@@ -24,6 +24,7 @@ import { deleteDeviceStorage, getDeviceStorage, setDeviceStorage } from '../../h
 import { DEFAULT_USER_DATA } from './user.constants';
 import { PATHS } from '../paths.constants';
 import { TOKEN_NAME } from './user.constants';
+import Toast from 'react-native-root-toast';
 
 export const userContext = createContext<Context>({} as Context);
 
@@ -182,6 +183,11 @@ export const UserProvider: FC<Props> = props => {
       if (result.data.result) {
         await setDeviceStorage(TOKEN_NAME, result.data.userData.verify_token);
         const userData = { ...DEFAULT_USER_DATA, ...result.data.userData };
+        Toast.show(`Welcome ${userData.first_name} ${userData.family_name}`, {
+          duration: Toast.durations.SHORT,
+          textColor: 'white',
+          backgroundColor: 'red',
+        });
         setUserData(userData);
         return true;
       }
