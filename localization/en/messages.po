@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-09-01 16:31+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+msgid "Access denied"
+msgstr "Access denied"
+
+msgid "Allow"
+msgstr "Allow"
+
+msgid "Allow Face ID to access the {nameApp} app."
+msgstr "Allow Face ID to access the {nameApp} app."
+
+msgid "Allow later"
+msgstr "Allow later"
+
+msgid "Allow login using Face ID"
+msgstr "Allow login using Face ID"
+
+msgid "Allow login using Touch ID"
+msgstr "Allow login using Touch ID"
+
+msgid "Allow Touch ID to access the {nameApp} app."
+msgstr "Allow Touch ID to access the {nameApp} app."
+
+msgid "Authorization"
+msgstr "Authorization"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "By clicking the \"Continue\" button, you agree to the"
+msgstr "By clicking the \"Continue\" button, you agree to the"
+
+msgid "Code incorrect"
+msgstr "Code incorrect"
+
+msgid "Continue"
+msgstr "Continue"
+
+msgid "Enter your password"
+msgstr "Enter your password"
+
+msgid "Error key token: Secret key is not defined in the environment variables"
+msgstr "Error key token: Secret key is not defined in the environment variables"
+
+msgid "Error: Invalid phone number or password"
+msgstr "Error: Invalid phone number or password"
+
+msgid "Error: Invalid token"
+msgstr "Error: Invalid token"
+
+msgid "Error: Token expired"
+msgstr "Error: Token expired"
+
+msgid "Error: User already exists"
+msgstr "Error: User already exists"
+
+msgid "Error: User not found"
+msgstr "Error: User not found"
+
+msgid "For authorization please enter phone number and password"
+msgstr "For authorization please enter phone number and password"
+
+msgid "Forget password?"
+msgstr "Forget password?"
+
+msgid "Forgot your password?"
+msgstr "Forgot your password?"
+
+msgid "Hello!"
+msgstr "Hello!"
+
+msgid "In 1968, the Council of Europe conducted research into the potential expansion of the Internet, as they were concerned about the impact of technology on human rights. This led to the development of policies aimed at protecting personal data."
+msgstr "In 1968, the Council of Europe conducted research into the potential expansion of the Internet, as they were concerned about the impact of technology on human rights. This led to the development of policies aimed at protecting personal data."
+
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Incorrect phone number entered or country code of the phone number selected incorrectly"
+
+msgid "Internal Server Error"
+msgstr "Internal Server Error"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Main"
+msgstr "Main"
+
+msgid "Now create yourself a strong password."
+msgstr "Now create yourself a strong password."
+
+msgid "or sign up using:"
+msgstr "or sign up using:"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Password must contain at least 8 characters"
+msgstr "Password must contain at least 8 characters"
+
+msgid "Passwords do not match"
+msgstr "Passwords do not match"
+
+msgid "Please authenticator"
+msgstr "Please authenticator"
+
+msgid "Please enter your password"
+msgstr "Please enter your password"
+
+msgid "Please enter your phone number"
+msgstr "Please enter your phone number"
+
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+msgid "Privacy Policy is a legal statement that defines what a business is."
+msgstr "Privacy Policy is a legal statement that defines what a business is."
+
+msgid "Privacy Policy is a legal statement that defines what a business owner does with personal data collected from users, as well as how this data is processed and for what purposes."
+msgstr "Privacy Policy is a legal statement that defines what a business owner does with personal data collected from users, as well as how this data is processed and for what purposes."
+
+msgid "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
+msgstr "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
+
+msgid "Registration"
+msgstr "Registration"
+
+msgid "Repeat password"
+msgstr "Repeat password"
+
+msgid "Resend the code"
+msgstr "Resend the code"
+
+msgid "Sing in"
+msgstr "Sing in"
+
+msgid "Terms of Service"
+msgstr "Terms of Service"
+
+msgid "Terms of Use"
+msgstr "Terms of Use"
+
+msgid "To start, I suggest registering"
+msgstr "To start, I suggest registering"
+
+msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
+msgstr "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
+
+msgid "We will help you recover it."
+msgstr "We will help you recover it."
+
+msgid "We're glad to see you on our service."
+msgstr "We're glad to see you on our service."
+
+msgid "Welcome"
+msgstr "Welcome"
+
+msgid "You have been sent an SMS with a code."
+msgstr "You have been sent an SMS with a code."

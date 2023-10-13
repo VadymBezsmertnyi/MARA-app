@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "types": ["node"],
+    "target": "ES6",
+    "lib": [
+      "es2021",
+      "es2018",
+      "DOM"
+    ],
+  },
+  "extends": ["expo/tsconfig.base", "@tsconfig/react-native/tsconfig.json"],
+}

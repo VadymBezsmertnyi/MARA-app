@@ -1,0 +1,7 @@
+
+localization/**/*.ts
+localization/**/*.d.ts
+localization/**/messages.ts
+localization/**/*.po
+src/icons/**/*
+src/source/images/**/*
