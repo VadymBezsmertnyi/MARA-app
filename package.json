@@ -20,7 +20,9 @@
     "eslint:warning": "eslint --max-warnings=500 --ext .js,.jsx,.ts,.tsx,.mjs 'src/**/*' --cache --cache-location './node_modules/.cache/eslint/.eslintcache'",
     "eslint:ci": "npm run eslint -- --quiet",
     "svgr": "svgr",
-    "icons": "svgr -d src/icons/components src/icons/svg --template src/icons/icon-template.js --typescript --native --no-dimensions"
+    "icons": "svgr -d src/icons/components src/icons/svg --template src/icons/icon-template.js --typescript --native --no-dimensions",
+    "android-debug-build": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/ && cd android && ./gradlew assembleDebug && cd ..",
+    "android-release-build": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && rm -rf android/app/src/main/res/drawable-* && rm -rf android/app/src/main/res/raw/* && cd android && ./gradlew assembleRelease && cd .."
   },
   "dependencies": {
     "@expo/status-bar-height": "^0.0.1",
