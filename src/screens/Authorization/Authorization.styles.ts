@@ -1,5 +1,4 @@
-import { Platform, StyleSheet } from 'react-native';
-import { PADDING_ANDROID, PADDING_IOS } from '../../../styles/constants';
+import { StyleSheet } from 'react-native';
 import colors from '../../../styles/colors';
 
 export const styles = StyleSheet.create({
@@ -35,7 +34,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 20,
     paddingTop: 10,
-    paddingBottom: Platform.OS === 'android' ? PADDING_ANDROID : PADDING_IOS,
+    paddingBottom: 20,
   },
   colorWhite: { color: colors.white },
 });
