@@ -14,6 +14,7 @@ export type MainScreenT = {
 export type MainScreensT = MainScreenT[];
 
 export type RootMainScreensParamList = {
+  [PATHS_MAIN_SCREENS.splash]: undefined;
   [PATHS_MAIN_SCREENS.welcome]: undefined;
   [PATHS_MAIN_SCREENS.authorization]: {
     phoneNumber?: string;

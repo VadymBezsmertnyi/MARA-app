@@ -12,6 +12,7 @@ import { RegistrationStack } from './registrationStack/registrationStack';
 
 // screens
 import { Welcome } from '../screens/Welcome/Welcome';
+import { Splash } from '../screens/Splash/Splash';
 
 // authorization
 import { Authorization } from '../screens/Authorization/Authorization';
@@ -24,6 +25,13 @@ export const useNavigators = () => {
   const { i18n } = useContext(localesContext);
 
   const mainScreens = [
+    {
+      id: PATHS_MAIN_SCREENS.splash,
+      name: PATHS_MAIN_SCREENS.splash,
+      title: null,
+      component: Splash,
+      headerShown: false,
+    },
     {
       id: 'welcome',
       name: PATHS_MAIN_SCREENS.welcome,

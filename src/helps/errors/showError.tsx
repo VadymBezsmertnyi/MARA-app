@@ -29,7 +29,7 @@ const info = (rawError: unknown) => {
   if (Platform.OS === 'web' && rawError) throw new Error(String(rawError));
   else
     Toast.show(String(rawError), {
-      duration: Toast.durations.SHORT,
+      duration: Toast.durations.LONG,
       textColor: 'black',
       backgroundColor: 'yellow',
     });

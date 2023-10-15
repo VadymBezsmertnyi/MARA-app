@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import QueryString from 'qs';
 import { t } from '@lingui/macro';
 
 // types
-import type { FC } from 'react';
+import type { FunctionComponent } from 'react';
 import type { Props, Context, UserDataT } from './user.types';
 import { KeysAuthorizationT } from '../../screens/Authorization/Authorization.types';
 
@@ -24,11 +24,10 @@ import { deleteDeviceStorage, getDeviceStorage, setDeviceStorage } from '../../h
 import { DEFAULT_USER_DATA } from './user.constants';
 import { PATHS } from '../paths.constants';
 import { TOKEN_NAME } from './user.constants';
-import Toast from 'react-native-root-toast';
 
 export const userContext = createContext<Context>({} as Context);
 
-export const UserProvider: FC<Props> = props => {
+export const UserProvider: FunctionComponent<Props> = props => {
   const { i18n } = props;
   const { api } = useContext(appContext);
   const { setLoading } = useContext(loadingContext);
@@ -148,25 +147,31 @@ export const UserProvider: FC<Props> = props => {
     else info(t(i18n)`Access denied`);
   };
 
-  const meUser = async (): Promise<void> => {
-    const verifyToken = await getDeviceStorage(TOKEN_NAME);
-    const queryParams = QueryString.stringify({ verifyToken }, { addQueryPrefix: true });
-    const url = `${PATHS.me}${queryParams}`;
-    if (verifyToken) {
-      try {
+  const meUser = async (): Promise<boolean> => {
+    try {
+      const verifyToken = await getDeviceStorage(TOKEN_NAME);
+      const queryParams = QueryString.stringify({ verifyToken }, { addQueryPrefix: true });
+      const url = `${PATHS.me}${queryParams}`;
+      if (verifyToken) {
         setLoading(true);
         const result = await api(url, undefined, resultUserDataS);
         if (result.data.result) {
           const userData = { ...DEFAULT_USER_DATA, ...result.data.userData };
           setUserData(userData);
-        } else showErrors.warning(getErrors(i18n)[result.data.code]);
-      } catch (error: any) {
-        if (error instanceof Error) {
-          bug(error);
-        } else warning(error);
-      } finally {
-        setLoading(false);
+          return true;
+        }
+        showErrors.warning(getErrors(i18n)[result.data.code]);
+        return false;
       }
+
+      return false;
+    } catch (error: any) {
+      if (error instanceof Error) {
+        bug(error);
+      } else warning(error);
+      return false;
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -191,11 +196,7 @@ export const UserProvider: FC<Props> = props => {
       if (result.data.result) {
         await setDeviceStorage(TOKEN_NAME, result.data.userData.verify_token);
         const userData = { ...DEFAULT_USER_DATA, ...result.data.userData };
-        Toast.show(`Welcome ${userData.first_name} ${userData.family_name}`, {
-          duration: Toast.durations.SHORT,
-          textColor: 'white',
-          backgroundColor: 'red',
-        });
+        info(`Welcome ${userData.first_name} ${userData.family_name}`);
         setUserData(userData);
         return true;
       }
@@ -299,6 +300,10 @@ export const UserProvider: FC<Props> = props => {
     }),
     [userData],
   );
+
+  useEffect(() => {
+    meUser();
+  }, []);
 
   return <userContext.Provider value={contextValue}>{props.children}</userContext.Provider>;
 };

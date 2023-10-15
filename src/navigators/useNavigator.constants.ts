@@ -1,4 +1,5 @@
 export const PATHS_MAIN_SCREENS = {
+  splash: 'splash',
   welcome: 'welcome',
   authorization: 'authorization',
   registration: 'registration',

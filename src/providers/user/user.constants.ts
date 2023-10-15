@@ -13,7 +13,6 @@ export const DEFAULT_USER_DATA: UserDataT = {
   family_name: '',
   photo_url: '',
   locale: 'en',
-  googleId: '',
   motoIds: [],
   autoIds: [],
   location_end: null,

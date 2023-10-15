@@ -1,7 +1,7 @@
 import { t } from '@lingui/macro';
 import { I18n } from '@lingui/core';
 
-export const getErrors = (i18n: I18n) => ({
+export const getErrors = (i18n: I18n): Record<string, string> => ({
   [1001]: t(i18n)`Error: Token expired`,
   [1002]: t(i18n)`Error: User not found`,
   [1003]: t(i18n)`Internal Server Error`,

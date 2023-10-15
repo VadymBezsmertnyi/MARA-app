@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 // types
 import type { I18n } from '@lingui/core';
-import { KeysAuthorizationT } from '../../screens/AuthorizationScreen/Authorization.types';
+import { KeysAuthorizationT } from '../../screens/Authorization/Authorization.types';
 
 // schemas
 import { userDataS } from './user.schemas';
@@ -18,7 +18,7 @@ export type Context = {
   }>;
   sendVerifyCode: (code: string) => Promise<boolean>;
   editUser: (dataRegistration: Record<string, string | number | boolean>) => Promise<void>;
-  meUser: () => Promise<void>;
+  meUser: () => Promise<boolean>;
   exitUser: () => Promise<void>;
   loginUser(dataLogin: Record<KeysAuthorizationT, string>): Promise<boolean>;
   recoveryPasswordSendCodeToUser: (phoneNumber: string) => Promise<boolean>;

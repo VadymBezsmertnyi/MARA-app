@@ -1,7 +1,7 @@
 import { t, Trans } from '@lingui/macro';
 import React, { FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
 import { DimensionValue, Platform, Pressable, ScrollView, Text, View } from 'react-native';
-import { Link, useIsFocused } from '@react-navigation/native';
+import { Link } from '@react-navigation/native';
 
 // types
 import { AuthorizationT, KeysAuthorizationT } from './Authorization.types';
@@ -30,12 +30,12 @@ import { PATHS_MAIN_SCREENS } from '../../navigators/useNavigator.constants';
 import { THEME_DARK } from '../../providers/theme/theme.const';
 
 // hooks
-import { useInitializer } from '../../useInitializer/useInitializer';
 import { useAuthorizationRegistration } from '../../helps/useAuthorizationRegistration';
 import { getClearValue } from '../../helps/regexp';
 
 // styles
 import { styles } from './Authorization.styles';
+import showErrors from '../../helps/errors/showError';
 
 // magic numbers
 const ADD_WIDTH_BUTTON_SUBMIT = 20;
@@ -47,14 +47,12 @@ const DEFAULT_DATA_AUTHORIZATION: AuthorizationT = {
 };
 
 export const Authorization: FunctionComponent = (): JSX.Element => {
-  const isFocused = useIsFocused();
   const navigation = useAllNavigation();
-  const {
-    params: { phoneNumber },
-  } = useMainRoute(PATHS_MAIN_SCREENS.authorization);
+  const { warning } = showErrors;
+  const { params } = useMainRoute(PATHS_MAIN_SCREENS.authorization);
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-  const { userData, meUser, loginUser } = useContext(userContext);
+  const { loginUser } = useContext(userContext);
   const { isTouchId, isFaceId, checkBiometric } = useContext(biometricAuthenticatorContext);
   const { verifyPhone, verifyPassword } = useAuthorizationRegistration();
   const [dataAuthorization, setDataAuthorization] = useState<AuthorizationT>(
@@ -62,14 +60,6 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
   );
   const [errorsMessage, setErrorsMessage] = useState<AuthorizationT>(DEFAULT_DATA_AUTHORIZATION);
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
-
-  const { isLoading } = useInitializer(
-    async function authorizationScreenInitializer() {
-      await meUser();
-      return {};
-    },
-    [isFocused],
-  );
 
   const errorsMessages: AuthorizationT = useMemo(
     () => ({
@@ -128,7 +118,15 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
   );
 
   useEffect(() => {
-    if (userData?.id) navigation.navigate(PATHS_MAIN_SCREENS.main);
+    if (params?.phoneNumber) {
+      const phone = params.phoneNumber;
+      setDataAuthorization(state => ({ ...state, phone }));
+      warning(
+        t(
+          i18n,
+        )`You are already registered, please proceed with the authorization, or you can reset your password`,
+      );
+    }
   }, []);
 
   if (isLoading) return <Text>Loading...</Text>;
