@@ -97,6 +97,15 @@ msgstr "Увійти"
 msgid "Main"
 msgstr "Головна"
 
+msgid "Map"
+msgstr "Карта"
+
+msgid "Market"
+msgstr "Базар"
+
+msgid "News"
+msgstr "Новини"
+
 msgid "Now create yourself a strong password."
 msgstr "Тепер створіть собі надійний пароль"
 
@@ -142,6 +151,9 @@ msgstr "Повторіть пароль"
 msgid "Resend the code"
 msgstr "Надіслати код повторно"
 
+msgid "Settings"
+msgstr "Настройки"
+
 msgid "Sing in"
 msgstr "Вхід"
 
@@ -150,6 +162,9 @@ msgstr "Умовами користування"
 
 msgid "Terms of Use"
 msgstr "Умовами користування"
+
+msgid "The entered phone number is not registered"
+msgstr "Введений номер телефону не зареєстрований"
 
 msgid "To start, I suggest registering"
 msgstr "Для початку пропоную зареєструватися"
@@ -166,5 +181,17 @@ msgstr "Раді бачити вас на нашому сервісі."
 msgid "Welcome"
 msgstr "Ласкаво просимо"
 
+msgid "Workshops"
+msgstr "Майстерні"
+
+msgid "You are already registered, please proceed with the authorization, or you can reset your password"
+msgstr "Ви вже зарестровані, пройдіть авторизацію або ви можете востановити пароль"
+
 msgid "You have been sent an SMS with a code."
 msgstr "Вам надіслано SMS!"
+
+msgid "You have entered the confirmation code incorrectly"
+msgstr "Ви невірно ввели код підтвердження"
+
+msgid "You have entered the phone number incorrectly"
+msgstr "Ви невірно ввели номер телефону"

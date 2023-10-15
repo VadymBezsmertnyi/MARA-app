@@ -97,6 +97,15 @@ msgstr "Login"
 msgid "Main"
 msgstr "Main"
 
+msgid "Map"
+msgstr "Map"
+
+msgid "Market"
+msgstr "Market"
+
+msgid "News"
+msgstr "News"
+
 msgid "Now create yourself a strong password."
 msgstr "Now create yourself a strong password."
 
@@ -142,6 +151,9 @@ msgstr "Repeat password"
 msgid "Resend the code"
 msgstr "Resend the code"
 
+msgid "Settings"
+msgstr "Settings"
+
 msgid "Sing in"
 msgstr "Sing in"
 
@@ -150,6 +162,9 @@ msgstr "Terms of Service"
 
 msgid "Terms of Use"
 msgstr "Terms of Use"
+
+msgid "The entered phone number is not registered"
+msgstr "The entered phone number is not registered"
 
 msgid "To start, I suggest registering"
 msgstr "To start, I suggest registering"
@@ -166,5 +181,17 @@ msgstr "We're glad to see you on our service."
 msgid "Welcome"
 msgstr "Welcome"
 
+msgid "Workshops"
+msgstr "Workshops"
+
+msgid "You are already registered, please proceed with the authorization, or you can reset your password"
+msgstr "You are already registered, please proceed with the authorization, or you can reset your password"
+
 msgid "You have been sent an SMS with a code."
 msgstr "You have been sent an SMS with a code."
+
+msgid "You have entered the confirmation code incorrectly"
+msgstr "You have entered the confirmation code incorrectly"
+
+msgid "You have entered the phone number incorrectly"
+msgstr "You have entered the phone number incorrectly"
