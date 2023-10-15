@@ -15,6 +15,9 @@ import { useAllNavigation } from '../../../navigators/Navigators.helps';
 // icons
 import { IconClose, IconFaceIdGradient } from '../../../icons/components';
 
+// constants
+import { PATHS_MAIN_SCREENS } from '../../../navigators/useNavigator.constants';
+
 // styles
 import { styles } from './RegistrationFaceId.styles';
 import colors from '../../../../styles/colors';
@@ -26,7 +29,7 @@ export const RegistrationFaceId: FunctionComponent = () => {
   const nameApp = 'MARA';
 
   const onAllowLater = () => {
-    navigation.navigate('main');
+    navigation.navigate(PATHS_MAIN_SCREENS.main);
   };
 
   const onAllow = async () => {

@@ -8,19 +8,22 @@ import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
 
 // providers
 import { localesContext } from '../../../../localization/localization.provider';
+import { userContext } from '../../../providers/user/user.provider';
 
 // helps
 import { useAllNavigation, useMainRoute } from '../../../navigators/Navigators.helps';
 
+// constants
+import { PATHS_REGISTRATION_SCREENS } from '../../../navigators/useNavigator.constants';
+
 // styles
 import { styles } from './RegistrationCode.styles';
-import { userContext } from '../../../providers/user/user.provider';
 
 const DEFAULT_CELL_COUNT = 4;
 const AMOUNT_MILLISECONDS_TIMEOUT = 5000;
 
 export const RegistrationCode: FunctionComponent = () => {
-  const route = useMainRoute('registrationCode');
+  const route = useMainRoute(PATHS_REGISTRATION_SCREENS.registrationCode);
   const navigation = useAllNavigation();
   const { sendCodeToUser, sendVerifyCode } = useContext(userContext);
   const { phoneNumber } = route.params;
@@ -33,7 +36,7 @@ export const RegistrationCode: FunctionComponent = () => {
     if (code.length === DEFAULT_CELL_COUNT) {
       const isVerifyCode = await sendVerifyCode(code);
       if (isVerifyCode) {
-        navigation.navigate('registrationPassword');
+        navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationPassword);
       } else setErrorMessage(t(i18n)`You have entered the confirmation code incorrectly`);
     }
   };

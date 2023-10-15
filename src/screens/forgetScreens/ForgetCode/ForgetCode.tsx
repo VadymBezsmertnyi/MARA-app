@@ -12,6 +12,9 @@ import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
 // hooks
 import { useForgetNavigation, useMainRoute } from '../../../navigators/Navigators.helps';
 
+// constants
+import { PATHS_FORGET_SCREENS } from '../../../navigators/useNavigator.constants';
+
 // styles
 import { styles } from './ForgetCode.styles';
 
@@ -19,7 +22,7 @@ const DEFAULT_CELL_COUNT = 4;
 const AMOUNT_MILLISECONDS_TIMEOUT = 5000;
 
 export const ForgetCode: FunctionComponent = () => {
-  const route = useMainRoute('registrationCode');
+  const route = useMainRoute(PATHS_FORGET_SCREENS.forgetCode);
   const { phoneNumber } = route.params;
   const navigation = useForgetNavigation();
   const { i18n } = useContext(localesContext);
@@ -28,7 +31,7 @@ export const ForgetCode: FunctionComponent = () => {
 
   const onSubmit = () => {
     if (code.length === DEFAULT_CELL_COUNT) {
-      if (isRecentCode) navigation.navigate('forgetPassword');
+      if (isRecentCode) navigation.navigate(PATHS_FORGET_SCREENS.forgetPassword);
     }
   };
 

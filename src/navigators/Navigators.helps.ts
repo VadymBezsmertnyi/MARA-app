@@ -15,5 +15,5 @@ export const useRegistrationNavigation = useNavigation<
   NativeStackNavigationProp<RootRegistrationScreensParamList>
 >;
 
-export const useMainRoute = <T extends keyof RootRegistrationScreensParamList>(_routeName: T) =>
-  useRoute<RouteProp<RootRegistrationScreensParamList, T>>();
+export const useMainRoute = <T extends keyof RootAllScreensParamList>(_routeName: T) =>
+  useRoute<RouteProp<RootAllScreensParamList, T>>();

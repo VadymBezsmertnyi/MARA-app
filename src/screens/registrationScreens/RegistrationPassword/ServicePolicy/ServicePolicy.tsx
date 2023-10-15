@@ -5,17 +5,20 @@ import { Trans } from '@lingui/macro';
 // helps
 import { useRegistrationNavigation } from '../../../../navigators/Navigators.helps';
 
+// constants
+import { PATHS_REGISTRATION_SCREENS } from '../../../../navigators/useNavigator.constants';
+
 // styles
 import { styles } from './ServicePolicy.styles';
 
 export const ServicePolicy: FunctionComponent = () => {
   const navigation = useRegistrationNavigation();
   const toTermsOfService = () => {
-    navigation.navigate('registrationTermsOfUse');
+    navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationTermsOfUse);
   };
 
   const toPrivacyPolicy = () => {
-    navigation.navigate('registrationPrivacyPolicy');
+    navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy);
   };
 
   const styleTextLink = useMemo(() => [styles.text, styles.link], []);

@@ -6,6 +6,7 @@ import { Trans, t } from '@lingui/macro';
 import { localesContext } from '../../../../localization/localization.provider';
 import { biometricAuthenticatorContext } from '../../../providers/biometricAuthenticator/biometricAuthenticator.provider';
 import { themeContext } from '../../../providers/theme/theme.provider';
+import { userContext } from '../../../providers/user/user.provider';
 
 // types
 import { KeysPasswordsT, PasswordsT } from '../../AuthorizationRegistration.types';
@@ -21,11 +22,14 @@ import { useRegistration } from '../../../helps/useRegistration';
 import { useAllNavigation } from '../../../navigators/Navigators.helps';
 
 // constants
+import {
+  PATHS_MAIN_SCREENS,
+  PATHS_REGISTRATION_SCREENS,
+} from '../../../navigators/useNavigator.constants';
 import { THEME_DARK } from '../../../providers/theme/theme.const';
 
 // styles
 import { styles } from './RegistrationPassword.styles';
-import { userContext } from '../../../providers/user/user.provider';
 
 export const RegistrationPassword: FunctionComponent = (): JSX.Element => {
   const navigation = useAllNavigation();
@@ -51,9 +55,9 @@ export const RegistrationPassword: FunctionComponent = (): JSX.Element => {
   };
 
   const redirectToScreen = () => {
-    if (isTouchId) navigation.navigate('registrationTouchId');
-    else if (isFaceId) navigation.navigate('registrationFaceId');
-    else navigation.navigate('main');
+    if (isTouchId) navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationTouchId);
+    else if (isFaceId) navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationFaceId);
+    else navigation.navigate(PATHS_MAIN_SCREENS.main);
   };
 
   const onSubmitClick = async () => {

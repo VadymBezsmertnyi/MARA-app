@@ -19,6 +19,7 @@ import { useRegistration } from '../../../helps/useRegistration';
 
 // constants
 import { THEME_DARK } from '../../../providers/theme/theme.const';
+import { PATHS_MAIN_SCREENS } from '../../../navigators/useNavigator.constants';
 
 // styles
 import { styles } from './ForgetPassword.styles';
@@ -45,7 +46,7 @@ export const ForgetPassword: FunctionComponent = () => {
   };
 
   const redirectToScreen = () => {
-    navigation.navigate('main');
+    navigation.navigate(PATHS_MAIN_SCREENS.main);
   };
 
   const onSubmitClick = () => {

@@ -15,6 +15,7 @@ import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
 // constants
 import { DEFAULT_CODE_COUNTRY, DEFAULT_COUNTRY } from '../../../constants/inputs.const';
 import { THEME_DARK } from '../../../providers/theme/theme.const';
+import { PATHS_FORGET_SCREENS } from '../../../navigators/useNavigator.constants';
 
 // helps
 import { useAuthorizationRegistration } from '../../../helps/useAuthorizationRegistration';
@@ -44,7 +45,7 @@ export const ForgetPhone: FunctionComponent = () => {
 
   const onSubmit = () => {
     if (!isError)
-      navigation.navigate('forgetCode', {
+      navigation.navigate(PATHS_FORGET_SCREENS.forgetCode, {
         phoneNumber: phone,
       });
   };

@@ -12,6 +12,12 @@ import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
 // hooks
 import { useAllNavigation } from '../../../navigators/Navigators.helps';
 
+// constants
+import {
+  PATHS_MAIN_SCREENS,
+  PATHS_REGISTRATION_SCREENS,
+} from '../../../navigators/useNavigator.constants';
+
 // icons
 import { IconClose, IconTouchIdGradient } from '../../../icons/components';
 
@@ -26,8 +32,8 @@ export const RegistrationTouchId: FunctionComponent = () => {
   const nameApp = 'MARA';
 
   const onAllowLater = () => {
-    if (isFaceId) navigation.navigate('registrationFaceId');
-    else navigation.navigate('main');
+    if (isFaceId) navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationFaceId);
+    else navigation.navigate(PATHS_MAIN_SCREENS.main);
   };
 
   const onAllow = async () => {

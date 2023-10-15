@@ -13,7 +13,7 @@ import { InputPassword } from '../../components/InputPassword/InputPassword';
 import { Social } from '../../components/Social/Social';
 
 // helps
-import { useAllNavigation } from '../../navigators/Navigators.helps';
+import { useAllNavigation, useMainRoute } from '../../navigators/Navigators.helps';
 
 // icons
 import { IconFaceIdGradient, IconTouchIdGradient } from '../../icons/components';
@@ -49,6 +49,9 @@ const DEFAULT_DATA_AUTHORIZATION: AuthorizationT = {
 export const Authorization: FunctionComponent = (): JSX.Element => {
   const isFocused = useIsFocused();
   const navigation = useAllNavigation();
+  const {
+    params: { phoneNumber },
+  } = useMainRoute(PATHS_MAIN_SCREENS.authorization);
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
   const { userData, meUser, loginUser } = useContext(userContext);
