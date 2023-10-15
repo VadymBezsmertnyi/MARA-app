@@ -8,6 +8,14 @@ export const PATHS_MAIN_SCREENS = {
   mainMap: 'mainMap',
 } as const;
 
+export const PATHS_MAIN_TABS = {
+  workshops: 'workshops',
+  map: 'map',
+  news: 'news',
+  market: 'market',
+  settings: 'settings',
+} as const;
+
 export const PATHS_REGISTRATION_SCREENS = {
   registrationPhone: 'registrationPhone',
   registrationCode: 'registrationCode',

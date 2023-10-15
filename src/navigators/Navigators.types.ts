@@ -1,6 +1,7 @@
 import {
   PATHS_FORGET_SCREENS,
   PATHS_MAIN_SCREENS,
+  PATHS_MAIN_TABS,
   PATHS_REGISTRATION_SCREENS,
 } from './useNavigator.constants';
 
@@ -25,6 +26,14 @@ export type RootMainScreensParamList = {
   };
   [PATHS_MAIN_SCREENS.main]: undefined;
   [PATHS_MAIN_SCREENS.mainMap]: undefined;
+};
+
+export type RootMainTabsParamList = {
+  [PATHS_MAIN_TABS.workshops]: undefined;
+  [PATHS_MAIN_TABS.map]: undefined;
+  [PATHS_MAIN_TABS.news]: undefined;
+  [PATHS_MAIN_TABS.market]: undefined;
+  [PATHS_MAIN_TABS.settings]: undefined;
 };
 
 export type RootForgetScreensParamList = {
