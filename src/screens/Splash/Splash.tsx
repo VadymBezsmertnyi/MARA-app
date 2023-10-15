@@ -30,7 +30,7 @@ export const Splash: FunctionComponent = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={splashScreenImage} resizeMode="contain" style={{ width: '100%' }} />
+      <Image source={splashScreenImage} resizeMode="contain" style={styles.image} />
     </View>
   );
 };
