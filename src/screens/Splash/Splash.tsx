@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, View } from 'react-native';
 
 // hooks
-import { useInitializer } from '../../useInitializer/useInitializer';
 import { useAllNavigation } from '../../navigators/Navigators.helps';
+import { useInitializer } from '../../useInitializer/useInitializer';
 
 // providers
 import { userContext } from '../../providers/user/user.provider';

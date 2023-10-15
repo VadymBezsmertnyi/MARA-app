@@ -7,6 +7,7 @@ import {
 
 // constants
 import { THEME_LIGHT } from '../../providers/theme/theme.const';
+import { PATHS_FORGET_SCREENS, PATHS_MAIN_SCREENS } from '../useNavigator.constants';
 
 // components
 import { HeaderLeft } from '../components/HeaderLeft/HeaderLeft';
@@ -16,6 +17,7 @@ import { RootForgetScreensParamList } from '../Navigators.types';
 
 // hooks
 import { useForgetStack } from './useForgetStack';
+import { useMainRoute } from '../Navigators.helps';
 
 // providers
 import { themeContext } from '../../providers/theme/theme.provider';
@@ -26,6 +28,7 @@ import colors from '../../../styles/colors';
 const Stack = createNativeStackNavigator<RootForgetScreensParamList>();
 
 export const ForgetStack: FunctionComponent = () => {
+  const { params } = useMainRoute(PATHS_MAIN_SCREENS.forget);
   const { theme } = useContext(themeContext);
   const { forgetScreens } = useForgetStack();
 
@@ -37,6 +40,11 @@ export const ForgetStack: FunctionComponent = () => {
     headerTitle: title || '',
     headerLeft: () => <HeaderLeft navigation={navigation} />,
   });
+
+  const initialParamsPhoneNumber = useMemo(
+    () => ({ phoneNumber: params?.phoneNumber }),
+    [params?.phoneNumber],
+  );
 
   const contentStyle = useMemo(
     () => ({ backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich }),
@@ -75,6 +83,9 @@ export const ForgetStack: FunctionComponent = () => {
           key={`screen-registration-${screen.id}`}
           name={screen.name}
           component={screen.component}
+          initialParams={
+            screen.name === PATHS_FORGET_SCREENS.forgetPhone ? initialParamsPhoneNumber : undefined
+          }
           options={({
             navigation,
           }: {

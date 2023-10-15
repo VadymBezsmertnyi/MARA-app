@@ -28,7 +28,7 @@ export const useNavigators = () => {
     {
       id: PATHS_MAIN_SCREENS.splash,
       name: PATHS_MAIN_SCREENS.splash,
-      title: null,
+      title: '',
       component: Splash,
       headerShown: false,
     },

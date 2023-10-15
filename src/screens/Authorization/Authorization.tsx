@@ -61,6 +61,14 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
   const [errorsMessage, setErrorsMessage] = useState<AuthorizationT>(DEFAULT_DATA_AUTHORIZATION);
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
 
+  const linkTo = useMemo(
+    () => ({
+      screen: PATHS_MAIN_SCREENS.forget,
+      params: { phoneNumber: params?.phoneNumber || dataAuthorization.phone || undefined },
+    }),
+    [params?.phoneNumber, dataAuthorization.phone],
+  );
+
   const errorsMessages: AuthorizationT = useMemo(
     () => ({
       phone: verifyPhone(dataAuthorization.phone, selectCountryIso),
@@ -129,8 +137,6 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
     }
   }, []);
 
-  if (isLoading) return <Text>Loading...</Text>;
-
   return (
     <View style={styles.screenContainer}>
       <ScrollView style={styles.inputsOther}>
@@ -157,7 +163,7 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
           placeholder={t(i18n)`Please enter your password`}
         />
         <View style={styles.containerForgetPassword}>
-          <Link style={styles.linkForgetPassword} to={`/${PATHS_MAIN_SCREENS.forget}`}>
+          <Link style={styles.linkForgetPassword} to={linkTo}>
             <View style={styles.containerLinkForgetPassword}>
               <Text style={styles.titleForgetPassword}>
                 <Trans>Forget password?</Trans>

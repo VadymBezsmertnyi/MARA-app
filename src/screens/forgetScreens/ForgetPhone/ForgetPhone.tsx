@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
+import React, { FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { Trans, t } from '@lingui/macro';
 
@@ -19,15 +19,19 @@ import { PATHS_FORGET_SCREENS } from '../../../navigators/useNavigator.constants
 
 // helps
 import { useAuthorizationRegistration } from '../../../helps/useAuthorizationRegistration';
-import { useForgetNavigation } from '../../../navigators/Navigators.helps';
+import { useForgetNavigation, useMainRoute } from '../../../navigators/Navigators.helps';
 
 // styles
 import { styles } from './ForgetPhone.styles';
+import { userContext } from '../../../providers/user/user.provider';
+import showErrors from '../../../helps/errors/showError';
 
 export const ForgetPhone: FunctionComponent = () => {
-  const { theme } = useContext(themeContext);
+  const { params } = useMainRoute(PATHS_FORGET_SCREENS.forgetPhone);
   const navigation = useForgetNavigation();
+  const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
+  const { sendCodeToUser } = useContext(userContext);
   const [phone, setPhone] = useState('');
   const { verifyPhone } = useAuthorizationRegistration();
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
@@ -43,12 +47,20 @@ export const ForgetPhone: FunctionComponent = () => {
   const errorsMessagePhone = verifyPhone(phone, selectCountryIso);
   const isError = Boolean(errorsMessagePhone.length);
 
-  const onSubmit = () => {
-    if (!isError)
-      navigation.navigate(PATHS_FORGET_SCREENS.forgetCode, {
-        phoneNumber: phone,
-      });
+  const onSubmit = async () => {
+    if (!isError) {
+      const { isHaveUser } = await sendCodeToUser(phone, true);
+      if (isHaveUser)
+        navigation.navigate(PATHS_FORGET_SCREENS.forgetCode, {
+          phoneNumber: phone,
+        });
+      else showErrors.bug(t(i18n)`The entered phone number is not registered`);
+    }
   };
+
+  useEffect(() => {
+    if (params?.phoneNumber) setPhone(params.phoneNumber);
+  }, []);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>

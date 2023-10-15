@@ -12,7 +12,10 @@ export type UserDataT = z.infer<typeof userDataS>;
 export type Context = {
   userData: UserDataT | null;
   cleanUserData: () => void;
-  sendCodeToUser: (phone_number: string) => Promise<{
+  sendCodeToUser: (
+    phone_number: string,
+    isForget?: boolean,
+  ) => Promise<{
     result: boolean;
     isHaveUser: boolean;
   }>;

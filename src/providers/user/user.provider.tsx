@@ -59,12 +59,13 @@ export const UserProvider: FunctionComponent<Props> = props => {
 
   const sendCodeToUser = async (
     phone_number: string,
+    isForget?: boolean,
   ): Promise<{ result: boolean; isHaveUser: boolean }> => {
     try {
       setLoading(true);
       const currentlyPhoneNumber = phone_number.replaceAll(' ', '');
       const resultCreateNewUser = await registrationPhone(currentlyPhoneNumber);
-      if (resultCreateNewUser.is_password)
+      if (resultCreateNewUser.is_password && !isForget)
         return { result: false, isHaveUser: resultCreateNewUser.is_password };
       await api(
         PATHS.sendCodeToUser,

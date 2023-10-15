@@ -20,13 +20,17 @@ export type RootMainScreensParamList = {
     phoneNumber?: string;
   };
   [PATHS_MAIN_SCREENS.registration]: undefined;
-  [PATHS_MAIN_SCREENS.forget]: undefined;
+  [PATHS_MAIN_SCREENS.forget]: {
+    phoneNumber?: string;
+  };
   [PATHS_MAIN_SCREENS.main]: undefined;
   [PATHS_MAIN_SCREENS.mainMap]: undefined;
 };
 
 export type RootForgetScreensParamList = {
-  [PATHS_FORGET_SCREENS.forgetPhone]: undefined;
+  [PATHS_FORGET_SCREENS.forgetPhone]: {
+    phoneNumber?: string;
+  };
   [PATHS_FORGET_SCREENS.forgetCode]: {
     phoneNumber: string;
   };

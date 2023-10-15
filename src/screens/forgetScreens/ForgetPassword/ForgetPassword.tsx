@@ -5,6 +5,7 @@ import { Trans, t } from '@lingui/macro';
 // providers
 import { localesContext } from '../../../../localization/localization.provider';
 import { themeContext } from '../../../providers/theme/theme.provider';
+import { userContext } from '../../../providers/user/user.provider';
 
 // types
 import { KeysPasswordsT, PasswordsT } from '../../AuthorizationRegistration.types';
@@ -28,6 +29,7 @@ export const ForgetPassword: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { i18n } = useContext(localesContext);
   const { theme } = useContext(themeContext);
+  const { editUser } = useContext(userContext);
   const { defaultDataRegistration, verifyErrors } = useRegistration();
   const [dataRegistration, setDataRegistration] = useState<PasswordsT>(defaultDataRegistration);
   const [errorsMessage, setErrorsMessage] = useState<PasswordsT>(defaultDataRegistration);
@@ -49,10 +51,10 @@ export const ForgetPassword: FunctionComponent = () => {
     navigation.navigate(PATHS_MAIN_SCREENS.main);
   };
 
-  const onSubmitClick = () => {
+  const onSubmitClick = async () => {
     if (isError) setErrorsMessage(errorsMessages);
     else {
-      console.log({ ...dataRegistration, is_password: true });
+      await editUser({ ...dataRegistration, is_password: true });
       redirectToScreen();
     }
   };

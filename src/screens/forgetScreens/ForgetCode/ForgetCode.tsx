@@ -17,6 +17,8 @@ import { PATHS_FORGET_SCREENS } from '../../../navigators/useNavigator.constants
 
 // styles
 import { styles } from './ForgetCode.styles';
+import showErrors from '../../../helps/errors/showError';
+import { userContext } from '../../../providers/user/user.provider';
 
 const DEFAULT_CELL_COUNT = 4;
 const AMOUNT_MILLISECONDS_TIMEOUT = 5000;
@@ -26,17 +28,21 @@ export const ForgetCode: FunctionComponent = () => {
   const { phoneNumber } = route.params;
   const navigation = useForgetNavigation();
   const { i18n } = useContext(localesContext);
+  const { sendCodeToUser, sendVerifyCode } = useContext(userContext);
   const [code, setCode] = useState('');
   const [isRecentCode, setIsRecentCode] = useState(false);
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (code.length === DEFAULT_CELL_COUNT) {
-      if (isRecentCode) navigation.navigate(PATHS_FORGET_SCREENS.forgetPassword);
+      const isVerifyCode = await sendVerifyCode(code);
+      if (isVerifyCode) {
+        navigation.navigate(PATHS_FORGET_SCREENS.forgetPassword);
+      } else showErrors.bug(t(i18n)`You have entered the confirmation code incorrectly`);
     }
   };
 
-  const onResendCode = () => {
-    console.log('onResendCode', code);
+  const onResendCode = async () => {
+    await sendCodeToUser(phoneNumber);
   };
 
   const timeoutRecentCode = () => {
@@ -48,10 +54,6 @@ export const ForgetCode: FunctionComponent = () => {
       clearTimeout(timeout);
     };
   };
-
-  useEffect(() => {
-    if (phoneNumber) console.log(phoneNumber);
-  }, []);
 
   useEffect(() => {
     if (!isRecentCode) timeoutRecentCode();
