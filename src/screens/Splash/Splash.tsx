@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 
 // hooks
 import { useInitializer } from '../../useInitializer/useInitializer';
@@ -10,6 +10,9 @@ import { userContext } from '../../providers/user/user.provider';
 
 // constants
 import { PATHS_MAIN_SCREENS } from '../../navigators/useNavigator.constants';
+
+// images
+import splashScreenImage from '../../../assets/splash.png';
 
 // styles
 import { styles } from './Splash.styles';
@@ -27,7 +30,7 @@ export const Splash: FunctionComponent = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Splash screen</Text>
+      <Image source={splashScreenImage} resizeMode="contain" style={{ width: '100%' }} />
     </View>
   );
 };
