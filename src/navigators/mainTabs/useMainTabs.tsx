@@ -16,10 +16,15 @@ import { Settings } from '../../screens/mainScreens/Settings/Settings';
 // icons components
 import {
   IconTabMap,
+  IconTabMapSelect,
   IconTabMarket,
+  IconTabMarketSelect,
   IconTabNews,
+  IconTabNewsSelect,
   IconTabSettings,
+  IconTabSettingsSelect,
   IconTabWorkshops,
+  IconTabWorkshopsSelect,
 } from '../../icons/components';
 
 // constants
@@ -36,6 +41,7 @@ export const useMainTabs = () => {
       component: Workshops,
       headerShown: false,
       tabBarIcon: IconTabWorkshops,
+      tabBarIconSelect: IconTabWorkshopsSelect,
     },
     {
       id: PATHS_MAIN_TABS.map,
@@ -44,6 +50,7 @@ export const useMainTabs = () => {
       component: Map,
       headerShown: false,
       tabBarIcon: IconTabMap,
+      tabBarIconSelect: IconTabMapSelect,
     },
     {
       id: PATHS_MAIN_TABS.news,
@@ -52,6 +59,7 @@ export const useMainTabs = () => {
       component: News,
       headerShown: false,
       tabBarIcon: IconTabNews,
+      tabBarIconSelect: IconTabNewsSelect,
     },
     {
       id: PATHS_MAIN_TABS.market,
@@ -60,6 +68,7 @@ export const useMainTabs = () => {
       component: Market,
       headerShown: false,
       tabBarIcon: IconTabMarket,
+      tabBarIconSelect: IconTabMarketSelect,
     },
     {
       id: PATHS_MAIN_TABS.settings,
@@ -68,6 +77,7 @@ export const useMainTabs = () => {
       component: Settings,
       headerShown: false,
       tabBarIcon: IconTabSettings,
+      tabBarIconSelect: IconTabSettingsSelect,
     },
   ] as const;
 

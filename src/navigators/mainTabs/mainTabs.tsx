@@ -1,46 +1,71 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useMemo } from 'react';
+import { TouchableOpacity, View } from 'react-native';
 import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { LinearGradient } from 'expo-linear-gradient';
+
+// helps
+import { useMainTabs } from './useMainTabs';
+
+// constants
+import { PATHS_MAIN_TABS } from '../useNavigator.constants';
 
 // types
 import { RootMainTabsParamList } from '../Navigators.types';
 
 // hooks
-import { useMainTabs } from './useMainTabs';
-import { TouchableOpacity, View } from 'react-native';
-import { PATHS_MAIN_TABS } from '../useNavigator.constants';
+import colors from '../../../styles/colors';
+import { styles } from './mainTabs.styles';
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
   const { mainTabs } = useMainTabs();
 
-  const tabBar = ({ state: { _index }, navigation }: BottomTabBarProps) => (
-    <View
-      style={{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '100%',
-        backgroundColor: 'blue',
-      }}
-    >
-      {mainTabs.map((screen, indexScreen) => {
-        const Icon = mainTabs[indexScreen].tabBarIcon;
-        return (
-          <View key={`tab-button-${screen.id}`} style={{}}>
-            <TouchableOpacity onPress={() => navigation.navigate(screen.name)}>
-              <Icon width={24} height={24} />
-            </TouchableOpacity>
-          </View>
-        );
-      })}
+  const colorsGradient = useMemo(() => [colors.californiaOrange, colors.blazeOrange], []);
+  const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
+  const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
+  const locationsGradient = useMemo(() => [0, 1], []);
+
+  const tabBar = ({ state: { index }, navigation }: BottomTabBarProps) => (
+    <View>
+      <LinearGradient
+        colors={colorsGradient}
+        start={startGradient}
+        end={endGradient}
+        locations={locationsGradient}
+        style={styles.container}
+      >
+        {mainTabs.map((screen, indexScreen) => {
+          const isActive = indexScreen === index;
+          const Icon = isActive
+            ? mainTabs[indexScreen].tabBarIconSelect
+            : mainTabs[indexScreen].tabBarIcon;
+          return (
+            <View key={`tab-button-${screen.id}`}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate(screen.name);
+                }}
+              >
+                <Icon width={32} height={32} />
+              </TouchableOpacity>
+            </View>
+          );
+        })}
+      </LinearGradient>
     </View>
+  );
+
+  const screenOptions = useMemo(
+    () => ({
+      headerShown: false,
+    }),
+    [],
   );
 
   return (
     <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
+      screenOptions={screenOptions}
       tabBar={tabBar}
       initialRouteName={PATHS_MAIN_TABS.map}
     >
@@ -49,9 +74,6 @@ export const MainTabs: FunctionComponent = () => {
           key={`tab-screen-${screen.id}`}
           name={screen.name}
           component={screen.component}
-          options={{
-            tabBarIcon: screen.tabBarIcon,
-          }}
         />
       ))}
     </Tab.Navigator>
