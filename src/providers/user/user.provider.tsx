@@ -58,10 +58,15 @@ export const UserProvider: FC<Props> = props => {
     }
   };
 
-  const sendCodeToUser = async (phone_number: string): Promise<void> => {
+  const sendCodeToUser = async (
+    phone_number: string,
+  ): Promise<{ result: boolean; isHaveUser: boolean }> => {
     try {
       setLoading(true);
-      const resultCreateNewUser = await registrationPhone(phone_number);
+      const currentlyPhoneNumber = phone_number.replaceAll(' ', '');
+      const resultCreateNewUser = await registrationPhone(currentlyPhoneNumber);
+      if (resultCreateNewUser.is_password)
+        return { result: false, isHaveUser: resultCreateNewUser.is_password };
       await api(
         PATHS.sendCodeToUser,
         {
@@ -71,8 +76,10 @@ export const UserProvider: FC<Props> = props => {
         shortResponseS,
       );
       setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser });
+      return { result: true, isHaveUser: resultCreateNewUser.is_password };
     } catch (error: any) {
       bug(error);
+      return { result: true, isHaveUser: false };
     } finally {
       setLoading(false);
     }
@@ -132,6 +139,7 @@ export const UserProvider: FC<Props> = props => {
           setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
         } else info(getErrors(i18n)[resultCreateNewUser.data.code]);
       } catch (error: any) {
+        console.log('error', error);
         bug(error);
         throw error;
       } finally {

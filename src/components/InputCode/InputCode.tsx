@@ -28,6 +28,7 @@ type InputCodeProps = {
   isResendCode?: boolean;
   onResendCode?: () => void;
   cellCount: number;
+  errorMessage?: string;
 };
 
 export const InputCode: FunctionComponent<InputCodeProps> = ({
@@ -41,6 +42,7 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
   isResendCode = false,
   onResendCode,
   cellCount,
+  errorMessage,
 }) => {
   const { theme } = useContext(themeContext);
   const ref = useBlurOnFulfill({ value, cellCount });
@@ -105,6 +107,7 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
             />
           </View>
         </View>
+        <Text style={styles.errorMessage}>{errorMessage}</Text>
       </View>
       {isResendCode && (
         <View style={styles.containerResend}>

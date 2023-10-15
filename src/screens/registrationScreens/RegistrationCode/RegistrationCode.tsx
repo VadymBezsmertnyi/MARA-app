@@ -14,6 +14,7 @@ import { useAllNavigation, useMainRoute } from '../../../navigators/Navigators.h
 
 // styles
 import { styles } from './RegistrationCode.styles';
+import { userContext } from '../../../providers/user/user.provider';
 
 const DEFAULT_CELL_COUNT = 4;
 const AMOUNT_MILLISECONDS_TIMEOUT = 5000;
@@ -21,19 +22,24 @@ const AMOUNT_MILLISECONDS_TIMEOUT = 5000;
 export const RegistrationCode: FunctionComponent = () => {
   const route = useMainRoute('registrationCode');
   const navigation = useAllNavigation();
+  const { sendCodeToUser, sendVerifyCode } = useContext(userContext);
   const { phoneNumber } = route.params;
   const { i18n } = useContext(localesContext);
   const [code, setCode] = useState('');
   const [isRecentCode, setIsRecentCode] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (code.length === DEFAULT_CELL_COUNT) {
-      if (isRecentCode) navigation.navigate('registrationPassword');
+      const isVerifyCode = await sendVerifyCode(code);
+      if (isVerifyCode) {
+        navigation.navigate('registrationPassword');
+      } else setErrorMessage(t(i18n)`You have entered the confirmation code incorrectly`);
     }
   };
 
-  const onResendCode = () => {
-    console.log('onResendCode', code);
+  const onResendCode = async () => {
+    await sendCodeToUser(phoneNumber);
   };
 
   const timeoutRecentCode = () => {
@@ -46,9 +52,10 @@ export const RegistrationCode: FunctionComponent = () => {
     };
   };
 
-  useEffect(() => {
-    if (phoneNumber) console.log(phoneNumber);
-  }, []);
+  const onChangeCode = (value: string) => {
+    setCode(value);
+    setErrorMessage('');
+  };
 
   useEffect(() => {
     if (!isRecentCode) timeoutRecentCode();
@@ -58,7 +65,7 @@ export const RegistrationCode: FunctionComponent = () => {
     <SafeAreaView style={styles.container}>
       <InputCode
         value={code}
-        setValue={setCode}
+        setValue={onChangeCode}
         title={t(i18n)`You have been sent an SMS with a code.`}
         subTitle={t(
           i18n,
@@ -66,6 +73,7 @@ export const RegistrationCode: FunctionComponent = () => {
         isResendCode={isRecentCode}
         onResendCode={onResendCode}
         cellCount={DEFAULT_CELL_COUNT}
+        errorMessage={errorMessage}
       />
       <ButtonCustom
         disabled={code.length < DEFAULT_CELL_COUNT}

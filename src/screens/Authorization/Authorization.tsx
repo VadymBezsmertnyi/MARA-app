@@ -1,5 +1,5 @@
 import { t, Trans } from '@lingui/macro';
-import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
+import React, { FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
 import { DimensionValue, Platform, Pressable, ScrollView, Text, View } from 'react-native';
 import { Link, useIsFocused } from '@react-navigation/native';
 
@@ -11,6 +11,9 @@ import { ButtonCustom } from '../../components/ButtonCustom/ButtonCustom';
 import { InputPhone } from '../../components/InputPhone/InputPhone';
 import { InputPassword } from '../../components/InputPassword/InputPassword';
 import { Social } from '../../components/Social/Social';
+
+// helps
+import { useAllNavigation } from '../../navigators/Navigators.helps';
 
 // icons
 import { IconFaceIdGradient, IconTouchIdGradient } from '../../icons/components';
@@ -44,8 +47,9 @@ const DEFAULT_DATA_AUTHORIZATION: AuthorizationT = {
 };
 
 export const Authorization: FunctionComponent = (): JSX.Element => {
-  const { theme } = useContext(themeContext);
   const isFocused = useIsFocused();
+  const navigation = useAllNavigation();
+  const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
   const { userData, meUser, loginUser } = useContext(userContext);
   const { isTouchId, isFaceId, checkBiometric } = useContext(biometricAuthenticatorContext);
@@ -95,7 +99,10 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
         ...dataAuthorization,
         phone: getClearValue(dataAuthorization.phone),
       });
-      if (result) setDataAuthorization(DEFAULT_DATA_AUTHORIZATION);
+      if (result) {
+        navigation.navigate(PATHS_MAIN_SCREENS.main);
+        setDataAuthorization(DEFAULT_DATA_AUTHORIZATION);
+      }
     }
   };
 
@@ -116,6 +123,10 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
     () => [styles.title, theme === THEME_DARK ? styles.colorWhite : {}],
     [theme],
   );
+
+  useEffect(() => {
+    if (userData?.id) navigation.navigate(PATHS_MAIN_SCREENS.main);
+  }, []);
 
   if (isLoading) return <Text>Loading...</Text>;
 

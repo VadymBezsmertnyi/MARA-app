@@ -50,4 +50,11 @@ export const styles = StyleSheet.create({
     borderColor: colors.grayCloudy,
   },
   colorWhite: { color: colors.white },
+  errorMessage: {
+    minHeight: 40,
+    textAlign: 'center',
+    paddingVertical: 5,
+    color: colors.errorRed,
+    fontWeight: '700',
+  },
 });

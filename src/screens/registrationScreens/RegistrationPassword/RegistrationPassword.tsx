@@ -25,11 +25,13 @@ import { THEME_DARK } from '../../../providers/theme/theme.const';
 
 // styles
 import { styles } from './RegistrationPassword.styles';
+import { userContext } from '../../../providers/user/user.provider';
 
 export const RegistrationPassword: FunctionComponent = (): JSX.Element => {
   const navigation = useAllNavigation();
   const { i18n } = useContext(localesContext);
   const { theme } = useContext(themeContext);
+  const { editUser } = useContext(userContext);
   const { isTouchId, isFaceId } = useContext(biometricAuthenticatorContext);
   const { defaultDataRegistration, verifyErrors } = useRegistration();
   const [dataRegistration, setDataRegistration] = useState<PasswordsT>(defaultDataRegistration);
@@ -49,20 +51,17 @@ export const RegistrationPassword: FunctionComponent = (): JSX.Element => {
   };
 
   const redirectToScreen = () => {
-    navigation.navigate('main');
-    // TODO later
-    /* if (isTouchId) navigation.navigate('registrationTouchId');
+    if (isTouchId) navigation.navigate('registrationTouchId');
     else if (isFaceId) navigation.navigate('registrationFaceId');
-    else navigation.navigate('main'); */
+    else navigation.navigate('main');
   };
 
-  const onSubmitClick = () => {
+  const onSubmitClick = async () => {
     if (isError) setErrorsMessage(errorsMessages);
     else {
-      console.log({ ...dataRegistration, is_password: true });
+      await editUser({ ...dataRegistration, is_password: true });
       redirectToScreen();
     }
-    // else await editUser({ ...dataRegistration, is_password: true });
   };
 
   return (

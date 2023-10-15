@@ -26,19 +26,20 @@ export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({ children }) =
   const [securityLevel, setSecurityLevel] = useState<number | null>(null);
   // AuthenticationType = 1-FINGERPRINT, 2-FACIAL_RECOGNITION, 3-IRIS(Android)
   const [authenticationType, setAuthenticationType] = useState<number[] | null>(null);
+  const isGlobalDisable = false;
 
   const isFaceId = useMemo(
-    () => (authenticationType ? authenticationType.includes(FACE_TYPE) : false),
+    () => (authenticationType ? authenticationType.includes(FACE_TYPE) && isGlobalDisable : false),
     [authenticationType],
   );
   const isTouchId = useMemo(
-    () => (authenticationType ? authenticationType.includes(TOUCH_TYPE) : false),
+    () => (authenticationType ? authenticationType.includes(TOUCH_TYPE) && isGlobalDisable : false),
     [authenticationType],
   );
   const isIrisId = useMemo(
     () =>
       authenticationType && Platform.OS === 'android'
-        ? authenticationType.includes(IRIS_TYPE)
+        ? authenticationType.includes(IRIS_TYPE) && isGlobalDisable
         : false,
     [authenticationType],
   );

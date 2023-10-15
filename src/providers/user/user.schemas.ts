@@ -15,7 +15,6 @@ export const userDataS = z.object({
   family_name: z.string(),
   photo_url: z.string(),
   locale: z.enum(languagesKeys),
-  googleId: z.string(),
   motoIds: z.array(z.number().or(z.string())),
   autoIds: z.array(z.number().or(z.string())),
   location_end: z.array(z.number()).max(NUMBER_TWO).nullable(),
