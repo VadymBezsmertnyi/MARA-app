@@ -1,10 +1,14 @@
 import React, { FunctionComponent } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+
+// styles
+import { styles } from './Map.styles';
 
 export const Map: FunctionComponent = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <Text>Map</Text>
+    <View style={styles.container}>
+      <MapView provider={PROVIDER_GOOGLE} style={styles.map} />
     </View>
   );
 };
