@@ -22,7 +22,8 @@ export const Map: FunctionComponent = () => {
   return (
     <View style={styles.container}>
       <MapView
-        provider={PROVIDER_GOOGLE}
+        // TODO
+        //provider={PROVIDER_GOOGLE}
         style={styles.map}
         initialRegion={state.region}
         onRegionChange={onRegionChange}
