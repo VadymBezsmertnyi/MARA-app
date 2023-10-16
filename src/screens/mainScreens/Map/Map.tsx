@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { View } from 'react-native';
-import MapView, { Details, Marker, Region } from 'react-native-maps';
+import MapView, { Details, Marker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 
 // styles
 import { styles } from './Map.styles';
@@ -22,8 +22,7 @@ export const Map: FunctionComponent = () => {
   return (
     <View style={styles.container}>
       <MapView
-        // TODO
-        //provider={PROVIDER_GOOGLE}
+        provider={PROVIDER_GOOGLE}
         style={styles.map}
         initialRegion={state.region}
         onRegionChange={onRegionChange}
