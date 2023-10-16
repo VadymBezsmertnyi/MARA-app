@@ -1,6 +1,6 @@
-import React, { FunctionComponent, useMemo, useState } from 'react';
-import { Text, View } from 'react-native';
-import MapView, { Details, Marker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+import React, { FunctionComponent, useState } from 'react';
+import { View } from 'react-native';
+import MapView, { Details, Marker, Region } from 'react-native-maps';
 
 // styles
 import { styles } from './Map.styles';
