@@ -22,6 +22,7 @@ import { messages as translationsEn } from './localization/en/messages';
 import { LoadingProvider } from './src/providers/loading/loading.provider';
 import { UserProvider, userContext } from './src/providers/user/user.provider';
 import { AppProvider } from './src/providers/app/app.provider';
+import { MapProvider } from './src/providers/map/map.provider';
 
 const CATALOGS_LANGUAGES = { uk: translationsUk as Messages, en: translationsEn as Messages };
 
@@ -49,7 +50,9 @@ function App() {
                 <SafeAreaProvider>
                   <ResponsiveLayoutProvider>
                     <BiometricAuthenticatorProvider>
-                      <Navigators />
+                      <MapProvider>
+                        <Navigators />
+                      </MapProvider>
                     </BiometricAuthenticatorProvider>
                   </ResponsiveLayoutProvider>
                 </SafeAreaProvider>

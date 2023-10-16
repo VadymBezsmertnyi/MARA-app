@@ -67,6 +67,12 @@
         {
           "username": "clyga_xaocy"
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
       ]
     ],
     "runtimeVersion": {
