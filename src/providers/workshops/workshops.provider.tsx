@@ -3,9 +3,11 @@ import React, { FunctionComponent, useMemo, useState } from 'react';
 // types
 import { WorkshopsT } from './workshops.types';
 
+// components
+import { SheetSearch } from './components/SheetSearch/SheetSearch';
+
 // helps
 import { searchTextInArray } from '../../helps/helps';
-import { SheetSearch } from './components/SheetSearch/SheetSearch';
 
 type WorkshopsContext = {
   workshops: WorkshopsT;

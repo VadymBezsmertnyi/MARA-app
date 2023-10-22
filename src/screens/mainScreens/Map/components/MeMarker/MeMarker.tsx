@@ -8,9 +8,7 @@ import { mapContext } from '../../../../../providers/map/map.provider';
 // styles
 import { styles } from './MeMarker.styles';
 
-type MeMarkerProps = {};
-
-export const MeMarker: FunctionComponent<MeMarkerProps> = () => {
+export const MeMarker: FunctionComponent = () => {
   const { location } = useContext(mapContext);
   const coordinateMarker = useMemo(
     () =>

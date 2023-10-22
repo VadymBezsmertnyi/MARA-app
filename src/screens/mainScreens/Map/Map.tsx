@@ -1,6 +1,9 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useContext, useState } from 'react';
 import { Platform, View } from 'react-native';
 import MapView, { Details, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+
+// providers
+import { workshopsContext } from '../../../providers/workshops/workshops.provider';
 
 // components
 import { SosMarker } from './components/SosMarker/SosMarker';
@@ -21,18 +24,8 @@ const DEFAULT_LOCATION = {
   longitudeDelta: 7.446565590798844,
 };
 
-const DEFAULT_LOCATIONS = [
-  {
-    longitude: 32.04073045402765,
-    latitude: 49.435687070760046,
-  },
-  {
-    longitude: 32.10822053253651,
-    latitude: 49.40207074110663,
-  },
-];
-
 export const Map: FunctionComponent = () => {
+  const { workshops } = useContext(workshopsContext);
   const [state, setState] = useState({
     region: DEFAULT_LOCATION,
   });
@@ -57,7 +50,7 @@ export const Map: FunctionComponent = () => {
         <MeMarker />
         <SosMarker longitude={31.758758202195168} latitude={49.56848145137262} />
         <EventMarker longitude={31.95705860853195} latitude={49.493768216622755} />
-        {DEFAULT_LOCATIONS.map(({ longitude, latitude }, index) => (
+        {workshops.map(({ longitude, latitude }, index) => (
           <OtherMarker
             key={`other-marker-${index + 1}`}
             longitude={longitude}

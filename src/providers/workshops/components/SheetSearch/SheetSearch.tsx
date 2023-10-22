@@ -1,10 +1,13 @@
 import React, { FunctionComponent, useContext, useMemo } from 'react';
-import { Platform, Pressable, ScrollView, Text, TextInput, View, ViewProps } from 'react-native';
+import { Platform, Pressable, ScrollView, TextInput, View, ViewProps } from 'react-native';
 import { t } from '@lingui/macro';
 
 // providers
 import { localesContext } from '../../../../../localization/localization.provider';
 import { responsiveLayoutContext } from '../../../responsiveLayout/responsiveLayout.provider';
+
+// components
+import { SheetWorkshop } from '../SheetWorkshop/SheetWorkshop';
 
 // icons
 import { IconLocationMarker } from '../../../../icons/components';
@@ -15,7 +18,6 @@ import { WorkshopsT } from '../../workshops.types';
 // styles
 import { styles } from './SheetSearch.styles';
 import colors from '../../../../../styles/colors';
-import { SheetWorkshop } from '../SheetWorkshop/SheetWorkshop';
 
 type SheetSearchProps = {
   isOpen: boolean;

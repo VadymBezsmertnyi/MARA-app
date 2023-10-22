@@ -1,8 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { IconRepair, IconStar } from '../../../../icons/components';
-import colors from '../../../../../styles/colors';
+
+// types
 import { WorkshopT } from '../../workshops.types';
+
+// components
+import { IconRepair, IconStar } from '../../../../icons/components';
+
+// styles
+import colors from '../../../../../styles/colors';
 import { styles } from './SheetWorkshop.styles';
 
 type SheetWorkshopProps = {
