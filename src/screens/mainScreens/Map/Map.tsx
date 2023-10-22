@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import MapView, { Details, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 
 // components
@@ -46,7 +46,7 @@ export const Map: FunctionComponent = () => {
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
-        mapType={'terrain'}
+        mapType={Platform.OS === 'ios' ? 'terrain' : 'standard'}
         initialRegion={state.region}
         onRegionChange={onRegionChange}
         zoomControlEnabled
