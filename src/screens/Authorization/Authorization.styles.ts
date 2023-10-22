@@ -19,16 +19,16 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   linkForgetPassword: {
-    color: colors.blueTest,
+    color: colors.blueTufts,
     fontSize: 12,
     fontWeight: '600',
   },
   containerLinkForgetPassword: {
-    borderBottomColor: colors.blueTest,
+    borderBottomColor: colors.blueTufts,
     borderBottomWidth: 1,
     alignItems: 'center',
   },
-  titleForgetPassword: { color: colors.blueTest, fontSize: 12, fontWeight: '600' },
+  titleForgetPassword: { color: colors.blueTufts, fontSize: 12, fontWeight: '600' },
   containerButtons: {
     alignItems: 'flex-end',
     flexDirection: 'row',

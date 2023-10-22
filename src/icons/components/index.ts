@@ -5,6 +5,7 @@ export { default as EyeShow } from './EyeShow';
 export { default as IconClose } from './IconClose';
 export { default as IconFaceIdGradient } from './IconFaceIdGradient';
 export { default as IconFaceId } from './IconFaceId';
+export { default as IconLocationMarker } from './IconLocationMarker';
 export { default as IconTabMapSelect } from './IconTabMapSelect';
 export { default as IconTabMap } from './IconTabMap';
 export { default as IconTabMarketSelect } from './IconTabMarketSelect';

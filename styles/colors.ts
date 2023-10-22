@@ -10,7 +10,7 @@ const colors = {
   blackRangoonGreen: '#040403',
   blackRich07: '#020202B2',
   //blue
-  blueTest: '#368CDC',
+  blueTufts: '#368CDC',
   //gray
   gray: '#ddd',
   grayFuscous: '#524B44',

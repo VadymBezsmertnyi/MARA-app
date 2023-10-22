@@ -40,11 +40,11 @@ export const styles = StyleSheet.create({
   },
   containerResendCode: {
     marginTop: 24,
-    borderBottomColor: colors.blueTest,
+    borderBottomColor: colors.blueTufts,
     borderBottomWidth: 1,
   },
   resendCode: {
-    color: colors.blueTest,
+    color: colors.blueTufts,
   },
   focusCell: {
     borderColor: colors.grayCloudy,

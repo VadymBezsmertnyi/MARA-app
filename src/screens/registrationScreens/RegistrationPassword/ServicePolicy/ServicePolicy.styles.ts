@@ -10,5 +10,5 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: { color: colors.grayCloudy, fontSize: 12, fontWeight: '600' },
-  link: { color: colors.blueTest },
+  link: { color: colors.blueTufts },
 });

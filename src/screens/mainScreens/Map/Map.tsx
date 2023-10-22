@@ -11,6 +11,7 @@ import { EventContainer } from './components/EventContainer/EventContainer';
 
 // styles
 import { styles } from './Map.styles';
+import { OtherMarker } from './components/OtherMarker/OtherMarker';
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -18,6 +19,17 @@ const DEFAULT_LOCATION = {
   latitudeDelta: 7.273602506374104,
   longitudeDelta: 7.446565590798844,
 };
+
+const DEFAULT_LOCATIONS = [
+  {
+    longitude: 32.04073045402765,
+    latitude: 49.435687070760046,
+  },
+  {
+    longitude: 32.10822053253651,
+    latitude: 49.40207074110663,
+  },
+];
 
 export const Map: FunctionComponent = () => {
   const [state, setState] = useState({
@@ -33,13 +45,24 @@ export const Map: FunctionComponent = () => {
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
+        mapType={'terrain'}
         initialRegion={state.region}
         onRegionChange={onRegionChange}
         zoomControlEnabled
+        showsBuildings={false}
+        showsPointsOfInterest={false}
+        showsIndoorLevelPicker={false}
       >
         <MeMarker />
         <SosMarker longitude={31.758758202195168} latitude={49.56848145137262} />
         <EventMarker longitude={31.95705860853195} latitude={49.493768216622755} />
+        {DEFAULT_LOCATIONS.map(({ longitude, latitude }, index) => (
+          <OtherMarker
+            key={`other-marker-${index + 1}`}
+            longitude={longitude}
+            latitude={latitude}
+          />
+        ))}
       </MapView>
       <UpContainer />
       <EventContainer />
