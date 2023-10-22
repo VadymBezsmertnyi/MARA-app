@@ -6,7 +6,7 @@ import { Menu } from '../Menu/Menu';
 
 // styles
 import { styles } from './UpContainer.styles';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Animated, Platform, Text, TouchableOpacity, View } from 'react-native';
 import { Trans } from '@lingui/macro';
 
 const INTENSITY = 5;
@@ -27,7 +27,9 @@ export const UpContainer: FunctionComponent = () => {
 
   return (
     <View style={containerStyles}>
-      <BlurView intensity={isSos ? INTENSITY : 0} tint="dark" style={styles.blurViewContainer} />
+      {Platform.OS !== 'android' ? (
+        <BlurView intensity={isSos ? INTENSITY : 0} tint="dark" style={styles.blurViewContainer} />
+      ) : null}
       <Menu isShowMenu={isShowMenu} setIsShowMenu={setIsShowMenu} />
       <TouchableOpacity onPress={pressSosLine} style={styles.buttonSos}>
         <Text style={styles.titleButtonSos}>

@@ -10,14 +10,18 @@ const SOS_PADDING_VERTICAL = 3;
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
+    minHeight: verticalScale(MIN_HEIGHT),
     flexDirection: 'row',
     alignItems: 'center',
     position: 'absolute',
     top: verticalScale(12),
-    minHeight: verticalScale(MIN_HEIGHT),
     gap: 13,
   },
-  blurViewContainer: { position: 'absolute', width: '100%', height: '100%' },
+  blurViewContainer: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
   sosContainer: {
     backgroundColor: colors.sosRed,
     paddingHorizontal: horizontalScale(SOS_PADDING_HORIZONTAL),
