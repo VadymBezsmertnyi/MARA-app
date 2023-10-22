@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
+import { Platform, Text, TouchableOpacity, View } from 'react-native';
 import { BlurView } from 'expo-blur';
+import { Trans } from '@lingui/macro';
 
 // components
 import { Menu } from '../Menu/Menu';
 
 // styles
 import { styles } from './UpContainer.styles';
-import { Animated, Platform, Text, TouchableOpacity, View } from 'react-native';
-import { Trans } from '@lingui/macro';
 
 const INTENSITY = 5;
 
@@ -26,16 +26,20 @@ export const UpContainer: FunctionComponent = () => {
   }, []);
 
   return (
-    <View style={containerStyles}>
+    <View style={styles.containerUp}>
       {Platform.OS !== 'android' ? (
         <BlurView intensity={isSos ? INTENSITY : 0} tint="dark" style={styles.blurViewContainer} />
       ) : null}
-      <Menu isShowMenu={isShowMenu} setIsShowMenu={setIsShowMenu} />
-      <TouchableOpacity onPress={pressSosLine} style={styles.buttonSos}>
-        <Text style={styles.titleButtonSos}>
-          <Trans>Someone needs help within a 5 km radius</Trans>
-        </Text>
-      </TouchableOpacity>
+      <View style={containerStyles}>
+        <Menu isShowMenu={isShowMenu} setIsShowMenu={setIsShowMenu} />
+        {isSos ? (
+          <TouchableOpacity onPress={pressSosLine} style={styles.buttonSos}>
+            <Text style={styles.titleButtonSos}>
+              <Trans>Someone needs help within a 5 km radius</Trans>
+            </Text>
+          </TouchableOpacity>
+        ) : null}
+      </View>
     </View>
   );
 };

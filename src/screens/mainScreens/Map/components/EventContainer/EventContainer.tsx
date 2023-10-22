@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import { Platform, Text, View } from 'react-native';
+import { BlurView } from 'expo-blur';
+import { LinearGradient } from 'expo-linear-gradient';
 
 // styles
 import { styles } from './EventContainer.styles';
-import { LinearGradient } from 'expo-linear-gradient';
 import colors from '../../../../../../styles/colors';
-import { BlurView } from 'expo-blur';
 
 export const EventContainer: FunctionComponent = () => {
   const titleEvent = 'Назва найближчої події';
