@@ -9,6 +9,7 @@ import { MeMarker } from './components/MeMarker/MeMarker';
 
 // styles
 import { styles } from './Map.styles';
+import { UpContainer } from './components/UpContainer/UpContainer';
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -39,6 +40,7 @@ export const Map: FunctionComponent = () => {
         <SosMarker longitude={31.758758202195168} latitude={49.56848145137262} />
         <EventMarker longitude={31.95705860853195} latitude={49.493768216622755} />
       </MapView>
+      <UpContainer />
     </View>
   );
 };
