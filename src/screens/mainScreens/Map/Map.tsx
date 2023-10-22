@@ -6,6 +6,7 @@ import MapView, { Details, Marker, PROVIDER_GOOGLE, Region } from 'react-native-
 import { styles } from './Map.styles';
 import { mapContext } from '../../../providers/map/map.provider';
 import { SosMarker } from './components/SosMarker/SosMarker';
+import { EventMarker } from './components/EventMarker/EventMarker';
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -52,6 +53,7 @@ export const Map: FunctionComponent = () => {
           </View>
         </Marker>
         <SosMarker longitude={31.758758202195168} latitude={49.56848145137262} />
+        <EventMarker longitude={31.95705860853195} latitude={49.493768216622755} />
       </MapView>
     </View>
   );
