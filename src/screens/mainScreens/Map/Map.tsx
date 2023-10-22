@@ -8,10 +8,11 @@ import { EventMarker } from './components/EventMarker/EventMarker';
 import { MeMarker } from './components/MeMarker/MeMarker';
 import { UpContainer } from './components/UpContainer/UpContainer';
 import { EventContainer } from './components/EventContainer/EventContainer';
+import { OtherMarker } from './components/OtherMarker/OtherMarker';
+import { ButtonSearch } from './components/ButtonSearch/ButtonSearch';
 
 // styles
 import { styles } from './Map.styles';
-import { OtherMarker } from './components/OtherMarker/OtherMarker';
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -66,6 +67,7 @@ export const Map: FunctionComponent = () => {
       </MapView>
       <UpContainer />
       <EventContainer />
+      <ButtonSearch />
     </View>
   );
 };

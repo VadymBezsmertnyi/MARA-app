@@ -1,8 +1,12 @@
 import React, { FunctionComponent, useMemo } from 'react';
-import { Marker, CalloutSubview, Callout } from 'react-native-maps';
-import { IconLocationMarker } from '../../../../../icons/components';
-import colors from '../../../../../../styles/colors';
 import { Text } from 'react-native';
+import { Marker, Callout } from 'react-native-maps';
+
+// icons
+import { IconLocationMarker } from '../../../../../icons/components';
+
+// styles
+import colors from '../../../../../../styles/colors';
 import { styles } from './OtherMarker.styles';
 
 type OtherMarkerProps = {
