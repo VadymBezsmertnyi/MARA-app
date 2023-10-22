@@ -1,6 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import { Platform, TouchableOpacity } from 'react-native';
 import { BlurView } from 'expo-blur';
+
+// providers
+import { workshopsContext } from '../../../../../providers/workshops/workshops.provider';
 
 // components
 import { IconSearchMap } from '../../../../../icons/components';
@@ -10,8 +13,9 @@ import { styles } from './ButtonSearch.styles';
 import colors from '../../../../../../styles/colors';
 
 export const ButtonSearch: FunctionComponent = () => {
+  const { isSearchMap, setIsSearchMap } = useContext(workshopsContext);
   const toggleSearch = () => {
-    console.log('toggleSearch');
+    setIsSearchMap(!isSearchMap);
   };
 
   return (

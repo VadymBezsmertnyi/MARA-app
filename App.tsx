@@ -9,6 +9,11 @@ import LocalesProvider from './localization/localization.provider';
 import { ThemeProvider } from './src/providers/theme/theme.provider';
 import { ResponsiveLayoutProvider } from './src/providers/responsiveLayout/responsiveLayout.provider';
 import { BiometricAuthenticatorProvider } from './src/providers/biometricAuthenticator/biometricAuthenticator.provider';
+import { LoadingProvider } from './src/providers/loading/loading.provider';
+import { UserProvider, userContext } from './src/providers/user/user.provider';
+import { AppProvider } from './src/providers/app/app.provider';
+import { MapProvider } from './src/providers/map/map.provider';
+import { WorkshopsProvider } from './src/providers/workshops/workshops.provider';
 
 // components
 import { Navigators } from './src/navigators/Navigators';
@@ -19,10 +24,6 @@ import { defaultLanguage, languagesLinguiAlias } from './localization/localizati
 // locales
 import { messages as translationsUk } from './localization/uk/messages';
 import { messages as translationsEn } from './localization/en/messages';
-import { LoadingProvider } from './src/providers/loading/loading.provider';
-import { UserProvider, userContext } from './src/providers/user/user.provider';
-import { AppProvider } from './src/providers/app/app.provider';
-import { MapProvider } from './src/providers/map/map.provider';
 
 const CATALOGS_LANGUAGES = { uk: translationsUk as Messages, en: translationsEn as Messages };
 
@@ -49,11 +50,13 @@ function App() {
               <NavigationContainer>
                 <SafeAreaProvider>
                   <ResponsiveLayoutProvider>
-                    <BiometricAuthenticatorProvider>
-                      <MapProvider>
-                        <Navigators />
-                      </MapProvider>
-                    </BiometricAuthenticatorProvider>
+                    <WorkshopsProvider>
+                      <BiometricAuthenticatorProvider>
+                        <MapProvider>
+                          <Navigators />
+                        </MapProvider>
+                      </BiometricAuthenticatorProvider>
+                    </WorkshopsProvider>
                   </ResponsiveLayoutProvider>
                 </SafeAreaProvider>
               </NavigationContainer>

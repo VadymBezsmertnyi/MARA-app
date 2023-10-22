@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   phoneInput: {
     width: '100%',
-    borderColor: colors.gray,
+    borderColor: colors.gainsboroGray,
     borderWidth: 1,
     borderRadius: 4,
   },

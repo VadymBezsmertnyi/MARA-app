@@ -13,11 +13,14 @@ const colors = {
   //blue
   blueTufts: '#368CDC',
   //gray
-  gray: '#ddd',
+  gray: '#bbb',
+  gainsboroGray: '#ddd',
   grayFuscous: '#524B44',
+  DavysGray: '#545262',
   gray50: '#80808080',
   grayMercury: '#E6E6E6',
   grayCloudy: '#A9A4A0',
+  platinumGray: '#DFDFE8',
   grayCod: '#1A1A1A',
   // silver
   chineseSilver: '#ccc',
