@@ -1,6 +1,8 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import { View } from 'react-native';
 import { Marker } from 'react-native-maps';
+
+// styles
 import { styles } from './EventMarker.styles';
 
 type EventMarkerProps = {

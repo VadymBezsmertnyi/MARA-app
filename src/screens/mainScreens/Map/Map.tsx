@@ -1,12 +1,14 @@
-import React, { FunctionComponent, useContext, useState } from 'react';
-import { Text, View } from 'react-native';
-import MapView, { Details, Marker, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+import React, { FunctionComponent, useState } from 'react';
+import { View } from 'react-native';
+import MapView, { Details, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+
+// components
+import { SosMarker } from './components/SosMarker/SosMarker';
+import { EventMarker } from './components/EventMarker/EventMarker';
+import { MeMarker } from './components/MeMarker/MeMarker';
 
 // styles
 import { styles } from './Map.styles';
-import { mapContext } from '../../../providers/map/map.provider';
-import { SosMarker } from './components/SosMarker/SosMarker';
-import { EventMarker } from './components/EventMarker/EventMarker';
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -16,7 +18,6 @@ const DEFAULT_LOCATION = {
 };
 
 export const Map: FunctionComponent = () => {
-  const { location } = useContext(mapContext);
   const [state, setState] = useState({
     region: DEFAULT_LOCATION,
   });
@@ -34,24 +35,7 @@ export const Map: FunctionComponent = () => {
         onRegionChange={onRegionChange}
         zoomControlEnabled
       >
-        <Marker
-          coordinate={{
-            longitude: location?.longitude || 0,
-            latitude: location?.latitude || 0,
-          }}
-        >
-          <View
-            style={{
-              backgroundColor: 'green',
-              width: 30,
-              height: 30,
-              borderRadius: 20,
-              justifyContent: 'center',
-            }}
-          >
-            <Text>YOUR</Text>
-          </View>
-        </Marker>
+        <MeMarker />
         <SosMarker longitude={31.758758202195168} latitude={49.56848145137262} />
         <EventMarker longitude={31.95705860853195} latitude={49.493768216622755} />
       </MapView>

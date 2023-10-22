@@ -21,8 +21,6 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) =
   const [location, setLocation] = useState<Location.LocationObjectCoords | null>(null);
   const [startGetGeolocation, setStartGetGeolocation] = useState<boolean>(false);
 
-  const valueContext: MapContext = useMemo(() => ({ location }), [location]);
-
   const getStatusApp = async () => {
     const { status } = await Location.getForegroundPermissionsAsync();
     setStatus(status);
@@ -42,6 +40,8 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) =
     const { coords } = await Location.getCurrentPositionAsync({});
     setLocation(coords);
   };
+
+  const valueContext: MapContext = useMemo(() => ({ location }), [location]);
 
   useEffect(() => {
     getStatusApp();
