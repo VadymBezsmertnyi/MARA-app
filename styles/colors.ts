@@ -25,6 +25,8 @@ const colors = {
   // red
   errorRed: '#ff3333',
   electricRed: '#E80000',
+  // green
+  green: 'green',
 
   // orange
   californiaOrange: '#FDA005',
