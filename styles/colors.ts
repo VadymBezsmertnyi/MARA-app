@@ -31,8 +31,10 @@ const colors = {
 
   // orange
   californiaOrange: '#FDA005',
+  californiaOrange70: '#fda005b3',
   chileanFireOrange: '#FD7102',
   blazeOrange: '#FD5E01',
+  blazeOrange70: '#fd5e01b3',
 };
 
 export default colors;

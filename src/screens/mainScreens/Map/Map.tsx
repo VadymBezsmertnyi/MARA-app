@@ -6,10 +6,11 @@ import MapView, { Details, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 import { SosMarker } from './components/SosMarker/SosMarker';
 import { EventMarker } from './components/EventMarker/EventMarker';
 import { MeMarker } from './components/MeMarker/MeMarker';
+import { UpContainer } from './components/UpContainer/UpContainer';
+import { EventContainer } from './components/EventContainer/EventContainer';
 
 // styles
 import { styles } from './Map.styles';
-import { UpContainer } from './components/UpContainer/UpContainer';
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -41,6 +42,7 @@ export const Map: FunctionComponent = () => {
         <EventMarker longitude={31.95705860853195} latitude={49.493768216622755} />
       </MapView>
       <UpContainer />
+      <EventContainer />
     </View>
   );
 };
