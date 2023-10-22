@@ -5,6 +5,7 @@ import MapView, { Details, Marker, PROVIDER_GOOGLE, Region } from 'react-native-
 // styles
 import { styles } from './Map.styles';
 import { mapContext } from '../../../providers/map/map.provider';
+import { SosMarker } from './components/SosMarker/SosMarker';
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -50,24 +51,7 @@ export const Map: FunctionComponent = () => {
             <Text>YOUR</Text>
           </View>
         </Marker>
-        <Marker
-          coordinate={{
-            longitude: 31.758758202195168,
-            latitude: 49.56848145137262,
-          }}
-        >
-          <View
-            style={{
-              backgroundColor: 'red',
-              width: 30,
-              height: 30,
-              borderRadius: 20,
-              justifyContent: 'center',
-            }}
-          >
-            <Text>SOS</Text>
-          </View>
-        </Marker>
+        <SosMarker longitude={31.758758202195168} latitude={49.56848145137262} />
       </MapView>
     </View>
   );

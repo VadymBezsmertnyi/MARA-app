@@ -24,6 +24,8 @@ const colors = {
   philippineSilver06: '#b5b5b599',
   // red
   errorRed: '#ff3333',
+  electricRed: '#E80000',
+
   // orange
   californiaOrange: '#FDA005',
   chileanFireOrange: '#FD7102',
