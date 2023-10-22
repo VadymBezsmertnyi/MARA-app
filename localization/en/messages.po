@@ -49,6 +49,9 @@ msgstr "Code incorrect"
 msgid "Continue"
 msgstr "Continue"
 
+msgid "Enter the address"
+msgstr "Enter the address"
+
 msgid "Enter your password"
 msgstr "Enter your password"
 
@@ -156,6 +159,9 @@ msgstr "Settings"
 
 msgid "Sing in"
 msgstr "Sing in"
+
+msgid "Someone needs help within a 5 km radius"
+msgstr "Someone needs help within a 5 km radius"
 
 msgid "Terms of Service"
 msgstr "Terms of Service"

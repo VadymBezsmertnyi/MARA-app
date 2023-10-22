@@ -49,6 +49,9 @@ msgstr "Код неправильний"
 msgid "Continue"
 msgstr "Продовжити"
 
+msgid "Enter the address"
+msgstr "Введіть адресу"
+
 msgid "Enter your password"
 msgstr "Введіть свій пароль"
 
@@ -156,6 +159,9 @@ msgstr "Настройки"
 
 msgid "Sing in"
 msgstr "Вхід"
+
+msgid "Someone needs help within a 5 km radius"
+msgstr "У радіусі 5 км комусь потрібна допомога"
 
 msgid "Terms of Service"
 msgstr "Умовами користування"

@@ -65,6 +65,7 @@ export const SheetSearch: FunctionComponent<SheetSearchProps> = ({
             onChangeText={setValue}
             placeholder={t(i18n)`Enter the address`}
             placeholderTextColor={colors.DavysGray}
+            style={styles.input}
           />
         </View>
         <View style={listStyles}>

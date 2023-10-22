@@ -3,6 +3,7 @@ import { horizontalScale, verticalScale } from '../../../../../styles/hooks';
 import colors from '../../../../../styles/colors';
 
 const PADDING_HORIZONTAL = 16;
+const WIDTH_INPUT = 300;
 
 export const styles = StyleSheet.create({
   background: {
@@ -24,13 +25,16 @@ export const styles = StyleSheet.create({
   },
   containerInput: {
     flexDirection: 'row',
-    paddingHorizontal: horizontalScale(12),
-    paddingVertical: verticalScale(12),
     alignItems: 'center',
     borderWidth: 1,
     borderColor: colors.platinumGray,
+    paddingHorizontal: horizontalScale(12),
     borderRadius: 8,
     gap: 8,
+  },
+  input: {
+    width: horizontalScale(WIDTH_INPUT),
+    paddingVertical: verticalScale(12),
   },
   scrollViewContainer: { gap: 12 },
 });
