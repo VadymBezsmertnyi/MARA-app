@@ -27,32 +27,34 @@ export const MainTabs: FunctionComponent = () => {
   const locationsGradient = useMemo(() => [0, 1], []);
 
   const tabBar = ({ state: { index }, navigation }: BottomTabBarProps) => (
-    <View>
-      <LinearGradient
-        colors={colorsGradient}
-        start={startGradient}
-        end={endGradient}
-        locations={locationsGradient}
-        style={styles.container}
-      >
-        {mainTabs.map((screen, indexScreen) => {
-          const isActive = indexScreen === index;
-          const Icon = isActive
-            ? mainTabs[indexScreen].tabBarIconSelect
-            : mainTabs[indexScreen].tabBarIcon;
-          return (
-            <View key={`tab-button-${screen.id}`}>
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate(screen.name);
-                }}
-              >
-                <Icon width={32} height={32} />
-              </TouchableOpacity>
-            </View>
-          );
-        })}
-      </LinearGradient>
+    <View style={styles.mainContainer}>
+      <View style={styles.absoluteContainer}>
+        <LinearGradient
+          colors={colorsGradient}
+          start={startGradient}
+          end={endGradient}
+          locations={locationsGradient}
+          style={styles.container}
+        >
+          {mainTabs.map((screen, indexScreen) => {
+            const isActive = indexScreen === index;
+            const Icon = isActive
+              ? mainTabs[indexScreen].tabBarIconSelect
+              : mainTabs[indexScreen].tabBarIcon;
+            return (
+              <View key={`tab-button-${screen.id}`}>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate(screen.name);
+                  }}
+                >
+                  <Icon width={32} height={32} />
+                </TouchableOpacity>
+              </View>
+            );
+          })}
+        </LinearGradient>
+      </View>
     </View>
   );
 

@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+  mainContainer: { height: 74 },
+  absoluteContainer: { position: 'absolute', bottom: 0, width: '100%' },
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
     backgroundColor: 'blue',
     paddingHorizontal: 27,
     paddingVertical: 24,
