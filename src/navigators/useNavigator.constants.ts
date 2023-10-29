@@ -31,3 +31,14 @@ export const PATHS_FORGET_SCREENS = {
   forgetCode: 'forgetCode',
   forgetPassword: 'forgetPassword',
 } as const;
+
+export const PATHS_NEWS_SCREENS = {
+  newsMain: 'newsMain',
+  newsList: 'newsList',
+  new: 'new',
+  events: 'events',
+  event: 'event',
+  addEvent: 'addEvent',
+  locationEventInput: 'locationEventInput',
+  locationEventMap: 'locationEventMap',
+} as const;

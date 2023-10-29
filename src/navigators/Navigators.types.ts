@@ -2,6 +2,7 @@ import {
   PATHS_FORGET_SCREENS,
   PATHS_MAIN_SCREENS,
   PATHS_MAIN_TABS,
+  PATHS_NEWS_SCREENS,
   PATHS_REGISTRATION_SCREENS,
 } from './useNavigator.constants';
 
@@ -56,6 +57,15 @@ export type RootRegistrationScreensParamList = {
   [PATHS_REGISTRATION_SCREENS.registrationFaceId]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationTermsOfUse]: undefined;
+};
+
+export type RootNewsScreensParamList = {
+  [PATHS_NEWS_SCREENS.newsMain]: undefined;
+  [PATHS_NEWS_SCREENS.news]: undefined;
+  [PATHS_NEWS_SCREENS.events]: undefined;
+  [PATHS_NEWS_SCREENS.addEvent]: undefined;
+  [PATHS_NEWS_SCREENS.locationEventInput]: undefined;
+  [PATHS_NEWS_SCREENS.locationEventMap]: undefined;
 };
 
 export type RootAllScreensParamList = RootMainScreensParamList &

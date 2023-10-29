@@ -7,9 +7,11 @@ import { localesContext } from '../../../localization/localization.provider';
 // screens
 import { Workshops } from '../../screens/mainScreens/Workshops/Workshops';
 
+// stacks
+import { NewsStack } from '../NewsStack/newsStack';
+
 // screens
 import { Map } from '../../screens/mainScreens/Map/Map';
-import { News } from '../../screens/mainScreens/News/News';
 import { Market } from '../../screens/mainScreens/Market/Market';
 import { Settings } from '../../screens/mainScreens/Settings/Settings';
 
@@ -56,7 +58,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.news,
       name: PATHS_MAIN_TABS.news,
       title: t(i18n)`Events and news`,
-      component: News,
+      component: NewsStack,
       headerShown: true,
       tabBarIcon: IconTabNews,
       tabBarIconSelect: IconTabNewsSelect,
