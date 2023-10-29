@@ -55,9 +55,9 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.news,
       name: PATHS_MAIN_TABS.news,
-      title: t(i18n)`News`,
+      title: t(i18n)`Events and news`,
       component: News,
-      headerShown: false,
+      headerShown: true,
       tabBarIcon: IconTabNews,
       tabBarIconSelect: IconTabNewsSelect,
     },

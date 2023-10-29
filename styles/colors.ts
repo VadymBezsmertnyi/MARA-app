@@ -5,6 +5,7 @@ const colors = {
   whiteTransparentFifteen: '#ffffff80',
   //black
   black: '#000',
+  black35: '#00000059',
   black80: '#ffffff80',
   blackRich: '#020202',
   blackCoffee: '#38312C',

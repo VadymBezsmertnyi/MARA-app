@@ -58,6 +58,16 @@ export const MainTabs: FunctionComponent = () => {
     </View>
   );
 
+  const headerLeft = () => (
+    <TouchableOpacity>
+      <View style={styles.menu}>
+        <View style={styles.line} />
+        <View style={styles.line} />
+        <View style={styles.line} />
+      </View>
+    </TouchableOpacity>
+  );
+
   const screenOptions = useMemo(
     () => ({
       headerShown: false,
@@ -76,6 +86,15 @@ export const MainTabs: FunctionComponent = () => {
           key={`tab-screen-${screen.id}`}
           name={screen.name}
           component={screen.component}
+          options={() => ({
+            headerShown: screen.headerShown,
+            headerTitle: screen.title,
+            headerTitleAlign: 'center',
+            headerLeft,
+            headerLeftContainerStyle: styles.headerLeftContainerStyle,
+            headerRightContainerStyle: { paddingRight: 16 },
+            headerShadowVisible: false,
+          })}
         />
       ))}
     </Tab.Navigator>
