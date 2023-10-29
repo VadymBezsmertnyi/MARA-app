@@ -4,6 +4,7 @@ import MapView, { Details, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 
 // providers
 import { workshopsContext } from '../../../providers/workshops/workshops.provider';
+import { themeContext } from '../../../providers/theme/theme.provider';
 
 // components
 import { SosMarker } from './components/SosMarker/SosMarker';
@@ -26,6 +27,7 @@ const DEFAULT_LOCATION = {
 
 export const Map: FunctionComponent = () => {
   const { workshops } = useContext(workshopsContext);
+  const { theme } = useContext(themeContext);
   const [state, setState] = useState({
     region: DEFAULT_LOCATION,
   });
@@ -43,6 +45,7 @@ export const Map: FunctionComponent = () => {
         initialRegion={state.region}
         onRegionChange={onRegionChange}
         zoomControlEnabled
+        userInterfaceStyle={theme}
         showsBuildings={false}
         showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
