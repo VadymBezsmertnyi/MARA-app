@@ -1,5 +1,6 @@
 export { default as ArrowDown } from './ArrowDown';
 export { default as ArrowLeft } from './ArrowLeft';
+export { default as ArrowLongRight } from './ArrowLongRight';
 export { default as EyeHide } from './EyeHide';
 export { default as EyeShow } from './EyeShow';
 export { default as IconClose } from './IconClose';

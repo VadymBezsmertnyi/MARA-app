@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
 import { userContext } from '../user/user.provider';
 import * as Location from 'expo-location';
-import { Platform } from 'react-native';
 
 type MapContext = {
   location: Location.LocationObjectCoords | null;

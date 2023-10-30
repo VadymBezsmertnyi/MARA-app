@@ -18,3 +18,12 @@ export const searchTextInArray = <T extends Array<Record<string, string | number
 
   return result as T;
 };
+
+export const formatDateFromUnixTimestamp = (unixTimestamp: number) => {
+  const date = new Date(unixTimestamp);
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Додаємо 1, оскільки місяці в JavaScript починаються з 0
+  const year = date.getFullYear();
+
+  return `${day}.${month}.${year}`;
+};

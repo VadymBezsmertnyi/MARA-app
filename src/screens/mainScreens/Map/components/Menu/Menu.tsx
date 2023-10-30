@@ -11,7 +11,6 @@ type MenuProps = {
 
 export const Menu: FunctionComponent<MenuProps> = ({ isShowMenu, setIsShowMenu }) => {
   const toggleShowMenu = () => {
-    console.log('toggleShowMenu', !isShowMenu);
     setIsShowMenu(!isShowMenu);
   };
 
