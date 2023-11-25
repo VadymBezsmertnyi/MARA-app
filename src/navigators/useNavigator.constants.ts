@@ -35,9 +35,9 @@ export const PATHS_FORGET_SCREENS = {
 export const PATHS_NEWS_SCREENS = {
   newsMain: 'newsMain',
   newsList: 'newsList',
-  new: 'new',
-  events: 'events',
-  event: 'event',
+  newItem: 'newItem',
+  eventsList: 'eventsList',
+  eventItem: 'eventItem',
   addEvent: 'addEvent',
   locationEventInput: 'locationEventInput',
   locationEventMap: 'locationEventMap',

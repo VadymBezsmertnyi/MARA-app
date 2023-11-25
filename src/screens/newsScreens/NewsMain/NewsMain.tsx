@@ -1,76 +1,36 @@
 import React, { FunctionComponent } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+// types
+import { RootNewsScreensParamList } from '../../../navigators/Navigators.types';
 
 // components
 import { ItemListEvents } from './components/ItemListEvents/ItemListEvents';
+import { ItemListNews } from './components/ItemListNews/ItemListNews';
 
 // icons
 import { ArrowLongRight } from '../../../icons/components';
 
+// constants
+import { DEFAULT_LIST_EVENT, DEFAULT_LIST_NEWS } from '../DELETE_newsScreens.constants';
+import { PATHS_NEWS_SCREENS } from '../../../navigators/useNavigator.constants';
+
 // styles
 import colors from '../../../../styles/colors';
 import { styles } from './NewsMain.styles';
-import { ItemListNews } from './components/ItemListNews/ItemListNews';
 
-const DEFAULT_LIST_EVENT = [
-  {
-    id: 1,
-    title: 'Гонки-1',
-    address: 'Автодром ім. Вадима-1',
-    startData: 1699877491000,
-    endData: 1700136691000,
-    location: [49.48149391021346, 31.999342627823353],
-    image: null,
-  },
-  {
-    id: 2,
-    title: 'Гонки-2',
-    address: 'Автодром ім. Вадима-2',
-    startData: 1699877491000,
-    endData: 1700136691000,
-    location: [49.47944629585574, 31.991484761238095],
-    image: null,
-  },
-  {
-    id: 3,
-    title: 'Гонки-3',
-    address: 'Автодром ім. Вадима-3',
-    startData: 1699877491000,
-    endData: 1700136691000,
-    location: [49.47944629585574, 31.991484761238095],
-    image: null,
-  },
-  {
-    id: 4,
-    title: 'Гонки-4',
-    address: 'Автодром ім. Вадима-4',
-    startData: 1699877491000,
-    endData: 1700136691000,
-    location: [49.47944629585574, 31.991484761238095],
-    image: null,
-  },
-] as const;
+type NewsMainProps = {
+  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+};
 
-const DEFAULT_LIST_NEWS = [
-  {
-    id: 1,
-    title: 'Планується мотопробіг-1',
-    data: 1699877491000,
-  },
-  {
-    id: 2,
-    title: 'Планується мотопробіг-2',
-    data: 1699877491000,
-  },
-  {
-    id: 3,
-    title: 'Планується мотопробіг-3',
-    data: 1699877491000,
-  },
-];
-
-export const NewsMain: FunctionComponent = () => {
-  console.log('new-main');
+export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
+  const onToEventsList = () => {
+    navigation.navigate(PATHS_NEWS_SCREENS.eventsList);
+  };
+  const onToNewsList = () => {
+    navigation.navigate(PATHS_NEWS_SCREENS.newsList);
+  };
   return (
     <View style={styles.container}>
       <View style={styles.containerPart}>
@@ -80,7 +40,7 @@ export const NewsMain: FunctionComponent = () => {
             <ItemListEvents key={`event-${eventItem.id}`} item={eventItem} />
           ))}
         </View>
-        <TouchableOpacity style={styles.buttonMore}>
+        <TouchableOpacity style={styles.buttonMore} onPress={onToEventsList}>
           <Text style={styles.titleButtonMore}>More events</Text>
           <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
         </TouchableOpacity>
@@ -92,7 +52,7 @@ export const NewsMain: FunctionComponent = () => {
             <ItemListNews key={`new-${newItem.id}`} title={newItem.title} date={newItem.data} />
           ))}
         </View>
-        <TouchableOpacity style={styles.buttonMore}>
+        <TouchableOpacity style={styles.buttonMore} onPress={onToNewsList}>
           <Text style={styles.titleButtonMore}>More news</Text>
           <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
         </TouchableOpacity>

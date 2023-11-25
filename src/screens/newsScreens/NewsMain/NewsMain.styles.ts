@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     paddingBottom: verticalScale(PADDING_BOTTOM),
     gap: verticalScale(GAP_MAIN),
   },
-  containerPart: { flex: 1, gap: verticalScale(GAP_MORE) },
+  containerPart: { gap: verticalScale(GAP_MORE) },
   titleType: { fontSize: scaleFont(FONT_SIZE_TITLE_TYPE), fontWeight: '700' },
   containerEvents: { gap: 8 },
   buttonMore: {

@@ -2,12 +2,14 @@ import React, { FunctionComponent, useMemo } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { LinearGradient } from 'expo-linear-gradient';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
 // helps
 import { useMainTabs } from './useMainTabs';
 
 // constants
 import { PATHS_MAIN_TABS } from '../useNavigator.constants';
+import { PATHS_NEWS_SCREENS_HIDE_MAIN_HEADER } from '../NewsStack/newsStack.constants';
 
 // types
 import { RootMainTabsParamList } from '../Navigators.types';
@@ -86,15 +88,21 @@ export const MainTabs: FunctionComponent = () => {
           key={`tab-screen-${screen.id}`}
           name={screen.name}
           component={screen.component}
-          options={() => ({
-            headerShown: screen.headerShown,
-            headerTitle: screen.title,
-            headerTitleAlign: 'center',
-            headerLeft,
-            headerLeftContainerStyle: styles.headerLeftContainerStyle,
-            headerRightContainerStyle: { paddingRight: 16 },
-            headerShadowVisible: false,
-          })}
+          options={({ route }) => {
+            const routeName = getFocusedRouteNameFromRoute(route);
+            const isHideHeader = routeName
+              ? PATHS_NEWS_SCREENS_HIDE_MAIN_HEADER.includes(routeName)
+              : false;
+            return {
+              headerShown: screen.headerShown && !isHideHeader,
+              headerTitle: screen.title,
+              headerTitleAlign: 'center',
+              headerLeft,
+              headerLeftContainerStyle: styles.headerLeftContainerStyle,
+              headerRightContainerStyle: { paddingRight: 16 },
+              headerShadowVisible: false,
+            };
+          }}
         />
       ))}
     </Tab.Navigator>

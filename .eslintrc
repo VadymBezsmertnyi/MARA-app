@@ -39,8 +39,10 @@
     // Arrow function not allowed as declaration in global/top-level-module
     "@getify/proper-arrows/where":"off",
     // Щоб можна було провіряти навіть те в чому впевнений eslint
-    "@typescript-eslint/no-unnecessary-condition":"off"
+    "@typescript-eslint/no-unnecessary-condition":"off",
     // декілька стилів з юсеефектом
     //"react-perf/jsx-no-new-array-as-prop":"off"
+    // виключити магічні числа
+    "@typescript-eslint/no-magic-numbers": "off"
   }
 }

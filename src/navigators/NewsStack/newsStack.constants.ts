@@ -1,0 +1,6 @@
+import { PATHS_NEWS_SCREENS } from '../useNavigator.constants';
+
+export const PATHS_NEWS_SCREENS_HIDE_MAIN_HEADER: string[] = [
+  PATHS_NEWS_SCREENS.eventsList,
+  PATHS_NEWS_SCREENS.newsList,
+];

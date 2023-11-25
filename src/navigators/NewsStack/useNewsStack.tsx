@@ -11,7 +11,7 @@ import { PATHS_NEWS_SCREENS } from '../useNavigator.constants';
 import { NewsMain } from '../../screens/newsScreens/NewsMain/NewsMain';
 import { NewsList } from '../../screens/newsScreens/NewsList/NewsList';
 import { New } from '../../screens/newsScreens/New/New';
-import { Events } from '../../screens/newsScreens/Events/Events';
+import { EventsList } from '../../screens/newsScreens/EventsList/EventsList';
 import { Event } from '../../screens/newsScreens/Event/Event';
 import { AddEvent } from '../../screens/newsScreens/AddEvent/AddEvent';
 import { LocationEventInput } from '../../screens/newsScreens/LocationEventInput/LocationEventInput';
@@ -36,22 +36,22 @@ export const useNewsStack = () => {
       component: NewsList,
     },
     {
-      id: PATHS_NEWS_SCREENS.new,
-      name: PATHS_NEWS_SCREENS.new,
+      id: PATHS_NEWS_SCREENS.newItem,
+      name: PATHS_NEWS_SCREENS.newItem,
       title: t(i18n)`New`,
       headerShown: false,
       component: New,
     },
     {
-      id: PATHS_NEWS_SCREENS.events,
-      name: PATHS_NEWS_SCREENS.events,
+      id: PATHS_NEWS_SCREENS.eventsList,
+      name: PATHS_NEWS_SCREENS.eventsList,
       title: t(i18n)`Events`,
       headerShown: false,
-      component: Events,
+      component: EventsList,
     },
     {
-      id: PATHS_NEWS_SCREENS.event,
-      name: PATHS_NEWS_SCREENS.event,
+      id: PATHS_NEWS_SCREENS.eventItem,
+      name: PATHS_NEWS_SCREENS.eventItem,
       title: t(i18n)`Event`,
       headerShown: false,
       component: Event,
