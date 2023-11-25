@@ -9,6 +9,7 @@ export { default as IconFaceIdGradient } from './IconFaceIdGradient';
 export { default as IconFaceId } from './IconFaceId';
 export { default as IconLocationMarker } from './IconLocationMarker';
 export { default as IconRepair } from './IconRepair';
+export { default as IconSearchInput } from './IconSearchInput';
 export { default as IconSearchMap } from './IconSearchMap';
 export { default as IconStar } from './IconStar';
 export { default as IconTabMapSelect } from './IconTabMapSelect';
