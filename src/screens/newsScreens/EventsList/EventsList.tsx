@@ -26,7 +26,7 @@ export const EventsList: FunctionComponent = () => {
       </Text>
       <InputSearch value={valueSearch} onChangeText={setValueSearch} />
       <InputSelectCity data={LIST_CITY} onSelect={onSelectCity} />
-      <View>
+      <View style={styles.containerList}>
         {DEFAULT_LIST_EVENT.map(eventItem => (
           <ItemListEvents key={`event-${eventItem.id}`} item={eventItem} />
         ))}
