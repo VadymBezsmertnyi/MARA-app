@@ -23,6 +23,7 @@ import { localesContext } from '../../../localization/localization.provider';
 import { biometricAuthenticatorContext } from '../../providers/biometricAuthenticator/biometricAuthenticator.provider';
 import { userContext } from '../../providers/user/user.provider';
 import { themeContext } from '../../providers/theme/theme.provider';
+import { ResponsiveLayoutProvider } from '../../providers/responsiveLayout/responsiveLayout.provider';
 
 // constants
 import { DEFAULT_CODE_COUNTRY, DEFAULT_COUNTRY } from '../../constants/inputs.const';
@@ -32,10 +33,10 @@ import { THEME_DARK } from '../../providers/theme/theme.const';
 // hooks
 import { useAuthorizationRegistration } from '../../helps/useAuthorizationRegistration';
 import { getClearValue } from '../../helps/regexp';
+import showErrors from '../../helps/errors/showError';
 
 // styles
 import { styles } from './Authorization.styles';
-import showErrors from '../../helps/errors/showError';
 
 // magic numbers
 const ADD_WIDTH_BUTTON_SUBMIT = 20;
@@ -138,59 +139,61 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
   }, []);
 
   return (
-    <View style={styles.screenContainer}>
-      <ScrollView style={styles.inputsOther}>
-        <Text style={titleStyle}>
-          <Trans>For authorization please enter phone number and password</Trans>
-        </Text>
-        <InputPhone
-          phoneNumber={dataAuthorization.phone || `+${DEFAULT_CODE_COUNTRY}`}
-          setPhoneNumber={value => {
-            onChange('phone', value);
-          }}
-          selectCountryIso={selectCountryIso}
-          setSelectCountryIso={setSelectCountryIso}
-          errorMessage={errorsMessage.phone}
-          label={t(i18n)`Please enter your phone number`}
-        />
-        <InputPassword
-          value={dataAuthorization.password}
-          onChangeText={value => {
-            onChange('password', value);
-          }}
-          errorMessage={errorsMessage.password}
-          label={t(i18n)`Password`}
-          placeholder={t(i18n)`Please enter your password`}
-        />
-        <View style={styles.containerForgetPassword}>
-          <Link style={styles.linkForgetPassword} to={linkTo}>
-            <View style={styles.containerLinkForgetPassword}>
-              <Text style={styles.titleForgetPassword}>
-                <Trans>Forget password?</Trans>
-              </Text>
-            </View>
-          </Link>
+    <ResponsiveLayoutProvider>
+      <View style={styles.screenContainer}>
+        <ScrollView style={styles.inputsOther}>
+          <Text style={titleStyle}>
+            <Trans>For authorization please enter phone number and password</Trans>
+          </Text>
+          <InputPhone
+            phoneNumber={dataAuthorization.phone || `+${DEFAULT_CODE_COUNTRY}`}
+            setPhoneNumber={value => {
+              onChange('phone', value);
+            }}
+            selectCountryIso={selectCountryIso}
+            setSelectCountryIso={setSelectCountryIso}
+            errorMessage={errorsMessage.phone}
+            label={t(i18n)`Please enter your phone number`}
+          />
+          <InputPassword
+            value={dataAuthorization.password}
+            onChangeText={value => {
+              onChange('password', value);
+            }}
+            errorMessage={errorsMessage.password}
+            label={t(i18n)`Password`}
+            placeholder={t(i18n)`Please enter your password`}
+          />
+          <View style={styles.containerForgetPassword}>
+            <Link style={styles.linkForgetPassword} to={linkTo}>
+              <View style={styles.containerLinkForgetPassword}>
+                <Text style={styles.titleForgetPassword}>
+                  <Trans>Forget password?</Trans>
+                </Text>
+              </View>
+            </Link>
+          </View>
+          <Social />
+        </ScrollView>
+        <View style={styles.containerButtons}>
+          <ButtonCustom
+            styleContainer={styleContainerButtonCustom}
+            disabled={isError}
+            title={t(i18n)`Login`}
+            onSubmit={onSubmit}
+          />
+          {isShowTouchId && (
+            <Pressable onPress={checkBiometric}>
+              <IconTouchIdGradient width={52} height={52} stroke="black" fill="none" />
+            </Pressable>
+          )}
+          {isShowFaceId && (
+            <Pressable onPress={checkBiometric}>
+              <IconFaceIdGradient width={52} height={52} stroke="none" fill="black" />
+            </Pressable>
+          )}
         </View>
-        <Social />
-      </ScrollView>
-      <View style={styles.containerButtons}>
-        <ButtonCustom
-          styleContainer={styleContainerButtonCustom}
-          disabled={isError}
-          title={t(i18n)`Login`}
-          onSubmit={onSubmit}
-        />
-        {isShowTouchId && (
-          <Pressable onPress={checkBiometric}>
-            <IconTouchIdGradient width={52} height={52} stroke="black" fill="none" />
-          </Pressable>
-        )}
-        {isShowFaceId && (
-          <Pressable onPress={checkBiometric}>
-            <IconFaceIdGradient width={52} height={52} stroke="none" fill="black" />
-          </Pressable>
-        )}
       </View>
-    </View>
+    </ResponsiveLayoutProvider>
   );
 };

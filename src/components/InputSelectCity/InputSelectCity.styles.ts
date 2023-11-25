@@ -2,6 +2,13 @@ import { StyleSheet } from 'react-native';
 import colors from '../../../styles/colors';
 
 export const styles = StyleSheet.create({
+  backgroundButton: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '110%',
+    height: '100%',
+  },
   container: {
     borderColor: colors.grayCloudy,
     borderWidth: 1,
@@ -11,8 +18,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
-    borderColor: colors.grayCloudy,
-    borderWidth: 1,
     borderRadius: 4,
     paddingRight: 16,
     paddingLeft: 12,

@@ -1,5 +1,12 @@
 import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
-import { Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import {
+  Pressable,
+  Text,
+  TextInput,
+  TouchableHighlight,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { t } from '@lingui/macro';
 
 // providers
@@ -51,55 +58,65 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({ data,
   }, [value, selectCity, i18n]);
 
   return (
-    <TouchableOpacity
-      disabled={isOpen}
-      style={styles.container}
-      onPress={() => {
-        setIsOpen(true);
-      }}
-    >
-      <View style={styles.containerInput}>
-        <IconLocationMarker width={16} height={16} fill={colors.californiaOrange} />
-        {isOpen ? (
-          <TextInput
-            style={styles.input}
-            placeholder={t(i18n)`All cities`}
-            value={value}
-            onChangeText={setValue}
-            onFocus={() => {
-              setIsOpen(true);
-            }}
-            onBlur={() => {
-              setIsOpen(false);
-            }}
-          />
-        ) : (
-          <View style={styles.input}>{showCity}</View>
-        )}
-        {isOpen ? (
-          <View style={styles.arrowToUp}>
-            <ArrowDown width={16} height={16} fill={colors.black} />
-          </View>
-        ) : (
-          <ArrowDown width={16} height={16} fill={colors.black} />
-        )}
-      </View>
+    <>
       {isOpen ? (
-        <View style={styles.containerList}>
-          {showListCity.map(city => (
-            <TouchableHighlight
-              underlayColor={colors.grayMercury}
-              key={`select-input-city-${city.id}`}
-              onPress={() => {
-                onSelectCity(city);
-              }}
-              style={styles.city}
-            >
-              <Text>{city.title.length ? city.title : t(i18n)`All cities`}</Text>
-            </TouchableHighlight>
-          ))}
-        </View>
+        <Pressable
+          style={styles.backgroundButton}
+          onPress={() => {
+            setIsOpen(false);
+          }}
+        />
       ) : null}
-    </TouchableOpacity>
+      <TouchableOpacity
+        disabled={isOpen}
+        style={styles.container}
+        onPress={() => {
+          setIsOpen(true);
+        }}
+      >
+        <View style={styles.containerInput}>
+          <IconLocationMarker width={16} height={16} fill={colors.californiaOrange} />
+          {isOpen ? (
+            <TextInput
+              style={styles.input}
+              placeholder={t(i18n)`All cities`}
+              value={value}
+              onChangeText={setValue}
+              onFocus={() => {
+                setIsOpen(true);
+              }}
+              onBlur={() => {
+                setIsOpen(false);
+              }}
+            />
+          ) : (
+            <View style={styles.input}>{showCity}</View>
+          )}
+          {isOpen ? (
+            <View style={styles.arrowToUp}>
+              <ArrowDown width={16} height={16} fill={colors.black} />
+            </View>
+          ) : (
+            <ArrowDown width={16} height={16} fill={colors.black} />
+          )}
+        </View>
+        {isOpen ? (
+          <View style={styles.containerList}>
+            {showListCity.map(city => (
+              <TouchableHighlight
+                underlayColor={colors.grayMercury}
+                key={`select-input-city-${city.id}`}
+                onPress={() => {
+                  onSelectCity(city);
+                }}
+                style={styles.city}
+              >
+                <Text>{city.title.length ? city.title : t(i18n)`All cities`}</Text>
+              </TouchableHighlight>
+            ))}
+          </View>
+        ) : null}
+      </TouchableOpacity>
+    </>
   );
 };

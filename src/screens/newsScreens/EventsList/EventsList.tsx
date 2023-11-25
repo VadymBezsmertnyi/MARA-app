@@ -4,10 +4,12 @@ import { Trans } from '@lingui/macro';
 
 // constants
 import { LIST_CITY } from '../DELETE_InputSelectCity.constants';
+import { DEFAULT_LIST_EVENT } from '../DELETE_newsScreens.constants';
 
 // components
 import { InputSearch } from '../../../components/InputSearch/InputSearch';
 import { InputSelectCity } from '../../../components/InputSelectCity/InputSelectCity';
+import { ItemListEvents } from '../NewsMain/components/ItemListEvents/ItemListEvents';
 
 // styles
 import { styles } from './EventsList.styles';
@@ -24,6 +26,11 @@ export const EventsList: FunctionComponent = () => {
       </Text>
       <InputSearch value={valueSearch} onChangeText={setValueSearch} />
       <InputSelectCity data={LIST_CITY} onSelect={onSelectCity} />
+      <View>
+        {DEFAULT_LIST_EVENT.map(eventItem => (
+          <ItemListEvents key={`event-${eventItem.id}`} item={eventItem} />
+        ))}
+      </View>
     </View>
   );
 };

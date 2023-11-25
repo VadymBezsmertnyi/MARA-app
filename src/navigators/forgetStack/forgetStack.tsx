@@ -21,6 +21,7 @@ import { useMainRoute } from '../Navigators.helps';
 
 // providers
 import { themeContext } from '../../providers/theme/theme.provider';
+import { ResponsiveLayoutProvider } from '../../providers/responsiveLayout/responsiveLayout.provider';
 
 // styles
 import colors from '../../../styles/colors';
@@ -77,22 +78,26 @@ export const ForgetStack: FunctionComponent = () => {
   );
 
   return (
-    <Stack.Navigator screenOptions={screenOptions}>
-      {forgetScreens.map(screen => (
-        <Stack.Screen
-          key={`screen-registration-${screen.id}`}
-          name={screen.name}
-          component={screen.component}
-          initialParams={
-            screen.name === PATHS_FORGET_SCREENS.forgetPhone ? initialParamsPhoneNumber : undefined
-          }
-          options={({
-            navigation,
-          }: {
-            navigation: NativeStackNavigationProp<RootForgetScreensParamList>;
-          }) => options(screen.title, navigation)}
-        />
-      ))}
-    </Stack.Navigator>
+    <ResponsiveLayoutProvider>
+      <Stack.Navigator screenOptions={screenOptions}>
+        {forgetScreens.map(screen => (
+          <Stack.Screen
+            key={`screen-registration-${screen.id}`}
+            name={screen.name}
+            component={screen.component}
+            initialParams={
+              screen.name === PATHS_FORGET_SCREENS.forgetPhone
+                ? initialParamsPhoneNumber
+                : undefined
+            }
+            options={({
+              navigation,
+            }: {
+              navigation: NativeStackNavigationProp<RootForgetScreensParamList>;
+            }) => options(screen.title, navigation)}
+          />
+        ))}
+      </Stack.Navigator>
+    </ResponsiveLayoutProvider>
   );
 };
