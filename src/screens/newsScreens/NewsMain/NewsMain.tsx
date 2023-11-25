@@ -10,6 +10,7 @@ import { ArrowLongRight } from '../../../icons/components';
 // styles
 import colors from '../../../../styles/colors';
 import { styles } from './NewsMain.styles';
+import { ItemListNews } from './components/ItemListNews/ItemListNews';
 
 const DEFAULT_LIST_EVENT = [
   {
@@ -50,6 +51,24 @@ const DEFAULT_LIST_EVENT = [
   },
 ] as const;
 
+const DEFAULT_LIST_NEWS = [
+  {
+    id: 1,
+    title: 'Планується мотопробіг-1',
+    data: 1699877491000,
+  },
+  {
+    id: 2,
+    title: 'Планується мотопробіг-2',
+    data: 1699877491000,
+  },
+  {
+    id: 3,
+    title: 'Планується мотопробіг-3',
+    data: 1699877491000,
+  },
+];
+
 export const NewsMain: FunctionComponent = () => {
   console.log('new-main');
   return (
@@ -68,8 +87,11 @@ export const NewsMain: FunctionComponent = () => {
       </View>
       <View style={styles.containerPart}>
         <Text style={styles.titleType}>Latest news:</Text>
-
-        <View style={styles.containerEvents}></View>
+        <View style={styles.containerEvents}>
+          {DEFAULT_LIST_NEWS.map(newItem => (
+            <ItemListNews key={`new-${newItem.id}`} title={newItem.title} date={newItem.data} />
+          ))}
+        </View>
         <TouchableOpacity style={styles.buttonMore}>
           <Text style={styles.titleButtonMore}>More news</Text>
           <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />

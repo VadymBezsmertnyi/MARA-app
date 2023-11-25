@@ -3,6 +3,7 @@ export { default as ArrowLeft } from './ArrowLeft';
 export { default as ArrowLongRight } from './ArrowLongRight';
 export { default as EyeHide } from './EyeHide';
 export { default as EyeShow } from './EyeShow';
+export { default as IconArrowRightNew } from './IconArrowRightNew';
 export { default as IconClose } from './IconClose';
 export { default as IconFaceIdGradient } from './IconFaceIdGradient';
 export { default as IconFaceId } from './IconFaceId';

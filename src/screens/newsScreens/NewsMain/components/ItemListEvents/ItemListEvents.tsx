@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useContext } from 'react';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { getDistance } from 'geolib';
 
 // provider
@@ -17,6 +17,7 @@ import { IconLocationMarker } from '../../../../../icons/components';
 
 // styles
 import { styles } from './ItemListEvents.styles';
+import colors from '../../../../../../styles/colors';
 
 type ItemListEventsProps = {
   item: {
@@ -38,8 +39,10 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item })
     ? getDistance(location, { longitude: locationItem[0], latitude: locationItem[1] })
     : null;
 
+  const selectEvent = () => {};
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={selectEvent}>
       {image ? <ImageCache imageSrc={image} /> : null}
       <View style={styles.part}>
         <Text>{title}</Text>
@@ -48,10 +51,10 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item })
       <View style={styles.part}>
         <Text>{formatDateFromUnixTimestamp(startData)}</Text>
         <View style={styles.containerLocation}>
-          <IconLocationMarker width={15} height={15} fill="black" />
+          <IconLocationMarker width={15} height={15} fill={colors.californiaOrange} />
           <Text>{distance ? `${distance / 1000} км` : i18n._(`Not enabled location`)}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
