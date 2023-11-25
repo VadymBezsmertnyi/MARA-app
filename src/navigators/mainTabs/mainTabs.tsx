@@ -17,6 +17,7 @@ import { RootMainTabsParamList } from '../Navigators.types';
 // hooks
 import colors from '../../../styles/colors';
 import { styles } from './mainTabs.styles';
+import { ResponsiveLayoutProvider } from '../../providers/responsiveLayout/responsiveLayout.provider';
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
@@ -87,7 +88,6 @@ export const MainTabs: FunctionComponent = () => {
         <Tab.Screen
           key={`tab-screen-${screen.id}`}
           name={screen.name}
-          component={screen.component}
           options={({ route }) => {
             const routeName = getFocusedRouteNameFromRoute(route);
             const isHideHeader = routeName
@@ -103,7 +103,13 @@ export const MainTabs: FunctionComponent = () => {
               headerShadowVisible: false,
             };
           }}
-        />
+        >
+          {props => (
+            <ResponsiveLayoutProvider>
+              <screen.component {...props} />
+            </ResponsiveLayoutProvider>
+          )}
+        </Tab.Screen>
       ))}
     </Tab.Navigator>
   );

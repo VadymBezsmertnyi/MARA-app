@@ -18,11 +18,17 @@ import { PATHS_REGISTRATION_SCREENS } from '../../../navigators/useNavigator.con
 
 // styles
 import { styles } from './RegistrationCode.styles';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootRegistrationScreensParamList } from '../../../navigators/Navigators.types';
 
 const DEFAULT_CELL_COUNT = 4;
 const AMOUNT_MILLISECONDS_TIMEOUT = 5000;
 
-export const RegistrationCode: FunctionComponent = () => {
+type RegistrationCodeProps = {
+  navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>;
+};
+
+export const RegistrationCode: FunctionComponent<RegistrationCodeProps> = () => {
   const route = useMainRoute(PATHS_REGISTRATION_SCREENS.registrationCode);
   const navigation = useAllNavigation();
   const { sendCodeToUser, sendVerifyCode } = useContext(userContext);

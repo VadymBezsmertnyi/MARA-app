@@ -7,7 +7,6 @@ import 'react-native-gesture-handler';
 // providers
 import LocalesProvider from './localization/localization.provider';
 import { ThemeProvider } from './src/providers/theme/theme.provider';
-import { ResponsiveLayoutProvider } from './src/providers/responsiveLayout/responsiveLayout.provider';
 import { BiometricAuthenticatorProvider } from './src/providers/biometricAuthenticator/biometricAuthenticator.provider';
 import { LoadingProvider } from './src/providers/loading/loading.provider';
 import { UserProvider, userContext } from './src/providers/user/user.provider';
@@ -49,15 +48,13 @@ function App() {
             <UserProvider i18n={i18n}>
               <NavigationContainer>
                 <SafeAreaProvider>
-                  <ResponsiveLayoutProvider>
-                    <WorkshopsProvider>
-                      <BiometricAuthenticatorProvider>
-                        <MapProvider>
-                          <Navigators />
-                        </MapProvider>
-                      </BiometricAuthenticatorProvider>
-                    </WorkshopsProvider>
-                  </ResponsiveLayoutProvider>
+                  <WorkshopsProvider>
+                    <BiometricAuthenticatorProvider>
+                      <MapProvider>
+                        <Navigators />
+                      </MapProvider>
+                    </BiometricAuthenticatorProvider>
+                  </WorkshopsProvider>
                 </SafeAreaProvider>
               </NavigationContainer>
             </UserProvider>

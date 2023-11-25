@@ -22,6 +22,7 @@ import { themeContext } from '../../providers/theme/theme.provider';
 
 // styles
 import colors from '../../../styles/colors';
+import { ResponsiveLayoutProvider } from '../../providers/responsiveLayout/responsiveLayout.provider';
 
 const Stack = createNativeStackNavigator();
 
@@ -74,13 +75,18 @@ export const RegistrationStack: FunctionComponent = () => {
         <Stack.Screen
           key={`screen-registration-${screen.id}`}
           name={screen.name}
-          component={screen.component}
           options={({
             navigation,
           }: {
             navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>;
           }) => options(screen.title, navigation)}
-        />
+        >
+          {props => (
+            <ResponsiveLayoutProvider>
+              <screen.component {...props} />
+            </ResponsiveLayoutProvider>
+          )}
+        </Stack.Screen>
       ))}
     </Stack.Navigator>
   );

@@ -17,6 +17,12 @@ import { ButtonSearch } from './components/ButtonSearch/ButtonSearch';
 
 // styles
 import { styles } from './Map.styles';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootMainTabsParamList } from '../../../navigators/Navigators.types';
+
+type MapProps = {
+  navigation: NativeStackNavigationProp<RootMainTabsParamList>;
+};
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -25,7 +31,7 @@ const DEFAULT_LOCATION = {
   longitudeDelta: 7.446565590798844,
 };
 
-export const Map: FunctionComponent = () => {
+export const Map: FunctionComponent<MapProps> = () => {
   const { workshops } = useContext(workshopsContext);
   const { theme } = useContext(themeContext);
   const [state, setState] = useState({
