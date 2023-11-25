@@ -10,9 +10,9 @@ import { PATHS_NEWS_SCREENS } from '../useNavigator.constants';
 // News and events
 import { NewsMain } from '../../screens/newsScreens/NewsMain/NewsMain';
 import { NewsList } from '../../screens/newsScreens/NewsList/NewsList';
-import { New } from '../../screens/newsScreens/New/New';
+import { NewItem } from '../../screens/newsScreens/NewItem/NewItem';
 import { EventsList } from '../../screens/newsScreens/EventsList/EventsList';
-import { Event } from '../../screens/newsScreens/Event/Event';
+import { EventItem } from '../../screens/newsScreens/EventItem/EventItem';
 import { AddEvent } from '../../screens/newsScreens/AddEvent/AddEvent';
 import { LocationEventInput } from '../../screens/newsScreens/LocationEventInput/LocationEventInput';
 import { LocationEventMap } from '../../screens/newsScreens/LocationEventMap/LocationEventMap';
@@ -40,7 +40,7 @@ export const useNewsStack = () => {
       name: PATHS_NEWS_SCREENS.newItem,
       title: t(i18n)`New`,
       headerShown: false,
-      component: New,
+      component: NewItem,
     },
     {
       id: PATHS_NEWS_SCREENS.eventsList,
@@ -54,7 +54,7 @@ export const useNewsStack = () => {
       name: PATHS_NEWS_SCREENS.eventItem,
       title: t(i18n)`Event`,
       headerShown: false,
-      component: Event,
+      component: EventItem,
     },
     {
       id: PATHS_NEWS_SCREENS.addEvent,
