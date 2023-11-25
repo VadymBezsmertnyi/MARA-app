@@ -2,6 +2,9 @@ import React, { FunctionComponent, useState } from 'react';
 import { Text, View } from 'react-native';
 import { Trans } from '@lingui/macro';
 
+// constants
+import { LIST_CITY } from '../DELETE_InputSelectCity.constants';
+
 // components
 import { InputSearch } from '../../../components/InputSearch/InputSearch';
 import { InputSelectCity } from '../../../components/InputSelectCity/InputSelectCity';
@@ -11,13 +14,16 @@ import { styles } from './EventsList.styles';
 
 export const EventsList: FunctionComponent = () => {
   const [valueSearch, setValueSearch] = useState('');
+
+  const onSelectCity = () => {};
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
         <Trans>Upcoming events:</Trans>
       </Text>
       <InputSearch value={valueSearch} onChangeText={setValueSearch} />
-      <InputSelectCity />
+      <InputSelectCity data={LIST_CITY} onSelect={onSelectCity} />
     </View>
   );
 };

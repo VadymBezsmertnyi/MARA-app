@@ -1,5 +1,9 @@
-import React, { FunctionComponent, useState } from 'react';
-import { TextInput, View } from 'react-native';
+import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
+import { Text, TextInput, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import { t } from '@lingui/macro';
+
+// providers
+import { localesContext } from '../../../localization/localization.provider';
 
 // components
 import { ArrowDown, IconLocationMarker } from '../../icons/components';
@@ -8,20 +12,94 @@ import { ArrowDown, IconLocationMarker } from '../../icons/components';
 import colors from '../../../styles/colors';
 import { styles } from './InputSelectCity.styles';
 
-export const InputSelectCity: FunctionComponent = () => {
+type Item = {
+  id: number;
+  title: string;
+};
+
+type InputSelectCityProps = {
+  data: Item[];
+  onSelect: (value: Item) => void;
+};
+
+export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({ data, onSelect }) => {
+  const { i18n } = useContext(localesContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [value, setValue] = useState('');
+  const [selectCity, setSelectCity] = useState<Item | null>(null);
+  const currentCity = useMemo(() => [{ id: 0, title: '' }, ...data], [data]);
+  const showListCity = useMemo(
+    () =>
+      currentCity.filter(city =>
+        value.length && city.title
+          ? city.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+          : true,
+      ),
+    [currentCity, value],
+  );
+
+  const onSelectCity = (city: Item) => {
+    setSelectCity(city);
+    setIsOpen(false);
+    setValue(city.title || '');
+    onSelect(city);
+  };
+
+  const showCity = useMemo(() => {
+    if (value && selectCity) return <Text style={styles.titleInput}>{value}</Text>;
+    return <Text style={styles.defaultTitleInput}>{t(i18n)`All cities`}</Text>;
+  }, [value, selectCity, i18n]);
 
   return (
-    <View style={styles.container}>
-      <IconLocationMarker width={16} height={16} fill={colors.californiaOrange} />
-      <TextInput style={styles.input} />
-      {isOpen ? (
-        <View style={styles.arrowToUp}>
+    <TouchableOpacity
+      disabled={isOpen}
+      style={styles.container}
+      onPress={() => {
+        setIsOpen(true);
+      }}
+    >
+      <View style={styles.containerInput}>
+        <IconLocationMarker width={16} height={16} fill={colors.californiaOrange} />
+        {isOpen ? (
+          <TextInput
+            style={styles.input}
+            placeholder={t(i18n)`All cities`}
+            value={value}
+            onChangeText={setValue}
+            onFocus={() => {
+              setIsOpen(true);
+            }}
+            onBlur={() => {
+              setIsOpen(false);
+            }}
+          />
+        ) : (
+          <View style={styles.input}>{showCity}</View>
+        )}
+        {isOpen ? (
+          <View style={styles.arrowToUp}>
+            <ArrowDown width={16} height={16} fill={colors.black} />
+          </View>
+        ) : (
           <ArrowDown width={16} height={16} fill={colors.black} />
+        )}
+      </View>
+      {isOpen ? (
+        <View style={styles.containerList}>
+          {showListCity.map(city => (
+            <TouchableHighlight
+              underlayColor={colors.grayMercury}
+              key={`select-input-city-${city.id}`}
+              onPress={() => {
+                onSelectCity(city);
+              }}
+              style={styles.city}
+            >
+              <Text>{city.title.length ? city.title : t(i18n)`All cities`}</Text>
+            </TouchableHighlight>
+          ))}
         </View>
-      ) : (
-        <ArrowDown width={16} height={16} fill={colors.black} />
-      )}
-    </View>
+      ) : null}
+    </TouchableOpacity>
   );
 };
