@@ -4,6 +4,7 @@ import { Trans } from '@lingui/macro';
 
 // components
 import { InputSearch } from '../../../components/InputSearch/InputSearch';
+import { InputSelectCity } from '../../../components/InputSelectCity/InputSelectCity';
 
 // styles
 import { styles } from './EventsList.styles';
@@ -16,6 +17,7 @@ export const EventsList: FunctionComponent = () => {
         <Trans>Upcoming events:</Trans>
       </Text>
       <InputSearch value={valueSearch} onChangeText={setValueSearch} />
+      <InputSelectCity />
     </View>
   );
 };
