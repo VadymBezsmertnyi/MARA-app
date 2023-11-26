@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { getDistance } from 'geolib';
+import { ImageSource } from 'expo-image';
 
 // provider
 import { mapContext } from '../../../../../providers/map/map.provider';
@@ -27,7 +28,7 @@ type ItemListEventsProps = {
     startData: number;
     endData: number;
     location: [number, number];
-    image: string | null;
+    image: ImageSource | null;
   };
 };
 
@@ -43,7 +44,9 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item })
 
   return (
     <TouchableOpacity style={styles.container} onPress={selectEvent}>
-      {image ? <ImageCache imageSrc={image} /> : null}
+      <View style={styles.containerImage}>
+        {image ? <ImageCache style={styles.image} contentFit="contain" imageSrc={image} /> : null}
+      </View>
       <View style={styles.part}>
         <Text>{title}</Text>
         <Text>{address}</Text>

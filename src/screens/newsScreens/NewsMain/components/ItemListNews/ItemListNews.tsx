@@ -1,8 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+
+// hooks
 import { formatDateFromUnixTimestamp } from '../../../../../helps/helps';
-import { styles } from './ItemListNews.styles';
+
+// components
 import { IconArrowRightNew } from '../../../../../icons/components';
+
+// styles
+import { styles } from './ItemListNews.styles';
 
 type ItemListNewsProps = {
   title: string;

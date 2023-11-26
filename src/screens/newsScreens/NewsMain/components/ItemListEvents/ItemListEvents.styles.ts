@@ -13,7 +13,10 @@ export const styles = StyleSheet.create({
     elevation: 20,
     shadowRadius: 20,
     shadowOpacity: 1,
+    gap: 8,
   },
+  containerImage: { flex: 1, width: 60 },
+  image: { width: '100%', height: 52 },
   part: { gap: 10 },
   containerLocation: { flexDirection: 'row' },
 });
