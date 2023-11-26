@@ -13,8 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Не ввімкнено місцезнаходження"
+
 msgid "Access denied"
 msgstr "Доступ заборонено"
+
+msgid "All cities"
+msgstr "Усі міста"
 
 msgid "Allow"
 msgstr "Дозволити"
@@ -49,8 +56,14 @@ msgstr "Код неправильний"
 msgid "Continue"
 msgstr "Продовжити"
 
+msgid "Create event"
+msgstr "Створити подію"
+
 msgid "Enter the address"
 msgstr "Введіть адресу"
+
+msgid "Enter the text to search"
+msgstr "Введіть текст для пошуку"
 
 msgid "Enter your password"
 msgstr "Введіть свій пароль"
@@ -73,6 +86,15 @@ msgstr "Помилка: Користувач вже існує"
 msgid "Error: User not found"
 msgstr "Помилка: Користувача не знайдено"
 
+msgid "Event"
+msgstr "Подія"
+
+msgid "Events"
+msgstr "Події"
+
+msgid "Events and news"
+msgstr "Події і новини"
+
 msgid "For authorization please enter phone number and password"
 msgstr "Для авторизації введіть свій номер телефону та пароль"
 
@@ -94,6 +116,9 @@ msgstr "Введений неправильний номер телефону а
 msgid "Internal Server Error"
 msgstr "Внутрішня помилка сервера"
 
+msgid "Location event"
+msgstr "Місцезнаходження події"
+
 msgid "Login"
 msgstr "Увійти"
 
@@ -105,6 +130,9 @@ msgstr "Карта"
 
 msgid "Market"
 msgstr "Базар"
+
+msgid "New"
+msgstr "Новина"
 
 msgid "News"
 msgstr "Новини"
@@ -174,6 +202,9 @@ msgstr "Введений номер телефону не зареєстрова
 
 msgid "To start, I suggest registering"
 msgstr "Для початку пропоную зареєструватися"
+
+msgid "Upcoming events:"
+msgstr "Найближчі події:"
 
 msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
 msgstr "Ми відправили вам SMS з кодом на номер {phoneNumber}. Якщо повідомлення не прийшло, натисніть кнопку нижче для повторної відправки"

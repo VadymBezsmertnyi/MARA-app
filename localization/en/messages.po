@@ -13,8 +13,15 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Not enabled location"
+
 msgid "Access denied"
 msgstr "Access denied"
+
+msgid "All cities"
+msgstr "All cities"
 
 msgid "Allow"
 msgstr "Allow"
@@ -49,8 +56,14 @@ msgstr "Code incorrect"
 msgid "Continue"
 msgstr "Continue"
 
+msgid "Create event"
+msgstr "Create event"
+
 msgid "Enter the address"
 msgstr "Enter the address"
+
+msgid "Enter the text to search"
+msgstr "Enter the text to search"
 
 msgid "Enter your password"
 msgstr "Enter your password"
@@ -73,6 +86,15 @@ msgstr "Error: User already exists"
 msgid "Error: User not found"
 msgstr "Error: User not found"
 
+msgid "Event"
+msgstr "Event"
+
+msgid "Events"
+msgstr "Events"
+
+msgid "Events and news"
+msgstr "Events and news"
+
 msgid "For authorization please enter phone number and password"
 msgstr "For authorization please enter phone number and password"
 
@@ -94,6 +116,9 @@ msgstr "Incorrect phone number entered or country code of the phone number selec
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
 
+msgid "Location event"
+msgstr "Location event"
+
 msgid "Login"
 msgstr "Login"
 
@@ -105,6 +130,9 @@ msgstr "Map"
 
 msgid "Market"
 msgstr "Market"
+
+msgid "New"
+msgstr "New"
 
 msgid "News"
 msgstr "News"
@@ -174,6 +202,9 @@ msgstr "The entered phone number is not registered"
 
 msgid "To start, I suggest registering"
 msgstr "To start, I suggest registering"
+
+msgid "Upcoming events:"
+msgstr "Upcoming events:"
 
 msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
 msgstr "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
