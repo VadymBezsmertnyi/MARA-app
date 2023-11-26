@@ -1,6 +1,6 @@
 import { Platform, StyleSheet } from 'react-native';
 
-const MARGIN_BOTTOM_IOS = 26;
+const MARGIN_BOTTOM_IOS = 4;
 
 export const styles = StyleSheet.create({
   container: { flex: 1, paddingHorizontal: 16, paddingBottom: 24 },

@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   },
   containerButton: {},
   buttonSubmit: {
-    marginVertical: 10,
+    marginVertical: 4,
   },
   colorWhite: {
     color: colors.white,

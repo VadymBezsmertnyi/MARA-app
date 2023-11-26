@@ -39,11 +39,13 @@ export const Menu: FunctionComponent<MenuProps> = ({ isShowMenu, setIsShowMenu }
           <View style={styles.line} />
         </View>
       </TouchableOpacity>
-      <View style={styles.list}>
-        <TouchableOpacity onPress={onExitUser}>
-          <Text>Exit</Text>
-        </TouchableOpacity>
-      </View>
+      {isShowMenu ? (
+        <View style={styles.list}>
+          <TouchableOpacity onPress={onExitUser}>
+            <Text>Exit</Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
     </View>
   );
 };

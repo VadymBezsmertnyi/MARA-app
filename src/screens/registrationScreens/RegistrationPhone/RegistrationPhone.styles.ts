@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   containerBody: { alignItems: 'center', gap: 44 },
   title: { color: colors.blackCoffee, fontWeight: '600', fontSize: 16 },
   containerButtons: {
-    paddingBottom: 20,
+    paddingBottom: 4,
   },
   colorWhite: { color: colors.white },
 });
