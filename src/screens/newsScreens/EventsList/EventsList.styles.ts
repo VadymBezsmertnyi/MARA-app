@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '700',
   },
+  containerScroll: { zIndex: -1 },
   containerList: {
     gap: 12,
   },

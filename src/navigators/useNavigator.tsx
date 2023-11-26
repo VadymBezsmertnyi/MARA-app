@@ -31,6 +31,7 @@ export const useNavigators = () => {
       title: '',
       component: Splash,
       headerShown: false,
+      gestureEnabled: false,
     },
     {
       id: 'welcome',
@@ -38,6 +39,7 @@ export const useNavigators = () => {
       title: t(i18n)`Welcome`,
       component: Welcome,
       headerShown: false,
+      gestureEnabled: false,
     },
     {
       id: 'authorization',
@@ -45,6 +47,7 @@ export const useNavigators = () => {
       title: t(i18n)`Authorization`,
       component: Authorization,
       headerShown: true,
+      gestureEnabled: true,
     },
     {
       id: 'registration',
@@ -52,6 +55,7 @@ export const useNavigators = () => {
       title: t(i18n)`Registration`,
       component: RegistrationStack,
       headerShown: false,
+      gestureEnabled: true,
     },
     {
       id: 'forget',
@@ -59,6 +63,7 @@ export const useNavigators = () => {
       title: t(i18n)`Password`,
       component: ForgetStack,
       headerShown: false,
+      gestureEnabled: true,
     },
     {
       id: 'main',
@@ -66,6 +71,7 @@ export const useNavigators = () => {
       title: t(i18n)`Main`,
       component: MainTabs,
       headerShown: false,
+      gestureEnabled: false,
     },
   ] as const;
 

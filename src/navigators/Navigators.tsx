@@ -47,12 +47,14 @@ export const Navigators: FunctionComponent = () => {
     title: string,
     headerShown: boolean,
     navigation: NativeStackNavigationProp<RootMainScreensParamList>,
+    gestureEnabled = true,
   ): NativeStackNavigationOptions => ({
     headerShown,
     title,
     headerTitleAlign: 'center',
     headerShadowVisible: false,
     headerLeft: () => <HeaderLeft navigation={navigation} />,
+    gestureEnabled,
   });
 
   const screenOptions: NativeStackNavigationOptions = useMemo(
@@ -75,7 +77,9 @@ export const Navigators: FunctionComponent = () => {
             navigation,
           }: {
             navigation: NativeStackNavigationProp<RootMainScreensParamList>;
-          }) => options(mainScreen.title, mainScreen.headerShown, navigation)}
+          }) =>
+            options(mainScreen.title, mainScreen.headerShown, navigation, mainScreen.gestureEnabled)
+          }
         />
       ))}
     </Stack.Navigator>

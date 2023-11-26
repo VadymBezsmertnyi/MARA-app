@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
 import {
   Pressable,
+  ScrollView,
   Text,
   TextInput,
   TouchableHighlight,
@@ -45,6 +46,11 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({ data,
     [currentCity, value],
   );
 
+  const stylesContainer = useMemo(
+    () => [styles.container, isOpen && styles.containerPosition],
+    [isOpen],
+  );
+
   const onSelectCity = (city: Item) => {
     setSelectCity(city);
     setIsOpen(false);
@@ -67,56 +73,61 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({ data,
           }}
         />
       ) : null}
-      <TouchableOpacity
-        disabled={isOpen}
-        style={styles.container}
-        onPress={() => {
-          setIsOpen(true);
-        }}
-      >
-        <View style={styles.containerInput}>
-          <IconLocationMarker width={16} height={16} fill={colors.californiaOrange} />
-          {isOpen ? (
-            <TextInput
-              style={styles.input}
-              placeholder={t(i18n)`All cities`}
-              value={value}
-              onChangeText={setValue}
-              onFocus={() => {
-                setIsOpen(true);
-              }}
-              onBlur={() => {
-                setIsOpen(false);
-              }}
-            />
-          ) : (
-            <View style={styles.input}>{showCity}</View>
-          )}
-          {isOpen ? (
-            <View style={styles.arrowToUp}>
-              <ArrowDown width={16} height={16} fill={colors.black} />
-            </View>
-          ) : (
-            <ArrowDown width={16} height={16} fill={colors.black} />
-          )}
-        </View>
-        {isOpen ? (
-          <View style={styles.containerList}>
-            {showListCity.map(city => (
-              <TouchableHighlight
-                underlayColor={colors.grayMercury}
-                key={`select-input-city-${city.id}`}
-                onPress={() => {
-                  onSelectCity(city);
+      <View style={styles.mainContainer}>
+        <TouchableOpacity
+          disabled={isOpen}
+          style={stylesContainer}
+          onPress={() => {
+            setIsOpen(true);
+          }}
+        >
+          <View style={styles.containerInput}>
+            <IconLocationMarker width={16} height={16} fill={colors.californiaOrange} />
+            {isOpen ? (
+              <TextInput
+                style={styles.input}
+                placeholder={t(i18n)`All cities`}
+                value={value}
+                onChangeText={setValue}
+                onFocus={() => {
+                  setIsOpen(true);
                 }}
-                style={styles.city}
-              >
-                <Text>{city.title.length ? city.title : t(i18n)`All cities`}</Text>
-              </TouchableHighlight>
-            ))}
+                onBlur={() => {
+                  setIsOpen(false);
+                }}
+              />
+            ) : (
+              <View style={styles.input}>{showCity}</View>
+            )}
+            {isOpen ? (
+              <View style={styles.arrowToUp}>
+                <ArrowDown width={16} height={16} fill={colors.black} />
+              </View>
+            ) : (
+              <ArrowDown width={16} height={16} fill={colors.black} />
+            )}
           </View>
-        ) : null}
-      </TouchableOpacity>
+          {isOpen ? (
+            <ScrollView
+              style={{ zIndex: 1, backgroundColor: colors.white }}
+              contentContainerStyle={styles.containerList}
+            >
+              {showListCity.map(city => (
+                <TouchableHighlight
+                  underlayColor={colors.grayMercury}
+                  key={`select-input-city-${city.id}`}
+                  onPress={() => {
+                    onSelectCity(city);
+                  }}
+                  style={styles.city}
+                >
+                  <Text>{city.title.length ? city.title : t(i18n)`All cities`}</Text>
+                </TouchableHighlight>
+              ))}
+            </ScrollView>
+          ) : null}
+        </TouchableOpacity>
+      </View>
     </>
   );
 };

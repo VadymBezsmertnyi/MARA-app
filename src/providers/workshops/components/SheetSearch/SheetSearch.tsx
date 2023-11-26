@@ -41,17 +41,16 @@ export const SheetSearch: FunctionComponent<SheetSearchProps> = ({
   };
 
   const containerStyles = useMemo(
-    () => [styles.container, Platform.OS === 'ios' && { bottom: durationHeight }],
+    () => [styles.container, Platform.OS === 'ios' && { bottom: durationHeight || 0 }],
     [durationHeight],
   );
-  const listStyles = useMemo(
-    () =>
-      ({
-        height: durationHeight ? durationHeight - 160 : '80%',
-        paddingBottom: 60 + Platform.OS === 'ios' ? durationHeight : 0,
-      }) as ViewProps,
-    [durationHeight],
-  );
+  const listStyles = useMemo(() => {
+    const height = durationHeight ? durationHeight - 160 : '80%';
+    return {
+      height,
+      paddingBottom: 60 + Platform.OS === 'ios' ? durationHeight : 0,
+    } as ViewProps;
+  }, [durationHeight]);
 
   if (!isOpen) return null;
   return (

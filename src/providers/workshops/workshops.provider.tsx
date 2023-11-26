@@ -8,6 +8,7 @@ import { SheetSearch } from './components/SheetSearch/SheetSearch';
 
 // helps
 import { searchTextInArray } from '../../helps/helps';
+import { ResponsiveLayoutProvider } from '../responsiveLayout/responsiveLayout.provider';
 
 type WorkshopsContext = {
   workshops: WorkshopsT;
@@ -47,7 +48,7 @@ const DEFAULT_LIST: WorkshopsT = [
 export const workshopsContext = React.createContext({} as WorkshopsContext);
 
 export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({ children }) => {
-  const [workshops, setWorkshops] = useState<WorkshopsT>(DEFAULT_LIST);
+  const [workshops, setWorkShops] = useState<WorkshopsT>(DEFAULT_LIST);
   const [isSearchMap, setIsSearchMap] = useState(false);
   const [valueSearch, setValueSearch] = useState('');
 
@@ -62,15 +63,17 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({ c
   );
 
   return (
-    <workshopsContext.Provider value={valueContext}>
-      {children}
-      <SheetSearch
-        isOpen={isSearchMap}
-        setIsOpen={setIsSearchMap}
-        workshops={filterWorkshop}
-        value={valueSearch}
-        setValue={setValueSearch}
-      />
-    </workshopsContext.Provider>
+    <ResponsiveLayoutProvider>
+      <workshopsContext.Provider value={valueContext}>
+        {children}
+        <SheetSearch
+          isOpen={isSearchMap}
+          setIsOpen={setIsSearchMap}
+          workshops={filterWorkshop}
+          value={valueSearch}
+          setValue={setValueSearch}
+        />
+      </workshopsContext.Provider>
+    </ResponsiveLayoutProvider>
   );
 };

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { Trans } from '@lingui/macro';
 
 // constants
@@ -21,11 +21,11 @@ export const NewsList: FunctionComponent = () => {
         <Trans>Upcoming events:</Trans>
       </Text>
       <InputSearch value={valueSearch} onChangeText={setValueSearch} />
-      <View style={styles.containerList}>
+      <ScrollView contentContainerStyle={styles.containerList}>
         {DEFAULT_LIST_NEWS.map(newItem => (
           <ItemListNews key={`new-${newItem.id}`} title={newItem.title} date={newItem.data} />
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 };

@@ -9,10 +9,17 @@ export const styles = StyleSheet.create({
     width: '110%',
     height: '100%',
   },
+  mainContainer: { height: 40 },
   container: {
     borderColor: colors.grayCloudy,
     borderWidth: 1,
     borderRadius: 4,
+  },
+  containerPosition: {
+    zIndex: 1,
+    position: 'absolute',
+    width: '100%',
+    maxHeight: 200,
   },
   containerInput: {
     flexDirection: 'row',
