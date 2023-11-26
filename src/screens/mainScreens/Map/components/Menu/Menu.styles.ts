@@ -15,4 +15,5 @@ export const styles = StyleSheet.create({
     gap: 5,
   },
   line: { backgroundColor: colors.blackCoffee, width: 16, height: 2 },
+  list: { position: 'absolute', bottom: -20, left: 0, backgroundColor: 'white', width: 50 },
 });

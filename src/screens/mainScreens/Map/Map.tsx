@@ -1,6 +1,10 @@
 import React, { FunctionComponent, useContext, useState } from 'react';
 import { Platform, View } from 'react-native';
 import MapView, { Details, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+// types
+import { RootMainTabsParamList } from '../../../navigators/Navigators.types';
 
 // providers
 import { workshopsContext } from '../../../providers/workshops/workshops.provider';
@@ -17,8 +21,6 @@ import { ButtonSearch } from './components/ButtonSearch/ButtonSearch';
 
 // styles
 import { styles } from './Map.styles';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootMainTabsParamList } from '../../../navigators/Navigators.types';
 
 type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
