@@ -61,9 +61,17 @@ export type RootRegistrationScreensParamList = {
 
 export type RootNewsScreensParamList = {
   [PATHS_NEWS_SCREENS.newsMain]: undefined;
-  [PATHS_NEWS_SCREENS.newItem]: undefined;
+  [PATHS_NEWS_SCREENS.newItem]:
+    | {
+        newId?: number;
+      }
+    | undefined;
   [PATHS_NEWS_SCREENS.newsList]: undefined;
-  [PATHS_NEWS_SCREENS.eventItem]: undefined;
+  [PATHS_NEWS_SCREENS.eventItem]:
+    | {
+        eventId?: number;
+      }
+    | undefined;
   [PATHS_NEWS_SCREENS.eventsList]: undefined;
   [PATHS_NEWS_SCREENS.addEvent]: undefined;
   [PATHS_NEWS_SCREENS.locationEventInput]: undefined;

@@ -2,6 +2,10 @@ import React, { FunctionComponent, useContext } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { getDistance } from 'geolib';
 import { ImageSource } from 'expo-image';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+// types
+import { RootNewsScreensParamList } from '../../../../../navigators/Navigators.types';
 
 // provider
 import { mapContext } from '../../../../../providers/map/map.provider';
@@ -12,6 +16,9 @@ import { formatDateFromUnixTimestamp } from '../../../../../helps/helps';
 
 // components
 import { ImageCache } from '../../../../../components/ImageCache/ImageCache';
+
+// constants
+import { PATHS_NEWS_SCREENS } from '../../../../../navigators/useNavigator.constants';
 
 // icons
 import { IconLocationMarker } from '../../../../../icons/components';
@@ -30,9 +37,10 @@ type ItemListEventsProps = {
     location: [number, number];
     image: ImageSource | null;
   };
+  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
 };
 
-export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item }) => {
+export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item, navigation }) => {
   const { location } = useContext(mapContext);
   const { i18n } = useContext(localesContext);
   const { title, address, image, startData, location: locationItem } = item;
@@ -40,7 +48,9 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item })
     ? getDistance(location, { longitude: locationItem[0], latitude: locationItem[1] })
     : null;
 
-  const selectEvent = () => {};
+  const selectEvent = () => {
+    navigation.navigate(PATHS_NEWS_SCREENS.eventItem, { eventId: item.id });
+  };
 
   return (
     <TouchableOpacity style={styles.container} onPress={selectEvent}>

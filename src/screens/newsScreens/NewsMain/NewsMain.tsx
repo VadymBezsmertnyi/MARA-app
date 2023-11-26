@@ -37,7 +37,11 @@ export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
         <Text style={styles.titleType}>Upcoming events:</Text>
         <View style={styles.containerEvents}>
           {DEFAULT_LIST_EVENT.slice(0, 3).map(eventItem => (
-            <ItemListEvents key={`event-${eventItem.id}`} item={eventItem} />
+            <ItemListEvents
+              key={`event-${eventItem.id}`}
+              item={eventItem}
+              navigation={navigation}
+            />
           ))}
         </View>
         <TouchableOpacity style={styles.buttonMore} onPress={onToEventsList}>
@@ -49,7 +53,13 @@ export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
         <Text style={styles.titleType}>Latest news:</Text>
         <View style={styles.containerEvents}>
           {DEFAULT_LIST_NEWS.map(newItem => (
-            <ItemListNews key={`new-${newItem.id}`} title={newItem.title} date={newItem.data} />
+            <ItemListNews
+              key={`new-${newItem.id}`}
+              newId={newItem.id}
+              title={newItem.title}
+              date={newItem.data}
+              navigation={navigation}
+            />
           ))}
         </View>
         <TouchableOpacity style={styles.buttonMore} onPress={onToNewsList}>
