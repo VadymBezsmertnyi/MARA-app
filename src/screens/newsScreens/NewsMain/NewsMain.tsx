@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 // types
@@ -32,7 +32,7 @@ export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
     navigation.navigate(PATHS_NEWS_SCREENS.newsList);
   };
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.containerPart}>
         <Text style={styles.titleType}>Upcoming events:</Text>
         <View style={styles.containerEvents}>
@@ -67,6 +67,6 @@ export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
           <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
