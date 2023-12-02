@@ -10,7 +10,7 @@ import { AuthorizationT, KeysAuthorizationT } from './Authorization.types';
 import { ButtonCustom } from '../../components/ButtonCustom/ButtonCustom';
 import { InputPhone } from '../../components/InputPhone/InputPhone';
 import { InputPassword } from '../../components/InputPassword/InputPassword';
-import { Social } from '../../components/Social/Social';
+import { Socials } from '../../components/Socials/Socials';
 
 // helps
 import { useAllNavigation, useMainRoute } from '../../navigators/Navigators.helps';
@@ -173,7 +173,7 @@ export const Authorization: FunctionComponent = (): JSX.Element => {
               </View>
             </Link>
           </View>
-          <Social />
+          <Socials />
         </ScrollView>
         <View style={styles.containerButtons}>
           <ButtonCustom

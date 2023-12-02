@@ -24,5 +24,6 @@ export { default as IconTabWorkshopsSelect } from './IconTabWorkshopsSelect';
 export { default as IconTabWorkshops } from './IconTabWorkshops';
 export { default as IconTouchIdGradient } from './IconTouchIdGradient';
 export { default as IconTouchId } from './IconTouchId';
+export { default as SocialApple } from './SocialApple';
 export { default as SocialFacebook } from './SocialFacebook';
 export { default as SocialGoogle } from './SocialGoogle';

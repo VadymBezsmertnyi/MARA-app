@@ -14,7 +14,7 @@ import { KeysPasswordsT, PasswordsT } from '../../AuthorizationRegistration.type
 // components
 import { InputPassword } from '../../../components/InputPassword/InputPassword';
 import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
-import { Social } from '../../../components/Social/Social';
+import { Socials } from '../../../components/Socials/Socials';
 import { ServicePolicy } from './ServicePolicy/ServicePolicy';
 
 // hooks
@@ -90,7 +90,7 @@ export const RegistrationPassword: FunctionComponent = (): JSX.Element => {
           }}
           errorMessage={errorsMessage.confirmPassword}
         />
-        <Social />
+        <Socials />
       </ScrollView>
       <View style={styles.containerButton}>
         <ServicePolicy />

@@ -1,5 +1,5 @@
-import React, { useContext, useMemo } from 'react';
-import { Pressable, StyleProp, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import React, { ReactElement, useContext, useMemo } from 'react';
+import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // providers
@@ -13,12 +13,13 @@ import { THEME_DARK } from '../../providers/theme/theme.const';
 import styles from './ButtonCustom.styles';
 
 type Props = {
-  title: string;
+  title?: string;
   disabled?: boolean;
   onSubmit: () => void;
   type?: 'full' | 'transparent';
   styleButton?: StyleProp<ViewStyle>;
   styleContainer?: StyleProp<ViewStyle>;
+  children?: ReactElement;
 };
 
 export const ButtonCustom = ({
@@ -28,6 +29,7 @@ export const ButtonCustom = ({
   type = 'full',
   styleButton,
   styleContainer,
+  children,
 }: Props) => {
   const { theme } = useContext(themeContext);
   const styleContainerState = useMemo(() => [styles.container, styleContainer], [styleContainer]);
@@ -63,7 +65,7 @@ export const ButtonCustom = ({
         style={styleLinearGradient}
       >
         <TouchableOpacity disabled={disabled} onPress={onSubmit} style={stylePressable}>
-          <Text style={styleText}>{title}</Text>
+          {children ? children : <Text style={styleText}>{title}</Text>}
         </TouchableOpacity>
       </LinearGradient>
     </View>
