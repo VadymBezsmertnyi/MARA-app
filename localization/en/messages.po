@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr "Continue with {typeSocial}"
+
+#. js-lingui-explicit-id
 msgid "Not enabled location"
 msgstr "Not enabled location"
 

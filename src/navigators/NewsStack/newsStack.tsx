@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext, useMemo } from 'react';
 import {
   NativeStackNavigationOptions,
-  NativeStackNavigationProp,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 
@@ -9,10 +8,7 @@ import {
 import { THEME_LIGHT } from '../../providers/theme/theme.const';
 
 // components
-import { HeaderLeft } from '../components/HeaderLeft/HeaderLeft';
-
-// types
-import { RootNewsScreensParamList } from '../Navigators.types';
+import { Header } from '../../components/Header/Header';
 
 // hooks
 import { useNewsStack } from './useNewsStack';
@@ -29,13 +25,9 @@ export const NewsStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
   const { newsScreens } = useNewsStack();
 
-  const options = (
-    title: string | null,
-    navigation: NativeStackNavigationProp<RootNewsScreensParamList>,
-  ): NativeStackNavigationOptions => ({
+  const options = (title: string | null): NativeStackNavigationOptions => ({
     headerShown: title !== null,
-    headerTitle: title || '',
-    headerLeft: () => <HeaderLeft navigation={navigation} />,
+    header: () => <Header title={title || ''} />,
   });
 
   const contentStyle = useMemo(
@@ -75,11 +67,7 @@ export const NewsStack: FunctionComponent = () => {
           key={`screen-news-${screen.id}`}
           name={screen.name}
           component={screen.component}
-          options={({
-            navigation,
-          }: {
-            navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
-          }) => options(screen.title, navigation)}
+          options={options(screen.title)}
         />
       ))}
     </Stack.Navigator>

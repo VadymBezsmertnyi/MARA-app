@@ -34,7 +34,7 @@ type ItemListEventsProps = {
     address: string;
     startData: number;
     endData: number;
-    location: [number, number];
+    location: number[];
     image: ImageSource | null;
   };
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
