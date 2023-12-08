@@ -4,7 +4,7 @@
 
 **1. npm install**
 
-**2. npx expo prebuild**
+**2. npm start or npx expo prebuild**
 
 \*_Perhaps you don't have Expo installed, in that case, please go here:_
 `https://docs.expo.dev/build/setup/`
