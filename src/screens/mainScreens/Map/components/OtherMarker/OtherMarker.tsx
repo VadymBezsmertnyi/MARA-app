@@ -6,15 +6,21 @@ import { Marker, Callout } from 'react-native-maps';
 import { IconLocationMarker } from '../../../../../icons/components';
 
 // styles
-import colors from '../../../../../../styles/colors';
 import { styles } from './OtherMarker.styles';
 
 type OtherMarkerProps = {
   longitude: number;
   latitude: number;
+  markerSize: number;
+  markerColor: string;
 };
 
-export const OtherMarker: FunctionComponent<OtherMarkerProps> = ({ longitude, latitude }) => {
+export const OtherMarker: FunctionComponent<OtherMarkerProps> = ({
+  longitude,
+  latitude,
+  markerSize,
+  markerColor,
+}) => {
   const coordinateMarker = useMemo(
     () => ({
       longitude,
@@ -25,7 +31,7 @@ export const OtherMarker: FunctionComponent<OtherMarkerProps> = ({ longitude, la
 
   return (
     <Marker coordinate={coordinateMarker}>
-      <IconLocationMarker width={32} height={32} fill={colors.blueTufts} />
+      <IconLocationMarker width={markerSize} height={markerSize} fill={markerColor} />
       <Callout style={styles.container}>
         <Text>TEST:</Text>
         <Text>longitude: {longitude}</Text>

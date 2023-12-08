@@ -34,7 +34,11 @@ const colors = {
   // green
   green: 'green',
 
+  // shadow
+  grayShadow: '#524d221a',
+
   // orange
+  lightOrange: '#FFEDDD',
   californiaOrange: '#FDA005',
   californiaOrange70: '#fda005b3',
   chileanFireOrange: '#FD7102',

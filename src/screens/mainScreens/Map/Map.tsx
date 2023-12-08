@@ -21,6 +21,7 @@ import { ButtonSearch } from './components/ButtonSearch/ButtonSearch';
 
 // styles
 import { styles } from './Map.styles';
+import colors from '../../../../styles/colors';
 
 type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
@@ -66,6 +67,8 @@ export const Map: FunctionComponent<MapProps> = () => {
             key={`other-marker-${index + 1}`}
             longitude={longitude}
             latitude={latitude}
+            markerSize={32}
+            markerColor={colors.blueTufts}
           />
         ))}
       </MapView>

@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext, useMemo } from 'react';
 import {
   NativeStackNavigationOptions,
-  NativeStackNavigationProp,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 
@@ -9,7 +8,7 @@ import {
 import { THEME_LIGHT } from '../providers/theme/theme.const';
 
 // components
-import { HeaderLeft } from './components/HeaderLeft/HeaderLeft';
+import { Header } from '../components/Header/Header';
 
 // provider
 import { themeContext } from '../providers/theme/theme.provider';
@@ -46,14 +45,10 @@ export const Navigators: FunctionComponent = () => {
   const options = (
     title: string,
     headerShown: boolean,
-    navigation: NativeStackNavigationProp<RootMainScreensParamList>,
     gestureEnabled = true,
   ): NativeStackNavigationOptions => ({
     headerShown,
-    title,
-    headerTitleAlign: 'center',
-    headerShadowVisible: false,
-    headerLeft: () => <HeaderLeft navigation={navigation} />,
+    header: () => <Header title={title} />,
     gestureEnabled,
   });
 
@@ -73,13 +68,7 @@ export const Navigators: FunctionComponent = () => {
           key={`screen_${mainScreen.name}`}
           name={mainScreen.name}
           component={mainScreen.component}
-          options={({
-            navigation,
-          }: {
-            navigation: NativeStackNavigationProp<RootMainScreensParamList>;
-          }) =>
-            options(mainScreen.title, mainScreen.headerShown, navigation, mainScreen.gestureEnabled)
-          }
+          options={options(mainScreen.title, mainScreen.headerShown, mainScreen.gestureEnabled)}
         />
       ))}
     </Stack.Navigator>
