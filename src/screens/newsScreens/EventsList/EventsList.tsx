@@ -1,11 +1,12 @@
 import React, { FunctionComponent, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { Trans } from '@lingui/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 // constants
 import { LIST_CITY } from '../DELETE_InputSelectCity.constants';
 import { DEFAULT_LIST_EVENT } from '../DELETE_newsScreens.constants';
+import { PATHS_NEWS_SCREENS } from '../../../navigators/useNavigator.constants';
 
 // components
 import { InputSearch } from '../../../components/InputSearch/InputSearch';
@@ -39,6 +40,17 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({ navigation 
           <ItemListEvents key={`event-${eventItem.id}`} item={eventItem} navigation={navigation} />
         ))}
       </ScrollView>
+      <TouchableOpacity
+        style={styles.createNewEvent}
+        onPress={() => {
+          navigation.navigate(PATHS_NEWS_SCREENS.addEvent);
+        }}
+      >
+        <View style={styles.createNewEventWrapper}>
+          <View style={styles.horizontal} />
+          <View style={styles.vertical} />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
