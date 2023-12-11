@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+// import Gallery from 'react-native-awesome-gallery';
 
 // icons
 import { ImageCache } from '../../../components/ImageCache/ImageCache';
@@ -11,7 +12,12 @@ import { localesContext } from '../../../../localization/localization.provider';
 
 // components
 import { Map } from '../../../components/Map/Map';
-import { IconLocationMarker } from '../../../icons/components';
+import {
+  IconLocationMarker,
+  RadixIconsCash,
+  RadixIconsCalendar,
+  MingcuteTimeLine,
+} from '../../../icons/components';
 
 // styles
 import { styles } from './EventItem.styles';
@@ -52,51 +58,51 @@ export const EventItem: FunctionComponent = () => {
           </View>
         </View>
         <View style={styles.dateOfEvent}>
-          <Text style={styles.title}>Дата проведення</Text>
+          <Text style={styles.title}>{i18n._('Date of the event')}</Text>
           <Text style={styles.label}>Початок:</Text>
           <View style={styles.wrapper}>
             <View style={styles.inner}>
               <View style={styles.iconWrapper}>
-                <IconLocationMarker width={24} height={24} fill={colors.californiaOrange} />
+                <RadixIconsCalendar width={24} height={24} fill={colors.californiaOrange} />
               </View>
               <Text style={styles.subtitle}>01.01.2023</Text>
             </View>
             <View style={styles.inner}>
               <View style={styles.iconWrapper}>
-                <IconLocationMarker width={24} height={24} fill={colors.californiaOrange} />
+                <MingcuteTimeLine width={24} height={24} fill={colors.californiaOrange} />
               </View>
               <Text style={styles.subtitle}>10:00</Text>
             </View>
           </View>
-          <Text style={styles.label}>Завершення:</Text>
+          <Text style={styles.label}>{i18n._('Finish')}:</Text>
           <View style={styles.wrapper}>
             <View style={styles.inner}>
               <View style={styles.iconWrapper}>
-                <IconLocationMarker width={24} height={24} fill={colors.californiaOrange} />
+                <RadixIconsCalendar width={24} height={24} fill={colors.californiaOrange} />
               </View>
               <Text style={styles.subtitle}>01.01.2023</Text>
             </View>
             <View style={styles.inner}>
               <View style={styles.iconWrapper}>
-                <IconLocationMarker width={24} height={24} fill={colors.californiaOrange} />
+                <MingcuteTimeLine width={24} height={24} fill={colors.californiaOrange} />
               </View>
               <Text style={styles.subtitle}>22:00</Text>
             </View>
           </View>
         </View>
         <View style={styles.dateOfEvent}>
-          <Text style={styles.title}>Ціна за участь:</Text>
+          <Text style={styles.title}>{i18n._('Price for participation')}:</Text>
           <View style={styles.wrapper}>
             <View style={styles.inner}>
               <View style={styles.iconWrapper}>
-                <IconLocationMarker width={24} height={24} fill={colors.californiaOrange} />
+                <RadixIconsCash width={24} height={24} fill={colors.californiaOrange} />
               </View>
               <Text style={styles.title}>100-1000 грн</Text>
             </View>
           </View>
         </View>
         <View style={styles.dateOfEvent}>
-          <Text style={styles.subtitle}>Про подію:</Text>
+          <Text style={styles.subtitle}>{i18n._('About event')}:</Text>
           <View style={styles.description}>
             <Text style={styles.text}>{descriptionText}.</Text>
             {!isFullDescription && (
@@ -114,6 +120,18 @@ export const EventItem: FunctionComponent = () => {
         </View>
         <View style={styles.mapWrapper}>
           <Map longitude={31.976197008043528} latitude={49.63489179964168} />
+        </View>
+        <View style={styles.gallery}>
+          <Text style={styles.subtitle}>{i18n._('Gallery')}:</Text>
+          {/* <Gallery // TODO catch error about GestureDetector
+              data={images}
+              onIndexChange={newIndex => {
+                console.log(newIndex);
+              }}
+            /> */}
+          <TouchableOpacity onPress={() => null} style={styles.galleryButton}>
+            <Text style={styles.galleryButtonTitle}>{i18n._('All photos')}</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>

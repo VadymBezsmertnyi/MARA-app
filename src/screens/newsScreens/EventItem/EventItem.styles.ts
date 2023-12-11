@@ -76,4 +76,23 @@ export const styles = StyleSheet.create({
     height: 24,
   },
   mapWrapper: { height: 185, marginTop: 20 },
+  gallery: {
+    marginTop: 20,
+  },
+  galleryButton: {
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.californiaOrange,
+    minWidth: 215,
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    alignSelf: 'center',
+    marginTop: 16,
+  },
+  galleryButtonTitle: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: colors.californiaOrange,
+    textAlign: 'center',
+  },
 });
