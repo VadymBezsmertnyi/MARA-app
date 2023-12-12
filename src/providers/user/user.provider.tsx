@@ -14,6 +14,7 @@ import { resultUserDataS } from './user.schemas';
 // providers
 import { appContext } from '../app/app.provider';
 import { loadingContext } from '../loading/loading.provider';
+import { webSocketContext } from '../WebSocketProvider/WebSocketProvider';
 
 // helps
 import showErrors from '../../helps/errors/showError';
@@ -29,6 +30,7 @@ export const userContext = createContext<Context>({} as Context);
 
 export const UserProvider: FunctionComponent<Props> = props => {
   const { i18n } = props;
+  const { setUserData: setUserDataSocket } = useContext(webSocketContext);
   const { api } = useContext(appContext);
   const { setLoading } = useContext(loadingContext);
   const { info, bug, warning } = showErrors;
@@ -36,6 +38,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
 
   const cleanUserData = () => {
     setUserData(null);
+    setUserDataSocket(null);
   };
 
   const registrationPhone = async (phone_number: string): Promise<UserDataT> => {
@@ -76,6 +79,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
         shortResponseS,
       );
       setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser });
+      setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser });
       return { result: true, isHaveUser: resultCreateNewUser.is_password };
     } catch (error: any) {
       bug(error);
@@ -102,6 +106,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
       );
       if (resultSendCode.data.result) {
         setUserData({ ...DEFAULT_USER_DATA, ...resultSendCode.data.userData });
+        setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultSendCode.data.userData });
         return true;
       }
       warning(t(i18n)`Code incorrect`);
@@ -109,6 +114,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
     } catch (error: any) {
       bug(error);
       setUserData(null);
+      setUserDataSocket(null);
       return false;
     } finally {
       setLoading(false);
@@ -137,6 +143,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
         if (resultCreateNewUser.data.result) {
           await setDeviceStorage(TOKEN_NAME, resultCreateNewUser.data.userData.verify_token);
           setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
+          setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
         } else info(getErrors(i18n)[resultCreateNewUser.data.code]);
       } catch (error: any) {
         console.log('error', error);
@@ -159,6 +166,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
         if (result.data.result) {
           const userData = { ...DEFAULT_USER_DATA, ...result.data.userData };
           setUserData(userData);
+          setUserDataSocket(userData);
           return true;
         }
         showErrors.warning(getErrors(i18n)[result.data.code]);
@@ -181,6 +189,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
       setLoading(true);
       await deleteDeviceStorage(TOKEN_NAME);
       setUserData(null);
+      setUserDataSocket(null);
     } catch (error: any) {
       if (error instanceof Error) {
         showErrors.bug(error);
@@ -199,6 +208,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
         const userData = { ...DEFAULT_USER_DATA, ...result.data.userData };
         info(`Welcome ${userData.first_name} ${userData.family_name}`);
         setUserData(userData);
+        setUserDataSocket(userData);
         return true;
       }
       info(getErrors(i18n)[result.data.code]);
@@ -223,6 +233,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
         shortResponseS,
       );
       setUserData(state => ({ ...DEFAULT_USER_DATA, ...state, phone_number }));
+      setUserDataSocket(state => ({ ...DEFAULT_USER_DATA, ...state, phone_number }));
       return result.data.result;
     } catch (error: any) {
       bug(error);
@@ -247,9 +258,10 @@ export const UserProvider: FunctionComponent<Props> = props => {
         },
         shortResponseS,
       );
-      if (result.data.result)
+      if (result.data.result) {
         setUserData(state => ({ ...DEFAULT_USER_DATA, ...state, is_verified: true }));
-      else warning(t(i18n)`Code incorrect`);
+        setUserDataSocket(state => ({ ...DEFAULT_USER_DATA, ...state, is_verified: true }));
+      } else warning(t(i18n)`Code incorrect`);
       return result.data.result;
     } catch (error: any) {
       bug(error);
@@ -275,6 +287,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
       if (resultCreateNewUser.data.result) {
         await setDeviceStorage(TOKEN_NAME, resultCreateNewUser.data.userData.verify_token);
         setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
+        setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
       } else info(getErrors(i18n)[resultCreateNewUser.data.code]);
       return resultCreateNewUser.data.result;
     } catch (error: any) {

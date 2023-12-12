@@ -1,7 +1,10 @@
-import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
+import React, { FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
 import { Platform, Text, TouchableOpacity, View } from 'react-native';
 import { BlurView } from 'expo-blur';
 import { Trans } from '@lingui/macro';
+
+// providers
+import { webSocketContext } from '../../../../../providers/WebSocketProvider/WebSocketProvider';
 
 // components
 import { Menu } from '../Menu/Menu';
@@ -12,6 +15,7 @@ import { styles } from './UpContainer.styles';
 const INTENSITY = 5;
 
 export const UpContainer: FunctionComponent = () => {
+  const { stateSocket } = useContext(webSocketContext);
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [isSos, setIsSos] = useState(false);
 
@@ -36,6 +40,11 @@ export const UpContainer: FunctionComponent = () => {
           <TouchableOpacity onPress={pressSosLine} style={styles.buttonSos}>
             <Text style={styles.titleButtonSos}>
               <Trans>Someone needs help within a 5 km radius</Trans>
+            </Text>
+            <Text style={styles.titleButtonSos}>
+              {stateSocket.connection
+                ? `Connect socket: ${stateSocket.connection}, user id: ${stateSocket.userIdDB}, time now:${stateSocket.currentTime}`
+                : `Not connect socket`}
             </Text>
           </TouchableOpacity>
         ) : null}

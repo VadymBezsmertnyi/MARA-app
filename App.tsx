@@ -13,6 +13,7 @@ import { UserProvider, userContext } from './src/providers/user/user.provider';
 import { AppProvider } from './src/providers/app/app.provider';
 import { MapProvider } from './src/providers/map/map.provider';
 import { WorkshopsProvider } from './src/providers/workshops/workshops.provider';
+import { WebSocketProvider } from './src/providers/WebSocketProvider/WebSocketProvider';
 
 // components
 import { Navigators } from './src/navigators/Navigators';
@@ -37,31 +38,33 @@ function App() {
   const techStoreAppProvider = useMemo(() => ({}), []);
 
   return (
-    <ThemeProvider>
-      <LoadingProvider>
-        <LocalesProvider i18n={i18n} language={language}>
-          <AppProvider
-            store={storeAppProvider}
-            language={language}
-            techStore={techStoreAppProvider}
-          >
-            <UserProvider i18n={i18n}>
-              <NavigationContainer>
-                <SafeAreaProvider>
-                  <WorkshopsProvider>
-                    <BiometricAuthenticatorProvider>
-                      <MapProvider>
-                        <Navigators />
-                      </MapProvider>
-                    </BiometricAuthenticatorProvider>
-                  </WorkshopsProvider>
-                </SafeAreaProvider>
-              </NavigationContainer>
-            </UserProvider>
-          </AppProvider>
-        </LocalesProvider>
-      </LoadingProvider>
-    </ThemeProvider>
+    <WebSocketProvider>
+      <ThemeProvider>
+        <LoadingProvider>
+          <LocalesProvider i18n={i18n} language={language}>
+            <AppProvider
+              store={storeAppProvider}
+              language={language}
+              techStore={techStoreAppProvider}
+            >
+              <UserProvider i18n={i18n}>
+                <NavigationContainer>
+                  <SafeAreaProvider>
+                    <WorkshopsProvider>
+                      <BiometricAuthenticatorProvider>
+                        <MapProvider>
+                          <Navigators />
+                        </MapProvider>
+                      </BiometricAuthenticatorProvider>
+                    </WorkshopsProvider>
+                  </SafeAreaProvider>
+                </NavigationContainer>
+              </UserProvider>
+            </AppProvider>
+          </LocalesProvider>
+        </LoadingProvider>
+      </ThemeProvider>
+    </WebSocketProvider>
   );
 }
 
