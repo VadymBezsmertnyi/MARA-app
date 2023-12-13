@@ -1,10 +1,12 @@
 import React, { FunctionComponent, useContext, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
+import { Input } from '../../../../../components/Input/Input';
+
+import { localesContext } from '../../../../../../localization/localization.provider';
+
 // styles
 import { styles } from './AddressItem.styles';
-import { localesContext } from '../../../../../../localization/localization.provider';
-import { Input } from '../../../../../components/Input/Input';
 
 type AddressItemProps = {
   street: string;
