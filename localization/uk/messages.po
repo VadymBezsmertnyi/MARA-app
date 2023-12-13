@@ -18,6 +18,82 @@ msgid "Continue with {typeSocial}"
 msgstr "Продовжити з {typeSocial}"
 
 #. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Ви можете створити подію"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Введіть назву події"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Назва події"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Введіть адресу"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Місце події"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Дата проведення"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Початок"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Завершення:"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr "Ціна за участь"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Коротко опишіть, що відбуватиметься"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Додати фото"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Ціна за участь"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Про подію"
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr "Читати весь опис..."
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Галерея"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Всі фото"
+
+#. js-lingui-explicit-id
 msgid "Not enabled location"
 msgstr "Не ввімкнено місцезнаходження"
 

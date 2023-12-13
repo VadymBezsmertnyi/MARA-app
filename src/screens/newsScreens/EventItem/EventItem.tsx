@@ -59,7 +59,7 @@ export const EventItem: FunctionComponent = () => {
         </View>
         <View style={styles.dateOfEvent}>
           <Text style={styles.title}>{i18n._('Date of the event')}</Text>
-          <Text style={styles.label}>Початок:</Text>
+          <Text style={styles.label}>{i18n._('The beginning')}:</Text>
           <View style={styles.wrapper}>
             <View style={styles.inner}>
               <View style={styles.iconWrapper}>
