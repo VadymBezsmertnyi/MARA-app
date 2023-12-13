@@ -1,21 +1,30 @@
 import React, { FunctionComponent, useContext, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 // components
-import { Input } from './components/Input/Input';
+import { Input } from '../../../components/Input/Input';
 import { IconTabMap } from '../../../icons/components';
 import { DatePicker } from './components/DatePicker/DatePicker';
 import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
 
 // providers
 import { localesContext } from '../../../../localization/localization.provider';
+import { RootNewsScreensParamList } from '../../../navigators/Navigators.types';
+
+// consts
+import { PATHS_NEWS_SCREENS } from '../../../navigators/useNavigator.constants';
 
 // styles
 import { styles } from './AddEvent.styles';
 import colors from '../../../../styles/colors';
 
-export const AddEvent: FunctionComponent = () => {
+type AddEventProps = {
+  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+};
+
+export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const { i18n } = useContext(localesContext);
   const [eventName, setEventName] = useState('');
   const [placeName, setPlaceName] = useState('');
@@ -107,7 +116,12 @@ export const AddEvent: FunctionComponent = () => {
           />
         </View>
         <Text style={styles.subtitle}>{i18n._('Add a photo')}:</Text>
-        <ButtonCustom title={i18n._('Confirm')} onSubmit={() => null} />
+        <ButtonCustom
+          title={i18n._('Confirm')}
+          onSubmit={() => {
+            navigation.navigate(PATHS_NEWS_SCREENS.locationEventInput);
+          }}
+        />
       </ScrollView>
     </View>
   );

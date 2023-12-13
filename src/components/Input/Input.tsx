@@ -1,12 +1,14 @@
 import React, { FunctionComponent, useMemo, useState } from 'react';
 import { KeyboardTypeOptions, Text, TextInput, View, ViewStyle } from 'react-native';
-import colors from '../../../../../../styles/colors';
+
+// styles
 import { styles } from './Input.styles';
+import colors from '../../../styles/colors';
 
 type InputProps = {
   placeholder: string;
   value: string;
-  label: string;
+  label?: string;
   onChange: (k: string) => void;
   InputIcon?: React.ReactNode;
   customStyles?: ViewStyle;
@@ -37,10 +39,13 @@ export const Input: FunctionComponent<InputProps> = ({
     [borderColor],
   );
   const inputStyles = useMemo(() => ({ ...styles.input, ...customStyles }), [customStyles]);
-
+  const containerStyles = useMemo(
+    () => ({ ...styles.container, marginTop: label ? 20 : 0 }),
+    [label],
+  );
   return (
-    <View style={styles.container}>
-      <Text style={styles.label}>{label}</Text>
+    <View style={containerStyles}>
+      {label && <Text style={styles.label}>{label}</Text>}
       <View style={inputWrapperStyles}>
         <TextInput
           style={inputStyles}

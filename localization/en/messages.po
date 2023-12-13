@@ -18,6 +18,82 @@ msgid "Continue with {typeSocial}"
 msgstr "Continue with {typeSocial}"
 
 #. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "You can create an event"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Enter the name of the event"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Name of the event"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Enter the address"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "The place of the event"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Date of the event"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "The beginning"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Conclusion"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr "Participation fee"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Briefly describe what will happen"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Add a photo"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Confirm"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Finish"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Price for participation"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "About event"
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr "Read the whole description..."
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Gallery"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "All photos"
+
+#. js-lingui-explicit-id
 msgid "Not enabled location"
 msgstr "Not enabled location"
 
