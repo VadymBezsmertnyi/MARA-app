@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Marker } from 'react-native-maps';
 
 // providers
-import { mapContext } from '../../../../../providers/map/map.provider';
+import { mapContext } from '../../../../../providers/MapProvider/MapProvider';
 
 // styles
 import { styles } from './MeMarker.styles';

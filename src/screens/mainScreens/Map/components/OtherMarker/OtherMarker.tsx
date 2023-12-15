@@ -13,6 +13,7 @@ type OtherMarkerProps = {
   latitude: number;
   markerSize: number;
   markerColor: string;
+  title: string;
 };
 
 export const OtherMarker: FunctionComponent<OtherMarkerProps> = ({
@@ -20,6 +21,7 @@ export const OtherMarker: FunctionComponent<OtherMarkerProps> = ({
   latitude,
   markerSize,
   markerColor,
+  title,
 }) => {
   const coordinateMarker = useMemo(
     () => ({
@@ -33,7 +35,7 @@ export const OtherMarker: FunctionComponent<OtherMarkerProps> = ({
     <Marker coordinate={coordinateMarker}>
       <IconLocationMarker width={markerSize} height={markerSize} fill={markerColor} />
       <Callout style={styles.container}>
-        <Text>TEST:</Text>
+        <Text>{title}:</Text>
         <Text>longitude: {longitude}</Text>
         <Text>latitude: {latitude}</Text>
       </Callout>

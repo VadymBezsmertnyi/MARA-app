@@ -11,7 +11,7 @@ import { BiometricAuthenticatorProvider } from './src/providers/biometricAuthent
 import { LoadingProvider } from './src/providers/loading/loading.provider';
 import { UserProvider, userContext } from './src/providers/user/user.provider';
 import { AppProvider } from './src/providers/app/app.provider';
-import { MapProvider } from './src/providers/map/map.provider';
+import { MapProvider } from './src/providers/MapProvider/MapProvider';
 import { WorkshopsProvider } from './src/providers/workshops/workshops.provider';
 import { WebSocketProvider } from './src/providers/WebSocketProvider/WebSocketProvider';
 

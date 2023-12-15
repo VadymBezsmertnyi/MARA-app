@@ -8,7 +8,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootNewsScreensParamList } from '../../../../../navigators/Navigators.types';
 
 // provider
-import { mapContext } from '../../../../../providers/map/map.provider';
+import { mapContext } from '../../../../../providers/MapProvider/MapProvider';
 import { localesContext } from '../../../../../../localization/localization.provider';
 
 // hooks
