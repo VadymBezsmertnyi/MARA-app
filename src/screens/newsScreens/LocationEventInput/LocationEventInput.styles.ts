@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
   wrapper: {
     marginTop: 10,
     paddingHorizontal: 15,
+    marginBottom: 20,
   },
   inner: {
     flexDirection: 'row',

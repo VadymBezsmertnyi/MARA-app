@@ -31,7 +31,7 @@ export const Input: FunctionComponent<InputProps> = ({
   };
 
   const onBlur = () => {
-    setBorderColor(colors.platinumGray);
+    if (!value) setBorderColor(colors.platinumGray);
   };
 
   const inputWrapperStyles = useMemo(
