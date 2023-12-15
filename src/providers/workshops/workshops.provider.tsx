@@ -30,8 +30,8 @@ const DEFAULT_LIST: WorkshopsT = [
       'test 1 description test description test description test description test description test description test description test description test description v test description',
     address: 'lane testing 1',
     rating: 5.0,
-    longitude: 32.04073045402765,
-    latitude: 49.435687070760046,
+    longitude: 32.06249489431158,
+    latitude: 49.42846082177688,
   },
   {
     id: 2,
@@ -40,8 +40,8 @@ const DEFAULT_LIST: WorkshopsT = [
       'test 2 description test description test description test description test description test description test description test description test description v test description',
     address: 'lane testing 2',
     rating: 4.1,
-    longitude: 32.10822053253651,
-    latitude: 49.40207074110663,
+    longitude: 32.06618206226458,
+    latitude: 49.438299503207254,
   },
 ];
 
