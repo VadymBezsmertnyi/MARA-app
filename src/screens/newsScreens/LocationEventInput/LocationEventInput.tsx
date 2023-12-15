@@ -13,7 +13,6 @@ import { RootNewsScreensParamList } from '../../../navigators/Navigators.types';
 import { PATHS_NEWS_SCREENS } from '../../../navigators/useNavigator.constants';
 
 import { styles } from './LocationEventInput.styles';
-import colors from '../../../../styles/colors';
 
 const DEFAULT_ADDRESS = [
   { id: 0, street: 'вул. Карманцінара', city: 'Жовті Води, Дніпропетровська область' },
@@ -64,7 +63,7 @@ export const LocationEventInput: FunctionComponent<LocationEventInputProps> = ({
             }}
           >
             <View style={styles.inner}>
-              <IconTabMap width={28} hanging={23} fill={colors.white} />
+              <IconTabMap width={28} height={23} />
               <Text style={styles.buttonTitle}>{i18n._('Select on the map')}</Text>
             </View>
           </ButtonCustom>

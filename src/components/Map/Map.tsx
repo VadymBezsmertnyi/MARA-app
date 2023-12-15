@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useContext, useMemo } from 'react';
 import { Platform, View } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Details, MapPressEvent, PROVIDER_GOOGLE, Region } from 'react-native-maps';
 
 // providers
 import { themeContext } from '../../providers/theme/theme.provider';
@@ -17,7 +17,8 @@ const mapType = Platform.OS === 'ios' ? 'terrain' : 'standard';
 type MapProps = {
   longitude: number;
   latitude: number;
-  onRegionChange?: () => void;
+  onRegionChange?: (region: Region, details: Details) => void;
+  onPress?: (event: MapPressEvent) => void;
 };
 
 const DEFAULT_LOCATION = {
@@ -25,7 +26,12 @@ const DEFAULT_LOCATION = {
   longitudeDelta: 0.01,
 };
 
-export const Map: FunctionComponent<MapProps> = ({ longitude, latitude, onRegionChange }) => {
+export const Map: FunctionComponent<MapProps> = ({
+  longitude,
+  latitude,
+  onRegionChange,
+  onPress,
+}) => {
   const { theme } = useContext(themeContext);
 
   const initialRegion = useMemo(
@@ -41,6 +47,7 @@ export const Map: FunctionComponent<MapProps> = ({ longitude, latitude, onRegion
         mapType={mapType}
         initialRegion={initialRegion}
         onRegionChange={onRegionChange}
+        onPress={onPress}
         zoomControlEnabled
         userInterfaceStyle={theme}
         showsBuildings={false}
