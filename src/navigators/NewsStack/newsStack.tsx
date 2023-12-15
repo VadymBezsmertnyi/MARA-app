@@ -25,8 +25,8 @@ export const NewsStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
   const { newsScreens } = useNewsStack();
 
-  const options = (title: string | null): NativeStackNavigationOptions => ({
-    headerShown: title !== null,
+  const options = (title: string | null, headerShown: boolean): NativeStackNavigationOptions => ({
+    headerShown,
     header: () => <Header title={title || ''} />,
   });
 
@@ -67,7 +67,7 @@ export const NewsStack: FunctionComponent = () => {
           key={`screen-news-${screen.id}`}
           name={screen.name}
           component={screen.component}
-          options={options(screen.title)}
+          options={options(screen.title, screen.headerShown)}
         />
       ))}
     </Stack.Navigator>
