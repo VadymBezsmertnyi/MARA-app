@@ -15,4 +15,5 @@ export type Props = {
   language: Language;
   children?: React.ReactNode;
 };
-export type Languages = { title: string; key: Language }[];
+export type LanguageType = { title: string; key: Language };
+export type Languages = LanguageType[];
