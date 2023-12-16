@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useState } from 'react';
+import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
 import { Modal, Pressable, Text, TouchableOpacity, View } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { BlurView } from 'expo-blur';
@@ -14,19 +14,23 @@ import { styles } from './SelectPicker.styles';
 
 type SelectPickerProps<T = { title: string; key: string }> = {
   value: string;
-  label?: string;
   onChange: (value: T) => void;
   data: T[];
+  otherTitle?: string;
 };
 
 export const SelectPicker: FunctionComponent<SelectPickerProps<{ title: string; key: string }>> = ({
   value,
-  label,
   onChange,
   data,
+  otherTitle = '',
 }) => {
   const { i18n } = useContext(localesContext);
   const [isShowModal, setIsShowModal] = useState(false);
+  const showTitle = useMemo(
+    () => data.find(item => item.key === value)?.title || otherTitle,
+    [data, value, otherTitle],
+  );
 
   return (
     <>
@@ -36,9 +40,8 @@ export const SelectPicker: FunctionComponent<SelectPickerProps<{ title: string; 
         }}
         style={styles.container}
       >
-        {label && <Text style={styles.label}>{label}</Text>}
         <View style={styles.wrapper}>
-          <Text style={styles.input}>{value}</Text>
+          <Text style={styles.input}>{showTitle}</Text>
         </View>
       </TouchableOpacity>
 
