@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Confirm"
+
+#. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
 msgstr "Continue with {typeSocial}"
 
@@ -66,10 +70,6 @@ msgid "Add a photo"
 msgstr "Add a photo"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Confirm"
-
-#. js-lingui-explicit-id
 msgid "Finish"
 msgstr "Finish"
 
@@ -92,6 +92,22 @@ msgstr "Gallery"
 #. js-lingui-explicit-id
 msgid "All photos"
 msgstr "All photos"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Enter the text to search"
+
+#. js-lingui-explicit-id
+msgid "Add a house number"
+msgstr "Add a house number"
+
+#. js-lingui-explicit-id
+msgid "Enter the house number"
+msgstr "Enter the house number"
+
+#. js-lingui-explicit-id
+msgid "Select on the map"
+msgstr "Select on the map"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -141,9 +157,6 @@ msgstr "Create event"
 
 msgid "Enter the address"
 msgstr "Enter the address"
-
-msgid "Enter the text to search"
-msgstr "Enter the text to search"
 
 msgid "Enter your password"
 msgstr "Enter your password"
@@ -195,6 +208,9 @@ msgstr "Incorrect phone number entered or country code of the phone number selec
 
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
+
+msgid "Language:"
+msgstr "Language:"
 
 msgid "Location event"
 msgstr "Location event"

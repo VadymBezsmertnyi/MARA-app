@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
 msgstr "Продовжити з {typeSocial}"
 
@@ -66,10 +70,6 @@ msgid "Add a photo"
 msgstr "Додати фото"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Опублікувати"
-
-#. js-lingui-explicit-id
 msgid "Finish"
 msgstr ""
 
@@ -92,6 +92,22 @@ msgstr "Галерея"
 #. js-lingui-explicit-id
 msgid "All photos"
 msgstr "Всі фото"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Введіть текст для пошуку"
+
+#. js-lingui-explicit-id
+msgid "Add a house number"
+msgstr "Додати номер будинку"
+
+#. js-lingui-explicit-id
+msgid "Enter the house number"
+msgstr "Введіть номер будинку"
+
+#. js-lingui-explicit-id
+msgid "Select on the map"
+msgstr "Вибрати на карті"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -141,9 +157,6 @@ msgstr "Створити подію"
 
 msgid "Enter the address"
 msgstr "Введіть адресу"
-
-msgid "Enter the text to search"
-msgstr "Введіть текст для пошуку"
 
 msgid "Enter your password"
 msgstr "Введіть свій пароль"
@@ -195,6 +208,9 @@ msgstr "Введений неправильний номер телефону а
 
 msgid "Internal Server Error"
 msgstr "Внутрішня помилка сервера"
+
+msgid "Language:"
+msgstr "Мова:"
 
 msgid "Location event"
 msgstr "Місцезнаходження події"
