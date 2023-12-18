@@ -4,6 +4,7 @@ import {
   PATHS_MAIN_TABS,
   PATHS_NEWS_SCREENS,
   PATHS_REGISTRATION_SCREENS,
+  PATHS_WORKSHOP_SCREENS,
 } from './useNavigator.constants';
 
 export type MainScreenT = {
@@ -78,6 +79,16 @@ export type RootNewsScreensParamList = {
   [PATHS_NEWS_SCREENS.locationEventMap]: undefined;
 };
 
+export type RootWorkshopsScreensParamList = {
+  [PATHS_WORKSHOP_SCREENS.workshopMain]: undefined;
+  [PATHS_WORKSHOP_SCREENS.workshopItem]:
+    | {
+        workshopId?: number;
+      }
+    | undefined;
+};
+
 export type RootAllScreensParamList = RootMainScreensParamList &
   RootForgetScreensParamList &
-  RootRegistrationScreensParamList;
+  RootRegistrationScreensParamList &
+  RootWorkshopsScreensParamList;

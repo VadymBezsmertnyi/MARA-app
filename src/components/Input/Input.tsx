@@ -40,8 +40,8 @@ export const Input: FunctionComponent<InputProps> = ({
   );
   const inputStyles = useMemo(() => ({ ...styles.input, ...customStyles }), [customStyles]);
   const containerStyles = useMemo(
-    () => ({ ...styles.container, marginTop: label ? 20 : 0 }),
-    [label],
+    () => ({ ...styles.container, marginTop: label ? 20 : 0, flex: customStyles ? 1 : 0 }),
+    [label, customStyles],
   );
   return (
     <View style={containerStyles}>

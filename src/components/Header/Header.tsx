@@ -21,10 +21,15 @@ import colors from '../../../styles/colors';
 
 type HeaderStackProps = {
   title: string;
+  leftElement?: JSX.Element;
   rightElement?: JSX.Element;
 };
 
-export const Header: FunctionComponent<HeaderStackProps> = ({ title, rightElement }) => {
+export const Header: FunctionComponent<HeaderStackProps> = ({
+  title,
+  leftElement = null,
+  rightElement,
+}) => {
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
@@ -42,13 +47,17 @@ export const Header: FunctionComponent<HeaderStackProps> = ({ title, rightElemen
     <SafeAreaView style={styles.background}>
       <View style={styles.container}>
         <TouchableOpacity onPress={onBack} style={styles.containerButtonBack}>
-          <ArrowLeft
-            width={24}
-            height={24}
-            stroke={theme === THEME_DARK ? colors.white : colors.black}
-            style={styles.iconButtonBack}
-          />
-          <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
+          {leftElement || (
+            <>
+              <ArrowLeft
+                width={24}
+                height={24}
+                stroke={theme === THEME_DARK ? colors.white : colors.black}
+                style={styles.iconButtonBack}
+              />
+              <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
+            </>
+          )}
         </TouchableOpacity>
 
         <Text style={styles.title}>{title}</Text>

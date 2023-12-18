@@ -4,6 +4,9 @@ import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/b
 import { LinearGradient } from 'expo-linear-gradient';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
+// components
+import { MenuBurgerButton } from '../../components/MenuBurgerButton/MenuBurgerButton';
+
 // helps
 import { useMainTabs } from './useMainTabs';
 
@@ -60,16 +63,6 @@ export const MainTabs: FunctionComponent = () => {
     </View>
   );
 
-  const headerLeft = () => (
-    <TouchableOpacity>
-      <View style={styles.menu}>
-        <View style={styles.line} />
-        <View style={styles.line} />
-        <View style={styles.line} />
-      </View>
-    </TouchableOpacity>
-  );
-
   const screenOptions = useMemo(
     () => ({
       headerShown: false,
@@ -97,7 +90,7 @@ export const MainTabs: FunctionComponent = () => {
               headerShown: screen.headerShown && !isHideHeader,
               headerTitle: screen.title,
               headerTitleAlign: 'center',
-              headerLeft,
+              headerLeft: () => <MenuBurgerButton />,
               headerLeftContainerStyle: styles.headerLeftContainerStyle,
               headerRightContainerStyle: { paddingRight: 16 },
               headerShadowVisible: false,

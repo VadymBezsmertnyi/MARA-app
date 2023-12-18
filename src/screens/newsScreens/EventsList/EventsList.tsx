@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useContext, useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { Trans } from '@lingui/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -13,6 +13,7 @@ import { Input } from '../../../components/Input/Input';
 import { InputSelectCity } from '../../../components/InputSelectCity/InputSelectCity';
 import { ItemListEvents } from '../NewsMain/components/ItemListEvents/ItemListEvents';
 import { IconSearchInput } from '../../../icons/components';
+import { AddEventButton } from '../../../components/AddEventButton/AddEventButton';
 
 // types
 import { RootNewsScreensParamList } from '../../../navigators/Navigators.types';
@@ -49,17 +50,11 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({ navigation 
           <ItemListEvents key={`event-${eventItem.id}`} item={eventItem} navigation={navigation} />
         ))}
       </ScrollView>
-      <TouchableOpacity
-        style={styles.createNewEvent}
+      <AddEventButton
         onPress={() => {
           navigation.navigate(PATHS_NEWS_SCREENS.addEvent);
         }}
-      >
-        <View style={styles.createNewEventWrapper}>
-          <View style={styles.horizontal} />
-          <View style={styles.vertical} />
-        </View>
-      </TouchableOpacity>
+      />
     </View>
   );
 };
