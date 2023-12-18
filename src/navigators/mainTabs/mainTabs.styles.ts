@@ -33,9 +33,13 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 5,
     shadowColor: Platform.OS === 'android' ? colors.black : colors.black35,
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
     elevation: 20,
-    shadowRadius: 20,
-    shadowOpacity: 1,
+    shadowRadius: 10,
+    shadowOpacity: 0.4,
   },
   line: { backgroundColor: colors.blackCoffee, width: 16, height: 2 },
   headerLeftContainerStyle: {

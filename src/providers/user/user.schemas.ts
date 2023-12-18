@@ -5,7 +5,7 @@ import { languagesKeys } from '../../../localization/localization.const';
 export const userDataS = z.object({
   // new
   id: z.number(),
-  isGeoLocation: z.boolean(),
+  isGeoLocation: z.boolean().optional(),
   // old
   phone_number: z.string(),
   is_password: z.boolean(),

@@ -4,11 +4,9 @@ import { t } from '@lingui/macro';
 // providers
 import { localesContext } from '../../../localization/localization.provider';
 
-// screens
-import { Workshops } from '../../screens/mainScreens/Workshops/Workshops';
-
 // stacks
 import { NewsStack } from '../NewsStack/newsStack';
+import { WorkshopStack } from '../WorkshopStack/workshopStack';
 
 // screens
 import { Map } from '../../screens/mainScreens/Map/Map';
@@ -40,7 +38,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.workshops,
       name: PATHS_MAIN_TABS.workshops,
       title: t(i18n)`Workshops`,
-      component: Workshops,
+      component: WorkshopStack,
       headerShown: false,
       tabBarIcon: IconTabWorkshops,
       tabBarIconSelect: IconTabWorkshopsSelect,

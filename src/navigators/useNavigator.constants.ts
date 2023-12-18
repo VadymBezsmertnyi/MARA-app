@@ -42,3 +42,8 @@ export const PATHS_NEWS_SCREENS = {
   locationEventInput: 'locationEventInput',
   locationEventMap: 'locationEventMap',
 } as const;
+
+export const PATHS_WORKSHOP_SCREENS = {
+  workshopMain: 'workshopMain',
+  workshopItem: 'workshopItem',
+} as const;
