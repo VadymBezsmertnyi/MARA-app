@@ -1,38 +1,23 @@
 import { StyleSheet } from 'react-native';
-import { horizontalScale, scaleFont, verticalScale } from '../../../../styles/hooks';
+import { horizontalScale, verticalScale } from '../../../../styles/hooks';
 import colors from '../../../../styles/colors';
 
 const PADDING_HORIZONTAL = 16;
-const PADDING_TOP = 8;
-const PADDING_BOTTOM = 36;
-const GAP_MAIN = 28;
-const FONT_SIZE_TITLE_TYPE = 20;
-const FONT_SIZE_TITLE_MORE = 16;
-const PADDING_VERTICAL = 8;
-const GAP_MORE = 8;
+const GAP_MAIN = 12;
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
-    paddingTop: verticalScale(PADDING_TOP),
-    paddingBottom: verticalScale(PADDING_BOTTOM),
+  },
+  wrapper: {
     gap: verticalScale(GAP_MAIN),
+    paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
+    paddingBottom: verticalScale(PADDING_HORIZONTAL),
   },
-  containerPart: { gap: verticalScale(GAP_MORE) },
-  titleType: { fontSize: scaleFont(FONT_SIZE_TITLE_TYPE), fontWeight: '700' },
-  containerEvents: { gap: 8 },
-  buttonMore: {
+  search: {
+    paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
+    paddingBottom: verticalScale(GAP_MAIN),
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: verticalScale(PADDING_VERTICAL),
-    gap: horizontalScale(GAP_MORE),
-  },
-  titleButtonMore: {
-    color: colors.blueTufts,
-    fontSize: scaleFont(FONT_SIZE_TITLE_MORE),
-    fontWeight: '600',
   },
 });

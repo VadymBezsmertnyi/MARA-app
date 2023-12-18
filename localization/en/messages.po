@@ -113,6 +113,14 @@ msgstr "Select on the map"
 msgid "Not enabled location"
 msgstr "Not enabled location"
 
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Workshops"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Enter the name of the workshop or type of work"
+
 msgid "Access denied"
 msgstr "Access denied"
 
@@ -328,3 +336,6 @@ msgstr "You have entered the confirmation code incorrectly"
 
 msgid "You have entered the phone number incorrectly"
 msgstr "You have entered the phone number incorrectly"
+
+msgid "Your location:"
+msgstr "Your location:"

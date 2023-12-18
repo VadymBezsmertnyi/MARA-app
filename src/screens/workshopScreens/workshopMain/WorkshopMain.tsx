@@ -1,60 +1,69 @@
-import React, { FunctionComponent } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import React, { FunctionComponent, useContext, useState } from 'react';
+import { ScrollView, View } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 // types
-import { RootNewsScreensParamList } from '../../../navigators/Navigators.types';
+import { RootWorkshopsScreensParamList } from '../../../navigators/Navigators.types';
+import { localesContext } from '../../../../localization/localization.provider';
 
 // components
+import { Input } from '../../../components/Input/Input';
+import { WorkshopItem } from './components/WorkshopItem/WorkshopItem';
+import { Header } from '../../../components/Header/Header';
+import { MenuBurgerButton } from '../../../components/MenuBurgerButton/MenuBurgerButton';
+import { HeaderFilters } from './components/HeaderFilters/HeaderFilters';
 
 // icons
-import { ArrowLongRight, IconSearchInput } from '../../../icons/components';
+import { IconSearchInput } from '../../../icons/components';
 
 // constants
-import { PATHS_NEWS_SCREENS } from '../../../navigators/useNavigator.constants';
+import { WORKSHOP } from './DELETE_workers.constants';
 
 // styles
-import colors from '../../../../styles/colors';
 import { styles } from './WorkshopMain.styles';
-import { Input } from '../../../components/Input/Input';
 
 type WorkshopMainProps = {
-  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+  navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
 };
 
 export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({ navigation }) => {
-  const onToEventsList = () => {
-    navigation.navigate(PATHS_NEWS_SCREENS.eventsList);
-  };
-  const onToNewsList = () => {
-    navigation.navigate(PATHS_NEWS_SCREENS.newsList);
-  };
+  const { i18n } = useContext(localesContext);
+  const [workshopName, setWorkshopName] = useState('');
+
   return (
-    <View style={{}}>
-      <Input
-        value=""
-        placeholder="dsds"
-        onChange={() => null}
-        InputIcon={<IconSearchInput width={26} height={26} />}
+    <>
+      <Header
+        leftElement={<MenuBurgerButton />}
+        title={i18n._('Workshops')}
+        rightElement={<HeaderFilters onPressFilter={() => null} onPressSort={() => null} />}
       />
-      <ScrollView style={styles.container}>
-        <View style={styles.containerPart}>
-          <Text style={styles.titleType}>Upcoming events:</Text>
-          <View style={styles.containerEvents}></View>
-          <TouchableOpacity style={styles.buttonMore} onPress={onToEventsList}>
-            <Text style={styles.titleButtonMore}>More events</Text>
-            <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
-          </TouchableOpacity>
+      <View style={styles.container}>
+        <View style={styles.search}>
+          <Input
+            value={workshopName}
+            placeholder={i18n._('Enter the name of the workshop or type of work')}
+            onChange={setWorkshopName}
+            InputIcon={<IconSearchInput width={26} height={26} />}
+          />
         </View>
-        <View style={styles.containerPart}>
-          <Text style={styles.titleType}>Latest news:</Text>
-          <View style={styles.containerEvents}></View>
-          <TouchableOpacity style={styles.buttonMore} onPress={onToNewsList}>
-            <Text style={styles.titleButtonMore}>More news</Text>
-            <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-    </View>
+        <ScrollView contentContainerStyle={styles.wrapper}>
+          {WORKSHOP.map(item => (
+            <WorkshopItem
+              key={item.id}
+              workshopId={item.id}
+              title={item.title}
+              description={item.description}
+              range={item.range}
+              comments={item.comments}
+              rate={item.range}
+              navigation={navigation}
+              isAutoService={item.isAutoService}
+              isMotoService={item.isMotoService}
+              image={item.photo}
+            />
+          ))}
+        </ScrollView>
+      </View>
+    </>
   );
 };
