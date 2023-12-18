@@ -18,6 +18,5 @@ export const styles = StyleSheet.create({
   search: {
     paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
     paddingBottom: verticalScale(GAP_MAIN),
-    flexDirection: 'row',
   },
 });

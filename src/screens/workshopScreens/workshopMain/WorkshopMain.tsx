@@ -12,6 +12,7 @@ import { WorkshopItem } from './components/WorkshopItem/WorkshopItem';
 import { Header } from '../../../components/Header/Header';
 import { MenuBurgerButton } from '../../../components/MenuBurgerButton/MenuBurgerButton';
 import { HeaderFilters } from './components/HeaderFilters/HeaderFilters';
+import { AddEventButton } from '../../../components/AddEventButton/AddEventButton';
 
 // icons
 import { IconSearchInput } from '../../../icons/components';
@@ -63,6 +64,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({ navigation 
             />
           ))}
         </ScrollView>
+        <AddEventButton onPress={() => null} />
       </View>
     </>
   );

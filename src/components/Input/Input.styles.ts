@@ -4,7 +4,6 @@ import colors from '../../../styles/colors';
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
-    flex: 1,
   },
   label: { fontSize: 16, fontWeight: '600', color: colors.blackCoffee },
   inputWrapper: {
