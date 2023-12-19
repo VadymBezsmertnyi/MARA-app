@@ -14,7 +14,8 @@ import {
   Text,
   Stop,
   LinearGradient,
-  ClipPath
+  ClipPath,
+  RadialGradient
 } from "react-native-svg";
 ${'\n'}
 const ${componentName} = (originalProps: IconType) => {

@@ -23,8 +23,8 @@
       "infoPlist": {
         "NSFaceIDUsageDescription": "Allow $(PRODUCT_NAME) to use Face ID."
       },
-      "config":{
-        "googleMapsApiKey":"AIzaSyBi9gmS8zJ8T6F6KG9V1CiwcyjUV1OSADQ"
+      "config": {
+        "googleMapsApiKey": "AIzaSyBi9gmS8zJ8T6F6KG9V1CiwcyjUV1OSADQ"
       }
     },
     "android": {
@@ -39,8 +39,8 @@
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT"
       ],
-      "config":{
-        "googleMaps":{
+      "config": {
+        "googleMaps": {
           "apiKey": "AIzaSyCw9CLYaQOFumxdzulnr1bH8K4N_n23jfM"
         }
       }
@@ -72,6 +72,14 @@
         "expo-location",
         {
           "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
         }
       ]
     ],

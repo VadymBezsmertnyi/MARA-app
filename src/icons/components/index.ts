@@ -11,6 +11,7 @@ export { default as IconFaceId } from './IconFaceId';
 export { default as IconFilter } from './IconFilter';
 export { default as IconLocationMarker } from './IconLocationMarker';
 export { default as IconMotoService } from './IconMotoService';
+export { default as IconProfileAvatar } from './IconProfileAvatar';
 export { default as IconRepair } from './IconRepair';
 export { default as IconSearchInput } from './IconSearchInput';
 export { default as IconSearchMap } from './IconSearchMap';
