@@ -1,9 +1,8 @@
-import React, { FunctionComponent, useContext } from 'react';
+import React, { FunctionComponent, useContext, useEffect } from 'react';
 import { Image, View } from 'react-native';
 
 // hooks
 import { useAllNavigation } from '../../navigators/Navigators.helps';
-import { useInitializer } from '../../useInitializer/useInitializer';
 
 // providers
 import { userContext } from '../../providers/user/user.provider';
@@ -21,11 +20,15 @@ export const Splash: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { meUser } = useContext(userContext);
 
-  useInitializer(async function authorizationScreenInitializer() {
+  const authorizationInitializer = async () => {
     const result = await meUser();
     if (result) navigation.navigate(PATHS_MAIN_SCREENS.main);
     else navigation.navigate(PATHS_MAIN_SCREENS.welcome);
     return {};
+  };
+
+  useEffect(() => {
+    authorizationInitializer();
   }, []);
 
   return (

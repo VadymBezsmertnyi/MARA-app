@@ -8,7 +8,7 @@ import { ButtonCustom } from '../../../../../components/ButtonCustom/ButtonCusto
 
 // providers
 import { localesContext } from '../../../../../../localization/localization.provider';
-import { dateToNMY } from '../../../../../providers/app/app.schema';
+import { dateToNMY } from '../../../../../helps/helps';
 
 // styles
 import { styles } from './DatePicker.styles';

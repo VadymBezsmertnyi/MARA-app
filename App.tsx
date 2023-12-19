@@ -10,10 +10,10 @@ import { ThemeProvider } from './src/providers/theme/theme.provider';
 import { BiometricAuthenticatorProvider } from './src/providers/biometricAuthenticator/biometricAuthenticator.provider';
 import { LoadingProvider } from './src/providers/loading/loading.provider';
 import { UserProvider, userContext } from './src/providers/user/user.provider';
-import { AppProvider } from './src/providers/app/app.provider';
 import { MapProvider } from './src/providers/MapProvider/MapProvider';
 import { WorkshopsProvider } from './src/providers/workshops/workshops.provider';
 import { WebSocketProvider } from './src/providers/WebSocketProvider/WebSocketProvider';
+import { ApiProvider } from './src/providers/ApiProvider/ApiProvider';
 
 // components
 import { Navigators } from './src/navigators/Navigators';
@@ -34,19 +34,13 @@ function App() {
     messages: CATALOGS_LANGUAGES,
     locale: languagesLinguiAlias[language],
   });
-  const storeAppProvider = useMemo(() => ({ i18n }), [i18n]);
-  const techStoreAppProvider = useMemo(() => ({}), []);
 
   return (
     <WebSocketProvider>
       <ThemeProvider>
         <LoadingProvider>
           <LocalesProvider i18n={i18n} language={language}>
-            <AppProvider
-              store={storeAppProvider}
-              language={language}
-              techStore={techStoreAppProvider}
-            >
+            <ApiProvider>
               <UserProvider i18n={i18n}>
                 <NavigationContainer>
                   <SafeAreaProvider>
@@ -60,7 +54,7 @@ function App() {
                   </SafeAreaProvider>
                 </NavigationContainer>
               </UserProvider>
-            </AppProvider>
+            </ApiProvider>
           </LocalesProvider>
         </LoadingProvider>
       </ThemeProvider>

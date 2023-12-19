@@ -27,3 +27,13 @@ export const formatDateFromUnixTimestamp = (unixTimestamp: number) => {
 
   return `${day}.${month}.${year}`;
 };
+
+export const dateToNMY = (date: Date): string => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  const formattedDay = day < 10 ? `0${day}` : day.toString();
+  const formattedMonth = month < 10 ? `0${month}` : month.toString();
+  const formattedDate = `${formattedDay}.${formattedMonth}.${year}`;
+  return formattedDate;
+};

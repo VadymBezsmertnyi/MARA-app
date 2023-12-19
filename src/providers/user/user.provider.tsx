@@ -25,13 +25,14 @@ import { deleteDeviceStorage, getDeviceStorage, setDeviceStorage } from '../../h
 import { DEFAULT_USER_DATA } from './user.constants';
 import { PATHS } from '../paths.constants';
 import { TOKEN_NAME } from './user.constants';
+import { apiContext } from '../ApiProvider/ApiProvider';
 
 export const userContext = createContext<Context>({} as Context);
 
 export const UserProvider: FunctionComponent<Props> = props => {
   const { i18n } = props;
   const { setUserData: setUserDataSocket } = useContext(webSocketContext);
-  const { api } = useContext(appContext);
+  const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
   const { info, bug, warning } = showErrors;
   const [userData, setUserData] = useState<UserDataT | null>(null);
@@ -41,19 +42,19 @@ export const UserProvider: FunctionComponent<Props> = props => {
     setUserDataSocket(null);
   };
 
-  const registrationPhone = async (phone_number: string): Promise<UserDataT> => {
+  const registrationPhone = async (phone_number: string): Promise<UserDataT | null> => {
     try {
       const resultCreateNewUser = await api(
         PATHS.addPhone,
         {
           method: 'POST',
-          body: {
+          data: {
             phone_number,
           },
         },
         resultUserDataS,
       );
-      return resultCreateNewUser.data.userData;
+      return resultCreateNewUser?.userData || null;
     } catch (error: any) {
       bug(error);
       throw error;
@@ -68,19 +69,19 @@ export const UserProvider: FunctionComponent<Props> = props => {
       setLoading(true);
       const currentlyPhoneNumber = phone_number.replaceAll(' ', '');
       const resultCreateNewUser = await registrationPhone(currentlyPhoneNumber);
-      if (resultCreateNewUser.is_password && !isForget)
+      if (resultCreateNewUser?.is_password && !isForget)
         return { result: false, isHaveUser: resultCreateNewUser.is_password };
       await api(
         PATHS.sendCodeToUser,
         {
           method: 'POST',
-          body: { phone_number },
+          data: { phone_number },
         },
         shortResponseS,
       );
       setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser });
       setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser });
-      return { result: true, isHaveUser: resultCreateNewUser.is_password };
+      return { result: true, isHaveUser: resultCreateNewUser?.is_password || false };
     } catch (error: any) {
       bug(error);
       return { result: true, isHaveUser: false };
@@ -96,7 +97,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
         PATHS.verifyCodePhone,
         {
           method: 'POST',
-          body: {
+          data: {
             userId: userData?.id,
             phone_number: userData?.phone_number,
             code,
@@ -104,13 +105,13 @@ export const UserProvider: FunctionComponent<Props> = props => {
         },
         resultUserDataS,
       );
-      if (resultSendCode.data.result) {
-        setUserData({ ...DEFAULT_USER_DATA, ...resultSendCode.data.userData });
-        setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultSendCode.data.userData });
+      if (resultSendCode?.result) {
+        setUserData({ ...DEFAULT_USER_DATA, ...resultSendCode.userData });
+        setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultSendCode.userData });
         return true;
       }
       warning(t(i18n)`Code incorrect`);
-      return resultSendCode.data.result;
+      return resultSendCode?.result || false;
     } catch (error: any) {
       bug(error);
       setUserData(null);
@@ -131,7 +132,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
           PATHS.editUser,
           {
             method: 'PUT',
-            body: {
+            data: {
               ...userData,
               ...newInfoUser,
               time_token: 1,
@@ -140,11 +141,11 @@ export const UserProvider: FunctionComponent<Props> = props => {
           resultUserDataS,
         );
 
-        if (resultCreateNewUser.data.result) {
-          await setDeviceStorage(TOKEN_NAME, resultCreateNewUser.data.userData.verify_token);
-          setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
-          setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
-        } else info(getErrors(i18n)[resultCreateNewUser.data.code]);
+        if (resultCreateNewUser?.result) {
+          await setDeviceStorage(TOKEN_NAME, resultCreateNewUser.userData.verify_token);
+          setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.userData });
+          setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.userData });
+        } else info(getErrors(i18n)[resultCreateNewUser?.code || '']);
       } catch (error: any) {
         console.log('error', error);
         bug(error);
@@ -163,13 +164,13 @@ export const UserProvider: FunctionComponent<Props> = props => {
       if (verifyToken) {
         setLoading(true);
         const result = await api(url, undefined, resultUserDataS);
-        if (result.data.result) {
-          const userData = { ...DEFAULT_USER_DATA, ...result.data.userData };
+        if (result?.result) {
+          const userData = { ...DEFAULT_USER_DATA, ...result.userData };
           setUserData(userData);
           setUserDataSocket(userData);
           return true;
         }
-        showErrors.warning(getErrors(i18n)[result.data.code]);
+        showErrors.warning(getErrors(i18n)[result?.code || '']);
         return false;
       }
 
@@ -202,16 +203,16 @@ export const UserProvider: FunctionComponent<Props> = props => {
   const loginUser = async (dataLogin: Record<KeysAuthorizationT, string>): Promise<boolean> => {
     try {
       setLoading(true);
-      const result = await api(PATHS.login, { method: 'POST', body: dataLogin }, resultUserDataS);
-      if (result.data.result) {
-        await setDeviceStorage(TOKEN_NAME, result.data.userData.verify_token);
-        const userData = { ...DEFAULT_USER_DATA, ...result.data.userData };
+      const result = await api(PATHS.login, { method: 'POST', data: dataLogin }, resultUserDataS);
+      if (result?.userData) {
+        await setDeviceStorage(TOKEN_NAME, result?.userData.verify_token);
+        const userData = { ...DEFAULT_USER_DATA, ...result?.userData };
         info(`Welcome ${userData.first_name} ${userData.family_name}`);
         setUserData(userData);
         setUserDataSocket(userData);
         return true;
       }
-      info(getErrors(i18n)[result.data.code]);
+      info(getErrors(i18n)[result?.code || '']);
       return false;
     } catch (error: any) {
       bug(error);
@@ -228,13 +229,13 @@ export const UserProvider: FunctionComponent<Props> = props => {
         PATHS.sendCodeToUser,
         {
           method: 'POST',
-          body: { phone_number },
+          data: { phone_number },
         },
         shortResponseS,
       );
       setUserData(state => ({ ...DEFAULT_USER_DATA, ...state, phone_number }));
       setUserDataSocket(state => ({ ...DEFAULT_USER_DATA, ...state, phone_number }));
-      return result.data.result;
+      return result?.result || false;
     } catch (error: any) {
       bug(error);
       return false;
@@ -250,7 +251,7 @@ export const UserProvider: FunctionComponent<Props> = props => {
         PATHS.verifyCodePhoneRecoveryPassword,
         {
           method: 'POST',
-          body: {
+          data: {
             userId: userData?.id,
             phone_number: userData?.phone_number,
             code,
@@ -258,11 +259,11 @@ export const UserProvider: FunctionComponent<Props> = props => {
         },
         shortResponseS,
       );
-      if (result.data.result) {
+      if (result?.result) {
         setUserData(state => ({ ...DEFAULT_USER_DATA, ...state, is_verified: true }));
         setUserDataSocket(state => ({ ...DEFAULT_USER_DATA, ...state, is_verified: true }));
       } else warning(t(i18n)`Code incorrect`);
-      return result.data.result;
+      return result?.result || false;
     } catch (error: any) {
       bug(error);
       setUserData(null);
@@ -279,17 +280,17 @@ export const UserProvider: FunctionComponent<Props> = props => {
         PATHS.editUserChangePassword,
         {
           method: 'PUT',
-          body: { phone_number: userData?.phone_number, password, time_token: 1 },
+          data: { phone_number: userData?.phone_number, password, time_token: 1 },
         },
         resultUserDataS,
       );
 
-      if (resultCreateNewUser.data.result) {
-        await setDeviceStorage(TOKEN_NAME, resultCreateNewUser.data.userData.verify_token);
-        setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
-        setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.data.userData });
-      } else info(getErrors(i18n)[resultCreateNewUser.data.code]);
-      return resultCreateNewUser.data.result;
+      if (resultCreateNewUser?.result) {
+        await setDeviceStorage(TOKEN_NAME, resultCreateNewUser.userData.verify_token);
+        setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.userData });
+        setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.userData });
+      } else info(getErrors(i18n)[resultCreateNewUser?.code || '']);
+      return resultCreateNewUser?.result || false;
     } catch (error: any) {
       bug(error);
       return false;
