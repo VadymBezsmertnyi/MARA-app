@@ -1,7 +1,12 @@
 import { UserDataT } from './user.types';
 
 export const DEFAULT_USER_DATA: UserDataT = {
+  // new
   id: 0,
+  isGeoLocation: false,
+  avatar: null,
+
+  // old
   phone_number: '',
   is_password: false,
   time_token: 1,

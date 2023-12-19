@@ -20,7 +20,12 @@ export type Context = {
     isHaveUser: boolean;
   }>;
   sendVerifyCode: (code: string) => Promise<boolean>;
-  editUser: (dataRegistration: Record<string, string | number | boolean>) => Promise<void>;
+  editUser: (
+    newInfoUser: Record<
+      string,
+      string | number | boolean | Record<string, string | number | boolean>
+    >,
+  ) => Promise<boolean>;
   meUser: () => Promise<boolean>;
   exitUser: () => Promise<void>;
   loginUser(dataLogin: Record<KeysAuthorizationT, string>): Promise<boolean>;

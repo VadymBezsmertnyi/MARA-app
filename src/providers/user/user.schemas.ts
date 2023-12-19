@@ -6,6 +6,15 @@ export const userDataS = z.object({
   // new
   id: z.number(),
   isGeoLocation: z.boolean(),
+  avatar: z
+    .object({
+      id: z.string().optional(),
+      name: z.string().optional(),
+      url: z.string().optional(),
+      image: z.string().optional(),
+      type: z.string(),
+    })
+    .nullable(),
   // old
   phone_number: z.string(),
   is_password: z.boolean(),

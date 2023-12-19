@@ -12,9 +12,9 @@ import { shortResponseS } from '../source.schemas';
 import { resultUserDataS } from './user.schemas';
 
 // providers
-import { appContext } from '../app/app.provider';
 import { loadingContext } from '../loading/loading.provider';
 import { webSocketContext } from '../WebSocketProvider/WebSocketProvider';
+import { apiContext } from '../ApiProvider/ApiProvider';
 
 // helps
 import showErrors from '../../helps/errors/showError';
@@ -25,7 +25,6 @@ import { deleteDeviceStorage, getDeviceStorage, setDeviceStorage } from '../../h
 import { DEFAULT_USER_DATA } from './user.constants';
 import { PATHS } from '../paths.constants';
 import { TOKEN_NAME } from './user.constants';
-import { apiContext } from '../ApiProvider/ApiProvider';
 
 export const userContext = createContext<Context>({} as Context);
 
@@ -123,8 +122,11 @@ export const UserProvider: FunctionComponent<Props> = props => {
   };
 
   const editUser = async (
-    newInfoUser: Record<string, string | number | boolean>,
-  ): Promise<void> => {
+    newInfoUser: Record<
+      string,
+      string | number | boolean | Record<string, string | number | boolean>
+    >,
+  ): Promise<boolean> => {
     if (userData)
       try {
         setLoading(true);
@@ -146,14 +148,16 @@ export const UserProvider: FunctionComponent<Props> = props => {
           setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.userData });
           setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.userData });
         } else info(getErrors(i18n)[resultCreateNewUser?.code || '']);
+        return true;
       } catch (error: any) {
         console.log('error', error);
         bug(error);
-        throw error;
+        return false;
       } finally {
         setLoading(false);
       }
     else info(t(i18n)`Access denied`);
+    return false;
   };
 
   const meUser = async (): Promise<boolean> => {
