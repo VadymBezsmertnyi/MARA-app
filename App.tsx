@@ -1,31 +1,37 @@
-import React, { useContext, useMemo } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { Messages, setupI18n } from '@lingui/core';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import 'react-native-gesture-handler';
+import React, { useContext, useMemo } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { Messages, setupI18n } from "@lingui/core";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import "react-native-gesture-handler";
 
 // providers
-import LocalesProvider from './localization/localization.provider';
-import { ThemeProvider } from './src/providers/theme/theme.provider';
-import { BiometricAuthenticatorProvider } from './src/providers/biometricAuthenticator/biometricAuthenticator.provider';
-import { LoadingProvider } from './src/providers/loading/loading.provider';
-import { UserProvider, userContext } from './src/providers/user/user.provider';
-import { MapProvider } from './src/providers/MapProvider/MapProvider';
-import { WorkshopsProvider } from './src/providers/workshops/workshops.provider';
-import { WebSocketProvider } from './src/providers/WebSocketProvider/WebSocketProvider';
-import { ApiProvider } from './src/providers/ApiProvider/ApiProvider';
+import LocalesProvider from "./localization/localization.provider";
+import { ThemeProvider } from "./src/providers/theme/theme.provider";
+import { BiometricAuthenticatorProvider } from "./src/providers/biometricAuthenticator/biometricAuthenticator.provider";
+import { LoadingProvider } from "./src/providers/loading/loading.provider";
+import { UserProvider, userContext } from "./src/providers/user/user.provider";
+import { MapProvider } from "./src/providers/MapProvider/MapProvider";
+import { WorkshopsProvider } from "./src/providers/workshops/workshops.provider";
+import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
+import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 
 // components
-import { Navigators } from './src/navigators/Navigators';
+import { Navigators } from "./src/navigators/Navigators";
 
 // constants
-import { defaultLanguage, languagesLinguiAlias } from './localization/localization.const';
+import {
+  defaultLanguage,
+  languagesLinguiAlias,
+} from "./localization/localization.const";
 
 // locales
-import { messages as translationsUk } from './localization/uk/messages';
-import { messages as translationsEn } from './localization/en/messages';
+import { messages as translationsUk } from "./localization/uk/messages";
+import { messages as translationsEn } from "./localization/en/messages";
 
-const CATALOGS_LANGUAGES = { uk: translationsUk as Messages, en: translationsEn as Messages };
+const CATALOGS_LANGUAGES = {
+  uk: translationsUk as Messages,
+  en: translationsEn as Messages,
+};
 
 function App() {
   const { userData } = useContext(userContext);
