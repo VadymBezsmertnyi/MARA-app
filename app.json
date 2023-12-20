@@ -19,7 +19,15 @@
       "buildNumber": "1",
       "usesAppleSignIn": true,
       "infoPlist": {
-        "NSFaceIDUsageDescription": "Allow $(PRODUCT_NAME) to use Face ID."
+        "UIApplicationShortcutItemTitle": "ADD_ITEM_SHORTCUT_TITLE",
+        "NSCameraUsageDescription": "Доступ до камери для фото профілю",
+        "NSPhotoLibraryUsageDescription": "Доступ до фотогалереї для фото профілю",
+        "NSMicrophoneUsageDescription": "We need microphone access for recording audio",
+        "NSCalendarsUsageDescription": "Доступ до календаря для планування подій",
+        "NSContactsUsageDescription": "Доступ до контактів для імпорту інформації",
+        "NSAppleMusicUsageDescription": "Доступ до Apple Music для імпорту музики",
+        "UIBackgroundModes": ["audio"],
+        "NSSpeechRecognitionUsageDescription": "Allow recognition to access your speech recognition"
       },
       "config": {
         "googleMapsApiKey": "AIzaSyBi9gmS8zJ8T6F6KG9V1CiwcyjUV1OSADQ"
@@ -34,8 +42,24 @@
       "googleServicesFile": "./google-services.json",
       "package": "com.motoauto.mara",
       "permissions": [
+        "RECORD_AUDIO",
+        "CAMERA_ROLL",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.USE_FINGERPRINT",
         "android.permission.USE_BIOMETRIC",
-        "android.permission.USE_FINGERPRINT"
+        "android.permission.GET_ACCOUNTS",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "com.google.android.c2dm.permission.RECEIVE",
+        "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
+        "com.google.android.providers.gsf.permission.READ_GSERVICES",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA_ROLL"
       ],
       "config": {
         "googleMaps": {

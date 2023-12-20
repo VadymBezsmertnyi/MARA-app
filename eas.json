@@ -14,8 +14,12 @@
       }
     },
     "preview2": {
+      "autoIncrement": true,
       "android": {
         "gradleCommand": ":app:assembleRelease"
+      },
+      "ios": {
+        "autoIncrement": "buildNumber"
       }
     },
     "preview3": {
