@@ -208,7 +208,10 @@ export const UserProvider: FunctionComponent<Props> = props => {
     try {
       setLoading(true);
       const result = await api(PATHS.login, { method: 'POST', data: dataLogin }, resultUserDataS);
-      if (result?.userData) {
+      
+
+      console.log('result',result)
+      if (result?.result) {
         await setDeviceStorage(TOKEN_NAME, result?.userData.verify_token);
         const userData = { ...DEFAULT_USER_DATA, ...result?.userData };
         info(`Welcome ${userData.first_name} ${userData.family_name}`);
