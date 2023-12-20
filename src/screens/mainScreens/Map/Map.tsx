@@ -3,11 +3,11 @@ import React, {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from "react";
 import { Platform, View } from "react-native";
-import MapView, { Details, PROVIDER_GOOGLE, Region } from "react-native-maps";
+import MapViewCluster from "react-native-map-clustering";
+import { Details, Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
@@ -52,7 +52,6 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { location } = useContext(mapContext);
   const { theme } = useContext(themeContext);
   const [region, setRegion] = useState(DEFAULT_LOCATION);
-  const refTimeoutChangeRegion = useRef(null);
   const listUsers = useMemo(
     () =>
       stateSocket.geolocationUsers
@@ -85,7 +84,7 @@ export const Map: FunctionComponent<MapProps> = () => {
 
   return (
     <View style={styles.container}>
-      <MapView
+      <MapViewCluster
         provider={PROVIDER_GOOGLE}
         style={styles.map}
         mapType={Platform.OS === "ios" ? "terrain" : "standard"}
@@ -98,6 +97,20 @@ export const Map: FunctionComponent<MapProps> = () => {
         showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
       >
+        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
+        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
+        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
+        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
+        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
+        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
+        <Marker coordinate={{ latitude: 49.4285, longitude: 32.0626 }} />
+        <Marker coordinate={{ latitude: 49.4467, longitude: 32.0616 }} />
+        <Marker coordinate={{ latitude: 49.4011, longitude: 32.0698 }} />
+        <Marker coordinate={{ latitude: 49.5414, longitude: 32.0512 }} />
+        <Marker coordinate={{ latitude: 49.4435, longitude: 31.0169 }} />
+        <Marker coordinate={{ latitude: 49.4389, longitude: 29.9874 }} />
+        <Marker coordinate={{ latitude: 49.4385, longitude: 29.9885 }} />
+        <Marker coordinate={{ latitude: 49.4319, longitude: 29.9794 }} />
         <MeMarker />
         <SosMarker
           longitude={31.758758202195168}
@@ -134,7 +147,7 @@ export const Map: FunctionComponent<MapProps> = () => {
             />
           );
         })}
-      </MapView>
+      </MapViewCluster>
       <UpContainer />
       <EventContainer />
       <ButtonSearch />
