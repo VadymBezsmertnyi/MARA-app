@@ -1,27 +1,32 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
-import { Image, ImageURISource, Text, TouchableOpacity, View } from 'react-native';
-import { Trans } from '@lingui/macro';
-import { z } from 'zod';
-import Checkbox from 'expo-checkbox';
-import * as ImagePicker from 'expo-image-picker';
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import { ImageURISource, Text, TouchableOpacity, View } from "react-native";
+import { Trans } from "@lingui/macro";
+import { z } from "zod";
+import Checkbox from "expo-checkbox";
+import * as ImagePicker from "expo-image-picker";
 
 // providers
-import { userContext } from '../../../providers/user/user.provider';
-import { localesContext } from '../../../../localization/localization.provider';
+import { userContext } from "../../../providers/user/user.provider";
+import { localesContext } from "../../../../localization/localization.provider";
 
 // components
-import { SelectPicker } from '../../../components/SelectPicker/SelectPicker';
+import { SelectPicker } from "../../../components/SelectPicker/SelectPicker";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // helps
-import showErrors from '../../../helps/errors/showError';
+import showErrors from "../../../helps/errors/showError";
 
 // constants
-import { languages, languagesKeys } from '../../../../localization/localization.const';
+import {
+  languages,
+  languagesKeys,
+} from "../../../../localization/localization.const";
+
+// icons
+import { IconProfileAvatar } from "../../../icons/components";
 
 // styles
-import { styles } from './Settings.styles';
-import { IconProfileAvatar } from '../../../icons/components';
-import { ImageCache } from '../../../components/ImageCache/ImageCache';
+import { styles } from "./Settings.styles";
 
 export const Settings: FunctionComponent = () => {
   const { userData, editUser } = useContext(userContext);
@@ -33,10 +38,10 @@ export const Settings: FunctionComponent = () => {
       userData?.avatar
         ? ({
             uri: userData.avatar.url,
-            cache: 'force-cache',
+            cache: "force-cache",
           } as ImageURISource)
         : null,
-    [userData?.avatar],
+    [userData?.avatar]
   );
 
   const changeLanguage = async (item: { title: string; key: string }) => {
@@ -59,15 +64,19 @@ export const Settings: FunctionComponent = () => {
 
     if (!result.canceled) {
       const titleSuccess = userData?.avatar?.id
-        ? i18n._('The photo has been changed')
-        : i18n._('The photo added');
+        ? i18n._("The photo has been changed")
+        : i18n._("The photo added");
       const resultUpdate = await editUser({
-        avatar: { image: result.assets[0].base64 as string, type: 'jpg' },
+        avatar: {
+          ...userData?.avatar,
+          image: result.assets[0].base64 as string,
+          type: "jpg",
+        },
       });
 
-      if (!resultUpdate) warning(i18n._('Sorry, an error occurred'));
+      if (!resultUpdate) warning(i18n._("Sorry, an error occurred"));
       else warning(titleSuccess);
-    } else warning(i18n._('Sorry, an error occurred'));
+    } else warning(i18n._("Sorry, an error occurred"));
   };
 
   return (
@@ -83,20 +92,31 @@ export const Settings: FunctionComponent = () => {
       </View>
       <TouchableOpacity onPress={pickImage} style={styles.buttonAddPhoto}>
         <Text style={styles.titleButtonAddPhoto}>
-          {imageSource ? <Trans>Edit photo +</Trans> : <Trans>Add photo +</Trans>}
+          {imageSource ? (
+            <Trans>Edit photo +</Trans>
+          ) : (
+            <Trans>Add photo +</Trans>
+          )}
         </Text>
       </TouchableOpacity>
       <View style={styles.option}>
         <Text>
           <Trans>Language:</Trans>
         </Text>
-        <SelectPicker value={language} onChange={changeLanguage} data={languages} />
+        <SelectPicker
+          value={language}
+          onChange={changeLanguage}
+          data={languages}
+        />
       </View>
       <View style={styles.option}>
         <Text>
           <Trans>Your location:</Trans>
         </Text>
-        <Checkbox value={userData?.isGeoLocation} onValueChange={toggleIsLocation} />
+        <Checkbox
+          value={userData?.isGeoLocation}
+          onValueChange={toggleIsLocation}
+        />
       </View>
     </View>
   );

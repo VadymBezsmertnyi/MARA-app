@@ -1,5 +1,5 @@
-import { Platform } from 'react-native';
-import { z } from 'zod';
+import { Platform } from "react-native";
+import { z } from "zod";
 
 const appManifestEnvS = z.object({
   APP_DOMAIN_APP: z.string(),
@@ -12,9 +12,9 @@ type AppManifestEnvT = z.infer<typeof appManifestEnvS>;
 export const getEnv = (): AppManifestEnvT => {
   const parsedEnv = z.object({ developer: appManifestEnvS }).parse({
     developer: {
-      APP_DOMAIN_WEB: 'localhost',
-      APP_DOMAIN_APP: '192.168.31.31',
-      APP_PORT: '5008',
+      APP_DOMAIN_WEB: "localhost",
+      APP_DOMAIN_APP: "192.168.31.31",
+      APP_PORT: "5008",
     },
   });
   return parsedEnv.developer;
@@ -22,10 +22,11 @@ export const getEnv = (): AppManifestEnvT => {
 
 export const getApiUrl = () => {
   const { APP_DOMAIN_WEB, APP_PORT } = getEnv();
-  const appDomainApp = '192.168.50.62';
-  const herokuServer = 'https://moto-auto-road-assistant-9ba1127a6934.herokuapp.com';
+  const appDomainApp = "192.168.50.62";
+  const herokuServer =
+    "https://moto-auto-road-assistant-9ba1127a6934.herokuapp.com";
   const api =
-    Platform.OS === 'web'
+    Platform.OS === "web"
       ? `http://${APP_DOMAIN_WEB}:${APP_PORT}`
       : `http://${appDomainApp}:${APP_PORT}`;
   return herokuServer || api;

@@ -1,6 +1,6 @@
-import { z } from 'zod';
-import { NUMBER_TWO } from './user.constants';
-import { languagesKeys } from '../../../localization/localization.const';
+import { z } from "zod";
+import { NUMBER_TWO } from "./user.constants";
+import { languagesKeys } from "../../../localization/localization.const";
 
 export const userDataS = z.object({
   // new
@@ -13,6 +13,7 @@ export const userDataS = z.object({
       url: z.string().optional(),
       image: z.string().optional(),
       type: z.string(),
+      VersionId: z.string(),
     })
     .nullable(),
   // old
