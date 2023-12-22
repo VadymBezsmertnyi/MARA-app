@@ -5,7 +5,7 @@ import {
   PATHS_NEWS_SCREENS,
   PATHS_REGISTRATION_SCREENS,
   PATHS_WORKSHOP_SCREENS,
-} from './useNavigator.constants';
+} from "./useNavigator.constants";
 
 export type MainScreenT = {
   id: string;
@@ -50,9 +50,6 @@ export type RootForgetScreensParamList = {
 
 export type RootRegistrationScreensParamList = {
   [PATHS_REGISTRATION_SCREENS.registrationPhone]: undefined;
-  [PATHS_REGISTRATION_SCREENS.registrationCode]: {
-    phoneNumber: string;
-  };
   [PATHS_REGISTRATION_SCREENS.registrationPassword]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationTouchId]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationFaceId]: undefined;

@@ -1,57 +1,66 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { Trans, t } from '@lingui/macro';
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import { ScrollView, Text, View } from "react-native";
+import { Trans, t } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../../localization/localization.provider';
-import { themeContext } from '../../../providers/theme/theme.provider';
-import { userContext } from '../../../providers/user/user.provider';
+import { localesContext } from "../../../../localization/localization.provider";
+import { themeContext } from "../../../providers/theme/theme.provider";
+import { userContext } from "../../../providers/user/user.provider";
 
 // components
-import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
-import { InputPhone } from '../../../components/InputPhone/InputPhone';
+import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+import { InputPhone } from "../../../components/InputPhone/InputPhone";
 
 // constants
-import { THEME_DARK } from '../../../providers/theme/theme.const';
-import { DEFAULT_CODE_COUNTRY, DEFAULT_COUNTRY } from '../../../constants/inputs.const';
+import { THEME_DARK } from "../../../providers/theme/theme.const";
+import {
+  DEFAULT_CODE_COUNTRY,
+  DEFAULT_COUNTRY,
+} from "../../../constants/inputs.const";
 import {
   PATHS_MAIN_SCREENS,
   PATHS_REGISTRATION_SCREENS,
-} from '../../../navigators/useNavigator.constants';
+} from "../../../navigators/useNavigator.constants";
 
 // helps
-import { useAllNavigation } from '../../../navigators/Navigators.helps';
+import { useAllNavigation } from "../../../navigators/Navigators.helps";
 
 // styles
-import { styles } from './RegistrationPhone.styles';
+import { styles } from "./RegistrationPhone.styles";
 
 export const RegistrationPhone: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-  const { sendCodeToUser } = useContext(userContext);
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const { registrationPhone } = useContext(userContext);
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [isVerify, setIsVerify] = useState(false);
-  const [errorMessage, setErrorsMessage] = useState('');
+  const [errorMessage, setErrorsMessage] = useState("");
 
   const onSubmit = async () => {
     if (isVerify && phoneNumber.length) {
-      const { result, isHaveUser } = await sendCodeToUser(phoneNumber);
-      if (result) navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationCode, { phoneNumber });
-      else if (isHaveUser) navigation.navigate(PATHS_MAIN_SCREENS.authorization, { phoneNumber });
-      else setErrorsMessage(t(i18n)`You have entered the phone number incorrectly`);
-    } else setErrorsMessage(t(i18n)`You have entered the phone number incorrectly`);
+      const userDate = await registrationPhone(phoneNumber);
+      if (userDate?.is_password)
+        navigation.navigate(PATHS_MAIN_SCREENS.authorization, { phoneNumber });
+      else if (userDate)
+        navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationPassword);
+      else
+        setErrorsMessage(
+          t(i18n)`You have entered the phone number incorrectly`
+        );
+    } else
+      setErrorsMessage(t(i18n)`You have entered the phone number incorrectly`);
   };
 
   const titleStyle = useMemo(
     () => [styles.title, theme === THEME_DARK && styles.colorWhite],
-    [theme],
+    [theme]
   );
 
   const onChangePhoneNumber = (value: string) => {
     setPhoneNumber(value);
-    setErrorsMessage('');
+    setErrorsMessage("");
   };
 
   return (
@@ -71,7 +80,11 @@ export const RegistrationPhone: FunctionComponent = () => {
         />
       </View>
       <View style={styles.containerButtons}>
-        <ButtonCustom disabled={!isVerify} title={t(i18n)`Continue`} onSubmit={onSubmit} />
+        <ButtonCustom
+          disabled={!isVerify}
+          title={t(i18n)`Continue`}
+          onSubmit={onSubmit}
+        />
       </View>
     </ScrollView>
   );

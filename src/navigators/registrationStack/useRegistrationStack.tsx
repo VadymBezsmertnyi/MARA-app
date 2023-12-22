@@ -1,20 +1,19 @@
-import { useContext } from 'react';
-import { t } from '@lingui/macro';
+import { useContext } from "react";
+import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../localization/localization.provider';
+import { localesContext } from "../../../localization/localization.provider";
 
 // constants
-import { PATHS_REGISTRATION_SCREENS } from '../useNavigator.constants';
+import { PATHS_REGISTRATION_SCREENS } from "../useNavigator.constants";
 
 // registration
-import { RegistrationPhone } from '../../screens/registrationScreens/RegistrationPhone/RegistrationPhone';
-import { RegistrationCode } from '../../screens/registrationScreens/RegistrationCode/RegistrationCode';
-import { RegistrationPassword } from '../../screens/registrationScreens/RegistrationPassword/RegistrationPassword';
-import { RegistrationTouchId } from '../../screens/registrationScreens/RegistrationTouchId/RegistrationTouchId';
-import { RegistrationFaceId } from '../../screens/registrationScreens/RegistrationFaceId/RegistrationFaceId';
-import { RegistrationPrivacyPolicy } from '../../screens/registrationScreens/RegistrationPrivacyPolicy/RegistrationPrivacyPolicy';
-import { RegistrationTermsOfUse } from '../../screens/registrationScreens/RegistrationTermsOfUse/RegistrationTermsOfUse';
+import { RegistrationPhone } from "../../screens/registrationScreens/RegistrationPhone/RegistrationPhone";
+import { RegistrationPassword } from "../../screens/registrationScreens/RegistrationPassword/RegistrationPassword";
+import { RegistrationTouchId } from "../../screens/registrationScreens/RegistrationTouchId/RegistrationTouchId";
+import { RegistrationFaceId } from "../../screens/registrationScreens/RegistrationFaceId/RegistrationFaceId";
+import { RegistrationPrivacyPolicy } from "../../screens/registrationScreens/RegistrationPrivacyPolicy/RegistrationPrivacyPolicy";
+import { RegistrationTermsOfUse } from "../../screens/registrationScreens/RegistrationTermsOfUse/RegistrationTermsOfUse";
 
 export const useRegistrationStack = () => {
   const { i18n } = useContext(localesContext);
@@ -25,12 +24,6 @@ export const useRegistrationStack = () => {
       name: PATHS_REGISTRATION_SCREENS.registrationPhone,
       title: t(i18n)`Registration`,
       component: RegistrationPhone,
-    },
-    {
-      id: PATHS_REGISTRATION_SCREENS.registrationCode,
-      name: PATHS_REGISTRATION_SCREENS.registrationCode,
-      title: t(i18n)`Registration`,
-      component: RegistrationCode,
     },
     {
       id: PATHS_REGISTRATION_SCREENS.registrationPassword,

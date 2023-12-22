@@ -54,85 +54,29 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const registrationPhone = async (
     phone_number: string
   ): Promise<UserDataT | null> => {
+    const currentlyPhoneNumber = phone_number.replaceAll(" ", "");
     try {
       const resultCreateNewUser = await api(
         PATHS.addPhone,
         {
           method: "POST",
           data: {
-            phone_number,
+            phone_number: currentlyPhoneNumber,
           },
         },
         resultUserDataS
       );
+
+      setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser?.userData });
+      setUserDataSocket({
+        ...DEFAULT_USER_DATA,
+        ...resultCreateNewUser?.userData,
+      });
+
       return resultCreateNewUser?.userData || null;
     } catch (error: any) {
       bug(error);
       throw error;
-    }
-  };
-
-  const sendCodeToUser = async (
-    phone_number: string,
-    isForget?: boolean
-  ): Promise<{ result: boolean; isHaveUser: boolean }> => {
-    try {
-      setLoading(true);
-      const currentlyPhoneNumber = phone_number.replaceAll(" ", "");
-      const resultCreateNewUser = await registrationPhone(currentlyPhoneNumber);
-      if (resultCreateNewUser?.is_password && !isForget)
-        return { result: false, isHaveUser: resultCreateNewUser.is_password };
-      await api(
-        PATHS.sendCodeToUser,
-        {
-          method: "POST",
-          data: { phone_number },
-        },
-        shortResponseS
-      );
-      setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser });
-      setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultCreateNewUser });
-      return {
-        result: true,
-        isHaveUser: resultCreateNewUser?.is_password || false,
-      };
-    } catch (error: any) {
-      bug(error);
-      return { result: true, isHaveUser: false };
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const sendVerifyCode = async (code: string): Promise<boolean> => {
-    try {
-      setLoading(true);
-      const resultSendCode = await api(
-        PATHS.verifyCodePhone,
-        {
-          method: "POST",
-          data: {
-            userId: userData?.id,
-            phone_number: userData?.phone_number,
-            code,
-          },
-        },
-        resultUserDataS
-      );
-      if (resultSendCode?.result) {
-        setUserData({ ...DEFAULT_USER_DATA, ...resultSendCode.userData });
-        setUserDataSocket({ ...DEFAULT_USER_DATA, ...resultSendCode.userData });
-        return true;
-      }
-      warning(t(i18n)`Code incorrect`);
-      return resultSendCode?.result || false;
-    } catch (error: any) {
-      bug(error);
-      setUserData(null);
-      setUserDataSocket(null);
-      return false;
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -236,6 +180,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   ): Promise<boolean> => {
     try {
       setLoading(true);
+      console.log(dataLogin);
       const result = await api(
         PATHS.login,
         { method: "POST", data: dataLogin },
@@ -254,77 +199,6 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
       return false;
     } catch (error: any) {
       bug(error);
-      return false;
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const recoveryPasswordSendCodeToUser = async (
-    phone_number: string
-  ): Promise<boolean> => {
-    try {
-      setLoading(true);
-      const result = await api(
-        PATHS.sendCodeToUser,
-        {
-          method: "POST",
-          data: { phone_number },
-        },
-        shortResponseS
-      );
-      setUserData((state) => ({
-        ...DEFAULT_USER_DATA,
-        ...state,
-        phone_number,
-      }));
-      setUserDataSocket((state) => ({
-        ...DEFAULT_USER_DATA,
-        ...state,
-        phone_number,
-      }));
-      return result?.result || false;
-    } catch (error: any) {
-      bug(error);
-      return false;
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const recoveryPasswordSendVerifyCode = async (
-    code: string
-  ): Promise<boolean> => {
-    try {
-      setLoading(true);
-      const result = await api(
-        PATHS.verifyCodePhoneRecoveryPassword,
-        {
-          method: "POST",
-          data: {
-            userId: userData?.id,
-            phone_number: userData?.phone_number,
-            code,
-          },
-        },
-        shortResponseS
-      );
-      if (result?.result) {
-        setUserData((state) => ({
-          ...DEFAULT_USER_DATA,
-          ...state,
-          is_verified: true,
-        }));
-        setUserDataSocket((state) => ({
-          ...DEFAULT_USER_DATA,
-          ...state,
-          is_verified: true,
-        }));
-      } else warning(t(i18n)`Code incorrect`);
-      return result?.result || false;
-    } catch (error: any) {
-      bug(error);
-      setUserData(null);
       return false;
     } finally {
       setLoading(false);
@@ -372,15 +246,12 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const contextValue: Context = useMemo(
     () => ({
       userData,
+      registrationPhone,
       cleanUserData,
-      sendCodeToUser,
-      sendVerifyCode,
       editUser,
       meUser,
       exitUser,
       loginUser,
-      recoveryPasswordSendCodeToUser,
-      recoveryPasswordSendVerifyCode,
       recoveryPasswordChangePassword,
     }),
     [userData]

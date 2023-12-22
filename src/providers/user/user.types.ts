@@ -1,36 +1,27 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 // types
-import type { I18n } from '@lingui/core';
-import { KeysAuthorizationT } from '../../screens/Authorization/Authorization.types';
+import type { I18n } from "@lingui/core";
+import { KeysAuthorizationT } from "../../screens/Authorization/Authorization.types";
 
 // schemas
-import { userDataS } from './user.schemas';
+import { userDataS } from "./user.schemas";
 
 export type UserDataT = z.infer<typeof userDataS>;
 
 export type Context = {
   userData: UserDataT | null;
   cleanUserData: () => void;
-  sendCodeToUser: (
-    phone_number: string,
-    isForget?: boolean,
-  ) => Promise<{
-    result: boolean;
-    isHaveUser: boolean;
-  }>;
-  sendVerifyCode: (code: string) => Promise<boolean>;
+  registrationPhone: (phone_number: string) => Promise<UserDataT | null>;
   editUser: (
     newInfoUser: Record<
       string,
       string | number | boolean | Record<string, string | number | boolean>
-    >,
+    >
   ) => Promise<boolean>;
   meUser: () => Promise<boolean>;
   exitUser: () => Promise<void>;
   loginUser(dataLogin: Record<KeysAuthorizationT, string>): Promise<boolean>;
-  recoveryPasswordSendCodeToUser: (phoneNumber: string) => Promise<boolean>;
-  recoveryPasswordSendVerifyCode: (code: string) => Promise<boolean>;
   recoveryPasswordChangePassword: (password: string) => Promise<boolean>;
 };
 

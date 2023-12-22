@@ -8,12 +8,8 @@ export const userDataS = z.object({
   isGeoLocation: z.boolean(),
   avatar: z
     .object({
-      id: z.string().optional(),
-      name: z.string().optional(),
-      url: z.string().optional(),
-      image: z.string().optional(),
-      type: z.string(),
-      VersionId: z.string(),
+      id: z.string(),
+      url: z.string(),
     })
     .nullable(),
   // old
