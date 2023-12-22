@@ -70,7 +70,6 @@ export const Settings: FunctionComponent = () => {
         avatar: {
           ...userData?.avatar,
           image: result.assets[0].base64 as string,
-          type: "jpg",
         },
       });
 
