@@ -1,8 +1,8 @@
-import { z } from 'zod';
-import { locationObjectCoordsSchema } from '../MapProvider/MapProvider.scheams';
+import { z } from "zod";
+import { locationObjectCoordsSchema } from "../MapProvider/MapProvider.schemas";
 
 export const dataLocationUserSchema = z.object({
-  type: z.enum(['geoLocation']),
+  type: z.enum(["geoLocation"]),
   userId: z.number(),
   geoLocation: locationObjectCoordsSchema,
   date: z.number(),
