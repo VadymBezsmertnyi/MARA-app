@@ -1,5 +1,5 @@
-import React from 'react';
-import { IconType } from '../icon.types';
+import React from "react";
+import { IconType } from "../icon.types";
 import {
   Svg,
   Path,
@@ -13,17 +13,23 @@ import {
   Stop,
   LinearGradient,
   ClipPath,
-} from 'react-native-svg';
+  RadialGradient,
+} from "react-native-svg";
 
 const SvgIconTabMapSelect = (originalProps: IconType) => {
   const { ...props } = originalProps;
 
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 41 32" {...props}>
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 41 32"
+      {...props}
+    >
       <Path
         fill="#fff"
         fillRule="evenodd"
-        d="M24.317 27.11 35.012 31V9.317l-10.976-4.49.281 22.284Zm-1.28-22.162L13.835 9.09l-.505 21.714 9.986-3.804-.279-22.05ZM2.487 4.67l10.348 4.435-.505 21.702-9.842-3.937V4.67Z"
+        d="M24.317 27.11 35.012 31V9.317l-10.976-4.49zm-1.28-22.162L13.835 9.09l-.505 21.714 9.986-3.804zM2.487 4.67l10.348 4.435-.505 21.702-9.842-3.937z"
         clipRule="evenodd"
       />
       <Path

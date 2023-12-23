@@ -1,5 +1,5 @@
-import React from 'react';
-import { IconType } from '../icon.types';
+import React from "react";
+import { IconType } from "../icon.types";
 import {
   Svg,
   Path,
@@ -13,13 +13,19 @@ import {
   Stop,
   LinearGradient,
   ClipPath,
-} from 'react-native-svg';
+  RadialGradient,
+} from "react-native-svg";
 
 const SvgIconTouchIdGradient = (originalProps: IconType) => {
   const { ...props } = originalProps;
 
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 114 114" {...props}>
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 114 114"
+      {...props}
+    >
       <G strokeLinecap="round" strokeWidth={2.836}>
         <Path
           stroke="url(#icon-touch-id-gradient_svg__a)"
@@ -63,7 +69,7 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__k)"
-          d="M58.405 112c7.07-10.11 11.657-21.873 13.11-34.334"
+          d="M58.405 112c7.07-10.11 11.657-21.873 13.11-34.333"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__l)"
@@ -103,11 +109,11 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__u)"
-          d="M97.734 54.441a105.636 105.636 0 0 0-.93-5.33h-.008C92.312 26.82 70.652 12.395 48.413 16.889c-17.09 3.454-29.547 17.076-32.363 33.316"
+          d="M97.734 54.441a105.636 105.636 0 0 0-.93-5.33h-.008C92.312 26.82 70.652 12.395 48.413 16.889c-17.09 3.454-29.547 17.077-32.363 33.316"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__v)"
-          d="M95.717 95.843a119.8 119.8 0 0 0 2.847-33.324"
+          d="M95.717 95.843a119.8 119.8 0 0 0 2.847-33.323"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__w)"

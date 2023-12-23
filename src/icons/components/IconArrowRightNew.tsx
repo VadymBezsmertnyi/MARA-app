@@ -1,5 +1,5 @@
-import React from 'react';
-import { IconType } from '../icon.types';
+import React from "react";
+import { IconType } from "../icon.types";
 import {
   Svg,
   Path,
@@ -13,13 +13,19 @@ import {
   Stop,
   LinearGradient,
   ClipPath,
-} from 'react-native-svg';
+  RadialGradient,
+} from "react-native-svg";
 
 const SvgIconArrowRightNew = (originalProps: IconType) => {
   const { ...props } = originalProps;
 
   return (
-    <Svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 18" {...props}>
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 10 18"
+      {...props}
+    >
       <Path
         stroke="url(#icon-arrow-right-new_svg__a)"
         strokeLinecap="round"
