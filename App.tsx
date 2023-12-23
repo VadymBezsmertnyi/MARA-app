@@ -14,6 +14,7 @@ import { MapProvider } from "./src/providers/MapProvider/MapProvider";
 import { WorkshopsProvider } from "./src/providers/workshops/workshops.provider";
 import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
 import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
+import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -48,17 +49,19 @@ function App() {
           <LocalesProvider i18n={i18n} language={language}>
             <ApiProvider>
               <UserProvider i18n={i18n}>
-                <NavigationContainer>
-                  <SafeAreaProvider>
-                    <WorkshopsProvider>
-                      <BiometricAuthenticatorProvider>
-                        <MapProvider>
-                          <Navigators />
-                        </MapProvider>
-                      </BiometricAuthenticatorProvider>
-                    </WorkshopsProvider>
-                  </SafeAreaProvider>
-                </NavigationContainer>
+                <EventsProvider>
+                  <NavigationContainer>
+                    <SafeAreaProvider>
+                      <WorkshopsProvider>
+                        <BiometricAuthenticatorProvider>
+                          <MapProvider>
+                            <Navigators />
+                          </MapProvider>
+                        </BiometricAuthenticatorProvider>
+                      </WorkshopsProvider>
+                    </SafeAreaProvider>
+                  </NavigationContainer>
+                </EventsProvider>
               </UserProvider>
             </ApiProvider>
           </LocalesProvider>

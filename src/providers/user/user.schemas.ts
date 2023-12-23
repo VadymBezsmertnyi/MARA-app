@@ -12,6 +12,7 @@ export const userDataS = z.object({
       url: z.string(),
     })
     .nullable(),
+  eventsIds: z.array(z.number()),
   // old
   phone_number: z.string(),
   is_password: z.boolean(),
