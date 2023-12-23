@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../../../styles/colors';
+import { StyleSheet } from "react-native";
+import colors from "../../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     paddingTop: 10,
   },
   scrollView: {
@@ -11,9 +11,9 @@ export const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   wrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
     gap: 16,
   },
   inner: {
@@ -21,17 +21,21 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: '700',
+    fontWeight: "700",
     color: colors.blackRich,
   },
   subtitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
     color: colors.blackCoffee,
     marginTop: 20,
   },
   multipleInput: {
     height: 110,
-    width: '100%',
+    width: "100%",
+  },
+  containerImages: {
+    marginBottom: 40,
+    gap: 12,
   },
 });

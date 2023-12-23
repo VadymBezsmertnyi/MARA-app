@@ -11,19 +11,21 @@ import { Input } from "../../../components/Input/Input";
 import { IconTabMap } from "../../../icons/components";
 import { DatePicker } from "./components/DatePicker/DatePicker";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+import { ImagesEvent } from "./components/ImagesEvent/ImagesEvent";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+import { userContext } from "../../../providers/user/user.provider";
+
+// helps
+import { combineDateAndTime } from "../../../helps/helps";
 
 // consts
 import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./AddEvent.styles";
-import colors from "../../../../styles/colors";
-import { userContext } from "../../../providers/user/user.provider";
-import { combineDateAndTime } from "../../../helps/helps";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
@@ -41,6 +43,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [finishTime, setFinishTime] = useState<Date>(new Date());
   const [price, setPrice] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
+  const [images, setImages] = useState<string[]>([]);
 
   const onChangeBeginDate = (
     _event: DateTimePickerEvent,
@@ -169,7 +172,10 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             onChange={setAboutEvent}
           />
         </View>
-        <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
+        <View style={styles.containerImages}>
+          <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
+          <ImagesEvent images={images} setImages={setImages} />
+        </View>
         <ButtonCustom title={i18n._("Confirm")} onSubmit={onSaveEvent} />
       </ScrollView>
     </View>
