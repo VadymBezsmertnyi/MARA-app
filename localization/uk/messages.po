@@ -22,6 +22,18 @@ msgid "Continue with {typeSocial}"
 msgstr "Продовжити з {typeSocial}"
 
 #. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Фото змінено"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Додано фото"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Вибачте, сталася помилка"
+
+#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Ви можете створити подію"
 
@@ -64,6 +76,10 @@ msgstr "Ціна за участь"
 #. js-lingui-explicit-id
 msgid "Briefly describe what will happen"
 msgstr "Коротко опишіть, що відбуватиметься"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event:"
+msgstr "Розкажіть нам про подію:"
 
 #. js-lingui-explicit-id
 msgid "Add a photo"
@@ -124,6 +140,9 @@ msgstr "Введіть назву майстерні або вид робіт"
 msgid "Access denied"
 msgstr "Доступ заборонено"
 
+msgid "Add photo +"
+msgstr "Додати фото +"
+
 msgid "All cities"
 msgstr "Усі міста"
 
@@ -154,14 +173,17 @@ msgstr "Назад"
 msgid "By clicking the \"Continue\" button, you agree to the"
 msgstr "Натискаючи кнопку \"Продовжити\", ви погоджуєтесь із"
 
-msgid "Code incorrect"
-msgstr "Код неправильний"
-
 msgid "Continue"
 msgstr "Продовжити"
 
 msgid "Create event"
 msgstr "Створити подію"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "Edit photo +"
+msgstr "Редагувати фото +"
 
 msgid "Enter the address"
 msgstr "Введіть адресу"
@@ -328,6 +350,9 @@ msgstr "Майстерні"
 msgid "You are already registered, please proceed with the authorization, or you can reset your password"
 msgstr "Ви вже зарестровані, пройдіть авторизацію або ви можете востановити пароль"
 
+msgid "You doesn't have events"
+msgstr ""
+
 msgid "You have been sent an SMS with a code."
 msgstr "Вам надіслано SMS!"
 
@@ -336,6 +361,9 @@ msgstr "Ви невірно ввели код підтвердження"
 
 msgid "You have entered the phone number incorrectly"
 msgstr "Ви невірно ввели номер телефону"
+
+msgid "You don't have events"
+msgstr "У вас немає подій"
 
 msgid "Your location:"
 msgstr "Ваше місцезнаходження:"

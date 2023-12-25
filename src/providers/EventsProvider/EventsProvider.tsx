@@ -23,6 +23,7 @@ import { eventSchema, resultEventsSchema } from "./EventsProvider.schemas";
 type EventsContext = {
   eventsList: EventsType;
   addEvent: (newEvent: EventType) => Promise<void>;
+  deleteEvent: (idEvent: number) => Promise<boolean>;
 };
 
 type EventsProviderType = {
@@ -36,12 +37,12 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
 }) => {
   const { userData } = useContext(userContext);
   const { api } = useContext(apiContext);
-  const [eventsList, setEventsLest] = useState<EventsType>([]);
+  const [eventsList, setEventsList] = useState<EventsType>([]);
   console.log("eventsList", eventsList);
 
   const getEvents = async () => {
     const result = await api(PATHS.eventsGet, null, resultEventsSchema);
-    if (result?.events) setEventsLest(result.events);
+    if (result?.events) setEventsList(result.events);
   };
 
   const addEvent = async (newEvent: EventType) => {
@@ -54,12 +55,28 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
         },
         z.object({ event: eventSchema })
       );
-      if (result?.event) setEventsLest((state) => [...state, result.event]);
+      if (result?.event) setEventsList((state) => [...state, result.event]);
+    }
+  };
+
+  const deleteEvent = async (idEvent: number): Promise<boolean> => {
+    try {
+      const result = await api(
+        PATHS.eventDelete,
+        { method: "DELETE", data: { id: idEvent } },
+        z.object({ result: z.boolean() })
+      );
+      if (result?.result)
+        setEventsList((state) => state.filter((event) => event.id !== idEvent));
+
+      return true;
+    } catch (error) {
+      return false;
     }
   };
 
   const contextValue: EventsContext = useMemo(
-    () => ({ eventsList, addEvent }),
+    () => ({ eventsList, addEvent, deleteEvent }),
     [eventsList]
   );
 

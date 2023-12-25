@@ -8,6 +8,7 @@ import * as ImagePicker from "expo-image-picker";
 // providers
 import { userContext } from "../../../providers/user/user.provider";
 import { localesContext } from "../../../../localization/localization.provider";
+import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 
 // components
 import { SelectPicker } from "../../../components/SelectPicker/SelectPicker";
@@ -31,7 +32,12 @@ import { styles } from "./Settings.styles";
 export const Settings: FunctionComponent = () => {
   const { userData, editUser } = useContext(userContext);
   const { i18n, language, setLanguage } = useContext(localesContext);
+  const { eventsList, deleteEvent } = useContext(eventsContext);
   const { warning } = showErrors;
+  const eventsListUser = useMemo(
+    () => eventsList.filter((event) => event.userId === userData?.id),
+    [eventsList, userData?.id]
+  );
 
   const imageSource = useMemo(
     () =>
@@ -78,6 +84,10 @@ export const Settings: FunctionComponent = () => {
     } else warning(i18n._("Sorry, an error occurred"));
   };
 
+  const onDeleteEvent = async (id: number) => {
+    await deleteEvent(id);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.containerAvatar}>
@@ -116,6 +126,37 @@ export const Settings: FunctionComponent = () => {
           value={userData?.isGeoLocation}
           onValueChange={toggleIsLocation}
         />
+      </View>
+      <View>
+        <Text>
+          <Trans>Your events:</Trans>
+        </Text>
+        <View style={styles.containerEvents}>
+          {eventsListUser.length ? (
+            eventsListUser.map((event) => (
+              <View
+                key={`event-user-${event.id}`}
+                style={styles.containerEvent}
+              >
+                <Text>{event.title}</Text>
+                <TouchableOpacity
+                  style={styles.buttonDeleteEvent}
+                  onPress={() => {
+                    onDeleteEvent(event.id);
+                  }}
+                >
+                  <Text style={styles.titleButtonDeleteEvent}>
+                    <Trans>Delete</Trans>
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            ))
+          ) : (
+            <Text>
+              <Trans>You doesn't have events</Trans>
+            </Text>
+          )}
+        </View>
       </View>
     </View>
   );
