@@ -47,11 +47,12 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
 
   const addEvent = async (newEvent: EventType) => {
     if (userData?.id) {
+      const data = { ...newEvent, userId: userData.id };
       const result = await api(
         PATHS.eventAdd,
         {
           method: "POST",
-          data: { ...newEvent, userId: userData.id },
+          data,
         },
         z.object({ event: eventSchema })
       );

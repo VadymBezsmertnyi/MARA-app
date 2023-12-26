@@ -77,6 +77,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     const finish = combineDateAndTime(finishDate, finishTime).getTime();
 
     if (userData?.id) {
+      const currentImages = images.map((image) => ({ id: "", url: "", image }));
       await addEvent({
         id: 0,
         userId: userData.id,
@@ -89,7 +90,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         price: Number(price),
         currency: "UAH",
         description: aboutEvent,
-        images: [], // TODO
+        images: currentImages,
       });
       navigation.navigate(PATHS_NEWS_SCREENS.eventsList);
     }
