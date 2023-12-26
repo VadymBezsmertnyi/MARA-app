@@ -2,7 +2,7 @@ import React, { useContext, useMemo } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { Messages, setupI18n } from "@lingui/core";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import "react-native-gesture-handler";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // providers
 import LocalesProvider from "./localization/localization.provider";
@@ -15,6 +15,7 @@ import { WorkshopsProvider } from "./src/providers/workshops/workshops.provider"
 import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
 import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
+import { ModalsSheetProvider } from "./src/providers/ModalsSheetProvider/ModalsSheetProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -28,6 +29,9 @@ import {
 // locales
 import { messages as translationsUk } from "./localization/uk/messages";
 import { messages as translationsEn } from "./localization/en/messages";
+
+// styles
+import { styles } from "./App.styles";
 
 const CATALOGS_LANGUAGES = {
   uk: translationsUk as Messages,
@@ -55,7 +59,13 @@ function App() {
                       <WorkshopsProvider>
                         <BiometricAuthenticatorProvider>
                           <MapProvider>
-                            <Navigators />
+                            <GestureHandlerRootView
+                              style={styles.gestureHandlerRootView}
+                            >
+                              <ModalsSheetProvider>
+                                <Navigators />
+                              </ModalsSheetProvider>
+                            </GestureHandlerRootView>
                           </MapProvider>
                         </BiometricAuthenticatorProvider>
                       </WorkshopsProvider>
