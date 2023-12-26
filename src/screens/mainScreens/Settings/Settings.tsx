@@ -28,6 +28,7 @@ import { IconProfileAvatar } from "../../../icons/components";
 
 // styles
 import { styles } from "./Settings.styles";
+import { compressAndProcessImages } from "../../../helps/helps";
 
 export const Settings: FunctionComponent = () => {
   const { userData, editUser } = useContext(userContext);
@@ -72,10 +73,11 @@ export const Settings: FunctionComponent = () => {
       const titleSuccess = userData?.avatar?.id
         ? i18n._("The photo has been changed")
         : i18n._("The photo added");
+      const compressImages = await compressAndProcessImages(result);
       const resultUpdate = await editUser({
         avatar: {
           ...userData?.avatar,
-          image: result.assets[0].base64 as string,
+          image: compressImages[0],
         },
       });
 

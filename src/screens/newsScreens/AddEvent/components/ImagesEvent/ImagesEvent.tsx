@@ -1,15 +1,6 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-
-// providers
-import { localesContext } from "../../../../../../localization/localization.provider";
 
 // components
 import {
@@ -17,10 +8,13 @@ import {
   IconArrowLeftEvent,
   IconArrowRightEvent,
 } from "../../../../../icons/components";
+import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
+
+// helps
+import { compressAndProcessImages } from "../../../../../helps/helps";
 
 // styles
 import { styles } from "./ImagesEvent.styles";
-import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
 
 type ImagesEventProps = {
   images: string[];
@@ -31,7 +25,6 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
   images,
   setImages,
 }) => {
-  const { i18n } = useContext(localesContext);
   const [showImages, setShowImages] = useState({
     start: 0,
     finish: 3,
@@ -44,21 +37,25 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
     () => showImages.finish < images.length && images.length > 3,
     [images, showImages]
   );
+  const styleButtonBack = useMemo(
+    () => ({ opacity: isBack ? 1 : 0.3 }),
+    [isBack]
+  );
+  const styleButtonNext = useMemo(
+    () => ({ opacity: isNext ? 1 : 0.3 }),
+    [isNext]
+  );
 
   const pickImage = async () => {
-    // TODO resize expo-image-manipulator
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       aspect: [4, 3],
       quality: 1,
-      base64: true,
       allowsMultipleSelection: true,
     });
 
     if (!result.canceled) {
-      const listImages = result.assets
-        .map((image) => image.base64 || "")
-        .filter((image) => image.length > 0);
+      const listImages = await compressAndProcessImages(result);
       setImages((state) => [...state, ...listImages]);
     }
   };
@@ -88,7 +85,7 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
       <TouchableOpacity
         disabled={!isBack}
         onPress={onBack}
-        style={{ opacity: isBack ? 1 : 0.3 }}
+        style={styleButtonBack}
       >
         <IconArrowLeftEvent width={44} height={44} />
       </TouchableOpacity>
@@ -111,7 +108,7 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
       <TouchableOpacity
         disabled={!isNext}
         onPress={onNext}
-        style={{ opacity: isNext ? 1 : 0.3 }}
+        style={styleButtonNext}
       >
         <IconArrowRightEvent width={44} height={44} />
       </TouchableOpacity>

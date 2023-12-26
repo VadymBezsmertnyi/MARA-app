@@ -1,3 +1,6 @@
+import { ImagePickerSuccessResult } from "expo-image-picker";
+import * as ImageManipulator from "expo-image-manipulator";
+
 export const searchTextInArray = <
   T extends Array<Record<string, string | number>>,
 >(
@@ -49,4 +52,26 @@ export const combineDateAndTime = (date: Date, time: Date): Date => {
   combinedDate.setMinutes(minutes);
 
   return combinedDate;
+};
+
+export const compressAndProcessImages = async (
+  result: ImagePickerSuccessResult
+): Promise<string[]> => {
+  const listImagesCompress = await Promise.all(
+    result.assets.map(async (image) =>
+      ImageManipulator.manipulateAsync(
+        image.uri,
+        [{ resize: { width: image.width / 2 } }],
+        {
+          compress: 0.7,
+          format: ImageManipulator.SaveFormat.JPEG,
+          base64: true,
+        }
+      )
+    )
+  );
+  const listImages = listImagesCompress
+    .map((image) => image.base64 || "")
+    .filter((image) => image.length > 0);
+  return listImages;
 };
