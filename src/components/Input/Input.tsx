@@ -1,14 +1,21 @@
-import React, { FunctionComponent, useMemo, useState } from 'react';
-import { KeyboardTypeOptions, Text, TextInput, View, ViewStyle } from 'react-native';
+import React, { FunctionComponent, useMemo, useState } from "react";
+import {
+  KeyboardTypeOptions,
+  Text,
+  TextInput,
+  View,
+  ViewStyle,
+} from "react-native";
 
 // styles
-import { styles } from './Input.styles';
-import colors from '../../../styles/colors';
+import { styles } from "./Input.styles";
+import colors from "../../../styles/colors";
 
 type InputProps = {
   placeholder: string;
-  value: string;
+  value?: string;
   label?: string;
+  defaultValue?: string;
   onChange: (k: string) => void;
   InputIcon?: React.ReactNode;
   customStyles?: ViewStyle;
@@ -19,10 +26,11 @@ export const Input: FunctionComponent<InputProps> = ({
   placeholder,
   value,
   label,
+  defaultValue,
   InputIcon,
   onChange,
   customStyles,
-  keyboardType = 'default',
+  keyboardType = "default",
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -36,13 +44,20 @@ export const Input: FunctionComponent<InputProps> = ({
 
   const inputWrapperStyles = useMemo(
     () => ({ ...styles.inputWrapper, borderColor }),
-    [borderColor],
+    [borderColor]
   );
-  const inputStyles = useMemo(() => ({ ...styles.input, ...customStyles }), [customStyles]);
-  const containerStyles = useMemo(
-    () => ({ ...styles.container, marginTop: label ? 20 : 0, flex: customStyles ? 1 : 0 }),
-    [label, customStyles],
+  const inputStyles = useMemo(
+    () => ({ ...styles.input, ...customStyles }),
+    [customStyles]
   );
+  const containerStyles = useMemo(() => {
+    const marginTop = label ? 20 : 0;
+    return {
+      ...styles.container,
+      marginTop,
+      flex: customStyles ? 1 : 0,
+    };
+  }, [label, customStyles]);
   return (
     <View style={containerStyles}>
       {label && <Text style={styles.label}>{label}</Text>}
@@ -50,6 +65,7 @@ export const Input: FunctionComponent<InputProps> = ({
         <TextInput
           style={inputStyles}
           placeholder={placeholder}
+          defaultValue={defaultValue}
           value={value}
           onChangeText={onChange}
           onFocus={onFocus}

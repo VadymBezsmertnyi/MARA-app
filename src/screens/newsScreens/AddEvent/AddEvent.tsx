@@ -6,22 +6,24 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 // types
 import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
 
+// providers
+import { localesContext } from "../../../../localization/localization.provider";
+import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+import { userContext } from "../../../providers/user/user.provider";
+import { modalsSheetContext } from "../../../providers/ModalsSheetProvider/ModalsSheetProvider";
+
 // components
 import { Input } from "../../../components/Input/Input";
 import { IconTabMap } from "../../../icons/components";
 import { DatePicker } from "./components/DatePicker/DatePicker";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImagesEvent } from "./components/ImagesEvent/ImagesEvent";
-
-// providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
-import { userContext } from "../../../providers/user/user.provider";
+import { InputButton } from "../../../components/InputButton/InputButton";
 
 // helps
 import { combineDateAndTime } from "../../../helps/helps";
 
-// consts
+// constants
 import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
@@ -35,6 +37,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const { i18n } = useContext(localesContext);
   const { addEvent } = useContext(eventsContext);
   const { userData } = useContext(userContext);
+  const { setModalType } = useContext(modalsSheetContext);
   const [eventName, setEventName] = useState("");
   const [placeName, setPlaceName] = useState("");
   const [beginDate, setBeginDate] = useState<Date>(new Date());
@@ -96,6 +99,14 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     }
   };
 
+  const onInputLocationModal = () => {
+    setModalType("input-location");
+  };
+
+  const onMapLocationModal = () => {
+    setModalType("map-location");
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
@@ -106,17 +117,21 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           value={eventName}
           onChange={setEventName}
         />
-        <Input
-          placeholder={i18n._("Enter the address")}
-          label={i18n._("The place of the event")}
-          value={placeName}
-          onChange={setPlaceName}
-          InputIcon={
-            <TouchableOpacity>
-              <IconTabMap width={41} height={32} />
-            </TouchableOpacity>
-          }
-        />
+        <View style={styles.containerLocation}>
+          <InputButton
+            placeholder={i18n._("Enter the address")}
+            label={i18n._("The place of the event")}
+            value={placeName}
+            customStyles={styles.buttonLocation}
+            onPress={onInputLocationModal}
+          />
+          <TouchableOpacity
+            style={styles.buttonMap}
+            onPress={onMapLocationModal}
+          >
+            <IconTabMap width={41} height={32} />
+          </TouchableOpacity>
+        </View>
         <Text style={styles.subtitle}>{i18n._("Date of the event")}</Text>
         <View style={styles.wrapper}>
           <View style={styles.inner}>

@@ -38,7 +38,6 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   const { userData } = useContext(userContext);
   const { api } = useContext(apiContext);
   const [eventsList, setEventsList] = useState<EventsType>([]);
-  console.log("eventsList", eventsList);
 
   const getEvents = async () => {
     const result = await api(PATHS.eventsGet, null, resultEventsSchema);

@@ -38,4 +38,11 @@ export const styles = StyleSheet.create({
     marginBottom: 40,
     gap: 12,
   },
+  containerLocation: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+  },
+  buttonLocation: { flex: 1 },
+  buttonMap: { paddingTop: 16, paddingLeft: 12, paddingBottom: 8 },
 });

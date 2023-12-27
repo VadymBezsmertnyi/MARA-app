@@ -4,9 +4,16 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
+import { TouchableOpacity, View, ViewStyle } from "react-native";
 import { BlurView } from "expo-blur";
 import BottomSheet from "@gorhom/bottom-sheet";
+
+// types
+import { ModalSheetType, ModalSheetTypes } from "./ModalsSheetProvider.types";
+
+// components
+import { InputLocationModal } from "./modals/InputLocationModal/InputLocationModal";
+import { MapLocationModal } from "./modals/MapLocationModal/MapLocationModal";
 
 // icons
 import { IconCloseGradient } from "../../icons/components";
@@ -14,13 +21,11 @@ import { IconCloseGradient } from "../../icons/components";
 // styles
 import { styles } from "./ModalsSheetProvider.styles";
 
-type ModalSheetType = {
-  isIndicator: boolean;
-  snapPoints: Array<string | number>;
-  isFooter?: JSX.Element;
+type ModalsSheetContext = {
+  modalSheet: ModalSheetType | null;
+  setModalSheet: React.Dispatch<React.SetStateAction<ModalSheetType | null>>;
+  setModalType: React.Dispatch<React.SetStateAction<ModalSheetTypes | null>>;
 };
-
-type ModalsSheetContext = {};
 
 type ModalsSheetProviderType = {
   children: JSX.Element;
@@ -32,6 +37,7 @@ export const ModalsSheetProvider: FunctionComponent<
   ModalsSheetProviderType
 > = ({ children }) => {
   const [modalSheet, setModalSheet] = useState<ModalSheetType | null>(null);
+  const [modalType, setModalType] = useState<ModalSheetTypes | null>(null);
 
   const snapPoints = useMemo(
     () => modalSheet?.snapPoints || ["90%"],
@@ -47,12 +53,12 @@ export const ModalsSheetProvider: FunctionComponent<
 
   const footerComponent = useCallback(
     () =>
-      modalSheet?.isFooter ? (
+      modalSheet?.footer ? (
         <BlurView intensity={40} tint="dark" style={styles.footerBlur}>
-          {modalSheet?.isFooter}
+          {modalSheet.footer}
         </BlurView>
       ) : null,
-    [modalSheet?.isFooter]
+    [modalSheet?.footer]
   );
 
   const handleComponent = () => (
@@ -61,6 +67,7 @@ export const ModalsSheetProvider: FunctionComponent<
         style={styles.buttonHeader}
         onPress={() => {
           setModalSheet(null);
+          setModalType(null);
         }}
       >
         <IconCloseGradient width={24} height={24} />
@@ -68,54 +75,68 @@ export const ModalsSheetProvider: FunctionComponent<
     </View>
   );
 
-  const contextValue: ModalsSheetContext = useMemo(() => ({}), []);
+  const showModal = useMemo(() => {
+    if (modalType === "input-location") return <InputLocationModal />;
+    if (modalType === "map-location") return <MapLocationModal />;
+    return null;
+  }, [modalType]);
+
+  const contextValue: ModalsSheetContext = useMemo(
+    () => ({ modalSheet, setModalSheet, setModalType }),
+    [modalSheet]
+  );
 
   return (
     <modalsSheetContext.Provider value={contextValue}>
       {children}
-      {modalSheet !== null ? (
+      {modalSheet !== null || showModal !== null ? (
         <TouchableOpacity
           style={styles.footerButton}
           onPress={() => {
             setModalSheet(null);
+            setModalType(null);
           }}
         >
           <BlurView intensity={15} style={styles.footerButtonBlurView} />
         </TouchableOpacity>
       ) : null}
-      <BottomSheet
-        handleComponent={handleComponent}
-        footerComponent={footerComponent}
-        onClose={() => {
-          setModalSheet(null);
-        }}
-        snapPoints={snapPoints}
-        //containerStyle={{ overflow: "hidden" }}
-        //backgroundStyle={{ overflow: "hidden" }}
-        //style={{ overflow: "hidden" }}
-        handleIndicatorStyle={handleIndicatorStyle}
-        //enablePanDownToClose
-        //enableContentPanningGesture
-      >
-        <View style={{ flex: 1, height: 200 }}>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-          <Text>TEST</Text>
-        </View>
-      </BottomSheet>
+      {modalSheet?.children ? (
+        <BottomSheet
+          handleComponent={handleComponent}
+          footerComponent={footerComponent}
+          onClose={() => {
+            setModalSheet(null);
+            setModalType(null);
+          }}
+          snapPoints={snapPoints}
+          //containerStyle={{ overflow: "hidden" }}
+          //backgroundStyle={{ overflow: "hidden" }}
+          //style={{ overflow: "hidden" }}
+          handleIndicatorStyle={handleIndicatorStyle}
+          //enablePanDownToClose
+          //enableContentPanningGesture
+        >
+          {modalSheet?.children}
+        </BottomSheet>
+      ) : null}
+      {showModal ? (
+        <BottomSheet
+          handleComponent={handleComponent}
+          footerComponent={footerComponent}
+          onClose={() => {
+            setModalSheet(null);
+          }}
+          snapPoints={snapPoints}
+          //containerStyle={{ overflow: "hidden" }}
+          //backgroundStyle={{ overflow: "hidden" }}
+          //style={{ overflow: "hidden" }}
+          handleIndicatorStyle={handleIndicatorStyle}
+          //enablePanDownToClose
+          //enableContentPanningGesture
+        >
+          {showModal}
+        </BottomSheet>
+      ) : null}
     </modalsSheetContext.Provider>
   );
 };
