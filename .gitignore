@@ -5,15 +5,11 @@ localization/**/messages.ts
 
 # dependencies
 node_modules/
-.env
-*.keystore
 
 # Expo
 .expo/
 dist/
 web-build/
-android/
-ios/
 
 # Native
 *.orig.*
@@ -36,6 +32,7 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
 
 # typescript
