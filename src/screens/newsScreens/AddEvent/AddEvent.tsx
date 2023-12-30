@@ -6,6 +6,9 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 // types
 import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
 
+// schemas
+import { locationSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
+
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
@@ -24,15 +27,14 @@ import { IconMapGradient } from "../../../icons/components";
 
 // helps
 import { combineDateAndTime } from "../../../helps/helps";
+import { getErrorText } from "./AddEvent.helps";
 
 // constants
 import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./AddEvent.styles";
-import { locationSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
 import colors from "../../../../styles/colors";
-import { getErrorText } from "./AddEvent.helps";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
@@ -55,7 +57,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     string,
     { name: string; title: string }
   > | null>(null);
-
   const start = useMemo(
     () => combineDateAndTime(beginDate, beginTime).getTime(),
     [beginDate, beginTime]

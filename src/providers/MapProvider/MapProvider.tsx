@@ -1,9 +1,15 @@
-import React, { FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
-import { userContext } from '../user/user.provider';
-import * as Location from 'expo-location';
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { userContext } from "../user/user.provider";
+import * as Location from "expo-location";
 
 // providers
-import { webSocketContext } from '../WebSocketProvider/WebSocketProvider';
+import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 
 type MapContext = {
   location: Location.LocationObjectCoords | null;
@@ -17,12 +23,16 @@ const INTERVAL_GET_LOCATION = 15000;
 
 export const mapContext = React.createContext({} as MapContext);
 
-export const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
+export const MapProvider: FunctionComponent<MapProviderProps> = ({
+  children,
+}) => {
   const { userData } = useContext(userContext);
   const { sendLocation } = useContext(webSocketContext);
   const [status, setStatus] = useState<Location.PermissionStatus | null>(null);
-  const [location, setLocation] = useState<Location.LocationObjectCoords | null>(null);
-  const [startGetGeolocation, setStartGetGeolocation] = useState<boolean>(false);
+  const [location, setLocation] =
+    useState<Location.LocationObjectCoords | null>(null);
+  const [startGetGeolocation, setStartGetGeolocation] =
+    useState<boolean>(false);
 
   const getStatusApp = async () => {
     const { status } = await Location.getForegroundPermissionsAsync();
@@ -33,7 +43,7 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) =
     const { status } = await Location.requestForegroundPermissionsAsync();
     setStatus(status);
 
-    if (status === 'granted') {
+    if (status === "granted") {
       const { coords } = await Location.getCurrentPositionAsync({});
       setLocation(coords);
     }
@@ -53,8 +63,9 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) =
   }, [userData?.isGeoLocation]);
 
   useEffect(() => {
-    if (!userData?.accessLocations && status === 'undetermined') checkPermission();
-    if (status === 'granted' && !startGetGeolocation) {
+    if (!userData?.accessLocations && status === "undetermined")
+      checkPermission();
+    if (status === "granted" && !startGetGeolocation) {
       const intervalId = setInterval(getLocation, INTERVAL_GET_LOCATION);
       setStartGetGeolocation(true);
       getLocation();
@@ -64,5 +75,7 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) =
     }
   }, [status]);
 
-  return <mapContext.Provider value={valueContext}>{children}</mapContext.Provider>;
+  return (
+    <mapContext.Provider value={valueContext}>{children}</mapContext.Provider>
+  );
 };

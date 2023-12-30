@@ -20,16 +20,19 @@ import { IconMapCustom } from "../../../../icons/components";
 // styles
 import { styles } from "./InputLocationModal.styles";
 import colors from "../../../../../styles/colors";
+import { ModalSheetTypes } from "../../ModalsSheetProvider.types";
 
 const EXPO_PUBLIC_API_KEY_GOOGLE_WEB = process.env
   .EXPO_PUBLIC_API_KEY_GOOGLE_WEB as string;
 
 type InputLocationModalProps = {
   setLocation: (location: GoogleLocationDetailResult) => void;
+  setModalType: React.Dispatch<React.SetStateAction<ModalSheetTypes | null>>;
 };
 
 export const InputLocationModal: FunctionComponent<InputLocationModalProps> = ({
   setLocation,
+  setModalType,
 }) => {
   const { i18n, language } = useContext(localesContext);
 
@@ -80,7 +83,9 @@ export const InputLocationModal: FunctionComponent<InputLocationModalProps> = ({
               <View style={styles.containerButton}>
                 <ButtonCustom
                   title={i18n._("Select on the map")}
-                  onSubmit={() => {}}
+                  onSubmit={() => {
+                    setModalType("map-location");
+                  }}
                   styleButton={styles.buttonSelectMap}
                 >
                   <>
