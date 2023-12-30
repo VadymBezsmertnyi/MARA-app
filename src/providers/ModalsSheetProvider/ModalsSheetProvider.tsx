@@ -93,6 +93,7 @@ export const ModalsSheetProvider: FunctionComponent<
             setLocation(newLocation);
             onClose();
           }}
+          setModalType={setModalType}
         />
       );
     if (modalType === "map-location")
