@@ -20,6 +20,7 @@ type InputProps = {
   InputIcon?: React.ReactNode;
   customStyles?: ViewStyle;
   keyboardType?: KeyboardTypeOptions;
+  errorMessage?: string;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -31,6 +32,7 @@ export const Input: FunctionComponent<InputProps> = ({
   onChange,
   customStyles,
   keyboardType = "default",
+  errorMessage,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -39,12 +41,15 @@ export const Input: FunctionComponent<InputProps> = ({
   };
 
   const onBlur = () => {
-    if (!value) setBorderColor(colors.platinumGray);
+    setBorderColor(colors.platinumGray);
   };
 
   const inputWrapperStyles = useMemo(
-    () => ({ ...styles.inputWrapper, borderColor }),
-    [borderColor]
+    () => ({
+      ...styles.inputWrapper,
+      borderColor: errorMessage ? colors.errorRed : borderColor,
+    }),
+    [borderColor, errorMessage]
   );
   const inputStyles = useMemo(
     () => ({ ...styles.input, ...customStyles }),
