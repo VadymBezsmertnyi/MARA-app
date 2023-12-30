@@ -180,7 +180,6 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   ): Promise<boolean> => {
     try {
       setLoading(true);
-      console.log(dataLogin);
       const result = await api(
         PATHS.login,
         { method: "POST", data: dataLogin },

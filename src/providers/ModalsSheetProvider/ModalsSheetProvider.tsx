@@ -27,6 +27,9 @@ type ModalsSheetContext = {
   location: GoogleLocationDetailResult | null;
   setModalSheet: React.Dispatch<React.SetStateAction<ModalSheetType | null>>;
   setModalType: React.Dispatch<React.SetStateAction<ModalSheetTypes | null>>;
+  setLocation: React.Dispatch<
+    React.SetStateAction<GoogleLocationDetailResult | null>
+  >;
 };
 
 type ModalsSheetProviderType = {
@@ -40,6 +43,7 @@ export const ModalsSheetProvider: FunctionComponent<
 > = ({ children }) => {
   const [modalSheet, setModalSheet] = useState<ModalSheetType | null>(null);
   const [modalType, setModalType] = useState<ModalSheetTypes | null>(null);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   // data
   const [location, setLocation] = useState<GoogleLocationDetailResult | null>(
     null
@@ -48,6 +52,7 @@ export const ModalsSheetProvider: FunctionComponent<
   const onClose = () => {
     setModalSheet(null);
     setModalType(null);
+    setIsOpenModal(false);
   };
 
   const snapPoints = useMemo(
@@ -90,12 +95,21 @@ export const ModalsSheetProvider: FunctionComponent<
           }}
         />
       );
-    if (modalType === "map-location") return <MapLocationModal />;
+    if (modalType === "map-location")
+      return (
+        <MapLocationModal
+          isOpenModal={isOpenModal}
+          setLocation={(newLocation) => {
+            setLocation(newLocation);
+            onClose();
+          }}
+        />
+      );
     return null;
-  }, [modalType]);
+  }, [modalType, isOpenModal]);
 
   const contextValue: ModalsSheetContext = useMemo(
-    () => ({ modalSheet, setModalSheet, setModalType, location }),
+    () => ({ modalSheet, setModalSheet, setModalType, location, setLocation }),
     [modalSheet, location]
   );
 
@@ -125,6 +139,9 @@ export const ModalsSheetProvider: FunctionComponent<
       ) : null}
       {showModal ? (
         <BottomSheet
+          onChange={() => {
+            setIsOpenModal(true);
+          }}
           handleComponent={handleComponent}
           footerComponent={footerComponent}
           onClose={onClose}
