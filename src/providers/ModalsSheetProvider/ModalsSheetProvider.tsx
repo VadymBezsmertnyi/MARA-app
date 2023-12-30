@@ -7,6 +7,7 @@ import React, {
 import { TouchableOpacity, View, ViewStyle } from "react-native";
 import { BlurView } from "expo-blur";
 import BottomSheet from "@gorhom/bottom-sheet";
+import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
 
 // types
 import { ModalSheetType, ModalSheetTypes } from "./ModalsSheetProvider.types";
@@ -23,6 +24,7 @@ import { styles } from "./ModalsSheetProvider.styles";
 
 type ModalsSheetContext = {
   modalSheet: ModalSheetType | null;
+  location: GoogleLocationDetailResult | null;
   setModalSheet: React.Dispatch<React.SetStateAction<ModalSheetType | null>>;
   setModalType: React.Dispatch<React.SetStateAction<ModalSheetTypes | null>>;
 };
@@ -38,6 +40,15 @@ export const ModalsSheetProvider: FunctionComponent<
 > = ({ children }) => {
   const [modalSheet, setModalSheet] = useState<ModalSheetType | null>(null);
   const [modalType, setModalType] = useState<ModalSheetTypes | null>(null);
+  // data
+  const [location, setLocation] = useState<GoogleLocationDetailResult | null>(
+    null
+  );
+
+  const onClose = () => {
+    setModalSheet(null);
+    setModalType(null);
+  };
 
   const snapPoints = useMemo(
     () => modalSheet?.snapPoints || ["90%"],
@@ -63,40 +74,37 @@ export const ModalsSheetProvider: FunctionComponent<
 
   const handleComponent = () => (
     <View style={styles.header}>
-      <TouchableOpacity
-        style={styles.buttonHeader}
-        onPress={() => {
-          setModalSheet(null);
-          setModalType(null);
-        }}
-      >
+      <TouchableOpacity style={styles.buttonHeader} onPress={onClose}>
         <IconCloseGradient width={24} height={24} />
       </TouchableOpacity>
     </View>
   );
 
   const showModal = useMemo(() => {
-    if (modalType === "input-location") return <InputLocationModal />;
+    if (modalType === "input-location")
+      return (
+        <InputLocationModal
+          location={location}
+          setLocation={(newLocation) => {
+            setLocation(newLocation);
+            onClose();
+          }}
+        />
+      );
     if (modalType === "map-location") return <MapLocationModal />;
     return null;
   }, [modalType]);
 
   const contextValue: ModalsSheetContext = useMemo(
-    () => ({ modalSheet, setModalSheet, setModalType }),
-    [modalSheet]
+    () => ({ modalSheet, setModalSheet, setModalType, location }),
+    [modalSheet, location]
   );
 
   return (
     <modalsSheetContext.Provider value={contextValue}>
       {children}
       {modalSheet !== null || showModal !== null ? (
-        <TouchableOpacity
-          style={styles.footerButton}
-          onPress={() => {
-            setModalSheet(null);
-            setModalType(null);
-          }}
-        >
+        <TouchableOpacity style={styles.footerButton} onPress={onClose}>
           <BlurView intensity={15} style={styles.footerButtonBlurView} />
         </TouchableOpacity>
       ) : null}
@@ -104,13 +112,10 @@ export const ModalsSheetProvider: FunctionComponent<
         <BottomSheet
           handleComponent={handleComponent}
           footerComponent={footerComponent}
-          onClose={() => {
-            setModalSheet(null);
-            setModalType(null);
-          }}
+          onClose={onClose}
           snapPoints={snapPoints}
           //containerStyle={{ overflow: "hidden" }}
-          //backgroundStyle={{ overflow: "hidden" }}
+          backgroundStyle={styles.backgroundModalStyle}
           //style={{ overflow: "hidden" }}
           handleIndicatorStyle={handleIndicatorStyle}
           //enablePanDownToClose
@@ -123,12 +128,10 @@ export const ModalsSheetProvider: FunctionComponent<
         <BottomSheet
           handleComponent={handleComponent}
           footerComponent={footerComponent}
-          onClose={() => {
-            setModalSheet(null);
-          }}
+          onClose={onClose}
           snapPoints={snapPoints}
           //containerStyle={{ overflow: "hidden" }}
-          //backgroundStyle={{ overflow: "hidden" }}
+          backgroundStyle={styles.backgroundModalStyle}
           //style={{ overflow: "hidden" }}
           handleIndicatorStyle={handleIndicatorStyle}
           //enablePanDownToClose
