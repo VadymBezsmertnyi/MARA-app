@@ -75,3 +75,19 @@ export const compressAndProcessImages = async (
     .filter((image) => image.length > 0);
   return listImages;
 };
+
+export const getStreetNumber = (fullTerms: Array<{ value: string }>) => {
+  const address = fullTerms
+    .filter(
+      (term, index) => index === 0 || (index === 1 && Number(term.value) >= 0)
+    )
+    .map((trim) => trim.value);
+  const isNumberHouse = address.length > 1;
+  const cityCountry = fullTerms
+    .filter(
+      (term, index) =>
+        (isNumberHouse ? index > 1 : index >= 1) && term.value.length > 0
+    )
+    .map((trim) => trim.value);
+  return { address: address.join(", "), cityCountry: cityCountry.join(", ") };
+};
