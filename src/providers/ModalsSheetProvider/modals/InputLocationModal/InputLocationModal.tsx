@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useContext } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { GoogleAutoComplete } from "react-native-google-autocomplete";
+import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
 import { Trans } from "@lingui/macro";
 
 // providers
@@ -19,18 +20,15 @@ import { IconMapCustom } from "../../../../icons/components";
 // styles
 import { styles } from "./InputLocationModal.styles";
 import colors from "../../../../../styles/colors";
-import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
 
 const EXPO_PUBLIC_API_KEY_GOOGLE_WEB = process.env
   .EXPO_PUBLIC_API_KEY_GOOGLE_WEB as string;
 
 type InputLocationModalProps = {
-  location: GoogleLocationDetailResult | null;
   setLocation: (location: GoogleLocationDetailResult) => void;
 };
 
 export const InputLocationModal: FunctionComponent<InputLocationModalProps> = ({
-  location,
   setLocation,
 }) => {
   const { i18n, language } = useContext(localesContext);

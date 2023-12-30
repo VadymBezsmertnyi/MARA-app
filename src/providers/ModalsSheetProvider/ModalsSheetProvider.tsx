@@ -84,7 +84,6 @@ export const ModalsSheetProvider: FunctionComponent<
     if (modalType === "input-location")
       return (
         <InputLocationModal
-          location={location}
           setLocation={(newLocation) => {
             setLocation(newLocation);
             onClose();
