@@ -22,6 +22,14 @@ msgid "Continue with {typeSocial}"
 msgstr "Продовжити з {typeSocial}"
 
 #. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Введіть адресу"
+
+#. js-lingui-explicit-id
+msgid "Select on the map"
+msgstr "Вибрати на карті"
+
+#. js-lingui-explicit-id
 msgid "The photo has been changed"
 msgstr "Фото змінено"
 
@@ -34,6 +42,42 @@ msgid "Sorry, an error occurred"
 msgstr "Вибачте, сталася помилка"
 
 #. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Назва події"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 5 and a maximum of 20 characters."
+msgstr "Текст повинен містити від 5 до 20 символів."
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Місце події"
+
+#. js-lingui-explicit-id
+msgid "The location of the event must be selected."
+msgstr "Потрібно вибрати місце події."
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Дата проведення"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "Дата закінчення повинна бути пізніше за дату початку."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Розкажіть нам про подію"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 20 and a maximum of 2000 characters."
+msgstr "Текст повинен містити від 20 до 2000 символів."
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Неправильно введені дані"
+
+#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Ви можете створити подію"
 
@@ -42,32 +86,16 @@ msgid "Enter the name of the event"
 msgstr "Введіть назву події"
 
 #. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Назва події"
-
-#. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Введіть адресу"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Місце події"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Дата проведення"
-
-#. js-lingui-explicit-id
 msgid "The beginning"
 msgstr "Початок"
 
 #. js-lingui-explicit-id
 msgid "Conclusion"
-msgstr "Завершення:"
+msgstr "Завершення"
 
 #. js-lingui-explicit-id
 msgid "100 uah"
-msgstr ""
+msgstr "100 грн"
 
 #. js-lingui-explicit-id
 msgid "Participation fee"
@@ -87,7 +115,7 @@ msgstr "Додати фото"
 
 #. js-lingui-explicit-id
 msgid "Finish"
-msgstr ""
+msgstr "Фініш"
 
 #. js-lingui-explicit-id
 msgid "Price for participation"
@@ -120,10 +148,6 @@ msgstr "Додати номер будинку"
 #. js-lingui-explicit-id
 msgid "Enter the house number"
 msgstr "Введіть номер будинку"
-
-#. js-lingui-explicit-id
-msgid "Select on the map"
-msgstr "Вибрати на карті"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -308,6 +332,9 @@ msgstr "Повторіть пароль"
 msgid "Resend the code"
 msgstr "Надіслати код повторно"
 
+msgid "Select on the map"
+msgstr "Обрати на карті"
+
 msgid "Settings"
 msgstr "Настройки"
 
@@ -351,7 +378,7 @@ msgid "You are already registered, please proceed with the authorization, or you
 msgstr "Ви вже зарестровані, пройдіть авторизацію або ви можете востановити пароль"
 
 msgid "You doesn't have events"
-msgstr ""
+msgstr "У вас немає подій"
 
 msgid "You have been sent an SMS with a code."
 msgstr "Вам надіслано SMS!"
@@ -362,8 +389,8 @@ msgstr "Ви невірно ввели код підтвердження"
 msgid "You have entered the phone number incorrectly"
 msgstr "Ви невірно ввели номер телефону"
 
-msgid "You don't have events"
-msgstr "У вас немає подій"
+msgid "Your events:"
+msgstr "Ваші події:"
 
 msgid "Your location:"
 msgstr "Ваше місцезнаходження:"

@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useContext, useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import { Alert, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
@@ -14,11 +14,13 @@ import { modalsSheetContext } from "../../../providers/ModalsSheetProvider/Modal
 
 // components
 import { Input } from "../../../components/Input/Input";
-import { IconTabMap } from "../../../icons/components";
 import { DatePicker } from "./components/DatePicker/DatePicker";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImagesEvent } from "./components/ImagesEvent/ImagesEvent";
 import { InputButton } from "../../../components/InputButton/InputButton";
+
+// icons
+import { IconMapGradient } from "../../../icons/components";
 
 // helps
 import { combineDateAndTime } from "../../../helps/helps";
@@ -28,6 +30,9 @@ import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./AddEvent.styles";
+import { locationSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
+import colors from "../../../../styles/colors";
+import { getErrorText } from "./AddEvent.helps";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
@@ -37,9 +42,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const { i18n } = useContext(localesContext);
   const { addEvent } = useContext(eventsContext);
   const { userData } = useContext(userContext);
-  const { setModalType } = useContext(modalsSheetContext);
+  const { setModalType, location } = useContext(modalsSheetContext);
   const [eventName, setEventName] = useState("");
-  const [placeName, setPlaceName] = useState("");
   const [beginDate, setBeginDate] = useState<Date>(new Date());
   const [beginTime, setBeginTime] = useState<Date>(new Date());
   const [finishDate, setFinishDate] = useState<Date>(new Date());
@@ -47,6 +51,49 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [price, setPrice] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
   const [images, setImages] = useState<string[]>([]);
+  const [errorMessage, setErrorMessage] = useState<Record<
+    string,
+    { name: string; title: string }
+  > | null>(null);
+
+  const start = useMemo(
+    () => combineDateAndTime(beginDate, beginTime).getTime(),
+    [beginDate, beginTime]
+  );
+  const finish = useMemo(
+    () => combineDateAndTime(finishDate, finishTime).getTime(),
+    [finishDate, finishTime]
+  );
+
+  const checkEnterData = () => {
+    const errorsObject = {
+      ...((eventName.length < 5 || eventName.length > 40) && {
+        eventName: getErrorText("eventName", i18n),
+      }),
+      ...(location === null && {
+        location: getErrorText("location", i18n),
+      }),
+      ...(start > finish && {
+        finish: getErrorText("finish", i18n),
+      }),
+      ...((aboutEvent.length < 20 || aboutEvent.length > 2000) && {
+        aboutEvent: getErrorText("aboutEvent", i18n),
+      }),
+    };
+    const isError = Object.keys(errorsObject).length > 0;
+    if (isError) {
+      const errorMessage = getErrorText("errorMessage", i18n);
+      const onlyErrors = Object.values(errorsObject).map(
+        (errorObject) => `${errorObject.name}: ${errorObject.title}`
+      );
+      Alert.alert(`${errorMessage.title}:\n\n${onlyErrors.join("\n\n")}`);
+      setErrorMessage({
+        ...errorsObject,
+        errorMessage,
+      });
+    } else setErrorMessage(null);
+    return isError;
+  };
 
   const onChangeBeginDate = (
     _event: DateTimePickerEvent,
@@ -76,16 +123,15 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   };
 
   const onSaveEvent = async () => {
-    const start = combineDateAndTime(beginDate, beginTime).getTime();
-    const finish = combineDateAndTime(finishDate, finishTime).getTime();
-
-    if (userData?.id) {
+    const isError = checkEnterData();
+    if (userData?.id && !isError) {
       const currentImages = images.map((image) => ({ id: "", url: "", image }));
+      const currentLocation = locationSchema.safeParse(location);
       await addEvent({
         id: 0,
         userId: userData.id,
         title: eventName,
-        location: null, // TODO
+        location: currentLocation.success ? currentLocation.data : null,
         date: {
           start,
           finish,
@@ -101,10 +147,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
 
   const onInputLocationModal = () => {
     setModalType("input-location");
+    setErrorMessage(null);
   };
 
   const onMapLocationModal = () => {
     setModalType("map-location");
+    setErrorMessage(null);
   };
 
   return (
@@ -113,23 +161,28 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         <Text style={styles.title}>{i18n._("You can create an event")}:</Text>
         <Input
           placeholder={i18n._("Enter the name of the event")}
-          label={i18n._("Name of the event")}
+          label={`${i18n._("Name of the event")}:*`}
           value={eventName}
-          onChange={setEventName}
+          onChange={(value) => {
+            setEventName(value);
+            setErrorMessage(null);
+          }}
+          errorMessage={errorMessage?.eventName?.title}
         />
         <View style={styles.containerLocation}>
           <InputButton
             placeholder={i18n._("Enter the address")}
-            label={i18n._("The place of the event")}
-            value={placeName}
+            label={`${i18n._("The place of the event")}:*`}
+            value={location?.formatted_address}
             customStyles={styles.buttonLocation}
             onPress={onInputLocationModal}
+            errorMessage={errorMessage?.location?.title}
           />
           <TouchableOpacity
             style={styles.buttonMap}
             onPress={onMapLocationModal}
           >
-            <IconTabMap width={41} height={32} />
+            <IconMapGradient width={41} height={32} />
           </TouchableOpacity>
         </View>
         <Text style={styles.subtitle}>{i18n._("Date of the event")}</Text>
@@ -137,15 +190,21 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           <View style={styles.inner}>
             <DatePicker
               value={beginDate}
-              label={`${i18n._("The beginning")}:`}
-              onChange={onChangeBeginDate}
+              label={`${i18n._("The beginning")}:*`}
+              onChange={(dataTime, data) => {
+                onChangeBeginDate(dataTime, data);
+                setErrorMessage(null);
+              }}
               mode="date"
             />
           </View>
           <View style={styles.inner}>
             <DatePicker
               value={beginTime}
-              onChange={onChangeBeginTime}
+              onChange={(dataTime, data) => {
+                onChangeBeginTime(dataTime, data);
+                setErrorMessage(null);
+              }}
               mode="time"
             />
           </View>
@@ -154,16 +213,24 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           <View style={styles.inner}>
             <DatePicker
               value={finishDate}
-              label={`${i18n._("Conclusion")}:`}
-              onChange={onChangeFinishDate}
+              label={`${i18n._("Conclusion")}:*`}
+              onChange={(dataTime, data) => {
+                onChangeFinishDate(dataTime, data);
+                setErrorMessage(null);
+              }}
               mode="date"
+              errorMessage={errorMessage?.finish?.title}
             />
           </View>
           <View style={styles.inner}>
             <DatePicker
               value={finishTime}
-              onChange={onChangeFinishTime}
+              onChange={(dataTime, data) => {
+                onChangeFinishTime(dataTime, data);
+                setErrorMessage(null);
+              }}
               mode="time"
+              errorMessage={errorMessage?.finish?.title}
             />
           </View>
         </View>
@@ -173,7 +240,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               placeholder={i18n._("100 uah")}
               label={`${i18n._("Participation fee")}:`}
               value={price}
-              onChange={setPrice}
+              onChange={(value) => {
+                if (!isNaN(Number(value))) {
+                  setPrice(value);
+                  setErrorMessage(null);
+                }
+              }}
               keyboardType="numeric"
             />
           </View>
@@ -182,16 +254,23 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         <View style={styles.wrapper}>
           <Input
             placeholder={i18n._("Briefly describe what will happen")}
-            label={i18n._("Tell us about the event:")}
+            label={`${i18n._("Tell us about the event:")}*`}
             value={aboutEvent}
             customStyles={styles.multipleInput}
-            onChange={setAboutEvent}
+            onChange={(value) => {
+              setErrorMessage(null);
+              setAboutEvent(value);
+            }}
+            errorMessage={errorMessage?.aboutEvent?.title}
           />
         </View>
         <View style={styles.containerImages}>
           <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
           <ImagesEvent images={images} setImages={setImages} />
         </View>
+        <Text style={{ textAlign: "center", color: colors.errorRed }}>
+          {errorMessage?.errorMessage.title || ""}
+        </Text>
         <ButtonCustom title={i18n._("Confirm")} onSubmit={onSaveEvent} />
       </ScrollView>
     </View>

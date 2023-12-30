@@ -12,6 +12,7 @@ type InputButtonProps = {
   InputIcon?: React.ReactNode;
   customStyles?: ViewStyle;
   onPress: () => void;
+  errorMessage?: string;
 };
 
 export const InputButton: FunctionComponent<InputButtonProps> = ({
@@ -21,6 +22,7 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
   InputIcon,
   customStyles,
   onPress,
+  errorMessage,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -33,8 +35,11 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
   };
 
   const inputWrapperStyles = useMemo(
-    () => ({ ...styles.inputWrapper, borderColor }),
-    [borderColor]
+    () => ({
+      ...styles.inputWrapper,
+      borderColor: errorMessage ? colors.errorRed : borderColor,
+    }),
+    [borderColor, errorMessage]
   );
   const inputStyles = useMemo(
     () => ({ ...styles.input, ...customStyles }),
@@ -63,7 +68,9 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
           onBlur={onBlur}
           onPress={onPress}
         >
-          <Text style={inputTitleStyles}>{value || placeholder}</Text>
+          <Text numberOfLines={1} style={inputTitleStyles}>
+            {value || placeholder}
+          </Text>
         </TouchableOpacity>
         {InputIcon}
       </View>

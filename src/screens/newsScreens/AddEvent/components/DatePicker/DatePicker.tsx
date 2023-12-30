@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useState } from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { Modal, Pressable, Text, TouchableOpacity, View } from "react-native";
 import DateTimePicker, {
   DateTimePickerEvent,
@@ -14,12 +14,14 @@ import { dateToNMY } from "../../../../../helps/helps";
 
 // styles
 import { styles } from "./DatePicker.styles";
+import colors from "../../../../../../styles/colors";
 
 type DatePickerProps = {
   value: Date;
   label?: string;
   onChange: (k: DateTimePickerEvent, d: Date | undefined) => void;
   mode: "date" | "time" | "datetime" | "countdown";
+  errorMessage?: string;
 };
 
 export const DatePicker: FunctionComponent<DatePickerProps> = ({
@@ -27,9 +29,18 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
   label,
   mode = "date",
   onChange,
+  errorMessage,
 }) => {
   const { i18n } = useContext(localesContext);
   const [isShowModal, setIsShowModal] = useState(false);
+
+  const inputWrapperStyles = useMemo(
+    () => ({
+      ...styles.wrapper,
+      ...(errorMessage && { borderColor: colors.errorRed }),
+    }),
+    [errorMessage]
+  );
 
   const parseDate =
     mode === "date" ? dateToNMY(value) : value.toLocaleTimeString("ua-UA");
@@ -42,7 +53,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
         style={styles.container}
       >
         {label && <Text style={styles.label}>{label}</Text>}
-        <View style={styles.wrapper}>
+        <View style={inputWrapperStyles}>
           <Text style={styles.input}>{parseDate}</Text>
         </View>
       </TouchableOpacity>

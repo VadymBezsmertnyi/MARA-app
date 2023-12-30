@@ -22,6 +22,14 @@ msgid "Continue with {typeSocial}"
 msgstr "Continue with {typeSocial}"
 
 #. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Enter the address"
+
+#. js-lingui-explicit-id
+msgid "Select on the map"
+msgstr "Select on the map"
+
+#. js-lingui-explicit-id
 msgid "The photo has been changed"
 msgstr "The photo has been changed"
 
@@ -34,28 +42,48 @@ msgid "Sorry, an error occurred"
 msgstr "Sorry, an error occurred"
 
 #. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "You can create an event"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Enter the name of the event"
-
-#. js-lingui-explicit-id
 msgid "Name of the event"
 msgstr "Name of the event"
 
 #. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Enter the address"
+msgid "The text must contain a minimum of 5 and a maximum of 20 characters."
+msgstr "The text must contain a minimum of 5 and a maximum of 20 characters."
 
 #. js-lingui-explicit-id
 msgid "The place of the event"
 msgstr "The place of the event"
 
 #. js-lingui-explicit-id
+msgid "The location of the event must be selected."
+msgstr "The location of the event must be selected."
+
+#. js-lingui-explicit-id
 msgid "Date of the event"
 msgstr "Date of the event"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "The end date must be greater than the start date."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Tell us about the event"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 20 and a maximum of 2000 characters."
+msgstr "The text must contain a minimum of 20 and a maximum of 2000 characters."
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Incorrectly entered data"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "You can create an event"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Enter the name of the event"
 
 #. js-lingui-explicit-id
 msgid "The beginning"
@@ -120,10 +148,6 @@ msgstr "Add a house number"
 #. js-lingui-explicit-id
 msgid "Enter the house number"
 msgstr "Enter the house number"
-
-#. js-lingui-explicit-id
-msgid "Select on the map"
-msgstr "Select on the map"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -307,6 +331,9 @@ msgstr "Repeat password"
 
 msgid "Resend the code"
 msgstr "Resend the code"
+
+msgid "Select on the map"
+msgstr "Select on the map"
 
 msgid "Settings"
 msgstr "Settings"

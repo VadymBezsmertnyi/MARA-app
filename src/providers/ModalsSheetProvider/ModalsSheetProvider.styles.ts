@@ -27,4 +27,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
   },
+  backgroundModalStyle: {
+    backgroundColor: "white", // Колір фону вашого компонента
+    elevation: 8, // Висота тіні
+    shadowOffset: { width: 0, height: -17.4 / 2 }, // Зсув тіні по горизонталі та вертикалі
+    shadowRadius: 17.4 / 2, // Радіус тіні
+    shadowOpacity: 0.15, // Прозорість тіні
+  },
 });
