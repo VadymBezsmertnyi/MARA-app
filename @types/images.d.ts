@@ -4,7 +4,11 @@ declare module "*.svg" {
   const content: React.FC<React.SVGProps<SVGSVGElement>>;
   export default content;
 }
-declare module "*.png";
+declare module "*.png" {
+  import { ImageSource } from "expo-image";
+  const content: ImageSource;
+  export default content;
+}
 declare module "*.jpeg" {
   import { ImageSource } from "expo-image";
   const content: ImageSource;
