@@ -1,56 +1,76 @@
-import React, { ReactElement, useContext, useMemo } from 'react';
-import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import React, { ReactElement, useContext, useMemo } from "react";
+import {
+  StyleProp,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/theme/theme.provider";
 
 // constants
-import colors from '../../../styles/colors';
-import { THEME_DARK } from '../../providers/theme/theme.const';
+import colors from "../../../styles/colors";
+import { THEME_DARK } from "../../providers/theme/theme.const";
 
 //styles
-import styles from './ButtonCustom.styles';
+import styles from "./ButtonCustom.styles";
 
 type Props = {
   title?: string;
   disabled?: boolean;
   onSubmit: () => void;
-  type?: 'full' | 'transparent';
+  type?: "full" | "transparent";
   styleButton?: StyleProp<ViewStyle>;
   styleContainer?: StyleProp<ViewStyle>;
   children?: ReactElement;
+  colorsGradientProps?: [string, string];
 };
 
 export const ButtonCustom = ({
   title,
   disabled = false,
   onSubmit,
-  type = 'full',
+  type = "full",
   styleButton,
   styleContainer,
   children,
+  colorsGradientProps,
 }: Props) => {
   const { theme } = useContext(themeContext);
-  const styleContainerState = useMemo(() => [styles.container, styleContainer], [styleContainer]);
+  const styleContainerState = useMemo(
+    () => [styles.container, styleContainer],
+    [styleContainer]
+  );
   const styleLinearGradient = useMemo(
     () => [styles.linearGradient, disabled && styles.disabled],
-    [disabled],
+    [disabled]
   );
   const stylePressable = useMemo(
     () => [
       styles.buttonSubmit,
       theme === THEME_DARK && styles.dark,
-      type === 'full' && styles.full,
+      type === "full" && styles.full,
       styleButton,
     ],
-    [styleButton, theme, type],
+    [styleButton, theme, type]
   );
   const styleText = useMemo(
-    () => [styles.buttonSubmitText, type !== 'full' ? styles.transparent : null],
-    [type],
+    () => [
+      styles.buttonSubmitText,
+      type !== "full" ? styles.transparent : null,
+    ],
+    [type]
   );
-  const colorsGradient = useMemo(() => [colors.californiaOrange, colors.blazeOrange], []);
+  const colorsGradient = useMemo(
+    () =>
+      colorsGradientProps
+        ? colorsGradientProps
+        : [colors.californiaOrange, colors.blazeOrange],
+    [colorsGradientProps]
+  );
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1], []);
@@ -64,7 +84,11 @@ export const ButtonCustom = ({
         locations={locationsGradient}
         style={styleLinearGradient}
       >
-        <TouchableOpacity disabled={disabled} onPress={onSubmit} style={stylePressable}>
+        <TouchableOpacity
+          disabled={disabled}
+          onPress={onSubmit}
+          style={stylePressable}
+        >
           {children ? children : <Text style={styleText}>{title}</Text>}
         </TouchableOpacity>
       </LinearGradient>
