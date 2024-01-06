@@ -18,6 +18,7 @@ export { default as IconLocationMarker } from "./IconLocationMarker";
 export { default as IconMapCustom } from "./IconMapCustom";
 export { default as IconMapGradient } from "./IconMapGradient";
 export { default as IconMotoService } from "./IconMotoService";
+export { default as IconPlusGradient } from "./IconPlusGradient";
 export { default as IconProfileAvatar } from "./IconProfileAvatar";
 export { default as IconRepair } from "./IconRepair";
 export { default as IconSearchInput } from "./IconSearchInput";
