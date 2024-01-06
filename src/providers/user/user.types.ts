@@ -16,7 +16,13 @@ export type Context = {
   editUser: (
     newInfoUser: Record<
       string,
-      string | number | boolean | Record<string, string | number | boolean>
+      | string
+      | number
+      | boolean
+      | Record<
+          string,
+          string | number | boolean | Record<string, string | number | boolean>
+        >
     >
   ) => Promise<boolean>;
   meUser: () => Promise<boolean>;

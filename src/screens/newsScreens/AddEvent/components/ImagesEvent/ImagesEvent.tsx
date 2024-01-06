@@ -1,6 +1,18 @@
-import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
+
+// types
+import { ImageType } from "../../../../../providers/ModalsProvider/ModalsProvider.types";
+
+// providers
+import { modalsContext } from "../../../../../providers/ModalsProvider/ModalsProvider";
 
 // components
 import {
@@ -17,14 +29,23 @@ import { compressAndProcessImages } from "../../../../../helps/helps";
 import { styles } from "./ImagesEvent.styles";
 
 type ImagesEventProps = {
-  images: string[];
-  setImages: React.Dispatch<React.SetStateAction<string[]>>;
+  images: ImageType[];
+  setImages: React.Dispatch<React.SetStateAction<ImageType[]>>;
 };
 
 export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
   images,
   setImages,
 }) => {
+  const {
+    setModalType,
+    image,
+    setImage,
+    isDelete,
+    onClose,
+    isMain,
+    setIsMain,
+  } = useContext(modalsContext);
   const [showImages, setShowImages] = useState({
     start: 0,
     finish: 3,
@@ -76,6 +97,39 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
       }));
   };
 
+  const selectImage = (image: ImageType, index: number) => {
+    setModalType("image");
+    setImage({ image, index });
+  };
+
+  const deleteImage = () => {
+    setImages((state) =>
+      state.filter((_oldImage, index) => index !== image?.index)
+    );
+    onClose();
+  };
+
+  const makeMainImage = () => {
+    const mainImage =
+      images.find((_oldImage, index) => image?.index === index) || null;
+
+    if (mainImage === null) onClose();
+    else {
+      const notMainList = images.filter(
+        (_oldImage, index) => index !== image?.index
+      );
+      const newListImages = [mainImage, ...notMainList];
+      setImages(newListImages);
+      setImage({ image: newListImages[0], index: 0 });
+      setIsMain(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isDelete) deleteImage();
+    if (isMain) makeMainImage();
+  }, [isDelete, isMain]);
+
   useEffect(() => {
     if (images.length >= 6) setShowImages({ start: 0, finish: 4 });
   }, [images.length]);
@@ -97,12 +151,18 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
         ) : null}
         {images
           .slice(showImages.start, showImages.finish)
-          .map((base64, index) => (
-            <ImageCache
+          .map((image, index) => (
+            <TouchableOpacity
               key={`image-event-${index + 1}`}
-              imageSrc={`data:image/jpeg;base64,${base64}`}
-              style={styles.image}
-            />
+              onPress={() => {
+                selectImage(image, index);
+              }}
+            >
+              <ImageCache
+                imageSrc={`data:image/jpeg;base64,${image.base64}`}
+                style={styles.image}
+              />
+            </TouchableOpacity>
           ))}
       </View>
       <TouchableOpacity

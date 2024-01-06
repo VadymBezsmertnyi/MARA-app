@@ -45,4 +45,5 @@ export const styles = StyleSheet.create({
   },
   buttonLocation: { flex: 1 },
   buttonMap: { paddingTop: 16, paddingLeft: 12, paddingBottom: 8 },
+  errorMessage: { textAlign: "center", color: colors.errorRed },
 });

@@ -16,6 +16,7 @@ import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketPr
 import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
 import { ModalsSheetProvider } from "./src/providers/ModalsSheetProvider/ModalsSheetProvider";
+import { ModalsProvider } from "./src/providers/ModalsProvider/ModalsProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -63,7 +64,9 @@ function App() {
                               style={styles.gestureHandlerRootView}
                             >
                               <ModalsSheetProvider>
-                                <Navigators />
+                                <ModalsProvider>
+                                  <Navigators />
+                                </ModalsProvider>
                               </ModalsSheetProvider>
                             </GestureHandlerRootView>
                           </MapProvider>

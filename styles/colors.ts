@@ -1,6 +1,7 @@
 const colors = {
   //white
   white: "#fff",
+  white70: "#ffffffb3",
   transparent: "#FFFFFF00",
   whiteTransparentFifteen: "#ffffff80",
   //black

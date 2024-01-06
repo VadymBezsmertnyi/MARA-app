@@ -54,6 +54,8 @@ export const eventSchema = z.object({
     z.object({
       id: z.string(),
       url: z.string(),
+      width: z.number(),
+      height: z.number(),
     })
   ),
 });

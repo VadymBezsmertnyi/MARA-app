@@ -1,6 +1,13 @@
 import { ImagePickerSuccessResult } from "expo-image-picker";
 import * as ImageManipulator from "expo-image-manipulator";
 
+// schemas
+import { imagesSchema } from "../providers/ModalsProvider/ModalsProvider.schemas";
+
+// type
+import { ImageType } from "../providers/ModalsProvider/ModalsProvider.types";
+import { Dimensions } from "react-native";
+
 export const searchTextInArray = <
   T extends Array<Record<string, string | number>>,
 >(
@@ -56,7 +63,7 @@ export const combineDateAndTime = (date: Date, time: Date): Date => {
 
 export const compressAndProcessImages = async (
   result: ImagePickerSuccessResult
-): Promise<string[]> => {
+): Promise<ImageType[]> => {
   const listImagesCompress = await Promise.all(
     result.assets.map(async (image) =>
       ImageManipulator.manipulateAsync(
@@ -70,10 +77,17 @@ export const compressAndProcessImages = async (
       )
     )
   );
+
   const listImages = listImagesCompress
-    .map((image) => image.base64 || "")
-    .filter((image) => image.length > 0);
-  return listImages;
+    .map(({ width, height, base64 }) => ({
+      width,
+      height,
+      base64,
+    }))
+    .filter((image) => image.base64 && image.base64.length > 0);
+  const isCurrentListImages = imagesSchema.safeParse(listImages);
+  if (isCurrentListImages.success) return isCurrentListImages.data;
+  return [];
 };
 
 export const getStreetNumber = (fullTerms: Array<{ value: string }>) => {
@@ -90,4 +104,17 @@ export const getStreetNumber = (fullTerms: Array<{ value: string }>) => {
     )
     .map((trim) => trim.value);
   return { address: address.join(", "), cityCountry: cityCountry.join(", ") };
+};
+
+export const getRightSizeImage = (
+  image: ImageType,
+  width?: number | null,
+  maxHeight?: number
+) => {
+  const widthWindow = width ? width : Dimensions.get("window").width;
+  const coefficientSize =
+    Number(((widthWindow * 100) / image.width).toFixed()) / 100;
+  const currentCoefficientSize =
+    maxHeight && maxHeight < coefficientSize ? maxHeight : coefficientSize;
+  return { width: widthWindow, height: image.height * currentCoefficientSize };
 };

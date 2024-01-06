@@ -17,8 +17,12 @@ type ModalsProviderType = {
 
 type ModalsContext = {
   setModalType: React.Dispatch<React.SetStateAction<"image" | null>>;
+  image: ImageModalType | null;
   setImage: React.Dispatch<React.SetStateAction<ImageModalType | null>>;
   isDelete: boolean;
+  onClose: () => void;
+  isMain: boolean;
+  setIsMain: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const modalsContext = React.createContext({} as ModalsContext);
@@ -29,20 +33,39 @@ export const ModalsProvider: FunctionComponent<ModalsProviderType> = ({
   const [modalType, setModalType] = useState<ModalTypes | null>(null);
   const [image, setImage] = useState<ImageModalType | null>(null);
   const [isDelete, setIsDelete] = useState(false);
-
-  const showModal = useMemo(() => {
-    if (modalType === "image") return <ImageModal image={image} />;
-    return null;
-  }, [modalType, image]);
+  const [isMain, setIsMain] = useState(false);
 
   const onClose = () => {
     setModalType(null);
     setImage(null);
+    setIsDelete(false);
+    setIsMain(false);
   };
 
+  const showModal = useMemo(() => {
+    if (modalType === "image")
+      return (
+        <ImageModal
+          imageInfo={image}
+          setIsDelete={setIsDelete}
+          onClose={onClose}
+          setIsMain={setIsMain}
+        />
+      );
+    return null;
+  }, [modalType, image]);
+
   const contextValue: ModalsContext = useMemo(
-    () => ({ setModalType, setImage, isDelete }),
-    []
+    () => ({
+      setModalType,
+      image,
+      setImage,
+      isDelete,
+      onClose,
+      isMain,
+      setIsMain,
+    }),
+    [isDelete, image, isMain]
   );
 
   return (

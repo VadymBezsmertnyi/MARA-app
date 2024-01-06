@@ -5,6 +5,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
 import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
+import { ImageType } from "../../../providers/ModalsProvider/ModalsProvider.types";
 
 // schemas
 import { locationSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
@@ -34,7 +35,6 @@ import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./AddEvent.styles";
-import colors from "../../../../styles/colors";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
@@ -52,7 +52,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [finishTime, setFinishTime] = useState<Date>(new Date());
   const [price, setPrice] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<ImageType[]>([]);
   const [errorMessage, setErrorMessage] = useState<Record<
     string,
     { name: string; title: string }
@@ -126,7 +126,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const onSaveEvent = async () => {
     const isError = checkEnterData();
     if (userData?.id && !isError) {
-      const currentImages = images.map((image) => ({ id: "", url: "", image }));
+      const currentImages = images.map((image) => ({
+        id: "",
+        url: "",
+        width: 0,
+        height: 0,
+        image,
+      }));
       const currentLocation = locationSchema.safeParse(location);
       await addEvent({
         id: 0,
@@ -269,7 +275,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
           <ImagesEvent images={images} setImages={setImages} />
         </View>
-        <Text style={{ textAlign: "center", color: colors.errorRed }}>
+        <Text style={styles.errorMessage}>
           {errorMessage?.errorMessage.title || ""}
         </Text>
         <ButtonCustom title={i18n._("Confirm")} onSubmit={onSaveEvent} />
