@@ -22,12 +22,28 @@ msgid "Continue with {typeSocial}"
 msgstr "Продовжити з {typeSocial}"
 
 #. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Фото {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Головне фото"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Зробити головним фото"
+
+#. js-lingui-explicit-id
 msgid "Enter the address"
 msgstr "Введіть адресу"
 
 #. js-lingui-explicit-id
 msgid "Select on the map"
 msgstr "Вибрати на карті"
+
+#. js-lingui-explicit-id
+msgid "Select"
+msgstr "Обрати"
 
 #. js-lingui-explicit-id
 msgid "The photo has been changed"
@@ -167,6 +183,9 @@ msgstr "Доступ заборонено"
 msgid "Add photo +"
 msgstr "Додати фото +"
 
+msgid "Add your address"
+msgstr "Додати вашу адресу"
+
 msgid "All cities"
 msgstr "Усі міста"
 
@@ -281,6 +300,9 @@ msgstr "Карта"
 msgid "Market"
 msgstr "Базар"
 
+msgid "Move and change location"
+msgstr "Перемістіть та змініть місцезнаходження"
+
 msgid "New"
 msgstr "Новина"
 
@@ -331,6 +353,9 @@ msgstr "Повторіть пароль"
 
 msgid "Resend the code"
 msgstr "Надіслати код повторно"
+
+msgid "Select a location on the map"
+msgstr "Виберіть місце на мапі"
 
 msgid "Select on the map"
 msgstr "Обрати на карті"

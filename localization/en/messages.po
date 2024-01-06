@@ -22,12 +22,28 @@ msgid "Continue with {typeSocial}"
 msgstr "Continue with {typeSocial}"
 
 #. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Photo {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Main photo"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Make the main photo"
+
+#. js-lingui-explicit-id
 msgid "Enter the address"
 msgstr "Enter the address"
 
 #. js-lingui-explicit-id
 msgid "Select on the map"
 msgstr "Select on the map"
+
+#. js-lingui-explicit-id
+msgid "Select"
+msgstr "Select"
 
 #. js-lingui-explicit-id
 msgid "The photo has been changed"
@@ -167,6 +183,9 @@ msgstr "Access denied"
 msgid "Add photo +"
 msgstr "Add photo +"
 
+msgid "Add your address"
+msgstr "Add your address"
+
 msgid "All cities"
 msgstr "All cities"
 
@@ -281,6 +300,9 @@ msgstr "Map"
 msgid "Market"
 msgstr "Market"
 
+msgid "Move and change location"
+msgstr "Move and change location"
+
 msgid "New"
 msgstr "New"
 
@@ -331,6 +353,9 @@ msgstr "Repeat password"
 
 msgid "Resend the code"
 msgstr "Resend the code"
+
+msgid "Select a location on the map"
+msgstr "Select a location on the map"
 
 msgid "Select on the map"
 msgstr "Select on the map"
