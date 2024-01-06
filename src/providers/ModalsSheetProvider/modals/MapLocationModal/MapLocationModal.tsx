@@ -2,15 +2,10 @@ import React, {
   FunctionComponent,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
-import {
-  Platform,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Platform, ScrollView, Text, View } from "react-native";
 import MapView, {
   LatLng,
   MapPressEvent,
@@ -20,7 +15,7 @@ import MapView, {
 import axios from "axios";
 import { Trans } from "@lingui/macro";
 import qs from "qs";
-import { convertDistance, getDistance } from "geolib";
+import { getDistance } from "geolib";
 
 // types
 import { NearbySearchGoogleType } from "./MapLocationModal.types";
@@ -33,13 +28,15 @@ import { mapContext } from "../../../MapProvider/MapProvider";
 
 // components
 import { ButtonCustom } from "../../../../components/ButtonCustom/ButtonCustom";
+import { AddressLocation } from "./components/AddressLocation/AddressLocation";
+import { NotAddressLocation } from "./components/NotAddressLocation/NotAddressLocation";
+import { Input } from "../../../../components/Input/Input";
 
-// icons
-import { IconLocationMarkerGradient } from "../../../../icons/components";
+// constants
+import { DEFAULT_MAP_PLACE } from "./MapLocationModal.constants";
 
 // styles
 import { styles } from "./MapLocationModal.styles";
-import colors from "../../../../../styles/colors";
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,
@@ -69,6 +66,18 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
   const [listAddress, setListAddress] = useState<NearbySearchGoogleType[]>([]);
   const [selectAddress, setSelectAddress] =
     useState<GoogleLocationDetailResult | null>(null);
+  const [isCustomAddress, setIsCustomAddress] = useState(false);
+  const [vicinity, setVicinity] = useState("");
+  const isNext = useMemo(() => {
+    if (selectAddress && !isCustomAddress) return true;
+    else if (isCustomAddress && vicinity.length > 5) return true;
+    return false;
+  }, [selectAddress, isCustomAddress, vicinity]);
+
+  const toggleCustomAddress = (value: boolean) => {
+    setIsCustomAddress(value);
+    setSelectAddress(null);
+  };
 
   const getDetailPlace = async (place_id: string) => {
     const queryParams = qs.stringify({
@@ -82,9 +91,8 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
       status: string;
     }>(apiUrlDetails);
 
-    if (result.data.status === "OK") {
-      setSelectAddress(result.data.result);
-    }
+    if (result.data.status === "OK") setSelectAddress(result.data.result);
+    setIsCustomAddress(false);
   };
 
   const getPlaces = async (event: MapPressEvent) => {
@@ -111,7 +119,15 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
   };
 
   const onPressSelect = () => {
-    if (selectAddress) setLocation(selectAddress);
+    const [firstAddress] = listAddress;
+    if (selectAddress && !isCustomAddress) setLocation(selectAddress);
+    else if (isCustomAddress && vicinity.length > 5)
+      setLocation({
+        ...DEFAULT_MAP_PLACE,
+        geometry: firstAddress.geometry,
+        name: firstAddress.name,
+        vicinity,
+      });
   };
 
   useEffect(() => {
@@ -128,24 +144,35 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
           <Trans>Move and change location</Trans>
         </Text>
       </View>
-      <MapView
-        onPress={getPlaces}
-        initialRegion={DEFAULT_LOCATION}
-        region={region}
-        onRegionChange={(event) => {
-          if (!isOpenModal) setRegion(event);
-        }}
-        provider={PROVIDER_GOOGLE}
-        style={styles.map}
-        mapType={Platform.OS === "ios" ? "terrain" : "standard"}
-        zoomControlEnabled
-        userInterfaceStyle={theme}
-        showsBuildings={false}
-        showsPointsOfInterest={false}
-        showsIndoorLevelPicker={false}
-      >
-        {marker ? <Marker coordinate={marker} /> : null}
-      </MapView>
+      <View style={styles.containerMap}>
+        <MapView
+          onPress={getPlaces}
+          initialRegion={DEFAULT_LOCATION}
+          region={region}
+          onRegionChange={(event) => {
+            if (!isOpenModal) setRegion(event);
+          }}
+          provider={PROVIDER_GOOGLE}
+          style={styles.map}
+          mapType={Platform.OS === "ios" ? "terrain" : "standard"}
+          zoomControlEnabled
+          userInterfaceStyle={theme}
+          showsBuildings={false}
+          showsPointsOfInterest={false}
+          showsIndoorLevelPicker={false}
+        >
+          {marker ? <Marker coordinate={marker} /> : null}
+        </MapView>
+        {isCustomAddress ? (
+          <View style={styles.containerInput}>
+            <Input
+              placeholder={i18n._("Enter the address")}
+              value={vicinity}
+              onChange={setVicinity}
+            />
+          </View>
+        ) : null}
+      </View>
       {listAddress.length ? (
         <View style={styles.containerFooter}>
           <ScrollView
@@ -158,41 +185,25 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
                 ? getDistance(location, address.geometry.location)
                 : null;
               const isSelect = address.place_id === selectAddress?.place_id;
-              const getStyle = () => [
-                styles.itemList,
-                isSelect && { borderColor: colors.chileanFireOrange },
-              ];
 
               return (
-                <TouchableOpacity
+                <AddressLocation
                   key={`address-${address.place_id}`}
-                  style={getStyle()}
-                  onPress={() => {
-                    getDetailPlace(address.place_id);
-                  }}
-                >
-                  <View style={styles.titlesItemList}>
-                    <Text numberOfLines={1} style={styles.titleItemList}>
-                      {address.vicinity}
-                    </Text>
-                    <Text numberOfLines={1} style={styles.subTitleItemList}>
-                      {address.name}
-                    </Text>
-                  </View>
-                  <View style={styles.containerLocationItemList}>
-                    <IconLocationMarkerGradient width={12} height={12} />
-                    {distance ? (
-                      <Text style={styles.titleLocationItemList}>
-                        {convertDistance(distance, "km").toFixed(2)} км
-                      </Text>
-                    ) : null}
-                  </View>
-                </TouchableOpacity>
+                  address={address}
+                  distance={distance}
+                  isSelect={isSelect}
+                  getDetailPlace={getDetailPlace}
+                />
               );
             })}
+            <NotAddressLocation
+              address={listAddress[0]}
+              isSelect={isCustomAddress}
+              onEnterPlace={toggleCustomAddress}
+            />
           </ScrollView>
           <ButtonCustom
-            disabled={!selectAddress}
+            disabled={!isNext}
             title={i18n._("Select")}
             onSubmit={onPressSelect}
           />

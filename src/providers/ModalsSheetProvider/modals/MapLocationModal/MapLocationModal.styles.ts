@@ -21,8 +21,17 @@ export const styles = StyleSheet.create({
     fontWeight: "400",
     textAlign: "center",
   },
+  containerMap: { flex: 1 },
   map: {
     flex: 1,
+  },
+  containerInput: {
+    backgroundColor: colors.white,
+    width: "100%",
+    top: 0,
+    position: "absolute",
+    paddingHorizontal: 16,
+    paddingBottom: 10,
   },
   containerFooter: {
     position: "absolute",
