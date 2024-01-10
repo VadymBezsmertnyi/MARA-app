@@ -23,7 +23,7 @@ const SvgIconTabMapSelect = (originalProps: IconType) => {
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 41 32"
+      viewBox="0 0 36 32"
       {...props}
     >
       <Path
