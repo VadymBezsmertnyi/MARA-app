@@ -1,6 +1,10 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../../../styles/colors';
-import { horizontalScale, scaleFont, verticalScale } from '../../../../styles/hooks';
+import { StyleSheet } from "react-native";
+import colors from "../../../../styles/colors";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../styles/hooks";
 
 const PADDING_HORIZONTAL = 16;
 const PADDING_TOP = 8;
@@ -21,18 +25,21 @@ export const styles = StyleSheet.create({
     gap: verticalScale(GAP_MAIN),
   },
   containerPart: { gap: verticalScale(GAP_MORE) },
-  titleType: { fontSize: scaleFont(FONT_SIZE_TITLE_TYPE), fontWeight: '700' },
+  titleType: {
+    fontFamily: "Montserrat_700Bold",
+    fontSize: scaleFont(FONT_SIZE_TITLE_TYPE),
+  },
   containerEvents: { gap: 8 },
   buttonMore: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     paddingVertical: verticalScale(PADDING_VERTICAL),
     gap: horizontalScale(GAP_MORE),
   },
   titleButtonMore: {
     color: colors.blueTufts,
     fontSize: scaleFont(FONT_SIZE_TITLE_MORE),
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });
