@@ -285,6 +285,9 @@ msgstr "Внутрішня помилка сервера"
 msgid "Language:"
 msgstr "Мова:"
 
+msgid "Latest news:"
+msgstr "Останні новини:"
+
 msgid "Location event"
 msgstr "Місцезнаходження події"
 
@@ -299,6 +302,12 @@ msgstr "Карта"
 
 msgid "Market"
 msgstr "Базар"
+
+msgid "More events"
+msgstr "Більше подій"
+
+msgid "More news"
+msgstr "Більше новин"
 
 msgid "Move and change location"
 msgstr "Перемістіть та змініть місцезнаходження"

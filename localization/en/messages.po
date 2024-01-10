@@ -285,6 +285,9 @@ msgstr "Internal Server Error"
 msgid "Language:"
 msgstr "Language:"
 
+msgid "Latest news:"
+msgstr "Latest news:"
+
 msgid "Location event"
 msgstr "Location event"
 
@@ -299,6 +302,12 @@ msgstr "Map"
 
 msgid "Market"
 msgstr "Market"
+
+msgid "More events"
+msgstr "More events"
+
+msgid "More news"
+msgstr "More news"
 
 msgid "Move and change location"
 msgstr "Move and change location"

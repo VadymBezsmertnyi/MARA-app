@@ -1,35 +1,37 @@
-import React, { FunctionComponent, useContext, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { Trans } from '@lingui/macro';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, { FunctionComponent, useContext, useState } from "react";
+import { ScrollView, Text, View } from "react-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { Trans } from "@lingui/macro";
 
 // constants
-import { LIST_CITY } from '../DELETE_InputSelectCity.constants';
-import { DEFAULT_LIST_EVENT } from '../DELETE_newsScreens.constants';
-import { PATHS_NEWS_SCREENS } from '../../../navigators/useNavigator.constants';
+import { LIST_CITY } from "../DELETE_InputSelectCity.constants";
+import { DEFAULT_LIST_EVENT } from "../DELETE_newsScreens.constants";
+import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // components
-import { Input } from '../../../components/Input/Input';
-import { InputSelectCity } from '../../../components/InputSelectCity/InputSelectCity';
-import { ItemListEvents } from '../NewsMain/components/ItemListEvents/ItemListEvents';
-import { IconSearchInput } from '../../../icons/components';
-import { AddEventButton } from '../../../components/AddEventButton/AddEventButton';
+import { Input } from "../../../components/Input/Input";
+import { InputSelectCity } from "../../../components/InputSelectCity/InputSelectCity";
+import { ItemListEvents } from "../NewsMain/components/ItemListEvents/ItemListEvents";
+import { IconSearchInput } from "../../../icons/components";
+import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
 
 // types
-import { RootNewsScreensParamList } from '../../../navigators/Navigators.types';
+import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
 
-import { localesContext } from '../../../../localization/localization.provider';
+import { localesContext } from "../../../../localization/localization.provider";
 
 // styles
-import { styles } from './EventsList.styles';
+import { styles } from "./EventsList.styles";
 
 type ItemListEventsProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
 };
 
-export const EventsList: FunctionComponent<ItemListEventsProps> = ({ navigation }) => {
+export const EventsList: FunctionComponent<ItemListEventsProps> = ({
+  navigation,
+}) => {
   const { i18n } = useContext(localesContext);
-  const [valueSearch, setValueSearch] = useState('');
+  const [valueSearch, setValueSearch] = useState("");
 
   const onSelectCity = () => {};
 
@@ -41,13 +43,17 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({ navigation 
       <Input
         value={valueSearch}
         onChange={setValueSearch}
-        placeholder={i18n._('Enter the text to search')}
+        placeholder={i18n._("Enter the text to search")}
         InputIcon={<IconSearchInput width={26} height={26} />}
       />
       <InputSelectCity data={LIST_CITY} onSelect={onSelectCity} />
       <ScrollView contentContainerStyle={styles.containerList}>
-        {DEFAULT_LIST_EVENT.map(eventItem => (
-          <ItemListEvents key={`event-${eventItem.id}`} item={eventItem} navigation={navigation} />
+        {DEFAULT_LIST_EVENT.map((eventItem) => (
+          <ItemListEvents
+            key={`event-${eventItem.id}`}
+            item={eventItem}
+            navigation={navigation}
+          />
         ))}
       </ScrollView>
       <AddEventButton

@@ -1,24 +1,27 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { I18nProvider } from '@lingui/react';
+import React, { useState, useEffect, useMemo } from "react";
+import { I18nProvider } from "@lingui/react";
 
 // types
-import { Language, LocalesContext, Props } from './localization.types';
+import { Language, LocalesContext, Props } from "./localization.types";
 
 // helps
-import { dynamicActivateLanguage, getDeviceLanguage } from './localization.helpers';
-import { setDeviceStorage } from '../src/helps/storage.help';
-import showErrors from '../src/helps/errors/showError';
+import {
+  dynamicActivateLanguage,
+  getDeviceLanguage,
+} from "./localization.helpers";
+import { setDeviceStorage } from "../src/helps/storage.help";
+import showErrors from "../src/helps/errors/showError";
 
 // constants
-import { defaultLanguage, languageKey } from './localization.const';
-import { languagesKeys } from './localization.const';
+import { defaultLanguage, languageKey } from "./localization.const";
+import { languagesKeys } from "./localization.const";
 
 export const localesContext = React.createContext({} as LocalesContext);
 
 const LocalesProvider: React.FC<Props> = ({ i18n, children }) => {
   const defaultLanguageState = useMemo(
     () => i18n?.locale || languagesKeys[1] || defaultLanguage,
-    [i18n?.locale],
+    [i18n?.locale]
   ) as Language;
   const [language, setLanguage] = useState<Language>(defaultLanguageState);
   const { bug } = showErrors;
@@ -32,10 +35,6 @@ const LocalesProvider: React.FC<Props> = ({ i18n, children }) => {
       bug(error);
     }
   };
-
-  useEffect(() => {
-    getLanguageStorage();
-  }, []);
 
   const setLanguageAsync = async (language: Language): Promise<void> => {
     try {
@@ -54,8 +53,12 @@ const LocalesProvider: React.FC<Props> = ({ i18n, children }) => {
       getLanguageStorage,
       setLanguage: setLanguageAsync,
     }),
-    [i18n, language],
+    [i18n, language]
   );
+
+  useEffect(() => {
+    getLanguageStorage();
+  }, []);
 
   return (
     <localesContext.Provider value={contextValue}>
