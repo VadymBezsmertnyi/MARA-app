@@ -14,7 +14,6 @@ import type { Props, Context, UserDataT } from "./user.types";
 import { KeysAuthorizationT } from "../../screens/Authorization/Authorization.types";
 
 // schemas
-import { shortResponseS } from "../source.schemas";
 import { resultUserDataS } from "./user.schemas";
 
 // providers
@@ -83,7 +82,13 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const editUser = async (
     newInfoUser: Record<
       string,
-      string | number | boolean | Record<string, string | number | boolean>
+      | string
+      | number
+      | boolean
+      | Record<
+          string,
+          string | number | boolean | Record<string, string | number | boolean>
+        >
     >
   ): Promise<boolean> => {
     if (userData)

@@ -346,7 +346,7 @@ msgid "Privacy Policy is a legal statement that defines what a business owner do
 msgstr "Політика конфіденційності — це юридична заява, яка визначає, що власник бізнесу робить із особистими даними, зібраними від користувачів, а також те, як ці дані обробляються та для яких цілей."
 
 msgid "Registration"
-msgstr "Регістрація"
+msgstr "Реєстрація"
 
 msgid "Repeat password"
 msgstr "Повторіть пароль"

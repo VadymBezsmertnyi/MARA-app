@@ -24,6 +24,8 @@ export const styles = StyleSheet.create({
   containerMap: { flex: 1 },
   map: {
     flex: 1,
+    minWidth: 10,
+    minHeight: 10,
   },
   containerInput: {
     backgroundColor: colors.white,

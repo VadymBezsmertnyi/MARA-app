@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Platform, ScrollView, Text, View } from "react-native";
+import { Platform, Text, View } from "react-native";
 import MapView, {
   LatLng,
   MapPressEvent,
@@ -16,6 +16,7 @@ import axios from "axios";
 import { Trans } from "@lingui/macro";
 import qs from "qs";
 import { getDistance } from "geolib";
+import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
 // types
 import { NearbySearchGoogleType } from "./MapLocationModal.types";
@@ -175,7 +176,7 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
       </View>
       {listAddress.length ? (
         <View style={styles.containerFooter}>
-          <ScrollView
+          <BottomSheetScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
             style={styles.containerList}
@@ -201,7 +202,7 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
               isSelect={isCustomAddress}
               onEnterPlace={toggleCustomAddress}
             />
-          </ScrollView>
+          </BottomSheetScrollView>
           <ButtonCustom
             disabled={!isNext}
             title={i18n._("Select")}
