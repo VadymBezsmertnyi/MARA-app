@@ -29,7 +29,7 @@ import {
 import LocalesProvider from "./localization/localization.provider";
 import { ThemeProvider } from "./src/providers/theme/theme.provider";
 import { BiometricAuthenticatorProvider } from "./src/providers/biometricAuthenticator/biometricAuthenticator.provider";
-import { LoadingProvider } from "./src/providers/loading/loading.provider";
+import { LoadingProvider } from "./src/providers/LoadingProvider/LoadingProvider";
 import { UserProvider, userContext } from "./src/providers/user/user.provider";
 import { MapProvider } from "./src/providers/MapProvider/MapProvider";
 import { WorkshopsProvider } from "./src/providers/workshops/workshops.provider";
@@ -81,7 +81,6 @@ function App() {
     Montserrat_800ExtraBold_Italic,
     Montserrat_900Black_Italic,
   });
-  console.log("fontsLoaded", fontsLoaded);
 
   const { userData } = useContext(userContext);
   const language = userData?.locale || defaultLanguage;
@@ -93,7 +92,7 @@ function App() {
   return (
     <WebSocketProvider>
       <ThemeProvider>
-        <LoadingProvider>
+        <LoadingProvider isLoadingProps={fontsLoaded}>
           <LocalesProvider i18n={i18n} language={language}>
             <ApiProvider>
               <UserProvider i18n={i18n}>

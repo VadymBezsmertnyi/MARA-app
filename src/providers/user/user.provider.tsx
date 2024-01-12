@@ -17,7 +17,7 @@ import { KeysAuthorizationT } from "../../screens/Authorization/Authorization.ty
 import { resultUserDataS } from "./user.schemas";
 
 // providers
-import { loadingContext } from "../loading/loading.provider";
+import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 

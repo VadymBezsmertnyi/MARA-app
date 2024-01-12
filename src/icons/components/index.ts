@@ -13,6 +13,8 @@ export { default as IconClose } from "./IconClose";
 export { default as IconFaceIdGradient } from "./IconFaceIdGradient";
 export { default as IconFaceId } from "./IconFaceId";
 export { default as IconFilter } from "./IconFilter";
+export { default as IconLoaderIn } from "./IconLoaderIn";
+export { default as IconLoaderOut } from "./IconLoaderOut";
 export { default as IconLocationMarkerGradient } from "./IconLocationMarkerGradient";
 export { default as IconLocationMarker } from "./IconLocationMarker";
 export { default as IconMapCustom } from "./IconMapCustom";

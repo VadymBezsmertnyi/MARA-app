@@ -1,14 +1,23 @@
-import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { Platform } from 'react-native';
-import * as LocalAuthentication from 'expo-local-authentication';
-import { t } from '@lingui/macro';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { Platform } from "react-native";
+import * as LocalAuthentication from "expo-local-authentication";
+import { t } from "@lingui/macro";
 
 // types
-import { BiometricAuthenticatorContextT, PropsT } from './biometricAuthenticator.types';
+import {
+  BiometricAuthenticatorContextT,
+  PropsT,
+} from "./biometricAuthenticator.types";
 
 // providers
-import { loadingContext } from '../loading/loading.provider';
-import { localesContext } from '../../../localization/localization.provider';
+import { loadingContext } from "../LoadingProvider/LoadingProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // magic numbers
 const TOUCH_TYPE = 1;
@@ -16,32 +25,42 @@ const FACE_TYPE = 2;
 const IRIS_TYPE = 3;
 
 export const biometricAuthenticatorContext = React.createContext(
-  {} as BiometricAuthenticatorContextT,
+  {} as BiometricAuthenticatorContextT
 );
 
-export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({ children }) => {
+export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({
+  children,
+}) => {
   const { i18n } = useContext(localesContext);
   const { setLoading } = useContext(loadingContext);
   // SecurityLevel = 0-NONE, 1-SECRET, 2-BIOMETRIC
   const [securityLevel, setSecurityLevel] = useState<number | null>(null);
   // AuthenticationType = 1-FINGERPRINT, 2-FACIAL_RECOGNITION, 3-IRIS(Android)
-  const [authenticationType, setAuthenticationType] = useState<number[] | null>(null);
+  const [authenticationType, setAuthenticationType] = useState<number[] | null>(
+    null
+  );
   const isGlobalDisable = false;
 
   const isFaceId = useMemo(
-    () => (authenticationType ? authenticationType.includes(FACE_TYPE) && isGlobalDisable : false),
-    [authenticationType],
+    () =>
+      authenticationType
+        ? authenticationType.includes(FACE_TYPE) && isGlobalDisable
+        : false,
+    [authenticationType]
   );
   const isTouchId = useMemo(
-    () => (authenticationType ? authenticationType.includes(TOUCH_TYPE) && isGlobalDisable : false),
-    [authenticationType],
+    () =>
+      authenticationType
+        ? authenticationType.includes(TOUCH_TYPE) && isGlobalDisable
+        : false,
+    [authenticationType]
   );
   const isIrisId = useMemo(
     () =>
-      authenticationType && Platform.OS === 'android'
+      authenticationType && Platform.OS === "android"
         ? authenticationType.includes(IRIS_TYPE) && isGlobalDisable
         : false,
-    [authenticationType],
+    [authenticationType]
   );
 
   const getBiometricTypes = useCallback(async (): Promise<void> => {
@@ -52,11 +71,12 @@ export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({ children }) =
         setSecurityLevel(enrolledLevel);
       }
       if (authenticationType === null) {
-        const authenticationTypes = await LocalAuthentication.supportedAuthenticationTypesAsync();
+        const authenticationTypes =
+          await LocalAuthentication.supportedAuthenticationTypesAsync();
         setAuthenticationType(authenticationTypes);
       }
     } catch (error) {
-      console.log('error', error);
+      console.log("error", error);
     } finally {
       setLoading(false);
     }
@@ -80,7 +100,7 @@ export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({ children }) =
 
   const contextValue: BiometricAuthenticatorContextT = useMemo(
     () => ({ isFaceId, isTouchId, isIrisId, checkBiometric }),
-    [isFaceId, isTouchId, isIrisId],
+    [isFaceId, isTouchId, isIrisId]
   );
 
   return (
