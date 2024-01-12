@@ -1,105 +1,80 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
-import { ImageBackground, ImageSourcePropType, Text, View } from 'react-native';
-import { ParamListBase, useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Trans, t } from '@lingui/macro';
-import { LinearGradient } from 'expo-linear-gradient';
-
-// components
-import { ButtonCustom } from '../../components/ButtonCustom/ButtonCustom';
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { ImageBackground } from "expo-image";
+import { BlurView } from "expo-blur";
+import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../localization/localization.provider';
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/theme/theme.provider";
+import { localesContext } from "../../../localization/localization.provider";
 
-// constants
-import colors from '../../../styles/colors';
-import { THEME_DARK, THEME_LIGHT } from '../../providers/theme/theme.const';
+// components
+import { Logo } from "../../components/Logo/Logo";
+import { ImageCache } from "../../components/ImageCache/ImageCache";
+import { Socials } from "../../components/Socials/Socials";
 
 // images
-import { backgroundWelcomeFirst } from '../../../images';
-
-// constants
-import { PATHS_MAIN_SCREENS } from '../../navigators/useNavigator.constants';
+import imageSplash from "../../../assets/splash.png";
+import imageCountryUk from "../../../images/icon-country-uk.png";
+import imageCountryUs from "../../../images/icon-country-us.png";
 
 // styles
-import { styles } from './Welcome.styles';
+import { styles } from "./Welcome.styles";
 
 export const Welcome: FunctionComponent = () => {
-  const { i18n } = useContext(localesContext);
-  const { theme } = useContext(themeContext);
-  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
-  const colorsLinearGradient = useMemo(
-    () => [
-      colors.white,
-      colors.whiteTransparentFifteen,
-      colors.whiteTransparentFifteen,
-      colors.white,
-    ],
-    [],
+  const { language, setLanguage } = useContext(localesContext);
+  const { setIsSplash } = useContext(themeContext);
+  const iconLanguage = useMemo(
+    () => (language === "en" ? imageCountryUs : imageCountryUk),
+    [language]
   );
-  const colorsLinearGradientDark = useMemo(
-    () => [
-      colors.blackRangoonGreen,
-      colors.blackRich07,
-      colors.blackRich07,
-      colors.blackRangoonGreen,
-    ],
-    [],
+  const showLanguage = useMemo(
+    () => (language === "uk" ? "ua" : language),
+    [language]
   );
-  const locationsLinearGradient = useMemo(() => [0.002, 0.5, 0.3, 0.8], []);
-  const locationsLinearGradientDark = useMemo(() => [0, 0.3, 0.5, 0.9], []);
-  const styleTitleMain = useMemo(
-    () => [styles.titleMain, theme === THEME_DARK ? styles.titlesDark : null],
-    [theme],
-  );
-  const styleTitleSub = useMemo(
-    () => [styles.titleSub, theme === THEME_DARK ? styles.titlesDark : null],
-    [theme],
-  );
-  const onAuthorization = () => {
-    navigation.navigate(PATHS_MAIN_SCREENS.authorization);
-  };
-  const onRegistration = () => {
-    navigation.navigate(PATHS_MAIN_SCREENS.registration);
+
+  useEffect(() => {
+    setIsSplash(true);
+  }, []);
+
+  const onChangeLanguage = () => {
+    if (language === "uk") setLanguage("en");
+    else setLanguage("uk");
   };
 
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        style={styles.logoContainer}
-        source={backgroundWelcomeFirst as ImageSourcePropType}
-      >
-        <LinearGradient
-          colors={theme === THEME_LIGHT ? colorsLinearGradient : colorsLinearGradientDark}
-          locations={theme === THEME_LIGHT ? locationsLinearGradient : locationsLinearGradientDark}
-          style={styles.overlay}
-        />
-        <View style={styles.logo}>
-          <Text style={styles.logoText}>Logo</Text>
+    <ImageBackground style={styles.container} source={imageSplash}>
+      <BlurView intensity={8} style={styles.containerBlur}>
+        <View style={styles.containerLanguage}>
+          <TouchableOpacity
+            onPress={onChangeLanguage}
+            style={styles.buttonLanguage}
+          >
+            <ImageCache imageSrc={iconLanguage} style={styles.iconLanguage} />
+            <Text style={styles.titleLanguage}>{showLanguage}</Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.titles}>
-          <Text style={styleTitleMain}>
+        <View style={styles.containerLogo}>
+          <Logo />
+        </View>
+        <View style={styles.containerTitles}>
+          <Text style={styles.title}>
             <Trans>Hello!</Trans>
           </Text>
-          <Text style={styleTitleSub}>
-            <Trans>We're glad to see you on our service.</Trans>
+          <Text style={styles.subTitle}>
+            <Trans>We're glad to see you on our service.</Trans>{" "}
           </Text>
+          <Text style={styles.subTitle}>
+            <Trans>Authorize using:</Trans>
+          </Text>
+          <Socials styleContainer={styles.containerSocials} />
         </View>
-      </ImageBackground>
-      <View style={styles.buttons}>
-        <ButtonCustom
-          title={t(i18n)`Sing in`}
-          onSubmit={onAuthorization}
-          styleContainer={styles.buttonLogin}
-        />
-        <ButtonCustom
-          title={t(i18n)`Registration`}
-          onSubmit={onRegistration}
-          type="transparent"
-          styleContainer={styles.buttonRegistration}
-        />
-      </View>
-    </View>
+      </BlurView>
+    </ImageBackground>
   );
 };

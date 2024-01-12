@@ -23,6 +23,7 @@ const colors = {
   grayMercury: "#E6E6E6",
   grayCloudy: "#A9A4A0",
   platinumGray: "#DFDFE8",
+  grayBlur: "rgba(255, 255, 255, 0.8)",
   grayCod: "#1A1A1A",
   gray10: "#712e001a",
   // silver

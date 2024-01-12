@@ -210,6 +210,9 @@ msgstr "Дозволити Touch id входити у додаток {nameApp}"
 msgid "Authorization"
 msgstr "Авторизація"
 
+msgid "Authorize using:"
+msgstr "Авторизуйтесь за допомогою:"
+
 msgid "Back"
 msgstr "Назад"
 
@@ -371,9 +374,6 @@ msgstr "Обрати на карті"
 
 msgid "Settings"
 msgstr "Настройки"
-
-msgid "Sing in"
-msgstr "Вхід"
 
 msgid "Someone needs help within a 5 km radius"
 msgstr "У радіусі 5 км комусь потрібна допомога"

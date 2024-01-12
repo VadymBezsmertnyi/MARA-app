@@ -8,6 +8,9 @@ import { useAllNavigation } from "../../navigators/Navigators.helps";
 import { userContext } from "../../providers/user/user.provider";
 import { themeContext } from "../../providers/theme/theme.provider";
 
+// components
+import { Logo } from "../../components/Logo/Logo";
+
 // constants
 import { PATHS_MAIN_SCREENS } from "../../navigators/useNavigator.constants";
 
@@ -41,9 +44,7 @@ export const Splash: FunctionComponent = () => {
         resizeMode="cover"
         style={styles.image}
       />
-      <View style={styles.containerLogo}>
-        <Text style={styles.titleLogo}>Logo</Text>
-      </View>
+      <Logo />
     </View>
   );
 };

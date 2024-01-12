@@ -210,6 +210,9 @@ msgstr "Allow Touch ID to access the {nameApp} app."
 msgid "Authorization"
 msgstr "Authorization"
 
+msgid "Authorize using:"
+msgstr "Authorize using:"
+
 msgid "Back"
 msgstr "Back"
 
@@ -371,9 +374,6 @@ msgstr "Select on the map"
 
 msgid "Settings"
 msgstr "Settings"
-
-msgid "Sing in"
-msgstr "Sing in"
 
 msgid "Someone needs help within a 5 km radius"
 msgstr "Someone needs help within a 5 km radius"

@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../../styles/colors';
+import { StyleSheet } from "react-native";
+import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
   socialConnect: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     marginVertical: 38,
     gap: 20,
   },
@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     marginBottom: 4,
     color: colors.blackCoffee,
     fontSize: 16,
-    fontStyle: 'normal',
-    fontWeight: '400',
+    fontStyle: "normal",
+    fontWeight: "400",
     lineHeight: 24,
   },
   itemSocialConnect: {
@@ -21,14 +21,14 @@ export const styles = StyleSheet.create({
     padding: 6,
     paddingLeft: 52,
     paddingRight: 53,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 12,
   },
   labelSocialConnect: {
-    color: colors.californiaOrange,
+    color: colors.chileanFireOrange,
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   colorWhite: {
     color: colors.white,

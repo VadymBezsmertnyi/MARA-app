@@ -1,52 +1,43 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../../styles/colors';
+import { StyleSheet } from "react-native";
+import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: { flex: 1 },
-  logoContainer: { flex: 2, justifyContent: 'center', alignItems: 'center' },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    height: '100%',
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-  },
-  logo: {
-    flex: 0.85,
-    justifyContent: 'center',
-  },
-  logoText: {
-    backgroundColor: colors.white,
-    padding: 20,
-    fontSize: 26,
-  },
-  titles: {
-    alignItems: 'center',
-  },
-  titlesDark: {
-    color: colors.white,
-  },
-  titleMain: {
-    color: colors.blackCoffee,
-    fontWeight: '700',
-    fontSize: 28,
-    lineHeight: 32,
-  },
-  titleSub: {
-    fontSize: 16,
-    lineHeight: 24,
-    textAlign: 'center',
-    color: colors.grayFuscous,
-  },
-  buttons: {
+  containerBlur: {
     flex: 1,
-    justifyContent: 'center',
-    paddingLeft: 16,
-    paddingRight: 16,
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: colors.grayBlur,
+    paddingTop: 56,
+    paddingBottom: 74,
+    paddingHorizontal: 15,
   },
-  buttonLogin: {
-    marginBottom: 24,
+  containerLogo: { justifyContent: "center", alignItems: "center" },
+  containerLanguage: { width: "100%", alignItems: "flex-end" },
+  buttonLanguage: { flexDirection: "row", gap: 12 },
+  iconLanguage: { width: 24, height: 24 },
+  titleLanguage: {
+    fontFamily: "Montserrat_600SemiBold",
+    fontSize: 16,
+    textTransform: "uppercase",
+    color: colors.blackCoffee,
   },
-  buttonRegistration: {},
+  containerTitles: { gap: 12, alignItems: "center" },
+  title: {
+    fontFamily: "Montserrat_700Bold",
+    fontSize: 28,
+    color: colors.blackCoffee,
+  },
+  subTitle: {
+    fontFamily: "Montserrat_600SemiBold",
+    fontSize: 16,
+    color: colors.blackCoffee,
+  },
+  containerSocials: {
+    flex: 0,
+    alignItems: "center",
+    marginVertical: 0,
+    paddingTop: 8,
+    gap: 20,
+  },
 });
