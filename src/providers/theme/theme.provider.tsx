@@ -27,6 +27,7 @@ export const ThemeProvider: React.FC<PropsT> = (props) => {
   const { children } = props;
   const [theme, setTheme] = useState<ThemeT>(THEME_LIGHT);
   const [heightStatusBar, setHeightStatusBar] = useState(0);
+  const [isSplash, setIsSplash] = useState(true);
 
   const setBarStyle = useMemo((): StatusBarStyle => {
     if (theme === THEME_LIGHT) return "dark-content";
@@ -34,14 +35,14 @@ export const ThemeProvider: React.FC<PropsT> = (props) => {
     return "default";
   }, [theme]);
 
-  const styleContainer = useMemo(
-    () => ({
+  const styleContainer = useMemo(() => {
+    const paddingTop = isSplash ? 0 : heightStatusBar;
+    return {
       ...styles.container,
-      paddingTop: heightStatusBar,
+      paddingTop,
       backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
-    }),
-    [heightStatusBar, theme]
-  );
+    };
+  }, [heightStatusBar, theme, isSplash]);
 
   const getHeightStatusBar = async () => {
     if (Platform.OS !== "android") {
@@ -69,8 +70,8 @@ export const ThemeProvider: React.FC<PropsT> = (props) => {
   };
 
   const contextValue: ThemeContext = useMemo(
-    () => ({ theme, selectTheme, getTheme }),
-    [theme]
+    () => ({ theme, selectTheme, getTheme, setIsSplash }),
+    [theme, isSplash]
   );
 
   useEffect(() => {
