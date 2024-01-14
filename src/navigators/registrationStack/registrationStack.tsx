@@ -1,28 +1,28 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import {
   NativeStackNavigationOptions,
   NativeStackNavigationProp,
   createNativeStackNavigator,
-} from '@react-navigation/native-stack';
+} from "@react-navigation/native-stack";
 
 // constants
-import { THEME_LIGHT } from '../../providers/theme/theme.const';
+import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // components
-import { HeaderLeft } from '../components/HeaderLeft/HeaderLeft';
+import { HeaderLeft } from "../components/HeaderLeft/HeaderLeft";
 
 // types
-import { RootRegistrationScreensParamList } from '../Navigators.types';
+import { RootRegistrationScreensParamList } from "../Navigators.types";
 
 // hooks
-import { useRegistrationStack } from './useRegistrationStack';
+import { useRegistrationStack } from "./useRegistrationStack";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // styles
-import colors from '../../../styles/colors';
-import { ResponsiveLayoutProvider } from '../../providers/responsiveLayout/responsiveLayout.provider';
+import colors from "../../../styles/colors";
+import { ResponsiveLayoutProvider } from "../../providers/responsiveLayout/responsiveLayout.provider";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,46 +32,48 @@ export const RegistrationStack: FunctionComponent = () => {
 
   const options = (
     title: string | null,
-    navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>,
+    navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>
   ): NativeStackNavigationOptions => ({
     headerShown: title !== null,
-    headerTitle: title || '',
+    headerTitle: title || "",
     headerLeft: () => <HeaderLeft navigation={navigation} />,
   });
 
   const contentStyle = useMemo(
-    () => ({ backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich }),
-    [theme],
+    () => ({
+      backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
+    }),
+    [theme]
   );
 
   const mainBackgroundColor = useMemo(
     () => ({
       backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
     }),
-    [theme],
+    [theme]
   );
 
   const mainFontSize = useMemo(
     () => ({
       color: theme === THEME_LIGHT ? colors.blackCoffee : colors.white,
     }),
-    [theme],
+    [theme]
   );
 
   const screenOptions: NativeStackNavigationOptions = useMemo(
     () => ({
       contentStyle,
       headerShadowVisible: false,
-      headerTitleAlign: 'center',
+      headerTitleAlign: "center",
       headerStyle: mainBackgroundColor,
       headerTitleStyle: mainFontSize,
     }),
-    [contentStyle, mainBackgroundColor, mainFontSize],
+    [contentStyle, mainBackgroundColor, mainFontSize]
   );
 
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      {registrationScreens.map(screen => (
+      {registrationScreens.map((screen) => (
         <Stack.Screen
           key={`screen-registration-${screen.id}`}
           name={screen.name}
@@ -80,13 +82,8 @@ export const RegistrationStack: FunctionComponent = () => {
           }: {
             navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>;
           }) => options(screen.title, navigation)}
-        >
-          {props => (
-            <ResponsiveLayoutProvider>
-              <screen.component {...props} />
-            </ResponsiveLayoutProvider>
-          )}
-        </Stack.Screen>
+          component={screen.component}
+        />
       ))}
     </Stack.Navigator>
   );

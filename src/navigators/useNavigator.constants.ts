@@ -1,7 +1,6 @@
 export const PATHS_MAIN_SCREENS = {
   splash: "splash",
   welcome: "welcome",
-  authorization: "authorization",
   registration: "registration",
   forget: "forget",
   main: "main",
@@ -17,8 +16,7 @@ export const PATHS_MAIN_TABS = {
 } as const;
 
 export const PATHS_REGISTRATION_SCREENS = {
-  registrationPhone: "registrationPhone",
-  registrationPassword: "registrationPassword",
+  registrationLocation: "registrationLocation",
   registrationTouchId: "registrationTouchId",
   registrationFaceId: "registrationFaceId",
   registrationPrivacyPolicy: "registrationPrivacyPolicy",

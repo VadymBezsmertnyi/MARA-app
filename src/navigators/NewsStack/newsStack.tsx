@@ -12,7 +12,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 // constants
-import { THEME_LIGHT } from "../../providers/theme/theme.const";
+import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // components
 import { Header } from "../../components/Header/Header";
@@ -22,7 +22,7 @@ import { useNewsStack } from "./useNewsStack";
 import { getActiveRouteName } from "../Navigators.helps";
 
 // providers
-import { themeContext } from "../../providers/theme/theme.provider";
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 import { modalsSheetContext } from "../../providers/ModalsSheetProvider/ModalsSheetProvider";
 
 // styles

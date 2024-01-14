@@ -1,26 +1,26 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
-} from '@react-navigation/native-stack';
+} from "@react-navigation/native-stack";
 
 // constants
-import { THEME_LIGHT } from '../providers/theme/theme.const';
+import { THEME_LIGHT } from "../providers/ThemeProvider/ThemeProvider.const";
 
 // components
-import { Header } from '../components/Header/Header';
+import { Header } from "../components/Header/Header";
 
 // provider
-import { themeContext } from '../providers/theme/theme.provider';
+import { themeContext } from "../providers/ThemeProvider/ThemeProvider";
 
 // types
-import { RootMainScreensParamList } from './Navigators.types';
+import { RootMainScreensParamList } from "./Navigators.types";
 
 // hooks
-import { useNavigators } from './useNavigator';
+import { useNavigators } from "./useNavigator";
 
 // styles
-import colors from '../../styles/colors';
+import colors from "../../styles/colors";
 
 const Stack = createNativeStackNavigator<RootMainScreensParamList>();
 
@@ -32,20 +32,20 @@ export const Navigators: FunctionComponent = () => {
     () => ({
       backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
     }),
-    [theme],
+    [theme]
   );
 
   const mainFontSize = useMemo(
     () => ({
       color: theme === THEME_LIGHT ? colors.blackCoffee : colors.white,
     }),
-    [theme],
+    [theme]
   );
 
   const options = (
     title: string,
     headerShown: boolean,
-    gestureEnabled = true,
+    gestureEnabled = true
   ): NativeStackNavigationOptions => ({
     headerShown,
     header: () => <Header title={title} />,
@@ -58,17 +58,21 @@ export const Navigators: FunctionComponent = () => {
       headerStyle: mainBackgroundColor,
       headerTitleStyle: mainFontSize,
     }),
-    [mainBackgroundColor, mainFontSize],
+    [mainBackgroundColor, mainFontSize]
   );
 
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      {mainScreens.map(mainScreen => (
+      {mainScreens.map((mainScreen) => (
         <Stack.Screen
           key={`screen_${mainScreen.name}`}
           name={mainScreen.name}
           component={mainScreen.component}
-          options={options(mainScreen.title, mainScreen.headerShown, mainScreen.gestureEnabled)}
+          options={options(
+            mainScreen.title,
+            mainScreen.headerShown,
+            mainScreen.gestureEnabled
+          )}
         />
       ))}
     </Stack.Navigator>

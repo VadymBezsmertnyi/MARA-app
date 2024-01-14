@@ -12,13 +12,17 @@ import StatusBarHeight from "@expo/status-bar-height";
 import { getDeviceStorage, setDeviceStorage } from "../../helps/storage.help";
 
 // constants
-import { KEY_STORAGE_THEME, THEME_DARK, THEME_LIGHT } from "./theme.const";
+import {
+  KEY_STORAGE_THEME,
+  THEME_DARK,
+  THEME_LIGHT,
+} from "./ThemeProvider.const";
 
 // types
-import { PropsT, ThemeContext, ThemeT } from "./theme.types";
+import { PropsT, ThemeContext, ThemeT } from "./ThemeProvider.types";
 
 // helpers
-import { styles } from "./theme.styles";
+import { styles } from "./ThemeProvider.styles";
 import colors from "../../../styles/colors";
 
 export const themeContext = React.createContext({} as ThemeContext);
@@ -27,7 +31,6 @@ export const ThemeProvider: React.FC<PropsT> = (props) => {
   const { children } = props;
   const [theme, setTheme] = useState<ThemeT>(THEME_LIGHT);
   const [heightStatusBar, setHeightStatusBar] = useState(0);
-  const [isSplash, setIsSplash] = useState(true);
 
   const setBarStyle = useMemo((): StatusBarStyle => {
     if (theme === THEME_LIGHT) return "dark-content";
@@ -35,14 +38,13 @@ export const ThemeProvider: React.FC<PropsT> = (props) => {
     return "default";
   }, [theme]);
 
-  const styleContainer = useMemo(() => {
-    const paddingTop = isSplash ? 0 : heightStatusBar;
-    return {
+  const styleContainer = useMemo(
+    () => ({
       ...styles.container,
-      paddingTop,
       backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
-    };
-  }, [heightStatusBar, theme, isSplash]);
+    }),
+    [theme]
+  );
 
   const getHeightStatusBar = async () => {
     if (Platform.OS !== "android") {
@@ -70,8 +72,8 @@ export const ThemeProvider: React.FC<PropsT> = (props) => {
   };
 
   const contextValue: ThemeContext = useMemo(
-    () => ({ theme, selectTheme, getTheme, setIsSplash }),
-    [theme, isSplash]
+    () => ({ theme, selectTheme, getTheme, heightStatusBar }),
+    [theme, heightStatusBar]
   );
 
   useEffect(() => {

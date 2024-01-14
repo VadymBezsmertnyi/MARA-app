@@ -19,10 +19,11 @@ export type MainScreensT = MainScreenT[];
 export type RootMainScreensParamList = {
   [PATHS_MAIN_SCREENS.splash]: undefined;
   [PATHS_MAIN_SCREENS.welcome]: undefined;
-  [PATHS_MAIN_SCREENS.authorization]: {
-    phoneNumber?: string;
-  };
-  [PATHS_MAIN_SCREENS.registration]: undefined;
+  [PATHS_MAIN_SCREENS.registration]:
+    | {
+        screen: keyof RootRegistrationScreensParamList;
+      }
+    | undefined;
   [PATHS_MAIN_SCREENS.forget]: {
     phoneNumber?: string;
   };
@@ -49,8 +50,7 @@ export type RootForgetScreensParamList = {
 };
 
 export type RootRegistrationScreensParamList = {
-  [PATHS_REGISTRATION_SCREENS.registrationPhone]: undefined;
-  [PATHS_REGISTRATION_SCREENS.registrationPassword]: undefined;
+  [PATHS_REGISTRATION_SCREENS.registrationLocation]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationTouchId]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationFaceId]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy]: undefined;
