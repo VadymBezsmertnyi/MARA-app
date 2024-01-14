@@ -38,7 +38,7 @@
         ]
       },
       "config": {
-        "googleMapsApiKey": "AIzaSyBi9gmS8zJ8T6F6KG9V1CiwcyjUV1OSADQ"
+        "googleMapsApiKey": "AIzaSyDIqAtdAs1HPG-L6ULG_9FTSWomwUkgiF0"
       }
     },
     "android": {
@@ -70,7 +70,7 @@
       ],
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyCw9CLYaQOFumxdzulnr1bH8K4N_n23jfM"
+          "apiKey": "AIzaSyDIqAtdAs1HPG-L6ULG_9FTSWomwUkgiF0"
         }
       }
     },

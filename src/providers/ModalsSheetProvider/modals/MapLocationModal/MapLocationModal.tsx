@@ -51,8 +51,8 @@ type MapLocationModalProps = {
   setLocation: (location: GoogleLocationDetailResult) => void;
 };
 
-const EXPO_PUBLIC_API_KEY_GOOGLE_WEB = process.env
-  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB as string;
+const EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES = process.env
+  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES as string;
 const URL_GOOGLE_PLACE_API = "https://maps.googleapis.com/maps/api/place";
 
 export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
@@ -83,7 +83,7 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
   const getDetailPlace = async (place_id: string) => {
     const queryParams = qs.stringify({
       place_id,
-      key: EXPO_PUBLIC_API_KEY_GOOGLE_WEB,
+      key: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       language,
     });
     const apiUrlDetails = `${URL_GOOGLE_PLACE_API}/details/json?${queryParams}`;
@@ -103,7 +103,7 @@ export const MapLocationModal: FunctionComponent<MapLocationModalProps> = ({
     const queryParams = qs.stringify({
       location: `${latitude},${longitude}`,
       radius: 100,
-      key: EXPO_PUBLIC_API_KEY_GOOGLE_WEB,
+      key: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       language,
     });
 

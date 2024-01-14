@@ -24,8 +24,8 @@ import { IconMapCustom } from "../../../../icons/components";
 import { styles } from "./InputLocationModal.styles";
 import colors from "../../../../../styles/colors";
 
-const EXPO_PUBLIC_API_KEY_GOOGLE_WEB = process.env
-  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB as string;
+const EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES = process.env
+  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES as string;
 
 type InputLocationModalProps = {
   setLocation: (location: GoogleLocationDetailResult) => void;
@@ -41,7 +41,7 @@ export const InputLocationModal: FunctionComponent<InputLocationModalProps> = ({
   return (
     <View style={styles.container}>
       <GoogleAutoComplete
-        apiKey={EXPO_PUBLIC_API_KEY_GOOGLE_WEB}
+        apiKey={EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES}
         debounce={1000}
         language={language}
       >

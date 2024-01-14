@@ -23,8 +23,8 @@ import { IconSearchInput } from "../../../../icons/components";
 // styles
 import { styles } from "./InputCityModal.styles";
 
-const EXPO_PUBLIC_API_KEY_GOOGLE_WEB = process.env
-  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB as string;
+const EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES = process.env
+  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES as string;
 
 type InputCityModalProps = {
   setCity: React.Dispatch<
@@ -43,7 +43,7 @@ export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
   return (
     <View style={styles.container}>
       <GoogleAutoComplete
-        apiKey={EXPO_PUBLIC_API_KEY_GOOGLE_WEB}
+        apiKey={EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES}
         debounce={1000}
         language={language}
         queryTypes="(cities)"
