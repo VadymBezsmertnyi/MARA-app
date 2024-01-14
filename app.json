@@ -28,7 +28,14 @@
         "NSContactsUsageDescription": "Доступ до контактів для імпорту інформації",
         "NSAppleMusicUsageDescription": "Доступ до Apple Music для імпорту музики",
         "UIBackgroundModes": ["audio"],
-        "NSSpeechRecognitionUsageDescription": "Allow recognition to access your speech recognition"
+        "NSSpeechRecognitionUsageDescription": "Allow recognition to access your speech recognition",
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "com.googleusercontent.apps.797450075852-4692dkokllud6pq99q9qru7lkk43l155"
+            ]
+          }
+        ]
       },
       "config": {
         "googleMapsApiKey": "AIzaSyBi9gmS8zJ8T6F6KG9V1CiwcyjUV1OSADQ"
@@ -78,6 +85,7 @@
     },
     "owner": "fop_vadym_bezsmertnyi",
     "plugins": [
+      "./plugins/react-native-maps-plugin",
       "expo-localization",
       [
         "expo-local-authentication",

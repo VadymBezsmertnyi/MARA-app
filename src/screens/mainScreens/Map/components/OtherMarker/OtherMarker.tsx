@@ -1,12 +1,12 @@
-import React, { FunctionComponent, useMemo } from 'react';
-import { Text } from 'react-native';
-import { Marker, Callout } from 'react-native-maps';
+import React, { FunctionComponent, useMemo } from "react";
+import { Text } from "react-native";
+import { Marker, Callout } from "react-native-maps";
 
 // icons
-import { IconLocationMarker } from '../../../../../icons/components';
+import { IconLocationMarker } from "../../../../../icons/components";
 
 // styles
-import { styles } from './OtherMarker.styles';
+import { styles } from "./OtherMarker.styles";
 
 type OtherMarkerProps = {
   longitude: number;
@@ -28,12 +28,16 @@ export const OtherMarker: FunctionComponent<OtherMarkerProps> = ({
       longitude,
       latitude,
     }),
-    [longitude, latitude],
+    [longitude, latitude]
   );
 
   return (
     <Marker coordinate={coordinateMarker}>
-      <IconLocationMarker width={markerSize} height={markerSize} fill={markerColor} />
+      <IconLocationMarker
+        width={markerSize}
+        height={markerSize}
+        fill={markerColor}
+      />
       <Callout style={styles.container}>
         <Text>{title}:</Text>
         <Text>longitude: {longitude}</Text>
