@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:797450075852:android:b3b4b768e7a58fdbd5cc69",
+        "mobilesdk_app_id": "1:797450075852:android:c44d53d7280de9d4d5cc69",
         "android_client_info": {
           "package_name": "com.motoauto.mara"
         }
@@ -20,16 +20,32 @@
             "package_name": "com.motoauto.mara",
             "certificate_hash": "c16369df3d9c5a352bf6ea2476c2902f1c2e5d3d"
           }
+        },
+        {
+          "client_id": "797450075852-eobrpbu433vp078jp55bi2moiek7do20.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCw9CLYaQOFumxdzulnr1bH8K4N_n23jfM"
+          "current_key": "AIzaSyCVTzyIBdXKEZtvg4LGLrlWVaovzO4KqfQ"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797450075852-eobrpbu433vp078jp55bi2moiek7do20.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "797450075852-4692dkokllud6pq99q9qru7lkk43l155.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.motoauto.mara"
+              }
+            }
+          ]
         }
       }
     }

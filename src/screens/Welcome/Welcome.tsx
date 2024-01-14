@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-} from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { ImageBackground } from "expo-image";
 import { BlurView } from "expo-blur";

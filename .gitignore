@@ -23,6 +23,7 @@ ios/
 *.p12
 *.key
 *.mobileprovision
+mara-fe790-1c5a827e83b7.json
 
 # Metro
 .metro-health-check*

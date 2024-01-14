@@ -44,8 +44,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff",
-        "googleServicesFile": "./google-services.json"
+        "backgroundColor": "#ffffff"
       },
       "googleServicesFile": "./google-services.json",
       "package": "com.motoauto.mara",
@@ -87,6 +86,7 @@
     "plugins": [
       "./plugins/react-native-maps-plugin",
       "expo-localization",
+      "expo-apple-authentication",
       [
         "expo-local-authentication",
         {

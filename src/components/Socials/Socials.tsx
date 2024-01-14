@@ -8,6 +8,7 @@ import React, {
 import { Alert, Platform, Text, View, ViewStyle } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin, User } from "@react-native-google-signin/google-signin";
+import * as AppleAuthentication from "expo-apple-authentication";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
@@ -77,13 +78,21 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   };
 
   const onGoogle = async () => {
-    const userDataGoogle = await GoogleSignin.signIn();
-    onChange(userDataGoogle);
+    try {
+      const userDataGoogle = await GoogleSignin.signIn();
+      onChange(userDataGoogle);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
-  const onApple = () => {
-    Alert.alert("You select: Apple");
-    //onChange();
+  const onApple = async () => {
+    try {
+      const result = await AppleAuthentication.signInAsync();
+      console.log("result", result);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   const showTitle = useCallback(
@@ -94,7 +103,8 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   useEffect(() => {
     GoogleSignin.configure({
       scopes: GOOGLE_SCOPES,
-      webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+      webClientId:
+        "797450075852-eobrpbu433vp078jp55bi2moiek7do20.apps.googleusercontent.com",
       offlineAccess: true,
       iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
     });

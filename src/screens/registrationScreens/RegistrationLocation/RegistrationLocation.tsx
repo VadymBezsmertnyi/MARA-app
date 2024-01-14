@@ -66,7 +66,11 @@ export const RegistrationLocation: FunctionComponent = () => {
 
   const saveLocationUser = async () => {
     if (city) {
-      const resultSave = await editUser({ isGeoLocation, cityUser: city });
+      const resultSave = await editUser({
+        isGeoLocation,
+        cityUser: city,
+        isNewUser: false,
+      });
       if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
     }
     setCity(null);
