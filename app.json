@@ -31,8 +31,12 @@
         "NSSpeechRecognitionUsageDescription": "Allow recognition to access your speech recognition",
         "CFBundleURLTypes": [
           {
-            "CFBundleURLSchemes": [
-              "com.googleusercontent.apps.797450075852-4692dkokllud6pq99q9qru7lkk43l155"
+            "CFBundleURLTypes": [
+              {
+                "CFBundleURLSchemes": [
+                  "com.googleusercontent.apps.549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns"
+                ]
+              }
             ]
           }
         ]
