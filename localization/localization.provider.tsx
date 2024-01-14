@@ -21,7 +21,7 @@ export const localesContext = React.createContext({} as LocalesContext);
 const LocalesProvider: React.FC<Props> = ({ i18n, children }) => {
   const defaultLanguageState = useMemo(
     () => i18n?.locale || languagesKeys[1] || defaultLanguage,
-    [i18n?.locale]
+    [i18n]
   ) as Language;
   const [language, setLanguage] = useState<Language>(defaultLanguageState);
   const { bug } = showErrors;
@@ -60,10 +60,16 @@ const LocalesProvider: React.FC<Props> = ({ i18n, children }) => {
     getLanguageStorage();
   }, []);
 
+  useEffect(() => {
+    if (language !== i18n.locale) setLanguageAsync(language);
+  }, [language, i18n.locale]);
+
   return (
-    <localesContext.Provider value={contextValue}>
-      <I18nProvider i18n={i18n}>{children}</I18nProvider>
-    </localesContext.Provider>
+    <I18nProvider i18n={i18n}>
+      <localesContext.Provider value={contextValue}>
+        {children}
+      </localesContext.Provider>
+    </I18nProvider>
   );
 };
 

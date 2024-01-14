@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { Messages, setupI18n } from "@lingui/core";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -30,7 +30,7 @@ import LocalesProvider from "./localization/localization.provider";
 import { ThemeProvider } from "./src/providers/theme/theme.provider";
 import { BiometricAuthenticatorProvider } from "./src/providers/biometricAuthenticator/biometricAuthenticator.provider";
 import { LoadingProvider } from "./src/providers/LoadingProvider/LoadingProvider";
-import { UserProvider, userContext } from "./src/providers/user/user.provider";
+import { UserProvider } from "./src/providers/user/user.provider";
 import { MapProvider } from "./src/providers/MapProvider/MapProvider";
 import { WorkshopsProvider } from "./src/providers/workshops/workshops.provider";
 import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
@@ -82,25 +82,23 @@ function App() {
     Montserrat_900Black_Italic,
   });
 
-  const { userData } = useContext(userContext);
-  const language = userData?.locale || defaultLanguage;
   const i18n = setupI18n({
     messages: CATALOGS_LANGUAGES,
-    locale: languagesLinguiAlias[language],
+    locale: languagesLinguiAlias[defaultLanguage],
   });
 
   return (
     <WebSocketProvider>
       <ThemeProvider>
         <LoadingProvider isLoadingProps={fontsLoaded}>
-          <LocalesProvider i18n={i18n} language={language}>
+          <LocalesProvider i18n={i18n}>
             <ApiProvider>
-              <UserProvider i18n={i18n}>
-                <EventsProvider>
-                  <NavigationContainer>
-                    <SafeAreaProvider>
-                      <WorkshopsProvider>
-                        <BiometricAuthenticatorProvider>
+              <BiometricAuthenticatorProvider>
+                <UserProvider i18n={i18n}>
+                  <EventsProvider>
+                    <NavigationContainer>
+                      <SafeAreaProvider>
+                        <WorkshopsProvider>
                           <MapProvider>
                             <GestureHandlerRootView
                               style={styles.gestureHandlerRootView}
@@ -112,12 +110,12 @@ function App() {
                               </ModalsSheetProvider>
                             </GestureHandlerRootView>
                           </MapProvider>
-                        </BiometricAuthenticatorProvider>
-                      </WorkshopsProvider>
-                    </SafeAreaProvider>
-                  </NavigationContainer>
-                </EventsProvider>
-              </UserProvider>
+                        </WorkshopsProvider>
+                      </SafeAreaProvider>
+                    </NavigationContainer>
+                  </EventsProvider>
+                </UserProvider>
+              </BiometricAuthenticatorProvider>
             </ApiProvider>
           </LocalesProvider>
         </LoadingProvider>
