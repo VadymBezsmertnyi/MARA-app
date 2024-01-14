@@ -1,23 +1,23 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
-} from '@react-navigation/native-stack';
+} from "@react-navigation/native-stack";
 
 // constants
-import { THEME_LIGHT } from '../../providers/theme/theme.const';
+import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // components
-import { Header } from '../../components/Header/Header';
+import { Header } from "../../components/Header/Header";
 
 // hooks
-import { useWorkshopStack } from './useWorkshopStack';
+import { useWorkshopStack } from "./useWorkshopStack";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // styles
-import colors from '../../../styles/colors';
+import colors from "../../../styles/colors";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,44 +25,49 @@ export const WorkshopStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
   const { workshopsScreens } = useWorkshopStack();
 
-  const options = (title: string | null, headerShown: boolean): NativeStackNavigationOptions => ({
+  const options = (
+    title: string | null,
+    headerShown: boolean
+  ): NativeStackNavigationOptions => ({
     headerShown,
-    header: () => <Header title={title || ''} />,
+    header: () => <Header title={title || ""} />,
   });
 
   const contentStyle = useMemo(
-    () => ({ backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich }),
-    [theme],
+    () => ({
+      backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
+    }),
+    [theme]
   );
 
   const mainBackgroundColor = useMemo(
     () => ({
       backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
     }),
-    [theme],
+    [theme]
   );
 
   const mainFontSize = useMemo(
     () => ({
       color: theme === THEME_LIGHT ? colors.blackCoffee : colors.white,
     }),
-    [theme],
+    [theme]
   );
 
   const screenOptions: NativeStackNavigationOptions = useMemo(
     () => ({
       contentStyle,
       headerShadowVisible: false,
-      headerTitleAlign: 'center',
+      headerTitleAlign: "center",
       headerStyle: mainBackgroundColor,
       headerTitleStyle: mainFontSize,
     }),
-    [contentStyle, mainBackgroundColor, mainFontSize],
+    [contentStyle, mainBackgroundColor, mainFontSize]
   );
 
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      {workshopsScreens.map(screen => (
+      {workshopsScreens.map((screen) => (
         <Stack.Screen
           key={`screen-news-${screen.id}`}
           name={screen.name}

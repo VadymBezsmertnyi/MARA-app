@@ -1,30 +1,42 @@
-import React, { FunctionComponent, useContext, useEffect, useMemo, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { Trans, t } from '@lingui/macro';
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { ScrollView, Text, View } from "react-native";
+import { Trans, t } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../../localization/localization.provider';
-import { themeContext } from '../../../providers/theme/theme.provider';
+import { localesContext } from "../../../../localization/localization.provider";
+import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
-import { InputPhone } from '../../../components/InputPhone/InputPhone';
+import { InputPhone } from "../../../components/InputPhone/InputPhone";
 
 // components
-import { ButtonCustom } from '../../../components/ButtonCustom/ButtonCustom';
+import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 
 // constants
-import { DEFAULT_CODE_COUNTRY, DEFAULT_COUNTRY } from '../../../constants/inputs.const';
-import { THEME_DARK } from '../../../providers/theme/theme.const';
-import { PATHS_FORGET_SCREENS } from '../../../navigators/useNavigator.constants';
+import {
+  DEFAULT_CODE_COUNTRY,
+  DEFAULT_COUNTRY,
+} from "../../../constants/inputs.const";
+import { THEME_DARK } from "../../../providers/ThemeProvider/ThemeProvider.const";
+import { PATHS_FORGET_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // helps
-import { useAuthorizationRegistration } from '../../../helps/useAuthorizationRegistration';
-import { useForgetNavigation, useMainRoute } from '../../../navigators/Navigators.helps';
+import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
+import {
+  useForgetNavigation,
+  useMainRoute,
+} from "../../../navigators/Navigators.helps";
 
 // styles
-import { styles } from './ForgetPhone.styles';
-import { userContext } from '../../../providers/user/user.provider';
-import showErrors from '../../../helps/errors/showError';
+import { styles } from "./ForgetPhone.styles";
+import { userContext } from "../../../providers/user/user.provider";
+import showErrors from "../../../helps/errors/showError";
 
 export const ForgetPhone: FunctionComponent = () => {
   const { params } = useMainRoute(PATHS_FORGET_SCREENS.forgetPhone);
@@ -32,17 +44,17 @@ export const ForgetPhone: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
   const { sendCodeToUser } = useContext(userContext);
-  const [phone, setPhone] = useState('');
+  const [phone, setPhone] = useState("");
   const { verifyPhone } = useAuthorizationRegistration();
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
 
   const titleStyle = useMemo(
     () => [styles.title, theme === THEME_DARK && styles.colorWhite],
-    [theme],
+    [theme]
   );
   const subTitleStyle = useMemo(
     () => [styles.subTitle, theme === THEME_DARK && styles.colorWhite],
-    [theme],
+    [theme]
   );
   const errorsMessagePhone = verifyPhone(phone, selectCountryIso);
   const isError = Boolean(errorsMessagePhone.length);
@@ -84,7 +96,11 @@ export const ForgetPhone: FunctionComponent = () => {
         </View>
       </View>
       <View>
-        <ButtonCustom disabled={isError} title={t(i18n)`Continue`} onSubmit={onSubmit} />
+        <ButtonCustom
+          disabled={isError}
+          title={t(i18n)`Continue`}
+          onSubmit={onSubmit}
+        />
       </View>
     </ScrollView>
   );

@@ -1,32 +1,43 @@
-import React, { FunctionComponent, useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { LinearGradient } from 'expo-linear-gradient';
-import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
+import { TouchableOpacity, View } from "react-native";
+import {
+  BottomTabBarProps,
+  createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
+import { LinearGradient } from "expo-linear-gradient";
+import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
 // components
-import { MenuBurgerButton } from '../../components/MenuBurgerButton/MenuBurgerButton';
+import { MenuBurgerButton } from "../../components/MenuBurgerButton/MenuBurgerButton";
 
 // helps
-import { useMainTabs } from './useMainTabs';
+import { useMainTabs } from "./useMainTabs";
 
 // constants
-import { PATHS_MAIN_TABS } from '../useNavigator.constants';
-import { PATHS_NEWS_SCREENS_HIDE_MAIN_HEADER } from '../NewsStack/newsStack.constants';
+import { PATHS_MAIN_TABS } from "../useNavigator.constants";
+import { PATHS_NEWS_SCREENS_HIDE_MAIN_HEADER } from "../NewsStack/newsStack.constants";
 
 // types
-import { RootMainTabsParamList } from '../Navigators.types';
+import { RootMainTabsParamList } from "../Navigators.types";
 
 // hooks
-import colors from '../../../styles/colors';
-import { styles } from './mainTabs.styles';
+import colors from "../../../styles/colors";
+import { styles } from "./mainTabs.styles";
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
   const { mainTabs } = useMainTabs();
 
-  const colorsGradient = useMemo(() => [colors.californiaOrange, colors.blazeOrange], []);
+  const colorsGradient = useMemo(
+    () => [colors.californiaOrange, colors.blazeOrange],
+    []
+  );
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1], []);
@@ -67,7 +78,7 @@ export const MainTabs: FunctionComponent = () => {
     () => ({
       headerShown: false,
     }),
-    [],
+    []
   );
 
   return (
@@ -76,7 +87,7 @@ export const MainTabs: FunctionComponent = () => {
       tabBar={tabBar}
       initialRouteName={PATHS_MAIN_TABS.map}
     >
-      {mainTabs.map(screen => (
+      {mainTabs.map((screen) => (
         <Tab.Screen
           key={`tab-screen-${screen.id}`}
           name={screen.name}
@@ -89,7 +100,7 @@ export const MainTabs: FunctionComponent = () => {
             return {
               headerShown: screen.headerShown && !isHideHeader,
               headerTitle: screen.title,
-              headerTitleAlign: 'center',
+              headerTitleAlign: "center",
               headerLeft: () => <MenuBurgerButton />,
               headerLeftContainerStyle: styles.headerLeftContainerStyle,
               headerRightContainerStyle: { paddingRight: 16 },

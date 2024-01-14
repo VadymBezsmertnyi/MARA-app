@@ -19,6 +19,7 @@ type InputProps = {
   onChange: (k: string) => void;
   InputIcon?: React.ReactNode;
   customStyles?: ViewStyle;
+  labelStyle?: ViewStyle;
   keyboardType?: KeyboardTypeOptions;
   errorMessage?: string;
 };
@@ -31,6 +32,7 @@ export const Input: FunctionComponent<InputProps> = ({
   InputIcon,
   onChange,
   customStyles,
+  labelStyle,
   keyboardType = "default",
   errorMessage,
 }) => {
@@ -63,9 +65,12 @@ export const Input: FunctionComponent<InputProps> = ({
       flex: customStyles ? 1 : 0,
     };
   }, [label, customStyles]);
+
+  const labelStyles = useMemo(() => [styles.label, labelStyle], [labelStyle]);
+
   return (
     <View style={containerStyles}>
-      {label && <Text style={styles.label}>{label}</Text>}
+      {label && <Text style={labelStyles}>{label}</Text>}
       <View style={inputWrapperStyles}>
         <TextInput
           style={inputStyles}

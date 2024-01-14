@@ -1,30 +1,33 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import {
   NativeStackNavigationOptions,
   NativeStackNavigationProp,
   createNativeStackNavigator,
-} from '@react-navigation/native-stack';
+} from "@react-navigation/native-stack";
 
 // constants
-import { THEME_LIGHT } from '../../providers/theme/theme.const';
-import { PATHS_FORGET_SCREENS, PATHS_MAIN_SCREENS } from '../useNavigator.constants';
+import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
+import {
+  PATHS_FORGET_SCREENS,
+  PATHS_MAIN_SCREENS,
+} from "../useNavigator.constants";
 
 // components
-import { HeaderLeft } from '../components/HeaderLeft/HeaderLeft';
+import { HeaderLeft } from "../components/HeaderLeft/HeaderLeft";
 
 // types
-import { RootForgetScreensParamList } from '../Navigators.types';
+import { RootForgetScreensParamList } from "../Navigators.types";
 
 // hooks
-import { useForgetStack } from './useForgetStack';
-import { useMainRoute } from '../Navigators.helps';
+import { useForgetStack } from "./useForgetStack";
+import { useMainRoute } from "../Navigators.helps";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
-import { ResponsiveLayoutProvider } from '../../providers/responsiveLayout/responsiveLayout.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { ResponsiveLayoutProvider } from "../../providers/responsiveLayout/responsiveLayout.provider";
 
 // styles
-import colors from '../../../styles/colors';
+import colors from "../../../styles/colors";
 
 const Stack = createNativeStackNavigator<RootForgetScreensParamList>();
 
@@ -35,52 +38,54 @@ export const ForgetStack: FunctionComponent = () => {
 
   const options = (
     title: string | null,
-    navigation: NativeStackNavigationProp<RootForgetScreensParamList>,
+    navigation: NativeStackNavigationProp<RootForgetScreensParamList>
   ): NativeStackNavigationOptions => ({
     headerShown: title !== null,
-    headerTitle: title || '',
+    headerTitle: title || "",
     headerLeft: () => <HeaderLeft navigation={navigation} />,
   });
 
   const initialParamsPhoneNumber = useMemo(
     () => ({ phoneNumber: params?.phoneNumber }),
-    [params?.phoneNumber],
+    [params?.phoneNumber]
   );
 
   const contentStyle = useMemo(
-    () => ({ backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich }),
-    [theme],
+    () => ({
+      backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
+    }),
+    [theme]
   );
 
   const mainBackgroundColor = useMemo(
     () => ({
       backgroundColor: theme === THEME_LIGHT ? colors.white : colors.blackRich,
     }),
-    [theme],
+    [theme]
   );
 
   const mainFontSize = useMemo(
     () => ({
       color: theme === THEME_LIGHT ? colors.blackCoffee : colors.white,
     }),
-    [theme],
+    [theme]
   );
 
   const screenOptions: NativeStackNavigationOptions = useMemo(
     () => ({
       contentStyle,
       headerShadowVisible: false,
-      headerTitleAlign: 'center',
+      headerTitleAlign: "center",
       headerStyle: mainBackgroundColor,
       headerTitleStyle: mainFontSize,
     }),
-    [contentStyle, mainBackgroundColor, mainFontSize],
+    [contentStyle, mainBackgroundColor, mainFontSize]
   );
 
   return (
     <ResponsiveLayoutProvider>
       <Stack.Navigator screenOptions={screenOptions}>
-        {forgetScreens.map(screen => (
+        {forgetScreens.map((screen) => (
           <Stack.Screen
             key={`screen-registration-${screen.id}`}
             name={screen.name}

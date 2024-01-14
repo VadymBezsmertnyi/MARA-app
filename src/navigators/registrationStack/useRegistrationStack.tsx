@@ -8,8 +8,7 @@ import { localesContext } from "../../../localization/localization.provider";
 import { PATHS_REGISTRATION_SCREENS } from "../useNavigator.constants";
 
 // registration
-import { RegistrationPhone } from "../../screens/registrationScreens/RegistrationPhone/RegistrationPhone";
-import { RegistrationPassword } from "../../screens/registrationScreens/RegistrationPassword/RegistrationPassword";
+import { RegistrationLocation } from "../../screens/registrationScreens/RegistrationLocation/RegistrationLocation";
 import { RegistrationTouchId } from "../../screens/registrationScreens/RegistrationTouchId/RegistrationTouchId";
 import { RegistrationFaceId } from "../../screens/registrationScreens/RegistrationFaceId/RegistrationFaceId";
 import { RegistrationPrivacyPolicy } from "../../screens/registrationScreens/RegistrationPrivacyPolicy/RegistrationPrivacyPolicy";
@@ -20,39 +19,38 @@ export const useRegistrationStack = () => {
 
   const registrationScreens = [
     {
-      id: PATHS_REGISTRATION_SCREENS.registrationPhone,
-      name: PATHS_REGISTRATION_SCREENS.registrationPhone,
-      title: t(i18n)`Registration`,
-      component: RegistrationPhone,
-    },
-    {
-      id: PATHS_REGISTRATION_SCREENS.registrationPassword,
-      name: PATHS_REGISTRATION_SCREENS.registrationPassword,
-      title: t(i18n)`Registration`,
-      component: RegistrationPassword,
+      id: PATHS_REGISTRATION_SCREENS.registrationLocation,
+      name: PATHS_REGISTRATION_SCREENS.registrationLocation,
+      title: null,
+      isHeader: false,
+      component: RegistrationLocation,
     },
     {
       id: PATHS_REGISTRATION_SCREENS.registrationTouchId,
       name: PATHS_REGISTRATION_SCREENS.registrationTouchId,
       title: null,
+      isHeader: true,
       component: RegistrationTouchId,
     },
     {
       id: PATHS_REGISTRATION_SCREENS.registrationFaceId,
       name: PATHS_REGISTRATION_SCREENS.registrationFaceId,
       title: null,
+      isHeader: true,
       component: RegistrationFaceId,
     },
     {
       id: PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy,
       name: PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy,
       title: t(i18n)`Privacy Policy`,
+      isHeader: true,
       component: RegistrationPrivacyPolicy,
     },
     {
       id: PATHS_REGISTRATION_SCREENS.registrationTermsOfUse,
       name: PATHS_REGISTRATION_SCREENS.registrationTermsOfUse,
       title: t(i18n)`Terms of Use`,
+      isHeader: true,
       component: RegistrationTermsOfUse,
     },
   ] as const;

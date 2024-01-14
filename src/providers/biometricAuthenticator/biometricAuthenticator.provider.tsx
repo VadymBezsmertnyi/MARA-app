@@ -39,7 +39,7 @@ export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({
   const [authenticationType, setAuthenticationType] = useState<number[] | null>(
     null
   );
-  const isGlobalDisable = false;
+  const isGlobalDisable = true;
 
   const isFaceId = useMemo(
     () =>

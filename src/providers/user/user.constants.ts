@@ -1,31 +1,20 @@
-import { UserDataT } from './user.types';
+import { UserDataT } from "./user.types";
 
 export const DEFAULT_USER_DATA: UserDataT = {
-  // new
   id: 0,
   isGeoLocation: false,
   avatar: null,
-
-  // old
-  phone_number: '',
-  is_password: false,
-  time_token: 1,
-  is_verified: false,
-  verify_code: '',
-  verify_token: '',
-  nick: '',
-  first_name: '',
-  family_name: '',
-  photo_url: '',
-  locale: 'en',
-  motoIds: [],
-  autoIds: [],
-  location_end: null,
-  location_sos: null,
-  accessLocations: false,
-  city_user_id: null,
+  eventsIds: [],
+  isCheckBiometric: null,
+  email: null,
+  verifyToken: null,
+  timeToken: 1,
+  languageLocal: "en",
+  isNewUser: true,
+  googleDate: null,
+  cityUser: null,
 };
 
 export const NUMBER_TWO = 2;
 
-export const TOKEN_NAME = 'token';
+export const TOKEN_NAME = "token";

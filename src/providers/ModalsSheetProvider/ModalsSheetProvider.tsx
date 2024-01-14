@@ -21,13 +21,18 @@ import { IconCloseGradient } from "../../icons/components";
 
 // styles
 import { styles } from "./ModalsSheetProvider.styles";
+import { InputCityModal } from "./modals/InputCityModal/InputCityModal";
 
 type ModalsSheetContext = {
   modalSheet: ModalSheetType | null;
   location: GoogleLocationDetailResult | null;
+  city: GoogleLocationDetailResult | null;
   setModalSheet: React.Dispatch<React.SetStateAction<ModalSheetType | null>>;
   setModalType: React.Dispatch<React.SetStateAction<ModalSheetTypes | null>>;
   setLocation: React.Dispatch<
+    React.SetStateAction<GoogleLocationDetailResult | null>
+  >;
+  setCity: React.Dispatch<
     React.SetStateAction<GoogleLocationDetailResult | null>
   >;
 };
@@ -48,10 +53,12 @@ export const ModalsSheetProvider: FunctionComponent<
   const [location, setLocation] = useState<GoogleLocationDetailResult | null>(
     null
   );
+  const [city, setCity] = useState<GoogleLocationDetailResult | null>(null);
 
   const onClose = () => {
     setModalSheet(null);
     setModalType(null);
+    setCity(null);
     setIsOpenModal(false);
   };
 
@@ -96,6 +103,8 @@ export const ModalsSheetProvider: FunctionComponent<
           setModalType={setModalType}
         />
       );
+    if (modalType === "input-city")
+      return <InputCityModal setCity={setCity} setModalType={setModalType} />;
     if (modalType === "map-location")
       return (
         <MapLocationModal
@@ -110,8 +119,16 @@ export const ModalsSheetProvider: FunctionComponent<
   }, [modalType, isOpenModal]);
 
   const contextValue: ModalsSheetContext = useMemo(
-    () => ({ modalSheet, setModalSheet, setModalType, location, setLocation }),
-    [modalSheet, location]
+    () => ({
+      modalSheet,
+      setModalSheet,
+      setModalType,
+      location,
+      setLocation,
+      city,
+      setCity,
+    }),
+    [modalSheet, location, city]
   );
 
   return (

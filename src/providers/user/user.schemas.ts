@@ -1,6 +1,26 @@
 import { z } from "zod";
-import { NUMBER_TWO } from "./user.constants";
 import { languagesKeys } from "../../../localization/localization.const";
+import { locationSchema } from "../EventsProvider/EventsProvider.schemas";
+
+export const googleBDSchema = z.object({
+  iss: z.string(),
+  at_hash: z.string().optional(),
+  email_verified: z.string().optional(),
+  sub: z.string(),
+  azp: z.string().optional(),
+  email: z.string().optional(),
+  profile: z.string().optional(),
+  picture: z.string().optional(),
+  name: z.string().optional(),
+  given_name: z.string().optional(),
+  family_name: z.string().optional(),
+  aud: z.string(),
+  iat: z.number(),
+  exp: z.number(),
+  nonce: z.string().optional(),
+  hd: z.string().optional(),
+  locale: z.string().optional(),
+});
 
 export const userDataS = z.object({
   // new
@@ -12,25 +32,15 @@ export const userDataS = z.object({
       url: z.string(),
     })
     .nullable(),
+  email: z.string().nullable(),
   eventsIds: z.array(z.number()),
-  // old
-  phone_number: z.string(),
-  is_password: z.boolean(),
-  time_token: z.number(),
-  is_verified: z.boolean(),
-  verify_code: z.string(),
-  verify_token: z.string(),
-  nick: z.string(),
-  first_name: z.string(),
-  family_name: z.string(),
-  photo_url: z.string(),
-  locale: z.enum(languagesKeys),
-  motoIds: z.array(z.number().or(z.string())),
-  autoIds: z.array(z.number().or(z.string())),
-  location_end: z.array(z.number()).max(NUMBER_TWO).nullable(),
-  location_sos: z.array(z.number()).max(NUMBER_TWO).nullable(),
-  accessLocations: z.boolean(),
-  city_user_id: z.string().nullable(),
+  isCheckBiometric: z.boolean().nullable(),
+  verifyToken: z.string().nullable(),
+  timeToken: z.number(),
+  languageLocal: z.enum(languagesKeys),
+  isNewUser: z.boolean(),
+  googleDate: googleBDSchema.nullable(),
+  cityUser: locationSchema.nullable(),
 });
 
 export const resultUserDataS = z.object({

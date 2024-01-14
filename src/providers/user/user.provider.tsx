@@ -1,32 +1,25 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import QueryString from "qs";
+import React, { createContext, useContext, useMemo, useState } from "react";
 import { t } from "@lingui/macro";
+import { User } from "@react-native-google-signin/google-signin";
 
 // types
 import type { FunctionComponent } from "react";
 import type { Props, Context, UserDataT } from "./user.types";
-import { KeysAuthorizationT } from "../../screens/Authorization/Authorization.types";
 
 // schemas
-import { resultUserDataS } from "./user.schemas";
+import { resultUserDataS, userDataS } from "./user.schemas";
 
 // providers
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
+import { biometricAuthenticatorContext } from "../biometricAuthenticator/biometricAuthenticator.provider";
 
 // helps
 import showErrors from "../../helps/errors/showError";
 import { getErrors } from "../../helps/errors/errors.helps";
 import {
   deleteDeviceStorage,
-  getDeviceStorage,
   setDeviceStorage,
 } from "../../helps/storage.help";
 
@@ -40,6 +33,7 @@ export const userContext = createContext<Context>({} as Context);
 export const UserProvider: FunctionComponent<Props> = (props) => {
   const { i18n } = props;
   const { setUserData: setUserDataSocket } = useContext(webSocketContext);
+  const { checkBiometric } = useContext(biometricAuthenticatorContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
   const { info, bug, warning } = showErrors;
@@ -50,46 +44,49 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     setUserDataSocket(null);
   };
 
-  const registrationPhone = async (
-    phone_number: string
-  ): Promise<UserDataT | null> => {
-    const currentlyPhoneNumber = phone_number.replaceAll(" ", "");
+  const setNewUserData = async (
+    verifyToken: string | null,
+    newUserData: UserDataT
+  ) => {
+    if (verifyToken) await setDeviceStorage(TOKEN_NAME, verifyToken);
+    setUserData({
+      ...DEFAULT_USER_DATA,
+      ...newUserData,
+    });
+    setUserDataSocket({
+      ...DEFAULT_USER_DATA,
+      ...newUserData,
+    });
+  };
+
+  const signInGoogle = async (userData: User): Promise<UserDataT | null> => {
+    setLoading(true);
     try {
       const resultCreateNewUser = await api(
-        PATHS.addPhone,
+        PATHS.loginGoogle,
         {
           method: "POST",
           data: {
-            phone_number: currentlyPhoneNumber,
+            idToken: userData.idToken,
           },
         },
-        resultUserDataS
+        userDataS
       );
-
-      setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser?.userData });
-      setUserDataSocket({
-        ...DEFAULT_USER_DATA,
-        ...resultCreateNewUser?.userData,
-      });
-
-      return resultCreateNewUser?.userData || null;
+      if (resultCreateNewUser) {
+        setNewUserData(resultCreateNewUser.verifyToken, resultCreateNewUser);
+        return resultCreateNewUser;
+      }
+      return null;
     } catch (error: any) {
       bug(error);
-      throw error;
+      return null;
+    } finally {
+      setLoading(false);
     }
   };
 
   const editUser = async (
-    newInfoUser: Record<
-      string,
-      | string
-      | number
-      | boolean
-      | Record<
-          string,
-          string | number | boolean | Record<string, string | number | boolean>
-        >
-    >
+    newInfoUser: Record<string, string | number | boolean | Record<string, any>>
   ): Promise<boolean> => {
     if (userData)
       try {
@@ -107,10 +104,13 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
           resultUserDataS
         );
 
-        if (resultCreateNewUser?.result) {
+        if (
+          resultCreateNewUser?.result &&
+          resultCreateNewUser.userData.verifyToken
+        ) {
           await setDeviceStorage(
             TOKEN_NAME,
-            resultCreateNewUser.userData.verify_token
+            resultCreateNewUser.userData.verifyToken
           );
           setUserData({
             ...DEFAULT_USER_DATA,
@@ -122,8 +122,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
           });
         } else info(getErrors(i18n)[resultCreateNewUser?.code || ""]);
         return true;
-      } catch (error: any) {
-        console.log("error", error);
+      } catch (error) {
         bug(error);
         return false;
       } finally {
@@ -135,25 +134,20 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
 
   const meUser = async (): Promise<boolean> => {
     try {
-      const verifyToken = await getDeviceStorage(TOKEN_NAME);
-      const queryParams = QueryString.stringify(
-        { verifyToken },
-        { addQueryPrefix: true }
-      );
-      const url = `${PATHS.me}${queryParams}`;
-      if (verifyToken) {
-        setLoading(true);
-        const result = await api(url, undefined, resultUserDataS);
-        if (result?.result) {
-          const userData = { ...DEFAULT_USER_DATA, ...result.userData };
-          setUserData(userData);
-          setUserDataSocket(userData);
-          return true;
-        }
-        showErrors.warning(getErrors(i18n)[result?.code || ""]);
-        return false;
-      }
+      setLoading(true);
+      const result = await api(PATHS.me, undefined, userDataS);
+      if (result) {
+        const isCheckBiometric = result.isGeoLocation
+          ? await checkBiometric()
+          : true;
 
+        if (!isCheckBiometric) return false;
+
+        const userData = { ...DEFAULT_USER_DATA, ...result };
+        setUserData(userData);
+        setUserDataSocket(userData);
+        return true;
+      }
       return false;
     } catch (error: any) {
       if (error instanceof Error) {
@@ -180,90 +174,17 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     }
   };
 
-  const loginUser = async (
-    dataLogin: Record<KeysAuthorizationT, string>
-  ): Promise<boolean> => {
-    try {
-      setLoading(true);
-      const result = await api(
-        PATHS.login,
-        { method: "POST", data: dataLogin },
-        resultUserDataS
-      );
-
-      if (result?.result) {
-        await setDeviceStorage(TOKEN_NAME, result?.userData.verify_token);
-        const userData = { ...DEFAULT_USER_DATA, ...result?.userData };
-        info(`Welcome ${userData.first_name} ${userData.family_name}`);
-        setUserData(userData);
-        setUserDataSocket(userData);
-        return true;
-      }
-      info(getErrors(i18n)[result?.code || ""]);
-      return false;
-    } catch (error: any) {
-      bug(error);
-      return false;
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const recoveryPasswordChangePassword = async (
-    password: string
-  ): Promise<boolean> => {
-    try {
-      setLoading(true);
-      const resultCreateNewUser = await api(
-        PATHS.editUserChangePassword,
-        {
-          method: "PUT",
-          data: {
-            phone_number: userData?.phone_number,
-            password,
-            time_token: 1,
-          },
-        },
-        resultUserDataS
-      );
-
-      if (resultCreateNewUser?.result) {
-        await setDeviceStorage(
-          TOKEN_NAME,
-          resultCreateNewUser.userData.verify_token
-        );
-        setUserData({ ...DEFAULT_USER_DATA, ...resultCreateNewUser.userData });
-        setUserDataSocket({
-          ...DEFAULT_USER_DATA,
-          ...resultCreateNewUser.userData,
-        });
-      } else info(getErrors(i18n)[resultCreateNewUser?.code || ""]);
-      return resultCreateNewUser?.result || false;
-    } catch (error: any) {
-      bug(error);
-      return false;
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const contextValue: Context = useMemo(
     () => ({
       userData,
-      registrationPhone,
       cleanUserData,
       editUser,
       meUser,
       exitUser,
-      loginUser,
-      recoveryPasswordChangePassword,
+      signInGoogle,
     }),
     [userData]
   );
-
-  useEffect(() => {
-    meUser();
-  }, []);
 
   return (
     <userContext.Provider value={contextValue}>

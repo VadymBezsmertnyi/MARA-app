@@ -1,10 +1,9 @@
 export const PATHS = {
   // user
-  me: "/user/authorization/me",
-  login: "/user/authorization/login",
-  addPhone: "/user/registration/addPhone",
-  editUser: "/user/registration/editUser",
-  editUserChangePassword: "/user/registration/editUser/changePassword",
+  loginGoogle: "/user/login/google",
+  me: "/user/login/me",
+  token: "/user/login/token",
+  editUser: "/user/login/editUser",
   // events
   eventsGet: "/events/",
   eventAdd: "/events/add/",

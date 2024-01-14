@@ -35,7 +35,7 @@ export const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
   );
 
   useEffect(() => {
-    setIsLoading(isLoadingProps);
+    setIsLoading(!isLoadingProps);
   }, [isLoadingProps]);
 
   return (

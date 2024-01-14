@@ -8,10 +8,15 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { ImageBackground } from "expo-image";
 import { BlurView } from "expo-blur";
 import { Trans } from "@lingui/macro";
+import { User } from "@react-native-google-signin/google-signin";
 
 // providers
-import { themeContext } from "../../providers/theme/theme.provider";
 import { localesContext } from "../../../localization/localization.provider";
+import { userContext } from "../../providers/user/user.provider";
+import { biometricAuthenticatorContext } from "../../providers/biometricAuthenticator/biometricAuthenticator.provider";
+
+// helps
+import { useAllNavigation } from "../../navigators/Navigators.helps";
 
 // components
 import { Logo } from "../../components/Logo/Logo";
@@ -23,12 +28,21 @@ import imageSplash from "../../../assets/splash.png";
 import imageCountryUk from "../../../images/icon-country-uk.png";
 import imageCountryUs from "../../../images/icon-country-us.png";
 
+// constants
+import {
+  PATHS_MAIN_SCREENS,
+  PATHS_REGISTRATION_SCREENS,
+} from "../../navigators/useNavigator.constants";
+
 // styles
 import { styles } from "./Welcome.styles";
 
 export const Welcome: FunctionComponent = () => {
+  const navigation = useAllNavigation();
+  const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
   const { language, setLanguage } = useContext(localesContext);
-  const { setIsSplash } = useContext(themeContext);
+  const { signInGoogle } = useContext(userContext);
+
   const iconLanguage = useMemo(
     () => (language === "en" ? imageCountryUs : imageCountryUk),
     [language]
@@ -38,13 +52,32 @@ export const Welcome: FunctionComponent = () => {
     [language]
   );
 
-  useEffect(() => {
-    setIsSplash(true);
-  }, []);
-
   const onChangeLanguage = () => {
     if (language === "uk") setLanguage("en");
     else setLanguage("uk");
+  };
+
+  const onSelect = async (userData: User) => {
+    const user = await signInGoogle(userData);
+    if (user?.isCheckBiometric === null && (isFaceId || isTouchId)) {
+      if (isTouchId)
+        navigation.navigate(PATHS_MAIN_SCREENS.registration, {
+          screen: PATHS_REGISTRATION_SCREENS.registrationTouchId,
+        });
+      else if (isFaceId)
+        navigation.navigate(PATHS_MAIN_SCREENS.registration, {
+          screen: PATHS_REGISTRATION_SCREENS.registrationFaceId,
+        });
+      else if (user.isNewUser)
+        navigation.navigate(PATHS_MAIN_SCREENS.registration, {
+          screen: PATHS_REGISTRATION_SCREENS.registrationLocation,
+        });
+      else navigation.navigate(PATHS_MAIN_SCREENS.main);
+    } else if (user?.isNewUser)
+      navigation.navigate(PATHS_MAIN_SCREENS.registration, {
+        screen: PATHS_REGISTRATION_SCREENS.registrationLocation,
+      });
+    else navigation.navigate(PATHS_MAIN_SCREENS.main);
   };
 
   return (
@@ -72,7 +105,10 @@ export const Welcome: FunctionComponent = () => {
           <Text style={styles.subTitle}>
             <Trans>Authorize using:</Trans>
           </Text>
-          <Socials styleContainer={styles.containerSocials} />
+          <Socials
+            styleContainer={styles.containerSocials}
+            onChange={onSelect}
+          />
         </View>
       </BlurView>
     </ImageBackground>

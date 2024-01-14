@@ -1,10 +1,16 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, {
+  FunctionComponent,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
 import { Alert, Platform, Text, View, ViewStyle } from "react-native";
 import { Trans } from "@lingui/macro";
+import { GoogleSignin, User } from "@react-native-google-signin/google-signin";
 
 // providers
-import { themeContext } from "../../providers/theme/theme.provider";
-import { localesContext } from "../../../localization/localization.provider";
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import {
@@ -15,21 +21,35 @@ import {
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 
 // constants
-import { THEME_DARK } from "../../providers/theme/theme.const";
+import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // styles
 import { styles } from "./Socials.styles";
 
+const GOOGLE_SCOPES = [
+  "https://www.googleapis.com/auth/drive.readonly",
+  "https://www.googleapis.com/auth/userinfo.email",
+  "https://www.googleapis.com/auth/drive.readonly",
+  "openid",
+  "https://www.googleapis.com/auth/userinfo.profile",
+];
+
+const EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS = process.env
+  .EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS as string;
+const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
+  .EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB as string;
+
 type SocialsProps = {
   isTitle?: boolean;
   styleContainer?: ViewStyle;
+  onChange: (value: User) => void;
 };
 
 export const Socials: FunctionComponent<SocialsProps> = ({
   isTitle = false,
   styleContainer,
+  onChange,
 }) => {
-  const { i18n } = useContext(localesContext);
   const { theme } = useContext(themeContext);
   const isIos = useMemo(() => Platform.OS === "ios", [Platform.OS]);
   const containerStyles = useMemo(
@@ -53,15 +73,32 @@ export const Socials: FunctionComponent<SocialsProps> = ({
 
   const onFacebook = () => {
     Alert.alert("You select: Facebook");
+    //onChange();
   };
 
-  const onGoogle = () => {
-    Alert.alert("You select: Google");
+  const onGoogle = async () => {
+    const userDataGoogle = await GoogleSignin.signIn();
+    onChange(userDataGoogle);
   };
 
   const onApple = () => {
     Alert.alert("You select: Apple");
+    //onChange();
   };
+
+  const showTitle = useCallback(
+    (typeSocial: string) => <Trans>Continue with {typeSocial}</Trans>,
+    []
+  );
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      scopes: GOOGLE_SCOPES,
+      webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+      offlineAccess: true,
+      iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+    });
+  }, []);
 
   return (
     <View style={containerStyles}>
@@ -74,30 +111,23 @@ export const Socials: FunctionComponent<SocialsProps> = ({
         <ButtonCustom type="transparent" onSubmit={onFacebook}>
           <View style={styles.itemSocialConnect}>
             <SocialFacebook width={24} height={24} />
-            <Text style={labelSocialConnectStyle}>
-              {i18n._(`Continue with {typeSocial}`, { typeSocial: "Facebook" })}
-            </Text>
+            <Text style={labelSocialConnectStyle}>{showTitle("Facebook")}</Text>
           </View>
         </ButtonCustom>
         {isIos ? (
           <ButtonCustom type="transparent" onSubmit={onApple}>
             <View style={styles.itemSocialConnect}>
               <SocialApple width={24} height={24} />
-              <Text style={labelSocialConnectStyle}>
-                {i18n._(`Continue with {typeSocial}`, { typeSocial: "Apple" })}
-              </Text>
+              <Text style={labelSocialConnectStyle}>{showTitle("Apple")}</Text>
             </View>
           </ButtonCustom>
-        ) : (
-          <ButtonCustom type="transparent" onSubmit={onGoogle}>
-            <View style={styles.itemSocialConnect}>
-              <SocialGoogle width={24} height={24} />
-              <Text style={labelSocialConnectStyle}>
-                {i18n._(`Continue with {typeSocial}`, { typeSocial: "Google" })}
-              </Text>
-            </View>
-          </ButtonCustom>
-        )}
+        ) : null}
+        <ButtonCustom type="transparent" onSubmit={onGoogle}>
+          <View style={styles.itemSocialConnect}>
+            <SocialGoogle width={24} height={24} />
+            <Text style={labelSocialConnectStyle}>{showTitle("Google")}</Text>
+          </View>
+        </ButtonCustom>
       </View>
     </View>
   );

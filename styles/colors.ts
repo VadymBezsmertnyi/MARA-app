@@ -16,6 +16,7 @@ const colors = {
   blueTufts: "#368CDC",
   //gray
   gray: "#bbb",
+  grayCheckbox: "#8E8E93",
   gainsboroGray: "#ddd",
   grayFuscous: "#524B44",
   DavysGray: "#545262",

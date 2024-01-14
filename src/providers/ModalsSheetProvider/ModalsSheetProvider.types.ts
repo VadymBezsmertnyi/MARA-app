@@ -5,4 +5,4 @@ export type ModalSheetType = {
   footer?: JSX.Element;
 };
 
-export type ModalSheetTypes = "input-location" | "map-location";
+export type ModalSheetTypes = "input-location" | "map-location" | "input-city";

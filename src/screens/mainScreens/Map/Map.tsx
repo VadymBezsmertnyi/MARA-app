@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Platform, View } from "react-native";
+import { Platform, View, ViewStyle } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
 import { Details, Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -15,7 +15,7 @@ import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { workshopsContext } from "../../../providers/workshops/workshops.provider";
-import { themeContext } from "../../../providers/theme/theme.provider";
+import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { webSocketContext } from "../../../providers/WebSocketProvider/WebSocketProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
 import { userContext } from "../../../providers/user/user.provider";
@@ -50,7 +50,7 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { workshops } = useContext(workshopsContext);
   const { stateSocket } = useContext(webSocketContext);
   const { location } = useContext(mapContext);
-  const { theme } = useContext(themeContext);
+  const { theme, heightStatusBar } = useContext(themeContext);
   const [region, setRegion] = useState(DEFAULT_LOCATION);
   const listUsers = useMemo(
     () =>
@@ -64,6 +64,10 @@ export const Map: FunctionComponent<MapProps> = () => {
   const usersGeolocation = useMemo(
     () => (stateSocket.geolocationUsers ? stateSocket.geolocationUsers : null),
     [stateSocket.geolocationUsers]
+  );
+  const containerStyles: ViewStyle = useMemo(
+    () => [styles.container, { marginTop: heightStatusBar }] as ViewStyle,
+    [heightStatusBar]
   );
 
   // TODO delete
@@ -83,7 +87,7 @@ export const Map: FunctionComponent<MapProps> = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <MapViewCluster
         provider={PROVIDER_GOOGLE}
         style={styles.map}

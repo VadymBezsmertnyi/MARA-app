@@ -23,7 +23,7 @@ import { NearbySearchGoogleType } from "./MapLocationModal.types";
 import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
 
 // providers
-import { themeContext } from "../../../theme/theme.provider";
+import { themeContext } from "../../../ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../../localization/localization.provider";
 import { mapContext } from "../../../MapProvider/MapProvider";
 

@@ -1,0 +1,87 @@
+import { StyleSheet } from "react-native";
+import colors from "../../../../../styles/colors";
+
+export const styles = StyleSheet.create({
+  container: { flex: 1 },
+  containerTitle: {
+    paddingHorizontal: 16,
+    gap: 16,
+  },
+  title: {
+    fontFamily: "Montserrat_600SemiBold",
+    fontSize: 16,
+    paddingHorizontal: 8,
+  },
+  lineTitle: {
+    width: "100%",
+    height: 1,
+    backgroundColor: colors.chileanFireOrange,
+  },
+  containerInput: {
+    paddingHorizontal: 16,
+    paddingBottom: 7,
+    backgroundColor: "white",
+    shadowColor: colors.gray10,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 17.4 / 2,
+    elevation: 9,
+    borderRadius: 8,
+  },
+  titleInput: {
+    paddingHorizontal: 8,
+  },
+  containerList: {},
+  containerItemList: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingRight: 24,
+  },
+  titleItemList: {
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    gap: 5,
+  },
+  pointItemList: {
+    width: 20,
+    height: 20,
+    backgroundColor: colors.lightOrange,
+    borderRadius: 40,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  selectPointItemList: {
+    width: 18,
+    height: 18,
+    borderColor: "#FD5E01",
+    borderWidth: 1,
+  },
+  inSelectPointItemList: {
+    width: 10,
+    height: 10,
+    backgroundColor: "#FD5E01",
+    borderRadius: 40,
+  },
+  streetTitleItemList: {
+    color: colors.blackCoffee,
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  cityTitleItemList: {
+    color: colors.blackCoffee,
+    fontSize: 12,
+    fontWeight: "400",
+  },
+  containerButton: { paddingHorizontal: 16, paddingVertical: 20 },
+  buttonSelectMap: {
+    flexDirection: "row",
+    gap: 4,
+    justifyContent: "center",
+  },
+  titleButtonSelectMap: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: colors.white,
+  },
+});

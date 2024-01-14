@@ -1,18 +1,23 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
-import { Platform, View } from 'react-native';
-import MapView, { Details, MapPressEvent, PROVIDER_GOOGLE, Region } from 'react-native-maps';
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { Platform, View } from "react-native";
+import MapView, {
+  Details,
+  MapPressEvent,
+  PROVIDER_GOOGLE,
+  Region,
+} from "react-native-maps";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
-import { OtherMarker } from '../../screens/mainScreens/Map/components/OtherMarker/OtherMarker';
+import { OtherMarker } from "../../screens/mainScreens/Map/components/OtherMarker/OtherMarker";
 
 // styles
-import { styles } from './Map.styles';
-import colors from '../../../styles/colors';
+import { styles } from "./Map.styles";
+import colors from "../../../styles/colors";
 
-const mapType = Platform.OS === 'ios' ? 'terrain' : 'standard';
+const mapType = Platform.OS === "ios" ? "terrain" : "standard";
 
 type MapProps = {
   longitude: number;
@@ -32,15 +37,15 @@ export const Map: FunctionComponent<MapProps> = ({
   onRegionChange,
   onPress,
 }) => {
-  const { theme } = useContext(themeContext);
+  const { theme, heightStatusBar } = useContext(themeContext);
 
   const initialRegion = useMemo(
     () => ({ ...DEFAULT_LOCATION, longitude, latitude }),
-    [longitude, latitude],
+    [longitude, latitude]
   );
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { paddingTop: heightStatusBar }]}>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
@@ -59,6 +64,7 @@ export const Map: FunctionComponent<MapProps> = ({
           latitude={latitude}
           markerColor={colors.electricRed}
           markerSize={45}
+          title={""}
         />
       </MapView>
     </View>
