@@ -4,6 +4,9 @@ import { GoogleAutoComplete } from "react-native-google-autocomplete";
 import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
 import { Trans } from "@lingui/macro";
 
+// types
+import { ModalSheetTypes } from "../../ModalsSheetProvider.types";
+
 // providers
 import { localesContext } from "../../../../../localization/localization.provider";
 
@@ -20,7 +23,6 @@ import { IconMapCustom } from "../../../../icons/components";
 // styles
 import { styles } from "./InputLocationModal.styles";
 import colors from "../../../../../styles/colors";
-import { ModalSheetTypes } from "../../ModalsSheetProvider.types";
 
 const EXPO_PUBLIC_API_KEY_GOOGLE_WEB = process.env
   .EXPO_PUBLIC_API_KEY_GOOGLE_WEB as string;
