@@ -13,6 +13,7 @@ type InputButtonProps = {
   customStyles?: ViewStyle;
   onPress: () => void;
   errorMessage?: string;
+  inputWrapperStyle?: ViewStyle;
 };
 
 export const InputButton: FunctionComponent<InputButtonProps> = ({
@@ -23,6 +24,7 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
   customStyles,
   onPress,
   errorMessage,
+  inputWrapperStyle,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -38,8 +40,9 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
     () => ({
       ...styles.inputWrapper,
       borderColor: errorMessage ? colors.errorRed : borderColor,
+      ...inputWrapperStyle,
     }),
-    [borderColor, errorMessage]
+    [borderColor, errorMessage, inputWrapperStyle]
   );
   const inputStyles = useMemo(
     () => ({ ...styles.input, ...customStyles }),

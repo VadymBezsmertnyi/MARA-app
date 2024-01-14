@@ -27,7 +27,7 @@ import {
 
 // providers
 import LocalesProvider from "./localization/localization.provider";
-import { ThemeProvider } from "./src/providers/theme/theme.provider";
+import { ThemeProvider } from "./src/providers/ThemeProvider/ThemeProvider";
 import { BiometricAuthenticatorProvider } from "./src/providers/biometricAuthenticator/biometricAuthenticator.provider";
 import { LoadingProvider } from "./src/providers/LoadingProvider/LoadingProvider";
 import { UserProvider } from "./src/providers/user/user.provider";

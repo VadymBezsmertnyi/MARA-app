@@ -9,11 +9,11 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 
 // providers
-import { themeContext } from "../../providers/theme/theme.provider";
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
 import colors from "../../../styles/colors";
-import { THEME_DARK } from "../../providers/theme/theme.const";
+import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 //styles
 import styles from "./ButtonCustom.styles";

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import {
   Pressable,
   StyleProp,
@@ -8,20 +8,20 @@ import {
   TextStyle,
   View,
   ViewStyle,
-} from 'react-native';
+} from "react-native";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
-import { THEME_DARK } from '../../providers/theme/theme.const';
-import colors from '../../../styles/colors';
+import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
+import colors from "../../../styles/colors";
 
 //icons
-import { EyeHide, EyeShow } from '../../icons/components';
+import { EyeHide, EyeShow } from "../../icons/components";
 
 // styles
-import { styles } from './InputPassword.styles';
+import { styles } from "./InputPassword.styles";
 
 type InputProps = {
   label?: string;
@@ -42,19 +42,29 @@ export const InputPassword: FunctionComponent<InputProps> = ({
   buttonStyle = null,
   errorStyle = null,
   errorMessage,
-  placeholder = '',
+  placeholder = "",
   ...props
 }): JSX.Element => {
   const { theme } = useContext(themeContext);
   const [isShow, setIsShow] = useState(true);
-  const containerStyleState = useMemo(() => [styles.container, containerStyle], [containerStyle]);
+  const containerStyleState = useMemo(
+    () => [styles.container, containerStyle],
+    [containerStyle]
+  );
   const labelStyleState = useMemo(
-    () => [styles.label, theme === THEME_DARK && { color: colors.white }, labelStyle],
-    [labelStyle, theme],
+    () => [
+      styles.label,
+      theme === THEME_DARK && { color: colors.white },
+      labelStyle,
+    ],
+    [labelStyle, theme]
   );
   const inputContainerStyle = useMemo(
-    () => [styles.inputContainer, theme === THEME_DARK && { backgroundColor: 'transparent' }],
-    [theme],
+    () => [
+      styles.inputContainer,
+      theme === THEME_DARK && { backgroundColor: "transparent" },
+    ],
+    [theme]
   );
   const inputStyleState = useMemo(
     () => [
@@ -63,12 +73,15 @@ export const InputPassword: FunctionComponent<InputProps> = ({
       inputStyle,
       errorMessage ? styles.inputError : null,
     ],
-    [errorMessage, inputStyle, theme],
+    [errorMessage, inputStyle, theme]
   );
-  const errorStyleState = useMemo(() => [styles.errorMessage, errorStyle], [errorStyle]);
+  const errorStyleState = useMemo(
+    () => [styles.errorMessage, errorStyle],
+    [errorStyle]
+  );
 
   const handlePasswordVisibility = () => {
-    setIsShow(state => !state);
+    setIsShow((state) => !state);
   };
 
   return (
@@ -83,7 +96,11 @@ export const InputPassword: FunctionComponent<InputProps> = ({
           {...props}
         />
         <Pressable onPress={handlePasswordVisibility} style={buttonStyle}>
-          {isShow ? <EyeHide width={24} height={24} /> : <EyeShow width={24} height={24} />}
+          {isShow ? (
+            <EyeHide width={24} height={24} />
+          ) : (
+            <EyeShow width={24} height={24} />
+          )}
         </Pressable>
       </View>
       <Text style={errorStyleState}>{errorMessage}</Text>

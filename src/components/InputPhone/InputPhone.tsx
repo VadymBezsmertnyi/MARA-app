@@ -1,24 +1,34 @@
-import React, { useContext, useMemo } from 'react';
-import { Image, StyleProp, Text, TextStyle, View, ViewStyle } from 'react-native';
-import PhoneInput from 'react-native-phone-input';
-import infoPhoneCountries from 'country-telephone-data';
+import React, { useContext, useMemo } from "react";
+import {
+  Image,
+  StyleProp,
+  Text,
+  TextStyle,
+  View,
+  ViewStyle,
+} from "react-native";
+import PhoneInput from "react-native-phone-input";
+import infoPhoneCountries from "country-telephone-data";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
-import { DEFAULT_CODE_COUNTRY, DEFAULT_COUNTRY } from '../../constants/inputs.const';
-import { THEME_DARK } from '../../providers/theme/theme.const';
+import {
+  DEFAULT_CODE_COUNTRY,
+  DEFAULT_COUNTRY,
+} from "../../constants/inputs.const";
+import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // helps
-import { getClearValue } from '../../helps/regexp';
+import { getClearValue } from "../../helps/regexp";
 
 // icons
-import { ArrowDown } from '../../icons/components';
+import { ArrowDown } from "../../icons/components";
 
 // styles
-import { styles } from './InputPhone.styles';
-import colors from '../../../styles/colors';
+import { styles } from "./InputPhone.styles";
+import colors from "../../../styles/colors";
 
 type InputProps = {
   phoneNumber: string;
@@ -48,32 +58,48 @@ export const InputPhone = ({
   errorStyle,
 }: InputProps) => {
   const { theme } = useContext(themeContext);
-  const textPropsPhoneInput = useMemo(() => ({ value: phoneNumber }), [phoneNumber]);
+  const textPropsPhoneInput = useMemo(
+    () => ({ value: phoneNumber }),
+    [phoneNumber]
+  );
 
-  const containerStyles = useMemo(() => [styles.container, containerStyle], [containerStyle]);
+  const containerStyles = useMemo(
+    () => [styles.container, containerStyle],
+    [containerStyle]
+  );
   const labelStyles = useMemo(
     () => [styles.label, theme === THEME_DARK && styles.colorWhite, labelStyle],
-    [labelStyle, theme],
+    [labelStyle, theme]
   );
-  const phoneInputStyles = useMemo(() => [styles.phoneInput, inputStyle], [inputStyle]);
-  const errorMessageStyles = useMemo(() => [styles.errorMessage, errorStyle], [errorStyle]);
+  const phoneInputStyles = useMemo(
+    () => [styles.phoneInput, inputStyle],
+    [inputStyle]
+  );
+  const errorMessageStyles = useMemo(
+    () => [styles.errorMessage, errorStyle],
+    [errorStyle]
+  );
 
   const selectCountry = useMemo(
     () =>
-      infoPhoneCountries.allCountries.find(country => country.iso2 === selectCountryIso) || null,
-    [selectCountryIso],
+      infoPhoneCountries.allCountries.find(
+        (country) => country.iso2 === selectCountryIso
+      ) || null,
+    [selectCountryIso]
   );
   const clearFormat = useMemo(
-    () => getClearValue(selectCountry?.format || ''),
-    [selectCountry?.format],
+    () => getClearValue(selectCountry?.format || ""),
+    [selectCountry?.format]
   );
   const containerFlagStyle = useMemo(
     () => [styles.containerFlag, theme === THEME_DARK && styles.backgroundDark],
-    [theme],
+    [theme]
   );
 
   const onSelectCountry = (iso: string) => {
-    const selectCountry = infoPhoneCountries.allCountries.find(country => country.iso2 === iso);
+    const selectCountry = infoPhoneCountries.allCountries.find(
+      (country) => country.iso2 === iso
+    );
     setSelectCountryIso(selectCountry?.iso2 || DEFAULT_COUNTRY);
     setPhoneNumber(`+${selectCountry?.dialCode || DEFAULT_CODE_COUNTRY}`);
   };
@@ -89,7 +115,11 @@ export const InputPhone = ({
   const renderFlag = ({ imageSource }: { imageSource: number }) => (
     <View style={containerFlagStyle}>
       <Image source={imageSource} style={styles.flagIcon} />
-      <ArrowDown width={15} height={10} fill={theme === THEME_DARK ? colors.white : colors.black} />
+      <ArrowDown
+        width={15}
+        height={10}
+        fill={theme === THEME_DARK ? colors.white : colors.black}
+      />
     </View>
   );
 

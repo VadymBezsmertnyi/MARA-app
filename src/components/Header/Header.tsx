@@ -1,23 +1,23 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
-import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
-import { t } from '@lingui/macro';
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import { t } from "@lingui/macro";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
-import { localesContext } from '../../../localization/localization.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // icons
-import { ArrowLeft } from '../../icons/components';
+import { ArrowLeft } from "../../icons/components";
 
 // constants
-import { THEME_DARK } from '../../providers/theme/theme.const';
+import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // hooks
-import { useAllNavigation } from '../../navigators/Navigators.helps';
+import { useAllNavigation } from "../../navigators/Navigators.helps";
 
 // styles
-import { styles } from './Header.styles';
-import colors from '../../../styles/colors';
+import { styles } from "./Header.styles";
+import colors from "../../../styles/colors";
 
 type HeaderStackProps = {
   title: string;
@@ -39,8 +39,11 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   };
 
   const backTitleStyle = useMemo(
-    () => [styles.titleButtonBack, theme === THEME_DARK ? { color: colors.white } : {}],
-    [theme],
+    () => [
+      styles.titleButtonBack,
+      theme === THEME_DARK ? { color: colors.white } : {},
+    ],
+    [theme]
   );
 
   return (

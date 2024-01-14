@@ -1,21 +1,33 @@
-import React, { FunctionComponent, useCallback, useContext, useMemo } from 'react';
-import { ScrollView, StyleProp, Text, TextStyle, TouchableOpacity, View } from 'react-native';
+import React, {
+  FunctionComponent,
+  useCallback,
+  useContext,
+  useMemo,
+} from "react";
+import {
+  ScrollView,
+  StyleProp,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import {
   CodeField,
   Cursor,
   useBlurOnFulfill,
   useClearByFocusCell,
-} from 'react-native-confirmation-code-field';
-import { Trans } from '@lingui/macro';
+} from "react-native-confirmation-code-field";
+import { Trans } from "@lingui/macro";
 
 // providers
-import { themeContext } from '../../providers/theme/theme.provider';
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
-import { THEME_DARK } from '../../providers/theme/theme.const';
+import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // styles
-import { styles } from './InputCode.styles';
+import { styles } from "./InputCode.styles";
 
 type InputCodeProps = {
   value: string;
@@ -57,24 +69,24 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
       theme === THEME_DARK && styles.colorWhite,
       isFocused && styles.focusCell,
     ],
-    [theme],
+    [theme]
   );
 
   const stylesContainer = useMemo(
     () => [styles.container, styleContainerInput],
-    [styleContainerInput],
+    [styleContainerInput]
   );
   const stylesTitle = useMemo(
     () => [styles.title, theme === THEME_DARK && styles.colorWhite, styleTitle],
-    [styleTitle, theme],
+    [styleTitle, theme]
   );
   const stylesSubTitle = useMemo(
     () => [styles.subTitle, theme === THEME_DARK && styles.colorWhite],
-    [theme],
+    [theme]
   );
   const stylesContainerCode = useMemo(
     () => [styles.containerCode, styleContainerCode],
-    [styleContainerCode],
+    [styleContainerCode]
   );
 
   return (
@@ -101,7 +113,7 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
                   style={stylesCodeFieldInput(isFocused)}
                   onLayout={getCellOnLayoutHandler(index)}
                 >
-                  {symbol || (isFocused ? <Cursor /> : '-')}
+                  {symbol || (isFocused ? <Cursor /> : "-")}
                 </Text>
               )}
             />
@@ -111,7 +123,10 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
       </View>
       {isResendCode && (
         <View style={styles.containerResend}>
-          <TouchableOpacity onPress={onResendCode} style={styles.buttonResendCode}>
+          <TouchableOpacity
+            onPress={onResendCode}
+            style={styles.buttonResendCode}
+          >
             <View style={styles.containerResendCode}>
               <Text style={styles.resendCode}>
                 <Trans>Resend the code</Trans>
