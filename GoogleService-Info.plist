@@ -2,20 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>797450075852-jithbnlibr1eoh5gmuqdp7vv8k7it5g8.apps.googleusercontent.com</string>
+	<string>549450621533-09mnh7319e88giupu5s5t99lb49ta3im.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBi9gmS8zJ8T6F6KG9V1CiwcyjUV1OSADQ</string>
+	<string>AIzaSyBHWzx3dIXJuNl5jViM-861D0qO5kURPkw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>797450075852</string>
+	<string>549450621533</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.motoauto.mara</string>
 	<key>PROJECT_ID</key>
-	<string>mara-fe790</string>
+	<string>moto-auto-road-assistant</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mara-fe790.appspot.com</string>
+	<string>moto-auto-road-assistant.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -27,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:797450075852:ios:7abc3bdbb2553cd3d5cc69</string>
+	<string>1:549450621533:ios:c6ff1e405ec505bcd2a3b4</string>
 </dict>
 </plist>

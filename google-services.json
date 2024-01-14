@@ -1,45 +1,45 @@
 {
   "project_info": {
-    "project_number": "797450075852",
-    "project_id": "mara-fe790",
-    "storage_bucket": "mara-fe790.appspot.com"
+    "project_number": "549450621533",
+    "project_id": "moto-auto-road-assistant",
+    "storage_bucket": "moto-auto-road-assistant.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:797450075852:android:c44d53d7280de9d4d5cc69",
+        "mobilesdk_app_id": "1:549450621533:android:6e532da2131c6c47d2a3b4",
         "android_client_info": {
           "package_name": "com.motoauto.mara"
         }
       },
       "oauth_client": [
         {
-          "client_id": "797450075852-jithbnlibr1eoh5gmuqdp7vv8k7it5g8.apps.googleusercontent.com",
+          "client_id": "549450621533-09mnh7319e88giupu5s5t99lb49ta3im.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.motoauto.mara",
-            "certificate_hash": "c16369df3d9c5a352bf6ea2476c2902f1c2e5d3d"
+            "certificate_hash": "f6fedeb44b25af2e6aaea87d7ef4c9a512e7dbe6"
           }
         },
         {
-          "client_id": "797450075852-eobrpbu433vp078jp55bi2moiek7do20.apps.googleusercontent.com",
+          "client_id": "549450621533-uj5cp4vb5p7u1u37tsa3eq3ltmku9le4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCVTzyIBdXKEZtvg4LGLrlWVaovzO4KqfQ"
+          "current_key": "AIzaSyCgTkMdY4yyX7kxG4BAVGrjhOJ03qRZ0Is"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "797450075852-eobrpbu433vp078jp55bi2moiek7do20.apps.googleusercontent.com",
+              "client_id": "549450621533-uj5cp4vb5p7u1u37tsa3eq3ltmku9le4.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "797450075852-4692dkokllud6pq99q9qru7lkk43l155.apps.googleusercontent.com",
+              "client_id": "549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.motoauto.mara"

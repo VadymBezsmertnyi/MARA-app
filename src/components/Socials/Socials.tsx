@@ -52,6 +52,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   onChange,
 }) => {
   const { theme } = useContext(themeContext);
+
   const isIos = useMemo(() => Platform.OS === "ios", [Platform.OS]);
   const containerStyles = useMemo(
     () => [styles.socialConnect, styleContainer],
@@ -103,8 +104,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   useEffect(() => {
     GoogleSignin.configure({
       scopes: GOOGLE_SCOPES,
-      webClientId:
-        "797450075852-eobrpbu433vp078jp55bi2moiek7do20.apps.googleusercontent.com",
+      webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
       offlineAccess: true,
       iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
     });
