@@ -14,15 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "549450621533-09mnh7319e88giupu5s5t99lb49ta3im.apps.googleusercontent.com",
+          "client_id": "549450621533-8g5jsuuabhuoif3l7clsacukbdr08n80.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.motoauto.mara",
-            "certificate_hash": "f6fedeb44b25af2e6aaea87d7ef4c9a512e7dbe6"
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },
         {
-          "client_id": "549450621533-ag78va0jn0dg58rpf9vavdcgp48f4u61.apps.googleusercontent.com",
+          "client_id": "549450621533-g1rujtokh4det5hsl399p5qr1hu1ejem.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
