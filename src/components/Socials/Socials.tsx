@@ -2,7 +2,6 @@ import React, {
   FunctionComponent,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
 } from "react";
 import { Alert, Platform, Text, View, ViewStyle } from "react-native";
@@ -52,6 +51,12 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   onChange,
 }) => {
   const { theme } = useContext(themeContext);
+  GoogleSignin.configure({
+    scopes: GOOGLE_SCOPES,
+    webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+    offlineAccess: true,
+    iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+  });
 
   const isIos = useMemo(() => Platform.OS === "ios", [Platform.OS]);
   const containerStyles = useMemo(
@@ -100,15 +105,6 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     (typeSocial: string) => <Trans>Continue with {typeSocial}</Trans>,
     []
   );
-
-  useEffect(() => {
-    GoogleSignin.configure({
-      scopes: GOOGLE_SCOPES,
-      webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-      offlineAccess: true,
-      iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-    });
-  }, []);
 
   return (
     <View style={containerStyles}>

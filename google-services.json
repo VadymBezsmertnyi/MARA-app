@@ -22,7 +22,7 @@
           }
         },
         {
-          "client_id": "549450621533-uj5cp4vb5p7u1u37tsa3eq3ltmku9le4.apps.googleusercontent.com",
+          "client_id": "549450621533-ag78va0jn0dg58rpf9vavdcgp48f4u61.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,14 +35,14 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "549450621533-uj5cp4vb5p7u1u37tsa3eq3ltmku9le4.apps.googleusercontent.com",
+              "client_id": "112333853563107126163",
               "client_type": 3
             },
             {
-              "client_id": "549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns.apps.googleusercontent.com",
+              "client_id": "549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.motoauto.mara"
+                "bundle_id": "moto.auto.road.assistant"
               }
             }
           ]

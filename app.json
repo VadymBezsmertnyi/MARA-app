@@ -14,7 +14,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.motoauto.mara",
+      "bundleIdentifier": "moto.auto.road.assistant",
       "googleServicesFile": "./GoogleService-Info.plist",
       "buildNumber": "1",
       "usesAppleSignIn": true,
@@ -32,7 +32,7 @@
         "CFBundleURLTypes": [
           {
             "CFBundleURLSchemes": [
-              "com.googleusercontent.apps.549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns"
+              "com.googleusercontent.apps.549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj"
             ]
           }
         ]
@@ -87,6 +87,12 @@
       "./plugins/react-native-maps-plugin",
       "expo-localization",
       "expo-apple-authentication",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj"
+        }
+      ],
       [
         "expo-local-authentication",
         {

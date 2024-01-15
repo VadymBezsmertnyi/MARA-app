@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns.apps.googleusercontent.com</string>
+	<string>549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.549450621533-vvul4kefgmk6ca2fp43v8pdksn56q5ns</string>
+	<string>com.googleusercontent.apps.549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>549450621533-09mnh7319e88giupu5s5t99lb49ta3im.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBHWzx3dIXJuNl5jViM-861D0qO5kURPkw</string>
+	<string>AIzaSyAF698OUKwv7YFwJTk9pWUzrpcwOScqbws</string>
 	<key>GCM_SENDER_ID</key>
 	<string>549450621533</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.motoauto.mara</string>
+	<string>moto.auto.road.assistant</string>
 	<key>PROJECT_ID</key>
 	<string>moto-auto-road-assistant</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:549450621533:ios:c6ff1e405ec505bcd2a3b4</string>
+	<string>1:549450621533:ios:dbc2966fdd87288bd2a3b4</string>
 </dict>
 </plist>
