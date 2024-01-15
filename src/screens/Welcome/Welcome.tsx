@@ -9,6 +9,7 @@ import { User } from "@react-native-google-signin/google-signin";
 import { localesContext } from "../../../localization/localization.provider";
 import { userContext } from "../../providers/user/user.provider";
 import { biometricAuthenticatorContext } from "../../providers/biometricAuthenticator/biometricAuthenticator.provider";
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // helps
 import { useAllNavigation } from "../../navigators/Navigators.helps";
@@ -36,6 +37,7 @@ export const Welcome: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
   const { language, setLanguage } = useContext(localesContext);
+  const { heightStatusBar } = useContext(themeContext);
   const { signInGoogle } = useContext(userContext);
 
   const iconLanguage = useMemo(
@@ -75,9 +77,19 @@ export const Welcome: FunctionComponent = () => {
     else navigation.navigate(PATHS_MAIN_SCREENS.main);
   };
 
+  const containerStyles = useMemo(
+    () => [
+      styles.containerBlur,
+      {
+        paddingTop: heightStatusBar,
+      },
+    ],
+    [heightStatusBar]
+  );
+
   return (
     <ImageBackground style={styles.container} source={imageSplash}>
-      <BlurView intensity={8} style={styles.containerBlur}>
+      <BlurView intensity={8} style={containerStyles}>
         <View style={styles.containerLanguage}>
           <TouchableOpacity
             onPress={onChangeLanguage}
