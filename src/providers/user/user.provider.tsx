@@ -132,28 +132,28 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     return false;
   };
 
-  const meUser = async (): Promise<boolean> => {
+  const meUser = async (): Promise<UserDataT | null> => {
     try {
       setLoading(true);
       const result = await api(PATHS.me, undefined, userDataS);
       if (result) {
-        const isCheckBiometric = result.isGeoLocation
+        const isCheckBiometric = result.isCheckBiometric
           ? await checkBiometric()
           : true;
 
-        if (!isCheckBiometric) return false;
+        if (!isCheckBiometric) return null;
 
         const userData = { ...DEFAULT_USER_DATA, ...result };
         setUserData(userData);
         setUserDataSocket(userData);
-        return true;
+        return userData;
       }
-      return false;
+      return null;
     } catch (error: any) {
       if (error instanceof Error) {
         bug(error);
       } else warning(error);
-      return false;
+      return null;
     } finally {
       setLoading(false);
     }

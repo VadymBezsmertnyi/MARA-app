@@ -32,11 +32,14 @@ export const RegistrationStack: FunctionComponent = () => {
 
   const options = (
     title: string | null,
+    isHeaderLeft: boolean,
     navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>
   ): NativeStackNavigationOptions => ({
     headerShown: title !== null,
     headerTitle: title || "",
-    headerLeft: () => <HeaderLeft navigation={navigation} />,
+    headerLeft: isHeaderLeft
+      ? () => <HeaderLeft navigation={navigation} />
+      : undefined,
   });
 
   const contentStyle = useMemo(
@@ -81,7 +84,7 @@ export const RegistrationStack: FunctionComponent = () => {
             navigation,
           }: {
             navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>;
-          }) => options(screen.title, navigation)}
+          }) => options(screen.title, screen.isBackHeader, navigation)}
           component={screen.component}
         />
       ))}

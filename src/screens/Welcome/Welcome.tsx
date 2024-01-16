@@ -24,11 +24,8 @@ import imageSplash from "../../../assets/splash.png";
 import imageCountryUk from "../../../images/icon-country-uk.png";
 import imageCountryUs from "../../../images/icon-country-us.png";
 
-// constants
-import {
-  PATHS_MAIN_SCREENS,
-  PATHS_REGISTRATION_SCREENS,
-} from "../../navigators/useNavigator.constants";
+// hooks
+import { redirectToScreen } from "../screens.hooks";
 
 // styles
 import { styles } from "./Welcome.styles";
@@ -56,25 +53,7 @@ export const Welcome: FunctionComponent = () => {
 
   const onSelect = async (userData: User) => {
     const user = await signInGoogle(userData);
-    if (user?.isCheckBiometric === null && (isFaceId || isTouchId)) {
-      if (isTouchId)
-        navigation.navigate(PATHS_MAIN_SCREENS.registration, {
-          screen: PATHS_REGISTRATION_SCREENS.registrationTouchId,
-        });
-      else if (isFaceId)
-        navigation.navigate(PATHS_MAIN_SCREENS.registration, {
-          screen: PATHS_REGISTRATION_SCREENS.registrationFaceId,
-        });
-      else if (user.isNewUser)
-        navigation.navigate(PATHS_MAIN_SCREENS.registration, {
-          screen: PATHS_REGISTRATION_SCREENS.registrationLocation,
-        });
-      else navigation.navigate(PATHS_MAIN_SCREENS.main);
-    } else if (user?.isNewUser)
-      navigation.navigate(PATHS_MAIN_SCREENS.registration, {
-        screen: PATHS_REGISTRATION_SCREENS.registrationLocation,
-      });
-    else navigation.navigate(PATHS_MAIN_SCREENS.main);
+    if (user) redirectToScreen(navigation, user, isFaceId, isTouchId);
   };
 
   const containerStyles = useMemo(

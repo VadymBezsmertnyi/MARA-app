@@ -21,6 +21,7 @@ export const PATHS_REGISTRATION_SCREENS = {
   registrationFaceId: "registrationFaceId",
   registrationPrivacyPolicy: "registrationPrivacyPolicy",
   registrationTermsOfUse: "registrationTermsOfUse",
+  registrationInfo: "registrationInfo",
 } as const;
 
 export const PATHS_FORGET_SCREENS = {

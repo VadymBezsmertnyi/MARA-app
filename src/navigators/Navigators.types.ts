@@ -55,6 +55,7 @@ export type RootRegistrationScreensParamList = {
   [PATHS_REGISTRATION_SCREENS.registrationFaceId]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy]: undefined;
   [PATHS_REGISTRATION_SCREENS.registrationTermsOfUse]: undefined;
+  [PATHS_REGISTRATION_SCREENS.registrationInfo]: undefined;
 };
 
 export type RootNewsScreensParamList = {

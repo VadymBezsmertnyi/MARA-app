@@ -69,9 +69,9 @@ export const RegistrationLocation: FunctionComponent = () => {
       const resultSave = await editUser({
         isGeoLocation,
         cityUser: city,
-        isNewUser: false,
       });
-      if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
+      if (resultSave)
+        navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationInfo);
     }
     setCity(null);
   };

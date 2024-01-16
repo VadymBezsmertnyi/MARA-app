@@ -1,0 +1,107 @@
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { Text, View } from "react-native";
+import { Trans } from "@lingui/macro";
+
+// providers
+import { userContext } from "../../../providers/user/user.provider";
+import { localesContext } from "../../../../localization/localization.provider";
+
+// helps
+import { useAllNavigation } from "../../../navigators/Navigators.helps";
+import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
+import { getClearValue } from "../../../helps/regexp";
+
+// components
+import { InputPhone } from "../../../components/InputPhone/InputPhone";
+import { Input } from "../../../components/Input/Input";
+import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+
+// constants
+import { PATHS_MAIN_SCREENS } from "../../../navigators/useNavigator.constants";
+import { DEFAULT_COUNTRY } from "../../../constants/inputs.const";
+
+// styles
+import { styles } from "./RegistrationInfo.styles";
+
+export const RegistrationInfo: FunctionComponent = () => {
+  const navigation = useAllNavigation();
+  const { verifyPhone } = useAuthorizationRegistration();
+  const { i18n } = useContext(localesContext);
+  const { userData, editUser } = useContext(userContext);
+  const [login, setLogin] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("+380");
+  const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
+  const [errorMessageLogin, setErrorMessageLogin] = useState("");
+
+  const onSave = async () => {
+    if (login.length >= 5 && login.length <= 20) {
+      const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
+      const clearPhoneNumber = getClearValue(phoneNumber);
+
+      const resultSave = await editUser({
+        login,
+        isNewUser: false,
+        ...(isPhone && { phoneNumber: clearPhoneNumber }),
+      });
+      if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
+    } else
+      setErrorMessageLogin(
+        i18n._("The length of the name should be between 5 and 20 characters")
+      );
+  };
+
+  const onLater = () => {
+    navigation.navigate(PATHS_MAIN_SCREENS.main);
+  };
+
+  const onChangeLogin = (value: string) => {
+    setErrorMessageLogin("");
+    setLogin(value);
+  };
+
+  useEffect(() => {
+    if (userData?.googleDate?.name) setLogin(userData.googleDate.name);
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>
+        <Trans>We recommend filling out the profile information</Trans>
+      </Text>
+      <View style={styles.containerInputs}>
+        <Input
+          label={`${i18n._("Name:")}*`}
+          placeholder={i18n._("Enter your name")}
+          value={login}
+          onChange={onChangeLogin}
+          errorMessage={errorMessageLogin}
+        />
+        <InputPhone
+          label={i18n._("Phone number:")}
+          phoneNumber={phoneNumber}
+          setPhoneNumber={setPhoneNumber}
+          selectCountryIso={selectCountryIso}
+          setSelectCountryIso={setSelectCountryIso}
+        />
+      </View>
+      <View style={styles.containerButton}>
+        <ButtonCustom
+          disabled={errorMessageLogin.length > 0}
+          title={i18n._("Save")}
+          onSubmit={onSave}
+        />
+        <ButtonCustom
+          disabled={errorMessageLogin.length > 0}
+          title={i18n._("Fill out later")}
+          onSubmit={onLater}
+          type="transparent"
+        />
+      </View>
+    </View>
+  );
+};

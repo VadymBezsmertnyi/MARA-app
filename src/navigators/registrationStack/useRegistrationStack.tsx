@@ -13,6 +13,7 @@ import { RegistrationTouchId } from "../../screens/registrationScreens/Registrat
 import { RegistrationFaceId } from "../../screens/registrationScreens/RegistrationFaceId/RegistrationFaceId";
 import { RegistrationPrivacyPolicy } from "../../screens/registrationScreens/RegistrationPrivacyPolicy/RegistrationPrivacyPolicy";
 import { RegistrationTermsOfUse } from "../../screens/registrationScreens/RegistrationTermsOfUse/RegistrationTermsOfUse";
+import { RegistrationInfo } from "../../screens/registrationScreens/RegistrationInfo/RegistrationInfo";
 
 export const useRegistrationStack = () => {
   const { i18n } = useContext(localesContext);
@@ -23,6 +24,7 @@ export const useRegistrationStack = () => {
       name: PATHS_REGISTRATION_SCREENS.registrationLocation,
       title: null,
       isHeader: false,
+      isBackHeader: false,
       component: RegistrationLocation,
     },
     {
@@ -30,6 +32,7 @@ export const useRegistrationStack = () => {
       name: PATHS_REGISTRATION_SCREENS.registrationTouchId,
       title: null,
       isHeader: true,
+      isBackHeader: false,
       component: RegistrationTouchId,
     },
     {
@@ -37,6 +40,7 @@ export const useRegistrationStack = () => {
       name: PATHS_REGISTRATION_SCREENS.registrationFaceId,
       title: null,
       isHeader: true,
+      isBackHeader: false,
       component: RegistrationFaceId,
     },
     {
@@ -44,6 +48,7 @@ export const useRegistrationStack = () => {
       name: PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy,
       title: t(i18n)`Privacy Policy`,
       isHeader: true,
+      isBackHeader: false,
       component: RegistrationPrivacyPolicy,
     },
     {
@@ -51,7 +56,16 @@ export const useRegistrationStack = () => {
       name: PATHS_REGISTRATION_SCREENS.registrationTermsOfUse,
       title: t(i18n)`Terms of Use`,
       isHeader: true,
+      isBackHeader: false,
       component: RegistrationTermsOfUse,
+    },
+    {
+      id: PATHS_REGISTRATION_SCREENS.registrationInfo,
+      name: PATHS_REGISTRATION_SCREENS.registrationInfo,
+      title: t(i18n)`Registration`,
+      isHeader: true,
+      isBackHeader: false,
+      component: RegistrationInfo,
     },
   ] as const;
 

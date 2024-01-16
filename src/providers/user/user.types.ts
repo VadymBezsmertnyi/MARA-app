@@ -15,7 +15,7 @@ export type Context = {
   editUser: (
     newInfoUser: Record<string, string | number | boolean | Record<string, any>>
   ) => Promise<boolean>;
-  meUser: () => Promise<boolean>;
+  meUser: () => Promise<UserDataT | null>;
   exitUser: () => Promise<void>;
   signInGoogle: (userData: User) => Promise<UserDataT | null>;
 };

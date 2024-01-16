@@ -1,11 +1,12 @@
-import React, { FunctionComponent, useContext } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Trans, t } from "@lingui/macro";
 
 // providers
 import { biometricAuthenticatorContext } from "../../../providers/biometricAuthenticator/biometricAuthenticator.provider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { userContext } from "../../../providers/user/user.provider";
+import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -31,7 +32,12 @@ export const RegistrationFaceId: FunctionComponent = () => {
   const { i18n } = useContext(localesContext);
   const { userData, editUser } = useContext(userContext);
   const { checkBiometric } = useContext(biometricAuthenticatorContext);
+  const { heightStatusBar } = useContext(themeContext);
   const nameApp = "MARA";
+  const containerStyles: ViewStyle = useMemo(
+    () => [styles.container, { paddingTop: heightStatusBar }] as ViewStyle,
+    [heightStatusBar]
+  );
 
   const redirect = () => {
     if (userData?.isNewUser)
@@ -51,7 +57,7 @@ export const RegistrationFaceId: FunctionComponent = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <View style={styles.containerClose}>
         <TouchableOpacity onPress={onAllowLater}>
           <IconClose width={24} height={24} fill={colors.black} />

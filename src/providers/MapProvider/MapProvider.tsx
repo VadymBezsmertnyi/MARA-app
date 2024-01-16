@@ -56,6 +56,15 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     // TODO send to DB
   };
 
+  const onIntervalGetLocation = () => {
+    const intervalId = setInterval(getLocation, INTERVAL_GET_LOCATION);
+    setStartGetGeolocation(true);
+    getLocation();
+    return () => {
+      clearInterval(intervalId);
+    };
+  };
+
   const valueContext: MapContext = useMemo(() => ({ location }), [location]);
 
   useEffect(() => {
@@ -63,16 +72,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   }, [userData?.isGeoLocation]);
 
   useEffect(() => {
-    if (!userData?.accessLocations && status === "undetermined")
-      checkPermission();
-    if (status === "granted" && !startGetGeolocation) {
-      const intervalId = setInterval(getLocation, INTERVAL_GET_LOCATION);
-      setStartGetGeolocation(true);
-      getLocation();
-      return () => {
-        clearInterval(intervalId);
-      };
-    }
+    if (status !== null)
+      if (userData?.isGeoLocation && status === "undetermined")
+        checkPermission();
+    if (status === "granted" && !startGetGeolocation) onIntervalGetLocation();
   }, [status]);
 
   return (
