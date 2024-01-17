@@ -17,6 +17,7 @@ import { Splash } from "../screens/Splash/Splash";
 // registration
 import { ForgetStack } from "./forgetStack/forgetStack";
 import { MainTabs } from "./mainTabs/mainTabs";
+import { MenuDrawer } from "./MenuDrawer/MenuDrawer";
 
 export const useNavigators = () => {
   const { i18n } = useContext(localesContext);
@@ -58,7 +59,7 @@ export const useNavigators = () => {
       id: "main",
       name: PATHS_MAIN_SCREENS.main,
       title: t(i18n)`Main`,
-      component: MainTabs,
+      component: MenuDrawer,
       headerShown: false,
       gestureEnabled: false,
     },

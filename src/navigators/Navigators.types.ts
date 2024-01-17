@@ -1,3 +1,4 @@
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import {
   PATHS_FORGET_SCREENS,
   PATHS_MAIN_SCREENS,
