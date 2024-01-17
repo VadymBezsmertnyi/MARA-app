@@ -4,12 +4,10 @@ import { Messages, setupI18n } from "@lingui/core";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
-  useFonts as useFontsMontserrat,
   Montserrat_600SemiBold,
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 import {
-  useFonts as useFontsOpenSans,
   OpenSans_300Light,
   OpenSans_400Regular,
   OpenSans_500Medium,
@@ -53,6 +51,7 @@ import { messages as translationsEn } from "./localization/en/messages";
 
 // styles
 import { styles } from "./App.styles";
+import { useFonts } from "expo-font";
 
 const CATALOGS_LANGUAGES = {
   uk: translationsUk as Messages,
@@ -60,11 +59,9 @@ const CATALOGS_LANGUAGES = {
 };
 
 function App() {
-  const [fontsLoadedMontserrat] = useFontsMontserrat({
+  const [fontsLoaded] = useFonts({
     Montserrat_600SemiBold,
     Montserrat_700Bold,
-  });
-  const [fontsLoadedOpenSans] = useFontsOpenSans({
     OpenSans_300Light,
     OpenSans_400Regular,
     OpenSans_500Medium,
@@ -87,9 +84,7 @@ function App() {
   return (
     <WebSocketProvider>
       <ThemeProvider>
-        <LoadingProvider
-          isLoadingProps={fontsLoadedMontserrat && fontsLoadedOpenSans}
-        >
+        <LoadingProvider isLoadingProps={fontsLoaded}>
           <LocalesProvider i18n={i18n}>
             <ApiProvider>
               <BiometricAuthenticatorProvider>
