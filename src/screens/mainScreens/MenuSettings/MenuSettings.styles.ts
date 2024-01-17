@@ -17,13 +17,12 @@ export const styles = StyleSheet.create({
     width: 24,
   },
   titleHeader: {
+    fontFamily: "OpenSans_600SemiBold",
     fontSize: 17,
-    fontWeight: "600",
     color: colors.blackCoffee,
   },
   lineWhite: {
     height: 1,
     backgroundColor: colors.white,
-    marginVertical: 16,
   },
 });

@@ -6,9 +6,10 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     gap: 8,
     alignItems: "center",
+    paddingVertical: 16,
   },
   title: {
+    fontFamily: "OpenSans_600SemiBold",
     fontSize: 16,
-    fontWeight: "600",
   },
 });
