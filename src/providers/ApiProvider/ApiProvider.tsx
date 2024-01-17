@@ -1,11 +1,9 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { I18n } from "@lingui/core";
 import { ZodSchema, z } from "zod";
 import axios, { AxiosRequestConfig } from "axios";
 
 // helps
 import { getApiUrl } from "./ApiProvider.helps";
-import showErrors from "../../helps/errors/showError";
 import { getDeviceStorage } from "../../helps/storage.help";
 import { TOKEN_NAME } from "../user/user.constants";
 import { PATHS } from "../paths.constants";

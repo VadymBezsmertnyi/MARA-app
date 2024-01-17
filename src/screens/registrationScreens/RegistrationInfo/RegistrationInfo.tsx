@@ -27,6 +27,7 @@ import { DEFAULT_COUNTRY } from "../../../constants/inputs.const";
 
 // styles
 import { styles } from "./RegistrationInfo.styles";
+import { getNamesUser } from "../../../providers/user/user.helps";
 
 export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();
@@ -42,10 +43,13 @@ export const RegistrationInfo: FunctionComponent = () => {
     if (login.length >= 5 && login.length <= 20) {
       const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
       const clearPhoneNumber = getClearValue(phoneNumber);
+      const { firstName, lastName } = getNamesUser(userData);
 
       const resultSave = await editUser({
         login,
         isNewUser: false,
+        firstName: login || firstName,
+        lastName,
         ...(isPhone && { phoneNumber: clearPhoneNumber }),
       });
       if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
@@ -65,7 +69,8 @@ export const RegistrationInfo: FunctionComponent = () => {
   };
 
   useEffect(() => {
-    if (userData?.googleDate?.name) setLogin(userData.googleDate.name);
+    if (userData?.googleDate?.given_name)
+      setLogin(userData.googleDate.given_name);
   }, []);
 
   return (

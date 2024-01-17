@@ -13,6 +13,9 @@ export const DEFAULT_USER_DATA: UserDataT = {
   isNewUser: true,
   googleDate: null,
   cityUser: null,
+  firstName: null,
+  lastName: null,
+  phoneNumber: null,
 };
 
 export const NUMBER_TWO = 2;

@@ -70,18 +70,6 @@ msgid "Privacy policy"
 msgstr "Privacy policy"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "The photo has been changed"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "The photo added"
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Sorry, an error occurred"
-
-#. js-lingui-explicit-id
 msgid "Name of the event"
 msgstr "Name of the event"
 
@@ -226,6 +214,38 @@ msgid "Continue"
 msgstr "Continue"
 
 #. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "The photo has been changed"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "The photo added"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Sorry, an error occurred"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "First Name"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Last Name"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "City"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Save profile"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Error: save profile"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Workshops"
 
@@ -235,9 +255,6 @@ msgstr "Enter the name of the workshop or type of work"
 
 msgid "Access denied"
 msgstr "Access denied"
-
-msgid "Add photo +"
-msgstr "Add photo +"
 
 msgid "Add your address"
 msgstr "Add your address"
@@ -293,9 +310,6 @@ msgstr "Dark theme"
 msgid "Delete"
 msgstr "Delete"
 
-msgid "Edit photo +"
-msgstr "Edit photo +"
-
 msgid "Enter the address"
 msgstr "Enter the address"
 
@@ -344,14 +358,14 @@ msgstr "Incorrect phone number entered or country code of the phone number selec
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
 
-msgid "Language:"
-msgstr "Language:"
-
 msgid "Latest news:"
 msgstr "Latest news:"
 
 msgid "Location event"
 msgstr "Location event"
+
+msgid "Logout"
+msgstr "Logout"
 
 msgid "Main"
 msgstr "Main"
@@ -410,6 +424,9 @@ msgstr "Privacy Policy is a legal statement that defines what a business owner d
 msgid "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
 msgstr "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
 
+msgid "Profile"
+msgstr "Profile"
+
 msgid "Registration"
 msgstr "Registration"
 
@@ -467,20 +484,11 @@ msgstr "Welcome"
 msgid "Workshops"
 msgstr "Workshops"
 
-msgid "You doesn't have events"
-msgstr "You doesn't have events"
-
 msgid "You have been sent an SMS with a code."
 msgstr "You have been sent an SMS with a code."
 
 msgid "You have entered the confirmation code incorrectly"
 msgstr "You have entered the confirmation code incorrectly"
 
-msgid "Your events:"
-msgstr "Your events:"
-
 msgid "Your location"
 msgstr "Your location"
-
-msgid "Your location:"
-msgstr "Your location:"

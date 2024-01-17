@@ -3,6 +3,7 @@ import {
   KeyboardTypeOptions,
   Text,
   TextInput,
+  TextStyle,
   View,
   ViewStyle,
 } from "react-native";
@@ -19,9 +20,10 @@ type InputProps = {
   onChange: (k: string) => void;
   InputIcon?: React.ReactNode;
   customStyles?: ViewStyle;
-  labelStyle?: ViewStyle;
+  labelStyle?: TextStyle;
   keyboardType?: KeyboardTypeOptions;
   errorMessage?: string;
+  containerStyle?: ViewStyle;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -35,6 +37,7 @@ export const Input: FunctionComponent<InputProps> = ({
   labelStyle,
   keyboardType = "default",
   errorMessage,
+  containerStyle,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -63,8 +66,9 @@ export const Input: FunctionComponent<InputProps> = ({
       ...styles.container,
       marginTop,
       flex: customStyles ? 1 : 0,
+      ...containerStyle,
     };
-  }, [label, customStyles]);
+  }, [label, customStyles, containerStyle]);
 
   const labelStyles = useMemo(() => [styles.label, labelStyle], [labelStyle]);
 

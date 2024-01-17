@@ -70,18 +70,6 @@ msgid "Privacy policy"
 msgstr "Політика конфіденційності"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Фото змінено"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "Додано фото"
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Вибачте, сталася помилка"
-
-#. js-lingui-explicit-id
 msgid "Name of the event"
 msgstr "Назва події"
 
@@ -226,6 +214,38 @@ msgid "Continue"
 msgstr "Продовжити"
 
 #. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Фото змінено"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Додано фото"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Вибачте, сталася помилка"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Ім'я"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Прізвище"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Місто"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Зберегти профіль"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Помилка: збереження профілю"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Майстерні"
 
@@ -235,9 +255,6 @@ msgstr "Введіть назву майстерні або вид робіт"
 
 msgid "Access denied"
 msgstr "Доступ заборонено"
-
-msgid "Add photo +"
-msgstr "Додати фото +"
 
 msgid "Add your address"
 msgstr "Додати вашу адресу"
@@ -293,9 +310,6 @@ msgstr "Темна тема"
 msgid "Delete"
 msgstr "Видалити"
 
-msgid "Edit photo +"
-msgstr "Редагувати фото +"
-
 msgid "Enter the address"
 msgstr "Введіть адресу"
 
@@ -344,14 +358,14 @@ msgstr "Введений неправильний номер телефону а
 msgid "Internal Server Error"
 msgstr "Внутрішня помилка сервера"
 
-msgid "Language:"
-msgstr "Мова:"
-
 msgid "Latest news:"
 msgstr "Останні новини:"
 
 msgid "Location event"
 msgstr "Місцезнаходження події"
+
+msgid "Logout"
+msgstr "Вийти"
 
 msgid "Main"
 msgstr "Головна"
@@ -410,6 +424,9 @@ msgstr "Політика конфіденційності — це юридич�
 msgid "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
 msgstr "Політика конфіденційності — це юридична заява, яка визначає, що власник бізнесу робить із особистими даними, зібраними від користувачів, а також те, як ці дані обробляються та для яких цілей."
 
+msgid "Profile"
+msgstr "Профіль"
+
 msgid "Registration"
 msgstr "Реєстрація"
 
@@ -467,20 +484,11 @@ msgstr "Ласкаво просимо"
 msgid "Workshops"
 msgstr "Майстерні"
 
-msgid "You doesn't have events"
-msgstr "У вас немає подій"
-
 msgid "You have been sent an SMS with a code."
 msgstr "Вам надіслано SMS!"
 
 msgid "You have entered the confirmation code incorrectly"
 msgstr "Ви невірно ввели код підтвердження"
 
-msgid "Your events:"
-msgstr "Ваші події:"
-
 msgid "Your location"
 msgstr "Ваше місцезнаходження"
-
-msgid "Your location:"
-msgstr "Ваше місцезнаходження:"

@@ -24,6 +24,7 @@ export { default as IconLockGradient } from "./IconLockGradient";
 export { default as IconMapCustom } from "./IconMapCustom";
 export { default as IconMapGradient } from "./IconMapGradient";
 export { default as IconMotoService } from "./IconMotoService";
+export { default as IconPencilGradient } from "./IconPencilGradient";
 export { default as IconPlusGradient } from "./IconPlusGradient";
 export { default as IconProfileAvatar } from "./IconProfileAvatar";
 export { default as IconRepair } from "./IconRepair";

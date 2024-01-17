@@ -1,17 +1,16 @@
-import { useContext } from 'react';
-import { t } from '@lingui/macro';
+import { useContext } from "react";
+import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../localization/localization.provider';
+import { localesContext } from "../../../localization/localization.provider";
 
 // stacks
-import { NewsStack } from '../NewsStack/newsStack';
-import { WorkshopStack } from '../WorkshopStack/workshopStack';
+import { NewsStack } from "../NewsStack/newsStack";
+import { WorkshopStack } from "../WorkshopStack/workshopStack";
 
 // screens
-import { Map } from '../../screens/mainScreens/Map/Map';
-import { Market } from '../../screens/mainScreens/Market/Market';
-import { Settings } from '../../screens/mainScreens/Settings/Settings';
+import { Map } from "../../screens/mainScreens/Map/Map";
+import { Market } from "../../screens/mainScreens/Market/Market";
 
 // icons components
 import {
@@ -25,10 +24,11 @@ import {
   IconTabSettingsSelect,
   IconTabWorkshops,
   IconTabWorkshopsSelect,
-} from '../../icons/components';
+} from "../../icons/components";
 
 // constants
-import { PATHS_MAIN_TABS } from '../useNavigator.constants';
+import { PATHS_MAIN_TABS } from "../useNavigator.constants";
+import { SettingsStack } from "../SettingsStack/settingsStack";
 
 export const useMainTabs = () => {
   const { i18n } = useContext(localesContext);
@@ -74,7 +74,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.settings,
       name: PATHS_MAIN_TABS.settings,
       title: t(i18n)`Settings`,
-      component: Settings,
+      component: SettingsStack,
       headerShown: false,
       tabBarIcon: IconTabSettings,
       tabBarIconSelect: IconTabSettingsSelect,

@@ -41,6 +41,9 @@ export const userDataS = z.object({
   isNewUser: z.boolean(),
   googleDate: googleBDSchema.nullable(),
   cityUser: locationSchema.nullable(),
+  firstName: z.string().nullable(),
+  lastName: z.string().nullable(),
+  phoneNumber: z.string().nullable(),
 });
 
 export const resultUserDataS = z.object({

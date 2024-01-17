@@ -5,6 +5,7 @@ import {
   PATHS_MAIN_TABS,
   PATHS_NEWS_SCREENS,
   PATHS_REGISTRATION_SCREENS,
+  PATHS_SETTINGS_SCREEN,
   PATHS_WORKSHOP_SCREENS,
 } from "./useNavigator.constants";
 
@@ -78,6 +79,14 @@ export type RootNewsScreensParamList = {
   [PATHS_NEWS_SCREENS.locationEventMap]: undefined;
 };
 
+export type RootSettingsScreensParamList = {
+  [PATHS_SETTINGS_SCREEN.settingsMain]: undefined;
+  [PATHS_SETTINGS_SCREEN.settingsAds]: undefined;
+  [PATHS_SETTINGS_SCREEN.settingsWorkshops]: undefined;
+  [PATHS_SETTINGS_SCREEN.settingsEvents]: undefined;
+  [PATHS_SETTINGS_SCREEN.settingsProfile]: undefined;
+};
+
 export type RootWorkshopsScreensParamList = {
   [PATHS_WORKSHOP_SCREENS.workshopMain]: undefined;
   [PATHS_WORKSHOP_SCREENS.workshopItem]:
@@ -90,4 +99,5 @@ export type RootWorkshopsScreensParamList = {
 export type RootAllScreensParamList = RootMainScreensParamList &
   RootForgetScreensParamList &
   RootRegistrationScreensParamList &
-  RootWorkshopsScreensParamList;
+  RootWorkshopsScreensParamList &
+  RootSettingsScreensParamList;

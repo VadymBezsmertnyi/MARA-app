@@ -1,5 +1,11 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
-import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
+import {
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
 
 // styles
 import { styles } from "./InputButton.styles";
@@ -14,6 +20,8 @@ type InputButtonProps = {
   onPress: () => void;
   errorMessage?: string;
   inputWrapperStyle?: ViewStyle;
+  labelStyle?: TextStyle;
+  containerStyle?: ViewStyle;
 };
 
 export const InputButton: FunctionComponent<InputButtonProps> = ({
@@ -25,6 +33,8 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
   onPress,
   errorMessage,
   inputWrapperStyle,
+  labelStyle,
+  containerStyle,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -54,16 +64,18 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
       ...styles.container,
       marginTop,
       flex: customStyles ? 1 : 0,
+      ...containerStyle,
     };
-  }, [label, customStyles]);
+  }, [label, customStyles, containerStyle]);
   const inputTitleStyles = useMemo(
     () => [styles.inputPlaceholder, value?.length > 0 && styles.inputValue],
     [value]
   );
+  const labelStyles = useMemo(() => [styles.label, labelStyle], [labelStyle]);
 
   return (
     <View style={containerStyles}>
-      {label && <Text style={styles.label}>{label}</Text>}
+      {label && <Text style={labelStyles}>{label}</Text>}
       <View style={inputWrapperStyles}>
         <TouchableOpacity
           style={inputStyles}

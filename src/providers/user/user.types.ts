@@ -13,7 +13,10 @@ export type Context = {
   userData: UserDataT | null;
   cleanUserData: () => void;
   editUser: (
-    newInfoUser: Record<string, string | number | boolean | Record<string, any>>
+    newInfoUser: Record<
+      string,
+      string | number | boolean | Record<string, any> | null
+    >
   ) => Promise<boolean>;
   meUser: () => Promise<UserDataT | null>;
   exitUser: () => Promise<void>;
