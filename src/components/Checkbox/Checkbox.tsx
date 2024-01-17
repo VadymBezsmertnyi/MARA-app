@@ -7,19 +7,25 @@ import colors from "../../../styles/colors";
 type CheckboxProps = {
   check: boolean;
   setCheck: (value: boolean) => void;
+  colorBoxEnabled?: string;
 };
 
 export const Checkbox: FunctionComponent<CheckboxProps> = ({
   check,
   setCheck,
+  colorBoxEnabled,
 }) => {
   const [value, setValue] = useState(false);
-  const colorsGradient = useMemo(
+  const colorBoxCheck = useMemo(
     () =>
-      value
-        ? [colors.californiaOrange, colors.blazeOrange]
-        : [colors.grayCheckbox, colors.grayCheckbox],
-    [value]
+      colorBoxEnabled
+        ? [colorBoxEnabled, colorBoxEnabled]
+        : [colors.californiaOrange, colors.blazeOrange],
+    [colorBoxEnabled]
+  );
+  const colorsGradient = useMemo(
+    () => (value ? colorBoxCheck : [colors.grayCheckbox, colors.grayCheckbox]),
+    [value, colorBoxCheck]
   );
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);

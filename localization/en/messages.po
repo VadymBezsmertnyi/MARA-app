@@ -50,6 +50,26 @@ msgid "Select on the map"
 msgstr "Select on the map"
 
 #. js-lingui-explicit-id
+msgid "SOS signal notification"
+msgstr "SOS signal notification"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Share the app"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "About the service"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Terms of use"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Privacy policy"
+
+#. js-lingui-explicit-id
 msgid "The photo has been changed"
 msgstr "The photo has been changed"
 
@@ -174,6 +194,30 @@ msgid "Not enabled location"
 msgstr "Not enabled location"
 
 #. js-lingui-explicit-id
+msgid "The length of the name should be between 5 and 20 characters"
+msgstr "The length of the name should be between 5 and 20 characters"
+
+#. js-lingui-explicit-id
+msgid "Name:"
+msgstr "Name:"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Enter your name"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Phone number:"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Save"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Fill out later"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Select the city"
 
@@ -242,6 +286,9 @@ msgstr "Continue with {typeSocial}"
 
 msgid "Create event"
 msgstr "Create event"
+
+msgid "Dark theme"
+msgstr "Dark theme"
 
 msgid "Delete"
 msgstr "Delete"
@@ -384,6 +431,9 @@ msgstr "Settings"
 msgid "Someone needs help within a 5 km radius"
 msgstr "Someone needs help within a 5 km radius"
 
+msgid "SOS signal"
+msgstr "SOS signal"
+
 msgid "Terms of Service"
 msgstr "Terms of Service"
 
@@ -401,6 +451,9 @@ msgstr "Upcoming events:"
 
 msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
 msgstr "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
+
+msgid "We recommend filling out the profile information"
+msgstr "We recommend filling out the profile information"
 
 msgid "We will help you recover it."
 msgstr "We will help you recover it."

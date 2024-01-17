@@ -8,6 +8,7 @@ export { default as IconArrowLeftEvent } from "./IconArrowLeftEvent";
 export { default as IconArrowRightEvent } from "./IconArrowRightEvent";
 export { default as IconArrowRightNew } from "./IconArrowRightNew";
 export { default as IconAutoService } from "./IconAutoService";
+export { default as IconAvatarEmpty } from "./IconAvatarEmpty";
 export { default as IconBellGradient } from "./IconBellGradient";
 export { default as IconCloseGradient } from "./IconCloseGradient";
 export { default as IconClose } from "./IconClose";

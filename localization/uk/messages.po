@@ -50,6 +50,26 @@ msgid "Select on the map"
 msgstr "Вибрати на карті"
 
 #. js-lingui-explicit-id
+msgid "SOS signal notification"
+msgstr "Сповіщення сигналу SOS"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Поділитись додатком"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "Про сервіс"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Умови користування"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Політика конфіденційності"
+
+#. js-lingui-explicit-id
 msgid "The photo has been changed"
 msgstr "Фото змінено"
 
@@ -174,6 +194,30 @@ msgid "Not enabled location"
 msgstr "Не ввімкнено місцезнаходження"
 
 #. js-lingui-explicit-id
+msgid "The length of the name should be between 5 and 20 characters"
+msgstr "Довжина імені повинна бути від 5 до 20 символів"
+
+#. js-lingui-explicit-id
+msgid "Name:"
+msgstr "Ім'я:"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Введіть своє ім'я"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Номер телефону:"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Зберегти"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Заповнити пізніше"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Оберіть місто:"
 
@@ -242,6 +286,9 @@ msgstr "Продовжити з {typeSocial}"
 
 msgid "Create event"
 msgstr "Створити подію"
+
+msgid "Dark theme"
+msgstr "Темна тема"
 
 msgid "Delete"
 msgstr "Видалити"
@@ -384,6 +431,9 @@ msgstr "Настройки"
 msgid "Someone needs help within a 5 km radius"
 msgstr "У радіусі 5 км комусь потрібна допомога"
 
+msgid "SOS signal"
+msgstr "Сигнал SOS"
+
 msgid "Terms of Service"
 msgstr "Умовами користування"
 
@@ -401,6 +451,9 @@ msgstr "Найближчі події:"
 
 msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
 msgstr "Ми відправили вам SMS з кодом на номер {phoneNumber}. Якщо повідомлення не прийшло, натисніть кнопку нижче для повторної відправки"
+
+msgid "We recommend filling out the profile information"
+msgstr "Рекомендуємо заповнити  дані для профілю"
 
 msgid "We will help you recover it."
 msgstr "Ми допоможемо його відновити"
