@@ -4,26 +4,25 @@ import { Messages, setupI18n } from "@lingui/core";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
-  useFonts,
-  Montserrat_100Thin,
-  Montserrat_200ExtraLight,
-  Montserrat_300Light,
-  Montserrat_400Regular,
-  Montserrat_500Medium,
+  useFonts as useFontsMontserrat,
   Montserrat_600SemiBold,
   Montserrat_700Bold,
-  Montserrat_800ExtraBold,
-  Montserrat_900Black,
-  Montserrat_100Thin_Italic,
-  Montserrat_200ExtraLight_Italic,
-  Montserrat_300Light_Italic,
-  Montserrat_400Regular_Italic,
-  Montserrat_500Medium_Italic,
-  Montserrat_600SemiBold_Italic,
-  Montserrat_700Bold_Italic,
-  Montserrat_800ExtraBold_Italic,
-  Montserrat_900Black_Italic,
 } from "@expo-google-fonts/montserrat";
+import {
+  useFonts as useFontsOpenSans,
+  OpenSans_300Light,
+  OpenSans_400Regular,
+  OpenSans_500Medium,
+  OpenSans_600SemiBold,
+  OpenSans_700Bold,
+  OpenSans_800ExtraBold,
+  OpenSans_300Light_Italic,
+  OpenSans_400Regular_Italic,
+  OpenSans_500Medium_Italic,
+  OpenSans_600SemiBold_Italic,
+  OpenSans_700Bold_Italic,
+  OpenSans_800ExtraBold_Italic,
+} from "@expo-google-fonts/open-sans";
 
 // providers
 import LocalesProvider from "./localization/localization.provider";
@@ -61,25 +60,23 @@ const CATALOGS_LANGUAGES = {
 };
 
 function App() {
-  const [fontsLoaded] = useFonts({
-    Montserrat_100Thin,
-    Montserrat_200ExtraLight,
-    Montserrat_300Light,
-    Montserrat_400Regular,
-    Montserrat_500Medium,
+  const [fontsLoadedMontserrat] = useFontsMontserrat({
     Montserrat_600SemiBold,
     Montserrat_700Bold,
-    Montserrat_800ExtraBold,
-    Montserrat_900Black,
-    Montserrat_100Thin_Italic,
-    Montserrat_200ExtraLight_Italic,
-    Montserrat_300Light_Italic,
-    Montserrat_400Regular_Italic,
-    Montserrat_500Medium_Italic,
-    Montserrat_600SemiBold_Italic,
-    Montserrat_700Bold_Italic,
-    Montserrat_800ExtraBold_Italic,
-    Montserrat_900Black_Italic,
+  });
+  const [fontsLoadedOpenSans] = useFontsOpenSans({
+    OpenSans_300Light,
+    OpenSans_400Regular,
+    OpenSans_500Medium,
+    OpenSans_600SemiBold,
+    OpenSans_700Bold,
+    OpenSans_800ExtraBold,
+    OpenSans_300Light_Italic,
+    OpenSans_400Regular_Italic,
+    OpenSans_500Medium_Italic,
+    OpenSans_600SemiBold_Italic,
+    OpenSans_700Bold_Italic,
+    OpenSans_800ExtraBold_Italic,
   });
 
   const i18n = setupI18n({
@@ -90,7 +87,9 @@ function App() {
   return (
     <WebSocketProvider>
       <ThemeProvider>
-        <LoadingProvider isLoadingProps={fontsLoaded}>
+        <LoadingProvider
+          isLoadingProps={fontsLoadedMontserrat && fontsLoadedOpenSans}
+        >
           <LocalesProvider i18n={i18n}>
             <ApiProvider>
               <BiometricAuthenticatorProvider>

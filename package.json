@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@expo-google-fonts/montserrat": "^0.2.3",
+    "@expo-google-fonts/open-sans": "^0.2.3",
     "@expo/status-bar-height": "^0.0.1",
     "@gorhom/bottom-sheet": "^4.5.1",
     "@lingui/conf": "^4.4.2",
