@@ -41,7 +41,7 @@ export const PATHS_NEWS_SCREENS = {
   locationEventMap: "locationEventMap",
 } as const;
 
-export const PATHS_SETTINGS_SCREEN = {
+export const PATHS_SETTINGS_SCREENS = {
   settingsMain: "settingsMain",
   settingsAds: "settingsAds",
   settingsWorkshops: "settingsWorkshops",

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { localesContext } from "../../../localization/localization.provider";
 
 // constants
-import { PATHS_SETTINGS_SCREEN } from "../useNavigator.constants";
+import { PATHS_SETTINGS_SCREENS } from "../useNavigator.constants";
 
 // News and events
 import { SettingsMain } from "../../screens/settingsScreens/SettingsMain/SettingsMain";
@@ -15,15 +15,15 @@ export const useSettingsStack = () => {
 
   const settingsScreens = [
     {
-      id: PATHS_SETTINGS_SCREEN.settingsMain,
-      name: PATHS_SETTINGS_SCREEN.settingsMain,
+      id: PATHS_SETTINGS_SCREENS.settingsMain,
+      name: PATHS_SETTINGS_SCREENS.settingsMain,
       title: null,
       headerShown: false,
       component: SettingsMain,
     },
     {
-      id: PATHS_SETTINGS_SCREEN.settingsProfile,
-      name: PATHS_SETTINGS_SCREEN.settingsProfile,
+      id: PATHS_SETTINGS_SCREENS.settingsProfile,
+      name: PATHS_SETTINGS_SCREENS.settingsProfile,
       title: null,
       headerShown: false,
       component: SettingsProfile,

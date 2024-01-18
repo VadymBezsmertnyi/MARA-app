@@ -5,7 +5,7 @@ import {
   PATHS_MAIN_TABS,
   PATHS_NEWS_SCREENS,
   PATHS_REGISTRATION_SCREENS,
-  PATHS_SETTINGS_SCREEN,
+  PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
 } from "./useNavigator.constants";
 
@@ -80,11 +80,11 @@ export type RootNewsScreensParamList = {
 };
 
 export type RootSettingsScreensParamList = {
-  [PATHS_SETTINGS_SCREEN.settingsMain]: undefined;
-  [PATHS_SETTINGS_SCREEN.settingsAds]: undefined;
-  [PATHS_SETTINGS_SCREEN.settingsWorkshops]: undefined;
-  [PATHS_SETTINGS_SCREEN.settingsEvents]: undefined;
-  [PATHS_SETTINGS_SCREEN.settingsProfile]: undefined;
+  [PATHS_SETTINGS_SCREENS.settingsMain]: undefined;
+  [PATHS_SETTINGS_SCREENS.settingsAds]: undefined;
+  [PATHS_SETTINGS_SCREENS.settingsWorkshops]: undefined;
+  [PATHS_SETTINGS_SCREENS.settingsEvents]: undefined;
+  [PATHS_SETTINGS_SCREENS.settingsProfile]: undefined;
 };
 
 export type RootWorkshopsScreensParamList = {

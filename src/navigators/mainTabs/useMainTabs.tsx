@@ -27,7 +27,11 @@ import {
 } from "../../icons/components";
 
 // constants
-import { PATHS_MAIN_TABS } from "../useNavigator.constants";
+import {
+  PATHS_MAIN_TABS,
+  PATHS_NEWS_SCREENS,
+  PATHS_SETTINGS_SCREENS,
+} from "../useNavigator.constants";
 import { SettingsStack } from "../SettingsStack/settingsStack";
 
 export const useMainTabs = () => {
@@ -37,6 +41,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.workshops,
       name: PATHS_MAIN_TABS.workshops,
+      mainScreen: null,
       title: t(i18n)`Workshops`,
       component: WorkshopStack,
       headerShown: false,
@@ -46,6 +51,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.map,
       name: PATHS_MAIN_TABS.map,
+      mainScreen: null,
       title: t(i18n)`Map`,
       component: Map,
       headerShown: false,
@@ -55,6 +61,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.news,
       name: PATHS_MAIN_TABS.news,
+      mainScreen: PATHS_NEWS_SCREENS.newsMain,
       title: t(i18n)`Events and news`,
       component: NewsStack,
       headerShown: true,
@@ -64,6 +71,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.market,
       name: PATHS_MAIN_TABS.market,
+      mainScreen: null,
       title: t(i18n)`Market`,
       component: Market,
       headerShown: false,
@@ -73,6 +81,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.settings,
       name: PATHS_MAIN_TABS.settings,
+      mainScreen: PATHS_SETTINGS_SCREENS.settingsMain,
       title: t(i18n)`Settings`,
       component: SettingsStack,
       headerShown: false,

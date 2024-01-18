@@ -61,7 +61,9 @@ export const MainTabs: FunctionComponent = () => {
               <View key={`tab-button-${screen.id}`}>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate(screen.name);
+                    navigation.navigate(screen.name, {
+                      screen: screen.mainScreen,
+                    });
                   }}
                 >
                   <Icon width={32} height={32} />

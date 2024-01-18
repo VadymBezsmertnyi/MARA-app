@@ -44,7 +44,7 @@ import {
 } from "../../../../localization/localization.const";
 import {
   PATHS_MAIN_SCREENS,
-  PATHS_SETTINGS_SCREEN,
+  PATHS_SETTINGS_SCREENS,
 } from "../../../navigators/useNavigator.constants";
 import { DEFAULT_COUNTRY } from "../../../constants/inputs.const";
 
@@ -150,7 +150,7 @@ export const SettingsMain: FunctionComponent = () => {
           type="transparent"
           title={i18n._("Setting profile")}
           onSubmit={() => {
-            navigation.navigate(PATHS_SETTINGS_SCREEN.settingsProfile);
+            navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
           }}
         />
       </ScrollView>
