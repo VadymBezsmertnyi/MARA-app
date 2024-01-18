@@ -48,12 +48,14 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 20,
+    gap: 20,
   },
   containerImage: {
     width: 84,
     height: 84,
     borderRadius: 40,
   },
+  email: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
   buttonPickImage: { position: "absolute", bottom: 8, right: 8 },
   buttonDeleteImage: { position: "absolute", bottom: 8, left: 8 },
 });

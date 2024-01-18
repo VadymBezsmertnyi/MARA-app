@@ -201,6 +201,7 @@ export const SettingsProfile: FunctionComponent = () => {
               </TouchableOpacity>
             ) : null}
           </View>
+          <Text style={styles.email}>{userData?.email}</Text>
         </View>
         <View style={styles.containerInputs}>
           <Input
