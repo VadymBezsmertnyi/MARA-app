@@ -16,7 +16,7 @@ import colors from "../../../styles/colors";
 import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 //styles
-import styles from "./ButtonCustom.styles";
+import { styles } from "./ButtonCustom.styles";
 
 type Props = {
   title?: string;
