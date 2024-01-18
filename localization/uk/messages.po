@@ -226,6 +226,42 @@ msgid "Sorry, an error occurred"
 msgstr "Вибачте, сталася помилка"
 
 #. js-lingui-explicit-id
+msgid "My ads"
+msgstr "Мої об’яви"
+
+#. js-lingui-explicit-id
+msgid "Add ad"
+msgstr "Додати об’яву"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Мої майстерні"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Додати майстерню"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Мої події"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Додати подію"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Корегувати профіль"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Зберегти профіль"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Помилка: збереження профілю"
+
+#. js-lingui-explicit-id
 msgid "First Name"
 msgstr "Ім'я"
 
@@ -236,14 +272,6 @@ msgstr "Прізвище"
 #. js-lingui-explicit-id
 msgid "City"
 msgstr "Місто"
-
-#. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Зберегти профіль"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Помилка: збереження профілю"
 
 #. js-lingui-explicit-id
 msgid "Workshops"

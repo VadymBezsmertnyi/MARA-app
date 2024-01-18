@@ -226,6 +226,42 @@ msgid "Sorry, an error occurred"
 msgstr "Sorry, an error occurred"
 
 #. js-lingui-explicit-id
+msgid "My ads"
+msgstr "My ads"
+
+#. js-lingui-explicit-id
+msgid "Add ad"
+msgstr "Add ad"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "My workshops"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Add workshop"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "My events"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Add event"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Setting profile"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Save profile"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Error: save profile"
+
+#. js-lingui-explicit-id
 msgid "First Name"
 msgstr "First Name"
 
@@ -236,14 +272,6 @@ msgstr "Last Name"
 #. js-lingui-explicit-id
 msgid "City"
 msgstr "City"
-
-#. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Save profile"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Error: save profile"
 
 #. js-lingui-explicit-id
 msgid "Workshops"

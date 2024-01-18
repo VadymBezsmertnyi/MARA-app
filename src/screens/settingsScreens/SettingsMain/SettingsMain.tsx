@@ -35,7 +35,10 @@ import { InputPhone } from "../../../components/InputPhone/InputPhone";
 // helps
 import showErrors from "../../../helps/errors/showError";
 import { compressAndProcessImages } from "../../../helps/helps";
-import { useAllNavigation } from "../../../navigators/Navigators.helps";
+import {
+  useAllNavigation,
+  useMainTabsNavigation,
+} from "../../../navigators/Navigators.helps";
 
 // constants
 import {
@@ -44,6 +47,8 @@ import {
 } from "../../../../localization/localization.const";
 import {
   PATHS_MAIN_SCREENS,
+  PATHS_MAIN_TABS,
+  PATHS_NEWS_SCREENS,
   PATHS_SETTINGS_SCREENS,
 } from "../../../navigators/useNavigator.constants";
 import { DEFAULT_COUNTRY } from "../../../constants/inputs.const";
@@ -53,6 +58,7 @@ import {
   IconCloseGradient,
   IconMapGradient,
   IconPencilGradient,
+  IconPlus,
   IconPlusGradient,
   IconProfileAvatar,
 } from "../../../icons/components";
@@ -61,9 +67,11 @@ import {
 import { styles } from "./SettingsMain.styles";
 import { getNamesUser } from "../../../providers/user/user.helps";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
+import { ItemMyList } from "./componetns/ItemMyList/ItemMyList";
 
 export const SettingsMain: FunctionComponent = () => {
-  const navigation = useAllNavigation();
+  const navigation = useMainTabsNavigation();
   const { userData, editUser, exitUser } = useContext(userContext);
   const { i18n, language, setLanguage } = useContext(localesContext);
   const { eventsList, deleteEvent } = useContext(eventsContext);
@@ -138,6 +146,10 @@ export const SettingsMain: FunctionComponent = () => {
     Alert.alert(`Delete profile ${userData?.id}`);
   };
 
+  const onShowMenu = () => {
+    navigation.openDrawer();
+  };
+
   const onLogoutProfile = async () => {
     await exitUser();
     navigation.navigate(PATHS_MAIN_SCREENS.welcome);
@@ -145,14 +157,83 @@ export const SettingsMain: FunctionComponent = () => {
 
   return (
     <View style={containerStyles}>
+      <View style={styles.containerHeader}>
+        <View style={styles.buttonsHeaderLeft}>
+          <MenuBurgerButton onPress={onShowMenu} />
+        </View>
+        <Text style={styles.titleHeader}>
+          <Trans>Profile</Trans>
+        </Text>
+        <TouchableOpacity
+          onPress={onLogoutProfile}
+          style={styles.buttonsHeaderRight}
+        >
+          <Text style={styles.titleLogout}>
+            <Trans>Logout</Trans>
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.containerAvatar}>
+        <View style={styles.containerImage}>
+          {imageSource ? (
+            <ImageCache style={styles.containerImage} imageSrc={imageSource} />
+          ) : (
+            <IconProfileAvatar />
+          )}
+        </View>
+        <View style={styles.containerInfo}>
+          <Text style={styles.infoUser}>{userData?.firstName}</Text>
+          <Text style={styles.infoUser}>{userData?.email}</Text>
+          <Text style={styles.infoUser}>
+            {userData?.cityUser?.formatted_address}
+          </Text>
+          <Text style={styles.infoUser}>{userData?.phoneNumber}</Text>
+        </View>
+      </View>
       <ScrollView>
-        <ButtonCustom
-          type="transparent"
-          title={i18n._("Setting profile")}
-          onSubmit={() => {
-            navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
-          }}
-        />
+        <View style={styles.containerList}>
+          <View style={styles.lineEmpty} />
+          <ItemMyList
+            title={i18n._("My ads")}
+            titleButton={i18n._("Add ad")}
+            onLinkTo={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAds);
+            }}
+            onAdd={() => {}}
+          />
+          <View style={styles.lineEmpty} />
+          <ItemMyList
+            title={i18n._("My workshops")}
+            titleButton={i18n._("Add workshop")}
+            onLinkTo={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
+            }}
+            onAdd={() => {}}
+          />
+          <View style={styles.lineEmpty} />
+          <ItemMyList
+            title={i18n._("My events")}
+            titleButton={i18n._("Add event")}
+            onLinkTo={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
+            }}
+            onAdd={() => {
+              navigation.navigate(PATHS_MAIN_TABS.news, {
+                screen: PATHS_NEWS_SCREENS.addEvent,
+              });
+            }}
+          />
+        </View>
+        <View style={styles.lineEmpty} />
+        <View style={styles.containerFooter}>
+          <ButtonCustom
+            type="transparent"
+            title={i18n._("Setting profile")}
+            onSubmit={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
+            }}
+          />
+        </View>
       </ScrollView>
     </View>
   );
