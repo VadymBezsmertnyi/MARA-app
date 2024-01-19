@@ -46,6 +46,8 @@ export const PATHS_SETTINGS_SCREENS = {
   settingsAds: "settingsAds",
   settingsWorkshops: "settingsWorkshops",
   settingsEvents: "settingsEvents",
+  settingsAddEvent: "settingsAddEvent",
+  settingsChangeEvent: "settingsChangeEvent",
   settingsProfile: "settingsProfile",
 } as const;
 

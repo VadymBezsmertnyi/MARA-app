@@ -1,11 +1,25 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { Alert, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RouteProp } from "@react-navigation/native";
+import { z } from "zod";
+import * as ImagePicker from "expo-image-picker";
+import * as FileSystem from "expo-file-system";
 
 // types
-import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
+import {
+  RootAllScreensParamList,
+  RootNewsScreensParamList,
+} from "../../../navigators/Navigators.types";
 import { ImageType } from "../../../providers/ModalsProvider/ModalsProvider.types";
+import { LocationType } from "../../../providers/EventsProvider/EventsProvider.types";
 
 // schemas
 import { locationSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
@@ -15,6 +29,7 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 import { userContext } from "../../../providers/user/user.provider";
 import { modalsSheetContext } from "../../../providers/ModalsSheetProvider/ModalsSheetProvider";
+import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -30,21 +45,24 @@ import { IconMapGradient } from "../../../icons/components";
 import { combineDateAndTime } from "../../../helps/helps";
 import { getErrorText } from "./AddEvent.helps";
 
-// constants
-import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
-
 // styles
 import { styles } from "./AddEvent.styles";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+  route: RouteProp<RootAllScreensParamList, keyof RootAllScreensParamList>;
 };
 
-export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
+export const AddEvent: FunctionComponent<AddEventProps> = ({
+  navigation,
+  route: { params },
+}) => {
   const { i18n } = useContext(localesContext);
-  const { addEvent } = useContext(eventsContext);
+  const { addEvent, changeEvent, eventsUserList } = useContext(eventsContext);
   const { userData } = useContext(userContext);
   const { setModalType, location } = useContext(modalsSheetContext);
+  const { setLoading } = useContext(loadingContext);
+  const [tempLocation, setTempLocation] = useState<LocationType | null>(null);
   const [eventName, setEventName] = useState("");
   const [beginDate, setBeginDate] = useState<Date>(new Date());
   const [beginTime, setBeginTime] = useState<Date>(new Date());
@@ -57,6 +75,21 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     string,
     { name: string; title: string }
   > | null>(null);
+
+  const currentParamsChangeEvent = useMemo(
+    () => z.object({ eventId: z.number() }).safeParse(params),
+    [params]
+  );
+  const eventUser = useMemo(
+    () =>
+      currentParamsChangeEvent.success
+        ? eventsUserList.find(
+            (eventUser) =>
+              eventUser.id === currentParamsChangeEvent.data.eventId
+          )
+        : null,
+    [currentParamsChangeEvent]
+  );
   const start = useMemo(
     () => combineDateAndTime(beginDate, beginTime).getTime(),
     [beginDate, beginTime]
@@ -67,11 +100,14 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   );
 
   const checkEnterData = () => {
+    const isErrorLocation = eventUser
+      ? tempLocation === null && location === null
+      : location === null;
     const errorsObject = {
       ...((eventName.length < 5 || eventName.length > 40) && {
         eventName: getErrorText("eventName", i18n),
       }),
-      ...(location === null && {
+      ...(isErrorLocation && {
         location: getErrorText("location", i18n),
       }),
       ...(start > finish && {
@@ -127,16 +163,16 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     const isError = checkEnterData();
     if (userData?.id && !isError) {
       const currentImages = images.map((image) => ({
-        id: "",
-        url: "",
-        width: 0,
-        height: 0,
+        id: image.id || "",
+        url: image.url || "",
+        width: image.width,
+        height: image.height,
         image,
       }));
-      const currentLocation = locationSchema.safeParse(location);
-      await addEvent({
-        id: 0,
-        userId: userData.id,
+      const currentLocation = tempLocation
+        ? locationSchema.safeParse(tempLocation)
+        : locationSchema.safeParse(location);
+      const newEvent = {
         title: eventName,
         location: currentLocation.success ? currentLocation.data : null,
         date: {
@@ -144,11 +180,18 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           finish,
         },
         price: Number(price),
-        currency: "UAH",
+        currency: "UAH" as const,
         description: aboutEvent,
         images: currentImages,
-      });
-      navigation.navigate(PATHS_NEWS_SCREENS.eventsList);
+      };
+      if (eventUser) await changeEvent({ ...eventUser, ...newEvent });
+      else
+        await addEvent({
+          id: 0,
+          userId: userData.id,
+          ...newEvent,
+        });
+      navigation.goBack();
     }
   };
 
@@ -161,6 +204,46 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     setModalType("map-location");
     setErrorMessage(null);
   };
+
+  const getEventUser = async () => {
+    setLoading(true);
+    if (params) {
+      if (eventUser) {
+        const imagesWithBath64 = await Promise.all(
+          eventUser.images.map(async (image) => {
+            const response = await FileSystem.downloadAsync(
+              image.url,
+              `${FileSystem.documentDirectory}temp.jpg`
+            );
+            const base64 = await FileSystem.readAsStringAsync(response.uri, {
+              encoding: "base64",
+            });
+            return {
+              id: image.id,
+              url: image.url,
+              width: image.width,
+              height: image.height,
+              base64,
+            };
+          })
+        );
+        setEventName(eventUser.title);
+        setTempLocation(eventUser.location);
+        setBeginDate(new Date(eventUser.date.start));
+        setBeginTime(new Date(eventUser.date.start));
+        setFinishDate(new Date(eventUser.date.finish));
+        setFinishTime(new Date(eventUser.date.finish));
+        setPrice(eventUser.price.toString());
+        setAboutEvent(eventUser.description);
+        setImages(imagesWithBath64);
+      }
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getEventUser();
+  }, [params]);
 
   return (
     <View style={styles.container}>
@@ -180,7 +263,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           <InputButton
             placeholder={i18n._("Enter the address")}
             label={`${i18n._("The place of the event")}:*`}
-            value={location?.formatted_address}
+            value={
+              location?.formatted_address || tempLocation?.formatted_address
+            }
             customStyles={styles.buttonLocation}
             onPress={onInputLocationModal}
             errorMessage={errorMessage?.location?.title}

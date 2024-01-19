@@ -130,9 +130,7 @@ export const SettingsMain: FunctionComponent = () => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
             }}
             onAdd={() => {
-              navigation.navigate(PATHS_MAIN_TABS.news, {
-                screen: PATHS_NEWS_SCREENS.addEvent,
-              });
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAddEvent);
             }}
           />
         </View>

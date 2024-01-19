@@ -15,6 +15,14 @@ export const styles = StyleSheet.create({
     paddingTop: 11,
     paddingBottom: 9,
   },
+  boxHeaderEmpty: {
+    width: 24,
+  },
+  titleHeader: {
+    fontFamily: "OpenSans_600SemiBold",
+    fontSize: 17,
+    color: colors.blackCoffee,
+  },
   containerProfile: {
     flexDirection: "row",
     alignItems: "center",
@@ -40,14 +48,6 @@ export const styles = StyleSheet.create({
   titleProfile: {
     fontFamily: "OpenSans_600SemiBold",
     fontSize: 16,
-  },
-  boxHeaderEmpty: {
-    width: 24,
-  },
-  titleHeader: {
-    fontFamily: "OpenSans_600SemiBold",
-    fontSize: 17,
-    color: colors.blackCoffee,
   },
   lineWhite: {
     height: 1,

@@ -6,6 +6,8 @@ export const PATHS = {
   editUser: "/user/login/editUser",
   // events
   eventsGet: "/events/",
+  eventsGetUserId: "/events/user/",
   eventAdd: "/events/add/",
+  eventChange: "/events/change/",
   eventDelete: "/events/delete/",
 } as const;
