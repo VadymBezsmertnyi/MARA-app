@@ -1,52 +1,52 @@
-import React, { FunctionComponent, useContext } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { getDistance } from 'geolib';
-import { ImageSource } from 'expo-image';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, { FunctionComponent, useContext } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { getDistance } from "geolib";
+import { ImageSource } from "expo-image";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
-import { RootNewsScreensParamList } from '../../../../../navigators/Navigators.types';
+import { RootNewsScreensParamList } from "../../../../../navigators/Navigators.types";
+import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
 
 // provider
-import { mapContext } from '../../../../../providers/MapProvider/MapProvider';
-import { localesContext } from '../../../../../../localization/localization.provider';
+import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
+import { localesContext } from "../../../../../../localization/localization.provider";
 
 // hooks
-import { formatDateFromUnixTimestamp } from '../../../../../helps/helps';
+import { formatDateFromUnixTimestamp } from "../../../../../helps/helps";
 
 // components
-import { ImageCache } from '../../../../../components/ImageCache/ImageCache';
+import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
 
 // constants
-import { PATHS_NEWS_SCREENS } from '../../../../../navigators/useNavigator.constants';
+import { PATHS_NEWS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // icons
-import { IconLocationMarker } from '../../../../../icons/components';
+import { IconLocationMarker } from "../../../../../icons/components";
 
 // styles
-import { styles } from './ItemListEvents.styles';
-import colors from '../../../../../../styles/colors';
+import { styles } from "./ItemListEvents.styles";
+import colors from "../../../../../../styles/colors";
 
 type ItemListEventsProps = {
-  item: {
-    id: number;
-    title: string;
-    address: string;
-    startData: number;
-    endData: number;
-    location: number[];
-    image: ImageSource | null;
-  };
+  item: EventType;
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
 };
 
-export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item, navigation }) => {
+export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
+  item,
+  navigation,
+}) => {
   const { location } = useContext(mapContext);
   const { i18n } = useContext(localesContext);
-  const { title, address, image, startData, location: locationItem } = item;
-  const distance = location
-    ? getDistance(location, { longitude: locationItem[0], latitude: locationItem[1] })
-    : null;
+  const image = item.images[0] ? item.images[0].url : null;
+  const distance =
+    location && item.location?.geometry.location
+      ? getDistance(location, {
+          longitude: item.location.geometry.location.lng,
+          latitude: item.location.geometry.location.lat,
+        })
+      : null;
 
   const selectEvent = () => {
     navigation.navigate(PATHS_NEWS_SCREENS.eventItem, { eventId: item.id });
@@ -54,18 +54,40 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({ item, n
 
   return (
     <TouchableOpacity style={styles.container} onPress={selectEvent}>
-      <View style={styles.containerImage}>
-        {image ? <ImageCache style={styles.image} contentFit="contain" imageSrc={image} /> : null}
+      <View style={styles.containerLeft}>
+        {image ? (
+          <ImageCache
+            style={styles.image}
+            contentFit="contain"
+            imageSrc={image}
+          />
+        ) : null}
+        <View
+          style={
+            image ? styles.containerTitles : styles.containerTitlesNotImage
+          }
+        >
+          <Text numberOfLines={1} style={styles.title}>
+            {item.title}
+          </Text>
+          <Text numberOfLines={1} style={styles.address}>
+            {item.location?.formatted_address}
+          </Text>
+        </View>
       </View>
       <View style={styles.part}>
-        <Text>{title}</Text>
-        <Text>{address}</Text>
-      </View>
-      <View style={styles.part}>
-        <Text>{formatDateFromUnixTimestamp(startData)}</Text>
+        <Text>{formatDateFromUnixTimestamp(item.date.start)}</Text>
         <View style={styles.containerLocation}>
-          <IconLocationMarker width={15} height={15} fill={colors.californiaOrange} />
-          <Text>{distance ? `${distance / 1000} км` : i18n._(`Not enabled location`)}</Text>
+          <IconLocationMarker
+            width={15}
+            height={15}
+            fill={colors.californiaOrange}
+          />
+          <Text style={styles.distance}>
+            {distance
+              ? `${(distance / 1000).toFixed()} км`
+              : i18n._(`Not enabled location`)}
+          </Text>
         </View>
       </View>
     </TouchableOpacity>

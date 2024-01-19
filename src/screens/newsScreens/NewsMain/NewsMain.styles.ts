@@ -42,4 +42,16 @@ export const styles = StyleSheet.create({
     fontSize: scaleFont(FONT_SIZE_TITLE_MORE),
     fontWeight: "600",
   },
+  containerNotList: {
+    height: 300,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  imageNotElements: {
+    width: "100%",
+    height: "90%",
+  },
+  titleNotList: {
+    fontFamily: "Montserrat_700Bold",
+  },
 });

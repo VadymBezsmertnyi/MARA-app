@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
@@ -6,18 +6,23 @@ import { Trans } from "@lingui/macro";
 // types
 import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
 
+// providers
+import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+
 // components
 import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
 import { ItemListNews } from "./components/ItemListNews/ItemListNews";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // icons
 import { ArrowLongRight } from "../../../icons/components";
 
+// images
+import notEventsImage from "../../../../assets/newsEvents/notEvents.jpeg";
+import notNewsImage from "../../../../assets/newsEvents/notNews.jpeg";
+
 // constants
-import {
-  DEFAULT_LIST_EVENT,
-  DEFAULT_LIST_NEWS,
-} from "../DELETE_newsScreens.constants";
+import { DEFAULT_LIST_NEWS } from "../DELETE_newsScreens.constants";
 import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
@@ -29,6 +34,11 @@ type NewsMainProps = {
 };
 
 export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
+  const { eventsList } = useContext(eventsContext);
+  const startDateEvents = useMemo(
+    () => eventsList.sort((a, b) => a.date.start - b.date.start).slice(0, 3),
+    [eventsList]
+  );
   const onToEventsList = () => {
     navigation.navigate(PATHS_NEWS_SCREENS.eventsList);
   };
@@ -42,42 +52,72 @@ export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
           <Trans>Upcoming events:</Trans>
         </Text>
         <View style={styles.containerEvents}>
-          {DEFAULT_LIST_EVENT.slice(0, 3).map((eventItem) => (
-            <ItemListEvents
-              key={`event-${eventItem.id}`}
-              item={eventItem}
-              navigation={navigation}
-            />
-          ))}
+          {startDateEvents.length ? (
+            startDateEvents.map((eventItem) => (
+              <ItemListEvents
+                key={`event-${eventItem.id}`}
+                item={eventItem}
+                navigation={navigation}
+              />
+            ))
+          ) : (
+            <View style={styles.containerNotList}>
+              <ImageCache
+                contentFit="contain"
+                style={styles.imageNotElements}
+                imageSrc={notEventsImage}
+              />
+              <Text style={styles.titleNotList}>
+                <Trans>Sorry, there are no upcoming events</Trans>
+              </Text>
+            </View>
+          )}
         </View>
-        <TouchableOpacity style={styles.buttonMore} onPress={onToEventsList}>
-          <Text style={styles.titleButtonMore}>
-            <Trans>More events</Trans>
-          </Text>
-          <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
-        </TouchableOpacity>
+        {startDateEvents.length ? (
+          <TouchableOpacity style={styles.buttonMore} onPress={onToEventsList}>
+            <Text style={styles.titleButtonMore}>
+              <Trans>More events</Trans>
+            </Text>
+            <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
+          </TouchableOpacity>
+        ) : null}
       </View>
       <View style={styles.containerPart}>
         <Text style={styles.titleType}>
           <Trans>Latest news:</Trans>
         </Text>
         <View style={styles.containerEvents}>
-          {DEFAULT_LIST_NEWS.map((newItem) => (
-            <ItemListNews
-              key={`new-${newItem.id}`}
-              newId={newItem.id}
-              title={newItem.title}
-              date={newItem.data}
-              navigation={navigation}
-            />
-          ))}
+          {DEFAULT_LIST_NEWS.length ? (
+            DEFAULT_LIST_NEWS.map((newItem) => (
+              <ItemListNews
+                key={`new-${newItem.id}`}
+                newId={newItem.id}
+                title={newItem.title}
+                date={newItem.data}
+                navigation={navigation}
+              />
+            ))
+          ) : (
+            <View style={styles.containerNotList}>
+              <ImageCache
+                contentFit="contain"
+                style={styles.imageNotElements}
+                imageSrc={notNewsImage}
+              />
+              <Text style={styles.titleNotList}>
+                <Trans>Sorry, there is no news</Trans>
+              </Text>
+            </View>
+          )}
         </View>
-        <TouchableOpacity style={styles.buttonMore} onPress={onToNewsList}>
-          <Text style={styles.titleButtonMore}>
-            <Trans>More news</Trans>
-          </Text>
-          <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
-        </TouchableOpacity>
+        {DEFAULT_LIST_NEWS.length ? (
+          <TouchableOpacity style={styles.buttonMore} onPress={onToNewsList}>
+            <Text style={styles.titleButtonMore}>
+              <Trans>More news</Trans>
+            </Text>
+            <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
+          </TouchableOpacity>
+        ) : null}
       </View>
     </ScrollView>
   );

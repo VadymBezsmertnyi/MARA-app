@@ -18,6 +18,14 @@ msgid "Confirm"
 msgstr "Опублікувати"
 
 #. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Створити подію"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Змінити подію"
+
+#. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
 msgstr "Фото {numberPhoto}"
 
@@ -214,16 +222,8 @@ msgid "Continue"
 msgstr "Продовжити"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Фото змінено"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "Додано фото"
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Вибачте, сталася помилка"
+msgid "events"
+msgstr "події"
 
 #. js-lingui-explicit-id
 msgid "My ads"
@@ -252,6 +252,18 @@ msgstr "Додати подію"
 #. js-lingui-explicit-id
 msgid "Setting profile"
 msgstr "Корегувати профіль"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Фото змінено"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Додано фото"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Вибачте, сталася помилка"
 
 #. js-lingui-explicit-id
 msgid "Save profile"
@@ -283,6 +295,9 @@ msgstr "Введіть назву майстерні або вид робіт"
 
 msgid "Access denied"
 msgstr "Доступ заборонено"
+
+msgid "Add event"
+msgstr "Додати подію"
 
 msgid "Add your address"
 msgstr "Додати вашу адресу"
@@ -413,6 +428,9 @@ msgstr "Більше новин"
 msgid "Move and change location"
 msgstr "Перемістіть та змініть місцезнаходження"
 
+msgid "My events"
+msgstr "Мої події"
+
 msgid "New"
 msgstr "Новина"
 
@@ -476,6 +494,16 @@ msgstr "Настройки"
 msgid "Someone needs help within a 5 km radius"
 msgstr "У радіусі 5 км комусь потрібна допомога"
 
+msgid "Sorry, there are no upcoming events"
+msgstr "Вибачте, немає майбутніх подій"
+
+msgid "Sorry, there is no news"
+msgstr "Вибачте, немає новин"
+
+msgid "Sorry!"
+msgstr "Вибачте!"
+
+
 msgid "SOS signal"
 msgstr "Сигнал SOS"
 
@@ -511,6 +539,9 @@ msgstr "Ласкаво просимо"
 
 msgid "Workshops"
 msgstr "Майстерні"
+
+msgid "You don't have {typeItem}."
+msgstr "У вас немає {typeItem}."
 
 msgid "You have been sent an SMS with a code."
 msgstr "Вам надіслано SMS!"

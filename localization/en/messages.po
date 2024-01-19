@@ -18,6 +18,14 @@ msgid "Confirm"
 msgstr "Confirm"
 
 #. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Create event"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Change event"
+
+#. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
 msgstr "Photo {numberPhoto}"
 
@@ -214,16 +222,8 @@ msgid "Continue"
 msgstr "Continue"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "The photo has been changed"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "The photo added"
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Sorry, an error occurred"
+msgid "events"
+msgstr "events"
 
 #. js-lingui-explicit-id
 msgid "My ads"
@@ -252,6 +252,18 @@ msgstr "Add event"
 #. js-lingui-explicit-id
 msgid "Setting profile"
 msgstr "Setting profile"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "The photo has been changed"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "The photo added"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Sorry, an error occurred"
 
 #. js-lingui-explicit-id
 msgid "Save profile"
@@ -283,6 +295,9 @@ msgstr "Enter the name of the workshop or type of work"
 
 msgid "Access denied"
 msgstr "Access denied"
+
+msgid "Add event"
+msgstr "Add event"
 
 msgid "Add your address"
 msgstr "Add your address"
@@ -413,6 +428,9 @@ msgstr "More news"
 msgid "Move and change location"
 msgstr "Move and change location"
 
+msgid "My events"
+msgstr "My events"
+
 msgid "New"
 msgstr "New"
 
@@ -476,6 +494,15 @@ msgstr "Settings"
 msgid "Someone needs help within a 5 km radius"
 msgstr "Someone needs help within a 5 km radius"
 
+msgid "Sorry, there are no upcoming events"
+msgstr "Sorry, there are no upcoming events"
+
+msgid "Sorry, there is no news"
+msgstr "Sorry, there is no news"
+
+msgid "Sorry!"
+msgstr "Sorry!"
+
 msgid "SOS signal"
 msgstr "SOS signal"
 
@@ -511,6 +538,9 @@ msgstr "Welcome"
 
 msgid "Workshops"
 msgstr "Workshops"
+
+msgid "You don't have {typeItem}."
+msgstr "You don't have {typeItem}."
 
 msgid "You have been sent an SMS with a code."
 msgstr "You have been sent an SMS with a code."
