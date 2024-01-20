@@ -29,6 +29,6 @@ export const styles = StyleSheet.create({
     fontSize: 12,
   },
   containerRight: {
-    justifyContent: "space-between",
+    justifyContent: "center",
   },
 });
