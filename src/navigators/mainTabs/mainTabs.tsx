@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-} from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import {
   BottomTabBarProps,
@@ -11,6 +6,9 @@ import {
 } from "@react-navigation/bottom-tabs";
 import { LinearGradient } from "expo-linear-gradient";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
+
+// providers
+import { responsiveLayoutContext } from "../../providers/responsiveLayout/responsiveLayout.provider";
 
 // components
 import { MenuBurgerButton } from "../../components/MenuBurgerButton/MenuBurgerButton";
@@ -33,17 +31,21 @@ const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
   const { mainTabs } = useMainTabs();
-
+  const { durationHeight } = useContext(responsiveLayoutContext);
   const colorsGradient = useMemo(
     () => [colors.californiaOrange, colors.blazeOrange],
     []
+  );
+  const containerStyles = useMemo(
+    () => [styles.mainContainer, { bottom: -durationHeight }],
+    [durationHeight]
   );
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1], []);
 
   const tabBar = ({ state: { index }, navigation }: BottomTabBarProps) => (
-    <View style={styles.mainContainer}>
+    <View style={containerStyles}>
       <View style={styles.absoluteContainer}>
         <LinearGradient
           colors={colorsGradient}
