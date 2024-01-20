@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
-import { t } from "@lingui/macro";
+import { Trans, t } from "@lingui/macro";
+import { useRoute } from "@react-navigation/native";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
@@ -18,6 +19,9 @@ import { useAllNavigation } from "../../navigators/Navigators.helps";
 // styles
 import { styles } from "./Header.styles";
 import colors from "../../../styles/colors";
+import { z } from "zod";
+import { eventsContext } from "../../providers/EventsProvider/EventsProvider";
+import { modalDeleteContext } from "../../providers/ModalDeleteProvider/ModalDeleteProvider";
 
 type HeaderStackProps = {
   title: string;
@@ -30,13 +34,19 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   leftElement = null,
   rightElement,
 }) => {
+  const route = useRoute();
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-
-  const onBack = () => {
-    navigation.goBack();
-  };
+  const { deleteEvent } = useContext(eventsContext);
+  const { onShowModal } = useContext(modalDeleteContext);
+  const idEditEvent = useMemo(() => {
+    const currentParams = z
+      .object({ eventId: z.number() })
+      .safeParse(route.params);
+    if (currentParams.success) return currentParams.data.eventId;
+    return null;
+  }, [route]);
 
   const backTitleStyle = useMemo(
     () => [
@@ -45,6 +55,15 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
     ],
     [theme]
   );
+
+  const onBack = () => {
+    navigation.goBack();
+  };
+
+  const onDeleteEvent = () => {
+    if (idEditEvent) deleteEvent(idEditEvent, "user");
+    navigation.goBack();
+  };
 
   return (
     <SafeAreaView style={styles.background}>
@@ -64,8 +83,19 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
         </TouchableOpacity>
 
         <Text style={styles.title}>{title}</Text>
-
-        <View style={styles.wrapper}>{rightElement && rightElement}</View>
+        {idEditEvent ? (
+          <TouchableOpacity
+            onPress={() => {
+              onShowModal(() => onDeleteEvent);
+            }}
+          >
+            <Text style={styles.titleButtonDeleteEvent}>
+              <Trans>Delete</Trans>
+            </Text>
+          </TouchableOpacity>
+        ) : (
+          <View style={styles.wrapper}>{rightElement && rightElement}</View>
+        )}
       </View>
     </SafeAreaView>
   );

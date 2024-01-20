@@ -47,6 +47,7 @@ export { default as IconTabWorkshopsSelect } from "./IconTabWorkshopsSelect";
 export { default as IconTabWorkshops } from "./IconTabWorkshops";
 export { default as IconTouchIdGradient } from "./IconTouchIdGradient";
 export { default as IconTouchId } from "./IconTouchId";
+export { default as IconWarningGradient } from "./IconWarningGradient";
 export { default as IconWheelGradient } from "./IconWheelGradient";
 export { default as IconChat } from "./IconChat";
 export { default as MingcuteTimeLine } from "./MingcuteTimeLine";

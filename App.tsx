@@ -8,19 +8,10 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 import {
-  OpenSans_300Light,
   OpenSans_400Regular,
-  OpenSans_500Medium,
   OpenSans_600SemiBold,
-  OpenSans_700Bold,
-  OpenSans_800ExtraBold,
-  OpenSans_300Light_Italic,
-  OpenSans_400Regular_Italic,
-  OpenSans_500Medium_Italic,
-  OpenSans_600SemiBold_Italic,
-  OpenSans_700Bold_Italic,
-  OpenSans_800ExtraBold_Italic,
 } from "@expo-google-fonts/open-sans";
+import { useFonts } from "expo-font";
 
 // providers
 import LocalesProvider from "./localization/localization.provider";
@@ -35,6 +26,7 @@ import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
 import { ModalsSheetProvider } from "./src/providers/ModalsSheetProvider/ModalsSheetProvider";
 import { ModalsProvider } from "./src/providers/ModalsProvider/ModalsProvider";
+import { ModalDeleteProvider } from "./src/providers/ModalDeleteProvider/ModalDeleteProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -51,7 +43,6 @@ import { messages as translationsEn } from "./localization/en/messages";
 
 // styles
 import { styles } from "./App.styles";
-import { useFonts } from "expo-font";
 
 const CATALOGS_LANGUAGES = {
   uk: translationsUk as Messages,
@@ -62,18 +53,8 @@ function App() {
   const [fontsLoaded] = useFonts({
     Montserrat_600SemiBold,
     Montserrat_700Bold,
-    OpenSans_300Light,
     OpenSans_400Regular,
-    OpenSans_500Medium,
     OpenSans_600SemiBold,
-    OpenSans_700Bold,
-    OpenSans_800ExtraBold,
-    OpenSans_300Light_Italic,
-    OpenSans_400Regular_Italic,
-    OpenSans_500Medium_Italic,
-    OpenSans_600SemiBold_Italic,
-    OpenSans_700Bold_Italic,
-    OpenSans_800ExtraBold_Italic,
   });
 
   const i18n = setupI18n({
@@ -99,7 +80,9 @@ function App() {
                             >
                               <ModalsSheetProvider>
                                 <ModalsProvider>
-                                  <Navigators />
+                                  <ModalDeleteProvider>
+                                    <Navigators />
+                                  </ModalDeleteProvider>
                                 </ModalsProvider>
                               </ModalsSheetProvider>
                             </GestureHandlerRootView>

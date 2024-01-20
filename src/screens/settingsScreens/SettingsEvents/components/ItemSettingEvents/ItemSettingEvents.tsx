@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import {
   StyleProp,
   Text,
@@ -9,9 +9,6 @@ import {
 
 // types
 import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
-
-// providers
-import { eventsContext } from "../../../../../providers/EventsProvider/EventsProvider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -24,10 +21,7 @@ import { useAllNavigation } from "../../../../../navigators/Navigators.helps";
 import { PATHS_SETTINGS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // icons
-import {
-  IconCloseGradient,
-  IconPencilGradient,
-} from "../../../../../icons/components";
+import { IconPencilGradient } from "../../../../../icons/components";
 
 // styles
 import { styles } from "./ItemSettingEvents.styles";
@@ -41,7 +35,6 @@ export const ItemSettingEvents: FunctionComponent<ItemSettingEventsProps> = ({
   event,
   isStart,
 }) => {
-  const { deleteEvent } = useContext(eventsContext);
   const navigation = useAllNavigation();
   const firstImage = event.images[0] ? event.images[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
@@ -53,10 +46,6 @@ export const ItemSettingEvents: FunctionComponent<ItemSettingEventsProps> = ({
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsChangeEvent, {
       eventId: event.id,
     });
-  };
-
-  const onPressDelete = async () => {
-    await deleteEvent(event.id, "user");
   };
 
   return (
@@ -75,9 +64,6 @@ export const ItemSettingEvents: FunctionComponent<ItemSettingEventsProps> = ({
       <View style={styles.containerRight}>
         <TouchableOpacity onPress={onPressChange}>
           <IconPencilGradient width={24} height={24} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onPressDelete}>
-          <IconCloseGradient width={24} height={24} />
         </TouchableOpacity>
       </View>
     </View>

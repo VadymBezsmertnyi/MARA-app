@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     paddingRight: 10,
     flexDirection: "row",
     justifyContent: "space-between",
+    minHeight: 68,
   },
   containerLeft: {
     flexDirection: "row",

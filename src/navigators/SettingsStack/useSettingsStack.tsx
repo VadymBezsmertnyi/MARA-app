@@ -47,7 +47,7 @@ export const useSettingsStack = () => {
     {
       id: PATHS_SETTINGS_SCREENS.settingsChangeEvent,
       name: PATHS_SETTINGS_SCREENS.settingsChangeEvent,
-      title: i18n._("Change event"),
+      title: i18n._("Event"),
       headerShown: true,
       component: AddEvent,
     },
