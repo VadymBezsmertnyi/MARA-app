@@ -22,6 +22,22 @@
           }
         },
         {
+          "client_id": "549450621533-anr53f6c68a0nqtgdoidc2steqo7h8lf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.motoauto.mara",
+            "certificate_hash": "f6fedeb44b25af2e6aaea87d7ef4c9a512e7dbe6"
+          }
+        },
+        {
+          "client_id": "549450621533-mn1vn76fgekm1udj90ummapjsoennegs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.motoauto.mara",
+            "certificate_hash": "4c494d93037543e7edadbb8e341e1f48b55092ed"
+          }
+        },
+        {
           "client_id": "549450621533-g1rujtokh4det5hsl399p5qr1hu1ejem.apps.googleusercontent.com",
           "client_type": 3
         }
