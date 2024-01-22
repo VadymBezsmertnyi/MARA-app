@@ -1,5 +1,6 @@
 export const PATHS = {
   // user
+  loginFacebook: "/user/login/facebook",
   loginGoogle: "/user/login/google",
   me: "/user/login/me",
   token: "/user/login/token",

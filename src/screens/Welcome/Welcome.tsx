@@ -35,7 +35,7 @@ export const Welcome: FunctionComponent = () => {
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
   const { language, setLanguage } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { signInGoogle } = useContext(userContext);
+  const { signInGoogle, signInFacebook } = useContext(userContext);
 
   const iconLanguage = useMemo(
     () => (language === "en" ? imageCountryUs : imageCountryUk),
@@ -51,8 +51,13 @@ export const Welcome: FunctionComponent = () => {
     else setLanguage("uk");
   };
 
-  const onSelect = async (userData: User) => {
+  const onSelectGoogle = async (userData: User) => {
     const user = await signInGoogle(userData);
+    if (user) redirectToScreen(navigation, user, isFaceId, isTouchId);
+  };
+
+  const onSelectFacebook = async (accessToken: string) => {
+    const user = await signInFacebook(accessToken);
     if (user) redirectToScreen(navigation, user, isFaceId, isTouchId);
   };
 
@@ -93,7 +98,8 @@ export const Welcome: FunctionComponent = () => {
           </Text>
           <Socials
             styleContainer={styles.containerSocials}
-            onChange={onSelect}
+            onChangeGoogle={onSelectGoogle}
+            onChangeFacebook={onSelectFacebook}
           />
         </View>
       </BlurView>

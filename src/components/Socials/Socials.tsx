@@ -4,10 +4,11 @@ import React, {
   useContext,
   useMemo,
 } from "react";
-import { Alert, Platform, Text, View, ViewStyle } from "react-native";
+import { Platform, Text, View, ViewStyle } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin, User } from "@react-native-google-signin/google-signin";
 import * as AppleAuthentication from "expo-apple-authentication";
+import { AccessToken, LoginManager, Settings } from "react-native-fbsdk-next";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
@@ -27,30 +28,33 @@ import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 import { styles } from "./Socials.styles";
 
 const GOOGLE_SCOPES = [
-  "https://www.googleapis.com/auth/drive.readonly",
   "https://www.googleapis.com/auth/userinfo.email",
-  "https://www.googleapis.com/auth/drive.readonly",
   "openid",
   "https://www.googleapis.com/auth/userinfo.profile",
 ];
 
-const EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS = process.env
-  .EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS as string;
-const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
-  .EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB as string;
+const PROCESS_ENV = process.env as unknown as {
+  EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS: string;
+  EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB: string;
+};
+const { EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB } =
+  PROCESS_ENV;
 
 type SocialsProps = {
   isTitle?: boolean;
   styleContainer?: ViewStyle;
-  onChange: (value: User) => void;
+  onChangeGoogle: (value: User) => void;
+  onChangeFacebook: (accessToken: string) => void;
 };
 
 export const Socials: FunctionComponent<SocialsProps> = ({
   isTitle = false,
   styleContainer,
-  onChange,
+  onChangeGoogle,
+  onChangeFacebook,
 }) => {
   const { theme } = useContext(themeContext);
+  Settings.initializeSDK();
   GoogleSignin.configure({
     scopes: GOOGLE_SCOPES,
     webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
@@ -78,17 +82,27 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     [theme]
   );
 
-  const onFacebook = () => {
-    Alert.alert("You select: Facebook");
-    //onChange();
+  const onFacebook = async () => {
+    try {
+      const result = await LoginManager.logInWithPermissions([
+        "email",
+        "public_profile",
+      ]);
+      if (!result.isCancelled) {
+        const accessToken = await AccessToken.getCurrentAccessToken();
+        if (accessToken?.accessToken) onChangeFacebook(accessToken.accessToken);
+      }
+    } catch (error) {
+      console.error("Facebook login error:", error);
+    }
   };
 
   const onGoogle = async () => {
     try {
       const userDataGoogle = await GoogleSignin.signIn();
-      onChange(userDataGoogle);
+      onChangeGoogle(userDataGoogle);
     } catch (error) {
-      console.log("error", error);
+      console.log("Google login error:", error);
     }
   };
 

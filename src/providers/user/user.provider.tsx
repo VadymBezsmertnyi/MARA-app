@@ -59,6 +59,34 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     });
   };
 
+  const signInFacebook = async (
+    accessToken: string
+  ): Promise<UserDataT | null> => {
+    setLoading(true);
+    try {
+      const resultCreateNewUser = await api(
+        PATHS.loginFacebook,
+        {
+          method: "POST",
+          data: {
+            accessToken,
+          },
+        },
+        userDataS
+      );
+      if (resultCreateNewUser) {
+        setNewUserData(resultCreateNewUser.verifyToken, resultCreateNewUser);
+        return resultCreateNewUser;
+      }
+      return null;
+    } catch (error: any) {
+      bug(error);
+      return null;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const signInGoogle = async (userData: User): Promise<UserDataT | null> => {
     setLoading(true);
     try {
@@ -185,6 +213,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
       meUser,
       exitUser,
       signInGoogle,
+      signInFacebook,
     }),
     [userData]
   );

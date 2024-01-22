@@ -5,7 +5,7 @@ import { locationSchema } from "../EventsProvider/EventsProvider.schemas";
 export const googleBDSchema = z.object({
   iss: z.string(),
   at_hash: z.string().optional(),
-  email_verified: z.string().optional(),
+  email_verified: z.string().or(z.boolean()).optional(),
   sub: z.string(),
   azp: z.string().optional(),
   email: z.string().optional(),

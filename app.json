@@ -11,9 +11,7 @@
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "moto.auto.road.assistant",
@@ -29,9 +27,7 @@
         "NSCalendarsUsageDescription": "Доступ до календаря для планування подій",
         "NSContactsUsageDescription": "Доступ до контактів для імпорту інформації",
         "NSAppleMusicUsageDescription": "Доступ до Apple Music для імпорту музики",
-        "UIBackgroundModes": [
-          "audio"
-        ],
+        "UIBackgroundModes": ["audio"],
         "NSSpeechRecognitionUsageDescription": "Allow recognition to access your speech recognition",
         "CFBundleURLTypes": [
           {
@@ -122,6 +118,14 @@
           "photosPermission": "The app accesses your photos to let you share them with your friends.",
           "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
+        }
+      ],
+      [
+        "react-native-fbsdk-next",
+        {
+          "appID": "392972260073420",
+          "displayName": "M.A.R.A.",
+          "clientToken": "9ab6fd53433128459985341b29d5843f"
         }
       ]
     ],

@@ -21,6 +21,7 @@ export type Context = {
   meUser: () => Promise<UserDataT | null>;
   exitUser: () => Promise<void>;
   signInGoogle: (userData: User) => Promise<UserDataT | null>;
+  signInFacebook: (accessToken: string) => Promise<UserDataT | null>;
 };
 
 export type State = {

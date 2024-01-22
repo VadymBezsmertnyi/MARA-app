@@ -7,6 +7,8 @@ import {
   View,
 } from "react-native";
 import { Trans } from "@lingui/macro";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 
 // providers
 import { userContext } from "../../../providers/user/user.provider";
@@ -25,8 +27,6 @@ import { useMainTabsNavigation } from "../../../navigators/Navigators.helps";
 // constants
 import {
   PATHS_MAIN_SCREENS,
-  PATHS_MAIN_TABS,
-  PATHS_NEWS_SCREENS,
   PATHS_SETTINGS_SCREENS,
 } from "../../../navigators/useNavigator.constants";
 
@@ -63,6 +63,10 @@ export const SettingsMain: FunctionComponent = () => {
   };
 
   const onLogoutProfile = async () => {
+    const isSignedInGoogle = await GoogleSignin.isSignedIn();
+    const isSignedInFacebook = await AccessToken.getCurrentAccessToken();
+    if (isSignedInGoogle) await GoogleSignin.signOut();
+    if (isSignedInFacebook) LoginManager.logOut();
     await exitUser();
     navigation.navigate(PATHS_MAIN_SCREENS.welcome);
   };
