@@ -35,6 +35,7 @@ import { IconProfileAvatar } from "../../../icons/components";
 
 // styles
 import { styles } from "./SettingsMain.styles";
+import { CommonActions } from "@react-navigation/native";
 
 export const SettingsMain: FunctionComponent = () => {
   const navigation = useMainTabsNavigation();
@@ -68,7 +69,12 @@ export const SettingsMain: FunctionComponent = () => {
     if (isSignedInGoogle) await GoogleSignin.signOut();
     if (isSignedInFacebook) LoginManager.logOut();
     await exitUser();
-    navigation.navigate(PATHS_MAIN_SCREENS.welcome);
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
+      })
+    );
   };
 
   return (
