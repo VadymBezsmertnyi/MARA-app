@@ -5,7 +5,7 @@ const {
 } = process.env as Record<string, string>;
 
 export const expo = {
-  name: "MARA",
+  name: "M.A.R.A.",
   slug: "mara",
   version: "1.0.0",
   orientation: "portrait",

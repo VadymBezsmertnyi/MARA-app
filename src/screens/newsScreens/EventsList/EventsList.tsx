@@ -5,7 +5,6 @@ import { Trans } from "@lingui/macro";
 
 // constants
 import { LIST_CITY } from "../DELETE_InputSelectCity.constants";
-import { DEFAULT_LIST_EVENT } from "../DELETE_newsScreens.constants";
 import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // components
@@ -22,6 +21,7 @@ import { localesContext } from "../../../../localization/localization.provider";
 
 // styles
 import { styles } from "./EventsList.styles";
+import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 
 type ItemListEventsProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
@@ -30,6 +30,7 @@ type ItemListEventsProps = {
 export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   navigation,
 }) => {
+  const { eventsList } = useContext(eventsContext);
   const { i18n } = useContext(localesContext);
   const [valueSearch, setValueSearch] = useState("");
 
@@ -48,7 +49,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
       />
       <InputSelectCity data={LIST_CITY} onSelect={onSelectCity} />
       <ScrollView contentContainerStyle={styles.containerList}>
-        {DEFAULT_LIST_EVENT.map((eventItem) => (
+        {eventsList.map((eventItem) => (
           <ItemListEvents
             key={`event-${eventItem.id}`}
             item={eventItem}

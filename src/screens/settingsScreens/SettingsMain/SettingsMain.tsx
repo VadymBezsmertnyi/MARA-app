@@ -9,6 +9,7 @@ import {
 import { Trans } from "@lingui/macro";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
+import { CommonActions } from "@react-navigation/native";
 
 // providers
 import { userContext } from "../../../providers/user/user.provider";
@@ -35,7 +36,6 @@ import { IconProfileAvatar } from "../../../icons/components";
 
 // styles
 import { styles } from "./SettingsMain.styles";
-import { CommonActions } from "@react-navigation/native";
 
 export const SettingsMain: FunctionComponent = () => {
   const navigation = useMainTabsNavigation();

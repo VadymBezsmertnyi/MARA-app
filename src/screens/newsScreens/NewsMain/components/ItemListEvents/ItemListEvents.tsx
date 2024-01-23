@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { getDistance } from "geolib";
-import { ImageSource } from "expo-image";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types

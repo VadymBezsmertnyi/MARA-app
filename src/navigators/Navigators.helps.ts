@@ -6,6 +6,8 @@ import {
 } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+
+// types
 import {
   RootAllScreensParamList,
   RootForgetScreensParamList,
