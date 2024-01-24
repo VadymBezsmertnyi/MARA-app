@@ -35,10 +35,7 @@ type NewsMainProps = {
 
 export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
   const { eventsList } = useContext(eventsContext);
-  const startDateEvents = useMemo(
-    () => eventsList.sort((a, b) => a.date.start - b.date.start).slice(0, 3),
-    [eventsList]
-  );
+  const startDateEvents = useMemo(() => eventsList.slice(0, 3), [eventsList]);
   const onToEventsList = () => {
     navigation.navigate(PATHS_NEWS_SCREENS.eventsList);
   };

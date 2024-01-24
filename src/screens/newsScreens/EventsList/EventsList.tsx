@@ -3,6 +3,10 @@ import { ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
 
+// providers
+import { localesContext } from "../../../../localization/localization.provider";
+import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+
 // constants
 import { LIST_CITY } from "../DELETE_InputSelectCity.constants";
 import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
@@ -17,11 +21,8 @@ import { AddEventButton } from "../../../components/AddEventButton/AddEventButto
 // types
 import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
 
-import { localesContext } from "../../../../localization/localization.provider";
-
 // styles
 import { styles } from "./EventsList.styles";
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 
 type ItemListEventsProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;

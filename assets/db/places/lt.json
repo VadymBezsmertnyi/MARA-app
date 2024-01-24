@@ -1,0 +1,49 @@
+{
+  "regions": [
+    {
+      "id": 1,
+      "name": {
+        "uk": "Вільнюс",
+        "en": "Vilnius"
+      },
+      "placeId": "ChIJAWFRGYqz3UYRc4Rp445bACo",
+      "cities": null
+    },
+    {
+      "id": 2,
+      "name": {
+        "uk": "Каунас",
+        "en": "Kaunas"
+      },
+      "placeId": "ChIJUZwZRhNgF0URF2ZPCE6hL4I",
+      "cities": null
+    },
+    {
+      "id": 3,
+      "name": {
+        "uk": "Клайпеда",
+        "en": "Klaipėda"
+      },
+      "placeId": "ChIJB-3PD1rQ3kYRtnVzb5bACy4",
+      "cities": null
+    },
+    {
+      "id": 4,
+      "name": {
+        "uk": "Шяуляй",
+        "en": "Šiauliai"
+      },
+      "placeId": "ChIJH5xaV3eN00YR3zXSr2dtpVY",
+      "cities": null
+    },
+    {
+      "id": 5,
+      "name": {
+        "uk": "Паневежис",
+        "en": "Panevėžys"
+      },
+      "placeId": "ChIJ7TLbtwPp3kYRvln6IzZg2iY",
+      "cities": null
+    }
+  ]
+}
