@@ -16,6 +16,13 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     gap: 16,
   },
+  containerPrices: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 16,
+  },
+  lineInputs: { width: 13, height: 1, backgroundColor: colors.black },
   inner: {
     flex: 2,
   },
@@ -46,4 +53,7 @@ export const styles = StyleSheet.create({
   buttonLocation: { flex: 1 },
   buttonMap: { paddingTop: 16, paddingLeft: 12, paddingBottom: 8 },
   errorMessage: { textAlign: "center", color: colors.errorRed },
+  empty: {
+    height: 100,
+  },
 });

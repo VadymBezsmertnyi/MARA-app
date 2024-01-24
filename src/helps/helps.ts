@@ -50,6 +50,22 @@ export const dateToNMY = (date: Date): string => {
   return formattedDate;
 };
 
+export const getTimeFromMilliseconds = (
+  milliseconds: number,
+  type: "HH:MM:SS" | "HH:MM" = "HH:MM"
+) => {
+  const date = new Date(milliseconds);
+  const hours = date.getUTCHours();
+  const minutes = date.getUTCMinutes();
+  const seconds = date.getUTCSeconds();
+  const formattedHours = String(hours).padStart(2, "0");
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(seconds).padStart(2, "0");
+
+  if (type === "HH:MM") return `${formattedHours}:${formattedMinutes}`;
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+};
+
 export const combineDateAndTime = (date: Date, time: Date): Date => {
   const hours = time.getHours();
   const minutes = time.getMinutes();

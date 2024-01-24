@@ -1,34 +1,66 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../../../styles/colors';
+import { StyleSheet } from "react-native";
+import colors from "../../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     paddingHorizontal: 15,
     paddingTop: 10,
   },
-  imageWrapper: { marginBottom: 10 },
-  image: { width: '100%', height: 185, borderRadius: 3, overflow: 'hidden' },
+  imageWrapper: { marginBottom: 10, position: "relative" },
+  image: {
+    width: "100%",
+    height: 185,
+    borderRadius: 3,
+    overflow: "hidden",
+    backgroundColor: colors.gray50,
+  },
+  buttonAllImage: {
+    position: "absolute",
+    backgroundColor: colors.white,
+    borderRadius: 3,
+    paddingHorizontal: 20,
+    paddingVertical: 5,
+    right: 12,
+    bottom: 10,
+  },
+  titleAllImage: {
+    fontFamily: "OpenSans_600SemiBold",
+    fontSize: 12,
+    color: colors.californiaOrange,
+  },
   wrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginTop: 10,
   },
+  locationTitle: {
+    fontFamily: "OpenSans_400Regular",
+    fontSize: 16,
+    lineHeight: 24,
+    color: colors.blackCoffee,
+    width: "75%",
+  },
   inner: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 16,
     flex: 2,
   },
   title: {
+    fontFamily: "Montserrat_700Bold",
     fontSize: 20,
-    fontWeight: '700',
+    color: colors.blackCoffee,
+  },
+  titleOther: {
+    fontFamily: "Montserrat_600SemiBold",
+    fontSize: 16,
     color: colors.blackCoffee,
   },
   subtitle: {
+    fontFamily: "Montserrat_600SemiBold",
     fontSize: 16,
-    fontWeight: '600',
     color: colors.blackCoffee,
   },
   text: {
@@ -37,14 +69,14 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
   },
   label: {
+    fontFamily: "OpenSans_600SemiBold",
     fontSize: 12,
-    fontWeight: '600',
     color: colors.blackCoffee,
     marginTop: 12,
   },
   distance: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 5,
   },
   dateOfEvent: {
@@ -63,21 +95,22 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.8,
   },
   description: { marginTop: 10 },
+  buttonFullDescription: {
+    justifyContent: "flex-end",
+  },
   fullTextTitle: {
     fontSize: 16,
     lineHeight: 24,
     color: colors.blueTufts,
   },
-  fullText: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 24,
-  },
-  mapWrapper: { height: 185, marginTop: 20 },
+  mapWrapper: { height: 400, marginTop: 20 },
   gallery: {
     marginTop: 20,
+  },
+  imageGallery: {
+    width: 150,
+    height: 132,
+    marginRight: 4,
   },
   galleryButton: {
     borderRadius: 8,
@@ -86,13 +119,13 @@ export const styles = StyleSheet.create({
     minWidth: 215,
     paddingHorizontal: 15,
     paddingVertical: 8,
-    alignSelf: 'center',
+    alignSelf: "center",
     marginTop: 16,
   },
   galleryButtonTitle: {
     fontSize: 12,
-    fontWeight: '600',
+    fontWeight: "600",
     color: colors.californiaOrange,
-    textAlign: 'center',
+    textAlign: "center",
   },
 });

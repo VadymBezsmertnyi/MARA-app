@@ -47,6 +47,7 @@ import { getErrorText } from "./AddEvent.helps";
 
 // styles
 import { styles } from "./AddEvent.styles";
+import { Trans } from "@lingui/macro";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
@@ -68,7 +69,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
   const [beginTime, setBeginTime] = useState<Date>(new Date());
   const [finishDate, setFinishDate] = useState<Date>(new Date());
   const [finishTime, setFinishTime] = useState<Date>(new Date());
-  const [price, setPrice] = useState("");
+  const [priceStart, setPriceStart] = useState("");
+  const [priceFinish, setPriceFinish] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
   const [images, setImages] = useState<ImageType[]>([]);
   const [errorMessage, setErrorMessage] = useState<Record<
@@ -179,7 +181,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
           start,
           finish,
         },
-        price: Number(price),
+        price:
+          Number(priceStart) > 0
+            ? {
+                start: Number(priceStart),
+                finish: Number(priceFinish) > 0 ? Number(priceFinish) : 0,
+              }
+            : null,
         currency: "UAH" as const,
         description: aboutEvent,
         images: currentImages,
@@ -233,7 +241,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
         setBeginTime(new Date(eventUser.date.start));
         setFinishDate(new Date(eventUser.date.finish));
         setFinishTime(new Date(eventUser.date.finish));
-        setPrice(eventUser.price.toString());
+        setPriceStart(eventUser.price?.start.toString() || "");
+        setPriceFinish(eventUser.price?.finish.toString() || "");
         setAboutEvent(eventUser.description);
         setImages(imagesWithBath64);
       }
@@ -326,22 +335,37 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
             />
           </View>
         </View>
-        <View style={styles.wrapper}>
+        <Text style={styles.subtitle}>
+          <Trans>Participation fee</Trans>:
+        </Text>
+        <View style={styles.containerPrices}>
           <View style={styles.inner}>
             <Input
               placeholder={i18n._("100 uah")}
-              label={`${i18n._("Participation fee")}:`}
-              value={price}
+              value={priceStart}
               onChange={(value) => {
                 if (!isNaN(Number(value))) {
-                  setPrice(value);
+                  setPriceStart(value);
                   setErrorMessage(null);
                 }
               }}
               keyboardType="numeric"
             />
           </View>
-          <View style={styles.inner} />
+          <View style={styles.lineInputs} />
+          <View style={styles.inner}>
+            <Input
+              placeholder={i18n._("200 uah")}
+              value={priceFinish}
+              onChange={(value) => {
+                if (!isNaN(Number(value))) {
+                  setPriceFinish(value);
+                  setErrorMessage(null);
+                }
+              }}
+              keyboardType="numeric"
+            />
+          </View>
         </View>
         <View style={styles.wrapper}>
           <Input
@@ -364,6 +388,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
           {errorMessage?.errorMessage.title || ""}
         </Text>
         <ButtonCustom title={i18n._("Confirm")} onSubmit={onSaveEvent} />
+        <View style={styles.empty} />
       </ScrollView>
     </View>
   );

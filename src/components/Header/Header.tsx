@@ -1,11 +1,17 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 import { Trans, t } from "@lingui/macro";
-import { useRoute } from "@react-navigation/native";
+import { RouteProp, useRoute } from "@react-navigation/native";
+import { z } from "zod";
+
+// types
+import { RootAllScreensParamList } from "../../navigators/Navigators.types";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../localization/localization.provider";
+import { eventsContext } from "../../providers/EventsProvider/EventsProvider";
+import { modalDeleteContext } from "../../providers/ModalDeleteProvider/ModalDeleteProvider";
 
 // icons
 import { ArrowLeft } from "../../icons/components";
@@ -19,9 +25,6 @@ import { useAllNavigation } from "../../navigators/Navigators.helps";
 // styles
 import { styles } from "./Header.styles";
 import colors from "../../../styles/colors";
-import { z } from "zod";
-import { eventsContext } from "../../providers/EventsProvider/EventsProvider";
-import { modalDeleteContext } from "../../providers/ModalDeleteProvider/ModalDeleteProvider";
 
 type HeaderStackProps = {
   title: string;
@@ -34,7 +37,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   leftElement = null,
   rightElement,
 }) => {
-  const route = useRoute();
+  const route = useRoute<RouteProp<RootAllScreensParamList>>();
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);

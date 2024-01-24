@@ -47,7 +47,7 @@ export const eventSchema = z.object({
     start: z.number(),
     finish: z.number(),
   }),
-  price: z.number(),
+  price: z.object({ start: z.number(), finish: z.number() }).nullable(),
   currency: z.enum(["UAH", "EUR", "USD"]),
   description: z.string(),
   images: z.array(

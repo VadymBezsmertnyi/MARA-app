@@ -48,7 +48,9 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
       : null;
 
   const selectEvent = () => {
-    navigation.navigate(PATHS_NEWS_SCREENS.eventItem, { eventId: item.id });
+    navigation.navigate(PATHS_NEWS_SCREENS.eventItem, {
+      eventId: item.id,
+    });
   };
 
   return (
