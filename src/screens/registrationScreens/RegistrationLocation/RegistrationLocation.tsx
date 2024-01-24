@@ -15,10 +15,7 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { InputButton } from "../../../components/InputButton/InputButton";
 
 // constants
-import {
-  PATHS_MAIN_SCREENS,
-  PATHS_REGISTRATION_SCREENS,
-} from "../../../navigators/useNavigator.constants";
+import { PATHS_REGISTRATION_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // helps
 import { useAllNavigation } from "../../../navigators/Navigators.helps";

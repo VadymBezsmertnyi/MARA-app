@@ -18,7 +18,7 @@ export const expo = {
   },
   assetBundlePatterns: ["**/*"],
   ios: {
-    supportsTablet: true,
+    supportsTablet: false,
     bundleIdentifier: "moto.auto.road.assistant",
     googleServicesFile: "./GoogleService-Info.plist",
     buildNumber: "1",

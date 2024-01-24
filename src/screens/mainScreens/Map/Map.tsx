@@ -7,11 +7,12 @@ import React, {
 } from "react";
 import { Platform, View, ViewStyle } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
-import { Details, Marker, PROVIDER_GOOGLE, Region } from "react-native-maps";
+import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
 import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
+import { mapMarker } from "./Map.types";
 
 // providers
 import { workshopsContext } from "../../../providers/workshops/workshops.provider";
@@ -19,6 +20,7 @@ import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { webSocketContext } from "../../../providers/WebSocketProvider/WebSocketProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
 import { userContext } from "../../../providers/user/user.provider";
+import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 
 // components
 import { SosMarker } from "./components/SosMarker/SosMarker";
@@ -38,7 +40,7 @@ type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
 };
 
-const DEFAULT_LOCATION = {
+const DEFAULT_LOCATION: mapMarker = {
   longitude: 31.976197008043528,
   latitude: 49.63489179964168,
   latitudeDelta: 7.273602506374104,
@@ -51,7 +53,14 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { stateSocket } = useContext(webSocketContext);
   const { location } = useContext(mapContext);
   const { theme, heightStatusBar } = useContext(themeContext);
-  const [region, setRegion] = useState(DEFAULT_LOCATION);
+  const { eventsList } = useContext(eventsContext);
+  const firstEvent = useMemo(
+    () => (eventsList.length ? eventsList[0] : null),
+    [eventsList]
+  );
+  const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
+  const [firstEventLocation, setFirstEventLocation] =
+    useState<mapMarker | null>(null);
   const listUsers = useMemo(
     () =>
       stateSocket.geolocationUsers
@@ -70,9 +79,9 @@ export const Map: FunctionComponent<MapProps> = () => {
     [heightStatusBar]
   );
 
-  // TODO delete
-  const onRegionChange = (region: Region, _details: Details) => {
-    //setRegion(region);
+  const showFirstEvent = (location: mapMarker) => {
+    setRegion(location);
+    setFirstEventLocation(location);
   };
 
   useEffect(() => {
@@ -94,7 +103,7 @@ export const Map: FunctionComponent<MapProps> = () => {
         mapType={Platform.OS === "ios" ? "terrain" : "standard"}
         initialRegion={DEFAULT_LOCATION}
         region={region}
-        onRegionChange={onRegionChange}
+        onRegionChange={() => {}}
         zoomControlEnabled
         userInterfaceStyle={theme}
         showsBuildings={false}
@@ -120,10 +129,13 @@ export const Map: FunctionComponent<MapProps> = () => {
           longitude={31.758758202195168}
           latitude={49.56848145137262}
         />
-        <EventMarker
-          longitude={31.95705860853195}
-          latitude={49.493768216622755}
-        />
+        {firstEventLocation && firstEvent ? (
+          <EventMarker
+            longitude={firstEventLocation.longitude}
+            latitude={firstEventLocation.latitude}
+            event={firstEvent}
+          />
+        ) : null}
         {workshops.map(({ longitude, latitude, title }, index) => (
           <OtherMarker
             key={`other-marker-${index + 1}`}
@@ -153,7 +165,7 @@ export const Map: FunctionComponent<MapProps> = () => {
         })}
       </MapViewCluster>
       <UpContainer />
-      <EventContainer />
+      <EventContainer firstEvent={firstEvent} showFirstEvent={showFirstEvent} />
       <ButtonSearch />
     </View>
   );

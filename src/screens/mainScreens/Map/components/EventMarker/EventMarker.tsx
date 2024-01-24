@@ -1,22 +1,39 @@
-import React, { FunctionComponent, useMemo } from 'react';
-import { View } from 'react-native';
-import { Marker } from 'react-native-maps';
+import React, { FunctionComponent, useMemo } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { Callout, Marker } from "react-native-maps";
+
+// types
+import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
+
+// helps
+import { dateToNMY } from "../../../../../helps/helps";
+import { useAllNavigation } from "../../../../../navigators/Navigators.helps";
+
+// constants
+import { PATHS_NEWS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // styles
-import { styles } from './EventMarker.styles';
+import { styles } from "./EventMarker.styles";
+import { Trans } from "@lingui/macro";
 
 type EventMarkerProps = {
   longitude: number;
   latitude: number;
+  event: EventType;
 };
 
-export const EventMarker: FunctionComponent<EventMarkerProps> = ({ longitude, latitude }) => {
+export const EventMarker: FunctionComponent<EventMarkerProps> = ({
+  longitude,
+  latitude,
+  event,
+}) => {
+  const navigation = useAllNavigation();
   const coordinateMarker = useMemo(
     () => ({
       longitude,
       latitude,
     }),
-    [longitude, latitude],
+    [longitude, latitude]
   );
 
   return (
@@ -26,6 +43,24 @@ export const EventMarker: FunctionComponent<EventMarkerProps> = ({ longitude, la
         <View style={styles.secondCircle} />
         <View style={styles.thirdCircle} />
       </View>
+      <Callout>
+        <View style={{ width: 200 }}>
+          <Text>{event.title}</Text>
+          <Text>{dateToNMY(new Date(event.date.start))}</Text>
+          <TouchableOpacity
+            onPress={() => {
+              console.log("dfdfdfd");
+              navigation.navigate(PATHS_NEWS_SCREENS.eventItem, {
+                eventId: event.id,
+              });
+            }}
+          >
+            <Text>
+              <Trans>more detail</Trans>
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </Callout>
     </Marker>
   );
 };
