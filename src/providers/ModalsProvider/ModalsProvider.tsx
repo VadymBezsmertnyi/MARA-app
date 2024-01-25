@@ -10,7 +10,7 @@ import { ImageModal } from "./modals/ImageModal/ImageModal";
 import { GalleryModal } from "./modals/GalleryModal/GalleryModal";
 
 // styles
-import { styles } from "./ModalsProvider.styles";
+import { ModalWindow } from "../../components/ModalWindow/ModalWindow";
 
 type ModalsProviderType = {
   children: JSX.Element;
@@ -87,12 +87,7 @@ export const ModalsProvider: FunctionComponent<ModalsProviderType> = ({
     <modalsContext.Provider value={contextValue}>
       {children}
       {showModal !== null ? (
-        <View style={styles.container}>
-          <TouchableOpacity style={styles.footerButton} onPress={onClose}>
-            <BlurView intensity={15} style={styles.footerButtonBlurView} />
-          </TouchableOpacity>
-          {showModal}
-        </View>
+        <ModalWindow onClose={onClose}>{showModal}</ModalWindow>
       ) : null}
     </modalsContext.Provider>
   );

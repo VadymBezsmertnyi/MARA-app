@@ -7,6 +7,7 @@ import { ImageModalType } from "../../ModalsProvider.types";
 
 // providers
 import { localesContext } from "../../../../../localization/localization.provider";
+import { themeContext } from "../../../ThemeProvider/ThemeProvider";
 
 // components
 import { ImageCache } from "../../../../components/ImageCache/ImageCache";
@@ -36,7 +37,12 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
   onClose,
 }) => {
   const { i18n } = useContext(localesContext);
+  const { heightStatusBar } = useContext(themeContext);
   const isMain = imageInfo?.index === 0;
+  const containerStyles = useMemo(
+    () => [styles.container, { marginTop: heightStatusBar }],
+    [heightStatusBar]
+  );
   const imageStyles = useMemo(
     () =>
       imageInfo
@@ -51,7 +57,7 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
 
   if (!imageInfo) return null;
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <View style={styles.containerHeader}>
         <View />
         <Text style={styles.titleHeader}>

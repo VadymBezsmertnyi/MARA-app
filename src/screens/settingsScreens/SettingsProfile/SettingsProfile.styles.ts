@@ -56,6 +56,13 @@ export const styles = StyleSheet.create({
     borderRadius: 40,
   },
   email: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
-  buttonPickImage: { position: "absolute", bottom: 8, right: 8 },
+  buttonPickImage: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    backgroundColor: colors.grayMercury,
+    padding: 6,
+    borderRadius: 40,
+  },
   buttonDeleteImage: { position: "absolute", bottom: 8, left: 8 },
 });

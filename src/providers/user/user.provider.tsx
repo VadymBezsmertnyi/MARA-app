@@ -16,6 +16,9 @@ import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { biometricAuthenticatorContext } from "../biometricAuthenticator/biometricAuthenticator.provider";
 
+// components
+import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
+
 // helps
 import showErrors from "../../helps/errors/showError";
 import { getErrors } from "../../helps/errors/errors.helps";
@@ -39,6 +42,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const { setLoading } = useContext(loadingContext);
   const { info, bug, warning } = showErrors;
   const [userData, setUserData] = useState<UserDataT | null>(null);
+  const [isChangeAvatar, setIsChangeAvatar] = useState(false);
 
   const cleanUserData = () => {
     setUserData(null);
@@ -246,6 +250,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
       signInGoogle,
       signInFacebook,
       deleteUser,
+      setIsChangeAvatar,
     }),
     [userData]
   );
@@ -253,6 +258,15 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   return (
     <userContext.Provider value={contextValue}>
       {props.children}
+      {isChangeAvatar ? (
+        <ModalChangeAvatar
+          userData={userData}
+          onClose={() => {
+            setIsChangeAvatar(false);
+          }}
+          editUser={editUser}
+        />
+      ) : null}
     </userContext.Provider>
   );
 };

@@ -38,7 +38,10 @@ import { useAuthorizationRegistration } from "../../../helps/useAuthorizationReg
 import { getClearValue } from "../../../helps/regexp";
 
 // constants
-import { PATHS_MAIN_SCREENS } from "../../../navigators/useNavigator.constants";
+import {
+  PATHS_MAIN_SCREENS,
+  PATHS_SETTINGS_SCREENS,
+} from "../../../navigators/useNavigator.constants";
 import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
@@ -46,7 +49,6 @@ import {
 
 // icons
 import {
-  IconCloseGradient,
   IconMapGradient,
   IconPencilGradient,
   IconPlusGradient,
@@ -59,7 +61,8 @@ import { styles } from "./SettingsProfile.styles";
 export const SettingsProfile: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { userData, editUser, exitUser, deleteUser } = useContext(userContext);
+  const { userData, editUser, exitUser, deleteUser, setIsChangeAvatar } =
+    useContext(userContext);
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
   const [firstName, setFirstName] = useState("");
@@ -95,9 +98,6 @@ export const SettingsProfile: FunctionComponent = () => {
     });
 
     if (!result.canceled) {
-      const titleSuccess = userData?.avatar?.id
-        ? i18n._("The photo has been changed")
-        : i18n._("The photo added");
       const compressImages = await compressAndProcessImages(result);
       const resultUpdate = await editUser({
         avatar: {
@@ -107,12 +107,12 @@ export const SettingsProfile: FunctionComponent = () => {
       });
 
       if (!resultUpdate) warning(i18n._("Sorry, an error occurred"));
-      else warning(titleSuccess);
+      else success(i18n._("The photo added"));
     } else warning(i18n._("Sorry, an error occurred"));
   };
 
-  const deleteImage = async () => {
-    await editUser({ avatar: null });
+  const onChangePhoto = () => {
+    setIsChangeAvatar(true);
   };
 
   const onDeleteProfile = async () => {
@@ -147,9 +147,11 @@ export const SettingsProfile: FunctionComponent = () => {
       phoneNumber,
       ...(isPhone && { phoneNumber: clearPhoneNumber }),
     });
-    if (resultSave) success(i18n._("Save profile"));
-    else warning(i18n._("Error: save profile"));
-    setCity(null);
+    if (resultSave) {
+      success(i18n._("Save profile"));
+      navigation.navigate(PATHS_SETTINGS_SCREENS.settingsMain);
+      setCity(null);
+    } else warning(i18n._("Error: save profile"));
   };
 
   useEffect(() => {
@@ -197,7 +199,7 @@ export const SettingsProfile: FunctionComponent = () => {
             )}
             <TouchableOpacity
               style={styles.buttonPickImage}
-              onPress={pickImage}
+              onPress={imageSource ? onChangePhoto : pickImage}
             >
               {imageSource ? (
                 <IconPencilGradient width={24} height={24} />
@@ -205,14 +207,6 @@ export const SettingsProfile: FunctionComponent = () => {
                 <IconPlusGradient width={24} height={24} />
               )}
             </TouchableOpacity>
-            {imageSource ? (
-              <TouchableOpacity
-                style={styles.buttonDeleteImage}
-                onPress={deleteImage}
-              >
-                <IconCloseGradient width={24} height={24} />
-              </TouchableOpacity>
-            ) : null}
           </View>
           <Text style={styles.email}>{userData?.email}</Text>
         </View>

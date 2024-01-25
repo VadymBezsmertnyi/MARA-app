@@ -23,6 +23,7 @@ export type Context = {
   signInGoogle: (userData: User) => Promise<UserDataT | null>;
   signInFacebook: (accessToken: string) => Promise<UserDataT | null>;
   deleteUser: () => Promise<boolean>;
+  setIsChangeAvatar: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type State = {
