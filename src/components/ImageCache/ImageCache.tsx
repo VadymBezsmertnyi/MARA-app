@@ -1,6 +1,11 @@
-import React, { FunctionComponent } from 'react';
-import { ImageStyle, StyleProp } from 'react-native';
-import { Image, ImageContentFit, ImageContentPosition, ImageSource } from 'expo-image';
+import React, { FunctionComponent } from "react";
+import { ImageStyle, StyleProp } from "react-native";
+import {
+  Image,
+  ImageContentFit,
+  ImageContentPosition,
+  ImageSource,
+} from "expo-image";
 
 type ImageCacheProps = {
   imageSrc: string | ImageSource;
@@ -22,7 +27,7 @@ type ImageCacheProps = {
 export const ImageCache: FunctionComponent<ImageCacheProps> = ({
   imageSrc,
   style,
-  contentFit = 'cover',
+  contentFit = "cover",
   contentPosition,
 }) => (
   <Image

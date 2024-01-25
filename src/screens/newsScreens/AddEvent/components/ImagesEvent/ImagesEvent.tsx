@@ -17,7 +17,7 @@ import { modalsContext } from "../../../../../providers/ModalsProvider/ModalsPro
 // components
 import {
   IconAddEvent,
-  IconArrowLeftEvent,
+  IconArrowLeftEventGradient,
   IconArrowRightEvent,
 } from "../../../../../icons/components";
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -141,7 +141,7 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
         onPress={onBack}
         style={styleButtonBack}
       >
-        <IconArrowLeftEvent width={44} height={44} />
+        <IconArrowLeftEventGradient width={44} height={44} />
       </TouchableOpacity>
       <View style={styles.list}>
         {images.length < 6 ? (

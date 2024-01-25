@@ -23,28 +23,16 @@ const SvgIconArrowLeftEvent = (originalProps: IconType) => {
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 44 44"
+      viewBox="0 0 25 24"
       {...props}
     >
       <Path
-        stroke="url(#icon-arrow-left-event_svg__a)"
+        stroke="#38312C"
         strokeLinecap="round"
-        strokeWidth={2.5}
-        d="M29 7 13.778 21.27a1 1 0 0 0 0 1.46L29 37"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="m15.5 18-6-6 6-6"
       />
-      <Defs>
-        <LinearGradient
-          id="icon-arrow-left-event_svg__a"
-          x1={20.977}
-          x2={53.691}
-          y1={-24.442}
-          y2={-8.16}
-          gradientUnits="userSpaceOnUse"
-        >
-          <Stop offset={0.109} stopColor="#FDA005" />
-          <Stop offset={1} stopColor="#FD5E01" />
-        </LinearGradient>
-      </Defs>
     </Svg>
   );
 };

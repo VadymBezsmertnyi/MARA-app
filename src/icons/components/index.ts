@@ -4,6 +4,7 @@ export { default as ArrowLongRight } from "./ArrowLongRight";
 export { default as EyeHide } from "./EyeHide";
 export { default as EyeShow } from "./EyeShow";
 export { default as IconAddEvent } from "./IconAddEvent";
+export { default as IconArrowLeftEventGradient } from "./IconArrowLeftEventGradient";
 export { default as IconArrowLeftEvent } from "./IconArrowLeftEvent";
 export { default as IconArrowRightEvent } from "./IconArrowRightEvent";
 export { default as IconArrowRightNew } from "./IconArrowRightNew";
