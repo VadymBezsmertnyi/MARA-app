@@ -1,12 +1,11 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import { ImageBackground } from "expo-image";
 import { BlurView } from "expo-blur";
 import { Trans } from "@lingui/macro";
 import { User } from "@react-native-google-signin/google-signin";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
 import { userContext } from "../../providers/user/user.provider";
 import { biometricAuthenticatorContext } from "../../providers/biometricAuthenticator/biometricAuthenticator.provider";
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
@@ -16,13 +15,11 @@ import { useAllNavigation } from "../../navigators/Navigators.helps";
 
 // components
 import { Logo } from "../../components/Logo/Logo";
-import { ImageCache } from "../../components/ImageCache/ImageCache";
 import { Socials } from "../../components/Socials/Socials";
+import { ChangeLanguage } from "../../components/ChangeLanguage/ChangeLanguage";
 
 // images
 import imageSplash from "../../../assets/splash.png";
-import imageCountryUk from "../../../images/icon-country-uk.png";
-import imageCountryUs from "../../../images/icon-country-us.png";
 
 // hooks
 import { redirectToScreen } from "../screens.hooks";
@@ -33,23 +30,8 @@ import { styles } from "./Welcome.styles";
 export const Welcome: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
-  const { language, setLanguage } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
   const { signInGoogle, signInFacebook } = useContext(userContext);
-
-  const iconLanguage = useMemo(
-    () => (language === "en" ? imageCountryUs : imageCountryUk),
-    [language]
-  );
-  const showLanguage = useMemo(
-    () => (language === "uk" ? "ua" : language),
-    [language]
-  );
-
-  const onChangeLanguage = () => {
-    if (language === "uk") setLanguage("en");
-    else setLanguage("uk");
-  };
 
   const onSelectGoogle = async (userData: User) => {
     const user = await signInGoogle(userData);
@@ -75,13 +57,7 @@ export const Welcome: FunctionComponent = () => {
     <ImageBackground style={styles.container} source={imageSplash}>
       <BlurView intensity={8} style={containerStyles}>
         <View style={styles.containerLanguage}>
-          <TouchableOpacity
-            onPress={onChangeLanguage}
-            style={styles.buttonLanguage}
-          >
-            <ImageCache imageSrc={iconLanguage} style={styles.iconLanguage} />
-            <Text style={styles.titleLanguage}>{showLanguage}</Text>
-          </TouchableOpacity>
+          <ChangeLanguage />
         </View>
         <View style={styles.containerLogo}>
           <Logo />

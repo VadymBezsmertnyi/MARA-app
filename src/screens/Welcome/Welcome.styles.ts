@@ -13,14 +13,6 @@ export const styles = StyleSheet.create({
   },
   containerLogo: { justifyContent: "center", alignItems: "center" },
   containerLanguage: { width: "100%", alignItems: "flex-end" },
-  buttonLanguage: { flexDirection: "row", gap: 12 },
-  iconLanguage: { width: 24, height: 24 },
-  titleLanguage: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
-    textTransform: "uppercase",
-    color: colors.blackCoffee,
-  },
   containerTitles: { gap: 12, alignItems: "center" },
   title: {
     fontFamily: "Montserrat_700Bold",

@@ -1,18 +1,24 @@
 import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { Alert, Text, TouchableOpacity, View } from "react-native";
 import { DrawerNavigationState, ParamListBase } from "@react-navigation/native";
+import { Trans } from "@lingui/macro";
+
+// types
 import {
   DrawerDescriptorMap,
   DrawerNavigationHelpers,
 } from "@react-navigation/drawer/lib/typescript/src/types";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
+import { userContext } from "../../../providers/user/user.provider";
 
 // components
 import { ItemMenuSettings } from "./components/ItemMenuSettings/ItemMenuSettings";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
+import { Checkbox } from "../../../components/Checkbox/Checkbox";
+import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguage";
 
 // icons
 import {
@@ -21,7 +27,6 @@ import {
   IconClose,
   IconDocumentGradient,
   IconLockGradient,
-  IconProfileAvatar,
   IconShareGradient,
   IconWheelGradient,
 } from "../../../icons/components";
@@ -29,9 +34,6 @@ import {
 // styles
 import { styles } from "./MenuSettings.styles";
 import colors from "../../../../styles/colors";
-import { userContext } from "../../../providers/user/user.provider";
-import { ImageCache } from "../../../components/ImageCache/ImageCache";
-import { Checkbox } from "../../../components/Checkbox/Checkbox";
 
 type MenuSettingsProps = {
   state: DrawerNavigationState<ParamListBase>;
@@ -133,6 +135,9 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             <Trans>Dark theme</Trans>
           </Text>
           <Checkbox check={darkTheme} setCheck={setDarkTheme} />
+        </View>
+        <View style={styles.containerLanguage}>
+          <ChangeLanguage />
         </View>
       </View>
       <View style={styles.containerCheckboxes}>

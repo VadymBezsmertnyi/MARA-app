@@ -65,6 +65,12 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
     fontSize: 16,
   },
+  containerLanguage: {
+    width: "100%",
+    alignItems: "flex-start",
+    paddingHorizontal: 20,
+    paddingTop: 35,
+  },
   titleSos: {
     fontFamily: "Montserrat_700Bold",
     color: colors.blackCoffee,
