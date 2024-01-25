@@ -83,6 +83,19 @@ export const SettingsEvents: FunctionComponent = () => {
               />
             );
           })}
+          <ButtonCustom
+            onSubmit={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAddEvent);
+            }}
+            styleContainer={styles.containerButtonAdd}
+          >
+            <View style={styles.buttonAdd}>
+              <IconPlus width={16} height={16} fill={colors.white} />
+              <Text style={styles.titleAdd}>
+                <Trans>Add event</Trans>
+              </Text>
+            </View>
+          </ButtonCustom>
         </ScrollView>
       )}
 

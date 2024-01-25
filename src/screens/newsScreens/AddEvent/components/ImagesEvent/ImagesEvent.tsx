@@ -13,6 +13,7 @@ import { ImageType } from "../../../../../providers/ModalsProvider/ModalsProvide
 
 // providers
 import { modalsContext } from "../../../../../providers/ModalsProvider/ModalsProvider";
+import { loadingContext } from "../../../../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import {
@@ -46,6 +47,7 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
     isMain,
     setIsMain,
   } = useContext(modalsContext);
+  const { setLoading } = useContext(loadingContext);
   const [showImages, setShowImages] = useState({
     start: 0,
     finish: 3,
@@ -68,6 +70,7 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
   );
 
   const pickImage = async () => {
+    setLoading(true);
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       aspect: [4, 3],
@@ -79,6 +82,7 @@ export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
       const listImages = await compressAndProcessImages(result);
       setImages((state) => [...state, ...listImages]);
     }
+    setLoading(false);
   };
 
   const onBack = () => {

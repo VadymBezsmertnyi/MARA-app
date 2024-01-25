@@ -10,7 +10,6 @@ import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { z } from "zod";
-import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
 
 // types

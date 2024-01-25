@@ -32,7 +32,6 @@ export const styles = StyleSheet.create({
   },
   containerElements: {
     paddingHorizontal: 16,
-    gap: 12,
   },
   boxHeaderEmpty: {
     width: 24,
@@ -45,6 +44,9 @@ export const styles = StyleSheet.create({
   containerFooter: {
     paddingHorizontal: 20,
     paddingBottom: 20,
+  },
+  containerButtonAdd: {
+    marginTop: 20,
   },
   buttonAdd: {
     flexDirection: "row",

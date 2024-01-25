@@ -32,7 +32,6 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   navigation,
 }) => {
   const { eventsList } = useContext(eventsContext);
-  console.log("eventsList", eventsList);
   const { i18n } = useContext(localesContext);
   const [valueSearch, setValueSearch] = useState("");
 

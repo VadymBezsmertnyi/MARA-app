@@ -97,8 +97,8 @@ export const ModalsSheetProvider: FunctionComponent<
       return (
         <InputLocationModal
           setLocation={(newLocation) => {
-            setLocation(newLocation);
             onClose();
+            setLocation(newLocation);
           }}
           setModalType={setModalType}
         />
@@ -110,8 +110,8 @@ export const ModalsSheetProvider: FunctionComponent<
         <MapLocationModal
           isOpenModal={isOpenModal}
           setLocation={(newLocation) => {
-            setLocation(newLocation);
             onClose();
+            setLocation(newLocation);
           }}
         />
       );
