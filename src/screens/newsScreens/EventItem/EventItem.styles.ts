@@ -105,12 +105,14 @@ export const styles = StyleSheet.create({
   },
   mapWrapper: { height: 400, marginTop: 20 },
   gallery: {
-    marginTop: 20,
+    marginTop: 40,
+    gap: 8,
   },
   imageGallery: {
     width: 150,
     height: 132,
     marginRight: 4,
+    borderRadius: 3,
   },
   galleryButton: {
     borderRadius: 8,
@@ -127,5 +129,8 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     color: colors.californiaOrange,
     textAlign: "center",
+  },
+  containerEmpty: {
+    height: 70,
   },
 });

@@ -45,7 +45,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   const { onShowModal } = useContext(modalDeleteContext);
   const idEditEvent = useMemo(() => {
     const currentParams = z
-      .object({ eventId: z.number() })
+      .object({ eventId: z.number(), isUser: z.boolean() })
       .safeParse(route.params);
     if (currentParams.success) return currentParams.data.eventId;
     return null;

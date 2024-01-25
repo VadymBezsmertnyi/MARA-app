@@ -7,6 +7,7 @@ import { ImageModalType, ModalTypes } from "./ModalsProvider.types";
 
 // components
 import { ImageModal } from "./modals/ImageModal/ImageModal";
+import { GalleryModal } from "./modals/GalleryModal/GalleryModal";
 
 // styles
 import { styles } from "./ModalsProvider.styles";
@@ -16,13 +17,19 @@ type ModalsProviderType = {
 };
 
 type ModalsContext = {
-  setModalType: React.Dispatch<React.SetStateAction<"image" | null>>;
+  setModalType: React.Dispatch<React.SetStateAction<ModalTypes | null>>;
   image: ImageModalType | null;
   setImage: React.Dispatch<React.SetStateAction<ImageModalType | null>>;
   isDelete: boolean;
   onClose: () => void;
   isMain: boolean;
   setIsMain: React.Dispatch<React.SetStateAction<boolean>>;
+  setImages: React.Dispatch<
+    React.SetStateAction<{
+      images: string[];
+      indexImage?: number | undefined;
+    } | null>
+  >;
 };
 
 export const modalsContext = React.createContext({} as ModalsContext);
@@ -32,6 +39,10 @@ export const ModalsProvider: FunctionComponent<ModalsProviderType> = ({
 }) => {
   const [modalType, setModalType] = useState<ModalTypes | null>(null);
   const [image, setImage] = useState<ImageModalType | null>(null);
+  const [images, setImages] = useState<{
+    images: string[];
+    indexImage?: number;
+  } | null>(null);
   const [isDelete, setIsDelete] = useState(false);
   const [isMain, setIsMain] = useState(false);
 
@@ -40,6 +51,7 @@ export const ModalsProvider: FunctionComponent<ModalsProviderType> = ({
     setImage(null);
     setIsDelete(false);
     setIsMain(false);
+    setImages(null);
   };
 
   const showModal = useMemo(() => {
@@ -52,6 +64,8 @@ export const ModalsProvider: FunctionComponent<ModalsProviderType> = ({
           setIsMain={setIsMain}
         />
       );
+    if (modalType === "gallery" && images)
+      return <GalleryModal data={images} onClose={onClose} />;
     return null;
   }, [modalType, image]);
 
@@ -64,6 +78,7 @@ export const ModalsProvider: FunctionComponent<ModalsProviderType> = ({
       onClose,
       isMain,
       setIsMain,
+      setImages,
     }),
     [isDelete, image, isMain]
   );

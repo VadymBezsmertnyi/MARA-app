@@ -5,13 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import {
-  Pressable,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import { convertDistance, getDistance } from "geolib";
@@ -30,6 +24,7 @@ import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
+import { modalsContext } from "../../../providers/ModalsProvider/ModalsProvider";
 
 // components
 import { Map } from "../../../components/Map/Map";
@@ -44,10 +39,6 @@ import {
 import { styles } from "./EventItem.styles";
 import colors from "../../../../styles/colors";
 
-const LOREM_IPSUM =
-  "Lorem ipsum dolor sit amet consectetur. Orci sit rutrum vestibulum turpis tempus nulla arcu vel. Lorem ipsum dolor sit amet consectetur. Orci sit rutrum vestibulum turpis tempus nulla arcu vel.Lorem ipsum dolor sit amet consectetur. Orci sit rutrum vestibulum turpis tempus nulla arcu vel. Lorem ipsum dolor sit amet consectetur. Orci sit rutrum vestibulum turpis tempus nulla arcu vel. Orci sit rutrum vestibulum turpis tempus nulla arcu vel.";
-const SEPARATED_TEXT = LOREM_IPSUM.split(".");
-
 type EventItemProps = {
   route: RouteProp<RootAllScreensParamList, keyof RootAllScreensParamList>;
 };
@@ -55,6 +46,7 @@ type EventItemProps = {
 export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
   const { i18n } = useContext(localesContext);
   const { eventsList } = useContext(eventsContext);
+  const { setModalType, setImages } = useContext(modalsContext);
   const { location } = useContext(mapContext);
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);
@@ -98,7 +90,16 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
     () => ({ ...styles.container, paddingBottom: tabBarHeight || 0 }),
     [tabBarHeight]
   );
-  console.log("eventSelect", eventSelect, distance);
+
+  const onShowGallery = (indexImage?: number) => {
+    if (eventSelect?.images.length) {
+      setModalType("gallery");
+      setImages({
+        images: eventSelect.images.map((image) => image.url),
+        indexImage,
+      });
+    }
+  };
 
   useEffect(() => {
     if (eventSelect && eventSelect.description.length > 300)
@@ -122,7 +123,12 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
             <View />
           )}
           {firstImage ? (
-            <TouchableOpacity style={styles.buttonAllImage}>
+            <TouchableOpacity
+              style={styles.buttonAllImage}
+              onPress={() => {
+                onShowGallery();
+              }}
+            >
               <Text style={styles.titleAllImage}>
                 <Trans>All photos</Trans>
               </Text>
@@ -258,10 +264,13 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
           <View style={styles.gallery}>
             <Text style={styles.subtitle}>{i18n._("Gallery")}:</Text>
             <ScrollView horizontal>
-              {eventSelect.images.map((image) => (
+              {eventSelect.images.map((image, indexImage) => (
                 <TouchableOpacity
                   key={`image-gallery-${image.id}`}
                   style={styles.imageGallery}
+                  onPress={() => {
+                    onShowGallery(indexImage);
+                  }}
                 >
                   <ImageCache
                     style={styles.image}
@@ -271,7 +280,12 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
                 </TouchableOpacity>
               ))}
             </ScrollView>
-            <TouchableOpacity onPress={() => null} style={styles.galleryButton}>
+            <TouchableOpacity
+              onPress={() => {
+                onShowGallery();
+              }}
+              style={styles.galleryButton}
+            >
               <Text style={styles.galleryButtonTitle}>
                 {i18n._("All photos")}
               </Text>
@@ -279,6 +293,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
           </View>
         ) : null}
       </View>
+      <View style={styles.containerEmpty} />
     </ScrollView>
   );
 };

@@ -82,8 +82,12 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
         z.object({ event: eventSchema })
       );
       if (result?.event) {
-        setEventsUserList((state) => [...state, result.event]);
-        setEventsList((state) => [...state, result.event]);
+        setEventsUserList((state) =>
+          [...state, result.event].sort((a, b) => b.date.start - a.date.start)
+        );
+        setEventsList((state) =>
+          [...state, result.event].sort((a, b) => b.date.start - a.date.start)
+        );
       }
     }
     setLoading(false);
