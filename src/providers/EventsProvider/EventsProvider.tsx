@@ -19,6 +19,9 @@ import { userContext } from "../user/user.provider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 
+// components
+import { ModalDeleteEvent } from "./components/ModalDeleteEvent/ModalDeleteEvent";
+
 // constants
 import { PATHS } from "../paths.constants";
 
@@ -31,6 +34,7 @@ type EventsContext = {
   addEvent: (newEvent: EventType) => Promise<void>;
   changeEvent: (changeEvent: EventType) => Promise<void>;
   deleteEvent: (idEvent: number, type?: "all" | "user") => Promise<boolean>;
+  setIdDeleteEvent: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 type EventsProviderType = {
@@ -47,6 +51,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   const { setLoading } = useContext(loadingContext);
   const [eventsList, setEventsList] = useState<UpcomingEvents>([]);
   const [eventsUserList, setEventsUserList] = useState<UpcomingEvents>([]);
+  const [idDeleteEvent, setIdDeleteEvent] = useState<number | null>(null);
 
   const getEvents = async () => {
     const result = await api(PATHS.eventsGet, null, resultEventsSchema);
@@ -149,7 +154,14 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   };
 
   const contextValue: EventsContext = useMemo(
-    () => ({ eventsList, eventsUserList, addEvent, changeEvent, deleteEvent }),
+    () => ({
+      eventsList,
+      eventsUserList,
+      addEvent,
+      changeEvent,
+      deleteEvent,
+      setIdDeleteEvent,
+    }),
     [eventsList, eventsUserList]
   );
 
@@ -163,6 +175,15 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   return (
     <eventsContext.Provider value={contextValue}>
       {children}
+      {idDeleteEvent !== null ? (
+        <ModalDeleteEvent
+          idDeleteEvent={idDeleteEvent}
+          deleteEvent={deleteEvent}
+          onClose={() => {
+            setIdDeleteEvent(null);
+          }}
+        />
+      ) : null}
     </eventsContext.Provider>
   );
 };

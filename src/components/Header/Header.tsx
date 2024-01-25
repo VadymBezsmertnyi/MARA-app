@@ -11,7 +11,6 @@ import { RootAllScreensParamList } from "../../navigators/Navigators.types";
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../localization/localization.provider";
 import { eventsContext } from "../../providers/EventsProvider/EventsProvider";
-import { modalDeleteContext } from "../../providers/ModalDeleteProvider/ModalDeleteProvider";
 
 // icons
 import { ArrowLeft } from "../../icons/components";
@@ -41,8 +40,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-  const { deleteEvent } = useContext(eventsContext);
-  const { onShowModal } = useContext(modalDeleteContext);
+  const { setIdDeleteEvent } = useContext(eventsContext);
   const idEditEvent = useMemo(() => {
     const currentParams = z
       .object({ eventId: z.number(), isUser: z.boolean() })
@@ -64,8 +62,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   };
 
   const onDeleteEvent = () => {
-    if (idEditEvent) deleteEvent(idEditEvent, "user");
-    navigation.goBack();
+    if (idEditEvent) setIdDeleteEvent(idEditEvent);
   };
 
   return (
@@ -87,11 +84,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
 
         <Text style={styles.title}>{title}</Text>
         {idEditEvent ? (
-          <TouchableOpacity
-            onPress={() => {
-              onShowModal(() => onDeleteEvent);
-            }}
-          >
+          <TouchableOpacity onPress={onDeleteEvent}>
             <Text style={styles.titleButtonDeleteEvent}>
               <Trans>Delete</Trans>
             </Text>

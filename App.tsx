@@ -26,7 +26,6 @@ import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
 import { ModalsSheetProvider } from "./src/providers/ModalsSheetProvider/ModalsSheetProvider";
 import { ModalsProvider } from "./src/providers/ModalsProvider/ModalsProvider";
-import { ModalDeleteProvider } from "./src/providers/ModalDeleteProvider/ModalDeleteProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -70,8 +69,8 @@ function App() {
             <ApiProvider>
               <BiometricAuthenticatorProvider>
                 <UserProvider i18n={i18n}>
-                  <EventsProvider>
-                    <NavigationContainer>
+                  <NavigationContainer>
+                    <EventsProvider>
                       <SafeAreaProvider>
                         <WorkshopsProvider>
                           <MapProvider>
@@ -80,17 +79,15 @@ function App() {
                             >
                               <ModalsSheetProvider>
                                 <ModalsProvider>
-                                  <ModalDeleteProvider>
-                                    <Navigators />
-                                  </ModalDeleteProvider>
+                                  <Navigators />
                                 </ModalsProvider>
                               </ModalsSheetProvider>
                             </GestureHandlerRootView>
                           </MapProvider>
                         </WorkshopsProvider>
                       </SafeAreaProvider>
-                    </NavigationContainer>
-                  </EventsProvider>
+                    </EventsProvider>
+                  </NavigationContainer>
                 </UserProvider>
               </BiometricAuthenticatorProvider>
             </ApiProvider>
