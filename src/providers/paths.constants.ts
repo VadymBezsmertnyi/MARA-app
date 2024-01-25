@@ -5,6 +5,7 @@ export const PATHS = {
   me: "/user/login/me",
   token: "/user/login/token",
   editUser: "/user/login/editUser",
+  delete: "/user/login/delete",
   // events
   eventsGet: "/events/",
   eventsGetUserId: "/events/user/",

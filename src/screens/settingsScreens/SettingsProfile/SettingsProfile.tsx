@@ -6,13 +6,13 @@ import React, {
   useState,
 } from "react";
 import {
-  Alert,
   ImageURISource,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import { CommonActions } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
 
@@ -59,7 +59,7 @@ import { styles } from "./SettingsProfile.styles";
 export const SettingsProfile: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { userData, editUser, exitUser } = useContext(userContext);
+  const { userData, editUser, exitUser, deleteUser } = useContext(userContext);
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
   const [firstName, setFirstName] = useState("");
@@ -115,13 +115,26 @@ export const SettingsProfile: FunctionComponent = () => {
     await editUser({ avatar: null });
   };
 
-  const onDeleteProfile = () => {
-    Alert.alert(`Delete profile ${userData?.id}`);
+  const onDeleteProfile = async () => {
+    const result = await deleteUser();
+    if (result)
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 0,
+          routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
+        })
+      );
   };
 
   const onLogoutProfile = async () => {
-    await exitUser();
-    navigation.navigate(PATHS_MAIN_SCREENS.welcome);
+    const result = await exitUser();
+    if (result)
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 0,
+          routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
+        })
+      );
   };
 
   const onSave = async () => {

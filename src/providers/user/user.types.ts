@@ -19,9 +19,10 @@ export type Context = {
     >
   ) => Promise<boolean>;
   meUser: () => Promise<UserDataT | null>;
-  exitUser: () => Promise<void>;
+  exitUser: () => Promise<boolean>;
   signInGoogle: (userData: User) => Promise<UserDataT | null>;
   signInFacebook: (accessToken: string) => Promise<UserDataT | null>;
+  deleteUser: () => Promise<boolean>;
 };
 
 export type State = {

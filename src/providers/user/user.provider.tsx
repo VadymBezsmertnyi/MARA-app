@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
 import { t } from "@lingui/macro";
 import { User } from "@react-native-google-signin/google-signin";
+import { z } from "zod";
 
 // types
 import type { FunctionComponent } from "react";
@@ -190,16 +191,46 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     }
   };
 
-  const exitUser = async (): Promise<void> => {
+  const exitUser = async (): Promise<boolean> => {
     try {
       setLoading(true);
       await deleteDeviceStorage(TOKEN_NAME);
       setUserData(null);
       setUserDataSocket(null);
+      return true;
     } catch (error: any) {
       if (error instanceof Error) {
         showErrors.bug(error);
       } else showErrors.warning(error);
+      return false;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteUser = async (): Promise<boolean> => {
+    try {
+      setLoading(true);
+      if (userData?.id) {
+        await api(
+          PATHS.delete,
+          {
+            method: "POST",
+            data: { id: userData.id },
+          },
+          z.object({ result: z.boolean() })
+        );
+        await deleteDeviceStorage(TOKEN_NAME);
+        setUserData(null);
+        setUserDataSocket(null);
+        return true;
+      }
+      return false;
+    } catch (error: any) {
+      if (error instanceof Error) {
+        showErrors.bug(error);
+      } else showErrors.warning(error);
+      return false;
     } finally {
       setLoading(false);
     }
@@ -214,6 +245,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
       exitUser,
       signInGoogle,
       signInFacebook,
+      deleteUser,
     }),
     [userData]
   );

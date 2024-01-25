@@ -39,6 +39,7 @@ export const userDataS = z.object({
   timeToken: z.number(),
   languageLocal: z.enum(languagesKeys),
   isNewUser: z.boolean(),
+  isDeleteUser: z.boolean(),
   googleDate: googleBDSchema.nullable(),
   cityUser: locationSchema.nullable(),
   firstName: z.string().nullable(),
