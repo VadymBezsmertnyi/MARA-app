@@ -9,7 +9,10 @@ import { z } from "zod";
 import qs from "qs";
 
 // types
-import { EventType, EventsType } from "./EventsProvider.types";
+import { EventType, UpcomingEvents } from "./EventsProvider.types";
+
+// hooks
+import { getSortEvents } from "./EventsProvider.hooks";
 
 // providers
 import { userContext } from "../user/user.provider";
@@ -23,8 +26,8 @@ import { PATHS } from "../paths.constants";
 import { eventSchema, resultEventsSchema } from "./EventsProvider.schemas";
 
 type EventsContext = {
-  eventsList: EventsType;
-  eventsUserList: EventsType;
+  eventsList: UpcomingEvents;
+  eventsUserList: UpcomingEvents;
   addEvent: (newEvent: EventType) => Promise<void>;
   changeEvent: (changeEvent: EventType) => Promise<void>;
   deleteEvent: (idEvent: number, type?: "all" | "user") => Promise<boolean>;
@@ -42,12 +45,12 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   const { userData } = useContext(userContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
-  const [eventsList, setEventsList] = useState<EventsType>([]);
-  const [eventsUserList, setEventsUserList] = useState<EventsType>([]);
+  const [eventsList, setEventsList] = useState<UpcomingEvents>([]);
+  const [eventsUserList, setEventsUserList] = useState<UpcomingEvents>([]);
 
   const getEvents = async () => {
     const result = await api(PATHS.eventsGet, null, resultEventsSchema);
-    if (result?.events) setEventsList(result.events);
+    if (result?.events) setEventsList(getSortEvents(result.events));
   };
 
   const getEventsUser = async () => {
@@ -65,7 +68,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
         null,
         resultEventsSchema
       );
-      if (result?.events) setEventsUserList(result.events);
+      if (result?.events) setEventsUserList(getSortEvents(result.events));
     }
   };
 
@@ -82,12 +85,8 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
         z.object({ event: eventSchema })
       );
       if (result?.event) {
-        setEventsUserList((state) =>
-          [...state, result.event].sort((a, b) => b.date.start - a.date.start)
-        );
-        setEventsList((state) =>
-          [...state, result.event].sort((a, b) => b.date.start - a.date.start)
-        );
+        setEventsUserList((state) => getSortEvents([...state, result.event]));
+        setEventsList((state) => getSortEvents([...state, result.event]));
       }
     }
     setLoading(false);
@@ -105,13 +104,17 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
     );
     if (result?.event) {
       setEventsUserList((state) =>
-        state.map((event) =>
-          event.id === result.event.id ? result.event : event
+        getSortEvents(
+          state.map((event) =>
+            event.id === result.event.id ? result.event : event
+          )
         )
       );
       setEventsList((state) =>
-        state.map((event) =>
-          event.id === result.event.id ? result.event : event
+        getSortEvents(
+          state.map((event) =>
+            event.id === result.event.id ? result.event : event
+          )
         )
       );
     }

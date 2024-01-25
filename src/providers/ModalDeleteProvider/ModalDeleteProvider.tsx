@@ -69,7 +69,6 @@ export const ModalDeleteProvider: FunctionComponent<
   }, [isShowModal, action]);
 
   const onShowModal = (newAction: ActionFunction) => {
-    console.log("onShowModal", newAction);
     setAction(newAction);
     setIsShowModal(true);
   };

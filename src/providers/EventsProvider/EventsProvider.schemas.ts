@@ -67,3 +67,12 @@ export const resultEventsSchema = z.object({
   events: eventsSchema,
   code: z.number(),
 });
+
+export const upcomingEventSchema = eventSchema.merge(
+  z.object({
+    isOld: z.boolean(),
+    isNow: z.boolean(),
+  })
+);
+
+export const upcomingEventsSchema = z.array(upcomingEventSchema);
