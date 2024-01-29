@@ -26,7 +26,7 @@ import { locationSchema } from "../../../providers/EventsProvider/EventsProvider
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
-import { userContext } from "../../../providers/user/user.provider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { modalsSheetContext } from "../../../providers/ModalsSheetProvider/ModalsSheetProvider";
 import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
 

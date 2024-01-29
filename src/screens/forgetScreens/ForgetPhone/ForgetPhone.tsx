@@ -35,7 +35,7 @@ import {
 
 // styles
 import { styles } from "./ForgetPhone.styles";
-import { userContext } from "../../../providers/user/user.provider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 import showErrors from "../../../helps/errors/showError";
 
 export const ForgetPhone: FunctionComponent = () => {

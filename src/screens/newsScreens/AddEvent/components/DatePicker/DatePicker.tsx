@@ -104,7 +104,6 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
         <Pressable
           style={styles.buttonBackground}
           onPress={() => {
-            console.log("onPress");
             setIsShowModal(false);
           }}
         >

@@ -25,7 +25,7 @@ import { RootMainTabsParamList } from "../Navigators.types";
 
 // hooks
 import colors from "../../../styles/colors";
-import { styles } from "./mainTabs.styles";
+import { styles } from "./MainTabs.styles";
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 

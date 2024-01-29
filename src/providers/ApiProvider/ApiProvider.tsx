@@ -5,7 +5,7 @@ import axios, { AxiosRequestConfig } from "axios";
 // helps
 import { getApiUrl } from "./ApiProvider.helps";
 import { getDeviceStorage } from "../../helps/storage.help";
-import { TOKEN_NAME } from "../user/user.constants";
+import { TOKEN_NAME } from "../UserProvider/UserProvider.constants";
 import { PATHS } from "../paths.constants";
 
 type ApiContext = {

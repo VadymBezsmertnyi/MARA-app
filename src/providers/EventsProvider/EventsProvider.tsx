@@ -15,7 +15,7 @@ import { EventType, UpcomingEvents } from "./EventsProvider.types";
 import { getSortEvents } from "./EventsProvider.hooks";
 
 // providers
-import { userContext } from "../user/user.provider";
+import { userContext } from "../UserProvider/UserProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 

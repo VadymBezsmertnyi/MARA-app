@@ -1,6 +1,6 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootAllScreensParamList } from "../navigators/Navigators.types";
-import { UserDataT } from "../providers/user/user.types";
+import { UserDataT } from "../providers/UserProvider/UserProvider.types";
 import {
   PATHS_MAIN_SCREENS,
   PATHS_REGISTRATION_SCREENS,

@@ -15,11 +15,11 @@ import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
 import { mapMarker } from "./Map.types";
 
 // providers
-import { workshopsContext } from "../../../providers/workshops/workshops.provider";
+import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { webSocketContext } from "../../../providers/WebSocketProvider/WebSocketProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
-import { userContext } from "../../../providers/user/user.provider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 
 // components

@@ -17,11 +17,11 @@ import { useFonts } from "expo-font";
 // providers
 import LocalesProvider from "./localization/localization.provider";
 import { ThemeProvider } from "./src/providers/ThemeProvider/ThemeProvider";
-import { BiometricAuthenticatorProvider } from "./src/providers/biometricAuthenticator/biometricAuthenticator.provider";
+import { BiometricProvider } from "./src/providers/BiometricProvider/BiometricProvider";
 import { LoadingProvider } from "./src/providers/LoadingProvider/LoadingProvider";
-import { UserProvider } from "./src/providers/user/user.provider";
+import { UserProvider } from "./src/providers/UserProvider/UserProvider";
 import { MapProvider } from "./src/providers/MapProvider/MapProvider";
-import { WorkshopsProvider } from "./src/providers/workshops/workshops.provider";
+import { WorkshopsProvider } from "./src/providers/WorkshopsProvider/WorkshopsProvider";
 import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
 import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
@@ -69,7 +69,7 @@ function App() {
         <LoadingProvider isLoadingProps={fontsLoaded}>
           <LocalesProvider i18n={i18n}>
             <ApiProvider>
-              <BiometricAuthenticatorProvider>
+              <BiometricProvider>
                 <UserProvider i18n={i18n}>
                   <NavigationContainer>
                     <EventsProvider>
@@ -91,7 +91,7 @@ function App() {
                     </EventsProvider>
                   </NavigationContainer>
                 </UserProvider>
-              </BiometricAuthenticatorProvider>
+              </BiometricProvider>
             </ApiProvider>
           </LocalesProvider>
         </LoadingProvider>

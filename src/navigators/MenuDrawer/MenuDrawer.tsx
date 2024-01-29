@@ -5,7 +5,7 @@ import {
 } from "@react-navigation/drawer";
 import { MenuSettings } from "../../screens/mainScreens/MenuSettings/MenuSettings";
 import { Dimensions } from "react-native";
-import { MainTabs } from "../mainTabs/mainTabs";
+import { MainTabs } from "../MainTabs/MainTabs";
 
 const Drawer = createDrawerNavigator();
 export const MenuDrawer: FunctionComponent = () => {

@@ -5,7 +5,7 @@ import { Trans } from "@lingui/macro";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { userContext } from "../../../providers/user/user.provider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { modalsSheetContext } from "../../../providers/ModalsSheetProvider/ModalsSheetProvider";
 

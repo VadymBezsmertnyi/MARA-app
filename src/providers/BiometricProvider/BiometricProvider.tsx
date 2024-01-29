@@ -1,4 +1,5 @@
 import React, {
+  FunctionComponent,
   useCallback,
   useContext,
   useEffect,
@@ -11,9 +12,9 @@ import { t } from "@lingui/macro";
 
 // types
 import {
-  BiometricAuthenticatorContextT,
-  PropsT,
-} from "./biometricAuthenticator.types";
+  BiometricContextType,
+  BiometricProviderType,
+} from "./BiometricProvider.types";
 
 // providers
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
@@ -25,10 +26,10 @@ const FACE_TYPE = 2;
 const IRIS_TYPE = 3;
 
 export const biometricAuthenticatorContext = React.createContext(
-  {} as BiometricAuthenticatorContextT
+  {} as BiometricContextType
 );
 
-export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({
+export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
   children,
 }) => {
   const { i18n } = useContext(localesContext);
@@ -98,7 +99,7 @@ export const BiometricAuthenticatorProvider: React.FC<PropsT> = ({
     getBiometricTypes();
   }, []);
 
-  const contextValue: BiometricAuthenticatorContextT = useMemo(
+  const contextValue: BiometricContextType = useMemo(
     () => ({ isFaceId, isTouchId, isIrisId, checkBiometric }),
     [isFaceId, isTouchId, isIrisId]
   );

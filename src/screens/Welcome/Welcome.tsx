@@ -6,8 +6,8 @@ import { Trans } from "@lingui/macro";
 import { User } from "@react-native-google-signin/google-signin";
 
 // providers
-import { userContext } from "../../providers/user/user.provider";
-import { biometricAuthenticatorContext } from "../../providers/biometricAuthenticator/biometricAuthenticator.provider";
+import { userContext } from "../../providers/UserProvider/UserProvider";
+import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // helps

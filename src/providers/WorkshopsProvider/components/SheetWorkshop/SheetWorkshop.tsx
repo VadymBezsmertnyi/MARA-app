@@ -1,30 +1,36 @@
-import React, { FunctionComponent } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import React, { FunctionComponent } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 
 // types
-import { WorkshopT } from '../../workshops.types';
+import { WorkshopT } from "../../WorkshopsProvider.types";
 
 // components
-import { IconRepair, IconStar } from '../../../../icons/components';
+import { IconRepair, IconStar } from "../../../../icons/components";
 
 // styles
-import colors from '../../../../../styles/colors';
-import { styles } from './SheetWorkshop.styles';
+import colors from "../../../../../styles/colors";
+import { styles } from "./SheetWorkshop.styles";
 
 type SheetWorkshopProps = {
   workshop: WorkshopT;
   isEndList: boolean;
 };
 
-export const SheetWorkshop: FunctionComponent<SheetWorkshopProps> = ({ workshop, isEndList }) => {
+export const SheetWorkshop: FunctionComponent<SheetWorkshopProps> = ({
+  workshop,
+  isEndList,
+}) => {
   const rating = workshop.rating.toFixed(1);
   const selectWorkshop = () => {
-    console.log('selectWorkshop', workshop.id, workshop.title);
+    console.log("selectWorkshop", workshop.id, workshop.title);
   };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={selectWorkshop} style={styles.containerWorkshop}>
+      <TouchableOpacity
+        onPress={selectWorkshop}
+        style={styles.containerWorkshop}
+      >
         <View style={styles.containerLeft}>
           <IconRepair width={24} height={24} fill={colors.grayFuscous} />
           <View style={styles.containerTitles}>

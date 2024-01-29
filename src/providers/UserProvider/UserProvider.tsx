@@ -5,16 +5,16 @@ import { z } from "zod";
 
 // types
 import type { FunctionComponent } from "react";
-import type { Props, Context, UserDataT } from "./user.types";
+import type { Props, Context, UserDataT } from "./UserProvider.types";
 
 // schemas
-import { resultUserDataS, userDataS } from "./user.schemas";
+import { resultUserDataS, userDataS } from "./UserProvider.schemas";
 
 // providers
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
-import { biometricAuthenticatorContext } from "../biometricAuthenticator/biometricAuthenticator.provider";
+import { biometricAuthenticatorContext } from "../BiometricProvider/BiometricProvider";
 
 // components
 import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
@@ -28,9 +28,9 @@ import {
 } from "../../helps/storage.help";
 
 // constants
-import { DEFAULT_USER_DATA } from "./user.constants";
+import { DEFAULT_USER_DATA } from "./UserProvider.constants";
 import { PATHS } from "../paths.constants";
-import { TOKEN_NAME } from "./user.constants";
+import { TOKEN_NAME } from "./UserProvider.constants";
 
 export const userContext = createContext<Context>({} as Context);
 

@@ -6,8 +6,8 @@ import { useAllNavigation } from "../../navigators/Navigators.helps";
 import { redirectToScreen } from "../screens.hooks";
 
 // providers
-import { userContext } from "../../providers/user/user.provider";
-import { biometricAuthenticatorContext } from "../../providers/biometricAuthenticator/biometricAuthenticator.provider";
+import { userContext } from "../../providers/UserProvider/UserProvider";
+import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
 
 // components
 import { Logo } from "../../components/Logo/Logo";

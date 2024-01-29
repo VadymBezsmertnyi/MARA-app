@@ -1,4 +1,4 @@
-import { UserDataT } from "./user.types";
+import { UserDataT } from "./UserProvider.types";
 
 export const getNamesUser = (
   userData: UserDataT | null

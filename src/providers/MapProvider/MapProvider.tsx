@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { userContext } from "../user/user.provider";
+import { userContext } from "../UserProvider/UserProvider";
 import * as Location from "expo-location";
 
 // providers

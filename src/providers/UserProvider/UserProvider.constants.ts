@@ -1,4 +1,4 @@
-import { UserDataT } from "./user.types";
+import { UserDataT } from "./UserProvider.types";
 
 export const DEFAULT_USER_DATA: UserDataT = {
   id: 0,

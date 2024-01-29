@@ -17,7 +17,7 @@ import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
 
 // providers
-import { userContext } from "../../../providers/user/user.provider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { modalsSheetContext } from "../../../providers/ModalsSheetProvider/ModalsSheetProvider";
@@ -33,7 +33,7 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import showErrors from "../../../helps/errors/showError";
 import { compressAndProcessImages } from "../../../helps/helps";
 import { useAllNavigation } from "../../../navigators/Navigators.helps";
-import { getNamesUser } from "../../../providers/user/user.helps";
+import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";
 

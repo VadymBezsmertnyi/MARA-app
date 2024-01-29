@@ -4,7 +4,7 @@ import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
 
 // types
-import { UserDataT } from "../../user.types";
+import { UserDataT } from "../../UserProvider.types";
 
 // providers
 import { localesContext } from "../../../../../localization/localization.provider";

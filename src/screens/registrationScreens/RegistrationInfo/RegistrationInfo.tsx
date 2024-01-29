@@ -8,7 +8,7 @@ import { Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { userContext } from "../../../providers/user/user.provider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 
 // helps
@@ -27,7 +27,7 @@ import { DEFAULT_COUNTRY } from "../../../constants/inputs.const";
 
 // styles
 import { styles } from "./RegistrationInfo.styles";
-import { getNamesUser } from "../../../providers/user/user.helps";
+import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
 
 export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();

@@ -1,14 +1,14 @@
-import { useContext } from 'react';
-import { t } from '@lingui/macro';
+import { useContext } from "react";
+import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../localization/localization.provider';
+import { localesContext } from "../../../localization/localization.provider";
 
 // constants
-import { PATHS_WORKSHOP_SCREENS } from '../useNavigator.constants';
+import { PATHS_WORKSHOP_SCREENS } from "../useNavigator.constants";
 
 // News and events
-import { WorkshopMain } from '../../screens/workshopScreens/workshopMain/WorkshopMain';
+import { WorkshopMain } from "../../screens/workshopScreens/WorkshopMain/WorkshopMain";
 
 export const useWorkshopStack = () => {
   const { i18n } = useContext(localesContext);

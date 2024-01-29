@@ -3,9 +3,9 @@ import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Trans, t } from "@lingui/macro";
 
 // providers
-import { biometricAuthenticatorContext } from "../../../providers/biometricAuthenticator/biometricAuthenticator.provider";
+import { biometricAuthenticatorContext } from "../../../providers/BiometricProvider/BiometricProvider";
 import { localesContext } from "../../../../localization/localization.provider";
-import { userContext } from "../../../providers/user/user.provider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components

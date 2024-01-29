@@ -4,7 +4,7 @@ import { z } from "zod";
 import type { I18n } from "@lingui/core";
 
 // schemas
-import { userDataS } from "./user.schemas";
+import { userDataS } from "./UserProvider.schemas";
 import { User } from "@react-native-google-signin/google-signin";
 
 export type UserDataT = z.infer<typeof userDataS>;

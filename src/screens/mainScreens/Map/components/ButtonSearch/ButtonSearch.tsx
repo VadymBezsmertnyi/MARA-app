@@ -3,7 +3,7 @@ import { Platform, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 
 // providers
-import { workshopsContext } from "../../../../../providers/workshops/workshops.provider";
+import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
 
 // components
 import { IconSearchMap } from "../../../../../icons/components";

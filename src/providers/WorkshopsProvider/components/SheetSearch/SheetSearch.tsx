@@ -1,23 +1,30 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
-import { Platform, Pressable, ScrollView, TextInput, View, ViewProps } from 'react-native';
-import { t } from '@lingui/macro';
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import {
+  Platform,
+  Pressable,
+  ScrollView,
+  TextInput,
+  View,
+  ViewProps,
+} from "react-native";
+import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../../../localization/localization.provider';
-import { responsiveLayoutContext } from '../../../responsiveLayout/responsiveLayout.provider';
+import { localesContext } from "../../../../../localization/localization.provider";
+import { responsiveLayoutContext } from "../../../responsiveLayout/responsiveLayout.provider";
 
 // components
-import { SheetWorkshop } from '../SheetWorkshop/SheetWorkshop';
+import { SheetWorkshop } from "../SheetWorkshop/SheetWorkshop";
 
 // icons
-import { IconLocationMarker } from '../../../../icons/components';
+import { IconLocationMarker } from "../../../../icons/components";
 
 // types
-import { WorkshopsT } from '../../workshops.types';
+import { WorkshopsT } from "../../WorkshopsProvider.types";
 
 // styles
-import { styles } from './SheetSearch.styles';
-import colors from '../../../../../styles/colors';
+import { styles } from "./SheetSearch.styles";
+import colors from "../../../../../styles/colors";
 
 type SheetSearchProps = {
   isOpen: boolean;
@@ -41,14 +48,17 @@ export const SheetSearch: FunctionComponent<SheetSearchProps> = ({
   };
 
   const containerStyles = useMemo(
-    () => [styles.container, Platform.OS === 'ios' && { bottom: durationHeight || 0 }],
-    [durationHeight],
+    () => [
+      styles.container,
+      Platform.OS === "ios" && { bottom: durationHeight || 0 },
+    ],
+    [durationHeight]
   );
   const listStyles = useMemo(() => {
-    const height = durationHeight ? durationHeight - 160 : '80%';
+    const height = durationHeight ? durationHeight - 160 : "80%";
     return {
       height,
-      paddingBottom: 60 + Platform.OS === 'ios' ? durationHeight : 0,
+      paddingBottom: 60 + Platform.OS === "ios" ? durationHeight : 0,
     } as ViewProps;
   }, [durationHeight]);
 
@@ -58,7 +68,11 @@ export const SheetSearch: FunctionComponent<SheetSearchProps> = ({
       <Pressable style={styles.background} onPress={onClose} />
       <View style={containerStyles}>
         <View style={styles.containerInput}>
-          <IconLocationMarker width={24} height={24} fill={colors.grayMercury} />
+          <IconLocationMarker
+            width={24}
+            height={24}
+            fill={colors.grayMercury}
+          />
           <TextInput
             value={value}
             onChangeText={setValue}
@@ -68,7 +82,10 @@ export const SheetSearch: FunctionComponent<SheetSearchProps> = ({
           />
         </View>
         <View style={listStyles}>
-          <ScrollView indicatorStyle={'black'} contentContainerStyle={styles.scrollViewContainer}>
+          <ScrollView
+            indicatorStyle={"black"}
+            contentContainerStyle={styles.scrollViewContainer}
+          >
             {workshops.map((workshop, index) => (
               <SheetWorkshop
                 key={`workshop-${workshop.id}`}
