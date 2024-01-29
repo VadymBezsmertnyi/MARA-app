@@ -50,6 +50,6 @@ const colors = {
   blazeOrange70: "#fd5e01b3",
 
   yellow: "#FDE405",
-} as const;
+};
 
 export default colors;

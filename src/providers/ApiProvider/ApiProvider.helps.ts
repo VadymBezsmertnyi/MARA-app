@@ -29,5 +29,5 @@ export const getApiUrl = () => {
     Platform.OS === "web"
       ? `http://${APP_DOMAIN_WEB}:${APP_PORT}`
       : `http://${appDomainApp}:${APP_PORT}`;
-  return api || herokuServer || api;
+  return herokuServer || api;
 };

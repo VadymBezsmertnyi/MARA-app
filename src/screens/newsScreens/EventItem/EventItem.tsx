@@ -263,7 +263,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
         {eventSelect.images.length ? (
           <View style={styles.gallery}>
             <Text style={styles.subtitle}>{i18n._("Gallery")}:</Text>
-            <ScrollView horizontal>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {eventSelect.images.map((image, indexImage) => (
                 <TouchableOpacity
                   key={`image-gallery-${image.id}`}
