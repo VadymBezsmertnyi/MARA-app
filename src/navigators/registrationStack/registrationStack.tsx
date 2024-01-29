@@ -40,6 +40,7 @@ export const RegistrationStack: FunctionComponent = () => {
     headerLeft: isHeaderLeft
       ? () => <HeaderLeft navigation={navigation} />
       : undefined,
+    headerBackVisible: isHeaderLeft,
   });
 
   const contentStyle = useMemo(
@@ -70,6 +71,7 @@ export const RegistrationStack: FunctionComponent = () => {
       headerTitleAlign: "center",
       headerStyle: mainBackgroundColor,
       headerTitleStyle: mainFontSize,
+      gestureEnabled: false,
     }),
     [contentStyle, mainBackgroundColor, mainFontSize]
   );

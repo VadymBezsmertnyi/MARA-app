@@ -1,8 +1,21 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
 
 export const styles = StyleSheet.create({
+  shadow: {
+    ...Platform.select({
+      ios: {
+        shadowColor: colors.brownShadow,
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 1,
+        shadowRadius: 6,
+      },
+      android: {
+        elevation: 2,
+      },
+    }),
+  },
   container: {
     minHeight: 68,
     flexDirection: "row",
@@ -12,10 +25,17 @@ export const styles = StyleSheet.create({
     paddingVertical: verticalScale(8),
     backgroundColor: colors.lightOrange,
     borderRadius: 4,
-    shadowColor: "rgba(82, 77, 34, 0.10)",
-    elevation: 20,
-    shadowRadius: 20,
-    shadowOpacity: 1,
+    ...Platform.select({
+      ios: {
+        shadowColor: colors.grayShadow,
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 1,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 2,
+      },
+    }),
   },
   containerLeft: {
     flexDirection: "row",
@@ -40,8 +60,9 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   part: { justifyContent: "space-around" },
-  containerLocation: { flexDirection: "row" },
+  containerLocation: { flexDirection: "row", alignItems: "center" },
   distance: {
+    flex: 1,
     fontFamily: "OpenSans_600SemiBold",
     fontSize: 12,
   },

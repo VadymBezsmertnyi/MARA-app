@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../../../../../styles/colors';
+import { StyleSheet } from "react-native";
+import colors from "../../../../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,31 +11,36 @@ export const styles = StyleSheet.create({
     borderColor: colors.platinumGray,
     borderRadius: 4,
     marginTop: 5,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     paddingRight: 16,
   },
-  label: { fontSize: 12, fontWeight: '600', color: colors.blackCoffee },
+  label: {
+    fontFamily: "OpenSans_600SemiBold",
+    fontSize: 12,
+    color: colors.blackCoffee,
+  },
+  labelRegular: { color: colors.errorRed },
   input: {
+    fontFamily: "OpenSans_600SemiBold",
     padding: 16,
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: '600',
     color: colors.blackCoffee,
-    textAlign: 'center',
+    textAlign: "center",
   },
   modal: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     zIndex: 999,
   },
   buttonBackground: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     bottom: 0,
     left: 0,
@@ -43,7 +48,7 @@ export const styles = StyleSheet.create({
   },
   containerBlur: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingHorizontal: 20,
   },
   button: {

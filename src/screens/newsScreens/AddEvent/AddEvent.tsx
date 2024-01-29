@@ -258,8 +258,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
       <ScrollView contentContainerStyle={styles.scrollView}>
         <Text style={styles.title}>{i18n._("You can create an event")}:</Text>
         <Input
+          isRegular
           placeholder={i18n._("Enter the name of the event")}
-          label={`${i18n._("Name of the event")}:*`}
+          label={i18n._("Name of the event")}
           value={eventName}
           onChange={(value) => {
             setEventName(value);
@@ -269,8 +270,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
         />
         <View style={styles.containerLocation}>
           <InputButton
+            isRegular
             placeholder={i18n._("Enter the address")}
-            label={`${i18n._("The place of the event")}:*`}
+            label={i18n._("The place of the event")}
             value={
               location?.formatted_address || tempLocation?.formatted_address
             }
@@ -289,8 +291,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
         <View style={styles.wrapper}>
           <View style={styles.inner}>
             <DatePicker
+              isRegular
               value={beginDate}
-              label={`${i18n._("The beginning")}:*`}
+              label={i18n._("The beginning")}
               onChange={(dataTime, data) => {
                 onChangeBeginDate(dataTime, data);
                 setErrorMessage(null);
@@ -312,8 +315,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({
         <View style={styles.wrapper}>
           <View style={styles.inner}>
             <DatePicker
+              isRegular
               value={finishDate}
-              label={`${i18n._("Conclusion")}:*`}
+              label={i18n._("Conclusion")}
               onChange={(dataTime, data) => {
                 onChangeFinishDate(dataTime, data);
                 setErrorMessage(null);

@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   containerInput: {
     paddingHorizontal: 16,
     paddingBottom: 7,
-    backgroundColor: "white",
+    backgroundColor: colors.white,
     shadowColor: colors.gray10,
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 1,
@@ -54,34 +54,29 @@ export const styles = StyleSheet.create({
   selectPointItemList: {
     width: 18,
     height: 18,
-    borderColor: "#FD5E01",
+    borderColor: colors.blazeOrange,
     borderWidth: 1,
   },
   inSelectPointItemList: {
     width: 10,
     height: 10,
-    backgroundColor: "#FD5E01",
+    backgroundColor: colors.blazeOrange,
     borderRadius: 40,
   },
   streetTitleItemList: {
+    fontFamily: "OpenSans_600SemiBold",
     color: colors.blackCoffee,
     fontSize: 16,
-    fontWeight: "600",
   },
   cityTitleItemList: {
+    fontFamily: "OpenSans_400Regular",
     color: colors.blackCoffee,
     fontSize: 12,
-    fontWeight: "400",
   },
   containerButton: { paddingHorizontal: 16, paddingVertical: 20 },
   buttonSelectMap: {
     flexDirection: "row",
     gap: 4,
     justifyContent: "center",
-  },
-  titleButtonSelectMap: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: colors.white,
   },
 });

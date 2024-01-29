@@ -10,6 +10,7 @@ import {
 import {
   OpenSans_400Regular,
   OpenSans_600SemiBold,
+  OpenSans_700Bold,
 } from "@expo-google-fonts/open-sans";
 import { useFonts } from "expo-font";
 
@@ -54,6 +55,7 @@ function App() {
     Montserrat_700Bold,
     OpenSans_400Regular,
     OpenSans_600SemiBold,
+    OpenSans_700Bold,
   });
 
   const i18n = setupI18n({

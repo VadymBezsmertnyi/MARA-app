@@ -1,20 +1,20 @@
-import React, { FunctionComponent, useContext, useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
-import { Trans } from '@lingui/macro';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, { FunctionComponent, useContext, useState } from "react";
+import { ScrollView, Text, View } from "react-native";
+import { Trans } from "@lingui/macro";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // constants
-import { DEFAULT_LIST_NEWS } from '../DELETE_newsScreens.constants';
+import { DEFAULT_LIST_NEWS } from "../DELETE_newsScreens.constants";
 
 // components
-import { Input } from '../../../components/Input/Input';
-import { ItemListNews } from '../NewsMain/components/ItemListNews/ItemListNews';
+import { Input } from "../../../components/Input/Input";
+import { ItemListNews } from "../NewsMain/components/ItemListNews/ItemListNews";
 
-import { localesContext } from '../../../../localization/localization.provider';
-import { RootNewsScreensParamList } from '../../../navigators/Navigators.types';
+import { localesContext } from "../../../../localization/localization.provider";
+import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
 
 // styles
-import { styles } from './NewsList.styles';
+import { styles } from "./NewsList.styles";
 
 type NewsListProps = {
   navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
@@ -22,7 +22,7 @@ type NewsListProps = {
 
 export const NewsList: FunctionComponent<NewsListProps> = ({ navigation }) => {
   const { i18n } = useContext(localesContext);
-  const [valueSearch, setValueSearch] = useState('');
+  const [valueSearch, setValueSearch] = useState("");
 
   return (
     <View style={styles.container}>
@@ -32,10 +32,10 @@ export const NewsList: FunctionComponent<NewsListProps> = ({ navigation }) => {
       <Input
         value={valueSearch}
         onChange={setValueSearch}
-        placeholder={i18n._('Enter the text to search')}
+        placeholder={i18n._("Enter the text to search")}
       />
       <ScrollView contentContainerStyle={styles.containerList}>
-        {DEFAULT_LIST_NEWS.map(newItem => (
+        {DEFAULT_LIST_NEWS.map((newItem) => (
           <ItemListNews
             key={`new-${newItem.id}`}
             title={newItem.title}

@@ -24,6 +24,7 @@ type InputProps = {
   keyboardType?: KeyboardTypeOptions;
   errorMessage?: string;
   containerStyle?: ViewStyle;
+  isRegular?: boolean;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -38,6 +39,7 @@ export const Input: FunctionComponent<InputProps> = ({
   keyboardType = "default",
   errorMessage,
   containerStyle,
+  isRegular = false,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -74,7 +76,16 @@ export const Input: FunctionComponent<InputProps> = ({
 
   return (
     <View style={containerStyles}>
-      {label && <Text style={labelStyles}>{label}</Text>}
+      {label && (
+        <Text style={labelStyles}>
+          {label}
+          {isRegular ? (
+            <>
+              :<Text style={styles.labelRegular}>*</Text>
+            </>
+          ) : null}
+        </Text>
+      )}
       <View style={inputWrapperStyles}>
         <TextInput
           style={inputStyles}

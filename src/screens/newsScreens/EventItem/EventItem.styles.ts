@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     color: colors.californiaOrange,
   },
   wrapper: {
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -75,6 +76,7 @@ export const styles = StyleSheet.create({
     marginTop: 12,
   },
   distance: {
+    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     gap: 5,
@@ -93,6 +95,9 @@ export const styles = StyleSheet.create({
     },
     shadowRadius: 9,
     shadowOpacity: 0.8,
+  },
+  iconWrapperLightBlue: {
+    backgroundColor: "#DDEFFF",
   },
   description: { marginTop: 10 },
   buttonFullDescription: {

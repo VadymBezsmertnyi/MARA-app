@@ -40,6 +40,7 @@ const colors = {
 
   // shadow
   grayShadow: "#524d221a",
+  brownShadow: "#712e0040",
 
   // orange
   lightOrange: "#FFEDDD",

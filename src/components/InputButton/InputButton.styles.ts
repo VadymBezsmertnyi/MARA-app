@@ -5,7 +5,12 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
   },
-  label: { fontSize: 16, fontWeight: "600", color: colors.blackCoffee },
+  label: {
+    fontFamily: "OpenSans_600SemiBold",
+    fontSize: 16,
+    color: colors.blackCoffee,
+  },
+  labelRegular: { color: colors.errorRed },
   inputWrapper: {
     borderWidth: 1,
     borderColor: colors.grayCloudy,
@@ -24,11 +29,12 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   inputPlaceholder: {
+    fontFamily: "OpenSans_600SemiBold",
     color: colors.grayCloudy,
     fontSize: 16,
   },
   inputValue: {
+    fontFamily: "OpenSans_600SemiBold",
     color: colors.blackCoffee,
-    fontWeight: "600",
   },
 });

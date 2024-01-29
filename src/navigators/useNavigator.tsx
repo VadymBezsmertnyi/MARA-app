@@ -45,7 +45,7 @@ export const useNavigators = () => {
       title: t(i18n)`Registration`,
       component: RegistrationStack,
       headerShown: false,
-      gestureEnabled: true,
+      gestureEnabled: false,
     },
     {
       id: "forget",

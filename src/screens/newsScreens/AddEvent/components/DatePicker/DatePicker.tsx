@@ -1,6 +1,14 @@
 import React, { FunctionComponent, useContext, useMemo, useState } from "react";
-import { Modal, Pressable, Text, TouchableOpacity, View } from "react-native";
+import {
+  Modal,
+  Platform,
+  Pressable,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import DateTimePicker, {
+  DateTimePickerAndroid,
   DateTimePickerEvent,
 } from "@react-native-community/datetimepicker";
 import { BlurView } from "expo-blur";
@@ -22,6 +30,7 @@ type DatePickerProps = {
   onChange: (k: DateTimePickerEvent, d: Date | undefined) => void;
   mode: "date" | "time" | "datetime" | "countdown";
   errorMessage?: string;
+  isRegular?: boolean;
 };
 
 export const DatePicker: FunctionComponent<DatePickerProps> = ({
@@ -30,6 +39,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
   mode = "date",
   onChange,
   errorMessage,
+  isRegular = false,
 }) => {
   const { i18n } = useContext(localesContext);
   const [isShowModal, setIsShowModal] = useState(false);
@@ -43,21 +53,48 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
   );
 
   const parseDate =
-    mode === "date" ? dateToNMY(value) : value.toLocaleTimeString("ua-UA");
+    mode === "date"
+      ? dateToNMY(value)
+      : value.toLocaleTimeString("ua-UA", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: false,
+        });
   return (
     <>
       <TouchableOpacity
         onPress={() => {
-          setIsShowModal(true);
+          if (Platform.OS === "android")
+            DateTimePickerAndroid.open({
+              value: value ? value : new Date(0),
+              onChange,
+              mode:
+                mode === "datetime"
+                  ? "time"
+                  : mode === "countdown"
+                  ? "date"
+                  : mode,
+              display: "spinner",
+              is24Hour: true,
+            });
+          else setIsShowModal(true);
         }}
         style={styles.container}
       >
-        {label && <Text style={styles.label}>{label}</Text>}
+        {label && (
+          <Text style={styles.label}>
+            {label}
+            {isRegular ? (
+              <>
+                :<Text style={styles.labelRegular}>*</Text>
+              </>
+            ) : null}
+          </Text>
+        )}
         <View style={inputWrapperStyles}>
           <Text style={styles.input}>{parseDate}</Text>
         </View>
       </TouchableOpacity>
-
       <Modal
         style={styles.modal}
         animationType="fade"
@@ -67,6 +104,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
         <Pressable
           style={styles.buttonBackground}
           onPress={() => {
+            console.log("onPress");
             setIsShowModal(false);
           }}
         >
@@ -78,6 +116,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
               display="spinner"
               onChange={onChange}
               minimumDate={new Date(0)}
+              minuteInterval={5}
             />
             <ButtonCustom
               styleContainer={styles.button}

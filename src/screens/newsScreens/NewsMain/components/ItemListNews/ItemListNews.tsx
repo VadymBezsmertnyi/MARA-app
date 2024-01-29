@@ -1,21 +1,21 @@
-import React, { FunctionComponent } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, { FunctionComponent } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
-import { RootNewsScreensParamList } from '../../../../../navigators/Navigators.types';
+import { RootNewsScreensParamList } from "../../../../../navigators/Navigators.types";
 
 // hooks
-import { formatDateFromUnixTimestamp } from '../../../../../helps/helps';
+import { formatDateFromUnixTimestamp } from "../../../../../helps/helps";
 
 // constants
-import { PATHS_NEWS_SCREENS } from '../../../../../navigators/useNavigator.constants';
+import { PATHS_NEWS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // components
-import { IconArrowRightNew } from '../../../../../icons/components';
+import { IconArrowRightNew } from "../../../../../icons/components";
 
 // styles
-import { styles } from './ItemListNews.styles';
+import { styles } from "./ItemListNews.styles";
 
 type ItemListNewsProps = {
   newId: number;
@@ -36,8 +36,8 @@ export const ItemListNews: FunctionComponent<ItemListNewsProps> = ({
   return (
     <TouchableOpacity style={styles.container} onPress={selectNew}>
       <View style={styles.containerTitles}>
-        <Text>{title}</Text>
-        <Text>{formatDateFromUnixTimestamp(date)}</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subTitle}>{formatDateFromUnixTimestamp(date)}</Text>
       </View>
       <View>
         <IconArrowRightNew width={12} height={20} />

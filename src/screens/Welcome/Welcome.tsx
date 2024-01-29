@@ -67,7 +67,7 @@ export const Welcome: FunctionComponent = () => {
             <Trans>Hello!</Trans>
           </Text>
           <Text style={styles.subTitle}>
-            <Trans>We're glad to see you on our service.</Trans>{" "}
+            <Trans>We're glad to see you on our service.</Trans>
           </Text>
           <Text style={styles.subTitle}>
             <Trans>Authorize using:</Trans>

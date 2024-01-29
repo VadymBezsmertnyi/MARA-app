@@ -38,9 +38,9 @@ export const styles = StyleSheet.create({
     gap: horizontalScale(GAP_MORE),
   },
   titleButtonMore: {
+    fontFamily: "Montserrat_600SemiBold",
     color: colors.blueTufts,
     fontSize: scaleFont(FONT_SIZE_TITLE_MORE),
-    fontWeight: "600",
   },
   containerNotList: {
     height: 300,

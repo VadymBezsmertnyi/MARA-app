@@ -90,6 +90,10 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
     () => ({ ...styles.container, paddingBottom: tabBarHeight || 0 }),
     [tabBarHeight]
   );
+  const iconWrapperLightBlueStyles = useMemo(
+    () => [styles.iconWrapper, styles.iconWrapperLightBlue],
+    []
+  );
 
   const onShowGallery = (indexImage?: number) => {
     if (eventSelect?.images.length) {
@@ -151,10 +155,10 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
               height={20}
               fill={colors.californiaOrange}
             />
-            <Text style={styles.subtitle}>
+            <Text numberOfLines={2} style={styles.subtitle}>
               {distance
                 ? `${convertDistance(distance, "km").toFixed(2)} км`
-                : ""}
+                : i18n._(`Not enabled location`)}
             </Text>
           </View>
         </View>
@@ -163,7 +167,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
           <Text style={styles.label}>{i18n._("The beginning")}:</Text>
           <View style={styles.wrapper}>
             <View style={styles.inner}>
-              <View style={styles.iconWrapper}>
+              <View style={iconWrapperLightBlueStyles}>
                 <RadixIconsCalendar
                   width={24}
                   height={24}
@@ -190,7 +194,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
           <Text style={styles.label}>{i18n._("Finish")}:</Text>
           <View style={styles.wrapper}>
             <View style={styles.inner}>
-              <View style={styles.iconWrapper}>
+              <View style={iconWrapperLightBlueStyles}>
                 <RadixIconsCalendar
                   width={24}
                   height={24}
@@ -221,7 +225,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
           </Text>
           <View style={styles.wrapper}>
             <View style={styles.inner}>
-              <View style={styles.iconWrapper}>
+              <View style={iconWrapperLightBlueStyles}>
                 <RadixIconsCash
                   width={24}
                   height={24}

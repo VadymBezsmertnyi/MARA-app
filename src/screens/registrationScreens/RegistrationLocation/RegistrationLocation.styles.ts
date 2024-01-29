@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   titleLocation: {
+    fontFamily: "OpenSans_400Regular",
     color: colors.grayFuscous,
     maxWidth: 203,
     fontSize: 16,
@@ -45,10 +46,10 @@ export const styles = StyleSheet.create({
     gap: 20,
   },
   titleTermsPolicy: {
+    fontFamily: "OpenSans_600SemiBold",
     color: colors.grayCloudy,
     textAlign: "center",
     fontSize: 12,
-    fontWeight: "600",
   },
   linkTermsPolicy: {
     color: colors.blueTufts,
