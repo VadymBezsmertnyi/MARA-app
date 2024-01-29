@@ -8,7 +8,7 @@ import { localesContext } from "../../../localization/localization.provider";
 import { PATHS_WORKSHOP_SCREENS } from "../useNavigator.constants";
 
 // News and events
-import { WorkshopMain } from "../../screens/workshopScreens/WorkshopMain/WorkshopMain";
+import { WorkshopMain } from "../../screens/workshopsScreens/WorkshopsMain/WorkshopMain";
 
 export const useWorkshopStack = () => {
   const { i18n } = useContext(localesContext);
