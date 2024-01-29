@@ -1,21 +1,30 @@
-import React, { FunctionComponent, useContext } from "react";
-import { Platform, TouchableOpacity, View } from "react-native";
+import React, { FunctionComponent } from "react";
+import { TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-// providers
-import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
+// types
+import { RootMainTabsParamList } from "../../../../../navigators/Navigators.types";
 
 // components
 import { IconSearchMap } from "../../../../../icons/components";
+
+// constants
+import { PATHS_MAIN_TABS } from "../../../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./ButtonSearch.styles";
 import colors from "../../../../../../styles/colors";
 
-export const ButtonSearch: FunctionComponent = () => {
-  const { isSearchMap, setIsSearchMap } = useContext(workshopsContext);
+type ButtonSearchProps = {
+  navigation: NativeStackNavigationProp<RootMainTabsParamList>;
+};
+
+export const ButtonSearch: FunctionComponent<ButtonSearchProps> = ({
+  navigation,
+}) => {
   const toggleSearch = () => {
-    setIsSearchMap(!isSearchMap);
+    navigation.navigate(PATHS_MAIN_TABS.workshops);
   };
 
   return (

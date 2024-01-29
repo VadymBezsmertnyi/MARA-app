@@ -1,19 +1,13 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 
+// providers
+import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.provider";
+
 // types
 import { WorkshopsT } from "./WorkshopsProvider.types";
 
-// components
-import { SheetSearch } from "./components/SheetSearch/SheetSearch";
-
-// helps
-import { searchTextInArray } from "../../helps/helps";
-import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.provider";
-
 type WorkshopsContext = {
   workshops: WorkshopsT;
-  isSearchMap: boolean;
-  setIsSearchMap: (value: boolean) => void;
   valueSearch: string;
   setValueSearch: (value: string) => void;
 };
@@ -51,36 +45,21 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   children,
 }) => {
   const [workshops, setWorkShops] = useState<WorkshopsT>(DEFAULT_LIST);
-  const [isSearchMap, setIsSearchMap] = useState(false);
   const [valueSearch, setValueSearch] = useState("");
-
-  const filterWorkshop = useMemo(
-    () => searchTextInArray(valueSearch, workshops),
-    [valueSearch, workshops]
-  );
 
   const valueContext: WorkshopsContext = useMemo(
     () => ({
       workshops,
-      isSearchMap,
-      setIsSearchMap,
       valueSearch,
       setValueSearch,
     }),
-    [isSearchMap, valueSearch, workshops]
+    [valueSearch, workshops]
   );
 
   return (
     <ResponsiveLayoutProvider>
       <workshopsContext.Provider value={valueContext}>
         {children}
-        <SheetSearch
-          isOpen={isSearchMap}
-          setIsOpen={setIsSearchMap}
-          workshops={filterWorkshop}
-          value={valueSearch}
-          setValue={setValueSearch}
-        />
       </workshopsContext.Provider>
     </ResponsiveLayoutProvider>
   );

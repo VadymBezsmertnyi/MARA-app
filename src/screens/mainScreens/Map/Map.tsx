@@ -47,7 +47,7 @@ const DEFAULT_LOCATION: mapMarker = {
   longitudeDelta: 7.446565590798844,
 };
 
-export const Map: FunctionComponent<MapProps> = () => {
+export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
   const { userData } = useContext(userContext);
   const { workshops } = useContext(workshopsContext);
   const { stateSocket } = useContext(webSocketContext);
@@ -166,7 +166,7 @@ export const Map: FunctionComponent<MapProps> = () => {
       </MapViewCluster>
       <UpContainer />
       <EventContainer firstEvent={firstEvent} showFirstEvent={showFirstEvent} />
-      <ButtonSearch />
+      <ButtonSearch navigation={navigation} />
     </View>
   );
 };
