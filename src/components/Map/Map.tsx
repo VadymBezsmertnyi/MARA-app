@@ -37,7 +37,7 @@ export const Map: FunctionComponent<MapProps> = ({
   onRegionChange,
   onPress,
 }) => {
-  const { theme, heightStatusBar } = useContext(themeContext);
+  const { theme } = useContext(themeContext);
 
   const initialRegion = useMemo(
     () => ({ ...DEFAULT_LOCATION, longitude, latitude }),
@@ -45,7 +45,7 @@ export const Map: FunctionComponent<MapProps> = ({
   );
 
   return (
-    <View style={[styles.container, { paddingTop: heightStatusBar }]}>
+    <View style={styles.container}>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}

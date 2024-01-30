@@ -92,14 +92,6 @@ export type RootNewsScreensParamList = {
     from: string;
     screenFrom?: string;
   };
-  [PATHS_NEWS_SCREENS.locationEventInput]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_NEWS_SCREENS.locationEventMap]?: Record<
-    string,
-    string | number | boolean
-  >;
 };
 
 export type RootSettingsScreensParamList = {

@@ -1,21 +1,19 @@
-import { useContext } from 'react';
-import { t } from '@lingui/macro';
+import { useContext } from "react";
+import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from '../../../localization/localization.provider';
+import { localesContext } from "../../../localization/localization.provider";
 
 // constants
-import { PATHS_NEWS_SCREENS } from '../useNavigator.constants';
+import { PATHS_NEWS_SCREENS } from "../useNavigator.constants";
 
 // News and events
-import { NewsMain } from '../../screens/newsScreens/NewsMain/NewsMain';
-import { NewsList } from '../../screens/newsScreens/NewsList/NewsList';
-import { NewItem } from '../../screens/newsScreens/NewItem/NewItem';
-import { EventsList } from '../../screens/newsScreens/EventsList/EventsList';
-import { EventItem } from '../../screens/newsScreens/EventItem/EventItem';
-import { AddEvent } from '../../screens/newsScreens/AddEvent/AddEvent';
-import { LocationEventInput } from '../../screens/newsScreens/LocationEventInput/LocationEventInput';
-import { LocationEventMap } from '../../screens/newsScreens/LocationEventMap/LocationEventMap';
+import { NewsMain } from "../../screens/newsScreens/NewsMain/NewsMain";
+import { NewsList } from "../../screens/newsScreens/NewsList/NewsList";
+import { NewItem } from "../../screens/newsScreens/NewItem/NewItem";
+import { EventsList } from "../../screens/newsScreens/EventsList/EventsList";
+import { EventItem } from "../../screens/newsScreens/EventItem/EventItem";
+import { AddEvent } from "../../screens/newsScreens/AddEvent/AddEvent";
 
 export const useNewsStack = () => {
   const { i18n } = useContext(localesContext);
@@ -62,20 +60,6 @@ export const useNewsStack = () => {
       title: t(i18n)`Create event`,
       headerShown: true,
       component: AddEvent,
-    },
-    {
-      id: PATHS_NEWS_SCREENS.locationEventInput,
-      name: PATHS_NEWS_SCREENS.locationEventInput,
-      title: t(i18n)`Location event`,
-      headerShown: true,
-      component: LocationEventInput,
-    },
-    {
-      id: PATHS_NEWS_SCREENS.locationEventMap,
-      name: PATHS_NEWS_SCREENS.locationEventMap,
-      title: t(i18n)`Location event`,
-      headerShown: false,
-      component: LocationEventMap,
     },
   ] as const;
 

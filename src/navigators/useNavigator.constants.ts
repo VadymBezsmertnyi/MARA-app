@@ -37,8 +37,6 @@ export const PATHS_NEWS_SCREENS = {
   eventsList: "eventsList",
   eventItem: "eventItem",
   addEvent: "addEvent",
-  locationEventInput: "locationEventInput",
-  locationEventMap: "locationEventMap",
 } as const;
 
 export const PATHS_SETTINGS_SCREENS = {
