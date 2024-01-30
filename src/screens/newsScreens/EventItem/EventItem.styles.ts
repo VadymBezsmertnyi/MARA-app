@@ -75,12 +75,6 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
     marginTop: 12,
   },
-  distance: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 5,
-  },
   dateOfEvent: {
     marginTop: 20,
   },

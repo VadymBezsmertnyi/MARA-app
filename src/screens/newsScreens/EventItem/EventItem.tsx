@@ -38,6 +38,7 @@ import {
 // styles
 import { styles } from "./EventItem.styles";
 import colors from "../../../../styles/colors";
+import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 
 type EventItemProps = {
   route: RouteProp<RootAllScreensParamList, keyof RootAllScreensParamList>;
@@ -149,18 +150,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
           <Text numberOfLines={2} style={styles.locationTitle}>
             {eventSelect.location?.formatted_address}
           </Text>
-          <View style={styles.distance}>
-            <IconLocationMarker
-              width={20}
-              height={20}
-              fill={colors.californiaOrange}
-            />
-            <Text numberOfLines={2} style={styles.subtitle}>
-              {distance
-                ? `${convertDistance(distance, "km").toFixed(2)} км`
-                : i18n._(`Not enabled location`)}
-            </Text>
-          </View>
+          <DistanceCard distance={distance} />
         </View>
         <View style={styles.dateOfEvent}>
           <Text style={styles.titleOther}>{i18n._("Date of the event")}</Text>
