@@ -6,8 +6,8 @@ import React, {
   useState,
 } from "react";
 import {
-  Dimensions,
   Image,
+  ImageSourcePropType,
   ImageStyle,
   LayoutChangeEvent,
   NativeScrollEvent,
@@ -15,29 +15,33 @@ import {
   ScrollView,
   StyleProp,
   StyleSheet,
-  Text,
   TouchableHighlight,
   TouchableOpacity,
   View,
   ViewStyle,
 } from "react-native";
-import { ImageSource } from "expo-image";
 
 // styles
 import { styles } from "./CustomSlider.styles";
 
 type CustomSliderProps = {
-  images: ImageSource[];
+  images: ImageSourcePropType[] | string[];
   style?: (styleProps: StyleProp<ViewStyle>) => StyleProp<ViewStyle>;
   styleScroll?: (styleProps: StyleProp<ViewStyle>) => StyleProp<ViewStyle>;
-  onPress?: ({ image, index }: { image: ImageSource; index: number }) => void;
+  onPress?: ({
+    image,
+    index,
+  }: {
+    image: ImageSourcePropType | string;
+    index: number;
+  }) => void;
   customSlide?: ({
     item,
     style,
     index,
     width,
   }: {
-    item: ImageSource;
+    item: ImageSourcePropType | string;
     style: StyleProp<ImageStyle>;
     index: number;
     width: number;
@@ -141,7 +145,11 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
     }
   };
 
-  const renderImage = (image: ImageSource, index: number, isLoop?: boolean) => {
+  const renderImage = (
+    image: ImageSourcePropType | string,
+    index: number,
+    isLoop?: boolean
+  ) => {
     const imageStyle = () => [styles.image, { width }];
 
     if (customSlide)
@@ -196,8 +204,7 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
         horizontal
         showsHorizontalScrollIndicator={false}
         style={scrollContainerStyles}
-        contentInset={loop ? { left: width } : undefined}
-        bounces={loop}
+        showsVerticalScrollIndicator={false}
       >
         {loop && renderImage(images[images.length - 1], -1, true)}
         {images.map((image, index) => renderImage(image, index))}
