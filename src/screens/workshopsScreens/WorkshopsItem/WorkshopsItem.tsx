@@ -1,5 +1,18 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import React, {
+  FunctionComponent,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import {
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
@@ -50,17 +63,34 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   navigation,
   route,
 }) => {
+  const { i18n } = useContext(localesContext);
   const { userData } = useContext(userContext);
+  const data = [...Array.from({ length: 20 }, (_, index) => index)].reverse();
+  const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
   const phone = userData?.phoneNumber || ""; // TODO CHANGE
   const showPhone = useMemo(() => getFormatPhoneNumber(phone), [phone]);
+  const scrollViewRef = useRef<ScrollView | null>(null);
 
-  const { i18n } = useContext(localesContext);
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const { layoutMeasurement, contentOffset, contentSize } = event.nativeEvent;
+    if (
+      amountShow < data.length &&
+      layoutMeasurement.height + contentOffset.y >= contentSize.height
+    )
+      setAmountShow((state) =>
+        state + 5 <= data.length ? state + 5 : data.length
+      );
+  };
 
   return (
     <View style={styles.container}>
-      <Header title={i18n._("Workshops")} rightElement={<HeaderRightItem />} />
-      <ScrollView>
+      <Header title={i18n._("Workshop")} rightElement={<HeaderRightItem />} />
+      <ScrollView
+        ref={scrollViewRef}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+      >
         <View style={styles.containerMain}>
           <View style={styles.containerInfo}>
             <View style={styles.containerSlider}>
@@ -122,7 +152,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
             </Text>
           </View>
           <ListWorksDo />
-          <FooterComments />
+          <FooterComments data={data.slice(0, amountShow)} />
         </View>
         <View style={styles.containerEmpty} />
       </ScrollView>

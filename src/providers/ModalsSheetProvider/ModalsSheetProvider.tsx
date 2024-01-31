@@ -1,12 +1,4 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useMemo,
-  useState,
-} from "react";
-import { TouchableOpacity, View, ViewStyle } from "react-native";
-import { BlurView } from "expo-blur";
-import BottomSheet from "@gorhom/bottom-sheet";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
 
 // types
@@ -15,13 +7,8 @@ import { ModalSheetType, ModalSheetTypes } from "./ModalsSheetProvider.types";
 // components
 import { InputLocationModal } from "./modals/InputLocationModal/InputLocationModal";
 import { MapLocationModal } from "./modals/MapLocationModal/MapLocationModal";
-
-// icons
-import { IconCloseGradient } from "../../icons/components";
-
-// styles
-import { styles } from "./ModalsSheetProvider.styles";
 import { InputCityModal } from "./modals/InputCityModal/InputCityModal";
+import { ModalsSheet } from "../../components/ModalsSheet/ModalsSheet";
 
 type ModalsSheetContext = {
   modalSheet: ModalSheetType | null;
@@ -61,36 +48,6 @@ export const ModalsSheetProvider: FunctionComponent<
     setCity(null);
     setIsOpenModal(false);
   };
-
-  const snapPoints = useMemo(
-    () => modalSheet?.snapPoints || ["90%"],
-    [modalSheet?.snapPoints]
-  );
-  const handleIndicatorStyle = useMemo(
-    () =>
-      ({
-        display: modalSheet?.isIndicator ? "flex" : "none",
-      }) as ViewStyle,
-    [modalSheet?.isIndicator]
-  );
-
-  const footerComponent = useCallback(
-    () =>
-      modalSheet?.footer ? (
-        <BlurView intensity={40} tint="dark" style={styles.footerBlur}>
-          {modalSheet.footer}
-        </BlurView>
-      ) : null,
-    [modalSheet?.footer]
-  );
-
-  const handleComponent = () => (
-    <View style={styles.header}>
-      <TouchableOpacity style={styles.buttonHeader} onPress={onClose}>
-        <IconCloseGradient width={24} height={24} />
-      </TouchableOpacity>
-    </View>
-  );
 
   const showModal = useMemo(() => {
     if (modalType === "input-location")
@@ -134,45 +91,18 @@ export const ModalsSheetProvider: FunctionComponent<
   return (
     <modalsSheetContext.Provider value={contextValue}>
       {children}
-      {modalSheet !== null || showModal !== null ? (
-        <TouchableOpacity style={styles.footerButton} onPress={onClose}>
-          <BlurView intensity={15} style={styles.footerButtonBlurView} />
-        </TouchableOpacity>
-      ) : null}
       {modalSheet?.children ? (
-        <BottomSheet
-          handleComponent={handleComponent}
-          footerComponent={footerComponent}
-          onClose={onClose}
-          snapPoints={snapPoints}
-          //containerStyle={{ overflow: "hidden" }}
-          backgroundStyle={styles.backgroundModalStyle}
-          //style={{ overflow: "hidden" }}
-          handleIndicatorStyle={handleIndicatorStyle}
-          //enablePanDownToClose
-          //enableContentPanningGesture
-        >
-          {modalSheet?.children}
-        </BottomSheet>
+        <ModalsSheet onClose={onClose}>{modalSheet?.children}</ModalsSheet>
       ) : null}
       {showModal ? (
-        <BottomSheet
+        <ModalsSheet
           onChange={() => {
             setIsOpenModal(true);
           }}
-          handleComponent={handleComponent}
-          footerComponent={footerComponent}
           onClose={onClose}
-          snapPoints={snapPoints}
-          //containerStyle={{ overflow: "hidden" }}
-          backgroundStyle={styles.backgroundModalStyle}
-          //style={{ overflow: "hidden" }}
-          handleIndicatorStyle={handleIndicatorStyle}
-          //enablePanDownToClose
-          //enableContentPanningGesture
         >
           {showModal}
-        </BottomSheet>
+        </ModalsSheet>
       ) : null}
     </modalsSheetContext.Provider>
   );

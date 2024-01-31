@@ -14,10 +14,17 @@ import { IconStar } from "../../../../../icons/components";
 // styles
 import { styles } from "./FooterComments.styles";
 import colors from "../../../../../../styles/colors";
+import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
 
-export const FooterComments: FunctionComponent = () => {
+type FooterCommentsProps = {
+  data: number[];
+};
+
+export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
+  data,
+}) => {
   const { i18n } = useContext(localesContext);
-  const data = Array.from({ length: 20 }, (_, index) => index);
+  const { setIdComment } = useContext(workshopsContext);
 
   const renderItem: ListRenderItem<number> = ({ item }) => {
     const rating = Number(((item + 1) / 4).toFixed(2));
@@ -52,6 +59,10 @@ export const FooterComments: FunctionComponent = () => {
     );
   };
 
+  const onShowWriteComment = () => {
+    setIdComment(4);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.containerReviews}>
@@ -65,17 +76,17 @@ export const FooterComments: FunctionComponent = () => {
           </View>
           <ButtonCustom
             title={i18n._("Write a review")}
-            onSubmit={() => {}}
+            onSubmit={onShowWriteComment}
             styleButton={styles.reviewsButton}
             styleContainer={styles.reviewsContainerButton}
           />
         </View>
       </View>
       <FlatList
-        data={data}
+        data={data.slice(0, 10)}
         renderItem={renderItem}
-        scrollEnabled={false}
         contentContainerStyle={styles.containerComments}
+        scrollEnabled={false}
       />
     </View>
   );

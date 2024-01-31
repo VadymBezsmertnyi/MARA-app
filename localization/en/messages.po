@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Not enabled location"
+
+#. js-lingui-explicit-id
 msgid "Confirm"
 msgstr "Confirm"
 
@@ -22,8 +26,20 @@ msgid "Create event"
 msgstr "Create event"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Change event"
+msgid "Event"
+msgstr "Event"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Event delete"
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Yes"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "No"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -56,6 +72,22 @@ msgstr "Enter the address"
 #. js-lingui-explicit-id
 msgid "Select on the map"
 msgstr "Select on the map"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Sorry, an error occurred"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "The photo has been changed"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Delete"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Change"
 
 #. js-lingui-explicit-id
 msgid "SOS signal notification"
@@ -134,8 +166,8 @@ msgid "100 uah"
 msgstr "100 uah"
 
 #. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr "Participation fee"
+msgid "200 uah"
+msgstr "200 uah"
 
 #. js-lingui-explicit-id
 msgid "Briefly describe what will happen"
@@ -150,6 +182,18 @@ msgid "Add a photo"
 msgstr "Add a photo"
 
 #. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Free"
+
+#. js-lingui-explicit-id
 msgid "Finish"
 msgstr "Finish"
 
@@ -162,10 +206,6 @@ msgid "About event"
 msgstr "About event"
 
 #. js-lingui-explicit-id
-msgid "Read the whole description..."
-msgstr "Read the whole description..."
-
-#. js-lingui-explicit-id
 msgid "Gallery"
 msgstr "Gallery"
 
@@ -176,18 +216,6 @@ msgstr "All photos"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Enter the text to search"
-
-#. js-lingui-explicit-id
-msgid "Add a house number"
-msgstr "Add a house number"
-
-#. js-lingui-explicit-id
-msgid "Enter the house number"
-msgstr "Enter the house number"
-
-#. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Not enabled location"
 
 #. js-lingui-explicit-id
 msgid "The length of the name should be between 5 and 20 characters"
@@ -254,16 +282,8 @@ msgid "Setting profile"
 msgstr "Setting profile"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "The photo has been changed"
-
-#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "The photo added"
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Sorry, an error occurred"
 
 #. js-lingui-explicit-id
 msgid "Save profile"
@@ -286,12 +306,39 @@ msgid "City"
 msgstr "City"
 
 #. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Write a review"
+
+#. js-lingui-explicit-id
+msgid "Go to workshop {title}"
+msgstr "Go to workshop {title}"
+
+#. js-lingui-explicit-id
+msgid "Workshop {title}"
+msgstr "Workshop {title}"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Auto"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Moto"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Workshop"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Workshops"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop or type of work"
 msgstr "Enter the name of the workshop or type of work"
+
+msgid "About us:"
+msgstr "About us:"
 
 msgid "Access denied"
 msgstr "Access denied"
@@ -304,6 +351,9 @@ msgstr "Add your address"
 
 msgid "All cities"
 msgstr "All cities"
+
+msgid "All photos"
+msgstr "All photos"
 
 msgid "Allow"
 msgstr "Allow"
@@ -329,6 +379,9 @@ msgstr "Allow Touch ID to access the {nameApp} app."
 msgid "and choose the city of residence:"
 msgstr "and choose the city of residence:"
 
+msgid "Are you sure you want to delete?"
+msgstr "Are you sure you want to delete?"
+
 msgid "Authorize using:"
 msgstr "Authorize using:"
 
@@ -352,9 +405,6 @@ msgstr "Dark theme"
 
 msgid "Delete"
 msgstr "Delete"
-
-msgid "Enter the address"
-msgstr "Enter the address"
 
 msgid "Enter your password"
 msgstr "Enter your password"
@@ -389,6 +439,9 @@ msgstr "Events and news"
 msgid "Forgot your password?"
 msgstr "Forgot your password?"
 
+msgid "Gallery"
+msgstr "Gallery"
+
 msgid "Hello!"
 msgstr "Hello!"
 
@@ -404,9 +457,6 @@ msgstr "Internal Server Error"
 msgid "Latest news:"
 msgstr "Latest news:"
 
-msgid "Location event"
-msgstr "Location event"
-
 msgid "Logout"
 msgstr "Logout"
 
@@ -418,6 +468,9 @@ msgstr "Map"
 
 msgid "Market"
 msgstr "Market"
+
+msgid "more detail"
+msgstr "more detail"
 
 msgid "More events"
 msgstr "More events"
@@ -442,6 +495,9 @@ msgstr "Now create yourself a strong password."
 
 msgid "or sign up using:"
 msgstr "or sign up using:"
+
+msgid "Participation fee"
+msgstr "Participation fee"
 
 msgid "Password"
 msgstr "Password"
@@ -473,6 +529,9 @@ msgstr "Privacy Policy is a legal statement that defines what a business owner d
 msgid "Profile"
 msgstr "Profile"
 
+msgid "Read the whole description..."
+msgstr "Read the whole description..."
+
 msgid "Registration"
 msgstr "Registration"
 
@@ -481,6 +540,9 @@ msgstr "Repeat password"
 
 msgid "Resend the code"
 msgstr "Resend the code"
+
+msgid "Reviews:"
+msgstr "Reviews:"
 
 msgid "Select a location on the map"
 msgstr "Select a location on the map"
@@ -515,6 +577,9 @@ msgstr "Terms of Use"
 msgid "The entered phone number is not registered"
 msgstr "The entered phone number is not registered"
 
+msgid "The work we do:"
+msgstr "The work we do:"
+
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 msgstr "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 
@@ -535,6 +600,9 @@ msgstr "We're glad to see you on our service."
 
 msgid "Welcome"
 msgstr "Welcome"
+
+msgid "Workshop"
+msgstr "Workshop"
 
 msgid "Workshops"
 msgstr "Workshops"

@@ -74,19 +74,19 @@ function App() {
                   <NavigationContainer>
                     <EventsProvider>
                       <SafeAreaProvider>
-                        <WorkshopsProvider>
-                          <MapProvider>
-                            <GestureHandlerRootView
-                              style={styles.gestureHandlerRootView}
-                            >
+                        <MapProvider>
+                          <GestureHandlerRootView
+                            style={styles.gestureHandlerRootView}
+                          >
+                            <WorkshopsProvider>
                               <ModalsSheetProvider>
                                 <ModalsProvider>
                                   <Navigators />
                                 </ModalsProvider>
                               </ModalsSheetProvider>
-                            </GestureHandlerRootView>
-                          </MapProvider>
-                        </WorkshopsProvider>
+                            </WorkshopsProvider>
+                          </GestureHandlerRootView>
+                        </MapProvider>
                       </SafeAreaProvider>
                     </EventsProvider>
                   </NavigationContainer>

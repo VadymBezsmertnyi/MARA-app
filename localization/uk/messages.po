@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Не ввімкнено місцезнаходження"
+
+#. js-lingui-explicit-id
 msgid "Confirm"
 msgstr "Опублікувати"
 
@@ -22,8 +26,20 @@ msgid "Create event"
 msgstr "Створити подію"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Змінити подію"
+msgid "Event"
+msgstr "Подія"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Видалити подію"
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Так"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Ні"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -56,6 +72,22 @@ msgstr "Введіть адресу"
 #. js-lingui-explicit-id
 msgid "Select on the map"
 msgstr "Вибрати на карті"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Вибачте, сталася помилка"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Фото змінено"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Видалити"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Змінити"
 
 #. js-lingui-explicit-id
 msgid "SOS signal notification"
@@ -134,8 +166,8 @@ msgid "100 uah"
 msgstr "100 грн"
 
 #. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr "Ціна за участь"
+msgid "200 uah"
+msgstr "200 грн"
 
 #. js-lingui-explicit-id
 msgid "Briefly describe what will happen"
@@ -150,6 +182,18 @@ msgid "Add a photo"
 msgstr "Додати фото"
 
 #. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} грн."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} грн."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Безкоштовно"
+
+#. js-lingui-explicit-id
 msgid "Finish"
 msgstr "Фініш"
 
@@ -162,10 +206,6 @@ msgid "About event"
 msgstr "Про подію"
 
 #. js-lingui-explicit-id
-msgid "Read the whole description..."
-msgstr "Читати весь опис..."
-
-#. js-lingui-explicit-id
 msgid "Gallery"
 msgstr "Галерея"
 
@@ -176,18 +216,6 @@ msgstr "Всі фото"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Введіть текст для пошуку"
-
-#. js-lingui-explicit-id
-msgid "Add a house number"
-msgstr "Додати номер будинку"
-
-#. js-lingui-explicit-id
-msgid "Enter the house number"
-msgstr "Введіть номер будинку"
-
-#. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Не ввімкнено місцезнаходження"
 
 #. js-lingui-explicit-id
 msgid "The length of the name should be between 5 and 20 characters"
@@ -254,16 +282,8 @@ msgid "Setting profile"
 msgstr "Корегувати профіль"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Фото змінено"
-
-#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Додано фото"
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Вибачте, сталася помилка"
 
 #. js-lingui-explicit-id
 msgid "Save profile"
@@ -286,12 +306,39 @@ msgid "City"
 msgstr "Місто"
 
 #. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Написати відгук"
+
+#. js-lingui-explicit-id
+msgid "Go to workshop {title}"
+msgstr "Перейти до майстерні {title}"
+
+#. js-lingui-explicit-id
+msgid "Workshop {title}"
+msgstr "Майстерня {title}"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Авто"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Мото"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Майстерня"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Майстерні"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop or type of work"
 msgstr "Введіть назву майстерні або вид робіт"
+
+msgid "About us:"
+msgstr "Про нас:"
 
 msgid "Access denied"
 msgstr "Доступ заборонено"
@@ -304,6 +351,9 @@ msgstr "Додати вашу адресу"
 
 msgid "All cities"
 msgstr "Усі міста"
+
+msgid "All photos"
+msgstr "Усі фотографії"
 
 msgid "Allow"
 msgstr "Дозволити"
@@ -329,6 +379,9 @@ msgstr "Дозволити Touch id входити у додаток {nameApp}"
 msgid "and choose the city of residence:"
 msgstr "та оберіть місто проживання:"
 
+msgid "Are you sure you want to delete?"
+msgstr "Ви впевнені, що хочете видалити?"
+
 msgid "Authorize using:"
 msgstr "Авторизуйтесь за допомогою:"
 
@@ -352,9 +405,6 @@ msgstr "Темна тема"
 
 msgid "Delete"
 msgstr "Видалити"
-
-msgid "Enter the address"
-msgstr "Введіть адресу"
 
 msgid "Enter your password"
 msgstr "Введіть свій пароль"
@@ -389,6 +439,9 @@ msgstr "Події і новини"
 msgid "Forgot your password?"
 msgstr "Забули свій пароль?"
 
+msgid "Gallery"
+msgstr "Галерея"
+
 msgid "Hello!"
 msgstr "Привіт!"
 
@@ -404,9 +457,6 @@ msgstr "Внутрішня помилка сервера"
 msgid "Latest news:"
 msgstr "Останні новини:"
 
-msgid "Location event"
-msgstr "Місцезнаходження події"
-
 msgid "Logout"
 msgstr "Вийти"
 
@@ -418,6 +468,9 @@ msgstr "Карта"
 
 msgid "Market"
 msgstr "Базар"
+
+msgid "more detail"
+msgstr "більше деталей"
 
 msgid "More events"
 msgstr "Більше подій"
@@ -442,6 +495,9 @@ msgstr "Тепер створіть собі надійний пароль"
 
 msgid "or sign up using:"
 msgstr "або зареєструйтеся за допомогою:"
+
+msgid "Participation fee"
+msgstr "Ціна за участь"
 
 msgid "Password"
 msgstr "Пароль"
@@ -473,6 +529,9 @@ msgstr "Політика конфіденційності — це юридич�
 msgid "Profile"
 msgstr "Профіль"
 
+msgid "Read the whole description..."
+msgstr "Читати весь опис..."
+
 msgid "Registration"
 msgstr "Реєстрація"
 
@@ -481,6 +540,9 @@ msgstr "Повторіть пароль"
 
 msgid "Resend the code"
 msgstr "Надіслати код повторно"
+
+msgid "Reviews:"
+msgstr "Відгуки:"
 
 msgid "Select a location on the map"
 msgstr "Виберіть місце на мапі"
@@ -503,7 +565,6 @@ msgstr "Вибачте, немає новин"
 msgid "Sorry!"
 msgstr "Вибачте!"
 
-
 msgid "SOS signal"
 msgstr "Сигнал SOS"
 
@@ -515,6 +576,9 @@ msgstr "Умовами користування"
 
 msgid "The entered phone number is not registered"
 msgstr "Введений номер телефону не зареєстрований"
+
+msgid "The work we do:"
+msgstr "Роботи, які ми виконуємо:"
 
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 msgstr "Щоб ви могли користуватися всіма можливостями сервісу, необхідно дозволити додатку визначати ваше місцезнаходження:"
@@ -536,6 +600,9 @@ msgstr "Раді бачити вас на нашому сервісі."
 
 msgid "Welcome"
 msgstr "Ласкаво просимо"
+
+msgid "Workshop"
+msgstr "Майстерня"
 
 msgid "Workshops"
 msgstr "Майстерні"

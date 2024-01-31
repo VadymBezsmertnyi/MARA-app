@@ -3,6 +3,10 @@ import React, { FunctionComponent, useMemo, useState } from "react";
 // providers
 import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.provider";
 
+// components
+import { ModalsSheet } from "../../components/ModalsSheet/ModalsSheet";
+import { ModalComment } from "./components/ModalComment/ModalComment";
+
 // types
 import { WorkshopsT } from "./WorkshopsProvider.types";
 
@@ -10,6 +14,7 @@ type WorkshopsContext = {
   workshops: WorkshopsT;
   valueSearch: string;
   setValueSearch: (value: string) => void;
+  setIdComment: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 type WorkshopsProviderProps = {
@@ -46,12 +51,23 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
 }) => {
   const [workshops, setWorkShops] = useState<WorkshopsT>(DEFAULT_LIST);
   const [valueSearch, setValueSearch] = useState("");
+  const [idComment, setIdComment] = useState<number | null>(null);
+
+  const showModal = useMemo(() => {
+    if (idComment !== null) return <ModalComment />;
+    return null;
+  }, [idComment]);
+
+  const onClose = () => {
+    setIdComment(null);
+  };
 
   const valueContext: WorkshopsContext = useMemo(
     () => ({
       workshops,
       valueSearch,
       setValueSearch,
+      setIdComment,
     }),
     [valueSearch, workshops]
   );
@@ -60,6 +76,9 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     <ResponsiveLayoutProvider>
       <workshopsContext.Provider value={valueContext}>
         {children}
+        {showModal ? (
+          <ModalsSheet onClose={onClose}>{showModal}</ModalsSheet>
+        ) : null}
       </workshopsContext.Provider>
     </ResponsiveLayoutProvider>
   );
