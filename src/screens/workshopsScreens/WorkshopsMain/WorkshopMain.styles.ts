@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { horizontalScale, verticalScale } from '../../../../styles/hooks';
-import colors from '../../../../styles/colors';
+import { StyleSheet } from "react-native";
+import { horizontalScale, verticalScale } from "../../../../styles/hooks";
+import colors from "../../../../styles/colors";
 
 const PADDING_HORIZONTAL = 16;
 const GAP_MAIN = 12;
@@ -18,5 +18,8 @@ export const styles = StyleSheet.create({
   search: {
     paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
     paddingBottom: verticalScale(GAP_MAIN),
+  },
+  containerEmpty: {
+    height: 70,
   },
 });

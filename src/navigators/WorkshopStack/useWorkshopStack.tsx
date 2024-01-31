@@ -9,6 +9,7 @@ import { PATHS_WORKSHOP_SCREENS } from "../useNavigator.constants";
 
 // News and events
 import { WorkshopMain } from "../../screens/workshopsScreens/WorkshopsMain/WorkshopMain";
+import { WorkshopsItem } from "../../screens/workshopsScreens/WorkshopsItem/WorkshopsItem";
 
 export const useWorkshopStack = () => {
   const { i18n } = useContext(localesContext);
@@ -20,6 +21,13 @@ export const useWorkshopStack = () => {
       title: t(i18n)`Workshops`,
       headerShown: false,
       component: WorkshopMain,
+    },
+    {
+      id: PATHS_WORKSHOP_SCREENS.workshopItem,
+      name: PATHS_WORKSHOP_SCREENS.workshopItem,
+      title: t(i18n)`Workshop`,
+      headerShown: false,
+      component: WorkshopsItem,
     },
   ] as const;
 

@@ -91,7 +91,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.8,
   },
   iconWrapperLightBlue: {
-    backgroundColor: "#DDEFFF",
+    backgroundColor: colors.blueLight,
   },
   description: { marginTop: 10 },
   buttonFullDescription: {

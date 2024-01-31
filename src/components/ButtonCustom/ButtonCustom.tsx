@@ -2,6 +2,7 @@ import React, { ReactElement, useContext, useMemo } from "react";
 import {
   StyleProp,
   Text,
+  TextStyle,
   TouchableOpacity,
   View,
   ViewStyle,
@@ -26,6 +27,7 @@ type Props = {
   styleButton?: StyleProp<ViewStyle>;
   styleContainer?: StyleProp<ViewStyle>;
   styleLinear?: StyleProp<ViewStyle>;
+  styleTitle?: StyleProp<TextStyle>;
   children?: ReactElement;
   colorsGradientProps?: [string, string];
 };
@@ -38,6 +40,7 @@ export const ButtonCustom = ({
   styleButton,
   styleContainer,
   styleLinear,
+  styleTitle,
   children,
   colorsGradientProps,
 }: Props) => {
@@ -63,8 +66,9 @@ export const ButtonCustom = ({
     () => [
       styles.buttonSubmitText,
       type !== "full" ? styles.transparent : null,
+      styleTitle,
     ],
-    [type]
+    [type, styleTitle]
   );
   const colorsGradient = useMemo(
     () =>

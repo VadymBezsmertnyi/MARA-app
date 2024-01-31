@@ -1,6 +1,7 @@
 import { Dimensions } from "react-native";
 import { ImagePickerSuccessResult } from "expo-image-picker";
 import * as ImageManipulator from "expo-image-manipulator";
+import infoPhoneCountries from "country-telephone-data";
 
 // schemas
 import { imagesSchema } from "../providers/ModalsProvider/ModalsProvider.schemas";
@@ -110,4 +111,28 @@ export const getRightSizeImage = (
   const currentCoefficientSize =
     maxHeight && maxHeight < coefficientSize ? maxHeight : coefficientSize;
   return { width: widthWindow, height: image.height * currentCoefficientSize };
+};
+
+export const getFormatPhoneNumber = (phone: string) => {
+  const country =
+    infoPhoneCountries.allCountries.find((country) =>
+      phone.slice(0, 4).includes(country.dialCode)
+    ) || null;
+  if (!country) return "";
+
+  let indexPhone = 0;
+  const arrayNumber = country.format.split("").map((item) => {
+    if (item === "+") {
+      indexPhone = indexPhone + 1;
+      return item;
+    }
+    if (item === ".") {
+      const currentNumber = phone[indexPhone] ? phone[indexPhone] : item;
+      indexPhone = indexPhone + 1;
+      return currentNumber;
+    }
+    return item;
+  });
+
+  return arrayNumber.join("");
 };

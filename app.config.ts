@@ -17,6 +17,7 @@ export const expo = {
     backgroundColor: "#ffffff",
   },
   assetBundlePatterns: ["**/*"],
+  scheme: "com.m-a-r-a.app",
   ios: {
     supportsTablet: false,
     bundleIdentifier: "moto.auto.road.assistant",
@@ -53,6 +54,7 @@ export const expo = {
     },
     googleServicesFile: "./google-services.json",
     package: "com.motoauto.mara",
+    scheme: "maraapp",
     permissions: [
       "RECORD_AUDIO",
       "CAMERA_ROLL",

@@ -4,6 +4,9 @@ import {
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
 
+// types
+import { RootWorkshopsScreensParamList } from "../Navigators.types";
+
 // constants
 import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 
@@ -19,7 +22,7 @@ import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 // styles
 import colors from "../../../styles/colors";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootWorkshopsScreensParamList>();
 
 export const WorkshopStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);

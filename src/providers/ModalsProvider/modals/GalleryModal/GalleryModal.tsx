@@ -1,9 +1,13 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Gallery from "react-native-awesome-gallery";
+import { Trans } from "@lingui/macro";
 
 // providers
 import { themeContext } from "../../../ThemeProvider/ThemeProvider";
+
+// components
+import { ImageCache } from "../../../../components/ImageCache/ImageCache";
 
 // icons
 import { IconArrowLeftEvent } from "../../../../icons/components";
@@ -11,8 +15,6 @@ import { IconArrowLeftEvent } from "../../../../icons/components";
 // styles
 import { styles } from "./GalleryModal.styles";
 import colors from "../../../../../styles/colors";
-import { ImageCache } from "../../../../components/ImageCache/ImageCache";
-import { Trans } from "@lingui/macro";
 
 type GalleryModalProps = {
   data: { images: string[]; indexImage?: number };

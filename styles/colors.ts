@@ -14,6 +14,7 @@ const colors = {
   blackRich07: "#020202B2",
   //blue
   blueTufts: "#368CDC",
+  blueLight: "#DDEFFF",
   //gray
   gray: "#bbb",
   grayCheckbox: "#8E8E93",

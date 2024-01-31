@@ -31,6 +31,7 @@ import {
   PATHS_MAIN_TABS,
   PATHS_NEWS_SCREENS,
   PATHS_SETTINGS_SCREENS,
+  PATHS_WORKSHOP_SCREENS,
 } from "../useNavigator.constants";
 import { SettingsStack } from "../SettingsStack/settingsStack";
 
@@ -41,7 +42,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.workshops,
       name: PATHS_MAIN_TABS.workshops,
-      mainScreen: null,
+      mainScreen: PATHS_WORKSHOP_SCREENS.workshopMain,
       title: t(i18n)`Workshops`,
       component: WorkshopStack,
       headerShown: false,
