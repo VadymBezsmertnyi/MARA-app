@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
-import { Animated, ScrollView, StyleProp, View, ViewStyle } from "react-native";
+import { Animated, ScrollView, StyleProp, ViewStyle } from "react-native";
 
 // styles
 import { styles } from "./ScrollViewCustom.styles";
