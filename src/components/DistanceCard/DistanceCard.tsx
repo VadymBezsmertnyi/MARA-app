@@ -14,10 +14,12 @@ import colors from "../../../styles/colors";
 
 type DistanceCardType = {
   distance: number | null;
+  numberOfLines?: number;
 };
 
 export const DistanceCard: FunctionComponent<DistanceCardType> = ({
   distance,
+  numberOfLines = 2,
 }) => {
   const { i18n } = useContext(localesContext);
 
@@ -28,8 +30,8 @@ export const DistanceCard: FunctionComponent<DistanceCardType> = ({
         height={20}
         fill={colors.californiaOrange}
       />
-      <Text numberOfLines={2} style={styles.title}>
-        {distance
+      <Text numberOfLines={numberOfLines} style={styles.title}>
+        {distance !== null
           ? `${convertDistance(distance, "km").toFixed(2)} км`
           : i18n._(`Not enabled location`)}
       </Text>

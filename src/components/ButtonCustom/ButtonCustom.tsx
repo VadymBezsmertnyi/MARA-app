@@ -25,6 +25,7 @@ type Props = {
   type?: "full" | "transparent";
   styleButton?: StyleProp<ViewStyle>;
   styleContainer?: StyleProp<ViewStyle>;
+  styleLinear?: StyleProp<ViewStyle>;
   children?: ReactElement;
   colorsGradientProps?: [string, string];
 };
@@ -36,6 +37,7 @@ export const ButtonCustom = ({
   type = "full",
   styleButton,
   styleContainer,
+  styleLinear,
   children,
   colorsGradientProps,
 }: Props) => {
@@ -45,8 +47,8 @@ export const ButtonCustom = ({
     [styleContainer]
   );
   const styleLinearGradient = useMemo(
-    () => [styles.linearGradient, disabled && styles.disabled],
-    [disabled]
+    () => [styles.linearGradient, disabled && styles.disabled, styleLinear],
+    [disabled, styleLinear]
   );
   const stylePressable = useMemo(
     () => [
