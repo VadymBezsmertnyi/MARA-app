@@ -22,11 +22,14 @@ export const styles = StyleSheet.create({
     paddingRight: 16,
   },
   input: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingTop: 16,
     paddingHorizontal: 16,
     paddingBottom: 16,
     color: colors.blackCoffee,
-    flex: 1,
   },
   inputPlaceholder: {
     fontFamily: "OpenSans_600SemiBold",

@@ -23,6 +23,8 @@ type InputButtonProps = {
   labelStyle?: TextStyle;
   containerStyle?: ViewStyle;
   isRegular?: boolean;
+  isSelect?: boolean;
+  rightElementInput?: JSX.Element;
 };
 
 export const InputButton: FunctionComponent<InputButtonProps> = ({
@@ -37,6 +39,8 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
   labelStyle,
   containerStyle,
   isRegular = false,
+  isSelect = false,
+  rightElementInput = null,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -80,6 +84,7 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
       {label && (
         <Text style={labelStyles}>
           {label}
+          {isSelect ? ":" : null}
           {isRegular ? (
             <>
               :<Text style={styles.labelRegular}>*</Text>
@@ -97,6 +102,7 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
           <Text numberOfLines={1} style={inputTitleStyles}>
             {value || placeholder}
           </Text>
+          {rightElementInput}
         </TouchableOpacity>
         {InputIcon}
       </View>

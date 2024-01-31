@@ -1,5 +1,12 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import {
+  SafeAreaView,
+  StyleProp,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
 import { Trans, t } from "@lingui/macro";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { z } from "zod";
@@ -29,18 +36,28 @@ type HeaderStackProps = {
   title: string;
   leftElement?: JSX.Element;
   rightElement?: JSX.Element;
+  onPressLeftElement?: () => void;
+  backgroundStyle?: StyleProp<ViewStyle>;
 };
 
 export const Header: FunctionComponent<HeaderStackProps> = ({
   title,
   leftElement = null,
   rightElement,
+  onPressLeftElement,
+  backgroundStyle,
 }) => {
   const route = useRoute<RouteProp<RootAllScreensParamList>>();
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
   const { setIdDeleteEvent } = useContext(eventsContext);
+
+  const backgroundStyles = useMemo(
+    () => [styles.background, backgroundStyle],
+    [backgroundStyle]
+  );
+
   const idEditEvent = useMemo(() => {
     const currentParams = z
       .object({ eventId: z.number(), isUser: z.boolean() })
@@ -58,7 +75,8 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   );
 
   const onBack = () => {
-    navigation.goBack();
+    if (onPressLeftElement) onPressLeftElement();
+    else navigation.goBack();
   };
 
   const onDeleteEvent = () => {
@@ -66,7 +84,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   };
 
   return (
-    <SafeAreaView style={styles.background}>
+    <SafeAreaView style={backgroundStyles}>
       <View style={styles.container}>
         <TouchableOpacity onPress={onBack} style={styles.containerButtonBack}>
           {leftElement || (
