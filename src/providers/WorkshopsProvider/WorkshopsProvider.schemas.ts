@@ -1,4 +1,12 @@
-import { z } from 'zod';
+import { z } from "zod";
+
+export const typeWorkSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  description: z.string(),
+});
+
+export const typeWorksSchema = z.array(typeWorkSchema);
 
 export const workshopS = z.object({
   id: z.number(),
