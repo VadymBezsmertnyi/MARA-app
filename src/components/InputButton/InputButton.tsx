@@ -25,6 +25,8 @@ type InputButtonProps = {
   isRegular?: boolean;
   isSelect?: boolean;
   rightElementInput?: JSX.Element;
+  disabled?: boolean;
+  isMultiLines?: boolean;
 };
 
 export const InputButton: FunctionComponent<InputButtonProps> = ({
@@ -41,6 +43,8 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
   isRegular = false,
   isSelect = false,
   rightElementInput = null,
+  disabled = false,
+  isMultiLines = false,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -70,9 +74,10 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
       ...styles.container,
       marginTop,
       flex: customStyles ? 1 : 0,
+      opacity: disabled ? 0.5 : 1,
       ...containerStyle,
     };
-  }, [label, customStyles, containerStyle]);
+  }, [label, customStyles, containerStyle, disabled]);
   const inputTitleStyles = useMemo(
     () => [styles.inputPlaceholder, value?.length > 0 && styles.inputValue],
     [value]
@@ -94,12 +99,16 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
       )}
       <View style={inputWrapperStyles}>
         <TouchableOpacity
+          disabled={disabled}
           style={inputStyles}
           onFocus={onFocus}
           onBlur={onBlur}
           onPress={onPress}
         >
-          <Text numberOfLines={1} style={inputTitleStyles}>
+          <Text
+            numberOfLines={isMultiLines ? undefined : 1}
+            style={inputTitleStyles}
+          >
             {value || placeholder}
           </Text>
           {rightElementInput}

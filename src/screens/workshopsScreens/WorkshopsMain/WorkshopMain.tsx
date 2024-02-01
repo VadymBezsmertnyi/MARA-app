@@ -1,10 +1,11 @@
 import React, { FunctionComponent, useContext, useState } from "react";
-import { ScrollView, View } from "react-native";
+import { Modal, ScrollView, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
 import { localesContext } from "../../../../localization/localization.provider";
+import { TypeFilters } from "./components/ModalFilter/ModalFilter.types";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -13,6 +14,9 @@ import { Header } from "../../../components/Header/Header";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { HeaderFilters } from "./components/HeaderFilters/HeaderFilters";
 import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
+import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
+import { ModalSort } from "./components/ModalSort/ModalSort";
+import { ModalFilter } from "./components/ModalFilter/ModalFilter";
 
 // icons
 import { IconSearchInput } from "../../../icons/components";
@@ -31,7 +35,25 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   navigation,
 }) => {
   const { i18n } = useContext(localesContext);
+  const [isShowSort, setIsShowSort] = useState(false);
+  const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");
+  const [filters, setFilters] = useState<TypeFilters | null>(null);
+
+  const onClose = () => {
+    setIsShowSort(false);
+    setIsShowFilter(false);
+  };
+
+  const setTypeSort = (type: "comments" | "distance" | "rating") => {
+    console.log(type);
+    onClose();
+  };
+
+  const onSubmitFilters = (newFilters: TypeFilters) => {
+    setFilters(newFilters);
+    onClose();
+  };
 
   return (
     <>
@@ -39,7 +61,14 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         leftElement={<MenuBurgerButton />}
         title={i18n._("Workshops")}
         rightElement={
-          <HeaderFilters onPressFilter={() => null} onPressSort={() => null} />
+          <HeaderFilters
+            onPressFilter={() => {
+              setIsShowFilter(true);
+            }}
+            onPressSort={() => {
+              setIsShowSort(true);
+            }}
+          />
         }
       />
       <View style={styles.container}>
@@ -73,6 +102,20 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         </ScrollView>
         <AddEventButton onPress={() => null} />
       </View>
+      {isShowSort ? (
+        <ModalWindow onClose={onClose}>
+          <ModalSort onClose={onClose} setTypeSort={setTypeSort} />
+        </ModalWindow>
+      ) : null}
+      {isShowFilter ? (
+        <Modal>
+          <ModalFilter
+            onClose={onClose}
+            filters={filters}
+            onSubmit={onSubmitFilters}
+          />
+        </Modal>
+      ) : null}
     </>
   );
 };

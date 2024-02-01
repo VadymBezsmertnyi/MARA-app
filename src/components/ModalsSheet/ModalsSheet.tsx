@@ -1,11 +1,16 @@
 import React, { FunctionComponent, useCallback, useMemo } from "react";
-import BottomSheet from "@gorhom/bottom-sheet";
 import { TouchableOpacity, View, ViewStyle } from "react-native";
-import { IconCloseGradient } from "../../icons/components";
+import BottomSheet from "@gorhom/bottom-sheet";
 import { BlurView } from "expo-blur";
+
+// icons
+import { IconCloseGradient } from "../../icons/components";
+
+// styles
 import { styles } from "./ModalsSheet.styles";
 
 type ModalsSheetProps = {
+  isShow?: boolean;
   onChange?: () => void;
   isShowClose?: boolean;
   onClose: () => void;
@@ -16,6 +21,7 @@ type ModalsSheetProps = {
 };
 
 export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
+  isShow = true,
   onChange,
   isShowClose = true,
   onClose,
@@ -54,6 +60,8 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
     [footer]
   );
 
+  if (!isShow) return null;
+
   return (
     <>
       <TouchableOpacity style={styles.footerButton} onPress={onClose}>
@@ -65,12 +73,8 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
         footerComponent={footerComponent}
         onClose={onClose}
         snapPoints={snapPoints}
-        //containerStyle={{ overflow: "hidden" }}
         backgroundStyle={styles.backgroundModalStyle}
-        //style={{ overflow: "hidden" }}
         handleIndicatorStyle={handleIndicatorStyle}
-        //enablePanDownToClose
-        //enableContentPanningGesture
       >
         {children}
       </BottomSheet>
