@@ -12,6 +12,7 @@ export { default as IconArrowRightStroke } from "./IconArrowRightStroke";
 export { default as IconAutoService } from "./IconAutoService";
 export { default as IconAvatarEmpty } from "./IconAvatarEmpty";
 export { default as IconBellGradient } from "./IconBellGradient";
+export { default as IconCheck } from "./IconCheck";
 export { default as IconCloseGradient } from "./IconCloseGradient";
 export { default as IconClose } from "./IconClose";
 export { default as IconDocumentGradient } from "./IconDocumentGradient";
