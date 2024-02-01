@@ -98,6 +98,22 @@ msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug re
 msgstr "Заміна масла / Заміна фільтра / Заміна ременя ГРМ / Заміна свічок запалювання / Заміна трансмісійної оли / Обслуговування гальм / Заміна всіх необхідних рідин / Та інше."
 
 #. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Діагностика"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Комплексна діагностика перед покупкою / Діагностика шасі / Діагностика двигуна / Діагностика трансмісії / Діагностика кузова / Комп'ютерна діагностика / Діагностика рідин / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Автоелектрика"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Ремонт електропроводки / Чіп-тюнінг / Встановлення будь-якої складності сигналізації / Корекція одометра / Перепрограмування ключів / Адаптація двигуна та трансмісії / Видалення EGR / Видалення DPF / Встановлення ксенону / Встановлення парктроніків / Та інше."
+
+#. js-lingui-explicit-id
 msgid "Chassis Repair"
 msgstr "Ремонт шасі"
 
@@ -110,8 +126,16 @@ msgid "Engine, Automatic, and Manual Transmission"
 msgstr "Двигун, автоматична та механічна коробка передач"
 
 #. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Діагностика двигуна / Ремонт двигуна / Заміна двигуна / Заміна масляної піддону двигуна / Діагностика автоматичної трансмісії / Заміна масла в автоматичній трансмісії / Заміна автоматичної трансмісії / Чищення-промивання автоматичної трансмісії / Заміна зчеплення / Діагностика механічної трансмісії / Заміна масла в механічній трансмісії / Заміна механічної трансмісії / Чищення-промивання механічної трансмісії / Та інше."
+
+#. js-lingui-explicit-id
 msgid "Brakes and Steering System"
 msgstr "Гальма та система керування"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Діагностика гальмівної системи / Заміна гальмівної рідини / Ремонт гальмівної системи / Прокачування гальмівної системи / Заміна рейки кермового управління / Відновлення рейки кермового управління / Заміна гідропідсилювача керма / Заміна рідини в гідропідсилювачі керма / Та інше."
 
 #. js-lingui-explicit-id
 msgid "Accessory Equipment"

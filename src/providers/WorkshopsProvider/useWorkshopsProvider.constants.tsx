@@ -15,15 +15,17 @@ export const useWorkshopsProvider = () => {
       },
       {
         id: 2,
-        title: "Diagnostics",
-        description:
-          "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc.",
+        title: i18n._("Diagnostics"),
+        description: i18n._(
+          "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+        ),
       },
       {
         id: 3,
-        title: "Auto Electrical",
-        description:
-          "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc.",
+        title: i18n._("Auto Electrical"),
+        description: i18n._(
+          "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+        ),
       },
       {
         id: 4,
@@ -35,14 +37,16 @@ export const useWorkshopsProvider = () => {
       {
         id: 5,
         title: i18n._("Engine, Automatic, and Manual Transmission"),
-        description:
-          "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc.",
+        description: i18n._(
+          "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+        ),
       },
       {
         id: 6,
         title: i18n._("Brakes and Steering System"),
-        description:
-          "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc.",
+        description: i18n._(
+          "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+        ),
       },
       {
         id: 7,
