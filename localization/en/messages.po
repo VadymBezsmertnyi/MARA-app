@@ -90,6 +90,134 @@ msgid "Change"
 msgstr "Change"
 
 #. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Chassis Repair"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Engine, Automatic, and Manual Transmission"
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Brakes and Steering System"
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Accessory Equipment"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Air Conditioning Systems"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Wheel Alignment"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Technical maintenance"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "General works"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Chassis"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Drive chain"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Engine"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Electrics"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Brake system"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Plastic repair"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Welding/restoration of fragments/restoration of fasteners"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Welding works"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Electric arc welding / Semi-automatic welding / Argon arc welding"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Tuning and customization"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+
+#. js-lingui-explicit-id
 msgid "SOS signal notification"
 msgstr "SOS signal notification"
 
@@ -330,6 +458,38 @@ msgid "Workshop"
 msgstr "Workshop"
 
 #. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Not information"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "All workshops"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Repair of motorcycles"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Repair of automobiles"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Type workshops"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "All works"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Type works"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Filter"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Workshops"
 
@@ -391,6 +551,15 @@ msgstr "Back"
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 
+msgid "By distance:"
+msgstr "By distance:"
+
+msgid "By number of comments:"
+msgstr "By number of comments:"
+
+msgid "By rating:"
+msgstr "By rating:"
+
 msgid "Continue"
 msgstr "Continue"
 
@@ -405,6 +574,9 @@ msgstr "Dark theme"
 
 msgid "Delete"
 msgstr "Delete"
+
+msgid "Distance, km:"
+msgstr "Distance, km:"
 
 msgid "Enter your password"
 msgstr "Enter your password"
@@ -438,6 +610,12 @@ msgstr "Events and news"
 
 msgid "Forgot your password?"
 msgstr "Forgot your password?"
+
+msgid "from closest to farthest"
+msgstr "from closest to farthest"
+
+msgid "from highest to lowest"
+msgstr "from highest to lowest"
 
 msgid "Gallery"
 msgstr "Gallery"
@@ -493,6 +671,9 @@ msgstr "News"
 msgid "Now create yourself a strong password."
 msgstr "Now create yourself a strong password."
 
+msgid "Only with rating:"
+msgstr "Only with rating:"
+
 msgid "or sign up using:"
 msgstr "or sign up using:"
 
@@ -534,6 +715,12 @@ msgstr "Read the whole description..."
 
 msgid "Registration"
 msgstr "Registration"
+
+msgid "Repair of automobiles"
+msgstr "Repair of automobiles"
+
+msgid "Repair of motorcycles"
+msgstr "Repair of motorcycles"
 
 msgid "Repeat password"
 msgstr "Repeat password"
@@ -582,6 +769,15 @@ msgstr "The work we do:"
 
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 msgstr "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+
+msgid "Type workshops"
+msgstr "Type workshops"
+
+msgid "Types of work for automobile transport:"
+msgstr "Types of work for automobile transport:"
+
+msgid "Types of work for motorcycle transport:"
+msgstr "Types of work for motorcycle transport:"
 
 msgid "Upcoming events:"
 msgstr "Upcoming events:"

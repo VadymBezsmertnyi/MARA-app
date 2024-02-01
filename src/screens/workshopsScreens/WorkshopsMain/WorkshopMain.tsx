@@ -85,7 +85,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         <ScrollView contentContainerStyle={styles.wrapper}>
           {WORKSHOP.map((item) => (
             <WorkshopItem
-              key={item.id}
+              key={`workshop-${item.id}`}
               workshopId={item.id}
               title={item.title}
               description={item.description}

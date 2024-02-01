@@ -90,6 +90,134 @@ msgid "Change"
 msgstr "Змінити"
 
 #. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Технічне обслуговування"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Заміна масла / Заміна фільтра / Заміна ременя ГРМ / Заміна свічок запалювання / Заміна трансмісійної оли / Обслуговування гальм / Заміна всіх необхідних рідин / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Ремонт шасі"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Заміна амортизатора / Заміна пружини / Заміна рульової тяги / Заміна балки / Пресування тихохідного блока / Заміна ресори / Заміна втулки / Заміна пильного диска / Заміна вала / Заміна шарового наконечника / Заміна підвіски двигуна та коробки передач / Механічна робота"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Двигун, автоматична та механічна коробка передач"
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Гальма та система керування"
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Додаткове обладнання"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Ремонт стартера / Заміна стартера / Ремонт генератора / Заміна генератора / Відновлення турбонаддува / Заміна турбонаддува / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Системи кондиціонування повітря"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Діагностика / Зарядка / Перезарядка / Виявлення витоків / Заміна трубок / Заміна радіатора / Ремонт компресора / Заміна компресора / Дезінфекція системи / Позбавлення від чужого запаху"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Вирівнювання коліс"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Вирівнювання коліс / Діагностика вирівнювання / Пошук дефектів підвіски / Пошук дефектів кузова"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Технічне обслуговування"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Змащення кабелів / Синхронізація карбюратора / Заміна повітряного фільтра / Заміна свічок запалювання / Заміна трансмісійної оли / Заміна масла в диференціалі / Заміна охолоджувальної рідини / Заміна масла в двигуні"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Загальні роботи"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Загальна діагностика / Вимірювання компресії / Перевірка рівня технічної рідини / Заміна зчіпного кабелю / Заміна дросельного кабелю / Прибирання та змивання бензобака / Видалення та встановлення бензобака / Видалення та встановлення пластмас / Встановлення захисного аркуша, слайдера"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Шасі"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Видалення та встановлення переднього колеса / Видалення та встановлення заднього колеса / Заміна підшипника колеса / Регулювання підшипника керма / Заміна підшипника керма / Видалення та встановлення передньої вилки / Заміна сальника передньої вилки / Заміна масла передньої вилки / Заміна підшипника задньої підвіски / Заміна амортизатора задньої підвіски / Заміна моноамортизатора / Ремонт заднього амортизатора"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Привід ланцюга"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Заміна приводу ланцюга та зірок / Чищення, змащування та налаштування ланцюга / Регулювання, натяг та змащування ланцюга"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Двигун"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Видалення та встановлення / Регулювання клапанів / Заміна зчеплення / Ремонт головки блока циліндрів / Заміна ланцюга ГРМ / Ремонт поршневої групи / Ремонт коробки передач / Капітальний ремонт двигуна"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Електрика"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Заміна реле регулятора / Заміна генератора / Заміна стартера / Ремонт стартера / Заміна лампочки / Установка ксенону / Заміна акумулятора / Зарядка акумулятора"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Гальмівна система"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Заміна гальмівних колодок дискового гальма / Заміна гальмівних колодок барабанного гальма / Прокачка гальм / Заміна гальмівної рідини / Заміна комбінованої гальмівної рідини / Заміна гальмівного шланга / Установка посиленого шланга / Заміна гальмівного диска / Ремонт гальмівного гальмівника"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Ремонт пластику"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Зварювання / відновлення фрагментів / відновлення кріплення"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Зварювальні роботи"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Дугове зварювання / Півавтоматичне зварювання / Аргонове зварювання"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Тюнінг та кастомізація"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Установка захисного аркуша / Установка слайдера / Установка вихлопної системи / Установка гальмівної системи / Установка посиленого шланга / Установка ксенону / Установка освітлення мотоцикла / Установка протитуманних фар (FL)"
+
+#. js-lingui-explicit-id
 msgid "SOS signal notification"
 msgstr "Сповіщення сигналу SOS"
 
@@ -330,6 +458,38 @@ msgid "Workshop"
 msgstr "Майстерня"
 
 #. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Інформація відсутня"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Всі майстерні"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Ремонт мотоциклів"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Ремонт автомобілів"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Тип майстерень"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Всі роботи"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Тип робіт"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Фільтр"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Майстерні"
 
@@ -391,6 +551,15 @@ msgstr "Назад"
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Натискаючи кнопку \"Продовжити\", ви погоджуєтесь із {buttonTermsService} та {buttonPrivacyPolicy}"
 
+msgid "By distance:"
+msgstr "За відстанню:"
+
+msgid "By number of comments:"
+msgstr "За кількістю коментарів:"
+
+msgid "By rating:"
+msgstr "За рейтингом:"
+
 msgid "Continue"
 msgstr "Продовжити"
 
@@ -405,6 +574,9 @@ msgstr "Темна тема"
 
 msgid "Delete"
 msgstr "Видалити"
+
+msgid "Distance, km:"
+msgstr "Відстань, км:"
 
 msgid "Enter your password"
 msgstr "Введіть свій пароль"
@@ -438,6 +610,12 @@ msgstr "Події і новини"
 
 msgid "Forgot your password?"
 msgstr "Забули свій пароль?"
+
+msgid "from closest to farthest"
+msgstr "від найближчого до найвіддаленішого"
+
+msgid "from highest to lowest"
+msgstr "від найвищого до найнижчого"
 
 msgid "Gallery"
 msgstr "Галерея"
@@ -493,6 +671,9 @@ msgstr "Новини"
 msgid "Now create yourself a strong password."
 msgstr "Тепер створіть собі надійний пароль"
 
+msgid "Only with rating:"
+msgstr "Тільки з рейтингом:"
+
 msgid "or sign up using:"
 msgstr "або зареєструйтеся за допомогою:"
 
@@ -534,6 +715,12 @@ msgstr "Читати весь опис..."
 
 msgid "Registration"
 msgstr "Реєстрація"
+
+msgid "Repair of automobiles"
+msgstr "Ремонт автомобілів"
+
+msgid "Repair of motorcycles"
+msgstr "Ремонт мотоциклів"
 
 msgid "Repeat password"
 msgstr "Повторіть пароль"
@@ -582,6 +769,15 @@ msgstr "Роботи, які ми виконуємо:"
 
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 msgstr "Щоб ви могли користуватися всіма можливостями сервісу, необхідно дозволити додатку визначати ваше місцезнаходження:"
+
+msgid "Type workshops"
+msgstr "Тип майстерень"
+
+msgid "Types of work for automobile transport:"
+msgstr "Типи робіт для автомобільного транспорту:"
+
+msgid "Types of work for motorcycle transport:"
+msgstr "Типи робіт для мотоциклів:"
 
 msgid "Upcoming events:"
 msgstr "Найближчі події:"

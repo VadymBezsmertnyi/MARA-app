@@ -261,7 +261,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 
               return isSelect ? (
                 <TouchableOpacity
-                  key={`rating-${rating}`}
+                  key={`rating-select-${rating}`}
                   onPress={() => {
                     onSelectRating(rating);
                   }}
@@ -272,6 +272,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
                 </TouchableOpacity>
               ) : (
                 <TouchableOpacity
+                  key={`rating-${rating}`}
                   onPress={() => {
                     onSelectRating(rating);
                   }}
@@ -321,7 +322,9 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             </Text>
             <LinearGradientCustom style={styles.lineModalType} />
             <View style={styles.containerSelect}>
-              <Text style={styles.titleSelect}>Repair of motorcycles</Text>
+              <Text style={styles.titleSelect}>
+                <Trans>Repair of motorcycles</Trans>
+              </Text>
               <View style={styles.containerRightSelect}>
                 {typeWorkshops.moto ? (
                   <IconMotoService width={28} height={28} />
@@ -336,7 +339,9 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
               </View>
             </View>
             <View style={styles.containerSelect}>
-              <Text style={styles.titleSelect}>Repair of automobiles</Text>
+              <Text style={styles.titleSelect}>
+                <Trans>Repair of automobiles</Trans>
+              </Text>
               <View style={styles.containerRightSelect}>
                 {typeWorkshops.auto ? (
                   <IconAutoService width={28} height={28} />
