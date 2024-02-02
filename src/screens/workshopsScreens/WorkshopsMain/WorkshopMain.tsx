@@ -6,6 +6,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
 import { localesContext } from "../../../../localization/localization.provider";
 import { TypeFilters } from "./components/ModalFilter/ModalFilter.types";
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -23,13 +24,14 @@ import { IconSearchInput } from "../../../icons/components";
 
 // constants
 import { WORKSHOP } from "./DELETE_workers.constants";
+import { PATHS_WORKSHOP_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./WorkshopMain.styles";
-import { PATHS_WORKSHOP_SCREENS } from "../../../navigators/useNavigator.constants";
 
 type WorkshopMainProps = {
-  navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
+  navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList> &
+    DrawerNavigationHelpers;
 };
 
 export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
@@ -60,10 +62,14 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     navigation.navigate(PATHS_WORKSHOP_SCREENS.workshopAdd);
   };
 
+  const onPressShowMenu = () => {
+    navigation.openDrawer();
+  };
+
   return (
     <>
       <Header
-        leftElement={<MenuBurgerButton />}
+        leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
         title={i18n._("Workshops")}
         rightElement={
           <HeaderFilters
