@@ -43,26 +43,6 @@ export const styles = StyleSheet.create({
     paddingVertical: 14,
     gap: 5,
   },
-  pointItemList: {
-    width: 20,
-    height: 20,
-    backgroundColor: colors.lightOrange,
-    borderRadius: 40,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  selectPointItemList: {
-    width: 18,
-    height: 18,
-    borderColor: colors.blazeOrange,
-    borderWidth: 1,
-  },
-  inSelectPointItemList: {
-    width: 10,
-    height: 10,
-    backgroundColor: colors.blazeOrange,
-    borderRadius: 40,
-  },
   streetTitleItemList: {
     fontFamily: "OpenSans_600SemiBold",
     color: colors.blackCoffee,

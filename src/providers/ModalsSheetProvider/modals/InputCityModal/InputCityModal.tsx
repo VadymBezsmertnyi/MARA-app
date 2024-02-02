@@ -13,6 +13,7 @@ import { localesContext } from "../../../../../localization/localization.provide
 // components
 import { Input } from "../../../../components/Input/Input";
 import { ButtonCustom } from "../../../../components/ButtonCustom/ButtonCustom";
+import { CheckboxPoint } from "../../../../components/CheckboxPoint/CheckboxPoint";
 
 // helps
 import { getStreetNumber } from "../../../../helps/helps";
@@ -23,8 +24,10 @@ import { IconSearchInput } from "../../../../icons/components";
 // styles
 import { styles } from "./InputCityModal.styles";
 
-const EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES = process.env
-  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES as string;
+const { EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES } = process.env as Record<
+  string,
+  string
+>;
 
 type InputCityModalProps = {
   setCity: React.Dispatch<
@@ -76,12 +79,6 @@ export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
                     const { address: streetTitle, cityCountry: cityTitle } =
                       getStreetNumber(address.terms);
                     const isSelect = selectCity === address.place_id;
-                    const selectPointStyle = () =>
-                      isSelect
-                        ? [styles.pointItemList, styles.selectPointItemList]
-                        : styles.pointItemList;
-                    const inSelectPointStyle = () =>
-                      isSelect ? styles.inSelectPointItemList : {};
                     return (
                       <TouchableOpacity
                         key={`address-google=${address.place_id}`}
@@ -102,9 +99,7 @@ export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
                             {cityTitle}
                           </Text>
                         </View>
-                        <View style={selectPointStyle()}>
-                          <View style={inSelectPointStyle()} />
-                        </View>
+                        <CheckboxPoint isSelect={isSelect} />
                       </TouchableOpacity>
                     );
                   })
