@@ -9,23 +9,23 @@ import { eventsContext } from "../../../providers/EventsProvider/EventsProvider"
 
 // constants
 import { LIST_CITY } from "../DELETE_InputSelectCity.constants";
-import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
+import { PATHS_EVENTS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // components
 import { Input } from "../../../components/Input/Input";
 import { InputSelectCity } from "../../../components/InputSelectCity/InputSelectCity";
-import { ItemListEvents } from "../NewsMain/components/ItemListEvents/ItemListEvents";
+import { ItemListEvents } from "../EventsMain/components/ItemListEvents/ItemListEvents";
 import { IconSearchInput } from "../../../icons/components";
 import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
 
 // types
-import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
+import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
 
 // styles
 import { styles } from "./EventsList.styles";
 
 type ItemListEventsProps = {
-  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+  navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
 };
 
 export const EventsList: FunctionComponent<ItemListEventsProps> = ({
@@ -60,7 +60,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
       </ScrollView>
       <AddEventButton
         onPress={() => {
-          navigation.navigate(PATHS_NEWS_SCREENS.addEvent);
+          navigation.navigate(PATHS_EVENTS_SCREENS.addEvent);
         }}
       />
     </View>

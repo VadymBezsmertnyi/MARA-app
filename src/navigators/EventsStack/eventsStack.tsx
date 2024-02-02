@@ -11,6 +11,9 @@ import {
 } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 
+// types
+import { RootEventsScreensParamList } from "../Navigators.types";
+
 // constants
 import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 
@@ -18,7 +21,7 @@ import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 import { Header } from "../../components/Header/Header";
 
 // helps
-import { useNewsStack } from "./useNewsStack";
+import { useNewsStack } from "./useEventsStack";
 import { getActiveRouteName } from "../Navigators.helps";
 
 // providers
@@ -28,12 +31,12 @@ import { modalsSheetContext } from "../../providers/ModalsSheetProvider/ModalsSh
 // styles
 import colors from "../../../styles/colors";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootEventsScreensParamList>();
 
 export const NewsStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
   const { setLocation } = useContext(modalsSheetContext);
-  const { newsScreens } = useNewsStack();
+  const { eventsScreens } = useNewsStack();
   const navigation = useNavigation();
   const [routeName, setRouteName] = useState("");
   const activeRouteName = getActiveRouteName(navigation.getState());
@@ -87,7 +90,7 @@ export const NewsStack: FunctionComponent = () => {
 
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      {newsScreens.map((screen) => (
+      {eventsScreens.map((screen) => (
         <Stack.Screen
           key={`screen-news-${screen.id}`}
           name={screen.name}

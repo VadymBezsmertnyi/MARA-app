@@ -8,14 +8,16 @@ import React, {
 import { Alert, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RouteProp } from "@react-navigation/native";
+import { RouteProp, useRoute } from "@react-navigation/native";
 import { z } from "zod";
 import * as FileSystem from "expo-file-system";
+import { Trans } from "@lingui/macro";
 
 // types
 import {
   RootAllScreensParamList,
-  RootNewsScreensParamList,
+  RootEventsScreensParamList,
+  RootSettingsScreensParamList,
 } from "../../../navigators/Navigators.types";
 import { ImageType } from "../../../providers/ModalsProvider/ModalsProvider.types";
 import { LocationType } from "../../../providers/EventsProvider/EventsProvider.types";
@@ -46,17 +48,16 @@ import { getErrorText } from "./AddEvent.helps";
 
 // styles
 import { styles } from "./AddEvent.styles";
-import { Trans } from "@lingui/macro";
 
 type AddEventProps = {
-  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
-  route: RouteProp<RootAllScreensParamList, keyof RootAllScreensParamList>;
+  navigation: NativeStackNavigationProp<RootAllScreensParamList>;
 };
 
-export const AddEvent: FunctionComponent<AddEventProps> = ({
-  navigation,
-  route: { params },
-}) => {
+export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
+  const { params } =
+    useRoute<
+      RouteProp<RootEventsScreensParamList & RootSettingsScreensParamList>
+    >();
   const { i18n } = useContext(localesContext);
   const { addEvent, changeEvent, eventsUserList } = useContext(eventsContext);
   const { userData } = useContext(userContext);

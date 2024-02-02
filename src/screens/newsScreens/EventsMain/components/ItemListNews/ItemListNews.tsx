@@ -3,13 +3,13 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
-import { RootNewsScreensParamList } from "../../../../../navigators/Navigators.types";
+import { RootEventsScreensParamList } from "../../../../../navigators/Navigators.types";
 
 // hooks
 import { formatDateFromUnixTimestamp } from "../../../../../helps/helps";
 
 // constants
-import { PATHS_NEWS_SCREENS } from "../../../../../navigators/useNavigator.constants";
+import { PATHS_EVENTS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // components
 import { IconArrowRightNew } from "../../../../../icons/components";
@@ -21,7 +21,7 @@ type ItemListNewsProps = {
   newId: number;
   title: string;
   date: number;
-  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+  navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
 };
 
 export const ItemListNews: FunctionComponent<ItemListNewsProps> = ({
@@ -31,7 +31,7 @@ export const ItemListNews: FunctionComponent<ItemListNewsProps> = ({
   navigation,
 }) => {
   const selectNew = () => {
-    navigation.navigate(PATHS_NEWS_SCREENS.newItem, { newId });
+    navigation.navigate(PATHS_EVENTS_SCREENS.newItem, { newId });
   };
   return (
     <TouchableOpacity style={styles.container} onPress={selectNew}>

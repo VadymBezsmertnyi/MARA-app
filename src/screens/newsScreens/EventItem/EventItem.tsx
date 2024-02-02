@@ -8,11 +8,11 @@ import React, {
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
-import { convertDistance, getDistance } from "geolib";
+import { getDistance } from "geolib";
 import { Trans } from "@lingui/macro";
 
 // types
-import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
+import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
 
 // helps
 import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
@@ -28,8 +28,10 @@ import { modalsContext } from "../../../providers/ModalsProvider/ModalsProvider"
 
 // components
 import { Map } from "../../../components/Map/Map";
+import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
+
+// icons
 import {
-  IconLocationMarker,
   RadixIconsCash,
   RadixIconsCalendar,
   MingcuteTimeLine,
@@ -38,10 +40,12 @@ import {
 // styles
 import { styles } from "./EventItem.styles";
 import colors from "../../../../styles/colors";
-import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 
 type EventItemProps = {
-  route: RouteProp<RootAllScreensParamList, keyof RootAllScreensParamList>;
+  route: RouteProp<
+    RootEventsScreensParamList,
+    keyof RootEventsScreensParamList
+  >;
 };
 
 export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {

@@ -30,13 +30,11 @@ export const PATHS_FORGET_SCREENS = {
   forgetPassword: "forgetPassword",
 } as const;
 
-export const PATHS_NEWS_SCREENS = {
-  newsMain: "newsMain",
-  newsList: "newsList",
-  newItem: "newItem",
+export const PATHS_EVENTS_SCREENS = {
+  eventsMain: "eventsMain",
   eventsList: "eventsList",
   eventItem: "eventItem",
-  addEvent: "addEvent",
+  eventAdd: "eventAdd",
 } as const;
 
 export const PATHS_SETTINGS_SCREENS = {
@@ -44,7 +42,7 @@ export const PATHS_SETTINGS_SCREENS = {
   settingsAds: "settingsAds",
   settingsWorkshops: "settingsWorkshops",
   settingsEvents: "settingsEvents",
-  settingsAddEvent: "settingsAddEvent",
+  settingsEventAdd: "settingsEventAdd",
   settingsChangeEvent: "settingsChangeEvent",
   settingsProfile: "settingsProfile",
 } as const;

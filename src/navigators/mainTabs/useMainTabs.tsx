@@ -5,7 +5,7 @@ import { t } from "@lingui/macro";
 import { localesContext } from "../../../localization/localization.provider";
 
 // stacks
-import { NewsStack } from "../NewsStack/newsStack";
+import { NewsStack } from "../EventsStack/eventsStack";
 import { WorkshopStack } from "../WorkshopStack/workshopStack";
 
 // screens
@@ -29,7 +29,7 @@ import {
 // constants
 import {
   PATHS_MAIN_TABS,
-  PATHS_NEWS_SCREENS,
+  PATHS_EVENTS_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
 } from "../useNavigator.constants";
@@ -62,7 +62,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.news,
       name: PATHS_MAIN_TABS.news,
-      mainScreen: PATHS_NEWS_SCREENS.newsMain,
+      mainScreen: PATHS_EVENTS_SCREENS.newsMain,
       title: t(i18n)`Events and news`,
       component: NewsStack,
       headerShown: true,

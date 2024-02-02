@@ -4,7 +4,7 @@ import { getDistance } from "geolib";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
-import { RootNewsScreensParamList } from "../../../../../navigators/Navigators.types";
+import { RootEventsScreensParamList } from "../../../../../navigators/Navigators.types";
 import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
 
 // provider
@@ -18,7 +18,7 @@ import { formatDateFromUnixTimestamp } from "../../../../../helps/helps";
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
 
 // constants
-import { PATHS_NEWS_SCREENS } from "../../../../../navigators/useNavigator.constants";
+import { PATHS_EVENTS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // icons
 import { IconLocationMarker } from "../../../../../icons/components";
@@ -29,7 +29,7 @@ import colors from "../../../../../../styles/colors";
 
 type ItemListEventsProps = {
   item: EventType;
-  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+  navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
 };
 
 export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
@@ -48,7 +48,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
       : null;
 
   const selectEvent = () => {
-    navigation.navigate(PATHS_NEWS_SCREENS.eventItem, {
+    navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
       eventId: item.id,
     });
   };

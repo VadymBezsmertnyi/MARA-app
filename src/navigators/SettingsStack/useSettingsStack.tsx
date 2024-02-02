@@ -38,8 +38,8 @@ export const useSettingsStack = () => {
       component: SettingsEvents,
     },
     {
-      id: PATHS_SETTINGS_SCREENS.settingsAddEvent,
-      name: PATHS_SETTINGS_SCREENS.settingsAddEvent,
+      id: PATHS_SETTINGS_SCREENS.settingsEventAdd,
+      name: PATHS_SETTINGS_SCREENS.settingsEventAdd,
       title: i18n._("Create event"),
       headerShown: true,
       component: AddEvent,

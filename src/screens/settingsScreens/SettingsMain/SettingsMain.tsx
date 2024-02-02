@@ -140,7 +140,7 @@ export const SettingsMain: FunctionComponent = () => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
             }}
             onAdd={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAddEvent);
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
             }}
           />
         </View>

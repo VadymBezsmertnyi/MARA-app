@@ -18,7 +18,7 @@ import { useMainTabs } from "./useMainTabs";
 
 // constants
 import { PATHS_MAIN_TABS } from "../useNavigator.constants";
-import { PATHS_NEWS_SCREENS_HIDE_MAIN_HEADER } from "../NewsStack/newsStack.constants";
+import { PATHS_EVENTS_SCREENS_HIDE_MAIN_HEADER } from "../EventsStack/eventsStack.constants";
 
 // types
 import { RootMainTabsParamList } from "../Navigators.types";
@@ -99,7 +99,7 @@ export const MainTabs: FunctionComponent = () => {
           options={({ route }) => {
             const routeName = getFocusedRouteNameFromRoute(route);
             const isHideHeader = routeName
-              ? PATHS_NEWS_SCREENS_HIDE_MAIN_HEADER.includes(routeName)
+              ? PATHS_EVENTS_SCREENS_HIDE_MAIN_HEADER.includes(routeName)
               : false;
             return {
               headerShown: screen.headerShown && !isHideHeader,

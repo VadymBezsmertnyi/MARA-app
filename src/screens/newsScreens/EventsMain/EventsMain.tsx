@@ -4,7 +4,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
 
 // types
-import { RootNewsScreensParamList } from "../../../navigators/Navigators.types";
+import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
@@ -23,24 +23,26 @@ import notNewsImage from "../../../../assets/newsEvents/notNews.jpeg";
 
 // constants
 import { DEFAULT_LIST_NEWS } from "../DELETE_newsScreens.constants";
-import { PATHS_NEWS_SCREENS } from "../../../navigators/useNavigator.constants";
+import { PATHS_EVENTS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import colors from "../../../../styles/colors";
-import { styles } from "./NewsMain.styles";
+import { styles } from "./EventsMain.styles";
 
-type NewsMainProps = {
-  navigation: NativeStackNavigationProp<RootNewsScreensParamList>;
+type EventsMainProps = {
+  navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
 };
 
-export const NewsMain: FunctionComponent<NewsMainProps> = ({ navigation }) => {
+export const EventsMain: FunctionComponent<EventsMainProps> = ({
+  navigation,
+}) => {
   const { eventsList } = useContext(eventsContext);
   const startDateEvents = useMemo(() => eventsList.slice(0, 3), [eventsList]);
   const onToEventsList = () => {
-    navigation.navigate(PATHS_NEWS_SCREENS.eventsList);
+    navigation.navigate(PATHS_EVENTS_SCREENS.eventsList);
   };
   const onToNewsList = () => {
-    navigation.navigate(PATHS_NEWS_SCREENS.newsList);
+    navigation.navigate(PATHS_EVENTS_SCREENS.newsList);
   };
   return (
     <ScrollView style={styles.container}>

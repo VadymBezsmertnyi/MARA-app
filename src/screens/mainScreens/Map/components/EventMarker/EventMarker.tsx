@@ -10,7 +10,7 @@ import { dateToNMY } from "../../../../../helps/helps";
 import { useAllNavigation } from "../../../../../navigators/Navigators.helps";
 
 // constants
-import { PATHS_NEWS_SCREENS } from "../../../../../navigators/useNavigator.constants";
+import { PATHS_EVENTS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./EventMarker.styles";
@@ -50,7 +50,7 @@ export const EventMarker: FunctionComponent<EventMarkerProps> = ({
           <TouchableOpacity
             onPress={() => {
               console.log("dfdfdfd");
-              navigation.navigate(PATHS_NEWS_SCREENS.eventItem, {
+              navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
                 eventId: event.id,
               });
             }}

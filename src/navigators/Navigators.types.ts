@@ -2,7 +2,7 @@ import {
   PATHS_FORGET_SCREENS,
   PATHS_MAIN_SCREENS,
   PATHS_MAIN_TABS,
-  PATHS_NEWS_SCREENS,
+  PATHS_EVENTS_SCREENS,
   PATHS_REGISTRATION_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
@@ -78,17 +78,19 @@ export type RootRegistrationScreensParamList = {
   >;
 };
 
-export type RootNewsScreensParamList = {
-  [PATHS_NEWS_SCREENS.newsMain]?: Record<string, string | number | boolean>;
-  [PATHS_NEWS_SCREENS.newItem]?: Record<string, string | number | boolean> & {
-    newId?: number;
-  };
-  [PATHS_NEWS_SCREENS.newsList]?: Record<string, string | number | boolean>;
-  [PATHS_NEWS_SCREENS.eventItem]?: Record<string, string | number | boolean> & {
+export type RootEventsScreensParamList = {
+  [PATHS_EVENTS_SCREENS.eventsMain]?: Record<string, string | number | boolean>;
+  [PATHS_EVENTS_SCREENS.eventItem]?: Record<
+    string,
+    string | number | boolean
+  > & {
     eventId?: number;
   };
-  [PATHS_NEWS_SCREENS.eventsList]?: Record<string, string | number | boolean>;
-  [PATHS_NEWS_SCREENS.addEvent]?: Record<string, string | number | boolean> & {
+  [PATHS_EVENTS_SCREENS.eventsList]?: Record<string, string | number | boolean>;
+  [PATHS_EVENTS_SCREENS.eventAdd]?: Record<
+    string,
+    string | number | boolean
+  > & {
     from: string;
     screenFrom?: string;
   };
@@ -111,7 +113,7 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
-  [PATHS_SETTINGS_SCREENS.settingsAddEvent]?: Record<
+  [PATHS_SETTINGS_SCREENS.settingsEventAdd]?: Record<
     string,
     string | number | boolean
   >;
@@ -150,5 +152,5 @@ export type RootAllScreensParamList = RootMainScreensParamList &
   RootRegistrationScreensParamList &
   RootWorkshopsScreensParamList &
   RootSettingsScreensParamList &
-  RootNewsScreensParamList &
+  RootEventsScreensParamList &
   RootMainTabsParamList;

@@ -11,6 +11,9 @@ import {
 } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 
+// types
+import { RootSettingsScreensParamList } from "../Navigators.types";
+
 // constants
 import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 
@@ -28,7 +31,7 @@ import { modalsSheetContext } from "../../providers/ModalsSheetProvider/ModalsSh
 // styles
 import colors from "../../../styles/colors";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootSettingsScreensParamList>();
 
 export const SettingsStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
