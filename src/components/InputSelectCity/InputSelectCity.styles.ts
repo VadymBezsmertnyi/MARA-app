@@ -3,6 +3,7 @@ import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
   backgroundButton: {
+    zIndex: 1,
     position: "absolute",
     top: 0,
     left: 0,
@@ -10,6 +11,7 @@ export const styles = StyleSheet.create({
     height: "100%",
   },
   mainContainer: {
+    zIndex: 1,
     height: 40,
   },
   container: {

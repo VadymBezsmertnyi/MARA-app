@@ -150,46 +150,4 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.blackCoffee,
   },
-  containerRightSelect: {
-    flexDirection: "row",
-    gap: 10,
-    alignItems: "center",
-  },
-  containerModalTypeWork: {
-    flex: 1,
-    paddingBottom: 40,
-    justifyContent: "space-between",
-  },
-  containerHeaderTypeWork: {
-    paddingHorizontal: 16,
-  },
-  titleModalTypeWork: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
-    color: colors.grayFuscous,
-  },
-  containerTypesWork: {
-    gap: 24,
-    paddingHorizontal: 16,
-  },
-  containerTypeWork: {
-    flexDirection: "row",
-    gap: 51,
-  },
-  containerTitlesTypeWork: {
-    flex: 1,
-    gap: 6,
-  },
-  titleTypeWork: {
-    fontFamily: "OpenSans_400Regular",
-    fontSize: 16,
-  },
-  subTitleTypeWork: {
-    fontFamily: "OpenSans_400Regular",
-    fontSize: 12,
-  },
-  containerSubmitModalTypeWork: {
-    padding: 24,
-    paddingBottom: 0,
-  },
 });

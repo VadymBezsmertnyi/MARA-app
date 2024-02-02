@@ -37,6 +37,9 @@ import {
 // styles
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
+import { ModalSheetTypeWorkshops } from "../../../../../components/ModalSheetTypeWorkshops/ModalSheetTypeWorkshops";
+import { ModalSheetTypesMotoWorks } from "../../../../../components/ModalSheetTypesMotoWorks/ModalSheetTypesMotoWorks";
+import { ModalSheetTypesAutoWorks } from "../../../../../components/ModalSheetTypesAutoWorks/ModalSheetTypesAutoWorks";
 
 type ModalFilterProps = {
   filters: TypeFilters | null;
@@ -119,6 +122,8 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   };
 
   const onSubmitTypeWorkshop = () => {
+    if (!typeWorkshops.moto) setSelectMotoTypesWorks([]);
+    if (!typeWorkshops.auto) setSelectAutoTypesWorks([]);
     setIsShowTypeWorkshops(false);
   };
 
@@ -127,27 +132,9 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
     else if (typeWorkshops.auto) setIsShowTypesAutoWorks(true);
   };
 
-  const onSelectMotoTypeWork = (typeMotoWork: TypeWorkType) => {
-    const isBe = selectMotoTypesWorks.includes(typeMotoWork.id);
-    if (isBe)
-      setSelectMotoTypesWorks((state) =>
-        state.filter((idTypeWork) => idTypeWork !== typeMotoWork.id)
-      );
-    else setSelectMotoTypesWorks((state) => [...state, typeMotoWork.id]);
-  };
-
   const onSubmitMotoTypeWorks = () => {
     setIsShowTypesMotoWorks(false);
     if (typeWorkshops.auto) setIsShowTypesAutoWorks(true);
-  };
-
-  const onSelectAutoTypeWork = (typeAutoWork: TypeWorkType) => {
-    const isBe = selectAutoTypesWorks.includes(typeAutoWork.id);
-    if (isBe)
-      setSelectAutoTypesWorks((state) =>
-        state.filter((idTypeWork) => idTypeWork !== typeAutoWork.id)
-      );
-    else setSelectAutoTypesWorks((state) => [...state, typeAutoWork.id]);
   };
 
   const onSubmitAutoTypeWorks = () => {
@@ -309,158 +296,27 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           styleContainer={styles.buttonSubmit}
         />
       </View>
-      <ModalsSheet
-        isShow={isShowTypeWorkshops}
-        onClose={() => {
-          setIsShowTypeWorkshops(false);
-        }}
-      >
-        <View style={styles.containerModalType}>
-          <View>
-            <Text style={styles.titleModalType}>
-              <Trans>Type workshops</Trans>
-            </Text>
-            <LinearGradientCustom style={styles.lineModalType} />
-            <View style={styles.containerSelect}>
-              <Text style={styles.titleSelect}>
-                <Trans>Repair of motorcycles</Trans>
-              </Text>
-              <View style={styles.containerRightSelect}>
-                {typeWorkshops.moto ? (
-                  <IconMotoService width={28} height={28} />
-                ) : null}
-                <CheckboxClassic
-                  check={typeWorkshops.moto}
-                  setCheck={(moto) => {
-                    setTypeWorkshops((state) => ({ ...state, moto }));
-                  }}
-                  isGradient
-                />
-              </View>
-            </View>
-            <View style={styles.containerSelect}>
-              <Text style={styles.titleSelect}>
-                <Trans>Repair of automobiles</Trans>
-              </Text>
-              <View style={styles.containerRightSelect}>
-                {typeWorkshops.auto ? (
-                  <IconAutoService width={28} height={28} />
-                ) : null}
-                <CheckboxClassic
-                  check={typeWorkshops.auto}
-                  setCheck={(auto) => {
-                    setTypeWorkshops((state) => ({ ...state, auto }));
-                  }}
-                  isGradient
-                />
-              </View>
-            </View>
-          </View>
-          <ButtonCustom
-            disabled={!(typeWorkshops.auto || typeWorkshops.moto)}
-            title={i18n._("Select")}
-            onSubmit={onSubmitTypeWorkshop}
-          />
-        </View>
-      </ModalsSheet>
-      <ModalsSheet
+      <ModalSheetTypeWorkshops
+        isShowTypeWorkshops={isShowTypeWorkshops}
+        onClose={onSubmitTypeWorkshop}
+        typeWorkshops={typeWorkshops}
+        setTypeWorkshops={setTypeWorkshops}
+        onSubmit={onSubmitTypeWorkshop}
+      />
+      <ModalSheetTypesMotoWorks
         isShow={isShowTypesMotoWorks}
-        onClose={() => {
-          setIsShowTypesMotoWorks(false);
-        }}
-      >
-        <View style={styles.containerModalTypeWork}>
-          <View style={styles.containerHeaderTypeWork}>
-            <Text style={styles.titleModalType}>
-              <Trans>Types of work for motorcycle transport:</Trans>
-            </Text>
-            <LinearGradientCustom style={styles.lineModalType} />
-          </View>
-          <ScrollView>
-            <View style={styles.containerTypesWork}>
-              {typesWorkServices.moto.map((workMoto) => {
-                const isSelect = selectMotoTypesWorks.includes(workMoto.id);
-                return (
-                  <View
-                    key={`moto-work-${workMoto.id}`}
-                    style={styles.containerTypeWork}
-                  >
-                    <View style={styles.containerTitlesTypeWork}>
-                      <Text style={styles.titleTypeWork}>{workMoto.title}</Text>
-                      <Text style={styles.subTitleTypeWork}>
-                        {workMoto.description}
-                      </Text>
-                    </View>
-                    <CheckboxClassic
-                      isGradient
-                      check={isSelect}
-                      setCheck={() => {
-                        onSelectMotoTypeWork(workMoto);
-                      }}
-                    />
-                  </View>
-                );
-              })}
-            </View>
-          </ScrollView>
-          <View style={styles.containerSubmitModalTypeWork}>
-            <ButtonCustom
-              disabled={selectMotoTypesWorks.length === 0}
-              title={i18n._("Select")}
-              onSubmit={onSubmitMotoTypeWorks}
-            />
-          </View>
-        </View>
-      </ModalsSheet>
-      <ModalsSheet
+        onClose={onSubmitMotoTypeWorks}
+        selectMotoTypesWorks={selectMotoTypesWorks}
+        setSelectMotoTypesWorks={setSelectMotoTypesWorks}
+        onSubmit={onSubmitMotoTypeWorks}
+      />
+      <ModalSheetTypesAutoWorks
         isShow={isShowTypesAutoWorks}
-        onClose={() => {
-          setIsShowTypesAutoWorks(false);
-        }}
-      >
-        <View style={styles.containerModalTypeWork}>
-          <View style={styles.containerHeaderTypeWork}>
-            <Text style={styles.titleModalType}>
-              <Trans>Types of work for automobile transport:</Trans>
-            </Text>
-            <LinearGradientCustom style={styles.lineModalType} />
-          </View>
-          <ScrollView>
-            <View style={styles.containerTypesWork}>
-              {typesWorkServices.auto.map((workAuto) => {
-                const isSelect = selectAutoTypesWorks.includes(workAuto.id);
-                return (
-                  <View
-                    key={`auto-work-${workAuto.id}`}
-                    style={styles.containerTypeWork}
-                  >
-                    <View style={styles.containerTitlesTypeWork}>
-                      <Text style={styles.titleTypeWork}>{workAuto.title}</Text>
-                      <Text style={styles.subTitleTypeWork}>
-                        {workAuto.description}
-                      </Text>
-                    </View>
-                    <CheckboxClassic
-                      isGradient
-                      check={isSelect}
-                      setCheck={() => {
-                        onSelectAutoTypeWork(workAuto);
-                      }}
-                    />
-                  </View>
-                );
-              })}
-            </View>
-          </ScrollView>
-          <View style={styles.containerSubmitModalTypeWork}>
-            <ButtonCustom
-              disabled={selectAutoTypesWorks.length === 0}
-              title={i18n._("Select")}
-              onSubmit={onSubmitAutoTypeWorks}
-            />
-          </View>
-        </View>
-      </ModalsSheet>
+        onClose={onSubmitAutoTypeWorks}
+        selectAutoTypesWorks={selectAutoTypesWorks}
+        setSelectAutoTypesWorks={setSelectAutoTypesWorks}
+        onSubmit={onSubmitAutoTypeWorks}
+      />
     </View>
   );
 };

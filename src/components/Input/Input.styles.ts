@@ -31,4 +31,12 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
     flex: 1,
   },
+  containerMaxLength: {
+    alignItems: "flex-end",
+  },
+  titleMaxLength: {
+    fontFamily: "OpenSans_400Regular",
+    fontSize: 16,
+    color: colors.grayCloudy,
+  },
 });

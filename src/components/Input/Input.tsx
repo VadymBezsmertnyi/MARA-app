@@ -25,6 +25,7 @@ type InputProps = {
   errorMessage?: string;
   containerStyle?: ViewStyle;
   isRegular?: boolean;
+  maxLength?: number;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -40,6 +41,7 @@ export const Input: FunctionComponent<InputProps> = ({
   errorMessage,
   containerStyle,
   isRegular = false,
+  maxLength,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -74,6 +76,10 @@ export const Input: FunctionComponent<InputProps> = ({
 
   const labelStyles = useMemo(() => [styles.label, labelStyle], [labelStyle]);
 
+  const onChangeText = (newValue: string) => {
+    if (!maxLength) onChange(newValue);
+    else if (newValue.length <= maxLength) onChange(newValue);
+  };
   return (
     <View style={containerStyles}>
       {label && (
@@ -92,7 +98,7 @@ export const Input: FunctionComponent<InputProps> = ({
           placeholder={placeholder}
           defaultValue={defaultValue}
           value={value}
-          onChangeText={onChange}
+          onChangeText={onChangeText}
           onFocus={onFocus}
           onBlur={onBlur}
           multiline={customStyles ? true : false}
@@ -100,6 +106,13 @@ export const Input: FunctionComponent<InputProps> = ({
         />
         {InputIcon}
       </View>
+      {value && maxLength ? (
+        <View style={styles.containerMaxLength}>
+          <Text style={styles.titleMaxLength}>
+            {value.length}/{maxLength}
+          </Text>
+        </View>
+      ) : null}
     </View>
   );
 };
