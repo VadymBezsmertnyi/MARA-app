@@ -52,4 +52,5 @@ export const PATHS_SETTINGS_SCREENS = {
 export const PATHS_WORKSHOP_SCREENS = {
   workshopMain: "workshopMain",
   workshopItem: "workshopItem",
+  workshopAdd: "workshopAdd",
 } as const;

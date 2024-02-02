@@ -139,6 +139,10 @@ export type RootWorkshopsScreensParamList = {
   > & {
     workshopId?: number;
   };
+  [PATHS_WORKSHOP_SCREENS.workshopAdd]?: Record<
+    string,
+    string | number | boolean
+  >;
 };
 
 export type RootAllScreensParamList = RootMainScreensParamList &

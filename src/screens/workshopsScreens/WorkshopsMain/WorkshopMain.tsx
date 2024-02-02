@@ -26,6 +26,7 @@ import { WORKSHOP } from "./DELETE_workers.constants";
 
 // styles
 import { styles } from "./WorkshopMain.styles";
+import { PATHS_WORKSHOP_SCREENS } from "../../../navigators/useNavigator.constants";
 
 type WorkshopMainProps = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
@@ -53,6 +54,10 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const onSubmitFilters = (newFilters: TypeFilters) => {
     setFilters(newFilters);
     onClose();
+  };
+
+  const onPressAddWorkshop = () => {
+    navigation.navigate(PATHS_WORKSHOP_SCREENS.workshopAdd);
   };
 
   return (
@@ -100,7 +105,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
           ))}
           <View style={styles.containerEmpty} />
         </ScrollView>
-        <AddEventButton onPress={() => null} />
+        <AddEventButton onPress={onPressAddWorkshop} />
       </View>
       {isShowSort ? (
         <ModalWindow onClose={onClose}>

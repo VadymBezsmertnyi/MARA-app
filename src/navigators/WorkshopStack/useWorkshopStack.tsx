@@ -7,9 +7,10 @@ import { localesContext } from "../../../localization/localization.provider";
 // constants
 import { PATHS_WORKSHOP_SCREENS } from "../useNavigator.constants";
 
-// News and events
+// screens
 import { WorkshopMain } from "../../screens/workshopsScreens/WorkshopsMain/WorkshopMain";
 import { WorkshopsItem } from "../../screens/workshopsScreens/WorkshopsItem/WorkshopsItem";
+import { WorkshopAdd } from "../../screens/workshopsScreens/WorkshopAdd/WorkshopAdd";
 
 export const useWorkshopStack = () => {
   const { i18n } = useContext(localesContext);
@@ -28,6 +29,13 @@ export const useWorkshopStack = () => {
       title: t(i18n)`Workshop`,
       headerShown: false,
       component: WorkshopsItem,
+    },
+    {
+      id: PATHS_WORKSHOP_SCREENS.workshopAdd,
+      name: PATHS_WORKSHOP_SCREENS.workshopAdd,
+      title: t(i18n)`Add workshop`,
+      headerShown: false,
+      component: WorkshopAdd,
     },
   ] as const;
 
