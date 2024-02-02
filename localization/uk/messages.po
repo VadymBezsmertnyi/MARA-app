@@ -530,6 +530,9 @@ msgstr "Доступ заборонено"
 msgid "Add event"
 msgstr "Додати подію"
 
+msgid "Add workshop"
+msgstr "Додати майстерню"
+
 msgid "Add your address"
 msgstr "Додати вашу адресу"
 
@@ -568,6 +571,9 @@ msgstr "Ви впевнені, що хочете видалити?"
 
 msgid "Authorize using:"
 msgstr "Авторизуйтесь за допомогою:"
+
+msgid "Automatically detect location"
+msgstr "Автоматично визначати місцезнаходження"
 
 msgid "Back"
 msgstr "Назад"

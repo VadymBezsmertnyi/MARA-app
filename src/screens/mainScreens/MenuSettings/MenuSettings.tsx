@@ -46,7 +46,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { userData } = useContext(userContext);
+  const { userData, editUser } = useContext(userContext);
   const [darkTheme, setDarkTheme] = useState(false);
   const [isSos, setIsSos] = useState(false);
 
@@ -59,6 +59,13 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
     ],
     [heightStatusBar]
   );
+
+  const onToggleLocation = async () => {
+    const isGeoLocation = !(userData?.isGeoLocation || false);
+    await editUser({
+      isGeoLocation,
+    });
+  };
 
   const onCloseMenu = () => {
     navigation.closeDrawer();
@@ -131,24 +138,35 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         />
         <View style={styles.lineWhite} />
         <View style={styles.containerCheckboxes}>
-          <Text style={styles.titleDarkTheme}>
-            <Trans>Dark theme</Trans>
-          </Text>
-          <Checkbox check={darkTheme} setCheck={setDarkTheme} />
-        </View>
-        <View style={styles.containerLanguage}>
-          <ChangeLanguage />
+          <View style={styles.containerCheckbox}>
+            <Text style={styles.titleDarkTheme}>
+              <Trans>Dark theme</Trans>
+            </Text>
+            <Checkbox check={darkTheme} setCheck={setDarkTheme} />
+          </View>
+          <View style={styles.containerCheckbox}>
+            <Text numberOfLines={2} style={styles.titleDarkTheme}>
+              <Trans>Automatically detect location</Trans>
+            </Text>
+            <Checkbox
+              check={userData?.isGeoLocation || false}
+              setCheck={onToggleLocation}
+            />
+          </View>
+          <View style={styles.containerCheckbox}>
+            <Text style={styles.titleSos}>
+              <Trans>SOS signal</Trans>
+            </Text>
+            <Checkbox
+              check={isSos}
+              setCheck={setIsSos}
+              colorBoxEnabled={colors.electricRed}
+            />
+          </View>
         </View>
       </View>
-      <View style={styles.containerCheckboxes}>
-        <Text style={styles.titleSos}>
-          <Trans>SOS signal</Trans>
-        </Text>
-        <Checkbox
-          check={isSos}
-          setCheck={setIsSos}
-          colorBoxEnabled={colors.electricRed}
-        />
+      <View style={styles.containerLanguage}>
+        <ChangeLanguage />
       </View>
     </View>
   );

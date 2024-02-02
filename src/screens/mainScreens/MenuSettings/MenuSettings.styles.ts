@@ -54,13 +54,17 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   containerCheckboxes: {
+    gap: 32,
+    paddingTop: 16,
+  },
+  containerCheckbox: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 16,
   },
   titleDarkTheme: {
+    flex: 1,
     fontFamily: "OpenSans_600SemiBold",
     color: colors.blackCoffee,
     fontSize: 16,

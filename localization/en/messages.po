@@ -530,6 +530,9 @@ msgstr "Access denied"
 msgid "Add event"
 msgstr "Add event"
 
+msgid "Add workshop"
+msgstr "Add workshop"
+
 msgid "Add your address"
 msgstr "Add your address"
 
@@ -568,6 +571,9 @@ msgstr "Are you sure you want to delete?"
 
 msgid "Authorize using:"
 msgstr "Authorize using:"
+
+msgid "Automatically detect location"
+msgstr "Automatically detect location"
 
 msgid "Back"
 msgstr "Back"
