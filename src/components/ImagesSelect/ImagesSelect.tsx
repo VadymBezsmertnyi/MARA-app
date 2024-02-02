@@ -9,32 +9,32 @@ import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 // types
-import { ImageType } from "../../../../../providers/ModalsProvider/ModalsProvider.types";
+import { ImageType } from "../../providers/ModalsProvider/ModalsProvider.types";
 
 // providers
-import { modalsContext } from "../../../../../providers/ModalsProvider/ModalsProvider";
-import { loadingContext } from "../../../../../providers/LoadingProvider/LoadingProvider";
+import { modalsContext } from "../../providers/ModalsProvider/ModalsProvider";
+import { loadingContext } from "../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import {
   IconAddEvent,
   IconArrowLeftEventGradient,
   IconArrowRightEvent,
-} from "../../../../../icons/components";
-import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
+} from "../../icons/components";
+import { ImageCache } from "../ImageCache/ImageCache";
 
 // helps
-import { compressAndProcessImages } from "../../../../../helps/helps";
+import { compressAndProcessImages } from "../../helps/helps";
 
 // styles
-import { styles } from "./ImagesEvent.styles";
+import { styles } from "./ImagesSelect.styles";
 
 type ImagesEventProps = {
   images: ImageType[];
   setImages: React.Dispatch<React.SetStateAction<ImageType[]>>;
 };
 
-export const ImagesEvent: FunctionComponent<ImagesEventProps> = ({
+export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   images,
   setImages,
 }) => {

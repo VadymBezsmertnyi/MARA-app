@@ -36,7 +36,7 @@ import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvid
 import { Input } from "../../../components/Input/Input";
 import { DatePicker } from "./components/DatePicker/DatePicker";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
-import { ImagesEvent } from "./components/ImagesEvent/ImagesEvent";
+import { ImagesSelect } from "../../../components/ImagesSelect/ImagesSelect";
 import { InputButton } from "../../../components/InputButton/InputButton";
 
 // icons
@@ -386,7 +386,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         </View>
         <View style={styles.containerImages}>
           <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
-          <ImagesEvent images={images} setImages={setImages} />
+          <ImagesSelect images={images} setImages={setImages} />
         </View>
         <Text style={styles.errorMessage}>
           {errorMessage?.errorMessage.title || ""}
