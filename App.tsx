@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-exports */ //enabled export default
+/* eslint-disable react/jsx-max-depth */ //For depth>15
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { Messages, setupI18n } from "@lingui/core";
@@ -27,6 +29,7 @@ import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
 import { ModalsSheetProvider } from "./src/providers/ModalsSheetProvider/ModalsSheetProvider";
 import { ModalsProvider } from "./src/providers/ModalsProvider/ModalsProvider";
+import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -69,29 +72,31 @@ function App() {
         <LoadingProvider isLoadingProps={fontsLoaded}>
           <LocalesProvider i18n={i18n}>
             <ApiProvider>
-              <BiometricProvider>
-                <UserProvider i18n={i18n}>
-                  <NavigationContainer>
-                    <EventsProvider>
-                      <SafeAreaProvider>
-                        <MapProvider>
-                          <GestureHandlerRootView
-                            style={styles.gestureHandlerRootView}
-                          >
-                            <WorkshopsProvider>
-                              <ModalsSheetProvider>
-                                <ModalsProvider>
-                                  <Navigators />
-                                </ModalsProvider>
-                              </ModalsSheetProvider>
-                            </WorkshopsProvider>
-                          </GestureHandlerRootView>
-                        </MapProvider>
-                      </SafeAreaProvider>
-                    </EventsProvider>
-                  </NavigationContainer>
-                </UserProvider>
-              </BiometricProvider>
+              <PlacesProvider>
+                <BiometricProvider>
+                  <UserProvider i18n={i18n}>
+                    <NavigationContainer>
+                      <EventsProvider>
+                        <SafeAreaProvider>
+                          <MapProvider>
+                            <GestureHandlerRootView
+                              style={styles.gestureHandlerRootView}
+                            >
+                              <WorkshopsProvider>
+                                <ModalsSheetProvider>
+                                  <ModalsProvider>
+                                    <Navigators />
+                                  </ModalsProvider>
+                                </ModalsSheetProvider>
+                              </WorkshopsProvider>
+                            </GestureHandlerRootView>
+                          </MapProvider>
+                        </SafeAreaProvider>
+                      </EventsProvider>
+                    </NavigationContainer>
+                  </UserProvider>
+                </BiometricProvider>
+              </PlacesProvider>
             </ApiProvider>
           </LocalesProvider>
         </LoadingProvider>
