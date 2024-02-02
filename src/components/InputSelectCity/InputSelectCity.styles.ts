@@ -1,15 +1,17 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../../styles/colors';
+import { StyleSheet } from "react-native";
+import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
   backgroundButton: {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
-    width: '110%',
-    height: '100%',
+    width: "110%",
+    height: "100%",
   },
-  mainContainer: { height: 40 },
+  mainContainer: {
+    height: 40,
+  },
   container: {
     borderColor: colors.grayCloudy,
     borderWidth: 1,
@@ -17,13 +19,13 @@ export const styles = StyleSheet.create({
   },
   containerPosition: {
     zIndex: 1,
-    position: 'absolute',
-    width: '100%',
+    position: "absolute",
+    width: "100%",
     maxHeight: 200,
   },
   containerInput: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 10,
     borderRadius: 4,
     paddingRight: 16,
@@ -36,7 +38,7 @@ export const styles = StyleSheet.create({
     color: colors.grayCloudy,
   },
   input: { flex: 1, padding: 8, paddingLeft: 0 },
-  arrowToUp: { transform: [{ rotate: '180deg' }] },
+  arrowToUp: { transform: [{ rotate: "180deg" }] },
   containerList: { paddingVertical: 8 },
   city: { paddingHorizontal: 12, paddingVertical: 8 },
 });

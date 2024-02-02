@@ -86,7 +86,12 @@ export type RootEventsScreensParamList = {
   > & {
     eventId?: number;
   };
-  [PATHS_EVENTS_SCREENS.eventsList]?: Record<string, string | number | boolean>;
+  [PATHS_EVENTS_SCREENS.eventsList]?: Record<
+    string,
+    string | number | boolean
+  > & {
+    isOld: boolean;
+  };
   [PATHS_EVENTS_SCREENS.eventAdd]?: Record<
     string,
     string | number | boolean

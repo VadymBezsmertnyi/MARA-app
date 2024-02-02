@@ -1,6 +1,7 @@
-import React, { FunctionComponent, useContext, useState } from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RouteProp } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
 
 // providers
@@ -26,21 +27,41 @@ import { styles } from "./EventsList.styles";
 
 type ItemListEventsProps = {
   navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
+  route: RouteProp<
+    RootEventsScreensParamList,
+    keyof RootEventsScreensParamList
+  >;
 };
 
 export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   navigation,
+  route,
 }) => {
+  const { params } = route;
   const { eventsList } = useContext(eventsContext);
   const { i18n } = useContext(localesContext);
   const [valueSearch, setValueSearch] = useState("");
+  const newDate = useMemo(() => new Date().getTime(), []);
+  const showEventsList = useMemo(
+    () =>
+      eventsList.filter((event) =>
+        params?.isOld
+          ? event.date.finish < newDate
+          : event.date.finish > newDate
+      ),
+    [eventsList, params]
+  );
 
   const onSelectCity = () => {};
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        <Trans>Upcoming events:</Trans>
+        {params?.isOld ? (
+          <Trans>Past events:</Trans>
+        ) : (
+          <Trans>Upcoming events:</Trans>
+        )}
       </Text>
       <Input
         value={valueSearch}
@@ -50,7 +71,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
       />
       <InputSelectCity data={LIST_CITY} onSelect={onSelectCity} />
       <ScrollView contentContainerStyle={styles.containerList}>
-        {eventsList.map((eventItem) => (
+        {showEventsList.map((eventItem) => (
           <ItemListEvents
             key={`event-${eventItem.id}`}
             item={eventItem}
@@ -60,7 +81,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
       </ScrollView>
       <AddEventButton
         onPress={() => {
-          navigation.navigate(PATHS_EVENTS_SCREENS.addEvent);
+          navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
         }}
       />
     </View>

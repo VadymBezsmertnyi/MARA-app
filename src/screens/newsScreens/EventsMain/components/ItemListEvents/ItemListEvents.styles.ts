@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     }),
   },
   container: {
+    flex: 1,
     minHeight: 68,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -24,7 +25,10 @@ export const styles = StyleSheet.create({
     paddingRight: horizontalScale(4),
     paddingVertical: verticalScale(8),
     backgroundColor: colors.lightOrange,
+    borderWidth: 1,
+    borderColor: colors.lightOrange,
     borderRadius: 4,
+    gap: 6,
     ...Platform.select({
       ios: {
         shadowColor: colors.grayShadow,
@@ -36,15 +40,25 @@ export const styles = StyleSheet.create({
         elevation: 2,
       },
     }),
+    zIndex: 0,
+  },
+  containerOld: {
+    backgroundColor: colors.grayMercury,
+    borderColor: colors.grayMercury,
+  },
+  containerNow: {
+    backgroundColor: colors.white,
+    borderColor: colors.blazeOrange,
   },
   containerLeft: {
+    flex: 1,
     flexDirection: "row",
     justifyContent: "flex-start",
     gap: 8,
   },
   image: { width: 60, height: 52, borderRadius: 3 },
   containerTitles: {
-    width: horizontalScale(220),
+    flex: 1,
     justifyContent: "space-around",
   },
   title: {
@@ -59,11 +73,28 @@ export const styles = StyleSheet.create({
     width: horizontalScale(280),
     justifyContent: "space-around",
   },
-  part: { justifyContent: "space-around" },
+  part: {
+    minWidth: 70,
+    justifyContent: "space-around",
+  },
+  partNow: {
+    paddingRight: horizontalScale(18),
+  },
   containerLocation: { flexDirection: "row", alignItems: "center" },
   distance: {
     flex: 1,
     fontFamily: "OpenSans_600SemiBold",
     fontSize: 12,
+  },
+  containerNowLabel: {
+    borderRadius: 2,
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+  },
+  titleNowLabel: {
+    fontFamily: "OpenSans_600SemiBold",
+    fontSize: 12,
+    color: colors.white,
+    textAlign: "center",
   },
 });
