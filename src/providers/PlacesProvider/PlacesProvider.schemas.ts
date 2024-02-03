@@ -29,9 +29,15 @@ export const countrySchema = z.object({
   isShow: z.boolean(),
 });
 
-export const placesSchema = z.object({
-  uk: countrySchema,
-  pl: countrySchema,
-  lt: countrySchema,
-  bl: countrySchema,
+export const countriesSchema = z.record(countrySchema);
+
+export const placeSchema = z.object({
+  countryId: z.number(),
+  regionPlaceId: z.string(),
+  city: z.string(),
+  address: z.string(),
+  coordinates: z.object({
+    latitude: z.number(),
+    longitude: z.number(),
+  }),
 });

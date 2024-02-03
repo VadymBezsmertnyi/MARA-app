@@ -361,266 +361,266 @@
             "en": "Izmail",
             "placeId": "ChIJh5U4Vx7j4xQRDbEiXGKs52k"
           }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": {
+        "uk": "Полтавська область",
+        "en": "Poltava Oblast"
+      },
+      "placeId": "ChIJA0NxZpRU1EARN2zpjE1vTCY",
+      "cities": [
+        {
+          "id": 1501,
+          "name": {
+            "uk": "Полтава",
+            "en": "Poltava"
+          },
+          "placeId": "ChIJoRN7EhlV1EARK8vh9eP2QBs"
         },
         {
-          "id": 15,
+          "id": 1502,
           "name": {
-            "uk": "Полтавська область",
-            "en": "Poltava Oblast"
+            "uk": "Миргород",
+            "en": "Myrhorod"
           },
-          "placeId": "ChIJA0NxZpRU1EARN2zpjE1vTCY",
-          "cities": [
-            {
-              "id": 1501,
-              "name": {
-                "uk": "Полтава",
-                "en": "Poltava"
-              },
-              "placeId": "ChIJoRN7EhlV1EARK8vh9eP2QBs"
-            },
-            {
-              "id": 1502,
-              "name": {
-                "uk": "Миргород",
-                "en": "Myrhorod"
-              },
-              "placeId": "ChIJY-dZ8ZVV1EARKpQnUpuGnIc"
-            }
-          ]
+          "placeId": "ChIJY-dZ8ZVV1EARKpQnUpuGnIc"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": {
+        "uk": "Рівненська область",
+        "en": "Rivne Oblast"
+      },
+      "placeId": "ChIJK-0hqicD2UERkc6h6dB8tNk",
+      "cities": [
+        {
+          "id": 1601,
+          "name": {
+            "uk": "Рівне",
+            "en": "Rivne"
+          },
+          "placeId": "ChIJkXVfI9AA3kERAFwnI6zNq9A"
         },
         {
-          "id": 16,
+          "id": 1602,
           "name": {
-            "uk": "Рівненська область",
-            "en": "Rivne Oblast"
+            "uk": "Дубно",
+            "en": "Dubno"
           },
-          "placeId": "ChIJK-0hqicD2UERkc6h6dB8tNk",
-          "cities": [
-            {
-              "id": 1601,
-              "name": {
-                "uk": "Рівне",
-                "en": "Rivne"
-              },
-              "placeId": "ChIJkXVfI9AA3kERAFwnI6zNq9A"
-            },
-            {
-              "id": 1602,
-              "name": {
-                "uk": "Дубно",
-                "en": "Dubno"
-              },
-              "placeId": "ChIJYXM1O35i30ER9UeA0USvRqg"
-            }
-          ]
+          "placeId": "ChIJYXM1O35i30ER9UeA0USvRqg"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": {
+        "uk": "Сумська область",
+        "en": "Sumy Oblast"
+      },
+      "placeId": "ChIJkQYH8wfU1EARiVSMmOGgY1U",
+      "cities": [
+        {
+          "id": 1701,
+          "name": {
+            "uk": "Суми",
+            "en": "Sumy"
+          },
+          "placeId": "ChIJGz2I1p_U1EARq0qO7MvPXV0"
         },
         {
-          "id": 17,
+          "id": 1702,
           "name": {
-            "uk": "Сумська область",
-            "en": "Sumy Oblast"
+            "uk": "Охтирка",
+            "en": "Okhtyrka"
           },
-          "placeId": "ChIJkQYH8wfU1EARiVSMmOGgY1U",
-          "cities": [
-            {
-              "id": 1701,
-              "name": {
-                "uk": "Суми",
-                "en": "Sumy"
-              },
-              "placeId": "ChIJGz2I1p_U1EARq0qO7MvPXV0"
-            },
-            {
-              "id": 1702,
-              "name": {
-                "uk": "Охтирка",
-                "en": "Okhtyrka"
-              },
-              "placeId": "ChIJE0p5wFqU1EARAFjbBRpHdKQ"
-            }
-          ]
+          "placeId": "ChIJE0p5wFqU1EARAFjbBRpHdKQ"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": {
+        "uk": "Тернопільська область",
+        "en": "Ternopil Oblast"
+      },
+      "placeId": "ChIJZUHD2MbU1EARNy2SUnUTYUE",
+      "cities": [
+        {
+          "id": 1801,
+          "name": {
+            "uk": "Тернопіль",
+            "en": "Ternopil"
+          },
+          "placeId": "ChIJZUHD2MbU1EARNy2SUnUTYUE"
         },
         {
-          "id": 18,
+          "id": 1802,
           "name": {
-            "uk": "Тернопільська область",
-            "en": "Ternopil Oblast"
+            "uk": "Чортків",
+            "en": "Chortkiv"
           },
-          "placeId": "ChIJZUHD2MbU1EARNy2SUnUTYUE",
-          "cities": [
-            {
-              "id": 1801,
-              "name": {
-                "uk": "Тернопіль",
-                "en": "Ternopil"
-              },
-              "placeId": "ChIJZUHD2MbU1EARNy2SUnUTYUE"
-            },
-            {
-              "id": 1802,
-              "name": {
-                "uk": "Чортків",
-                "en": "Chortkiv"
-              },
-              "placeId": "ChIJA8nzthfV1EARTAq-m0WepJk"
-            }
-          ]
+          "placeId": "ChIJA8nzthfV1EARTAq-m0WepJk"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": {
+        "uk": "Харківська область",
+        "en": "Kharkiv Oblast"
+      },
+      "placeId": "ChIJvR1os7sXzUARxQyUbj0a0P0",
+      "cities": [
+        {
+          "id": 1901,
+          "name": {
+            "uk": "Харків",
+            "en": "Kharkiv"
+          },
+          "placeId": "ChIJrQVK6P2I1EARiWHRX0HUMz0"
         },
         {
-          "id": 19,
+          "id": 1902,
           "name": {
-            "uk": "Харківська область",
-            "en": "Kharkiv Oblast"
+            "uk": "Ізюм",
+            "en": "Izyum"
           },
-          "placeId": "ChIJvR1os7sXzUARxQyUbj0a0P0",
-          "cities": [
-            {
-              "id": 1901,
-              "name": {
-                "uk": "Харків",
-                "en": "Kharkiv"
-              },
-              "placeId": "ChIJrQVK6P2I1EARiWHRX0HUMz0"
-            },
-            {
-              "id": 1902,
-              "name": {
-                "uk": "Ізюм",
-                "en": "Izyum"
-              },
-              "placeId": "ChIJ9Z_wiKaR1EARbphDPnN7Q9M"
-            }
-          ]
+          "placeId": "ChIJ9Z_wiKaR1EARbphDPnN7Q9M"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": {
+        "uk": "Херсонська область",
+        "en": "Kherson Oblast"
+      },
+      "placeId": "ChIJh5U4Vx7j4xQRDbEiXGKs52k",
+      "cities": [
+        {
+          "id": 2001,
+          "name": {
+            "uk": "Херсон",
+            "en": "Kherson"
+          },
+          "placeId": "ChIJH77ti-mo1EARUVTzOzfc79k"
         },
         {
-          "id": 20,
+          "id": 2002,
           "name": {
-            "uk": "Херсонська область",
-            "en": "Kherson Oblast"
+            "uk": "Нова Каховка",
+            "en": "Nova Kakhovka"
           },
-          "placeId": "ChIJh5U4Vx7j4xQRDbEiXGKs52k",
-          "cities": [
-            {
-              "id": 2001,
-              "name": {
-                "uk": "Херсон",
-                "en": "Kherson"
-              },
-              "placeId": "ChIJH77ti-mo1EARUVTzOzfc79k"
-            },
-            {
-              "id": 2002,
-              "name": {
-                "uk": "Нова Каховка",
-                "en": "Nova Kakhovka"
-              },
-              "placeId": "ChIJ-TsoVDeI3EAR51j4H54wzNE"
-            }
-          ]
+          "placeId": "ChIJ-TsoVDeI3EAR51j4H54wzNE"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": {
+        "uk": "Хмельницька область",
+        "en": "Khmelnytskyi Oblast"
+      },
+      "placeId": "ChIJRcC9G8PV0WAR8X7U1t3Opno",
+      "cities": [
+        {
+          "id": 2101,
+          "name": {
+            "uk": "Хмельницький",
+            "en": "Khmelnytskyi"
+          },
+          "placeId": "ChIJr30YRUk2EEAR_Z4XYJFSxuM"
         },
         {
-          "id": 21,
+          "id": 2102,
           "name": {
-            "uk": "Хмельницька область",
-            "en": "Khmelnytskyi Oblast"
+            "uk": "Кам'янець-Подільський",
+            "en": "Kamianets-Podilskyi"
           },
-          "placeId": "ChIJRcC9G8PV0WAR8X7U1t3Opno",
-          "cities": [
-            {
-              "id": 2101,
-              "name": {
-                "uk": "Хмельницький",
-                "en": "Khmelnytskyi"
-              },
-              "placeId": "ChIJr30YRUk2EEAR_Z4XYJFSxuM"
-            },
-            {
-              "id": 2102,
-              "name": {
-                "uk": "Кам'янець-Подільський",
-                "en": "Kamianets-Podilskyi"
-              },
-              "placeId": "ChIJB1Ndb4ln6EARXvhqDteJ0tE"
-            }
-          ]
+          "placeId": "ChIJB1Ndb4ln6EARXvhqDteJ0tE"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": {
+        "uk": "Черкаська область",
+        "en": "Cherkasy Oblast"
+      },
+      "placeId": "ChIJ3f5vMowt1EARnvTgH6CJx-0",
+      "cities": [
+        {
+          "id": 2201,
+          "name": {
+            "uk": "Черкаси",
+            "en": "Cherkasy"
+          },
+          "placeId": "ChIJS5nvivtT1EARZmOqY3MBJK4"
         },
         {
-          "id": 22,
+          "id": 2202,
           "name": {
-            "uk": "Черкаська область",
-            "en": "Cherkasy Oblast"
+            "uk": "Канів",
+            "en": "Kaniv"
           },
-          "placeId": "ChIJ3f5vMowt1EARnvTgH6CJx-0",
-          "cities": [
-            {
-              "id": 2201,
-              "name": {
-                "uk": "Черкаси",
-                "en": "Cherkasy"
-              },
-              "placeId": "ChIJS5nvivtT1EARZmOqY3MBJK4"
-            },
-            {
-              "id": 2202,
-              "name": {
-                "uk": "Канів",
-                "en": "Kaniv"
-              },
-              "placeId": "ChIJOZLThGFI1EARRFoeaXaFuUM"
-            }
-          ]
+          "placeId": "ChIJOZLThGFI1EARRFoeaXaFuUM"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": {
+        "uk": "Чернівецька область",
+        "en": "Chernivtsi Oblast"
+      },
+      "placeId": "ChIJyQOV-0q-1EAR0iH8kIPyBZ8",
+      "cities": [
+        {
+          "id": 2301,
+          "name": {
+            "uk": "Чернівці",
+            "en": "Chernivtsi"
+          },
+          "placeId": "ChIJyQOV-0q-1EAR0iH8kIPyBZ8"
         },
         {
-          "id": 23,
+          "id": 2302,
           "name": {
-            "uk": "Чернівецька область",
-            "en": "Chernivtsi Oblast"
+            "uk": "Кицмань",
+            "en": "Kitsman"
           },
-          "placeId": "ChIJyQOV-0q-1EAR0iH8kIPyBZ8",
-          "cities": [
-            {
-              "id": 2301,
-              "name": {
-                "uk": "Чернівці",
-                "en": "Chernivtsi"
-              },
-              "placeId": "ChIJyQOV-0q-1EAR0iH8kIPyBZ8"
-            },
-            {
-              "id": 2302,
-              "name": {
-                "uk": "Кицмань",
-                "en": "Kitsman"
-              },
-              "placeId": "ChIJYWBewRoq1EARgET0X1Ek6o0"
-            }
-          ]
+          "placeId": "ChIJYWBewRoq1EARgET0X1Ek6o0"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": {
+        "uk": "Чернігівська область",
+        "en": "Chernihiv Oblast"
+      },
+      "placeId": "ChIJY5KyNRrI2EARqXOrf1JzKgE",
+      "cities": [
+        {
+          "id": 2401,
+          "name": {
+            "uk": "Чернігів",
+            "en": "Chernihiv"
+          },
+          "placeId": "ChIJY5KyNRrI2EARqXOrf1JzKgE"
         },
         {
-          "id": 24,
+          "id": 2402,
           "name": {
-            "uk": "Чернігівська область",
-            "en": "Chernihiv Oblast"
+            "uk": "Ніжин",
+            "en": "Nizhyn"
           },
-          "placeId": "ChIJY5KyNRrI2EARqXOrf1JzKgE",
-          "cities": [
-            {
-              "id": 2401,
-              "name": {
-                "uk": "Чернігів",
-                "en": "Chernihiv"
-              },
-              "placeId": "ChIJY5KyNRrI2EARqXOrf1JzKgE"
-            },
-            {
-              "id": 2402,
-              "name": {
-                "uk": "Ніжин",
-                "en": "Nizhyn"
-              },
-              "placeId": "ChIJoVsQyxdV2EARi04l7Ia04SE"
-            }
-          ]
+          "placeId": "ChIJoVsQyxdV2EARi04l7Ia04SE"
         }
       ]
     }

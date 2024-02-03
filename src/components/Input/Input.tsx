@@ -25,6 +25,7 @@ type InputProps = {
   errorMessage?: string;
   containerStyle?: ViewStyle;
   isRegular?: boolean;
+  isSelect?: boolean;
   maxLength?: number;
 };
 
@@ -41,6 +42,7 @@ export const Input: FunctionComponent<InputProps> = ({
   errorMessage,
   containerStyle,
   isRegular = false,
+  isSelect = false,
   maxLength,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
@@ -85,6 +87,7 @@ export const Input: FunctionComponent<InputProps> = ({
       {label && (
         <Text style={labelStyles}>
           {label}
+          {isSelect ? ":" : null}
           {isRegular ? (
             <>
               :<Text style={styles.labelRegular}>*</Text>

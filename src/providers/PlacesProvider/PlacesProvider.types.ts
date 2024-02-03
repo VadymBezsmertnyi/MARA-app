@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { placesSchema, regionsCountrySchema } from "./PlacesProvider.schemas";
+import {
+  placeSchema,
+  countriesSchema,
+  regionsCountrySchema,
+} from "./PlacesProvider.schemas";
 
 export type RegionsCountryType = z.infer<typeof regionsCountrySchema>;
-export type PlacesType = z.infer<typeof placesSchema>;
+export type CountriesType = z.infer<typeof countriesSchema>;
+
+export type PlaceType = z.infer<typeof placeSchema>;

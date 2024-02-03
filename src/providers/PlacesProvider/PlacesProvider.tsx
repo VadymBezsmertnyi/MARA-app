@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 // types
-import { PlacesType, RegionsCountryType } from "./PlacesProvider.types";
+import { CountriesType, RegionsCountryType } from "./PlacesProvider.types";
 
 // constants
 import REGIONS_UK from "../../../assets/db/places/uk.json";
@@ -17,7 +17,7 @@ import REGIONS_LT from "../../../assets/db/places/lt.json";
 import { localesContext } from "../../../localization/localization.provider";
 
 type PlacesContext = {
-  places: PlacesType | null;
+  places: CountriesType | null;
 };
 
 type PlacesProviderProps = {
@@ -30,7 +30,7 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   children,
 }) => {
   const { i18n } = useContext(localesContext);
-  const [places, setPlaces] = useState<PlacesType | null>(null);
+  const [places, setPlaces] = useState<CountriesType | null>(null);
 
   const getCurrentRegion = (array: any) =>
     (array as unknown as { regions: RegionsCountryType }).regions.map(
@@ -48,7 +48,7 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
     const regionsPL = getCurrentRegion(REGIONS_PL);
     const regionsBY = getCurrentRegion(REGIONS_BY);
     const regionsLT = getCurrentRegion(REGIONS_LT);
-    const currentPlaces: PlacesType = {
+    const currentPlaces: CountriesType = {
       uk: {
         id: 1,
         title: i18n._("Ukraine"),
