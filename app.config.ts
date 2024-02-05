@@ -45,6 +45,7 @@ export const expo = {
     },
     config: {
       googleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
+      usesNonExemptEncryption: false,
     },
   },
   android: {

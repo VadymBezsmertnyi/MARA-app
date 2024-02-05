@@ -1,4 +1,7 @@
 import { Platform } from "react-native";
+import * as Application from "expo-application";
+import * as SecureStore from "expo-secure-store";
+import Constants from "expo-constants";
 import { z } from "zod";
 
 const appManifestEnvS = z.object({
@@ -30,4 +33,19 @@ export const getApiUrl = () => {
       ? `http://${APP_DOMAIN_WEB}:${APP_PORT}`
       : `http://${appDomainApp}:${APP_PORT}`;
   return herokuServer || api;
+};
+
+export const getDeviceId = async () => {
+  if (Platform.OS === "android") {
+    return Application.androidId;
+  }
+  const deviceId = await SecureStore.getItemAsync("deviceId");
+
+  if (!deviceId) {
+    const newDeviceId = Constants.installationId; //or generate uuid
+    await SecureStore.setItemAsync("deviceId", newDeviceId);
+    return newDeviceId;
+  }
+
+  return deviceId;
 };

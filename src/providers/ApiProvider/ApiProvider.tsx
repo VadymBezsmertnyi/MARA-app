@@ -1,10 +1,14 @@
 import React, { FunctionComponent, useMemo } from "react";
+import { Platform } from "react-native";
 import { ZodSchema, z } from "zod";
 import axios, { AxiosRequestConfig } from "axios";
+import qs from "qs";
 
 // helps
-import { getApiUrl } from "./ApiProvider.helps";
+import { getApiUrl, getDeviceId } from "./ApiProvider.helps";
 import { getDeviceStorage } from "../../helps/storage.help";
+
+// constants
 import { TOKEN_NAME } from "../UserProvider/UserProvider.constants";
 import { PATHS } from "../paths.constants";
 
@@ -31,9 +35,20 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
     config: AxiosRequestConfig | null = { method: "GET" },
     schema: ZodSchema<T> = z.any()
   ): Promise<T | null> {
+    const platform = Platform.OS;
+    const deviceId = await getDeviceId();
     const verifyToken = await getDeviceStorage(TOKEN_NAME);
-    const currentUrl = url.includes("http") ? url : `${urlApi}${url}`;
+    const queryParams = qs.stringify(
+      { platform, deviceId },
+      {
+        addQueryPrefix: !url.includes("?"),
+      }
+    );
+    const currentUrl = url.includes("http")
+      ? url
+      : `${urlApi}${url}${url.includes("?") ? `&${queryParams}` : queryParams}`;
     const currentConfig = config ? config : {};
+
     try {
       const response = await axios(currentUrl, {
         headers: {
