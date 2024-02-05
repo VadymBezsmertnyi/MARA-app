@@ -42,7 +42,7 @@ export const getDeviceId = async () => {
   const deviceId = await SecureStore.getItemAsync("deviceId");
 
   if (!deviceId) {
-    const newDeviceId = Constants.installationId; //or generate uuid
+    const newDeviceId = Constants.installationId;
     await SecureStore.setItemAsync("deviceId", newDeviceId);
     return newDeviceId;
   }
