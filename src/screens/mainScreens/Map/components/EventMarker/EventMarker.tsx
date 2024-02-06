@@ -49,7 +49,6 @@ export const EventMarker: FunctionComponent<EventMarkerProps> = ({
           <Text>{dateToNMY(new Date(event.date.start))}</Text>
           <TouchableOpacity
             onPress={() => {
-              console.log("dfdfdfd");
               navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
                 eventId: event.id,
               });

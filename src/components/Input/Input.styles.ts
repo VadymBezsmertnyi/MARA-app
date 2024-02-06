@@ -39,4 +39,14 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.grayCloudy,
   },
+  titleMaxLengthError: {
+    color: colors.errorRed,
+  },
+  errorMessage: {
+    fontFamily: "Montserrat_700Bold",
+    fontSize: 10,
+    color: colors.errorRed,
+    marginTop: 4,
+    minHeight: 20,
+  },
 });

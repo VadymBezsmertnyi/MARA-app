@@ -78,6 +78,14 @@ export const Input: FunctionComponent<InputProps> = ({
 
   const labelStyles = useMemo(() => [styles.label, labelStyle], [labelStyle]);
 
+  const titleMaxLengthStyles = useMemo(
+    () => [
+      styles.titleMaxLength,
+      errorMessage ? styles.titleMaxLengthError : undefined,
+    ],
+    [errorMessage]
+  );
+
   const onChangeText = (newValue: string) => {
     if (!maxLength) onChange(newValue);
     else if (newValue.length <= maxLength) onChange(newValue);
@@ -109,12 +117,15 @@ export const Input: FunctionComponent<InputProps> = ({
         />
         {InputIcon}
       </View>
-      {value && maxLength ? (
+      {value !== undefined && maxLength ? (
         <View style={styles.containerMaxLength}>
-          <Text style={styles.titleMaxLength}>
+          <Text style={titleMaxLengthStyles}>
             {value.length}/{maxLength}
           </Text>
         </View>
+      ) : null}
+      {errorMessage !== undefined ? (
+        <Text style={styles.errorMessage}>{errorMessage || ""}</Text>
       ) : null}
     </View>
   );

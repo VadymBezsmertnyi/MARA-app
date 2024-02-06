@@ -16,6 +16,9 @@ import MapView, {
   PROVIDER_GOOGLE,
 } from "react-native-maps";
 
+// types
+import { PlaceType } from "../../providers/PlacesProvider/PlacesProvider.types";
+
 // providers
 import { localesContext } from "../../../localization/localization.provider";
 import { placesContext } from "../../providers/PlacesProvider/PlacesProvider";
@@ -33,7 +36,6 @@ import { IconSearchInput } from "../../icons/components";
 
 // styles
 import { styles } from "./ModalSheetPlace.styles";
-import { PlaceType } from "../../providers/PlacesProvider/PlacesProvider.types";
 
 const DEFAULT_LOCATION = {
   longitude: 31.976197008043528,

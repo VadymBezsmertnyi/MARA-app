@@ -115,6 +115,9 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
         </TouchableOpacity>
         {InputIcon}
       </View>
+      {errorMessage !== undefined ? (
+        <Text style={styles.errorMessage}>{errorMessage || ""}</Text>
+      ) : null}
     </View>
   );
 };

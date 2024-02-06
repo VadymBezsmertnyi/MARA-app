@@ -38,4 +38,13 @@ export const styles = StyleSheet.create({
   containerEmpty: {
     height: 150,
   },
+  containerSubmit: {
+    gap: 10,
+  },
+  errorMessage: {
+    fontFamily: "Montserrat_700Bold",
+    textAlign: "center",
+    color: colors.errorRed,
+    minHeight: 20,
+  },
 });

@@ -12,4 +12,10 @@ export const PATHS = {
   eventAdd: "/events/add/",
   eventChange: "/events/change/",
   eventDelete: "/events/delete/",
+  //workshops
+  workshopsGet: "/workshops/",
+  workshopsGetUserId: "/workshops/user/",
+  workshopsAdd: "/workshops/add/",
+  workshopsChange: "/workshops/change/",
+  workshopsDelete: "/workshops/delete/",
 } as const;

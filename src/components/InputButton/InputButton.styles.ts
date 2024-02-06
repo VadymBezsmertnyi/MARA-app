@@ -40,4 +40,11 @@ export const styles = StyleSheet.create({
     fontFamily: "OpenSans_600SemiBold",
     color: colors.blackCoffee,
   },
+  errorMessage: {
+    fontFamily: "Montserrat_700Bold",
+    fontSize: 10,
+    color: colors.errorRed,
+    marginTop: 4,
+    minHeight: 20,
+  },
 });
