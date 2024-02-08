@@ -1,13 +1,17 @@
-import React, { FunctionComponent, useMemo } from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { ImageSource } from 'expo-image';
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { ImageSource } from "expo-image";
+import { Trans } from "@lingui/macro";
+
+// providers
+import { localesContext } from "../../../../../../localization/localization.provider";
 
 // types
-import { RootWorkshopsScreensParamList } from '../../../../../navigators/Navigators.types';
+import { RootWorkshopsScreensParamList } from "../../../../../navigators/Navigators.types";
 
 // constants
-import { PATHS_WORKSHOP_SCREENS } from '../../../../../navigators/useNavigator.constants';
+import { PATHS_WORKSHOP_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // components
 import {
@@ -16,22 +20,22 @@ import {
   IconStar,
   IconAutoService,
   IconMotoService,
-} from '../../../../../icons/components';
+} from "../../../../../icons/components";
 
 // image
-import WorkshopPlaceholder from '../../../../../../assets/default/workshop-placeholder.png';
+import WorkshopPlaceholder from "../../../../../../assets/default/workshop-placeholder.png";
 
 // styles
-import { styles } from './WorkshopItem.styles';
-import colors from '../../../../../../styles/colors';
+import { styles } from "./WorkshopItem.styles";
+import colors from "../../../../../../styles/colors";
 
 type WorkshopItemProps = {
   workshopId: number;
   title: string;
   description: string;
-  range: number;
+  range: number | string | null;
   comments: number;
-  rate: number;
+  rate: number | null;
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
   isMotoService: boolean;
   isAutoService: boolean;
@@ -50,13 +54,14 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
   isAutoService,
   image,
 }) => {
+  const { i18n } = useContext(localesContext);
   const selectNew = () => {
     navigation.navigate(PATHS_WORKSHOP_SCREENS.workshopItem, { workshopId });
   };
 
   const autoServiceStyles = useMemo(
     () => ({ ...styles.auto, right: isMotoService ? 0 : -8 }),
-    [isMotoService],
+    [isMotoService]
   );
 
   const checkImage = image || WorkshopPlaceholder;
@@ -85,18 +90,36 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
         </Text>
         <View style={styles.wrapper}>
           <View style={styles.inner}>
-            <IconLocationMarker fill={colors.californiaOrange} width={12} height={12} />
-            <Text style={styles.infoText}>{range}</Text>
+            <IconLocationMarker
+              fill={colors.californiaOrange}
+              width={12}
+              height={12}
+            />
+            <Text style={styles.infoText}>
+              {range} {i18n._("km")}
+            </Text>
           </View>
           <View style={styles.comment}>
-            <View style={styles.inner}>
-              <IconChat width={12} height={12} fill={colors.californiaOrange} />
-              <Text style={styles.infoText}>{comments}</Text>
-            </View>
-            <View style={styles.inner}>
-              <IconStar width={12} height={12} fill={colors.yellow} />
-              <Text style={styles.infoText}>{rate}</Text>
-            </View>
+            {rate ? (
+              <>
+                <View style={styles.inner}>
+                  <IconChat
+                    width={12}
+                    height={12}
+                    fill={colors.californiaOrange}
+                  />
+                  <Text style={styles.infoText}>{comments}</Text>
+                </View>
+                <View style={styles.inner}>
+                  <IconStar width={12} height={12} fill={colors.yellow} />
+                  <Text style={styles.infoText}>{rate}</Text>
+                </View>
+              </>
+            ) : (
+              <Text style={styles.notComments}>
+                <Trans>Not comments</Trans>
+              </Text>
+            )}
           </View>
         </View>
       </View>

@@ -2,6 +2,10 @@ import React, { FunctionComponent, useContext, useState } from "react";
 import { Modal, ScrollView, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
+// providers
+import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { mapContext } from "../../../providers/MapProvider/MapProvider";
+
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
 import { localesContext } from "../../../../localization/localization.provider";
@@ -28,6 +32,7 @@ import { PATHS_WORKSHOP_SCREENS } from "../../../navigators/useNavigator.constan
 
 // styles
 import { styles } from "./WorkshopMain.styles";
+import { convertDistance, getDistance } from "geolib";
 
 type WorkshopMainProps = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList> &
@@ -38,6 +43,8 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   navigation,
 }) => {
   const { i18n } = useContext(localesContext);
+  const { workshops } = useContext(workshopsContext);
+  const { location } = useContext(mapContext);
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");
@@ -94,21 +101,31 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
           />
         </View>
         <ScrollView contentContainerStyle={styles.wrapper}>
-          {WORKSHOP.map((item) => (
-            <WorkshopItem
-              key={`workshop-${item.id}`}
-              workshopId={item.id}
-              title={item.title}
-              description={item.description}
-              range={item.range}
-              comments={item.comments}
-              rate={item.range}
-              navigation={navigation}
-              isAutoService={item.isAutoService}
-              isMotoService={item.isMotoService}
-              image={item.photo}
-            />
-          ))}
+          {workshops.map((item) => {
+            const distance = location
+              ? getDistance(location, {
+                  longitude: item.place.coordinates.longitude,
+                  latitude: item.place.coordinates.latitude,
+                })
+              : null;
+            return (
+              <WorkshopItem
+                key={`workshop-${item.id}`}
+                workshopId={item.id}
+                title={item.title}
+                description={item.description}
+                range={
+                  distance ? convertDistance(distance, "km").toFixed(2) : null
+                }
+                comments={item.comments.length} //TODO
+                rate={item.rating}
+                navigation={navigation}
+                isAutoService={item.autoTypesWorks.length > 0}
+                isMotoService={item.motoTypesWorks.length > 0}
+                image={item.images[0]}
+              />
+            );
+          })}
           <View style={styles.containerEmpty} />
         </ScrollView>
         <AddEventButton onPress={onPressAddWorkshop} />

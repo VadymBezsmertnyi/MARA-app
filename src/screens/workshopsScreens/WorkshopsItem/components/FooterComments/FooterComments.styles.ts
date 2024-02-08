@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import { verticalScale } from "../../../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,6 +17,7 @@ export const styles = StyleSheet.create({
   containerOtherReviews: {
     flexDirection: "row",
     justifyContent: "space-between",
+    gap: verticalScale(85),
   },
   containerStars: {
     flexDirection: "row",
@@ -27,7 +29,7 @@ export const styles = StyleSheet.create({
     fontSize: 28,
   },
   reviewsButton: { paddingHorizontal: 35, paddingVertical: 8 },
-  reviewsContainerButton: { height: "auto" },
+  reviewsContainerButton: { flex: 1, height: "auto" },
   containerComments: { gap: 10 },
   containerComment: {
     borderWidth: 1,

@@ -13,22 +13,33 @@ export const ScrollViewCustom: FunctionComponent<ScrollViewCustomProps> = ({
   children,
   style,
 }) => {
-  const [height, setHeight] = useState(0);
+  const [heightLineIndicator, setHeightLineIndicator] = useState(0);
   const scrollY = new Animated.Value(0);
+  const opacity = new Animated.Value(0);
   const translateY = scrollY.interpolate({
     inputRange: [0, 100],
     outputRange: [0, 0],
     extrapolate: "clamp",
   });
 
-  const containerStyles = useMemo(
+  const startOpacity = () => {
+    opacity.setValue(1);
+    Animated.timing(opacity, {
+      toValue: 0,
+      duration: 1000,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const containerIndicatorStyles = useMemo(
     () => [
       styles.containerIndicator,
       {
         transform: [{ translateY }],
+        opacity,
       },
     ],
-    [translateY, height]
+    [translateY, heightLineIndicator, opacity]
   );
 
   const indicatorStyle = useMemo(
@@ -46,18 +57,24 @@ export const ScrollViewCustom: FunctionComponent<ScrollViewCustomProps> = ({
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={style}
-        onLayout={(event) => {
-          setHeight(event.nativeEvent.layout.height);
-        }}
         onScroll={(event) => {
-          const current = (height + 30) / event.nativeEvent.contentSize.height;
+          startOpacity();
+          const current =
+            (heightLineIndicator /
+              (event.nativeEvent.contentSize.height - heightLineIndicator)) *
+            0.9;
           scrollY.setValue(event.nativeEvent.contentOffset.y * current);
         }}
         scrollEventThrottle={16}
       >
         {children}
       </ScrollView>
-      <Animated.View style={containerStyles}>
+      <Animated.View
+        onLayout={(event) => {
+          setHeightLineIndicator(event.nativeEvent.layout.height);
+        }}
+        style={containerIndicatorStyles}
+      >
         <Animated.View style={indicatorStyle} />
       </Animated.View>
     </>

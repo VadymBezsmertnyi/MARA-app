@@ -16,6 +16,7 @@ import {
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
+import { getDistance } from "geolib";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
@@ -23,12 +24,12 @@ import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.ty
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { mapContext } from "../../../providers/MapProvider/MapProvider";
+import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 
 // helps
 import { getFormatPhoneNumber } from "../../../helps/helps";
-
-// images
-import WorkshopPhoto from "../../../../assets/default/workshop-slider.png";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -57,29 +58,74 @@ type WorkshopsItemType = {
   >;
 };
 
-const DELETE_LIST_IMAGES = [WorkshopPhoto, WorkshopPhoto, WorkshopPhoto];
-
 export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   navigation,
   route,
 }) => {
   const { i18n } = useContext(localesContext);
   const { userData } = useContext(userContext);
-  const data = [...Array.from({ length: 20 }, (_, index) => index)].reverse();
+  const { workshops } = useContext(workshopsContext);
+  const { places } = useContext(placesContext);
+  const { location } = useContext(mapContext);
   const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
-  const phone = userData?.phoneNumber || ""; // TODO CHANGE
-  const showPhone = useMemo(() => getFormatPhoneNumber(phone), [phone]);
   const scrollViewRef = useRef<ScrollView | null>(null);
+  const selectWorkshop = useMemo(
+    () =>
+      workshops.find((workshop) => workshop.id === route.params?.workshopId) ||
+      null,
+    [workshops, route.params]
+  );
+  const distance =
+    location && selectWorkshop
+      ? getDistance(location, {
+          longitude: selectWorkshop.place.coordinates.longitude,
+          latitude: selectWorkshop.place.coordinates.latitude,
+        })
+      : null;
+
+  const isCommentUser = useMemo(
+    () =>
+      selectWorkshop && userData
+        ? selectWorkshop.comments.filter(
+            (comment) => comment.userId === userData.id
+          ).length > 0
+        : false,
+    [selectWorkshop, userData]
+  );
+  const commentsReverse = useMemo(
+    () =>
+      selectWorkshop?.comments ? [...selectWorkshop.comments].reverse() : [],
+    [selectWorkshop?.comments]
+  );
+  const showPhone = useMemo(
+    () =>
+      selectWorkshop?.phoneNumber
+        ? getFormatPhoneNumber(selectWorkshop.phoneNumber)
+        : null,
+    [selectWorkshop?.phoneNumber]
+  );
+  // TODO NEED CHANGE
+  const showTitlePlace = useMemo(() => {
+    const country = places
+      ? Object.keys(places)
+          .map((placeKey) => places[placeKey])
+          .find((country) => country.id === selectWorkshop?.place.countryId) ||
+        null
+      : null;
+    if (country && selectWorkshop?.place)
+      return `${country.title}, ${selectWorkshop?.place.city}, ${selectWorkshop?.place.address}`;
+    return ``;
+  }, [places, selectWorkshop?.place]);
 
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const { layoutMeasurement, contentOffset, contentSize } = event.nativeEvent;
     if (
-      amountShow < data.length &&
+      amountShow < commentsReverse.length &&
       layoutMeasurement.height + contentOffset.y >= contentSize.height
     )
       setAmountShow((state) =>
-        state + 5 <= data.length ? state + 5 : data.length
+        state + 5 <= commentsReverse.length ? state + 5 : commentsReverse.length
       );
   };
 
@@ -95,19 +141,17 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
           <View style={styles.containerInfo}>
             <View style={styles.containerSlider}>
               <CustomSlider
-                images={DELETE_LIST_IMAGES}
+                images={selectWorkshop?.images || []}
                 loop
-                styleScroll={(props) => [props, { borderRadius: 3 }]}
+                styleScroll={(props) => [props, styles.imagesScroll]}
               />
             </View>
             <View style={styles.info}>
               <View style={styles.titles}>
-                <Text style={styles.titleInfo}>У Вадима</Text>
-                <Text style={styles.subTitleInfo}>
-                  вул. Володимира Великого, 36
-                </Text>
+                <Text style={styles.titleInfo}>{selectWorkshop?.title}</Text>
+                <Text style={styles.subTitleInfo}>{showTitlePlace}</Text>
               </View>
-              <DistanceCard distance={null} numberOfLines={1} />
+              <DistanceCard distance={distance} numberOfLines={1} />
             </View>
             <View style={styles.containerContacts}>
               <View style={styles.containerPhone}>
@@ -117,26 +161,35 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
                 <Text style={styles.titlePhone}>{showPhone}</Text>
               </View>
               <View style={styles.containerIconsService}>
-                <IconAutoService
-                  width={40}
-                  height={40}
-                  style={styles.autoIcon}
-                />
-                <IconMotoService width={40} height={40} />
+                {selectWorkshop?.autoTypesWorks.length ? (
+                  <IconAutoService
+                    width={40}
+                    height={40}
+                    style={styles.autoIcon}
+                  />
+                ) : null}
+                {selectWorkshop?.motoTypesWorks.length ? (
+                  <IconMotoService width={40} height={40} />
+                ) : null}
               </View>
             </View>
           </View>
-          <View style={styles.containerMap}>
-            <Map longitude={0} latitude={0} />
-          </View>
+          {selectWorkshop ? (
+            <View style={styles.containerMap}>
+              <Map
+                longitude={selectWorkshop.place.coordinates.longitude}
+                latitude={selectWorkshop.place.coordinates.latitude}
+              />
+            </View>
+          ) : null}
           <View style={styles.containerDescription}>
             <Text style={styles.titleDescription}>
               <Trans>About us:</Trans>
             </Text>
             <Text style={styles.description}>
-              Lorem ipsum dolor sit amet consectetur. Orci sit rutrum vestibulum
-              turpis tempus nulla arcu vel. Lorem ipsum dolor sit amet
-              consectetur.
+              {isFullDescription
+                ? selectWorkshop?.description
+                : selectWorkshop?.description.slice(0, 100)}
               {!isFullDescription && (
                 <TouchableOpacity
                   style={styles.buttonDescription}
@@ -151,8 +204,16 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
               )}
             </Text>
           </View>
-          <ListWorksDo />
-          <FooterComments data={data.slice(0, amountShow)} />
+          {selectWorkshop ? (
+            <ListWorksDo
+              motoWorkIds={selectWorkshop.motoTypesWorks}
+              autoWorkIds={selectWorkshop.autoTypesWorks}
+            />
+          ) : null}
+          <FooterComments
+            data={commentsReverse.slice(0, amountShow)}
+            isCommentUser={isCommentUser}
+          />
         </View>
         <View style={styles.containerEmpty} />
       </ScrollView>

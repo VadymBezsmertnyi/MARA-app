@@ -1,5 +1,6 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import { verticalScale } from "../../../../styles/hooks";
 
 const WIDTH = Dimensions.get("window").width;
 
@@ -9,6 +10,7 @@ export const styles = StyleSheet.create({
   containerMain: { gap: 40, width: "100%" },
   containerInfo: { gap: 20, width: "100%" },
   containerSlider: { height: 184, paddingHorizontal: 20 },
+  imagesScroll: { borderRadius: 3, backgroundColor: colors.transparent },
   info: {
     width: WIDTH - 20,
     flexDirection: "row",
@@ -16,7 +18,7 @@ export const styles = StyleSheet.create({
     gap: 20,
     alignItems: "flex-start",
   },
-  titles: { gap: 12 },
+  titles: { maxWidth: verticalScale(250), gap: 12 },
   titleInfo: {
     fontFamily: "Montserrat_700Bold",
     fontSize: 20,

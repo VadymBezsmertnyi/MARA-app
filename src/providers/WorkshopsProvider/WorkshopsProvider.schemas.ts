@@ -1,4 +1,5 @@
 import { z } from "zod";
+import colors from "../../../styles/colors";
 
 export const typeWorkSchema = z.object({
   id: z.number(),
@@ -13,6 +14,7 @@ export const commentSchema = z.object({
   userId: z.number(),
   userName: z.string(),
   description: z.string(),
+  rating: z.number().min(1).max(5),
   dateCreate: z.number(),
   dateUpdate: z.number(),
 });

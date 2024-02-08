@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     width: 2,
     top: 16,
     right: 4,
-    height: "90%",
+    height: "95%",
     backgroundColor: colors.white,
     overflow: "hidden",
     borderRadius: 1,

@@ -1,6 +1,9 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useContext } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { convertDistance } from "geolib";
+
+// providers
+import { localesContext } from "../../../../../../../localization/localization.provider";
 
 // types
 import { NearbySearchGoogleType } from "../../MapLocationModal.types";
@@ -25,6 +28,7 @@ export const AddressLocation: FunctionComponent<AddressLocationProps> = ({
   isSelect,
   getDetailPlace,
 }) => {
+  const { i18n } = useContext(localesContext);
   const getStyle = () => [
     styles.itemList,
     isSelect && { borderColor: colors.chileanFireOrange },
@@ -50,7 +54,7 @@ export const AddressLocation: FunctionComponent<AddressLocationProps> = ({
         <IconLocationMarkerGradient width={12} height={12} />
         {distance ? (
           <Text style={styles.titleLocationItemList}>
-            {convertDistance(distance, "km").toFixed(2)} км
+            {convertDistance(distance, "km").toFixed(2)} {i18n._("km")}
           </Text>
         ) : null}
       </View>

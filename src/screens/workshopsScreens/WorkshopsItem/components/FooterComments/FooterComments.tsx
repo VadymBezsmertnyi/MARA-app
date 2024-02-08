@@ -1,9 +1,13 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { FlatList, ListRenderItem, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
+// types
+import { CommentType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
+import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
 
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
@@ -14,47 +18,46 @@ import { IconStar } from "../../../../../icons/components";
 // styles
 import { styles } from "./FooterComments.styles";
 import colors from "../../../../../../styles/colors";
-import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { dateToNMY } from "../../../../../helps/helps";
 
 type FooterCommentsProps = {
-  data: number[];
+  data: CommentType[];
+  isCommentUser: boolean;
 };
 
 export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
   data,
+  isCommentUser,
 }) => {
   const { i18n } = useContext(localesContext);
   const { setIdComment } = useContext(workshopsContext);
+  const isComments = useMemo(() => data.length > 0, [data]);
 
-  const renderItem: ListRenderItem<number> = ({ item }) => {
-    const rating = Number(((item + 1) / 4).toFixed(2));
-    const showAmountStars =
-      Number(rating.toFixed()) > 0 ? Number(rating.toFixed()) : 1;
-    const stars = Array.from({ length: showAmountStars }, (_, index) => index);
+  const renderItem: ListRenderItem<CommentType> = ({ item }) => {
+    const stars = Array.from({ length: item.rating }, (_, index) => index);
 
     return (
       <View style={styles.containerComment}>
         <View style={styles.headerComment}>
-          <Text style={styles.titleName}>Вася Пупкін</Text>
-          <Text style={styles.titleDate}>27.03.2023</Text>
+          <Text style={styles.titleName}>{item.userName}</Text>
+          <Text style={styles.titleDate}>
+            {dateToNMY(new Date(item.dateUpdate))}
+          </Text>
         </View>
         <View style={styles.starsContainer}>
           <View style={styles.stars}>
             {stars.map((star) => (
               <IconStar
-                key={`star-${star}-comment-${item}`}
+                key={`star-${star}-comment-${item.id}`}
                 width={12}
                 height={12}
                 fill={colors.yellow}
               />
             ))}
           </View>
-          <Text style={styles.titleStars}>{showAmountStars}</Text>
+          <Text style={styles.titleStars}>{item.rating}</Text>
         </View>
-        <Text style={styles.comment}>
-          Найкраще місце для сервісу! Вони вразили своєю професіональністю та
-          швидкістю виконання робіт.
-        </Text>
+        <Text style={styles.comment}>{item.description}</Text>
       </View>
     );
   };
@@ -70,12 +73,20 @@ export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
           <Trans>Reviews:</Trans>
         </Text>
         <View style={styles.containerOtherReviews}>
-          <View style={styles.containerStars}>
-            <IconStar width={32} height={32} fill={colors.yellow} />
-            <Text style={styles.titleStar}>5.0</Text>
-          </View>
+          {isComments ? (
+            <View style={styles.containerStars}>
+              <IconStar width={32} height={32} fill={colors.yellow} />
+              <Text style={styles.titleStar}>5.0</Text>
+            </View>
+          ) : null}
           <ButtonCustom
-            title={i18n._("Write a review")}
+            title={
+              !isComments
+                ? i18n._("Draft the first review")
+                : isCommentUser
+                ? i18n._("Change a review")
+                : i18n._("Write a review")
+            }
             onSubmit={onShowWriteComment}
             styleButton={styles.reviewsButton}
             styleContainer={styles.reviewsContainerButton}

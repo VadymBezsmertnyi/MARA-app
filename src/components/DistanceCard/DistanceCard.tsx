@@ -32,7 +32,7 @@ export const DistanceCard: FunctionComponent<DistanceCardType> = ({
       />
       <Text numberOfLines={numberOfLines} style={styles.title}>
         {distance !== null
-          ? `${convertDistance(distance, "km").toFixed(2)} км`
+          ? `${convertDistance(distance, "km").toFixed(2)} ${i18n._("km")}`
           : i18n._(`Not enabled location`)}
       </Text>
     </View>

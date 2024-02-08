@@ -1,6 +1,10 @@
-import { StyleSheet } from 'react-native';
-import { horizontalScale, scaleFont, verticalScale } from '../../../../../../styles/hooks';
-import colors from '../../../../../../styles/colors';
+import { StyleSheet } from "react-native";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../../../styles/hooks";
+import colors from "../../../../../../styles/colors";
 
 const PADDING_HORIZONTAL = 16;
 const PADDING_TOP = 8;
@@ -12,8 +16,8 @@ const FONT_SIZE_INFO = 10;
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: colors.lightOrange,
     paddingLeft: horizontalScale(PADDING_TOP),
     paddingRight: horizontalScale(PADDING_HORIZONTAL),
@@ -30,7 +34,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: scaleFont(FONT_SIZE_TITLE),
-    fontWeight: '600',
+    fontWeight: "600",
     color: colors.blackCoffee,
   },
   description: {
@@ -44,37 +48,43 @@ export const styles = StyleSheet.create({
   wrapper: {
     marginTop: 8,
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   inner: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 4,
   },
   infoText: {
     fontSize: scaleFont(FONT_SIZE_INFO),
-    fontWeight: '600',
+    fontWeight: "600",
     color: colors.blackCoffee,
   },
   image: {
     width: 73,
     height: 73,
+    borderRadius: 3,
   },
   moto: {
-    position: 'absolute',
+    position: "absolute",
     right: -8,
     bottom: -7,
   },
   auto: {
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     bottom: -7,
   },
   comment: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 18,
+  },
+  notComments: {
+    fontSize: scaleFont(FONT_SIZE_INFO),
+    fontWeight: "600",
+    color: colors.grayCloudy,
   },
 });

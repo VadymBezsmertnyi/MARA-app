@@ -5,6 +5,9 @@ import { Trans } from "@lingui/macro";
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
 
+// helps
+import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 import { ScrollViewCustom } from "../../../../../components/ScrollViewCustom/ScrollViewCustom";
@@ -15,11 +18,44 @@ import { IconOkGradient } from "../../../../../icons/components";
 // styles
 import { styles } from "./ListWorksDo.styles";
 
-type ListWorksDoProps = {};
+type ListWorksDoProps = {
+  motoWorkIds: number[];
+  autoWorkIds: number[];
+};
 
-export const ListWorksDo: FunctionComponent<ListWorksDoProps> = () => {
+export const ListWorksDo: FunctionComponent<ListWorksDoProps> = ({
+  motoWorkIds,
+  autoWorkIds,
+}) => {
   const { i18n } = useContext(localesContext);
   const [isAuto, setIsAuto] = useState(false);
+  const [isShortList, setIsShortList] = useState(false);
+  const { typesWorkServices } = useWorkshopsProvider();
+  const motoList = useMemo(
+    () =>
+      motoWorkIds.map(
+        (motoId) =>
+          typesWorkServices.moto.find(
+            (motoService) => motoService.id === motoId
+          ) || null
+      ),
+    [typesWorkServices.moto, motoWorkIds]
+  );
+  const autoList = useMemo(
+    () =>
+      autoWorkIds.map(
+        (autoId) =>
+          typesWorkServices.auto.find(
+            (autoService) => autoService.id === autoId
+          ) || null
+      ),
+    [typesWorkServices.auto, autoWorkIds]
+  );
+  const showListWork = useMemo(() => {
+    if (isAuto && autoList.length > 0) return autoList;
+    else if (motoList.length) return motoList;
+    return autoList;
+  }, [isAuto, autoList, motoList]);
 
   const leftButtonStyles = useMemo(
     () => [
@@ -31,60 +67,67 @@ export const ListWorksDo: FunctionComponent<ListWorksDoProps> = () => {
     [isAuto]
   );
 
+  if (motoWorkIds.length === 0 && autoWorkIds.length === 0) return null;
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
         <Trans>The work we do:</Trans>
       </Text>
       <View style={styles.containerCheckButton}>
-        <TouchableOpacity
-          style={styles.checkButton}
-          onPress={() => {
-            setIsAuto((state) => !state);
-          }}
-        >
-          <ButtonCustom
-            disabled
-            type={isAuto ? "full" : "transparent"}
-            title={i18n._("Auto")}
-            onSubmit={() => {}}
-            styleContainer={leftButtonStyles}
-            styleLinear={styles.styleLinearButtons}
-            styleTitle={styles.titleButtons}
-          />
-          <ButtonCustom
-            disabled
-            type={isAuto ? "transparent" : "full"}
-            title={i18n._("Moto")}
-            onSubmit={() => {}}
-            styleContainer={styles.rightButton}
-            styleLinear={styles.styleLinearButtons}
-            styleTitle={styles.titleButtons}
-          />
-        </TouchableOpacity>
+        {motoWorkIds.length > 0 && autoWorkIds.length > 0 ? (
+          <TouchableOpacity
+            style={styles.checkButton}
+            onPress={() => {
+              setIsAuto((state) => !state);
+            }}
+          >
+            <ButtonCustom
+              disabled
+              type={isAuto ? "full" : "transparent"}
+              title={i18n._("Auto")}
+              onSubmit={() => null}
+              styleContainer={leftButtonStyles}
+              styleLinear={styles.styleLinearButtons}
+              styleTitle={styles.titleButtons}
+            />
+            <ButtonCustom
+              disabled
+              type={isAuto ? "transparent" : "full"}
+              title={i18n._("Moto")}
+              onSubmit={() => null}
+              styleContainer={styles.rightButton}
+              styleLinear={styles.styleLinearButtons}
+              styleTitle={styles.titleButtons}
+            />
+          </TouchableOpacity>
+        ) : null}
       </View>
-      <View style={styles.containerList}>
+      <View
+        style={styles.containerList}
+        onLayout={(event) => {
+          setIsShortList(event.nativeEvent.layout.height >= 564);
+        }}
+      >
         <ScrollViewCustom style={styles.containerServices}>
           <>
-            {Array.from({ length: 20 }, (_, index) => index).map((item) => (
-              <View
-                key={`type-service-${item + 1}`}
-                style={styles.containerService}
-              >
-                <IconOkGradient width={40} height={40} />
-                <View style={styles.containerInfoService}>
-                  <Text style={styles.titleInfoService}>
-                    Технічне обслуговування
-                  </Text>
-                  <Text style={styles.subTitleInfoService}>
-                    Мастило троса/Синхронізація карбюраторів/Заміна повітряного
-                    фільтразаміна свічок/Заміна масла в коробці/Заміна масла в
-                    редукторі/Заміна охолоджуючої рідини/Заміна масла в двигуні
-                  </Text>
+            {showListWork.map((item, index) =>
+              item ? (
+                <View
+                  key={`type-service-${item.id + index}`}
+                  style={styles.containerService}
+                >
+                  <IconOkGradient width={40} height={40} />
+                  <View style={styles.containerInfoService}>
+                    <Text style={styles.titleInfoService}>{item.title}</Text>
+                    <Text style={styles.subTitleInfoService}>
+                      {item.description}
+                    </Text>
+                  </View>
                 </View>
-              </View>
-            ))}
-            <View style={styles.containerEmpty} />
+              ) : null
+            )}
+            {isShortList ? <View style={styles.containerEmpty} /> : null}
           </>
         </ScrollViewCustom>
       </View>
