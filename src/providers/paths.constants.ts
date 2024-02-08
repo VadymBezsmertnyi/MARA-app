@@ -18,4 +18,6 @@ export const PATHS = {
   workshopsAdd: "/workshops/add/",
   workshopsChange: "/workshops/change/",
   workshopsDelete: "/workshops/delete/",
+  workshopsCommentsAdd: "/workshops/comments/add/",
+  workshopsCommentsChange: "/workshops/comments/change/",
 } as const;

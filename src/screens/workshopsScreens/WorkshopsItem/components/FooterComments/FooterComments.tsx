@@ -7,10 +7,12 @@ import { CommentType } from "../../../../../providers/WorkshopsProvider/Workshop
 
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
-import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
 
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
+
+// helps
+import { dateToNMY } from "../../../../../helps/helps";
 
 // icons
 import { IconStar } from "../../../../../icons/components";
@@ -18,19 +20,21 @@ import { IconStar } from "../../../../../icons/components";
 // styles
 import { styles } from "./FooterComments.styles";
 import colors from "../../../../../../styles/colors";
-import { dateToNMY } from "../../../../../helps/helps";
 
 type FooterCommentsProps = {
   data: CommentType[];
   isCommentUser: boolean;
+  rating: number;
+  setIsShowModalComment: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
   data,
   isCommentUser,
+  rating,
+  setIsShowModalComment,
 }) => {
   const { i18n } = useContext(localesContext);
-  const { setIdComment } = useContext(workshopsContext);
   const isComments = useMemo(() => data.length > 0, [data]);
 
   const renderItem: ListRenderItem<CommentType> = ({ item }) => {
@@ -63,7 +67,7 @@ export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
   };
 
   const onShowWriteComment = () => {
-    setIdComment(4);
+    setIsShowModalComment(true);
   };
 
   return (
@@ -76,7 +80,7 @@ export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
           {isComments ? (
             <View style={styles.containerStars}>
               <IconStar width={32} height={32} fill={colors.yellow} />
-              <Text style={styles.titleStar}>5.0</Text>
+              <Text style={styles.titleStar}>{rating.toFixed(1)}</Text>
             </View>
           ) : null}
           <ButtonCustom

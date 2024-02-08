@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     fontFamily: "Montserrat_700Bold",
     fontSize: 28,
   },
-  reviewsButton: { paddingHorizontal: 35, paddingVertical: 8 },
+  reviewsButton: { paddingVertical: 8 },
   reviewsContainerButton: { flex: 1, height: "auto" },
   containerComments: { gap: 10 },
   containerComment: {

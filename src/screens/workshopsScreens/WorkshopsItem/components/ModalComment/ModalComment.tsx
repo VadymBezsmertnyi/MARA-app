@@ -1,0 +1,190 @@
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { Text, TouchableOpacity, View } from "react-native";
+import { Trans } from "@lingui/macro";
+
+// types
+import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+
+// providers
+import { userContext } from "../../../../../providers/UserProvider/UserProvider";
+import { localesContext } from "../../../../../../localization/localization.provider";
+import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
+
+// components
+import { Input } from "../../../../../components/Input/Input";
+import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
+
+// icons
+import { IconStar } from "../../../../../icons/components";
+
+// styles
+import { styles } from "./ModalComment.styles";
+import colors from "../../../../../../styles/colors";
+
+type ModalCommentProps = {
+  selectWorkshop: WorkshopType | null;
+  onClose: () => void;
+};
+
+export const ModalComment: FunctionComponent<ModalCommentProps> = ({
+  selectWorkshop,
+  onClose,
+}) => {
+  const { i18n } = useContext(localesContext);
+  const { userData } = useContext(userContext);
+  const { addComment, changeComment } = useContext(workshopsContext);
+  const [userName, setUserName] = useState("");
+  const [description, setDescription] = useState("");
+  const [rating, setRating] = useState(0);
+  const [errorMessages, setErrorMessages] = useState<Record<
+    string,
+    string
+  > | null>(null);
+  const stars = Array.from({ length: 5 }, (_, index) => index + 1);
+  const commentUser = useMemo(
+    () =>
+      selectWorkshop?.comments.find(
+        (comment) => comment.userId === userData?.id
+      ) || null,
+    []
+  );
+
+  const clearKeyError = (key: string) => {
+    if (errorMessages && key in errorMessages) {
+      const { [key]: _, ...otherErrorMessage } = errorMessages;
+      if (Object.keys(otherErrorMessage).length <= 2) setErrorMessages(null);
+      else setErrorMessages(otherErrorMessage);
+    }
+  };
+
+  const checkEnterData = () => {
+    const errorsObject = {
+      ...((userName.length < 3 || userName.length > 40) && {
+        title: i18n._(
+          "The text must contain a minimum of 3 and a maximum of 40 characters."
+        ),
+      }),
+      ...((description.length < 10 || description.length > 2000) && {
+        description: i18n._(
+          "The text must contain a minimum of 10 and a maximum of 2000 characters."
+        ),
+      }),
+      ...(rating === 0 && {
+        rating: i18n._(
+          "The text must contain a minimum of 10 and a maximum of 2000 characters."
+        ),
+      }),
+    };
+    const isError = Object.keys(errorsObject).length > 0;
+    if (isError) setErrorMessages(errorsObject);
+    else setErrorMessages(null);
+    return isError;
+  };
+
+  const onSubmit = async () => {
+    const isError = checkEnterData();
+    if (!isError && selectWorkshop && userData) {
+      const newComment = {
+        userId: userData.id,
+        description,
+        userName,
+        rating,
+        dateCreate: new Date().getTime(),
+        dateUpdate: new Date().getTime(),
+      };
+      const result = commentUser
+        ? await changeComment(selectWorkshop.id, {
+            ...commentUser,
+            ...newComment,
+            dateCreate: commentUser.dateCreate,
+          })
+        : await addComment(selectWorkshop.id, newComment);
+      if (result) onClose();
+    }
+  };
+
+  useEffect(() => {
+    if (commentUser) {
+      setUserName(commentUser.userName);
+      setDescription(commentUser.description);
+      setRating(commentUser.rating);
+    }
+    if (userData) setUserName(`${userData.firstName} ${userData.lastName}`);
+  }, [commentUser]);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.containerHeader}>
+        <Text style={styles.titleHeader}>
+          <Trans>Leave a review</Trans>
+        </Text>
+      </View>
+      <View style={styles.containerBody}>
+        <Input
+          label={i18n._("Name")}
+          placeholder={i18n._("Enter your name")}
+          value={userName}
+          onChange={(value) => {
+            clearKeyError("userName");
+            setUserName(value);
+          }}
+          errorMessage={errorMessages?.userName}
+        />
+        <Input
+          placeholder={i18n._("Add a description about the workshop")}
+          label={i18n._("Workshop description")}
+          value={description}
+          onChange={(value) => {
+            clearKeyError("description");
+            setDescription(value);
+          }}
+          containerStyle={styles.containerStyle}
+          customStyles={styles.customStylesInput}
+          errorMessage={errorMessages?.description}
+        />
+        <View>
+          <View style={styles.containerStars}>
+            {stars.map((star) => (
+              <TouchableOpacity
+                key={`star-${star}-comment`}
+                onPress={() => {
+                  clearKeyError("rating");
+                  setRating(star);
+                }}
+              >
+                {rating >= star ? (
+                  <IconStar
+                    width={32}
+                    height={32}
+                    fill={colors.yellow}
+                    stroke={colors.yellow}
+                  />
+                ) : (
+                  <IconStar width={32} height={32} stroke={colors.grayCloudy} />
+                )}
+              </TouchableOpacity>
+            ))}
+          </View>
+          {errorMessages?.rating ? (
+            <Text style={styles.errorMessage}>{errorMessages.rating}</Text>
+          ) : null}
+        </View>
+      </View>
+      <View style={styles.containerButton}>
+        <ButtonCustom
+          disabled={
+            errorMessages ? Object.values(errorMessages).length > 0 : false
+          }
+          title={i18n._("Publish")}
+          onSubmit={onSubmit}
+        />
+      </View>
+    </View>
+  );
+};

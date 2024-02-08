@@ -9,7 +9,11 @@ import { z } from "zod";
 import qs from "qs";
 
 // types
-import { WorkshopType, WorkshopsType } from "./WorkshopsProvider.types";
+import {
+  CommentType,
+  WorkshopType,
+  WorkshopsType,
+} from "./WorkshopsProvider.types";
 
 // providers
 import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.provider";
@@ -20,18 +24,21 @@ import { userContext } from "../UserProvider/UserProvider";
 // schemas
 import { workshopSchema, workshopsSchema } from "./WorkshopsProvider.schemas";
 
-// components
-import { ModalsSheet } from "../../components/ModalsSheet/ModalsSheet";
-import { ModalComment } from "./components/ModalComment/ModalComment";
-
 // constants
 import { PATHS } from "../paths.constants";
 
 type WorkshopsContext = {
   workshops: WorkshopsType;
   workshopsUser: WorkshopsType;
-  setIdComment: React.Dispatch<React.SetStateAction<number | null>>;
   addWorkshop: (newWorkshop: Omit<WorkshopType, "id">) => Promise<boolean>;
+  addComment: (
+    idWorkshop: number,
+    newComment: Omit<CommentType, "id">
+  ) => Promise<boolean>;
+  changeComment: (
+    idWorkshop: number,
+    changeComment: CommentType
+  ) => Promise<boolean>;
 };
 
 type WorkshopsProviderProps = {
@@ -48,16 +55,6 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   const { userData } = useContext(userContext);
   const [workshops, setWorkShops] = useState<WorkshopsType>([]);
   const [workshopsUser, setWorkShopsUser] = useState<WorkshopsType>([]);
-  const [idComment, setIdComment] = useState<number | null>(null);
-
-  const showModal = useMemo(() => {
-    if (idComment !== null) return <ModalComment />;
-    return null;
-  }, [idComment]);
-
-  const onClose = () => {
-    setIdComment(null);
-  };
 
   const getWorkshops = async () => {
     const result = await api(
@@ -120,12 +117,67 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     return false;
   };
 
+  const addComment = async (
+    idWorkshop: number,
+    newComment: Omit<CommentType, "id">
+  ) => {
+    setLoading(true);
+    const result = await api(
+      PATHS.workshopsCommentsAdd,
+      {
+        method: "POST",
+        data: { idWorkshop, ...newComment },
+      },
+      z.object({ workshop: workshopSchema })
+    );
+
+    if (result?.workshop) {
+      setWorkShops((state) =>
+        state.map((item) =>
+          item.id === result.workshop.id ? result.workshop : item
+        )
+      );
+      setLoading(false);
+      return true;
+    }
+    setLoading(false);
+    return false;
+  };
+
+  const changeComment = async (
+    idWorkshop: number,
+    changeComment: CommentType
+  ) => {
+    setLoading(true);
+    const result = await api(
+      PATHS.workshopsCommentsChange,
+      {
+        method: "PUT",
+        data: { idWorkshop, ...changeComment },
+      },
+      z.object({ workshop: workshopSchema })
+    );
+
+    if (result?.workshop) {
+      setWorkShops((state) =>
+        state.map((item) =>
+          item.id === result.workshop.id ? result.workshop : item
+        )
+      );
+      setLoading(false);
+      return true;
+    }
+    setLoading(false);
+    return false;
+  };
+
   const valueContext: WorkshopsContext = useMemo(
     () => ({
       workshops,
       workshopsUser,
-      setIdComment,
       addWorkshop,
+      addComment,
+      changeComment,
     }),
     [workshops]
   );
@@ -141,9 +193,6 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     <ResponsiveLayoutProvider>
       <workshopsContext.Provider value={valueContext}>
         {children}
-        {showModal ? (
-          <ModalsSheet onClose={onClose}>{showModal}</ModalsSheet>
-        ) : null}
       </workshopsContext.Provider>
     </ResponsiveLayoutProvider>
   );

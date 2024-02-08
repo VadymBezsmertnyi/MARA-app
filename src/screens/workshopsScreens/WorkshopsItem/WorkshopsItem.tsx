@@ -39,6 +39,8 @@ import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { Map } from "../../../components/Map/Map";
 import { ListWorksDo } from "./components/ListWorksDo/ListWorksDo";
 import { FooterComments } from "./components/FooterComments/FooterComments";
+import { ModalsSheet } from "../../../components/ModalsSheet/ModalsSheet";
+import { ModalComment } from "./components/ModalComment/ModalComment";
 
 // icons
 import {
@@ -69,6 +71,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const { location } = useContext(mapContext);
   const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
+  const [isShowModalComment, setIsShowModalComment] = useState(false);
   const scrollViewRef = useRef<ScrollView | null>(null);
   const selectWorkshop = useMemo(
     () =>
@@ -105,7 +108,6 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         : null,
     [selectWorkshop?.phoneNumber]
   );
-  // TODO NEED CHANGE
   const showTitlePlace = useMemo(() => {
     const country = places
       ? Object.keys(places)
@@ -117,6 +119,10 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       return `${country.title}, ${selectWorkshop?.place.city}, ${selectWorkshop?.place.address}`;
     return ``;
   }, [places, selectWorkshop?.place]);
+
+  const onClose = () => {
+    setIsShowModalComment(false);
+  };
 
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const { layoutMeasurement, contentOffset, contentSize } = event.nativeEvent;
@@ -213,10 +219,15 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
           <FooterComments
             data={commentsReverse.slice(0, amountShow)}
             isCommentUser={isCommentUser}
+            setIsShowModalComment={setIsShowModalComment}
+            rating={selectWorkshop?.rating || 0}
           />
         </View>
         <View style={styles.containerEmpty} />
       </ScrollView>
+      <ModalsSheet isShow={isShowModalComment} onClose={onClose}>
+        <ModalComment selectWorkshop={selectWorkshop} onClose={onClose} />
+      </ModalsSheet>
     </View>
   );
 };
