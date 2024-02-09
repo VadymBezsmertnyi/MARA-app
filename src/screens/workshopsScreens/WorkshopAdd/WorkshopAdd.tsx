@@ -312,6 +312,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
 
   useEffect(() => {
     if (selectWorkshop) getChangeWorkshop();
+    else if (userData?.phoneNumber && phoneNumber.length < 5)
+      setPhoneNumber(userData.phoneNumber);
   }, [selectWorkshop]);
 
   return (

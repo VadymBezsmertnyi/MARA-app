@@ -1,9 +1,6 @@
 import { Platform } from "react-native";
 import Toast from "react-native-root-toast";
 import { Errors } from "./errors";
-// TODO
-//import { IS_NODE } from '../useInitializer/useInitializer.const';
-const IS_NODE = false;
 
 const bug = (rawError: Error | string): void => {
   if (rawError instanceof Error) {
@@ -53,9 +50,6 @@ const fatal = (error: Errors): void => {
       textColor: "white",
       backgroundColor: "black",
     });
-  if (IS_NODE && error) {
-    throw error;
-  }
 };
 
 const success = (rawError: unknown) => {
