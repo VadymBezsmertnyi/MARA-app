@@ -14,32 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "km"
+msgstr "км"
+
+#. js-lingui-explicit-id
 msgid "Not enabled location"
 msgstr "Не ввімкнено місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Опублікувати"
-
-#. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Створити подію"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Подія"
-
-#. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Видалити подію"
-
-#. js-lingui-explicit-id
-msgid "Yes"
-msgstr "Так"
-
-#. js-lingui-explicit-id
-msgid "No"
-msgstr "Ні"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -66,12 +46,80 @@ msgid "Select"
 msgstr "Обрати"
 
 #. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Введіть адресу"
+msgid "Yes"
+msgstr "Так"
 
 #. js-lingui-explicit-id
-msgid "Select on the map"
-msgstr "Вибрати на карті"
+msgid "No"
+msgstr "Ні"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the locality"
+msgstr "Введіть назву населеного пункту"
+
+#. js-lingui-explicit-id
+msgid "Kyiv"
+msgstr "Київ"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Введіть точну адресу"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Вулиця Незалежності, 1"
+
+#. js-lingui-explicit-id
+msgid "Select country"
+msgstr "Виберіть країну"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Продовжити"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Назад"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Створити подію"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Змінити подію"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Створити майстерню"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Змінити майстерню"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Видалити подію"
+
+#. js-lingui-explicit-id
+msgid "Ukraine"
+msgstr "Україна"
+
+#. js-lingui-explicit-id
+msgid "Poland"
+msgstr "Польща"
+
+#. js-lingui-explicit-id
+msgid "Belarus"
+msgstr "Білорусь"
+
+#. js-lingui-explicit-id
+msgid "Lithuania"
+msgstr "Литва"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -306,6 +354,10 @@ msgid "Enter the name of the event"
 msgstr "Введіть назву події"
 
 #. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Введіть адресу"
+
+#. js-lingui-explicit-id
 msgid "The beginning"
 msgstr "Початок"
 
@@ -332,6 +384,10 @@ msgstr "Розкажіть нам про подію:"
 #. js-lingui-explicit-id
 msgid "Add a photo"
 msgstr "Додати фото"
+
+#. js-lingui-explicit-id
+msgid "Event address"
+msgstr "Адреса події"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -398,10 +454,6 @@ msgid "Select the city"
 msgstr "Оберіть місто:"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Продовжити"
-
-#. js-lingui-explicit-id
 msgid "events"
 msgstr "події"
 
@@ -458,32 +510,60 @@ msgid "City"
 msgstr "Місто"
 
 #. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Написати відгук"
+msgid "workshops"
+msgstr "майстерні"
 
 #. js-lingui-explicit-id
-msgid "Go to workshop {title}"
-msgstr "Перейти до майстерні {title}"
+msgid "Name of the workshop"
+msgstr "Назва майстерні"
 
 #. js-lingui-explicit-id
-msgid "Workshop {title}"
-msgstr "Майстерня {title}"
+msgid "The text must contain a minimum of 5 and a maximum of 40 characters."
+msgstr "Текст повинен містити від 5 до 40 символів."
 
 #. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Авто"
+msgid "The place of the workshop"
+msgstr "Місце розташування майстерні"
+
+#. js-lingui-explicit-id
+msgid "The location of the workshop must be selected."
+msgstr "Місце розташування майстерні повинно бути обрано."
+
+#. js-lingui-explicit-id
+msgid "Description of the workshop"
+msgstr "Опис майстерні"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 200 and a maximum of 9000 characters."
+msgstr "Текст повинен містити від 200 до 9000 символів."
+
+#. js-lingui-explicit-id
+msgid "Phone number the workshop"
+msgstr "Номер телефону майстерні"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Будь ласка, введіть номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Types of workshop jobs"
+msgstr "Типи робіт майстерні"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Будь ласка, оберіть принаймні один тип"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Інформація відсутня"
 
 #. js-lingui-explicit-id
 msgid "Moto"
 msgstr "Мото"
 
 #. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Майстерня"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Інформація відсутня"
+msgid "Auto"
+msgstr "Авто"
 
 #. js-lingui-explicit-id
 msgid "All workshops"
@@ -496,6 +576,106 @@ msgstr "Ремонт мотоциклів"
 #. js-lingui-explicit-id
 msgid "Repair of automobiles"
 msgstr "Ремонт автомобілів"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Майстерню успішно змінено"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Майстерню успішно створено"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Помилка при зміні майстерні"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Помилка при створенні майстерні"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Введіть назву майстерні"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Назва майстерні"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Адреса майстерні"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Додайте опис про майстерню"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Опис майстерні"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Номер телефону*"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Тип майстерні"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Виберіть тип"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Типи робіт"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Виберіть типи робіт"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Перше фото буде на обкладинці оголошення."
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Створіть перший відгук"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Змінити відгук"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Написати відгук"
+
+#. js-lingui-explicit-id
+msgid "Go to workshop {title}"
+msgstr "Перейти до майстерні {title}"
+
+#. js-lingui-explicit-id
+msgid "Workshop {title}"
+msgstr "Майстерня {title}"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Текст повинен містити принаймні 3, але не більше 40 символів."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Текст повинен містити принаймні 10, але не більше 2000 символів."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Ім'я"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Майстерня"
 
 #. js-lingui-explicit-id
 msgid "Type workshops"
@@ -532,9 +712,6 @@ msgstr "Додати подію"
 
 msgid "Add workshop"
 msgstr "Додати майстерню"
-
-msgid "Add your address"
-msgstr "Додати вашу адресу"
 
 msgid "All cities"
 msgstr "Усі міста"
@@ -662,8 +839,8 @@ msgstr "Введений неправильний номер телефону а
 msgid "Internal Server Error"
 msgstr "Внутрішня помилка сервера"
 
-msgid "Latest news:"
-msgstr "Останні новини:"
+msgid "Leave a review"
+msgstr "Залишити відгук"
 
 msgid "Logout"
 msgstr "Вийти"
@@ -683,20 +860,23 @@ msgstr "більше деталей"
 msgid "More events"
 msgstr "Більше подій"
 
-msgid "More news"
-msgstr "Більше новин"
-
-msgid "Move and change location"
-msgstr "Перемістіть та змініть місцезнаходження"
+msgid "Move and change the location"
+msgstr "Перемістити та змінити місце"
 
 msgid "My events"
 msgstr "Мої події"
 
-msgid "New"
-msgstr "Новина"
+msgid "My workshops"
+msgstr "Мої майстерні"
 
-msgid "News"
-msgstr "Новини"
+msgid "No events have passed"
+msgstr "Події не відбулися"
+
+msgid "Not comments"
+msgstr "Коментарі відсутні"
+
+msgid "Now"
+msgstr "Зараз"
 
 msgid "Now create yourself a strong password."
 msgstr "Тепер створіть собі надійний пароль"
@@ -718,6 +898,9 @@ msgstr "Пароль повинен містити не менше 8 симво�
 
 msgid "Passwords do not match"
 msgstr "Паролі не співпадають"
+
+msgid "Past events:"
+msgstr "Минулі події:"
 
 msgid "Please authenticator"
 msgstr "Будьласка пройдіть аутентифікацію"
@@ -764,9 +947,6 @@ msgstr "Відгуки:"
 msgid "Select a location on the map"
 msgstr "Виберіть місце на мапі"
 
-msgid "Select on the map"
-msgstr "Обрати на карті"
-
 msgid "Settings"
 msgstr "Настройки"
 
@@ -776,8 +956,8 @@ msgstr "У радіусі 5 км комусь потрібна допомога"
 msgid "Sorry, there are no upcoming events"
 msgstr "Вибачте, немає майбутніх подій"
 
-msgid "Sorry, there is no news"
-msgstr "Вибачте, немає новин"
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Вибачте, найближчих майстерень немає"
 
 msgid "Sorry!"
 msgstr "Вибачте!"

@@ -14,32 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "km"
+msgstr "km"
+
+#. js-lingui-explicit-id
 msgid "Not enabled location"
 msgstr "Not enabled location"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Confirm"
-
-#. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Create event"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Event"
-
-#. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Event delete"
-
-#. js-lingui-explicit-id
-msgid "Yes"
-msgstr "Yes"
-
-#. js-lingui-explicit-id
-msgid "No"
-msgstr "No"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -66,12 +46,80 @@ msgid "Select"
 msgstr "Select"
 
 #. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Enter the address"
+msgid "Yes"
+msgstr "Yes"
 
 #. js-lingui-explicit-id
-msgid "Select on the map"
-msgstr "Select on the map"
+msgid "No"
+msgstr "No"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the locality"
+msgstr "Enter the name of the locality"
+
+#. js-lingui-explicit-id
+msgid "Kyiv"
+msgstr "Kyiv"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Enter the exact address"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Independence Street, 1"
+
+#. js-lingui-explicit-id
+msgid "Select country"
+msgstr "Select country"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Continue"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Back"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Confirm"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Create event"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Change event"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Create workshop"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Change workshop"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Event delete"
+
+#. js-lingui-explicit-id
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#. js-lingui-explicit-id
+msgid "Poland"
+msgstr "Poland"
+
+#. js-lingui-explicit-id
+msgid "Belarus"
+msgstr "Belarus"
+
+#. js-lingui-explicit-id
+msgid "Lithuania"
+msgstr "Lithuania"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -306,6 +354,10 @@ msgid "Enter the name of the event"
 msgstr "Enter the name of the event"
 
 #. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Enter the address"
+
+#. js-lingui-explicit-id
 msgid "The beginning"
 msgstr "The beginning"
 
@@ -332,6 +384,10 @@ msgstr "Tell us about the event:"
 #. js-lingui-explicit-id
 msgid "Add a photo"
 msgstr "Add a photo"
+
+#. js-lingui-explicit-id
+msgid "Event address"
+msgstr "Event address"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -398,10 +454,6 @@ msgid "Select the city"
 msgstr "Select the city"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Continue"
-
-#. js-lingui-explicit-id
 msgid "events"
 msgstr "events"
 
@@ -458,32 +510,60 @@ msgid "City"
 msgstr "City"
 
 #. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Write a review"
+msgid "workshops"
+msgstr "workshops"
 
 #. js-lingui-explicit-id
-msgid "Go to workshop {title}"
-msgstr "Go to workshop {title}"
+msgid "Name of the workshop"
+msgstr "Name of the workshop"
 
 #. js-lingui-explicit-id
-msgid "Workshop {title}"
-msgstr "Workshop {title}"
+msgid "The text must contain a minimum of 5 and a maximum of 40 characters."
+msgstr "The text must contain a minimum of 5 and a maximum of 40 characters."
 
 #. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Auto"
+msgid "The place of the workshop"
+msgstr "The place of the workshop"
+
+#. js-lingui-explicit-id
+msgid "The location of the workshop must be selected."
+msgstr "The location of the workshop must be selected."
+
+#. js-lingui-explicit-id
+msgid "Description of the workshop"
+msgstr "Description of the workshop"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 200 and a maximum of 9000 characters."
+msgstr "The text must contain a minimum of 200 and a maximum of 9000 characters."
+
+#. js-lingui-explicit-id
+msgid "Phone number the workshop"
+msgstr "Phone number the workshop"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Please enter phone number"
+
+#. js-lingui-explicit-id
+msgid "Types of workshop jobs"
+msgstr "Types of workshop jobs"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Please select at least one type"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Not information"
 
 #. js-lingui-explicit-id
 msgid "Moto"
 msgstr "Moto"
 
 #. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Workshop"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Not information"
+msgid "Auto"
+msgstr "Auto"
 
 #. js-lingui-explicit-id
 msgid "All workshops"
@@ -496,6 +576,106 @@ msgstr "Repair of motorcycles"
 #. js-lingui-explicit-id
 msgid "Repair of automobiles"
 msgstr "Repair of automobiles"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Workshop change successfully"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Workshop created successfully"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Error changing workshop"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Error creating workshop"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Enter the name of the workshop"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Workshop name"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Workshop address"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Add a description about the workshop"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Workshop description"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Phone number*:"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Type workshop"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Select type"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Types of work"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Select types of work"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "The first photo will be on the cover of the advertisement."
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Publish"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Draft the first review"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Change a review"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Write a review"
+
+#. js-lingui-explicit-id
+msgid "Go to workshop {title}"
+msgstr "Go to workshop {title}"
+
+#. js-lingui-explicit-id
+msgid "Workshop {title}"
+msgstr "Workshop {title}"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "The text must contain a minimum of 3 and a maximum of 40 characters."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "The text must contain a minimum of 10 and a maximum of 2000 characters."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Name"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Workshop"
 
 #. js-lingui-explicit-id
 msgid "Type workshops"
@@ -532,9 +712,6 @@ msgstr "Add event"
 
 msgid "Add workshop"
 msgstr "Add workshop"
-
-msgid "Add your address"
-msgstr "Add your address"
 
 msgid "All cities"
 msgstr "All cities"
@@ -662,8 +839,8 @@ msgstr "Incorrect phone number entered or country code of the phone number selec
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
 
-msgid "Latest news:"
-msgstr "Latest news:"
+msgid "Leave a review"
+msgstr "Leave a review"
 
 msgid "Logout"
 msgstr "Logout"
@@ -683,20 +860,23 @@ msgstr "more detail"
 msgid "More events"
 msgstr "More events"
 
-msgid "More news"
-msgstr "More news"
-
-msgid "Move and change location"
-msgstr "Move and change location"
+msgid "Move and change the location"
+msgstr "Move and change the location"
 
 msgid "My events"
 msgstr "My events"
 
-msgid "New"
-msgstr "New"
+msgid "My workshops"
+msgstr "My workshops"
 
-msgid "News"
-msgstr "News"
+msgid "No events have passed"
+msgstr "No events have passed"
+
+msgid "Not comments"
+msgstr "Not comments"
+
+msgid "Now"
+msgstr "Now"
 
 msgid "Now create yourself a strong password."
 msgstr "Now create yourself a strong password."
@@ -718,6 +898,9 @@ msgstr "Password must contain at least 8 characters"
 
 msgid "Passwords do not match"
 msgstr "Passwords do not match"
+
+msgid "Past events:"
+msgstr "Past events:"
 
 msgid "Please authenticator"
 msgstr "Please authenticator"
@@ -764,9 +947,6 @@ msgstr "Reviews:"
 msgid "Select a location on the map"
 msgstr "Select a location on the map"
 
-msgid "Select on the map"
-msgstr "Select on the map"
-
 msgid "Settings"
 msgstr "Settings"
 
@@ -776,8 +956,8 @@ msgstr "Someone needs help within a 5 km radius"
 msgid "Sorry, there are no upcoming events"
 msgstr "Sorry, there are no upcoming events"
 
-msgid "Sorry, there is no news"
-msgstr "Sorry, there is no news"
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Sorry, there are no upcoming workshops"
 
 msgid "Sorry!"
 msgstr "Sorry!"

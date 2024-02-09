@@ -265,9 +265,7 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
                 </>
               ) : (
                 <>
-                  <Text style={styles.title}>
-                    <Trans>{title}</Trans>
-                  </Text>
+                  <Text style={styles.title}>{title}</Text>
                   <LinearGradientCustom style={styles.lineHeader} />
                 </>
               )}
