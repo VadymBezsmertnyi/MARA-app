@@ -114,6 +114,16 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
+  [PATHS_SETTINGS_SCREENS.settingsWorkshopAdd]?: Record<
+    string,
+    string | number | boolean
+  >;
+  [PATHS_SETTINGS_SCREENS.settingsWorkshopChange]?: Record<
+    string,
+    string | number | boolean
+  > & {
+    workshopId: number;
+  };
   [PATHS_SETTINGS_SCREENS.settingsEvents]?: Record<
     string,
     string | number | boolean
@@ -122,12 +132,11 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
-  [PATHS_SETTINGS_SCREENS.settingsChangeEvent]?: Record<
+  [PATHS_SETTINGS_SCREENS.settingsEventChange]?: Record<
     string,
     string | number | boolean
   > & {
     eventId: number;
-    isUser: boolean;
   };
   [PATHS_SETTINGS_SCREENS.settingsProfile]?: Record<
     string,

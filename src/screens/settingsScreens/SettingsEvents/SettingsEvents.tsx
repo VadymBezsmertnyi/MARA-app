@@ -85,7 +85,7 @@ export const SettingsEvents: FunctionComponent = () => {
           })}
           <ButtonCustom
             onSubmit={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAddEvent);
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
             }}
             styleContainer={styles.containerButtonAdd}
           >
@@ -102,7 +102,7 @@ export const SettingsEvents: FunctionComponent = () => {
       <View style={styles.containerFooter}>
         <ButtonCustom
           onSubmit={() => {
-            navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAddEvent);
+            navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
           }}
         >
           <View style={styles.buttonAdd}>

@@ -3,43 +3,39 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../../../localization/localization.provider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // components
-import { ButtonCustom } from "../../../../components/ButtonCustom/ButtonCustom";
-import { ModalWindow } from "../../../../components/ModalWindow/ModalWindow";
+import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
+import { ModalWindow } from "../ModalWindow/ModalWindow";
 
 // helps
-import showErrors from "../../../../helps/errors/showError";
-import { useAllNavigation } from "../../../../navigators/Navigators.helps";
+import { useAllNavigation } from "../../navigators/Navigators.helps";
 
 // icons
-import { IconClose, IconWarningGradient } from "../../../../icons/components";
+import { IconClose, IconWarningGradient } from "../../icons/components";
 
 // styles
-import { styles } from "./ModalDeleteEvent.styles";
-import colors from "../../../../../styles/colors";
+import { styles } from "./ModalDelete.styles";
+import colors from "../../../styles/colors";
 
-type ModalDeleteEventProps = {
-  idDeleteEvent: number;
-  deleteEvent: (idEvent: number, type?: "all" | "user") => Promise<boolean>;
+type ModalDeleteProps = {
   onClose: () => void;
+  onSubmit: () => Promise<void>;
+  isGoBack?: boolean;
 };
 
-export const ModalDeleteEvent: FunctionComponent<ModalDeleteEventProps> = ({
-  idDeleteEvent,
+export const ModalDelete: FunctionComponent<ModalDeleteProps> = ({
   onClose,
-  deleteEvent,
+  onSubmit,
+  isGoBack = true,
 }) => {
   const { i18n } = useContext(localesContext);
   const navigation = useAllNavigation();
-  const { success } = showErrors;
 
-  const onDeleteEvent = async () => {
-    await deleteEvent(idDeleteEvent, "user");
-    success(i18n._("Event delete"));
-    onClose();
-    navigation.goBack();
+  const onDelete = async () => {
+    await onSubmit();
+    if (isGoBack) navigation.goBack();
   };
 
   return (
@@ -57,7 +53,7 @@ export const ModalDeleteEvent: FunctionComponent<ModalDeleteEventProps> = ({
         <View style={styles.containerButtons}>
           <ButtonCustom
             title={i18n._("Yes")}
-            onSubmit={onDeleteEvent}
+            onSubmit={onDelete}
             type="transparent"
             styleContainer={styles.buttonModal}
           />

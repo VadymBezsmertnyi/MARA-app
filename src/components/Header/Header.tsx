@@ -38,6 +38,7 @@ type HeaderStackProps = {
   rightElement?: JSX.Element;
   onPressLeftElement?: () => void;
   backgroundStyle?: StyleProp<ViewStyle>;
+  onRightDelete?: () => void;
 };
 
 export const Header: FunctionComponent<HeaderStackProps> = ({
@@ -46,6 +47,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   rightElement,
   onPressLeftElement,
   backgroundStyle,
+  onRightDelete,
 }) => {
   const route = useRoute<RouteProp<RootAllScreensParamList>>();
   const navigation = useAllNavigation();
@@ -60,7 +62,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
 
   const idEditEvent = useMemo(() => {
     const currentParams = z
-      .object({ eventId: z.number(), isUser: z.boolean() })
+      .object({ eventId: z.number() })
       .safeParse(route.params);
     if (currentParams.success) return currentParams.data.eventId;
     return null;
@@ -101,8 +103,10 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
         </TouchableOpacity>
 
         <Text style={styles.title}>{title}</Text>
-        {idEditEvent ? (
-          <TouchableOpacity onPress={onDeleteEvent}>
+        {idEditEvent || onRightDelete ? (
+          <TouchableOpacity
+            onPress={onRightDelete ? onRightDelete : onDeleteEvent}
+          >
             <Text style={styles.titleButtonDeleteEvent}>
               <Trans>Delete</Trans>
             </Text>

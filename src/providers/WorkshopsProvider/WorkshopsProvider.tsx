@@ -31,6 +31,11 @@ type WorkshopsContext = {
   workshops: WorkshopsType;
   workshopsUser: WorkshopsType;
   addWorkshop: (newWorkshop: Omit<WorkshopType, "id">) => Promise<boolean>;
+  changeWorkshop: (changeWorkshop: WorkshopType) => Promise<boolean>;
+  deleteWorkshop: (
+    idWorkshop: number,
+    type?: "all" | "user"
+  ) => Promise<boolean>;
   addComment: (
     idWorkshop: number,
     newComment: Omit<CommentType, "id">
@@ -117,6 +122,63 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     return false;
   };
 
+  const changeWorkshop = async (changeWorkshop: WorkshopType) => {
+    setLoading(true);
+    const result = await api(
+      PATHS.workshopsChange,
+      {
+        method: "PUT",
+        data: changeWorkshop,
+      },
+      z.object({ workshop: workshopSchema })
+    );
+    if (result?.workshop) {
+      setWorkShopsUser((state) =>
+        state.map((workshop) =>
+          workshop.id === result.workshop.id ? result.workshop : workshop
+        )
+      );
+      setWorkShops((state) =>
+        state.map((workshop) =>
+          workshop.id === result.workshop.id ? result.workshop : workshop
+        )
+      );
+      setLoading(false);
+      return true;
+    }
+    setLoading(false);
+    return false;
+  };
+
+  const deleteWorkshop = async (
+    idWorkshop: number,
+    type: "all" | "user" = "all"
+  ): Promise<boolean> => {
+    try {
+      setLoading(true);
+      const result = await api(
+        PATHS.workshopsDelete,
+        { method: "DELETE", data: { id: idWorkshop } },
+        z.object({ result: z.boolean() })
+      );
+      if (result?.result) {
+        setWorkShops((state) =>
+          state.filter((workshop) => workshop.id !== idWorkshop)
+        );
+        if (type === "user")
+          setWorkShopsUser((state) =>
+            state.filter((workshop) => workshop.id !== idWorkshop)
+          );
+      }
+
+      return true;
+    } catch (error) {
+      return false;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const addComment = async (
     idWorkshop: number,
     newComment: Omit<CommentType, "id">
@@ -176,10 +238,12 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
       workshops,
       workshopsUser,
       addWorkshop,
+      changeWorkshop,
+      deleteWorkshop,
       addComment,
       changeComment,
     }),
-    [workshops]
+    [workshops, workshopsUser]
   );
 
   useEffect(() => {

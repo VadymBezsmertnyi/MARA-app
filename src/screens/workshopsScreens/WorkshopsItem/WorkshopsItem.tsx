@@ -195,7 +195,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
             <Text style={styles.description}>
               {isFullDescription
                 ? selectWorkshop?.description
-                : selectWorkshop?.description.slice(0, 100)}
+                : `${selectWorkshop?.description.slice(0, 100)}... `}
               {!isFullDescription && (
                 <TouchableOpacity
                   style={styles.buttonDescription}

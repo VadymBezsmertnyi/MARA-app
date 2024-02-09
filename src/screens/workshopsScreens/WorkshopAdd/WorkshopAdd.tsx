@@ -1,11 +1,23 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { Alert, Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RouteProp, useRoute } from "@react-navigation/native";
+import * as FileSystem from "expo-file-system";
 
 //types
 import { ImageType } from "../../../providers/ModalsProvider/ModalsProvider.types";
 import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
-import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
+import {
+  RootAllScreensParamList,
+  RootSettingsScreensParamList,
+  RootWorkshopsScreensParamList,
+} from "../../../navigators/Navigators.types";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -14,6 +26,7 @@ import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/useWo
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -27,6 +40,7 @@ import { ModalSheetTypesMotoWorks } from "../../../components/ModalSheetTypesMot
 import { ImagesSelect } from "../../../components/ImagesSelect/ImagesSelect";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ModalSheetPlace } from "../../../components/ModalSheetPlace/ModalSheetPlace";
+import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 // helps
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -51,11 +65,17 @@ type WorkshopAddProps = {
 export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   navigation,
 }) => {
+  const { params } =
+    useRoute<
+      RouteProp<RootWorkshopsScreensParamList & RootSettingsScreensParamList>
+    >();
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { addWorkshop } = useContext(workshopsContext);
+  const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
+    useContext(workshopsContext);
   const { userData } = useContext(userContext);
   const { places } = useContext(placesContext);
+  const { setLoading } = useContext(loadingContext);
   const { typesWorkServices } = useWorkshopsProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const { success, bug } = showErrors;
@@ -68,6 +88,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const [isShowTypesMotoWorks, setIsShowTypesMotoWorks] = useState(false);
   const [isShowTypesAutoWorks, setIsShowTypesAutoWorks] = useState(false);
   const [isShowSelectPlace, setIsShowSelectPlace] = useState(false);
+  const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [typeWorkshops, setTypeWorkshops] = useState({
     moto: false,
     auto: false,
@@ -83,6 +104,11 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     string,
     { name: string; title: string }
   > | null>(null);
+  const selectWorkshop = useMemo(
+    () =>
+      workshops.find((workshop) => workshop.id === params?.workshopId) || null,
+    [workshops, params]
+  );
   const showTitlePlace = useMemo(() => {
     const country = places
       ? Object.keys(places)
@@ -228,18 +254,79 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         dataCreate: new Date().getTime(),
         rating: null,
       };
-      const isCreate = await addWorkshop(newWorkshop);
+      const isCreate = selectWorkshop
+        ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })
+        : await addWorkshop(newWorkshop);
       if (isCreate) {
         navigation.goBack();
-        success(i18n._("Workshop created successfully"));
-      } else bug(i18n._("Error creating workshop"));
+        success(
+          selectWorkshop
+            ? i18n._("Workshop change successfully")
+            : i18n._("Workshop created successfully")
+        );
+      } else
+        bug(
+          selectWorkshop
+            ? i18n._("Error changing workshop")
+            : i18n._("Error creating workshop")
+        );
     }
   };
+
+  const getChangeWorkshop = async () => {
+    setLoading(true);
+    if (selectWorkshop) {
+      const imagesWithBath64 = await Promise.all(
+        selectWorkshop.images.map(async (image) => {
+          const response = await FileSystem.downloadAsync(
+            image.url,
+            `${FileSystem.documentDirectory}temp.jpg`
+          );
+          const base64 = await FileSystem.readAsStringAsync(response.uri, {
+            encoding: "base64",
+          });
+          return {
+            id: image.id,
+            url: image.url,
+            width: image.width,
+            height: image.height,
+            base64,
+          };
+        })
+      );
+      setTitle(selectWorkshop.title);
+      setPlace(selectWorkshop.place);
+      setDescription(selectWorkshop.description);
+      setPhoneNumber(selectWorkshop.phoneNumber);
+      setTypeWorkshops((state) => ({
+        ...state,
+        moto: selectWorkshop.motoTypesWorks.length > 0,
+        auto: selectWorkshop.autoTypesWorks.length > 0,
+      }));
+      setSelectAutoTypesWorks(selectWorkshop.autoTypesWorks);
+      setSelectMotoTypesWorks(selectWorkshop.motoTypesWorks);
+      setImages(imagesWithBath64);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    if (selectWorkshop) getChangeWorkshop();
+  }, [selectWorkshop]);
 
   return (
     <>
       <View style={containerStyles}>
-        <Header title={i18n._("Add workshop")} />
+        <Header
+          title={
+            params?.workshopId
+              ? i18n._("Change workshop")
+              : i18n._("Add workshop")
+          }
+          onRightDelete={() => {
+            setIsShowDeleteModal(true);
+          }}
+        />
         <ScrollView>
           <View style={styles.containerInputs}>
             <Input
@@ -412,6 +499,19 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         }}
         onSubmit={onSubmitPlace}
       />
+      <Modal visible={isShowDeleteModal} transparent>
+        <ModalDelete
+          onClose={() => {
+            setIsShowDeleteModal(false);
+          }}
+          onSubmit={async () => {
+            if (selectWorkshop?.id) {
+              await deleteWorkshop(selectWorkshop.id, "user");
+              setIsShowDeleteModal(false);
+            }
+          }}
+        />
+      </Modal>
     </>
   );
 };

@@ -51,6 +51,7 @@ export const styles = StyleSheet.create({
   buttonAdd: {
     flexDirection: "row",
     gap: 10,
+    alignItems: "center",
   },
   titleAdd: {
     color: colors.white,

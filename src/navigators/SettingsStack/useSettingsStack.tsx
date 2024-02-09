@@ -12,6 +12,10 @@ import { SettingsProfile } from "../../screens/settingsScreens/SettingsProfile/S
 import { SettingsEvents } from "../../screens/settingsScreens/SettingsEvents/SettingsEvents";
 import { AddEvent } from "../../screens/newsScreens/AddEvent/AddEvent";
 
+// Workshops
+import { SettingsWorkshops } from "../../screens/settingsScreens/SettingsWorkshops/SettingsWorkshops";
+import { WorkshopAdd } from "../../screens/workshopsScreens/WorkshopAdd/WorkshopAdd";
+
 export const useSettingsStack = () => {
   const { i18n } = useContext(localesContext);
 
@@ -45,11 +49,32 @@ export const useSettingsStack = () => {
       component: AddEvent,
     },
     {
-      id: PATHS_SETTINGS_SCREENS.settingsChangeEvent,
-      name: PATHS_SETTINGS_SCREENS.settingsChangeEvent,
-      title: i18n._("Event"),
+      id: PATHS_SETTINGS_SCREENS.settingsEventChange,
+      name: PATHS_SETTINGS_SCREENS.settingsEventChange,
+      title: i18n._("Change event"),
       headerShown: true,
       component: AddEvent,
+    },
+    {
+      id: PATHS_SETTINGS_SCREENS.settingsWorkshops,
+      name: PATHS_SETTINGS_SCREENS.settingsWorkshops,
+      title: null,
+      headerShown: false,
+      component: SettingsWorkshops,
+    },
+    {
+      id: PATHS_SETTINGS_SCREENS.settingsWorkshopAdd,
+      name: PATHS_SETTINGS_SCREENS.settingsWorkshopAdd,
+      title: i18n._("Create workshop"),
+      headerShown: false,
+      component: WorkshopAdd,
+    },
+    {
+      id: PATHS_SETTINGS_SCREENS.settingsWorkshopChange,
+      name: PATHS_SETTINGS_SCREENS.settingsWorkshopChange,
+      title: i18n._("Change workshop"),
+      headerShown: false,
+      component: WorkshopAdd,
     },
   ] as const;
 

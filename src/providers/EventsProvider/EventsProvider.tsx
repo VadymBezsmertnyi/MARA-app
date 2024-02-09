@@ -18,9 +18,13 @@ import { getSortEvents } from "./EventsProvider.hooks";
 import { userContext } from "../UserProvider/UserProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // components
-import { ModalDeleteEvent } from "./components/ModalDeleteEvent/ModalDeleteEvent";
+import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
+
+// helps
+import showErrors from "../../helps/errors/showError";
 
 // constants
 import { PATHS } from "../paths.constants";
@@ -46,12 +50,14 @@ export const eventsContext = React.createContext({} as EventsContext);
 export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   children,
 }) => {
+  const { i18n } = useContext(localesContext);
   const { userData } = useContext(userContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
   const [eventsList, setEventsList] = useState<UpcomingEvents>([]);
   const [eventsUserList, setEventsUserList] = useState<UpcomingEvents>([]);
   const [idDeleteEvent, setIdDeleteEvent] = useState<number | null>(null);
+  const { success } = showErrors;
 
   const getEvents = async () => {
     const result = await api(PATHS.eventsGet, null, resultEventsSchema);
@@ -176,9 +182,12 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
     <eventsContext.Provider value={contextValue}>
       {children}
       {idDeleteEvent !== null ? (
-        <ModalDeleteEvent
-          idDeleteEvent={idDeleteEvent}
-          deleteEvent={deleteEvent}
+        <ModalDelete
+          onSubmit={async () => {
+            await deleteEvent(idDeleteEvent, "user");
+            success(i18n._("Event delete"));
+            setIdDeleteEvent(null);
+          }}
           onClose={() => {
             setIdDeleteEvent(null);
           }}

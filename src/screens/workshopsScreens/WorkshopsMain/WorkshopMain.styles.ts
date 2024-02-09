@@ -1,6 +1,8 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { horizontalScale, verticalScale } from "../../../../styles/hooks";
 import colors from "../../../../styles/colors";
+
+const HEIGHT = Dimensions.get("window").height;
 
 const PADDING_HORIZONTAL = 16;
 const GAP_MAIN = 12;
@@ -21,5 +23,17 @@ export const styles = StyleSheet.create({
   },
   containerEmpty: {
     height: 70,
+  },
+  containerNotList: {
+    height: HEIGHT - 400,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  imageNotElements: {
+    width: "100%",
+    height: "90%",
+  },
+  titleNotList: {
+    fontFamily: "Montserrat_700Bold",
   },
 });
