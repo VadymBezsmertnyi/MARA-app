@@ -31,13 +31,15 @@ export const countrySchema = z.object({
 
 export const countriesSchema = z.record(countrySchema);
 
+export const coordinatesSchema = z.object({
+  latitude: z.number(),
+  longitude: z.number(),
+});
+
 export const placeSchema = z.object({
   countryId: z.number(),
   regionPlaceId: z.string(),
   city: z.string(),
   address: z.string(),
-  coordinates: z.object({
-    latitude: z.number(),
-    longitude: z.number(),
-  }),
+  coordinates: coordinatesSchema,
 });

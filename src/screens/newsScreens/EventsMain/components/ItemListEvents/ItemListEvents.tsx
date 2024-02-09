@@ -11,6 +11,7 @@ import { EventType } from "../../../../../providers/EventsProvider/EventsProvide
 // provider
 import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
 import { localesContext } from "../../../../../../localization/localization.provider";
+import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 // hooks
 import { formatDateFromUnixTimestamp } from "../../../../../helps/helps";
@@ -40,6 +41,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
 }) => {
   const { location } = useContext(mapContext);
   const { i18n } = useContext(localesContext);
+  const { places } = useContext(placesContext);
   const nowDate = new Date().getTime();
   const isOld = useMemo(
     () => item.date.finish < nowDate,
@@ -55,13 +57,13 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
   );
   const distance = useMemo(
     () =>
-      location && item.location?.geometry.location
+      location && item.place?.coordinates
         ? getDistance(location, {
-            longitude: item.location.geometry.location.lng,
-            latitude: item.location.geometry.location.lat,
+            longitude: item.place?.coordinates.longitude,
+            latitude: item.place?.coordinates.latitude,
           })
         : null,
-    [location, item.location]
+    [location, item.place]
   );
   const containerStyles = useMemo(
     () => [
@@ -75,6 +77,16 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
     () => [styles.part, isNow && styles.partNow],
     [isNow]
   );
+  const showTitlePlace = useMemo(() => {
+    const country = places
+      ? Object.keys(places)
+          .map((placeKey) => places[placeKey])
+          .find((country) => country.id === item.place?.countryId) || null
+      : null;
+    if (country && item.place)
+      return `${country.title}, ${item.place.city}, ${item.place.address}`;
+    return ``;
+  }, [places, item.place]);
 
   const selectEvent = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
@@ -95,7 +107,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
             {item.title}
           </Text>
           <Text numberOfLines={1} style={styles.address}>
-            {item.location?.formatted_address}
+            {showTitlePlace}
           </Text>
         </View>
       </View>

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import colors from "../../../styles/colors";
+import { placeSchema } from "../PlacesProvider/PlacesProvider.schemas";
 
 export const typeWorkSchema = z.object({
   id: z.number(),
@@ -17,19 +17,6 @@ export const commentSchema = z.object({
   rating: z.number().min(1).max(5),
   dateCreate: z.number(),
   dateUpdate: z.number(),
-});
-
-export const coordinatesSchema = z.object({
-  latitude: z.number(),
-  longitude: z.number(),
-});
-
-export const placeSchema = z.object({
-  countryId: z.number(),
-  regionPlaceId: z.string(),
-  city: z.string(),
-  address: z.string(),
-  coordinates: coordinatesSchema,
 });
 
 export const workshopSchema = z.object({

@@ -19,18 +19,16 @@ import {
   RootEventsScreensParamList,
   RootSettingsScreensParamList,
 } from "../../../navigators/Navigators.types";
-import { LocationType } from "../../../providers/EventsProvider/EventsProvider.types";
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
-
-// schemas
-import { locationSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
+import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { modalsSheetContext } from "../../../providers/ModalsSheetProvider/ModalsSheetProvider";
+import { ModalSheetPlace } from "../../../components/ModalSheetPlace/ModalSheetPlace";
 import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
+import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -44,10 +42,10 @@ import { IconMapGradient } from "../../../icons/components";
 
 // helps
 import { combineDateAndTime } from "../../../helps/helps";
-import { getErrorText } from "./AddEvent.helps";
+import { getErrorText } from "./EventAdd.helps";
 
 // styles
-import { styles } from "./AddEvent.styles";
+import { styles } from "./EventAdd.styles";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -61,10 +59,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const { i18n } = useContext(localesContext);
   const { addEvent, changeEvent, eventsUserList } = useContext(eventsContext);
   const { userData } = useContext(userContext);
-  const { setModalType, location } = useContext(modalsSheetContext);
   const { setLoading } = useContext(loadingContext);
-  const [tempLocation, setTempLocation] = useState<LocationType | null>(null);
+  const { places } = useContext(placesContext);
   const [eventName, setEventName] = useState("");
+  const [place, setPlace] = useState<PlaceType | null>(null);
+  const [isModalPlace, setIsModalPlace] = useState(false);
   const [beginDate, setBeginDate] = useState<Date>(new Date());
   const [beginTime, setBeginTime] = useState<Date>(new Date());
   const [finishDate, setFinishDate] = useState<Date>(new Date());
@@ -78,6 +77,16 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     { name: string; title: string }
   > | null>(null);
 
+  const showTitlePlace = useMemo(() => {
+    const country = places
+      ? Object.keys(places)
+          .map((placeKey) => places[placeKey])
+          .find((country) => country.id === place?.countryId) || null
+      : null;
+    if (country && place)
+      return `${country.title}, ${place.city}, ${place.address}`;
+    return ``;
+  }, [places, place]);
   const currentParamsChangeEvent = useMemo(
     () => z.object({ eventId: z.number() }).safeParse(params),
     [params]
@@ -102,14 +111,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   );
 
   const checkEnterData = () => {
-    const isErrorLocation = eventUser
-      ? tempLocation === null && location === null
-      : location === null;
     const errorsObject = {
       ...((eventName.length < 5 || eventName.length > 40) && {
         eventName: getErrorText("eventName", i18n),
       }),
-      ...(isErrorLocation && {
+      ...(place === null && {
         location: getErrorText("location", i18n),
       }),
       ...(start > finish && {
@@ -171,12 +177,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         height: image.height,
         image,
       }));
-      const currentLocation = tempLocation
-        ? locationSchema.safeParse(tempLocation)
-        : locationSchema.safeParse(location);
       const newEvent = {
         title: eventName,
-        location: currentLocation.success ? currentLocation.data : null,
+        place,
         date: {
           start,
           finish,
@@ -203,16 +206,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     }
   };
 
-  const onInputLocationModal = () => {
-    setModalType("input-location");
-    setErrorMessage(null);
-  };
-
-  const onMapLocationModal = () => {
-    setModalType("map-location");
-    setErrorMessage(null);
-  };
-
   const getEventUser = async () => {
     setLoading(true);
     if (params) {
@@ -236,7 +229,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           })
         );
         setEventName(eventUser.title);
-        setTempLocation(eventUser.location);
+        setPlace(eventUser.place);
         setBeginDate(new Date(eventUser.date.start));
         setBeginTime(new Date(eventUser.date.start));
         setFinishDate(new Date(eventUser.date.finish));
@@ -255,145 +248,160 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   }, [params]);
 
   return (
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        <Text style={styles.title}>{i18n._("You can create an event")}:</Text>
-        <Input
-          isRegular
-          placeholder={i18n._("Enter the name of the event")}
-          label={i18n._("Name of the event")}
-          value={eventName}
-          onChange={(value) => {
-            setEventName(value);
-            setErrorMessage(null);
-          }}
-          errorMessage={errorMessage?.eventName?.title}
-        />
-        <View style={styles.containerLocation}>
-          <InputButton
-            isRegular
-            placeholder={i18n._("Enter the address")}
-            label={i18n._("The place of the event")}
-            value={
-              location?.formatted_address || tempLocation?.formatted_address
-            }
-            customStyles={styles.buttonLocation}
-            onPress={onInputLocationModal}
-            errorMessage={errorMessage?.location?.title}
-          />
-          <TouchableOpacity
-            style={styles.buttonMap}
-            onPress={onMapLocationModal}
-          >
-            <IconMapGradient width={41} height={32} />
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.subtitle}>{i18n._("Date of the event")}</Text>
-        <View style={styles.wrapper}>
-          <View style={styles.inner}>
-            <DatePicker
-              isRegular
-              value={beginDate}
-              label={i18n._("The beginning")}
-              onChange={(dataTime, data) => {
-                onChangeBeginDate(dataTime, data);
-                setErrorMessage(null);
-              }}
-              mode="date"
-            />
-          </View>
-          <View style={styles.inner}>
-            <DatePicker
-              value={beginTime}
-              onChange={(dataTime, data) => {
-                onChangeBeginTime(dataTime, data);
-                setErrorMessage(null);
-              }}
-              mode="time"
-            />
-          </View>
-        </View>
-        <View style={styles.wrapper}>
-          <View style={styles.inner}>
-            <DatePicker
-              isRegular
-              value={finishDate}
-              label={i18n._("Conclusion")}
-              onChange={(dataTime, data) => {
-                onChangeFinishDate(dataTime, data);
-                setErrorMessage(null);
-              }}
-              mode="date"
-              errorMessage={errorMessage?.finish?.title}
-            />
-          </View>
-          <View style={styles.inner}>
-            <DatePicker
-              value={finishTime}
-              onChange={(dataTime, data) => {
-                onChangeFinishTime(dataTime, data);
-                setErrorMessage(null);
-              }}
-              mode="time"
-              errorMessage={errorMessage?.finish?.title}
-            />
-          </View>
-        </View>
-        <Text style={styles.subtitle}>
-          <Trans>Participation fee</Trans>:
-        </Text>
-        <View style={styles.containerPrices}>
-          <View style={styles.inner}>
-            <Input
-              placeholder={i18n._("100 uah")}
-              value={priceStart}
-              onChange={(value) => {
-                if (!isNaN(Number(value))) {
-                  setPriceStart(value);
-                  setErrorMessage(null);
-                }
-              }}
-              keyboardType="numeric"
-            />
-          </View>
-          <View style={styles.lineInputs} />
-          <View style={styles.inner}>
-            <Input
-              placeholder={i18n._("200 uah")}
-              value={priceFinish}
-              onChange={(value) => {
-                if (!isNaN(Number(value))) {
-                  setPriceFinish(value);
-                  setErrorMessage(null);
-                }
-              }}
-              keyboardType="numeric"
-            />
-          </View>
-        </View>
-        <View style={styles.wrapper}>
+    <>
+      <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.scrollView}>
+          <Text style={styles.title}>{i18n._("You can create an event")}:</Text>
           <Input
-            placeholder={i18n._("Briefly describe what will happen")}
-            label={`${i18n._("Tell us about the event:")}*`}
-            value={aboutEvent}
-            customStyles={styles.multipleInput}
+            isRegular
+            placeholder={i18n._("Enter the name of the event")}
+            label={i18n._("Name of the event")}
+            value={eventName}
             onChange={(value) => {
+              setEventName(value);
               setErrorMessage(null);
-              setAboutEvent(value);
             }}
-            errorMessage={errorMessage?.aboutEvent?.title}
+            errorMessage={errorMessage?.eventName?.title}
           />
-        </View>
-        <View style={styles.containerImages}>
-          <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
-          <ImagesSelect images={images} setImages={setImages} />
-        </View>
-        <Text style={styles.errorMessage}>
-          {errorMessage?.errorMessage.title || ""}
-        </Text>
-        <ButtonCustom title={i18n._("Confirm")} onSubmit={onSaveEvent} />
-        <View style={styles.empty} />
-      </ScrollView>
-    </View>
+          <View style={styles.containerLocation}>
+            <InputButton
+              isRegular
+              placeholder={i18n._("Enter the address")}
+              label={i18n._("The place of the event")}
+              value={showTitlePlace}
+              customStyles={styles.buttonLocation}
+              onPress={() => {
+                setIsModalPlace(true);
+              }}
+              errorMessage={errorMessage?.location?.title}
+            />
+            <TouchableOpacity
+              style={styles.buttonMap}
+              onPress={() => {
+                setIsModalPlace(true);
+              }}
+            >
+              <IconMapGradient width={41} height={32} />
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.subtitle}>{i18n._("Date of the event")}</Text>
+          <View style={styles.wrapper}>
+            <View style={styles.inner}>
+              <DatePicker
+                isRegular
+                value={beginDate}
+                label={i18n._("The beginning")}
+                onChange={(dataTime, data) => {
+                  onChangeBeginDate(dataTime, data);
+                  setErrorMessage(null);
+                }}
+                mode="date"
+              />
+            </View>
+            <View style={styles.inner}>
+              <DatePicker
+                value={beginTime}
+                onChange={(dataTime, data) => {
+                  onChangeBeginTime(dataTime, data);
+                  setErrorMessage(null);
+                }}
+                mode="time"
+              />
+            </View>
+          </View>
+          <View style={styles.wrapper}>
+            <View style={styles.inner}>
+              <DatePicker
+                isRegular
+                value={finishDate}
+                label={i18n._("Conclusion")}
+                onChange={(dataTime, data) => {
+                  onChangeFinishDate(dataTime, data);
+                  setErrorMessage(null);
+                }}
+                mode="date"
+                errorMessage={errorMessage?.finish?.title}
+              />
+            </View>
+            <View style={styles.inner}>
+              <DatePicker
+                value={finishTime}
+                onChange={(dataTime, data) => {
+                  onChangeFinishTime(dataTime, data);
+                  setErrorMessage(null);
+                }}
+                mode="time"
+                errorMessage={errorMessage?.finish?.title}
+              />
+            </View>
+          </View>
+          <Text style={styles.subtitle}>
+            <Trans>Participation fee</Trans>:
+          </Text>
+          <View style={styles.containerPrices}>
+            <View style={styles.inner}>
+              <Input
+                placeholder={i18n._("100 uah")}
+                value={priceStart}
+                onChange={(value) => {
+                  if (!isNaN(Number(value))) {
+                    setPriceStart(value);
+                    setErrorMessage(null);
+                  }
+                }}
+                keyboardType="numeric"
+              />
+            </View>
+            <View style={styles.lineInputs} />
+            <View style={styles.inner}>
+              <Input
+                placeholder={i18n._("200 uah")}
+                value={priceFinish}
+                onChange={(value) => {
+                  if (!isNaN(Number(value))) {
+                    setPriceFinish(value);
+                    setErrorMessage(null);
+                  }
+                }}
+                keyboardType="numeric"
+              />
+            </View>
+          </View>
+          <View style={styles.wrapper}>
+            <Input
+              placeholder={i18n._("Briefly describe what will happen")}
+              label={`${i18n._("Tell us about the event:")}*`}
+              value={aboutEvent}
+              customStyles={styles.multipleInput}
+              onChange={(value) => {
+                setErrorMessage(null);
+                setAboutEvent(value);
+              }}
+              errorMessage={errorMessage?.aboutEvent?.title}
+            />
+          </View>
+          <View style={styles.containerImages}>
+            <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
+            <ImagesSelect images={images} setImages={setImages} />
+          </View>
+          <Text style={styles.errorMessage}>
+            {errorMessage?.errorMessage.title || ""}
+          </Text>
+          <ButtonCustom title={i18n._("Confirm")} onSubmit={onSaveEvent} />
+          <View style={styles.empty} />
+        </ScrollView>
+      </View>
+      <ModalSheetPlace
+        isOpen={isModalPlace}
+        title={i18n._("Event address")}
+        onClose={() => {
+          setIsModalPlace(false);
+        }}
+        onSubmit={(data) => {
+          setPlace(data);
+          setIsModalPlace(false);
+        }}
+      />
+    </>
   );
 };

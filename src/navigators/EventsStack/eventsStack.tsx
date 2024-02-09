@@ -26,7 +26,6 @@ import { getActiveRouteName } from "../Navigators.helps";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
-import { modalsSheetContext } from "../../providers/ModalsSheetProvider/ModalsSheetProvider";
 
 // styles
 import colors from "../../../styles/colors";
@@ -35,7 +34,6 @@ const Stack = createNativeStackNavigator<RootEventsScreensParamList>();
 
 export const NewsStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
-  const { setLocation } = useContext(modalsSheetContext);
   const { eventsScreens } = useNewsStack();
   const navigation = useNavigation();
   const [routeName, setRouteName] = useState("");
@@ -82,10 +80,8 @@ export const NewsStack: FunctionComponent = () => {
   );
 
   useEffect(() => {
-    if (activeRouteName && activeRouteName !== routeName) {
+    if (activeRouteName && activeRouteName !== routeName)
       setRouteName(activeRouteName);
-      setLocation(null);
-    }
   }, [activeRouteName]);
 
   return (

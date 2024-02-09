@@ -27,7 +27,6 @@ import { WorkshopsProvider } from "./src/providers/WorkshopsProvider/WorkshopsPr
 import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
 import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
-import { ModalsSheetProvider } from "./src/providers/ModalsSheetProvider/ModalsSheetProvider";
 import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
 
 // components
@@ -82,9 +81,7 @@ function App() {
                               style={styles.gestureHandlerRootView}
                             >
                               <WorkshopsProvider>
-                                <ModalsSheetProvider>
-                                  <Navigators />
-                                </ModalsSheetProvider>
+                                <Navigators />
                               </WorkshopsProvider>
                             </GestureHandlerRootView>
                           </MapProvider>

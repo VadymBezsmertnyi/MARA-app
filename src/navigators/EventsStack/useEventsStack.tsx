@@ -11,7 +11,7 @@ import { PATHS_EVENTS_SCREENS } from "../useNavigator.constants";
 import { EventsMain } from "../../screens/newsScreens/EventsMain/EventsMain";
 import { EventsList } from "../../screens/newsScreens/EventsList/EventsList";
 import { EventItem } from "../../screens/newsScreens/EventItem/EventItem";
-import { AddEvent } from "../../screens/newsScreens/AddEvent/AddEvent";
+import { AddEvent } from "../../screens/newsScreens/EventAdd/EventAdd";
 
 export const useNewsStack = () => {
   const { i18n } = useContext(localesContext);

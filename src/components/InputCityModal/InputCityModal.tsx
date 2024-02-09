@@ -8,18 +8,18 @@ import { Trans } from "@lingui/macro";
 import { ModalSheetTypes } from "../../ModalsSheetProvider.types";
 
 // providers
-import { localesContext } from "../../../../../localization/localization.provider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // components
-import { Input } from "../../../../components/Input/Input";
-import { ButtonCustom } from "../../../../components/ButtonCustom/ButtonCustom";
-import { CheckboxPoint } from "../../../../components/CheckboxPoint/CheckboxPoint";
+import { Input } from "../Input/Input";
+import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
+import { CheckboxPoint } from "../CheckboxPoint/CheckboxPoint";
 
 // helps
-import { getStreetNumber } from "../../../../helps/helps";
+import { getStreetNumber } from "../../helps/helps";
 
 // icons
-import { IconSearchInput } from "../../../../icons/components";
+import { IconSearchInput } from "../../icons/components";
 
 // styles
 import { styles } from "./InputCityModal.styles";

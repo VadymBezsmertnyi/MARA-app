@@ -1,6 +1,43 @@
 import { z } from "zod";
 import { languagesKeys } from "../../../localization/localization.const";
-import { locationSchema } from "../EventsProvider/EventsProvider.schemas";
+
+export const locationSchema = z.object({
+  address_components: z.array(
+    z.object({
+      long_name: z.string(),
+      short_name: z.string(),
+      types: z.array(z.string()),
+    })
+  ),
+  adr_address: z.string(),
+  formatted_address: z.string(),
+  geometry: z.object({
+    location: z.object({
+      lat: z.number(),
+      lng: z.number(),
+    }),
+    viewport: z.object({
+      northeast: z.object({
+        lat: z.number(),
+        lng: z.number(),
+      }),
+      southwest: z.object({
+        lat: z.number(),
+        lng: z.number(),
+      }),
+    }),
+  }),
+  icon: z.string(),
+  icon_background_color: z.string(),
+  icon_mask_base_uri: z.string(),
+  name: z.string(),
+  place_id: z.string(),
+  reference: z.string(),
+  types: z.array(z.string()),
+  url: z.string(),
+  utc_offset: z.number(),
+  vicinity: z.string(),
+});
 
 export const googleBDSchema = z.object({
   iss: z.string(),
