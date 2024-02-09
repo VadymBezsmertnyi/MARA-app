@@ -4,10 +4,10 @@ import * as ImageManipulator from "expo-image-manipulator";
 import infoPhoneCountries from "country-telephone-data";
 
 // schemas
-import { imagesSchema } from "../providers/ModalsProvider/ModalsProvider.schemas";
+import { imagesSchema } from "../components/ImageModal/ImageModal.schemas";
 
-// type
-import { ImageType } from "../providers/ModalsProvider/ModalsProvider.types";
+// types
+import { ImageType } from "../components/ImageModal/ImageModal.types";
 
 export const formatDateFromUnixTimestamp = (unixTimestamp: number) => {
   const date = new Date(unixTimestamp);

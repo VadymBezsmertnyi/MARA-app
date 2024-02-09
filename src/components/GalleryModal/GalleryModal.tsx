@@ -4,17 +4,17 @@ import Gallery from "react-native-awesome-gallery";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { themeContext } from "../../../ThemeProvider/ThemeProvider";
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
-import { ImageCache } from "../../../../components/ImageCache/ImageCache";
+import { ImageCache } from "../ImageCache/ImageCache";
 
 // icons
-import { IconArrowLeftEvent } from "../../../../icons/components";
+import { IconArrowLeftEvent } from "../../icons/components";
 
 // styles
 import { styles } from "./GalleryModal.styles";
-import colors from "../../../../../styles/colors";
+import colors from "../../../styles/colors";
 
 type GalleryModalProps = {
   data: { images: string[]; indexImage?: number };

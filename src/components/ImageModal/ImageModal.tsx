@@ -3,25 +3,25 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // types
-import { ImageModalType } from "../../ModalsProvider.types";
+import { ImageModalType } from "./ImageModal.types";
 
 // providers
-import { localesContext } from "../../../../../localization/localization.provider";
-import { themeContext } from "../../../ThemeProvider/ThemeProvider";
+import { localesContext } from "../../../localization/localization.provider";
+import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
-import { ImageCache } from "../../../../components/ImageCache/ImageCache";
-import { ButtonCustom } from "../../../../components/ButtonCustom/ButtonCustom";
+import { ImageCache } from "../ImageCache/ImageCache";
+import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 
 // helps
-import { getRightSizeImage } from "../../../../helps/helps";
+import { getRightSizeImage } from "../../helps/helps";
 
 // icons
-import { IconClose } from "../../../../icons/components";
+import { IconClose } from "../../icons/components";
 
 // styles
 import { styles } from "./ImageModal.styles";
-import colors from "../../../../../styles/colors";
+import colors from "../../../styles/colors";
 
 type ImageModalProps = {
   imageInfo: ImageModalType | null;

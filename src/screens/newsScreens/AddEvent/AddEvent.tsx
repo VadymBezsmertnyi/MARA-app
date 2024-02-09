@@ -19,8 +19,8 @@ import {
   RootEventsScreensParamList,
   RootSettingsScreensParamList,
 } from "../../../navigators/Navigators.types";
-import { ImageType } from "../../../providers/ModalsProvider/ModalsProvider.types";
 import { LocationType } from "../../../providers/EventsProvider/EventsProvider.types";
+import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 
 // schemas
 import { locationSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";

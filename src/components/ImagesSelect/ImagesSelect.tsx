@@ -5,14 +5,13 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { Modal, TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 // types
-import { ImageType } from "../../providers/ModalsProvider/ModalsProvider.types";
+import { ImageModalType, ImageType } from "../ImageModal/ImageModal.types";
 
 // providers
-import { modalsContext } from "../../providers/ModalsProvider/ModalsProvider";
 import { loadingContext } from "../../providers/LoadingProvider/LoadingProvider";
 
 // components
@@ -22,6 +21,8 @@ import {
   IconArrowRightEvent,
 } from "../../icons/components";
 import { ImageCache } from "../ImageCache/ImageCache";
+import { ModalWindow } from "../ModalWindow/ModalWindow";
+import { ImageModal } from "../ImageModal/ImageModal";
 
 // helps
 import { compressAndProcessImages } from "../../helps/helps";
@@ -38,20 +39,14 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   images,
   setImages,
 }) => {
-  const {
-    setModalType,
-    image,
-    setImage,
-    isDelete,
-    onClose,
-    isMain,
-    setIsMain,
-  } = useContext(modalsContext);
   const { setLoading } = useContext(loadingContext);
   const [showImages, setShowImages] = useState({
     start: 0,
     finish: 3,
   });
+  const [isDelete, setIsDelete] = useState(false);
+  const [isMain, setIsMain] = useState(false);
+  const [image, setImage] = useState<ImageModalType | null>(null);
   const isBack = useMemo(
     () => showImages.start > 0 && images.length > 3,
     [images, showImages]
@@ -68,6 +63,12 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
     () => ({ opacity: isNext ? 1 : 0.3 }),
     [isNext]
   );
+
+  const onClose = () => {
+    setImage(null);
+    setIsDelete(false);
+    setIsMain(false);
+  };
 
   const pickImage = async () => {
     setLoading(true);
@@ -99,11 +100,6 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
         start: state.start + 1,
         finish: state.finish + 1,
       }));
-  };
-
-  const selectImage = (image: ImageType, index: number) => {
-    setModalType("image");
-    setImage({ image, index });
   };
 
   const deleteImage = () => {
@@ -139,43 +135,55 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   }, [images.length]);
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        disabled={!isBack}
-        onPress={onBack}
-        style={styleButtonBack}
-      >
-        <IconArrowLeftEventGradient width={44} height={44} />
-      </TouchableOpacity>
-      <View style={styles.list}>
-        {images.length < 6 ? (
-          <TouchableOpacity onPress={pickImage}>
-            <IconAddEvent width={48} height={48} />
-          </TouchableOpacity>
-        ) : null}
-        {images
-          .slice(showImages.start, showImages.finish)
-          .map((image, index) => (
-            <TouchableOpacity
-              key={`image-event-${index + 1}`}
-              onPress={() => {
-                selectImage(image, index);
-              }}
-            >
-              <ImageCache
-                imageSrc={`data:image/jpeg;base64,${image.base64}`}
-                style={styles.image}
-              />
+    <>
+      <View style={styles.container}>
+        <TouchableOpacity
+          disabled={!isBack}
+          onPress={onBack}
+          style={styleButtonBack}
+        >
+          <IconArrowLeftEventGradient width={44} height={44} />
+        </TouchableOpacity>
+        <View style={styles.list}>
+          {images.length < 6 ? (
+            <TouchableOpacity onPress={pickImage}>
+              <IconAddEvent width={48} height={48} />
             </TouchableOpacity>
-          ))}
+          ) : null}
+          {images
+            .slice(showImages.start, showImages.finish)
+            .map((image, index) => (
+              <TouchableOpacity
+                key={`image-event-${index + 1}`}
+                onPress={() => {
+                  setImage({ image, index });
+                }}
+              >
+                <ImageCache
+                  imageSrc={`data:image/jpeg;base64,${image.base64}`}
+                  style={styles.image}
+                />
+              </TouchableOpacity>
+            ))}
+        </View>
+        <TouchableOpacity
+          disabled={!isNext}
+          onPress={onNext}
+          style={styleButtonNext}
+        >
+          <IconArrowRightEvent width={44} height={44} />
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        disabled={!isNext}
-        onPress={onNext}
-        style={styleButtonNext}
-      >
-        <IconArrowRightEvent width={44} height={44} />
-      </TouchableOpacity>
-    </View>
+      <Modal visible={Boolean(image)} transparent>
+        <ModalWindow onClose={onClose}>
+          <ImageModal
+            imageInfo={image}
+            setIsDelete={setIsDelete}
+            onClose={onClose}
+            setIsMain={setIsMain}
+          />
+        </ModalWindow>
+      </Modal>
+    </>
   );
 };

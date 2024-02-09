@@ -11,8 +11,8 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
 
 //types
-import { ImageType } from "../../../providers/ModalsProvider/ModalsProvider.types";
 import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
+import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 import {
   RootAllScreensParamList,
   RootSettingsScreensParamList,
