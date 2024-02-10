@@ -16,7 +16,6 @@
     "previewAndroid": {
       "channel": "main",
       "android": {
-        "gradleCommand": ":app:assembleRelease",
         "buildType": "app-bundle"
       },
       "ios": {
