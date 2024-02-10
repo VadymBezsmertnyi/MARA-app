@@ -7,16 +7,17 @@
       "developmentClient": true,
       "distribution": "internal"
     },
-    "preview": {
+    "previewIos": {
       "channel": "main",
       "android": {
         "buildType": "apk"
       }
     },
-    "preview2": {
+    "previewAndroid": {
       "channel": "main",
       "android": {
-        "gradleCommand": ":app:assembleRelease"
+        "gradleCommand": ":app:assembleRelease",
+        "buildType": "app-bundle"
       },
       "ios": {
         "autoIncrement": "buildNumber"
