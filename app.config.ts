@@ -81,7 +81,7 @@ export const expo = {
         apiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       },
     },
-    versionCode: 2,
+    versionCode: 3,
   },
   web: {
     favicon: "./assets/favicon.png",
