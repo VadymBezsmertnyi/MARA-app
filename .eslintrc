@@ -1,9 +1,6 @@
 {
   "extends": "memcrab",
-  "plugins": [
-    "only-warn",
-    "prettier"
-  ],
+  "plugins": ["only-warn", "prettier"],
   "env": {
     "browser": true,
     "node": true,
@@ -13,7 +10,7 @@
     "fondy": true,
     "JSX": true
   },
-  "rules" : {
+  "rules": {
     // any types
     "@typescript-eslint/no-explicit-any": "off",
     // прибираємо попередження на дублікат import react
@@ -53,6 +50,8 @@
     // use any type
     "@typescript-eslint/no-unsafe-member-access": "off",
     // для console.error
-    "no-console": "off"
+    "no-console": "off",
+    // для process.env
+    "@typescript-eslint/no-unnecessary-type-assertion": "off"
   }
 }

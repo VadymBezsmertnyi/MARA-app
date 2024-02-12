@@ -1,13 +1,11 @@
-const env = Object.fromEntries(
-  Object.entries(process.env).filter(([key]) => key.startsWith("EXPO_PUBLIC_"))
-);
-
-const {
-  EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
-  EXPO_PUBLIC_IOS_URL_SCHEME,
-  EXPO_PUBLIC_FACEBOOK_CLIENT_TOKEN,
-  EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-} = process.env as Record<string, string>;
+const EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES = process.env
+  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES as string;
+const EXPO_PUBLIC_IOS_URL_SCHEME = process.env
+  .EXPO_PUBLIC_IOS_URL_SCHEME as string;
+const EXPO_PUBLIC_FACEBOOK_CLIENT_TOKEN = process.env
+  .EXPO_PUBLIC_FACEBOOK_CLIENT_TOKEN as string;
+const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
+  .EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB as string;
 
 export const expo = {
   name: "M.A.R.A",
@@ -96,7 +94,6 @@ export const expo = {
     eas: {
       projectId: "c9b5a1d2-759e-4704-9171-69ad591def63",
     },
-    env,
   },
   owner: "fop_vadym_bezsmertnyi",
   plugins: [

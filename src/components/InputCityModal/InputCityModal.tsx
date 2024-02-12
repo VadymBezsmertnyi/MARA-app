@@ -5,7 +5,6 @@ import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dis
 import { Trans } from "@lingui/macro";
 
 // types
-import { ModalSheetTypes } from "../../ModalsSheetProvider.types";
 
 // providers
 import { localesContext } from "../../../localization/localization.provider";
@@ -24,16 +23,14 @@ import { IconSearchInput } from "../../icons/components";
 // styles
 import { styles } from "./InputCityModal.styles";
 
-const { EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES } = process.env as Record<
-  string,
-  string
->;
+const EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES = process.env
+  .EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES as string;
 
 type InputCityModalProps = {
   setCity: React.Dispatch<
     React.SetStateAction<GoogleLocationDetailResult | null>
   >;
-  setModalType: React.Dispatch<React.SetStateAction<ModalSheetTypes | null>>;
+  setModalType: (value: null) => void;
 };
 
 export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
