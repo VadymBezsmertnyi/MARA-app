@@ -2,7 +2,6 @@ import React, {
   FunctionComponent,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
 } from "react";
 import { Platform, Text, View, ViewStyle } from "react-native";
@@ -28,6 +27,13 @@ import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 // styles
 import { styles } from "./Socials.styles";
 
+type SocialsProps = {
+  isTitle?: boolean;
+  styleContainer?: ViewStyle;
+  onChangeGoogle: (value: User) => void;
+  onChangeFacebook: (accessToken: string) => void;
+};
+
 const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.email",
   "openid",
@@ -36,18 +42,13 @@ const GOOGLE_SCOPES = [
 
 const { EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB } =
   process.env as Record<string, string>;
-console.log(
-  "EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB",
-  EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-  EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB
-);
 
-type SocialsProps = {
-  isTitle?: boolean;
-  styleContainer?: ViewStyle;
-  onChangeGoogle: (value: User) => void;
-  onChangeFacebook: (accessToken: string) => void;
-};
+GoogleSignin.configure({
+  scopes: GOOGLE_SCOPES,
+  webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+  offlineAccess: true,
+  iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+});
 
 export const Socials: FunctionComponent<SocialsProps> = ({
   isTitle = false,
@@ -113,15 +114,6 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     (typeSocial: string) => <Trans>Continue with {typeSocial}</Trans>,
     []
   );
-
-  useEffect(() => {
-    GoogleSignin.configure({
-      scopes: GOOGLE_SCOPES,
-      webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-      offlineAccess: true,
-      iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-    });
-  }, []);
 
   return (
     <View style={containerStyles}>
