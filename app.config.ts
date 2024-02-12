@@ -50,6 +50,7 @@ export const expo = {
     },
   },
   android: {
+    versionCode: 6,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
@@ -82,7 +83,6 @@ export const expo = {
         apiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       },
     },
-    versionCode: 5,
   },
   web: {
     favicon: "./assets/favicon.png",
