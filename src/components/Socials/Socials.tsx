@@ -2,6 +2,7 @@ import React, {
   FunctionComponent,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
 } from "react";
 import { Platform, Text, View, ViewStyle } from "react-native";
@@ -33,12 +34,13 @@ const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.profile",
 ];
 
-const PROCESS_ENV = process.env as unknown as {
-  EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS: string;
-  EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB: string;
-};
 const { EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB } =
-  PROCESS_ENV;
+  process.env as Record<string, string>;
+console.log(
+  "EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB",
+  EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+  EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB
+);
 
 type SocialsProps = {
   isTitle?: boolean;
@@ -55,12 +57,6 @@ export const Socials: FunctionComponent<SocialsProps> = ({
 }) => {
   const { theme } = useContext(themeContext);
   Settings.initializeSDK();
-  GoogleSignin.configure({
-    scopes: GOOGLE_SCOPES,
-    webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-    offlineAccess: true,
-    iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-  });
 
   const isIos = useMemo(() => Platform.OS === "ios", [Platform.OS]);
   const containerStyles = useMemo(
@@ -117,6 +113,15 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     (typeSocial: string) => <Trans>Continue with {typeSocial}</Trans>,
     []
   );
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      scopes: GOOGLE_SCOPES,
+      webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+      offlineAccess: true,
+      iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+    });
+  }, []);
 
   return (
     <View style={containerStyles}>

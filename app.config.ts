@@ -2,6 +2,7 @@ const {
   EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
   EXPO_PUBLIC_IOS_URL_SCHEME,
   EXPO_PUBLIC_FACEBOOK_CLIENT_TOKEN,
+  EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
 } = process.env as Record<string, string>;
 
 export const expo = {
@@ -101,6 +102,7 @@ export const expo = {
       "@react-native-google-signin/google-signin",
       {
         iosUrlScheme: EXPO_PUBLIC_IOS_URL_SCHEME,
+        webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
       },
     ],
     [
