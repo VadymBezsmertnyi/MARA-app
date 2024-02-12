@@ -55,7 +55,7 @@ export const expo = {
     },
   },
   android: {
-    versionCode: 7,
+    versionCode: 8,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
