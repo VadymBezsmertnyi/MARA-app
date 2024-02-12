@@ -17,8 +17,6 @@ export const expo = {
     backgroundColor: "#ffffff",
   },
   assetBundlePatterns: ["**/*"],
-  scheme: "com.m-a-r-a.app",
-  uriScheme: "com.m-a-r-a.app",
   platforms: ["ios", "android"],
   ios: {
     supportsTablet: false,
@@ -27,6 +25,7 @@ export const expo = {
     buildNumber: "1",
     usesAppleSignIn: true,
     infoPlist: {
+      LSApplicationQueriesSchemes: ["lyft"],
       NSFaceIDUsageDescription: "Allow $(PRODUCT_NAME) to use Face ID.",
       UIApplicationShortcutItemTitle: "ADD_ITEM_SHORTCUT_TITLE",
       NSCameraUsageDescription: "Доступ до камери для фото профілю",
