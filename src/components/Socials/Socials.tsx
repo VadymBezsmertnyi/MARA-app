@@ -34,23 +34,6 @@ type SocialsProps = {
   onChangeFacebook: (accessToken: string) => void;
 };
 
-const GOOGLE_SCOPES = [
-  "https://www.googleapis.com/auth/userinfo.email",
-  "openid",
-  "https://www.googleapis.com/auth/userinfo.profile",
-];
-
-const { EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB } =
-  process.env as Record<string, string>;
-
-if (EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB)
-  GoogleSignin.configure({
-    scopes: GOOGLE_SCOPES,
-    webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-    offlineAccess: true,
-    iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-  });
-
 export const Socials: FunctionComponent<SocialsProps> = ({
   isTitle = false,
   styleContainer,
