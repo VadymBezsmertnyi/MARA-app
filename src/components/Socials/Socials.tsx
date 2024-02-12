@@ -43,12 +43,13 @@ const GOOGLE_SCOPES = [
 const { EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB } =
   process.env as Record<string, string>;
 
-GoogleSignin.configure({
-  scopes: GOOGLE_SCOPES,
-  webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-  offlineAccess: true,
-  iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-});
+if (EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB)
+  GoogleSignin.configure({
+    scopes: GOOGLE_SCOPES,
+    webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+    offlineAccess: true,
+    iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+  });
 
 export const Socials: FunctionComponent<SocialsProps> = ({
   isTitle = false,
