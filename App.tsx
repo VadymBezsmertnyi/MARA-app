@@ -60,6 +60,17 @@ const GOOGLE_SCOPES = [
 
 const { EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS, EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB } =
   process.env as Record<string, string>;
+console.log(
+  "EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB",
+  EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB
+);
+if (EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB)
+  GoogleSignin.configure({
+    scopes: GOOGLE_SCOPES,
+    webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+    offlineAccess: true,
+    iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+  });
 
 SplashScreen.preventAutoHideAsync();
 
@@ -89,16 +100,6 @@ function App() {
   useEffect(() => {
     setAppIsReady(true);
   }, []);
-
-  useEffect(() => {
-    if (EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB)
-      GoogleSignin.configure({
-        scopes: GOOGLE_SCOPES,
-        webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-        offlineAccess: true,
-        iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-      });
-  }, [EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB]);
 
   return (
     <WebSocketProvider>
