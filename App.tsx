@@ -54,7 +54,7 @@ const CATALOGS_LANGUAGES = {
 function App() {
   const linking = useMemo(
     () => ({
-      prefixes: [Linking.createURL("/"), "https://com.m-a-r-a.app"],
+      prefixes: [Linking.createURL("")],
     }),
     []
   );
