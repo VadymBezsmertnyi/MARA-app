@@ -17,6 +17,7 @@ import {
   OpenSans_700Bold,
 } from "@expo-google-fonts/open-sans";
 import { useFonts } from "expo-font";
+import Constants from "expo-constants";
 
 // providers
 import LocalesProvider from "./localization/localization.provider";
@@ -64,13 +65,16 @@ console.log(
   "EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB",
   EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB
 );
-if (EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB)
-  GoogleSignin.configure({
-    scopes: GOOGLE_SCOPES,
-    webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
-    offlineAccess: true,
-    iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-  });
+console.log("process.env", process.env);
+console.log("process", process);
+console.log("Constants.expoConfig?.extra", Constants.expoConfig?.extra);
+
+GoogleSignin.configure({
+  scopes: GOOGLE_SCOPES,
+  webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB,
+  offlineAccess: true,
+  iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+});
 
 SplashScreen.preventAutoHideAsync();
 
