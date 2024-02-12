@@ -1,9 +1,10 @@
 /* eslint-disable no-restricted-exports */ //enabled export default
 /* eslint-disable react/jsx-max-depth */ //For depth>15
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { Messages, setupI18n } from "@lingui/core";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import * as SplashScreen from "expo-splash-screen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
   Montserrat_600SemiBold,
@@ -50,7 +51,10 @@ const CATALOGS_LANGUAGES = {
   en: translationsEn as Messages,
 };
 
+SplashScreen.preventAutoHideAsync();
+
 function App() {
+  const [appIsReady, setAppIsReady] = useState(false);
   const [fontsLoaded] = useFonts({
     Montserrat_600SemiBold,
     Montserrat_700Bold,
@@ -63,6 +67,18 @@ function App() {
     messages: CATALOGS_LANGUAGES,
     locale: languagesLinguiAlias[defaultLanguage],
   });
+
+  useEffect(() => {
+    if (appIsReady)
+      (async () => {
+        setAppIsReady(false);
+        await SplashScreen.hideAsync();
+      })();
+  }, [appIsReady]);
+
+  useEffect(() => {
+    setAppIsReady(true);
+  }, []);
 
   return (
     <WebSocketProvider>
