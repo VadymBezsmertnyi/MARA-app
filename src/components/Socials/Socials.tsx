@@ -101,9 +101,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     try {
       const userDataGoogle = await GoogleSignin.signIn();
       onChangeGoogle(userDataGoogle);
-    } catch (error) {
-      console.log("Google login error:", error);
-    }
+    } catch (error) {}
   };
 
   const onApple = async () => {

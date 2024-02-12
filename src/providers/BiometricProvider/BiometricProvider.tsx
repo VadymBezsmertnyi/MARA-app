@@ -77,7 +77,6 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
         setAuthenticationType(authenticationTypes);
       }
     } catch (error) {
-      console.log("error", error);
     } finally {
       setLoading(false);
     }

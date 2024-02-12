@@ -65,7 +65,6 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
   );
 
   const checkImage = { ...image, uri: image.url } || WorkshopPlaceholder;
-  console.log("checkImage", checkImage);
 
   return (
     <TouchableOpacity style={styles.container} onPress={selectNew}>
