@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { Platform, View, ViewStyle } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
-import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import { PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
@@ -28,13 +28,12 @@ import { EventMarker } from "./components/EventMarker/EventMarker";
 import { MeMarker } from "./components/MeMarker/MeMarker";
 import { UpContainer } from "./components/UpContainer/UpContainer";
 import { EventContainer } from "./components/EventContainer/EventContainer";
-import { OtherMarker } from "./components/OtherMarker/OtherMarker";
+import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
 import { ButtonSearch } from "./components/ButtonSearch/ButtonSearch";
 import { UserMarker } from "./components/UserMarker/UserMarker";
 
 // styles
 import { styles } from "./Map.styles";
-import colors from "../../../../styles/colors";
 
 type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
@@ -110,20 +109,6 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
         showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
       >
-        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
-        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
-        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
-        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
-        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
-        <Marker coordinate={{ latitude: 49.4346, longitude: 32.0621 }} />
-        <Marker coordinate={{ latitude: 49.4285, longitude: 32.0626 }} />
-        <Marker coordinate={{ latitude: 49.4467, longitude: 32.0616 }} />
-        <Marker coordinate={{ latitude: 49.4011, longitude: 32.0698 }} />
-        <Marker coordinate={{ latitude: 49.5414, longitude: 32.0512 }} />
-        <Marker coordinate={{ latitude: 49.4435, longitude: 31.0169 }} />
-        <Marker coordinate={{ latitude: 49.4389, longitude: 29.9874 }} />
-        <Marker coordinate={{ latitude: 49.4385, longitude: 29.9885 }} />
-        <Marker coordinate={{ latitude: 49.4319, longitude: 29.9794 }} />
         <MeMarker />
         <SosMarker
           longitude={31.758758202195168}
@@ -136,16 +121,25 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
             event={firstEvent}
           />
         ) : null}
-        {workshops.map(({ longitude, latitude, title }, index) => (
-          <OtherMarker
-            key={`other-marker-${index + 1}`}
-            longitude={longitude}
-            latitude={latitude}
-            markerSize={32}
-            markerColor={colors.blueTufts}
-            title={title}
-          />
-        ))}
+        {workshops.map(
+          (
+            {
+              place: {
+                coordinates: { longitude, latitude },
+              },
+              title,
+            },
+            index
+          ) => (
+            <WorkshopMarker
+              key={`marker-workshop-${index + 1}`}
+              longitude={longitude}
+              latitude={latitude}
+              markerSize={32}
+              title={title}
+            />
+          )
+        )}
         {listUsers.map((userId) => {
           const userLocation = usersGeolocation?.[userId]
             ? usersGeolocation[userId]

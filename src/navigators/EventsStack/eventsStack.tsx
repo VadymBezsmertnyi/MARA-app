@@ -32,7 +32,7 @@ import colors from "../../../styles/colors";
 
 const Stack = createNativeStackNavigator<RootEventsScreensParamList>();
 
-export const NewsStack: FunctionComponent = () => {
+export const EventsStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
   const { eventsScreens } = useNewsStack();
   const navigation = useNavigation();

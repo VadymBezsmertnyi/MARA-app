@@ -5,7 +5,13 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { LinearGradient } from "expo-linear-gradient";
-import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
+import {
+  getFocusedRouteNameFromRoute,
+  useNavigation,
+} from "@react-navigation/native";
+
+// types
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // providers
 import { responsiveLayoutContext } from "../../providers/responsiveLayout/responsiveLayout.provider";
@@ -30,6 +36,7 @@ import { styles } from "./MainTabs.styles";
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
+  const navigation = useNavigation<DrawerNavigationHelpers>();
   const { mainTabs } = useMainTabs();
   const { durationHeight } = useContext(responsiveLayoutContext);
   const colorsGradient = useMemo(
@@ -43,6 +50,10 @@ export const MainTabs: FunctionComponent = () => {
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1], []);
+
+  const onShowMenu = () => {
+    navigation.openDrawer();
+  };
 
   const tabBar = ({ state: { index }, navigation }: BottomTabBarProps) => (
     <View style={containerStyles}>
@@ -105,7 +116,7 @@ export const MainTabs: FunctionComponent = () => {
               headerShown: screen.headerShown && !isHideHeader,
               headerTitle: screen.title,
               headerTitleAlign: "center",
-              headerLeft: () => <MenuBurgerButton />,
+              headerLeft: () => <MenuBurgerButton onPress={onShowMenu} />,
               headerLeftContainerStyle: styles.headerLeftContainerStyle,
               headerRightContainerStyle: { paddingRight: 16 },
               headerShadowVisible: false,

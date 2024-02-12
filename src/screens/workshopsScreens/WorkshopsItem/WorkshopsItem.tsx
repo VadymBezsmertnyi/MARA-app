@@ -1,6 +1,7 @@
 import React, {
   FunctionComponent,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
@@ -17,6 +18,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
 import { getDistance } from "geolib";
+import * as Linking from "expo-linking";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
@@ -134,6 +136,16 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         state + 5 <= commentsReverse.length ? state + 5 : commentsReverse.length
       );
   };
+
+  const test = async () => {
+    const initialUrl = await Linking.parseInitialURLAsync();
+    console.log("URL-адреса:", initialUrl);
+    console.log("route:", route);
+  };
+
+  useEffect(() => {
+    test();
+  }, []);
 
   return (
     <View style={styles.container}>

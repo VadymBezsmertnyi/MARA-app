@@ -2,6 +2,7 @@ import React, { FunctionComponent, useContext, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
+import { convertDistance, getDistance } from "geolib";
 
 // providers
 import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
@@ -36,7 +37,6 @@ import notWorkshopsImage from "../../../../assets/workshops/notWorkshops.jpeg";
 
 // styles
 import { styles } from "./WorkshopMain.styles";
-import { convertDistance, getDistance } from "geolib";
 
 type WorkshopMainProps = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList> &

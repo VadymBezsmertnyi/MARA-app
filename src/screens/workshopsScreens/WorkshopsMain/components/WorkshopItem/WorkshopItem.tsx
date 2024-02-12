@@ -39,7 +39,7 @@ type WorkshopItemProps = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
   isMotoService: boolean;
   isAutoService: boolean;
-  image: ImageSource | null;
+  image: { url: string };
 };
 
 export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
@@ -64,7 +64,8 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
     [isMotoService]
   );
 
-  const checkImage = image || WorkshopPlaceholder;
+  const checkImage = { ...image, uri: image.url } || WorkshopPlaceholder;
+  console.log("checkImage", checkImage);
 
   return (
     <TouchableOpacity style={styles.container} onPress={selectNew}>

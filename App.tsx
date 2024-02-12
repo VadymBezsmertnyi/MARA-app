@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-exports */ //enabled export default
 /* eslint-disable react/jsx-max-depth */ //For depth>15
-import React from "react";
+import React, { useMemo } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { Messages, setupI18n } from "@lingui/core";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -15,6 +15,7 @@ import {
   OpenSans_700Bold,
 } from "@expo-google-fonts/open-sans";
 import { useFonts } from "expo-font";
+import * as Linking from "expo-linking";
 
 // providers
 import LocalesProvider from "./localization/localization.provider";
@@ -51,6 +52,13 @@ const CATALOGS_LANGUAGES = {
 };
 
 function App() {
+  const linking = useMemo(
+    () => ({
+      prefixes: [Linking.createURL("/"), "https://com.m-a-r-a.app"],
+    }),
+    []
+  );
+
   const [fontsLoaded] = useFonts({
     Montserrat_600SemiBold,
     Montserrat_700Bold,
@@ -73,7 +81,7 @@ function App() {
               <PlacesProvider>
                 <BiometricProvider>
                   <UserProvider i18n={i18n}>
-                    <NavigationContainer>
+                    <NavigationContainer linking={linking}>
                       <EventsProvider>
                         <SafeAreaProvider>
                           <MapProvider>

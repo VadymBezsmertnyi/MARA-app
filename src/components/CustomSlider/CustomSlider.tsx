@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import {
   Image,
-  ImageSourcePropType,
   ImageStyle,
   LayoutChangeEvent,
   NativeScrollEvent,
@@ -25,14 +24,14 @@ import {
 import { styles } from "./CustomSlider.styles";
 
 type CustomSliderProps = {
-  images: ImageSourcePropType[] | string[];
+  images: Array<{ url: string }> | string[];
   style?: (styleProps: StyleProp<ViewStyle>) => StyleProp<ViewStyle>;
   styleScroll?: (styleProps: StyleProp<ViewStyle>) => StyleProp<ViewStyle>;
   onPress?: ({
     image,
     index,
   }: {
-    image: ImageSourcePropType | string;
+    image: { url: string } | string;
     index: number;
   }) => void;
   customSlide?: ({
@@ -41,7 +40,7 @@ type CustomSliderProps = {
     index,
     width,
   }: {
-    item: ImageSourcePropType | string;
+    item: { url: string } | string;
     style: StyleProp<ImageStyle>;
     index: number;
     width: number;
@@ -146,7 +145,7 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
   };
 
   const renderImage = (
-    image: ImageSourcePropType | string,
+    image: { url: string } | string,
     index: number,
     isLoop?: boolean
   ) => {
@@ -155,7 +154,8 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
     if (customSlide)
       return customSlide({ item: image, style: imageStyle(), index, width });
 
-    const imageObject = typeof image === "string" ? { uri: image } : image;
+    const imageObject =
+      typeof image === "string" ? { uri: image } : { uri: image.url };
 
     const imageComponent = (
       <View style={StyleSheet.absoluteFillObject}>

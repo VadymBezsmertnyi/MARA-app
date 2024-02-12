@@ -18,6 +18,7 @@ export const expo = {
   },
   assetBundlePatterns: ["**/*"],
   scheme: "com.m-a-r-a.app",
+  platforms: ["ios", "android"],
   ios: {
     supportsTablet: false,
     bundleIdentifier: "moto.auto.road.assistant",
