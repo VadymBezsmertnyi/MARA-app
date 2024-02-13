@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  containerHeaderMenu: { minWidth: 80 },
   containerInput: {
     paddingHorizontal: 16,
     paddingBottom: 8,

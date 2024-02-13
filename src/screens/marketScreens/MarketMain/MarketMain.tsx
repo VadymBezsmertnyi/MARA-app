@@ -21,13 +21,19 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { Header } from "../../../components/Header/Header";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { HeaderFilters } from "../../workshopsScreens/WorkshopsMain/components/HeaderFilters/HeaderFilters";
+import { Input } from "../../../components/Input/Input";
+import { ProductCardSmall } from "./components/ProductCardSmall/ProductCardSmall";
+import { ProductCardFull } from "./components/ProductCardFull/ProductCardFull";
+import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
+
+// icons
+import { IconSearchInput } from "../../../icons/components";
+
+// constants
+import { PATHS_MARKET_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./MarketMain.styles";
-import { Input } from "../../../components/Input/Input";
-import { IconSearchInput } from "../../../icons/components";
-import { ProductCardSmall } from "./components/ProductCardSmall/ProductCardSmall";
-import { ProductCardFull } from "./components/ProductCardFull/ProductCardFull";
 
 type MarketMainProps = {
   navigation: NativeStackNavigationProp<RootMarketScreensParamList> &
@@ -39,6 +45,10 @@ const data = [
   { id: "2", title: "Елемент 2" },
   { id: "3", title: "Елемент 3" },
   { id: "4", title: "Елемент 4" },
+  { id: "5", title: "Елемент 5" },
+  { id: "6", title: "Елемент 6" },
+  { id: "7", title: "Елемент 7" },
+  { id: "8", title: "Елемент 8" },
 ];
 
 export const MarketMain: FunctionComponent<MarketMainProps> = ({
@@ -57,6 +67,10 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
 
   const onPressShowMenu = () => {
     navigation.openDrawer();
+  };
+
+  const onPressAddProduct = () => {
+    navigation.navigate(PATHS_MARKET_SCREENS.marketAdd);
   };
 
   const renderItem: ListRenderItem<{
@@ -80,7 +94,11 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
   return (
     <View style={stylesContainer}>
       <Header
-        leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
+        leftElement={
+          <View style={styles.containerHeaderMenu}>
+            <MenuBurgerButton onPress={onPressShowMenu} />
+          </View>
+        }
         title={i18n._("Market")}
         rightElement={
           <HeaderFilters
@@ -124,6 +142,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
           />
         )}
       </View>
+      <AddEventButton onPress={onPressAddProduct} />
     </View>
   );
 };

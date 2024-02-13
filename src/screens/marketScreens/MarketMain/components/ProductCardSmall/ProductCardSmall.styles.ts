@@ -44,8 +44,8 @@ export const styles = StyleSheet.create({
   },
   containerLike: {
     position: "absolute",
-    padding: 18,
+    padding: 7,
     top: 0,
-    right: 0,
+    right: -5,
   },
 });
