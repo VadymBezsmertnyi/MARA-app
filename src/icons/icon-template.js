@@ -1,4 +1,7 @@
-const template = ({ imports, interfaces, componentName, props, jsx, exports }, { tpl }) => {
+const template = (
+  { imports, interfaces, componentName, props, jsx, exports },
+  { tpl }
+) => {
   return tpl`
 import React from "react";
 import { IconType } from '../icon.types';
@@ -15,15 +18,16 @@ import {
   Stop,
   LinearGradient,
   ClipPath,
-  RadialGradient
+  RadialGradient,
+  Rect
 } from "react-native-svg";
-${'\n'}
+${"\n"}
 const ${componentName} = (originalProps: IconType) => {
   const { ...props } = originalProps;
-  ${'\n'}
+  ${"\n"}
   return ${jsx}
 };
-${'\n'}
+${"\n"}
 export default ${componentName};
 `;
 };

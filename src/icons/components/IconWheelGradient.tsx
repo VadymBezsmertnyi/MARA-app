@@ -14,6 +14,7 @@ import {
   LinearGradient,
   ClipPath,
   RadialGradient,
+  Rect,
 } from "react-native-svg";
 
 const SvgIconWheelGradient = (originalProps: IconType) => {
