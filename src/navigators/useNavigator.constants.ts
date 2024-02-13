@@ -54,3 +54,9 @@ export const PATHS_WORKSHOP_SCREENS = {
   workshopItem: "workshopItem",
   workshopAdd: "workshopAdd",
 } as const;
+
+export const PATHS_MARKET_SCREENS = {
+  marketMain: "marketMain",
+  marketItem: "marketItem",
+  marketAdd: "marketAdd",
+} as const;

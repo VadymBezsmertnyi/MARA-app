@@ -7,10 +7,11 @@ import { localesContext } from "../../../localization/localization.provider";
 // stacks
 import { EventsStack } from "../EventsStack/eventsStack";
 import { WorkshopStack } from "../WorkshopStack/workshopStack";
+import { SettingsStack } from "../SettingsStack/settingsStack";
+import { MarketStack } from "../MarketStack/MarketStack";
 
 // screens
 import { Map } from "../../screens/mainScreens/Map/Map";
-import { Market } from "../../screens/mainScreens/Market/Market";
 
 // icons components
 import {
@@ -33,7 +34,6 @@ import {
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
 } from "../useNavigator.constants";
-import { SettingsStack } from "../SettingsStack/settingsStack";
 
 export const useMainTabs = () => {
   const { i18n } = useContext(localesContext);
@@ -74,7 +74,7 @@ export const useMainTabs = () => {
       name: PATHS_MAIN_TABS.market,
       mainScreen: null,
       title: t(i18n)`Market`,
-      component: Market,
+      component: MarketStack,
       headerShown: false,
       tabBarIcon: IconTabMarket,
       tabBarIconSelect: IconTabMarketSelect,

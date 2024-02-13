@@ -16,7 +16,8 @@ import { Splash } from "../screens/Splash/Splash";
 
 // registration
 import { ForgetStack } from "./forgetStack/forgetStack";
-import { MainTabs } from "./MainTabs/MainTabs";
+
+// main stack
 import { MenuDrawer } from "./MenuDrawer/MenuDrawer";
 
 export const useNavigators = () => {

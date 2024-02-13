@@ -6,6 +6,7 @@ import {
   PATHS_REGISTRATION_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
+  PATHS_MARKET_SCREENS,
 } from "./useNavigator.constants";
 
 export type MainScreenT = {
@@ -161,10 +162,22 @@ export type RootWorkshopsScreensParamList = {
   >;
 };
 
+export type RootMarketScreensParamList = {
+  [PATHS_MARKET_SCREENS.marketMain]?: Record<string, string | number | boolean>;
+  [PATHS_MARKET_SCREENS.marketAdd]?: Record<
+    string,
+    string | number | boolean
+  > & {
+    workshopId?: number;
+  };
+  [PATHS_MARKET_SCREENS.marketItem]?: Record<string, string | number | boolean>;
+};
+
 export type RootAllScreensParamList = RootMainScreensParamList &
   RootForgetScreensParamList &
   RootRegistrationScreensParamList &
   RootWorkshopsScreensParamList &
+  RootMarketScreensParamList &
   RootSettingsScreensParamList &
   RootEventsScreensParamList &
   RootMainTabsParamList;
