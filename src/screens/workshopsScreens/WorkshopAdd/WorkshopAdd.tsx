@@ -44,7 +44,7 @@ import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 // helps
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
-import { getErrorText } from "./WorkshopAdd.helps";
+import { useErrors } from "../../../helps/useErrors";
 import { getClearValue } from "../../../helps/regexp";
 import showErrors from "../../../helps/errors/showError";
 
@@ -70,6 +70,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       RouteProp<RootWorkshopsScreensParamList & RootSettingsScreensParamList>
     >();
   const { i18n } = useContext(localesContext);
+  const { getErrorText } = useErrors(i18n);
   const { heightStatusBar } = useContext(themeContext);
   const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
     useContext(workshopsContext);
@@ -168,25 +169,39 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
     const errorsObject = {
       ...((title.length < 5 || title.length > 40) && {
-        title: getErrorText("title", i18n),
+        title: getErrorText("title", {
+          min: 5,
+          max: 40,
+          otherName: i18n._("workshop"),
+        }),
       }),
       ...(place === null && {
-        place: getErrorText("place", i18n),
+        place: getErrorText("place", {
+          otherName: i18n._("workshop"),
+        }),
       }),
       ...((description.length < 200 || description.length > 9000) && {
-        description: getErrorText("description", i18n),
+        description: getErrorText("description", {
+          min: 200,
+          max: 9000,
+          otherName: i18n._("workshop"),
+        }),
       }),
       ...(!isPhone && {
-        phoneNumber: getErrorText("phoneNumber", i18n),
+        phoneNumber: getErrorText("phoneNumber", {
+          otherName: i18n._("workshop"),
+        }),
       }),
       ...(selectMotoTypesWorks.length === 0 &&
         selectAutoTypesWorks.length === 0 && {
-          types: getErrorText("types", i18n),
+          types: getErrorText("types", {
+            otherName: i18n._("workshop"),
+          }),
         }),
     };
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
-      const errorMessage = getErrorText("errorMessage", i18n);
+      const errorMessage = getErrorText("errorMessage", {});
       const onlyErrors = Object.values(errorsObject).map(
         (errorObject) => `${errorObject.name}: ${errorObject.title}`
       );

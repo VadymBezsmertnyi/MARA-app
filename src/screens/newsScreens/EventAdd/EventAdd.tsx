@@ -42,7 +42,7 @@ import { IconMapGradient } from "../../../icons/components";
 
 // helps
 import { combineDateAndTime } from "../../../helps/helps";
-import { getErrorText } from "./EventAdd.helps";
+import { useErrors } from "../../../helps/useErrors";
 
 // styles
 import { styles } from "./EventAdd.styles";
@@ -57,6 +57,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
       RouteProp<RootEventsScreensParamList & RootSettingsScreensParamList>
     >();
   const { i18n } = useContext(localesContext);
+  const { getErrorText } = useErrors(i18n);
   const { addEvent, changeEvent, eventsUserList } = useContext(eventsContext);
   const { userData } = useContext(userContext);
   const { setLoading } = useContext(loadingContext);
@@ -113,21 +114,29 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const checkEnterData = () => {
     const errorsObject = {
       ...((eventName.length < 5 || eventName.length > 40) && {
-        eventName: getErrorText("eventName", i18n),
+        eventName: getErrorText("eventName", {
+          min: 5,
+          max: 40,
+          otherName: i18n._("event"),
+        }),
       }),
       ...(place === null && {
-        location: getErrorText("location", i18n),
+        location: getErrorText("location", { otherName: i18n._("event") }),
       }),
       ...(start > finish && {
-        finish: getErrorText("finish", i18n),
+        finish: getErrorText("finish", {}),
       }),
       ...((aboutEvent.length < 20 || aboutEvent.length > 2000) && {
-        aboutEvent: getErrorText("aboutEvent", i18n),
+        aboutEvent: getErrorText("aboutEvent", {
+          min: 20,
+          max: 2000,
+          otherName: i18n._("event"),
+        }),
       }),
     };
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
-      const errorMessage = getErrorText("errorMessage", i18n);
+      const errorMessage = getErrorText("errorMessage", {});
       const onlyErrors = Object.values(errorsObject).map(
         (errorObject) => `${errorObject.name}: ${errorObject.title}`
       );
