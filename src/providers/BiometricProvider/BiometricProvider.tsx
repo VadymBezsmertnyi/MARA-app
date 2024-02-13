@@ -40,26 +40,26 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
   const [authenticationType, setAuthenticationType] = useState<number[] | null>(
     null
   );
-  const isGlobalDisable = true;
+  const isGlobalOn = false;
 
   const isFaceId = useMemo(
     () =>
       authenticationType
-        ? authenticationType.includes(FACE_TYPE) && isGlobalDisable
+        ? authenticationType.includes(FACE_TYPE) && isGlobalOn
         : false,
     [authenticationType]
   );
   const isTouchId = useMemo(
     () =>
       authenticationType
-        ? authenticationType.includes(TOUCH_TYPE) && isGlobalDisable
+        ? authenticationType.includes(TOUCH_TYPE) && isGlobalOn
         : false,
     [authenticationType]
   );
   const isIrisId = useMemo(
     () =>
       authenticationType && Platform.OS === "android"
-        ? authenticationType.includes(IRIS_TYPE) && isGlobalDisable
+        ? authenticationType.includes(IRIS_TYPE) && isGlobalOn
         : false,
     [authenticationType]
   );
@@ -77,21 +77,27 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
         setAuthenticationType(authenticationTypes);
       }
     } catch (error) {
+      console.log("error", error);
     } finally {
       setLoading(false);
     }
   }, [authenticationType, securityLevel, setLoading]);
 
   const checkBiometric = async (): Promise<boolean> => {
-    const hasHardware = await LocalAuthentication.hasHardwareAsync();
-    if (hasHardware) {
-      await LocalAuthentication.isEnrolledAsync();
-      const { success } = await LocalAuthentication.authenticateAsync({
-        promptMessage: t(i18n)`Please authenticator`,
-      });
-      return success;
+    try {
+      const hasHardware = await LocalAuthentication.hasHardwareAsync();
+      if (hasHardware) {
+        await LocalAuthentication.isEnrolledAsync();
+        const { success } = await LocalAuthentication.authenticateAsync({
+          promptMessage: t(i18n)`Please authenticator`,
+        });
+        return success;
+      }
+      return false;
+    } catch (error) {
+      console.log("error", error);
+      return false;
     }
-    return false;
   };
 
   useEffect(() => {
