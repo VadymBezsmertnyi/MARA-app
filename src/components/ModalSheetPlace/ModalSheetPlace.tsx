@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import {
   Modal,
   Platform,
@@ -49,6 +55,7 @@ type ModalSheetPlaceProps = {
   title: string;
   onClose: () => void;
   onSubmit: (date: PlaceType) => void;
+  isExactLocation?: boolean;
 };
 
 type StepModal = "country" | "region" | "address" | "coordinate";
@@ -59,6 +66,7 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
   title,
   onClose,
   onSubmit,
+  isExactLocation = true,
 }) => {
   const { i18n, language } = useContext(localesContext);
   const { theme } = useContext(themeContext);
@@ -75,12 +83,18 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
     () => (places ? Object.keys(places) : []),
     [places]
   );
-  const isEnd = useMemo(() => step === STEPS.length - 1, [step]);
+  const isEnd = useMemo(
+    () => step === STEPS.length - (isExactLocation ? 1 : 2),
+    [step]
+  );
   const stepName = useMemo(() => STEPS[step], [step]);
   const isNextStep = useMemo(() => {
     if (stepName === "country") return selectCountryIso !== null;
     if (stepName === "region") return selectRegionId !== null;
-    if (stepName === "address") return city.length >= 4 && address.length >= 4;
+    if (stepName === "address")
+      return isExactLocation
+        ? city.length >= 4 && address.length >= 4
+        : city.length >= 4;
     if (stepName === "coordinate") return coordinates !== null;
     return false;
   }, [selectCountryIso, selectRegionId, city, address, coordinates, step]);
@@ -164,14 +178,16 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
             onChange={setCity}
             containerStyle={styles.input}
           />
-          <Input
-            isRegular
-            label={i18n._("Enter the exact address")}
-            placeholder={i18n._("Independence Street, 1")}
-            value={address}
-            onChange={setAddress}
-            containerStyle={styles.input}
-          />
+          {isExactLocation ? (
+            <Input
+              isRegular
+              label={i18n._("Enter the exact address")}
+              placeholder={i18n._("Independence Street, 1")}
+              value={address}
+              onChange={setAddress}
+              containerStyle={styles.input}
+            />
+          ) : null}
         </View>
       );
     if (stepName === "coordinate")
@@ -228,7 +244,12 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
     setSearch("");
     const isPreEnd = step === STEPS.length - 2;
     if (isPreEnd) setRegion(DEFAULT_LOCATION);
-    if (isEnd && places && selectCountryIso && coordinates) {
+    if (
+      isEnd &&
+      places &&
+      selectCountryIso &&
+      (isExactLocation ? coordinates : true)
+    ) {
       const countrySelect = places[selectCountryIso];
       const regionSelect =
         countrySelect.regions.find(
@@ -248,13 +269,19 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
     } else setStep((state) => state + 1);
   };
 
+  useEffect(() => {
+    setStep(0);
+    setCoordinates(null);
+    setAddress("");
+  }, [isExactLocation]);
+
   return (
     <Modal visible={isOpen} transparent>
       <ModalsSheet isShow={isOpen} onClose={onClose}>
         <View style={styles.container}>
           <Shadow stretch disabled={step > 1}>
             <View style={styles.containerHeader}>
-              {isEnd ? (
+              {isExactLocation && isEnd ? (
                 <>
                   <Text style={styles.titleCoordinates}>
                     <Trans>Select a location on the map</Trans>

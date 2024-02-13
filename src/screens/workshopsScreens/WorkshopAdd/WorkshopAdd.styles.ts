@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
   container: {},
   containerInputs: {
     paddingHorizontal: 16,
-    gap: 40,
   },
   containerStyle: { flex: 0, marginTop: 0 },
   customStylesInput: { height: 180 },

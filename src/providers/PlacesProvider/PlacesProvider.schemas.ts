@@ -41,5 +41,5 @@ export const placeSchema = z.object({
   regionPlaceId: z.string(),
   city: z.string(),
   address: z.string(),
-  coordinates: coordinatesSchema,
+  coordinates: coordinatesSchema.nullable(),
 });

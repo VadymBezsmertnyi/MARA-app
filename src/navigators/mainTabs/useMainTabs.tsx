@@ -33,6 +33,7 @@ import {
   PATHS_EVENTS_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
+  PATHS_MARKET_SCREENS,
 } from "../useNavigator.constants";
 
 export const useMainTabs = () => {
@@ -72,7 +73,7 @@ export const useMainTabs = () => {
     {
       id: PATHS_MAIN_TABS.market,
       name: PATHS_MAIN_TABS.market,
-      mainScreen: null,
+      mainScreen: PATHS_MARKET_SCREENS.marketMain,
       title: t(i18n)`Market`,
       component: MarketStack,
       headerShown: false,

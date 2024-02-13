@@ -24,6 +24,7 @@ type InputButtonProps = {
   containerStyle?: ViewStyle;
   isRegular?: boolean;
   isSelect?: boolean;
+  leftElementInput?: JSX.Element;
   rightElementInput?: JSX.Element;
   disabled?: boolean;
   isMultiLines?: boolean;
@@ -42,6 +43,7 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
   containerStyle,
   isRegular = false,
   isSelect = false,
+  leftElementInput = null,
   rightElementInput = null,
   disabled = false,
   isMultiLines = false,
@@ -105,6 +107,7 @@ export const InputButton: FunctionComponent<InputButtonProps> = ({
           onBlur={onBlur}
           onPress={onPress}
         >
+          {leftElementInput}
           <Text
             numberOfLines={isMultiLines ? undefined : 1}
             style={inputTitleStyles}
