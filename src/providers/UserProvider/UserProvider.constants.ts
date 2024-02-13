@@ -16,6 +16,7 @@ export const DEFAULT_USER_DATA: UserDataT = {
   firstName: null,
   lastName: null,
   phoneNumber: null,
+  isDeleteUser: false,
 };
 
 export const NUMBER_TWO = 2;

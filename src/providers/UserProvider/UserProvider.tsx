@@ -158,7 +158,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
           });
         } else info(getErrors(i18n)[resultCreateNewUser?.code || ""]);
         return true;
-      } catch (error) {
+      } catch (error: any) {
         bug(error);
         return false;
       } finally {
@@ -172,6 +172,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     try {
       setLoading(true);
       const result = await api(PATHS.me, undefined, userDataS);
+      console.log("result", result);
       if (result) {
         const isCheckBiometric = result.isCheckBiometric
           ? await checkBiometric()
