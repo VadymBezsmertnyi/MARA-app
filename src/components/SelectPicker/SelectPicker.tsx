@@ -1,35 +1,57 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from 'react';
-import { Modal, Pressable, Text, TouchableOpacity, View } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-import { BlurView } from 'expo-blur';
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import {
+  Modal,
+  Pressable,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
+import { Picker } from "@react-native-picker/picker";
+import { BlurView } from "expo-blur";
 
 // providers
-import { localesContext } from '../../../localization/localization.provider';
+import { localesContext } from "../../../localization/localization.provider";
 
 // components
-import { ButtonCustom } from '../ButtonCustom/ButtonCustom';
+import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 
 // styles
-import { styles } from './SelectPicker.styles';
+import { styles } from "./SelectPicker.styles";
 
 type SelectPickerProps<T = { title: string; key: string }> = {
   value: string;
   onChange: (value: T) => void;
   data: T[];
   otherTitle?: string;
+  containerStyle?: ViewStyle;
+  inputStyle?: TextStyle;
 };
 
-export const SelectPicker: FunctionComponent<SelectPickerProps<{ title: string; key: string }>> = ({
+export const SelectPicker: FunctionComponent<
+  SelectPickerProps<{ title: string; key: string }>
+> = ({
   value,
   onChange,
   data,
-  otherTitle = '',
+  otherTitle = "",
+  containerStyle,
+  inputStyle,
 }) => {
   const { i18n } = useContext(localesContext);
   const [isShowModal, setIsShowModal] = useState(false);
   const showTitle = useMemo(
-    () => data.find(item => item.key === value)?.title || otherTitle,
-    [data, value, otherTitle],
+    () => otherTitle || data.find((item) => item.key === value)?.title,
+    [data, value, otherTitle]
+  );
+  const containerStyles = useMemo(
+    () => [styles.container, containerStyle],
+    [containerStyle]
+  );
+  const containerInput = useMemo(
+    () => [styles.input, inputStyle],
+    [inputStyle]
   );
 
   return (
@@ -38,14 +60,19 @@ export const SelectPicker: FunctionComponent<SelectPickerProps<{ title: string; 
         onPress={() => {
           setIsShowModal(true);
         }}
-        style={styles.container}
+        style={containerStyles}
       >
         <View style={styles.wrapper}>
-          <Text style={styles.input}>{showTitle}</Text>
+          <Text style={containerInput}>{showTitle}</Text>
         </View>
       </TouchableOpacity>
 
-      <Modal style={styles.modal} animationType="fade" transparent visible={isShowModal}>
+      <Modal
+        style={styles.modal}
+        animationType="fade"
+        transparent
+        visible={isShowModal}
+      >
         <BlurView intensity={30} style={styles.containerBlur}>
           <Pressable
             style={styles.buttonBackground}
@@ -59,7 +86,7 @@ export const SelectPicker: FunctionComponent<SelectPickerProps<{ title: string; 
               onChange(data[itemIndex]);
             }}
           >
-            {data.map(item => (
+            {data.map((item) => (
               <Picker.Item
                 key={`select-language-${item.key}`}
                 label={item.title}
@@ -69,7 +96,7 @@ export const SelectPicker: FunctionComponent<SelectPickerProps<{ title: string; 
           </Picker>
           <ButtonCustom
             styleContainer={styles.button}
-            title={i18n._('Confirm')}
+            title={i18n._("Confirm")}
             onSubmit={() => {
               setIsShowModal(false);
             }}

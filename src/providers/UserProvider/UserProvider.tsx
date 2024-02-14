@@ -172,7 +172,6 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     try {
       setLoading(true);
       const result = await api(PATHS.me, undefined, userDataS);
-      console.log("result", result);
       if (result) {
         const isCheckBiometric = result.isCheckBiometric
           ? await checkBiometric()
