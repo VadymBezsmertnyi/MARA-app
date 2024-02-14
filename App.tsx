@@ -31,6 +31,8 @@ import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketPr
 import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
 import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
 import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
+import { MarketProvider } from "./src/providers/MarketProvider/MarketProvider";
+import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -116,9 +118,13 @@ function App() {
                             <GestureHandlerRootView
                               style={styles.gestureHandlerRootView}
                             >
-                              <WorkshopsProvider>
-                                <Navigators />
-                              </WorkshopsProvider>
+                              <PaymentProvider>
+                                <WorkshopsProvider>
+                                  <MarketProvider>
+                                    <Navigators />
+                                  </MarketProvider>
+                                </WorkshopsProvider>
+                              </PaymentProvider>
                             </GestureHandlerRootView>
                           </MapProvider>
                         </SafeAreaProvider>

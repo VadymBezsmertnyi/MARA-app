@@ -1,17 +1,17 @@
 import React, { FunctionComponent, useMemo } from "react";
 
-type MapContext = {};
+type MarketContext = {};
 
 type MarketProviderProps = {
   children: React.ReactNode;
 };
 
-export const marketContext = React.createContext({} as MapContext);
+export const marketContext = React.createContext({} as MarketContext);
 
 export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   children,
 }) => {
-  const valueContext: MapContext = useMemo(() => ({}), []);
+  const valueContext: MarketContext = useMemo(() => ({}), []);
 
   return (
     <marketContext.Provider value={valueContext}>
