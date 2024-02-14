@@ -37,10 +37,10 @@ import { IconArrowRightEvent } from "../../../icons/components";
 import { ModalSheetTypeWorkshops } from "../../../components/ModalSheetTypeWorkshops/ModalSheetTypeWorkshops";
 import { ModalSheetTypesAutoWorks } from "../../../components/ModalSheetTypesAutoWorks/ModalSheetTypesAutoWorks";
 import { ModalSheetTypesMotoWorks } from "../../../components/ModalSheetTypesMotoWorks/ModalSheetTypesMotoWorks";
-import { ImagesSelect } from "../../../components/ImagesSelect/ImagesSelect";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ModalSheetPlace } from "../../../components/ModalSheetPlace/ModalSheetPlace";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
+import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 
 // helps
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -444,17 +444,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                   : ""
               }
             />
-            <View style={styles.containerImages}>
-              <Text style={styles.titleContainerImages}>
-                {i18n._("Add a photo")}:
-              </Text>
-              <Text style={styles.subtitleContainerImages}>
-                {i18n._(
-                  "The first photo will be on the cover of the advertisement."
-                )}
-              </Text>
-              <ImagesSelect images={images} setImages={setImages} />
-            </View>
+            <BoxSelectImages isSubTitle images={images} setImages={setImages} />
             <View style={styles.containerSubmit}>
               <Text style={styles.errorMessage}>
                 {errorMessage?.errorMessage?.title || ""}

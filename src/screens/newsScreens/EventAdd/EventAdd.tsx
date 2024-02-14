@@ -34,7 +34,7 @@ import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider"
 import { Input } from "../../../components/Input/Input";
 import { DatePicker } from "./components/DatePicker/DatePicker";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
-import { ImagesSelect } from "../../../components/ImagesSelect/ImagesSelect";
+import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { InputButton } from "../../../components/InputButton/InputButton";
 
 // icons
@@ -389,10 +389,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               errorMessage={errorMessage?.aboutEvent?.title}
             />
           </View>
-          <View style={styles.containerImages}>
-            <Text style={styles.subtitle}>{i18n._("Add a photo")}:</Text>
-            <ImagesSelect images={images} setImages={setImages} />
-          </View>
+          <BoxSelectImages
+            images={images}
+            setImages={setImages}
+            containerStyle={styles.containerImages}
+          />
           <Text style={styles.errorMessage}>
             {errorMessage?.errorMessage.title || ""}
           </Text>

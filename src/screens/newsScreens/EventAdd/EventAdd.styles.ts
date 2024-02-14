@@ -42,8 +42,8 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   containerImages: {
+    marginTop: 20,
     marginBottom: 40,
-    gap: 12,
   },
   containerLocation: {
     flexDirection: "row",

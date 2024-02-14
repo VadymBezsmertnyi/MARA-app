@@ -21,19 +21,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingRight: 0,
   },
-  containerImages: {
-    gap: 12,
-  },
-  titleContainerImages: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
-    color: colors.blackCoffee,
-  },
-  subtitleContainerImages: {
-    fontFamily: "OpenSans_400Regular",
-    fontSize: 16,
-    color: colors.grayCloudy,
-  },
   containerEmpty: {
     height: 150,
   },
