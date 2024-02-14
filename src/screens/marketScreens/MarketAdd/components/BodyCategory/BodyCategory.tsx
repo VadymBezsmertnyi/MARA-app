@@ -14,8 +14,10 @@ import { InputButton } from "../../../../../components/InputButton/InputButton";
 
 // constants
 import {
+  NAME_AUTO_PARTS,
   NAME_BRAND_AUTO,
   NAME_BRAND_MOTO,
+  NAME_MOTO_PARTS,
   NAME_TYPE_FUEL,
   NAME_TYPE_TRANSMISSION,
 } from "../../MarketAdd.constants";
@@ -66,9 +68,11 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
   return (
     <View style={styles.container}>
       <InputButton
-        placeholder={i18n._("Brand")}
+        placeholder={i18n._("Brand/Make")}
         value={
-          select.brandAuto?.name || select.brandMoto?.name || i18n._("Brand")
+          select.brandAuto?.name ||
+          select.brandMoto?.name ||
+          i18n._("Brand/Make")
         }
         onPress={() => {
           if (isMoto || isMotoParts) setTypeModal(NAME_BRAND_MOTO);
@@ -84,68 +88,98 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
         containerStyle={styles.containerStyleInputButton}
         inputWrapperStyle={styles.inputWrapperStyleInputButton}
       />
-      <View style={styles.containerTwoInputs}>
-        <Input
-          keyboardType="numeric"
-          label={i18n._("Mileage, km:")}
-          placeholder={"100"}
-          value={mileage}
-          onChange={setMileage}
-          containerStyle={styles.containerInput}
-        />
-        <Input
-          keyboardType="numeric"
-          label={i18n._("Year of release:")}
-          placeholder={"1999"}
-          value={yearRelease}
-          onChange={setYearRelease}
-          containerStyle={styles.containerInput}
-        />
-      </View>
-      <SelectTwoButtons
-        isSelectFirst={isCleared}
-        titleFirst={i18n._("Yes")}
-        titleSecond={i18n._("No")}
-        label={i18n._("Cleared:")}
-        onPressFirst={() => {
-          setIsCleared(true);
-        }}
-        onPressSecond={() => {
-          setIsCleared(false);
-        }}
-      />
-      <InputButton
-        placeholder={i18n._("Type fuel")}
-        value={select.typeFuel?.name || i18n._("Type fuel")}
-        onPress={() => {
-          setTypeModal(NAME_TYPE_FUEL);
-        }}
-        rightElementInput={
-          <IconArrowRightEvent
-            width={15}
-            height={20}
-            fill={colors.blackCoffee}
+      {isMoto || isCar ? (
+        <>
+          <View style={styles.containerTwoInputs}>
+            <Input
+              keyboardType="numeric"
+              label={i18n._("Mileage, km:")}
+              placeholder={"100"}
+              value={mileage}
+              onChange={setMileage}
+              containerStyle={styles.containerInput}
+            />
+            <Input
+              keyboardType="numeric"
+              label={i18n._("Year of release:")}
+              placeholder={"1999"}
+              value={yearRelease}
+              onChange={setYearRelease}
+              containerStyle={styles.containerInput}
+            />
+          </View>
+          <SelectTwoButtons
+            isSelectFirst={isCleared}
+            titleFirst={i18n._("Yes")}
+            titleSecond={i18n._("No")}
+            label={i18n._("Cleared:")}
+            onPressFirst={() => {
+              setIsCleared(true);
+            }}
+            onPressSecond={() => {
+              setIsCleared(false);
+            }}
           />
-        }
-        containerStyle={styles.containerStyleInputButton}
-        inputWrapperStyle={styles.inputWrapperStyleInputButton}
-      />
-      <InputButton
-        placeholder={i18n._("Transmission gearbox")}
-        value={select.typeTransmission?.name || i18n._("Transmission gearbox")}
-        onPress={() => {
-          setTypeModal(NAME_TYPE_TRANSMISSION);
-        }}
-        rightElementInput={
-          <IconArrowRightEvent
-            width={15}
-            height={20}
-            fill={colors.blackCoffee}
+          <InputButton
+            placeholder={i18n._("Type fuel")}
+            value={select.typeFuel?.name || i18n._("Type fuel")}
+            onPress={() => {
+              setTypeModal(NAME_TYPE_FUEL);
+            }}
+            rightElementInput={
+              <IconArrowRightEvent
+                width={15}
+                height={20}
+                fill={colors.blackCoffee}
+              />
+            }
+            containerStyle={styles.containerStyleInputButton}
+            inputWrapperStyle={styles.inputWrapperStyleInputButton}
           />
-        }
-        containerStyle={styles.containerStyleInputButton}
-        inputWrapperStyle={styles.inputWrapperStyleInputButton}
-      />
+          <InputButton
+            placeholder={i18n._("Transmission gearbox")}
+            value={
+              select.typeTransmission?.name || i18n._("Transmission gearbox")
+            }
+            onPress={() => {
+              setTypeModal(NAME_TYPE_TRANSMISSION);
+            }}
+            rightElementInput={
+              <IconArrowRightEvent
+                width={15}
+                height={20}
+                fill={colors.blackCoffee}
+              />
+            }
+            containerStyle={styles.containerStyleInputButton}
+            inputWrapperStyle={styles.inputWrapperStyleInputButton}
+          />
+        </>
+      ) : null}
+      {isMotoParts || isCarParts ? (
+        <InputButton
+          placeholder={
+            isMotoParts ? i18n._("Motorcycle parts") : i18n._("Car parts")
+          }
+          value={
+            select.motoParts?.name ||
+            select.autoParts?.name ||
+            (isMotoParts ? i18n._("Motorcycle parts") : i18n._("Car parts"))
+          }
+          onPress={() => {
+            setTypeModal(isMotoParts ? NAME_MOTO_PARTS : NAME_AUTO_PARTS);
+          }}
+          rightElementInput={
+            <IconArrowRightEvent
+              width={15}
+              height={20}
+              fill={colors.blackCoffee}
+            />
+          }
+          containerStyle={styles.containerStyleInputButton}
+          inputWrapperStyle={styles.inputWrapperStyleInputButton}
+        />
+      ) : null}
     </View>
   );
 };

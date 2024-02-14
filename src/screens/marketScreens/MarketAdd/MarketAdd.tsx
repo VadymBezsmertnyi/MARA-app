@@ -79,7 +79,6 @@ export const MarketAdd: FunctionComponent = () => {
     string,
     { name: string; title: string }
   > | null>(null);
-  console.log("select", select);
 
   const showTitlePlace = useMemo(() => {
     const country = places

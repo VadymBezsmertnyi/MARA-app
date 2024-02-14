@@ -18,9 +18,11 @@ import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCusto
 
 // constants
 import {
+  NAME_AUTO_PARTS,
   NAME_BRAND_AUTO,
   NAME_BRAND_MOTO,
   NAME_MAIN_CATEGORIES,
+  NAME_MOTO_PARTS,
   NAME_TYPE_FUEL,
   NAME_TYPE_TRANSMISSION,
 } from "../../MarketAdd.constants";
@@ -47,6 +49,8 @@ export const ModalSheetCategories: FunctionComponent<
     brandsAuto,
     fuelTypes,
     transmissionTypes,
+    motoParts,
+    autoParts,
   } = useCategoriesMarket(i18n);
   const [select, setSelect] = useState<TypeDataCategory | null>(null);
   const [search, setSearch] = useState("");
@@ -58,10 +62,12 @@ export const ModalSheetCategories: FunctionComponent<
 
   const titleShow = useMemo(() => {
     if (type === NAME_MAIN_CATEGORIES) return i18n._("Category");
-    if (type === NAME_BRAND_AUTO || type === NAME_BRAND_MOTO)
-      return i18n._("Brand");
+    if (type === NAME_BRAND_MOTO) return i18n._("motorcycle brand");
+    if (type === NAME_BRAND_AUTO) return i18n._("Car's make");
     if (type === NAME_TYPE_FUEL) return i18n._("Type of fuel");
     if (type === NAME_TYPE_TRANSMISSION) return i18n._("Type of transmission");
+    if (type === NAME_MOTO_PARTS) return i18n._("Motorcycle parts");
+    if (type === NAME_AUTO_PARTS) return i18n._("Car parts");
     return "";
   }, [type]);
 
@@ -71,6 +77,8 @@ export const ModalSheetCategories: FunctionComponent<
     if (type === NAME_BRAND_AUTO) return brandsAuto;
     if (type === NAME_TYPE_FUEL) return fuelTypes;
     if (type === NAME_TYPE_TRANSMISSION) return transmissionTypes;
+    if (type === NAME_MOTO_PARTS) return motoParts;
+    if (type === NAME_AUTO_PARTS) return autoParts;
     return [];
   }, [type]);
 
