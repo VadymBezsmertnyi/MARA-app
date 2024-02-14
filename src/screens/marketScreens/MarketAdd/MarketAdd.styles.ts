@@ -21,4 +21,21 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.grayFuscous,
   },
+  containerStyle: { flex: 0, marginTop: 20 },
+  customStylesInput: { height: 180 },
+  containerContacts: {
+    marginTop: 40,
+  },
+  titleContacts: {
+    fontFamily: "Montserrat_600SemiBold",
+    fontSize: 16,
+    color: colors.blackCoffee,
+  },
+  labelInputContacts: {
+    fontFamily: "OpenSans_400Regular",
+    fontSize: 16,
+    color: colors.grayCloudy,
+  },
+  containerButtonSubmit: { marginHorizontal: 36 },
+  containerEmpty: { height: 100 },
 });

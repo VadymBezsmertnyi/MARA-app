@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: {
@@ -7,6 +8,7 @@ export const styles = StyleSheet.create({
   label: {
     fontFamily: "Montserrat_600SemiBold",
     fontSize: 16,
+    color: colors.blackCoffee,
   },
   containerInputs: {
     flexDirection: "row",

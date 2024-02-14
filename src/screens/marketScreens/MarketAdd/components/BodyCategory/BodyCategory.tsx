@@ -1,0 +1,151 @@
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { View } from "react-native";
+
+// types
+import { TypeDataCategory, TypeModalCategories } from "../../MarketAdd.types";
+
+// providers
+import { localesContext } from "../../../../../../localization/localization.provider";
+
+// components
+import { Input } from "../../../../../components/Input/Input";
+import { SelectTwoButtons } from "../../../../../components/SelectTwoButtons/SelectTwoButtons";
+import { InputButton } from "../../../../../components/InputButton/InputButton";
+
+// constants
+import {
+  NAME_BRAND_AUTO,
+  NAME_BRAND_MOTO,
+  NAME_TYPE_FUEL,
+  NAME_TYPE_TRANSMISSION,
+} from "../../MarketAdd.constants";
+
+// icons
+import { IconArrowRightEvent } from "../../../../../icons/components";
+
+// styles
+import { styles } from "./BodyCategory.styles";
+import colors from "../../../../../../styles/colors";
+
+type BodyCategoryProps = {
+  select: Record<TypeModalCategories, TypeDataCategory | undefined> | null;
+  setTypeModal: React.Dispatch<
+    React.SetStateAction<TypeModalCategories | null>
+  >;
+  mileage: string;
+  setMileage: React.Dispatch<React.SetStateAction<string>>;
+  yearRelease: string;
+  setYearRelease: React.Dispatch<React.SetStateAction<string>>;
+  isCleared: boolean;
+  setIsCleared: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
+  select,
+  setTypeModal,
+  mileage,
+  setMileage,
+  yearRelease,
+  setYearRelease,
+  isCleared,
+  setIsCleared,
+}) => {
+  const { i18n } = useContext(localesContext);
+  const isMoto = useMemo(() => select?.category?.id === 1, [select?.category]);
+  const isCar = useMemo(() => select?.category?.id === 2, [select?.category]);
+  const isMotoParts = useMemo(
+    () => select?.category?.id === 3,
+    [select?.category]
+  );
+  const isCarParts = useMemo(
+    () => select?.category?.id === 4,
+    [select?.category]
+  );
+
+  if (select === null) return null;
+  return (
+    <View style={styles.container}>
+      <InputButton
+        placeholder={i18n._("Brand")}
+        value={
+          select.brandAuto?.name || select.brandMoto?.name || i18n._("Brand")
+        }
+        onPress={() => {
+          if (isMoto || isMotoParts) setTypeModal(NAME_BRAND_MOTO);
+          if (isCar || isCarParts) setTypeModal(NAME_BRAND_AUTO);
+        }}
+        rightElementInput={
+          <IconArrowRightEvent
+            width={15}
+            height={20}
+            fill={colors.blackCoffee}
+          />
+        }
+        containerStyle={styles.containerStyleInputButton}
+        inputWrapperStyle={styles.inputWrapperStyleInputButton}
+      />
+      <View style={styles.containerTwoInputs}>
+        <Input
+          keyboardType="numeric"
+          label={i18n._("Mileage, km:")}
+          placeholder={"100"}
+          value={mileage}
+          onChange={setMileage}
+          containerStyle={styles.containerInput}
+        />
+        <Input
+          keyboardType="numeric"
+          label={i18n._("Year of release:")}
+          placeholder={"1999"}
+          value={yearRelease}
+          onChange={setYearRelease}
+          containerStyle={styles.containerInput}
+        />
+      </View>
+      <SelectTwoButtons
+        isSelectFirst={isCleared}
+        titleFirst={i18n._("Yes")}
+        titleSecond={i18n._("No")}
+        label={i18n._("Cleared:")}
+        onPressFirst={() => {
+          setIsCleared(true);
+        }}
+        onPressSecond={() => {
+          setIsCleared(false);
+        }}
+      />
+      <InputButton
+        placeholder={i18n._("Type fuel")}
+        value={select.typeFuel?.name || i18n._("Type fuel")}
+        onPress={() => {
+          setTypeModal(NAME_TYPE_FUEL);
+        }}
+        rightElementInput={
+          <IconArrowRightEvent
+            width={15}
+            height={20}
+            fill={colors.blackCoffee}
+          />
+        }
+        containerStyle={styles.containerStyleInputButton}
+        inputWrapperStyle={styles.inputWrapperStyleInputButton}
+      />
+      <InputButton
+        placeholder={i18n._("Transmission gearbox")}
+        value={select.typeTransmission?.name || i18n._("Transmission gearbox")}
+        onPress={() => {
+          setTypeModal(NAME_TYPE_TRANSMISSION);
+        }}
+        rightElementInput={
+          <IconArrowRightEvent
+            width={15}
+            height={20}
+            fill={colors.blackCoffee}
+          />
+        }
+        containerStyle={styles.containerStyleInputButton}
+        inputWrapperStyle={styles.inputWrapperStyleInputButton}
+      />
+    </View>
+  );
+};

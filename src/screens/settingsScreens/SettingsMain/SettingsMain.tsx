@@ -116,8 +116,8 @@ export const SettingsMain: FunctionComponent = () => {
         <View style={styles.containerList}>
           <View style={styles.lineEmpty} />
           <ItemMyList
-            title={i18n._("My ads")}
-            titleButton={i18n._("Add ad")}
+            title={i18n._("My adverts")}
+            titleButton={i18n._("Add advert")}
             onLinkTo={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAds);
             }}
