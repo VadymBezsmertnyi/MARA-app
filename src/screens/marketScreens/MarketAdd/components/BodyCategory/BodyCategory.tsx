@@ -119,6 +119,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
             onPressSecond={() => {
               setIsCleared(false);
             }}
+            containerStyle={styles.containerCurrent}
           />
           <InputButton
             placeholder={i18n._("Type fuel")}

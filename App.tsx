@@ -17,7 +17,6 @@ import {
   OpenSans_700Bold,
 } from "@expo-google-fonts/open-sans";
 import { useFonts } from "expo-font";
-import Constants from "expo-constants";
 
 // providers
 import LocalesProvider from "./localization/localization.provider";

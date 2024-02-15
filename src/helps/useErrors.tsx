@@ -147,6 +147,7 @@ export const useErrors = (i18n: I18n) => {
 
   const getErrorAddProduct = ({
     title,
+    description,
     place,
     isPhone,
     price,
@@ -157,6 +158,7 @@ export const useErrors = (i18n: I18n) => {
     yearRelease,
   }: {
     title: string;
+    description: string;
     place: any | null;
     isPhone: boolean;
     price: string;
@@ -181,6 +183,13 @@ export const useErrors = (i18n: I18n) => {
         otherName: i18n._("advert"),
       }),
     }),
+    ...((description.length < 20 || description.length > 9000) && {
+      title: getErrorText("description", {
+        min: 20,
+        max: 9000,
+        otherName: i18n._("advert"),
+      }),
+    }),
     ...(place === null && {
       place: getErrorText("place", {
         otherName: i18n._("advert"),
@@ -202,20 +211,20 @@ export const useErrors = (i18n: I18n) => {
       }),
     }),
     ...(!(select?.brandAuto || select?.brandMoto) && {
-      category: getErrorText("brand", {
+      brand: getErrorText("brand", {
         otherName: i18n._("advert"),
       }),
     }),
     ...(isTransport &&
       (Number(mileage) <= 0 || isNaN(Number(mileage))) && {
-        category: getErrorText("mileage", {
+        mileage: getErrorText("mileage", {
           otherName: i18n._("advert"),
         }),
       }),
     ...(isTransport &&
       (Number(yearRelease) < 1900 ||
         Number(yearRelease) > new Date().getFullYear()) && {
-        category: getErrorText("yearRelease", {
+        yearRelease: getErrorText("yearRelease", {
           otherName: i18n._("advert"),
           min: 1900,
           max: new Date().getFullYear(),
@@ -223,19 +232,19 @@ export const useErrors = (i18n: I18n) => {
       }),
     ...(isTransport &&
       !select?.typeFuel && {
-        category: getErrorText("typeFuel", {
+        typeFuel: getErrorText("typeFuel", {
           otherName: i18n._("advert"),
         }),
       }),
     ...(isTransport &&
       !select?.typeTransmission && {
-        category: getErrorText("typeTransmission", {
+        typeTransmission: getErrorText("typeTransmission", {
           otherName: i18n._("advert"),
         }),
       }),
     ...(isParts &&
       !(select?.motoParts || select?.autoParts) && {
-        category: getErrorText("typeTransmission", {
+        typeParts: getErrorText("typeParts", {
           otherName: i18n._("advert"),
         }),
       }),

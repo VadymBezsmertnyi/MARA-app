@@ -265,7 +265,10 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
           }
         : null;
 
-      if (submitData) onSubmit(submitData);
+      if (submitData) {
+        onSubmit(submitData);
+        setStep(0);
+      }
     } else setStep((state) => state + 1);
   };
 

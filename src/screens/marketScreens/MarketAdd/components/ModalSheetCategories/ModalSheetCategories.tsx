@@ -1,5 +1,12 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
 
 // types
 import { TypeDataCategory, TypeModalCategories } from "../../MarketAdd.types";
@@ -15,6 +22,7 @@ import { ModalsSheet } from "../../../../../components/ModalsSheet/ModalsSheet";
 import { LinearGradientCustom } from "../../../../../components/LinearGradientCustom/LinearGradientCustom";
 import { CheckboxPoint } from "../../../../../components/CheckboxPoint/CheckboxPoint";
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
+import { Input } from "../../../../../components/Input/Input";
 
 // constants
 import {
@@ -27,21 +35,22 @@ import {
   NAME_TYPE_TRANSMISSION,
 } from "../../MarketAdd.constants";
 
+// icons
+import { IconSearchInput } from "../../../../../icons/components";
+
 // styles
 import { styles } from "./ModalSheetCategories.styles";
-import { Input } from "../../../../../components/Input/Input";
-import { IconSearchInput } from "../../../../../icons/components";
-import { Shadow } from "react-native-shadow-2";
 
 type ModalSheetCategoriesProps = {
   type: TypeModalCategories | null;
+  selectData: Record<TypeModalCategories, TypeDataCategory | undefined> | null;
   onClose: () => void;
   onSubmit: (type: TypeModalCategories, select: TypeDataCategory) => void;
 };
 
 export const ModalSheetCategories: FunctionComponent<
   ModalSheetCategoriesProps
-> = ({ type, onClose, onSubmit }) => {
+> = ({ type, selectData, onClose, onSubmit }) => {
   const { i18n } = useContext(localesContext);
   const {
     mainCategories,
@@ -98,6 +107,29 @@ export const ModalSheetCategories: FunctionComponent<
     setSearch("");
     onClose();
   };
+
+  const setOldDate = () => {
+    if (selectData) {
+      if (type === NAME_MAIN_CATEGORIES && selectData.category)
+        setSelect(selectData.category);
+      if (type === NAME_BRAND_MOTO && selectData.brandMoto)
+        setSelect(selectData.brandMoto);
+      if (type === NAME_BRAND_AUTO && selectData.brandAuto)
+        setSelect(selectData.brandAuto);
+      if (type === NAME_TYPE_FUEL && selectData.typeFuel)
+        setSelect(selectData.typeFuel);
+      if (type === NAME_TYPE_TRANSMISSION && selectData.typeTransmission)
+        setSelect(selectData.typeTransmission);
+      if (type === NAME_MOTO_PARTS && selectData.motoParts)
+        setSelect(selectData.motoParts);
+      if (type === NAME_AUTO_PARTS && selectData.autoParts)
+        setSelect(selectData.autoParts);
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) setOldDate();
+  }, [isOpen]);
 
   return (
     <Modal visible={isOpen} transparent>

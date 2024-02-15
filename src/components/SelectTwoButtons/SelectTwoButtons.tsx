@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import { Text, View } from "react-native";
+import React, { FunctionComponent, useMemo } from "react";
+import { Text, View, ViewStyle } from "react-native";
 
 // components
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -14,6 +14,7 @@ type SelectTwoButtonsProps = {
   label: string;
   onPressFirst: () => void;
   onPressSecond: () => void;
+  containerStyle?: ViewStyle;
 };
 
 export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
@@ -23,12 +24,18 @@ export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
   label,
   onPressFirst,
   onPressSecond,
+  containerStyle,
 }) => {
   const typeFirst = isSelectFirst ? "full" : "transparent";
   const typeSecond = !isSelectFirst ? "full" : "transparent";
 
+  const containerStyles = useMemo(
+    () => [styles.container, containerStyle],
+    [containerStyle]
+  );
+
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <Text style={styles.title}>{label}</Text>
       <View style={styles.containerSelectType}>
         <ButtonCustom

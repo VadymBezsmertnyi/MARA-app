@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Alert, ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // types
@@ -17,7 +17,7 @@ import { TypeDataCategory, TypeModalCategories } from "./MarketAdd.types";
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { paymentContext } from "../../../providers/PaymentProvider/PaymentProvider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -31,6 +31,7 @@ import { PriceCurrency } from "../../../components/PriceCurrency/PriceCurrency";
 import { ModalSheetCategories } from "./components/ModalSheetCategories/ModalSheetCategories";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { BodyCategory } from "./components/BodyCategory/BodyCategory";
+import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 
 // hooks
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -53,12 +54,13 @@ import colors from "../../../../styles/colors";
 export const MarketAdd: FunctionComponent = () => {
   const { i18n } = useContext(localesContext);
   const { places } = useContext(placesContext);
-  const { listCurrency } = useContext(paymentContext);
+  const { userData } = useContext(userContext);
   const { verifyPhone } = useAuthorizationRegistration();
-  const { getErrorText } = useErrors(i18n);
-  const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
-  const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
+  const { getErrorAddProduct } = useErrors(i18n);
   const [title, setTitle] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
+  const [telegram, setTelegram] = useState("");
+  const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [mileage, setMileage] = useState("");
@@ -75,6 +77,7 @@ export const MarketAdd: FunctionComponent = () => {
     TypeModalCategories,
     TypeDataCategory | undefined
   > | null>(null);
+  const [isShowErrors, setIsShowErrors] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
     string,
     { name: string; title: string }
@@ -101,36 +104,25 @@ export const MarketAdd: FunctionComponent = () => {
 
   const checkEnterData = () => {
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
-    const errorsObject = {
-      ...((title.length < 5 || title.length > 40) && {
-        title: getErrorText("title", {
-          min: 5,
-          max: 40,
-          otherName: i18n._("advert"),
-        }),
-      }),
-      ...(place === null && {
-        place: getErrorText("place", {
-          otherName: i18n._("advert"),
-        }),
-      }),
-      ...(!isPhone && {
-        phoneNumber: getErrorText("phoneNumber", {
-          otherName: i18n._("advert"),
-        }),
-      }),
-    };
+    const isTransport =
+      select?.category?.id === 1 || select?.category?.id === 2;
+    const isParts = select?.category?.id === 3 || select?.category?.id === 4;
+    const errorsObject = getErrorAddProduct({
+      title,
+      description,
+      place,
+      isPhone,
+      price,
+      select,
+      isTransport,
+      isParts,
+      mileage,
+      yearRelease,
+    });
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
-      const errorMessage = getErrorText("errorMessage", {});
-      const onlyErrors = Object.values(errorsObject).map(
-        (errorObject) => `${errorObject.name}: ${errorObject.title}`
-      );
-      Alert.alert(`${errorMessage.title}:\n\n${onlyErrors.join("\n\n")}`);
-      setErrorMessage({
-        ...errorsObject,
-        errorMessage,
-      });
+      setIsShowErrors(true);
+      setErrorMessage(errorsObject);
     } else setErrorMessage(null);
     return isError;
   };
@@ -143,7 +135,57 @@ export const MarketAdd: FunctionComponent = () => {
 
   const onSubmit = () => {
     const isError = checkEnterData();
-    console.log("isError", isError);
+    if (userData?.id && !isError) {
+      const data = {
+        title,
+        isNew,
+        isBusiness,
+        place,
+        images,
+        description,
+        price,
+        codeCurrency,
+        phoneNumber,
+        telegram,
+        moto:
+          select?.category?.id === 1
+            ? {
+                brand: select.brandMoto,
+                mileage,
+                yearRelease,
+                isCleared,
+                typeFuel: select.typeFuel,
+                typeTransmission: select.typeTransmission,
+              }
+            : null,
+        auto:
+          select?.category?.id === 2
+            ? {
+                brand: select.brandAuto,
+                mileage,
+                yearRelease,
+                isCleared,
+                typeFuel: select.typeFuel,
+                typeTransmission: select.typeTransmission,
+              }
+            : null,
+        motoParts:
+          select?.category?.id === 3
+            ? {
+                brand: select.brandMoto,
+                type: select.motoParts,
+              }
+            : null,
+        autoParts:
+          select?.category?.id === 4
+            ? {
+                brand: select.brandAuto,
+                type: select.autoParts,
+              }
+            : null,
+      };
+      console.log("data", data);
+    }
   };
 
   useEffect(() => {
@@ -271,10 +313,10 @@ export const MarketAdd: FunctionComponent = () => {
               isSelect
               placeholder={i18n._("@fgt_com")}
               label={i18n._("Your telegram")}
-              value={title}
+              value={telegram}
               onChange={(value) => {
-                clearKeyError("title");
-                setTitle(value);
+                clearKeyError("telegram");
+                setTelegram(value);
               }}
               errorMessage={errorMessage?.title ? errorMessage.title.title : ""}
               labelStyle={styles.labelInputContacts}
@@ -313,6 +355,7 @@ export const MarketAdd: FunctionComponent = () => {
       />
       <ModalSheetCategories
         type={typeModal}
+        selectData={select}
         onClose={() => {
           setTypeModal(null);
         }}
@@ -321,6 +364,13 @@ export const MarketAdd: FunctionComponent = () => {
             select ? { ...select, [type]: selectData } : { [type]: selectData };
           setSelect(newSelectList);
         }}
+      />
+      <ModalShowErrors
+        isOpen={isShowErrors}
+        onClose={() => {
+          setIsShowErrors(false);
+        }}
+        errors={errorMessage}
       />
     </>
   );
