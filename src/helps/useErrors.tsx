@@ -1,4 +1,5 @@
 import { I18n } from "@lingui/core";
+import { TypeDataCategory } from "../screens/marketScreens/MarketAdd/MarketAdd.types";
 
 type NameKeyType =
   | "eventName"
@@ -10,7 +11,15 @@ type NameKeyType =
   | "description"
   | "phoneNumber"
   | "place"
-  | "types";
+  | "types"
+  | "category"
+  | "price"
+  | "brand"
+  | "mileage"
+  | "yearRelease"
+  | "typeFuel"
+  | "typeTransmission"
+  | "typeParts";
 
 export const useErrors = (i18n: I18n) => {
   const getErrorText = (
@@ -80,6 +89,55 @@ export const useErrors = (i18n: I18n) => {
           name: i18n._("Types of {otherName} jobs", { otherName }),
           title: i18n._("Please select at least one type"),
         };
+      if (type === "price")
+        return {
+          name: i18n._("Price {otherName}", { otherName }),
+          title: i18n._("Please enter price for {otherName}", { otherName }),
+        };
+      if (type === "category")
+        return {
+          name: i18n._("Category {otherName}", { otherName }),
+          title: i18n._("Please enter category for {otherName}", { otherName }),
+        };
+      if (type === "brand")
+        return {
+          name: i18n._("Brand {otherName}", { otherName }),
+          title: i18n._("Please enter brand for {otherName}", { otherName }),
+        };
+      if (type === "mileage")
+        return {
+          name: i18n._("Mileage {otherName}", { otherName }),
+          title: i18n._("Please enter mileage for {otherName}", { otherName }),
+        };
+      if (type === "yearRelease")
+        return {
+          name: i18n._("Year release {otherName}", { otherName }),
+          title: i18n._(
+            "Please enter year minimum of {min} and a maximum of {max} for {otherName}",
+            { otherName, min, max }
+          ),
+        };
+      if (type === "typeFuel")
+        return {
+          name: i18n._("Type fuel {otherName}", { otherName }),
+          title: i18n._("Please enter type fuel for {otherName}", {
+            otherName,
+          }),
+        };
+      if (type === "typeTransmission")
+        return {
+          name: i18n._("Type transmission {otherName}", { otherName }),
+          title: i18n._("Please enter type transmission for {otherName}", {
+            otherName,
+          }),
+        };
+      if (type === "typeParts")
+        return {
+          name: i18n._("Type parts {otherName}", { otherName }),
+          title: i18n._("Please enter type parts for {otherName}", {
+            otherName,
+          }),
+        };
       if (type === "errorMessage")
         return { name: "", title: i18n._("Incorrectly entered data") };
       return { name: "", title: "" };
@@ -87,5 +145,101 @@ export const useErrors = (i18n: I18n) => {
     return { name: "", title: "" };
   };
 
-  return { getErrorText };
+  const getErrorAddProduct = ({
+    title,
+    place,
+    isPhone,
+    price,
+    select,
+    isTransport,
+    isParts,
+    mileage,
+    yearRelease,
+  }: {
+    title: string;
+    place: any | null;
+    isPhone: boolean;
+    price: string;
+    select?: {
+      category?: TypeDataCategory;
+      brandAuto?: TypeDataCategory;
+      brandMoto?: TypeDataCategory;
+      typeFuel?: TypeDataCategory;
+      typeTransmission?: TypeDataCategory;
+      motoParts?: TypeDataCategory;
+      autoParts?: TypeDataCategory;
+    } | null;
+    isTransport: boolean;
+    isParts: boolean;
+    mileage: string;
+    yearRelease: string;
+  }) => ({
+    ...((title.length < 5 || title.length > 40) && {
+      title: getErrorText("title", {
+        min: 5,
+        max: 40,
+        otherName: i18n._("advert"),
+      }),
+    }),
+    ...(place === null && {
+      place: getErrorText("place", {
+        otherName: i18n._("advert"),
+      }),
+    }),
+    ...(!isPhone && {
+      phoneNumber: getErrorText("phoneNumber", {
+        otherName: i18n._("advert"),
+      }),
+    }),
+    ...((Number(price) <= 0 || isNaN(Number(price))) && {
+      price: getErrorText("price", {
+        otherName: i18n._("advert"),
+      }),
+    }),
+    ...(!select?.category && {
+      category: getErrorText("category", {
+        otherName: i18n._("advert"),
+      }),
+    }),
+    ...(!(select?.brandAuto || select?.brandMoto) && {
+      category: getErrorText("brand", {
+        otherName: i18n._("advert"),
+      }),
+    }),
+    ...(isTransport &&
+      (Number(mileage) <= 0 || isNaN(Number(mileage))) && {
+        category: getErrorText("mileage", {
+          otherName: i18n._("advert"),
+        }),
+      }),
+    ...(isTransport &&
+      (Number(yearRelease) < 1900 ||
+        Number(yearRelease) > new Date().getFullYear()) && {
+        category: getErrorText("yearRelease", {
+          otherName: i18n._("advert"),
+          min: 1900,
+          max: new Date().getFullYear(),
+        }),
+      }),
+    ...(isTransport &&
+      !select?.typeFuel && {
+        category: getErrorText("typeFuel", {
+          otherName: i18n._("advert"),
+        }),
+      }),
+    ...(isTransport &&
+      !select?.typeTransmission && {
+        category: getErrorText("typeTransmission", {
+          otherName: i18n._("advert"),
+        }),
+      }),
+    ...(isParts &&
+      !(select?.motoParts || select?.autoParts) && {
+        category: getErrorText("typeTransmission", {
+          otherName: i18n._("advert"),
+        }),
+      }),
+  });
+
+  return { getErrorText, getErrorAddProduct };
 };
