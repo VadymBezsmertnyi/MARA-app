@@ -41,6 +41,7 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ModalSheetPlace } from "../../../components/ModalSheetPlace/ModalSheetPlace";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
+import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 
 // helps
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -101,6 +102,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     []
   );
   const [images, setImages] = useState<ImageType[]>([]);
+  const [isShowErrors, setIsShowErrors] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
     string,
     { name: string; title: string }
@@ -201,15 +203,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     };
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
-      const errorMessage = getErrorText("errorMessage", {});
-      const onlyErrors = Object.values(errorsObject).map(
-        (errorObject) => `${errorObject.name}: ${errorObject.title}`
-      );
-      Alert.alert(`${errorMessage.title}:\n\n${onlyErrors.join("\n\n")}`);
-      setErrorMessage({
-        ...errorsObject,
-        errorMessage,
-      });
+      setIsShowErrors(true);
+      setErrorMessage(errorsObject);
     } else setErrorMessage(null);
     return isError;
   };
@@ -519,6 +514,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           }}
         />
       </Modal>
+      <ModalShowErrors
+        isOpen={isShowErrors}
+        onClose={() => {
+          setIsShowErrors(false);
+        }}
+        errors={errorMessage}
+      />
     </>
   );
 };

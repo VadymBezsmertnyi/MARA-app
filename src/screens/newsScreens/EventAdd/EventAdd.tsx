@@ -36,6 +36,7 @@ import { DatePicker } from "./components/DatePicker/DatePicker";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { InputButton } from "../../../components/InputButton/InputButton";
+import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 
 // icons
 import { IconMapGradient } from "../../../icons/components";
@@ -73,6 +74,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [priceFinish, setPriceFinish] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
   const [images, setImages] = useState<ImageType[]>([]);
+  const [isShowErrors, setIsShowErrors] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
     string,
     { name: string; title: string }
@@ -136,15 +138,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     };
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
-      const errorMessage = getErrorText("errorMessage", {});
-      const onlyErrors = Object.values(errorsObject).map(
-        (errorObject) => `${errorObject.name}: ${errorObject.title}`
-      );
-      Alert.alert(`${errorMessage.title}:\n\n${onlyErrors.join("\n\n")}`);
-      setErrorMessage({
-        ...errorsObject,
-        errorMessage,
-      });
+      setIsShowErrors(true);
+      setErrorMessage(errorsObject);
     } else setErrorMessage(null);
     return isError;
   };
@@ -411,6 +406,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           setPlace(data);
           setIsModalPlace(false);
         }}
+      />
+      <ModalShowErrors
+        isOpen={isShowErrors}
+        onClose={() => {
+          setIsShowErrors(false);
+        }}
+        errors={errorMessage}
       />
     </>
   );
