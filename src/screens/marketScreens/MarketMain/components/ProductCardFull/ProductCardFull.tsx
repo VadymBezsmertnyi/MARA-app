@@ -1,15 +1,20 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
+import dayjs from "dayjs";
+
+// types
+import { ProductType } from "../../../../../providers/MarketProvider/MarketProvider.types";
 
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
+import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
 import { TextLinearGradient } from "../../../../../components/TextLinearGradient/TextLinearGradient";
 
 // images
-import DELETE_IMAGE from "./DELETE.png";
+import imageNoPhoto from "../../../../../../assets/noPhoto.png";
 
 // icons
 import {
@@ -22,13 +27,23 @@ import { styles } from "./ProductCardFull.styles";
 import colors from "../../../../../../styles/colors";
 
 type ProductCardFullProps = {
+  product: ProductType;
   onSelect: (idProduct: number) => void;
 };
 
 export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
+  product,
   onSelect,
 }) => {
   const { i18n } = useContext(localesContext);
+  const { listCurrency } = useContext(paymentContext);
+  const firstImage = useMemo(
+    () => (product.images.length ? product.images[0] : null),
+    [product.images]
+  );
+  const symbolCurrency =
+    listCurrency.find((currency) => currency.code === product.codeCurrency)
+      ?.symbol || i18n._("grn");
 
   return (
     <TouchableOpacity
@@ -37,7 +52,11 @@ export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
         onSelect(1);
       }}
     >
-      <ImageCache imageSrc={DELETE_IMAGE} style={styles.image} />
+      {firstImage ? (
+        <ImageCache imageSrc={firstImage.url} style={styles.image} />
+      ) : (
+        <ImageCache imageSrc={imageNoPhoto} style={styles.image} />
+      )}
       <View style={styles.body}>
         <View style={styles.containerSubTitle}>
           <View style={styles.containerCity}>
@@ -46,19 +65,16 @@ export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
               height={13}
               fill={colors.grayCloudy}
             />
-            <Text style={styles.subTitle}>City</Text>
+            <Text style={styles.subTitle}>{product.place.city}</Text>
           </View>
-          <Text style={styles.subTitle}>DD.MM.YYYY</Text>
+          <Text style={styles.subTitle}>
+            {dayjs(product.updateAT).format("DD.MM.YYYY")}
+          </Text>
         </View>
         <Text numberOfLines={2} style={styles.title}>
-          Дууууууууже довга назва товару який продаєтьсДууууууууже довга назва
-          товару який продаєтьс
+          {product.title}
         </Text>
-        <TextLinearGradient
-          title={i18n._("{price} grn", {
-            price: (200000).toLocaleString("uk"),
-          })}
-        />
+        <TextLinearGradient title={`${product.price} ${symbolCurrency}`} />
       </View>
       <TouchableOpacity
         onPress={() => {

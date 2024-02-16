@@ -12,10 +12,12 @@ import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript
 
 // types
 import { RootMarketScreensParamList } from "../../../navigators/Navigators.types";
+import { ProductType } from "../../../providers/MarketProvider/MarketProvider.types";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
+import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -56,6 +58,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
+  const { products } = useContext(marketContext);
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [isWrap, setIsWrap] = useState(false);
@@ -73,18 +76,17 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
     navigation.navigate(PATHS_MARKET_SCREENS.marketAdd);
   };
 
-  const renderItem: ListRenderItem<{
-    id: string;
-    title: string;
-  }> = ({ item }) =>
+  const renderItem: ListRenderItem<ProductType> = ({ item }) =>
     isWrap ? (
       <ProductCardFull
+        product={item}
         onSelect={(idProduct) => {
           console.log("onSelect-idProduct", idProduct);
         }}
       />
     ) : (
       <ProductCardSmall
+        product={item}
         onSelect={(idProduct) => {
           console.log("onSelect-idProduct", idProduct);
         }}
@@ -124,7 +126,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
         {isWrap ? (
           <FlatList
             key={"_"}
-            data={data}
+            data={products}
             renderItem={renderItem}
             keyExtractor={(item) => `product-${item.id}`}
             numColumns={1}
@@ -133,7 +135,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
         ) : (
           <FlatList
             key={"#"}
-            data={data}
+            data={products}
             renderItem={renderItem}
             keyExtractor={(item) => `product-wrap-${item.id}`}
             numColumns={2}
