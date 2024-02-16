@@ -7,17 +7,22 @@ import React, {
 } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import dayjs from "dayjs";
 
 // types
 import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 import { CodeCurrenciesType } from "../../../providers/PaymentProvider/PaymentProvider.types";
 import { TypeDataCategory, TypeModalCategories } from "./MarketAdd.types";
+import { ProductType } from "../../../providers/MarketProvider/MarketProvider.types";
+import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -36,6 +41,7 @@ import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowEr
 // hooks
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { useErrors } from "../../../helps/useErrors";
+import showErrors from "../../../helps/errors/showError";
 
 // constants
 import {
@@ -51,12 +57,20 @@ import { IconArrowRightEvent } from "../../../icons/components";
 import { styles } from "./MarketAdd.styles";
 import colors from "../../../../styles/colors";
 
-export const MarketAdd: FunctionComponent = () => {
+type MarketAddProps = {
+  navigation: NativeStackNavigationProp<RootAllScreensParamList>;
+};
+
+export const MarketAdd: FunctionComponent<MarketAddProps> = ({
+  navigation,
+}) => {
   const { i18n } = useContext(localesContext);
   const { places } = useContext(placesContext);
   const { userData } = useContext(userContext);
+  const { addProduct } = useContext(marketContext);
   const { verifyPhone } = useAuthorizationRegistration();
   const { getErrorAddProduct } = useErrors(i18n);
+  const { success, bug } = showErrors;
   const [title, setTitle] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [telegram, setTelegram] = useState("");
@@ -133,58 +147,91 @@ export const MarketAdd: FunctionComponent = () => {
     clearKeyError("place");
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     const isError = checkEnterData();
-    if (userData?.id && !isError) {
-      const data = {
+    if (userData?.id && !isError && place) {
+      const currentImages = images.map((image) => ({
+        id: image.id || "",
+        url: image.url || "",
+        width: image.width,
+        height: image.height,
+        image,
+      }));
+      const newProduct: Omit<ProductType, "id"> = {
+        userId: userData?.id,
         title,
         isNew,
         isBusiness,
         place,
-        images,
+        images: currentImages,
         description,
-        price,
+        price: Number(price),
         codeCurrency,
         phoneNumber,
         telegram,
         moto:
-          select?.category?.id === 1
+          select?.category?.id === 1 &&
+          select.brandMoto &&
+          select.typeFuel &&
+          select.typeTransmission
             ? {
                 brand: select.brandMoto,
-                mileage,
-                yearRelease,
+                mileage: Number(mileage),
+                yearRelease: Number(yearRelease),
                 isCleared,
                 typeFuel: select.typeFuel,
                 typeTransmission: select.typeTransmission,
               }
             : null,
         auto:
-          select?.category?.id === 2
+          select?.category?.id === 2 &&
+          select.brandAuto &&
+          select.typeFuel &&
+          select.typeTransmission
             ? {
                 brand: select.brandAuto,
-                mileage,
-                yearRelease,
+                mileage: Number(mileage),
+                yearRelease: Number(yearRelease),
                 isCleared,
                 typeFuel: select.typeFuel,
                 typeTransmission: select.typeTransmission,
               }
             : null,
         motoParts:
-          select?.category?.id === 3
+          select?.category?.id === 3 && select.brandMoto && select.motoParts
             ? {
                 brand: select.brandMoto,
                 type: select.motoParts,
               }
             : null,
         autoParts:
-          select?.category?.id === 4
+          select?.category?.id === 4 && select.brandAuto && select.autoParts
             ? {
                 brand: select.brandAuto,
                 type: select.autoParts,
               }
             : null,
+        updateAT: dayjs().valueOf(),
       };
-      console.log("data", data);
+      /* const isCreate = selectWorkshop
+        ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })
+        : await addProduct(newWorkshop); */
+      const isCreate = await addProduct(newProduct);
+      if (isCreate) {
+        navigation.goBack();
+        success(
+          i18n._("Product created successfully")
+          /* selectWorkshop
+            ? i18n._("Workshop change successfully")
+            : i18n._("Workshop created successfully") */
+        );
+      } else
+        bug(
+          i18n._("Error creating product")
+          /* selectWorkshop
+            ? i18n._("Error changing workshop")
+            : i18n._("Error creating workshop") */
+        );
     }
   };
 

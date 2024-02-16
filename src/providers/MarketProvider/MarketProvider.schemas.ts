@@ -23,6 +23,7 @@ export const partsSchema = z.object({
 
 export const productSchema = z.object({
   id: z.number(),
+  userId: z.number(),
   title: z.string(),
   isNew: z.boolean(),
   isBusiness: z.boolean(),
@@ -44,6 +45,13 @@ export const productSchema = z.object({
   auto: transportSchema.nullable(),
   motoParts: partsSchema.nullable(),
   autoParts: partsSchema.nullable(),
+  updateAT: z.number(),
 });
 
 export const productsSchema = z.array(productSchema);
+
+export const resultProductsSchema = z.object({
+  result: z.boolean(),
+  products: productsSchema,
+  code: z.number(),
+});

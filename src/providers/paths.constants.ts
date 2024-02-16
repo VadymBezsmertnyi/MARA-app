@@ -20,4 +20,10 @@ export const PATHS = {
   workshopsDelete: "/workshops/delete/",
   workshopsCommentsAdd: "/workshops/comments/add/",
   workshopsCommentsChange: "/workshops/comments/change/",
+  // market
+  marketsProductsGet: "/markets/products/",
+  marketsProductsGetUserId: "/markets/products/user/",
+  marketsProductsAdd: "/markets/products/add/",
+  marketsProductsChange: "/markets/products/change/",
+  marketsProductsDelete: "/markets/products/delete/",
 } as const;

@@ -71,6 +71,8 @@ export const userDataS = z.object({
     .nullable(),
   email: z.string().nullable(),
   eventsIds: z.array(z.number()),
+  workshopsIds: z.array(z.number()),
+  productsIds: z.array(z.number()),
   isCheckBiometric: z.boolean().nullable(),
   verifyToken: z.string().nullable(),
   timeToken: z.number(),
