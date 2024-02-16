@@ -184,7 +184,7 @@ export const useErrors = (i18n: I18n) => {
       }),
     }),
     ...((description.length < 20 || description.length > 9000) && {
-      title: getErrorText("description", {
+      description: getErrorText("description", {
         min: 20,
         max: 9000,
         otherName: i18n._("advert"),

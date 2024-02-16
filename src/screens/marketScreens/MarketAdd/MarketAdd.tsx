@@ -48,7 +48,11 @@ import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
-import { NAME_MAIN_CATEGORIES } from "./MarketAdd.constants";
+import {
+  NAME_AUTO_PARTS,
+  NAME_MAIN_CATEGORIES,
+  NAME_MOTO_PARTS,
+} from "./MarketAdd.constants";
 
 // icons
 import { IconArrowRightEvent } from "../../../icons/components";
@@ -111,7 +115,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const clearKeyError = (key: string) => {
     if (errorMessage && key in errorMessage) {
       const { [key]: _, ...otherErrorMessage } = errorMessage;
-      if (Object.keys(otherErrorMessage).length <= 2) setErrorMessage(null);
+      if (Object.keys(otherErrorMessage).length === 0) setErrorMessage(null);
       else setErrorMessage(otherErrorMessage);
     }
   };
@@ -273,7 +277,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             }
             containerStyle={styles.containerStyleInputButton}
             inputWrapperStyle={styles.inputWrapperStyleInputButton}
-            errorMessage={errorMessage?.place ? errorMessage.place.title : ""}
+            errorMessage={
+              errorMessage?.category ? errorMessage.category.title : ""
+            }
           />
           <SelectTwoButtons
             isSelectFirst={isNew}
@@ -286,6 +292,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             onPressSecond={() => {
               setIsNew(false);
             }}
+            containerStyle={styles.containerTwoButtons}
           />
           <SelectTwoButtons
             isSelectFirst={!isBusiness}
@@ -300,6 +307,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               setPlace(null);
               setIsBusiness(true);
             }}
+            containerStyle={styles.containerTwoButtons}
           />
           <InputButton
             isSelect
@@ -329,6 +337,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             setYearRelease={setYearRelease}
             isCleared={isCleared}
             setIsCleared={setIsCleared}
+            errorMessage={errorMessage}
+            clearKeyError={clearKeyError}
           />
           <BoxSelectImages isSubTitle images={images} setImages={setImages} />
           <Input
@@ -351,6 +361,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             onChange={setPrice}
             code={codeCurrency}
             setCode={setCodeCurrency}
+            errorMessage={errorMessage?.price?.title}
+            clearKeyError={clearKeyError}
           />
           <View style={styles.containerContacts}>
             <Text style={styles.titleContacts}>
@@ -365,7 +377,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
                 clearKeyError("telegram");
                 setTelegram(value);
               }}
-              errorMessage={errorMessage?.title ? errorMessage.title.title : ""}
+              errorMessage={
+                errorMessage?.telegram ? errorMessage.telegram.title : ""
+              }
               labelStyle={styles.labelInputContacts}
             />
             <InputPhone
@@ -396,6 +410,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         isOpen={isShowSelectPlace}
         title={i18n._("Location")}
         onClose={() => {
+          clearKeyError("place");
           setIsShowSelectPlace(false);
         }}
         onSubmit={onSubmitPlace}
@@ -409,6 +424,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         onSubmit={(type, selectData) => {
           const newSelectList: Record<string, TypeDataCategory | undefined> =
             select ? { ...select, [type]: selectData } : { [type]: selectData };
+          if (type === NAME_MOTO_PARTS || type === NAME_AUTO_PARTS)
+            clearKeyError("typeParts");
+          else clearKeyError(type);
           setSelect(newSelectList);
         }}
       />

@@ -21,4 +21,11 @@ export const styles = StyleSheet.create({
   input: {
     paddingTop: 13,
   },
+  errorMessage: {
+    fontFamily: "Montserrat_700Bold",
+    fontSize: 10,
+    color: colors.errorRed,
+    marginTop: 4,
+    minHeight: 20,
+  },
 });

@@ -40,6 +40,14 @@ type BodyCategoryProps = {
   setYearRelease: React.Dispatch<React.SetStateAction<string>>;
   isCleared: boolean;
   setIsCleared: React.Dispatch<React.SetStateAction<boolean>>;
+  errorMessage: Record<
+    string,
+    {
+      name: string;
+      title: string;
+    }
+  > | null;
+  clearKeyError: (type: string) => void;
 };
 
 export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
@@ -51,6 +59,8 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
   setYearRelease,
   isCleared,
   setIsCleared,
+  errorMessage,
+  clearKeyError,
 }) => {
   const { i18n } = useContext(localesContext);
   const isMoto = useMemo(() => select?.category?.id === 1, [select?.category]);
@@ -77,6 +87,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
         onPress={() => {
           if (isMoto || isMotoParts) setTypeModal(NAME_BRAND_MOTO);
           if (isCar || isCarParts) setTypeModal(NAME_BRAND_AUTO);
+          clearKeyError("brand");
         }}
         rightElementInput={
           <IconArrowRightEvent
@@ -87,6 +98,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
         }
         containerStyle={styles.containerStyleInputButton}
         inputWrapperStyle={styles.inputWrapperStyleInputButton}
+        errorMessage={errorMessage?.brand ? errorMessage.brand.title : ""}
       />
       {isMoto || isCar ? (
         <>
@@ -96,16 +108,28 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
               label={i18n._("Mileage, km:")}
               placeholder={"100"}
               value={mileage}
-              onChange={setMileage}
+              onChange={(value) => {
+                setMileage(value);
+                clearKeyError("mileage");
+              }}
               containerStyle={styles.containerInput}
+              errorMessage={
+                errorMessage?.mileage ? errorMessage.mileage.title : ""
+              }
             />
             <Input
               keyboardType="numeric"
               label={i18n._("Year of release:")}
               placeholder={"1999"}
               value={yearRelease}
-              onChange={setYearRelease}
+              onChange={(value) => {
+                setYearRelease(value);
+                clearKeyError("yearRelease");
+              }}
               containerStyle={styles.containerInput}
+              errorMessage={
+                errorMessage?.yearRelease ? errorMessage.yearRelease.title : ""
+              }
             />
           </View>
           <SelectTwoButtons
@@ -136,6 +160,9 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
             }
             containerStyle={styles.containerStyleInputButton}
             inputWrapperStyle={styles.inputWrapperStyleInputButton}
+            errorMessage={
+              errorMessage?.typeFuel ? errorMessage.typeFuel.title : ""
+            }
           />
           <InputButton
             placeholder={i18n._("Transmission gearbox")}
@@ -154,6 +181,11 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
             }
             containerStyle={styles.containerStyleInputButton}
             inputWrapperStyle={styles.inputWrapperStyleInputButton}
+            errorMessage={
+              errorMessage?.typeTransmission
+                ? errorMessage.typeTransmission.title
+                : ""
+            }
           />
         </>
       ) : null}
@@ -177,8 +209,11 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
               fill={colors.blackCoffee}
             />
           }
-          containerStyle={styles.containerStyleInputButton}
+          containerStyle={styles.containerPartsInputButton}
           inputWrapperStyle={styles.inputWrapperStyleInputButton}
+          errorMessage={
+            errorMessage?.typeParts ? errorMessage.typeParts.title : ""
+          }
         />
       ) : null}
     </View>

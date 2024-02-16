@@ -8,6 +8,11 @@ export const styles = StyleSheet.create({
   containerStyleInputButton: {
     backgroundColor: colors.transparent,
     marginTop: 0,
+    marginBottom: 0,
+  },
+  containerPartsInputButton: {
+    backgroundColor: colors.transparent,
+    marginTop: 0,
     marginBottom: 20,
   },
   inputWrapperStyleInputButton: {

@@ -24,6 +24,8 @@ type PriceCurrencyProps = {
   code: CodeCurrenciesType;
   setCode: React.Dispatch<React.SetStateAction<CodeCurrenciesType>>;
   onChange: (value: string) => void;
+  errorMessage?: string;
+  clearKeyError: (type: string) => void;
 };
 
 export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
@@ -32,6 +34,8 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
   code,
   setCode,
   onChange,
+  errorMessage,
+  clearKeyError,
 }) => {
   const { i18n } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
@@ -60,7 +64,10 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
           keyboardType="numeric"
           placeholder={"100"}
           value={value}
-          onChange={onChange}
+          onChange={(value) => {
+            onChange(value);
+            clearKeyError("price");
+          }}
           containerStyle={styles.containerInput}
         />
         <SelectPicker
@@ -75,6 +82,7 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
           inputStyle={styles.input}
         />
       </View>
+      <Text style={styles.errorMessage}>{errorMessage}</Text>
     </View>
   );
 };

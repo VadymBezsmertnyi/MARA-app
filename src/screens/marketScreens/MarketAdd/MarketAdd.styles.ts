@@ -16,6 +16,9 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingRight: 0,
   },
+  containerTwoButtons: {
+    marginBottom: 20,
+  },
   labelInput: {
     fontFamily: "OpenSans_400Regular",
     fontSize: 14,
@@ -24,7 +27,7 @@ export const styles = StyleSheet.create({
   containerStyle: { flex: 0, marginTop: 20 },
   customStylesInput: { height: 180 },
   containerContacts: {
-    marginTop: 40,
+    marginTop: 10,
   },
   titleContacts: {
     fontFamily: "Montserrat_600SemiBold",
