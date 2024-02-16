@@ -1,10 +1,258 @@
-import React, { FunctionComponent } from "react";
-import { Text, View } from "react-native";
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { Linking, ScrollView, Text, View } from "react-native";
+import { RouteProp } from "@react-navigation/native";
+import dayjs from "dayjs";
+import { Trans } from "@lingui/macro";
 
-export const MarketItem: FunctionComponent = () => {
+// types
+import { RootMarketScreensParamList } from "../../../navigators/Navigators.types";
+
+// providers
+import { localesContext } from "../../../../localization/localization.provider";
+import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
+import { paymentContext } from "../../../providers/PaymentProvider/PaymentProvider";
+
+// components
+import { Header } from "../../../components/Header/Header";
+import { HeaderRightItem } from "../../workshopsScreens/WorkshopsItem/components/HeaderRightItem/HeaderRightItem";
+import { CustomSlider } from "../../../components/CustomSlider/CustomSlider";
+import { ItemDescriptions } from "./components/ItemDescriptions/ItemDescriptions";
+import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+
+// icons
+import {
+  IconLocationMarkerGradient,
+  IconPhone,
+  IconTelegram,
+  RadixIconsCash,
+} from "../../../icons/components";
+
+// styles
+import { styles } from "./MarketItem.styles";
+import colors from "../../../../styles/colors";
+
+type MarketItemProps = {
+  route: RouteProp<
+    RootMarketScreensParamList,
+    keyof RootMarketScreensParamList
+  >;
+};
+
+export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
+  const { i18n } = useContext(localesContext);
+  const { products } = useContext(marketContext);
+  const { listCurrency } = useContext(paymentContext);
+  const selectProduct = useMemo(
+    () =>
+      products.find((product) => product.id === route.params?.productId) ||
+      null,
+    [route.params]
+  );
+  const showPrice = useMemo(() => {
+    const showCurrency =
+      listCurrency.find(
+        (currency) => currency.code === selectProduct?.codeCurrency
+      ) || listCurrency[0];
+    return `${selectProduct?.price.toLocaleString("uk")} ${
+      showCurrency.symbol
+    }`;
+  }, [selectProduct?.price]);
+  const brand = useMemo(() => {
+    if (selectProduct?.autoParts) return selectProduct.autoParts.brand.name;
+    if (selectProduct?.motoParts) return selectProduct.motoParts.brand.name;
+    if (selectProduct?.auto) return selectProduct.auto.brand.name;
+    if (selectProduct?.moto) return selectProduct.moto.brand.name;
+    return null;
+  }, [selectProduct]);
+  const mileage = useMemo(() => {
+    if (selectProduct?.auto)
+      return selectProduct.auto.mileage.toLocaleString("uk");
+    if (selectProduct?.moto)
+      return selectProduct.moto.mileage.toLocaleString("uk");
+    return null;
+  }, [selectProduct?.auto, selectProduct?.moto]);
+  const yearRelease = useMemo(() => {
+    if (selectProduct?.auto) return selectProduct.auto.yearRelease;
+    if (selectProduct?.moto) return selectProduct.moto.yearRelease;
+    return null;
+  }, [selectProduct?.auto, selectProduct?.moto]);
+  const cleared = useMemo(() => {
+    if (selectProduct?.auto)
+      return selectProduct.auto.isCleared ? i18n._("Yes") : i18n._("No");
+    if (selectProduct?.moto)
+      return selectProduct.moto.isCleared ? i18n._("Yes") : i18n._("No");
+    return null;
+  }, [selectProduct?.auto, selectProduct?.moto]);
+  const typeFuel = useMemo(() => {
+    if (selectProduct?.auto) return selectProduct.auto.typeFuel.name;
+    if (selectProduct?.moto) return selectProduct.moto.typeFuel.name;
+    return null;
+  }, [selectProduct?.auto, selectProduct?.moto]);
+  const typeTransmission = useMemo(() => {
+    if (selectProduct?.auto) return selectProduct.auto.typeTransmission.name;
+    if (selectProduct?.moto) return selectProduct.moto.typeTransmission.name;
+    return null;
+  }, [selectProduct?.auto, selectProduct?.moto]);
+  const typeParts = useMemo(() => {
+    if (selectProduct?.autoParts) return selectProduct.autoParts.type.name;
+    if (selectProduct?.motoParts) return selectProduct.motoParts?.type.name;
+    return null;
+  }, [selectProduct?.autoParts, selectProduct?.motoParts]);
+
+  const onPressTelegram = async () => {
+    if (selectProduct?.telegram) {
+      const isAt = selectProduct.telegram.includes("@");
+      const currentTelegramName = isAt
+        ? selectProduct.telegram.slice(1, selectProduct.telegram.length)
+        : selectProduct.telegram;
+      const appTelegramURI = `tg://resolve?domain=${currentTelegramName}`;
+      const webTelegramURI = `https://t.me/${currentTelegramName}`;
+      const isTelegram = await Linking.canOpenURL(appTelegramURI);
+
+      if (isTelegram) Linking.openURL(appTelegramURI);
+      else Linking.openURL(webTelegramURI);
+    }
+  };
+  const onPressCall = async () => {
+    if (selectProduct?.phoneNumber) {
+      const phoneURI = `tel:${selectProduct.phoneNumber.replaceAll(" ", "")}`;
+      const isPhone = await Linking.canOpenURL(phoneURI);
+
+      if (isPhone) Linking.openURL(phoneURI);
+    }
+  };
+
+  if (!selectProduct) return null;
   return (
-    <View style={{ flex: 1 }}>
-      <Text>MarketItem</Text>
+    <View style={styles.container}>
+      <Header title={""} rightElement={<HeaderRightItem />} />
+      <ScrollView>
+        <View style={styles.containerMain}>
+          <View style={styles.containerInfo}>
+            <View style={styles.containerSlider}>
+              <CustomSlider
+                images={selectProduct?.images || []}
+                loop
+                styleScroll={(props) => [props, styles.imagesScroll]}
+              />
+            </View>
+            <Text numberOfLines={2} style={styles.title}>
+              {selectProduct?.title}
+            </Text>
+            <View style={styles.containerPlaceData}>
+              <Text style={styles.titleDate}>
+                {dayjs(selectProduct.updateAT).format("DD.MM.YYYY")}
+              </Text>
+              <View style={styles.containerCity}>
+                <IconLocationMarkerGradient width={14} height={13} />
+                <Text style={styles.subTitle}>{selectProduct.place.city}</Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.containerPrice}>
+            <View style={styles.iconWrapperLightBlue}>
+              <RadixIconsCash
+                width={24}
+                height={24}
+                fill={colors.californiaOrange}
+              />
+            </View>
+            <Text style={styles.titlePrice}>{showPrice}</Text>
+          </View>
+          <View style={styles.containerMainInfo}>
+            <View style={styles.containerDescription}>
+              <Text style={styles.titleDescription}>
+                <Trans>Description</Trans>
+              </Text>
+              <View style={styles.containerItemsDescriptions}>
+                <ItemDescriptions title={i18n._("Brand")} value={brand} />
+                <ItemDescriptions
+                  title={i18n._("Condition")}
+                  value={selectProduct.isNew ? i18n._("New") : i18n._("Used")}
+                />
+                <ItemDescriptions
+                  title={i18n._("Seller")}
+                  value={
+                    selectProduct.isBusiness
+                      ? i18n._("Business")
+                      : i18n._("Private individual")
+                  }
+                />
+                <ItemDescriptions
+                  title={i18n._("Mileage")}
+                  value={mileage ? i18n._("{mileage} km", { mileage }) : null}
+                />
+                <ItemDescriptions
+                  title={i18n._("Year of manufacture")}
+                  value={
+                    yearRelease
+                      ? i18n._("{yearRelease} km", { yearRelease })
+                      : null
+                  }
+                />
+                <ItemDescriptions
+                  title={i18n._("Customs cleared")}
+                  value={cleared}
+                />
+                <ItemDescriptions
+                  title={i18n._("Fuel type")}
+                  value={typeFuel}
+                />
+                <ItemDescriptions
+                  title={i18n._("Transmission")}
+                  value={typeTransmission}
+                />
+                <ItemDescriptions
+                  title={i18n._("Type parts")}
+                  value={typeParts}
+                />
+              </View>
+            </View>
+            <Text style={styles.description}>{selectProduct.description}</Text>
+            <View style={styles.containerViews}>
+              <Text style={styles.titleViews}>
+                <Trans>Views:</Trans> {selectProduct.quantityViews}
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.containerEmpty} />
+      </ScrollView>
+      <View style={styles.containerButtons}>
+        {selectProduct.telegram ? (
+          <ButtonCustom
+            onSubmit={onPressTelegram}
+            styleContainer={styles.containerTelegram}
+          >
+            <View style={styles.containerButton}>
+              <IconTelegram
+                width={25}
+                height={22}
+                strokeWidth={2}
+                stroke={colors.white}
+              />
+              <Text style={styles.titleButton}>
+                <Trans>Write</Trans>
+              </Text>
+            </View>
+          </ButtonCustom>
+        ) : null}
+        <ButtonCustom
+          onSubmit={onPressCall}
+          styleContainer={
+            !selectProduct.telegram ? styles.containerTelegram : undefined
+          }
+        >
+          <View style={styles.containerButton}>
+            <IconPhone width={29} height={29} fill={colors.white} />
+            {!selectProduct.telegram ? (
+              <Text style={styles.titleButton}>
+                <Trans>Call</Trans>
+              </Text>
+            ) : null}
+          </View>
+        </ButtonCustom>
+      </View>
     </View>
   );
 };

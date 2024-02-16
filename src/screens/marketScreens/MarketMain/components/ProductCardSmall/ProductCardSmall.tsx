@@ -66,7 +66,9 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
           <IconLocationMarker width={14} height={13} fill={colors.grayCloudy} />
           <Text style={styles.subTitle}>{product.place.city}</Text>
         </View>
-        <TextLinearGradient title={`${product.price} ${symbolCurrency}`} />
+        <TextLinearGradient
+          title={`${product.price.toLocaleString("uk")} ${symbolCurrency}`}
+        />
         <View style={styles.containerSubTitle}>
           <Text style={styles.subTitle}>
             {dayjs(product.updateAT).format("DD.MM.YYYY")}
@@ -79,7 +81,7 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
         }}
         style={styles.containerLike}
       >
-        <IconLikeGradient width={38} height={20} />
+        <IconLikeGradient width={38} height={20} opacity={0} />
       </TouchableOpacity>
     </TouchableOpacity>
   );

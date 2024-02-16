@@ -74,7 +74,9 @@ export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
         <Text numberOfLines={2} style={styles.title}>
           {product.title}
         </Text>
-        <TextLinearGradient title={`${product.price} ${symbolCurrency}`} />
+        <TextLinearGradient
+          title={`${product.price.toLocaleString("uk")} ${symbolCurrency}`}
+        />
       </View>
       <TouchableOpacity
         onPress={() => {
@@ -82,7 +84,7 @@ export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
         }}
         style={styles.containerLike}
       >
-        <IconLikeGradient width={38} height={20} />
+        <IconLikeGradient width={38} height={20} opacity={0} />
       </TouchableOpacity>
     </TouchableOpacity>
   );

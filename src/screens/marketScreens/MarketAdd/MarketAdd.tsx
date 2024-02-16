@@ -216,6 +216,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               }
             : null,
         updateAT: dayjs().valueOf(),
+        quantityViews: 0,
       };
       /* const isCreate = selectWorkshop
         ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })

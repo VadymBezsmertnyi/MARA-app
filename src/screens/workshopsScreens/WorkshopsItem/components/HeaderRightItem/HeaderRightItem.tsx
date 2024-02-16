@@ -58,10 +58,10 @@ export const HeaderRightItem: FunctionComponent = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity disabled onPress={onPressShare}>
-        <IconShareGradient width={23} height={23} />
+        <IconShareGradient width={23} height={23} opacity={0.1} />
       </TouchableOpacity>
       <TouchableOpacity disabled onPress={onToggleLike}>
-        <IconLikeGradient width={38} height={20} />
+        <IconLikeGradient width={38} height={20} opacity={0.1} />
       </TouchableOpacity>
     </View>
   );

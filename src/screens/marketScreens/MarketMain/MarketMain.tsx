@@ -76,21 +76,17 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
     navigation.navigate(PATHS_MARKET_SCREENS.marketAdd);
   };
 
+  const onSelectProduct = (productId: number) => {
+    navigation.navigate(PATHS_MARKET_SCREENS.marketItem, {
+      productId,
+    });
+  };
+
   const renderItem: ListRenderItem<ProductType> = ({ item }) =>
     isWrap ? (
-      <ProductCardFull
-        product={item}
-        onSelect={(idProduct) => {
-          console.log("onSelect-idProduct", idProduct);
-        }}
-      />
+      <ProductCardFull product={item} onSelect={onSelectProduct} />
     ) : (
-      <ProductCardSmall
-        product={item}
-        onSelect={(idProduct) => {
-          console.log("onSelect-idProduct", idProduct);
-        }}
-      />
+      <ProductCardSmall product={item} onSelect={onSelectProduct} />
     );
 
   return (

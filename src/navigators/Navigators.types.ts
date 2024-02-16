@@ -164,13 +164,13 @@ export type RootWorkshopsScreensParamList = {
 
 export type RootMarketScreensParamList = {
   [PATHS_MARKET_SCREENS.marketMain]?: Record<string, string | number | boolean>;
-  [PATHS_MARKET_SCREENS.marketAdd]?: Record<
+  [PATHS_MARKET_SCREENS.marketAdd]?: Record<string, string | number | boolean>;
+  [PATHS_MARKET_SCREENS.marketItem]?: Record<
     string,
     string | number | boolean
   > & {
-    workshopId?: number;
+    productId?: number;
   };
-  [PATHS_MARKET_SCREENS.marketItem]?: Record<string, string | number | boolean>;
 };
 
 export type RootAllScreensParamList = RootMainScreensParamList &

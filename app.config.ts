@@ -28,7 +28,13 @@ export const expo = {
     buildNumber: "1",
     usesAppleSignIn: true,
     infoPlist: {
-      LSApplicationQueriesSchemes: ["lyft"],
+      LSApplicationQueriesSchemes: [
+        "lyft",
+        "tel",
+        "telprompt",
+        "telegram",
+        "tg",
+      ],
       NSFaceIDUsageDescription: "Allow $(PRODUCT_NAME) to use Face ID.",
       UIApplicationShortcutItemTitle: "ADD_ITEM_SHORTCUT_TITLE",
       NSCameraUsageDescription: "Доступ до камери для фото профілю",

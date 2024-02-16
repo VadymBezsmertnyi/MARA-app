@@ -180,7 +180,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
               </View>
             </View>
           </View>
-          {selectWorkshop ? (
+          {selectWorkshop?.place.coordinates ? (
             <View style={styles.containerMap}>
               <Map
                 longitude={selectWorkshop.place.coordinates.longitude}
