@@ -8,6 +8,8 @@ import { ProductType } from "../../../../../providers/MarketProvider/MarketProvi
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
 import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
+import { marketContext } from "../../../../../providers/MarketProvider/MarketProvider";
+import { userContext } from "../../../../../providers/UserProvider/UserProvider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -37,6 +39,12 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
+  const { changeProduct } = useContext(marketContext);
+  const { userData } = useContext(userContext);
+  const isLike = useMemo(
+    () => (userData ? product.likeUserIds.includes(userData.id) : false),
+    [product?.likeUserIds]
+  );
   const firstImage = useMemo(
     () => (product.images.length ? product.images[0] : null),
     [product.images]
@@ -44,6 +52,24 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
   const symbolCurrency =
     listCurrency.find((currency) => currency.code === product.codeCurrency)
       ?.symbol || i18n._("grn");
+
+  const onPressLike = async () => {
+    if (userData) {
+      const currentImages = product.images.map((image) => ({
+        id: image.id || "",
+        url: image.url || "",
+        width: image.width,
+        height: image.height,
+        image,
+      }));
+      const likeUserIds = isLike
+        ? product.likeUserIds.filter(
+            (likeUserId) => likeUserId !== userData?.id
+          )
+        : [...product.likeUserIds, userData.id];
+      await changeProduct({ ...product, images: currentImages, likeUserIds });
+    }
+  };
 
   return (
     <TouchableOpacity
@@ -74,13 +100,8 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
           </Text>
         </View>
       </View>
-      <TouchableOpacity
-        onPress={() => {
-          console.log("Like product");
-        }}
-        style={styles.containerLike}
-      >
-        <IconLikeGradient width={38} height={20} opacity={0} />
+      <TouchableOpacity onPress={onPressLike} style={styles.containerLike}>
+        <IconLikeGradient width={38} height={20} />
       </TouchableOpacity>
     </TouchableOpacity>
   );
