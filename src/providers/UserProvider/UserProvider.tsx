@@ -15,6 +15,7 @@ import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { biometricAuthenticatorContext } from "../BiometricProvider/BiometricProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // components
 import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
@@ -35,7 +36,7 @@ import { TOKEN_NAME } from "./UserProvider.constants";
 export const userContext = createContext<Context>({} as Context);
 
 export const UserProvider: FunctionComponent<Props> = (props) => {
-  const { i18n } = props;
+  const { i18n } = useContext(localesContext);
   const { setUserData: setUserDataSocket } = useContext(webSocketContext);
   const { checkBiometric } = useContext(biometricAuthenticatorContext);
   const { api } = useContext(apiContext);

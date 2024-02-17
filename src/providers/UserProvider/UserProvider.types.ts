@@ -33,5 +33,4 @@ export type State = {
 export type Props = {
   children: React.ReactNode;
   state?: State;
-  i18n: I18n;
 };

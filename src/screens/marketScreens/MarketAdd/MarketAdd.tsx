@@ -400,9 +400,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             titleSecond={i18n._("Used")}
             label={i18n._("The state of the goods:")}
             onPressFirst={() => {
+              clearKeyError("isNew");
               setIsNew(true);
             }}
             onPressSecond={() => {
+              clearKeyError("isNew");
               setIsNew(false);
             }}
             containerStyle={styles.containerTwoButtons}
@@ -414,10 +416,12 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             label={i18n._("Seller:")}
             onPressFirst={() => {
               setPlace(null);
+              clearKeyError("isBusiness");
               setIsBusiness(false);
             }}
             onPressSecond={() => {
               setPlace(null);
+              clearKeyError("isBusiness");
               setIsBusiness(true);
             }}
             containerStyle={styles.containerTwoButtons}

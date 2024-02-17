@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-max-depth */ //For depth>15
 import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { Messages, setupI18n } from "@lingui/core";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -36,23 +35,8 @@ import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider
 // components
 import { Navigators } from "./src/navigators/Navigators";
 
-// constants
-import {
-  defaultLanguage,
-  languagesLinguiAlias,
-} from "./localization/localization.const";
-
-// locales
-import { messages as translationsUk } from "./localization/uk/messages";
-import { messages as translationsEn } from "./localization/en/messages";
-
 // styles
 import { styles } from "./App.styles";
-
-const CATALOGS_LANGUAGES = {
-  uk: translationsUk as Messages,
-  en: translationsEn as Messages,
-};
 
 const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.email",
@@ -84,11 +68,6 @@ function App() {
     OpenSans_700Bold,
   });
 
-  const i18n = setupI18n({
-    messages: CATALOGS_LANGUAGES,
-    locale: languagesLinguiAlias[defaultLanguage],
-  });
-
   useEffect(() => {
     if (appIsReady)
       (async () => {
@@ -105,11 +84,11 @@ function App() {
     <WebSocketProvider>
       <ThemeProvider>
         <LoadingProvider isLoadingProps={fontsLoaded}>
-          <LocalesProvider i18n={i18n}>
+          <LocalesProvider>
             <ApiProvider>
               <PlacesProvider>
                 <BiometricProvider>
-                  <UserProvider i18n={i18n}>
+                  <UserProvider>
                     <NavigationContainer>
                       <EventsProvider>
                         <SafeAreaProvider>

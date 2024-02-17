@@ -29,7 +29,7 @@ export const placesContext = React.createContext({} as PlacesContext);
 export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   children,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const [places, setPlaces] = useState<CountriesType | null>(null);
 
   const getCurrentRegion = (array: any) =>
@@ -81,7 +81,7 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
 
   useEffect(() => {
     getPlaces();
-  }, []);
+  }, [language]);
 
   return (
     <placesContext.Provider value={valueContext}>

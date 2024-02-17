@@ -11,7 +11,6 @@ export type LocalesContext = {
   children?: React.ReactNode;
 };
 export type Props = {
-  i18n: i18Type;
   children?: React.ReactNode;
 };
 export type LanguageType = { title: string; key: Language };
