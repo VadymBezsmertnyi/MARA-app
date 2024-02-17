@@ -14,22 +14,26 @@ import { ProductType, ProductsType } from "./MarketProvider.types";
 // schemas
 import { productSchema, resultProductsSchema } from "./MarketProvider.schemas";
 
+// helps
+import showErrors from "../../helps/errors/showError";
+
 // providers
 import { userContext } from "../UserProvider/UserProvider";
 import { localesContext } from "../../../localization/localization.provider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 
+// components
+import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
+
 // constants
 import { PATHS } from "../paths.constants";
-import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
-import showErrors from "../../helps/errors/showError";
 
 type MarketContext = {
   products: ProductsType;
   productsUser: ProductsType;
   addProduct: (newProduct: Omit<ProductType, "id">) => Promise<boolean>;
-  changeProduct: (changeProduct: ProductType) => Promise<void>;
+  changeProduct: (changeProduct: ProductType) => Promise<boolean>;
   deleteProduct: (idProduct: number, type?: "all" | "user") => Promise<boolean>;
 };
 
@@ -104,7 +108,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   const changeProduct = async (changeProduct: ProductType) => {
     setLoading(true);
     const result = await api(
-      PATHS.eventChange,
+      PATHS.marketsProductsChange,
       {
         method: "POST",
         data: changeProduct,
@@ -122,8 +126,11 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
           product.id === result.product.id ? result.product : product
         )
       );
+      setLoading(false);
+      return true;
     }
     setLoading(false);
+    return false;
   };
 
   const deleteProduct = async (
@@ -133,15 +140,17 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
     try {
       setLoading(true);
       const result = await api(
-        PATHS.eventDelete,
+        PATHS.marketsProductsDelete,
         { method: "DELETE", data: { id: idProduct } },
         z.object({ result: z.boolean() })
       );
       if (result?.result) {
-        setProducts((state) => state.filter((event) => event.id !== idProduct));
+        setProducts((state) =>
+          state.filter((product) => product.id !== idProduct)
+        );
         if (type === "user")
           setProductsUser((state) =>
-            state.filter((event) => event.id !== idProduct)
+            state.filter((product) => product.id !== idProduct)
           );
       }
 
@@ -178,7 +187,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         <ModalDelete
           onSubmit={async () => {
             await deleteProduct(idDeleteProduct, "user");
-            success(i18n._("Event delete"));
+            success(i18n._("Product delete"));
             setIdDeleteProduct(null);
           }}
           onClose={() => {

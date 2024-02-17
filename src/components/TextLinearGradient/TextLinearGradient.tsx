@@ -25,7 +25,7 @@ export const TextLinearGradient: FunctionComponent<TextLinearGradientProps> = ({
   const endGradient = useMemo(() => ({ x: 0, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1], []);
 
-  const containerStyle = useMemo(() => [{ height }], [height]);
+  const containerStyle = useMemo(() => [{ flex: 1, height }], [height]);
   const textStyle = useMemo(() => [styles.title, style], [style]);
 
   return (

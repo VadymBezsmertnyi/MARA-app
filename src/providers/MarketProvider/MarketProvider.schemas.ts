@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { placeSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import { codeCurrenciesSchema } from "../PaymentProvider/PaymentProvider.schemas";
 
 export const infoCategorySchema = z.object({
   id: z.number(),
@@ -38,7 +39,7 @@ export const productSchema = z.object({
   ),
   description: z.string(),
   price: z.number(),
-  codeCurrency: z.string(),
+  codeCurrency: codeCurrenciesSchema,
   phoneNumber: z.string(),
   telegram: z.string(),
   moto: transportSchema.nullable(),

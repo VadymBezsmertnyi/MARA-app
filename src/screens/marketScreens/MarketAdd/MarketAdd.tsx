@@ -9,6 +9,8 @@ import { ScrollView, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import dayjs from "dayjs";
+import { RouteProp, useRoute } from "@react-navigation/native";
+import * as FileSystem from "expo-file-system";
 
 // types
 import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
@@ -16,13 +18,18 @@ import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 import { CodeCurrenciesType } from "../../../providers/PaymentProvider/PaymentProvider.types";
 import { TypeDataCategory, TypeModalCategories } from "./MarketAdd.types";
 import { ProductType } from "../../../providers/MarketProvider/MarketProvider.types";
-import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
+import {
+  RootAllScreensParamList,
+  RootMarketScreensParamList,
+  RootSettingsScreensParamList,
+} from "../../../navigators/Navigators.types";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
+import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -42,6 +49,7 @@ import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowEr
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { useErrors } from "../../../helps/useErrors";
 import showErrors from "../../../helps/errors/showError";
+import { useCategoriesMarket } from "../../../helps/useCategoriesMarket";
 
 // constants
 import {
@@ -68,11 +76,25 @@ type MarketAddProps = {
 export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   navigation,
 }) => {
+  const { params } =
+    useRoute<
+      RouteProp<RootMarketScreensParamList & RootSettingsScreensParamList>
+    >();
   const { i18n } = useContext(localesContext);
   const { places } = useContext(placesContext);
   const { userData } = useContext(userContext);
-  const { addProduct } = useContext(marketContext);
+  const { productsUser, addProduct, changeProduct } = useContext(marketContext);
+  const { setLoading } = useContext(loadingContext);
   const { verifyPhone } = useAuthorizationRegistration();
+  const {
+    getCategory,
+    getBrandMoto,
+    getBrandAuto,
+    getFuelType,
+    getTransmissionType,
+    getMotoPart,
+    getAutoPart,
+  } = useCategoriesMarket(i18n);
   const { getErrorAddProduct } = useErrors(i18n);
   const { success, bug } = showErrors;
   const [title, setTitle] = useState("");
@@ -89,6 +111,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const [isCleared, setIsCleared] = useState(true);
   const [isNew, setIsNew] = useState(false);
   const [isBusiness, setIsBusiness] = useState(false);
+  const [isChange, setIsChange] = useState(false);
   const [images, setImages] = useState<ImageType[]>([]);
   const [typeModal, setTypeModal] = useState<TypeModalCategories | null>(null);
   const [select, setSelect] = useState<Record<
@@ -100,6 +123,13 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     string,
     { name: string; title: string }
   > | null>(null);
+  const productUser = useMemo(
+    () =>
+      params?.productId
+        ? productsUser.find((product) => product.id === params.productId)
+        : null,
+    [params?.productId]
+  );
 
   const showTitlePlace = useMemo(() => {
     const country = places
@@ -118,6 +148,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
       if (Object.keys(otherErrorMessage).length === 0) setErrorMessage(null);
       else setErrorMessage(otherErrorMessage);
     }
+    setIsChange(false);
   };
 
   const checkEnterData = () => {
@@ -218,38 +249,119 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         updateAT: dayjs().valueOf(),
         quantityViews: 0,
       };
-      /* const isCreate = selectWorkshop
-        ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })
-        : await addProduct(newWorkshop); */
-      const isCreate = await addProduct(newProduct);
+      const isCreate = productUser
+        ? await changeProduct({ ...productUser, ...newProduct })
+        : await addProduct(newProduct);
       if (isCreate) {
         navigation.goBack();
         success(
-          i18n._("Product created successfully")
-          /* selectWorkshop
-            ? i18n._("Workshop change successfully")
-            : i18n._("Workshop created successfully") */
+          productUser
+            ? i18n._("Product change successfully")
+            : i18n._("Product created successfully")
         );
       } else
         bug(
-          i18n._("Error creating product")
-          /* selectWorkshop
-            ? i18n._("Error changing workshop")
-            : i18n._("Error creating workshop") */
+          productUser
+            ? i18n._("Error changing product")
+            : i18n._("Error creating product")
         );
     }
   };
 
+  const getProductUser = async () => {
+    setLoading(true);
+    if (params) {
+      if (productUser) {
+        setIsChange(true);
+        const getCategoryFull = () => {
+          if (productUser.moto) return getCategory(1);
+          if (productUser.auto) return getCategory(2);
+          if (productUser.motoParts) return getCategory(3);
+          if (productUser.autoParts) return getCategory(4);
+          return undefined;
+        };
+        const imagesWithBath64 = await Promise.all(
+          productUser.images.map(async (image) => {
+            const response = await FileSystem.downloadAsync(
+              image.url,
+              `${FileSystem.documentDirectory}temp.jpg`
+            );
+            const base64 = await FileSystem.readAsStringAsync(response.uri, {
+              encoding: "base64",
+            });
+            return {
+              id: image.id,
+              url: image.url,
+              width: image.width,
+              height: image.height,
+              base64,
+            };
+          })
+        );
+        setTitle(productUser.title);
+        setPlace(productUser.place);
+        setImages(imagesWithBath64);
+        setIsNew(productUser.isNew);
+        setIsBusiness(productUser.isBusiness);
+        setSelect({
+          category: getCategoryFull(),
+          brandMoto: getBrandMoto(
+            productUser.moto?.brand.id || productUser.motoParts?.brand.id
+          ),
+          brandAuto: getBrandAuto(
+            productUser.auto?.brand.id || productUser.autoParts?.brand.id
+          ),
+          typeFuel: getFuelType(
+            productUser.auto?.typeFuel.id || productUser.moto?.typeFuel.id
+          ),
+          typeTransmission: getTransmissionType(
+            productUser.auto?.typeTransmission.id ||
+              productUser.moto?.typeTransmission.id
+          ),
+          motoParts: getMotoPart(productUser.motoParts?.type.id),
+          autoParts: getAutoPart(productUser.autoParts?.type.id),
+        });
+        setMileage(
+          productUser.auto?.mileage.toString() ||
+            productUser.moto?.mileage.toString() ||
+            ""
+        );
+        setYearRelease(
+          productUser.auto?.yearRelease.toString() ||
+            productUser.moto?.yearRelease.toString() ||
+            ""
+        );
+        setIsCleared(
+          productUser.auto?.isCleared || productUser.moto?.isCleared || false
+        );
+        setDescription(productUser.description);
+        setPrice(productUser.price.toString());
+        setCodeCurrency(productUser.codeCurrency);
+        setTelegram(productUser.telegram);
+        setPhoneNumber(productUser.phoneNumber);
+      }
+    }
+    setLoading(false);
+  };
+
   useEffect(() => {
-    const brakeSelect: Record<string, TypeDataCategory | undefined> | null =
-      select?.category ? { category: select.category } : null;
-    setSelect(brakeSelect);
+    if (!isChange) {
+      const brakeSelect: Record<string, TypeDataCategory | undefined> | null =
+        select?.category ? { category: select.category } : null;
+      setSelect(brakeSelect);
+    }
   }, [select?.category]);
+
+  useEffect(() => {
+    getProductUser();
+  }, [params]);
 
   return (
     <>
       <View style={styles.container}>
-        <Header title={i18n._("Add advert")} />
+        <Header
+          title={productUser ? i18n._("Change advert") : i18n._("Add advert")}
+        />
         <ScrollView style={styles.body}>
           <Input
             isSelect

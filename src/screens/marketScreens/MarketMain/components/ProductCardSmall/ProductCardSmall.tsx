@@ -44,7 +44,6 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
   const symbolCurrency =
     listCurrency.find((currency) => currency.code === product.codeCurrency)
       ?.symbol || i18n._("grn");
-  console.log("product", product);
 
   return (
     <TouchableOpacity

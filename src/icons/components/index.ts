@@ -17,6 +17,7 @@ export { default as IconCloseGradient } from "./IconCloseGradient";
 export { default as IconClose } from "./IconClose";
 export { default as IconColumnItemsGradient } from "./IconColumnItemsGradient";
 export { default as IconDocumentGradient } from "./IconDocumentGradient";
+export { default as IconEye } from "./IconEye";
 export { default as IconFaceIdGradient } from "./IconFaceIdGradient";
 export { default as IconFaceId } from "./IconFaceId";
 export { default as IconFilter } from "./IconFilter";

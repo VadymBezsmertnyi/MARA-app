@@ -222,6 +222,23 @@ export const useCategoriesMarket = (i18n: I18n) => {
     },
   ];
 
+  const getCategory = (idCategory?: number) =>
+    mainCategories.find((category) => category.id === idCategory);
+  const getBrandMoto = (idBrandMoto?: number) =>
+    brandsMoto.find((brandMoto) => brandMoto.id === idBrandMoto);
+  const getBrandAuto = (idBrandAuto?: number) =>
+    brandsAuto.find((brandAuto) => brandAuto.id === idBrandAuto);
+  const getFuelType = (idFuelType?: number) =>
+    fuelTypes.find((fuelType) => fuelType.id === idFuelType);
+  const getTransmissionType = (idTransmissionType?: number) =>
+    transmissionTypes.find(
+      (transmissionType) => transmissionType.id === idTransmissionType
+    );
+  const getMotoPart = (idMotoPart?: number) =>
+    motoParts.find((motoPart) => motoPart.id === idMotoPart);
+  const getAutoPart = (idAutoPart?: number) =>
+    autoParts.find((autoPart) => autoPart.id === idAutoPart);
+
   return {
     mainCategories,
     brandsMoto,
@@ -230,5 +247,12 @@ export const useCategoriesMarket = (i18n: I18n) => {
     transmissionTypes,
     motoParts,
     autoParts,
+    getCategory,
+    getBrandMoto,
+    getBrandAuto,
+    getFuelType,
+    getTransmissionType,
+    getMotoPart,
+    getAutoPart,
   };
 };
