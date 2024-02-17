@@ -1,11 +1,5 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { FunctionComponent, useContext, useState } from "react";
 import { Share, TouchableOpacity, View } from "react-native";
-import * as Linking from "expo-linking";
 
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
@@ -16,13 +10,18 @@ import {
   IconShareGradient,
 } from "../../../../../icons/components";
 
-// constants
-import { PATHS_WORKSHOP_SCREENS } from "../../../../../navigators/useNavigator.constants";
-
 // styles
 import { styles } from "./HeaderRightItem.styles";
 
-export const HeaderRightItem: FunctionComponent = () => {
+type HeaderRightItemProps = {
+  isLike: boolean;
+  onPressLike: (like: boolean) => void;
+};
+
+export const HeaderRightItem: FunctionComponent<HeaderRightItemProps> = ({
+  isLike,
+  onPressLike,
+}) => {
   const { i18n } = useContext(localesContext);
   const [url, setUrl] = useState<string | null>(null);
 
@@ -46,22 +45,17 @@ export const HeaderRightItem: FunctionComponent = () => {
     }
   };
 
-  const onToggleLike = () => {};
-
-  useEffect(() => {
-    const link = Linking.createURL(PATHS_WORKSHOP_SCREENS.workshopItem, {
-      queryParams: { workshopId: "1" },
-    });
-    setUrl(link);
-  }, []);
+  const onToggleLike = () => {
+    onPressLike(!isLike);
+  };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity disabled onPress={onPressShare}>
         <IconShareGradient width={23} height={23} opacity={0.1} />
       </TouchableOpacity>
-      <TouchableOpacity disabled onPress={onToggleLike}>
-        <IconLikeGradient width={38} height={20} opacity={0.1} />
+      <TouchableOpacity onPress={onToggleLike}>
+        <IconLikeGradient width={38} height={20} />
       </TouchableOpacity>
     </View>
   );

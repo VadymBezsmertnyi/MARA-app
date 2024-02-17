@@ -111,10 +111,10 @@ export const ListWorksDo: FunctionComponent<ListWorksDoProps> = ({
       >
         <ScrollViewCustom style={styles.containerServices}>
           <>
-            {showListWork.map((item, index) =>
+            {showListWork.map((item) =>
               item ? (
                 <View
-                  key={`type-service-${item.id + index}`}
+                  key={`type-service-${item.id}`}
                   style={styles.containerService}
                 >
                   <IconOkGradient width={40} height={40} />

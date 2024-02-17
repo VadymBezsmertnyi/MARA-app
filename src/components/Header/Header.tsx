@@ -8,16 +8,10 @@ import {
   ViewStyle,
 } from "react-native";
 import { Trans, t } from "@lingui/macro";
-import { RouteProp, useRoute } from "@react-navigation/native";
-import { z } from "zod";
-
-// types
-import { RootAllScreensParamList } from "../../navigators/Navigators.types";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../localization/localization.provider";
-import { eventsContext } from "../../providers/EventsProvider/EventsProvider";
 
 // icons
 import { ArrowLeft } from "../../icons/components";
@@ -49,24 +43,14 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   backgroundStyle,
   onRightDelete,
 }) => {
-  const route = useRoute<RouteProp<RootAllScreensParamList>>();
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-  const { setIdDeleteEvent } = useContext(eventsContext);
 
   const backgroundStyles = useMemo(
     () => [styles.background, backgroundStyle],
     [backgroundStyle]
   );
-
-  const idEditEvent = useMemo(() => {
-    const currentParams = z
-      .object({ eventId: z.number() })
-      .safeParse(route.params);
-    if (currentParams.success) return currentParams.data.eventId;
-    return null;
-  }, [route]);
 
   const backTitleStyle = useMemo(
     () => [
@@ -79,10 +63,6 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   const onBack = () => {
     if (onPressLeftElement) onPressLeftElement();
     else navigation.goBack();
-  };
-
-  const onDeleteEvent = () => {
-    if (idEditEvent) setIdDeleteEvent(idEditEvent);
   };
 
   return (
@@ -103,10 +83,8 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
         </TouchableOpacity>
 
         <Text style={styles.title}>{title}</Text>
-        {idEditEvent || onRightDelete ? (
-          <TouchableOpacity
-            onPress={onRightDelete ? onRightDelete : onDeleteEvent}
-          >
+        {onRightDelete ? (
+          <TouchableOpacity onPress={onRightDelete}>
             <Text style={styles.titleButtonDeleteEvent}>
               <Trans>Delete</Trans>
             </Text>

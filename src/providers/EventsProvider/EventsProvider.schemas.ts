@@ -21,6 +21,7 @@ export const eventSchema = z.object({
       height: z.number(),
     })
   ),
+  likeUserIds: z.array(z.number()),
 });
 
 export const eventsSchema = z.array(eventSchema);

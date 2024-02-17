@@ -11,6 +11,7 @@ import { RootMarketScreensParamList } from "../../../navigators/Navigators.types
 import { localesContext } from "../../../../localization/localization.provider";
 import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
 import { paymentContext } from "../../../providers/PaymentProvider/PaymentProvider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -43,7 +44,8 @@ type MarketItemProps = {
 
 export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
   const { i18n } = useContext(localesContext);
-  const { products } = useContext(marketContext);
+  const { userData } = useContext(userContext);
+  const { products, changeProduct } = useContext(marketContext);
   const { listCurrency } = useContext(paymentContext);
   const {
     getBrandMoto,
@@ -58,6 +60,13 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
       products.find((product) => product.id === route.params?.productId) ||
       null,
     [route.params]
+  );
+  const isLike = useMemo(
+    () =>
+      userData && selectProduct
+        ? selectProduct.likeUserIds.includes(userData.id)
+        : false,
+    [selectProduct?.likeUserIds]
   );
   const showPrice = useMemo(() => {
     const showCurrency =
@@ -146,11 +155,33 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
       if (isPhone) Linking.openURL(phoneURI);
     }
   };
+  const onPressLike = () => {
+    if (selectProduct && userData) {
+      const currentImages = selectProduct.images.map((image) => ({
+        id: image.id || "",
+        url: image.url || "",
+        width: image.width,
+        height: image.height,
+        image,
+      }));
+      const likeUserIds = isLike
+        ? selectProduct.likeUserIds.filter(
+            (likeUserId) => likeUserId !== userData?.id
+          )
+        : [...selectProduct.likeUserIds, userData.id];
+      changeProduct({ ...selectProduct, images: currentImages, likeUserIds });
+    }
+  };
 
   if (!selectProduct) return null;
   return (
     <View style={styles.container}>
-      <Header title={""} rightElement={<HeaderRightItem />} />
+      <Header
+        title={""}
+        rightElement={
+          <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
+        }
+      />
       <ScrollView>
         <View style={styles.containerMain}>
           <View style={styles.containerInfo}>

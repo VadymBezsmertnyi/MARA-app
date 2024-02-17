@@ -66,7 +66,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { userData } = useContext(userContext);
-  const { workshops } = useContext(workshopsContext);
+  const { workshops, changeWorkshop } = useContext(workshopsContext);
   const { places } = useContext(placesContext);
   const { location } = useContext(mapContext);
   const [amountShow, setAmountShow] = useState(5);
@@ -86,6 +86,13 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
           latitude: selectWorkshop.place.coordinates.latitude,
         })
       : null;
+  const isLike = useMemo(
+    () =>
+      userData && selectWorkshop
+        ? selectWorkshop.likeUserIds.includes(userData.id)
+        : false,
+    [selectWorkshop?.likeUserIds]
+  );
 
   const isCommentUser = useMemo(
     () =>
@@ -135,9 +142,32 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       );
   };
 
+  const onPressLike = () => {
+    if (selectWorkshop && userData) {
+      const currentImages = selectWorkshop.images.map((image) => ({
+        id: image.id || "",
+        url: image.url || "",
+        width: image.width,
+        height: image.height,
+        image,
+      }));
+      const likeUserIds = isLike
+        ? selectWorkshop.likeUserIds.filter(
+            (likeUserId) => likeUserId !== userData?.id
+          )
+        : [...selectWorkshop.likeUserIds, userData.id];
+      changeWorkshop({ ...selectWorkshop, images: currentImages, likeUserIds });
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Header title={i18n._("Workshop")} rightElement={<HeaderRightItem />} />
+      <Header
+        title={i18n._("Workshop")}
+        rightElement={
+          <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
+        }
+      />
       <ScrollView
         ref={scrollViewRef}
         onScroll={handleScroll}

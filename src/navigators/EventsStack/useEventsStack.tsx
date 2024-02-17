@@ -35,14 +35,14 @@ export const useNewsStack = () => {
       id: PATHS_EVENTS_SCREENS.eventItem,
       name: PATHS_EVENTS_SCREENS.eventItem,
       title: t(i18n)`Event`,
-      headerShown: true,
+      headerShown: false,
       component: EventItem,
     },
     {
       id: PATHS_EVENTS_SCREENS.eventAdd,
       name: PATHS_EVENTS_SCREENS.eventAdd,
       title: t(i18n)`Create event`,
-      headerShown: true,
+      headerShown: false,
       component: AddEvent,
     },
   ] as const;

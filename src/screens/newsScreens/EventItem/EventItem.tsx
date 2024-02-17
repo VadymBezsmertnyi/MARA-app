@@ -25,12 +25,15 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { Map } from "../../../components/Map/Map";
 import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { GalleryModal } from "../../../components/GalleryModal/GalleryModal";
 import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
+import { Header } from "../../../components/Header/Header";
+import { HeaderRightItem } from "../../workshopsScreens/WorkshopsItem/components/HeaderRightItem/HeaderRightItem";
 
 // icons
 import {
@@ -52,9 +55,10 @@ type EventItemProps = {
 
 export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
   const { i18n, language } = useContext(localesContext);
-  const { eventsList } = useContext(eventsContext);
+  const { eventsList, changeEvent } = useContext(eventsContext);
   const { location } = useContext(mapContext);
   const { places } = useContext(placesContext);
+  const { userData } = useContext(userContext);
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [gallery, setGallery] = useState<{
@@ -67,6 +71,13 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
         ? eventsList.find((event) => event.id === route.params?.eventId) || null
         : null,
     [route.params]
+  );
+  const isLike = useMemo(
+    () =>
+      userData && eventSelect
+        ? eventSelect.likeUserIds.includes(userData.id)
+        : false,
+    [eventSelect?.likeUserIds]
   );
   const showTitlePlace = useMemo(() => {
     const country = places
@@ -130,6 +141,23 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
       });
     }
   };
+  const onPressLike = () => {
+    if (eventSelect && userData) {
+      const currentImages = eventSelect.images.map((image) => ({
+        id: image.id || "",
+        url: image.url || "",
+        width: image.width,
+        height: image.height,
+        image,
+      }));
+      const likeUserIds = isLike
+        ? eventSelect.likeUserIds.filter(
+            (likeUserId) => likeUserId !== userData?.id
+          )
+        : [...eventSelect.likeUserIds, userData.id];
+      changeEvent({ ...eventSelect, images: currentImages, likeUserIds });
+    }
+  };
 
   useEffect(() => {
     if (eventSelect && eventSelect.description.length > 300)
@@ -140,7 +168,13 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
   if (!eventSelect) return null;
 
   return (
-    <>
+    <View style={{ flex: 1 }}>
+      <Header
+        title={i18n._("Event")}
+        rightElement={
+          <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
+        }
+      />
       <ScrollView>
         <View style={containerStyles}>
           <View style={styles.imageWrapper}>
@@ -331,6 +365,6 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
           </ModalWindow>
         ) : null}
       </Modal>
-    </>
+    </View>
   );
 };

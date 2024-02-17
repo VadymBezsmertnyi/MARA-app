@@ -39,6 +39,7 @@ export const workshopSchema = z.object({
   dataCreate: z.number(),
   comments: z.array(commentSchema),
   rating: z.number().nullable(),
+  likeUserIds: z.array(z.number()),
 });
 
 export const workshopsSchema = z.array(workshopSchema);

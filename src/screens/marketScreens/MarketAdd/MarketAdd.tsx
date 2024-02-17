@@ -251,6 +251,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             : null,
         updateAT: dayjs().valueOf(),
         quantityViews: 0,
+        likeUserIds: productUser?.likeUserIds || [],
       };
       const isCreate = productUser
         ? await changeProduct({ ...productUser, ...newProduct })

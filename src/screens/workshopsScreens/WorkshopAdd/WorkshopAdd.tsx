@@ -263,6 +263,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         comments: [],
         dataCreate: new Date().getTime(),
         rating: null,
+        likeUserIds: [],
       };
       const isCreate = selectWorkshop
         ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })

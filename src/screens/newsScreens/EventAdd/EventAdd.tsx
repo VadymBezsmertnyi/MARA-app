@@ -5,7 +5,14 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Alert, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Modal,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -47,6 +54,8 @@ import { useErrors } from "../../../helps/useErrors";
 
 // styles
 import { styles } from "./EventAdd.styles";
+import { Header } from "../../../components/Header/Header";
+import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -59,7 +68,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     >();
   const { i18n } = useContext(localesContext);
   const { getErrorText } = useErrors(i18n);
-  const { addEvent, changeEvent, eventsUserList } = useContext(eventsContext);
+  const { addEvent, changeEvent, eventsUserList, deleteEvent } =
+    useContext(eventsContext);
   const { userData } = useContext(userContext);
   const { setLoading } = useContext(loadingContext);
   const { places } = useContext(placesContext);
@@ -75,6 +85,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [aboutEvent, setAboutEvent] = useState("");
   const [images, setImages] = useState<ImageType[]>([]);
   const [isShowErrors, setIsShowErrors] = useState(false);
+  const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
     string,
     { name: string; title: string }
@@ -198,6 +209,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         currency: "UAH" as const,
         description: aboutEvent,
         images: currentImages,
+        likeUserIds: eventUser?.likeUserIds || [],
       };
       if (eventUser) await changeEvent({ ...eventUser, ...newEvent });
       else
@@ -214,6 +226,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     setLoading(true);
     if (params) {
       if (eventUser) {
+        const currentImages = images.map((image) => ({
+          id: image.id || "",
+          url: image.url || "",
+          width: image.width,
+          height: image.height,
+          image,
+        }));
         const imagesWithBath64 = await Promise.all(
           eventUser.images.map(async (image) => {
             const response = await FileSystem.downloadAsync(
@@ -253,6 +272,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
 
   return (
     <>
+      <Header
+        title={eventUser ? i18n._("Change event") : i18n._("Createt event")}
+        onRightDelete={() => {
+          setIsShowDeleteModal(true);
+        }}
+      />
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.scrollView}>
           <Text style={styles.title}>{i18n._("You can create an event")}:</Text>
@@ -414,6 +439,19 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         }}
         errors={errorMessage}
       />
+      <Modal visible={isShowDeleteModal} transparent>
+        <ModalDelete
+          onClose={() => {
+            setIsShowDeleteModal(false);
+          }}
+          onSubmit={async () => {
+            if (eventUser?.id) {
+              await deleteEvent(eventUser.id, "user");
+              setIsShowDeleteModal(false);
+            }
+          }}
+        />
+      </Modal>
     </>
   );
 };

@@ -48,6 +48,7 @@ export const productSchema = z.object({
   autoParts: partsSchema.nullable(),
   updateAT: z.number(),
   quantityViews: z.number(),
+  likeUserIds: z.array(z.number()),
 });
 
 export const productsSchema = z.array(productSchema);
