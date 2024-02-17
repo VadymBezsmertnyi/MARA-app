@@ -64,7 +64,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.news,
       name: PATHS_MAIN_TABS.news,
       mainScreen: PATHS_EVENTS_SCREENS.eventsMain,
-      title: t(i18n)`Events and news`,
+      title: t(i18n)`Events`,
       component: EventsStack,
       headerShown: true,
       tabBarIcon: IconTabNews,

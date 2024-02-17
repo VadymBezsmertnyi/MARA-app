@@ -14,6 +14,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Додати фото"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Перше фото буде на обкладинці оголошення."
+
+#. js-lingui-explicit-id
 msgid "km"
 msgstr "км"
 
@@ -82,8 +90,344 @@ msgid "Back"
 msgstr "Назад"
 
 #. js-lingui-explicit-id
+msgid "The price of the item"
+msgstr "Ціна товару"
+
+#. js-lingui-explicit-id
 msgid "Confirm"
 msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle transport"
+msgstr "Транспорт для мотоциклів"
+
+#. js-lingui-explicit-id
+msgid "Car transport"
+msgstr "Транспорт для автомобілів"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle parts"
+msgstr "Деталі для мотоциклів"
+
+#. js-lingui-explicit-id
+msgid "Car parts"
+msgstr "Деталі для автомобілів"
+
+#. js-lingui-explicit-id
+msgid "Gasoline"
+msgstr "Бензин"
+
+#. js-lingui-explicit-id
+msgid "Diesel"
+msgstr "Дизель"
+
+#. js-lingui-explicit-id
+msgid "Gas / Petrol"
+msgstr "Газ / Бензин"
+
+#. js-lingui-explicit-id
+msgid "Electric"
+msgstr "Електрика"
+
+#. js-lingui-explicit-id
+msgid "Hybrid"
+msgstr "Гібрид"
+
+#. js-lingui-explicit-id
+msgid "Other"
+msgstr "Інше"
+
+#. js-lingui-explicit-id
+msgid "Manual"
+msgstr "Механічна"
+
+#. js-lingui-explicit-id
+msgid "Automatic"
+msgstr "Автоматична"
+
+#. js-lingui-explicit-id
+msgid "Continuously variable transmission (CVT)"
+msgstr "Безступінчаста трансмісія (CVT)"
+
+#. js-lingui-explicit-id
+msgid "Adaptive"
+msgstr "Адаптивна"
+
+#. js-lingui-explicit-id
+msgid "Tiptronic"
+msgstr "Тіптронік"
+
+#. js-lingui-explicit-id
+msgid "Batteries"
+msgstr "Акумулятори"
+
+#. js-lingui-explicit-id
+msgid "Shock absorbers and suspension"
+msgstr "Амортизатори та підвіска"
+
+#. js-lingui-explicit-id
+msgid "Variators and reducers"
+msgstr "Варіатори та редуктори"
+
+#. js-lingui-explicit-id
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Вихлопні системи, прямі труби, глушники"
+
+#. js-lingui-explicit-id
+msgid "Engine parts"
+msgstr "Деталі двигуна"
+
+#. js-lingui-explicit-id
+msgid "Gearbox"
+msgstr "Коробка передач"
+
+#. js-lingui-explicit-id
+msgid "Footrests and pedals"
+msgstr "Підніжки та педалі"
+
+#. js-lingui-explicit-id
+msgid "Lighting and lamps"
+msgstr "Освітлення та лампи"
+
+#. js-lingui-explicit-id
+msgid "Bearings"
+msgstr "Підшипники"
+
+#. js-lingui-explicit-id
+msgid "Drive and chassis"
+msgstr "Привід та шасі"
+
+#. js-lingui-explicit-id
+msgid "Frame, brackets, and swingarms"
+msgstr "Рама, кронштейни та підвіски"
+
+#. js-lingui-explicit-id
+msgid "Handlebars and controls"
+msgstr "Кермо та керування"
+
+#. js-lingui-explicit-id
+msgid "Seat"
+msgstr "Сидіння"
+
+#. js-lingui-explicit-id
+msgid "Cooling system"
+msgstr "Система охолодження"
+
+#. js-lingui-explicit-id
+msgid "Clutch"
+msgstr "Зчеплення"
+
+#. js-lingui-explicit-id
+msgid "Fuel system"
+msgstr "Паливна система"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Гальмівна система"
+
+#. js-lingui-explicit-id
+msgid "Cables and hoses"
+msgstr "Кабелі та шланги"
+
+#. js-lingui-explicit-id
+msgid "Filters"
+msgstr "Фільтри"
+
+#. js-lingui-explicit-id
+msgid "Chains and sprockets"
+msgstr "Ланцюги та зірочки"
+
+#. js-lingui-explicit-id
+msgid "Electrical system"
+msgstr "Електрична система"
+
+#. js-lingui-explicit-id
+msgid "Other motorcycle parts"
+msgstr "Інші деталі для мотоциклів"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Двигун"
+
+#. js-lingui-explicit-id
+msgid "Exhaust system"
+msgstr "Вихлопна система"
+
+#. js-lingui-explicit-id
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Трансмісія / Механічна та Автоматична"
+
+#. js-lingui-explicit-id
+msgid "Steering system"
+msgstr "Система керування"
+
+#. js-lingui-explicit-id
+msgid "Suspension / Chassis"
+msgstr "Підвіска / Шасі"
+
+#. js-lingui-explicit-id
+msgid "Body parts"
+msgstr "Деталі кузова"
+
+#. js-lingui-explicit-id
+msgid "Interior details"
+msgstr "Деталі інтер'єру"
+
+#. js-lingui-explicit-id
+msgid "Air conditioning, heater, ventilation"
+msgstr "Кондиціонер, обігрівач, вентиляція"
+
+#. js-lingui-explicit-id
+msgid "Air intake system"
+msgstr "Система подачі повітря"
+
+#. js-lingui-explicit-id
+msgid "Ignition system"
+msgstr "Система запалювання"
+
+#. js-lingui-explicit-id
+msgid "Window and headlight cleaning system"
+msgstr "Система очищення вікон та фар"
+
+#. js-lingui-explicit-id
+msgid "Headlights and lighting"
+msgstr "Фари та освітлення"
+
+#. js-lingui-explicit-id
+msgid "Electrical equipment"
+msgstr "Електрообладнання"
+
+#. js-lingui-explicit-id
+msgid "Automotive glass"
+msgstr "Автомобільне скло"
+
+#. js-lingui-explicit-id
+msgid "Liquefied gas system"
+msgstr "Система рідкого газу"
+
+#. js-lingui-explicit-id
+msgid "Other types of spare parts"
+msgstr "Інші типи запчастин"
+
+#. js-lingui-explicit-id
+msgid "Name of the {otherName}"
+msgstr "Назва {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of {min} and a maximum of {max} characters."
+msgstr "Текст повинен містити від {min} до {max} символів."
+
+#. js-lingui-explicit-id
+msgid "The place of the {otherName}"
+msgstr "Місце розташування {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The location of the {otherName} must be selected."
+msgstr "Місце розташування {otherName} повинно бути обрано."
+
+#. js-lingui-explicit-id
+msgid "Date of the {otherName}"
+msgstr "Дата {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "Дата закінчення повинна бути пізніше за дату початку."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the {otherName}"
+msgstr "Розкажіть нам про {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Description of the {otherName}"
+msgstr "Опис {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Phone number the {otherName}"
+msgstr "Номер телефону {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Будь ласка, введіть номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Types of {otherName} jobs"
+msgstr "Типи робіт {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Будь ласка, оберіть принаймні один тип"
+
+#. js-lingui-explicit-id
+msgid "Price {otherName}"
+msgstr "Ціна {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter price for {otherName}"
+msgstr "Будь ласка, введіть ціну для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Category {otherName}"
+msgstr "Категорія {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter category for {otherName}"
+msgstr "Будь ласка, введіть категорію для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Brand {otherName}"
+msgstr "Бренд {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter brand for {otherName}"
+msgstr "Будь ласка, введіть бренд для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Mileage {otherName}"
+msgstr "Пробіг {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter mileage for {otherName}"
+msgstr "Будь ласка, введіть пробіг для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Year release {otherName}"
+msgstr "Рік випуску {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter year minimum of {min} and a maximum of {max} for {otherName}"
+msgstr "Будь ласка, введіть рік в межах від {min} до {max} для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type fuel {otherName}"
+msgstr "Тип палива {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type fuel for {otherName}"
+msgstr "Будь ласка, введіть тип палива для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type transmission {otherName}"
+msgstr "Тип коробки передач {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type transmission for {otherName}"
+msgstr "Будь ласка, введіть тип коробки передач для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type parts {otherName}"
+msgstr "Тип деталів {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type parts for {otherName}"
+msgstr "Будь ласка, введіть тип деталів для {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Неправильно введені дані"
+
+#. js-lingui-explicit-id
+msgid "advert"
+msgstr "оголошення"
 
 #. js-lingui-explicit-id
 msgid "Create event"
@@ -242,10 +586,6 @@ msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and a
 msgstr "Заміна приводу ланцюга та зірок / Чищення, змащування та налаштування ланцюга / Регулювання, натяг та змащування ланцюга"
 
 #. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Двигун"
-
-#. js-lingui-explicit-id
 msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
 msgstr "Видалення та встановлення / Регулювання клапанів / Заміна зчеплення / Ремонт головки блока циліндрів / Заміна ланцюга ГРМ / Ремонт поршневої групи / Ремонт коробки передач / Капітальний ремонт двигуна"
 
@@ -256,10 +596,6 @@ msgstr "Електрика"
 #. js-lingui-explicit-id
 msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
 msgstr "Заміна реле регулятора / Заміна генератора / Заміна стартера / Ремонт стартера / Заміна лампочки / Установка ксенону / Заміна акумулятора / Зарядка акумулятора"
-
-#. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Гальмівна система"
 
 #. js-lingui-explicit-id
 msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
@@ -310,40 +646,184 @@ msgid "Privacy policy"
 msgstr "Політика конфіденційності"
 
 #. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Назва події"
+msgid "Brand/Make"
+msgstr "Бренд/Виробник"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 5 and a maximum of 20 characters."
-msgstr "Текст повинен містити від 5 до 20 символів."
+msgid "Mileage, km:"
+msgstr "Пробіг, км:"
 
 #. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Місце події"
+msgid "Year of release:"
+msgstr "Рік випуску:"
 
 #. js-lingui-explicit-id
-msgid "The location of the event must be selected."
-msgstr "Потрібно вибрати місце події."
+msgid "Cleared:"
+msgstr "Розмито:"
 
 #. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Дата проведення"
+msgid "Type fuel"
+msgstr "Тип палива"
 
 #. js-lingui-explicit-id
-msgid "The end date must be greater than the start date."
-msgstr "Дата закінчення повинна бути пізніше за дату початку."
+msgid "Transmission gearbox"
+msgstr "Коробка передач"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Розкажіть нам про подію"
+msgid "Category"
+msgstr "Категорія"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 20 and a maximum of 2000 characters."
-msgstr "Текст повинен містити від 20 до 2000 символів."
+msgid "motorcycle brand"
+msgstr "марка мотоцикла"
 
 #. js-lingui-explicit-id
-msgid "Incorrectly entered data"
-msgstr "Неправильно введені дані"
+msgid "Car's make"
+msgstr "Марка автомобіля"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Тип палива"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Тип коробки передач"
+
+#. js-lingui-explicit-id
+msgid "Product created successfully"
+msgstr "Товар успішно створено"
+
+#. js-lingui-explicit-id
+msgid "Error creating product"
+msgstr "Помилка при створенні товару"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Додати оголошення"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the advert"
+msgstr "Введіть назву оголошення"
+
+#. js-lingui-explicit-id
+msgid "Advert name"
+msgstr "Назва оголошення"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "Новий"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Вжитий"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Стан товару:"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Приватна особа"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Бізнес"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Продавець:"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Виберіть місто"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the product"
+msgstr "Додайте опис товару"
+
+#. js-lingui-explicit-id
+msgid "Product description"
+msgstr "Опис товару"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "Ваш телеграм"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Номер телефону*:"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "Brand"
+msgstr "Бренд"
+
+#. js-lingui-explicit-id
+msgid "Condition"
+msgstr "Стан"
+
+#. js-lingui-explicit-id
+msgid "Seller"
+msgstr "Продавець"
+
+#. js-lingui-explicit-id
+msgid "Mileage"
+msgstr "Пробіг"
+
+#. js-lingui-explicit-id
+msgid "{mileage} km"
+msgstr "{mileage} км"
+
+#. js-lingui-explicit-id
+msgid "Year of manufacture"
+msgstr "Рік виробництва"
+
+#. js-lingui-explicit-id
+msgid "{yearRelease} km"
+msgstr "{yearRelease} км"
+
+#. js-lingui-explicit-id
+msgid "Customs cleared"
+msgstr "Мито сплачено"
+
+#. js-lingui-explicit-id
+msgid "Fuel type"
+msgstr "Тип палива"
+
+#. js-lingui-explicit-id
+msgid "Transmission"
+msgstr "Коробка передач"
+
+#. js-lingui-explicit-id
+msgid "Type parts"
+msgstr "Тип деталів"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "грн"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Ринок"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Введіть назву"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "подія"
 
 #. js-lingui-explicit-id
 msgid "You can create an event"
@@ -354,8 +834,20 @@ msgid "Enter the name of the event"
 msgstr "Введіть назву події"
 
 #. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Назва події"
+
+#. js-lingui-explicit-id
 msgid "Enter the address"
 msgstr "Введіть адресу"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Місце події"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Дата проведення"
 
 #. js-lingui-explicit-id
 msgid "The beginning"
@@ -380,10 +872,6 @@ msgstr "Коротко опишіть, що відбуватиметься"
 #. js-lingui-explicit-id
 msgid "Tell us about the event:"
 msgstr "Розкажіть нам про подію:"
-
-#. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Додати фото"
 
 #. js-lingui-explicit-id
 msgid "Event address"
@@ -458,12 +946,8 @@ msgid "events"
 msgstr "події"
 
 #. js-lingui-explicit-id
-msgid "My ads"
-msgstr "Мої об’яви"
-
-#. js-lingui-explicit-id
-msgid "Add ad"
-msgstr "Додати об’яву"
+msgid "My adverts"
+msgstr "Мої оголошення"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
@@ -514,46 +998,6 @@ msgid "workshops"
 msgstr "майстерні"
 
 #. js-lingui-explicit-id
-msgid "Name of the workshop"
-msgstr "Назва майстерні"
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 5 and a maximum of 40 characters."
-msgstr "Текст повинен містити від 5 до 40 символів."
-
-#. js-lingui-explicit-id
-msgid "The place of the workshop"
-msgstr "Місце розташування майстерні"
-
-#. js-lingui-explicit-id
-msgid "The location of the workshop must be selected."
-msgstr "Місце розташування майстерні повинно бути обрано."
-
-#. js-lingui-explicit-id
-msgid "Description of the workshop"
-msgstr "Опис майстерні"
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 200 and a maximum of 9000 characters."
-msgstr "Текст повинен містити від 200 до 9000 символів."
-
-#. js-lingui-explicit-id
-msgid "Phone number the workshop"
-msgstr "Номер телефону майстерні"
-
-#. js-lingui-explicit-id
-msgid "Please enter phone number"
-msgstr "Будь ласка, введіть номер телефону"
-
-#. js-lingui-explicit-id
-msgid "Types of workshop jobs"
-msgstr "Типи робіт майстерні"
-
-#. js-lingui-explicit-id
-msgid "Please select at least one type"
-msgstr "Будь ласка, оберіть принаймні один тип"
-
-#. js-lingui-explicit-id
 msgid "Not information"
 msgstr "Інформація відсутня"
 
@@ -576,6 +1020,10 @@ msgstr "Ремонт мотоциклів"
 #. js-lingui-explicit-id
 msgid "Repair of automobiles"
 msgstr "Ремонт автомобілів"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "майстерня"
 
 #. js-lingui-explicit-id
 msgid "Workshop change successfully"
@@ -614,10 +1062,6 @@ msgid "Workshop description"
 msgstr "Опис майстерні"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Номер телефону*"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Тип майстерні"
 
@@ -632,14 +1076,6 @@ msgstr "Типи робіт"
 #. js-lingui-explicit-id
 msgid "Select types of work"
 msgstr "Виберіть типи робіт"
-
-#. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "Перше фото буде на обкладинці оголошення."
-
-#. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Опублікувати"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -710,6 +1146,9 @@ msgstr "Доступ заборонено"
 msgid "Add event"
 msgstr "Додати подію"
 
+msgid "Add product"
+msgstr "Додати товар"
+
 msgid "Add workshop"
 msgstr "Додати майстерню"
 
@@ -767,6 +1206,9 @@ msgstr "За кількістю коментарів:"
 msgid "By rating:"
 msgstr "За рейтингом:"
 
+msgid "Call"
+msgstr "Подзвонити"
+
 msgid "Continue"
 msgstr "Продовжити"
 
@@ -781,6 +1223,9 @@ msgstr "Темна тема"
 
 msgid "Delete"
 msgstr "Видалити"
+
+msgid "Description"
+msgstr "Опис"
 
 msgid "Distance, km:"
 msgstr "Відстань, км:"
@@ -811,9 +1256,6 @@ msgstr "Подія"
 
 msgid "Events"
 msgstr "Події"
-
-msgid "Events and news"
-msgstr "Події і новини"
 
 msgid "Forgot your password?"
 msgstr "Забули свій пароль?"
@@ -948,7 +1390,7 @@ msgid "Select a location on the map"
 msgstr "Виберіть місце на мапі"
 
 msgid "Settings"
-msgstr "Настройки"
+msgstr "Налаштування"
 
 msgid "Someone needs help within a 5 km radius"
 msgstr "У радіусі 5 км комусь потрібна допомога"
@@ -992,6 +1434,9 @@ msgstr "Типи робіт для мотоциклів:"
 msgid "Upcoming events:"
 msgstr "Найближчі події:"
 
+msgid "Views:"
+msgstr "Перегляди:"
+
 msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
 msgstr "Ми відправили вам SMS з кодом на номер {phoneNumber}. Якщо повідомлення не прийшло, натисніть кнопку нижче для повторної відправки"
 
@@ -1013,6 +1458,9 @@ msgstr "Майстерня"
 msgid "Workshops"
 msgstr "Майстерні"
 
+msgid "Write"
+msgstr "Написати"
+
 msgid "You don't have {typeItem}."
 msgstr "У вас немає {typeItem}."
 
@@ -1021,6 +1469,9 @@ msgstr "Вам надіслано SMS!"
 
 msgid "You have entered the confirmation code incorrectly"
 msgstr "Ви невірно ввели код підтвердження"
+
+msgid "Your contact information"
+msgstr "Ваші контактні дані"
 
 msgid "Your location"
 msgstr "Ваше місцезнаходження"

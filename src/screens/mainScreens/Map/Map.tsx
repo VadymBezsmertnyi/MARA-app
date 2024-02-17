@@ -5,9 +5,9 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Platform, View, ViewStyle } from "react-native";
+import { Platform, Text, View, ViewStyle } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
-import { PROVIDER_GOOGLE } from "react-native-maps";
+import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
@@ -108,6 +108,15 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
         showsBuildings={false}
         showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
+        renderCluster={(cluster) => {
+          return (
+            <Marker coordinate={cluster.coordinate} onPress={() => {}}>
+              <View style={{ width: 50, height: 50, backgroundColor: "white" }}>
+                <Text>TEST</Text>
+              </View>
+            </Marker>
+          );
+        }}
       >
         <MeMarker />
         <SosMarker
@@ -121,24 +130,16 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
             event={firstEvent}
           />
         ) : null}
-        {workshops.map(
-          (
-            {
-              place: {
-                coordinates: { longitude, latitude },
-              },
-              title,
-            },
-            index
-          ) => (
+        {workshops.map(({ place: { coordinates }, title }, index) =>
+          coordinates ? (
             <WorkshopMarker
               key={`marker-workshop-${index + 1}`}
-              longitude={longitude}
-              latitude={latitude}
+              longitude={coordinates.longitude}
+              latitude={coordinates.latitude}
               markerSize={32}
               title={title}
             />
-          )
+          ) : null
         )}
         {listUsers.map((userId) => {
           const userLocation = usersGeolocation?.[userId]

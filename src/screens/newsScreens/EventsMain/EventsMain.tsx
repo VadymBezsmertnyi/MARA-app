@@ -12,6 +12,7 @@ import { eventsContext } from "../../../providers/EventsProvider/EventsProvider"
 // components
 import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
+import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
 
 // icons
 import { ArrowLongRight } from "../../../icons/components";
@@ -51,90 +52,106 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   const onToOldNewsList = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventsList, { isOld: true });
   };
+
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={styles.containerPart}>
-          <Text style={styles.titleType}>
-            <Trans>Upcoming events:</Trans>
-          </Text>
-          <View style={styles.containerEvents}>
+    <>
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.containerPart}>
+            <Text style={styles.titleType}>
+              <Trans>Upcoming events:</Trans>
+            </Text>
+            <View style={styles.containerEvents}>
+              {eventsWill.length ? (
+                eventsWill
+                  .slice(0, 3)
+                  .map((eventItem) => (
+                    <ItemListEvents
+                      key={`event-${eventItem.id}`}
+                      item={eventItem}
+                      navigation={navigation}
+                    />
+                  ))
+              ) : (
+                <View style={styles.containerNotList}>
+                  <ImageCache
+                    contentFit="contain"
+                    style={styles.imageNotElements}
+                    imageSrc={notEventsImage}
+                  />
+                  <Text style={styles.titleNotList}>
+                    <Trans>Sorry, there are no upcoming events</Trans>
+                  </Text>
+                </View>
+              )}
+            </View>
             {eventsWill.length ? (
-              eventsWill
-                .slice(0, 3)
-                .map((eventItem) => (
-                  <ItemListEvents
-                    key={`event-${eventItem.id}`}
-                    item={eventItem}
-                    navigation={navigation}
-                  />
-                ))
-            ) : (
-              <View style={styles.containerNotList}>
-                <ImageCache
-                  contentFit="contain"
-                  style={styles.imageNotElements}
-                  imageSrc={notEventsImage}
-                />
-                <Text style={styles.titleNotList}>
-                  <Trans>Sorry, there are no upcoming events</Trans>
+              <TouchableOpacity
+                style={styles.buttonMore}
+                onPress={onToEventsList}
+              >
+                <Text style={styles.titleButtonMore}>
+                  <Trans>More events</Trans>
                 </Text>
-              </View>
-            )}
+                <ArrowLongRight
+                  width={40}
+                  height={12}
+                  fill={colors.blueTufts}
+                />
+              </TouchableOpacity>
+            ) : null}
           </View>
-          {eventsWill.length ? (
-            <TouchableOpacity
-              style={styles.buttonMore}
-              onPress={onToEventsList}
-            >
-              <Text style={styles.titleButtonMore}>
-                <Trans>More events</Trans>
-              </Text>
-              <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
-            </TouchableOpacity>
-          ) : null}
-        </View>
-        <View style={styles.containerPart}>
-          <Text style={styles.titleType}>
-            <Trans>Past events:</Trans>
-          </Text>
-          <View style={styles.containerEvents}>
+          <View style={styles.containerPart}>
+            <Text style={styles.titleType}>
+              <Trans>Past events:</Trans>
+            </Text>
+            <View style={styles.containerEvents}>
+              {eventsOld.length ? (
+                eventsOld
+                  .slice(0, 3)
+                  .map((itemOld) => (
+                    <ItemListEvents
+                      key={`event-${itemOld.id}`}
+                      item={itemOld}
+                      navigation={navigation}
+                    />
+                  ))
+              ) : (
+                <View style={styles.containerNotList}>
+                  <ImageCache
+                    contentFit="contain"
+                    style={styles.imageNotElements}
+                    imageSrc={notNewsImage}
+                  />
+                  <Text style={styles.titleNotList}>
+                    <Trans>No events have passed</Trans>
+                  </Text>
+                </View>
+              )}
+            </View>
             {eventsOld.length ? (
-              eventsOld
-                .slice(0, 3)
-                .map((itemOld) => (
-                  <ItemListEvents
-                    key={`event-${itemOld.id}`}
-                    item={itemOld}
-                    navigation={navigation}
-                  />
-                ))
-            ) : (
-              <View style={styles.containerNotList}>
-                <ImageCache
-                  contentFit="contain"
-                  style={styles.imageNotElements}
-                  imageSrc={notNewsImage}
-                />
-                <Text style={styles.titleNotList}>
-                  <Trans>No events have passed</Trans>
+              <TouchableOpacity
+                style={styles.buttonMore}
+                onPress={onToOldNewsList}
+              >
+                <Text style={styles.titleButtonMore}>
+                  <Trans>More events</Trans>
                 </Text>
-              </View>
-            )}
+                <ArrowLongRight
+                  width={40}
+                  height={12}
+                  fill={colors.blueTufts}
+                />
+              </TouchableOpacity>
+            ) : null}
           </View>
-          {eventsOld.length ? (
-            <TouchableOpacity
-              style={styles.buttonMore}
-              onPress={onToOldNewsList}
-            >
-              <Text style={styles.titleButtonMore}>
-                <Trans>More events</Trans>
-              </Text>
-              <ArrowLongRight width={40} height={12} fill={colors.blueTufts} />
-            </TouchableOpacity>
-          ) : null}
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+      <AddEventButton
+        onPress={() => {
+          navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
+        }}
+      />
+    </>
   );
 };

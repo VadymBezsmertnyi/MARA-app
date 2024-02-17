@@ -26,22 +26,22 @@ const LocalesProvider: React.FC<Props> = ({ i18n, children }) => {
   const [language, setLanguage] = useState<Language>(defaultLanguageState);
   const { bug } = showErrors;
 
-  const getLanguageStorage = async () => {
-    try {
-      const language = await getDeviceLanguage();
-      await dynamicActivateLanguage(language, i18n);
-      setLanguage(language);
-    } catch (error) {
-      bug(error);
-    }
-  };
-
   const setLanguageAsync = async (language: Language): Promise<void> => {
     try {
       await dynamicActivateLanguage(language, i18n);
       await setDeviceStorage(languageKey, language);
       setLanguage(language);
-    } catch (error) {
+    } catch (error: any) {
+      bug(error);
+    }
+  };
+
+  const getLanguageStorage = async () => {
+    try {
+      const language = await getDeviceLanguage();
+      await setLanguageAsync(language);
+      setLanguage(language);
+    } catch (error: any) {
       bug(error);
     }
   };

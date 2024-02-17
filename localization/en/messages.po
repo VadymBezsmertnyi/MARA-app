@@ -14,6 +14,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Add a photo"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "The first photo will be on the cover of the advertisement."
+
+#. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
@@ -82,8 +90,344 @@ msgid "Back"
 msgstr "Back"
 
 #. js-lingui-explicit-id
+msgid "The price of the item"
+msgstr "The price of the item"
+
+#. js-lingui-explicit-id
 msgid "Confirm"
 msgstr "Confirm"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle transport"
+msgstr "Motorcycle transport"
+
+#. js-lingui-explicit-id
+msgid "Car transport"
+msgstr "Car transport"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle parts"
+msgstr "Motorcycle parts"
+
+#. js-lingui-explicit-id
+msgid "Car parts"
+msgstr "Car parts"
+
+#. js-lingui-explicit-id
+msgid "Gasoline"
+msgstr "Gasoline"
+
+#. js-lingui-explicit-id
+msgid "Diesel"
+msgstr "Diesel"
+
+#. js-lingui-explicit-id
+msgid "Gas / Petrol"
+msgstr "Gas / Petrol"
+
+#. js-lingui-explicit-id
+msgid "Electric"
+msgstr "Electric"
+
+#. js-lingui-explicit-id
+msgid "Hybrid"
+msgstr "Hybrid"
+
+#. js-lingui-explicit-id
+msgid "Other"
+msgstr "Other"
+
+#. js-lingui-explicit-id
+msgid "Manual"
+msgstr "Manual"
+
+#. js-lingui-explicit-id
+msgid "Automatic"
+msgstr "Automatic"
+
+#. js-lingui-explicit-id
+msgid "Continuously variable transmission (CVT)"
+msgstr "Continuously variable transmission (CVT)"
+
+#. js-lingui-explicit-id
+msgid "Adaptive"
+msgstr "Adaptive"
+
+#. js-lingui-explicit-id
+msgid "Tiptronic"
+msgstr "Tiptronic"
+
+#. js-lingui-explicit-id
+msgid "Batteries"
+msgstr "Batteries"
+
+#. js-lingui-explicit-id
+msgid "Shock absorbers and suspension"
+msgstr "Shock absorbers and suspension"
+
+#. js-lingui-explicit-id
+msgid "Variators and reducers"
+msgstr "Variators and reducers"
+
+#. js-lingui-explicit-id
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Exhaust systems, straight pipes, mufflers"
+
+#. js-lingui-explicit-id
+msgid "Engine parts"
+msgstr "Engine parts"
+
+#. js-lingui-explicit-id
+msgid "Gearbox"
+msgstr "Gearbox"
+
+#. js-lingui-explicit-id
+msgid "Footrests and pedals"
+msgstr "Footrests and pedals"
+
+#. js-lingui-explicit-id
+msgid "Lighting and lamps"
+msgstr "Lighting and lamps"
+
+#. js-lingui-explicit-id
+msgid "Bearings"
+msgstr "Bearings"
+
+#. js-lingui-explicit-id
+msgid "Drive and chassis"
+msgstr "Drive and chassis"
+
+#. js-lingui-explicit-id
+msgid "Frame, brackets, and swingarms"
+msgstr "Frame, brackets, and swingarms"
+
+#. js-lingui-explicit-id
+msgid "Handlebars and controls"
+msgstr "Handlebars and controls"
+
+#. js-lingui-explicit-id
+msgid "Seat"
+msgstr "Seat"
+
+#. js-lingui-explicit-id
+msgid "Cooling system"
+msgstr "Cooling system"
+
+#. js-lingui-explicit-id
+msgid "Clutch"
+msgstr "Clutch"
+
+#. js-lingui-explicit-id
+msgid "Fuel system"
+msgstr "Fuel system"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Brake system"
+
+#. js-lingui-explicit-id
+msgid "Cables and hoses"
+msgstr "Cables and hoses"
+
+#. js-lingui-explicit-id
+msgid "Filters"
+msgstr "Filters"
+
+#. js-lingui-explicit-id
+msgid "Chains and sprockets"
+msgstr "Chains and sprockets"
+
+#. js-lingui-explicit-id
+msgid "Electrical system"
+msgstr "Electrical system"
+
+#. js-lingui-explicit-id
+msgid "Other motorcycle parts"
+msgstr "Other motorcycle parts"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Engine"
+
+#. js-lingui-explicit-id
+msgid "Exhaust system"
+msgstr "Exhaust system"
+
+#. js-lingui-explicit-id
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Transmission / Manual and Automatic Transmission"
+
+#. js-lingui-explicit-id
+msgid "Steering system"
+msgstr "Steering system"
+
+#. js-lingui-explicit-id
+msgid "Suspension / Chassis"
+msgstr "Suspension / Chassis"
+
+#. js-lingui-explicit-id
+msgid "Body parts"
+msgstr "Body parts"
+
+#. js-lingui-explicit-id
+msgid "Interior details"
+msgstr "Interior details"
+
+#. js-lingui-explicit-id
+msgid "Air conditioning, heater, ventilation"
+msgstr "Air conditioning, heater, ventilation"
+
+#. js-lingui-explicit-id
+msgid "Air intake system"
+msgstr "Air intake system"
+
+#. js-lingui-explicit-id
+msgid "Ignition system"
+msgstr "Ignition system"
+
+#. js-lingui-explicit-id
+msgid "Window and headlight cleaning system"
+msgstr "Window and headlight cleaning system"
+
+#. js-lingui-explicit-id
+msgid "Headlights and lighting"
+msgstr "Headlights and lighting"
+
+#. js-lingui-explicit-id
+msgid "Electrical equipment"
+msgstr "Electrical equipment"
+
+#. js-lingui-explicit-id
+msgid "Automotive glass"
+msgstr "Automotive glass"
+
+#. js-lingui-explicit-id
+msgid "Liquefied gas system"
+msgstr "Liquefied gas system"
+
+#. js-lingui-explicit-id
+msgid "Other types of spare parts"
+msgstr "Other types of spare parts"
+
+#. js-lingui-explicit-id
+msgid "Name of the {otherName}"
+msgstr "Name of the {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of {min} and a maximum of {max} characters."
+msgstr "The text must contain a minimum of {min} and a maximum of {max} characters."
+
+#. js-lingui-explicit-id
+msgid "The place of the {otherName}"
+msgstr "The place of the {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The location of the {otherName} must be selected."
+msgstr "The location of the {otherName} must be selected."
+
+#. js-lingui-explicit-id
+msgid "Date of the {otherName}"
+msgstr "Date of the {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "The end date must be greater than the start date."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the {otherName}"
+msgstr "Tell us about the {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Description of the {otherName}"
+msgstr "Description of the {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Phone number the {otherName}"
+msgstr "Phone number the {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Please enter phone number"
+
+#. js-lingui-explicit-id
+msgid "Types of {otherName} jobs"
+msgstr "Types of {otherName} jobs"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Please select at least one type"
+
+#. js-lingui-explicit-id
+msgid "Price {otherName}"
+msgstr "Price {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter price for {otherName}"
+msgstr "Please enter price for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Category {otherName}"
+msgstr "Category {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter category for {otherName}"
+msgstr "Please enter category for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Brand {otherName}"
+msgstr "Brand {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter brand for {otherName}"
+msgstr "Please enter brand for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Mileage {otherName}"
+msgstr "Mileage {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter mileage for {otherName}"
+msgstr "Please enter mileage for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Year release {otherName}"
+msgstr "Year release {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter year minimum of {min} and a maximum of {max} for {otherName}"
+msgstr "Please enter year minimum of {min} and a maximum of {max} for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type fuel {otherName}"
+msgstr "Type fuel {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type fuel for {otherName}"
+msgstr "Please enter type fuel for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type transmission {otherName}"
+msgstr "Type transmission {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type transmission for {otherName}"
+msgstr "Please enter type transmission for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type parts {otherName}"
+msgstr "Type parts {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type parts for {otherName}"
+msgstr "Please enter type parts for {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Incorrectly entered data"
+
+#. js-lingui-explicit-id
+msgid "advert"
+msgstr "advert"
 
 #. js-lingui-explicit-id
 msgid "Create event"
@@ -242,10 +586,6 @@ msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and a
 msgstr "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
 
 #. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Engine"
-
-#. js-lingui-explicit-id
 msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
 msgstr "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
 
@@ -256,10 +596,6 @@ msgstr "Electrics"
 #. js-lingui-explicit-id
 msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
 msgstr "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-
-#. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Brake system"
 
 #. js-lingui-explicit-id
 msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
@@ -310,40 +646,184 @@ msgid "Privacy policy"
 msgstr "Privacy policy"
 
 #. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Name of the event"
+msgid "Brand/Make"
+msgstr "Brand/Make"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 5 and a maximum of 20 characters."
-msgstr "The text must contain a minimum of 5 and a maximum of 20 characters."
+msgid "Mileage, km:"
+msgstr "Mileage, km:"
 
 #. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "The place of the event"
+msgid "Year of release:"
+msgstr "Year of release:"
 
 #. js-lingui-explicit-id
-msgid "The location of the event must be selected."
-msgstr "The location of the event must be selected."
+msgid "Cleared:"
+msgstr "Cleared:"
 
 #. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Date of the event"
+msgid "Type fuel"
+msgstr "Type fuel"
 
 #. js-lingui-explicit-id
-msgid "The end date must be greater than the start date."
-msgstr "The end date must be greater than the start date."
+msgid "Transmission gearbox"
+msgstr "Transmission gearbox"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Tell us about the event"
+msgid "Category"
+msgstr "Category"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 20 and a maximum of 2000 characters."
-msgstr "The text must contain a minimum of 20 and a maximum of 2000 characters."
+msgid "motorcycle brand"
+msgstr "motorcycle brand"
 
 #. js-lingui-explicit-id
-msgid "Incorrectly entered data"
-msgstr "Incorrectly entered data"
+msgid "Car's make"
+msgstr "Car's make"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Type of fuel"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Type of transmission"
+
+#. js-lingui-explicit-id
+msgid "Product created successfully"
+msgstr "Product created successfully"
+
+#. js-lingui-explicit-id
+msgid "Error creating product"
+msgstr "Error creating product"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Add advert"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the advert"
+msgstr "Enter the name of the advert"
+
+#. js-lingui-explicit-id
+msgid "Advert name"
+msgstr "Advert name"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "New"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Used"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "The state of the goods:"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Private individual"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Business"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Seller:"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Location"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Choose a city"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the product"
+msgstr "Add a description about the product"
+
+#. js-lingui-explicit-id
+msgid "Product description"
+msgstr "Product description"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "Your telegram"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Phone number*:"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Publish"
+
+#. js-lingui-explicit-id
+msgid "Brand"
+msgstr "Brand"
+
+#. js-lingui-explicit-id
+msgid "Condition"
+msgstr "Condition"
+
+#. js-lingui-explicit-id
+msgid "Seller"
+msgstr "Seller"
+
+#. js-lingui-explicit-id
+msgid "Mileage"
+msgstr "Mileage"
+
+#. js-lingui-explicit-id
+msgid "{mileage} km"
+msgstr "{mileage} km"
+
+#. js-lingui-explicit-id
+msgid "Year of manufacture"
+msgstr "Year of manufacture"
+
+#. js-lingui-explicit-id
+msgid "{yearRelease} km"
+msgstr "{yearRelease} km"
+
+#. js-lingui-explicit-id
+msgid "Customs cleared"
+msgstr "Customs cleared"
+
+#. js-lingui-explicit-id
+msgid "Fuel type"
+msgstr "Fuel type"
+
+#. js-lingui-explicit-id
+msgid "Transmission"
+msgstr "Transmission"
+
+#. js-lingui-explicit-id
+msgid "Type parts"
+msgstr "Type parts"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "grn"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Market"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Enter the name"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "event"
 
 #. js-lingui-explicit-id
 msgid "You can create an event"
@@ -354,8 +834,20 @@ msgid "Enter the name of the event"
 msgstr "Enter the name of the event"
 
 #. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Name of the event"
+
+#. js-lingui-explicit-id
 msgid "Enter the address"
 msgstr "Enter the address"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "The place of the event"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Date of the event"
 
 #. js-lingui-explicit-id
 msgid "The beginning"
@@ -380,10 +872,6 @@ msgstr "Briefly describe what will happen"
 #. js-lingui-explicit-id
 msgid "Tell us about the event:"
 msgstr "Tell us about the event:"
-
-#. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Add a photo"
 
 #. js-lingui-explicit-id
 msgid "Event address"
@@ -458,12 +946,8 @@ msgid "events"
 msgstr "events"
 
 #. js-lingui-explicit-id
-msgid "My ads"
-msgstr "My ads"
-
-#. js-lingui-explicit-id
-msgid "Add ad"
-msgstr "Add ad"
+msgid "My adverts"
+msgstr "My adverts"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
@@ -514,46 +998,6 @@ msgid "workshops"
 msgstr "workshops"
 
 #. js-lingui-explicit-id
-msgid "Name of the workshop"
-msgstr "Name of the workshop"
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 5 and a maximum of 40 characters."
-msgstr "The text must contain a minimum of 5 and a maximum of 40 characters."
-
-#. js-lingui-explicit-id
-msgid "The place of the workshop"
-msgstr "The place of the workshop"
-
-#. js-lingui-explicit-id
-msgid "The location of the workshop must be selected."
-msgstr "The location of the workshop must be selected."
-
-#. js-lingui-explicit-id
-msgid "Description of the workshop"
-msgstr "Description of the workshop"
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 200 and a maximum of 9000 characters."
-msgstr "The text must contain a minimum of 200 and a maximum of 9000 characters."
-
-#. js-lingui-explicit-id
-msgid "Phone number the workshop"
-msgstr "Phone number the workshop"
-
-#. js-lingui-explicit-id
-msgid "Please enter phone number"
-msgstr "Please enter phone number"
-
-#. js-lingui-explicit-id
-msgid "Types of workshop jobs"
-msgstr "Types of workshop jobs"
-
-#. js-lingui-explicit-id
-msgid "Please select at least one type"
-msgstr "Please select at least one type"
-
-#. js-lingui-explicit-id
 msgid "Not information"
 msgstr "Not information"
 
@@ -576,6 +1020,10 @@ msgstr "Repair of motorcycles"
 #. js-lingui-explicit-id
 msgid "Repair of automobiles"
 msgstr "Repair of automobiles"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "workshop"
 
 #. js-lingui-explicit-id
 msgid "Workshop change successfully"
@@ -614,10 +1062,6 @@ msgid "Workshop description"
 msgstr "Workshop description"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Phone number*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Type workshop"
 
@@ -632,14 +1076,6 @@ msgstr "Types of work"
 #. js-lingui-explicit-id
 msgid "Select types of work"
 msgstr "Select types of work"
-
-#. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "The first photo will be on the cover of the advertisement."
-
-#. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Publish"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -710,6 +1146,9 @@ msgstr "Access denied"
 msgid "Add event"
 msgstr "Add event"
 
+msgid "Add product"
+msgstr "Add product"
+
 msgid "Add workshop"
 msgstr "Add workshop"
 
@@ -767,6 +1206,9 @@ msgstr "By number of comments:"
 msgid "By rating:"
 msgstr "By rating:"
 
+msgid "Call"
+msgstr "Call"
+
 msgid "Continue"
 msgstr "Continue"
 
@@ -781,6 +1223,9 @@ msgstr "Dark theme"
 
 msgid "Delete"
 msgstr "Delete"
+
+msgid "Description"
+msgstr "Description"
 
 msgid "Distance, km:"
 msgstr "Distance, km:"
@@ -811,9 +1256,6 @@ msgstr "Event"
 
 msgid "Events"
 msgstr "Events"
-
-msgid "Events and news"
-msgstr "Events and news"
 
 msgid "Forgot your password?"
 msgstr "Forgot your password?"
@@ -992,6 +1434,9 @@ msgstr "Types of work for motorcycle transport:"
 msgid "Upcoming events:"
 msgstr "Upcoming events:"
 
+msgid "Views:"
+msgstr "Views:"
+
 msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
 msgstr "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
 
@@ -1013,6 +1458,9 @@ msgstr "Workshop"
 msgid "Workshops"
 msgstr "Workshops"
 
+msgid "Write"
+msgstr "Write"
+
 msgid "You don't have {typeItem}."
 msgstr "You don't have {typeItem}."
 
@@ -1021,6 +1469,9 @@ msgstr "You have been sent an SMS with a code."
 
 msgid "You have entered the confirmation code incorrectly"
 msgstr "You have entered the confirmation code incorrectly"
+
+msgid "Your contact information"
+msgstr "Your contact information"
 
 msgid "Your location"
 msgstr "Your location"
