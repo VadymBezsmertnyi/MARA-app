@@ -129,7 +129,9 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
             onLinkTo={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
             }}
-            onAdd={() => {}}
+            onAdd={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
+            }}
           />
           <View style={styles.lineEmpty} />
           <ItemMyList
