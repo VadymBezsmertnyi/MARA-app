@@ -10,6 +10,11 @@ import { Trans } from "@lingui/macro";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 import { CommonActions } from "@react-navigation/native";
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+// types
+import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { userContext } from "../../../providers/UserProvider/UserProvider";
@@ -21,9 +26,6 @@ import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { ItemMyList } from "./components/ItemMyList/ItemMyList";
-
-// helps
-import { useMainTabsNavigation } from "../../../navigators/Navigators.helps";
 
 // constants
 import {
@@ -37,8 +39,14 @@ import { IconProfileAvatar } from "../../../icons/components";
 // styles
 import { styles } from "./SettingsMain.styles";
 
-export const SettingsMain: FunctionComponent = () => {
-  const navigation = useMainTabsNavigation();
+type SettingsMainProps = {
+  navigation: NativeStackNavigationProp<RootAllScreensParamList> &
+    DrawerNavigationHelpers;
+};
+
+export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
+  navigation,
+}) => {
   const { userData, exitUser } = useContext(userContext);
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
@@ -119,7 +127,7 @@ export const SettingsMain: FunctionComponent = () => {
             title={i18n._("My adverts")}
             titleButton={i18n._("Add advert")}
             onLinkTo={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsAds);
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
             }}
             onAdd={() => {}}
           />

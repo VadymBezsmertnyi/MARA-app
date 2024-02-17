@@ -1,6 +1,11 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+// types
+import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -28,8 +33,14 @@ import notItemsImage from "../../../../assets/settingsScreen/notSettings.jpg";
 import { styles } from "./SettingsEvents.styles";
 import colors from "../../../../styles/colors";
 
-export const SettingsEvents: FunctionComponent = () => {
-  const navigation = useAllNavigation();
+type SettingsEventsProps = {
+  navigation: NativeStackNavigationProp<RootAllScreensParamList> &
+    DrawerNavigationHelpers;
+};
+
+export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
+  navigation,
+}) => {
   const { eventsUserList } = useContext(eventsContext);
   const { heightStatusBar } = useContext(themeContext);
   const { i18n } = useContext(localesContext);

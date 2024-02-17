@@ -39,7 +39,9 @@ export const PATHS_EVENTS_SCREENS = {
 
 export const PATHS_SETTINGS_SCREENS = {
   settingsMain: "settingsMain",
-  settingsAds: "settingsAds",
+  settingsProducts: "settingsProducts",
+  settingsProductAdd: "settingsProductAdd",
+  settingsProductChange: "settingsProductChange",
   settingsWorkshops: "settingsWorkshops",
   settingsWorkshopAdd: "settingsWorkshopAdd",
   settingsWorkshopChange: "settingsWorkshopChange",

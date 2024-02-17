@@ -1,6 +1,11 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+// types
+import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -11,9 +16,6 @@ import { workshopsContext } from "../../../providers/WorkshopsProvider/Workshops
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ItemSettingWorkshops } from "./components/ItemSettingWorkshops/ItemSettingWorkshops";
-
-// helps
-import { useAllNavigation } from "../../../navigators/Navigators.helps";
 
 // icons
 import { IconClose, IconPlus } from "../../../icons/components";
@@ -28,8 +30,14 @@ import notItemsImage from "../../../../assets/settingsScreen/notWorkshopsUsers.j
 import { styles } from "./SettingsWorkshops.styles";
 import colors from "../../../../styles/colors";
 
-export const SettingsWorkshops: FunctionComponent = () => {
-  const navigation = useAllNavigation();
+type SettingsWorkshopsProps = {
+  navigation: NativeStackNavigationProp<RootAllScreensParamList> &
+    DrawerNavigationHelpers;
+};
+
+export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
+  navigation,
+}) => {
   const { workshopsUser } = useContext(workshopsContext);
   const { heightStatusBar } = useContext(themeContext);
   const { i18n } = useContext(localesContext);

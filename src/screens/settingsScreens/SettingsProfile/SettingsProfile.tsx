@@ -17,6 +17,11 @@ import { CommonActions } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
 import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+// types
+import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { InputCityModal } from "../../../components/InputCityModal/InputCityModal";
@@ -37,7 +42,6 @@ import { ModalsSheet } from "../../../components/ModalsSheet/ModalsSheet";
 // helps
 import showErrors from "../../../helps/errors/showError";
 import { compressAndProcessImages } from "../../../helps/helps";
-import { useAllNavigation } from "../../../navigators/Navigators.helps";
 import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";
@@ -63,8 +67,14 @@ import {
 // styles
 import { styles } from "./SettingsProfile.styles";
 
-export const SettingsProfile: FunctionComponent = () => {
-  const navigation = useAllNavigation();
+type SettingsProfileProps = {
+  navigation: NativeStackNavigationProp<RootAllScreensParamList> &
+    DrawerNavigationHelpers;
+};
+
+export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
+  navigation,
+}) => {
   const { verifyPhone } = useAuthorizationRegistration();
   const { userData, editUser, exitUser, deleteUser, setIsChangeAvatar } =
     useContext(userContext);
