@@ -49,7 +49,7 @@ export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        onSelect(1);
+        onSelect(product.id);
       }}
     >
       {firstImage ? (

@@ -19,6 +19,9 @@ import { CustomSlider } from "../../../components/CustomSlider/CustomSlider";
 import { ItemDescriptions } from "./components/ItemDescriptions/ItemDescriptions";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 
+// helps
+import { useCategoriesMarket } from "../../../helps/useCategoriesMarket";
+
 // icons
 import {
   IconLocationMarkerGradient,
@@ -42,6 +45,14 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
   const { i18n } = useContext(localesContext);
   const { products } = useContext(marketContext);
   const { listCurrency } = useContext(paymentContext);
+  const {
+    getBrandMoto,
+    getBrandAuto,
+    getFuelType,
+    getTransmissionType,
+    getMotoPart,
+    getAutoPart,
+  } = useCategoriesMarket(i18n);
   const selectProduct = useMemo(
     () =>
       products.find((product) => product.id === route.params?.productId) ||
@@ -58,10 +69,14 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     }`;
   }, [selectProduct?.price]);
   const brand = useMemo(() => {
-    if (selectProduct?.autoParts) return selectProduct.autoParts.brand.name;
-    if (selectProduct?.motoParts) return selectProduct.motoParts.brand.name;
-    if (selectProduct?.auto) return selectProduct.auto.brand.name;
-    if (selectProduct?.moto) return selectProduct.moto.brand.name;
+    if (selectProduct?.autoParts)
+      return getBrandAuto(selectProduct.autoParts.brandId)?.name || "";
+    if (selectProduct?.motoParts)
+      return getBrandMoto(selectProduct.motoParts.brandId)?.name || "";
+    if (selectProduct?.auto)
+      return getBrandAuto(selectProduct.auto.brandId)?.name || "";
+    if (selectProduct?.moto)
+      return getBrandMoto(selectProduct.moto.brandId)?.name || "";
     return null;
   }, [selectProduct]);
   const mileage = useMemo(() => {
@@ -84,18 +99,28 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     return null;
   }, [selectProduct?.auto, selectProduct?.moto]);
   const typeFuel = useMemo(() => {
-    if (selectProduct?.auto) return selectProduct.auto.typeFuel.name;
-    if (selectProduct?.moto) return selectProduct.moto.typeFuel.name;
+    if (selectProduct?.auto)
+      return getFuelType(selectProduct.auto.typeFuelId)?.name || "";
+    if (selectProduct?.moto)
+      return getFuelType(selectProduct.moto.typeFuelId)?.name || "";
     return null;
   }, [selectProduct?.auto, selectProduct?.moto]);
   const typeTransmission = useMemo(() => {
-    if (selectProduct?.auto) return selectProduct.auto.typeTransmission.name;
-    if (selectProduct?.moto) return selectProduct.moto.typeTransmission.name;
+    if (selectProduct?.auto)
+      return (
+        getTransmissionType(selectProduct.auto.typeTransmissionId)?.name || ""
+      );
+    if (selectProduct?.moto)
+      return (
+        getTransmissionType(selectProduct.moto.typeTransmissionId)?.name || ""
+      );
     return null;
   }, [selectProduct?.auto, selectProduct?.moto]);
   const typeParts = useMemo(() => {
-    if (selectProduct?.autoParts) return selectProduct.autoParts.type.name;
-    if (selectProduct?.motoParts) return selectProduct.motoParts?.type.name;
+    if (selectProduct?.autoParts)
+      return getAutoPart(selectProduct.autoParts.typeId)?.name || "";
+    if (selectProduct?.motoParts)
+      return getMotoPart(selectProduct.motoParts?.typeId)?.name || "";
     return null;
   }, [selectProduct?.autoParts, selectProduct?.motoParts]);
 

@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Modal, ScrollView, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import dayjs from "dayjs";
@@ -44,6 +44,7 @@ import { ModalSheetCategories } from "./components/ModalSheetCategories/ModalShe
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { BodyCategory } from "./components/BodyCategory/BodyCategory";
 import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
+import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 // hooks
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -83,7 +84,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const { i18n } = useContext(localesContext);
   const { places } = useContext(placesContext);
   const { userData } = useContext(userContext);
-  const { productsUser, addProduct, changeProduct } = useContext(marketContext);
+  const { productsUser, addProduct, changeProduct, deleteProduct } =
+    useContext(marketContext);
   const { setLoading } = useContext(loadingContext);
   const { verifyPhone } = useAuthorizationRegistration();
   const {
@@ -112,6 +114,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const [isNew, setIsNew] = useState(false);
   const [isBusiness, setIsBusiness] = useState(false);
   const [isChange, setIsChange] = useState(false);
+  const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [images, setImages] = useState<ImageType[]>([]);
   const [typeModal, setTypeModal] = useState<TypeModalCategories | null>(null);
   const [select, setSelect] = useState<Record<
@@ -340,7 +343,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         setTelegram(productUser.telegram);
         setPhoneNumber(productUser.phoneNumber);
       }
-    }
+    } else if (userData?.phoneNumber) setPhoneNumber(userData.phoneNumber);
     setLoading(false);
   };
 
@@ -361,6 +364,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
       <View style={styles.container}>
         <Header
           title={productUser ? i18n._("Change advert") : i18n._("Add advert")}
+          onRightDelete={() => {
+            setIsShowDeleteModal(true);
+          }}
         />
         <ScrollView style={styles.body}>
           <Input
@@ -555,6 +561,19 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         }}
         errors={errorMessage}
       />
+      <Modal visible={isShowDeleteModal} transparent>
+        <ModalDelete
+          onClose={() => {
+            setIsShowDeleteModal(false);
+          }}
+          onSubmit={async () => {
+            if (productUser?.id) {
+              await deleteProduct(productUser.id, "user");
+              setIsShowDeleteModal(false);
+            }
+          }}
+        />
+      </Modal>
     </>
   );
 };
