@@ -210,12 +210,12 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           select.typeFuel &&
           select.typeTransmission
             ? {
-                brand: select.brandMoto,
+                brandId: select.brandMoto.id,
                 mileage: Number(mileage),
                 yearRelease: Number(yearRelease),
                 isCleared,
-                typeFuel: select.typeFuel,
-                typeTransmission: select.typeTransmission,
+                typeFuelId: select.typeFuel.id,
+                typeTransmissionId: select.typeTransmission.id,
               }
             : null,
         auto:
@@ -224,26 +224,26 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           select.typeFuel &&
           select.typeTransmission
             ? {
-                brand: select.brandAuto,
+                brandId: select.brandAuto.id,
                 mileage: Number(mileage),
                 yearRelease: Number(yearRelease),
                 isCleared,
-                typeFuel: select.typeFuel,
-                typeTransmission: select.typeTransmission,
+                typeFuelId: select.typeFuel.id,
+                typeTransmissionId: select.typeTransmission.id,
               }
             : null,
         motoParts:
           select?.category?.id === 3 && select.brandMoto && select.motoParts
             ? {
-                brand: select.brandMoto,
-                type: select.motoParts,
+                brandId: select.brandMoto.id,
+                typeId: select.motoParts.id,
               }
             : null,
         autoParts:
           select?.category?.id === 4 && select.brandAuto && select.autoParts
             ? {
-                brand: select.brandAuto,
-                type: select.autoParts,
+                brandId: select.brandAuto.id,
+                typeId: select.autoParts.id,
               }
             : null,
         updateAT: dayjs().valueOf(),
@@ -306,20 +306,20 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         setSelect({
           category: getCategoryFull(),
           brandMoto: getBrandMoto(
-            productUser.moto?.brand.id || productUser.motoParts?.brand.id
+            productUser.moto?.brandId || productUser.motoParts?.brandId
           ),
           brandAuto: getBrandAuto(
-            productUser.auto?.brand.id || productUser.autoParts?.brand.id
+            productUser.auto?.brandId || productUser.autoParts?.brandId
           ),
           typeFuel: getFuelType(
-            productUser.auto?.typeFuel.id || productUser.moto?.typeFuel.id
+            productUser.auto?.typeFuelId || productUser.moto?.typeFuelId
           ),
           typeTransmission: getTransmissionType(
-            productUser.auto?.typeTransmission.id ||
-              productUser.moto?.typeTransmission.id
+            productUser.auto?.typeTransmissionId ||
+              productUser.moto?.typeTransmissionId
           ),
-          motoParts: getMotoPart(productUser.motoParts?.type.id),
-          autoParts: getAutoPart(productUser.autoParts?.type.id),
+          motoParts: getMotoPart(productUser.motoParts?.typeId),
+          autoParts: getAutoPart(productUser.autoParts?.typeId),
         });
         setMileage(
           productUser.auto?.mileage.toString() ||
@@ -523,6 +523,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         </ScrollView>
       </View>
       <ModalSheetPlace
+        place={place || productUser?.place}
         isExactLocation={isBusiness}
         isOpen={isShowSelectPlace}
         title={i18n._("Location")}

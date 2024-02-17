@@ -51,6 +51,7 @@ const DEFAULT_LOCATION = {
 };
 
 type ModalSheetPlaceProps = {
+  place?: PlaceType | null;
   isOpen: boolean;
   title: string;
   onClose: () => void;
@@ -62,6 +63,7 @@ type StepModal = "country" | "region" | "address" | "coordinate";
 const STEPS: StepModal[] = ["country", "region", "address", "coordinate"];
 
 export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
+  place = null,
   isOpen,
   title,
   onClose,
@@ -277,6 +279,20 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
     setCoordinates(null);
     setAddress("");
   }, [isExactLocation]);
+
+  useEffect(() => {
+    if (place) {
+      const countryIso =
+        showCountry.find(
+          (countryIso) => places?.[countryIso].id === place.countryId
+        ) || null;
+      setSelectCountryIso(countryIso);
+      setSelectRegionId(place.regionPlaceId);
+      setCity(place.city);
+      setAddress(place.address);
+      setCoordinates(place.coordinates);
+    }
+  }, [place]);
 
   return (
     <Modal visible={isOpen} transparent>

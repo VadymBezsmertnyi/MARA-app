@@ -61,14 +61,14 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
         isShow: true,
         regions: regionsPL,
       },
-      lt: {
+      bl: {
         id: 3,
         title: i18n._("Belarus"),
         isShow: false,
         regions: regionsBY,
       },
-      bl: {
-        id: 1,
+      lt: {
+        id: 4,
         title: i18n._("Lithuania"),
         isShow: true,
         regions: regionsLT,

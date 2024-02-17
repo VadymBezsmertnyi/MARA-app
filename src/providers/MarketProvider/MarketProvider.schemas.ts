@@ -9,17 +9,17 @@ export const infoCategorySchema = z.object({
 });
 
 export const transportSchema = z.object({
-  brand: infoCategorySchema,
+  brandId: z.number(),
   mileage: z.number(),
   yearRelease: z.number(),
   isCleared: z.boolean(),
-  typeFuel: infoCategorySchema,
-  typeTransmission: infoCategorySchema,
+  typeFuelId: z.number(),
+  typeTransmissionId: z.number(),
 });
 
 export const partsSchema = z.object({
-  brand: infoCategorySchema,
-  type: infoCategorySchema,
+  brandId: z.number(),
+  typeId: z.number(),
 });
 
 export const productSchema = z.object({
