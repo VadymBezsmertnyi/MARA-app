@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import { Text, View } from "react-native";
+import { Platform, Text, View } from "react-native";
 import { ImageBackground } from "expo-image";
 import { BlurView } from "expo-blur";
 import { Trans } from "@lingui/macro";
@@ -55,28 +55,34 @@ export const Welcome: FunctionComponent = () => {
 
   return (
     <ImageBackground style={styles.container} source={imageSplash}>
-      <BlurView intensity={8} style={containerStyles}>
-        <View style={styles.containerLanguage}>
-          <ChangeLanguage />
-        </View>
-        <View style={styles.containerLogo}>
-          <Logo />
-        </View>
-        <View style={styles.containerTitles}>
-          <Text style={styles.title}>
-            <Trans>Hello!</Trans>
-          </Text>
-          <Text style={styles.subTitle}>
-            <Trans>We're glad to see you on our service.</Trans>
-          </Text>
-          <Text style={styles.subTitle}>
-            <Trans>Authorize using:</Trans>
-          </Text>
-          <Socials
-            styleContainer={styles.containerSocials}
-            onChangeGoogle={onSelectGoogle}
-            onChangeFacebook={onSelectFacebook}
-          />
+      <BlurView
+        intensity={Platform.OS === "ios" ? 15 : undefined}
+        blurReductionFactor={Platform.OS === "android" ? 25 : undefined}
+        style={styles.container}
+      >
+        <View style={containerStyles}>
+          <View style={styles.containerLanguage}>
+            <ChangeLanguage />
+          </View>
+          <View style={styles.containerLogo}>
+            <Logo />
+          </View>
+          <View style={styles.containerTitles}>
+            <Text style={styles.title}>
+              <Trans>Hello!</Trans>
+            </Text>
+            <Text style={styles.subTitle}>
+              <Trans>We're glad to see you on our service.</Trans>
+            </Text>
+            <Text style={styles.subTitle}>
+              <Trans>Authorize using:</Trans>
+            </Text>
+            <Socials
+              styleContainer={styles.containerSocials}
+              onChangeGoogle={onSelectGoogle}
+              onChangeFacebook={onSelectFacebook}
+            />
+          </View>
         </View>
       </BlurView>
     </ImageBackground>

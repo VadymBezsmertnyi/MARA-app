@@ -1,12 +1,5 @@
-import React, { FunctionComponent, useEffect, useMemo } from "react";
-import { View } from "react-native";
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withSequence,
-  withSpring,
-} from "react-native-reanimated";
+import React, { FunctionComponent, useEffect, useMemo, useRef } from "react";
+import { View, Animated, Easing } from "react-native";
 
 // icons
 import { IconLoaderIn, IconLoaderOut } from "../../../../icons/components";
@@ -15,29 +8,50 @@ import { IconLoaderIn, IconLoaderOut } from "../../../../icons/components";
 import { styles } from "./Loader.styles";
 
 export const Loader: FunctionComponent = () => {
-  const rotationValue = useSharedValue(0);
+  const rotationValue = useRef(new Animated.Value(0)).current;
+
+  const rotateOut = rotationValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["0deg", "360deg"],
+  });
+
+  const rotateIn = rotationValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["0deg", "-360deg"],
+  });
+
+  const startAnimation = () => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(rotationValue, {
+          toValue: 1,
+          duration: 1000,
+          easing: Easing.linear,
+          useNativeDriver: true,
+        }),
+        Animated.timing(rotationValue, {
+          toValue: 0,
+          duration: 1000,
+          easing: Easing.linear,
+          useNativeDriver: true,
+        }),
+      ]),
+      { iterations: -1 }
+    ).start();
+  };
+
+  const stylesIconOut = useMemo(
+    () => [{ transform: [{ rotate: rotateOut }] }],
+    []
+  );
+  const stylesIconIn = useMemo(
+    () => [styles.iconIn, { transform: [{ rotate: rotateIn }] }],
+    []
+  );
 
   useEffect(() => {
-    // Опціонально, можна додати анімаційні ефекти
-    rotationValue.value = withRepeat(
-      withSequence(
-        withSpring(1, { damping: 2, stiffness: 8 }), // Анімація в одному напрямку
-        withSpring(-1, { damping: 2, stiffness: 8 }) // Анімація в іншому напрямку
-      ),
-      -1 // Безкінечно повторюємо анімацію
-    );
+    startAnimation();
   }, []);
-
-  const animatedStyleOut = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${rotationValue.value * 360}deg` }],
-  }));
-
-  const animatedStyleIn = useAnimatedStyle(() => ({
-    transform: [{ rotate: `-${rotationValue.value * 360}deg` }],
-  }));
-
-  const stylesIconOut = useMemo(() => [animatedStyleOut], []);
-  const stylesIconIn = useMemo(() => [styles.iconIn, animatedStyleIn], []);
 
   return (
     <View style={styles.container}>

@@ -73,6 +73,7 @@ export const expo = {
       "READ_EXTERNAL_STORAGE",
       "WRITE_EXTERNAL_STORAGE",
       "USE_BIOMETRIC",
+      "USE_FINGERPRINT",
       "INTERNET",
       "ACCESS_NETWORK_STATE",
       "GET_ACCOUNTS",

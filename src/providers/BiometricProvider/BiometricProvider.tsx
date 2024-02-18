@@ -8,7 +8,6 @@ import React, {
 } from "react";
 import { Platform } from "react-native";
 import * as LocalAuthentication from "expo-local-authentication";
-import { t } from "@lingui/macro";
 
 // types
 import {
@@ -77,7 +76,7 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
         setAuthenticationType(authenticationTypes);
       }
     } catch (error) {
-      console.log("error", error);
+      console.log("error-getBiometricTypes", error);
     } finally {
       setLoading(false);
     }
@@ -89,7 +88,7 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
       if (hasHardware) {
         await LocalAuthentication.isEnrolledAsync();
         const { success } = await LocalAuthentication.authenticateAsync({
-          promptMessage: t(i18n)`Please authenticator`,
+          promptMessage: i18n._(`Please authenticator`),
         });
         return success;
       }
@@ -100,14 +99,14 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
     }
   };
 
-  useEffect(() => {
-    getBiometricTypes();
-  }, []);
-
   const contextValue: BiometricContextType = useMemo(
     () => ({ isFaceId, isTouchId, isIrisId, checkBiometric }),
     [isFaceId, isTouchId, isIrisId]
   );
+
+  useEffect(() => {
+    getBiometricTypes();
+  }, []);
 
   return (
     <biometricAuthenticatorContext.Provider value={contextValue}>

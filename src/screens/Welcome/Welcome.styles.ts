@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
@@ -7,7 +7,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: colors.grayBlur,
+    backgroundColor:
+      Platform.OS === "ios" ? colors.white70 : colors.whiteTransparentFifteen,
     paddingBottom: 74,
     paddingHorizontal: 15,
   },
