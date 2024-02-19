@@ -14,9 +14,6 @@ import { RegistrationStack } from "./registrationStack/registrationStack";
 import { Welcome } from "../screens/Welcome/Welcome";
 import { Splash } from "../screens/Splash/Splash";
 
-// registration
-import { ForgetStack } from "./forgetStack/forgetStack";
-
 // main stack
 import { MenuDrawer } from "./MenuDrawer/MenuDrawer";
 
@@ -47,14 +44,6 @@ export const useNavigators = () => {
       component: RegistrationStack,
       headerShown: false,
       gestureEnabled: false,
-    },
-    {
-      id: "forget",
-      name: PATHS_MAIN_SCREENS.forget,
-      title: t(i18n)`Password`,
-      component: ForgetStack,
-      headerShown: false,
-      gestureEnabled: true,
     },
     {
       id: "main",

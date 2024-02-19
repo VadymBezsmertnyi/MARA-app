@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
     gap: 40,
   },
+  containerHeader: { justifyContent: "center" },
   title: {
     fontFamily: "Montserrat_700Bold",
     fontSize: 28,

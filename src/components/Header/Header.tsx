@@ -33,6 +33,9 @@ type HeaderStackProps = {
   onPressLeftElement?: () => void;
   backgroundStyle?: StyleProp<ViewStyle>;
   onRightDelete?: () => void;
+  isShowLeft?: boolean;
+  isShowRight?: boolean;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
 export const Header: FunctionComponent<HeaderStackProps> = ({
@@ -42,6 +45,9 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   onPressLeftElement,
   backgroundStyle,
   onRightDelete,
+  isShowLeft = true,
+  isShowRight = true,
+  containerStyle,
 }) => {
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
@@ -50,6 +56,11 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   const backgroundStyles = useMemo(
     () => [styles.background, backgroundStyle],
     [backgroundStyle]
+  );
+
+  const containerStyles = useMemo(
+    () => [styles.container, containerStyle],
+    [containerStyle]
   );
 
   const backTitleStyle = useMemo(
@@ -67,20 +78,22 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
 
   return (
     <SafeAreaView style={backgroundStyles}>
-      <View style={styles.container}>
-        <TouchableOpacity onPress={onBack} style={styles.containerButtonBack}>
-          {leftElement || (
-            <>
-              <ArrowLeft
-                width={24}
-                height={24}
-                stroke={theme === THEME_DARK ? colors.white : colors.black}
-                style={styles.iconButtonBack}
-              />
-              <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
-            </>
-          )}
-        </TouchableOpacity>
+      <View style={containerStyles}>
+        {isShowLeft ? (
+          <TouchableOpacity onPress={onBack} style={styles.containerButtonBack}>
+            {leftElement || (
+              <>
+                <ArrowLeft
+                  width={24}
+                  height={24}
+                  stroke={theme === THEME_DARK ? colors.white : colors.black}
+                  style={styles.iconButtonBack}
+                />
+                <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
+              </>
+            )}
+          </TouchableOpacity>
+        ) : null}
 
         <Text style={styles.title}>{title}</Text>
         {onRightDelete ? (
@@ -89,9 +102,9 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
               <Trans>Delete</Trans>
             </Text>
           </TouchableOpacity>
-        ) : (
+        ) : isShowRight ? (
           <View style={styles.wrapper}>{rightElement && rightElement}</View>
-        )}
+        ) : null}
       </View>
     </SafeAreaView>
   );

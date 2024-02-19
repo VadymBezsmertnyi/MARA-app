@@ -1,13 +1,14 @@
-import React, { ReactElement, useContext, useMemo } from "react";
+import React, { ReactElement, useContext, useMemo, useState } from "react";
 import {
   StyleProp,
   Text,
   TextStyle,
-  TouchableOpacity,
+  TouchableHighlight,
   View,
   ViewStyle,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { Shadow } from "react-native-shadow-2";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
@@ -30,6 +31,7 @@ type Props = {
   styleTitle?: StyleProp<TextStyle>;
   children?: ReactElement;
   colorsGradientProps?: [string, string];
+  onPressFocus?: (value: boolean) => void;
 };
 
 export const ButtonCustom = ({
@@ -43,8 +45,27 @@ export const ButtonCustom = ({
   styleTitle,
   children,
   colorsGradientProps,
+  onPressFocus,
 }: Props) => {
+  const [isFocus, setIsFocus] = useState(false);
   const { theme } = useContext(themeContext);
+  const sidesShadow = useMemo(
+    () => ({ bottom: true, top: false, start: false, end: false }),
+    []
+  );
+  const cornersShadow = useMemo(
+    () => ({
+      topStart: false,
+      topEnd: false,
+      bottomEnd: true,
+      bottomStart: true,
+    }),
+    []
+  );
+  const offsetShadow: [x: string | number, y: string | number] = useMemo(
+    () => [0, 0],
+    []
+  );
   const styleContainerState = useMemo(
     () => [styles.container, styleContainer],
     [styleContainer]
@@ -67,22 +88,41 @@ export const ButtonCustom = ({
       styles.buttonSubmitText,
       type !== "full" ? styles.transparent : null,
       styleTitle,
+      isFocus && { color: colors.white },
     ],
-    [type, styleTitle]
+    [type, styleTitle, isFocus]
   );
-  const colorsGradient = useMemo(
-    () =>
-      colorsGradientProps
-        ? colorsGradientProps
-        : [colors.californiaOrange, colors.blazeOrange],
-    [colorsGradientProps]
+  const colorsGradient = useMemo(() => {
+    if (colorsGradientProps) return colorsGradientProps;
+    if (isFocus) return [colors.chileanFireOrange, colors.chileanFireOrange];
+    return [colors.californiaOrange, colors.blazeOrange];
+  }, [colorsGradientProps, isFocus]);
+  const startGradient = useMemo(
+    () => (isFocus ? { x: 0, y: 0 } : { x: 0.9, y: 0.5 }),
+    [isFocus]
   );
-  const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
-  const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
-  const locationsGradient = useMemo(() => [0, 1], []);
+  const endGradient = useMemo(
+    () => (isFocus ? { x: 0, y: 0 } : { x: 0.1, y: 0.5 }),
+    [isFocus]
+  );
+  const locationsGradient = useMemo(
+    () => (isFocus ? [0, 0] : [0, 1]),
+    [isFocus]
+  );
 
   return (
     <View style={styleContainerState}>
+      <Shadow
+        stretch
+        disabled={type === "transparent" || disabled}
+        startColor={colors.shadowButton}
+        style={styles.styleShadow}
+        sides={sidesShadow}
+        corners={cornersShadow}
+        offset={offsetShadow}
+        distance={10}
+        containerStyle={styles.containerStyleShadow}
+      />
       <LinearGradient
         colors={colorsGradient}
         start={startGradient}
@@ -90,13 +130,22 @@ export const ButtonCustom = ({
         locations={locationsGradient}
         style={styleLinearGradient}
       >
-        <TouchableOpacity
+        <TouchableHighlight
           disabled={disabled}
           onPress={onSubmit}
           style={stylePressable}
+          underlayColor={colors.chileanFireOrange}
+          onPressIn={() => {
+            setIsFocus(true);
+            if (onPressFocus) onPressFocus(true);
+          }}
+          onPressOut={() => {
+            setIsFocus(false);
+            if (onPressFocus) onPressFocus(false);
+          }}
         >
           {children ? children : <Text style={styleText}>{title}</Text>}
-        </TouchableOpacity>
+        </TouchableHighlight>
       </LinearGradient>
     </View>
   );

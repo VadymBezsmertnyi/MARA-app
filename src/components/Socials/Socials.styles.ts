@@ -3,9 +3,7 @@ import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
   socialConnect: {
-    flex: 1,
     alignItems: "center",
-    marginVertical: 38,
     gap: 20,
   },
   titleSocialConnect: {
@@ -17,10 +15,7 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
   },
   itemSocialConnect: {
-    flex: 1,
     padding: 6,
-    paddingLeft: 52,
-    paddingRight: 53,
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
@@ -30,10 +25,14 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
   },
+  focusTitleSocialConnect: {
+    color: colors.white,
+  },
   colorWhite: {
     color: colors.white,
   },
   containerButtons: {
+    width: "100%",
     gap: 8,
   },
 });

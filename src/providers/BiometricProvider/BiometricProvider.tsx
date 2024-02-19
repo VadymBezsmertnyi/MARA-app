@@ -39,7 +39,7 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
   const [authenticationType, setAuthenticationType] = useState<number[] | null>(
     null
   );
-  const isGlobalOn = false;
+  const isGlobalOn = true;
 
   const isFaceId = useMemo(
     () =>

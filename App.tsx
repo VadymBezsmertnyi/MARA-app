@@ -6,6 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import { Settings } from "react-native-fbsdk-next";
 import {
   Montserrat_600SemiBold,
   Montserrat_700Bold,
@@ -57,6 +58,7 @@ GoogleSignin.configure({
 });
 
 SplashScreen.preventAutoHideAsync();
+Settings.initializeSDK();
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);

@@ -28,6 +28,7 @@ import { DEFAULT_COUNTRY } from "../../../constants/inputs.const";
 // styles
 import { styles } from "./RegistrationInfo.styles";
 import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
+import { Header } from "../../../components/Header/Header";
 
 export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();
@@ -75,6 +76,12 @@ export const RegistrationInfo: FunctionComponent = () => {
 
   return (
     <View style={styles.container}>
+      <Header
+        title={i18n._("Registration")}
+        isShowLeft={false}
+        isShowRight={false}
+        containerStyle={styles.containerHeader}
+      />
       <Text style={styles.title}>
         <Trans>We recommend filling out the profile information</Trans>
       </Text>

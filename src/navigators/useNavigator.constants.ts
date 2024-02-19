@@ -2,7 +2,6 @@ export const PATHS_MAIN_SCREENS = {
   splash: "splash",
   welcome: "welcome",
   registration: "registration",
-  forget: "forget",
   main: "main",
   mainMap: "mainMap",
 } as const;

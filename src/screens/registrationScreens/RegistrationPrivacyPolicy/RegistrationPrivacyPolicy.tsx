@@ -4,6 +4,10 @@ import { Trans } from "@lingui/macro";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
+import { localesContext } from "../../../../localization/localization.provider";
+
+// components
+import { Header } from "../../../components/Header/Header";
 
 // constants
 import { THEME_DARK } from "../../../providers/ThemeProvider/ThemeProvider.const";
@@ -12,6 +16,7 @@ import { THEME_DARK } from "../../../providers/ThemeProvider/ThemeProvider.const
 import { styles } from "./RegistrationPrivacyPolicy.styles";
 
 export const RegistrationPrivacyPolicy: FunctionComponent = () => {
+  const { i18n } = useContext(localesContext);
   const { theme } = useContext(themeContext);
 
   const firstTitleStyle = useMemo(
@@ -33,42 +38,44 @@ export const RegistrationPrivacyPolicy: FunctionComponent = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-        <View style={styles.containerTitle}>
-          <Text style={firstTitleStyle}>
-            <Trans>Privacy Policy</Trans>
-          </Text>
-          <Text style={secondTitleStyle}>
-            <Trans>
-              Privacy Policy is a legal statement that defines what a business
-              owner does with personal data collected from users, as well as how
-              this data is processed and for what purposes.
-            </Trans>
-          </Text>
-        </View>
-        <View style={styles.containerSubTitle}>
-          <Text style={firstSubTitleStyle}>
-            <Trans>
-              Privacy Policy is a legal statement that defines what a business
-              is.
-            </Trans>
-          </Text>
-          <Text style={secondSubTitleStyle}>
-            <Trans>
-              Privacy Policy is a legal statement that defines what a business
-              owner does with personal data collected from users, as well as how
-              this data is processed and for what purposes.
-            </Trans>
-          </Text>
-          <Text style={secondSubTitleStyle}>
-            <Trans>
-              In 1968, the Council of Europe conducted research into the
-              potential expansion of the Internet, as they were concerned about
-              the impact of technology on human rights. This led to the
-              development of policies aimed at protecting personal data.
-            </Trans>
-          </Text>
-        </View>
+      <Header
+        title={i18n._("Privacy Policy")}
+        isShowRight={false}
+        containerStyle={styles.containerHeader}
+      />
+      <View style={styles.containerTitle}>
+        <Text style={firstTitleStyle}>
+          <Trans>Privacy Policy</Trans>
+        </Text>
+        <Text style={secondTitleStyle}>
+          <Trans>
+            Privacy Policy is a legal statement that defines what a business
+            owner does with personal data collected from users, as well as how
+            this data is processed and for what purposes.
+          </Trans>
+        </Text>
+      </View>
+      <View style={styles.containerSubTitle}>
+        <Text style={firstSubTitleStyle}>
+          <Trans>
+            Privacy Policy is a legal statement that defines what a business is.
+          </Trans>
+        </Text>
+        <Text style={secondSubTitleStyle}>
+          <Trans>
+            Privacy Policy is a legal statement that defines what a business
+            owner does with personal data collected from users, as well as how
+            this data is processed and for what purposes.
+          </Trans>
+        </Text>
+        <Text style={secondSubTitleStyle}>
+          <Trans>
+            In 1968, the Council of Europe conducted research into the potential
+            expansion of the Internet, as they were concerned about the impact
+            of technology on human rights. This led to the development of
+            policies aimed at protecting personal data.
+          </Trans>
+        </Text>
       </View>
     </View>
   );

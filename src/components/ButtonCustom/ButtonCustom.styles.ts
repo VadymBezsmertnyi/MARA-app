@@ -3,7 +3,17 @@ import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: {
+    position: "relative",
     height: 52,
+  },
+  styleShadow: {
+    height: 40,
+  },
+  containerStyleShadow: {
+    position: "absolute",
+    width: "95%",
+    left: 10,
+    top: 10,
   },
   linearGradient: {
     width: "100%",

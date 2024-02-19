@@ -128,6 +128,7 @@ export const RegistrationLocation: FunctionComponent = () => {
       </View>
       <Modal visible={isShowModal} transparent>
         <ModalsSheet
+          isShow
           onClose={() => {
             setIsShowModal(false);
           }}

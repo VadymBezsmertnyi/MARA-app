@@ -14,7 +14,11 @@ export const styles = StyleSheet.create({
   },
   containerLogo: { justifyContent: "center", alignItems: "center" },
   containerLanguage: { width: "100%", alignItems: "flex-end" },
-  containerTitles: { gap: 12, alignItems: "center" },
+  containerTitles: {
+    width: "100%",
+    gap: 12,
+    alignItems: "center",
+  },
   title: {
     fontFamily: "Montserrat_700Bold",
     fontSize: 28,
@@ -26,10 +30,10 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
   },
   containerSocials: {
-    flex: 0,
+    width: "100%",
     alignItems: "center",
-    marginVertical: 0,
     paddingTop: 8,
+    paddingHorizontal: 55,
     gap: 20,
   },
 });

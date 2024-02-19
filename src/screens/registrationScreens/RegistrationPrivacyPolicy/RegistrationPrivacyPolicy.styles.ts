@@ -4,10 +4,14 @@ import colors from "../../../../styles/colors";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 12,
     gap: 20,
   },
+  containerHeader: {
+    paddingLeft: 12,
+    paddingRight: 16,
+  },
   containerTitle: {
+    paddingHorizontal: 16,
     gap: 12,
   },
   firstTitle: {
@@ -22,7 +26,7 @@ export const styles = StyleSheet.create({
     opacity: 0.6,
     lineHeight: 24,
   },
-  containerSubTitle: { gap: 12 },
+  containerSubTitle: { gap: 12, paddingHorizontal: 16 },
   firstSubTitle: {
     fontFamily: "OpenSans_600SemiBold",
     color: colors.blackCoffee,

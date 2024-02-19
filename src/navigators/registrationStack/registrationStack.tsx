@@ -1,18 +1,11 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import {
   NativeStackNavigationOptions,
-  NativeStackNavigationProp,
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
 
 // constants
 import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
-
-// components
-import { HeaderLeft } from "../components/HeaderLeft/HeaderLeft";
-
-// types
-import { RootRegistrationScreensParamList } from "../Navigators.types";
 
 // hooks
 import { useRegistrationStack } from "./useRegistrationStack";
@@ -22,7 +15,6 @@ import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 
 // styles
 import colors from "../../../styles/colors";
-import { ResponsiveLayoutProvider } from "../../providers/responsiveLayout/responsiveLayout.provider";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,17 +22,8 @@ export const RegistrationStack: FunctionComponent = () => {
   const { theme } = useContext(themeContext);
   const { registrationScreens } = useRegistrationStack();
 
-  const options = (
-    title: string | null,
-    isHeaderLeft: boolean,
-    navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>
-  ): NativeStackNavigationOptions => ({
-    headerShown: title !== null,
-    headerTitle: title || "",
-    headerLeft: isHeaderLeft
-      ? () => <HeaderLeft navigation={navigation} />
-      : undefined,
-    headerBackVisible: isHeaderLeft,
+  const options = (): NativeStackNavigationOptions => ({
+    headerShown: false,
   });
 
   const contentStyle = useMemo(
@@ -82,11 +65,7 @@ export const RegistrationStack: FunctionComponent = () => {
         <Stack.Screen
           key={`screen-registration-${screen.id}`}
           name={screen.name}
-          options={({
-            navigation,
-          }: {
-            navigation: NativeStackNavigationProp<RootRegistrationScreensParamList>;
-          }) => options(screen.title, screen.isBackHeader, navigation)}
+          options={options}
           component={screen.component}
         />
       ))}

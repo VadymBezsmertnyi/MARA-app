@@ -50,6 +50,7 @@ const colors = {
   chileanFireOrange: "#FD7102",
   blazeOrange: "#FD5E01",
   blazeOrange70: "#fd5e01b3",
+  shadowButton: "#F1650070",
 
   yellow: "#FDE405",
 };

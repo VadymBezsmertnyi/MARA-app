@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+} from "react";
+import { BackHandler } from "react-native";
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
@@ -18,6 +24,7 @@ import { RootMainScreensParamList } from "./Navigators.types";
 
 // hooks
 import { useNavigators } from "./useNavigator";
+import { useAllNavigation } from "./Navigators.helps";
 
 // styles
 import colors from "../../styles/colors";
@@ -25,6 +32,7 @@ import colors from "../../styles/colors";
 const Stack = createNativeStackNavigator<RootMainScreensParamList>();
 
 export const Navigators: FunctionComponent = () => {
+  const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
   const { mainScreens } = useNavigators();
 
@@ -60,6 +68,20 @@ export const Navigators: FunctionComponent = () => {
     }),
     [mainBackgroundColor, mainFontSize]
   );
+
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => {
+        console.log("navigation", navigation);
+        console.log("route", navigation.getState());
+        return true;
+      }
+    );
+    return () => {
+      backHandler.remove();
+    };
+  }, []);
 
   return (
     <Stack.Navigator screenOptions={screenOptions}>

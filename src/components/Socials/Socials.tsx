@@ -3,12 +3,13 @@ import React, {
   useCallback,
   useContext,
   useMemo,
+  useState,
 } from "react";
 import { Platform, Text, View, ViewStyle } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin, User } from "@react-native-google-signin/google-signin";
 import * as AppleAuthentication from "expo-apple-authentication";
-import { AccessToken, LoginManager, Settings } from "react-native-fbsdk-next";
+import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 
 // providers
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
@@ -26,6 +27,7 @@ import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
 
 // styles
 import { styles } from "./Socials.styles";
+import colors from "../../../styles/colors";
 
 type SocialsProps = {
   isTitle?: boolean;
@@ -40,8 +42,8 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   onChangeGoogle,
   onChangeFacebook,
 }) => {
+  const [focus, setFocus] = useState<number | null>(null);
   const { theme } = useContext(themeContext);
-  Settings.initializeSDK();
 
   const isIos = useMemo(() => Platform.OS === "ios", [Platform.OS]);
   const containerStyles = useMemo(
@@ -55,12 +57,13 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     ],
     [theme]
   );
-  const labelSocialConnectStyle = useMemo(
-    () => [
+  const labelSocialConnectStyle = useCallback(
+    (isFocus: boolean) => [
       styles.labelSocialConnect,
       theme === THEME_DARK && styles.colorWhite,
+      isFocus && { color: colors.white },
     ],
-    [theme]
+    [theme, focus]
   );
 
   const onFacebook = async () => {
@@ -107,24 +110,53 @@ export const Socials: FunctionComponent<SocialsProps> = ({
         </Text>
       ) : null}
       <View style={styles.containerButtons}>
-        <ButtonCustom type="transparent" onSubmit={onFacebook}>
-          <View style={styles.itemSocialConnect}>
-            <SocialFacebook width={24} height={24} />
-            <Text style={labelSocialConnectStyle}>{showTitle("Facebook")}</Text>
-          </View>
-        </ButtonCustom>
         {isIos ? (
-          <ButtonCustom type="transparent" onSubmit={onApple}>
+          <ButtonCustom
+            type="transparent"
+            onSubmit={onFacebook}
+            onPressFocus={(value) => {
+              if (value) setFocus(1);
+              else setFocus(null);
+            }}
+          >
             <View style={styles.itemSocialConnect}>
-              <SocialApple width={24} height={24} />
-              <Text style={labelSocialConnectStyle}>{showTitle("Apple")}</Text>
+              <SocialFacebook width={24} height={24} />
+              <Text style={labelSocialConnectStyle(focus === 1)}>
+                {showTitle("Facebook")}
+              </Text>
             </View>
           </ButtonCustom>
         ) : null}
-        <ButtonCustom type="transparent" onSubmit={onGoogle}>
+        {isIos ? (
+          <ButtonCustom
+            type="transparent"
+            onSubmit={onApple}
+            onPressFocus={(value) => {
+              if (value) setFocus(2);
+              else setFocus(null);
+            }}
+          >
+            <View style={styles.itemSocialConnect}>
+              <SocialApple width={24} height={24} />
+              <Text style={labelSocialConnectStyle(focus === 2)}>
+                {showTitle("Apple")}
+              </Text>
+            </View>
+          </ButtonCustom>
+        ) : null}
+        <ButtonCustom
+          type="transparent"
+          onSubmit={onGoogle}
+          onPressFocus={(value) => {
+            if (value) setFocus(3);
+            else setFocus(null);
+          }}
+        >
           <View style={styles.itemSocialConnect}>
             <SocialGoogle width={24} height={24} />
-            <Text style={labelSocialConnectStyle}>{showTitle("Google")}</Text>
+            <Text style={labelSocialConnectStyle(focus === 3)}>
+              {showTitle("Google")}
+            </Text>
           </View>
         </ButtonCustom>
       </View>

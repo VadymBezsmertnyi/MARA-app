@@ -4,6 +4,10 @@ import { Trans } from "@lingui/macro";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
+import { localesContext } from "../../../../localization/localization.provider";
+
+// components
+import { Header } from "../../../components/Header/Header";
 
 // constants
 import { THEME_DARK } from "../../../providers/ThemeProvider/ThemeProvider.const";
@@ -12,6 +16,7 @@ import { THEME_DARK } from "../../../providers/ThemeProvider/ThemeProvider.const
 import { styles } from "./RegistrationTermsOfUse.styles";
 
 export const RegistrationTermsOfUse: FunctionComponent = () => {
+  const { i18n } = useContext(localesContext);
   const { theme } = useContext(themeContext);
 
   const firstTitleStyle = useMemo(
@@ -33,6 +38,11 @@ export const RegistrationTermsOfUse: FunctionComponent = () => {
 
   return (
     <View style={styles.container}>
+      <Header
+        title={i18n._("Terms of Use")}
+        isShowRight={false}
+        containerStyle={styles.containerHeader}
+      />
       <View style={styles.containerTitle}>
         <Text style={firstTitleStyle}>
           <Trans>Terms of Service</Trans>
