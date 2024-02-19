@@ -1,5 +1,4 @@
 import {
-  PATHS_FORGET_SCREENS,
   PATHS_MAIN_SCREENS,
   PATHS_MAIN_TABS,
   PATHS_EVENTS_SCREENS,
@@ -27,7 +26,6 @@ export type RootMainScreensParamList = {
   > & {
     screen: keyof RootRegistrationScreensParamList;
   };
-  [PATHS_MAIN_SCREENS.forget]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_SCREENS.main]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_SCREENS.mainMap]?: Record<string, string | number | boolean>;
 };
@@ -38,18 +36,6 @@ export type RootMainTabsParamList = {
   [PATHS_MAIN_TABS.news]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.market]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.settings]?: Record<string, string | number | boolean>;
-};
-
-export type RootForgetScreensParamList = {
-  [PATHS_FORGET_SCREENS.forgetPhone]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_FORGET_SCREENS.forgetCode]?: Record<string, string | number | boolean>;
-  [PATHS_FORGET_SCREENS.forgetPassword]?: Record<
-    string,
-    string | number | boolean
-  >;
 };
 
 export type RootRegistrationScreensParamList = {
@@ -184,7 +170,6 @@ export type RootMarketScreensParamList = {
 };
 
 export type RootAllScreensParamList = RootMainScreensParamList &
-  RootForgetScreensParamList &
   RootRegistrationScreensParamList &
   RootWorkshopsScreensParamList &
   RootMarketScreensParamList &

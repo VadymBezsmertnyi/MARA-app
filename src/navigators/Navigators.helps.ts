@@ -10,17 +10,12 @@ import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript
 // types
 import {
   RootAllScreensParamList,
-  RootForgetScreensParamList,
   RootMainTabsParamList,
   RootRegistrationScreensParamList,
 } from "./Navigators.types";
 
 export const useAllNavigation = useNavigation<
   NativeStackNavigationProp<RootAllScreensParamList>
->;
-
-export const useForgetNavigation = useNavigation<
-  NativeStackNavigationProp<RootForgetScreensParamList>
 >;
 export const useRegistrationNavigation = useNavigation<
   NativeStackNavigationProp<RootRegistrationScreensParamList>

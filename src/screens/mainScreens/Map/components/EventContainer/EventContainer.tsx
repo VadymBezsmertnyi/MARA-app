@@ -46,10 +46,10 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
     >
       <TouchableOpacity
         onPress={() => {
-          if (firstEvent.location)
+          if (firstEvent.place?.coordinates)
             showFirstEvent({
-              longitude: firstEvent.location.geometry.location.lng,
-              latitude: firstEvent.location.geometry.location.lat,
+              longitude: firstEvent.place?.coordinates.longitude,
+              latitude: firstEvent.place?.coordinates.latitude,
               latitudeDelta: 0,
               longitudeDelta: 0.01,
             });

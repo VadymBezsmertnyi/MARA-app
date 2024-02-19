@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { Platform, Text, View, ViewStyle } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
-import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
@@ -23,14 +23,15 @@ import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 
 // components
-import { SosMarker } from "./components/SosMarker/SosMarker";
 import { EventMarker } from "./components/EventMarker/EventMarker";
 import { MeMarker } from "./components/MeMarker/MeMarker";
 import { UpContainer } from "./components/UpContainer/UpContainer";
 import { EventContainer } from "./components/EventContainer/EventContainer";
-import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
 import { ButtonSearch } from "./components/ButtonSearch/ButtonSearch";
-import { UserMarker } from "./components/UserMarker/UserMarker";
+import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
+
+// icons
+import { IconLocationMarker } from "../../../icons/components";
 
 // styles
 import { styles } from "./Map.styles";
@@ -53,13 +54,11 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
   const { location } = useContext(mapContext);
   const { theme, heightStatusBar } = useContext(themeContext);
   const { eventsList } = useContext(eventsContext);
+  const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
   const firstEvent = useMemo(
     () => (eventsList.length ? eventsList[0] : null),
     [eventsList]
   );
-  const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
-  const [firstEventLocation, setFirstEventLocation] =
-    useState<mapMarker | null>(null);
   const listUsers = useMemo(
     () =>
       stateSocket.geolocationUsers
@@ -80,7 +79,6 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
 
   const showFirstEvent = (location: mapMarker) => {
     setRegion(location);
-    setFirstEventLocation(location);
   };
 
   useEffect(() => {
@@ -102,45 +100,30 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
         mapType={Platform.OS === "ios" ? "terrain" : "standard"}
         initialRegion={DEFAULT_LOCATION}
         region={region}
-        onRegionChange={() => {}}
         zoomControlEnabled
         userInterfaceStyle={theme}
         showsBuildings={false}
         showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
-        renderCluster={(cluster) => {
-          return (
-            <Marker coordinate={cluster.coordinate} onPress={() => {}}>
-              <View style={{ width: 50, height: 50, backgroundColor: "white" }}>
-                <Text>TEST</Text>
-              </View>
-            </Marker>
-          );
-        }}
       >
         <MeMarker />
-        <SosMarker
-          longitude={31.758758202195168}
-          latitude={49.56848145137262}
-        />
-        {firstEventLocation && firstEvent ? (
-          <EventMarker
-            longitude={firstEventLocation.longitude}
-            latitude={firstEventLocation.latitude}
-            event={firstEvent}
-          />
-        ) : null}
-        {workshops.map(({ place: { coordinates }, title }, index) =>
-          coordinates ? (
-            <WorkshopMarker
-              key={`marker-workshop-${index + 1}`}
-              longitude={coordinates.longitude}
-              latitude={coordinates.latitude}
-              markerSize={32}
-              title={title}
+        {eventsList.map((eventItem) =>
+          eventItem.place?.coordinates ? (
+            <EventMarker
+              key={`marker-event-${eventItem.id}`}
+              longitude={eventItem.place?.coordinates.longitude}
+              latitude={eventItem.place?.coordinates.latitude}
+              event={eventItem}
             />
           ) : null
         )}
+        {workshops.map((workshop) => (
+          <WorkshopMarker
+            key={`marker-workshop-${workshop.id}`}
+            workshop={workshop}
+            location={location}
+          />
+        ))}
         {listUsers.map((userId) => {
           const userLocation = usersGeolocation?.[userId]
             ? usersGeolocation[userId]
@@ -148,14 +131,19 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
 
           if (userLocation === null) return null;
           return (
-            <UserMarker
+            <Marker
               key={`user-marker-${userId}`}
-              longitude={userLocation.geoLocation.longitude}
-              latitude={userLocation.geoLocation.latitude}
-              markerSize={32}
-              markerColor={"green"}
-              title={`User ${userLocation.userId}`}
-            />
+              coordinate={userLocation.geoLocation}
+            >
+              <IconLocationMarker width={32} height={32} fill={"green"} />
+              <Callout>
+                <View style={{ width: 200 }}>
+                  <Text>{`User ${userLocation.userId}`}:</Text>
+                  <Text>longitude: {userLocation.geoLocation.longitude}</Text>
+                  <Text>latitude: {userLocation.geoLocation.latitude}</Text>
+                </View>
+              </Callout>
+            </Marker>
           );
         })}
       </MapViewCluster>

@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
 
 // hooks
 import { useMainTabsNavigation } from "../../../../../navigators/Navigators.helps";
@@ -15,14 +16,14 @@ export const Menu: FunctionComponent = () => {
   };
 
   return (
-    <View>
-      <TouchableOpacity onPress={onShowMenu} style={styles.container}>
+    <TouchableOpacity onPress={onShowMenu} style={styles.container}>
+      <Shadow stretch>
         <View style={styles.menu}>
           <View style={styles.line} />
           <View style={styles.line} />
           <View style={styles.line} />
         </View>
-      </TouchableOpacity>
-    </View>
+      </Shadow>
+    </TouchableOpacity>
   );
 };

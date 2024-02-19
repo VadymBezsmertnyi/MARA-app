@@ -107,12 +107,13 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         <ScrollView contentContainerStyle={styles.wrapper}>
           {workshops.length ? (
             workshops.map((item) => {
-              const distance = location
-                ? getDistance(location, {
-                    longitude: item.place.coordinates.longitude,
-                    latitude: item.place.coordinates.latitude,
-                  })
-                : null;
+              const distance =
+                location && item.place.coordinates
+                  ? getDistance(location, {
+                      longitude: item.place.coordinates.longitude,
+                      latitude: item.place.coordinates.latitude,
+                    })
+                  : null;
               return (
                 <WorkshopItem
                   key={`workshop-${item.id}`}

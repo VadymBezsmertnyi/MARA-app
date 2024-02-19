@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { Trans } from "@lingui/macro";
@@ -32,10 +26,6 @@ export const UpContainer: FunctionComponent = () => {
   const pressSosLine = () => {
     console.log("pressSosLine");
   };
-
-  useEffect(() => {
-    setIsSos(true);
-  }, []);
 
   return (
     <View style={styles.containerUp}>

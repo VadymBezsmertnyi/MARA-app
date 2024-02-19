@@ -23,12 +23,6 @@ export const PATHS_REGISTRATION_SCREENS = {
   registrationInfo: "registrationInfo",
 } as const;
 
-export const PATHS_FORGET_SCREENS = {
-  forgetPhone: "forgetPhone",
-  forgetCode: "forgetCode",
-  forgetPassword: "forgetPassword",
-} as const;
-
 export const PATHS_EVENTS_SCREENS = {
   eventsMain: "eventsMain",
   eventsList: "eventsList",

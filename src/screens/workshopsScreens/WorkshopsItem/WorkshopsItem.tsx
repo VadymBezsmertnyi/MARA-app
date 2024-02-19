@@ -80,7 +80,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     [workshops, route.params]
   );
   const distance =
-    location && selectWorkshop
+    location && selectWorkshop?.place.coordinates
       ? getDistance(location, {
           longitude: selectWorkshop.place.coordinates.longitude,
           latitude: selectWorkshop.place.coordinates.latitude,
@@ -167,6 +167,9 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         rightElement={
           <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
         }
+        onPressLeftElement={() => {
+          navigation.goBack();
+        }}
       />
       <ScrollView
         ref={scrollViewRef}
