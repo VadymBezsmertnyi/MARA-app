@@ -49,21 +49,8 @@ export const ButtonCustom = ({
 }: Props) => {
   const [isFocus, setIsFocus] = useState(false);
   const { theme } = useContext(themeContext);
-  const sidesShadow = useMemo(
-    () => ({ bottom: true, top: false, start: false, end: false }),
-    []
-  );
-  const cornersShadow = useMemo(
-    () => ({
-      topStart: false,
-      topEnd: false,
-      bottomEnd: true,
-      bottomStart: true,
-    }),
-    []
-  );
   const offsetShadow: [x: string | number, y: string | number] = useMemo(
-    () => [0, 0],
+    () => [0, 3],
     []
   );
   const styleContainerState = useMemo(
@@ -114,39 +101,36 @@ export const ButtonCustom = ({
     <View style={styleContainerState}>
       <Shadow
         stretch
+        distance={4}
         disabled={type === "transparent" || disabled}
         startColor={colors.shadowButton}
-        style={styles.styleShadow}
-        sides={sidesShadow}
-        corners={cornersShadow}
         offset={offsetShadow}
-        distance={10}
-        containerStyle={styles.containerStyleShadow}
-      />
-      <LinearGradient
-        colors={colorsGradient}
-        start={startGradient}
-        end={endGradient}
-        locations={locationsGradient}
-        style={styleLinearGradient}
       >
-        <TouchableHighlight
-          disabled={disabled}
-          onPress={onSubmit}
-          style={stylePressable}
-          underlayColor={colors.chileanFireOrange}
-          onPressIn={() => {
-            setIsFocus(true);
-            if (onPressFocus) onPressFocus(true);
-          }}
-          onPressOut={() => {
-            setIsFocus(false);
-            if (onPressFocus) onPressFocus(false);
-          }}
+        <LinearGradient
+          colors={colorsGradient}
+          start={startGradient}
+          end={endGradient}
+          locations={locationsGradient}
+          style={styleLinearGradient}
         >
-          {children ? children : <Text style={styleText}>{title}</Text>}
-        </TouchableHighlight>
-      </LinearGradient>
+          <TouchableHighlight
+            disabled={disabled}
+            onPress={onSubmit}
+            style={stylePressable}
+            underlayColor={colors.chileanFireOrange}
+            onPressIn={() => {
+              setIsFocus(true);
+              if (onPressFocus) onPressFocus(true);
+            }}
+            onPressOut={() => {
+              setIsFocus(false);
+              if (onPressFocus) onPressFocus(false);
+            }}
+          >
+            {children ? children : <Text style={styleText}>{title}</Text>}
+          </TouchableHighlight>
+        </LinearGradient>
+      </Shadow>
     </View>
   );
 };

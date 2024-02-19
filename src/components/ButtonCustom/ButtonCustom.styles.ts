@@ -6,22 +6,10 @@ export const styles = StyleSheet.create({
     position: "relative",
     height: 52,
   },
-  styleShadow: {
-    height: 40,
-  },
-  containerStyleShadow: {
-    position: "absolute",
-    width: "95%",
-    left: 10,
-    top: 10,
-  },
   linearGradient: {
-    width: "100%",
-    height: "100%",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,
-    flex: 1,
     padding: 2,
   },
   buttonSubmit: {
