@@ -5,6 +5,14 @@ const WIDTH = Dimensions.get("screen").width;
 
 export const styles = StyleSheet.create({
   container: {
+    gap: 16,
+  },
+  labelSectors: {
+    fontFamily: "OpenSans_600SemiBold",
+    fontSize: 16,
+    color: colors.blackCoffee,
+  },
+  containerTrack: {
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -55,7 +63,7 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
     position: "absolute",
     top: -20,
-    width: 30,
+    minWidth: 40,
     textAlign: "center",
   },
   minimumTrackStyle: { width: "100%", height: 6, borderRadius: 10 },

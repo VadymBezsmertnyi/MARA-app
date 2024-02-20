@@ -6,7 +6,6 @@ import React, {
   useState,
 } from "react";
 import { StatusBar, Text, TouchableOpacity, View } from "react-native";
-import { Slider } from "@miblanchard/react-native-slider";
 import { Trans } from "@lingui/macro";
 
 // types
@@ -26,6 +25,7 @@ import { LinearGradientCustom } from "../../../../../components/LinearGradientCu
 import { ModalSheetTypeWorkshops } from "../../../../../components/ModalSheetTypeWorkshops/ModalSheetTypeWorkshops";
 import { ModalSheetTypesMotoWorks } from "../../../../../components/ModalSheetTypesMotoWorks/ModalSheetTypesMotoWorks";
 import { ModalSheetTypesAutoWorks } from "../../../../../components/ModalSheetTypesAutoWorks/ModalSheetTypesAutoWorks";
+import { InputSlider } from "../../../../../components/InputSlider/InputSlider";
 
 // icons
 import { IconArrowRightEvent } from "../../../../../icons/components";
@@ -33,7 +33,6 @@ import { IconArrowRightEvent } from "../../../../../icons/components";
 // styles
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
-import { InputSlider } from "../../../../../components/InputSlider/InputSlider";
 
 type ModalFilterProps = {
   filters: TypeFilters | null;
@@ -156,6 +155,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
         title={i18n._("Filter")}
         onPressLeftElement={onClose}
         backgroundStyle={styles.headerBackground}
+        rightStyle={styles.containerRightHeader}
       />
       <View style={styles.containerBody}>
         <InputButton
@@ -177,6 +177,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           }
         />
         <InputSlider
+          label={i18n._("Distance, km:")}
           min={1}
           max={200}
           value={distance}
@@ -239,7 +240,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           }
         />
         <ButtonCustom
-          title={i18n._("Filter")}
+          title={i18n._("Filtering")}
           onSubmit={onSubmitFilters}
           styleContainer={styles.buttonSubmit}
         />

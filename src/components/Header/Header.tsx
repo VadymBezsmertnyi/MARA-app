@@ -36,6 +36,7 @@ type HeaderStackProps = {
   isShowLeft?: boolean;
   isShowRight?: boolean;
   containerStyle?: StyleProp<ViewStyle>;
+  rightStyle?: StyleProp<ViewStyle>;
 };
 
 export const Header: FunctionComponent<HeaderStackProps> = ({
@@ -48,6 +49,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   isShowLeft = true,
   isShowRight = true,
   containerStyle,
+  rightStyle,
 }) => {
   const navigation = useAllNavigation();
   const { theme } = useContext(themeContext);
@@ -69,6 +71,11 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
       theme === THEME_DARK ? { color: colors.white } : {},
     ],
     [theme]
+  );
+
+  const rightStyles = useMemo(
+    () => [styles.container, rightStyle],
+    [rightStyle]
   );
 
   const onBack = () => {
@@ -103,7 +110,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
             </Text>
           </TouchableOpacity>
         ) : isShowRight ? (
-          <View style={styles.wrapper}>{rightElement && rightElement}</View>
+          <View style={rightStyles}>{rightElement && rightElement}</View>
         ) : null}
       </View>
     </SafeAreaView>

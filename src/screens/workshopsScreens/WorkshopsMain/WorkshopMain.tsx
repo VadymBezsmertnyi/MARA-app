@@ -92,6 +92,8 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             }}
           />
         }
+        containerStyle={styles.containerHeader}
+        rightStyle={styles.containerRightHeader}
       />
       <View style={styles.container}>
         <View style={styles.search}>

@@ -28,6 +28,7 @@ import { ProductCardSmall } from "./components/ProductCardSmall/ProductCardSmall
 import { ProductCardFull } from "./components/ProductCardFull/ProductCardFull";
 import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
 import { ModalFilter } from "./components/ModalFilter/ModalFilter";
+import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
 
 // icons
 import { IconSearchInput } from "../../../icons/components";
@@ -37,6 +38,7 @@ import { PATHS_MARKET_SCREENS } from "../../../navigators/useNavigator.constants
 
 // styles
 import { styles } from "./MarketMain.styles";
+import { ModalSort } from "./components/ModalSort/ModalSort";
 
 type MarketMainProps = {
   navigation: NativeStackNavigationProp<RootMarketScreensParamList> &
@@ -57,6 +59,16 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
     () => [styles.container, { paddingTop: heightStatusBar }],
     [heightStatusBar]
   );
+
+  const onClose = () => {
+    setIsShowSort(false);
+    setIsShowFilter(false);
+  };
+
+  const setTypeSort = (type: "latest" | "cheapest" | "expensive") => {
+    console.log(type);
+    onClose();
+  };
 
   const onPressShowMenu = () => {
     navigation.openDrawer();
@@ -133,12 +145,12 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
         </View>
         <AddEventButton onPress={onPressAddProduct} />
       </View>
-      <ModalFilter
-        isOpen={isShowFilter}
-        onClose={() => {
-          setIsShowFilter(false);
-        }}
+      <ModalSort
+        isOpen={isShowSort}
+        onClose={onClose}
+        setTypeSort={setTypeSort}
       />
+      <ModalFilter isOpen={isShowFilter} onClose={onClose} />
     </>
   );
 };

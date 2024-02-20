@@ -10,15 +10,15 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 15,
-    paddingTop: 9,
-    paddingBottom: 11,
+    paddingRight: 15,
+    paddingBottom: 2,
   },
-  wrapper: {
+  containerRight: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "flex-end",
     gap: 10,
-    minWidth: 50,
+    minWidth: 90,
   },
   title: {
     fontFamily: "OpenSans_600SemiBold",
@@ -26,7 +26,12 @@ export const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: "center",
   },
-  containerButtonBack: { flexDirection: "row", alignItems: "center" },
+  containerButtonBack: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 9,
+    paddingHorizontal: 15,
+  },
   iconButtonBack: {
     stroke: colors.blackCoffee,
     strokeWidth: 2,

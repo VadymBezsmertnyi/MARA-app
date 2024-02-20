@@ -23,6 +23,7 @@ import { styles } from "./ButtonCustom.styles";
 type Props = {
   title?: string;
   disabled?: boolean;
+  disabledShadow?: boolean;
   onSubmit: () => void;
   type?: "full" | "transparent";
   styleButton?: StyleProp<ViewStyle>;
@@ -37,6 +38,7 @@ type Props = {
 export const ButtonCustom = ({
   title,
   disabled = false,
+  disabledShadow = false,
   onSubmit,
   type = "full",
   styleButton,
@@ -102,7 +104,7 @@ export const ButtonCustom = ({
       <Shadow
         stretch
         distance={4}
-        disabled={type === "transparent" || disabled}
+        disabled={disabledShadow || type === "transparent" || disabled}
         startColor={colors.shadowButton}
         offset={offsetShadow}
       >

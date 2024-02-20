@@ -12,6 +12,9 @@ export const styles = StyleSheet.create({
   headerBackground: {
     backgroundColor: colors.lightOrange,
   },
+  containerRightHeader: {
+    minWidth: 90,
+  },
   containerBody: {
     paddingLeft: 20,
     paddingRight: 16,

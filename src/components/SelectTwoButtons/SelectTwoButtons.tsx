@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { Text, View, ViewStyle } from "react-native";
+import { Text, TextStyle, View, ViewStyle } from "react-native";
 
 // components
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -8,13 +8,14 @@ import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 import { styles } from "./SelectTwoButtons.styles";
 
 type SelectTwoButtonsProps = {
-  isSelectFirst: boolean;
+  isSelectFirst: boolean | null;
   titleFirst: string;
   titleSecond: string;
   label: string;
   onPressFirst: () => void;
   onPressSecond: () => void;
   containerStyle?: ViewStyle;
+  labelStyle?: TextStyle;
 };
 
 export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
@@ -25,6 +26,7 @@ export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
   onPressFirst,
   onPressSecond,
   containerStyle,
+  labelStyle,
 }) => {
   const typeFirst = isSelectFirst ? "full" : "transparent";
   const typeSecond = !isSelectFirst ? "full" : "transparent";
@@ -34,19 +36,21 @@ export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
     [containerStyle]
   );
 
+  const titleStyles = useMemo(() => [styles.title, labelStyle], [labelStyle]);
+
   return (
     <View style={containerStyles}>
-      <Text style={styles.title}>{label}</Text>
+      <Text style={titleStyles}>{label}</Text>
       <View style={styles.containerSelectType}>
         <ButtonCustom
           title={titleFirst}
-          type={typeFirst}
+          type={isSelectFirst === null ? "transparent" : typeFirst}
           onSubmit={onPressFirst}
           styleContainer={styles.buttonSelectType}
         />
         <ButtonCustom
           title={titleSecond}
-          type={typeSecond}
+          type={isSelectFirst === null ? "transparent" : typeSecond}
           onSubmit={onPressSecond}
           styleContainer={styles.buttonSelectType}
         />

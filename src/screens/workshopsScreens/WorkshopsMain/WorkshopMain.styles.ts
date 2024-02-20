@@ -12,6 +12,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
   },
+  containerHeader: { paddingRight: 0 },
+  containerRightHeader: { minHeight: 0 },
   wrapper: {
     gap: verticalScale(GAP_MAIN),
     paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
