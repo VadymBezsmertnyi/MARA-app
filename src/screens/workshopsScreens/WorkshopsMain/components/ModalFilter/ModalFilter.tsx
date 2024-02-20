@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { Slider } from "@miblanchard/react-native-slider";
 import { Trans } from "@lingui/macro";
 
@@ -14,7 +14,6 @@ import { TypeFilters } from "./ModalFilter.types";
 
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
-import { TypeWorkType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // hooks
 import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
@@ -23,23 +22,17 @@ import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider
 import { Header } from "../../../../../components/Header/Header";
 import { InputButton } from "../../../../../components/InputButton/InputButton";
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
-import { ModalsSheet } from "../../../../../components/ModalsSheet/ModalsSheet";
 import { LinearGradientCustom } from "../../../../../components/LinearGradientCustom/LinearGradientCustom";
-import { CheckboxClassic } from "../../../../../components/CheckboxClassic/CheckboxClassic";
+import { ModalSheetTypeWorkshops } from "../../../../../components/ModalSheetTypeWorkshops/ModalSheetTypeWorkshops";
+import { ModalSheetTypesMotoWorks } from "../../../../../components/ModalSheetTypesMotoWorks/ModalSheetTypesMotoWorks";
+import { ModalSheetTypesAutoWorks } from "../../../../../components/ModalSheetTypesAutoWorks/ModalSheetTypesAutoWorks";
 
 // icons
-import {
-  IconArrowRightEvent,
-  IconAutoService,
-  IconMotoService,
-} from "../../../../../icons/components";
+import { IconArrowRightEvent } from "../../../../../icons/components";
 
 // styles
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
-import { ModalSheetTypeWorkshops } from "../../../../../components/ModalSheetTypeWorkshops/ModalSheetTypeWorkshops";
-import { ModalSheetTypesMotoWorks } from "../../../../../components/ModalSheetTypesMotoWorks/ModalSheetTypesMotoWorks";
-import { ModalSheetTypesAutoWorks } from "../../../../../components/ModalSheetTypesAutoWorks/ModalSheetTypesAutoWorks";
 
 type ModalFilterProps = {
   filters: TypeFilters | null;
@@ -158,7 +151,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   return (
     <View style={styles.container}>
       <Header
-        title={"Filter"}
+        title={i18n._("Filter")}
         onPressLeftElement={onClose}
         backgroundStyle={styles.headerBackground}
       />

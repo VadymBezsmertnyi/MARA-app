@@ -6,12 +6,12 @@ export const styles = StyleSheet.create({
     position: "relative",
   },
   linearGradient: {
-    borderRadius: 20,
+    borderRadius: 5,
   },
   containerMain: {
     flex: 1,
     margin: 1,
-    borderRadius: 19,
+    borderRadius: 4,
     backgroundColor: colors.white,
     padding: 6,
     gap: 10,

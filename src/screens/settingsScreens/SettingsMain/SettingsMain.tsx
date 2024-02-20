@@ -114,9 +114,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
         <View style={styles.containerInfo}>
           <Text style={styles.infoUser}>{userData?.firstName}</Text>
           <Text style={styles.infoUser}>{userData?.email}</Text>
-          <Text style={styles.infoUser}>
-            {userData?.cityUser?.formatted_address}
-          </Text>
+          <Text style={styles.infoUser}>{userData?.cityUser?.name}</Text>
           <Text style={styles.infoUser}>{userData?.phoneNumber}</Text>
         </View>
       </View>
@@ -166,6 +164,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
             }}
           />
         </View>
+        <View style={styles.containerEmpty} />
       </ScrollView>
     </View>
   );

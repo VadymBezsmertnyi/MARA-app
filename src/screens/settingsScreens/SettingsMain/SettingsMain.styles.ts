@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
 
 export const styles = StyleSheet.create({
@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     gap: 10,
   },
   containerHeader: {
+    paddingTop: Platform.OS === "android" ? 10 : 0,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -57,6 +58,9 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: 1,
     backgroundColor: colors.grayMercury,
+  },
+  containerEmpty: {
+    height: 100,
   },
   containerList: {},
   containerFooter: {
