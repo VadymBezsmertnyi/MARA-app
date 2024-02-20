@@ -100,6 +100,10 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
     if (stepName === "coordinate") return coordinates !== null;
     return false;
   }, [selectCountryIso, selectRegionId, city, address, coordinates, step]);
+  const offsetShadow: [x: string | number, y: string | number] = useMemo(
+    () => [0, 3],
+    []
+  );
 
   const getPlaces = (event: MapPressEvent) => {
     const {
@@ -171,7 +175,7 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
     }
     if (stepName === "address")
       return (
-        <View style={styles.containerInputs}>
+        <ScrollView style={styles.containerInputs}>
           <Input
             isRegular
             label={i18n._("Enter the name of the locality")}
@@ -190,7 +194,7 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
               containerStyle={styles.input}
             />
           ) : null}
-        </View>
+        </ScrollView>
       );
     if (stepName === "coordinate")
       return (
@@ -215,12 +219,14 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
           </MapView>
           {coordinates ? (
             <View style={styles.containerLineCoordinates}>
-              <View style={styles.lineCoordinates}>
-                <Text style={styles.titleLineCoordinates}>
-                  {coordinates.latitude.toFixed(6)},
-                  {coordinates.longitude.toFixed(6)}
-                </Text>
-              </View>
+              <Shadow stretch offset={offsetShadow} distance={4}>
+                <View style={styles.lineCoordinates}>
+                  <Text style={styles.titleLineCoordinates}>
+                    {coordinates.latitude.toFixed(6)},
+                    {coordinates.longitude.toFixed(6)}
+                  </Text>
+                </View>
+              </Shadow>
             </View>
           ) : null}
         </View>

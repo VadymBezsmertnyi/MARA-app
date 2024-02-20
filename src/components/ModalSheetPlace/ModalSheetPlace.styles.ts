@@ -33,12 +33,16 @@ export const styles = StyleSheet.create({
   inputSearch: { marginTop: 8 },
   containerList: {
     padding: 24,
+    paddingTop: 16,
+    paddingHorizontal: 14,
   },
   containerItemList: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 15,
-    height: 20,
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingHorizontal: 10,
+    minHeight: 40,
   },
   titleItemList: {
     fontFamily: "OpenSans_400Regular",

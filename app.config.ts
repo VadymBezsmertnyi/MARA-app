@@ -68,6 +68,7 @@ export const expo = {
     package: "com.motoauto.mara",
     scheme: "maraapp",
     permissions: [
+      "CAMERA",
       "RECORD_AUDIO",
       "CAMERA_ROLL",
       "READ_EXTERNAL_STORAGE",

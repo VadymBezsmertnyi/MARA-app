@@ -92,7 +92,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
         rightElementInput={
           <IconArrowRightEvent
             width={15}
-            height={20}
+            height={15}
             fill={colors.blackCoffee}
           />
         }
@@ -154,7 +154,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
             rightElementInput={
               <IconArrowRightEvent
                 width={15}
-                height={20}
+                height={15}
                 fill={colors.blackCoffee}
               />
             }
@@ -175,7 +175,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
             rightElementInput={
               <IconArrowRightEvent
                 width={15}
-                height={20}
+                height={15}
                 fill={colors.blackCoffee}
               />
             }
@@ -205,7 +205,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
           rightElementInput={
             <IconArrowRightEvent
               width={15}
-              height={20}
+              height={15}
               fill={colors.blackCoffee}
             />
           }

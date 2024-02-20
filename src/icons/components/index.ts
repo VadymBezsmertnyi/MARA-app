@@ -7,6 +7,7 @@ export { default as IconAddEvent } from "./IconAddEvent";
 export { default as IconAppleAppStore } from "./IconAppleAppStore";
 export { default as IconArrowLeftEventGradient } from "./IconArrowLeftEventGradient";
 export { default as IconArrowLeftEvent } from "./IconArrowLeftEvent";
+export { default as IconArrowRightEventGradient } from "./IconArrowRightEventGradient";
 export { default as IconArrowRightEvent } from "./IconArrowRightEvent";
 export { default as IconArrowRightNew } from "./IconArrowRightNew";
 export { default as IconArrowRightStroke } from "./IconArrowRightStroke";

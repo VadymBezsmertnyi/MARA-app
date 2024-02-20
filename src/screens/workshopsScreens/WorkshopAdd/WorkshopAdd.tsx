@@ -408,7 +408,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 rightElementInput={
                   <IconArrowRightEvent
                     width={15}
-                    height={20}
+                    height={15}
                     fill={colors.blackCoffee}
                   />
                 }
@@ -430,7 +430,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               rightElementInput={
                 <IconArrowRightEvent
                   width={15}
-                  height={20}
+                  height={15}
                   fill={colors.blackCoffee}
                 />
               }

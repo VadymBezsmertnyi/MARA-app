@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { Slider } from "@miblanchard/react-native-slider";
 import { Trans } from "@lingui/macro";
 
@@ -150,6 +150,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={colors.lightOrange} />
       <Header
         title={i18n._("Filter")}
         onPressLeftElement={onClose}
@@ -169,7 +170,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           rightElementInput={
             <IconArrowRightEvent
               width={15}
-              height={20}
+              height={15}
               fill={colors.blackCoffee}
             />
           }
@@ -278,7 +279,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           rightElementInput={
             <IconArrowRightEvent
               width={15}
-              height={20}
+              height={15}
               fill={colors.blackCoffee}
             />
           }

@@ -19,6 +19,7 @@ import {
   IconAddEvent,
   IconArrowLeftEventGradient,
   IconArrowRightEvent,
+  IconArrowRightEventGradient,
 } from "../../icons/components";
 import { ImageCache } from "../ImageCache/ImageCache";
 import { ModalWindow } from "../ModalWindow/ModalWindow";
@@ -171,7 +172,7 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
           onPress={onNext}
           style={styleButtonNext}
         >
-          <IconArrowRightEvent width={44} height={44} />
+          <IconArrowRightEventGradient width={44} height={44} />
         </TouchableOpacity>
       </View>
       <Modal visible={Boolean(image)} transparent>

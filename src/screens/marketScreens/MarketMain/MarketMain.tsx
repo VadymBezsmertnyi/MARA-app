@@ -27,6 +27,7 @@ import { Input } from "../../../components/Input/Input";
 import { ProductCardSmall } from "./components/ProductCardSmall/ProductCardSmall";
 import { ProductCardFull } from "./components/ProductCardFull/ProductCardFull";
 import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
+import { ModalFilter } from "./components/ModalFilter/ModalFilter";
 
 // icons
 import { IconSearchInput } from "../../../icons/components";
@@ -41,17 +42,6 @@ type MarketMainProps = {
   navigation: NativeStackNavigationProp<RootMarketScreensParamList> &
     DrawerNavigationHelpers;
 };
-
-const data = [
-  { id: "1", title: "Елемент 1" },
-  { id: "2", title: "Елемент 2" },
-  { id: "3", title: "Елемент 3" },
-  { id: "4", title: "Елемент 4" },
-  { id: "5", title: "Елемент 5" },
-  { id: "6", title: "Елемент 6" },
-  { id: "7", title: "Елемент 7" },
-  { id: "8", title: "Елемент 8" },
-];
 
 export const MarketMain: FunctionComponent<MarketMainProps> = ({
   navigation,
@@ -90,57 +80,65 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
     );
 
   return (
-    <View style={stylesContainer}>
-      <Header
-        leftElement={
-          <View style={styles.containerHeaderMenu}>
-            <MenuBurgerButton onPress={onPressShowMenu} />
+    <>
+      <View style={stylesContainer}>
+        <Header
+          leftElement={
+            <View style={styles.containerHeaderMenu}>
+              <MenuBurgerButton onPress={onPressShowMenu} />
+            </View>
+          }
+          title={i18n._("Market")}
+          rightElement={
+            <HeaderFilters
+              isWrap={isWrap}
+              setIsWrap={setIsWrap}
+              onPressFilter={() => {
+                setIsShowFilter(true);
+              }}
+              onPressSort={() => {
+                setIsShowSort(true);
+              }}
+            />
+          }
+        />
+        <View>
+          <View style={styles.containerInput}>
+            <Input
+              placeholder={i18n._("Enter the name")}
+              onChange={() => {}}
+              InputIcon={<IconSearchInput width={26} height={26} />}
+            />
           </View>
-        }
-        title={i18n._("Market")}
-        rightElement={
-          <HeaderFilters
-            isWrap={isWrap}
-            setIsWrap={setIsWrap}
-            onPressFilter={() => {
-              setIsShowFilter(true);
-            }}
-            onPressSort={() => {
-              setIsShowSort(true);
-            }}
-          />
-        }
-      />
-      <View>
-        <View style={styles.containerInput}>
-          <Input
-            placeholder={i18n._("Enter the name")}
-            onChange={() => {}}
-            InputIcon={<IconSearchInput width={26} height={26} />}
-          />
+          {isWrap ? (
+            <FlatList
+              key={"_"}
+              data={products}
+              renderItem={renderItem}
+              keyExtractor={(item) => `product-${item.id}`}
+              numColumns={1}
+              contentContainerStyle={styles.containerList}
+            />
+          ) : (
+            <FlatList
+              key={"#"}
+              data={products}
+              renderItem={renderItem}
+              keyExtractor={(item) => `product-wrap-${item.id}`}
+              numColumns={2}
+              contentContainerStyle={styles.containerList}
+              columnWrapperStyle={styles.columnContainerList}
+            />
+          )}
         </View>
-        {isWrap ? (
-          <FlatList
-            key={"_"}
-            data={products}
-            renderItem={renderItem}
-            keyExtractor={(item) => `product-${item.id}`}
-            numColumns={1}
-            contentContainerStyle={styles.containerList}
-          />
-        ) : (
-          <FlatList
-            key={"#"}
-            data={products}
-            renderItem={renderItem}
-            keyExtractor={(item) => `product-wrap-${item.id}`}
-            numColumns={2}
-            contentContainerStyle={styles.containerList}
-            columnWrapperStyle={styles.columnContainerList}
-          />
-        )}
+        <AddEventButton onPress={onPressAddProduct} />
       </View>
-      <AddEventButton onPress={onPressAddProduct} />
-    </View>
+      <ModalFilter
+        isOpen={isShowFilter}
+        onClose={() => {
+          setIsShowFilter(false);
+        }}
+      />
+    </>
   );
 };

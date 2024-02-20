@@ -22,18 +22,10 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.whiteTransparentFifteen,
     width: 72,
     height: 72,
-    overflow: "hidden",
     borderRadius: 50,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    shadowColor: colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowRadius: 20,
-    shadowOpacity: 0.3,
   },
   horizontal: {
     width: 40,
@@ -51,8 +43,9 @@ export const styles = StyleSheet.create({
     top: 17,
   },
   blurViewContainer: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
+    width: 72,
+    height: 72,
+    borderRadius: 50,
+    overflow: "hidden",
   },
 });

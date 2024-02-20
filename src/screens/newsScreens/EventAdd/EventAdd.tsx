@@ -5,14 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import {
-  Alert,
-  Modal,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -44,6 +37,8 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { InputButton } from "../../../components/InputButton/InputButton";
 import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
+import { Header } from "../../../components/Header/Header";
+import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 // icons
 import { IconMapGradient } from "../../../icons/components";
@@ -54,8 +49,6 @@ import { useErrors } from "../../../helps/useErrors";
 
 // styles
 import { styles } from "./EventAdd.styles";
-import { Header } from "../../../components/Header/Header";
-import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -226,13 +219,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     setLoading(true);
     if (params) {
       if (eventUser) {
-        const currentImages = images.map((image) => ({
-          id: image.id || "",
-          url: image.url || "",
-          width: image.width,
-          height: image.height,
-          image,
-        }));
         const imagesWithBath64 = await Promise.all(
           eventUser.images.map(async (image) => {
             const response = await FileSystem.downloadAsync(

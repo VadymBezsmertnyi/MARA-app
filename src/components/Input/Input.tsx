@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   KeyboardTypeOptions,
+  StyleProp,
   Text,
   TextInput,
   TextStyle,
@@ -62,7 +63,7 @@ export const Input: FunctionComponent<InputProps> = ({
     }),
     [borderColor, errorMessage]
   );
-  const inputStyles = useMemo(
+  const inputStyles: StyleProp<TextStyle> = useMemo(
     () => ({ ...styles.input, ...customStyles }),
     [customStyles]
   );
@@ -109,6 +110,7 @@ export const Input: FunctionComponent<InputProps> = ({
           placeholder={placeholder}
           defaultValue={defaultValue}
           value={value}
+          textAlignVertical={customStyles ? "top" : "center"}
           onChangeText={onChangeText}
           onFocus={onFocus}
           onBlur={onBlur}

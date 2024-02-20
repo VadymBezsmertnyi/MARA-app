@@ -1,7 +1,10 @@
-import React, { FunctionComponent } from "react";
-import { TouchableOpacity, View } from "react-native";
-import { styles } from "./AddEventButton.styles";
+import React, { FunctionComponent, useMemo } from "react";
+import { Platform, TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
 import { BlurView } from "expo-blur";
+
+// styles
+import { styles } from "./AddEventButton.styles";
 
 type AddEventButtonProps = {
   onPress: () => void;
@@ -9,12 +12,26 @@ type AddEventButtonProps = {
 
 export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
   onPress,
-}) => (
-  <TouchableOpacity style={styles.createNewEvent} onPress={onPress}>
-    <View style={styles.createNewEventWrapper}>
-      <BlurView intensity={5} tint="dark" style={styles.blurViewContainer} />
-      <View style={styles.horizontal} />
-      <View style={styles.vertical} />
-    </View>
-  </TouchableOpacity>
-);
+}) => {
+  const offsetShadow: [x: string | number, y: string | number] = useMemo(
+    () => [0, 3],
+    []
+  );
+
+  return (
+    <TouchableOpacity style={styles.createNewEvent} onPress={onPress}>
+      <Shadow stretch offset={offsetShadow} distance={4}>
+        <BlurView
+          intensity={Platform.OS === "android" ? 15 : 5}
+          tint="light"
+          style={styles.blurViewContainer}
+        >
+          <View style={styles.createNewEventWrapper}>
+            <View style={styles.horizontal} />
+            <View style={styles.vertical} />
+          </View>
+        </BlurView>
+      </Shadow>
+    </TouchableOpacity>
+  );
+};
