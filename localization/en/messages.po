@@ -446,8 +446,24 @@ msgid "Change workshop"
 msgstr "Change workshop"
 
 #. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Create advert"
+
+#. js-lingui-explicit-id
+msgid "Change advert"
+msgstr "Change advert"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Please authenticator"
+
+#. js-lingui-explicit-id
 msgid "Event delete"
 msgstr "Event delete"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Advert delete"
 
 #. js-lingui-explicit-id
 msgid "Ukraine"
@@ -626,6 +642,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
 
 #. js-lingui-explicit-id
+msgid "Invitation sent successfully"
+msgstr "Invitation sent successfully"
+
+#. js-lingui-explicit-id
+msgid "Invitation failed to send"
+msgstr "Invitation failed to send"
+
+#. js-lingui-explicit-id
 msgid "SOS signal notification"
 msgstr "SOS signal notification"
 
@@ -690,12 +714,20 @@ msgid "Type of transmission"
 msgstr "Type of transmission"
 
 #. js-lingui-explicit-id
-msgid "Product created successfully"
-msgstr "Product created successfully"
+msgid "Advert change successfully"
+msgstr "Advert change successfully"
 
 #. js-lingui-explicit-id
-msgid "Error creating product"
-msgstr "Error creating product"
+msgid "Advert created successfully"
+msgstr "Advert created successfully"
+
+#. js-lingui-explicit-id
+msgid "Error changing advert"
+msgstr "Error changing advert"
+
+#. js-lingui-explicit-id
+msgid "Error creating advert"
+msgstr "Error creating advert"
 
 #. js-lingui-explicit-id
 msgid "Add advert"
@@ -742,12 +774,12 @@ msgid "Choose a city"
 msgstr "Choose a city"
 
 #. js-lingui-explicit-id
-msgid "Add a description about the product"
-msgstr "Add a description about the product"
+msgid "Add a description about the advert"
+msgstr "Add a description about the advert"
 
 #. js-lingui-explicit-id
-msgid "Product description"
-msgstr "Product description"
+msgid "Advert description"
+msgstr "Advert description"
 
 #. js-lingui-explicit-id
 msgid "@fgt_com"
@@ -810,6 +842,18 @@ msgid "Type parts"
 msgstr "Type parts"
 
 #. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Filter"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Price, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Filtering"
+
+#. js-lingui-explicit-id
 msgid "grn"
 msgstr "grn"
 
@@ -824,6 +868,10 @@ msgstr "Enter the name"
 #. js-lingui-explicit-id
 msgid "event"
 msgstr "event"
+
+#. js-lingui-explicit-id
+msgid "Createt event"
+msgstr "Createt event"
 
 #. js-lingui-explicit-id
 msgid "You can create an event"
@@ -890,6 +938,10 @@ msgid "Free"
 msgstr "Free"
 
 #. js-lingui-explicit-id
+msgid "Event"
+msgstr "Event"
+
+#. js-lingui-explicit-id
 msgid "Finish"
 msgstr "Finish"
 
@@ -918,6 +970,10 @@ msgid "The length of the name should be between 5 and 20 characters"
 msgstr "The length of the name should be between 5 and 20 characters"
 
 #. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Registration"
+
+#. js-lingui-explicit-id
 msgid "Name:"
 msgstr "Name:"
 
@@ -940,6 +996,14 @@ msgstr "Fill out later"
 #. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Select the city"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Terms of Use"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -968,6 +1032,10 @@ msgstr "Add event"
 #. js-lingui-explicit-id
 msgid "Setting profile"
 msgstr "Setting profile"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "adverts"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -1118,16 +1186,16 @@ msgid "Type workshops"
 msgstr "Type workshops"
 
 #. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Distance, km:"
+
+#. js-lingui-explicit-id
 msgid "All works"
 msgstr "All works"
 
 #. js-lingui-explicit-id
 msgid "Type works"
 msgstr "Type works"
-
-#. js-lingui-explicit-id
-msgid "Filter"
-msgstr "Filter"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
@@ -1137,17 +1205,20 @@ msgstr "Workshops"
 msgid "Enter the name of the workshop or type of work"
 msgstr "Enter the name of the workshop or type of work"
 
+msgid "{distance} km"
+msgstr "{distance} km"
+
 msgid "About us:"
 msgstr "About us:"
 
 msgid "Access denied"
 msgstr "Access denied"
 
+msgid "Add advert"
+msgstr "Add advert"
+
 msgid "Add event"
 msgstr "Add event"
-
-msgid "Add product"
-msgstr "Add product"
 
 msgid "Add workshop"
 msgstr "Add workshop"
@@ -1209,14 +1280,17 @@ msgstr "By rating:"
 msgid "Call"
 msgstr "Call"
 
-msgid "Continue"
-msgstr "Continue"
+msgid "Cheapest"
+msgstr "Cheapest"
 
 msgid "Continue with {typeSocial}"
 msgstr "Continue with {typeSocial}"
 
 msgid "Create event"
 msgstr "Create event"
+
+msgid "Currency:"
+msgstr "Currency:"
 
 msgid "Dark theme"
 msgstr "Dark theme"
@@ -1226,12 +1300,6 @@ msgstr "Delete"
 
 msgid "Description"
 msgstr "Description"
-
-msgid "Distance, km:"
-msgstr "Distance, km:"
-
-msgid "Enter your password"
-msgstr "Enter your password"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Error key token: Secret key is not defined in the environment variables"
@@ -1257,9 +1325,6 @@ msgstr "Event"
 msgid "Events"
 msgstr "Events"
 
-msgid "Forgot your password?"
-msgstr "Forgot your password?"
-
 msgid "from closest to farthest"
 msgstr "from closest to farthest"
 
@@ -1280,6 +1345,9 @@ msgstr "Incorrect phone number entered or country code of the phone number selec
 
 msgid "Internal Server Error"
 msgstr "Internal Server Error"
+
+msgid "Latest"
+msgstr "Latest"
 
 msgid "Leave a review"
 msgstr "Leave a review"
@@ -1302,8 +1370,14 @@ msgstr "more detail"
 msgid "More events"
 msgstr "More events"
 
+msgid "Most expensive"
+msgstr "Most expensive"
+
 msgid "Move and change the location"
 msgstr "Move and change the location"
+
+msgid "My adverts"
+msgstr "My adverts"
 
 msgid "My events"
 msgstr "My events"
@@ -1320,9 +1394,6 @@ msgstr "Not comments"
 msgid "Now"
 msgstr "Now"
 
-msgid "Now create yourself a strong password."
-msgstr "Now create yourself a strong password."
-
 msgid "Only with rating:"
 msgstr "Only with rating:"
 
@@ -1332,9 +1403,6 @@ msgstr "or sign up using:"
 msgid "Participation fee"
 msgstr "Participation fee"
 
-msgid "Password"
-msgstr "Password"
-
 msgid "Password must contain at least 8 characters"
 msgstr "Password must contain at least 8 characters"
 
@@ -1343,12 +1411,6 @@ msgstr "Passwords do not match"
 
 msgid "Past events:"
 msgstr "Past events:"
-
-msgid "Please authenticator"
-msgstr "Please authenticator"
-
-msgid "Please enter your phone number"
-msgstr "Please enter your phone number"
 
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
@@ -1376,9 +1438,6 @@ msgstr "Repair of automobiles"
 
 msgid "Repair of motorcycles"
 msgstr "Repair of motorcycles"
-
-msgid "Repeat password"
-msgstr "Repeat password"
 
 msgid "Resend the code"
 msgstr "Resend the code"
@@ -1413,9 +1472,6 @@ msgstr "Terms of Service"
 msgid "Terms of Use"
 msgstr "Terms of Use"
 
-msgid "The entered phone number is not registered"
-msgstr "The entered phone number is not registered"
-
 msgid "The work we do:"
 msgstr "The work we do:"
 
@@ -1437,20 +1493,17 @@ msgstr "Upcoming events:"
 msgid "Views:"
 msgstr "Views:"
 
-msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
-msgstr "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
-
 msgid "We recommend filling out the profile information"
 msgstr "We recommend filling out the profile information"
-
-msgid "We will help you recover it."
-msgstr "We will help you recover it."
 
 msgid "We're glad to see you on our service."
 msgstr "We're glad to see you on our service."
 
 msgid "Welcome"
 msgstr "Welcome"
+
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "What platform do you want to send the app installation invitation to?"
 
 msgid "Workshop"
 msgstr "Workshop"
@@ -1463,12 +1516,6 @@ msgstr "Write"
 
 msgid "You don't have {typeItem}."
 msgstr "You don't have {typeItem}."
-
-msgid "You have been sent an SMS with a code."
-msgstr "You have been sent an SMS with a code."
-
-msgid "You have entered the confirmation code incorrectly"
-msgstr "You have entered the confirmation code incorrectly"
 
 msgid "Your contact information"
 msgstr "Your contact information"

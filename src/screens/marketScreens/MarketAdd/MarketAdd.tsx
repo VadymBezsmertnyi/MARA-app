@@ -260,14 +260,14 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         navigation.goBack();
         success(
           productUser
-            ? i18n._("Product change successfully")
-            : i18n._("Product created successfully")
+            ? i18n._("Advert change successfully")
+            : i18n._("Advert created successfully")
         );
       } else
         bug(
           productUser
-            ? i18n._("Error changing product")
-            : i18n._("Error creating product")
+            ? i18n._("Error changing advert")
+            : i18n._("Error creating advert")
         );
     }
   };
@@ -466,8 +466,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           />
           <BoxSelectImages isSubTitle images={images} setImages={setImages} />
           <Input
-            placeholder={i18n._("Add a description about the product")}
-            label={i18n._("Product description")}
+            placeholder={i18n._("Add a description about the advert")}
+            label={i18n._("Advert description")}
             value={description}
             onChange={(value) => {
               clearKeyError("description");

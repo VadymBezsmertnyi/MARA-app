@@ -187,7 +187,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         <ModalDelete
           onSubmit={async () => {
             await deleteProduct(idDeleteProduct, "user");
-            success(i18n._("Product delete"));
+            success(i18n._("Advert delete"));
             setIdDeleteProduct(null);
           }}
           onClose={() => {

@@ -446,8 +446,24 @@ msgid "Change workshop"
 msgstr "Змінити майстерню"
 
 #. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Створити оголошення"
+
+#. js-lingui-explicit-id
+msgid "Change advert"
+msgstr "Змінити оголошення"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Будь ласка, аутентифікатор"
+
+#. js-lingui-explicit-id
 msgid "Event delete"
 msgstr "Видалити подію"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Оголошення видалено"
 
 #. js-lingui-explicit-id
 msgid "Ukraine"
@@ -626,6 +642,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Установка захисного аркуша / Установка слайдера / Установка вихлопної системи / Установка гальмівної системи / Установка посиленого шланга / Установка ксенону / Установка освітлення мотоцикла / Установка протитуманних фар (FL)"
 
 #. js-lingui-explicit-id
+msgid "Invitation sent successfully"
+msgstr "Запрошення надіслане успішно"
+
+#. js-lingui-explicit-id
+msgid "Invitation failed to send"
+msgstr "Не вдалося надіслати запрошення"
+
+#. js-lingui-explicit-id
 msgid "SOS signal notification"
 msgstr "Сповіщення сигналу SOS"
 
@@ -690,12 +714,20 @@ msgid "Type of transmission"
 msgstr "Тип коробки передач"
 
 #. js-lingui-explicit-id
-msgid "Product created successfully"
-msgstr "Товар успішно створено"
+msgid "Advert change successfully"
+msgstr "Оголошення успішно змінено"
 
 #. js-lingui-explicit-id
-msgid "Error creating product"
-msgstr "Помилка при створенні товару"
+msgid "Advert created successfully"
+msgstr "Оголошення успішно створено"
+
+#. js-lingui-explicit-id
+msgid "Error changing advert"
+msgstr "Помилка зміни оголошення"
+
+#. js-lingui-explicit-id
+msgid "Error creating advert"
+msgstr "Помилка створення оголошення"
 
 #. js-lingui-explicit-id
 msgid "Add advert"
@@ -742,12 +774,12 @@ msgid "Choose a city"
 msgstr "Виберіть місто"
 
 #. js-lingui-explicit-id
-msgid "Add a description about the product"
-msgstr "Додайте опис товару"
+msgid "Add a description about the advert"
+msgstr "Додайте опис про оголошення"
 
 #. js-lingui-explicit-id
-msgid "Product description"
-msgstr "Опис товару"
+msgid "Advert description"
+msgstr "Опис оголошення"
 
 #. js-lingui-explicit-id
 msgid "@fgt_com"
@@ -810,6 +842,18 @@ msgid "Type parts"
 msgstr "Тип деталів"
 
 #. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Фільтр"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Ціна, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Фільтрація"
+
+#. js-lingui-explicit-id
 msgid "grn"
 msgstr "грн"
 
@@ -824,6 +868,10 @@ msgstr "Введіть назву"
 #. js-lingui-explicit-id
 msgid "event"
 msgstr "подія"
+
+#. js-lingui-explicit-id
+msgid "Createt event"
+msgstr "Створити подію"
 
 #. js-lingui-explicit-id
 msgid "You can create an event"
@@ -890,6 +938,10 @@ msgid "Free"
 msgstr "Безкоштовно"
 
 #. js-lingui-explicit-id
+msgid "Event"
+msgstr "Подія"
+
+#. js-lingui-explicit-id
 msgid "Finish"
 msgstr "Фініш"
 
@@ -918,6 +970,10 @@ msgid "The length of the name should be between 5 and 20 characters"
 msgstr "Довжина імені повинна бути від 5 до 20 символів"
 
 #. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Реєстрація"
+
+#. js-lingui-explicit-id
 msgid "Name:"
 msgstr "Ім'я:"
 
@@ -940,6 +996,14 @@ msgstr "Заповнити пізніше"
 #. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Оберіть місто:"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Політика конфіденційності"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Умови використання"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -968,6 +1032,10 @@ msgstr "Додати подію"
 #. js-lingui-explicit-id
 msgid "Setting profile"
 msgstr "Корегувати профіль"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "оголошення"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -1118,16 +1186,16 @@ msgid "Type workshops"
 msgstr "Тип майстерень"
 
 #. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Відстань, км:"
+
+#. js-lingui-explicit-id
 msgid "All works"
 msgstr "Всі роботи"
 
 #. js-lingui-explicit-id
 msgid "Type works"
 msgstr "Тип робіт"
-
-#. js-lingui-explicit-id
-msgid "Filter"
-msgstr "Фільтр"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
@@ -1137,17 +1205,20 @@ msgstr "Майстерні"
 msgid "Enter the name of the workshop or type of work"
 msgstr "Введіть назву майстерні або вид робіт"
 
+msgid "{distance} km"
+msgstr "{distance} км"
+
 msgid "About us:"
 msgstr "Про нас:"
 
 msgid "Access denied"
 msgstr "Доступ заборонено"
 
+msgid "Add advert"
+msgstr "Додати оголошення"
+
 msgid "Add event"
 msgstr "Додати подію"
-
-msgid "Add product"
-msgstr "Додати товар"
 
 msgid "Add workshop"
 msgstr "Додати майстерню"
@@ -1209,14 +1280,17 @@ msgstr "За рейтингом:"
 msgid "Call"
 msgstr "Подзвонити"
 
-msgid "Continue"
-msgstr "Продовжити"
+msgid "Cheapest"
+msgstr "Найдешевший"
 
 msgid "Continue with {typeSocial}"
 msgstr "Продовжити з {typeSocial}"
 
 msgid "Create event"
 msgstr "Створити подію"
+
+msgid "Currency:"
+msgstr "Валюта:"
 
 msgid "Dark theme"
 msgstr "Темна тема"
@@ -1226,12 +1300,6 @@ msgstr "Видалити"
 
 msgid "Description"
 msgstr "Опис"
-
-msgid "Distance, km:"
-msgstr "Відстань, км:"
-
-msgid "Enter your password"
-msgstr "Введіть свій пароль"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Помилка ключа токена: Секретний ключ не визначено в змінних середовища"
@@ -1257,9 +1325,6 @@ msgstr "Подія"
 msgid "Events"
 msgstr "Події"
 
-msgid "Forgot your password?"
-msgstr "Забули свій пароль?"
-
 msgid "from closest to farthest"
 msgstr "від найближчого до найвіддаленішого"
 
@@ -1280,6 +1345,9 @@ msgstr "Введений неправильний номер телефону а
 
 msgid "Internal Server Error"
 msgstr "Внутрішня помилка сервера"
+
+msgid "Latest"
+msgstr "Останній"
 
 msgid "Leave a review"
 msgstr "Залишити відгук"
@@ -1302,8 +1370,14 @@ msgstr "більше деталей"
 msgid "More events"
 msgstr "Більше подій"
 
+msgid "Most expensive"
+msgstr "Найдорожчий"
+
 msgid "Move and change the location"
 msgstr "Перемістити та змінити місце"
+
+msgid "My adverts"
+msgstr "Мої оголошення"
 
 msgid "My events"
 msgstr "Мої події"
@@ -1320,9 +1394,6 @@ msgstr "Коментарі відсутні"
 msgid "Now"
 msgstr "Зараз"
 
-msgid "Now create yourself a strong password."
-msgstr "Тепер створіть собі надійний пароль"
-
 msgid "Only with rating:"
 msgstr "Тільки з рейтингом:"
 
@@ -1332,9 +1403,6 @@ msgstr "або зареєструйтеся за допомогою:"
 msgid "Participation fee"
 msgstr "Ціна за участь"
 
-msgid "Password"
-msgstr "Пароль"
-
 msgid "Password must contain at least 8 characters"
 msgstr "Пароль повинен містити не менше 8 символів"
 
@@ -1343,12 +1411,6 @@ msgstr "Паролі не співпадають"
 
 msgid "Past events:"
 msgstr "Минулі події:"
-
-msgid "Please authenticator"
-msgstr "Будьласка пройдіть аутентифікацію"
-
-msgid "Please enter your phone number"
-msgstr "Введіть ваш номер телефону"
 
 msgid "Privacy Policy"
 msgstr "Політикою конфіденційності"
@@ -1376,9 +1438,6 @@ msgstr "Ремонт автомобілів"
 
 msgid "Repair of motorcycles"
 msgstr "Ремонт мотоциклів"
-
-msgid "Repeat password"
-msgstr "Повторіть пароль"
 
 msgid "Resend the code"
 msgstr "Надіслати код повторно"
@@ -1413,9 +1472,6 @@ msgstr "Умовами користування"
 msgid "Terms of Use"
 msgstr "Умовами користування"
 
-msgid "The entered phone number is not registered"
-msgstr "Введений номер телефону не зареєстрований"
-
 msgid "The work we do:"
 msgstr "Роботи, які ми виконуємо:"
 
@@ -1437,20 +1493,17 @@ msgstr "Найближчі події:"
 msgid "Views:"
 msgstr "Перегляди:"
 
-msgid "We have sent you an SMS with a code to the number {phoneNumber}. If you didn't receive the message, press the button below to resend."
-msgstr "Ми відправили вам SMS з кодом на номер {phoneNumber}. Якщо повідомлення не прийшло, натисніть кнопку нижче для повторної відправки"
-
 msgid "We recommend filling out the profile information"
 msgstr "Рекомендуємо заповнити  дані для профілю"
-
-msgid "We will help you recover it."
-msgstr "Ми допоможемо його відновити"
 
 msgid "We're glad to see you on our service."
 msgstr "Раді бачити вас на нашому сервісі."
 
 msgid "Welcome"
 msgstr "Ласкаво просимо"
+
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "На яку платформу ви хочете надіслати запрошення на встановлення додатку?"
 
 msgid "Workshop"
 msgstr "Майстерня"
@@ -1463,12 +1516,6 @@ msgstr "Написати"
 
 msgid "You don't have {typeItem}."
 msgstr "У вас немає {typeItem}."
-
-msgid "You have been sent an SMS with a code."
-msgstr "Вам надіслано SMS!"
-
-msgid "You have entered the confirmation code incorrectly"
-msgstr "Ви невірно ввели код підтвердження"
 
 msgid "Your contact information"
 msgstr "Ваші контактні дані"

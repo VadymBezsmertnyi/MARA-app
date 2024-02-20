@@ -33,7 +33,7 @@ export const useMarketStack = () => {
     {
       id: PATHS_MARKET_SCREENS.marketAdd,
       name: PATHS_MARKET_SCREENS.marketAdd,
-      title: t(i18n)`Add product`,
+      title: t(i18n)`Add advert`,
       headerShown: false,
       component: MarketAdd,
     },
