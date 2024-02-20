@@ -33,6 +33,7 @@ import { IconArrowRightEvent } from "../../../../../icons/components";
 // styles
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
+import { InputSlider } from "../../../../../components/InputSlider/InputSlider";
 
 type ModalFilterProps = {
   filters: TypeFilters | null;
@@ -175,59 +176,12 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             />
           }
         />
-        <View style={styles.containerFullTrack}>
-          <Text style={styles.labelSectors}>
-            <Trans>Distance, km:</Trans>
-          </Text>
-          <View style={styles.containerTrack}>
-            <View style={styles.track}>
-              <TouchableOpacity
-                style={styles.containerIcon}
-                onPress={() => {
-                  if (distance > 1) setDistance((state) => state - 1);
-                }}
-              >
-                <View style={styles.lineMinusIcon} />
-              </TouchableOpacity>
-              <Slider
-                value={distance}
-                onValueChange={(values) => {
-                  setDistance(Number(values[0].toFixed()));
-                }}
-                minimumValue={1}
-                maximumValue={200}
-                trackStyle={styles.trackStyle}
-                renderThumbComponent={() => (
-                  <View style={styles.containerThumb}>
-                    <LinearGradientCustom
-                      style={styles.thumbLinerGradientStyle}
-                    >
-                      <View style={styles.thumbStyle} />
-                    </LinearGradientCustom>
-                    <Text style={styles.numberThumb}>{distance}</Text>
-                  </View>
-                )}
-                renderMinimumTrackComponent={() => (
-                  <LinearGradientCustom style={styles.minimumTrackStyle} />
-                )}
-                maximumTrackStyle={styles.maximumTrackStyle}
-              />
-              <TouchableOpacity
-                style={styles.containerIcon}
-                onPress={() => {
-                  if (distance < 200) setDistance((state) => state + 1);
-                }}
-              >
-                <View style={styles.lineMinusIcon} />
-                <View style={styles.linePlusIcon} />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.containerPointers}>
-              <Text style={styles.numbersThumb}>1</Text>
-              <Text style={styles.numbersThumb}>200</Text>
-            </View>
-          </View>
-        </View>
+        <InputSlider
+          min={1}
+          max={200}
+          value={distance}
+          onChange={setDistance}
+        />
         <View style={styles.containerSelectRatings}>
           <Text style={styles.labelSectors}>
             <Trans>Only with rating:</Trans>
