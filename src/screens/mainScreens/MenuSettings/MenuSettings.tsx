@@ -6,6 +6,7 @@ import {
   View,
   Share,
   Platform,
+  StatusBar,
 } from "react-native";
 import { DrawerNavigationState, ParamListBase } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
@@ -58,6 +59,7 @@ type MenuSettingsProps = {
 
 export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   navigation,
+  state,
 }) => {
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
@@ -66,6 +68,13 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
   const { success, warning } = showErrors;
+  const isShowDrawer = useMemo(
+    () =>
+      state.history.length
+        ? state.history[state.history.length - 1].type === "drawer"
+        : false,
+    [state.history]
+  );
   // TODO will do
   const isToggleTheme = false;
   const isToggleSos = false;
@@ -108,6 +117,9 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   return (
     <>
       <View style={containerStyles}>
+        {isShowDrawer ? (
+          <StatusBar backgroundColor={colors.lightOrange} />
+        ) : null}
         <View>
           <View style={styles.containerHeader}>
             <View style={styles.boxHeaderEmpty} />
