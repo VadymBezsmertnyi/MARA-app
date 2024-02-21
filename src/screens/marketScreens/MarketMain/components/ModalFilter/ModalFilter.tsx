@@ -10,11 +10,16 @@ import { Trans } from "@lingui/macro";
 
 // types
 import { CurrencyType } from "../../../../../providers/PaymentProvider/PaymentProvider.types";
+import {
+  CountryType,
+  RegionsCountryType,
+} from "../../../../../providers/PlacesProvider/PlacesProvider.types";
 
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
 import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
 import { marketContext } from "../../../../../providers/MarketProvider/MarketProvider";
+import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { Header } from "../../../../../components/Header/Header";
@@ -41,9 +46,10 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   isOpen,
   onClose,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
   const { minMaxPrices, placesAll } = useContext(marketContext);
+  const { places } = useContext(placesContext);
   const [selectCurrency, setSelectCurrency] = useState<CurrencyType | null>(
     null
   );
@@ -54,6 +60,41 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const [selectPlaces, setSelectPlaces] = useState<FilterCheckboxes | null>(
     null
   );
+  const selectCountries = useMemo(
+    () =>
+      selectPlaces?.countryIds.reduce((a, b) => {
+        const country = places
+          ? Object.values(places).find(
+              (countryOld) => countryOld.id.toString() === b
+            )
+          : null;
+        if (!country) return a;
+        return [...a, country];
+      }, [] as CountryType[]) || null,
+    [selectPlaces?.countryIds]
+  );
+  const selectRegions = useMemo(
+    () =>
+      selectCountries?.reduce((a, b) => {
+        const regions =
+          b.regions.filter(
+            (region) => selectPlaces?.regionIds.includes(region.placeId)
+          ) || [];
+        return [...a, ...regions];
+      }, [] as RegionsCountryType) || null,
+    [selectCountries, selectPlaces?.regionIds]
+  );
+  const showTitle = useMemo(() => {
+    if (selectPlaces?.cityTitles.length)
+      return selectPlaces.cityTitles.join("/");
+    if (selectRegions?.length)
+      return selectRegions
+        .map((region) => region.name[language || "en"])
+        .join("/");
+    if (selectCountries?.length)
+      return selectCountries.map((country) => country.title).join("/");
+    return "";
+  }, [selectPlaces?.cityTitles, selectRegions, selectCountries]);
   const minSlider = useMemo(
     () =>
       minMaxPrices?.min && selectCurrency
@@ -117,7 +158,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             isSelect
             label={i18n._("Location")}
             placeholder={i18n._("Choose a city")}
-            value={""}
+            value={showTitle}
             onPress={() => {
               setIsShowPlaces(true);
             }}
