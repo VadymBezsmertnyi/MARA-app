@@ -11,6 +11,7 @@ import { z } from "zod";
 // types
 import {
   MinMaxPricesType,
+  PlacesAllType,
   ProductType,
   ProductsType,
 } from "./MarketProvider.types";
@@ -42,6 +43,7 @@ type MarketContext = {
   changeProduct: (changeProduct: ProductType) => Promise<boolean>;
   deleteProduct: (idProduct: number, type?: "all" | "user") => Promise<boolean>;
   minMaxPrices: MinMaxPricesType | null;
+  placesAll: PlacesAllType | null;
 };
 
 type MarketProviderProps = {
@@ -64,6 +66,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   const [minMaxPrices, setMinMaxPrices] = useState<MinMaxPricesType | null>(
     null
   );
+  const [placesAll, setPlacesAll] = useState<PlacesAllType | null>(null);
   const { success } = showErrors;
 
   const setMinMaxProduct = async (product: ProductType) => {
@@ -97,6 +100,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       setProducts(result.products);
       setCurrencies(result.currencies);
       setMinMaxPrices({ min: result.min, max: result.max });
+      if (result.places) setPlacesAll(result.places);
     }
   };
 
@@ -212,8 +216,9 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       changeProduct,
       deleteProduct,
       minMaxPrices,
+      placesAll,
     }),
-    [products, productsUser]
+    [products, productsUser, minMaxPrices, placesAll]
   );
 
   useEffect(() => {

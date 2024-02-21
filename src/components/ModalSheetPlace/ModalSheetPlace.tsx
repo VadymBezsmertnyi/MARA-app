@@ -133,7 +133,9 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
                   );
                 }}
               >
-                <Text>{places[countryIso].title}</Text>
+                <Text style={styles.titleItemList}>
+                  {places[countryIso].title}
+                </Text>
                 <CheckboxPoint isSelect={countryIso === selectCountryIso} />
               </TouchableOpacity>
             ) : null;
@@ -164,7 +166,9 @@ export const ModalSheetPlace: FunctionComponent<ModalSheetPlaceProps> = ({
                   );
                 }}
               >
-                <Text>{region.name[language || "en"]}</Text>
+                <Text style={styles.titleItemList}>
+                  {region.name[language || "en"]}
+                </Text>
                 <CheckboxPoint isSelect={selectRegionId === region.placeId} />
               </TouchableOpacity>
             ) : null;

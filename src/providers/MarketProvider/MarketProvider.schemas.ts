@@ -63,6 +63,20 @@ export const productSchema = z.object({
 
 export const productsSchema = z.array(productSchema);
 
+export const placesAllSchema = z.record(
+  z.string(),
+  z.object({
+    countryId: z.string(),
+    regions: z.record(
+      z.string(),
+      z.object({
+        regionId: z.string(),
+        cities: z.array(z.string()),
+      })
+    ),
+  })
+);
+
 export const resultProductsSchema = z.object({
   result: z.boolean(),
   code: z.number(),
@@ -70,6 +84,7 @@ export const resultProductsSchema = z.object({
   currencies: currenciesSchema,
   max: ratesCurrencySchema,
   min: ratesCurrencySchema,
+  places: placesAllSchema.optional(),
 });
 
 export const minMaxPricesSchema = z.object({
