@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useContext, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { Modal, StatusBar, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
@@ -8,6 +14,7 @@ import { CurrencyType } from "../../../../../providers/PaymentProvider/PaymentPr
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
 import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
+import { marketContext } from "../../../../../providers/MarketProvider/MarketProvider";
 
 // components
 import { Header } from "../../../../../components/Header/Header";
@@ -34,12 +41,45 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
+  const { minMaxPrices } = useContext(marketContext);
   const [selectCurrency, setSelectCurrency] = useState<CurrencyType | null>(
     null
   );
   const [price, setPrice] = useState(200);
+  const [isNew, setIsNew] = useState<boolean | null>(null);
+  const [isBusiness, setIsBusiness] = useState<boolean | null>(null);
+  const minSlider = useMemo(
+    () =>
+      minMaxPrices?.min && selectCurrency
+        ? Number(minMaxPrices.min[selectCurrency.code].toFixed(0))
+        : 0,
+    [minMaxPrices?.min, selectCurrency]
+  );
+  const maxSlider = useMemo(
+    () =>
+      minMaxPrices?.max && selectCurrency
+        ? Number(minMaxPrices.max[selectCurrency.code].toFixed(0))
+        : 5000,
+    [minMaxPrices?.max, selectCurrency]
+  );
+  const onSubmitFilters = () => {
+    const dataFilter = {
+      price: selectCurrency
+        ? {
+            codeCurrent: selectCurrency.code,
+            min: minSlider,
+            max: price,
+          }
+        : null,
+      isNew,
+      isBusiness,
+    };
+    console.log("dataFilter", dataFilter);
+  };
 
-  const onSubmitFilters = () => {};
+  useEffect(() => {
+    if (minSlider > price || maxSlider < price) setPrice(minSlider);
+  }, [selectCurrency]);
 
   return (
     <Modal transparent visible={isOpen}>
@@ -84,22 +124,30 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             inputWrapperStyle={styles.inputWrapperStyleInputButton}
           />
           <SelectTwoButtons
-            isSelectFirst={null}
+            isSelectFirst={isNew}
             titleFirst={i18n._("New")}
             titleSecond={i18n._("Used")}
             label={i18n._("The state of the goods:")}
-            onPressFirst={() => {}}
-            onPressSecond={() => {}}
+            onPressFirst={() => {
+              setIsNew((state) => (state ? null : true));
+            }}
+            onPressSecond={() => {
+              setIsNew((state) => (state === false ? null : false));
+            }}
             containerStyle={styles.containerTwoButtons}
             labelStyle={styles.labelSelect}
           />
           <SelectTwoButtons
-            isSelectFirst={null}
-            titleFirst={i18n._("Private individual")}
-            titleSecond={i18n._("Business")}
+            isSelectFirst={isBusiness}
+            titleFirst={i18n._("Business")}
+            titleSecond={i18n._("Private individual")}
             label={i18n._("Seller:")}
-            onPressFirst={() => {}}
-            onPressSecond={() => {}}
+            onPressFirst={() => {
+              setIsBusiness((state) => (state ? null : true));
+            }}
+            onPressSecond={() => {
+              setIsBusiness((state) => (state === false ? null : false));
+            }}
             containerStyle={styles.containerTwoButtons}
             labelStyle={styles.labelSelect}
           />
@@ -134,8 +182,8 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             label={i18n._("Price, {symbol}:", {
               symbol: selectCurrency?.symbol || listCurrency[0].symbol,
             })}
-            min={0}
-            max={5000}
+            min={minSlider}
+            max={maxSlider}
             value={price}
             onChange={setPrice}
           />

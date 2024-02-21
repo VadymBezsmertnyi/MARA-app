@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
     position: "absolute",
     top: -20,
-    minWidth: 40,
+    minWidth: 100,
     textAlign: "center",
   },
   minimumTrackStyle: { width: "100%", height: 6, borderRadius: 10 },

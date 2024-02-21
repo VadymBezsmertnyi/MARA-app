@@ -78,8 +78,8 @@ export const InputSlider: FunctionComponent<InputSliderProps> = ({
           </TouchableOpacity>
         </View>
         <View style={styles.containerPointers}>
-          <Text style={styles.numbersThumb}>1</Text>
-          <Text style={styles.numbersThumb}>200</Text>
+          <Text style={styles.numbersThumb}>{min}</Text>
+          <Text style={styles.numbersThumb}>{max}</Text>
         </View>
       </View>
     </View>
