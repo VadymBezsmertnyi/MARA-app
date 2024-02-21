@@ -1,6 +1,10 @@
 import { z } from "zod";
 import { placeSchema } from "../PlacesProvider/PlacesProvider.schemas";
-import { codeCurrenciesSchema } from "../PaymentProvider/PaymentProvider.schemas";
+import {
+  codeCurrenciesSchema,
+  currenciesSchema,
+  ratesCurrencySchema,
+} from "../PaymentProvider/PaymentProvider.schemas";
 
 export const infoCategorySchema = z.object({
   id: z.number(),
@@ -39,6 +43,12 @@ export const productSchema = z.object({
   ),
   description: z.string(),
   price: z.number(),
+  prices: z.object({
+    UAH: z.number().optional(),
+    USD: z.number().optional(),
+    EUR: z.number().optional(),
+    date: z.number().nullable(),
+  }),
   codeCurrency: codeCurrenciesSchema,
   phoneNumber: z.string(),
   telegram: z.string(),
@@ -55,6 +65,14 @@ export const productsSchema = z.array(productSchema);
 
 export const resultProductsSchema = z.object({
   result: z.boolean(),
-  products: productsSchema,
   code: z.number(),
+  products: productsSchema,
+  currencies: currenciesSchema,
+  max: ratesCurrencySchema,
+  min: ratesCurrencySchema,
+});
+
+export const minMaxPricesSchema = z.object({
+  min: ratesCurrencySchema,
+  max: ratesCurrencySchema,
 });

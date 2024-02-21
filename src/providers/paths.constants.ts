@@ -26,4 +26,5 @@ export const PATHS = {
   marketsProductsAdd: "/markets/products/add/",
   marketsProductsChange: "/markets/products/change/",
   marketsProductsDelete: "/markets/products/delete/",
+  marketsProductsMinMaxPricesGet: "/markets/products/minMaxPrices/",
 } as const;

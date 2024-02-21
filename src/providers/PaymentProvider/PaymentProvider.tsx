@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import CurrencyList from "currency-list";
 
 // types
-import { CurrencyType } from "./PaymentProvider.types";
+import { CurrenciesType, CurrencyType } from "./PaymentProvider.types";
 
 // providers
 import { localesContext } from "../../../localization/localization.provider";
@@ -12,6 +12,8 @@ import { LIST_CURRENCIES } from "./PaymentProvider.constants";
 
 type PaymentContext = {
   listCurrency: CurrencyType[];
+  currencies: CurrenciesType | null;
+  setCurrencies: React.Dispatch<React.SetStateAction<CurrenciesType | null>>;
 };
 
 type PaymentProviderProps = {
@@ -24,6 +26,7 @@ export const PaymentProvider: FunctionComponent<PaymentProviderProps> = ({
   children,
 }) => {
   const { language } = useContext(localesContext);
+  const [currencies, setCurrencies] = useState<CurrenciesType | null>(null);
   const listCurrency = useMemo(
     () =>
       LIST_CURRENCIES.map(
@@ -34,8 +37,8 @@ export const PaymentProvider: FunctionComponent<PaymentProviderProps> = ({
   );
 
   const valueContext: PaymentContext = useMemo(
-    () => ({ listCurrency }),
-    [listCurrency]
+    () => ({ listCurrency, currencies, setCurrencies }),
+    [listCurrency, currencies]
   );
 
   return (

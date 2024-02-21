@@ -9,10 +9,15 @@ import qs from "qs";
 import { z } from "zod";
 
 // types
-import { ProductType, ProductsType } from "./MarketProvider.types";
+import {
+  MinMaxPricesType,
+  ProductType,
+  ProductsType,
+} from "./MarketProvider.types";
 
 // schemas
 import { productSchema, resultProductsSchema } from "./MarketProvider.schemas";
+import { ratesCurrencySchema } from "../PaymentProvider/PaymentProvider.schemas";
 
 // helps
 import showErrors from "../../helps/errors/showError";
@@ -22,6 +27,7 @@ import { userContext } from "../UserProvider/UserProvider";
 import { localesContext } from "../../../localization/localization.provider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
+import { paymentContext } from "../PaymentProvider/PaymentProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
@@ -35,6 +41,7 @@ type MarketContext = {
   addProduct: (newProduct: Omit<ProductType, "id">) => Promise<boolean>;
   changeProduct: (changeProduct: ProductType) => Promise<boolean>;
   deleteProduct: (idProduct: number, type?: "all" | "user") => Promise<boolean>;
+  minMaxPrices: MinMaxPricesType | null;
 };
 
 type MarketProviderProps = {
@@ -48,12 +55,37 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { userData } = useContext(userContext);
+  const { setCurrencies } = useContext(paymentContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
   const [products, setProducts] = useState<ProductsType>([]);
   const [productsUser, setProductsUser] = useState<ProductsType>([]);
   const [idDeleteProduct, setIdDeleteProduct] = useState<number | null>(null);
+  const [minMaxPrices, setMinMaxPrices] = useState<MinMaxPricesType | null>(
+    null
+  );
   const { success } = showErrors;
+
+  const setMinMaxProduct = async (product: ProductType) => {
+    const isMinProduct = minMaxPrices
+      ? product.price < minMaxPrices?.min[product.codeCurrency]
+      : false;
+    const isMaxProduct = minMaxPrices
+      ? product.price > minMaxPrices?.max[product.codeCurrency]
+      : false;
+
+    if (isMinProduct || isMaxProduct) {
+      const result = await api(
+        PATHS.marketsProductsMinMaxPricesGet,
+        null,
+        z.object({
+          max: ratesCurrencySchema,
+          min: ratesCurrencySchema,
+        })
+      );
+      setMinMaxPrices(result);
+    }
+  };
 
   const getProducts = async () => {
     const result = await api(
@@ -61,7 +93,11 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       null,
       resultProductsSchema
     );
-    if (result?.products) setProducts(result.products);
+    if (result) {
+      setProducts(result.products);
+      setCurrencies(result.currencies);
+      setMinMaxPrices({ min: result.min, max: result.max });
+    }
   };
 
   const getProductsUser = async () => {
@@ -79,12 +115,16 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         null,
         resultProductsSchema
       );
-      if (result?.products) setProductsUser(result.products);
+      if (result) {
+        setProductsUser(result.products);
+        setCurrencies(result.currencies);
+        setMinMaxPrices({ min: result.min, max: result.max });
+      }
     }
   };
 
   const addProduct = async (
-    newProduct: Omit<ProductType, "id">
+    newProduct: Omit<ProductType, "id" | "prices">
   ): Promise<boolean> => {
     setLoading(true);
     const result = await api(
@@ -99,13 +139,14 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       setProductsUser((state) => [...state, result.product]);
       setProducts((state) => [...state, result.product]);
       setLoading(false);
+      setMinMaxProduct(result.product);
       return true;
     }
     setLoading(false);
     return false;
   };
 
-  const changeProduct = async (changeProduct: ProductType) => {
+  const changeProduct = async (changeProduct: Omit<ProductType, "prices">) => {
     setLoading(true);
     const result = await api(
       PATHS.marketsProductsChange,
@@ -126,6 +167,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
           product.id === result.product.id ? result.product : product
         )
       );
+      setMinMaxProduct(result.product);
       setLoading(false);
       return true;
     }
@@ -169,6 +211,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       addProduct,
       changeProduct,
       deleteProduct,
+      minMaxPrices,
     }),
     [products, productsUser]
   );
