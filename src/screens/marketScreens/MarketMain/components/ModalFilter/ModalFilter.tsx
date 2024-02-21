@@ -22,6 +22,8 @@ import { InputButton } from "../../../../../components/InputButton/InputButton";
 import { SelectTwoButtons } from "../../../../../components/SelectTwoButtons/SelectTwoButtons";
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 import { InputSlider } from "../../../../../components/InputSlider/InputSlider";
+import { FilterCheckboxes } from "../../../../../components/ModalSheetPlaceCheckboxes/ModalSheetPlaceCheckboxes.types";
+import { ModalSheetPlaceCheckboxes } from "../../../../../components/ModalSheetPlaceCheckboxes/ModalSheetPlaceCheckboxes";
 
 // icons
 import { IconArrowRightEvent } from "../../../../../icons/components";
@@ -29,7 +31,6 @@ import { IconArrowRightEvent } from "../../../../../icons/components";
 // styles
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
-import { ModalSheetPlaceCheckboxes } from "../../../../../components/ModalSheetPlaceCheckboxes/ModalSheetPlaceCheckboxes";
 
 type ModalFilterProps = {
   isOpen: boolean;
@@ -50,6 +51,9 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const [isNew, setIsNew] = useState<boolean | null>(null);
   const [isBusiness, setIsBusiness] = useState<boolean | null>(null);
   const [isShowPlaces, setIsShowPlaces] = useState(false);
+  const [selectPlaces, setSelectPlaces] = useState<FilterCheckboxes | null>(
+    null
+  );
   const minSlider = useMemo(
     () =>
       minMaxPrices?.min && selectCurrency
@@ -201,10 +205,11 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
       <ModalSheetPlaceCheckboxes
         isOpen={isShowPlaces}
         title={i18n._("Location")}
-        onClose={() => {
+        onClose={(isClear) => {
+          if (isClear) setSelectPlaces(null);
           setIsShowPlaces(false);
         }}
-        onSubmit={() => {}}
+        onSubmit={setSelectPlaces}
         placesSelected={placesAll}
       />
     </Modal>

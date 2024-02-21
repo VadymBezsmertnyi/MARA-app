@@ -10,6 +10,10 @@ import { Shadow } from "react-native-shadow-2";
 
 // types
 import { PlacesAllType } from "../../providers/MarketProvider/MarketProvider.types";
+import {
+  FilterCheckboxes,
+  StepModalCheckboxes,
+} from "./ModalSheetPlaceCheckboxes.types";
 
 // providers
 import { localesContext } from "../../../localization/localization.provider";
@@ -32,16 +36,11 @@ type ModalSheetPlaceProps = {
   placesSelected: PlacesAllType | null;
   isOpen: boolean;
   title: string;
-  onClose: () => void;
-  onSubmit: (date: {
-    countryIds: string[];
-    regionIds: string[];
-    cityTitles: string[];
-  }) => void;
+  onClose: (isClear?: boolean) => void;
+  onSubmit: (date: FilterCheckboxes) => void;
 };
 
-type StepModal = "country" | "region" | "city";
-const STEPS: StepModal[] = ["country", "region", "city"];
+const STEPS: StepModalCheckboxes[] = ["country", "region", "city"];
 
 export const ModalSheetPlaceCheckboxes: FunctionComponent<
   ModalSheetPlaceProps
@@ -129,6 +128,7 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
     [placesSelected, countriesSelectAmount, selectRegionIds, selectCitiesTitles]
   );
   const stepName = useMemo(() => STEPS[step], [step]);
+
   const showElement = useMemo(() => {
     if (stepName === "country")
       return (
@@ -145,6 +145,8 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                 key={`country-${country.countryId}`}
                 style={styles.containerItemList}
                 onPress={() => {
+                  setSelectRegionIds([]);
+                  setSelectCitiesTitles([]);
                   setSelectCountriesIso((state) =>
                     state.includes(country.countryId)
                       ? state.filter(
@@ -160,6 +162,8 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                   isGradient
                   check={selectCountriesIso.includes(country.countryId)}
                   setCheck={() => {
+                    setSelectRegionIds([]);
+                    setSelectCitiesTitles([]);
                     setSelectCountriesIso((state) =>
                       state.includes(country.countryId)
                         ? state.filter(
@@ -201,6 +205,7 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                         key={`country-${country.countryId}-region-${region.regionId}`}
                         style={styles.containerItemList}
                         onPress={() => {
+                          setSelectCitiesTitles([]);
                           setSelectRegionIds((state) =>
                             state.includes(region.regionId)
                               ? state.filter(
@@ -217,6 +222,7 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                           isGradient
                           check={selectRegionIds.includes(region.regionId)}
                           setCheck={() => {
+                            setSelectCitiesTitles([]);
                             setSelectRegionIds((state) =>
                               state.includes(region.regionId)
                                 ? state.filter(
@@ -324,6 +330,7 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
       );
     return null;
   }, [selectCountriesIso, selectRegionIds, selectCitiesTitles, step, search]);
+
   const isSelectStep = useMemo(() => {
     if (stepName === "country") return amountData.countries > 0;
     if (stepName === "region") return amountData.regions > 0;
@@ -339,14 +346,17 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
 
   const onPressNext = () => {
     setSearch("");
-    if (isSelectStep && STEPS.length - 1 > step) setStep((state) => state + 1);
-    else {
+    if (step === 0 && amountData.countries === 0) onClose(true);
+    else if (isSelectStep && STEPS.length - 1 > step) {
+      setStep((state) => state + 1);
+    } else {
       const submitData = {
         countryIds: selectCountriesIso,
         regionIds: selectRegionIds,
         cityTitles: selectCitiesTitles,
       };
       onSubmit(submitData);
+      onClose();
     }
   };
 
