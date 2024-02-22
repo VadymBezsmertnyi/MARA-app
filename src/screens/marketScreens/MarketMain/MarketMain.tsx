@@ -28,7 +28,8 @@ import { ProductCardSmall } from "./components/ProductCardSmall/ProductCardSmall
 import { ProductCardFull } from "./components/ProductCardFull/ProductCardFull";
 import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
 import { ModalFilter } from "./components/ModalFilter/ModalFilter";
-import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
+import { ModalSort } from "./components/ModalSort/ModalSort";
+import { ModalFilterSubmitType } from "./components/ModalFilter/ModalFilter.types";
 
 // icons
 import { IconSearchInput } from "../../../icons/components";
@@ -38,7 +39,6 @@ import { PATHS_MARKET_SCREENS } from "../../../navigators/useNavigator.constants
 
 // styles
 import { styles } from "./MarketMain.styles";
-import { ModalSort } from "./components/ModalSort/ModalSort";
 
 type MarketMainProps = {
   navigation: NativeStackNavigationProp<RootMarketScreensParamList> &
@@ -54,6 +54,9 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [isWrap, setIsWrap] = useState(false);
+  const [dataFilter, setDataFilter] = useState<ModalFilterSubmitType | null>(
+    null
+  );
 
   const stylesContainer: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -150,7 +153,12 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
         onClose={onClose}
         setTypeSort={setTypeSort}
       />
-      <ModalFilter isOpen={isShowFilter} onClose={onClose} />
+      <ModalFilter
+        isOpen={isShowFilter}
+        onClose={onClose}
+        dataFilterOld={dataFilter}
+        onSubmit={setDataFilter}
+      />
     </>
   );
 };

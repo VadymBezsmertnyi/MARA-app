@@ -52,4 +52,5 @@ export const styles = StyleSheet.create({
     fontSize: 22,
   },
   buttonSubmit: { marginHorizontal: 36, marginTop: 20 },
+  containerEmpty: { height: 50 },
 });

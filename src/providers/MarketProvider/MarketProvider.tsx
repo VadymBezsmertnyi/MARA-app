@@ -39,7 +39,9 @@ import { PATHS } from "../paths.constants";
 type MarketContext = {
   products: ProductsType;
   productsUser: ProductsType;
-  addProduct: (newProduct: Omit<ProductType, "id">) => Promise<boolean>;
+  addProduct: (
+    newProduct: Omit<ProductType, "id" | "prices">
+  ) => Promise<boolean>;
   changeProduct: (changeProduct: ProductType) => Promise<boolean>;
   deleteProduct: (idProduct: number, type?: "all" | "user") => Promise<boolean>;
   minMaxPrices: MinMaxPricesType | null;

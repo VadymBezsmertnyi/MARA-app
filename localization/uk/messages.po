@@ -99,11 +99,11 @@ msgstr "Опублікувати"
 
 #. js-lingui-explicit-id
 msgid "Motorcycle transport"
-msgstr "Транспорт для мотоциклів"
+msgstr "Мото транспорт"
 
 #. js-lingui-explicit-id
 msgid "Car transport"
-msgstr "Транспорт для автомобілів"
+msgstr "Авто транспорт"
 
 #. js-lingui-explicit-id
 msgid "Motorcycle parts"

@@ -23,6 +23,7 @@ import { LinearGradientCustom } from "../../../../../components/LinearGradientCu
 import { CheckboxPoint } from "../../../../../components/CheckboxPoint/CheckboxPoint";
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 import { Input } from "../../../../../components/Input/Input";
+import { CheckboxClassic } from "../../../../../components/CheckboxClassic/CheckboxClassic";
 
 // constants
 import {
@@ -43,14 +44,31 @@ import { styles } from "./ModalSheetCategories.styles";
 
 type ModalSheetCategoriesProps = {
   type: TypeModalCategories | null;
-  selectData: Record<TypeModalCategories, TypeDataCategory | undefined> | null;
+  selectData?: Record<TypeModalCategories, TypeDataCategory | undefined> | null;
   onClose: () => void;
-  onSubmit: (type: TypeModalCategories, select: TypeDataCategory) => void;
+  onSubmit?: (type: TypeModalCategories, select: TypeDataCategory) => void;
+  isMultiSelect?: boolean;
+  multiselectData?: Record<
+    TypeModalCategories,
+    TypeDataCategory[] | undefined
+  > | null;
+  onSubmitMultiselect?: (
+    type: TypeModalCategories,
+    select: TypeDataCategory[]
+  ) => void;
 };
 
 export const ModalSheetCategories: FunctionComponent<
   ModalSheetCategoriesProps
-> = ({ type, selectData, onClose, onSubmit }) => {
+> = ({
+  type,
+  selectData = null,
+  onClose,
+  onSubmit,
+  isMultiSelect = false,
+  multiselectData = null,
+  onSubmitMultiselect,
+}) => {
   const { i18n } = useContext(localesContext);
   const {
     mainCategories,
@@ -62,6 +80,9 @@ export const ModalSheetCategories: FunctionComponent<
     autoParts,
   } = useCategoriesMarket(i18n);
   const [select, setSelect] = useState<TypeDataCategory | null>(null);
+  const [multiselect, setMultiselect] = useState<TypeDataCategory[] | null>(
+    null
+  );
   const [search, setSearch] = useState("");
   const isOpen = useMemo(() => type !== null, [type]);
   const isBrand = useMemo(
@@ -71,7 +92,7 @@ export const ModalSheetCategories: FunctionComponent<
 
   const titleShow = useMemo(() => {
     if (type === NAME_MAIN_CATEGORIES) return i18n._("Category");
-    if (type === NAME_BRAND_MOTO) return i18n._("motorcycle brand");
+    if (type === NAME_BRAND_MOTO) return i18n._("Motorcycle brand");
     if (type === NAME_BRAND_AUTO) return i18n._("Car's make");
     if (type === NAME_TYPE_FUEL) return i18n._("Type of fuel");
     if (type === NAME_TYPE_TRANSMISSION) return i18n._("Type of transmission");
@@ -102,8 +123,17 @@ export const ModalSheetCategories: FunctionComponent<
   );
 
   const onPressSave = () => {
-    if (select !== null && type !== null) onSubmit(type, select);
+    if (onSubmit && !isMultiSelect && type !== null && select !== null)
+      onSubmit(type, select);
+    if (
+      onSubmitMultiselect &&
+      isMultiSelect &&
+      type !== null &&
+      multiselect !== null
+    )
+      onSubmitMultiselect(type, multiselect);
     setSelect(null);
+    setMultiselect(null);
     setSearch("");
     onClose();
   };
@@ -125,6 +155,18 @@ export const ModalSheetCategories: FunctionComponent<
       if (type === NAME_AUTO_PARTS && selectData.autoParts)
         setSelect(selectData.autoParts);
     }
+  };
+
+  const onMultiselect = (itemData: TypeDataCategory) => {
+    if (multiselect) {
+      const isSelect = multiselect
+        ? multiselect.filter((item) => item.id === itemData.id).length > 0
+        : false;
+      const newMultiselect = isSelect
+        ? multiselect.filter((item) => item.id !== itemData.id)
+        : [...multiselect, itemData];
+      setMultiselect(newMultiselect);
+    } else setMultiselect([itemData]);
   };
 
   useEffect(() => {
@@ -152,23 +194,42 @@ export const ModalSheetCategories: FunctionComponent<
             </View>
           </Shadow>
           <ScrollView style={styles.containerList}>
-            {showData.map((item) => (
-              <TouchableOpacity
-                key={`select-${type}-${item.id}`}
-                style={styles.containerItemList}
-                onPress={() => {
-                  setSelect(item);
-                }}
-              >
-                <Text>{item.name}</Text>
-                <CheckboxPoint isSelect={item.id === select?.id} />
-              </TouchableOpacity>
-            ))}
+            {showData.map((itemData) => {
+              const isSelect =
+                isMultiSelect && multiselect
+                  ? multiselect.filter(
+                      (selectMulti) => selectMulti.id === itemData.id
+                    ).length > 0
+                  : itemData.id === select?.id;
+              return (
+                <TouchableOpacity
+                  key={`select-${type}-${itemData.id}`}
+                  style={styles.containerItemList}
+                  onPress={() => {
+                    if (isMultiSelect) onMultiselect(itemData);
+                    else setSelect(itemData);
+                  }}
+                >
+                  <Text>{itemData.name}</Text>
+                  {isMultiSelect ? (
+                    <CheckboxClassic
+                      isGradient
+                      check={isSelect}
+                      setCheck={() => {
+                        onMultiselect(itemData);
+                      }}
+                    />
+                  ) : (
+                    <CheckboxPoint isSelect={isSelect} />
+                  )}
+                </TouchableOpacity>
+              );
+            })}
             <View style={styles.containerEmpty} />
           </ScrollView>
           <View style={styles.containerSubmitModalTypeWork}>
             <ButtonCustom
-              disabled={select === null}
+              disabled={select === null && !multiselect?.length}
               title={i18n._("Select")}
               onSubmit={onPressSave}
             />

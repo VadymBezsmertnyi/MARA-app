@@ -195,7 +195,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         height: image.height,
         image,
       }));
-      const newProduct: Omit<ProductType, "id"> = {
+      const newProduct: Omit<ProductType, "id" | "prices"> = {
         userId: userData?.id,
         title,
         isNew,
