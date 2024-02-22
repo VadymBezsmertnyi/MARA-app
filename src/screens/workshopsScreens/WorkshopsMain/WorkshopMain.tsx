@@ -34,6 +34,7 @@ import { PATHS_WORKSHOP_SCREENS } from "../../../navigators/useNavigator.constan
 
 // images
 import notWorkshopsImage from "../../../../assets/workshops/notWorkshops.jpeg";
+import notWorkshopsFilterImage from "../../../../assets/workshops/notWorkshopsFilter.jpeg";
 
 // styles
 import { styles } from "./WorkshopMain.styles";
@@ -56,9 +57,6 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
   );
-  console.log("workshops", workshops);
-  console.log("filters", filters);
-  console.log("sort", sort);
   const workshopsFilterSort = useMemo(() => {
     if (filters === null && sort === null) return workshops;
     const filterWorkshop = filters
@@ -189,7 +187,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
           />
         </View>
         <ScrollView contentContainerStyle={styles.wrapper}>
-          {workshops.length ? (
+          {workshops.length && workshopsFilterSort.length ? (
             workshopsFilterSort.map((item) => {
               const distance =
                 location && item.place.coordinates
@@ -216,6 +214,17 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                 />
               );
             })
+          ) : workshops.length ? (
+            <View style={styles.containerNotList}>
+              <ImageCache
+                contentFit="contain"
+                style={styles.imageNotElements}
+                imageSrc={notWorkshopsFilterImage}
+              />
+              <Text style={styles.titleNotList}>
+                <Trans>Sorry, but no workshops were found by the filters</Trans>
+              </Text>
+            </View>
           ) : (
             <View style={styles.containerNotList}>
               <ImageCache
