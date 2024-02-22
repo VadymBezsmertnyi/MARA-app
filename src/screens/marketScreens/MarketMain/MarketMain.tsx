@@ -37,8 +37,14 @@ import { IconSearchInput } from "../../../icons/components";
 // constants
 import { PATHS_MARKET_SCREENS } from "../../../navigators/useNavigator.constants";
 
+// images
+import notProductsImage from "../../../../assets/market/notProducts.jpeg";
+import notProductsFilterImage from "../../../../assets/market/notProductsFilter.jpeg";
+
 // styles
 import { styles } from "./MarketMain.styles";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
+import { Trans } from "@lingui/macro";
 
 type MarketMainProps = {
   navigation: NativeStackNavigationProp<RootMarketScreensParamList> &
@@ -50,13 +56,128 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { products } = useContext(marketContext);
+  const { products, minMaxPrices } = useContext(marketContext);
+  const [productName, setProductName] = useState("");
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [isWrap, setIsWrap] = useState(false);
   const [dataFilter, setDataFilter] = useState<ModalFilterSubmitType | null>(
     null
   );
+  const [sort, setSort] = useState<"latest" | "cheapest" | "expensive" | null>(
+    null
+  );
+
+  const getIsPrice = (
+    product: ProductType,
+    currentDataFilter: ModalFilterSubmitType
+  ) => {
+    if (currentDataFilter.price) {
+      const priceProductCurrency =
+        product.codeCurrency === currentDataFilter.price.codeCurrent
+          ? product.price
+          : product.prices[currentDataFilter.price.codeCurrent] ||
+            minMaxPrices?.max[currentDataFilter.price.codeCurrent] ||
+            null;
+      if (!priceProductCurrency) return false;
+      return priceProductCurrency <= currentDataFilter.price.max;
+    }
+    return true;
+  };
+
+  const productsFilterSort = useMemo(() => {
+    if (dataFilter === null && sort === null && !productName.length)
+      return products;
+
+    const filterProducts = dataFilter
+      ? products.filter((product) => {
+          const brandMotoProductId =
+            product.moto?.brandId || product.motoParts?.brandId || null;
+          const brandAutoProductId =
+            product.auto?.brandId || product.autoParts?.brandId || null;
+          const isPrice = getIsPrice(product, dataFilter);
+          const isNew =
+            dataFilter.isNew !== null
+              ? dataFilter.isNew === product.isNew
+              : true;
+          const isBusiness =
+            dataFilter.isBusiness !== null
+              ? dataFilter.isBusiness === product.isBusiness
+              : true;
+          const isCategory = dataFilter.category?.length
+            ? dataFilter.category.filter(
+                (categoryProducts) =>
+                  (categoryProducts.id === 1 && Boolean(product.moto)) ||
+                  (categoryProducts.id === 2 && Boolean(product.auto)) ||
+                  (categoryProducts.id === 3 && Boolean(product.motoParts)) ||
+                  (categoryProducts.id === 4 && Boolean(product.autoParts))
+              ).length > 0
+            : true;
+          const isBrandMoto =
+            dataFilter.brandMoto && brandMotoProductId
+              ? dataFilter.brandMoto.filter(
+                  (brand) => brand.id === brandMotoProductId
+                ).length > 0
+              : true;
+          const isBrandAuto =
+            dataFilter.brandAuto && brandAutoProductId
+              ? dataFilter.brandAuto.filter(
+                  (brand) => brand.id === brandAutoProductId
+                ).length > 0
+              : true;
+          const isPlaceCountry = dataFilter.selectPlaces
+            ? dataFilter.selectPlaces.countryIds.filter(
+                (countryId) => countryId === product.place.countryId.toString()
+              ).length > 0
+            : true;
+          const isPlaceRegion = dataFilter.selectPlaces
+            ? dataFilter.selectPlaces.regionIds.filter(
+                (regionId) => regionId === product.place.regionPlaceId
+              ).length > 0
+            : true;
+          const isPlaceCity = dataFilter.selectPlaces
+            ? dataFilter.selectPlaces.cityTitles.filter(
+                (cityTitle) => cityTitle === product.place.city
+              ).length > 0
+            : true;
+
+          return (
+            isPrice &&
+            isNew &&
+            isBusiness &&
+            isCategory &&
+            isBrandMoto &&
+            isBrandAuto &&
+            isPlaceCountry &&
+            isPlaceRegion &&
+            isPlaceCity
+          );
+        })
+      : products;
+
+    const sortFilterProducts = sort
+      ? filterProducts.sort((prev, next) => {
+          const pricePrevUAH =
+            prev.codeCurrency === "UAH" ? prev.price : prev.prices["UAH"] || 0;
+          const priceNextUAH =
+            next.codeCurrency === "UAH" ? next.price : next.prices["UAH"] || 0;
+          if (sort === "cheapest") return priceNextUAH - pricePrevUAH;
+          if (sort === "expensive") return pricePrevUAH - priceNextUAH;
+          if (sort === "latest") return prev.updateAT - next.updateAT;
+          return 0;
+        })
+      : filterProducts;
+
+    const findInputWorkshop = sortFilterProducts.length
+      ? sortFilterProducts.filter((product) =>
+          product.title
+            .toLocaleLowerCase()
+            .includes(productName.toLocaleLowerCase())
+        )
+      : sortFilterProducts;
+
+    return findInputWorkshop;
+  }, [products, dataFilter, sort, productName]);
 
   const stylesContainer: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -69,7 +190,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
   };
 
   const setTypeSort = (type: "latest" | "cheapest" | "expensive") => {
-    console.log(type);
+    setSort((state) => (state === type ? null : type));
     onClose();
   };
 
@@ -121,29 +242,54 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
           <View style={styles.containerInput}>
             <Input
               placeholder={i18n._("Enter the name")}
-              onChange={() => {}}
+              value={productName}
+              onChange={setProductName}
               InputIcon={<IconSearchInput width={26} height={26} />}
             />
           </View>
-          {isWrap ? (
-            <FlatList
-              key={"_"}
-              data={products}
-              renderItem={renderItem}
-              keyExtractor={(item) => `product-${item.id}`}
-              numColumns={1}
-              contentContainerStyle={styles.containerList}
-            />
+          {products.length && productsFilterSort?.length ? (
+            isWrap ? (
+              <FlatList
+                key={"_"}
+                data={productsFilterSort}
+                renderItem={renderItem}
+                keyExtractor={(item) => `product-${item.id}`}
+                numColumns={1}
+                contentContainerStyle={styles.containerList}
+              />
+            ) : (
+              <FlatList
+                key={"#"}
+                data={productsFilterSort}
+                renderItem={renderItem}
+                keyExtractor={(item) => `product-wrap-${item.id}`}
+                numColumns={2}
+                contentContainerStyle={styles.containerList}
+                columnWrapperStyle={styles.columnContainerList}
+              />
+            )
+          ) : products.length ? (
+            <View style={styles.containerNotList}>
+              <ImageCache
+                contentFit="contain"
+                style={styles.imageNotElements}
+                imageSrc={notProductsFilterImage}
+              />
+              <Text style={styles.titleNotList}>
+                <Trans>Sorry, but no products were found by the filters</Trans>
+              </Text>
+            </View>
           ) : (
-            <FlatList
-              key={"#"}
-              data={products}
-              renderItem={renderItem}
-              keyExtractor={(item) => `product-wrap-${item.id}`}
-              numColumns={2}
-              contentContainerStyle={styles.containerList}
-              columnWrapperStyle={styles.columnContainerList}
-            />
+            <View style={styles.containerNotList}>
+              <ImageCache
+                contentFit="contain"
+                style={styles.imageNotElements}
+                imageSrc={notProductsImage}
+              />
+              <Text style={styles.titleNotList}>
+                <Trans>Sorry, there are no upcoming products</Trans>
+              </Text>
+            </View>
           )}
         </View>
         <AddEventButton onPress={onPressAddProduct} />

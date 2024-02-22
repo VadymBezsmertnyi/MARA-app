@@ -157,6 +157,25 @@ export const ModalSheetCategories: FunctionComponent<
     }
   };
 
+  const setOldDataMultiselect = () => {
+    if (multiselectData) {
+      if (type === NAME_MAIN_CATEGORIES && multiselectData.category)
+        setMultiselect(multiselectData.category);
+      if (type === NAME_MAIN_CATEGORIES && multiselectData.brandMoto)
+        setMultiselect(multiselectData.brandMoto);
+      if (type === NAME_MAIN_CATEGORIES && multiselectData.brandAuto)
+        setMultiselect(multiselectData.brandAuto);
+      if (type === NAME_MAIN_CATEGORIES && multiselectData.typeFuel)
+        setMultiselect(multiselectData.typeFuel);
+      if (type === NAME_MAIN_CATEGORIES && multiselectData.typeTransmission)
+        setMultiselect(multiselectData.typeTransmission);
+      if (type === NAME_MAIN_CATEGORIES && multiselectData.motoParts)
+        setMultiselect(multiselectData.motoParts);
+      if (type === NAME_MAIN_CATEGORIES && multiselectData.autoParts)
+        setMultiselect(multiselectData.autoParts);
+    }
+  };
+
   const onMultiselect = (itemData: TypeDataCategory) => {
     if (multiselect) {
       const isSelect = multiselect
@@ -170,7 +189,9 @@ export const ModalSheetCategories: FunctionComponent<
   };
 
   useEffect(() => {
-    if (isOpen) setOldDate();
+    if (isOpen)
+      if (isMultiSelect) setOldDataMultiselect();
+      else setOldDate();
   }, [isOpen]);
 
   return (
@@ -229,7 +250,7 @@ export const ModalSheetCategories: FunctionComponent<
           </ScrollView>
           <View style={styles.containerSubmitModalTypeWork}>
             <ButtonCustom
-              disabled={select === null && !multiselect?.length}
+              disabled={select === null && !isMultiSelect}
               title={i18n._("Select")}
               onSubmit={onPressSave}
             />

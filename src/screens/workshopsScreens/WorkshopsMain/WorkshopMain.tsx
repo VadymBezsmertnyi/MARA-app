@@ -58,7 +58,8 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     null
   );
   const workshopsFilterSort = useMemo(() => {
-    if (filters === null && sort === null) return workshops;
+    if (filters === null && sort === null && !workshopName.length)
+      return workshops;
     const filterWorkshop = filters
       ? workshops.filter((workshop) => {
           const distance =
@@ -124,7 +125,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         })
       : filterWorkshop;
     const findInputWorkshop = workshopName.length
-      ? workshops.filter((workshop) =>
+      ? sortWorkshop.filter((workshop) =>
           workshop.title
             .toLocaleLowerCase()
             .includes(workshopName.toLocaleLowerCase())
@@ -140,7 +141,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   };
 
   const setTypeSort = (type: "comments" | "distance" | "rating") => {
-    setSort(type);
+    setSort((state) => (state === type ? null : type));
     onClose();
   };
 

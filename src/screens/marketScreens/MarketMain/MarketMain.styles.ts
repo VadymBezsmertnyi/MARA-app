@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+
+const HEIGHT = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
   container: {
@@ -25,5 +27,17 @@ export const styles = StyleSheet.create({
     padding: 20,
     flex: 1,
     borderRadius: 10,
+  },
+  containerNotList: {
+    height: HEIGHT - 400,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  imageNotElements: {
+    width: "100%",
+    height: "90%",
+  },
+  titleNotList: {
+    fontFamily: "Montserrat_700Bold",
   },
 });
