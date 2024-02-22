@@ -6,6 +6,7 @@ import { localesContext } from "../../../../../../localization/localization.prov
 
 // components
 import {
+  IconLikeFullGradient,
   IconLikeGradient,
   IconShareGradient,
 } from "../../../../../icons/components";
@@ -55,7 +56,11 @@ export const HeaderRightItem: FunctionComponent<HeaderRightItemProps> = ({
         <IconShareGradient width={23} height={23} opacity={0.1} />
       </TouchableOpacity>
       <TouchableOpacity onPress={onToggleLike}>
-        <IconLikeGradient width={38} height={20} />
+        {isLike ? (
+          <IconLikeFullGradient width={38} height={38} />
+        ) : (
+          <IconLikeGradient width={38} height={38} />
+        )}
       </TouchableOpacity>
     </View>
   );

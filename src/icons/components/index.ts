@@ -24,6 +24,7 @@ export { default as IconFaceIdGradient } from "./IconFaceIdGradient";
 export { default as IconFaceId } from "./IconFaceId";
 export { default as IconFilter } from "./IconFilter";
 export { default as IconGooglePlayStore } from "./IconGooglePlayStore";
+export { default as IconLikeFullGradient } from "./IconLikeFullGradient";
 export { default as IconLikeGradient } from "./IconLikeGradient";
 export { default as IconLoaderIn } from "./IconLoaderIn";
 export { default as IconLoaderOut } from "./IconLoaderOut";

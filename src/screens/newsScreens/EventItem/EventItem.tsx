@@ -70,7 +70,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
       route.params?.eventId
         ? eventsList.find((event) => event.id === route.params?.eventId) || null
         : null,
-    [route.params]
+    [route.params, eventsList]
   );
   const isLike = useMemo(
     () =>

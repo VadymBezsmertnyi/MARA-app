@@ -20,6 +20,7 @@ import imageNoPhoto from "../../../../../../assets/noPhoto.png";
 
 // icons
 import {
+  IconLikeFullGradient,
   IconLikeGradient,
   IconLocationMarker,
 } from "../../../../../icons/components";
@@ -101,7 +102,11 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
         </View>
       </View>
       <TouchableOpacity onPress={onPressLike} style={styles.containerLike}>
-        <IconLikeGradient width={38} height={20} />
+        {isLike ? (
+          <IconLikeFullGradient width={38} height={38} />
+        ) : (
+          <IconLikeGradient width={38} height={38} />
+        )}
       </TouchableOpacity>
     </TouchableOpacity>
   );
