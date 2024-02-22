@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { Trans } from "@lingui/macro";
 
 // types
 import { RootMarketScreensParamList } from "../../../navigators/Navigators.types";
@@ -30,12 +31,14 @@ import { AddEventButton } from "../../../components/AddEventButton/AddEventButto
 import { ModalFilter } from "./components/ModalFilter/ModalFilter";
 import { ModalSort } from "./components/ModalSort/ModalSort";
 import { ModalFilterSubmitType } from "./components/ModalFilter/ModalFilter.types";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // icons
 import { IconSearchInput } from "../../../icons/components";
 
 // constants
 import { PATHS_MARKET_SCREENS } from "../../../navigators/useNavigator.constants";
+import { CURRENCY_UAH } from "../../../providers/PaymentProvider/PaymentProvider.constants";
 
 // images
 import notProductsImage from "../../../../assets/market/notProducts.jpeg";
@@ -43,8 +46,6 @@ import notProductsFilterImage from "../../../../assets/market/notProductsFilter.
 
 // styles
 import { styles } from "./MarketMain.styles";
-import { ImageCache } from "../../../components/ImageCache/ImageCache";
-import { Trans } from "@lingui/macro";
 
 type MarketMainProps = {
   navigation: NativeStackNavigationProp<RootMarketScreensParamList> &
@@ -158,9 +159,13 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
     const sortFilterProducts = sort
       ? filterProducts.sort((prev, next) => {
           const pricePrevUAH =
-            prev.codeCurrency === "UAH" ? prev.price : prev.prices["UAH"] || 0;
+            prev.codeCurrency === CURRENCY_UAH
+              ? prev.price
+              : prev.prices[CURRENCY_UAH] || 0;
           const priceNextUAH =
-            next.codeCurrency === "UAH" ? next.price : next.prices["UAH"] || 0;
+            next.codeCurrency === CURRENCY_UAH
+              ? next.price
+              : next.prices[CURRENCY_UAH] || 0;
           if (sort === "cheapest") return priceNextUAH - pricePrevUAH;
           if (sort === "expensive") return pricePrevUAH - priceNextUAH;
           if (sort === "latest") return prev.updateAT - next.updateAT;

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { placeSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import { codeCurrenciesSchema } from "../PaymentProvider/PaymentProvider.schemas";
 
 export const eventSchema = z.object({
   id: z.number(),
@@ -11,7 +12,7 @@ export const eventSchema = z.object({
     finish: z.number(),
   }),
   price: z.object({ start: z.number(), finish: z.number() }).nullable(),
-  currency: z.enum(["UAH", "EUR", "USD"]),
+  currency: codeCurrenciesSchema,
   description: z.string(),
   images: z.array(
     z.object({

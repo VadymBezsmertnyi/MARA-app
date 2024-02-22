@@ -1,6 +1,15 @@
 import { z } from "zod";
+import {
+  CURRENCY_UAH,
+  CURRENCY_EUR,
+  CURRENCY_USD,
+} from "./PaymentProvider.constants";
 
-export const codeCurrenciesSchema = z.enum(["UAH", "USD", "EUR"]);
+export const codeCurrenciesSchema = z.enum([
+  CURRENCY_UAH,
+  CURRENCY_EUR,
+  CURRENCY_USD,
+]);
 
 export const currencySchema = z.object({
   name: z.string(),

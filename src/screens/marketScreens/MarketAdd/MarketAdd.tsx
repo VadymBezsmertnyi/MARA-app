@@ -62,6 +62,7 @@ import {
   NAME_MAIN_CATEGORIES,
   NAME_MOTO_PARTS,
 } from "./MarketAdd.constants";
+import { CURRENCY_UAH } from "../../../providers/PaymentProvider/PaymentProvider.constants";
 
 // icons
 import { IconArrowRightEvent } from "../../../icons/components";
@@ -107,7 +108,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const [price, setPrice] = useState("");
   const [mileage, setMileage] = useState("");
   const [yearRelease, setYearRelease] = useState("");
-  const [codeCurrency, setCodeCurrency] = useState<CodeCurrenciesType>("UAH");
+  const [codeCurrency, setCodeCurrency] =
+    useState<CodeCurrenciesType>(CURRENCY_UAH);
   const [place, setPlace] = useState<PlaceType | null>(null);
   const [isShowSelectPlace, setIsShowSelectPlace] = useState(false);
   const [isCleared, setIsCleared] = useState(true);
