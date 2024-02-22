@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useState } from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
@@ -47,12 +47,94 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   navigation,
 }) => {
   const { i18n } = useContext(localesContext);
-  const { workshops } = useContext(workshopsContext);
+  const { workshops, minMaxDistance } = useContext(workshopsContext);
   const { location } = useContext(mapContext);
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");
   const [filters, setFilters] = useState<TypeFilters | null>(null);
+  const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
+    null
+  );
+  console.log("workshops", workshops);
+  console.log("filters", filters);
+  console.log("sort", sort);
+  const workshopsFilterSort = useMemo(() => {
+    if (filters === null && sort === null) return workshops;
+    const filterWorkshop = filters
+      ? workshops.filter((workshop) => {
+          const distance =
+            location && workshop.place.coordinates
+              ? convertDistance(
+                  getDistance(location, {
+                    longitude: workshop.place.coordinates.longitude,
+                    latitude: workshop.place.coordinates.latitude,
+                  }),
+                  "km"
+                )
+              : null;
+          const isMoto = filters.moto
+            ? workshop.motoTypesWorks.filter(
+                (typeWork) => filters.moto?.includes(typeWork)
+              ).length > 0
+            : true;
+          const isAuto = filters.auto
+            ? workshop.autoTypesWorks.filter(
+                (typeWork) => filters.auto?.includes(typeWork)
+              ).length > 0
+            : true;
+          const isDistance =
+            filters.maxDistance && distance
+              ? distance <= filters.maxDistance
+              : true;
+          const isRating =
+            filters.minRating && workshop.rating
+              ? filters.minRating <= workshop.rating
+              : true;
+          return isMoto && isAuto && isDistance && isRating;
+        })
+      : workshops;
+    const sortWorkshop = sort
+      ? filterWorkshop.sort((prev, next) => {
+          const distancePrev =
+            location && prev.place.coordinates
+              ? convertDistance(
+                  getDistance(location, {
+                    longitude: prev.place.coordinates.longitude,
+                    latitude: prev.place.coordinates.latitude,
+                  }),
+                  "km"
+                )
+              : null;
+          const distanceNext =
+            location && next.place.coordinates
+              ? convertDistance(
+                  getDistance(location, {
+                    longitude: next.place.coordinates.longitude,
+                    latitude: next.place.coordinates.latitude,
+                  }),
+                  "km"
+                )
+              : null;
+          if (sort === "comments")
+            return prev.comments.length - next.comments.length;
+          if (sort === "distance" && distancePrev && distanceNext)
+            return distancePrev - distanceNext;
+          if (sort === "rating" && prev.rating && next.rating)
+            return prev.rating - next.rating;
+          return 0;
+        })
+      : filterWorkshop;
+    const findInputWorkshop = workshopName.length
+      ? workshops.filter((workshop) =>
+          workshop.title
+            .toLocaleLowerCase()
+            .includes(workshopName.toLocaleLowerCase())
+        )
+      : sortWorkshop;
+
+    return findInputWorkshop;
+  }, [workshops, filters, sort, workshopName]);
 
   const onClose = () => {
     setIsShowSort(false);
@@ -60,7 +142,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   };
 
   const setTypeSort = (type: "comments" | "distance" | "rating") => {
-    console.log(type);
+    setSort(type);
     onClose();
   };
 
@@ -108,7 +190,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         </View>
         <ScrollView contentContainerStyle={styles.wrapper}>
           {workshops.length ? (
-            workshops.map((item) => {
+            workshopsFilterSort.map((item) => {
               const distance =
                 location && item.place.coordinates
                   ? getDistance(location, {
@@ -161,6 +243,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             onClose={onClose}
             filters={filters}
             onSubmit={onSubmitFilters}
+            maxDistance={minMaxDistance.max}
           />
         </Modal>
       ) : null}

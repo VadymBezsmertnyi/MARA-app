@@ -26,6 +26,8 @@ import { workshopSchema, workshopsSchema } from "./WorkshopsProvider.schemas";
 
 // constants
 import { PATHS } from "../paths.constants";
+import { convertDistance, getDistance } from "geolib";
+import { mapContext } from "../MapProvider/MapProvider";
 
 type WorkshopsContext = {
   workshops: WorkshopsType;
@@ -44,6 +46,10 @@ type WorkshopsContext = {
     idWorkshop: number,
     changeComment: CommentType
   ) => Promise<boolean>;
+  minMaxDistance: {
+    min: number;
+    max: number;
+  };
 };
 
 type WorkshopsProviderProps = {
@@ -58,8 +64,31 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
   const { userData } = useContext(userContext);
+  const { location } = useContext(mapContext);
   const [workshops, setWorkShops] = useState<WorkshopsType>([]);
   const [workshopsUser, setWorkShopsUser] = useState<WorkshopsType>([]);
+  const minMaxDistance = useMemo(() => {
+    const distanceMinMax = workshops
+      .map((workshop) =>
+        location && workshop.place.coordinates
+          ? convertDistance(
+              getDistance(location, {
+                longitude: workshop.place.coordinates.longitude,
+                latitude: workshop.place.coordinates.latitude,
+              }),
+              "km"
+            )
+          : 0
+      )
+      .sort((a, b) => a - b);
+    return {
+      min: distanceMinMax.length > 0 ? Number(distanceMinMax[0].toFixed()) : 0,
+      max:
+        distanceMinMax.length > 1
+          ? Number(distanceMinMax[distanceMinMax.length - 1].toFixed())
+          : 200,
+    };
+  }, [workshops]);
 
   const getWorkshops = async () => {
     const result = await api(
@@ -237,13 +266,14 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     () => ({
       workshops,
       workshopsUser,
+      minMaxDistance,
       addWorkshop,
       changeWorkshop,
       deleteWorkshop,
       addComment,
       changeComment,
     }),
-    [workshops, workshopsUser]
+    [workshops, workshopsUser, minMaxDistance]
   );
 
   useEffect(() => {

@@ -38,12 +38,14 @@ type ModalFilterProps = {
   filters: TypeFilters | null;
   onClose: () => void;
   onSubmit: (filters: TypeFilters) => void;
+  maxDistance?: number;
 };
 
 export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   onClose,
   onSubmit,
   filters,
+  maxDistance = 200,
 }) => {
   const { i18n } = useContext(localesContext);
   const { typesWorkServices } = useWorkshopsProvider();
@@ -178,8 +180,8 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
         />
         <InputSlider
           label={i18n._("Distance, km:")}
-          min={1}
-          max={200}
+          min={0}
+          max={maxDistance}
           value={distance}
           onChange={setDistance}
         />
