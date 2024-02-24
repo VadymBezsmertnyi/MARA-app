@@ -9,6 +9,7 @@ import { User } from "@react-native-google-signin/google-signin";
 import { userContext } from "../../providers/UserProvider/UserProvider";
 import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { analyticsContext } from "../../providers/AnalitycsProvider/AnalyticsProvider";
 
 // helps
 import { useAllNavigation } from "../../navigators/Navigators.helps";
@@ -21,6 +22,12 @@ import { ChangeLanguage } from "../../components/ChangeLanguage/ChangeLanguage";
 // images
 import imageSplash from "../../../assets/splash.png";
 
+// constants
+import {
+  METHOD_NAME_AUTH_FACEBOOK,
+  METHOD_NAME_AUTH_GOOGLE,
+} from "../../providers/AnalitycsProvider/AnalyticsProvider.constants";
+
 // hooks
 import { redirectToScreen } from "../screens.hooks";
 
@@ -30,17 +37,28 @@ import { styles } from "./Welcome.styles";
 export const Welcome: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
+  const { onLogLogin, onLogSignUp } = useContext(analyticsContext);
   const { heightStatusBar } = useContext(themeContext);
   const { signInGoogle, signInFacebook } = useContext(userContext);
 
   const onSelectGoogle = async (userData: User) => {
     const user = await signInGoogle(userData);
-    if (user) redirectToScreen(navigation, user, isFaceId, isTouchId);
+
+    if (user) {
+      if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_GOOGLE);
+      else await onLogLogin(METHOD_NAME_AUTH_GOOGLE);
+      redirectToScreen(navigation, user, isFaceId, isTouchId);
+    }
   };
 
   const onSelectFacebook = async (accessToken: string) => {
     const user = await signInFacebook(accessToken);
-    if (user) redirectToScreen(navigation, user, isFaceId, isTouchId);
+
+    if (user) {
+      if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_FACEBOOK);
+      else await onLogLogin(METHOD_NAME_AUTH_FACEBOOK);
+      redirectToScreen(navigation, user, isFaceId, isTouchId);
+    }
   };
 
   const containerStyles = useMemo(

@@ -103,6 +103,15 @@ export const expo = {
   owner: "fop_vadym_bezsmertnyi",
   plugins: [
     "./plugins/react-native-maps-plugin",
+    "@react-native-firebase/app",
+    [
+      "expo-build-properties",
+      {
+        ios: {
+          useFrameworks: "static",
+        },
+      },
+    ],
     [
       "onesignal-expo-plugin",
       {

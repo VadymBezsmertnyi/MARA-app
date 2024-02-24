@@ -73,6 +73,7 @@ export const Navigators: FunctionComponent = () => {
     const backHandler = BackHandler.addEventListener(
       "hardwareBackPress",
       () => {
+        // TODO create later
         console.log("navigation", navigation);
         console.log("route", navigation.getState());
         return true;

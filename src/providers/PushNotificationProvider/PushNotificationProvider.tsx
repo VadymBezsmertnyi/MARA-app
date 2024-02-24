@@ -56,7 +56,6 @@ export const PushNotificationProvider: FunctionComponent<
 
   const getNewParams = async () => {
     const initialUrl = await Linking.getInitialURL();
-    console.log("initialUrl-map:", initialUrl);
     if (initialUrl)
       console.log("Linking.parse(initialUrl)-map:", Linking.parse(initialUrl));
   };

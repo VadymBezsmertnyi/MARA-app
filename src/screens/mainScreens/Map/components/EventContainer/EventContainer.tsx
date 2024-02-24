@@ -1,14 +1,12 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
+import dayjs from "dayjs";
 
 //types
 import { mapMarker } from "../../Map.types";
 import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
-
-// providers
-import { eventsContext } from "../../../../../providers/EventsProvider/EventsProvider";
 
 // helps
 import { dateToNMY } from "../../../../../helps/helps";
@@ -26,6 +24,11 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   firstEvent,
   showFirstEvent,
 }) => {
+  const isDateShow = useMemo(() => {
+    if (!firstEvent) return false;
+    const dateNow = dayjs().valueOf();
+    return dateNow < firstEvent.date.finish;
+  }, [firstEvent]);
   const colorsLinearGradient = useMemo(
     () => [colors.californiaOrange70, colors.blazeOrange70],
     []
@@ -34,7 +37,7 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   const endLinearGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsLinearGradient = useMemo(() => [0, 1], []);
 
-  if (!firstEvent) return null;
+  if (!firstEvent || !isDateShow) return null;
 
   return (
     <LinearGradient

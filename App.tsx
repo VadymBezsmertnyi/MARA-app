@@ -33,6 +33,7 @@ import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
 import { MarketProvider } from "./src/providers/MarketProvider/MarketProvider";
 import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider";
 import { PushNotificationProvider } from "./src/providers/PushNotificationProvider/PushNotificationProvider";
+import { AnalyticsProvider } from "./src/providers/AnalitycsProvider/AnalyticsProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -89,33 +90,35 @@ function App() {
         <LoadingProvider isLoadingProps={fontsLoaded}>
           <LocalesProvider>
             <ApiProvider>
-              <PlacesProvider>
-                <BiometricProvider>
-                  <UserProvider>
-                    <NavigationContainer>
-                      <EventsProvider>
-                        <SafeAreaProvider>
-                          <MapProvider>
-                            <GestureHandlerRootView
-                              style={styles.gestureHandlerRootView}
-                            >
-                              <PushNotificationProvider>
-                                <PaymentProvider>
-                                  <WorkshopsProvider>
-                                    <MarketProvider>
-                                      <Navigators />
-                                    </MarketProvider>
-                                  </WorkshopsProvider>
-                                </PaymentProvider>
-                              </PushNotificationProvider>
-                            </GestureHandlerRootView>
-                          </MapProvider>
-                        </SafeAreaProvider>
-                      </EventsProvider>
-                    </NavigationContainer>
-                  </UserProvider>
-                </BiometricProvider>
-              </PlacesProvider>
+              <AnalyticsProvider>
+                <PlacesProvider>
+                  <BiometricProvider>
+                    <UserProvider>
+                      <NavigationContainer>
+                        <EventsProvider>
+                          <SafeAreaProvider>
+                            <MapProvider>
+                              <GestureHandlerRootView
+                                style={styles.gestureHandlerRootView}
+                              >
+                                <PushNotificationProvider>
+                                  <PaymentProvider>
+                                    <WorkshopsProvider>
+                                      <MarketProvider>
+                                        <Navigators />
+                                      </MarketProvider>
+                                    </WorkshopsProvider>
+                                  </PaymentProvider>
+                                </PushNotificationProvider>
+                              </GestureHandlerRootView>
+                            </MapProvider>
+                          </SafeAreaProvider>
+                        </EventsProvider>
+                      </NavigationContainer>
+                    </UserProvider>
+                  </BiometricProvider>
+                </PlacesProvider>
+              </AnalyticsProvider>
             </ApiProvider>
           </LocalesProvider>
         </LoadingProvider>
