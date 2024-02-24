@@ -30,10 +30,10 @@ export const ChangeLanguage: FunctionComponent = () => {
   const onChangeLanguage = async () => {
     if (language === "uk") {
       setLanguage("en");
-      if (userData) await editUser({ ...userData, localesContext: "en" });
+      if (userData) await editUser({ ...userData, languageLocal: "en" });
     } else {
       setLanguage("uk");
-      if (userData) await editUser({ ...userData, localesContext: "uk" });
+      if (userData) await editUser({ ...userData, languageLocal: "uk" });
     }
   };
   return (
