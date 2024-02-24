@@ -59,6 +59,14 @@ export const googleBDSchema = z.object({
   locale: z.string().optional(),
 });
 
+export const facebookBDSchema = z.object({
+  id: z.string(),
+  first_name: z.string(),
+  last_name: z.string(),
+  name: z.string(),
+  email: z.string(),
+});
+
 export const userDataS = z.object({
   // new
   id: z.number(),
@@ -80,10 +88,12 @@ export const userDataS = z.object({
   isNewUser: z.boolean(),
   isDeleteUser: z.boolean(),
   googleDate: googleBDSchema.nullable(),
+  facebookDate: facebookBDSchema.nullable(),
   cityUser: locationSchema.nullable(),
   firstName: z.string().nullable(),
   lastName: z.string().nullable(),
   phoneNumber: z.string().nullable(),
+  subscriptionId: z.string().nullable(),
 });
 
 export const resultUserDataS = z.object({

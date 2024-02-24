@@ -32,6 +32,7 @@ import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
 import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
 import { MarketProvider } from "./src/providers/MarketProvider/MarketProvider";
 import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider";
+import { PushNotificationProvider } from "./src/providers/PushNotificationProvider/PushNotificationProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -98,13 +99,15 @@ function App() {
                             <GestureHandlerRootView
                               style={styles.gestureHandlerRootView}
                             >
-                              <PaymentProvider>
-                                <WorkshopsProvider>
-                                  <MarketProvider>
-                                    <Navigators />
-                                  </MarketProvider>
-                                </WorkshopsProvider>
-                              </PaymentProvider>
+                              <PushNotificationProvider>
+                                <PaymentProvider>
+                                  <WorkshopsProvider>
+                                    <MarketProvider>
+                                      <Navigators />
+                                    </MarketProvider>
+                                  </WorkshopsProvider>
+                                </PaymentProvider>
+                              </PushNotificationProvider>
                             </GestureHandlerRootView>
                           </MapProvider>
                         </SafeAreaProvider>

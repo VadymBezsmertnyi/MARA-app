@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import {
   Alert,
   Text,
@@ -21,6 +27,8 @@ import {
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { pushNotificationContext } from "../../../providers/PushNotificationProvider/PushNotificationProvider";
+import { mapContext } from "../../../providers/MapProvider/MapProvider";
 
 // helps
 import showErrors from "../../../helps/errors/showError";
@@ -63,7 +71,9 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
+  const { location } = useContext(mapContext);
   const { userData, editUser } = useContext(userContext);
+  const { addSosNotification } = useContext(pushNotificationContext);
   const [darkTheme, setDarkTheme] = useState(false);
   const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
@@ -113,6 +123,14 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const onCloseMenu = () => {
     navigation.closeDrawer();
   };
+
+  const onPressSos = () => {
+    if (location) addSosNotification(location);
+  };
+
+  useEffect(() => {
+    if (isSos) onPressSos();
+  }, [isSos]);
 
   return (
     <>

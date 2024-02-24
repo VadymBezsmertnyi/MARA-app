@@ -1,7 +1,6 @@
 import React, {
   FunctionComponent,
   useCallback,
-  useEffect,
   useMemo,
   useRef,
   useState,
@@ -95,7 +94,13 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
     [userData]
   );
 
-  useEffect(() => {
+  const contextValue: WebSocketContext = useMemo(
+    () => ({ stateSocket, setUserData, sendLocation }),
+    [stateSocket, sendLocation]
+  );
+
+  // TODO
+  /* useEffect(() => {
     if (userData?.id) connectToWebSocket();
     else if (socketRef.current?.readyState === WebSocket.OPEN)
       socketRef.current.onclose = (e) => {
@@ -103,12 +108,7 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
         console.log(e.code, e.reason);
         setStateSocket(DEFAULT_STATE_SOCKET);
       };
-  }, [userData?.id]);
-
-  const contextValue: WebSocketContext = useMemo(
-    () => ({ stateSocket, setUserData, sendLocation }),
-    [stateSocket, sendLocation]
-  );
+  }, [userData?.id]); */
 
   return (
     <webSocketContext.Provider value={contextValue}>
