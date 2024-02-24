@@ -1,8 +1,9 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
 // providers
 import { localesContext } from "../../../localization/localization.provider";
+import { userContext } from "../../providers/UserProvider/UserProvider";
 
 // components
 import { ImageCache } from "../ImageCache/ImageCache";
@@ -16,6 +17,7 @@ import { styles } from "./ChangeLanguage.styles";
 
 export const ChangeLanguage: FunctionComponent = () => {
   const { language, setLanguage } = useContext(localesContext);
+  const { userData, editUser } = useContext(userContext);
   const iconLanguage = useMemo(
     () => (language === "en" ? imageCountryUs : imageCountryUk),
     [language]
@@ -25,9 +27,14 @@ export const ChangeLanguage: FunctionComponent = () => {
     [language]
   );
 
-  const onChangeLanguage = () => {
-    if (language === "uk") setLanguage("en");
-    else setLanguage("uk");
+  const onChangeLanguage = async () => {
+    if (language === "uk") {
+      setLanguage("en");
+      if (userData) await editUser({ ...userData, localesContext: "en" });
+    } else {
+      setLanguage("uk");
+      if (userData) await editUser({ ...userData, localesContext: "uk" });
+    }
   };
   return (
     <TouchableOpacity onPress={onChangeLanguage} style={styles.buttonLanguage}>
