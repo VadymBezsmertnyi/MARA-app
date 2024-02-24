@@ -19,6 +19,7 @@ import { userContext } from "../UserProvider/UserProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { localesContext } from "../../../localization/localization.provider";
+import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
@@ -54,6 +55,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   const { userData } = useContext(userContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
+  const { onSetUserProperties } = useContext(analyticsContext);
   const [eventsList, setEventsList] = useState<UpcomingEvents>([]);
   const [eventsUserList, setEventsUserList] = useState<UpcomingEvents>([]);
   const [idDeleteEvent, setIdDeleteEvent] = useState<number | null>(null);
@@ -98,6 +100,9 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
       if (result?.event) {
         setEventsUserList((state) => getSortEvents([...state, result.event]));
         setEventsList((state) => getSortEvents([...state, result.event]));
+        await onSetUserProperties({
+          amountEvents: (userData.eventsIds.length + 1).toString(),
+        });
       }
     }
     setLoading(false);
@@ -145,10 +150,15 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
       );
       if (result?.result) {
         setEventsList((state) => state.filter((event) => event.id !== idEvent));
-        if (type === "user")
+        if (type === "user") {
           setEventsUserList((state) =>
             state.filter((event) => event.id !== idEvent)
           );
+          if (userData && userData.eventsIds.length > 0)
+            await onSetUserProperties({
+              amountEvents: (userData.eventsIds.length - 1).toString(),
+            });
+        }
       }
 
       return true;

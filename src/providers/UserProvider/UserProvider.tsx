@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
+import { Platform } from "react-native";
 import { t } from "@lingui/macro";
 import { User } from "@react-native-google-signin/google-signin";
 import { z } from "zod";
@@ -16,6 +17,7 @@ import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { biometricAuthenticatorContext } from "../BiometricProvider/BiometricProvider";
 import { localesContext } from "../../../localization/localization.provider";
+import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
 
 // components
 import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
@@ -41,9 +43,26 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const { checkBiometric } = useContext(biometricAuthenticatorContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
+  const { onSetUserProperties } = useContext(analyticsContext);
   const { info, bug, warning } = showErrors;
   const [userData, setUserData] = useState<UserDataT | null>(null);
   const [isChangeAvatar, setIsChangeAvatar] = useState(false);
+
+  const setAnalytics = async (
+    newUserData: UserDataT,
+    oldUserData: UserDataT
+  ) => {
+    const newUserDataAnalytics = {
+      ...(newUserData.languageLocal !== oldUserData.languageLocal && {
+        language: newUserData.languageLocal,
+      }),
+      platform: Platform.OS,
+      amountWorkshops: newUserData.workshopsIds.length.toString(),
+      amountEvents: newUserData.eventsIds.length.toString(),
+      amountProducts: newUserData.productsIds.length.toString(),
+    };
+    await onSetUserProperties(newUserDataAnalytics);
+  };
 
   const cleanUserData = () => {
     setUserData(null);
@@ -140,6 +159,9 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
           },
           resultUserDataS
         );
+
+        if (resultCreateNewUser && userData)
+          await setAnalytics(resultCreateNewUser.userData, userData);
 
         if (
           resultCreateNewUser?.result &&

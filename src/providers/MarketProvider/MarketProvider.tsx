@@ -29,6 +29,7 @@ import { localesContext } from "../../../localization/localization.provider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { paymentContext } from "../PaymentProvider/PaymentProvider";
+import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
@@ -62,6 +63,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   const { setCurrencies } = useContext(paymentContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
+  const { onSetUserProperties } = useContext(analyticsContext);
   const [products, setProducts] = useState<ProductsType>([]);
   const [productsUser, setProductsUser] = useState<ProductsType>([]);
   const [idDeleteProduct, setIdDeleteProduct] = useState<number | null>(null);
@@ -146,6 +148,10 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       setProducts((state) => [...state, result.product]);
       setLoading(false);
       setMinMaxProduct(result.product);
+      if (userData)
+        await onSetUserProperties({
+          amountWorkshops: (userData.workshopsIds.length + 1).toString(),
+        });
       return true;
     }
     setLoading(false);
@@ -196,10 +202,15 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         setProducts((state) =>
           state.filter((product) => product.id !== idProduct)
         );
-        if (type === "user")
+        if (type === "user") {
           setProductsUser((state) =>
             state.filter((product) => product.id !== idProduct)
           );
+          if (userData && userData.productsIds.length > 0)
+            await onSetUserProperties({
+              amountProducts: (userData.productsIds.length - 1).toString(),
+            });
+        }
       }
 
       return true;

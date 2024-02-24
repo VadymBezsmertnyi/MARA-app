@@ -1,7 +1,10 @@
 /* eslint-disable no-restricted-exports */ //enabled export default
 /* eslint-disable react/jsx-max-depth */ //For depth>15
-import React, { useEffect, useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -18,6 +21,9 @@ import {
 } from "@expo-google-fonts/open-sans";
 import { useFonts } from "expo-font";
 
+// types
+import { RootAllScreensParamList } from "./src/navigators/Navigators.types";
+
 // providers
 import LocalesProvider from "./localization/localization.provider";
 import { ThemeProvider } from "./src/providers/ThemeProvider/ThemeProvider";
@@ -33,7 +39,7 @@ import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
 import { MarketProvider } from "./src/providers/MarketProvider/MarketProvider";
 import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider";
 import { PushNotificationProvider } from "./src/providers/PushNotificationProvider/PushNotificationProvider";
-import { AnalyticsProvider } from "./src/providers/AnalitycsProvider/AnalyticsProvider";
+import { AnalyticsProvider } from "./src/providers/AnalyticsProvider/AnalyticsProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -63,6 +69,9 @@ SplashScreen.preventAutoHideAsync();
 Settings.initializeSDK();
 
 function App() {
+  const [currentRouteName, setCurrentRouteName] = useState<string | null>(null);
+  const navigationRef =
+    useRef<NavigationContainerRef<RootAllScreensParamList>>(null);
   const [appIsReady, setAppIsReady] = useState(false);
   const [fontsLoaded] = useFonts({
     Montserrat_600SemiBold,
@@ -90,11 +99,18 @@ function App() {
         <LoadingProvider isLoadingProps={fontsLoaded}>
           <LocalesProvider>
             <ApiProvider>
-              <AnalyticsProvider>
+              <AnalyticsProvider currentRouteName={currentRouteName}>
                 <PlacesProvider>
                   <BiometricProvider>
                     <UserProvider>
-                      <NavigationContainer>
+                      <NavigationContainer
+                        ref={navigationRef}
+                        onStateChange={() => {
+                          const nameRoute =
+                            navigationRef.current?.getCurrentRoute()?.name;
+                          if (nameRoute) setCurrentRouteName(nameRoute);
+                        }}
+                      >
                         <EventsProvider>
                           <SafeAreaProvider>
                             <MapProvider>

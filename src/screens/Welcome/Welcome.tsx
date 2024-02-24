@@ -9,7 +9,7 @@ import { User } from "@react-native-google-signin/google-signin";
 import { userContext } from "../../providers/UserProvider/UserProvider";
 import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
-import { analyticsContext } from "../../providers/AnalitycsProvider/AnalyticsProvider";
+import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsProvider";
 
 // helps
 import { useAllNavigation } from "../../navigators/Navigators.helps";
@@ -26,7 +26,7 @@ import imageSplash from "../../../assets/splash.png";
 import {
   METHOD_NAME_AUTH_FACEBOOK,
   METHOD_NAME_AUTH_GOOGLE,
-} from "../../providers/AnalitycsProvider/AnalyticsProvider.constants";
+} from "../../providers/AnalyticsProvider/AnalyticsProvider.constants";
 
 // hooks
 import { redirectToScreen } from "../screens.hooks";

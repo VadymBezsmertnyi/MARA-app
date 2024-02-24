@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { z } from "zod";
 import qs from "qs";
+import { convertDistance, getDistance } from "geolib";
 
 // types
 import {
@@ -20,14 +21,14 @@ import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.p
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { userContext } from "../UserProvider/UserProvider";
+import { mapContext } from "../MapProvider/MapProvider";
+import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
 
 // schemas
 import { workshopSchema, workshopsSchema } from "./WorkshopsProvider.schemas";
 
 // constants
 import { PATHS } from "../paths.constants";
-import { convertDistance, getDistance } from "geolib";
-import { mapContext } from "../MapProvider/MapProvider";
 
 type WorkshopsContext = {
   workshops: WorkshopsType;
@@ -65,6 +66,7 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   const { setLoading } = useContext(loadingContext);
   const { userData } = useContext(userContext);
   const { location } = useContext(mapContext);
+  const { onSetUserProperties } = useContext(analyticsContext);
   const [workshops, setWorkShops] = useState<WorkshopsType>([]);
   const [workshopsUser, setWorkShopsUser] = useState<WorkshopsType>([]);
   const minMaxDistance = useMemo(() => {
@@ -142,6 +144,9 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         setWorkShops((state) => [...state, result.workshop]);
         setWorkShopsUser((state) => [...state, result.workshop]);
         setLoading(false);
+        await onSetUserProperties({
+          amountWorkshops: (userData.workshopsIds.length + 1).toString(),
+        });
         return true;
       }
       setLoading(false);
@@ -194,10 +199,16 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         setWorkShops((state) =>
           state.filter((workshop) => workshop.id !== idWorkshop)
         );
-        if (type === "user")
+        if (type === "user") {
           setWorkShopsUser((state) =>
             state.filter((workshop) => workshop.id !== idWorkshop)
           );
+
+          if (userData && userData.workshopsIds.length > 0)
+            await onSetUserProperties({
+              amountWorkshops: (userData.workshopsIds.length - 1).toString(),
+            });
+        }
       }
 
       return true;

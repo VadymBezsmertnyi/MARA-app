@@ -8,14 +8,14 @@ import { redirectToScreen } from "../screens.hooks";
 // providers
 import { userContext } from "../../providers/UserProvider/UserProvider";
 import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
-import { analyticsContext } from "../../providers/AnalitycsProvider/AnalyticsProvider";
+import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsProvider";
 
 // components
 import { Logo } from "../../components/Logo/Logo";
 
 // constants
 import { PATHS_MAIN_SCREENS } from "../../navigators/useNavigator.constants";
-import { METHOD_NAME_AUTH_AUTO } from "../../providers/AnalitycsProvider/AnalyticsProvider.constants";
+import { METHOD_NAME_AUTH_AUTO } from "../../providers/AnalyticsProvider/AnalyticsProvider.constants";
 
 // images
 import splashScreenImage from "../../../assets/splash.png";

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useMemo } from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import analytics from "@react-native-firebase/analytics";
 
 // types
@@ -7,20 +7,28 @@ import { MethodAuthType } from "./AnalyticsProvider.types";
 type AnalyticsContext = {
   onLogLogin: (method: MethodAuthType) => Promise<void>;
   onLogSignUp: (method: MethodAuthType) => Promise<void>;
+  onSetUserProperties: (
+    properties: Record<string, string | null>
+  ) => Promise<void>;
 };
 
 type AnalyticsProviderProps = {
   children: JSX.Element;
+  currentRouteName: string | null;
 };
 
 export const analyticsContext = React.createContext({} as AnalyticsContext);
 
 export const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
   children,
+  currentRouteName,
 }) => {
+  const [previousRouteName, setPreviousRouteName] = useState<string | null>(
+    null
+  );
   const onLogAppOpen = async () => {
+    await analytics().setAnalyticsCollectionEnabled(true);
     await analytics().logAppOpen();
-    const test = await analytics().getSessionId();
   };
 
   const onLogSignUp = async (method: MethodAuthType) => {
@@ -33,14 +41,34 @@ export const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
     });
   };
 
+  const onLogScreenView = async () => {
+    if (currentRouteName)
+      if (currentRouteName !== previousRouteName)
+        await analytics().logScreenView({
+          screen_class: currentRouteName,
+          screen_name: currentRouteName,
+        });
+    setPreviousRouteName(currentRouteName);
+  };
+
+  const onSetUserProperties = async (
+    properties: Record<string, string | null>
+  ) => {
+    await analytics().setUserProperties(properties);
+  };
+
   const contextValue: AnalyticsContext = useMemo(
-    () => ({ onLogLogin, onLogSignUp }),
+    () => ({ onLogLogin, onLogSignUp, onSetUserProperties }),
     []
   );
 
   useEffect(() => {
     onLogAppOpen();
   }, []);
+
+  useEffect(() => {
+    onLogScreenView();
+  }, [currentRouteName]);
 
   return (
     <analyticsContext.Provider value={contextValue}>
