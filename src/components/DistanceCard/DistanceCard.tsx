@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useContext } from "react";
-import { Text, View } from "react-native";
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { StyleProp, Text, View, ViewStyle } from "react-native";
 import { convertDistance } from "geolib";
 
 // providers
@@ -15,16 +15,22 @@ import colors from "../../../styles/colors";
 type DistanceCardType = {
   distance: number | null;
   numberOfLines?: number;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
 export const DistanceCard: FunctionComponent<DistanceCardType> = ({
   distance,
   numberOfLines = 2,
+  containerStyle,
 }) => {
   const { i18n } = useContext(localesContext);
+  const containerStyles = useMemo(
+    () => [styles.container, containerStyle],
+    [containerStyle]
+  );
 
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <IconLocationMarker
         width={20}
         height={20}

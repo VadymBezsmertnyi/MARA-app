@@ -59,7 +59,12 @@ export const RegistrationFaceId: FunctionComponent = () => {
   return (
     <View style={containerStyles}>
       <View style={styles.containerClose}>
-        <TouchableOpacity onPress={onAllowLater}>
+        <TouchableOpacity
+          accessibilityLabel={i18n._(
+            "Button for closing the registration FaceID"
+          )}
+          onPress={onAllowLater}
+        >
           <IconClose width={24} height={24} fill={colors.black} />
         </TouchableOpacity>
       </View>

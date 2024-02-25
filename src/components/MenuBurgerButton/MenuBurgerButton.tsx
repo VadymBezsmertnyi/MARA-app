@@ -1,5 +1,8 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { TouchableOpacity, View, ViewStyle } from "react-native";
+
+// providers
+import { localesContext } from "../../../localization/localization.provider";
 
 // styles
 import { styles } from "./MenuBurgerButton.styles";
@@ -13,10 +16,15 @@ export const MenuBurgerButton: FunctionComponent<MenuBurgerButtonProps> = ({
   onPress,
   style,
 }) => {
+  const { i18n } = useContext(localesContext);
+
   const styleContainer = useMemo(() => [styles.menu, style], [style]);
 
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity
+      accessibilityLabel={i18n._("Toggle show menu")}
+      onPress={onPress}
+    >
       <View style={styleContainer}>
         <View style={styles.line} />
         <View style={styles.line} />

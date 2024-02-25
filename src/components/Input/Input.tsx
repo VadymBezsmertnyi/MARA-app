@@ -28,6 +28,7 @@ type InputProps = {
   isRegular?: boolean;
   isSelect?: boolean;
   maxLength?: number;
+  accessibilityLabel?: string;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -45,6 +46,7 @@ export const Input: FunctionComponent<InputProps> = ({
   isRegular = false,
   isSelect = false,
   maxLength,
+  accessibilityLabel,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -107,6 +109,7 @@ export const Input: FunctionComponent<InputProps> = ({
       <View style={inputWrapperStyles}>
         <TextInput
           style={inputStyles}
+          accessibilityLabel={accessibilityLabel}
           placeholder={placeholder}
           defaultValue={defaultValue}
           value={value}

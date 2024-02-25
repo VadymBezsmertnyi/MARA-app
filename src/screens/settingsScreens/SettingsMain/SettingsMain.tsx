@@ -120,7 +120,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
       </View>
       <ScrollView>
         <View style={styles.containerList}>
-          <View style={styles.lineEmpty} />
+          <View style={styles.lineEmptyFirst} />
           <ItemMyList
             title={i18n._("My adverts")}
             titleButton={i18n._("Add advert")}

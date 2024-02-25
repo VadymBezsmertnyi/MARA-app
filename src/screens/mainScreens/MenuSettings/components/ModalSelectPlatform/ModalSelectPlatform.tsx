@@ -1,7 +1,15 @@
-import React, { FunctionComponent, useCallback, useState } from "react";
+import React, {
+  FunctionComponent,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 import { Trans } from "@lingui/macro";
+
+// providers
+import { localesContext } from "../../../../../../localization/localization.provider";
 
 // components
 import { ModalWindow } from "../../../../../components/ModalWindow/ModalWindow";
@@ -28,6 +36,7 @@ type ModalSelectPlatformProps = {
 export const ModalSelectPlatform: FunctionComponent<
   ModalSelectPlatformProps
 > = ({ isOpen, onClose, onSelect }) => {
+  const { i18n } = useContext(localesContext);
   const [focusPlatform, setFocusPlatform] = useState<"android" | "ios" | null>(
     null
   );
@@ -46,7 +55,12 @@ export const ModalSelectPlatform: FunctionComponent<
         <Shadow stretch>
           <View style={styles.container}>
             <View style={styles.containerClose}>
-              <TouchableOpacity onPress={onClose}>
+              <TouchableOpacity
+                accessibilityLabel={i18n._(
+                  "Button for closing the modal window"
+                )}
+                onPress={onClose}
+              >
                 <IconClose width={24} height={24} fill={colors.blackCoffee} />
               </TouchableOpacity>
             </View>

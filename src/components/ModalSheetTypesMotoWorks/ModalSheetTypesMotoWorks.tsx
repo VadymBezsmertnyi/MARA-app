@@ -75,6 +75,10 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
                   </View>
                   <CheckboxClassic
                     isGradient
+                    accessibilityLabel={i18n._(
+                      "Select type work moto {nameTypeWork}",
+                      { nameTypeWork: workMoto.title }
+                    )}
                     check={isSelect}
                     setCheck={() => {
                       onSelectMotoTypeWork(workMoto);
@@ -88,6 +92,7 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
         <View style={styles.containerSubmitModalTypeWork}>
           <ButtonCustom
             disabled={selectMotoTypesWorks.length === 0}
+            accessibilityLabel={i18n._("Select")}
             title={i18n._("Select")}
             onSubmit={onSubmit}
           />

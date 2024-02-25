@@ -1,6 +1,9 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useContext } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
+
+// providers
+import { localesContext } from "../../../../../../localization/localization.provider";
 
 // hooks
 import { useMainTabsNavigation } from "../../../../../navigators/Navigators.helps";
@@ -9,6 +12,7 @@ import { useMainTabsNavigation } from "../../../../../navigators/Navigators.help
 import { styles } from "./Menu.styles";
 
 export const Menu: FunctionComponent = () => {
+  const { i18n } = useContext(localesContext);
   const navigation = useMainTabsNavigation();
 
   const onShowMenu = () => {
@@ -16,7 +20,11 @@ export const Menu: FunctionComponent = () => {
   };
 
   return (
-    <TouchableOpacity onPress={onShowMenu} style={styles.container}>
+    <TouchableOpacity
+      accessibilityLabel={i18n._("Toggle show menu")}
+      onPress={onShowMenu}
+      style={styles.container}
+    >
       <Shadow stretch>
         <View style={styles.menu}>
           <View style={styles.line} />

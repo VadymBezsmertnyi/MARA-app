@@ -34,6 +34,10 @@ msgid "Photo {numberPhoto}"
 msgstr "Фото {numberPhoto}"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Кнопка для закриття модального вікна"
+
+#. js-lingui-explicit-id
 msgid "Main photo"
 msgstr "Головне фото"
 
@@ -46,12 +50,36 @@ msgid "Enter text to search"
 msgstr "Введіть текст для пошуку"
 
 #. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Натисніть та введіть для пошуку міста"
+
+#. js-lingui-explicit-id
 msgid "Choose a city:"
 msgstr "Оберіть місто:"
 
 #. js-lingui-explicit-id
+msgid "Select the city {cityName}"
+msgstr "Виберіть місто {cityName}"
+
+#. js-lingui-explicit-id
+msgid "If you have selected a city, press to confirm"
+msgstr "Якщо ви вибрали місто, натисніть для підтвердження"
+
+#. js-lingui-explicit-id
 msgid "Select"
 msgstr "Обрати"
+
+#. js-lingui-explicit-id
+msgid "Decrease the maximum number"
+msgstr "Зменшити максимальну кількість"
+
+#. js-lingui-explicit-id
+msgid "Increase the maximum number"
+msgstr "Збільшити максимальну кількість"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Перемикання відображення меню"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -88,6 +116,38 @@ msgstr "Продовжити"
 #. js-lingui-explicit-id
 msgid "Back"
 msgstr "Назад"
+
+#. js-lingui-explicit-id
+msgid "Select country {nameCountry}"
+msgstr "Виберіть країну {nameCountry}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameRegion}"
+msgstr "Виберіть регіон {nameRegion}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameCity}"
+msgstr "Виберіть регіон {nameCity}"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Виберіть тип роботи авто {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Виберіть тип роботи мото {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto"
+msgstr "Виберіть тип роботи мото"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto"
+msgstr "Виберіть тип роботи авто"
+
+#. js-lingui-explicit-id
+msgid "Background overlay for closing the modal window"
+msgstr "Фонове наложення для закриття модального вікна"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -430,6 +490,10 @@ msgid "advert"
 msgstr "оголошення"
 
 #. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Виберіть вкладку {tabName}"
+
+#. js-lingui-explicit-id
 msgid "Create event"
 msgstr "Створити подію"
 
@@ -650,6 +714,10 @@ msgid "Invitation failed to send"
 msgstr "Не вдалося надіслати запрошення"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Кнопка для закриття екрану налаштувань меню"
+
+#. js-lingui-explicit-id
 msgid "SOS signal notification"
 msgstr "Сповіщення сигналу SOS"
 
@@ -698,8 +766,8 @@ msgid "Category"
 msgstr "Категорія"
 
 #. js-lingui-explicit-id
-msgid "motorcycle brand"
-msgstr "марка мотоцикла"
+msgid "Motorcycle brand"
+msgstr "Марка мотоцикла"
 
 #. js-lingui-explicit-id
 msgid "Car's make"
@@ -850,6 +918,18 @@ msgid "Price, {symbol}:"
 msgstr "Ціна, {symbol}:"
 
 #. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Марка автомобіля"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "марка мотоцикла"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Марка мотоцикла"
+
+#. js-lingui-explicit-id
 msgid "Filtering"
 msgstr "Фільтрація"
 
@@ -858,12 +938,20 @@ msgid "grn"
 msgstr "грн"
 
 #. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Перемикання подобається продукт"
+
+#. js-lingui-explicit-id
 msgid "Market"
 msgstr "Ринок"
 
 #. js-lingui-explicit-id
 msgid "Enter the name"
 msgstr "Введіть назву"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Додати продукт"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -966,6 +1054,18 @@ msgid "Enter the text to search"
 msgstr "Введіть текст для пошуку"
 
 #. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Натисніть, щоб побачити більше подій"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Додати подію"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Кнопка для закриття реєстрації FaceID"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 5 and 20 characters"
 msgstr "Довжина імені повинна бути від 5 до 20 символів"
 
@@ -994,6 +1094,10 @@ msgid "Fill out later"
 msgstr "Заповнити пізніше"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Перемикач вашого місцезнаходження"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Оберіть місто:"
 
@@ -1006,8 +1110,16 @@ msgid "Terms of Use"
 msgstr "Умови використання"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Кнопка для закриття реєстрації TouchID"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "події"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Кнопка для закриття екрану налаштувань подій"
 
 #. js-lingui-explicit-id
 msgid "My adverts"
@@ -1026,16 +1138,16 @@ msgid "My events"
 msgstr "Мої події"
 
 #. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Додати подію"
-
-#. js-lingui-explicit-id
 msgid "Setting profile"
 msgstr "Корегувати профіль"
 
 #. js-lingui-explicit-id
 msgid "adverts"
 msgstr "оголошення"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Кнопка для закриття екрану налаштувань продуктів"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -1064,6 +1176,10 @@ msgstr "Місто"
 #. js-lingui-explicit-id
 msgid "workshops"
 msgstr "майстерні"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Кнопка для закриття екрану налаштувань майстерень"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -1164,6 +1280,10 @@ msgstr "Перейти до майстерні {title}"
 #. js-lingui-explicit-id
 msgid "Workshop {title}"
 msgstr "Майстерня {title}"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Виберіть сторінку для поділу"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -1454,8 +1574,17 @@ msgstr "Налаштування"
 msgid "Someone needs help within a 5 km radius"
 msgstr "У радіусі 5 км комусь потрібна допомога"
 
+msgid "Sorry, but no products were found by the filters"
+msgstr "Вибачте, за вказаними фільтрами продукти не знайдені"
+
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Вибачте, за вказаними фільтрами майстерні не знайдені"
+
 msgid "Sorry, there are no upcoming events"
 msgstr "Вибачте, немає майбутніх подій"
+
+msgid "Sorry, there are no upcoming products"
+msgstr "Вибачте, немає майбутніх продуктів"
 
 msgid "Sorry, there are no upcoming workshops"
 msgstr "Вибачте, найближчих майстерень немає"

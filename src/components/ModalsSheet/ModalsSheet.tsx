@@ -1,7 +1,15 @@
-import React, { FunctionComponent, useCallback, useMemo } from "react";
+import React, {
+  FunctionComponent,
+  useCallback,
+  useContext,
+  useMemo,
+} from "react";
 import { TouchableOpacity, View, ViewStyle } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { BlurView } from "expo-blur";
+
+// providers
+import { localesContext } from "../../../localization/localization.provider";
 
 // icons
 import { IconCloseGradient } from "../../icons/components";
@@ -30,6 +38,7 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
   isIndicator = false,
   children,
 }) => {
+  const { i18n } = useContext(localesContext);
   const handleIndicatorStyle = useMemo(
     () =>
       ({
@@ -44,7 +53,11 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
 
   const handleComponent = () => (
     <View style={styles.header}>
-      <TouchableOpacity style={styles.buttonHeader} onPress={onClose}>
+      <TouchableOpacity
+        accessibilityLabel={i18n._("Button for closing the modal window")}
+        style={styles.buttonHeader}
+        onPress={onClose}
+      >
         <IconCloseGradient width={24} height={24} />
       </TouchableOpacity>
     </View>
@@ -64,7 +77,13 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
 
   return (
     <>
-      <TouchableOpacity style={styles.footerButton} onPress={onClose}>
+      <TouchableOpacity
+        accessibilityLabel={i18n._(
+          "Background overlay for closing the modal window"
+        )}
+        style={styles.footerButton}
+        onPress={onClose}
+      >
         <BlurView intensity={15} style={styles.footerButtonBlurView} />
       </TouchableOpacity>
       <BottomSheet

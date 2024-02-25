@@ -190,7 +190,11 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
                 <Text style={styles.titleInfo}>{selectWorkshop?.title}</Text>
                 <Text style={styles.subTitleInfo}>{showTitlePlace}</Text>
               </View>
-              <DistanceCard distance={distance} numberOfLines={1} />
+              <DistanceCard
+                distance={distance}
+                numberOfLines={1}
+                containerStyle={styles.containerDistance}
+              />
             </View>
             <View style={styles.containerContacts}>
               <View style={styles.containerPhone}>

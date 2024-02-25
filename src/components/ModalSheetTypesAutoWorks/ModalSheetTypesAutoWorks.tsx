@@ -73,6 +73,10 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
                   </View>
                   <CheckboxClassic
                     isGradient
+                    accessibilityLabel={i18n._(
+                      "Select type work auto {nameTypeWork}",
+                      { nameTypeWork: workAuto.title }
+                    )}
                     check={isSelect}
                     setCheck={() => {
                       onSelectAutoTypeWork(workAuto);
@@ -86,6 +90,7 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
         <View style={styles.containerSubmitModalTypeWork}>
           <ButtonCustom
             disabled={selectAutoTypesWorks.length === 0}
+            accessibilityLabel={i18n._("Select")}
             title={i18n._("Select")}
             onSubmit={onSubmit}
           />

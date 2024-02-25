@@ -59,6 +59,9 @@ export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
             <View style={styles.containerInput}>
               <Input
                 placeholder={i18n._("Enter text to search")}
+                accessibilityLabel={i18n._(
+                  "Press and enter to search for a city"
+                )}
                 label={i18n._("Choose a city:")}
                 defaultValue={inputValue}
                 onChange={(value) => {
@@ -79,6 +82,10 @@ export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
                     return (
                       <TouchableOpacity
                         key={`address-google=${address.place_id}`}
+                        accessibilityLabel={i18n._(
+                          "Select the city {cityName}",
+                          { cityName: cityTitle }
+                        )}
                         onPress={async () => {
                           const resultLocation = await fetchDetails(
                             address.place_id
@@ -103,6 +110,9 @@ export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
                 : null}
               <View style={styles.containerButton}>
                 <ButtonCustom
+                  accessibilityLabel={i18n._(
+                    "If you have selected a city, press to confirm"
+                  )}
                   disabled={!selectCity}
                   title={i18n._("Select")}
                   onSubmit={() => {

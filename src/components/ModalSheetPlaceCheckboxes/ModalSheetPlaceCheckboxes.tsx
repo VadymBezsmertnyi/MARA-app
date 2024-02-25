@@ -143,6 +143,9 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
             return isShow ? (
               <TouchableOpacity
                 key={`country-${country.countryId}`}
+                accessibilityLabel={i18n._("Select country {nameCountry}", {
+                  nameCountry: country.title,
+                })}
                 style={styles.containerItemList}
                 onPress={() => {
                   setSelectRegionIds([]);
@@ -160,6 +163,9 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                 <Text style={styles.titleItemList}>{country.title}</Text>
                 <CheckboxClassic
                   isGradient
+                  accessibilityLabel={i18n._("Select country {nameCountry}", {
+                    nameCountry: country.title,
+                  })}
                   check={selectCountriesIso.includes(country.countryId)}
                   setCheck={() => {
                     setSelectRegionIds([]);
@@ -203,6 +209,10 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                     return isFind ? (
                       <TouchableOpacity
                         key={`country-${country.countryId}-region-${region.regionId}`}
+                        accessibilityLabel={i18n._(
+                          "Select region {nameRegion}",
+                          { nameRegion: region.title[language || "en"] }
+                        )}
                         style={styles.containerItemList}
                         onPress={() => {
                           setSelectCitiesTitles([]);
@@ -220,6 +230,10 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                         </Text>
                         <CheckboxClassic
                           isGradient
+                          accessibilityLabel={i18n._(
+                            "Select region {nameRegion}",
+                            { nameRegion: region.title[language || "en"] }
+                          )}
                           check={selectRegionIds.includes(region.regionId)}
                           setCheck={() => {
                             setSelectCitiesTitles([]);
@@ -286,6 +300,10 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                                 key={`country-${country.countryId}-region-${
                                   region.regionId
                                 }-city-${index + 1}`}
+                                accessibilityLabel={i18n._(
+                                  "Select region {nameCity}",
+                                  { nameCity: cityName }
+                                )}
                                 style={styles.containerItemList}
                                 onPress={() => {
                                   setSelectCitiesTitles((state) =>
@@ -302,6 +320,10 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
                                 </Text>
                                 <CheckboxClassic
                                   isGradient
+                                  accessibilityLabel={i18n._(
+                                    "Select region {nameCity}",
+                                    { nameCity: cityName }
+                                  )}
                                   check={selectCitiesTitles.includes(cityName)}
                                   setCheck={() => {
                                     setSelectCitiesTitles((state) =>
@@ -388,12 +410,16 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
             <Shadow stretch disabled={step > 1}>
               <View style={styles.containerSubmitModalTypeWork}>
                 <ButtonCustom
+                  accessibilityLabel={
+                    !isSelectStep ? i18n._("Select") : i18n._("Continue")
+                  }
                   title={!isSelectStep ? i18n._("Select") : i18n._("Continue")}
                   onSubmit={onPressNext}
                 />
                 <ButtonCustom
                   type="transparent"
                   disabled={false}
+                  accessibilityLabel={i18n._("Back")}
                   title={i18n._("Back")}
                   onSubmit={onPressBack}
                 />

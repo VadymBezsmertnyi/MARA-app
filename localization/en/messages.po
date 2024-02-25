@@ -34,6 +34,10 @@ msgid "Photo {numberPhoto}"
 msgstr "Photo {numberPhoto}"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Button for closing the modal window"
+
+#. js-lingui-explicit-id
 msgid "Main photo"
 msgstr "Main photo"
 
@@ -46,12 +50,36 @@ msgid "Enter text to search"
 msgstr "Enter text to search"
 
 #. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Press and enter to search for a city"
+
+#. js-lingui-explicit-id
 msgid "Choose a city:"
 msgstr "Choose a city:"
 
 #. js-lingui-explicit-id
+msgid "Select the city {cityName}"
+msgstr "Select the city {cityName}"
+
+#. js-lingui-explicit-id
+msgid "If you have selected a city, press to confirm"
+msgstr "If you have selected a city, press to confirm"
+
+#. js-lingui-explicit-id
 msgid "Select"
 msgstr "Select"
+
+#. js-lingui-explicit-id
+msgid "Decrease the maximum number"
+msgstr "Decrease the maximum number"
+
+#. js-lingui-explicit-id
+msgid "Increase the maximum number"
+msgstr "Increase the maximum number"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Toggle show menu"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -88,6 +116,38 @@ msgstr "Continue"
 #. js-lingui-explicit-id
 msgid "Back"
 msgstr "Back"
+
+#. js-lingui-explicit-id
+msgid "Select country {nameCountry}"
+msgstr "Select country {nameCountry}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameRegion}"
+msgstr "Select region {nameRegion}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameCity}"
+msgstr "Select region {nameCity}"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Select type work auto {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Select type work moto {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto"
+msgstr "Select type work moto"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto"
+msgstr "Select type work auto"
+
+#. js-lingui-explicit-id
+msgid "Background overlay for closing the modal window"
+msgstr "Background overlay for closing the modal window"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -430,6 +490,10 @@ msgid "advert"
 msgstr "advert"
 
 #. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Select tab {tabName}"
+
+#. js-lingui-explicit-id
 msgid "Create event"
 msgstr "Create event"
 
@@ -650,6 +714,10 @@ msgid "Invitation failed to send"
 msgstr "Invitation failed to send"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Button for closing the menu settings screen"
+
+#. js-lingui-explicit-id
 msgid "SOS signal notification"
 msgstr "SOS signal notification"
 
@@ -698,8 +766,8 @@ msgid "Category"
 msgstr "Category"
 
 #. js-lingui-explicit-id
-msgid "motorcycle brand"
-msgstr "motorcycle brand"
+msgid "Motorcycle brand"
+msgstr "Motorcycle brand"
 
 #. js-lingui-explicit-id
 msgid "Car's make"
@@ -850,6 +918,18 @@ msgid "Price, {symbol}:"
 msgstr "Price, {symbol}:"
 
 #. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Make of car"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "brand of motorcycle"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Brand of motorcycle"
+
+#. js-lingui-explicit-id
 msgid "Filtering"
 msgstr "Filtering"
 
@@ -858,12 +938,20 @@ msgid "grn"
 msgstr "grn"
 
 #. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Toggle like product"
+
+#. js-lingui-explicit-id
 msgid "Market"
 msgstr "Market"
 
 #. js-lingui-explicit-id
 msgid "Enter the name"
 msgstr "Enter the name"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Add product"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -966,6 +1054,18 @@ msgid "Enter the text to search"
 msgstr "Enter the text to search"
 
 #. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Press show more events"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Add event"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Button for closing the registration FaceID"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 5 and 20 characters"
 msgstr "The length of the name should be between 5 and 20 characters"
 
@@ -994,6 +1094,10 @@ msgid "Fill out later"
 msgstr "Fill out later"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Toggle on your location"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Select the city"
 
@@ -1006,8 +1110,16 @@ msgid "Terms of Use"
 msgstr "Terms of Use"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Button for closing the registration TouchID"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "events"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Button for closing the settings events screen"
 
 #. js-lingui-explicit-id
 msgid "My adverts"
@@ -1026,16 +1138,16 @@ msgid "My events"
 msgstr "My events"
 
 #. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Add event"
-
-#. js-lingui-explicit-id
 msgid "Setting profile"
 msgstr "Setting profile"
 
 #. js-lingui-explicit-id
 msgid "adverts"
 msgstr "adverts"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Button for closing the settings products screen"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -1064,6 +1176,10 @@ msgstr "City"
 #. js-lingui-explicit-id
 msgid "workshops"
 msgstr "workshops"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Button for closing the settings workshops screen"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -1164,6 +1280,10 @@ msgstr "Go to workshop {title}"
 #. js-lingui-explicit-id
 msgid "Workshop {title}"
 msgstr "Workshop {title}"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Select share page"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -1454,8 +1574,17 @@ msgstr "Settings"
 msgid "Someone needs help within a 5 km radius"
 msgstr "Someone needs help within a 5 km radius"
 
+msgid "Sorry, but no products were found by the filters"
+msgstr "Sorry, but no products were found by the filters"
+
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Sorry, but no workshops were found by the filters"
+
 msgid "Sorry, there are no upcoming events"
 msgstr "Sorry, there are no upcoming events"
+
+msgid "Sorry, there are no upcoming products"
+msgstr "Sorry, there are no upcoming products"
 
 msgid "Sorry, there are no upcoming workshops"
 msgstr "Sorry, there are no upcoming workshops"

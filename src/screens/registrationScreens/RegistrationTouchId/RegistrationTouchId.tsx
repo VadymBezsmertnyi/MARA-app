@@ -53,7 +53,12 @@ export const RegistrationTouchId: FunctionComponent = () => {
   return (
     <View style={styles.container}>
       <View style={styles.containerClose}>
-        <TouchableOpacity onPress={onAllowLater}>
+        <TouchableOpacity
+          accessibilityLabel={i18n._(
+            "Button for closing the registration TouchID"
+          )}
+          onPress={onAllowLater}
+        >
           <IconClose width={24} height={24} fill={colors.black} />
         </TouchableOpacity>
       </View>

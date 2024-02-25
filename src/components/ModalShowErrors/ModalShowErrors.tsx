@@ -45,7 +45,10 @@ export const ModalShowErrors: FunctionComponent<ModalErrors> = ({
       <ModalWindow onClose={onClose}>
         <View style={styles.containerModal}>
           <View style={styles.containerClose}>
-            <TouchableOpacity onPress={onClose}>
+            <TouchableOpacity
+              accessibilityLabel={i18n._("Button for closing the modal window")}
+              onPress={onClose}
+            >
               <IconClose width={24} height={24} fill={colors.blackCoffee} />
             </TouchableOpacity>
           </View>

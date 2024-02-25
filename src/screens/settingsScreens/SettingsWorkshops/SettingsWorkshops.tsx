@@ -59,7 +59,12 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
         <Text style={styles.titleHeader}>
           <Trans>My workshops</Trans>
         </Text>
-        <TouchableOpacity onPress={onClose}>
+        <TouchableOpacity
+          accessibilityLabel={i18n._(
+            "Button for closing the settings workshops screen"
+          )}
+          onPress={onClose}
+        >
           <IconClose width={24} height={24} fill={colors.blackCoffee} />
         </TouchableOpacity>
       </View>

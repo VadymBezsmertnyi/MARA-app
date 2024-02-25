@@ -14,7 +14,6 @@ import {
   ScrollView,
   StyleProp,
   StyleSheet,
-  TouchableHighlight,
   TouchableOpacity,
   View,
   ViewStyle,
@@ -218,20 +217,22 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
             const currentPosition = position || positionState;
             const getStyles = () => [
               styles.button,
+              { backgroundColor: "#ccc" },
               currentPosition === (loop ? index + 1 : index) &&
                 styles.buttonSelected,
             ];
             return (
-              <TouchableHighlight
+              <View
                 key={`slider-button-${index + 1}`}
-                underlayColor="#ccc"
-                onPress={() => {
+                // TODO
+                //underlayColor="#ccc"
+                /* onPress={() => {
                   move(index);
-                }}
+                }} */
                 style={getStyles()}
               >
                 <View />
-              </TouchableHighlight>
+              </View>
             );
           })}
         </View>

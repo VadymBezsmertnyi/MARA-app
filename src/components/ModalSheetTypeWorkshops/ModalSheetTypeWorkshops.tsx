@@ -13,6 +13,8 @@ import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 
 // icons
 import { IconAutoService, IconMotoService } from "../../icons/components";
+
+// styles
 import { styles } from "./ModalSheetTypeWorkshops.styles";
 
 type ModalSheetTypeWorkshopsProps = {
@@ -64,6 +66,7 @@ export const ModalSheetTypeWorkshops: FunctionComponent<
                   setTypeWorkshops((state) => ({ ...state, moto }));
                 }}
                 isGradient
+                accessibilityLabel={i18n._("Select type work moto")}
               />
             </View>
           </View>
@@ -81,6 +84,7 @@ export const ModalSheetTypeWorkshops: FunctionComponent<
                   setTypeWorkshops((state) => ({ ...state, auto }));
                 }}
                 isGradient
+                accessibilityLabel={i18n._("Select type work auto")}
               />
             </View>
           </View>
@@ -88,6 +92,7 @@ export const ModalSheetTypeWorkshops: FunctionComponent<
         <ButtonCustom
           disabled={!(typeWorkshops.auto || typeWorkshops.moto)}
           title={i18n._("Select")}
+          accessibilityLabel={i18n._("Select")}
           onSubmit={onSubmit}
         />
       </View>

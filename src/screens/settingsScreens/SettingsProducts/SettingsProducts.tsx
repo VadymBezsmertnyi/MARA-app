@@ -60,7 +60,12 @@ export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
         <Text style={styles.titleHeader}>
           <Trans>My adverts</Trans>
         </Text>
-        <TouchableOpacity onPress={onClose}>
+        <TouchableOpacity
+          accessibilityLabel={i18n._(
+            "Button for closing the settings products screen"
+          )}
+          onPress={onClose}
+        >
           <IconClose width={24} height={24} fill={colors.blackCoffee} />
         </TouchableOpacity>
       </View>

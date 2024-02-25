@@ -8,6 +8,7 @@ import { RootEventsScreensParamList } from "../../../navigators/Navigators.types
 
 // providers
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+import { localesContext } from "../../../../localization/localization.provider";
 
 // components
 import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
@@ -35,6 +36,7 @@ type EventsMainProps = {
 export const EventsMain: FunctionComponent<EventsMainProps> = ({
   navigation,
 }) => {
+  const { i18n } = useContext(localesContext);
   const { eventsList } = useContext(eventsContext);
   const timeNow = useMemo(() => new Date().getTime(), []);
   const eventsWill = useMemo(
@@ -87,6 +89,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
             </View>
             {eventsWill.length ? (
               <TouchableOpacity
+                accessibilityLabel={i18n._("Press show more events")}
                 style={styles.buttonMore}
                 onPress={onToEventsList}
               >
@@ -151,6 +154,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
         onPress={() => {
           navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
         }}
+        accessibilityLabel={i18n._("Add event")}
       />
     </>
   );

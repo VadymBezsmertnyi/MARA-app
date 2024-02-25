@@ -1,7 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useContext } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 import { Trans } from "@lingui/macro";
+
+// providers
+import { localesContext } from "../../../../../../localization/localization.provider";
 
 // icons
 import { IconClose } from "../../../../../icons/components";
@@ -18,54 +21,61 @@ type ModalSortProps = {
 export const ModalSort: FunctionComponent<ModalSortProps> = ({
   onClose,
   setTypeSort,
-}) => (
-  <Shadow>
-    <View style={styles.container}>
-      <View style={styles.containerHeader}>
-        <TouchableOpacity onPress={onClose}>
-          <IconClose width={24} height={24} fill={colors.blackCoffee} />
-        </TouchableOpacity>
+}) => {
+  const { i18n } = useContext(localesContext);
+
+  return (
+    <Shadow>
+      <View style={styles.container}>
+        <View style={styles.containerHeader}>
+          <TouchableOpacity
+            accessibilityLabel={i18n._("Button for closing the modal window")}
+            onPress={onClose}
+          >
+            <IconClose width={24} height={24} fill={colors.blackCoffee} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.containerButtons}>
+          <TouchableOpacity
+            onPress={() => {
+              setTypeSort("distance");
+            }}
+          >
+            <Text style={styles.titleButton}>
+              <Trans>By distance:</Trans>
+            </Text>
+            <Text style={styles.subTitleButton}>
+              <Trans>from closest to farthest</Trans>
+            </Text>
+          </TouchableOpacity>
+          <View style={styles.line} />
+          <TouchableOpacity
+            onPress={() => {
+              setTypeSort("rating");
+            }}
+          >
+            <Text style={styles.titleButton}>
+              <Trans>By rating:</Trans>
+            </Text>
+            <Text style={styles.subTitleButton}>
+              <Trans>from highest to lowest</Trans>
+            </Text>
+          </TouchableOpacity>
+          <View style={styles.line} />
+          <TouchableOpacity
+            onPress={() => {
+              setTypeSort("comments");
+            }}
+          >
+            <Text style={styles.titleButton}>
+              <Trans>By number of comments:</Trans>
+            </Text>
+            <Text style={styles.subTitleButton}>
+              <Trans>from highest to lowest</Trans>
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.containerButtons}>
-        <TouchableOpacity
-          onPress={() => {
-            setTypeSort("distance");
-          }}
-        >
-          <Text style={styles.titleButton}>
-            <Trans>By distance:</Trans>
-          </Text>
-          <Text style={styles.subTitleButton}>
-            <Trans>from closest to farthest</Trans>
-          </Text>
-        </TouchableOpacity>
-        <View style={styles.line} />
-        <TouchableOpacity
-          onPress={() => {
-            setTypeSort("rating");
-          }}
-        >
-          <Text style={styles.titleButton}>
-            <Trans>By rating:</Trans>
-          </Text>
-          <Text style={styles.subTitleButton}>
-            <Trans>from highest to lowest</Trans>
-          </Text>
-        </TouchableOpacity>
-        <View style={styles.line} />
-        <TouchableOpacity
-          onPress={() => {
-            setTypeSort("comments");
-          }}
-        >
-          <Text style={styles.titleButton}>
-            <Trans>By number of comments:</Trans>
-          </Text>
-          <Text style={styles.subTitleButton}>
-            <Trans>from highest to lowest</Trans>
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  </Shadow>
-);
+    </Shadow>
+  );
+};

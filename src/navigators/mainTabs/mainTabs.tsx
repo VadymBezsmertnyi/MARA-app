@@ -15,6 +15,7 @@ import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript
 
 // providers
 import { responsiveLayoutContext } from "../../providers/responsiveLayout/responsiveLayout.provider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // components
 import { MenuBurgerButton } from "../../components/MenuBurgerButton/MenuBurgerButton";
@@ -37,6 +38,7 @@ const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
   const navigation = useNavigation<DrawerNavigationHelpers>();
+  const { i18n } = useContext(localesContext);
   const { mainTabs } = useMainTabs();
   const { durationHeight } = useContext(responsiveLayoutContext);
   const colorsGradient = useMemo(
@@ -73,6 +75,9 @@ export const MainTabs: FunctionComponent = () => {
             return (
               <View key={`tab-button-${screen.id}`}>
                 <TouchableOpacity
+                  accessibilityLabel={i18n._("Select tab {tabName}", {
+                    tabName: screen.title,
+                  })}
                   onPress={() => {
                     navigation.navigate(screen.name, {
                       screen: screen.mainScreen,

@@ -52,6 +52,12 @@ export const styles = StyleSheet.create({
     gap: 6,
   },
   infoUser: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
+  lineEmptyFirst: {
+    marginBottom: 10,
+    width: "100%",
+    height: 1,
+    backgroundColor: colors.grayMercury,
+  },
   lineEmpty: {
     marginTop: 24,
     marginBottom: 10,

@@ -240,7 +240,10 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
           )}
           <View style={styles.containerEmpty} />
         </ScrollView>
-        <AddEventButton onPress={onPressAddWorkshop} />
+        <AddEventButton
+          onPress={onPressAddWorkshop}
+          accessibilityLabel={i18n._("Add workshop")}
+        />
       </View>
       {isShowSort ? (
         <ModalWindow onClose={onClose}>

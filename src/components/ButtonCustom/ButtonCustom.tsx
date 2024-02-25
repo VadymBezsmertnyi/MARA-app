@@ -33,6 +33,7 @@ type Props = {
   children?: ReactElement;
   colorsGradientProps?: [string, string];
   onPressFocus?: (value: boolean) => void;
+  accessibilityLabel?: string;
 };
 
 export const ButtonCustom = ({
@@ -48,6 +49,7 @@ export const ButtonCustom = ({
   children,
   colorsGradientProps,
   onPressFocus,
+  accessibilityLabel,
 }: Props) => {
   const [isFocus, setIsFocus] = useState(false);
   const { theme } = useContext(themeContext);
@@ -117,6 +119,7 @@ export const ButtonCustom = ({
         >
           <TouchableHighlight
             disabled={disabled}
+            accessibilityLabel={accessibilityLabel}
             onPress={onSubmit}
             style={stylePressable}
             underlayColor={colors.chileanFireOrange}

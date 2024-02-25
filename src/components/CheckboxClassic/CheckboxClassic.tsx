@@ -8,17 +8,20 @@ type CheckboxClassicProps = {
   check: boolean;
   setCheck: (value: boolean) => void;
   isGradient?: boolean;
+  accessibilityLabel?: string;
 };
 
 export const CheckboxClassic: FunctionComponent<CheckboxClassicProps> = ({
   check,
   setCheck,
   isGradient = false,
+  accessibilityLabel,
 }) => {
   const body = check ? <IconCheck /> : <View />;
 
   return (
     <TouchableOpacity
+      accessibilityLabel={accessibilityLabel}
       onPress={() => {
         setCheck(!check);
       }}

@@ -104,7 +104,11 @@ export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
           title={`${product.price.toLocaleString("uk")} ${symbolCurrency}`}
         />
       </View>
-      <TouchableOpacity onPress={onPressLike} style={styles.containerLike}>
+      <TouchableOpacity
+        accessibilityLabel={i18n._("Toggle like product")}
+        onPress={onPressLike}
+        style={styles.containerLike}
+      >
         {isLike ? (
           <IconLikeFullGradient width={38} height={38} />
         ) : (

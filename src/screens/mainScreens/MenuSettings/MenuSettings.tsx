@@ -144,7 +144,12 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             <Text style={styles.titleHeader}>
               <Trans>Settings</Trans>
             </Text>
-            <TouchableOpacity onPress={onCloseMenu}>
+            <TouchableOpacity
+              accessibilityLabel={i18n._(
+                "Button for closing the menu settings screen"
+              )}
+              onPress={onCloseMenu}
+            >
               <IconClose width={24} height={24} fill={colors.blackCoffee} />
             </TouchableOpacity>
           </View>

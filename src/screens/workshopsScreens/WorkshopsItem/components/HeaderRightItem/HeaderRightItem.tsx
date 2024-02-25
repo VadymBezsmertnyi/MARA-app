@@ -52,10 +52,17 @@ export const HeaderRightItem: FunctionComponent<HeaderRightItemProps> = ({
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity disabled onPress={onPressShare}>
+      <TouchableOpacity
+        accessibilityLabel={i18n._("Select share page")}
+        disabled
+        onPress={onPressShare}
+      >
         <IconShareGradient width={23} height={23} opacity={0.1} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={onToggleLike}>
+      <TouchableOpacity
+        accessibilityLabel={i18n._("Toggle like product")}
+        onPress={onToggleLike}
+      >
         {isLike ? (
           <IconLikeFullGradient width={38} height={38} />
         ) : (

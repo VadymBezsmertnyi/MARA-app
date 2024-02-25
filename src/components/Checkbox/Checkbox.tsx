@@ -8,12 +8,14 @@ type CheckboxProps = {
   check: boolean;
   setCheck: (value: boolean) => void;
   colorBoxEnabled?: string;
+  accessibilityLabel?: string;
 };
 
 export const Checkbox: FunctionComponent<CheckboxProps> = ({
   check,
   setCheck,
   colorBoxEnabled,
+  accessibilityLabel,
 }) => {
   const [value, setValue] = useState(false);
   const colorBoxCheck = useMemo(
@@ -45,7 +47,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   }, [check]);
 
   return (
-    <Pressable onPress={onToggleCheck}>
+    <Pressable accessibilityLabel={accessibilityLabel} onPress={onToggleCheck}>
       <LinearGradient
         colors={colorsGradient}
         start={startGradient}

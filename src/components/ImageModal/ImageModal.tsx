@@ -63,7 +63,10 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
         <Text style={styles.titleHeader}>
           {i18n._("Photo {numberPhoto}", { numberPhoto: imageInfo.index + 1 })}
         </Text>
-        <TouchableOpacity onPress={onClose}>
+        <TouchableOpacity
+          accessibilityLabel={i18n._("Button for closing the modal window")}
+          onPress={onClose}
+        >
           <IconClose width={24} height={24} fill={colors.blackRich} />
         </TouchableOpacity>
       </View>

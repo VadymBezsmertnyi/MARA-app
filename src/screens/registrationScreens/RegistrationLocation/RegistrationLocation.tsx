@@ -94,7 +94,11 @@ export const RegistrationLocation: FunctionComponent = () => {
                 Allow the {nameApp} application to determine my location
               </Trans>
             </Text>
-            <Checkbox check={isGeoLocation} setCheck={setIsGeolocation} />
+            <Checkbox
+              accessibilityLabel={i18n._("Toggle on your location")}
+              check={isGeoLocation}
+              setCheck={setIsGeolocation}
+            />
           </View>
           <View style={styles.containerCity}>
             <Text style={styles.titleCity}>

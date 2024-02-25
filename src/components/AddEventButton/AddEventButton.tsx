@@ -8,10 +8,12 @@ import { styles } from "./AddEventButton.styles";
 
 type AddEventButtonProps = {
   onPress: () => void;
+  accessibilityLabel?: string;
 };
 
 export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
   onPress,
+  accessibilityLabel,
 }) => {
   const offsetShadow: [x: string | number, y: string | number] = useMemo(
     () => [0, 3],
@@ -19,7 +21,11 @@ export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
   );
 
   return (
-    <TouchableOpacity style={styles.createNewEvent} onPress={onPress}>
+    <TouchableOpacity
+      accessibilityLabel={accessibilityLabel}
+      style={styles.createNewEvent}
+      onPress={onPress}
+    >
       <Shadow stretch offset={offsetShadow} distance={4}>
         <BlurView
           intensity={Platform.OS === "android" ? 15 : 5}

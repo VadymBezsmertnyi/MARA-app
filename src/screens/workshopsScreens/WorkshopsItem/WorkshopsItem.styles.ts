@@ -1,6 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
-import { verticalScale } from "../../../../styles/hooks";
 
 const WIDTH = Dimensions.get("window").width;
 
@@ -17,8 +16,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     gap: 20,
     alignItems: "flex-start",
+    justifyContent: "space-between",
   },
-  titles: { maxWidth: verticalScale(250), gap: 12 },
+  titles: { flex: 1, gap: 12 },
   titleInfo: {
     fontFamily: "Montserrat_700Bold",
     fontSize: 20,
@@ -28,6 +28,9 @@ export const styles = StyleSheet.create({
     fontFamily: "OpenSans_400Regular",
     fontSize: 16,
     color: colors.blackCoffee,
+  },
+  containerDistance: {
+    justifyContent: "flex-end",
   },
   containerContacts: {
     gap: 12,

@@ -297,7 +297,10 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
             </View>
           )}
         </View>
-        <AddEventButton onPress={onPressAddProduct} />
+        <AddEventButton
+          onPress={onPressAddProduct}
+          accessibilityLabel={i18n._("Add product")}
+        />
       </View>
       <ModalSort
         isOpen={isShowSort}

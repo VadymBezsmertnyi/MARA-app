@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     gap: verticalScale(85),
+    maxHeight: 50,
   },
   containerStars: {
     flexDirection: "row",
