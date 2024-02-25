@@ -9,6 +9,7 @@ import {
   NativeScrollEvent,
   NativeSyntheticEvent,
   ScrollView,
+  StyleSheet,
   Text,
   TouchableOpacity,
   View,
@@ -49,8 +50,12 @@ import {
   RadixIconsCalendar,
 } from "../../../icons/components";
 
+// image
+import WorkshopPlaceholder from "../../../../assets/default/workshop-placeholder.png";
+
 // styles
 import { styles } from "./WorkshopsItem.styles";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 type WorkshopsItemType = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
@@ -179,11 +184,19 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         <View style={styles.containerMain}>
           <View style={styles.containerInfo}>
             <View style={styles.containerSlider}>
-              <CustomSlider
-                images={selectWorkshop?.images || []}
-                loop
-                styleScroll={(props) => [props, styles.imagesScroll]}
-              />
+              {selectWorkshop?.images.length ? (
+                <CustomSlider
+                  images={selectWorkshop.images}
+                  loop
+                  styleScroll={(props) => [props, styles.imagesScroll]}
+                />
+              ) : (
+                <ImageCache
+                  imageSrc={WorkshopPlaceholder}
+                  contentFit="contain"
+                  style={StyleSheet.absoluteFillObject}
+                />
+              )}
             </View>
             <View style={styles.info}>
               <View style={styles.titles}>

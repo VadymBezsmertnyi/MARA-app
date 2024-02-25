@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { ImageSource } from "expo-image";
 import { Trans } from "@lingui/macro";
 
 // providers
@@ -39,7 +38,7 @@ type WorkshopItemProps = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
   isMotoService: boolean;
   isAutoService: boolean;
-  image: { url: string };
+  image: { url: string } | null;
 };
 
 export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
@@ -64,7 +63,9 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
     [isMotoService]
   );
 
-  const checkImage = { ...image, uri: image.url } || WorkshopPlaceholder;
+  const checkImage = image
+    ? { ...image, uri: image?.url }
+    : WorkshopPlaceholder;
 
   return (
     <TouchableOpacity style={styles.container} onPress={selectNew}>

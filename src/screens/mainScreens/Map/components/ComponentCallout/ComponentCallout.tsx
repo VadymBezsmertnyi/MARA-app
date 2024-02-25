@@ -12,11 +12,14 @@ import {
   IconMotoService,
 } from "../../../../../icons/components";
 
+// image
+import WorkshopPlaceholder from "../../../../../../assets/default/workshop-placeholder.png";
+
 // styles
 import { styles } from "./ComponentCallout.styles";
 
 type ComponentCalloutProps = {
-  imageSrc: string;
+  imageSrc: string | null;
   title: string;
   distance: string | null;
   isMoto: boolean;
@@ -30,6 +33,7 @@ export const ComponentCallout: FunctionComponent<ComponentCalloutProps> = ({
   isAuto,
 }) => {
   const styleIconAuto = useMemo(() => ({ right: isMoto ? -12 : 0 }), [isMoto]);
+  const checkImage = imageSrc ? imageSrc : WorkshopPlaceholder;
   return (
     <View style={styles.container}>
       <LinearGradientCustom style={styles.linearGradient}>
@@ -37,7 +41,7 @@ export const ComponentCallout: FunctionComponent<ComponentCalloutProps> = ({
           <View style={styles.containerTitle}>
             <View style={styles.containerImage}>
               <ImageCache
-                imageSrc={imageSrc}
+                imageSrc={checkImage}
                 contentFit="cover"
                 style={styles.image}
               />

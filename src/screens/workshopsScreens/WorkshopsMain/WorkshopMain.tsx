@@ -211,7 +211,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                   navigation={navigation}
                   isAutoService={item.autoTypesWorks.length > 0}
                   isMotoService={item.motoTypesWorks.length > 0}
-                  image={item.images[0]}
+                  image={item.images ? item.images[0] : null}
                 />
               );
             })

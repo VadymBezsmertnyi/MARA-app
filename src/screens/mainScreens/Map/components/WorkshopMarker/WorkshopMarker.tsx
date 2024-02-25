@@ -64,7 +64,7 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
         }}
       >
         <ComponentCallout
-          imageSrc={workshop.images[0].url}
+          imageSrc={workshop.images.length ? workshop.images[0].url : null}
           title={workshop.title}
           distance={distance ? convertDistance(distance, "km").toFixed() : null}
           isMoto={workshop.motoTypesWorks.length > 0}
