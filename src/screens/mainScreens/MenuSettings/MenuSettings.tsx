@@ -149,6 +149,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 "Button for closing the menu settings screen"
               )}
               onPress={onCloseMenu}
+              style={styles.buttonClose}
             >
               <IconClose width={24} height={24} fill={colors.blackCoffee} />
             </TouchableOpacity>
@@ -218,15 +219,21 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 <Checkbox check={darkTheme} setCheck={setDarkTheme} />
               </View>
             ) : null}
-            <View style={styles.containerCheckbox}>
+            <TouchableOpacity
+              onPress={onToggleLocation}
+              style={styles.containerCheckbox}
+            >
               <Text numberOfLines={2} style={styles.titleDarkTheme}>
                 <Trans>Automatically detect location</Trans>
               </Text>
               <Checkbox
+                accessibilityLabel={i18n._(
+                  "Toggle automatically detect location"
+                )}
                 check={userData?.isGeoLocation || false}
                 setCheck={onToggleLocation}
               />
-            </View>
+            </TouchableOpacity>
             {isToggleSos ? (
               <View style={styles.containerCheckbox}>
                 <Text style={styles.titleSos}>

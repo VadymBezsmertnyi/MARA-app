@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
-    paddingTop: 11,
-    paddingBottom: 9,
+    paddingRight: 10,
+    alignItems: "center",
   },
   boxHeaderEmpty: {
     width: 24,
@@ -22,6 +22,10 @@ export const styles = StyleSheet.create({
     fontFamily: "OpenSans_600SemiBold",
     fontSize: 17,
     color: colors.blackCoffee,
+  },
+  buttonClose: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
   containerProfile: {
     flexDirection: "row",

@@ -738,6 +738,10 @@ msgid "Privacy policy"
 msgstr "Політика конфіденційності"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Перемикач автоматичного виявлення місцезнаходження"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Бренд/Виробник"
 

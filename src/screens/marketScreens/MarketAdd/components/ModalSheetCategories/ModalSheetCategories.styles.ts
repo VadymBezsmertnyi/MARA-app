@@ -23,8 +23,7 @@ export const styles = StyleSheet.create({
   containerItemList: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 15,
-    height: 20,
+    paddingVertical: 10,
   },
   containerEmpty: {
     height: 20,

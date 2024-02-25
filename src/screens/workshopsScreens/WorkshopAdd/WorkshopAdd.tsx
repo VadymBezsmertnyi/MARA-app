@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Alert, Modal, ScrollView, Text, View } from "react-native";
+import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";

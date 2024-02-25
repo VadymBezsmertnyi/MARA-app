@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   header: { alignItems: "flex-end" },
   buttonHeader: {
     paddingTop: 12,
-    paddingBottom: 5,
+    paddingBottom: 12,
     paddingHorizontal: 16,
   },
   footerButton: {
