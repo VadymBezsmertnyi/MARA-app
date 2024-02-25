@@ -182,9 +182,9 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           otherName: i18n._("workshop"),
         }),
       }),
-      ...((description.length < 200 || description.length > 9000) && {
+      ...((description.length < 50 || description.length > 9000) && {
         description: getErrorText("description", {
-          min: 200,
+          min: 50,
           max: 9000,
           otherName: i18n._("workshop"),
         }),
