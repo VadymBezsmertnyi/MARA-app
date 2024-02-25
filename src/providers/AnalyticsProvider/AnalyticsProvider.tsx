@@ -28,6 +28,15 @@ export const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
   );
   const onLogAppOpen = async () => {
     await analytics().setAnalyticsCollectionEnabled(true);
+    await analytics().setConsent({
+      ad_personalization: true,
+      ad_storage: true,
+      ad_user_data: true,
+      analytics_storage: true,
+      functionality_storage: true,
+      personalization_storage: true,
+      security_storage: true,
+    });
     await analytics().logAppOpen();
   };
 
