@@ -154,7 +154,6 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
             data: {
               ...userData,
               ...newInfoUser,
-              platform: Platform.OS,
               time_token: 1,
             },
           },
