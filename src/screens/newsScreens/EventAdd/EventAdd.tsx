@@ -401,7 +401,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             containerStyle={styles.containerImages}
           />
           <Text style={styles.errorMessage}>
-            {errorMessage?.errorMessage.title || ""}
+            {errorMessage?.errorMessage?.title || ""}
           </Text>
           <ButtonCustom title={i18n._("Confirm")} onSubmit={onSaveEvent} />
           <View style={styles.empty} />
