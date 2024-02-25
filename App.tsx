@@ -117,7 +117,9 @@ function App() {
                               <GestureHandlerRootView
                                 style={styles.gestureHandlerRootView}
                               >
-                                <PushNotificationProvider>
+                                <PushNotificationProvider
+                                  currentRouteName={currentRouteName}
+                                >
                                   <PaymentProvider>
                                     <WorkshopsProvider>
                                       <MarketProvider>

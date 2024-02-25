@@ -152,18 +152,19 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
 
     if (customSlide)
       return customSlide({ item: image, style: imageStyle(), index, width });
-
     const imageObject =
-      typeof image === "string" ? { uri: image } : { uri: image.url };
+      typeof image === "string" ? { uri: image } : { uri: image?.url };
 
     const imageComponent = (
       <View style={StyleSheet.absoluteFillObject}>
-        <Image
-          key={`image-render-item-${index + 1}`}
-          source={imageObject}
-          resizeMode="contain"
-          style={imageStyle()}
-        />
+        {imageObject.uri ? (
+          <Image
+            key={`image-render-item-${index + 1}`}
+            source={imageObject}
+            resizeMode="contain"
+            style={imageStyle()}
+          />
+        ) : null}
       </View>
     );
 

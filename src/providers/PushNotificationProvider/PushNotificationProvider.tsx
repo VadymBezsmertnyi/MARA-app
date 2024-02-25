@@ -3,18 +3,32 @@ import React, {
   useContext,
   useEffect,
   useMemo,
+  useState,
 } from "react";
 import { LogLevel, OneSignal } from "react-native-onesignal";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import Constants from "expo-constants";
 import * as Linking from "expo-linking";
 import qs from "qs";
+import { LocationObjectCoords } from "expo-location";
 
 // types
 import { Language } from "../../../localization/localization.types";
+import { InitialUrlType } from "./PushNotificationProvider.types";
 
 // providers
 import { userContext } from "../UserProvider/UserProvider";
-import { LocationObjectCoords } from "expo-location";
+
+// schemas
+import { typeInitialUrlSchema } from "./PushNotificationProvider.schemas";
+
+// constants
+import {
+  PATHS_MAIN_SCREENS,
+  PATHS_MAIN_TABS,
+  PATHS_WORKSHOP_SCREENS,
+} from "../../navigators/useNavigator.constants";
 
 type PushNotificationContext = {
   setLanguageNotification: (language: Language) => void;
@@ -23,6 +37,7 @@ type PushNotificationContext = {
 
 type PushNotificationProviderProps = {
   children: React.ReactNode;
+  currentRouteName: string | null;
 };
 
 const oneSignalAppId =
@@ -38,8 +53,18 @@ export const pushNotificationContext = React.createContext(
 
 export const PushNotificationProvider: FunctionComponent<
   PushNotificationProviderProps
-> = ({ children }) => {
+> = ({ children, currentRouteName }) => {
+  const navigation = useNavigation<
+    NativeStackNavigationProp<{
+      [PATHS_MAIN_SCREENS.main]?: Record<string, string>;
+      [PATHS_MAIN_TABS.workshops]?: {
+        screen: string;
+        params: { workshopId: number };
+      };
+    }>
+  >();
   const { userData, editUser } = useContext(userContext);
+  const [tempGoLink, setTempGoLink] = useState<InitialUrlType | null>(null);
 
   const setSubscriptionNotification = async () => {
     if (userData) {
@@ -56,8 +81,10 @@ export const PushNotificationProvider: FunctionComponent<
 
   const getNewParams = async () => {
     const initialUrl = await Linking.getInitialURL();
-    if (initialUrl)
-      console.log("Linking.parse(initialUrl)-map:", Linking.parse(initialUrl));
+    const currentInitialUrl = initialUrl
+      ? typeInitialUrlSchema.safeParse(Linking.parse(initialUrl))
+      : null;
+    if (currentInitialUrl?.success) setTempGoLink(currentInitialUrl.data);
   };
 
   const addSosNotification = async (location: LocationObjectCoords) => {
@@ -84,6 +111,24 @@ export const PushNotificationProvider: FunctionComponent<
     if (userData?.id) setSubscriptionNotification();
     getNewParams();
   }, [userData?.id]);
+
+  useEffect(() => {
+    const stateNavigate = navigation.getState();
+    const isMainScreen = stateNavigate?.routes.length
+      ? stateNavigate.routes[stateNavigate.index].name ===
+        PATHS_MAIN_SCREENS.main
+      : false;
+    if (tempGoLink && currentRouteName === PATHS_MAIN_TABS.map && isMainScreen)
+      if (tempGoLink.path === PATHS_MAIN_TABS.workshops) {
+        navigation.navigate(PATHS_MAIN_TABS.workshops, {
+          screen: PATHS_WORKSHOP_SCREENS.workshopItem,
+          params: {
+            workshopId: Number(tempGoLink.queryParams.workshopId),
+          },
+        });
+        setTempGoLink(null);
+      }
+  }, [tempGoLink, currentRouteName]);
   return (
     <pushNotificationContext.Provider value={valueContext}>
       {children}
