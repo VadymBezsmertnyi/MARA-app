@@ -1584,11 +1584,11 @@ msgstr "Sorry, but no products were found by the filters"
 msgid "Sorry, but no workshops were found by the filters"
 msgstr "Sorry, but no workshops were found by the filters"
 
+msgid "Sorry, there are no available items"
+msgstr "Sorry, there are no available items"
+
 msgid "Sorry, there are no upcoming events"
 msgstr "Sorry, there are no upcoming events"
-
-msgid "Sorry, there are no upcoming products"
-msgstr "Sorry, there are no upcoming products"
 
 msgid "Sorry, there are no upcoming workshops"
 msgstr "Sorry, there are no upcoming workshops"

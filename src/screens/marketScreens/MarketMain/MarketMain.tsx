@@ -292,7 +292,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 imageSrc={notProductsImage}
               />
               <Text style={styles.titleNotList}>
-                <Trans>Sorry, there are no upcoming products</Trans>
+                <Trans>Sorry, there are no available items</Trans>
               </Text>
             </View>
           )}

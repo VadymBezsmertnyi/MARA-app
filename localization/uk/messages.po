@@ -1584,11 +1584,11 @@ msgstr "Вибачте, за вказаними фільтрами продук�
 msgid "Sorry, but no workshops were found by the filters"
 msgstr "Вибачте, за вказаними фільтрами майстерні не знайдені"
 
+msgid "Sorry, there are no available items"
+msgstr "Вибачте, немає доступних товарів"
+
 msgid "Sorry, there are no upcoming events"
 msgstr "Вибачте, немає майбутніх подій"
-
-msgid "Sorry, there are no upcoming products"
-msgstr "Вибачте, немає майбутніх продуктів"
 
 msgid "Sorry, there are no upcoming workshops"
 msgstr "Вибачте, найближчих майстерень немає"
