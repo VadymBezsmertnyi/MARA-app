@@ -1,5 +1,6 @@
 import React, {
   FunctionComponent,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -9,9 +10,18 @@ import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
+import { NavigationContainerRef } from "@react-navigation/native";
 
 // constants
 import { THEME_LIGHT } from "../providers/ThemeProvider/ThemeProvider.const";
+import {
+  PATHS_EVENTS_SCREENS,
+  PATHS_MAIN_SCREENS,
+  PATHS_MAIN_TABS,
+  PATHS_MARKET_SCREENS,
+  PATHS_SETTINGS_SCREENS,
+  PATHS_WORKSHOP_SCREENS,
+} from "./useNavigator.constants";
 
 // components
 import { Header } from "../components/Header/Header";
@@ -20,19 +30,28 @@ import { Header } from "../components/Header/Header";
 import { themeContext } from "../providers/ThemeProvider/ThemeProvider";
 
 // types
-import { RootMainScreensParamList } from "./Navigators.types";
+import {
+  RootAllScreensParamList,
+  RootMainScreensParamList,
+} from "./Navigators.types";
 
 // hooks
 import { useNavigators } from "./useNavigator";
-import { useAllNavigation } from "./Navigators.helps";
 
 // styles
 import colors from "../../styles/colors";
 
 const Stack = createNativeStackNavigator<RootMainScreensParamList>();
 
-export const Navigators: FunctionComponent = () => {
-  const navigation = useAllNavigation();
+type NavigatorsProps = {
+  currentRouteName: string | null;
+  navigation: NavigationContainerRef<RootAllScreensParamList> | null;
+};
+
+export const Navigators: FunctionComponent<NavigatorsProps> = ({
+  currentRouteName,
+  navigation,
+}) => {
   const { theme } = useContext(themeContext);
   const { mainScreens } = useNavigators();
 
@@ -69,20 +88,39 @@ export const Navigators: FunctionComponent = () => {
     [mainBackgroundColor, mainFontSize]
   );
 
+  const onPressBack = useCallback(() => {
+    if (navigation && currentRouteName) {
+      const stateNavigator = navigation.getState();
+      const mainName = stateNavigator.routes[stateNavigator.index].name;
+      const tabsNames = [
+        PATHS_WORKSHOP_SCREENS.workshopMain,
+        PATHS_MAIN_TABS.map,
+        PATHS_EVENTS_SCREENS.eventsMain,
+        PATHS_MARKET_SCREENS.marketMain,
+        PATHS_SETTINGS_SCREENS.settingsMain,
+      ] as string[];
+      const isStartTab = tabsNames.includes(currentRouteName);
+      if (
+        (isStartTab && mainName === PATHS_MAIN_SCREENS.main) ||
+        (currentRouteName === PATHS_MAIN_SCREENS.welcome &&
+          mainName === PATHS_MAIN_SCREENS.welcome)
+      )
+        BackHandler.exitApp();
+      else navigation.goBack();
+    }
+
+    return true;
+  }, [currentRouteName]);
+
   useEffect(() => {
     const backHandler = BackHandler.addEventListener(
       "hardwareBackPress",
-      () => {
-        // TODO create later
-        console.log("navigation", navigation);
-        console.log("route", navigation.getState());
-        return true;
-      }
+      onPressBack
     );
     return () => {
       backHandler.remove();
     };
-  }, []);
+  }, [currentRouteName]);
 
   return (
     <Stack.Navigator screenOptions={screenOptions}>

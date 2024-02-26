@@ -89,6 +89,8 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
           date,
         };
         socketRef.current?.send(JSON.stringify(dataLocationUser));
+      } else {
+        // TODO Later delete
       }
     },
     [userData]

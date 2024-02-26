@@ -123,7 +123,10 @@ function App() {
                                   <PaymentProvider>
                                     <WorkshopsProvider>
                                       <MarketProvider>
-                                        <Navigators />
+                                        <Navigators
+                                          currentRouteName={currentRouteName}
+                                          navigation={navigationRef.current}
+                                        />
                                       </MarketProvider>
                                     </WorkshopsProvider>
                                   </PaymentProvider>
