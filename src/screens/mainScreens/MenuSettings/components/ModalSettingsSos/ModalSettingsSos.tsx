@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
@@ -56,6 +62,11 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
         },
       });
   };
+
+  useEffect(() => {
+    if (userData?.settingsSos.radiusKm)
+      setRadius(userData.settingsSos.radiusKm);
+  }, [userData?.settingsSos.radiusKm]);
 
   return (
     <Modal visible={isOpen} transparent>

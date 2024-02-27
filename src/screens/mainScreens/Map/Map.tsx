@@ -28,6 +28,7 @@ import { UpContainer } from "./components/UpContainer/UpContainer";
 import { EventContainer } from "./components/EventContainer/EventContainer";
 import { ButtonSearch } from "./components/ButtonSearch/ButtonSearch";
 import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
+import { SosMarker } from "./components/SosMarker/SosMarker";
 
 // icons
 import { IconLocationMarker } from "../../../icons/components";
@@ -49,7 +50,7 @@ const DEFAULT_LOCATION: mapMarker = {
 export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
   const { userData } = useContext(userContext);
   const { workshops } = useContext(workshopsContext);
-  const { location, usersMaps } = useContext(mapContext);
+  const { location, usersMaps, usersSos } = useContext(mapContext);
   const { theme, heightStatusBar } = useContext(themeContext);
   const { eventsList } = useContext(eventsContext);
   const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
@@ -63,6 +64,13 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
         ? usersMaps.filter(({ userId }) => Number(userId) !== userData?.id)
         : [],
     [usersMaps, userData?.id]
+  );
+  const listUsersSos = useMemo(
+    () =>
+      usersSos
+        ? usersSos.filter(({ userId }) => Number(userId) !== userData?.id)
+        : [],
+    [usersSos, userData?.id]
   );
 
   const containerStyles: ViewStyle = useMemo(
@@ -135,6 +143,13 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
             </Marker>
           );
         })}
+        {listUsersSos.map((userLocationSos) => (
+          <SosMarker
+            key={`user-sos-marker-${userLocationSos.userId}`}
+            longitude={userLocationSos.location.longitude}
+            latitude={userLocationSos.location.latitude}
+          />
+        ))}
       </MapViewCluster>
       <UpContainer />
       <EventContainer firstEvent={firstEvent} showFirstEvent={showFirstEvent} />

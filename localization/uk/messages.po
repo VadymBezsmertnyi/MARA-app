@@ -706,6 +706,54 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Установка захисного аркуша / Установка слайдера / Установка вихлопної системи / Установка гальмівної системи / Установка посиленого шланга / Установка ксенону / Установка освітлення мотоцикла / Установка протитуманних фар (FL)"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the menu settings sos"
+msgstr "Кнопка для закриття меню налаштувань SOS"
+
+#. js-lingui-explicit-id
+msgid "Radius, km:"
+msgstr "Радіус, км:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "Перемикач сповіщення про сигнал SOS"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Перемикач автоматичного визначення місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "Ваш телеграм"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Номер телефону:"
+
+#. js-lingui-explicit-id
+msgid "Add a description"
+msgstr "Додати опис"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr "Опис"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. js-lingui-explicit-id
+msgid "On SOS"
+msgstr "Вкоючити SOS"
+
+#. js-lingui-explicit-id
+msgid "Check permissions"
+msgstr "Перевірити дозволи"
+
+#. js-lingui-explicit-id
 msgid "Invitation sent successfully"
 msgstr "Запрошення надіслане успішно"
 
@@ -736,10 +784,6 @@ msgstr "Умови користування"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Політика конфіденційності"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Перемикач автоматичного виявлення місцезнаходження"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -852,14 +896,6 @@ msgstr "Додайте опис про оголошення"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Опис оголошення"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Ваш телеграм"
 
 #. js-lingui-explicit-id
 msgid "Phone number*:"
@@ -1084,10 +1120,6 @@ msgstr "Ім'я:"
 #. js-lingui-explicit-id
 msgid "Enter your name"
 msgstr "Введіть своє ім'я"
-
-#. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Номер телефону:"
 
 #. js-lingui-explicit-id
 msgid "Save"
@@ -1338,6 +1370,12 @@ msgstr "Про нас:"
 msgid "Access denied"
 msgstr "Доступ заборонено"
 
+msgid "Access to geolocation in the background mode"
+msgstr "Доступ до геолокації в режимі фонової роботи"
+
+msgid "Access to geolocation when using the application"
+msgstr "Доступ до геолокації при використанні додатка"
+
 msgid "Add advert"
 msgstr "Додати оголошення"
 
@@ -1424,6 +1462,9 @@ msgstr "Видалити"
 
 msgid "Description"
 msgstr "Опис"
+
+msgid "Do you want to send an SOS signal?"
+msgstr "Бажаєте відправити сигнал SOS?"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Помилка ключа токена: Секретний ключ не визначено в змінних середовища"
@@ -1515,6 +1556,9 @@ msgstr "Події не відбулися"
 msgid "Not comments"
 msgstr "Коментарі відсутні"
 
+msgid "Notification of SOS signal"
+msgstr "Сповіщення про сигнал SOS"
+
 msgid "Now"
 msgstr "Зараз"
 
@@ -1575,8 +1619,11 @@ msgstr "Виберіть місце на мапі"
 msgid "Settings"
 msgstr "Налаштування"
 
-msgid "Someone needs help within a 5 km radius"
-msgstr "У радіусі 5 км комусь потрібна допомога"
+msgid "Settings and permissions should be enabled"
+msgstr "Налаштування та дозволи мають бути увімкнені"
+
+msgid "Someone needs help within a {distance} km radius"
+msgstr "Хтось потребує допомоги в радіусі {distance} км"
 
 msgid "Sorry, but no products were found by the filters"
 msgstr "Вибачте, за вказаними фільтрами продукти не знайдені"
@@ -1611,6 +1658,9 @@ msgstr "Роботи, які ми виконуємо:"
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 msgstr "Щоб ви могли користуватися всіма можливостями сервісу, необхідно дозволити додатку визначати ваше місцезнаходження:"
 
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr "Для отримання сигналів SOS налаштуйте радіус прийому сигналів від центру вашого міста:"
+
 msgid "Type workshops"
 msgstr "Тип майстерень"
 
@@ -1637,6 +1687,9 @@ msgstr "Ласкаво просимо"
 
 msgid "What platform do you want to send the app installation invitation to?"
 msgstr "На яку платформу ви хочете надіслати запрошення на встановлення додатку?"
+
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr "Автоматично вимкнеться через 20-30 хвилин"
 
 msgid "Workshop"
 msgstr "Майстерня"

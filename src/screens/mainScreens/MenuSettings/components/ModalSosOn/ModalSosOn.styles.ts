@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
 
 const WIDTH = Dimensions.get("window").width;
-const HEIGHT = Dimensions.get("window").height;
+const HEIGHT = Dimensions.get("screen").height;
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,13 +11,16 @@ export const styles = StyleSheet.create({
     maxHeight: HEIGHT - 300,
     borderRadius: 20,
     backgroundColor: colors.lightOrange,
-    padding: 16,
-    paddingBottom: 37,
+    paddingVertical: 16,
     gap: 10,
   },
   containerClose: {
     width: "100%",
     alignItems: "flex-end",
+    paddingHorizontal: 16,
+  },
+  containerScroll: {
+    paddingHorizontal: 16,
   },
   titleModal: {
     fontFamily: "Montserrat_700Bold",

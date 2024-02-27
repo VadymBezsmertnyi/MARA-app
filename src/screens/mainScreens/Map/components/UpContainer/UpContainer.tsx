@@ -1,10 +1,11 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { webSocketContext } from "../../../../../providers/WebSocketProvider/WebSocketProvider";
+import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
+import { userContext } from "../../../../../providers/UserProvider/UserProvider";
 
 // components
 import { Menu } from "../Menu/Menu";
@@ -15,8 +16,16 @@ import { styles } from "./UpContainer.styles";
 const INTENSITY = 5;
 
 export const UpContainer: FunctionComponent = () => {
-  const { stateSocket } = useContext(webSocketContext);
-  const [isSos, setIsSos] = useState(false);
+  const { userData } = useContext(userContext);
+  const { usersSos } = useContext(mapContext);
+  const distance = useMemo(
+    () => userData?.settingsSos.radiusKm || 5,
+    [userData?.settingsSos.radiusKm]
+  );
+  const isSos = useMemo(
+    () => (usersSos ? usersSos.length > 0 : false),
+    [usersSos, userData?.id]
+  );
 
   const containerStyles = useMemo(
     () => [styles.container, isSos && styles.sosContainer],
@@ -41,12 +50,7 @@ export const UpContainer: FunctionComponent = () => {
         {isSos ? (
           <TouchableOpacity onPress={pressSosLine} style={styles.buttonSos}>
             <Text style={styles.titleButtonSos}>
-              <Trans>Someone needs help within a 5 km radius</Trans>
-            </Text>
-            <Text style={styles.titleButtonSos}>
-              {stateSocket.connection
-                ? `Connect socket: ${stateSocket.connection}, user id: ${stateSocket.userIdDB}, time now:${stateSocket.currentTime}`
-                : `Not connect socket`}
+              <Trans>Someone needs help within a {distance} km radius</Trans>
             </Text>
           </TouchableOpacity>
         ) : null}

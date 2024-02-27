@@ -706,6 +706,54 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
 
 #. js-lingui-explicit-id
+msgid "Button for closing the menu settings sos"
+msgstr "Button for closing the menu settings sos"
+
+#. js-lingui-explicit-id
+msgid "Radius, km:"
+msgstr "Radius, km:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "Toggle notification of SOS signal"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Toggle automatically detect location"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "Your telegram"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Phone number:"
+
+#. js-lingui-explicit-id
+msgid "Add a description"
+msgstr "Add a description"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr "Description"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Cancel"
+
+#. js-lingui-explicit-id
+msgid "On SOS"
+msgstr "On SOS"
+
+#. js-lingui-explicit-id
+msgid "Check permissions"
+msgstr "Check permissions"
+
+#. js-lingui-explicit-id
 msgid "Invitation sent successfully"
 msgstr "Invitation sent successfully"
 
@@ -736,10 +784,6 @@ msgstr "Terms of use"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Privacy policy"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Toggle automatically detect location"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -852,14 +896,6 @@ msgstr "Add a description about the advert"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Advert description"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Your telegram"
 
 #. js-lingui-explicit-id
 msgid "Phone number*:"
@@ -1084,10 +1120,6 @@ msgstr "Name:"
 #. js-lingui-explicit-id
 msgid "Enter your name"
 msgstr "Enter your name"
-
-#. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Phone number:"
 
 #. js-lingui-explicit-id
 msgid "Save"
@@ -1338,6 +1370,12 @@ msgstr "About us:"
 msgid "Access denied"
 msgstr "Access denied"
 
+msgid "Access to geolocation in the background mode"
+msgstr "Access to geolocation in the background mode"
+
+msgid "Access to geolocation when using the application"
+msgstr "Access to geolocation when using the application"
+
 msgid "Add advert"
 msgstr "Add advert"
 
@@ -1424,6 +1462,9 @@ msgstr "Delete"
 
 msgid "Description"
 msgstr "Description"
+
+msgid "Do you want to send an SOS signal?"
+msgstr "Do you want to send an SOS signal?"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Error key token: Secret key is not defined in the environment variables"
@@ -1515,6 +1556,9 @@ msgstr "No events have passed"
 msgid "Not comments"
 msgstr "Not comments"
 
+msgid "Notification of SOS signal"
+msgstr "Notification of SOS signal"
+
 msgid "Now"
 msgstr "Now"
 
@@ -1575,8 +1619,11 @@ msgstr "Select a location on the map"
 msgid "Settings"
 msgstr "Settings"
 
-msgid "Someone needs help within a 5 km radius"
-msgstr "Someone needs help within a 5 km radius"
+msgid "Settings and permissions should be enabled"
+msgstr "Settings and permissions should be enabled"
+
+msgid "Someone needs help within a {distance} km radius"
+msgstr "Someone needs help within a {distance} km radius"
 
 msgid "Sorry, but no products were found by the filters"
 msgstr "Sorry, but no products were found by the filters"
@@ -1611,6 +1658,9 @@ msgstr "The work we do:"
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 msgstr "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
 
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+
 msgid "Type workshops"
 msgstr "Type workshops"
 
@@ -1637,6 +1687,9 @@ msgstr "Welcome"
 
 msgid "What platform do you want to send the app installation invitation to?"
 msgstr "What platform do you want to send the app installation invitation to?"
+
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr "Will automatically turn off after 20-30 minutes"
 
 msgid "Workshop"
 msgstr "Workshop"

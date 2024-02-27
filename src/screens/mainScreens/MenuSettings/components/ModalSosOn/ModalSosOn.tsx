@@ -92,17 +92,17 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
       <ModalWindow onClose={onClose}>
         <Shadow stretch>
           <View style={styles.container}>
-            <ScrollView>
-              <View style={styles.containerClose}>
-                <TouchableOpacity
-                  accessibilityLabel={i18n._(
-                    "Button for closing the modal window"
-                  )}
-                  onPress={onClose}
-                >
-                  <IconClose width={24} height={24} fill={colors.blackCoffee} />
-                </TouchableOpacity>
-              </View>
+            <View style={styles.containerClose}>
+              <TouchableOpacity
+                accessibilityLabel={i18n._(
+                  "Button for closing the modal window"
+                )}
+                onPress={onClose}
+              >
+                <IconClose width={24} height={24} fill={colors.blackCoffee} />
+              </TouchableOpacity>
+            </View>
+            <ScrollView style={styles.containerScroll}>
               <Text style={styles.titleModal}>
                 <Trans>Do you want to send an SOS signal?</Trans>
               </Text>
@@ -170,8 +170,8 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
                   errorStyle={styles.errorStyleInput}
                 />
                 <Input
-                  placeholder={i18n._("Add a description about the advert")}
-                  label={i18n._("Advert description")}
+                  placeholder={i18n._("Add a description")}
+                  label={i18n._("Description")}
                   value={description}
                   onChange={setDescription}
                   containerStyle={styles.containerInput}
@@ -214,14 +214,14 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
                   <Trans>Will automatically turn off after 20-30 minutes</Trans>
                 </Text>
               </View>
-              {isLoading ? (
-                <BlurView intensity={10} style={styles.containerLoading}>
-                  <Loader />
-                </BlurView>
-              ) : null}
             </ScrollView>
           </View>
         </Shadow>
+        {isLoading ? (
+          <BlurView intensity={10} style={styles.containerLoading}>
+            <Loader />
+          </BlurView>
+        ) : null}
       </ModalWindow>
     </Modal>
   );
