@@ -150,6 +150,7 @@ export const expo = {
           "Allow $(PRODUCT_NAME) to use your location",
         isIosBackgroundLocationEnabled: true,
         isAndroidBackgroundLocationEnabled: true,
+        isAndroidForegroundServiceEnabled: true,
       },
     ],
     [

@@ -64,7 +64,6 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
         : [],
     [usersMaps, userData?.id]
   );
-  console.log("listUsers", listUsers);
 
   const containerStyles: ViewStyle = useMemo(
     () => [styles.container, { marginTop: heightStatusBar }] as ViewStyle,

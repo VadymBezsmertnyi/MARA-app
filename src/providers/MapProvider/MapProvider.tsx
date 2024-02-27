@@ -5,6 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { Linking } from "react-native";
 import { userContext } from "../UserProvider/UserProvider";
 import * as Location from "expo-location";
 import { z } from "zod";
@@ -25,6 +26,14 @@ import { PATHS } from "../paths.constants";
 type MapContext = {
   location: Location.LocationObjectCoords | null;
   usersMaps: UserLocationMapType[] | null;
+  statusForeground: Location.PermissionStatus | null;
+  statusBackground: Location.PermissionStatus | null;
+  setPermission: () => Promise<void>;
+  onSendSos: (
+    phoneNumber: string,
+    telegram: string,
+    description: string
+  ) => Promise<void>;
 };
 
 type MapProviderProps = {
@@ -41,7 +50,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   const { api } = useContext(apiContext);
   const { userData } = useContext(userContext);
   const { sendLocation } = useContext(webSocketContext);
-  const [status, setStatus] = useState<Location.PermissionStatus | null>(null);
+  const [statusForeground, setStatusForeground] =
+    useState<Location.PermissionStatus | null>(null);
+  const [statusBackground, setStatusBackground] =
+    useState<Location.PermissionStatus | null>(null);
   const [location, setLocation] =
     useState<Location.LocationObjectCoords | null>(null);
   const [startGetGeolocation, setStartGetGeolocation] =
@@ -49,18 +61,37 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   const [usersMaps, setUsersMap] = useState<UserLocationMapType[] | null>(null);
 
   const getStatusApp = async () => {
-    const { status } = await Location.getForegroundPermissionsAsync();
-    setStatus(status);
+    const { status: statusBackground } =
+      await Location.requestBackgroundPermissionsAsync();
+    const { status: statusForeground } =
+      await Location.requestForegroundPermissionsAsync();
+    setStatusBackground(statusBackground);
+    setStatusForeground(statusForeground);
   };
 
   const checkPermission = async () => {
-    const { status } = await Location.requestForegroundPermissionsAsync();
-    setStatus(status);
+    const { status: statusBackground } =
+      await Location.requestBackgroundPermissionsAsync();
+    const { status: statusForeground } =
+      await Location.requestForegroundPermissionsAsync();
+    setStatusBackground(statusBackground);
+    setStatusForeground(statusForeground);
 
-    if (status === "granted") {
+    if (statusForeground === Location.PermissionStatus.GRANTED) {
       const { coords } = await Location.getCurrentPositionAsync({});
       setLocation(coords);
     }
+
+    return (
+      statusForeground === Location.PermissionStatus.GRANTED &&
+      statusBackground === Location.PermissionStatus.GRANTED
+    );
+  };
+
+  const setPermission = async () => {
+    const isPermission = await checkPermission();
+    if (!isPermission) await Linking.openSettings();
+    console.log("isPermission", isPermission);
   };
 
   const getLocation = async () => {
@@ -108,9 +139,35 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     };
   };
 
+  const onSendSos = async (
+    phoneNumber: string,
+    telegram: string,
+    description: string
+  ) => {
+    const date = new Date().getTime();
+    if (userData && location) {
+      const dataLocationUser = {
+        date,
+        userId: userData.id,
+        location,
+        phoneNumber,
+        telegram,
+        description,
+      };
+      console.log("dataLocationUser", dataLocationUser);
+    }
+  };
+
   const valueContext: MapContext = useMemo(
-    () => ({ location, usersMaps }),
-    [location, usersMaps]
+    () => ({
+      location,
+      usersMaps,
+      statusForeground,
+      statusBackground,
+      setPermission,
+      onSendSos,
+    }),
+    [location, usersMaps, statusForeground, statusBackground]
   );
 
   useEffect(() => {
@@ -118,11 +175,12 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   }, [userData?.isGeoLocation]);
 
   useEffect(() => {
-    if (status !== null)
-      if (userData?.isGeoLocation && status === "undetermined")
+    if (statusForeground !== null)
+      if (userData?.isGeoLocation && statusForeground === "undetermined")
         checkPermission();
-    if (status === "granted" && !startGetGeolocation) onIntervalGetLocation();
-  }, [status]);
+    if (statusForeground === "granted" && !startGetGeolocation)
+      onIntervalGetLocation();
+  }, [statusForeground]);
 
   return (
     <mapContext.Provider value={valueContext}>{children}</mapContext.Provider>

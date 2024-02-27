@@ -39,6 +39,7 @@ import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguage";
 import { ModalSelectPlatform } from "./components/ModalSelectPlatform/ModalSelectPlatform";
+import { ModalSosOn } from "./components/ModalSosOn/ModalSosOn";
 
 // icons
 import {
@@ -77,6 +78,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const [darkTheme, setDarkTheme] = useState(false);
   const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
+  const [isShowOnSos, setIsShowOnSos] = useState(false);
   const { success, warning } = showErrors;
   const isShowDrawer = useMemo(
     () =>
@@ -87,7 +89,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   );
   // TODO will do
   const isToggleTheme = false;
-  const isToggleSos = false;
 
   const containerStyles = useMemo(
     () => [
@@ -168,15 +169,13 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             <Text style={styles.titleProfile}>{userData?.email}</Text>
           </View>
           <View style={styles.lineWhite} />
-          {isToggleSos ? (
-            <ItemMenuSettings
-              title={i18n._("SOS signal notification")}
-              Icon={IconBellGradient}
-              onPress={() => {
-                Alert.alert("SOS signal notification");
-              }}
-            />
-          ) : null}
+          <ItemMenuSettings
+            title={i18n._("SOS signal notification")}
+            Icon={IconBellGradient}
+            onPress={() => {
+              Alert.alert("SOS signal notification");
+            }}
+          />
           <View style={styles.lineWhite} />
           <ItemMenuSettings
             title={i18n._("Share the app")}
@@ -234,18 +233,19 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 setCheck={onToggleLocation}
               />
             </TouchableOpacity>
-            {isToggleSos ? (
-              <View style={styles.containerCheckbox}>
-                <Text style={styles.titleSos}>
-                  <Trans>SOS signal</Trans>
-                </Text>
-                <Checkbox
-                  check={isSos}
-                  setCheck={setIsSos}
-                  colorBoxEnabled={colors.electricRed}
-                />
-              </View>
-            ) : null}
+            <View style={styles.containerCheckbox}>
+              <Text style={styles.titleSos}>
+                <Trans>SOS signal</Trans>
+              </Text>
+              <Checkbox
+                check={isSos}
+                setCheck={(value) => {
+                  if (value) setIsShowOnSos(true);
+                  setIsSos(value);
+                }}
+                colorBoxEnabled={colors.electricRed}
+              />
+            </View>
           </View>
         </View>
         <View style={styles.containerLanguage}>
@@ -258,6 +258,13 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
           setIsShowSelectPlatform(false);
         }}
         onSelect={shareApp}
+      />
+      <ModalSosOn
+        isOpen={isShowOnSos}
+        onClose={() => {
+          setIsSos(false);
+          setIsShowOnSos(false);
+        }}
       />
     </>
   );
