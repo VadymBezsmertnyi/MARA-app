@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
-import { Linking, ScrollView, Text, View } from "react-native";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import { Linking, Modal, ScrollView, Text, View } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import dayjs from "dayjs";
 import { Trans } from "@lingui/macro";
@@ -19,6 +19,8 @@ import { HeaderRightItem } from "../../workshopsScreens/WorkshopsItem/components
 import { CustomSlider } from "../../../components/CustomSlider/CustomSlider";
 import { ItemDescriptions } from "./components/ItemDescriptions/ItemDescriptions";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
+import { GalleryModal } from "../../../components/GalleryModal/GalleryModal";
 
 // helps
 import { useCategoriesMarket } from "../../../helps/useCategoriesMarket";
@@ -55,6 +57,10 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     getMotoPart,
     getAutoPart,
   } = useCategoriesMarket(i18n);
+  const [gallery, setGallery] = useState<{
+    images: string[];
+    indexImage?: number;
+  } | null>(null);
   const selectProduct = useMemo(
     () =>
       products.find((product) => product.id === route.params?.productId) ||
@@ -173,142 +179,178 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     }
   };
 
+  const onShowGallery = (indexImage?: number) => {
+    if (selectProduct?.images.length) {
+      setGallery({
+        images: selectProduct.images.map((image) => image.url),
+        indexImage,
+      });
+    }
+  };
+
   if (!selectProduct) return null;
   return (
-    <View style={styles.container}>
-      <Header
-        title={""}
-        rightElement={
-          <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
-        }
-      />
-      <ScrollView>
-        <View style={styles.containerMain}>
-          <View style={styles.containerInfo}>
-            <View style={styles.containerSlider}>
-              <CustomSlider
-                images={selectProduct?.images || []}
-                loop
-                styleScroll={(props) => [props, styles.imagesScroll]}
-              />
-            </View>
-            <Text numberOfLines={2} style={styles.title}>
-              {selectProduct?.title}
-            </Text>
-            <View style={styles.containerPlaceData}>
-              <Text style={styles.titleDate}>
-                {dayjs(selectProduct.updateAT).format("DD.MM.YYYY")}
+    <>
+      <View style={styles.container}>
+        <Header
+          title={""}
+          rightElement={
+            <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
+          }
+        />
+        <ScrollView>
+          <View style={styles.containerMain}>
+            <View style={styles.containerInfo}>
+              {selectProduct?.images.length ? (
+                <View style={styles.containerSlider}>
+                  <CustomSlider
+                    images={selectProduct?.images || []}
+                    loop
+                    styleScroll={(props) => [props, styles.imagesScroll]}
+                    onPress={({ index }) => {
+                      onShowGallery(index);
+                    }}
+                  />
+                </View>
+              ) : null}
+              <Text numberOfLines={2} style={styles.title}>
+                {selectProduct?.title}
               </Text>
-              <View style={styles.containerCity}>
-                <IconLocationMarkerGradient width={14} height={13} />
-                <Text style={styles.subTitle}>{selectProduct.place.city}</Text>
+              <View style={styles.containerPlaceData}>
+                <Text style={styles.titleDate}>
+                  {dayjs(selectProduct.updateAT).format("DD.MM.YYYY")}
+                </Text>
+                <View style={styles.containerCity}>
+                  <IconLocationMarkerGradient width={14} height={13} />
+                  <Text style={styles.subTitle}>
+                    {selectProduct.place.city}
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View style={styles.containerPrice}>
+              <View style={styles.iconWrapperLightBlue}>
+                <RadixIconsCash
+                  width={24}
+                  height={24}
+                  fill={colors.californiaOrange}
+                />
+              </View>
+              <Text style={styles.titlePrice}>{showPrice}</Text>
+            </View>
+            <View style={styles.containerMainInfo}>
+              <View style={styles.containerDescription}>
+                <Text style={styles.titleDescription}>
+                  <Trans>Description</Trans>
+                </Text>
+                <View style={styles.containerItemsDescriptions}>
+                  <ItemDescriptions title={i18n._("Brand")} value={brand} />
+                  <ItemDescriptions
+                    title={i18n._("Condition")}
+                    value={selectProduct.isNew ? i18n._("New") : i18n._("Used")}
+                  />
+                  <ItemDescriptions
+                    title={i18n._("Seller")}
+                    value={
+                      selectProduct.isBusiness
+                        ? i18n._("Business")
+                        : i18n._("Private individual")
+                    }
+                  />
+                  <ItemDescriptions
+                    title={i18n._("Mileage")}
+                    value={mileage ? i18n._("{mileage} km", { mileage }) : null}
+                  />
+                  <ItemDescriptions
+                    title={i18n._("Year of manufacture")}
+                    value={
+                      yearRelease
+                        ? i18n._("{yearRelease} km", { yearRelease })
+                        : null
+                    }
+                  />
+                  <ItemDescriptions
+                    title={i18n._("Customs cleared")}
+                    value={cleared}
+                  />
+                  <ItemDescriptions
+                    title={i18n._("Fuel type")}
+                    value={typeFuel}
+                  />
+                  <ItemDescriptions
+                    title={i18n._("Transmission")}
+                    value={typeTransmission}
+                  />
+                  <ItemDescriptions
+                    title={i18n._("Type parts")}
+                    value={typeParts}
+                  />
+                </View>
+              </View>
+              <Text style={styles.description}>
+                {selectProduct.description}
+              </Text>
+              <View style={styles.containerViews}>
+                <Text style={styles.titleViews}>
+                  <Trans>Views:</Trans> {selectProduct.quantityViews}
+                </Text>
               </View>
             </View>
           </View>
-          <View style={styles.containerPrice}>
-            <View style={styles.iconWrapperLightBlue}>
-              <RadixIconsCash
-                width={24}
-                height={24}
-                fill={colors.californiaOrange}
-              />
-            </View>
-            <Text style={styles.titlePrice}>{showPrice}</Text>
-          </View>
-          <View style={styles.containerMainInfo}>
-            <View style={styles.containerDescription}>
-              <Text style={styles.titleDescription}>
-                <Trans>Description</Trans>
-              </Text>
-              <View style={styles.containerItemsDescriptions}>
-                <ItemDescriptions title={i18n._("Brand")} value={brand} />
-                <ItemDescriptions
-                  title={i18n._("Condition")}
-                  value={selectProduct.isNew ? i18n._("New") : i18n._("Used")}
+          <View style={styles.containerEmpty} />
+        </ScrollView>
+        <View style={styles.containerButtons}>
+          {selectProduct.telegram ? (
+            <ButtonCustom
+              onSubmit={onPressTelegram}
+              styleContainer={styles.containerTelegram}
+            >
+              <View style={styles.containerButton}>
+                <IconTelegram
+                  width={25}
+                  height={22}
+                  strokeWidth={2}
+                  stroke={colors.white}
                 />
-                <ItemDescriptions
-                  title={i18n._("Seller")}
-                  value={
-                    selectProduct.isBusiness
-                      ? i18n._("Business")
-                      : i18n._("Private individual")
-                  }
-                />
-                <ItemDescriptions
-                  title={i18n._("Mileage")}
-                  value={mileage ? i18n._("{mileage} km", { mileage }) : null}
-                />
-                <ItemDescriptions
-                  title={i18n._("Year of manufacture")}
-                  value={
-                    yearRelease
-                      ? i18n._("{yearRelease} km", { yearRelease })
-                      : null
-                  }
-                />
-                <ItemDescriptions
-                  title={i18n._("Customs cleared")}
-                  value={cleared}
-                />
-                <ItemDescriptions
-                  title={i18n._("Fuel type")}
-                  value={typeFuel}
-                />
-                <ItemDescriptions
-                  title={i18n._("Transmission")}
-                  value={typeTransmission}
-                />
-                <ItemDescriptions
-                  title={i18n._("Type parts")}
-                  value={typeParts}
-                />
+                <Text style={styles.titleButton}>
+                  <Trans>Write</Trans>
+                </Text>
               </View>
-            </View>
-            <Text style={styles.description}>{selectProduct.description}</Text>
-            <View style={styles.containerViews}>
-              <Text style={styles.titleViews}>
-                <Trans>Views:</Trans> {selectProduct.quantityViews}
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.containerEmpty} />
-      </ScrollView>
-      <View style={styles.containerButtons}>
-        {selectProduct.telegram ? (
+            </ButtonCustom>
+          ) : null}
           <ButtonCustom
-            onSubmit={onPressTelegram}
-            styleContainer={styles.containerTelegram}
+            onSubmit={onPressCall}
+            styleContainer={
+              !selectProduct.telegram ? styles.containerTelegram : undefined
+            }
           >
             <View style={styles.containerButton}>
-              <IconTelegram
-                width={25}
-                height={22}
-                strokeWidth={2}
-                stroke={colors.white}
-              />
-              <Text style={styles.titleButton}>
-                <Trans>Write</Trans>
-              </Text>
+              <IconPhone width={29} height={29} fill={colors.white} />
+              {!selectProduct.telegram ? (
+                <Text style={styles.titleButton}>
+                  <Trans>Call</Trans>
+                </Text>
+              ) : null}
             </View>
           </ButtonCustom>
-        ) : null}
-        <ButtonCustom
-          onSubmit={onPressCall}
-          styleContainer={
-            !selectProduct.telegram ? styles.containerTelegram : undefined
-          }
-        >
-          <View style={styles.containerButton}>
-            <IconPhone width={29} height={29} fill={colors.white} />
-            {!selectProduct.telegram ? (
-              <Text style={styles.titleButton}>
-                <Trans>Call</Trans>
-              </Text>
-            ) : null}
-          </View>
-        </ButtonCustom>
+        </View>
       </View>
-    </View>
+      <Modal visible={gallery !== null} transparent>
+        {gallery ? (
+          <ModalWindow
+            onClose={() => {
+              setGallery(null);
+            }}
+          >
+            <GalleryModal
+              data={gallery}
+              onClose={() => {
+                setGallery(null);
+              }}
+            />
+          </ModalWindow>
+        ) : null}
+      </Modal>
+    </>
   );
 };
