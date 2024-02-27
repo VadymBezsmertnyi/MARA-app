@@ -40,6 +40,7 @@ import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguage";
 import { ModalSelectPlatform } from "./components/ModalSelectPlatform/ModalSelectPlatform";
 import { ModalSosOn } from "./components/ModalSosOn/ModalSosOn";
+import { ModalSettingsSos } from "./components/ModalSettingsSos/ModalSettingsSos";
 
 // icons
 import {
@@ -79,6 +80,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
   const [isShowOnSos, setIsShowOnSos] = useState(false);
+  const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
   const { success, warning } = showErrors;
   const isShowDrawer = useMemo(
     () =>
@@ -173,7 +175,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             title={i18n._("SOS signal notification")}
             Icon={IconBellGradient}
             onPress={() => {
-              Alert.alert("SOS signal notification");
+              setIsShowSettingsSos(true);
             }}
           />
           <View style={styles.lineWhite} />
@@ -264,6 +266,12 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         onClose={() => {
           setIsSos(false);
           setIsShowOnSos(false);
+        }}
+      />
+      <ModalSettingsSos
+        isOpen={isShowSettingsSos}
+        onClose={() => {
+          setIsShowSettingsSos(false);
         }}
       />
     </>

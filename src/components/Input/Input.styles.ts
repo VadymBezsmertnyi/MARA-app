@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingRight: 16,
   },
   input: {
     fontFamily: "OpenSans_600SemiBold",
