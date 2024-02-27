@@ -90,138 +90,144 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
   return (
     <Modal visible={isOpen} transparent>
       <ModalWindow onClose={onClose}>
-        <Shadow stretch>
-          <View style={styles.container}>
-            <View style={styles.containerClose}>
-              <TouchableOpacity
-                accessibilityLabel={i18n._(
-                  "Button for closing the modal window"
-                )}
-                onPress={onClose}
-              >
-                <IconClose width={24} height={24} fill={colors.blackCoffee} />
-              </TouchableOpacity>
-            </View>
-            <ScrollView style={styles.containerScroll}>
-              <Text style={styles.titleModal}>
-                <Trans>Do you want to send an SOS signal?</Trans>
-              </Text>
-              <View style={styles.containerPermissionsInfo}>
-                <View style={styles.linePermissionsInfo}>
-                  <Text numberOfLines={2} style={styles.titlePermissionsInfo}>
-                    <Trans>
-                      Access to geolocation when using the application
-                    </Trans>
-                  </Text>
-                  <View
-                    style={
-                      isPermissionLocationForeground
-                        ? styles.pointOn
-                        : styles.pointOff
-                    }
-                  />
-                </View>
-                <View style={styles.linePermissionsInfo}>
-                  <Text numberOfLines={2} style={styles.titlePermissionsInfo}>
-                    <Trans>Access to geolocation in the background mode</Trans>
-                  </Text>
-                  <View
-                    style={
-                      isPermissionLocationBackground
-                        ? styles.pointOn
-                        : styles.pointOff
-                    }
-                  />
-                </View>
+        <>
+          <Shadow stretch>
+            <View style={styles.container}>
+              <View style={styles.containerClose}>
                 <TouchableOpacity
-                  onPress={onToggleLocation}
-                  style={styles.containerCheckbox}
+                  accessibilityLabel={i18n._(
+                    "Button for closing the modal window"
+                  )}
+                  onPress={onClose}
                 >
-                  <Text numberOfLines={2} style={styles.titleDarkTheme}>
-                    <Trans>Automatically detect location</Trans>
-                  </Text>
-                  <Checkbox
-                    accessibilityLabel={i18n._(
-                      "Toggle automatically detect location"
-                    )}
-                    check={userData?.isGeoLocation || false}
-                    setCheck={onToggleLocation}
-                  />
+                  <IconClose width={24} height={24} fill={colors.blackCoffee} />
                 </TouchableOpacity>
               </View>
-              <View style={styles.containerInputs}>
-                <Input
-                  isSelect
-                  placeholder={i18n._("@fgt_com")}
-                  label={i18n._("Your telegram")}
-                  value={telegram}
-                  onChange={setTelegram}
-                  labelStyle={styles.labelInputContacts}
-                  containerStyle={styles.containerInput}
-                />
-                <InputPhone
-                  label={i18n._("Phone number:")}
-                  phoneNumber={phoneNumber}
-                  setPhoneNumber={setPhoneNumber}
-                  selectCountryIso={selectCountryIso}
-                  setSelectCountryIso={setSelectCountryIso}
-                  labelStyle={styles.labelInputContacts}
-                  containerStyle={styles.containerInput}
-                  errorStyle={styles.errorStyleInput}
-                />
-                <Input
-                  placeholder={i18n._("Add a description")}
-                  label={i18n._("Description")}
-                  value={description}
-                  onChange={setDescription}
-                  containerStyle={styles.containerInput}
-                  labelStyle={styles.labelInputContacts}
-                />
-              </View>
-              <View style={styles.containerButtons}>
-                <ButtonCustom
-                  type="transparent"
-                  title={i18n._("Cancel")}
-                  onSubmit={onClose}
-                  styleContainer={styles.button}
-                />
-                {isPermissionLocationForeground &&
-                isPermissionLocationBackground ? (
+              <ScrollView style={styles.containerScroll}>
+                <Text style={styles.titleModal}>
+                  <Trans>Do you want to send an SOS signal?</Trans>
+                </Text>
+                <View style={styles.containerPermissionsInfo}>
+                  <View style={styles.linePermissionsInfo}>
+                    <Text numberOfLines={2} style={styles.titlePermissionsInfo}>
+                      <Trans>
+                        Access to geolocation when using the application
+                      </Trans>
+                    </Text>
+                    <View
+                      style={
+                        isPermissionLocationForeground
+                          ? styles.pointOn
+                          : styles.pointOff
+                      }
+                    />
+                  </View>
+                  <View style={styles.linePermissionsInfo}>
+                    <Text numberOfLines={2} style={styles.titlePermissionsInfo}>
+                      <Trans>
+                        Access to geolocation in the background mode
+                      </Trans>
+                    </Text>
+                    <View
+                      style={
+                        isPermissionLocationBackground
+                          ? styles.pointOn
+                          : styles.pointOff
+                      }
+                    />
+                  </View>
+                  <TouchableOpacity
+                    onPress={onToggleLocation}
+                    style={styles.containerCheckbox}
+                  >
+                    <Text numberOfLines={2} style={styles.titleDarkTheme}>
+                      <Trans>Automatically detect location</Trans>
+                    </Text>
+                    <Checkbox
+                      accessibilityLabel={i18n._(
+                        "Toggle automatically detect location"
+                      )}
+                      check={userData?.isGeoLocation || false}
+                      setCheck={onToggleLocation}
+                    />
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.containerInputs}>
+                  <Input
+                    isSelect
+                    placeholder={i18n._("@fgt_com")}
+                    label={i18n._("Your telegram")}
+                    value={telegram}
+                    onChange={setTelegram}
+                    labelStyle={styles.labelInputContacts}
+                    containerStyle={styles.containerInput}
+                  />
+                  <InputPhone
+                    label={i18n._("Phone number:")}
+                    phoneNumber={phoneNumber}
+                    setPhoneNumber={setPhoneNumber}
+                    selectCountryIso={selectCountryIso}
+                    setSelectCountryIso={setSelectCountryIso}
+                    labelStyle={styles.labelInputContacts}
+                    containerStyle={styles.containerInput}
+                    errorStyle={styles.errorStyleInput}
+                  />
+                  <Input
+                    placeholder={i18n._("Add a description")}
+                    label={i18n._("Description")}
+                    value={description}
+                    onChange={setDescription}
+                    containerStyle={styles.containerInput}
+                    labelStyle={styles.labelInputContacts}
+                  />
+                </View>
+                <View style={styles.containerButtons}>
                   <ButtonCustom
-                    disabled={
-                      !isPermissionLocationForeground ||
-                      !isPermissionLocationBackground ||
-                      !userData?.isGeoLocation ||
-                      !isContact
-                    }
-                    title={i18n._("On SOS")}
-                    onSubmit={onPressSos}
+                    type="transparent"
+                    title={i18n._("Cancel")}
+                    onSubmit={onClose}
                     styleContainer={styles.button}
                   />
-                ) : (
-                  <ButtonCustom
-                    title={i18n._("Check permissions")}
-                    onSubmit={setPermission}
-                    styleContainer={styles.button}
-                  />
-                )}
-              </View>
-              <View>
-                <Text style={styles.titleInf}>
-                  <Trans>Settings and permissions should be enabled</Trans>
-                </Text>
-                <Text style={styles.titleInf}>
-                  <Trans>Will automatically turn off after 20-30 minutes</Trans>
-                </Text>
-              </View>
-            </ScrollView>
-          </View>
-        </Shadow>
-        {isLoading ? (
-          <BlurView intensity={10} style={styles.containerLoading}>
-            <Loader />
-          </BlurView>
-        ) : null}
+                  {isPermissionLocationForeground &&
+                  isPermissionLocationBackground ? (
+                    <ButtonCustom
+                      disabled={
+                        !isPermissionLocationForeground ||
+                        !isPermissionLocationBackground ||
+                        !userData?.isGeoLocation ||
+                        !isContact
+                      }
+                      title={i18n._("On SOS")}
+                      onSubmit={onPressSos}
+                      styleContainer={styles.button}
+                    />
+                  ) : (
+                    <ButtonCustom
+                      title={i18n._("Check permissions")}
+                      onSubmit={setPermission}
+                      styleContainer={styles.button}
+                    />
+                  )}
+                </View>
+                <View>
+                  <Text style={styles.titleInf}>
+                    <Trans>Settings and permissions should be enabled</Trans>
+                  </Text>
+                  <Text style={styles.titleInf}>
+                    <Trans>
+                      Will automatically turn off after 20-30 minutes
+                    </Trans>
+                  </Text>
+                </View>
+              </ScrollView>
+            </View>
+          </Shadow>
+          {isLoading ? (
+            <BlurView intensity={10} style={styles.containerLoading}>
+              <Loader />
+            </BlurView>
+          ) : null}
+        </>
       </ModalWindow>
     </Modal>
   );
