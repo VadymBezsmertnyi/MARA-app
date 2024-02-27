@@ -21,3 +21,17 @@ export const userLocationMapSchema = z.object({
 });
 
 export const usersLocationMapSchema = z.array(userLocationMapSchema);
+
+export const userLocationSosSchema = z.object({
+  date: z.number(),
+  userId: z.number(),
+  location: z.object({
+    latitude: z.number(),
+    longitude: z.number(),
+  }),
+  description: z.string(),
+  phoneNumber: z.string(),
+  telegram: z.string(),
+});
+
+export const usersLocationSosSchema = z.array(userLocationSosSchema);

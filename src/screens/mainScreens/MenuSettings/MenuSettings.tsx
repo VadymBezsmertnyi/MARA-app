@@ -73,15 +73,22 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { location } = useContext(mapContext);
+  const { usersSos, onDeleteSos } = useContext(mapContext);
   const { userData, editUser } = useContext(userContext);
-  const { addSosNotification } = useContext(pushNotificationContext);
   const [darkTheme, setDarkTheme] = useState(false);
   const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
   const [isShowOnSos, setIsShowOnSos] = useState(false);
   const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
   const { success, warning } = showErrors;
+  const isOnSos = useMemo(
+    () =>
+      usersSos
+        ? usersSos.filter((userSos) => userSos.userId === userData?.id).length >
+          0
+        : false,
+    [usersSos]
+  );
   const isShowDrawer = useMemo(
     () =>
       state.history.length
@@ -126,14 +133,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const onCloseMenu = () => {
     navigation.closeDrawer();
   };
-
-  const onPressSos = () => {
-    if (location) addSosNotification(location);
-  };
-
-  useEffect(() => {
-    if (isSos) onPressSos();
-  }, [isSos]);
 
   return (
     <>
@@ -240,9 +239,10 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 <Trans>SOS signal</Trans>
               </Text>
               <Checkbox
-                check={isSos}
+                check={isOnSos || isSos}
                 setCheck={(value) => {
                   if (value) setIsShowOnSos(true);
+                  else onDeleteSos();
                   setIsSos(value);
                 }}
                 colorBoxEnabled={colors.electricRed}
@@ -264,8 +264,8 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
       <ModalSosOn
         isOpen={isShowOnSos}
         onClose={() => {
-          setIsSos(false);
           setIsShowOnSos(false);
+          setIsSos(false);
         }}
       />
       <ModalSettingsSos

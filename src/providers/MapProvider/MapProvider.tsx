@@ -11,14 +11,18 @@ import * as Location from "expo-location";
 import { z } from "zod";
 
 // types
-import { UserLocationMapType } from "./MapProvider.types";
+import { UserLocationMapType, UserLocationSosType } from "./MapProvider.types";
 
 // providers
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 
 // schemas
-import { usersLocationMapSchema } from "./MapProvider.schemas";
+import {
+  userLocationSosSchema,
+  usersLocationMapSchema,
+  usersLocationSosSchema,
+} from "./MapProvider.schemas";
 
 // constants
 import { PATHS } from "../paths.constants";
@@ -26,6 +30,7 @@ import { PATHS } from "../paths.constants";
 type MapContext = {
   location: Location.LocationObjectCoords | null;
   usersMaps: UserLocationMapType[] | null;
+  usersSos: UserLocationSosType[] | null;
   statusForeground: Location.PermissionStatus | null;
   statusBackground: Location.PermissionStatus | null;
   setPermission: () => Promise<void>;
@@ -34,6 +39,7 @@ type MapContext = {
     telegram: string,
     description: string
   ) => Promise<void>;
+  onDeleteSos: () => Promise<void>;
 };
 
 type MapProviderProps = {
@@ -59,6 +65,7 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   const [startGetGeolocation, setStartGetGeolocation] =
     useState<boolean>(false);
   const [usersMaps, setUsersMap] = useState<UserLocationMapType[] | null>(null);
+  const [usersSos, setUsersSos] = useState<UserLocationSosType[] | null>(null);
 
   const getStatusApp = async () => {
     const { status: statusBackground } =
@@ -121,9 +128,15 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
       const result = await api(
         PATHS.locationUsers,
         { method: "POST", data: dataLocationUser },
-        z.object({ usersLocation: usersLocationMapSchema })
+        z.object({
+          usersLocation: usersLocationMapSchema,
+          usersSos: usersLocationSosSchema,
+        })
       );
-      if (result) setUsersMap(result.usersLocation);
+      if (result) {
+        setUsersMap(result.usersLocation);
+        setUsersSos(result.usersSos);
+      }
     }
 
     setLocation(coords);
@@ -154,7 +167,29 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
         telegram,
         description,
       };
-      console.log("dataLocationUser", dataLocationUser);
+      const result = await api(
+        PATHS.locationUsersSosAdd,
+        { method: "POST", data: dataLocationUser },
+        z.object({
+          userLocationSos: userLocationSosSchema,
+        })
+      );
+      if (result)
+        setUsersSos((state) =>
+          state ? [...state, result.userLocationSos] : [result.userLocationSos]
+        );
+    }
+  };
+
+  const onDeleteSos = async () => {
+    if (userData) {
+      await api(PATHS.locationUsersSosDelete, {
+        method: "DELETE",
+        data: { userId: userData.id },
+      });
+      setUsersSos((state) =>
+        state ? state.filter((userSos) => userSos.userId !== userData.id) : []
+      );
     }
   };
 
@@ -162,12 +197,14 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     () => ({
       location,
       usersMaps,
+      usersSos,
       statusForeground,
       statusBackground,
       setPermission,
       onSendSos,
+      onDeleteSos,
     }),
-    [location, usersMaps, statusForeground, statusBackground]
+    [location, usersMaps, usersSos, statusForeground, statusBackground]
   );
 
   useEffect(() => {
