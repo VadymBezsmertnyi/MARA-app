@@ -94,6 +94,10 @@ export const userDataS = z.object({
   lastName: z.string().nullable(),
   phoneNumber: z.string().nullable(),
   subscriptionId: z.string().nullable(),
+  settingsSos: z.object({
+    isEnable: z.boolean(),
+    radiusKm: z.number(),
+  }),
 });
 
 export const resultUserDataS = z.object({

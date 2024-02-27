@@ -5,6 +5,8 @@ export const DEFAULT_USER_DATA: UserDataT = {
   isGeoLocation: false,
   avatar: null,
   eventsIds: [],
+  workshopsIds: [],
+  productsIds: [],
   isCheckBiometric: null,
   email: null,
   verifyToken: null,
@@ -12,12 +14,17 @@ export const DEFAULT_USER_DATA: UserDataT = {
   languageLocal: "en",
   isNewUser: true,
   googleDate: null,
+  facebookDate: null,
   cityUser: null,
   firstName: null,
   lastName: null,
   phoneNumber: null,
   isDeleteUser: false,
   subscriptionId: null,
+  settingsSos: {
+    isEnable: false,
+    radiusKm: 5,
+  },
 };
 
 export const NUMBER_TWO = 2;

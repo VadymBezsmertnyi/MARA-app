@@ -29,6 +29,7 @@ type InputProps = {
   isSelect?: boolean;
   maxLength?: number;
   accessibilityLabel?: string;
+  disabled?: boolean;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -47,6 +48,7 @@ export const Input: FunctionComponent<InputProps> = ({
   isSelect = false,
   maxLength,
   accessibilityLabel,
+  disabled = false,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -76,8 +78,9 @@ export const Input: FunctionComponent<InputProps> = ({
       marginTop,
       flex: customStyles ? 1 : 0,
       ...containerStyle,
+      opacity: disabled ? 0.5 : 1,
     };
-  }, [label, customStyles, containerStyle]);
+  }, [label, customStyles, containerStyle, disabled]);
 
   const labelStyles = useMemo(() => [styles.label, labelStyle], [labelStyle]);
 
@@ -108,6 +111,8 @@ export const Input: FunctionComponent<InputProps> = ({
       )}
       <View style={inputWrapperStyles}>
         <TextInput
+          editable={!disabled}
+          selectTextOnFocus={!disabled}
           style={inputStyles}
           accessibilityLabel={accessibilityLabel}
           placeholder={placeholder}

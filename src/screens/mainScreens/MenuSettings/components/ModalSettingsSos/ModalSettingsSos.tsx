@@ -48,10 +48,13 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
   );
 
   const onToggleLocation = async () => {
-    const isGeoLocation = !(userData?.isGeoLocation || false);
-    await editUser({
-      isGeoLocation,
-    });
+    if (userData)
+      await editUser({
+        settingsSos: {
+          radiusKm: radius > 0 ? radius : userData.settingsSos.radiusKm,
+          isEnable: !userData.settingsSos.isEnable,
+        },
+      });
   };
 
   return (
@@ -80,6 +83,7 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
             </Trans>
           </Text>
           <Input
+            disabled={userData?.settingsSos.isEnable}
             placeholder={"100"}
             keyboardType="numeric"
             label={i18n._("Radius, km:")}
@@ -104,8 +108,9 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
               <Trans>Notification of SOS signal</Trans>
             </Text>
             <Checkbox
+              disabled={radius === 0}
               accessibilityLabel={i18n._("Toggle notification of SOS signal")}
-              check={false}
+              check={userData?.settingsSos.isEnable || false}
               setCheck={onToggleLocation}
             />
           </TouchableOpacity>
