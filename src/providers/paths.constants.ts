@@ -27,4 +27,7 @@ export const PATHS = {
   marketsProductsChange: "/markets/products/change/",
   marketsProductsDelete: "/markets/products/delete/",
   marketsProductsMinMaxPricesGet: "/markets/products/minMaxPrices/",
+  // other
+  ipApiGetCountry: "http://ip-api.com/json",
+  locationUsers: "/location-users/",
 } as const;

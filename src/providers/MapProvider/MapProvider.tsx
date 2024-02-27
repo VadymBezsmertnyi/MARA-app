@@ -7,12 +7,24 @@ import React, {
 } from "react";
 import { userContext } from "../UserProvider/UserProvider";
 import * as Location from "expo-location";
+import { z } from "zod";
+
+// types
+import { UserLocationMapType } from "./MapProvider.types";
 
 // providers
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
+import { apiContext } from "../ApiProvider/ApiProvider";
+
+// schemas
+import { usersLocationMapSchema } from "./MapProvider.schemas";
+
+// constants
+import { PATHS } from "../paths.constants";
 
 type MapContext = {
   location: Location.LocationObjectCoords | null;
+  usersMaps: UserLocationMapType[] | null;
 };
 
 type MapProviderProps = {
@@ -26,6 +38,7 @@ export const mapContext = React.createContext({} as MapContext);
 export const MapProvider: FunctionComponent<MapProviderProps> = ({
   children,
 }) => {
+  const { api } = useContext(apiContext);
   const { userData } = useContext(userContext);
   const { sendLocation } = useContext(webSocketContext);
   const [status, setStatus] = useState<Location.PermissionStatus | null>(null);
@@ -33,6 +46,7 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     useState<Location.LocationObjectCoords | null>(null);
   const [startGetGeolocation, setStartGetGeolocation] =
     useState<boolean>(false);
+  const [usersMaps, setUsersMap] = useState<UserLocationMapType[] | null>(null);
 
   const getStatusApp = async () => {
     const { status } = await Location.getForegroundPermissionsAsync();
@@ -51,9 +65,38 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
 
   const getLocation = async () => {
     const { coords } = await Location.getCurrentPositionAsync({});
+    const result = await api(
+      PATHS.ipApiGetCountry,
+      null,
+      z.object({
+        country: z.string(),
+        countryCode: z.string(),
+      })
+    );
+    const isUkraine =
+      result?.country === "Ukraine" || result?.countryCode === "UA";
+    const date = new Date().getTime();
+    // TODO delete later
+    if (userData) {
+      const dataLocationUser = {
+        date,
+        userId: userData.id,
+        location: {
+          latitude: coords.latitude,
+          longitude: coords.longitude,
+        },
+        isUkraine,
+      };
+      const result = await api(
+        PATHS.locationUsers,
+        { method: "POST", data: dataLocationUser },
+        z.object({ usersLocation: usersLocationMapSchema })
+      );
+      if (result) setUsersMap(result.usersLocation);
+    }
+
     setLocation(coords);
-    sendLocation(coords);
-    // TODO send to DB
+    sendLocation(coords); // Send to websocket
   };
 
   const onIntervalGetLocation = () => {
@@ -65,7 +108,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     };
   };
 
-  const valueContext: MapContext = useMemo(() => ({ location }), [location]);
+  const valueContext: MapContext = useMemo(
+    () => ({ location, usersMaps }),
+    [location, usersMaps]
+  );
 
   useEffect(() => {
     if (userData?.isGeoLocation) getStatusApp();

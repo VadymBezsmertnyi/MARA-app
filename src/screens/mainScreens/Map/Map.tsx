@@ -17,7 +17,6 @@ import { mapMarker } from "./Map.types";
 // providers
 import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { webSocketContext } from "../../../providers/WebSocketProvider/WebSocketProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
@@ -50,8 +49,7 @@ const DEFAULT_LOCATION: mapMarker = {
 export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
   const { userData } = useContext(userContext);
   const { workshops } = useContext(workshopsContext);
-  const { stateSocket } = useContext(webSocketContext);
-  const { location } = useContext(mapContext);
+  const { location, usersMaps } = useContext(mapContext);
   const { theme, heightStatusBar } = useContext(themeContext);
   const { eventsList } = useContext(eventsContext);
   const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
@@ -61,17 +59,13 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
   );
   const listUsers = useMemo(
     () =>
-      stateSocket.geolocationUsers
-        ? Object.keys(stateSocket.geolocationUsers).filter(
-            (userId) => Number(userId) !== userData?.id
-          )
+      usersMaps
+        ? usersMaps.filter(({ userId }) => Number(userId) !== userData?.id)
         : [],
-    [stateSocket.geolocationUsers, userData?.id]
+    [usersMaps, userData?.id]
   );
-  const usersGeolocation = useMemo(
-    () => (stateSocket.geolocationUsers ? stateSocket.geolocationUsers : null),
-    [stateSocket.geolocationUsers]
-  );
+  console.log("listUsers", listUsers);
+
   const containerStyles: ViewStyle = useMemo(
     () => [styles.container, { marginTop: heightStatusBar }] as ViewStyle,
     [heightStatusBar]
@@ -124,23 +118,19 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
             location={location}
           />
         ))}
-        {listUsers.map((userId) => {
-          const userLocation = usersGeolocation?.[userId]
-            ? usersGeolocation[userId]
-            : null;
-
+        {listUsers.map((userLocation) => {
           if (userLocation === null) return null;
           return (
             <Marker
-              key={`user-marker-${userId}`}
-              coordinate={userLocation.geoLocation}
+              key={`user-marker-${userLocation.userId}`}
+              coordinate={userLocation.location}
             >
               <IconLocationMarker width={32} height={32} fill={"green"} />
               <Callout>
-                <View style={{ width: 200 }}>
+                <View style={styles.containerClusterUser}>
                   <Text>{`User ${userLocation.userId}`}:</Text>
-                  <Text>longitude: {userLocation.geoLocation.longitude}</Text>
-                  <Text>latitude: {userLocation.geoLocation.latitude}</Text>
+                  <Text>longitude: {userLocation.location.longitude}</Text>
+                  <Text>latitude: {userLocation.location.latitude}</Text>
                 </View>
               </Callout>
             </Marker>
