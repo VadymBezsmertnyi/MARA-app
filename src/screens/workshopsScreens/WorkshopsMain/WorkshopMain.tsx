@@ -184,7 +184,13 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
               "Enter the name of the workshop or type of work"
             )}
             onChange={setWorkshopName}
-            InputIcon={<IconSearchInput width={26} height={26} />}
+            InputIcon={
+              <IconSearchInput
+                width={26}
+                height={26}
+                style={styles.iconInput}
+              />
+            }
           />
         </View>
         <ScrollView contentContainerStyle={styles.wrapper}>

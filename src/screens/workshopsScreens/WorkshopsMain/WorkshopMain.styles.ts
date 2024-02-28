@@ -23,6 +23,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
     paddingBottom: verticalScale(GAP_MAIN),
   },
+  iconInput: {
+    marginRight: 16,
+  },
   containerEmpty: {
     height: 70,
   },

@@ -249,7 +249,13 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
               placeholder={i18n._("Enter the name")}
               value={productName}
               onChange={setProductName}
-              InputIcon={<IconSearchInput width={26} height={26} />}
+              InputIcon={
+                <IconSearchInput
+                  width={26}
+                  height={26}
+                  style={styles.iconInput}
+                />
+              }
             />
           </View>
           {products.length && productsFilterSort?.length ? (

@@ -77,12 +77,14 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   };
 
   const checkPermission = async () => {
-    const { status: statusBackground } =
-      await Location.requestBackgroundPermissionsAsync();
     const { status: statusForeground } =
       await Location.requestForegroundPermissionsAsync();
-    setStatusBackground(statusBackground);
     setStatusForeground(statusForeground);
+    if (statusForeground === Location.PermissionStatus.GRANTED) {
+      const { status: statusBackground } =
+        await Location.requestBackgroundPermissionsAsync();
+      setStatusBackground(statusBackground);
+    }
 
     if (statusForeground === Location.PermissionStatus.GRANTED) {
       const { coords } = await Location.getCurrentPositionAsync({});
@@ -98,7 +100,6 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   const setPermission = async () => {
     const isPermission = await checkPermission();
     if (!isPermission) await Linking.openSettings();
-    console.log("isPermission", isPermission);
   };
 
   const getLocation = async () => {

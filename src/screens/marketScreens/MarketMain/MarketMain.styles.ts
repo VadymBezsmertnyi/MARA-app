@@ -11,6 +11,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingBottom: 8,
   },
+  iconInput: {
+    marginRight: 16,
+  },
   containerList: {
     flexGrow: 1,
     justifyContent: "space-between",
