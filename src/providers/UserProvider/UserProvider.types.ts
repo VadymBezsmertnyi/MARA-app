@@ -18,7 +18,7 @@ export type Context = {
       string | number | boolean | Record<string, any> | null
     >
   ) => Promise<boolean>;
-  meUser: () => Promise<UserDataT | null>;
+  meUser: (isLoading: boolean) => Promise<UserDataT | null>;
   exitUser: () => Promise<boolean>;
   signInGoogle: (userData: User) => Promise<UserDataT | null>;
   signInFacebook: (accessToken: string) => Promise<UserDataT | null>;

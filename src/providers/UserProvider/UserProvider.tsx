@@ -191,9 +191,9 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     return false;
   };
 
-  const meUser = async (): Promise<UserDataT | null> => {
+  const meUser = async (isLoading: boolean): Promise<UserDataT | null> => {
     try {
-      setLoading(true);
+      if (isLoading) setLoading(true);
       const result = await api(PATHS.me, undefined, userDataS);
       if (result) {
         const isCheckBiometric = result.isCheckBiometric

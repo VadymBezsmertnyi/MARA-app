@@ -81,11 +81,17 @@ function App() {
     OpenSans_700Bold,
   });
 
+  const hideSplashScreen = async () => {
+    await SplashScreen.hideAsync();
+  };
+
   useEffect(() => {
     if (appIsReady)
-      (async () => {
-        setAppIsReady(false);
-        await SplashScreen.hideAsync();
+      (() => {
+        const timeout = setTimeout(hideSplashScreen, 1000);
+        return () => {
+          clearTimeout(timeout);
+        };
       })();
   }, [appIsReady]);
 

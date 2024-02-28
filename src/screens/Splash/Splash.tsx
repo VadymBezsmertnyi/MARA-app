@@ -30,7 +30,7 @@ export const Splash: FunctionComponent = () => {
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
 
   const authorizationInitializer = async () => {
-    const result = await meUser();
+    const result = await meUser(false);
     await onLogLogin(METHOD_NAME_AUTH_AUTO);
     if (result) redirectToScreen(navigation, result, isFaceId, isTouchId);
     else navigation.navigate(PATHS_MAIN_SCREENS.welcome);
