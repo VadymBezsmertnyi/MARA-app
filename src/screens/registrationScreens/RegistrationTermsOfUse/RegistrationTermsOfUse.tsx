@@ -1,39 +1,26 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
-import { Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import { View } from "react-native";
+import WebView from "react-native-webview";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 
 // components
 import { Header } from "../../../components/Header/Header";
-
-// constants
-import { THEME_DARK } from "../../../providers/ThemeProvider/ThemeProvider.const";
+import { Loader } from "../../../providers/LoadingProvider/components/Loader/Loader";
 
 // styles
 import { styles } from "./RegistrationTermsOfUse.styles";
 
 export const RegistrationTermsOfUse: FunctionComponent = () => {
-  const { i18n } = useContext(localesContext);
-  const { theme } = useContext(themeContext);
+  const { i18n, language } = useContext(localesContext);
+  const [loading, setLoading] = useState(true);
 
-  const firstTitleStyle = useMemo(
-    () => [styles.firstTitle, theme === THEME_DARK && styles.colorWhite],
-    [theme]
-  );
-  const secondTitleStyle = useMemo(
-    () => [styles.secondTitle, theme === THEME_DARK && styles.colorWhite],
-    [theme]
-  );
-  const firstSubTitleStyle = useMemo(
-    () => [styles.firstSubTitle, theme === THEME_DARK && styles.colorWhite],
-    [theme]
-  );
-  const secondSubTitleStyle = useMemo(
-    () => [styles.secondSubTitle, theme === THEME_DARK && styles.colorWhite],
-    [theme]
+  const source = useMemo(
+    () => ({
+      uri: `https://m-a-r-a.netlify.app/mobile/term-of-use?language=${language}`,
+    }),
+    []
   );
 
   return (
@@ -43,38 +30,14 @@ export const RegistrationTermsOfUse: FunctionComponent = () => {
         isShowRight={false}
         containerStyle={styles.containerHeader}
       />
-      <View style={styles.containerTitle}>
-        <Text style={firstTitleStyle}>
-          <Trans>Terms of Service</Trans>
-        </Text>
-        <Text style={secondTitleStyle}>
-          <Trans>
-            Privacy Policy is a legal statement that defines what a business
-            owner does with the personal data collected from users, as well as
-            how this data is processed and for what purposes.
-          </Trans>
-        </Text>
-      </View>
-      <View style={styles.containerSubTitle}>
-        <Text style={firstSubTitleStyle}>
-          <Trans>Terms of Service</Trans>
-        </Text>
-        <Text style={secondSubTitleStyle}>
-          <Trans>
-            Privacy Policy is a legal statement that defines what a business
-            owner does with personal data collected from users, as well as how
-            this data is processed and for what purposes.
-          </Trans>
-        </Text>
-        <Text style={secondSubTitleStyle}>
-          <Trans>
-            In 1968, the Council of Europe conducted research into the potential
-            expansion of the Internet, as they were concerned about the impact
-            of technology on human rights. This led to the development of
-            policies aimed at protecting personal data.
-          </Trans>
-        </Text>
-      </View>
+      <WebView
+        source={source}
+        onLoad={(event) => {
+          setLoading(event.nativeEvent.loading);
+        }}
+        cacheEnabled
+      />
+      {loading ? <Loader /> : null}
     </View>
   );
 };

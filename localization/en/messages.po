@@ -754,14 +754,6 @@ msgid "Check permissions"
 msgstr "Check permissions"
 
 #. js-lingui-explicit-id
-msgid "Invitation sent successfully"
-msgstr "Invitation sent successfully"
-
-#. js-lingui-explicit-id
-msgid "Invitation failed to send"
-msgstr "Invitation failed to send"
-
-#. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
 msgstr "Button for closing the menu settings screen"
 
@@ -1502,9 +1494,6 @@ msgstr "Gallery"
 msgid "Hello!"
 msgstr "Hello!"
 
-msgid "In 1968, the Council of Europe conducted research into the potential expansion of the Internet, as they were concerned about the impact of technology on human rights. This led to the development of policies aimed at protecting personal data."
-msgstr "In 1968, the Council of Europe conducted research into the potential expansion of the Internet, as they were concerned about the impact of technology on human rights. This led to the development of policies aimed at protecting personal data."
-
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Incorrect phone number entered or country code of the phone number selected incorrectly"
 
@@ -1582,15 +1571,6 @@ msgstr "Past events:"
 
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
-
-msgid "Privacy Policy is a legal statement that defines what a business is."
-msgstr "Privacy Policy is a legal statement that defines what a business is."
-
-msgid "Privacy Policy is a legal statement that defines what a business owner does with personal data collected from users, as well as how this data is processed and for what purposes."
-msgstr "Privacy Policy is a legal statement that defines what a business owner does with personal data collected from users, as well as how this data is processed and for what purposes."
-
-msgid "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
-msgstr "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
 
 msgid "Profile"
 msgstr "Profile"

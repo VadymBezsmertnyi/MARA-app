@@ -110,23 +110,21 @@ export const Socials: FunctionComponent<SocialsProps> = ({
         </Text>
       ) : null}
       <View style={styles.containerButtons}>
-        {isIos ? (
-          <ButtonCustom
-            type="transparent"
-            onSubmit={onFacebook}
-            onPressFocus={(value) => {
-              if (value) setFocus(1);
-              else setFocus(null);
-            }}
-          >
-            <View style={styles.itemSocialConnect}>
-              <SocialFacebook width={24} height={24} />
-              <Text style={labelSocialConnectStyle(focus === 1)}>
-                {showTitle("Facebook")}
-              </Text>
-            </View>
-          </ButtonCustom>
-        ) : null}
+        <ButtonCustom
+          type="transparent"
+          onSubmit={onFacebook}
+          onPressFocus={(value) => {
+            if (value) setFocus(1);
+            else setFocus(null);
+          }}
+        >
+          <View style={styles.itemSocialConnect}>
+            <SocialFacebook width={24} height={24} />
+            <Text style={labelSocialConnectStyle(focus === 1)}>
+              {showTitle("Facebook")}
+            </Text>
+          </View>
+        </ButtonCustom>
         {isIos ? (
           <ButtonCustom
             type="transparent"

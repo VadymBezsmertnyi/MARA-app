@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import {
   Alert,
   Text,
@@ -27,11 +21,7 @@ import {
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { pushNotificationContext } from "../../../providers/PushNotificationProvider/PushNotificationProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
-
-// helps
-import showErrors from "../../../helps/errors/showError";
 
 // components
 import { ItemMenuSettings } from "./components/ItemMenuSettings/ItemMenuSettings";
@@ -41,6 +31,7 @@ import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguag
 import { ModalSelectPlatform } from "./components/ModalSelectPlatform/ModalSelectPlatform";
 import { ModalSosOn } from "./components/ModalSosOn/ModalSosOn";
 import { ModalSettingsSos } from "./components/ModalSettingsSos/ModalSettingsSos";
+import { ModalAgreements } from "./components/ModalAgreements/ModalAgreements";
 
 // icons
 import {
@@ -80,7 +71,9 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
   const [isShowOnSos, setIsShowOnSos] = useState(false);
   const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
-  const { success, warning } = showErrors;
+  const [typeAgreements, setTypeAgreements] = useState<
+    "terms" | "policy" | null
+  >(null);
   const isOnSos = useMemo(
     () =>
       usersSos
@@ -114,13 +107,11 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
       selectPlatform === "ios"
         ? `https://apps.apple.com/uk/app/${APP_NAME}/id=${APP_ID}`
         : `https://play.google.com/store/apps/details?id=${PACKAGE_NAME}`;
-    const result = await Share.share({
+    await Share.share({
       title: "M.A.R.A.(Moto Auto Road Assistant)",
       message: Platform.OS === "android" ? currentUrl : undefined,
       url: currentUrl,
     });
-    if (result) success(i18n._("Invitation sent successfully"));
-    else warning(i18n._("Invitation failed to send"));
   };
 
   const onToggleLocation = async () => {
@@ -198,7 +189,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             title={i18n._("Terms of use")}
             Icon={IconDocumentGradient}
             onPress={() => {
-              Alert.alert("Terms of use");
+              setTypeAgreements("terms");
             }}
           />
           <View style={styles.lineWhite} />
@@ -206,7 +197,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             title={i18n._("Privacy policy")}
             Icon={IconLockGradient}
             onPress={() => {
-              Alert.alert("Privacy policy");
+              setTypeAgreements("policy");
             }}
           />
           <View style={styles.lineWhite} />
@@ -273,6 +264,13 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         onClose={() => {
           setIsShowSettingsSos(false);
         }}
+      />
+      <ModalAgreements
+        isOpen={typeAgreements !== null}
+        onClose={() => {
+          setTypeAgreements(null);
+        }}
+        type={typeAgreements}
       />
     </>
   );

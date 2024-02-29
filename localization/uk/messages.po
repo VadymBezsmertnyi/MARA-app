@@ -754,14 +754,6 @@ msgid "Check permissions"
 msgstr "Перевірити дозволи"
 
 #. js-lingui-explicit-id
-msgid "Invitation sent successfully"
-msgstr "Запрошення надіслане успішно"
-
-#. js-lingui-explicit-id
-msgid "Invitation failed to send"
-msgstr "Не вдалося надіслати запрошення"
-
-#. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
 msgstr "Кнопка для закриття екрану налаштувань меню"
 
@@ -1502,9 +1494,6 @@ msgstr "Галерея"
 msgid "Hello!"
 msgstr "Привіт!"
 
-msgid "In 1968, the Council of Europe conducted research into the potential expansion of the Internet, as they were concerned about the impact of technology on human rights. This led to the development of policies aimed at protecting personal data."
-msgstr "У 1968 році Рада Європи провела дослідження щодо загрози розширення Інтернету, оскільки вони були стурбовані впливом технологій на права людини. Це призвело до розробки політик, які мали бути розроблені для захисту персональних даних."
-
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Введений неправильний номер телефону або неправильно вибраний код країни для введеного номера телефону"
 
@@ -1582,15 +1571,6 @@ msgstr "Минулі події:"
 
 msgid "Privacy Policy"
 msgstr "Політикою конфіденційності"
-
-msgid "Privacy Policy is a legal statement that defines what a business is."
-msgstr "Політика конфіденційності - це юридична заява, яка визначає, що таке бізнес"
-
-msgid "Privacy Policy is a legal statement that defines what a business owner does with personal data collected from users, as well as how this data is processed and for what purposes."
-msgstr "Політика конфіденційності — це юридична заява, яка визначає, що власник бізнесу робить із особистими даними, зібраними від користувачів, а також те, як ці дані обробляються та для яких цілей."
-
-msgid "Privacy Policy is a legal statement that defines what a business owner does with the personal data collected from users, as well as how this data is processed and for what purposes."
-msgstr "Політика конфіденційності — це юридична заява, яка визначає, що власник бізнесу робить із особистими даними, зібраними від користувачів, а також те, як ці дані обробляються та для яких цілей."
 
 msgid "Profile"
 msgstr "Профіль"
