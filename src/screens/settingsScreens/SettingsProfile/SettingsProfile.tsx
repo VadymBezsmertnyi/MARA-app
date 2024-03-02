@@ -30,6 +30,7 @@ import { InputCityModal } from "../../../components/InputCityModal/InputCityModa
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
+import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
 
 // components
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
@@ -80,6 +81,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     useContext(userContext);
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
+  const { dataDeepLink } = useContext(sharingContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
@@ -267,6 +269,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
               setSelectCountryIso={setSelectCountryIso}
               labelStyle={styles.labelInput}
             />
+            <Text>{JSON.stringify(dataDeepLink)}</Text>
           </View>
           <ButtonCustom title={i18n._("Save")} onSubmit={onSave} />
         </ScrollView>

@@ -1,6 +1,5 @@
 import React, {
   FunctionComponent,
-  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -12,6 +11,7 @@ import { userContext } from "../UserProvider/UserProvider";
 
 type SharingContextType = {
   getSharedLink: (data: Record<string, string>) => void;
+  dataDeepLink: Record<string, any> | null;
 };
 
 type SharingProviderProps = {
@@ -40,33 +40,30 @@ export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
     setIsFirstLaunch(false);
   };
 
-  const getSharedLink = useCallback(
-    (data: Record<string, string>) => {
-      if (userId)
-        appsFlyer.generateInviteLink(
-          {
-            channel: "app",
-            customerID: userId.toString(),
-            userParams: {
-              deep_link_value: `maraapp://?userId=${userId}`,
-              userId,
-              ...data,
-            },
+  const getSharedLink = (data: Record<string, string>) => {
+    if (userId)
+      appsFlyer.generateInviteLink(
+        {
+          channel: "app",
+          customerID: userId.toString(),
+          userParams: {
+            deep_link_value: `maraapp://?userId=${userId}`,
+            userId,
+            ...data,
           },
-          async (link) => {
-            await Share.share({
-              title: "Parking Reader",
-              url: link as string,
-              message: Platform.OS === "android" ? (link as string) : undefined,
-            });
-          },
-          () => {
-            Alert.alert("Error: Sorry");
-          }
-        );
-    },
-    [userId]
-  );
+        },
+        async (link) => {
+          await Share.share({
+            title: "M.A.R.A.(Moto Auto Road Assistant)",
+            url: link as string,
+            message: Platform.OS === "android" ? (link as string) : undefined,
+          });
+        },
+        () => {
+          Alert.alert("Error: Sorry");
+        }
+      );
+  };
 
   const setAppsFlyer = async () => {
     const onDeepLinkCanceller = appsFlyer.onDeepLink((res) => {
@@ -87,8 +84,8 @@ export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
   };
 
   const contextValue: SharingContextType = useMemo(
-    () => ({ getSharedLink }),
-    [getSharedLink]
+    () => ({ getSharedLink, dataDeepLink }),
+    [dataDeepLink]
   );
 
   useEffect(() => {
