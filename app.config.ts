@@ -47,7 +47,7 @@ export const expo = {
       NSCalendarsUsageDescription: "Доступ до календаря для планування подій",
       NSContactsUsageDescription: "Доступ до контактів для імпорту інформації",
       NSAppleMusicUsageDescription: "Доступ до Apple Music для імпорту музики",
-      UIBackgroundModes: ["audio"],
+      UIBackgroundModes: ["location", "fetch", "remote-notification", "audio"],
       NSSpeechRecognitionUsageDescription:
         "Allow recognition to access your speech recognition",
       CFBundleURLTypes: [

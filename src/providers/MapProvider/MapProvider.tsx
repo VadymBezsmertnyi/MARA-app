@@ -7,7 +7,9 @@ import React, {
 } from "react";
 import { Linking } from "react-native";
 import { userContext } from "../UserProvider/UserProvider";
+import * as TaskManager from "expo-task-manager";
 import * as Location from "expo-location";
+import * as BackgroundFetch from "expo-background-fetch";
 import { z } from "zod";
 
 // types
@@ -47,6 +49,8 @@ type MapProviderProps = {
 };
 
 const INTERVAL_GET_LOCATION = 15000;
+const LOCATION_TASK_NAME = "background-location-task";
+const INTERVAL_BACKGROUND = 60;
 
 export const mapContext = React.createContext({} as MapContext);
 
@@ -74,6 +78,12 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
       await Location.requestForegroundPermissionsAsync();
     setStatusBackground(statusBackground);
     setStatusForeground(statusForeground);
+
+    if (statusBackground === Location.PermissionStatus.GRANTED) {
+      await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
+        accuracy: Location.Accuracy.Balanced,
+      });
+    }
   };
 
   const checkPermission = async () => {
@@ -102,8 +112,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     if (!isPermission) await Linking.openSettings();
   };
 
-  const getLocation = async () => {
-    const { coords } = await Location.getCurrentPositionAsync({});
+  const getLocation = async (coordsProps?: Location.LocationObject) => {
+    const { coords } = coordsProps
+      ? coordsProps
+      : await Location.getCurrentPositionAsync({});
     const result = await api(
       PATHS.ipApiGetCountry,
       null,
@@ -115,7 +127,6 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     const isUkraine =
       result?.country === "Ukraine" || result?.countryCode === "UA";
     const date = new Date().getTime();
-    // TODO delete later
     if (userData) {
       const dataLocationUser = {
         date,
@@ -208,6 +219,37 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     [location, usersMaps, usersSos, statusForeground, statusBackground]
   );
 
+  const startGetLocationBackground = async () => {
+    TaskManager.defineTask<{ locations: Location.LocationObject[] }>(
+      LOCATION_TASK_NAME,
+      async ({ data }) => {
+        if (data) {
+          const { locations } = data;
+          await getLocation(locations[0]);
+        }
+      }
+    );
+    const status = await BackgroundFetch.getStatusAsync();
+    switch (status) {
+      case BackgroundFetch.BackgroundFetchStatus.Restricted:
+      case BackgroundFetch.BackgroundFetchStatus.Denied:
+        return;
+      default: {
+        let tasks = await TaskManager.getRegisteredTasksAsync();
+        if (tasks.find((f) => f.taskName === LOCATION_TASK_NAME) === null) {
+          await BackgroundFetch.registerTaskAsync(LOCATION_TASK_NAME);
+          tasks = await TaskManager.getRegisteredTasksAsync();
+        }
+
+        await BackgroundFetch.setMinimumIntervalAsync(INTERVAL_BACKGROUND);
+      }
+    }
+  };
+
+  useEffect(() => {
+    startGetLocationBackground();
+  }, []);
+
   useEffect(() => {
     if (userData?.isGeoLocation) getStatusApp();
   }, [userData?.isGeoLocation]);
@@ -216,7 +258,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     if (statusForeground !== null)
       if (userData?.isGeoLocation && statusForeground === "undetermined")
         checkPermission();
-    if (statusForeground === "granted" && !startGetGeolocation)
+    if (
+      statusForeground === Location.PermissionStatus.GRANTED &&
+      !startGetGeolocation
+    )
       onIntervalGetLocation();
   }, [statusForeground]);
 
