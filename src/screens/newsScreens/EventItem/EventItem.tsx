@@ -26,6 +26,7 @@ import { eventsContext } from "../../../providers/EventsProvider/EventsProvider"
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
 
 // components
 import { Map } from "../../../components/Map/Map";
@@ -59,6 +60,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
   const { location } = useContext(mapContext);
   const { places } = useContext(placesContext);
   const { userData } = useContext(userContext);
+  const { getSharedLink } = useContext(sharingContext);
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [gallery, setGallery] = useState<{
@@ -165,6 +167,10 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
     else setIsFullDescription(true);
   }, []);
 
+  const onPressShare = () => {
+    if (eventSelect) getSharedLink({ eventId: eventSelect.id.toString() });
+  };
+
   if (!eventSelect) return null;
 
   return (
@@ -172,7 +178,11 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
       <Header
         title={i18n._("Event")}
         rightElement={
-          <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
+          <HeaderRightItem
+            onPressLike={onPressLike}
+            isLike={isLike}
+            onPressShare={onPressShare}
+          />
         }
       />
       <ScrollView>

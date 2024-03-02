@@ -28,6 +28,7 @@ import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { mapContext } from "../../../providers/MapProvider/MapProvider";
 import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
 
 // helps
 import { getFormatPhoneNumber } from "../../../helps/helps";
@@ -42,6 +43,7 @@ import { ListWorksDo } from "./components/ListWorksDo/ListWorksDo";
 import { FooterComments } from "./components/FooterComments/FooterComments";
 import { ModalsSheet } from "../../../components/ModalsSheet/ModalsSheet";
 import { ModalComment } from "./components/ModalComment/ModalComment";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // icons
 import {
@@ -55,7 +57,6 @@ import WorkshopPlaceholder from "../../../../assets/default/workshop-placeholder
 
 // styles
 import { styles } from "./WorkshopsItem.styles";
-import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 type WorkshopsItemType = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
@@ -74,6 +75,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const { workshops, changeWorkshop } = useContext(workshopsContext);
   const { places } = useContext(placesContext);
   const { location } = useContext(mapContext);
+  const { getSharedLink } = useContext(sharingContext);
   const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [isShowModalComment, setIsShowModalComment] = useState(false);
@@ -165,12 +167,21 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     }
   };
 
+  const onPressShare = () => {
+    if (selectWorkshop)
+      getSharedLink({ productId: selectWorkshop.id.toString() });
+  };
+
   return (
     <View style={styles.container}>
       <Header
         title={i18n._("Workshop")}
         rightElement={
-          <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
+          <HeaderRightItem
+            onPressLike={onPressLike}
+            isLike={isLike}
+            onPressShare={onPressShare}
+          />
         }
         onPressLeftElement={() => {
           navigation.goBack();

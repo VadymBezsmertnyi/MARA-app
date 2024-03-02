@@ -12,6 +12,7 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
 import { paymentContext } from "../../../providers/PaymentProvider/PaymentProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -49,6 +50,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
   const { userData } = useContext(userContext);
   const { products, changeProduct } = useContext(marketContext);
   const { listCurrency } = useContext(paymentContext);
+  const { getSharedLink } = useContext(sharingContext);
   const {
     getBrandMoto,
     getBrandAuto,
@@ -188,6 +190,11 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     }
   };
 
+  const onPressShare = () => {
+    if (selectProduct)
+      getSharedLink({ productId: selectProduct.id.toString() });
+  };
+
   if (!selectProduct) return null;
   return (
     <>
@@ -195,7 +202,11 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
         <Header
           title={""}
           rightElement={
-            <HeaderRightItem onPressLike={onPressLike} isLike={isLike} />
+            <HeaderRightItem
+              onPressLike={onPressLike}
+              isLike={isLike}
+              onPressShare={onPressShare}
+            />
           }
         />
         <ScrollView>

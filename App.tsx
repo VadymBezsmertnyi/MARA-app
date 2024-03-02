@@ -40,6 +40,7 @@ import { MarketProvider } from "./src/providers/MarketProvider/MarketProvider";
 import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider";
 import { PushNotificationProvider } from "./src/providers/PushNotificationProvider/PushNotificationProvider";
 import { AnalyticsProvider } from "./src/providers/AnalyticsProvider/AnalyticsProvider";
+import { SharingProvider } from "./src/providers/SharingProvider/SharingProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -129,10 +130,12 @@ function App() {
                                   <PaymentProvider>
                                     <WorkshopsProvider>
                                       <MarketProvider>
-                                        <Navigators
-                                          currentRouteName={currentRouteName}
-                                          navigation={navigationRef.current}
-                                        />
+                                        <SharingProvider>
+                                          <Navigators
+                                            currentRouteName={currentRouteName}
+                                            navigation={navigationRef.current}
+                                          />
+                                        </SharingProvider>
                                       </MarketProvider>
                                     </WorkshopsProvider>
                                   </PaymentProvider>

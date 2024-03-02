@@ -60,6 +60,7 @@ export const expo = {
       googleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       usesNonExemptEncryption: false,
     },
+    associatedDomains: ["applinks:expotest.onelink.me"],
   },
   android: {
     versionCode: 14,
@@ -82,6 +83,7 @@ export const expo = {
       "ACCESS_NETWORK_STATE",
       "GET_ACCOUNTS",
       "SYSTEM_ALERT_WINDOW",
+      "com.google.android.gms.permission.AD_ID",
       "com.google.android.c2dm.permission.RECEIVE",
       "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
       "com.google.android.providers.gsf.permission.READ_GSERVICES",
@@ -175,6 +177,7 @@ export const expo = {
       },
     ],
     "expo-router",
+    ["react-native-appsflyer", { shouldUseStrictMode: true }],
   ],
   runtimeVersion: {
     policy: "nativeVersion",

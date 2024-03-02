@@ -45,7 +45,7 @@ export const InputCityModal: FunctionComponent<InputCityModalProps> = ({
       <GoogleAutoComplete
         apiKey={EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES}
         debounce={1000}
-        language={language}
+        language={language} //TODO CITY TO DB
         queryTypes="(cities)"
       >
         {({ inputValue, handleTextChange, locationResults, fetchDetails }) => (
