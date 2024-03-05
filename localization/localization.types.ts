@@ -1,5 +1,6 @@
 // types
 import type { I18n as i18Type } from "@lingui/core";
+import { ImageSource } from "expo-image";
 
 export type Language = "uk" | "en";
 
@@ -13,5 +14,5 @@ export type LocalesContext = {
 export type Props = {
   children?: React.ReactNode;
 };
-export type LanguageType = { title: string; key: Language };
+export type LanguageType = { title: string; key: Language; icon: ImageSource };
 export type Languages = LanguageType[];

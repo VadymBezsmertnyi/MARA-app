@@ -1,27 +1,45 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
-import { Text, TouchableOpacity } from "react-native";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Trans } from "@lingui/macro";
+import { Shadow } from "react-native-shadow-2";
+
+// types
+import { Language } from "../../../localization/localization.types";
 
 // providers
 import { localesContext } from "../../../localization/localization.provider";
 import { userContext } from "../../providers/UserProvider/UserProvider";
 import { pushNotificationContext } from "../../providers/PushNotificationProvider/PushNotificationProvider";
+import { Loader } from "../../providers/LoadingProvider/components/Loader/Loader";
+import { loadingContext } from "../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import { ImageCache } from "../ImageCache/ImageCache";
+import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
+import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
+import { CheckboxPoint } from "../CheckboxPoint/CheckboxPoint";
+import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
+import { Input } from "../Input/Input";
 
-// images
-import imageCountryUk from "../../../images/icon-country-uk.png";
-import imageCountryUs from "../../../images/icon-country-us.png";
+// icons
+import { IconSearchInput } from "../../icons/components";
+
+// constants
+import { languages } from "../../../localization/localization.const";
 
 // styles
 import { styles } from "./ChangeLanguage.styles";
 
 export const ChangeLanguage: FunctionComponent = () => {
-  const { language, setLanguage } = useContext(localesContext);
+  const { i18n, language, setLanguage } = useContext(localesContext);
+  const { isLoading } = useContext(loadingContext);
   const { userData, editUser } = useContext(userContext);
   const { setLanguageNotification } = useContext(pushNotificationContext);
-  const iconLanguage = useMemo(
-    () => (language === "en" ? imageCountryUs : imageCountryUk),
+  const [isShowChangeLanguage, setIsShowChangeLanguage] = useState(false);
+  const [selectLanguage, setSelectLanguage] = useState<Language | null>(null);
+  const selectLanguageGlobal = useMemo(
+    () =>
+      languages.find((languageItem) => languageItem.key === language) || null,
     [language]
   );
   const showLanguage = useMemo(
@@ -30,20 +48,91 @@ export const ChangeLanguage: FunctionComponent = () => {
   );
 
   const onChangeLanguage = async () => {
-    if (language === "uk") {
-      setLanguage("en");
-      setLanguageNotification("en");
-      if (userData) await editUser({ ...userData, languageLocal: "en" });
-    } else {
-      setLanguage("uk");
-      setLanguageNotification("uk");
-      if (userData) await editUser({ ...userData, languageLocal: "uk" });
+    if (selectLanguage !== null && language !== selectLanguage) {
+      await setLanguage(selectLanguage);
+      setLanguageNotification(selectLanguage);
+      if (userData)
+        await editUser({ ...userData, languageLocal: selectLanguage });
     }
+    setSelectLanguage(null);
+    setIsShowChangeLanguage(false);
   };
+
   return (
-    <TouchableOpacity onPress={onChangeLanguage} style={styles.buttonLanguage}>
-      <ImageCache imageSrc={iconLanguage} style={styles.iconLanguage} />
-      <Text style={styles.titleLanguage}>{showLanguage}</Text>
-    </TouchableOpacity>
+    <>
+      <TouchableOpacity
+        onPress={() => {
+          setIsShowChangeLanguage(true);
+          setSelectLanguage(language);
+        }}
+        style={styles.buttonLanguage}
+      >
+        {selectLanguageGlobal ? (
+          <ImageCache
+            imageSrc={selectLanguageGlobal.icon}
+            style={styles.iconLanguage}
+          />
+        ) : null}
+        <Text style={styles.titleLanguage}>{showLanguage}</Text>
+      </TouchableOpacity>
+      <Modal visible={isShowChangeLanguage} transparent>
+        <ModalsSheet
+          onClose={() => {
+            setIsShowChangeLanguage(false);
+          }}
+        >
+          <View style={styles.containerModal}>
+            <Shadow stretch>
+              <View style={styles.headerModal}>
+                <Text style={styles.titleModal}>
+                  <Trans>Language selection</Trans>
+                </Text>
+                <LinearGradientCustom style={styles.lineHeader} />
+                <Input
+                  placeholder={i18n._("Enter text to search")}
+                  accessibilityLabel={i18n._(
+                    "Press and enter to search for a city"
+                  )}
+                  defaultValue={""}
+                  onChange={(value) => {}}
+                  labelStyle={styles.titleInput}
+                  containerStyle={styles.containerInput}
+                  wrapperStyle={styles.wrapperInput}
+                  InputIcon={<IconSearchInput width={26} height={26} />}
+                />
+              </View>
+            </Shadow>
+            <ScrollView contentContainerStyle={styles.containerScroll}>
+              {languages.map((languagesItem) => (
+                <TouchableOpacity
+                  key={`language-${languagesItem.key}`}
+                  style={styles.containerItemList}
+                  onPress={() => {
+                    setSelectLanguage(languagesItem.key);
+                  }}
+                >
+                  <Text style={styles.titleItemList}>
+                    {languagesItem.title}
+                  </Text>
+                  <CheckboxPoint
+                    isSelect={languagesItem.key === selectLanguage}
+                  />
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+            <Shadow stretch>
+              <View style={styles.containerButtons}>
+                <ButtonCustom
+                  disabled={selectLanguage === null}
+                  title={i18n._("Select")}
+                  onSubmit={onChangeLanguage}
+                />
+              </View>
+            </Shadow>
+            {isLoading ? <Loader /> : null}
+          </View>
+        </ModalsSheet>
+      </Modal>
+    </>
   );
 };

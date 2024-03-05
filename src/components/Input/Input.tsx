@@ -25,6 +25,7 @@ type InputProps = {
   keyboardType?: KeyboardTypeOptions;
   errorMessage?: string;
   containerStyle?: ViewStyle;
+  wrapperStyle?: ViewStyle;
   isRegular?: boolean;
   isSelect?: boolean;
   maxLength?: number;
@@ -44,6 +45,7 @@ export const Input: FunctionComponent<InputProps> = ({
   keyboardType = "default",
   errorMessage,
   containerStyle,
+  wrapperStyle,
   isRegular = false,
   isSelect = false,
   maxLength,
@@ -64,8 +66,9 @@ export const Input: FunctionComponent<InputProps> = ({
     () => ({
       ...styles.inputWrapper,
       borderColor: errorMessage ? colors.errorRed : borderColor,
+      ...wrapperStyle,
     }),
-    [borderColor, errorMessage]
+    [borderColor, errorMessage, wrapperStyle]
   );
   const inputStyles: StyleProp<TextStyle> = useMemo(
     () => ({ ...styles.input, ...customStyles }),
