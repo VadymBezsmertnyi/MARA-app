@@ -56,7 +56,7 @@ export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
           await Share.share({
             title: "M.A.R.A.(Moto Auto Road Assistant)",
             url: link as string,
-            message: Platform.OS === "android" ? (link as string) : undefined,
+            message: link as string,
           });
         },
         () => {

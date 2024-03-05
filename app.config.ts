@@ -60,10 +60,10 @@ export const expo = {
       googleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       usesNonExemptEncryption: false,
     },
-    associatedDomains: ["applinks:expotest.onelink.me"],
+    associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 15,
+    versionCode: 16,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
@@ -93,14 +93,14 @@ export const expo = {
         apiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       },
     },
-    intentFilters: [
+    /* intentFilters: [
       {
         action: "VIEW",
         data: [
           {
             scheme: "https",
-            host: "mara-app.onelink.me", // <<-- important for android App Links
-            pathPrefix: "/13Vx", // <<-- set your onelink template id
+            host: "mara-app.onelink.me",
+            pathPrefix: "/13Vx",
           },
         ],
         category: ["BROWSABLE", "DEFAULT"],
@@ -114,7 +114,7 @@ export const expo = {
         ],
         category: ["BROWSABLE", "DEFAULT"],
       },
-    ],
+    ], */
   },
   web: {
     favicon: "./assets/favicon.png",
