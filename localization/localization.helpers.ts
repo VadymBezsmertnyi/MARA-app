@@ -9,12 +9,14 @@ import {
   LANGUAGE_UK,
   defaultLanguage,
   languageKey,
+  LANGUAGE_FR,
 } from "./localization.const";
 import { Language } from "./localization.types";
 
 // locales
 import { messages as translationsUk } from "./uk/messages";
 import { messages as translationsEn } from "./en/messages";
+import { messages as translationsFr } from "./fr/messages";
 
 // types
 import type { I18n as i18Type } from "@lingui/core";
@@ -39,15 +41,15 @@ const getMessagesByLocale = (locale: Language) => {
   switch (locale) {
     case LANGUAGE_EN:
       return translationsEn;
-      break;
 
     case LANGUAGE_UK:
       return translationsUk;
-      break;
+
+    case LANGUAGE_FR:
+      return translationsFr;
 
     default:
       return translationsEn;
-      break;
   }
 };
 

@@ -1,11 +1,12 @@
 import type { Language, Languages } from "./localization.types";
 
 // images
-import imageCountryUk from "../images/icon-country-uk.png";
-import imageCountryUs from "../images/icon-country-us.png";
+import imageCountryUk from "../images/countries/icon-country-uk.png";
+import imageCountryUs from "../images/countries/icon-country-us.png";
+import imageCountryFr from "../images/countries/icon-country-fr.png";
 
 export const defaultLanguage: Language = "en";
-export const languagesKeys = ["en", "uk"] as const;
+export const languagesKeys = ["en", "uk", "fr"] as const;
 export const languageKey = "language";
 
 export const languages: Languages = [
@@ -21,24 +22,28 @@ export const languages: Languages = [
     icon: imageCountryUs,
     native: "English",
   },
+  {
+    title: "Français",
+    key: "fr",
+    icon: imageCountryFr,
+    native: "French",
+  },
 ];
 
 export const languages_short = {
   en: "en-EN",
   uk: "uk-UA",
+  fr: "fr-FR",
 };
 
 export const languagesLinguiAlias = {
   en: "en",
   uk: "uk",
+  fr: "fr",
 } as const;
-
-export const normalizeLanguages = {
-  en: "en",
-  uk: "uk",
-};
 
 export const LANGUAGE_EN = "en";
 export const LANGUAGE_UK = "uk";
+export const LANGUAGE_FR = "fr";
 
-export const languagePattern = /\b(en|uk)\b/;
+export const languagePattern = /\b(en|uk|fr)\b/;

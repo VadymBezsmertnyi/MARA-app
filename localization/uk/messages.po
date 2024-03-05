@@ -22,6 +22,18 @@ msgid "The first photo will be on the cover of the advertisement."
 msgstr "Перше фото буде на обкладинці оголошення."
 
 #. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Введіть текст для пошуку"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Натисніть та введіть для пошуку міста"
+
+#. js-lingui-explicit-id
+msgid "Select"
+msgstr "Обрати"
+
+#. js-lingui-explicit-id
 msgid "km"
 msgstr "км"
 
@@ -46,14 +58,6 @@ msgid "Make the main photo"
 msgstr "Зробити головним фото"
 
 #. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Введіть текст для пошуку"
-
-#. js-lingui-explicit-id
-msgid "Press and enter to search for a city"
-msgstr "Натисніть та введіть для пошуку міста"
-
-#. js-lingui-explicit-id
 msgid "Choose a city:"
 msgstr "Оберіть місто:"
 
@@ -64,10 +68,6 @@ msgstr "Виберіть місто {cityName}"
 #. js-lingui-explicit-id
 msgid "If you have selected a city, press to confirm"
 msgstr "Якщо ви вибрали місто, натисніть для підтвердження"
-
-#. js-lingui-explicit-id
-msgid "Select"
-msgstr "Обрати"
 
 #. js-lingui-explicit-id
 msgid "Decrease the maximum number"
@@ -1302,14 +1302,6 @@ msgid "Write a review"
 msgstr "Написати відгук"
 
 #. js-lingui-explicit-id
-msgid "Go to workshop {title}"
-msgstr "Перейти до майстерні {title}"
-
-#. js-lingui-explicit-id
-msgid "Workshop {title}"
-msgstr "Майстерня {title}"
-
-#. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Виберіть сторінку для поділу"
 
@@ -1499,6 +1491,9 @@ msgstr "Введений неправильний номер телефону а
 
 msgid "Internal Server Error"
 msgstr "Внутрішня помилка сервера"
+
+msgid "Language selection"
+msgstr "Вибір мови"
 
 msgid "Latest"
 msgstr "Останній"
