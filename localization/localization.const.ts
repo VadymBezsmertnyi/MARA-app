@@ -13,11 +13,13 @@ export const languages: Languages = [
     title: "Українська",
     key: "uk",
     icon: imageCountryUk,
+    native: "Ukrainian",
   },
   {
     title: "English",
     key: "en",
     icon: imageCountryUs,
+    native: "English",
   },
 ];
 

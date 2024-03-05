@@ -14,5 +14,10 @@ export type LocalesContext = {
 export type Props = {
   children?: React.ReactNode;
 };
-export type LanguageType = { title: string; key: Language; icon: ImageSource };
+export type LanguageType = {
+  title: string;
+  key: Language;
+  icon: ImageSource;
+  native: string;
+};
 export type Languages = LanguageType[];

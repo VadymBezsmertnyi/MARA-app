@@ -36,7 +36,24 @@ export const ChangeLanguage: FunctionComponent = () => {
   const { userData, editUser } = useContext(userContext);
   const { setLanguageNotification } = useContext(pushNotificationContext);
   const [isShowChangeLanguage, setIsShowChangeLanguage] = useState(false);
+  const [valueSearch, setValueSearch] = useState("");
   const [selectLanguage, setSelectLanguage] = useState<Language | null>(null);
+  const showListLanguage = useMemo(
+    () =>
+      languages.filter(
+        (languageItem) =>
+          languageItem.native
+            .toLocaleLowerCase()
+            .includes(valueSearch.toLocaleLowerCase()) ||
+          languageItem.title
+            .toLocaleLowerCase()
+            .includes(valueSearch.toLocaleLowerCase()) ||
+          languageItem.key
+            .toLocaleLowerCase()
+            .includes(valueSearch.toLocaleLowerCase())
+      ),
+    [languages, language, valueSearch]
+  );
   const selectLanguageGlobal = useMemo(
     () =>
       languages.find((languageItem) => languageItem.key === language) || null,
@@ -56,6 +73,7 @@ export const ChangeLanguage: FunctionComponent = () => {
     }
     setSelectLanguage(null);
     setIsShowChangeLanguage(false);
+    setValueSearch("");
   };
 
   return (
@@ -79,6 +97,7 @@ export const ChangeLanguage: FunctionComponent = () => {
         <ModalsSheet
           onClose={() => {
             setIsShowChangeLanguage(false);
+            setValueSearch("");
           }}
         >
           <View style={styles.containerModal}>
@@ -93,8 +112,8 @@ export const ChangeLanguage: FunctionComponent = () => {
                   accessibilityLabel={i18n._(
                     "Press and enter to search for a city"
                   )}
-                  defaultValue={""}
-                  onChange={(value) => {}}
+                  value={valueSearch}
+                  onChange={setValueSearch}
                   labelStyle={styles.titleInput}
                   containerStyle={styles.containerInput}
                   wrapperStyle={styles.wrapperInput}
@@ -103,7 +122,7 @@ export const ChangeLanguage: FunctionComponent = () => {
               </View>
             </Shadow>
             <ScrollView contentContainerStyle={styles.containerScroll}>
-              {languages.map((languagesItem) => (
+              {showListLanguage.map((languagesItem) => (
                 <TouchableOpacity
                   key={`language-${languagesItem.key}`}
                   style={styles.containerItemList}
@@ -112,7 +131,7 @@ export const ChangeLanguage: FunctionComponent = () => {
                   }}
                 >
                   <Text style={styles.titleItemList}>
-                    {languagesItem.title}
+                    {languagesItem.title} ({languagesItem.native})
                   </Text>
                   <CheckboxPoint
                     isSelect={languagesItem.key === selectLanguage}
