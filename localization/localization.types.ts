@@ -2,7 +2,25 @@
 import type { I18n as i18Type } from "@lingui/core";
 import { ImageSource } from "expo-image";
 
-export type Language = "uk" | "en" | "fr" | "de" | "es" | "it";
+export type Language =
+  | "uk"
+  | "en"
+  | "fr"
+  | "de"
+  | "es"
+  | "it"
+  | "sk"
+  | "sv"
+  | "da"
+  | "fi"
+  | "pl"
+  | "cs"
+  | "hu"
+  | "el"
+  | "ro"
+  | "lt"
+  | "lv"
+  | "be";
 
 export type LocalesContext = {
   i18n: i18Type;

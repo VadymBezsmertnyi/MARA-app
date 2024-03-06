@@ -1,0 +1,1685 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-03-06 17:22+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: sk\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Pridať fotografiu"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Prvá fotografia bude na obálke inzerátu."
+
+#. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Zadajte text na vyhľadávanie"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Stlačte a zadajte pre vyhľadávanie mesta"
+
+#. js-lingui-explicit-id
+msgid "Select"
+msgstr "Vybrať"
+
+#. js-lingui-explicit-id
+msgid "km"
+msgstr "km"
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Nepovolené umiestnenie"
+
+#. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Fotografia {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Tlačidlo pre zatvorenie modálneho okna"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Hlavná fotografia"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Nastaviť hlavnú fotografiu"
+
+#. js-lingui-explicit-id
+msgid "Choose a city:"
+msgstr "Vyberte mesto:"
+
+#. js-lingui-explicit-id
+msgid "Select the city {cityName}"
+msgstr "Vyberte mesto {cityName}"
+
+#. js-lingui-explicit-id
+msgid "If you have selected a city, press to confirm"
+msgstr "Ak ste vybrali mesto, stlačte pre potvrdenie"
+
+#. js-lingui-explicit-id
+msgid "Decrease the maximum number"
+msgstr "Znížiť maximálny počet"
+
+#. js-lingui-explicit-id
+msgid "Increase the maximum number"
+msgstr "Zvýšiť maximálny počet"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Prepínač zobrazenia menu"
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Áno"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Nie"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the locality"
+msgstr "Zadajte názov obce"
+
+#. js-lingui-explicit-id
+msgid "Kyiv"
+msgstr "Kyjev"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Zadajte presnú adresu"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Ulica Nezávislosti, 1"
+
+#. js-lingui-explicit-id
+msgid "Select country"
+msgstr "Vyberte krajinu"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Pokračovať"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Späť"
+
+#. js-lingui-explicit-id
+msgid "Select country {nameCountry}"
+msgstr "Vyberte krajinu {nameCountry}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameRegion}"
+msgstr "Vyberte región {nameRegion}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameCity}"
+msgstr "Vyberte región {nameCity}"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Vyberte typ práce auto {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Vyberte typ práce moto {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto"
+msgstr "Vyberte typ práce moto"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto"
+msgstr "Vyberte typ práce auto"
+
+#. js-lingui-explicit-id
+msgid "Background overlay for closing the modal window"
+msgstr "Pozadie pre zatvorenie modálneho okna"
+
+#. js-lingui-explicit-id
+msgid "The price of the item"
+msgstr "Cena položky"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Potvrdiť"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle transport"
+msgstr "Preprava motocyklov"
+
+#. js-lingui-explicit-id
+msgid "Car transport"
+msgstr "Preprava automobilov"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle parts"
+msgstr "Dielce motocyklov"
+
+#. js-lingui-explicit-id
+msgid "Car parts"
+msgstr "Dielce automobilov"
+
+#. js-lingui-explicit-id
+msgid "Gasoline"
+msgstr "Benzín"
+
+#. js-lingui-explicit-id
+msgid "Diesel"
+msgstr "Nafta"
+
+#. js-lingui-explicit-id
+msgid "Gas / Petrol"
+msgstr "Plyn / Benzín"
+
+#. js-lingui-explicit-id
+msgid "Electric"
+msgstr "Elektrický"
+
+#. js-lingui-explicit-id
+msgid "Hybrid"
+msgstr "Hybridný"
+
+#. js-lingui-explicit-id
+msgid "Other"
+msgstr "Iné"
+
+#. js-lingui-explicit-id
+msgid "Manual"
+msgstr "Manuálny"
+
+#. js-lingui-explicit-id
+msgid "Automatic"
+msgstr "Automatický"
+
+#. js-lingui-explicit-id
+msgid "Continuously variable transmission (CVT)"
+msgstr "Spojitý variabilný prevod (CVT)"
+
+#. js-lingui-explicit-id
+msgid "Adaptive"
+msgstr "Prispôsobivý"
+
+#. js-lingui-explicit-id
+msgid "Tiptronic"
+msgstr "Tiptronic"
+
+#. js-lingui-explicit-id
+msgid "Batteries"
+msgstr "Batérie"
+
+#. js-lingui-explicit-id
+msgid "Shock absorbers and suspension"
+msgstr "Tlmiče a zavesenie"
+
+#. js-lingui-explicit-id
+msgid "Variators and reducers"
+msgstr "Variátory a reduktory"
+
+#. js-lingui-explicit-id
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Výfukové systémy, rovné potrubia, tlmiče"
+
+#. js-lingui-explicit-id
+msgid "Engine parts"
+msgstr "Časti motora"
+
+#. js-lingui-explicit-id
+msgid "Gearbox"
+msgstr "Prevodovka"
+
+#. js-lingui-explicit-id
+msgid "Footrests and pedals"
+msgstr "Opierky nohy a pedále"
+
+#. js-lingui-explicit-id
+msgid "Lighting and lamps"
+msgstr "Osvetlenie a lampy"
+
+#. js-lingui-explicit-id
+msgid "Bearings"
+msgstr "Ložiská"
+
+#. js-lingui-explicit-id
+msgid "Drive and chassis"
+msgstr "Pohon a podvozok"
+
+#. js-lingui-explicit-id
+msgid "Frame, brackets, and swingarms"
+msgstr "Rám, držiaky a kyvné ramená"
+
+#. js-lingui-explicit-id
+msgid "Handlebars and controls"
+msgstr "Riadidlá a ovládanie"
+
+#. js-lingui-explicit-id
+msgid "Seat"
+msgstr "Sedadlo"
+
+#. js-lingui-explicit-id
+msgid "Cooling system"
+msgstr "Chladiaci systém"
+
+#. js-lingui-explicit-id
+msgid "Clutch"
+msgstr "Sprevod"
+
+#. js-lingui-explicit-id
+msgid "Fuel system"
+msgstr "Palivový systém"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Brzdový systém"
+
+#. js-lingui-explicit-id
+msgid "Cables and hoses"
+msgstr "Káble a hadice"
+
+#. js-lingui-explicit-id
+msgid "Filters"
+msgstr "Filtre"
+
+#. js-lingui-explicit-id
+msgid "Chains and sprockets"
+msgstr "Reťaze a ozubené kolesá"
+
+#. js-lingui-explicit-id
+msgid "Electrical system"
+msgstr "Elektrický systém"
+
+#. js-lingui-explicit-id
+msgid "Other motorcycle parts"
+msgstr "Iné časti motocykla"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Motor"
+
+#. js-lingui-explicit-id
+msgid "Exhaust system"
+msgstr "Výfukový systém"
+
+#. js-lingui-explicit-id
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Prevodovka / Manuálna a automatická prevodovka"
+
+#. js-lingui-explicit-id
+msgid "Steering system"
+msgstr "Riadiaci systém"
+
+#. js-lingui-explicit-id
+msgid "Suspension / Chassis"
+msgstr "Zavesenie / Podvozok"
+
+#. js-lingui-explicit-id
+msgid "Body parts"
+msgstr "Karoséria"
+
+#. js-lingui-explicit-id
+msgid "Interior details"
+msgstr "Interiérové detaily"
+
+#. js-lingui-explicit-id
+msgid "Air conditioning, heater, ventilation"
+msgstr "Klimatizácia, kúrenie, ventilácia"
+
+#. js-lingui-explicit-id
+msgid "Air intake system"
+msgstr "Systém nasávania vzduchu"
+
+#. js-lingui-explicit-id
+msgid "Ignition system"
+msgstr "Systém zapálenia"
+
+#. js-lingui-explicit-id
+msgid "Window and headlight cleaning system"
+msgstr "Systém čistenia okien a svetiel"
+
+#. js-lingui-explicit-id
+msgid "Headlights and lighting"
+msgstr "Predné svetlá a osvetlenie"
+
+#. js-lingui-explicit-id
+msgid "Electrical equipment"
+msgstr "Elektrické zariadenie"
+
+#. js-lingui-explicit-id
+msgid "Automotive glass"
+msgstr "Automobilové sklo"
+
+#. js-lingui-explicit-id
+msgid "Liquefied gas system"
+msgstr "Systém skvapalneného plynu"
+
+#. js-lingui-explicit-id
+msgid "Other types of spare parts"
+msgstr "Iné druhy náhradných dielov"
+
+#. js-lingui-explicit-id
+msgid "Name of the {otherName}"
+msgstr "Názov {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of {min} and a maximum of {max} characters."
+msgstr "Text musí obsahovať minimálne {min} a maximálne {max} znakov."
+
+#. js-lingui-explicit-id
+msgid "The place of the {otherName}"
+msgstr "Miesto {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The location of the {otherName} must be selected."
+msgstr "Miesto {otherName} musí byť vybrané."
+
+#. js-lingui-explicit-id
+msgid "Date of the {otherName}"
+msgstr "Dátum {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "Koncový dátum musí byť väčší ako začiatočný dátum."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the {otherName}"
+msgstr "Povedzte nám o {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Description of the {otherName}"
+msgstr "Popis {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Phone number the {otherName}"
+msgstr "Telefónne číslo {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Prosím, zadajte telefónne číslo"
+
+#. js-lingui-explicit-id
+msgid "Types of {otherName} jobs"
+msgstr "Typy práce {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Prosím, vyberte aspoň jeden typ"
+
+#. js-lingui-explicit-id
+msgid "Price {otherName}"
+msgstr "Cena {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter price for {otherName}"
+msgstr "Prosím, zadajte cenu pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Category {otherName}"
+msgstr "Kategória {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter category for {otherName}"
+msgstr "Prosím, zadajte kategóriu pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Brand {otherName}"
+msgstr "Značka {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter brand for {otherName}"
+msgstr "Prosím, zadajte značku pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Mileage {otherName}"
+msgstr "Stav {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter mileage for {otherName}"
+msgstr "Prosím, zadajte stav pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Year release {otherName}"
+msgstr "Rok výroby {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter year minimum of {min} and a maximum of {max} for {otherName}"
+msgstr "Prosím, zadajte rok minimálne {min} a maximálne {max} pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type fuel {otherName}"
+msgstr "Typ paliva {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type fuel for {otherName}"
+msgstr "Prosím, zadajte typ paliva pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type transmission {otherName}"
+msgstr "Typ prevodovky {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type transmission for {otherName}"
+msgstr "Prosím, zadajte typ prevodovky pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type parts {otherName}"
+msgstr "Typ dielov {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type parts for {otherName}"
+msgstr "Prosím, zadajte typ dielov pre {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Nesprávne zadané údaje"
+
+#. js-lingui-explicit-id
+msgid "advert"
+msgstr "inzerát"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Vyberte záložku {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Vytvoriť udalosť"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Zmeniť udalosť"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Vytvoriť dielňu"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Zmeniť dielňu"
+
+#. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Vytvoriť inzerát"
+
+#. js-lingui-explicit-id
+msgid "Change advert"
+msgstr "Zmeniť inzerát"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Prosím, overovateľ"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Zmazať udalosť"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Zmazať inzerát"
+
+#. js-lingui-explicit-id
+msgid "Ukraine"
+msgstr "Ukrajina"
+
+#. js-lingui-explicit-id
+msgid "Poland"
+msgstr "Poľsko"
+
+#. js-lingui-explicit-id
+msgid "Belarus"
+msgstr "Bielorusko"
+
+#. js-lingui-explicit-id
+msgid "Lithuania"
+msgstr "Litva"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Ľutujeme, došlo k chybe"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Fotografia bola zmenená"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Vymazať"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Zmeniť"
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Údržba"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Výmena oleja / Výmena filtra / Výmena klina / Výmena zapalovacích sviečok / Výmena oleja v prevodovke / Servis brzd / Výmena všetkých potrebných náplní / atď."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnostika"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Komplexná diagnostika pred nákupom / Diagnostika podvozka / Diagnostika motora / Diagnostika prevodovky / Diagnostika karosérie / Počítačová diagnostika / Diagnostika kvapalín / atď."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Autoelektrika"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Oprava káblov / Chip tuning / Montáž alarmu ľubovoľnej zložitosti / Oprava tachometra / Reprogramovanie kľúča / Adaptácia motora a prevodovky / Odstránenie EGR / Odstránenie DPF / Montáž xenónu / Montáž parkovacích senzorov / atď."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Oprava podvozka"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Výmena tlmiča / Výmena pružiny / Výmena ramena / Výmena nosníka / Výmena silentbloku / Výmena listových pružín / Výmena náboja / Výmena pílnej platne / Výmena nápravy / Výmena ložiska / Výmena motora a prevodovky / Mechanická práca"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Motor, automatická a manuálna prevodovka"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Diagnostika motora / Oprava motora / Výmena motora / Výmena olejovej vane motora / Diagnostika automatickej prevodovky / Výmena oleja v automatickej prevodovke / Výmena automatickej prevodovky / Čistenie a preplachovanie automatickej prevodovky / Výmena spojky / Diagnostika manuálnej prevodovky / Výmena oleja v manuálnej prevodovke / Výmena manuálnej prevodovky / Čistenie a preplachovanie manuálnej prevodovky / atď."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Brzdy a riadiaci systém"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Diagnostika brzdového systému / Výmena brzdovej kvapaliny / Oprava brzdového systému / Vývrtka brzdového systému / Výmena riadiacej sústavy / Obnova riadiacej sústavy / Výmena posilňovača riadenia / Výmena kvapaliny posilňovača riadenia / atď."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Príslušenstvo"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Oprava štartéra / Výmena štartéra / Oprava generátora / Výmena generátora / Obnova turbodúchadla / Výmena turbodúchadla / atď."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Klimatizačné systémy"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostika / Nabíjanie / Prebíjanie / Detekcia úniku / Výmena potrubia / Výmena radiátora / Oprava kompresora / Výmena kompresora / Dezinfekcia systému / Odstránenie cudzích zápachov"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Vyvážanie kolies"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Vyvážanie kolies / Diagnostika vyvážania / Hľadanie chýb závesu / Hľadanie chýb karosérie"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Technická údržba"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Mazanie káblov / Synchronizácia karburátora / Výmena vzduchového filtra / Výmena zapalovacích sviečok / Výmena oleja v prevodovke / Výmena oleja v diferenciáli / Výmena chladiacej kvapaliny / Výmena oleja v motore"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Všeobecné práce"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Všeobecná diagnostika / Meranie kompresie / Kontrola hladiny technickej kvapaliny / Výmena spojovacieho kábla / Výmena kábla plynu / Čistenie a preplachovanie nádrže / Odstránenie a montáž nádrže / Odstránenie a montáž plastových dielov / Montáž ochrannej oblúkov / Montáž šmyku"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Podvozok"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Odstránenie a montáž predného kolesa / Odstránenie a montáž zadného kolesa / Výmena ložiska kolesa / Nastavenie ložiska riadiacej tyče / Výmena ložiska riadiacej tyče / Odstránenie a montáž prednej vidlice / Výmena tesnenia prednej vidlice / Výmena oleja v prednej vidlici / Výmena ložiska závesu zadného kolesa / Výmena tlmiča zadného kolesa / Výmena monotlačiaceho tlmiča / Oprava zadného tlmiča"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Reťazový pohon"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Výmena reťazového pohonu a prevodníka / Čistenie, mazanie a nastavenie reťaze / Nastavenie, natiahnutie a mazanie reťaze"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Odstránenie a montáž / Nastavenie ventilov / Výmena spojky / Oprava valca / Výmena časovacieho reťaze / Oprava piestnej skupiny / Oprava prevodovky / Generálna oprava motora"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Elektrika"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Výmena regulátora relé / Výmena alternátora / Výmena štartéra / Oprava štartéra / Výmena žiarovky / Montáž xenónu / Výmena batérie / Nabíjanie batérie"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Výmena brzdových platničiek na kotúčoch / Výmena brzdových platničiek na bubne / Odvzdušnenie brzdového systému / Výmena brzdovej kvapaliny / Kombinovaná výmena brzdovej kvapaliny / Výmena brzdového hadičky / Montáž zosilnenej hadičky / Výmena brzdového kotúča / Oprava brzdového tlačidla"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Oprava plastov"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Zváranie/obnova fragmentov/obnova upevňovacích prvkov"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Zváracie práce"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Elektrické oblúkové zváranie / Poloautomatické zváranie / Argónové oblúkové zváranie"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Ladenie a prispôsobenie"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Montáž ochrannej archy / Montáž šmykačiek / Montáž výfukového systému / Montáž brzdového systému / Montáž zosilnenej hadičky / Montáž xenónu / Montáž osvetlenia motocykla / Montáž hmlových svetlometov (FL)"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings sos"
+msgstr "Tlačidlo pre zatvorenie ponuky nastavení SOS"
+
+#. js-lingui-explicit-id
+msgid "Radius, km:"
+msgstr "Polomer, km:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "Prepínač upozornenia na SOS signál"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Prepínač automatického zistenia polohy"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "Váš telegram"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Telefónne číslo:"
+
+#. js-lingui-explicit-id
+msgid "Add a description"
+msgstr "Pridať popis"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr "Popis"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#. js-lingui-explicit-id
+msgid "On SOS"
+msgstr "Na SOS"
+
+#. js-lingui-explicit-id
+msgid "Check permissions"
+msgstr "Skontrolovať povolenia"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Tlačidlo pre zatvorenie obrazovky nastavení ponuky"
+
+#. js-lingui-explicit-id
+msgid "SOS signal notification"
+msgstr "Upozornenie na SOS signál"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Zdieľať aplikáciu"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "O službe"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Podmienky používania"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Zásady ochrany osobných údajov"
+
+#. js-lingui-explicit-id
+msgid "Brand/Make"
+msgstr "Značka/Výrobník"
+
+#. js-lingui-explicit-id
+msgid "Mileage, km:"
+msgstr "Stav, km:"
+
+#. js-lingui-explicit-id
+msgid "Year of release:"
+msgstr "Rok vydania:"
+
+#. js-lingui-explicit-id
+msgid "Cleared:"
+msgstr "Vyčistené:"
+
+#. js-lingui-explicit-id
+msgid "Type fuel"
+msgstr "Typ paliva"
+
+#. js-lingui-explicit-id
+msgid "Transmission gearbox"
+msgstr "Prevodovka"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategória"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle brand"
+msgstr "Značka motocykla"
+
+#. js-lingui-explicit-id
+msgid "Car's make"
+msgstr "Značka vozidla"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Typ paliva"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Typ prevodovky"
+
+#. js-lingui-explicit-id
+msgid "Advert change successfully"
+msgstr "Reklama úspešne zmenená"
+
+#. js-lingui-explicit-id
+msgid "Advert created successfully"
+msgstr "Reklama úspešne vytvorená"
+
+#. js-lingui-explicit-id
+msgid "Error changing advert"
+msgstr "Chyba pri zmene reklamy"
+
+#. js-lingui-explicit-id
+msgid "Error creating advert"
+msgstr "Chyba pri vytváraní reklamy"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Pridať inzerát"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the advert"
+msgstr "Zadajte názov reklamy"
+
+#. js-lingui-explicit-id
+msgid "Advert name"
+msgstr "Názov reklamy"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "Nové"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Použité"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Stav tovaru:"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Súkromná osoba"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Firma"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Predajca:"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Poloha"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Vyberte mesto"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the advert"
+msgstr "Pridať popis reklamy"
+
+#. js-lingui-explicit-id
+msgid "Advert description"
+msgstr "Popis reklamy"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Telefónne číslo*:"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Publikovať"
+
+#. js-lingui-explicit-id
+msgid "Brand"
+msgstr "Značka"
+
+#. js-lingui-explicit-id
+msgid "Condition"
+msgstr "Stav"
+
+#. js-lingui-explicit-id
+msgid "Seller"
+msgstr "Predajca"
+
+#. js-lingui-explicit-id
+msgid "Mileage"
+msgstr "Prejdené kilometre"
+
+#. js-lingui-explicit-id
+msgid "{mileage} km"
+msgstr "{mileage} km"
+
+#. js-lingui-explicit-id
+msgid "Year of manufacture"
+msgstr "Rok výroby"
+
+#. js-lingui-explicit-id
+msgid "{yearRelease} km"
+msgstr "{yearRelease} km"
+
+#. js-lingui-explicit-id
+msgid "Customs cleared"
+msgstr "Vyrovnáno colné"
+
+#. js-lingui-explicit-id
+msgid "Fuel type"
+msgstr "Typ paliva"
+
+#. js-lingui-explicit-id
+msgid "Transmission"
+msgstr "Prevodovka"
+
+#. js-lingui-explicit-id
+msgid "Type parts"
+msgstr "Typ dielov"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Filtr"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Cena, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Značka auta"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "Značka motocykla"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Značka motocykla"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Filtrovanie"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "grn"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Prepínač ako produkt"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Trh"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Zadajte názov"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Pridať produkt"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "udalosť"
+
+#. js-lingui-explicit-id
+msgid "Createt event"
+msgstr "Vytvoriť udalosť"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Môžete vytvoriť udalosť"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Zadajte názov udalosti"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Názov udalosti"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Zadajte adresu"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Miesto udalosti"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Dátum udalosti"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Začiatok"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Záver"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Stručne popíšte, čo sa stane"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event:"
+msgstr "Povedzte nám o udalosti:"
+
+#. js-lingui-explicit-id
+msgid "Event address"
+msgstr "Adresa udalosti"
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Zadarmo"
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Udalosť"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Dokončiť"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Cena za účasť"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "O udalosti"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Galéria"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Všetky fotografie"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Zadajte text na vyhľadanie"
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Stlačte zobraziť viac udalostí"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Pridať udalosť"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Tlačidlo pre zatvorenie registrácie FaceID"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 5 and 20 characters"
+msgstr "Dĺžka názvu by mala byť medzi 5 a 20 znakmi"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Registrácia"
+
+#. js-lingui-explicit-id
+msgid "Name:"
+msgstr "Meno:"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Zadajte svoje meno"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Uložiť"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Vyplniť neskôr"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Prepínač zapnutia vašej polohy"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Vyberte mesto"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Zásady ochrany osobných údajov"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Podmienky použitia"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Tlačidlo pre zatvorenie registrácie TouchID"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "udalosti"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Tlačidlo pre zatvorenie obrazovky nastavení udalostí"
+
+#. js-lingui-explicit-id
+msgid "My adverts"
+msgstr "Moje inzeráty"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Moje dielne"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridať dielňu"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Moje udalosti"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Nastavenie profilu"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "inzeráty"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Tlačidlo pre zatvorenie obrazovky nastavení produktov"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Fotografia pridaná"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Uložiť profil"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Chyba: uložiť profil"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Krstné meno"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Priezvisko"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Mesto"
+
+#. js-lingui-explicit-id
+msgid "workshops"
+msgstr "dielne"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Tlačidlo pre zatvorenie obrazovky nastavení dielní"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Žiadne informácie"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Moto"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Auto"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Všetky dielne"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Opravy motocyklov"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Opravy áut"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "dielňa"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Dielňa úspešne zmenená"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Dielňa úspešne vytvorená"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Chyba pri zmene dielne"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Chyba pri vytváraní dielne"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Zadajte názov dielne"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Názov dielne"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Adresa dielne"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Pridajte popis dielne"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Popis dielne"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Typ dielne"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Vyberte typ"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Typy prác"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Vyberte typy prác"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Napísať prvú recenziu"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Zmeniť recenziu"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Napísať recenziu"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Vyberte zdieľanú stránku"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Text musí obsahovať minimálne 3 a maximálne 40 znakov."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Text musí obsahovať minimálne 10 a maximálne 2000 znakov."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Názov"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Dieln"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Typy dielne"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Vzdialenosť, km:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Všetky práce"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Typy prác"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Dielne"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Zadajte názov dielne alebo typ práce"
+
+msgid "{distance} km"
+msgstr "{distance} km"
+
+msgid "About us:"
+msgstr "O nás:"
+
+msgid "Access denied"
+msgstr "Prístup odmietnutý"
+
+msgid "Access to geolocation in the background mode"
+msgstr "Prístup k geolokácii v režime pozadia"
+
+msgid "Access to geolocation when using the application"
+msgstr "Prístup k geolokácii pri používaní aplikácie"
+
+msgid "Add advert"
+msgstr "Pridať inzerát"
+
+msgid "Add event"
+msgstr "Pridať udalosť"
+
+msgid "Add workshop"
+msgstr "Pridať dielňu"
+
+msgid "All cities"
+msgstr "Všetky mestá"
+
+msgid "All photos"
+msgstr "Všetky fotografie"
+
+msgid "Allow"
+msgstr "Povoliť"
+
+msgid "Allow Face ID to access the {nameApp} app."
+msgstr "Povoliť prístup cez Face ID k aplikácii {nameApp}."
+
+msgid "Allow later"
+msgstr "Povoliť neskôr"
+
+msgid "Allow login using Face ID"
+msgstr "Povoliť prihlásenie pomocou Face ID"
+
+msgid "Allow login using Touch ID"
+msgstr "Povoliť prihlásenie pomocou Touch ID"
+
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Povoliť aplikácii {nameApp} určiť moju polohu"
+
+msgid "Allow Touch ID to access the {nameApp} app."
+msgstr "Povoliť prístup cez Touch ID k aplikácii {nameApp}."
+
+msgid "and choose the city of residence:"
+msgstr "a vybrať mesto pobytu:"
+
+msgid "Are you sure you want to delete?"
+msgstr "Ste si istý, že chcete vymazať?"
+
+msgid "Authorize using:"
+msgstr "Autorizovať pomocou:"
+
+msgid "Automatically detect location"
+msgstr "Automatické zistenie polohy"
+
+msgid "Back"
+msgstr "Späť"
+
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "Kliknutím na tlačidlo „Pokračovať“ súhlasíte s {buttonTermsService} a {buttonPrivacyPolicy}"
+
+msgid "By distance:"
+msgstr "Podľa vzdialenosti:"
+
+msgid "By number of comments:"
+msgstr "Podľa počtu komentárov:"
+
+msgid "By rating:"
+msgstr "Podľa hodnotenia:"
+
+msgid "Call"
+msgstr "Volanie"
+
+msgid "Cheapest"
+msgstr "Najlacnejší"
+
+msgid "Continue with {typeSocial}"
+msgstr "Pokračovať s {typeSocial}"
+
+msgid "Create event"
+msgstr "Vytvoriť udalosť"
+
+msgid "Currency:"
+msgstr "Mena:"
+
+msgid "Dark theme"
+msgstr "Tmavá téma"
+
+msgid "Delete"
+msgstr "Vymazať"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Do you want to send an SOS signal?"
+msgstr "Chcete odoslať SOS signál?"
+
+msgid "Error key token: Secret key is not defined in the environment variables"
+msgstr "Chyba kľúčového tokenu: Tajný kľúč nie je definovaný v premenných prostredia"
+
+msgid "Error: Invalid phone number or password"
+msgstr "Chyba: Neplatné telefónne číslo alebo heslo"
+
+msgid "Error: Invalid token"
+msgstr "Chyba: Neplatný token"
+
+msgid "Error: Token expired"
+msgstr "Chyba: Token vypršal"
+
+msgid "Error: User already exists"
+msgstr "Chyba: Používateľ už existuje"
+
+msgid "Error: User not found"
+msgstr "Chyba: Používateľ nenájdený"
+
+msgid "Event"
+msgstr "Udalosť"
+
+msgid "Events"
+msgstr "Udalosti"
+
+msgid "from closest to farthest"
+msgstr "od najbližšieho po najvzdialenejší"
+
+msgid "from highest to lowest"
+msgstr "od najvyššieho po najnižšie"
+
+msgid "Gallery"
+msgstr "Galéria"
+
+msgid "Hello!"
+msgstr "Ahoj!"
+
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Zadané nesprávne telefónne číslo alebo nesprávne zvolený kód krajiny telefónneho čísla"
+
+msgid "Internal Server Error"
+msgstr "Interná serverová chyba"
+
+msgid "Language selection"
+msgstr "Výber jazyka"
+
+msgid "Latest"
+msgstr "Najnovšie"
+
+msgid "Leave a review"
+msgstr "Napísať recenziu"
+
+msgid "Logout"
+msgstr "Odhlásiť sa"
+
+msgid "Main"
+msgstr "Hlavná"
+
+msgid "Map"
+msgstr "Mapa"
+
+msgid "Market"
+msgstr "Trh"
+
+msgid "more detail"
+msgstr "viac detailov"
+
+msgid "More events"
+msgstr "Viac udalostí"
+
+msgid "Most expensive"
+msgstr "Najdrahší"
+
+msgid "Move and change the location"
+msgstr "Presunúť a zmeniť polohu"
+
+msgid "My adverts"
+msgstr "Moje inzeráty"
+
+msgid "My events"
+msgstr "Moje udalosti"
+
+msgid "My workshops"
+msgstr "Moje dielne"
+
+msgid "No events have passed"
+msgstr "Neboli zaznamenané žiadne udalosti"
+
+msgid "Not comments"
+msgstr "Žiadne komentáre"
+
+msgid "Notification of SOS signal"
+msgstr "Upozornenie na SOS signál"
+
+msgid "Now"
+msgstr "Teraz"
+
+msgid "Only with rating:"
+msgstr "Iba s hodnotením:"
+
+msgid "or sign up using:"
+msgstr "alebo sa prihláste pomocou:"
+
+msgid "Participation fee"
+msgstr "Účasťový poplatok"
+
+msgid "Password must contain at least 8 characters"
+msgstr "Heslo musí obsahovať aspoň 8 znakov"
+
+msgid "Passwords do not match"
+msgstr "Heslá sa nezhodujú"
+
+msgid "Past events:"
+msgstr "Minulé udalosti:"
+
+msgid "Privacy Policy"
+msgstr "Zásady ochrany osobných údajov"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Read the whole description..."
+msgstr "Prečítať celý popis..."
+
+msgid "Registration"
+msgstr "Registrácia"
+
+msgid "Repair of automobiles"
+msgstr "Opravy áut"
+
+msgid "Repair of motorcycles"
+msgstr "Opravy motocyklov"
+
+msgid "Resend the code"
+msgstr "Znova odoslať kód"
+
+msgid "Reviews:"
+msgstr "Recenzie:"
+
+msgid "Select a location on the map"
+msgstr "Vyberte polohu na mape"
+
+msgid "Settings"
+msgstr "Nastavenia"
+
+msgid "Settings and permissions should be enabled"
+msgstr "Nastavenia a oprávnenia by mali byť povolené"
+
+msgid "Someone needs help within a {distance} km radius"
+msgstr "Niekto potrebuje pomoc v polomeru {distance} km"
+
+msgid "Sorry, but no products were found by the filters"
+msgstr "Ľutujeme, ale žiadne produkty neboli nájdené pomocou filtrov"
+
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Ľutujeme, ale žiadne dielne neboli nájdené pomocou filtrov"
+
+msgid "Sorry, there are no available items"
+msgstr "Ľutujeme, ale nie sú k dispozícii žiadne položky"
+
+msgid "Sorry, there are no upcoming events"
+msgstr "Ľutujeme, ale žiadne nadchádzajúce udalosti nie sú k dispozícii"
+
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Ľutujeme, ale žiadne nadchádzajúce dielne nie sú k dispozícii"
+
+msgid "Sorry!"
+msgstr "Ľutujeme!"
+
+msgid "SOS signal"
+msgstr "SOS signál"
+
+msgid "Terms of Service"
+msgstr "Podmienky služby"
+
+msgid "Terms of Use"
+msgstr "Podmienky používania"
+
+msgid "The work we do:"
+msgstr "Práce, ktoré robíme:"
+
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Na plné využitie všetkých funkcií služby musíte aplikácii povoliť určenie vašej polohy:"
+
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr "Ak chcete prijímať SOS signály, nastavte polomer prijímania signálov z centra vášho mesta:"
+
+msgid "Type workshops"
+msgstr "Typy dielní"
+
+msgid "Types of work for automobile transport:"
+msgstr "Typy prác pre automobilovú dopravu:"
+
+msgid "Types of work for motorcycle transport:"
+msgstr "Typy prác pre motocyklovú dopravu:"
+
+msgid "Upcoming events:"
+msgstr "Nadchádzajúce udalosti:"
+
+msgid "Views:"
+msgstr "Zobrazenia:"
+
+msgid "We recommend filling out the profile information"
+msgstr "Odporúčame vyplniť informácie v profile"
+
+msgid "We're glad to see you on our service."
+msgstr "Teší nás, že vás vídame na našej službe."
+
+msgid "Welcome"
+msgstr "Vitajte"
+
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "Na akú platformu chcete poslať pozvánku na inštaláciu aplikácie?"
+
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr "Automaticky sa vypne po 20-30 minútach"
+
+msgid "Workshop"
+msgstr "Dielnia"
+
+msgid "Workshops"
+msgstr "Dielní"
+
+msgid "Write"
+msgstr "Napísať"
+
+msgid "You don't have {typeItem}."
+msgstr "Nemáte {typeItem}."
+
+msgid "Your contact information"
+msgstr "Vaše kontaktné informácie"
+
+msgid "Your location"
+msgstr "Vaša poloha"

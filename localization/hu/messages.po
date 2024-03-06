@@ -1,0 +1,1685 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-03-06 14:15+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: hu\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Fénykép hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Az első fénykép lesz a hirdetés borítója."
+
+#. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Írjon be szöveget a kereséshez"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Nyomja meg és írja be a város nevét a kereséshez"
+
+#. js-lingui-explicit-id
+msgid "Select"
+msgstr "Válasszon"
+
+#. js-lingui-explicit-id
+msgid "km"
+msgstr "km"
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Helyzet engedélyezése szükséges"
+
+#. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Fénykép {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Gomb a párbeszédablak bezárásához"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Fő fénykép"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Fő fénykép készítése"
+
+#. js-lingui-explicit-id
+msgid "Choose a city:"
+msgstr "Válasszon egy várost:"
+
+#. js-lingui-explicit-id
+msgid "Select the city {cityName}"
+msgstr "Válassza ki a várost: {cityName}"
+
+#. js-lingui-explicit-id
+msgid "If you have selected a city, press to confirm"
+msgstr "Ha választott várost, nyomja meg a megerősítéshez"
+
+#. js-lingui-explicit-id
+msgid "Decrease the maximum number"
+msgstr "Csökkentse a maximális számot"
+
+#. js-lingui-explicit-id
+msgid "Increase the maximum number"
+msgstr "Növelje a maximális számot"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Menü megjelenítése kapcsoló"
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Igen"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Nem"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the locality"
+msgstr "Írja be a település nevét"
+
+#. js-lingui-explicit-id
+msgid "Kyiv"
+msgstr "Kijev"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Írja be a pontos címet"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Függetlenség utca, 1"
+
+#. js-lingui-explicit-id
+msgid "Select country"
+msgstr "Válasszon országot"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Folytatás"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Vissza"
+
+#. js-lingui-explicit-id
+msgid "Select country {nameCountry}"
+msgstr "Válassza ki az országot: {nameCountry}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameRegion}"
+msgstr "Válassza ki a régiót: {nameRegion}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameCity}"
+msgstr "Válassza ki a várost: {nameCity}"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Válassza ki az autó típusát: {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Válassza ki a motorkerékpár típusát: {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto"
+msgstr "Válassza ki a motorkerékpár típusát"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto"
+msgstr "Válassza ki az autó típusát"
+
+#. js-lingui-explicit-id
+msgid "Background overlay for closing the modal window"
+msgstr "Háttér átfedés a párbeszédablak bezárásához"
+
+#. js-lingui-explicit-id
+msgid "The price of the item"
+msgstr "Az elem ára"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Megerősítés"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle transport"
+msgstr "Motorkerékpár szállítás"
+
+#. js-lingui-explicit-id
+msgid "Car transport"
+msgstr "Autó szállítás"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle parts"
+msgstr "Motorkerékpár alkatrészek"
+
+#. js-lingui-explicit-id
+msgid "Car parts"
+msgstr "Autó alkatrészek"
+
+#. js-lingui-explicit-id
+msgid "Gasoline"
+msgstr "Benzin"
+
+#. js-lingui-explicit-id
+msgid "Diesel"
+msgstr "Dízel"
+
+#. js-lingui-explicit-id
+msgid "Gas / Petrol"
+msgstr "Gáz / Benzin"
+
+#. js-lingui-explicit-id
+msgid "Electric"
+msgstr "Elektromos"
+
+#. js-lingui-explicit-id
+msgid "Hybrid"
+msgstr "Hibrid"
+
+#. js-lingui-explicit-id
+msgid "Other"
+msgstr "Egyéb"
+
+#. js-lingui-explicit-id
+msgid "Manual"
+msgstr "Kézi"
+
+#. js-lingui-explicit-id
+msgid "Automatic"
+msgstr "Automata"
+
+#. js-lingui-explicit-id
+msgid "Continuously variable transmission (CVT)"
+msgstr "Folyamatosan változó sebességű átvitel (CVT)"
+
+#. js-lingui-explicit-id
+msgid "Adaptive"
+msgstr "Adaptív"
+
+#. js-lingui-explicit-id
+msgid "Tiptronic"
+msgstr "Tiptronik"
+
+#. js-lingui-explicit-id
+msgid "Batteries"
+msgstr "Akumulátorok"
+
+#. js-lingui-explicit-id
+msgid "Shock absorbers and suspension"
+msgstr "Rugózás és lengéscsillapítás"
+
+#. js-lingui-explicit-id
+msgid "Variators and reducers"
+msgstr "Változók és reduktorok"
+
+#. js-lingui-explicit-id
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Kipufogó rendszerek, egyenes csövek, dobok"
+
+#. js-lingui-explicit-id
+msgid "Engine parts"
+msgstr "Motordíszek"
+
+#. js-lingui-explicit-id
+msgid "Gearbox"
+msgstr "Sebességváltó"
+
+#. js-lingui-explicit-id
+msgid "Footrests and pedals"
+msgstr "Lábbalanszok és pedálok"
+
+#. js-lingui-explicit-id
+msgid "Lighting and lamps"
+msgstr "Világítás és lámpák"
+
+#. js-lingui-explicit-id
+msgid "Bearings"
+msgstr "Csapágyak"
+
+#. js-lingui-explicit-id
+msgid "Drive and chassis"
+msgstr "Meghajtás és vázszerkezet"
+
+#. js-lingui-explicit-id
+msgid "Frame, brackets, and swingarms"
+msgstr "Váz, konzolok és lengőkarok"
+
+#. js-lingui-explicit-id
+msgid "Handlebars and controls"
+msgstr "Kormány és vezérlők"
+
+#. js-lingui-explicit-id
+msgid "Seat"
+msgstr "Ülés"
+
+#. js-lingui-explicit-id
+msgid "Cooling system"
+msgstr "Hűtőrendszer"
+
+#. js-lingui-explicit-id
+msgid "Clutch"
+msgstr "Kuplung"
+
+#. js-lingui-explicit-id
+msgid "Fuel system"
+msgstr "Üzemanyagrendszer"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Fékrendszer"
+
+#. js-lingui-explicit-id
+msgid "Cables and hoses"
+msgstr "Kábelek és tömlők"
+
+#. js-lingui-explicit-id
+msgid "Filters"
+msgstr "Szűrők"
+
+#. js-lingui-explicit-id
+msgid "Chains and sprockets"
+msgstr "Láncok és fogaskerekek"
+
+#. js-lingui-explicit-id
+msgid "Electrical system"
+msgstr "Elektromos rendszer"
+
+#. js-lingui-explicit-id
+msgid "Other motorcycle parts"
+msgstr "Egyéb motorkerékpár alkatrészek"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Motor"
+
+#. js-lingui-explicit-id
+msgid "Exhaust system"
+msgstr "Kipufogórendszer"
+
+#. js-lingui-explicit-id
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Sebességváltó / Kézi és Automata"
+
+#. js-lingui-explicit-id
+msgid "Steering system"
+msgstr "Kormányrendszer"
+
+#. js-lingui-explicit-id
+msgid "Suspension / Chassis"
+msgstr "Rugózás / Váz"
+
+#. js-lingui-explicit-id
+msgid "Body parts"
+msgstr "Karosszéria alkatrészek"
+
+#. js-lingui-explicit-id
+msgid "Interior details"
+msgstr "Belső részletek"
+
+#. js-lingui-explicit-id
+msgid "Air conditioning, heater, ventilation"
+msgstr "Klíma, fűtés, szellőzés"
+
+#. js-lingui-explicit-id
+msgid "Air intake system"
+msgstr "Légszűrő rendszer"
+
+#. js-lingui-explicit-id
+msgid "Ignition system"
+msgstr "Gyújtórendszer"
+
+#. js-lingui-explicit-id
+msgid "Window and headlight cleaning system"
+msgstr "Ablak- és fényszóró tisztító rendszer"
+
+#. js-lingui-explicit-id
+msgid "Headlights and lighting"
+msgstr "Fényszórók és világítás"
+
+#. js-lingui-explicit-id
+msgid "Electrical equipment"
+msgstr "Elektromos felszerelés"
+
+#. js-lingui-explicit-id
+msgid "Automotive glass"
+msgstr "Autóüveg"
+
+#. js-lingui-explicit-id
+msgid "Liquefied gas system"
+msgstr "Folyékony gáz rendszer"
+
+#. js-lingui-explicit-id
+msgid "Other types of spare parts"
+msgstr "Egyéb típusú alkatrészek"
+
+#. js-lingui-explicit-id
+msgid "Name of the {otherName}"
+msgstr "{otherName} neve"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of {min} and a maximum of {max} characters."
+msgstr "A szövegnek legalább {min} és legfeljebb {max} karaktert kell tartalmaznia."
+
+#. js-lingui-explicit-id
+msgid "The place of the {otherName}"
+msgstr "{otherName} helye"
+
+#. js-lingui-explicit-id
+msgid "The location of the {otherName} must be selected."
+msgstr "A(z) {otherName} helyét ki kell választani."
+
+#. js-lingui-explicit-id
+msgid "Date of the {otherName}"
+msgstr "{otherName} dátuma"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "A befejezési dátumnak későbbinek kell lennie, mint a kezdési dátum."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the {otherName}"
+msgstr "Mondja el nekünk a(z) {otherName}-ról"
+
+#. js-lingui-explicit-id
+msgid "Description of the {otherName}"
+msgstr "{otherName} leírása"
+
+#. js-lingui-explicit-id
+msgid "Phone number the {otherName}"
+msgstr "{otherName} telefonszáma"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Kérem, adja meg a telefonszámot"
+
+#. js-lingui-explicit-id
+msgid "Types of {otherName} jobs"
+msgstr "{otherName} munkatípusok"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Kérem, válasszon legalább egy típust"
+
+#. js-lingui-explicit-id
+msgid "Price {otherName}"
+msgstr "{otherName} ára"
+
+#. js-lingui-explicit-id
+msgid "Please enter price for {otherName}"
+msgstr "Kérem, adja meg a(z) {otherName} árát"
+
+#. js-lingui-explicit-id
+msgid "Category {otherName}"
+msgstr "{otherName} kategória"
+
+#. js-lingui-explicit-id
+msgid "Please enter category for {otherName}"
+msgstr "Kérem, adja meg a(z) {otherName} kategóriáját"
+
+#. js-lingui-explicit-id
+msgid "Brand {otherName}"
+msgstr "{otherName} márkája"
+
+#. js-lingui-explicit-id
+msgid "Please enter brand for {otherName}"
+msgstr "Kérem, adja meg a(z) {otherName} márkáját"
+
+#. js-lingui-explicit-id
+msgid "Mileage {otherName}"
+msgstr "{otherName} futásteljesítménye"
+
+#. js-lingui-explicit-id
+msgid "Please enter mileage for {otherName}"
+msgstr "Kérem, adja meg a(z) {otherName} futásteljesítményét"
+
+#. js-lingui-explicit-id
+msgid "Year release {otherName}"
+msgstr "{otherName} gyártási éve"
+
+#. js-lingui-explicit-id
+msgid "Please enter year minimum of {min} and a maximum of {max} for {otherName}"
+msgstr "Kérem, adja meg a(z) {otherName} minimális és maximális {min} és {max} gyártási évet"
+
+#. js-lingui-explicit-id
+msgid "Type fuel {otherName}"
+msgstr "Üzemanyag típusa {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type fuel for {otherName}"
+msgstr "Kérjük, adja meg az üzemanyag típusát a(z) {otherName} számára"
+
+#. js-lingui-explicit-id
+msgid "Type transmission {otherName}"
+msgstr "Váltó típusa {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type transmission for {otherName}"
+msgstr "Kérjük, adja meg a váltó típusát a(z) {otherName} számára"
+
+#. js-lingui-explicit-id
+msgid "Type parts {otherName}"
+msgstr "Alkatrész típusa {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type parts for {otherName}"
+msgstr "Kérjük, adja meg az alkatrész típusát a(z) {otherName} számára"
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Helytelenül bevitt adatok"
+
+#. js-lingui-explicit-id
+msgid "advert"
+msgstr "hirdetés"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Válassza ki a(z) {tabName} lapot"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Esemény létrehozása"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Esemény módosítása"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Műhely létrehozása"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Műhely módosítása"
+
+#. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Hirdetés létrehozása"
+
+#. js-lingui-explicit-id
+msgid "Change advert"
+msgstr "Hirdetés módosítása"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Kérjük, hitelesítő"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Esemény törlése"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Hirdetés törlése"
+
+#. js-lingui-explicit-id
+msgid "Ukraine"
+msgstr "Ukrajna"
+
+#. js-lingui-explicit-id
+msgid "Poland"
+msgstr "Lengyelország"
+
+#. js-lingui-explicit-id
+msgid "Belarus"
+msgstr "Fehéroroszország"
+
+#. js-lingui-explicit-id
+msgid "Lithuania"
+msgstr "Litvánia"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Sajnáljuk, hiba történt"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "A fénykép megváltozott"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Törlés"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Módosítás"
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Karbantartás"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Olajcsere / Szűrőcsere / Hosszúsági szíjcsere / Gyújtógyertya csere / Sebességváltóolaj csere / Fék szerviz / Minden szükséges folyadék csere / Stb."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnosztika"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Teljes körű elővásárlási diagnosztika / Váz diagnosztika / Motor diagnosztika / Sebességváltó diagnosztika / Karosszéria diagnosztika / Számítógép diagnosztika / Folyadék diagnosztika / Stb."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Autó elektromos"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Kábel javítás / Chip tuning / Bármilyen bonyolult riasztó telepítése / Kilométeróra javítás / Kulcs újra programozás / Motor és váltó adaptáció / EGR eltávolítás / DPF eltávolítás / Xenon telepítés / Parkoló szenzorok telepítése / Stb."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Váz javítás"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Rugócsillapító csere / Rugó csere / Vezérlőkar csere / Híd csere / Csendes blokk préselés / Lombszög rugócsere / Agycsere / Láncfűrészlap csere / Tengelycsere / Gömbcsukló csere / Motor és váltó rögzítés csere / Mechanikai munka"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Motor, Automata és Kézi Váltó"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Motor diagnosztika / Motor javítás / Motor csere / Motorolaj lefolyó cseréje / Automata váltó diagnosztika / Automata váltó olajcseréje / Automata váltó csere / Automata váltó tisztítás-öblítés / Kuplung csere / Kézi váltó diagnosztika / Kézi váltó olajcseréje / Kézi váltó csere / Kézi váltó tisztítás-öblítés / Stb."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Fék és Kormánymű"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Fékrendszer diagnosztika / Fékolaj csere / Fékrendszer javítás / Fék légtelenítés / Kormánymű csere / Kormánymű helyreállítás / Szervokormány csere / Szervokormány olaj csere / Stb."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Kiegészítő berendezések"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Indítómotor javítás / Indítómotor csere / Generátor javítás / Generátor csere / Turbofeltöltő helyreállítás / Turbofeltöltő csere / Stb."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Klímarendszer"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnosztika / Töltés / Újratöltés / Szivárgás keresés / Cserélendő cső / Radiátor csere / Kompresszor javítás / Kompresszor csere / Rendszer fertőtlenítés / Idegen szagok eltávolítása"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Kerekek egyenesítése"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Kerek egyenesítés / Egyenesítés diagnosztika / Rugózás hibakeresése / Karosszéria hibakeresése"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Technikai karbantartás"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Kábel kenés / Karburátor szinkronizálás / Légszűrő csere / Gyújtógyertya csere / Sebességváltó olaj csere / Differenciál olaj csere / Hűtőfolyadék csere / Motorolaj csere"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Általános munkák"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Általános diagnosztika / Nyomás mérés / Technikai folyadékszint ellenőrzése / Kuplungkábel csere / Gázkar kábel csere / Üzemanyagtank tisztítása és öblítése / Üzemanyagtartály eltávolítása és felszerelése / Műanyag eltávolítása és felszerelése / Biztonsági ív, csúszda felszerelése"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Váz"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Elülső kerék eltávolítása és felszerelése / Hátsó kerék eltávolítása és felszerelése / Kerékcsapágy csere / Kormányoszlop csapágy beállítás / Kormányoszlop csapágy csere / Első villa eltávolítása és felszerelése / Első villa tömítés csere / Első villa olaj csere / Hátsó lengőkar csapágy csere / Hátsó rugócsillapító csere / Monorugócsillapító csere / Hátsó rugócsillapító javítás"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Hajtó lánc"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Hajtó lánc és fogaskerék csere / Lánc tisztítás, kenés és beállítás / Lánc beállítás, feszítés és kenés"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Eltávolítás és felszerelés / Szelep beállítás / Kuplung csere / Hengerfej javítás / Hosszúsági lánc csere / Dugattyú csoport javítása / Sebességváltó javítása / Motor felújítása"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Elektromos"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Szabályozó relé csere / Generátor csere / Indítómotor csere / Indítómotor javítás / Villanykörte csere / Xenon telepítés / Akkumulátor csere / Akkumulátor töltés"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Tárcsafék betét csere / Dobfék betét csere / Féklégtelenítés / Fékolaj csere / Kombinált fékolaj csere / Féktárcsa csere / Fékmeghajtó javítás"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Műanyag javítás"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Hegesztés / Töredékek helyreállítása / Rögzítőelemek helyreállítása"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Hegesztési munkák"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Elektromos ívhegesztés / Félautomata hegesztés / Argon ívhegesztés"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Hangolás és testreszabás"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Védelmi ív telepítése / Csúszda telepítése / Kipufogórendszer telepítése / Fékrrendszer telepítése / Erősített tömlő telepítése / Xenon telepítés / Motorkerékpár világítás telepítése / Ködlámpa telepítése (FL)"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings sos"
+msgstr "Gomb a menü beállítások bezárásához sos"
+
+#. js-lingui-explicit-id
+msgid "Radius, km:"
+msgstr "Sugár, km:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "SOS jelzés értesítésének be- és kikapcsolása"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Automatikus helyzet érzékelés be- és kikapcsolása"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "A televíziód"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Telefonszám:"
+
+#. js-lingui-explicit-id
+msgid "Add a description"
+msgstr "Leírás hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr "Leírás"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Mégsem"
+
+#. js-lingui-explicit-id
+msgid "On SOS"
+msgstr "SOS-n"
+
+#. js-lingui-explicit-id
+msgid "Check permissions"
+msgstr "Engedélyek ellenőrzése"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Gomb a menübeállítások képernyő bezárásához"
+
+#. js-lingui-explicit-id
+msgid "SOS signal notification"
+msgstr "SOS-jelzés értesítés"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Alkalmazás megosztása"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "Az szolgáltatásról"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Felhasználási feltételek"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Adatvédelmi irányelvek"
+
+#. js-lingui-explicit-id
+msgid "Brand/Make"
+msgstr "Márka/Gyártó"
+
+#. js-lingui-explicit-id
+msgid "Mileage, km:"
+msgstr "Kilométeróra állás, km:"
+
+#. js-lingui-explicit-id
+msgid "Year of release:"
+msgstr "Gyártási év:"
+
+#. js-lingui-explicit-id
+msgid "Cleared:"
+msgstr "Vámmentes:"
+
+#. js-lingui-explicit-id
+msgid "Type fuel"
+msgstr "Üzemanyag típusa"
+
+#. js-lingui-explicit-id
+msgid "Transmission gearbox"
+msgstr "Váltó"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategória"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle brand"
+msgstr "Motorkerékpár márkája"
+
+#. js-lingui-explicit-id
+msgid "Car's make"
+msgstr "Autó gyártója"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Üzemanyag típusa"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Váltó típusa"
+
+#. js-lingui-explicit-id
+msgid "Advert change successfully"
+msgstr "Hirdetés sikeresen módosítva"
+
+#. js-lingui-explicit-id
+msgid "Advert created successfully"
+msgstr "Hirdetés sikeresen létrehozva"
+
+#. js-lingui-explicit-id
+msgid "Error changing advert"
+msgstr "Hiba történt a hirdetés módosításakor"
+
+#. js-lingui-explicit-id
+msgid "Error creating advert"
+msgstr "Hiba történt a hirdetés létrehozásakor"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Hirdetés hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the advert"
+msgstr "Adja meg a hirdetés nevét"
+
+#. js-lingui-explicit-id
+msgid "Advert name"
+msgstr "Hirdetés neve"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "Új"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Használt"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Az árucikk állapota:"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Magánszemély"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Vállalkozás"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Eladó:"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Helyszín"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Válasszon egy várost"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the advert"
+msgstr "Adjon meg leírást a hirdetésről"
+
+#. js-lingui-explicit-id
+msgid "Advert description"
+msgstr "Hirdetés leírása"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Telefonszám*:"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Közzététel"
+
+#. js-lingui-explicit-id
+msgid "Brand"
+msgstr "Márka"
+
+#. js-lingui-explicit-id
+msgid "Condition"
+msgstr "Állapot"
+
+#. js-lingui-explicit-id
+msgid "Seller"
+msgstr "Eladó"
+
+#. js-lingui-explicit-id
+msgid "Mileage"
+msgstr "Kilométeróra állás"
+
+#. js-lingui-explicit-id
+msgid "{mileage} km"
+msgstr "{mileage} km"
+
+#. js-lingui-explicit-id
+msgid "Year of manufacture"
+msgstr "Gyártási év"
+
+#. js-lingui-explicit-id
+msgid "{yearRelease} km"
+msgstr "{yearRelease} km"
+
+#. js-lingui-explicit-id
+msgid "Customs cleared"
+msgstr "Vámmentes"
+
+#. js-lingui-explicit-id
+msgid "Fuel type"
+msgstr "Üzemanyag típusa"
+
+#. js-lingui-explicit-id
+msgid "Transmission"
+msgstr "Váltó"
+
+#. js-lingui-explicit-id
+msgid "Type parts"
+msgstr "Alkatrésztípus"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Szűrő"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Ár, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Autó márka"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "Motorkerékpár márkája"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Motorkerékpár márka"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Szűrés"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "grn"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Kedvenc termék kapcsoló"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Piac"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Adja meg a nevet"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Termék hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "esemény"
+
+#. js-lingui-explicit-id
+msgid "Createt event"
+msgstr "Esemény létrehozása"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Létrehozhat egy eseményt"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Adja meg az esemény nevét"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Esemény neve"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Adja meg az címet"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Az esemény helyszíne"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Az esemény dátuma"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Kezdete"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Befejezése"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Röviden írja le, mi fog történni"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event:"
+msgstr "Meséljen az eseményről:"
+
+#. js-lingui-explicit-id
+msgid "Event address"
+msgstr "Esemény címe"
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Ingyenes"
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Esemény"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Befejezés"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Ár a részvételért"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Az eseményről"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Galéria"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Minden fénykép"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Adja meg a keresendő szöveget"
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Nyomja meg a többi esemény megjelenítéséhez"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Esemény hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Gomb a FaceID regisztráció bezárásához"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 5 and 20 characters"
+msgstr "A név hossza 5 és 20 karakter között legyen"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Regisztráció"
+
+#. js-lingui-explicit-id
+msgid "Name:"
+msgstr "Név:"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Adja meg a nevét"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Mentés"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Később kitöltöm"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Helyzetkapcsoló bekapcsolása"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Válassza ki a várost"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Adatvédelmi irányelvek"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Felhasználási feltételek"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Gomb a TouchID regisztráció bezárásához"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "események"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Gomb a beállítások események képernyő bezárásához"
+
+#. js-lingui-explicit-id
+msgid "My adverts"
+msgstr "Saját hirdetéseim"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Saját műhelyeim"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Műhely hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Saját eseményeim"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Profil beállítása"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "hirdetések"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Gomb a beállítások termékek képernyő bezárásához"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "A fotó hozzáadva"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Profil mentése"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Hiba: profil mentése"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Keresztnév"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Vezetéknév"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Város"
+
+#. js-lingui-explicit-id
+msgid "workshops"
+msgstr "műhelyek"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Gomb a műhelybeállítások képernyő bezárásához"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Nincs információ"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Motorkerékpár"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Autó"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Összes műhely"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Motorkerékpár javítása"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Autó javítása"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "Műhely"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Műhely módosítása sikeres"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Műhely létrehozása sikeres"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Hiba a műhely módosításakor"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Hiba a műhely létrehozásakor"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Adja meg a műhely nevét"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Műhely neve"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Műhely címe"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Adjon meg leírást a műhelyről"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Műhely leírása"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Műhely típusa"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Válasszon típust"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Munkatípusok"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Válassza ki a munkatípusokat"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Írjon az első értékelést"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Értékelés módosítása"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Írjon egy értékelést"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Válassza ki az osztási oldalt"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "A szövegnek minimum 3 és maximum 40 karaktert kell tartalmaznia."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "A szövegnek minimum 10 és maximum 2000 karaktert kell tartalmaznia."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Név"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Műhely"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Műhely típusok"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Távolság, km:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Minden munka"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Munka típusai"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Műhelyek"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Adja meg a műhely nevét vagy a munka típusát"
+
+msgid "{distance} km"
+msgstr "{distance} km"
+
+msgid "About us:"
+msgstr "Rólunk:"
+
+msgid "Access denied"
+msgstr "Hozzáférés megtagadva"
+
+msgid "Access to geolocation in the background mode"
+msgstr "Hozzáférés a háttérben futó helymeghatározáshoz"
+
+msgid "Access to geolocation when using the application"
+msgstr "Hozzáférés a helymeghatározáshoz az alkalmazás használatakor"
+
+msgid "Add advert"
+msgstr "Hirdetés hozzáadása"
+
+msgid "Add event"
+msgstr "Esemény hozzáadása"
+
+msgid "Add workshop"
+msgstr "Műhely hozzáadása"
+
+msgid "All cities"
+msgstr "Összes város"
+
+msgid "All photos"
+msgstr "Összes fénykép"
+
+msgid "Allow"
+msgstr "Engedélyezés"
+
+msgid "Allow Face ID to access the {nameApp} app."
+msgstr "Engedélyezze a Face ID-t a {nameApp} alkalmazáshoz való hozzáféréshez."
+
+msgid "Allow later"
+msgstr "Engedélyezés később"
+
+msgid "Allow login using Face ID"
+msgstr "Bejelentkezés engedélyezése Face ID használatával"
+
+msgid "Allow login using Touch ID"
+msgstr "Bejelentkezés engedélyezése Touch ID használatával"
+
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Engedélyezze a {nameApp} alkalmazásnak a tartózkodási helyem meghatározását"
+
+msgid "Allow Touch ID to access the {nameApp} app."
+msgstr "Engedélyezze a Touch ID-t a {nameApp} alkalmazáshoz való hozzáféréshez."
+
+msgid "and choose the city of residence:"
+msgstr "és válassza ki lakhelyének városát:"
+
+msgid "Are you sure you want to delete?"
+msgstr "Biztosan törölni szeretné?"
+
+msgid "Authorize using:"
+msgstr "Hitelesítés használata:"
+
+msgid "Automatically detect location"
+msgstr "Hely automatikus érzékelése"
+
+msgid "Back"
+msgstr "Vissza"
+
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "A „Folytatás” gombra kattintva elfogadja a {buttonTermsService} és a {buttonPrivacyPolicy} feltételeit"
+
+msgid "By distance:"
+msgstr "Távolság alapján:"
+
+msgid "By number of comments:"
+msgstr "Hozzászólások száma alapján:"
+
+msgid "By rating:"
+msgstr "Értékelés alapján:"
+
+msgid "Call"
+msgstr "Hívás"
+
+msgid "Cheapest"
+msgstr "Legolcsóbb"
+
+msgid "Continue with {typeSocial}"
+msgstr "Folytatás a(z) {typeSocial} használatával"
+
+msgid "Create event"
+msgstr "Esemény létrehozása"
+
+msgid "Currency:"
+msgstr "Pénznem:"
+
+msgid "Dark theme"
+msgstr "Sötét téma"
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "Description"
+msgstr "Leírás"
+
+msgid "Do you want to send an SOS signal?"
+msgstr "Szeretne SOS jelzést küldeni?"
+
+msgid "Error key token: Secret key is not defined in the environment variables"
+msgstr "Hiba a kulcs tokenben: A titkos kulcs nincs definiálva a környezeti változókban"
+
+msgid "Error: Invalid phone number or password"
+msgstr "Hiba: Érvénytelen telefonszám vagy jelszó"
+
+msgid "Error: Invalid token"
+msgstr "Hiba: Érvénytelen token"
+
+msgid "Error: Token expired"
+msgstr "Hiba: Lejárt token"
+
+msgid "Error: User already exists"
+msgstr "Hiba: A felhasználó már létezik"
+
+msgid "Error: User not found"
+msgstr "Hiba: Felhasználó nem található"
+
+msgid "Event"
+msgstr "Esemény"
+
+msgid "Events"
+msgstr "Események"
+
+msgid "from closest to farthest"
+msgstr "a legközelebbitől a legtávolabbiig"
+
+msgid "from highest to lowest"
+msgstr "a legmagasabbtól a legalacsonyabbig"
+
+msgid "Gallery"
+msgstr "Galéria"
+
+msgid "Hello!"
+msgstr "Üdvözöljük!"
+
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Helytelen telefonszám vagy helytelenül választott országkód"
+
+msgid "Internal Server Error"
+msgstr "Belső szerverhiba"
+
+msgid "Language selection"
+msgstr "Nyelvválasztás"
+
+msgid "Latest"
+msgstr "Legújabb"
+
+msgid "Leave a review"
+msgstr "Értékelés hagyása"
+
+msgid "Logout"
+msgstr "Kijelentkezés"
+
+msgid "Main"
+msgstr "Főoldal"
+
+msgid "Map"
+msgstr "Térkép"
+
+msgid "Market"
+msgstr "Piac"
+
+msgid "more detail"
+msgstr "további részletek"
+
+msgid "More events"
+msgstr "További események"
+
+msgid "Most expensive"
+msgstr "Legdrágább"
+
+msgid "Move and change the location"
+msgstr "Mozgatás és hely megváltoztatása"
+
+msgid "My adverts"
+msgstr "Hirdetéseim"
+
+msgid "My events"
+msgstr "Eseményeim"
+
+msgid "My workshops"
+msgstr "Műhelyeim"
+
+msgid "No events have passed"
+msgstr "Nem voltak események"
+
+msgid "Not comments"
+msgstr "Nincsenek hozzászólások"
+
+msgid "Notification of SOS signal"
+msgstr "Értesítés az SOS jelzésről"
+
+msgid "Now"
+msgstr "Most"
+
+msgid "Only with rating:"
+msgstr "Csak értékeléssel:"
+
+msgid "or sign up using:"
+msgstr "vagy regisztráljon a következővel:"
+
+msgid "Participation fee"
+msgstr "Részvételi díj"
+
+msgid "Password must contain at least 8 characters"
+msgstr "A jelszónak legalább 8 karaktert kell tartalmaznia"
+
+msgid "Passwords do not match"
+msgstr "A jelszavak nem egyeznek"
+
+msgid "Past events:"
+msgstr "Korábbi események:"
+
+msgid "Privacy Policy"
+msgstr "Adatvédelmi irányelvek"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Read the whole description..."
+msgstr "Olvassa el az teljes leírást..."
+
+msgid "Registration"
+msgstr "Regisztráció"
+
+msgid "Repair of automobiles"
+msgstr "Autók javítása"
+
+msgid "Repair of motorcycles"
+msgstr "Motorkerékpárok javítása"
+
+msgid "Resend the code"
+msgstr "Kód újraküldése"
+
+msgid "Reviews:"
+msgstr "Értékelések:"
+
+msgid "Select a location on the map"
+msgstr "Válasszon helyet a térképen"
+
+msgid "Settings"
+msgstr "Beállítások"
+
+msgid "Settings and permissions should be enabled"
+msgstr "A beállításoknak és a jogosultságoknak engedélyezve kell lenniük"
+
+msgid "Someone needs help within a {distance} km radius"
+msgstr "Valaki segítségre szorul egy {distance} km-es sugarú körzetben"
+
+msgid "Sorry, but no products were found by the filters"
+msgstr "Sajnáljuk, de a szűrők szerint nem találtunk termékeket"
+
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Sajnáljuk, de a szűrők szerint nem találtunk műhelyeket"
+
+msgid "Sorry, there are no available items"
+msgstr "Sajnáljuk, jelenleg nincsenek elérhető elemek"
+
+msgid "Sorry, there are no upcoming events"
+msgstr "Sajnáljuk, jelenleg nincsenek közelgő események"
+
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Sajnáljuk, jelenleg nincsenek közelgő műhelyek"
+
+msgid "Sorry!"
+msgstr "Sajnáljuk!"
+
+msgid "SOS signal"
+msgstr "SOS jel"
+
+msgid "Terms of Service"
+msgstr "Szolgáltatási feltételek"
+
+msgid "Terms of Use"
+msgstr "Felhasználási feltételek"
+
+msgid "The work we do:"
+msgstr "A végezett munka:"
+
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Az összes szolgáltatás teljes mértékű kihasználásához engedélyeznie kell az alkalmazásnak a tartózkodási helyének meghatározására vonatkozó engedélyt:"
+
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr "Az SOS jelek fogadásához állítsa be a jelek fogadásának sugárát városa központjából:"
+
+msgid "Type workshops"
+msgstr "Műhely típusok"
+
+msgid "Types of work for automobile transport:"
+msgstr "Munkatípusok autós szállításhoz:"
+
+msgid "Types of work for motorcycle transport:"
+msgstr "Munkatípusok motorkerékpár szállításhoz:"
+
+msgid "Upcoming events:"
+msgstr "Közelgő események:"
+
+msgid "Views:"
+msgstr "Megtekintések:"
+
+msgid "We recommend filling out the profile information"
+msgstr "Ajánljuk, hogy töltse ki a profilinformációkat"
+
+msgid "We're glad to see you on our service."
+msgstr "Örömmel látjuk Önt a szolgáltatásunkon."
+
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "Milyen platformra szeretné elküldeni az alkalmazás telepítési meghívóját?"
+
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr "Automatikusan kikapcsol 20-30 perc után"
+
+msgid "Workshop"
+msgstr "Műhely"
+
+msgid "Workshops"
+msgstr "Műhelyek"
+
+msgid "Write"
+msgstr "Írjon"
+
+msgid "You don't have {typeItem}."
+msgstr "Nincs {typeItem}-je."
+
+msgid "Your contact information"
+msgstr "Az Ön elérhetőségi adatai"
+
+msgid "Your location"
+msgstr "Az Ön helyzete"

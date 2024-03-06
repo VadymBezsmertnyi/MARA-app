@@ -1,0 +1,1685 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-03-06 14:15+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: fi\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Lisää kuva"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Ensimmäinen kuva tulee mainoksen kanteen."
+
+#. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Kirjoita etsittävä teksti"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Paina ja syötä etsiäksesi kaupunkia"
+
+#. js-lingui-explicit-id
+msgid "Select"
+msgstr "Valitse"
+
+#. js-lingui-explicit-id
+msgid "km"
+msgstr "km"
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Sijaintia ei ole otettu käyttöön"
+
+#. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Kuva {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Painike modaalisen ikkunan sulkemiseksi"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Pääkuva"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Tee pääkuvaksi"
+
+#. js-lingui-explicit-id
+msgid "Choose a city:"
+msgstr "Valitse kaupunki:"
+
+#. js-lingui-explicit-id
+msgid "Select the city {cityName}"
+msgstr "Valitse kaupunki {cityName}"
+
+#. js-lingui-explicit-id
+msgid "If you have selected a city, press to confirm"
+msgstr "Jos olet valinnut kaupungin, paina vahvistaaksesi"
+
+#. js-lingui-explicit-id
+msgid "Decrease the maximum number"
+msgstr "Vähennä enimmäismäärää"
+
+#. js-lingui-explicit-id
+msgid "Increase the maximum number"
+msgstr "Lisää enimmäismäärää"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Vaihda näytä-valikko"
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Kyllä"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Ei"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the locality"
+msgstr "Kirjoita paikkakunnan nimi"
+
+#. js-lingui-explicit-id
+msgid "Kyiv"
+msgstr "Kiova"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Kirjoita tarkka osoite"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Itsenaistyntie, 1"
+
+#. js-lingui-explicit-id
+msgid "Select country"
+msgstr "Valitse maa"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Jatka"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Takaisin"
+
+#. js-lingui-explicit-id
+msgid "Select country {nameCountry}"
+msgstr "Valitse maa {nameCountry}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameRegion}"
+msgstr "Valitse alue {nameRegion}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameCity}"
+msgstr "Valitse alue {nameCity}"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Valitse työtyyppi auto {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Valitse työtyyppi moto {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto"
+msgstr "Valitse työtyyppi moto"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto"
+msgstr "Valitse työtyyppi auto"
+
+#. js-lingui-explicit-id
+msgid "Background overlay for closing the modal window"
+msgstr "Taustapäällyste modaalisen ikkunan sulkemiseksi"
+
+#. js-lingui-explicit-id
+msgid "The price of the item"
+msgstr "Kohteen hinta"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Vahvista"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle transport"
+msgstr "Moottoripyörän kuljetus"
+
+#. js-lingui-explicit-id
+msgid "Car transport"
+msgstr "Auton kuljetus"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle parts"
+msgstr "Moottoripyörän osat"
+
+#. js-lingui-explicit-id
+msgid "Car parts"
+msgstr "Auton osat"
+
+#. js-lingui-explicit-id
+msgid "Gasoline"
+msgstr "Bensiini"
+
+#. js-lingui-explicit-id
+msgid "Diesel"
+msgstr "Diesel"
+
+#. js-lingui-explicit-id
+msgid "Gas / Petrol"
+msgstr "Kaasu / Bensiini"
+
+#. js-lingui-explicit-id
+msgid "Electric"
+msgstr "Sähkö"
+
+#. js-lingui-explicit-id
+msgid "Hybrid"
+msgstr "Hybridi"
+
+#. js-lingui-explicit-id
+msgid "Other"
+msgstr "Muu"
+
+#. js-lingui-explicit-id
+msgid "Manual"
+msgstr "Manuaalinen"
+
+#. js-lingui-explicit-id
+msgid "Automatic"
+msgstr "Automaattinen"
+
+#. js-lingui-explicit-id
+msgid "Continuously variable transmission (CVT)"
+msgstr "Jatkuvasti muuttuva vaihteisto (CVT)"
+
+#. js-lingui-explicit-id
+msgid "Adaptive"
+msgstr "Mukautuva"
+
+#. js-lingui-explicit-id
+msgid "Tiptronic"
+msgstr "Tiptronic"
+
+#. js-lingui-explicit-id
+msgid "Batteries"
+msgstr "Paristot"
+
+#. js-lingui-explicit-id
+msgid "Shock absorbers and suspension"
+msgstr "Iskunvaimentimet ja jousitus"
+
+#. js-lingui-explicit-id
+msgid "Variators and reducers"
+msgstr "Muuttajat ja vähentäjät"
+
+#. js-lingui-explicit-id
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Pakoputkistot, suorat putket, äänenvaimentimet"
+
+#. js-lingui-explicit-id
+msgid "Engine parts"
+msgstr "Moottorin osat"
+
+#. js-lingui-explicit-id
+msgid "Gearbox"
+msgstr "Vaihteisto"
+
+#. js-lingui-explicit-id
+msgid "Footrests and pedals"
+msgstr "Jalkatuet ja polkimet"
+
+#. js-lingui-explicit-id
+msgid "Lighting and lamps"
+msgstr "Valaistus ja lamput"
+
+#. js-lingui-explicit-id
+msgid "Bearings"
+msgstr "Laakerit"
+
+#. js-lingui-explicit-id
+msgid "Drive and chassis"
+msgstr "Veto ja alusta"
+
+#. js-lingui-explicit-id
+msgid "Frame, brackets, and swingarms"
+msgstr "Runko, kiinnikkeet ja keinuvivut"
+
+#. js-lingui-explicit-id
+msgid "Handlebars and controls"
+msgstr "Ohjaustangot ja hallintalaitteet"
+
+#. js-lingui-explicit-id
+msgid "Seat"
+msgstr "Penkki"
+
+#. js-lingui-explicit-id
+msgid "Cooling system"
+msgstr "Jäähdytysjärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Clutch"
+msgstr "Kytkin"
+
+#. js-lingui-explicit-id
+msgid "Fuel system"
+msgstr "Polttoainejärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Jarrujärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Cables and hoses"
+msgstr "Kaapelit ja letkut"
+
+#. js-lingui-explicit-id
+msgid "Filters"
+msgstr "Suodattimet"
+
+#. js-lingui-explicit-id
+msgid "Chains and sprockets"
+msgstr "Ketjut ja hammaspyörät"
+
+#. js-lingui-explicit-id
+msgid "Electrical system"
+msgstr "Sähköjärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Other motorcycle parts"
+msgstr "Muut moottoripyörän osat"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Moottori"
+
+#. js-lingui-explicit-id
+msgid "Exhaust system"
+msgstr "Pakoputkisto"
+
+#. js-lingui-explicit-id
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Vaihteisto / Käsivalintainen ja Automaattivaihteisto"
+
+#. js-lingui-explicit-id
+msgid "Steering system"
+msgstr "Ohjausjärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Suspension / Chassis"
+msgstr "Jousitus / Alusta"
+
+#. js-lingui-explicit-id
+msgid "Body parts"
+msgstr "Korinosat"
+
+#. js-lingui-explicit-id
+msgid "Interior details"
+msgstr "Sisäosien yksityiskohdat"
+
+#. js-lingui-explicit-id
+msgid "Air conditioning, heater, ventilation"
+msgstr "Ilmastointi, lämmitin, ilmanvaihto"
+
+#. js-lingui-explicit-id
+msgid "Air intake system"
+msgstr "Ilmanottojärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Ignition system"
+msgstr "Sytytysjärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Window and headlight cleaning system"
+msgstr "Ikkunan ja ajovalojen puhdistusjärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Headlights and lighting"
+msgstr "Ajovalot ja valaistus"
+
+#. js-lingui-explicit-id
+msgid "Electrical equipment"
+msgstr "Sähkövarusteet"
+
+#. js-lingui-explicit-id
+msgid "Automotive glass"
+msgstr "Autolasit"
+
+#. js-lingui-explicit-id
+msgid "Liquefied gas system"
+msgstr "Nestekaasujärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Other types of spare parts"
+msgstr "Muut varaosatyypit"
+
+#. js-lingui-explicit-id
+msgid "Name of the {otherName}"
+msgstr "Nimi {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of {min} and a maximum of {max} characters."
+msgstr "Tekstin on oltava vähintään {min} ja enintään {max} merkkiä pitkä."
+
+#. js-lingui-explicit-id
+msgid "The place of the {otherName}"
+msgstr "{otherName} sijainti"
+
+#. js-lingui-explicit-id
+msgid "The location of the {otherName} must be selected."
+msgstr "{otherName} sijainti on valittava."
+
+#. js-lingui-explicit-id
+msgid "Date of the {otherName}"
+msgstr "{otherName} päivämäärä"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "Päättymispäivämäärän on oltava suurempi kuin alkupäivämäärä."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the {otherName}"
+msgstr "Kerro meille {otherName} asiasta"
+
+#. js-lingui-explicit-id
+msgid "Description of the {otherName}"
+msgstr "{otherName} kuvaus"
+
+#. js-lingui-explicit-id
+msgid "Phone number the {otherName}"
+msgstr "{otherName} puhelinnumero"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Syötä puhelinnumero"
+
+#. js-lingui-explicit-id
+msgid "Types of {otherName} jobs"
+msgstr "{otherName} työn tyypit"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Valitse vähintään yksi tyyppi"
+
+#. js-lingui-explicit-id
+msgid "Price {otherName}"
+msgstr "{otherName} hinta"
+
+#. js-lingui-explicit-id
+msgid "Please enter price for {otherName}"
+msgstr "Syötä hinta {otherName} "
+
+#. js-lingui-explicit-id
+msgid "Category {otherName}"
+msgstr "{otherName} luokka"
+
+#. js-lingui-explicit-id
+msgid "Please enter category for {otherName}"
+msgstr "Syötä luokka {otherName} "
+
+#. js-lingui-explicit-id
+msgid "Brand {otherName}"
+msgstr "{otherName} merkki"
+
+#. js-lingui-explicit-id
+msgid "Please enter brand for {otherName}"
+msgstr "Syötä merkki {otherName} "
+
+#. js-lingui-explicit-id
+msgid "Mileage {otherName}"
+msgstr "{otherName} ajomatka"
+
+#. js-lingui-explicit-id
+msgid "Please enter mileage for {otherName}"
+msgstr "Syötä ajomatka {otherName} "
+
+#. js-lingui-explicit-id
+msgid "Year release {otherName}"
+msgstr "{otherName} julkaisuvuosi"
+
+#. js-lingui-explicit-id
+msgid "Please enter year minimum of {min} and a maximum of {max} for {otherName}"
+msgstr "Syötä {otherName} vähintään {min} ja enintään {max} julkaisuvuosi"
+
+#. js-lingui-explicit-id
+msgid "Type fuel {otherName}"
+msgstr "{otherName} polttoainetyyppi"
+
+#. js-lingui-explicit-id
+msgid "Please enter type fuel for {otherName}"
+msgstr "Syötä polttoainetyyppi {otherName} "
+
+#. js-lingui-explicit-id
+msgid "Type transmission {otherName}"
+msgstr "{otherName} vaihdetyyppi"
+
+#. js-lingui-explicit-id
+msgid "Please enter type transmission for {otherName}"
+msgstr "Syötä vaihdetyyppi {otherName} "
+
+#. js-lingui-explicit-id
+msgid "Type parts {otherName}"
+msgstr "{otherName} osan tyyppi"
+
+#. js-lingui-explicit-id
+msgid "Please enter type parts for {otherName}"
+msgstr "Syötä osan tyyppi {otherName} "
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Virheellisesti syötetty tieto"
+
+#. js-lingui-explicit-id
+msgid "advert"
+msgstr "mainos"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Valitse välilehti {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Luo tapahtuma"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Muuta tapahtumaa"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Luo työpaja"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Muuta työpajaa"
+
+#. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Luo mainos"
+
+#. js-lingui-explicit-id
+msgid "Change advert"
+msgstr "Muuta mainosta"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Ole hyvä ja tunnistaudu"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Poista tapahtuma"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Mainoksen poistaminen"
+
+#. js-lingui-explicit-id
+msgid "Ukraine"
+msgstr "Ukraina"
+
+#. js-lingui-explicit-id
+msgid "Poland"
+msgstr "Puola"
+
+#. js-lingui-explicit-id
+msgid "Belarus"
+msgstr "Valko-Venäjä"
+
+#. js-lingui-explicit-id
+msgid "Lithuania"
+msgstr "Liettua"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Pahoittelut, tapahtui virhe"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Kuva on vaihdettu"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Poista"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Muuta"
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Huolto"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Öljynvaihto / Suodattimen vaihto / Jakohihnan vaihto / Sytytystulpan vaihto / Vaihteistoöljyn vaihto / Jarruhuolto / Kaikkien tarpeellisten nesteiden vaihto / Jne."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnostiikka"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Kattava ennakkodiagnostiikka / Alustan diagnostiikka / Moottorin diagnostiikka / Vaihteiston diagnostiikka / Korin diagnostiikka / Tietokoneen diagnostiikka / Nesteiden diagnostiikka / Jne."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Auton sähköjärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Johtojen korjaus / Sirun viritys / Minkä tahansa monimutkaisuuden hälytyksen asennus / Mittariston korjaus / Avainten uudelleenohjelmointi / Moottorin ja vaihteiston sovitus / EGR-poisto / DPF-poisto / Xenon-asennus / Pysäköintianturien asennus / Jne."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Alustan korjaus"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Iskunvaimentimen jousen vaihto / Jousen vaihto / Ohjausvarren vaihto / Palkin vaihto / Hiljaisen lohkon puristus / Lehtijousen vaihto / Napin vaihto / Sahalohkon vaihto / Akselin vaihto / Pallonivelen vaihto / Moottorin ja vaihteiston kiinnikkeiden vaihto / Mekaaninen työ"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Moottori, automaattivaihteisto ja manuaalivaihteisto"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Moottorin diagnostiikka / Moottorin korjaus / Moottorin vaihto / Moottorin öljynpannun vaihto / Automaattivaihteiston diagnostiikka / Automaattivaihteiston öljynvaihto / Automaattivaihteiston vaihto / Automaattivaihteiston puhdistus-huuhtelu / Kytkimen vaihto / Käsivalintaisen vaihteiston diagnostiikka / Käsivalintaisen vaihteiston öljynvaihto / Käsivalintaisen vaihteiston vaihto / Käsivalintaisen vaihteiston puhdistus-huuhtelu / Jne."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Jarrut ja ohjausjärjestelmä"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Jarrujärjestelmän diagnostiikka / Jarrunesteiden vaihto / Jarrujärjestelmän korjaus / Jarrujärjestelmän ilmanpoisto / Ohjaustangon vaihto / Ohjaustangon entisöinti / Ohjaustehostimen vaihto / Ohjaustehostimen nesteen vaihto / Jne."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Varusteet"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Käynnistimen korjaus / Käynnistimen vaihto / Generaattorin korjaus / Generaattorin vaihto / Turbopuhaltimen entisöinti / Turbopuhaltimen vaihto / Jne."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Ilmastointijärjestelmät"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostiikka / Lataus / Uudelleenlataus / Vuodon havaitseminen / Putkien vaihto / Säiliön vaihto / Kompressorin korjaus / Kompressorin vaihto / Järjestelmän desinfiointi / Ulkomaisten hajujen poistaminen"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Pyöränsuuntaus"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Pyörän suuntaus / Suuntauksen diagnostiikka / Jousituksen vikojen etsintä / Korin vikojen etsintä"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Tekninen huolto"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Kaapelin voitelu / Kaasuttimen synkronointi / Ilmansuodattimen vaihto / Sytytystulppien vaihto / Vaihteistoöljyn vaihto / Differentiaalin öljynvaihto / Jäähdytysnesteen vaihto / Moottoriöljyn vaihto"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Yleiset työt"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Yleinen vianmääritys / Puristusmittaus / Teknisen nestetason tarkistus / Kytkinkaapelin vaihto / Kaasuvaijerin vaihto / Polttoainesäiliön puhdistus ja huuhtelu / Polttoainesäiliön poisto ja asennus / Muovin poisto ja asennus / Turvakaaren, liukusäätimen asennus"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Alusta"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Etupyörän irrotus ja asennus / Takapyörän irrotus ja asennus / Pyöränlaakerin vaihto / Ohjaustangon laakerin säätö / Ohjaustangon laakerin vaihto / Etuhaarukan irrotus ja asennus / Etuhaarukan tiivisteen vaihto / Etuhaarukan öljynvaihto / Takahaarukan laakerin vaihto / Takaiskunvaimentimen vaihto / Monotukivaimentimen vaihto / Takaiskunvaimentimen korjaus"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Vetoketju"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Vetoketjun ja hammaspyörän vaihto / Ketjun puhdistus, voitelu ja säätö / Ketjun säätö, kiristys ja voitelu"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Irrotus ja asennus / Venttiilien säätö / Kytkimen vaihto / Sylinterikannen korjaus / Ajoituksen ketjun vaihto / Mäntäryhmän korjaus / Vaihteiston korjaus / Moottorin kokonaiskorjaus"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Sähköjärjestelmät"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Säädin releen vaihto / Vaihtovirtalaitteen vaihto / Käynnistimen vaihto / Käynnistimen korjaus / Lampun vaihto / Xenonin asennus / Akun vaihto / Akun lataus"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Jarrupalan vaihto levyjarruun / Jarrupalan vaihto rumpujarruun / Jarrujen ilmanpoisto / Jarrunesteen vaihto / Yhdistetyn jarrunesteen vaihto / Jarruletkun vaihto / Vahvistetun letkun asennus / Jarrulevyn vaihto / Jarrusatulan korjaus"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Muovin korjaus"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Hitsaus / fragmenttien palautus / kiinnittimien palautus"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Hitsaustyöt"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Sähkökaarihitsaus / Puoliautomaattinen hitsaus / Argonkaarihitsaus"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Viritäminen ja muokkaaminen"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Suojakaaren asennus / Liukusäätimen asennus / Pakoputkiston asennus / Jarrujärjestelmän asennus / Vahvistetun letkun asennus / Xenonin asennus / Moottoripyörän valaistuksen asennus / Sumuvalojen asennus (FL)"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings sos"
+msgstr "Painike valikon asetusten sulkemiseen SOS"
+
+#. js-lingui-explicit-id
+msgid "Radius, km:"
+msgstr "Säde, km:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "Vaihda SOS-signaalin ilmoitusta"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Vaihda automaattista sijainnin tunnistusta"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "Sinun telegramisi"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Puhelinnumero:"
+
+#. js-lingui-explicit-id
+msgid "Add a description"
+msgstr "Lisää kuvaus"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr "Kuvaus"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Peruuta"
+
+#. js-lingui-explicit-id
+msgid "On SOS"
+msgstr "Hätätilanteessa"
+
+#. js-lingui-explicit-id
+msgid "Check permissions"
+msgstr "Tarkista käyttöoikeudet"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Painike valikon asetusnäytön sulkemiseen"
+
+#. js-lingui-explicit-id
+msgid "SOS signal notification"
+msgstr "SOS-signaalin ilmoitus"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Jaa sovellus"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "Tietoa palvelusta"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Käyttöehdot"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Yksityisyydensuoja"
+
+#. js-lingui-explicit-id
+msgid "Brand/Make"
+msgstr "Merkki/Tyyppi"
+
+#. js-lingui-explicit-id
+msgid "Mileage, km:"
+msgstr "Ajomäärä, km:"
+
+#. js-lingui-explicit-id
+msgid "Year of release:"
+msgstr "Julkaisuvuosi:"
+
+#. js-lingui-explicit-id
+msgid "Cleared:"
+msgstr "Tyhjennetty:"
+
+#. js-lingui-explicit-id
+msgid "Type fuel"
+msgstr "Polttoainetyyppi"
+
+#. js-lingui-explicit-id
+msgid "Transmission gearbox"
+msgstr "Vaihdelaatikko"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Luokka"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle brand"
+msgstr "Moottoripyörän merkki"
+
+#. js-lingui-explicit-id
+msgid "Car's make"
+msgstr "Auton merkki"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Polttoainetyyppi"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Vaihdelaatikon tyyppi"
+
+#. js-lingui-explicit-id
+msgid "Advert change successfully"
+msgstr "Mainoksen muutos onnistui"
+
+#. js-lingui-explicit-id
+msgid "Advert created successfully"
+msgstr "Mainoksen luominen onnistui"
+
+#. js-lingui-explicit-id
+msgid "Error changing advert"
+msgstr "Virhe mainoksen muuttamisessa"
+
+#. js-lingui-explicit-id
+msgid "Error creating advert"
+msgstr "Virhe mainoksen luomisessa"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Lisää mainos"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the advert"
+msgstr "Syötä mainoksen nimi"
+
+#. js-lingui-explicit-id
+msgid "Advert name"
+msgstr "Mainoksen nimi"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "Uusi"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Käytetty"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Tavaroiden tila:"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Yksityishenkilö"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Yritys"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Myyjä:"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Sijainti"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Valitse kaupunki"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the advert"
+msgstr "Lisää kuvaus mainoksesta"
+
+#. js-lingui-explicit-id
+msgid "Advert description"
+msgstr "Mainoksen kuvaus"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Puhelinnumero*:"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Julkaise"
+
+#. js-lingui-explicit-id
+msgid "Brand"
+msgstr "Merkki"
+
+#. js-lingui-explicit-id
+msgid "Condition"
+msgstr "Kunto"
+
+#. js-lingui-explicit-id
+msgid "Seller"
+msgstr "Myyjä"
+
+#. js-lingui-explicit-id
+msgid "Mileage"
+msgstr "Ajomäärä"
+
+#. js-lingui-explicit-id
+msgid "{mileage} km"
+msgstr "{mileage} km"
+
+#. js-lingui-explicit-id
+msgid "Year of manufacture"
+msgstr "Valmistusvuosi"
+
+#. js-lingui-explicit-id
+msgid "{yearRelease} km"
+msgstr "{yearRelease} km"
+
+#. js-lingui-explicit-id
+msgid "Customs cleared"
+msgstr "Tulli tyhjennetty"
+
+#. js-lingui-explicit-id
+msgid "Fuel type"
+msgstr "Polttoainetyyppi"
+
+#. js-lingui-explicit-id
+msgid "Transmission"
+msgstr "Vaihdelaatikko"
+
+#. js-lingui-explicit-id
+msgid "Type parts"
+msgstr "Osatyyppi"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Suodatin"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Hinta, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Auton merkki"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "Moottoripyörän merkki"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Moottoripyörän merkki"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Suodatus"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "grn"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Vaihda tuotteen tykkäystä"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Markkina"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Syötä nimi"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Lisää tuote"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "tapahtuma"
+
+#. js-lingui-explicit-id
+msgid "Createt event"
+msgstr "Tapahtuma luotu"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Voit luoda tapahtuman"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Syötä tapahtuman nimi"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Tapahtuman nimi"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Syötä osoite"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Tapahtumapaikka"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Tapahtuman päivämäärä"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Alku"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Lopetus"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Kuvaile lyhyesti, mitä tapahtuu"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event:"
+msgstr "Kerro tapahtumasta:"
+
+#. js-lingui-explicit-id
+msgid "Event address"
+msgstr "Tapahtuman osoite"
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Ilmainen"
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Tapahtuma"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Loppu"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Hinta osallistumiselle"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Tietoja tapahtumasta"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Galleria"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Kaikki kuvat"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Syötä etsittävä teksti"
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Paina näyttääksesi lisää tapahtumia"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Lisää tapahtuma"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Painike sulkeaksesi rekisteröinnin FaceID"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 5 and 20 characters"
+msgstr "Nimen pituuden tulee olla 5–20 merkkiä"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Rekisteröinti"
+
+#. js-lingui-explicit-id
+msgid "Name:"
+msgstr "Nimi:"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Syötä nimesi"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Tallenna"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Täytä myöhemmin"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Vaihda sijaintiasi"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Valitse kaupunki"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Yksityisyyskäytäntö"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Käyttöehdot"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Painike sulkeaksesi rekisteröinnin TouchID"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "tapahtumat"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Painike sulkemaan asetusten tapahtumanäyttö"
+
+#. js-lingui-explicit-id
+msgid "My adverts"
+msgstr "Omat ilmoitukset"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Omat työpajat"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Lisää työpaja"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Omat tapahtumat"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Profiilin asetukset"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "ilmoitukset"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Painike sulkemaan asetusten tuote-näyttö"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Kuva lisätty"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Tallenna profiili"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Virhe: tallenna profiili"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Etunimi"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Sukunimi"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Kaupunki"
+
+#. js-lingui-explicit-id
+msgid "workshops"
+msgstr "työpajat"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Painike sulkemaan asetusten työpaja-näyttö"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Ei tietoja"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Moto"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Auto"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Kaikki työpajat"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Moottoripyörien korjaus"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Autojen korjaus"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "työpaja"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Työpajan vaihto onnistui"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Työpajan luominen onnistui"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Virhe työpajan vaihtamisessa"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Virhe työpajan luomisessa"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Syötä työpajan nimi"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Työpajan nimi"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Työpajan osoite"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Lisää kuvaus työpajasta"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Työpajan kuvaus"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Työpajan tyyppi"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Valitse tyyppi"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Työtyypit"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Valitse työtyypit"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Laadi ensimmäinen arvostelu"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Muuta arvostelua"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Kirjoita arvostelu"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Valitse jaettava sivu"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Tekstin tulee olla vähintään 3 ja enintään 40 merkkiä pitkä."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Tekstin tulee olla vähintään 10 ja enintään 2000 merkkiä pitkä."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Nimi"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Työpaja"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Työpajojen tyyppi"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Etäisyys, km:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Kaikki työt"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Työtyyppi"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Työpajat"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Syötä työpajan nimi tai työn tyyppi"
+
+msgid "{distance} km"
+msgstr "{distance} km"
+
+msgid "About us:"
+msgstr "Tietoa meistä:"
+
+msgid "Access denied"
+msgstr "Pääsy estetty"
+
+msgid "Access to geolocation in the background mode"
+msgstr "Pääsy sijaintiin taustatilassa"
+
+msgid "Access to geolocation when using the application"
+msgstr "Pääsy sijaintiin sovelluksen käytön aikana"
+
+msgid "Add advert"
+msgstr "Lisää ilmoitus"
+
+msgid "Add event"
+msgstr "Lisää tapahtuma"
+
+msgid "Add workshop"
+msgstr "Lisää työpaja"
+
+msgid "All cities"
+msgstr "Kaikki kaupungit"
+
+msgid "All photos"
+msgstr "Kaikki valokuvat"
+
+msgid "Allow"
+msgstr "Salli"
+
+msgid "Allow Face ID to access the {nameApp} app."
+msgstr "Salli Face ID:n käyttö {nameApp}-sovelluksessa."
+
+msgid "Allow later"
+msgstr "Salli myöhemmin"
+
+msgid "Allow login using Face ID"
+msgstr "Salli kirjautuminen Face ID:llä"
+
+msgid "Allow login using Touch ID"
+msgstr "Salli kirjautuminen Touch ID:llä"
+
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Salli {nameApp}-sovelluksen määrittää sijaintini"
+
+msgid "Allow Touch ID to access the {nameApp} app."
+msgstr "Salli Touch ID:n käyttö {nameApp}-sovelluksessa."
+
+msgid "and choose the city of residence:"
+msgstr "ja valitse asuinkaupunki:"
+
+msgid "Are you sure you want to delete?"
+msgstr "Haluatko varmasti poistaa?"
+
+msgid "Authorize using:"
+msgstr "Valtuuta käyttämällä:"
+
+msgid "Automatically detect location"
+msgstr "Tunnista sijainti automaattisesti"
+
+msgid "Back"
+msgstr "Takaisin"
+
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "Klikkaamalla \"Jatka\"-painiketta hyväksyt {buttonTermsService} ja {buttonPrivacyPolicy}"
+
+msgid "By distance:"
+msgstr "Etäisyyden mukaan:"
+
+msgid "By number of comments:"
+msgstr "Kommenttien määrän mukaan:"
+
+msgid "By rating:"
+msgstr "Arvostelun mukaan:"
+
+msgid "Call"
+msgstr "Soita"
+
+msgid "Cheapest"
+msgstr "Halvin"
+
+msgid "Continue with {typeSocial}"
+msgstr "Jatka {typeSocial}-tilillä"
+
+msgid "Create event"
+msgstr "Luo tapahtuma"
+
+msgid "Currency:"
+msgstr "Valuutta:"
+
+msgid "Dark theme"
+msgstr "Tumma teema"
+
+msgid "Delete"
+msgstr "Poista"
+
+msgid "Description"
+msgstr "Kuvaus"
+
+msgid "Do you want to send an SOS signal?"
+msgstr "Haluatko lähettää SOS-signaalin?"
+
+msgid "Error key token: Secret key is not defined in the environment variables"
+msgstr "Virhe avaintokenissa: Salainen avain ei ole määritetty ympäristömuuttujissa"
+
+msgid "Error: Invalid phone number or password"
+msgstr "Virhe: Virheellinen puhelinnumero tai salasana"
+
+msgid "Error: Invalid token"
+msgstr "Virhe: Virheellinen tunniste"
+
+msgid "Error: Token expired"
+msgstr "Virhe: Tunniste vanhentunut"
+
+msgid "Error: User already exists"
+msgstr "Virhe: Käyttäjä on jo olemassa"
+
+msgid "Error: User not found"
+msgstr "Virhe: Käyttäjää ei löydy"
+
+msgid "Event"
+msgstr "Tapahtuma"
+
+msgid "Events"
+msgstr "Tapahtumat"
+
+msgid "from closest to farthest"
+msgstr "lähimmästä kauimpaan"
+
+msgid "from highest to lowest"
+msgstr "korkeimmasta matalimpaan"
+
+msgid "Gallery"
+msgstr "Kuvagalleria"
+
+msgid "Hello!"
+msgstr "Hei!"
+
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Virheellinen puhelinnumero tai valittu maakoodi"
+
+msgid "Internal Server Error"
+msgstr "Sisäinen palvelinvirhe"
+
+msgid "Language selection"
+msgstr "Kielen valinta"
+
+msgid "Latest"
+msgstr "Viimeisimmät"
+
+msgid "Leave a review"
+msgstr "Jätä arvostelu"
+
+msgid "Logout"
+msgstr "Kirjaudu ulos"
+
+msgid "Main"
+msgstr "Pääsivu"
+
+msgid "Map"
+msgstr "Kartta"
+
+msgid "Market"
+msgstr "Markkinat"
+
+msgid "more detail"
+msgstr "lisätietoja"
+
+msgid "More events"
+msgstr "Lisää tapahtumia"
+
+msgid "Most expensive"
+msgstr "Kallein"
+
+msgid "Move and change the location"
+msgstr "Liiku ja vaihda sijaintia"
+
+msgid "My adverts"
+msgstr "Omat ilmoitukset"
+
+msgid "My events"
+msgstr "Omat tapahtumat"
+
+msgid "My workshops"
+msgstr "Omat työpajat"
+
+msgid "No events have passed"
+msgstr "Ei kuluneita tapahtumia"
+
+msgid "Not comments"
+msgstr "Ei kommentteja"
+
+msgid "Notification of SOS signal"
+msgstr "Ilmoitus SOS-signaalista"
+
+msgid "Now"
+msgstr "Nyt"
+
+msgid "Only with rating:"
+msgstr "Vain arvostellut:"
+
+msgid "or sign up using:"
+msgstr "tai rekisteröidy käyttäen:"
+
+msgid "Participation fee"
+msgstr "Osallistumismaksu"
+
+msgid "Password must contain at least 8 characters"
+msgstr "Salasanan on oltava vähintään 8 merkkiä pitkä"
+
+msgid "Passwords do not match"
+msgstr "Salasanat eivät täsmää"
+
+msgid "Past events:"
+msgstr "Menneet tapahtumat:"
+
+msgid "Privacy Policy"
+msgstr "Yksityisyyskäytäntö"
+
+msgid "Profile"
+msgstr "Profiili"
+
+msgid "Read the whole description..."
+msgstr "Lue koko kuvaus..."
+
+msgid "Registration"
+msgstr "Rekisteröityminen"
+
+msgid "Repair of automobiles"
+msgstr "Autojen korjaus"
+
+msgid "Repair of motorcycles"
+msgstr "Moottoripyörien korjaus"
+
+msgid "Resend the code"
+msgstr "Lähetä koodi uudelleen"
+
+msgid "Reviews:"
+msgstr "Arvostelut:"
+
+msgid "Select a location on the map"
+msgstr "Valitse sijainti kartalta"
+
+msgid "Settings"
+msgstr "Asetukset"
+
+msgid "Settings and permissions should be enabled"
+msgstr "Asetukset ja käyttöoikeudet on otettava käyttöön"
+
+msgid "Someone needs help within a {distance} km radius"
+msgstr "Joku tarvitsee apua {distance} km säteellä"
+
+msgid "Sorry, but no products were found by the filters"
+msgstr "Anteeksi, mutta suodattimilla ei löydy tuotteita"
+
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Valitettavasti suodattimilla ei löydy työpajoja"
+
+msgid "Sorry, there are no available items"
+msgstr "Pahoittelut, mutta mitään saatavilla olevia kohteita ei ole"
+
+msgid "Sorry, there are no upcoming events"
+msgstr "Pahoittelut, tulevia tapahtumia ei ole"
+
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Pahoittelut, tulevia työpajoja ei ole"
+
+msgid "Sorry!"
+msgstr "Pahoittelut!"
+
+msgid "SOS signal"
+msgstr "SOS-signaali"
+
+msgid "Terms of Service"
+msgstr "Palveluehdot"
+
+msgid "Terms of Use"
+msgstr "Käyttöehdot"
+
+msgid "The work we do:"
+msgstr "Teemme seuraavaa:"
+
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Voit käyttää kaikkia sovelluksen ominaisuuksia, kun annat sovellukselle luvan sijaintisi määrittämiseen:"
+
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr "Aseta SOS-signaalin vastaanottosäde kaupungin keskipisteestä:"
+
+msgid "Type workshops"
+msgstr "Työpajojen tyyppi"
+
+msgid "Types of work for automobile transport:"
+msgstr "Työtyypit autoliikenteelle:"
+
+msgid "Types of work for motorcycle transport:"
+msgstr "Työtyypit moottoripyöräliikenteelle:"
+
+msgid "Upcoming events:"
+msgstr "Tulevat tapahtumat:"
+
+msgid "Views:"
+msgstr "Näkymät:"
+
+msgid "We recommend filling out the profile information"
+msgstr "Suosittelemme profiilitietojen täyttämistä"
+
+msgid "We're glad to see you on our service."
+msgstr "Olemme iloisia nähdessämme sinut palvelussamme."
+
+msgid "Welcome"
+msgstr "Tervetuloa"
+
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "Mihin alustalle haluat lähettää sovelluskutsun?"
+
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr "Sulkeutuu automaattisesti 20-30 minuutin kuluttua"
+
+msgid "Workshop"
+msgstr "Työpaja"
+
+msgid "Workshops"
+msgstr "Työpajat"
+
+msgid "Write"
+msgstr "Kirjoita"
+
+msgid "You don't have {typeItem}."
+msgstr "Sinulla ei ole {typeItem}."
+
+msgid "Your contact information"
+msgstr "Yhteystietosi"
+
+msgid "Your location"
+msgstr "Sijaintisi"

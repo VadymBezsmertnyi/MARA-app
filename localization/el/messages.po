@@ -1,0 +1,1685 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-03-06 14:15+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: el\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Προσθέστε μια φωτογραφία"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Η πρώτη φωτογραφία θα είναι στο εξώφυλλο της διαφήμισης."
+
+#. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Εισαγάγετε κείμενο για αναζήτηση"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Πατήστε και εισάγετε για αναζήτηση πόλης"
+
+#. js-lingui-explicit-id
+msgid "Select"
+msgstr "Επιλέξτε"
+
+#. js-lingui-explicit-id
+msgid "km"
+msgstr "χλμ"
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Η τοποθεσία δεν είναι ενεργοποιημένη"
+
+#. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Φωτογραφία {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Κουμπί για κλείσιμο του παραθύρου modal"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Κύρια φωτογραφία"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Κάντε την κύρια φωτογραφία"
+
+#. js-lingui-explicit-id
+msgid "Choose a city:"
+msgstr "Επιλέξτε μια πόλη:"
+
+#. js-lingui-explicit-id
+msgid "Select the city {cityName}"
+msgstr "Επιλέξτε την πόλη {cityName}"
+
+#. js-lingui-explicit-id
+msgid "If you have selected a city, press to confirm"
+msgstr "Αν έχετε επιλέξει μια πόλη, πατήστε για επιβεβαίωση"
+
+#. js-lingui-explicit-id
+msgid "Decrease the maximum number"
+msgstr "Μειώστε το μέγιστο αριθμό"
+
+#. js-lingui-explicit-id
+msgid "Increase the maximum number"
+msgstr "Αυξήστε το μέγιστο αριθμό"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Εναλλαγή εμφάνισης μενού"
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Ναι"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Όχι"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the locality"
+msgstr "Εισαγάγετε το όνομα της τοποθεσίας"
+
+#. js-lingui-explicit-id
+msgid "Kyiv"
+msgstr "Κίεβο"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Εισαγάγετε την ακριβή διεύθυνση"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Οδός Ανεξαρτησίας, 1"
+
+#. js-lingui-explicit-id
+msgid "Select country"
+msgstr "Επιλέξτε χώρα"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Συνέχεια"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Πίσω"
+
+#. js-lingui-explicit-id
+msgid "Select country {nameCountry}"
+msgstr "Επιλέξτε χώρα {nameCountry}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameRegion}"
+msgstr "Επιλέξτε περιοχή {nameRegion}"
+
+#. js-lingui-explicit-id
+msgid "Select region {nameCity}"
+msgstr "Επιλέξτε περιοχή {nameCity}"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Επιλέξτε τύπο εργασίας αυτοκινήτου {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Επιλέξτε τύπο εργασίας μοτο {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Select type work moto"
+msgstr "Επιλέξτε τύπο εργασίας μοτο"
+
+#. js-lingui-explicit-id
+msgid "Select type work auto"
+msgstr "Επιλέξτε τύπο εργασίας αυτοκινήτου"
+
+#. js-lingui-explicit-id
+msgid "Background overlay for closing the modal window"
+msgstr "Υπόβαθρο επικάλυψης για το κλείσιμο του παραθύρου modal"
+
+#. js-lingui-explicit-id
+msgid "The price of the item"
+msgstr "Η τιμή του αντικειμένου"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Επιβεβαιώστε"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle transport"
+msgstr "Μεταφορά μοτοσικλετών"
+
+#. js-lingui-explicit-id
+msgid "Car transport"
+msgstr "Μεταφορά αυτοκινήτων"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle parts"
+msgstr "Ανταλλακτικά μοτοσικλετών"
+
+#. js-lingui-explicit-id
+msgid "Car parts"
+msgstr "Ανταλλακτικά αυτοκινήτων"
+
+#. js-lingui-explicit-id
+msgid "Gasoline"
+msgstr "Βενζίνη"
+
+#. js-lingui-explicit-id
+msgid "Diesel"
+msgstr "Πετρέλαιο"
+
+#. js-lingui-explicit-id
+msgid "Gas / Petrol"
+msgstr "Αέριο / Πετρέλαιο"
+
+#. js-lingui-explicit-id
+msgid "Electric"
+msgstr "Ηλεκτρικό"
+
+#. js-lingui-explicit-id
+msgid "Hybrid"
+msgstr "Υβριδικό"
+
+#. js-lingui-explicit-id
+msgid "Other"
+msgstr "Άλλο"
+
+#. js-lingui-explicit-id
+msgid "Manual"
+msgstr "Χειροκίνητο"
+
+#. js-lingui-explicit-id
+msgid "Automatic"
+msgstr "Αυτόματο"
+
+#. js-lingui-explicit-id
+msgid "Continuously variable transmission (CVT)"
+msgstr "Συνεχώς μεταβλητή μετάδοση (CVT)"
+
+#. js-lingui-explicit-id
+msgid "Adaptive"
+msgstr "Προσαρμοστικό"
+
+#. js-lingui-explicit-id
+msgid "Tiptronic"
+msgstr "Τιπτρονικό"
+
+#. js-lingui-explicit-id
+msgid "Batteries"
+msgstr "Μπαταρίες"
+
+#. js-lingui-explicit-id
+msgid "Shock absorbers and suspension"
+msgstr "Αμορτισέρ και ανάρτηση"
+
+#. js-lingui-explicit-id
+msgid "Variators and reducers"
+msgstr "Μεταβλητές και μειωτές"
+
+#. js-lingui-explicit-id
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Συστήματα εξάτμισης, ευθείες σωληνώσεις, εξατμιστές"
+
+#. js-lingui-explicit-id
+msgid "Engine parts"
+msgstr "Ανταλλακτικά κινητήρα"
+
+#. js-lingui-explicit-id
+msgid "Gearbox"
+msgstr "Κιβώτιο ταχυτήτων"
+
+#. js-lingui-explicit-id
+msgid "Footrests and pedals"
+msgstr "Ποδοστηρίων και πεντάλ"
+
+#. js-lingui-explicit-id
+msgid "Lighting and lamps"
+msgstr "Φωτισμός και λάμπες"
+
+#. js-lingui-explicit-id
+msgid "Bearings"
+msgstr "Ρουλεμάν"
+
+#. js-lingui-explicit-id
+msgid "Drive and chassis"
+msgstr "Κίνηση και σασί"
+
+#. js-lingui-explicit-id
+msgid "Frame, brackets, and swingarms"
+msgstr "Πλαίσιο, βραχίονες και αιωρούμενα χέρια"
+
+#. js-lingui-explicit-id
+msgid "Handlebars and controls"
+msgstr "Τιμόνια και ελέγχου"
+
+#. js-lingui-explicit-id
+msgid "Seat"
+msgstr "Κάθισμα"
+
+#. js-lingui-explicit-id
+msgid "Cooling system"
+msgstr "Σύστημα ψύξης"
+
+#. js-lingui-explicit-id
+msgid "Clutch"
+msgstr "Συμπλέκτης"
+
+#. js-lingui-explicit-id
+msgid "Fuel system"
+msgstr "Σύστημα καυσίμου"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Σύστημα φρένων"
+
+#. js-lingui-explicit-id
+msgid "Cables and hoses"
+msgstr "Καλώδια και σωλήνες"
+
+#. js-lingui-explicit-id
+msgid "Filters"
+msgstr "Φίλτρα"
+
+#. js-lingui-explicit-id
+msgid "Chains and sprockets"
+msgstr "Αλυσίδες και γρανάζια"
+
+#. js-lingui-explicit-id
+msgid "Electrical system"
+msgstr "Ηλεκτρικό σύστημα"
+
+#. js-lingui-explicit-id
+msgid "Other motorcycle parts"
+msgstr "Άλλα ανταλλακτικά μοτοσικλετών"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Κινητήρας"
+
+#. js-lingui-explicit-id
+msgid "Exhaust system"
+msgstr "Σύστημα εξάτμισης"
+
+#. js-lingui-explicit-id
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Μετάδοση / Χειροκίνητη και Αυτόματη μετάδοση"
+
+#. js-lingui-explicit-id
+msgid "Steering system"
+msgstr "Σύστημα διεύθυνσης"
+
+#. js-lingui-explicit-id
+msgid "Suspension / Chassis"
+msgstr "Ανάρτηση / Σασί"
+
+#. js-lingui-explicit-id
+msgid "Body parts"
+msgstr "Ανταλλακτικά σώματος"
+
+#. js-lingui-explicit-id
+msgid "Interior details"
+msgstr "Εσωτερικά στοιχεία"
+
+#. js-lingui-explicit-id
+msgid "Air conditioning, heater, ventilation"
+msgstr "Κλιματισμός, θερμαντήρας, εξαερισμός"
+
+#. js-lingui-explicit-id
+msgid "Air intake system"
+msgstr "Σύστημα εισαγωγής αέρα"
+
+#. js-lingui-explicit-id
+msgid "Ignition system"
+msgstr "Σύστημα ανάφλεξης"
+
+#. js-lingui-explicit-id
+msgid "Window and headlight cleaning system"
+msgstr "Σύστημα καθαρισμού παραθύρων και φανοστατών"
+
+#. js-lingui-explicit-id
+msgid "Headlights and lighting"
+msgstr "Φανάρια και φωτισμός"
+
+#. js-lingui-explicit-id
+msgid "Electrical equipment"
+msgstr "Ηλεκτρικός εξοπλισμός"
+
+#. js-lingui-explicit-id
+msgid "Automotive glass"
+msgstr "Αυτοκινητικά τζάμια"
+
+#. js-lingui-explicit-id
+msgid "Liquefied gas system"
+msgstr "Σύστημα υγροποιημένου αερίου"
+
+#. js-lingui-explicit-id
+msgid "Other types of spare parts"
+msgstr "Άλλοι τύποι ανταλλακτικών"
+
+#. js-lingui-explicit-id
+msgid "Name of the {otherName}"
+msgstr "Όνομα του {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of {min} and a maximum of {max} characters."
+msgstr "Το κείμενο πρέπει να περιέχει τουλάχιστον {min} και το πολύ {max} χαρακτήρες."
+
+#. js-lingui-explicit-id
+msgid "The place of the {otherName}"
+msgstr "Η τοποθεσία του {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The location of the {otherName} must be selected."
+msgstr "Η τοποθεσία του {otherName} πρέπει να επιλεγεί."
+
+#. js-lingui-explicit-id
+msgid "Date of the {otherName}"
+msgstr "Ημερομηνία του {otherName}"
+
+#. js-lingui-explicit-id
+msgid "The end date must be greater than the start date."
+msgstr "Η ημερομηνία λήξης πρέπει να είναι μεγαλύτερη από την ημερομηνία έναρξης."
+
+#. js-lingui-explicit-id
+msgid "Tell us about the {otherName}"
+msgstr "Πείτε μας για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Description of the {otherName}"
+msgstr "Περιγραφή του {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Phone number the {otherName}"
+msgstr "Τηλέφωνο επικοινωνίας του {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter phone number"
+msgstr "Παρακαλώ εισάγετε τον αριθμό τηλεφώνου"
+
+#. js-lingui-explicit-id
+msgid "Types of {otherName} jobs"
+msgstr "Τύποι εργασιών {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please select at least one type"
+msgstr "Παρακαλώ επιλέξτε τουλάχιστον έναν τύπο"
+
+#. js-lingui-explicit-id
+msgid "Price {otherName}"
+msgstr "Τιμή {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter price for {otherName}"
+msgstr "Παρακαλώ εισάγετε τιμή για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Category {otherName}"
+msgstr "Κατηγορία {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter category for {otherName}"
+msgstr "Παρακαλώ εισάγετε κατηγορία για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Brand {otherName}"
+msgstr "Μάρκα {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter brand for {otherName}"
+msgstr "Παρακαλώ εισάγετε μάρκα για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Mileage {otherName}"
+msgstr "Χιλιομετρητής {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter mileage for {otherName}"
+msgstr "Παρακαλώ εισάγετε χιλιομετρητή για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Year release {otherName}"
+msgstr "Έτος κυκλοφορίας {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter year minimum of {min} and a maximum of {max} for {otherName}"
+msgstr "Παρακαλώ εισάγετε έτος, τουλάχιστον {min} και το πολύ {max} για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type fuel {otherName}"
+msgstr "Τύπος καυσίμου {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type fuel for {otherName}"
+msgstr "Παρακαλώ εισάγετε τύπο καυσίμου για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type transmission {otherName}"
+msgstr "Τύπος μετάδοσης {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type transmission for {otherName}"
+msgstr "Παρακαλώ εισάγετε τύπο μετάδοσης για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Type parts {otherName}"
+msgstr "Τύπος ανταλλακτικών {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please enter type parts for {otherName}"
+msgstr "Παρακαλώ εισάγετε τύπο ανταλλακτικών για το {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Incorrectly entered data"
+msgstr "Εισάχθηκαν λανθασμένα δεδομένα"
+
+#. js-lingui-explicit-id
+msgid "advert"
+msgstr "διαφήμιση"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Επιλογή καρτέλας {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Δημιουργία εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Αλλαγή εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Δημιουργία εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Αλλαγή εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Δημιουργία διαφήμισης"
+
+#. js-lingui-explicit-id
+msgid "Change advert"
+msgstr "Αλλαγή διαφήμισης"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Παρακαλώ ελέγξτε τον ταυτοποιητή"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Διαγραφή εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Διαγραφή διαφήμισης"
+
+#. js-lingui-explicit-id
+msgid "Ukraine"
+msgstr "Ουκρανία"
+
+#. js-lingui-explicit-id
+msgid "Poland"
+msgstr "Πολωνία"
+
+#. js-lingui-explicit-id
+msgid "Belarus"
+msgstr "Λευκορωσία"
+
+#. js-lingui-explicit-id
+msgid "Lithuania"
+msgstr "Λιθουανία"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Λυπούμαστε, προέκυψε σφάλμα"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Η φωτογραφία άλλαξε"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Αλλαγή"
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Συντήρηση"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Αλλαγή λαδιού / Αντικατάσταση φίλτρου / Αντικατάσταση ζώνης χρονισμού / Αντικατάσταση μπουζιών / Αλλαγή λαδιού μετάδοσης / Σέρβις φρένων / Αντικατάσταση όλων των απαραίτητων υγρών / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Διαγνωστικά"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Ολοκληρωμένο διαγνωστικό πριν την αγορά / Διαγνωστικό συστήματος ανάρτησης / Διαγνωστικό κινητήρα / Διαγνωστικό μετάδοσης / Διαγνωστικό σώματος / Διαγνωστικό υπολογιστή / Διαγνωστικό υγρών / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Αυτοκίνητο ηλεκτρικό"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Επισκευή καλωδίωσης / Ρύθμιση τσιπ / Εγκατάσταση συστήματος συναγερμού οποιασδήποτε πολυπλοκότητας / Διόρθωση οδομέτρου / Επαναπρογραμματισμός κλειδιού / Προσαρμογή κινητήρα και μετάδοσης / Αφαίρεση EGR / Αφαίρεση DPF / Εγκατάσταση ξενόν / Εγκατάσταση αισθητήρων στάθμευσης / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Επισκευή ανάρτησης"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Αντικατάσταση αμορτισέρ / Αντικατάσταση ελατηρίου / Αντικατάσταση ράβδου ελέγχου / Αντικατάσταση δέματος / Αντικατάσταση αθόρυβου τύπου / Αντικατάσταση φύλλων ελατηρίου / Αντικατάσταση πλήμνης / Αντικατάσταση δίσκου πριονιού / Αντικατάσταση άξονα / Αντικατάσταση σφαιρικού κοχλία / Αντικατάσταση βάσης κινητήρα και μετάδοσης / Μηχανική εργασία"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Κινητήρας, Αυτόματο, και Χειροκίνητο Κιβώτιο Ταχυτήτων"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Διαγνωστικό κινητήρα / Επισκευή κινητήρα / Αντικατάσταση κινητήρα / Αντικατάσταση βανού λαδιού κινητήρα / Διαγνωστικό αυτόματου κιβωτίου ταχυτήτων / Αλλαγή λαδιού αυτόματου κιβωτίου ταχυτήτων / Αντικατάσταση αυτόματου κιβωτίου ταχυτήτων / Καθαρισμός-ξέπλυμα αυτόματου κιβωτίου ταχυτήτων / Αντικατάσταση συμπλέκτη / Διαγνωστικό χειροκίνητου κιβωτίου ταχυτήτων / Αλλαγή λαδιού χειροκίνητου κιβωτίου ταχυτήτων / Αντικατάσταση χειροκίνητου κιβωτίου ταχυτήτων / Καθαρισμός-ξέπλυμα χειροκίνητου κιβωτίου ταχυτήτων / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Συστήματα φρένων και διεύθυνσης"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Διαγνωστικό συστήματος φρένων / Αντικατάσταση υγρού φρένων / Επισκευή συστήματος φρένων / Εκκένωση φρένων / Αντικατάσταση ρακέτας διεύθυνσης / Ανακατασκευή ρακέτας διεύθυνσης / Αντικατάσταση υδραυλικού τιμονιού / Αντικατάσταση υγρού υδραυλικού τιμονιού / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Εξοπλισμός αξεσουάρ"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Επισκευή εκκινητήρα / Αντικατάσταση εκκινητήρα / Επισκευή γεννήτριας / Αντικατάσταση γεννήτριας / Ανακατασκευή τουρμπίνας / Αντικατάσταση τουρμπίνας / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Συστήματα κλιματισμού"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Διαγνωστικό / Φόρτιση / Επαναφόρτιση / Εντοπισμός διαρροής / Αντικατάσταση σωλήνα / Αντικατάσταση ψυγείου / Επισκευή συμπιεστή / Αντικατάσταση συμπιεστή / Απολύμανση συστήματος / Απομάκρυνση ξένων οσμών"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Ευθυγράμμιση τροχών"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Ευθυγράμμιση τροχών / Διαγνωστικό ευθυγράμμισης / Αναζήτηση ελαττωμάτων ανάρτησης / Αναζήτηση ελαττωμάτων σώματος"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Τεχνική συντήρηση"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Λίπανση καλωδίου / Συγχρονισμός καρμπυρατέρ / Αντικατάσταση φίλτρου αέρα / Αντικατάσταση μπουζιών / Αλλαγή λαδιού μετάδοσης / Αλλαγή λαδιού διαφορικού / Αντικατάσταση ψυκτικού υγρού / Αλλαγή λαδιού κινητήρα"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Γενικές εργασίες"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Γενικό διαγνωστικό / Μέτρηση συμπίεσης / Έλεγχος επιπέδου τεχνικών υγρών / Αντικατάσταση καλωδίου συμπλέκτη / Αντικατάσταση καλωδίου γκαζιού / Καθαρισμός και ξέπλυμα δεξαμενής καυσίμου / Αφαίρεση και εγκατάσταση δεξαμενής καυσίμου / Αφαίρεση και εγκατάσταση πλαστικού / Εγκατάσταση τόξου ασφάλειας, ρυθμιστής"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Ανάρτηση"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Αφαίρεση και εγκατάσταση μπροστινού τροχού / Αφαίρεση και εγκατάσταση πίσω τροχού / Αντικατάσταση ρουλεμάν τροχού / Ρύθμιση ρουλεμάν στήλης διεύθυνσης / Αντικατάσταση ρουλεμάν στήλης διεύθυνσης / Αφαίρεση και εγκατάσταση πιρούνι μπροστινού τροχού / Αντικατάσταση σφραγίδας πιρουνιού μπροστινού τροχού / Αλλαγή λαδιού πιρουνιού μπροστινού τροχού / Αντικατάσταση ρουλεμάν αρμού πίσω σιαγώνας / Αντικατάσταση αμορτισέρ πίσω / Αντικατάσταση μονοαμορτισέρ / Επισκευή αμορτισέρ πίσω"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Αλυσίδα κίνησης"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Αντικατάσταση αλυσίδας κίνησης και γραναζιού / Καθαρισμός, λίπανση και ρύθμιση αλυσίδας / Ρύθμιση, τάση και λίπανση αλυσίδας"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Αφαίρεση και εγκατάσταση / Ρύθμιση βαλβίδων / Αντικατάσταση συμπλέκτη / Επισκευή κεφαλής κυλίνδρου / Αντικατάσταση αλυσίδας χρονισμού / Επισκευή ομάδας εμβόλων / Επισκευή κιβωτίου ταχυτήτων / Ανακατασκευή κινητήρα"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Ηλεκτρικά"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Αντικατάσταση ρελέ ρυθμιστή / Αντικατάσταση γεννήτρας / Αντικατάσταση εκκινητή / Επισκευή εκκινητή / Αντικατάσταση λάμπας / Εγκατάσταση ξενόν / Αντικατάσταση μπαταρίας / Φόρτιση μπαταρίας"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Αντικατάσταση πλακέτων δισκόφρενου / Αντικατάσταση πλακέτων ταμπούρου / Αποπίεση φρένων / Αντικατάσταση υγρού φρένων / Συνδυασμένη αντικατάσταση υγρού φρένων / Αντικατάσταση σωλήνα φρένων / Εγκατάσταση ενισχυμένου σωλήνα / Αντικατάσταση δίσκου φρένων / Επισκευή μοχλού φρένων"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Επισκευή πλαστικού"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Συγκόλληση/ανάκτηση κομματιών/ανάκτηση ενίσχυσης"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Εργασίες συγκόλλησης"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Ηλεκτρική συγκόλληση με ακόνη / Ημιαυτόματη συγκόλληση / Ηλεκτρική συγκόλληση αργονίου"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Ρύθμιση και προσαρμογή"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Εγκατάσταση προστατευτικής καμπάνας / Εγκατάσταση διακλαδωτής / Εγκατάσταση εξατμίσεων / Εγκατάσταση συστήματος φρένων / Εγκατάσταση ενισχυμένου σωλήνα / Εγκατάσταση ξενόν / Εγκατάσταση φωτισμού μοτοσικλέτας / Εγκατάσταση φανών ομίχλης (FL)"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings sos"
+msgstr "Κουμπί για κλείσιμο του μενού ρυθμίσεων SOS"
+
+#. js-lingui-explicit-id
+msgid "Radius, km:"
+msgstr "Ακτίνα, χλμ:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "Εναλλαγή ειδοποίησης σήματος SOS"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Εναλλαγή αυτόματης ανίχνευσης τοποθεσίας"
+
+#. js-lingui-explicit-id
+msgid "@fgt_com"
+msgstr "@fgt_com"
+
+#. js-lingui-explicit-id
+msgid "Your telegram"
+msgstr "Το τηλέγραφός σας"
+
+#. js-lingui-explicit-id
+msgid "Phone number:"
+msgstr "Αριθμός τηλεφώνου:"
+
+#. js-lingui-explicit-id
+msgid "Add a description"
+msgstr "Προσθήκη περιγραφής"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr "Περιγραφή"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#. js-lingui-explicit-id
+msgid "On SOS"
+msgstr "Σε κατάσταση έκτακτης ανάγκης"
+
+#. js-lingui-explicit-id
+msgid "Check permissions"
+msgstr "Έλεγχος δικαιωμάτων"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων μενού"
+
+#. js-lingui-explicit-id
+msgid "SOS signal notification"
+msgstr "Ειδοποίηση σήματος έκτακτης ανάγκης"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Κοινοποίηση εφαρμογής"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "Σχετικά με την υπηρεσία"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Όροι χρήσης"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Πολιτική απορρήτου"
+
+#. js-lingui-explicit-id
+msgid "Brand/Make"
+msgstr "Μάρκα/Κατασκευαστής"
+
+#. js-lingui-explicit-id
+msgid "Mileage, km:"
+msgstr "Χιλιόμετρα, km:"
+
+#. js-lingui-explicit-id
+msgid "Year of release:"
+msgstr "Έτος κυκλοφορίας:"
+
+#. js-lingui-explicit-id
+msgid "Cleared:"
+msgstr "Καθαρισμένο:"
+
+#. js-lingui-explicit-id
+msgid "Type fuel"
+msgstr "Τύπος καυσίμου"
+
+#. js-lingui-explicit-id
+msgid "Transmission gearbox"
+msgstr "Κιβώτιο ταχυτήτων"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Κατηγορία"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle brand"
+msgstr "Μάρκα μοτοσυκλέτας"
+
+#. js-lingui-explicit-id
+msgid "Car's make"
+msgstr "Κατασκευαστής αυτοκινήτου"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Τύπος καυσίμου"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Τύπος μετάδοσης"
+
+#. js-lingui-explicit-id
+msgid "Advert change successfully"
+msgstr "Η αγγελία αλλάχθηκε με επιτυχία"
+
+#. js-lingui-explicit-id
+msgid "Advert created successfully"
+msgstr "Η αγγελία δημιουργήθηκε με επιτυχία"
+
+#. js-lingui-explicit-id
+msgid "Error changing advert"
+msgstr "Σφάλμα κατά την αλλαγή της αγγελίας"
+
+#. js-lingui-explicit-id
+msgid "Error creating advert"
+msgstr "Σφάλμα κατά τη δημιουργία της αγγελίας"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Προσθήκη αγγελίας"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the advert"
+msgstr "Εισαγωγή ονόματος της αγγελίας"
+
+#. js-lingui-explicit-id
+msgid "Advert name"
+msgstr "Όνομα αγγελίας"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "Νέο"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Χρησιμοποιημένο"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Η κατάσταση του αγαθού:"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Ιδιώτης"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Επιχείρηση"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Πωλητής:"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Τοποθεσία"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Επιλέξτε πόλη"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the advert"
+msgstr "Προσθήκη περιγραφής για την αγγελία"
+
+#. js-lingui-explicit-id
+msgid "Advert description"
+msgstr "Περιγραφή αγγελίας"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Τηλεφωνικός αριθμός*:"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Δημοσίευση"
+
+#. js-lingui-explicit-id
+msgid "Brand"
+msgstr "Μάρκα"
+
+#. js-lingui-explicit-id
+msgid "Condition"
+msgstr "Κατάσταση"
+
+#. js-lingui-explicit-id
+msgid "Seller"
+msgstr "Πωλητής"
+
+#. js-lingui-explicit-id
+msgid "Mileage"
+msgstr "Χιλιομετρητής"
+
+#. js-lingui-explicit-id
+msgid "{mileage} km"
+msgstr "{mileage} χλμ"
+
+#. js-lingui-explicit-id
+msgid "Year of manufacture"
+msgstr "Έτος κατασκευής"
+
+#. js-lingui-explicit-id
+msgid "{yearRelease} km"
+msgstr "{yearRelease} χλμ"
+
+#. js-lingui-explicit-id
+msgid "Customs cleared"
+msgstr "Καθαρισμένο από τελωνείο"
+
+#. js-lingui-explicit-id
+msgid "Fuel type"
+msgstr "Τύπος καυσίμου"
+
+#. js-lingui-explicit-id
+msgid "Transmission"
+msgstr "Μετάδοση"
+
+#. js-lingui-explicit-id
+msgid "Type parts"
+msgstr "Τύπος εξαρτημάτων"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Φίλτρο"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Τιμή, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Κατασκευαστής αυτοκινήτου"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "Μάρκα μοτοσυκλέτας"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Μάρκα μοτοσυκλέτας"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Φιλτράρισμα"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "grn"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Εναλλαγή σαν προϊόν"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Αγορά"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Εισαγωγή ονόματος"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Προσθήκη προϊόντος"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Createt event"
+msgstr "Δημιουργία εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Μπορείτε να δημιουργήσετε μια εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Εισαγωγή ονόματος της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Όνομα της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Εισαγωγή διεύθυνσης"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Τοποθεσία της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Ημερομηνία της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Η αρχή"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Συμπέρασμα"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Περιγράψτε σύντομα τι θα συμβεί"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event:"
+msgstr "Πείτε μας για την εκδήλωση:"
+
+#. js-lingui-explicit-id
+msgid "Event address"
+msgstr "Διεύθυνση εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Δωρεάν"
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Τέλος"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Τιμή για συμμετοχή"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Σχετικά με την εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Γκαλερί"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Όλες οι φωτογραφίες"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Εισαγωγή κειμένου για αναζήτηση"
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Πατήστε για εμφάνιση περισσότερων εκδηλώσεων"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Προσθήκη εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Κουμπί για κλείσιμο εγγραφής FaceID"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 5 and 20 characters"
+msgstr "Το μήκος του ονόματος πρέπει να είναι μεταξύ 5 και 20 χαρακτήρων"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Εγγραφή"
+
+#. js-lingui-explicit-id
+msgid "Name:"
+msgstr "Όνομα:"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Εισαγωγή ονόματος σας"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Συμπλήρωση αργότερα"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Εναλλαγή τοποθεσίας σας"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Επιλογή πόλης"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Πολιτική Απορρήτου"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Όροι Χρήσης"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Κουμπί για κλείσιμο εγγραφής TouchID"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "εκδηλώσεις"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εκδηλώσεων"
+
+#. js-lingui-explicit-id
+msgid "My adverts"
+msgstr "Οι αγγελίες μου"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Τα εργαστήριά μου"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Προσθήκη εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Οι εκδηλώσεις μου"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Ρύθμιση προφίλ"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "αγγελίες"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων προϊόντων"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Η φωτογραφία προστέθηκε"
+
+#. js-lingui-explicit-id
+msgid "Save profile"
+msgstr "Αποθήκευση προφίλ"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Σφάλμα: αποθήκευση προφίλ"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Όνομα"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Επώνυμο"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Πόλη"
+
+#. js-lingui-explicit-id
+msgid "workshops"
+msgstr "εργαστήρια"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εργαστηρίων"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Χωρίς πληροφορίες"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Μοτο"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Αυτοκίνητο"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Όλα τα εργαστήρια"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Επισκευή μοτοσικλετών"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Επισκευή αυτοκινήτων"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "εργαστήριο"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Το εργαστήριο άλλαξε με επιτυχία"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Το εργαστήριο δημιουργήθηκε με επιτυχία"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Σφάλμα κατά την αλλαγή του εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Σφάλμα κατά τη δημιουργία του εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Εισάγετε το όνομα του εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Όνομα εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Διεύθυνση εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Προσθέστε μια περιγραφή για το εργαστήριο"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Περιγραφή εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Τύπος εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Επιλέξτε τύπο"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Τύποι εργασίας"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Επιλέξτε τύπους εργασίας"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Προετοιμάστε την πρώτη αναθεώρηση"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Αλλαγή μιας αναθεώρησης"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Γράψτε μια αναθεώρηση"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Επιλέξτε σελίδα κοινοποίησης"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Το κείμενο πρέπει να περιέχει τουλάχιστον 3 και το πολύ 40 χαρακτήρες."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Το κείμενο πρέπει να περιέχει τουλάχιστον 10 και το πολύ 2000 χαρακτήρες."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Όνομα"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Εργαστήρι"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Τύποι εργαστηρίων"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Απόσταση, χιλιόμετρα:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Όλες οι εργασίες"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Τύποι εργασίας"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Εργαστήρια"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Εισάγετε το όνομα του εργαστηρίου ή τον τύπο της εργασίας"
+
+msgid "{distance} km"
+msgstr "{distance} χλμ"
+
+msgid "About us:"
+msgstr "Σχετικά με εμάς:"
+
+msgid "Access denied"
+msgstr "Άρνηση πρόσβασης"
+
+msgid "Access to geolocation in the background mode"
+msgstr "Πρόσβαση στη γεωγραφική τοποθεσία στη λειτουργία φόντου"
+
+msgid "Access to geolocation when using the application"
+msgstr "Πρόσβαση στη γεωγραφική τοποθεσία κατά τη χρήση της εφαρμογής"
+
+msgid "Add advert"
+msgstr "Προσθήκη διαφήμισης"
+
+msgid "Add event"
+msgstr "Προσθήκη εκδήλωσης"
+
+msgid "Add workshop"
+msgstr "Προσθήκη εργαστηρίου"
+
+msgid "All cities"
+msgstr "Όλες οι πόλεις"
+
+msgid "All photos"
+msgstr "Όλες οι φωτογραφίες"
+
+msgid "Allow"
+msgstr "Να επιτραπεί"
+
+msgid "Allow Face ID to access the {nameApp} app."
+msgstr "Επιτρέψτε στο Face ID να έχει πρόσβαση στην εφαρμογή {nameApp}."
+
+msgid "Allow later"
+msgstr "Να επιτραπεί αργότερα"
+
+msgid "Allow login using Face ID"
+msgstr "Να επιτραπεί η σύνδεση χρησιμοποιώντας το Face ID"
+
+msgid "Allow login using Touch ID"
+msgstr "Να επιτραπεί η σύνδεση χρησιμοποιώντας το Touch ID"
+
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Να επιτραπεί στην εφαρμογή {nameApp} να προσδιορίσει την τοποθεσία μου"
+
+msgid "Allow Touch ID to access the {nameApp} app."
+msgstr "Επιτρέψτε στο Touch ID να έχει πρόσβαση στην εφαρμογή {nameApp}."
+
+msgid "and choose the city of residence:"
+msgstr "και επιλέξτε την πόλη διαμονής σας:"
+
+msgid "Are you sure you want to delete?"
+msgstr "Είστε σίγουρος ότι θέλετε να διαγράψετε;"
+
+msgid "Authorize using:"
+msgstr "Εξουσιοδοτήστε χρησιμοποιώντας:"
+
+msgid "Automatically detect location"
+msgstr "Ανίχνευση τοποθεσίας αυτόματα"
+
+msgid "Back"
+msgstr "Πίσω"
+
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "Κάνοντας κλικ στο κουμπί \"Συνέχεια\", συμφωνείτε με τους {buttonTermsService} και {buttonPrivacyPolicy}"
+
+msgid "By distance:"
+msgstr "Κατά απόσταση:"
+
+msgid "By number of comments:"
+msgstr "Κατά αριθμό σχολίων:"
+
+msgid "By rating:"
+msgstr "Βαθμολογία κατά:"
+
+msgid "Call"
+msgstr "Κλήση"
+
+msgid "Cheapest"
+msgstr "Φθηνότερο"
+
+msgid "Continue with {typeSocial}"
+msgstr "Συνέχεια με {typeSocial}"
+
+msgid "Create event"
+msgstr "Δημιουργία εκδήλωσης"
+
+msgid "Currency:"
+msgstr "Νόμισμα:"
+
+msgid "Dark theme"
+msgstr "Σκοτεινό θέμα"
+
+msgid "Delete"
+msgstr "Διαγραφή"
+
+msgid "Description"
+msgstr "Περιγραφή"
+
+msgid "Do you want to send an SOS signal?"
+msgstr "Θέλετε να στείλετε ένα σήμα SOS;"
+
+msgid "Error key token: Secret key is not defined in the environment variables"
+msgstr "Σφάλμα κλειδιού του token: Το μυστικό κλειδί δεν έχει οριστεί στις μεταβλητές περιβάλλοντος"
+
+msgid "Error: Invalid phone number or password"
+msgstr "Σφάλμα: Μη έγκυρος αριθμός τηλεφώνου ή κωδικός πρόσβασης"
+
+msgid "Error: Invalid token"
+msgstr "Σφάλμα: Μη έγκυρο token"
+
+msgid "Error: Token expired"
+msgstr "Σφάλμα: Το token έχει λήξει"
+
+msgid "Error: User already exists"
+msgstr "Σφάλμα: Ο χρήστης υπάρχει ήδη"
+
+msgid "Error: User not found"
+msgstr "Σφάλμα: Ο χρήστης δεν βρέθηκε"
+
+msgid "Event"
+msgstr "Εκδήλωση"
+
+msgid "Events"
+msgstr "Εκδηλώσεις"
+
+msgid "from closest to farthest"
+msgstr "από τον πλησιέστερο στον πιο μακρινό"
+
+msgid "from highest to lowest"
+msgstr "από τον υψηλότερο στον χαμηλότερο"
+
+msgid "Gallery"
+msgstr "Συλλογή"
+
+msgid "Hello!"
+msgstr "Γεια σας!"
+
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Εισάγατε εσφαλμένο αριθμό τηλεφώνου ή επιλέξατε εσφαλμένο κωδικό χώρας"
+
+msgid "Internal Server Error"
+msgstr "Εσωτερικό σφάλμα του διακομιστή"
+
+msgid "Language selection"
+msgstr "Επιλογή γλώσσας"
+
+msgid "Latest"
+msgstr "Τελευταίο"
+
+msgid "Leave a review"
+msgstr "Αφήστε μια κριτική"
+
+msgid "Logout"
+msgstr "Αποσύνδεση"
+
+msgid "Main"
+msgstr "Κύριο"
+
+msgid "Map"
+msgstr "Χάρτης"
+
+msgid "Market"
+msgstr "Αγορά"
+
+msgid "more detail"
+msgstr "περισσότερες λεπτομέρειες"
+
+msgid "More events"
+msgstr "Περισσότερες εκδηλώσεις"
+
+msgid "Most expensive"
+msgstr "Πιο ακριβό"
+
+msgid "Move and change the location"
+msgstr "Μετακινήστε και αλλάξτε την τοποθεσία"
+
+msgid "My adverts"
+msgstr "Οι διαφημίσεις μου"
+
+msgid "My events"
+msgstr "Οι εκδηλώσεις μου"
+
+msgid "My workshops"
+msgstr "Τα εργαστήριά μου"
+
+msgid "No events have passed"
+msgstr "Δεν έχουν περάσει εκδηλώσεις"
+
+msgid "Not comments"
+msgstr "Χωρίς σχόλια"
+
+msgid "Notification of SOS signal"
+msgstr "Ειδοποίηση του σήματος SOS"
+
+msgid "Now"
+msgstr "Τώρα"
+
+msgid "Only with rating:"
+msgstr "Μόνο με βαθμολογία:"
+
+msgid "or sign up using:"
+msgstr "ή εγγραφείτε χρησιμοποιώντας:"
+
+msgid "Participation fee"
+msgstr "Κόστος συμμετοχής"
+
+msgid "Password must contain at least 8 characters"
+msgstr "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες"
+
+msgid "Passwords do not match"
+msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
+
+msgid "Past events:"
+msgstr "Προηγούμενες εκδηλώσεις:"
+
+msgid "Privacy Policy"
+msgstr "Πολιτική Απορρήτου"
+
+msgid "Profile"
+msgstr "Προφίλ"
+
+msgid "Read the whole description..."
+msgstr "Διαβάστε ολόκληρη την περιγραφή..."
+
+msgid "Registration"
+msgstr "Εγγραφή"
+
+msgid "Repair of automobiles"
+msgstr "Επισκευή αυτοκινήτων"
+
+msgid "Repair of motorcycles"
+msgstr "Επισκευή μοτοσυκλετών"
+
+msgid "Resend the code"
+msgstr "Επανάληψη αποστολής κωδικού"
+
+msgid "Reviews:"
+msgstr "Κριτικές:"
+
+msgid "Select a location on the map"
+msgstr "Επιλέξτε μια τοποθεσία στο χάρτη"
+
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+msgid "Settings and permissions should be enabled"
+msgstr "Οι ρυθμίσεις και οι άδειες πρέπει να είναι ενεργοποιημένες"
+
+msgid "Someone needs help within a {distance} km radius"
+msgstr "Κάποιος χρειάζεται βοήθεια μέσα σε ακτίνα {distance} χλμ"
+
+msgid "Sorry, but no products were found by the filters"
+msgstr "Λυπούμαστε, αλλά δεν βρέθηκαν προϊόντα από τα φίλτρα"
+
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Λυπούμαστε, αλλά δεν βρέθηκαν εργαστήρια από τα φίλτρα"
+
+msgid "Sorry, there are no available items"
+msgstr "Λυπούμαστε, δεν υπάρχουν διαθέσιμα αντικείμενα"
+
+msgid "Sorry, there are no upcoming events"
+msgstr "Λυπούμαστε, δεν υπάρχουν επερχόμενες εκδηλώσεις"
+
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Λυπούμαστε, δεν υπάρχουν επερχόμενα εργαστήρια"
+
+msgid "Sorry!"
+msgstr "Λυπούμαστε!"
+
+msgid "SOS signal"
+msgstr "Σήμα SOS"
+
+msgid "Terms of Service"
+msgstr "Όροι Υπηρεσίας"
+
+msgid "Terms of Use"
+msgstr "Όροι Χρήσης"
+
+msgid "The work we do:"
+msgstr "Η δουλειά που κάνουμε:"
+
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Για να εκμεταλλευτείτε πλήρως όλες τις λειτουργίες της υπηρεσίας, πρέπει να δώσετε άδεια στην εφαρμογή να προσδιορίσει την τοποθεσία σας:"
+
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr "Για να λάβετε σήματα SOS, ορίστε την ακτίνα λήψης σήματος από το κέντρο της πόλης σας:"
+
+msgid "Type workshops"
+msgstr "Τύπος εργαστηρίων"
+
+msgid "Types of work for automobile transport:"
+msgstr "Τύποι εργασιών για μεταφορά αυτοκινήτων:"
+
+msgid "Types of work for motorcycle transport:"
+msgstr "Τύποι εργασιών για μεταφορά μοτοσυκλετών:"
+
+msgid "Upcoming events:"
+msgstr "Επερχόμενες εκδηλώσεις:"
+
+msgid "Views:"
+msgstr "Προβολές:"
+
+msgid "We recommend filling out the profile information"
+msgstr "Συνιστούμε να συμπληρώσετε τις πληροφορίες του προφίλ σας"
+
+msgid "We're glad to see you on our service."
+msgstr "Χαίρομαστε που σας βλέπουμε στην υπηρεσία μας."
+
+msgid "Welcome"
+msgstr "Καλώς ήρθατε"
+
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "Σε ποια πλατφόρμα θέλετε να στείλετε την πρόσκληση εγκατάστασης της εφαρμογής;"
+
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr "Θα απενεργοποιηθεί αυτόματα μετά από 20-30 λεπτά"
+
+msgid "Workshop"
+msgstr "Εργαστήριο"
+
+msgid "Workshops"
+msgstr "Εργαστήρια"
+
+msgid "Write"
+msgstr "Γράψτε"
+
+msgid "You don't have {typeItem}."
+msgstr "Δεν έχετε {typeItem}."
+
+msgid "Your contact information"
+msgstr "Οι πληροφορίες επικοινωνίας σας"
+
+msgid "Your location"
+msgstr "Η τοποθεσία σας"

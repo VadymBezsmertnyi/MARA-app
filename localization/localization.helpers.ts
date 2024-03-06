@@ -13,6 +13,11 @@ import {
   LANGUAGE_DE,
   LANGUAGE_ES,
   LANGUAGE_IT,
+  LANGUAGE_SV,
+  LANGUAGE_DA,
+  LANGUAGE_FI,
+  LANGUAGE_PL,
+  LANGUAGE_CS,
 } from "./localization.const";
 import { Language } from "./localization.types";
 
@@ -23,6 +28,11 @@ import { messages as translationsFr } from "./fr/messages";
 import { messages as translationsDe } from "./de/messages";
 import { messages as translationsEs } from "./es/messages";
 import { messages as translationsIt } from "./it/messages";
+import { messages as translationsSv } from "./sv/messages";
+import { messages as translationsDa } from "./da/messages";
+import { messages as translationsFi } from "./fi/messages";
+import { messages as translationsPl } from "./pl/messages";
+import { messages as translationsCs } from "./cs/messages";
 
 // types
 import type { I18n as i18Type } from "@lingui/core";
@@ -47,21 +57,26 @@ const getMessagesByLocale = (locale: Language) => {
   switch (locale) {
     case LANGUAGE_EN:
       return translationsEn;
-
     case LANGUAGE_UK:
       return translationsUk;
-
     case LANGUAGE_FR:
       return translationsFr;
-
     case LANGUAGE_DE:
       return translationsDe;
-
     case LANGUAGE_ES:
       return translationsEs;
-
     case LANGUAGE_IT:
       return translationsIt;
+    case LANGUAGE_SV:
+      return translationsSv;
+    case LANGUAGE_DA:
+      return translationsDa;
+    case LANGUAGE_FI:
+      return translationsFi;
+    case LANGUAGE_PL:
+      return translationsPl;
+    case LANGUAGE_CS:
+      return translationsCs;
 
     default:
       return translationsEn;

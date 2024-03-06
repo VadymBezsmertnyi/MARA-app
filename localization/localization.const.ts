@@ -7,9 +7,33 @@ import imageCountryFr from "../images/countries/icon-country-fr.png";
 import imageCountryDe from "../images/countries/icon-country-de.png";
 import imageCountryEs from "../images/countries/icon-country-es.png";
 import imageCountryIt from "../images/countries/icon-country-it.png";
+import imageCountrySv from "../images/countries/icon-country-sv.png";
+import imageCountryDa from "../images/countries/icon-country-da.png";
+import imageCountryFi from "../images/countries/icon-country-fi.png";
+import imageCountryPl from "../images/countries/icon-country-pl.png";
+import imageCountryCs from "../images/countries/icon-country-cs.png";
 
 export const defaultLanguage: Language = "en";
-export const languagesKeys = ["en", "uk", "fr", "de", "es", "it"] as const;
+export const languagesKeys = [
+  "en",
+  "uk",
+  "fr",
+  "de",
+  "es",
+  "it",
+  "sk",
+  "sv",
+  "da",
+  "fi",
+  "pl",
+  "cs",
+  "hu",
+  "el",
+  "ro",
+  "lt",
+  "lv",
+  "be",
+] as const;
 export const languageKey = "language";
 
 export const languages: Languages = [
@@ -49,15 +73,50 @@ export const languages: Languages = [
     icon: imageCountryIt,
     native: "Italian",
   },
+  {
+    title: "Svenska",
+    key: "sv",
+    icon: imageCountrySv,
+    native: "Swedish",
+  },
+  {
+    title: "Dansk",
+    key: "da",
+    icon: imageCountryDa,
+    native: "Danish",
+  },
+  {
+    title: "Suomi",
+    key: "fi",
+    icon: imageCountryFi,
+    native: "Finnish",
+  },
+  {
+    title: "Polski",
+    key: "pl",
+    icon: imageCountryPl,
+    native: "Polish",
+  },
+  {
+    title: "Čeština",
+    key: "cs",
+    icon: imageCountryCs,
+    native: "Czech",
+  },
 ];
 
 export const languages_short = {
-  en: "en-EN",
+  en: "en-US",
   uk: "uk-UA",
   fr: "fr-FR",
   de: "de-DE",
   es: "es-ES",
   it: "it-IT",
+  sv: "sv-SE",
+  da: "da-DK",
+  fi: "fi-FI",
+  pl: "pl-PL",
+  cs: "cs-CS",
 };
 
 export const languagesLinguiAlias = {
@@ -67,6 +126,11 @@ export const languagesLinguiAlias = {
   de: "de",
   es: "es",
   it: "it",
+  sv: "sv",
+  da: "da",
+  fi: "fi",
+  pl: "pl",
+  cs: "cs",
 } as const;
 
 export const LANGUAGE_EN = "en";
@@ -75,5 +139,10 @@ export const LANGUAGE_FR = "fr";
 export const LANGUAGE_DE = "de";
 export const LANGUAGE_ES = "es";
 export const LANGUAGE_IT = "it";
+export const LANGUAGE_SV = "sv";
+export const LANGUAGE_DA = "da";
+export const LANGUAGE_FI = "fi";
+export const LANGUAGE_PL = "pl";
+export const LANGUAGE_CS = "cs";
 
-export const languagePattern = /\b(en|uk|fr|de|es|it)\b/;
+export const languagePattern = /\b(en|uk|fr|de|es|it|sv|da|fi|pl|cs)\b/;

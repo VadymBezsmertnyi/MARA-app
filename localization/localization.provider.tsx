@@ -20,6 +20,11 @@ import { messages as translationsFr } from "../localization/fr/messages";
 import { messages as translationsDe } from "../localization/de/messages";
 import { messages as translationsEs } from "../localization/es/messages";
 import { messages as translationsIt } from "../localization/it/messages";
+import { messages as translationsSv } from "../localization/sv/messages";
+import { messages as translationsDa } from "../localization/da/messages";
+import { messages as translationsFi } from "../localization/fi/messages";
+import { messages as translationsPl } from "../localization/pl/messages";
+import { messages as translationsCs } from "../localization/cs/messages";
 
 // constants
 import {
@@ -34,6 +39,11 @@ const CATALOGS_LANGUAGES = {
   de: translationsDe as Messages,
   es: translationsEs as Messages,
   it: translationsIt as Messages,
+  sv: translationsSv as Messages,
+  da: translationsDa as Messages,
+  fi: translationsFi as Messages,
+  pl: translationsPl as Messages,
+  cs: translationsCs as Messages,
 };
 
 export const localesContext = React.createContext({} as LocalesContext);
