@@ -13,7 +13,7 @@ const config: LinguiConfig = {
       exclude: ["**/node_modules/**"],
     },
   ],
-  locales: ["en", "uk", "fr", "de"],
+  locales: ["en", "uk", "fr", "de", "es"],
   compileNamespace: "ts",
   format: "po",
   sourceLocale: "en",

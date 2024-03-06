@@ -5,9 +5,10 @@ import imageCountryUk from "../images/countries/icon-country-uk.png";
 import imageCountryUs from "../images/countries/icon-country-us.png";
 import imageCountryFr from "../images/countries/icon-country-fr.png";
 import imageCountryDe from "../images/countries/icon-country-de.png";
+import imageCountryEs from "../images/countries/icon-country-es.png";
 
 export const defaultLanguage: Language = "en";
-export const languagesKeys = ["en", "uk", "fr", "de"] as const;
+export const languagesKeys = ["en", "uk", "fr", "de", "es"] as const;
 export const languageKey = "language";
 
 export const languages: Languages = [
@@ -35,6 +36,12 @@ export const languages: Languages = [
     icon: imageCountryDe,
     native: "German",
   },
+  {
+    title: "Español",
+    key: "es",
+    icon: imageCountryEs,
+    native: "Spanish",
+  },
 ];
 
 export const languages_short = {
@@ -42,6 +49,7 @@ export const languages_short = {
   uk: "uk-UA",
   fr: "fr-FR",
   de: "de-DE",
+  es: "es-ES",
 };
 
 export const languagesLinguiAlias = {
@@ -49,11 +57,13 @@ export const languagesLinguiAlias = {
   uk: "uk",
   fr: "fr",
   de: "de",
+  es: "es",
 } as const;
 
 export const LANGUAGE_EN = "en";
 export const LANGUAGE_UK = "uk";
 export const LANGUAGE_FR = "fr";
 export const LANGUAGE_DE = "de";
+export const LANGUAGE_ES = "es";
 
-export const languagePattern = /\b(en|uk|fr|de)\b/;
+export const languagePattern = /\b(en|uk|fr|de|es)\b/;

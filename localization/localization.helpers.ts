@@ -11,6 +11,7 @@ import {
   languageKey,
   LANGUAGE_FR,
   LANGUAGE_DE,
+  LANGUAGE_ES,
 } from "./localization.const";
 import { Language } from "./localization.types";
 
@@ -19,6 +20,7 @@ import { messages as translationsUk } from "./uk/messages";
 import { messages as translationsEn } from "./en/messages";
 import { messages as translationsFr } from "./fr/messages";
 import { messages as translationsDe } from "./de/messages";
+import { messages as translationsEs } from "./es/messages";
 
 // types
 import type { I18n as i18Type } from "@lingui/core";
@@ -52,6 +54,9 @@ const getMessagesByLocale = (locale: Language) => {
 
     case LANGUAGE_DE:
       return translationsDe;
+
+    case LANGUAGE_ES:
+      return translationsEs;
 
     default:
       return translationsEn;
