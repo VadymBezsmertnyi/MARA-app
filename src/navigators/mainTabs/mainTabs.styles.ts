@@ -11,8 +11,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     backgroundColor: "blue",
-    paddingHorizontal: 27,
-    paddingVertical: 24,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
   },
@@ -29,5 +27,9 @@ export const styles = StyleSheet.create({
   },
   headerRightContainerStyle: {
     paddingRight: horizontalScale(PADDING_HORIZONTAL),
+  },
+  button: {
+    paddingVertical: verticalScale(24),
+    paddingHorizontal: horizontalScale(20),
   },
 });

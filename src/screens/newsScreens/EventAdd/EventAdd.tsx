@@ -260,9 +260,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     <>
       <Header
         title={eventUser ? i18n._("Change event") : i18n._("Createt event")}
-        onRightDelete={() => {
-          setIsShowDeleteModal(true);
-        }}
+        onRightDelete={
+          eventUser
+            ? () => {
+                setIsShowDeleteModal(true);
+              }
+            : undefined
+        }
       />
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.scrollView}>

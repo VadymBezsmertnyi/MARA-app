@@ -30,7 +30,7 @@ import { PATHS_EVENTS_SCREENS_HIDE_MAIN_HEADER } from "../EventsStack/eventsStac
 // types
 import { RootMainTabsParamList } from "../Navigators.types";
 
-// hooks
+// styles
 import colors from "../../../styles/colors";
 import { styles } from "./MainTabs.styles";
 
@@ -83,6 +83,7 @@ export const MainTabs: FunctionComponent = () => {
                       screen: screen.mainScreen,
                     });
                   }}
+                  style={styles.button}
                 >
                   <Icon width={32} height={32} />
                 </TouchableOpacity>

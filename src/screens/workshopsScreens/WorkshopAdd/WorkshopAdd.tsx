@@ -332,13 +332,15 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       <View style={containerStyles}>
         <Header
           title={
-            params?.workshopId
-              ? i18n._("Change workshop")
-              : i18n._("Add workshop")
+            selectWorkshop ? i18n._("Change workshop") : i18n._("Add workshop")
           }
-          onRightDelete={() => {
-            setIsShowDeleteModal(true);
-          }}
+          onRightDelete={
+            selectWorkshop
+              ? () => {
+                  setIsShowDeleteModal(true);
+                }
+              : undefined
+          }
         />
         <ScrollView>
           <View style={styles.containerInputs}>
