@@ -1,15 +1,20 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   socialConnect: {
     alignItems: "center",
-    gap: 20,
+    gap: verticalScale(20),
   },
   titleSocialConnect: {
     marginBottom: 4,
     color: colors.blackCoffee,
-    fontSize: 16,
+    fontSize: scaleFont(16),
     fontStyle: "normal",
     fontWeight: "400",
     lineHeight: 24,
@@ -18,11 +23,11 @@ export const styles = StyleSheet.create({
     padding: 6,
     flexDirection: "row",
     alignItems: "center",
-    gap: 12,
+    gap: horizontalScale(12),
   },
   labelSocialConnect: {
     color: colors.chileanFireOrange,
-    fontSize: 16,
+    fontSize: scaleFont(16),
     fontWeight: "600",
   },
   focusTitleSocialConnect: {
@@ -33,6 +38,6 @@ export const styles = StyleSheet.create({
   },
   containerButtons: {
     width: "100%",
-    gap: 8,
+    gap: verticalScale(8),
   },
 });

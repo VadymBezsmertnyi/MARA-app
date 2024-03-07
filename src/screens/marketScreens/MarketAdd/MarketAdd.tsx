@@ -367,9 +367,13 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
       <View style={styles.container}>
         <Header
           title={productUser ? i18n._("Change advert") : i18n._("Add advert")}
-          onRightDelete={() => {
-            setIsShowDeleteModal(true);
-          }}
+          onRightDelete={
+            productUser
+              ? () => {
+                  setIsShowDeleteModal(true);
+                }
+              : undefined
+          }
         />
         <ScrollView style={styles.body}>
           <Input
