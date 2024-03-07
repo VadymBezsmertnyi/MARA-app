@@ -5,6 +5,7 @@ import React, {
   useState,
 } from "react";
 import { Text, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import { Trans } from "@lingui/macro";
 
 // providers
@@ -15,11 +16,13 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { useAllNavigation } from "../../../navigators/Navigators.helps";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";
+import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
 
 // components
 import { InputPhone } from "../../../components/InputPhone/InputPhone";
 import { Input } from "../../../components/Input/Input";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+import { Header } from "../../../components/Header/Header";
 
 // constants
 import { PATHS_MAIN_SCREENS } from "../../../navigators/useNavigator.constants";
@@ -27,8 +30,6 @@ import { DEFAULT_COUNTRY } from "../../../constants/inputs.const";
 
 // styles
 import { styles } from "./RegistrationInfo.styles";
-import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
-import { Header } from "../../../components/Header/Header";
 
 export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();
@@ -82,38 +83,40 @@ export const RegistrationInfo: FunctionComponent = () => {
         isShowRight={false}
         containerStyle={styles.containerHeader}
       />
-      <Text style={styles.title}>
-        <Trans>We recommend filling out the profile information</Trans>
-      </Text>
-      <View style={styles.containerInputs}>
-        <Input
-          label={`${i18n._("Name:")}*`}
-          placeholder={i18n._("Enter your name")}
-          value={login}
-          onChange={onChangeLogin}
-          errorMessage={errorMessageLogin}
-        />
-        <InputPhone
-          label={i18n._("Phone number:")}
-          phoneNumber={phoneNumber}
-          setPhoneNumber={setPhoneNumber}
-          selectCountryIso={selectCountryIso}
-          setSelectCountryIso={setSelectCountryIso}
-        />
-      </View>
-      <View style={styles.containerButton}>
-        <ButtonCustom
-          disabled={errorMessageLogin.length > 0}
-          title={i18n._("Save")}
-          onSubmit={onSave}
-        />
-        <ButtonCustom
-          disabled={errorMessageLogin.length > 0}
-          title={i18n._("Fill out later")}
-          onSubmit={onLater}
-          type="transparent"
-        />
-      </View>
+      <ScrollView>
+        <Text style={styles.title}>
+          <Trans>We recommend filling out the profile information</Trans>
+        </Text>
+        <View style={styles.containerInputs}>
+          <Input
+            label={`${i18n._("Name:")}*`}
+            placeholder={i18n._("Enter your name")}
+            value={login}
+            onChange={onChangeLogin}
+            errorMessage={errorMessageLogin}
+          />
+          <InputPhone
+            label={i18n._("Phone number:")}
+            phoneNumber={phoneNumber}
+            setPhoneNumber={setPhoneNumber}
+            selectCountryIso={selectCountryIso}
+            setSelectCountryIso={setSelectCountryIso}
+          />
+        </View>
+        <View style={styles.containerButton}>
+          <ButtonCustom
+            disabled={errorMessageLogin.length > 0}
+            title={i18n._("Save")}
+            onSubmit={onSave}
+          />
+          <ButtonCustom
+            disabled={errorMessageLogin.length > 0}
+            title={i18n._("Fill out later")}
+            onSubmit={onLater}
+            type="transparent"
+          />
+        </View>
+      </ScrollView>
     </View>
   );
 };
