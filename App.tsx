@@ -25,7 +25,7 @@ import { useFonts } from "expo-font";
 import { RootAllScreensParamList } from "./src/navigators/Navigators.types";
 
 // providers
-import LocalesProvider from "./localization/localization.provider";
+import { LocalesProvider } from "./localization/localization.provider";
 import { ThemeProvider } from "./src/providers/ThemeProvider/ThemeProvider";
 import { BiometricProvider } from "./src/providers/BiometricProvider/BiometricProvider";
 import { LoadingProvider } from "./src/providers/LoadingProvider/LoadingProvider";

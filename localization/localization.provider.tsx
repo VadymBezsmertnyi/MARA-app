@@ -27,6 +27,9 @@ import { messages as translationsPl } from "../localization/pl/messages";
 import { messages as translationsCs } from "../localization/cs/messages";
 import { messages as translationsHu } from "../localization/hu/messages";
 import { messages as translationsEl } from "../localization/el/messages";
+import { messages as translationsRo } from "../localization/ro/messages";
+import { messages as translationsLt } from "../localization/lt/messages";
+import { messages as translationsLv } from "../localization/lv/messages";
 
 // constants
 import {
@@ -48,11 +51,14 @@ const CATALOGS_LANGUAGES = {
   cs: translationsCs as Messages,
   hu: translationsHu as Messages,
   el: translationsEl as Messages,
+  ro: translationsRo as Messages,
+  lt: translationsLt as Messages,
+  lv: translationsLv as Messages,
 };
 
 export const localesContext = React.createContext({} as LocalesContext);
 
-const LocalesProvider: React.FC<Props> = ({ children }) => {
+export const LocalesProvider: React.FC<Props> = ({ children }) => {
   const [languageUser, setLanguage] = useState<Language>(defaultLanguage);
   const language = languageUser || defaultLanguage;
   const { bug } = showErrors;
@@ -103,5 +109,3 @@ const LocalesProvider: React.FC<Props> = ({ children }) => {
     </I18nProvider>
   );
 };
-
-export default LocalesProvider;

@@ -14,6 +14,9 @@ import imageCountryPl from "../images/countries/icon-country-pl.png";
 import imageCountryCs from "../images/countries/icon-country-cs.png";
 import imageCountryHu from "../images/countries/icon-country-hu.png";
 import imageCountryEl from "../images/countries/icon-country-el.png";
+import imageCountryRo from "../images/countries/icon-country-ro.png";
+import imageCountryLt from "../images/countries/icon-country-lt.png";
+import imageCountryLv from "../images/countries/icon-country-lt.png";
 
 export const defaultLanguage: Language = "en";
 export const languagesKeys = [
@@ -117,6 +120,24 @@ export const languages: Languages = [
     icon: imageCountryEl,
     native: "Greek",
   },
+  {
+    title: "Română",
+    key: "ro",
+    icon: imageCountryRo,
+    native: "Romanian",
+  },
+  {
+    title: "Lietuvių",
+    key: "lt",
+    icon: imageCountryLt,
+    native: "Lithuanian",
+  },
+  {
+    title: "Latviešu",
+    key: "lv",
+    icon: imageCountryLv,
+    native: "Latvian",
+  },
 ];
 
 export const languages_short = {
@@ -133,6 +154,9 @@ export const languages_short = {
   cs: "cs-CS",
   hu: "hu-HU",
   el: "el-GR",
+  ro: "ro-RO",
+  lt: "lt-LT",
+  lv: "lv-LV",
 };
 
 export const languagesLinguiAlias = {
@@ -149,6 +173,9 @@ export const languagesLinguiAlias = {
   cs: "cs",
   hu: "hu",
   el: "el",
+  ro: "ro",
+  lt: "lt",
+  lv: "lv",
 } as const;
 
 export const LANGUAGE_EN = "en";
@@ -164,5 +191,9 @@ export const LANGUAGE_PL = "pl";
 export const LANGUAGE_CS = "cs";
 export const LANGUAGE_HU = "hu";
 export const LANGUAGE_EL = "el";
+export const LANGUAGE_RO = "ro";
+export const LANGUAGE_LT = "lt";
+export const LANGUAGE_LV = "lv";
 
-export const languagePattern = /\b(en|uk|fr|de|es|it|sv|da|fi|pl|cs|hu|el)\b/;
+export const languagePattern =
+  /\b(en|uk|fr|de|es|it|sv|da|fi|pl|cs|hu|el|ro|lt|lv)\b/;
