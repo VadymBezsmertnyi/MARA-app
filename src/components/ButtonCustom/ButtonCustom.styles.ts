@@ -1,16 +1,23 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 
+// hooks
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../styles/hooks";
+
 export const styles = StyleSheet.create({
   container: {
     position: "relative",
-    height: 52,
+    height: verticalScale(52),
   },
   linearGradient: {
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,
-    padding: 2,
+    padding: horizontalScale(2),
   },
   buttonSubmit: {
     width: "100%",
@@ -31,7 +38,7 @@ export const styles = StyleSheet.create({
   },
   buttonSubmitText: {
     fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: colors.white,
   },
   transparent: {
