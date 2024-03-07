@@ -1,8 +1,12 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
 import dayjs from "dayjs";
+import { Trans } from "@lingui/macro";
+
+// providers
+import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 //types
 import { mapMarker } from "../../Map.types";
@@ -24,6 +28,17 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   firstEvent,
   showFirstEvent,
 }) => {
+  const { places } = useContext(placesContext);
+  const selectCountryTitle = useMemo(
+    () =>
+      places
+        ? Object.values(places).find(
+            (country) => country.id === firstEvent?.place?.countryId
+          )?.title || null
+        : null,
+    [places]
+  );
+
   const isDateShow = useMemo(() => {
     if (!firstEvent) return false;
     const dateNow = dayjs().valueOf();
@@ -66,8 +81,15 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
           />
         ) : null}
         <View style={styles.container}>
+          <Text style={styles.mainTitle}>
+            <Trans>The nearest event:</Trans>
+          </Text>
           <Text style={styles.title}>{firstEvent.title}</Text>
           <Text style={styles.subTitle}>
+            {firstEvent.place?.city}
+            {selectCountryTitle ? `, ${selectCountryTitle}` : ""}
+          </Text>
+          <Text style={styles.dateTitle}>
             {dateToNMY(new Date(firstEvent.date.start))}
           </Text>
         </View>

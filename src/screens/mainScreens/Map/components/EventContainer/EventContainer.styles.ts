@@ -18,14 +18,19 @@ export const styles = StyleSheet.create({
     minHeight: verticalScale(MIN_HEIGHT),
     overflow: "hidden",
   },
-  container: {
-    paddingHorizontal: horizontalScale(12),
-    paddingVertical: verticalScale(12),
-  },
   blurViewContainer: {
     position: "absolute",
     width: "100%",
     height: "100%",
+  },
+  container: {
+    paddingHorizontal: horizontalScale(12),
+    paddingVertical: verticalScale(12),
+  },
+  mainTitle: {
+    fontFamily: "OpenSans_400Regular",
+    color: colors.white,
+    fontSize: 12,
   },
   title: {
     fontFamily: "OpenSans_600SemiBold",
@@ -34,6 +39,11 @@ export const styles = StyleSheet.create({
   },
   subTitle: {
     fontFamily: "OpenSans_600SemiBold",
+    color: colors.white,
+    fontSize: 12,
+  },
+  dateTitle: {
+    fontFamily: "OpenSans_400Regular",
     color: colors.white,
     fontSize: 12,
   },
