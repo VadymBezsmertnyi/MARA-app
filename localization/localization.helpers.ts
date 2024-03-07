@@ -23,6 +23,8 @@ import {
   LANGUAGE_RO,
   LANGUAGE_LT,
   LANGUAGE_LV,
+  LANGUAGE_BE,
+  LANGUAGE_SK,
 } from "./localization.const";
 import { Language } from "./localization.types";
 
@@ -43,6 +45,8 @@ import { messages as translationsEl } from "./el/messages";
 import { messages as translationsRo } from "./ro/messages";
 import { messages as translationsLt } from "./lt/messages";
 import { messages as translationsLv } from "./lv/messages";
+import { messages as translationsBe } from "./be/messages";
+import { messages as translationsSk } from "./sk/messages";
 
 // types
 import type { I18n as i18Type } from "@lingui/core";
@@ -97,6 +101,10 @@ const getMessagesByLocale = (locale: Language) => {
       return translationsLt;
     case LANGUAGE_LV:
       return translationsLv;
+    case LANGUAGE_BE:
+      return translationsBe;
+    case LANGUAGE_SK:
+      return translationsSk;
 
     default:
       return translationsEn;

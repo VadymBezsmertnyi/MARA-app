@@ -42,6 +42,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.blackCoffee,
   },
+  containerEmpty: {
+    height: 20,
+  },
   containerButtons: {
     paddingTop: 24,
     paddingHorizontal: 12,

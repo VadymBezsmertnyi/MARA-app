@@ -138,6 +138,7 @@ export const ChangeLanguage: FunctionComponent = () => {
                   />
                 </TouchableOpacity>
               ))}
+              <View style={styles.containerEmpty} />
             </ScrollView>
             <Shadow stretch>
               <View style={styles.containerButtons}>

@@ -17,6 +17,8 @@ import imageCountryEl from "../images/countries/icon-country-el.png";
 import imageCountryRo from "../images/countries/icon-country-ro.png";
 import imageCountryLt from "../images/countries/icon-country-lt.png";
 import imageCountryLv from "../images/countries/icon-country-lt.png";
+import imageCountryBe from "../images/countries/icon-country-be.png";
+import imageCountrySk from "../images/countries/icon-country-sk.png";
 
 export const defaultLanguage: Language = "en";
 export const languagesKeys = [
@@ -138,6 +140,18 @@ export const languages: Languages = [
     icon: imageCountryLv,
     native: "Latvian",
   },
+  {
+    title: "Беларуская",
+    key: "be",
+    icon: imageCountryBe,
+    native: "Belarusian",
+  },
+  {
+    title: "Slovenský",
+    key: "sk",
+    icon: imageCountrySk,
+    native: "Slovak",
+  },
 ];
 
 export const languages_short = {
@@ -157,6 +171,8 @@ export const languages_short = {
   ro: "ro-RO",
   lt: "lt-LT",
   lv: "lv-LV",
+  be: "be-BY",
+  sk: "sk-SK",
 };
 
 export const languagesLinguiAlias = {
@@ -176,6 +192,8 @@ export const languagesLinguiAlias = {
   ro: "ro",
   lt: "lt",
   lv: "lv",
+  be: "be",
+  sk: "sk",
 } as const;
 
 export const LANGUAGE_EN = "en";
@@ -194,6 +212,8 @@ export const LANGUAGE_EL = "el";
 export const LANGUAGE_RO = "ro";
 export const LANGUAGE_LT = "lt";
 export const LANGUAGE_LV = "lv";
+export const LANGUAGE_BE = "be";
+export const LANGUAGE_SK = "sk";
 
 export const languagePattern =
-  /\b(en|uk|fr|de|es|it|sv|da|fi|pl|cs|hu|el|ro|lt|lv)\b/;
+  /\b(en|uk|fr|de|es|it|sv|da|fi|pl|cs|hu|el|ro|lt|lv|be|sk)\b/;

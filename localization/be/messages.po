@@ -791,7 +791,7 @@ msgstr "Год выпуску:"
 
 #. js-lingui-explicit-id
 msgid "Cleared:"
-msgstr "Митны афармлены:"
+msgstr "Мытна ачышчана:"
 
 #. js-lingui-explicit-id
 msgid "Type fuel"

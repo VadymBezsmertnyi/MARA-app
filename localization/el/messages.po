@@ -791,7 +791,7 @@ msgstr "Έτος κυκλοφορίας:"
 
 #. js-lingui-explicit-id
 msgid "Cleared:"
-msgstr "Καθαρισμένο:"
+msgstr "Τελωνείο καθαρίστηκε:"
 
 #. js-lingui-explicit-id
 msgid "Type fuel"

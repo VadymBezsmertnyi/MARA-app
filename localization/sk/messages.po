@@ -791,7 +791,7 @@ msgstr "Rok vydania:"
 
 #. js-lingui-explicit-id
 msgid "Cleared:"
-msgstr "Vyčistené:"
+msgstr "Rozmýšľané:"
 
 #. js-lingui-explicit-id
 msgid "Type fuel"

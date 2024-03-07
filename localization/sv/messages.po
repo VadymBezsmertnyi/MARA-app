@@ -791,7 +791,7 @@ msgstr "År för utgivning:"
 
 #. js-lingui-explicit-id
 msgid "Cleared:"
-msgstr "Rensad:"
+msgstr "Tullklar:"
 
 #. js-lingui-explicit-id
 msgid "Type fuel"
