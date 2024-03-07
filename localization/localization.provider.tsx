@@ -25,6 +25,8 @@ import { messages as translationsDa } from "../localization/da/messages";
 import { messages as translationsFi } from "../localization/fi/messages";
 import { messages as translationsPl } from "../localization/pl/messages";
 import { messages as translationsCs } from "../localization/cs/messages";
+import { messages as translationsHu } from "../localization/hu/messages";
+import { messages as translationsEl } from "../localization/el/messages";
 
 // constants
 import {
@@ -44,6 +46,8 @@ const CATALOGS_LANGUAGES = {
   fi: translationsFi as Messages,
   pl: translationsPl as Messages,
   cs: translationsCs as Messages,
+  hu: translationsHu as Messages,
+  el: translationsEl as Messages,
 };
 
 export const localesContext = React.createContext({} as LocalesContext);

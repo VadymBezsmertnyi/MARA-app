@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 
 export const styles = StyleSheet.create({
-  buttonLanguage: { flexDirection: "row", gap: 12 },
+  buttonLanguage: { flexDirection: "row", gap: 12, alignItems: "center" },
   iconLanguage: { width: 24, height: 24 },
   titleLanguage: {
     fontFamily: "Montserrat_600SemiBold",
