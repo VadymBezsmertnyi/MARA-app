@@ -120,6 +120,7 @@ export const Input: FunctionComponent<InputProps> = ({
           accessibilityLabel={accessibilityLabel}
           placeholder={placeholder}
           defaultValue={defaultValue}
+          placeholderTextColor={colors.grayCloudy}
           value={value}
           textAlignVertical={customStyles ? "top" : "center"}
           onChangeText={onChangeText}

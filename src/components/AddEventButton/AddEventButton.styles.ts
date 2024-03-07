@@ -1,11 +1,14 @@
 import { Platform, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 
+// hooks
+import { verticalScale } from "../../../styles/hooks";
+
 export const styles = StyleSheet.create({
   createNewEvent: {
     position: "absolute",
     right: 15,
-    bottom: 90,
+    bottom: verticalScale(Platform.OS === "ios" ? 100 : 90),
     shadowColor: colors.grayShadow,
     ...Platform.select({
       ios: {

@@ -3,7 +3,7 @@ import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
 
 const CURRENT_RIGHT = 10;
-const IOS_BOTTOM = 90;
+const IOS_BOTTOM = 100;
 const ANDROID_BOTTOM = 180;
 const CURRENT_BOTTOM = Platform.OS === "ios" ? IOS_BOTTOM : ANDROID_BOTTOM;
 
@@ -14,8 +14,8 @@ export const styles = StyleSheet.create({
     bottom: verticalScale(CURRENT_BOTTOM),
   },
   blurViewContainer: {
-    width: 72,
-    height: 72,
+    width: horizontalScale(72),
+    height: horizontalScale(72),
     borderRadius: 40,
     overflow: "hidden",
     alignItems: "center",

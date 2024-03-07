@@ -4,7 +4,7 @@ import React, {
   useContext,
   useMemo,
 } from "react";
-import { TouchableOpacity, View, ViewStyle } from "react-native";
+import { Platform, TouchableOpacity, View, ViewStyle } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { BlurView } from "expo-blur";
 
@@ -46,10 +46,10 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
       }) as ViewStyle,
     [isIndicator]
   );
-  const snapPoints = useMemo(
-    () => snapPointsProps || ["90%"],
-    [snapPointsProps]
-  );
+  const snapPoints = useMemo(() => {
+    const defaultSnapPoints = Platform.OS === "ios" ? ["90%"] : ["95%"];
+    return snapPointsProps ? snapPointsProps : defaultSnapPoints;
+  }, [snapPointsProps]);
 
   const handleComponent = () => (
     <View style={styles.header}>

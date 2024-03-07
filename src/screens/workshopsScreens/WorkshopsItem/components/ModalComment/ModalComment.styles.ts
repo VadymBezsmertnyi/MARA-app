@@ -1,27 +1,35 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
-  container: { flex: 1, gap: 28 },
+  container: { flex: 1, gap: verticalScale(28) },
   containerHeader: { alignItems: "center" },
   titleHeader: {
     fontFamily: "Montserrat_700Bold",
-    fontSize: 20,
+    fontSize: scaleFont(20),
     color: colors.grayFuscous,
   },
   containerBody: {
-    paddingHorizontal: 16,
-    gap: 20,
+    paddingHorizontal: horizontalScale(16),
+    gap: verticalScale(20),
   },
   containerStyle: { flex: 0, marginTop: 0 },
-  customStylesInput: { height: 180 },
-  containerStars: { flexDirection: "row", gap: 8 },
-  containerButton: { paddingHorizontal: 52 },
+  customStylesInput: { height: verticalScale(180) },
+  containerStars: { flexDirection: "row", gap: horizontalScale(8) },
+  containerButton: { paddingHorizontal: horizontalScale(52) },
   errorMessage: {
     fontFamily: "Montserrat_700Bold",
-    fontSize: 10,
+    fontSize: scaleFont(10),
     color: colors.errorRed,
-    marginTop: 4,
-    minHeight: 20,
+    marginTop: verticalScale(4),
+    minHeight: verticalScale(20),
+  },
+  containerEmpty: {
+    height: verticalScale(120),
   },
 });

@@ -149,6 +149,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
             ) : null}
           </View>
         </View>
+        <View style={styles.containerEmpty} />
       </ScrollView>
       <AddEventButton
         onPress={() => {

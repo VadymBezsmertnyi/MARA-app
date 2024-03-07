@@ -1,13 +1,20 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 
+// hooks
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../styles/hooks";
+
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
   },
   label: {
     fontFamily: "OpenSans_600SemiBold",
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: colors.blackCoffee,
   },
   labelRegular: { color: colors.errorRed },
@@ -22,10 +29,10 @@ export const styles = StyleSheet.create({
   },
   input: {
     fontFamily: "OpenSans_600SemiBold",
-    paddingTop: 13,
-    paddingHorizontal: 16,
-    paddingBottom: 16,
-    fontSize: 16,
+    paddingTop: verticalScale(13),
+    paddingHorizontal: horizontalScale(16),
+    paddingBottom: verticalScale(16),
+    fontSize: scaleFont(16),
     lineHeight: 24,
     color: colors.blackCoffee,
     flex: 1,
@@ -35,7 +42,7 @@ export const styles = StyleSheet.create({
   },
   titleMaxLength: {
     fontFamily: "OpenSans_400Regular",
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: colors.grayCloudy,
   },
   titleMaxLengthError: {
@@ -43,9 +50,9 @@ export const styles = StyleSheet.create({
   },
   errorMessage: {
     fontFamily: "Montserrat_700Bold",
-    fontSize: 10,
+    fontSize: scaleFont(10),
     color: colors.errorRed,
-    marginTop: 4,
-    minHeight: 20,
+    marginTop: verticalScale(4),
+    minHeight: verticalScale(20),
   },
 });

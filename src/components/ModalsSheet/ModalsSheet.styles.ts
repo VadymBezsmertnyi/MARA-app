@@ -1,11 +1,13 @@
 import { StyleSheet } from "react-native";
 
+// hooks
+import { horizontalScale, verticalScale } from "../../../styles/hooks";
+
 export const styles = StyleSheet.create({
   header: { alignItems: "flex-end" },
   buttonHeader: {
-    paddingTop: 12,
-    paddingBottom: 12,
-    paddingHorizontal: 16,
+    paddingVertical: verticalScale(12),
+    paddingHorizontal: horizontalScale(16),
   },
   footerButton: {
     flex: 1,

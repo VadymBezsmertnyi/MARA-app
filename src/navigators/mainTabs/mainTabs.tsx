@@ -20,8 +20,9 @@ import { localesContext } from "../../../localization/localization.provider";
 // components
 import { MenuBurgerButton } from "../../components/MenuBurgerButton/MenuBurgerButton";
 
-// helps
+// hooks
 import { useMainTabs } from "./useMainTabs";
+import { horizontalScale } from "../../../styles/hooks";
 
 // constants
 import { PATHS_MAIN_TABS } from "../useNavigator.constants";
@@ -85,7 +86,10 @@ export const MainTabs: FunctionComponent = () => {
                   }}
                   style={styles.button}
                 >
-                  <Icon width={32} height={32} />
+                  <Icon
+                    width={horizontalScale(32)}
+                    height={horizontalScale(32)}
+                  />
                 </TouchableOpacity>
               </View>
             );

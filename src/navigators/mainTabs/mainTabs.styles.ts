@@ -1,11 +1,14 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+import { getBottomSpace } from "react-native-iphone-x-helper";
+
+// hooks
 import { horizontalScale, verticalScale } from "../../../styles/hooks";
 
 const PADDING_HORIZONTAL = 16;
 const PADDING_VERTICAL = 3;
 
 export const styles = StyleSheet.create({
-  mainContainer: { position: "absolute", width: "100%", height: 74 },
+  mainContainer: { position: "absolute", width: "100%" },
   absoluteContainer: { position: "absolute", bottom: 0, width: "100%" },
   container: {
     flexDirection: "row",
@@ -13,6 +16,10 @@ export const styles = StyleSheet.create({
     backgroundColor: "blue",
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
+    paddingBottom:
+      Platform.OS === "android"
+        ? verticalScale(10)
+        : getBottomSpace() - verticalScale(10),
   },
   linearGradient: {
     justifyContent: "center",
@@ -29,7 +36,8 @@ export const styles = StyleSheet.create({
     paddingRight: horizontalScale(PADDING_HORIZONTAL),
   },
   button: {
-    paddingVertical: verticalScale(24),
+    paddingTop: verticalScale(24),
+    paddingBottom: verticalScale(10),
     paddingHorizontal: horizontalScale(20),
   },
 });

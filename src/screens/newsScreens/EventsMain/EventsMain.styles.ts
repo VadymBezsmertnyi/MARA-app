@@ -54,4 +54,7 @@ export const styles = StyleSheet.create({
   titleNotList: {
     fontFamily: "Montserrat_700Bold",
   },
+  containerEmpty: {
+    height: verticalScale(40),
+  },
 });

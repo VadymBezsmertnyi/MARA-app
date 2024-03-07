@@ -18,7 +18,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: horizontalScale(15),
   },
   containerLogo: { justifyContent: "center", alignItems: "center" },
-  containerLanguage: { width: "100%", alignItems: "flex-end" },
+  containerLanguage: {
+    width: "100%",
+    alignItems: "flex-end",
+    paddingTop: Platform.OS === "android" ? verticalScale(10) : 0,
+  },
   containerTitles: {
     width: "100%",
     gap: 12,
