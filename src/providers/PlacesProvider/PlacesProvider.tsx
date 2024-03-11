@@ -5,19 +5,33 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import qs from "qs";
 
 // types
-import { CountriesType, RegionsCountryType } from "./PlacesProvider.types";
+import {
+  CountriesType,
+  CountryDbType,
+  GetSearchPlaceType,
+  RegionsCountryType,
+} from "./PlacesProvider.types";
+
+// providers
+import { apiContext } from "../ApiProvider/ApiProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // constants
 import REGIONS_UK from "../../../assets/db/places/uk.json";
 import REGIONS_PL from "../../../assets/db/places/pl.json";
 import REGIONS_BY from "../../../assets/db/places/by.json";
 import REGIONS_LT from "../../../assets/db/places/lt.json";
-import { localesContext } from "../../../localization/localization.provider";
+import {
+  getCountiesResultSchema,
+  getSearchPlaceSchema,
+} from "./PlacesProvider.schemas";
 
 type PlacesContext = {
   places: CountriesType | null;
+  getSearchPlace: (searchText: string) => Promise<GetSearchPlaceType | null>;
 };
 
 type PlacesProviderProps = {
@@ -29,8 +43,22 @@ export const placesContext = React.createContext({} as PlacesContext);
 export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   children,
 }) => {
+  const { api } = useContext(apiContext);
   const { i18n, language } = useContext(localesContext);
   const [places, setPlaces] = useState<CountriesType | null>(null);
+  // TODO NEW LOGICs
+  const [countries, setCountries] = useState<CountryDbType[]>([]);
+  const countriesSelectLanguage = useMemo(
+    () =>
+      countries.map(({ id, place_id, [language]: country }) => ({
+        id,
+        place_id,
+        ...country,
+      })),
+    [countries, language]
+  );
+  console.log("countries", countries);
+  console.log("countriesSelectLanguage", countriesSelectLanguage);
 
   const getCurrentRegion = (array: any) =>
     (array as unknown as { regions: RegionsCountryType }).regions.map(
@@ -77,11 +105,45 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
     setPlaces(currentPlaces);
   };
 
-  const valueContext: PlacesContext = useMemo(() => ({ places }), [places]);
+  const getCounties = async () => {
+    const result = await api(
+      `/places/countries/`,
+      { method: "GET" },
+      getCountiesResultSchema
+    );
+    if (result) setCountries(result.countries);
+  };
+
+  const getSearchPlace = async (
+    searchText: string
+  ): Promise<GetSearchPlaceType | null> => {
+    const queryParams = qs.stringify(
+      {
+        searchText,
+        language,
+      },
+      { addQueryPrefix: true }
+    );
+    const result = await api(
+      `/places/cities/search/${queryParams}`,
+      { method: "GET" },
+      getSearchPlaceSchema
+    );
+    return result;
+  };
+
+  const valueContext: PlacesContext = useMemo(
+    () => ({ places, getSearchPlace }),
+    [places]
+  );
 
   useEffect(() => {
     getPlaces();
   }, [language]);
+
+  useEffect(() => {
+    getCounties();
+  }, []);
 
   return (
     <placesContext.Provider value={valueContext}>
