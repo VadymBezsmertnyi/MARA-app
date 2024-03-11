@@ -33,7 +33,7 @@ export type RootMainScreensParamList = {
 export type RootMainTabsParamList = {
   [PATHS_MAIN_TABS.workshops]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.map]?: Record<string, string | number | boolean>;
-  [PATHS_MAIN_TABS.news]?: Record<string, string | number | boolean>;
+  [PATHS_MAIN_TABS.events]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.market]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.settings]?: Record<string, string | number | boolean>;
 };

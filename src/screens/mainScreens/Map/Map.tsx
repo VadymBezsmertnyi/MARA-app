@@ -9,6 +9,8 @@ import { Platform, Text, View, ViewStyle } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
 import { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { Trans } from "@lingui/macro";
+import dayjs from "dayjs";
 
 // types
 import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
@@ -31,10 +33,11 @@ import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
 import { SosMarker } from "./components/SosMarker/SosMarker";
 
 // icons
-import { IconLocationMarker } from "../../../icons/components";
+import { IconAutoMap } from "../../../icons/components";
 
 // styles
 import { styles } from "./Map.styles";
+import colors from "../../../../styles/colors";
 
 type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
@@ -63,14 +66,14 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
       usersMaps
         ? usersMaps.filter(({ userId }) => Number(userId) !== userData?.id)
         : [],
-    [usersMaps, userData?.id]
+    [usersMaps, userData?.id, location]
   );
   const listUsersSos = useMemo(
     () =>
       usersSos
         ? usersSos.filter(({ userId }) => Number(userId) !== userData?.id)
         : [],
-    [usersSos, userData?.id]
+    [usersSos, userData?.id, location]
   );
 
   const containerStyles: ViewStyle = useMemo(
@@ -112,8 +115,7 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
           eventItem.place?.coordinates ? (
             <EventMarker
               key={`marker-event-${eventItem.id}`}
-              longitude={eventItem.place?.coordinates.longitude}
-              latitude={eventItem.place?.coordinates.latitude}
+              location={location}
               event={eventItem}
             />
           ) : null
@@ -126,18 +128,29 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
           />
         ))}
         {listUsers.map((userLocation) => {
-          if (userLocation === null) return null;
+          const dateNow = dayjs().valueOf();
+          const isUserSos =
+            listUsersSos.filter(
+              (userSos) => userSos.userId === userLocation.userId
+            ).length > 0;
+          if (userLocation === null || isUserSos) return null;
+          const timeUpdate =
+            dateNow > userLocation.date ? dateNow - userLocation.date : null;
           return (
             <Marker
               key={`user-marker-${userLocation.userId}`}
               coordinate={userLocation.location}
             >
-              <IconLocationMarker width={32} height={32} fill={"green"} />
+              <IconAutoMap width={24} height={24} fill={colors.pinkNight} />
               <Callout>
                 <View style={styles.containerClusterUser}>
-                  <Text>{`User ${userLocation.userId}`}:</Text>
-                  <Text>longitude: {userLocation.location.longitude}</Text>
-                  <Text>latitude: {userLocation.location.latitude}</Text>
+                  <Text>{`User #${userLocation.userId}`}</Text>
+                  {timeUpdate ? (
+                    <Text>
+                      <Trans>Last update</Trans>:{" "}
+                      {dayjs(timeUpdate).format("mm:ss")}
+                    </Text>
+                  ) : null}
                 </View>
               </Callout>
             </Marker>
@@ -148,6 +161,10 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
             key={`user-sos-marker-${userLocationSos.userId}`}
             longitude={userLocationSos.location.longitude}
             latitude={userLocationSos.location.latitude}
+            phoneNumber={userLocationSos.phoneNumber}
+            telegram={userLocationSos.telegram}
+            description={userLocationSos.description}
+            date={userLocationSos.date}
           />
         ))}
       </MapViewCluster>

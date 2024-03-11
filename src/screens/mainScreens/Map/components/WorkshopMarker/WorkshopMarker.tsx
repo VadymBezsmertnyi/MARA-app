@@ -9,7 +9,7 @@ import { convertDistance, getDistance } from "geolib";
 import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // components
-import { ComponentCallout } from "../ComponentCallout/ComponentCallout";
+import { ComponentCalloutWorkshop } from "../ComponentCalloutWorkshop/ComponentCalloutWorkshop";
 
 // constants
 import {
@@ -63,7 +63,7 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
           });
         }}
       >
-        <ComponentCallout
+        <ComponentCalloutWorkshop
           imageSrc={workshop.images.length ? workshop.images[0].url : null}
           title={workshop.title}
           distance={distance ? convertDistance(distance, "km").toFixed() : null}

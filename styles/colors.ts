@@ -52,7 +52,11 @@ const colors = {
   blazeOrange70: "#fd5e01b3",
   shadowButton: "#F1650070",
 
+  // yellow
   yellow: "#FDE405",
+
+  //pink
+  pinkNight: "#942A5D",
 };
 
 export default colors;

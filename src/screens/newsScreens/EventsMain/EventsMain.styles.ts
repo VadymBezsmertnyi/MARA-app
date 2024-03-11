@@ -16,6 +16,8 @@ const PADDING_VERTICAL = 8;
 const GAP_MORE = 8;
 
 export const styles = StyleSheet.create({
+  containerHeader: { paddingRight: 0 },
+  containerRightHeader: { minHeight: 0, width: 50 },
   container: {
     flex: 1,
     backgroundColor: colors.white,

@@ -8,6 +8,7 @@ import React, {
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { getDistance } from "geolib";
 import { Trans } from "@lingui/macro";
 
@@ -46,15 +47,20 @@ import {
 // styles
 import { styles } from "./EventItem.styles";
 import colors from "../../../../styles/colors";
+import { PATHS_EVENTS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 type EventItemProps = {
+  navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
   route: RouteProp<
     RootEventsScreensParamList,
     keyof RootEventsScreensParamList
   >;
 };
 
-export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
+export const EventItem: FunctionComponent<EventItemProps> = ({
+  route,
+  navigation,
+}) => {
   const { i18n, language } = useContext(localesContext);
   const { eventsList, changeEvent } = useContext(eventsContext);
   const { location } = useContext(mapContext);
@@ -174,7 +180,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
   if (!eventSelect) return null;
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.containerMain}>
       <Header
         title={i18n._("Event")}
         rightElement={
@@ -184,6 +190,10 @@ export const EventItem: FunctionComponent<EventItemProps> = ({ route }) => {
             onPressShare={onPressShare}
           />
         }
+        onPressLeftElement={() => {
+          console.log("navigation", navigation);
+          navigation.navigate(PATHS_EVENTS_SCREENS.eventsMain);
+        }}
       />
       <ScrollView>
         <View style={containerStyles}>

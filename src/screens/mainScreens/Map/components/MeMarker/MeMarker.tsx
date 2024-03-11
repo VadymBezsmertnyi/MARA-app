@@ -1,12 +1,14 @@
-import React, { FunctionComponent, useContext, useMemo } from 'react';
-import { View } from 'react-native';
-import { Marker } from 'react-native-maps';
+import React, { FunctionComponent, useContext, useMemo } from "react";
+import { Marker } from "react-native-maps";
 
 // providers
-import { mapContext } from '../../../../../providers/MapProvider/MapProvider';
+import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
+
+// icons
+import { IconAutoMap } from "../../../../../icons/components";
 
 // styles
-import { styles } from './MeMarker.styles';
+import colors from "../../../../../../styles/colors";
 
 export const MeMarker: FunctionComponent = () => {
   const { location } = useContext(mapContext);
@@ -18,18 +20,14 @@ export const MeMarker: FunctionComponent = () => {
             latitude: location.latitude,
           }
         : null,
-    [location],
+    [location]
   );
 
   if (!coordinateMarker) return null;
 
   return (
     <Marker coordinate={coordinateMarker}>
-      <View style={styles.container}>
-        <View style={styles.firstCircle} />
-        <View style={styles.secondCircle} />
-        <View style={styles.thirdCircle} />
-      </View>
+      <IconAutoMap width={24} height={24} fill={colors.green} />
     </Marker>
   );
 };

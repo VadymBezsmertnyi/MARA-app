@@ -9,7 +9,7 @@ export const PATHS_MAIN_SCREENS = {
 export const PATHS_MAIN_TABS = {
   workshops: "workshops",
   map: "map",
-  news: "news",
+  events: "events",
   market: "market",
   settings: "settings",
 } as const;

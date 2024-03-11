@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { Trans } from "@lingui/macro";
 
 // types
@@ -14,6 +15,8 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
+import { Header } from "../../../components/Header/Header";
+import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 
 // icons
 import { ArrowLongRight } from "../../../icons/components";
@@ -30,7 +33,8 @@ import colors from "../../../../styles/colors";
 import { styles } from "./EventsMain.styles";
 
 type EventsMainProps = {
-  navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
+  navigation: NativeStackNavigationProp<RootEventsScreensParamList> &
+    DrawerNavigationHelpers;
 };
 
 export const EventsMain: FunctionComponent<EventsMainProps> = ({
@@ -55,8 +59,18 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
     navigation.navigate(PATHS_EVENTS_SCREENS.eventsList, { isOld: true });
   };
 
+  const onPressShowMenu = () => {
+    navigation.openDrawer();
+  };
+
   return (
     <>
+      <Header
+        leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
+        title={i18n._("Events")}
+        containerStyle={styles.containerHeader}
+        rightStyle={styles.containerRightHeader}
+      />
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.containerPart}>

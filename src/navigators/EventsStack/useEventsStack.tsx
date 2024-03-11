@@ -28,7 +28,7 @@ export const useNewsStack = () => {
       id: PATHS_EVENTS_SCREENS.eventsList,
       name: PATHS_EVENTS_SCREENS.eventsList,
       title: t(i18n)`Events`,
-      headerShown: true,
+      headerShown: false,
       component: EventsList,
     },
     {

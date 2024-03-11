@@ -16,7 +16,7 @@ import {
 import WorkshopPlaceholder from "../../../../../../assets/default/workshop-placeholder.png";
 
 // styles
-import { styles } from "./ComponentCallout.styles";
+import { styles } from "./ComponentCalloutWorkshop.styles";
 
 type ComponentCalloutProps = {
   imageSrc: string | null;
@@ -25,13 +25,9 @@ type ComponentCalloutProps = {
   isMoto: boolean;
   isAuto: boolean;
 };
-export const ComponentCallout: FunctionComponent<ComponentCalloutProps> = ({
-  imageSrc,
-  title,
-  distance,
-  isMoto,
-  isAuto,
-}) => {
+export const ComponentCalloutWorkshop: FunctionComponent<
+  ComponentCalloutProps
+> = ({ imageSrc, title, distance, isMoto, isAuto }) => {
   const styleIconAuto = useMemo(() => ({ right: isMoto ? -12 : 0 }), [isMoto]);
   const checkImage = imageSrc ? imageSrc : WorkshopPlaceholder;
   return (
