@@ -161,7 +161,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     const errorsObject = getErrorAddProduct({
       title,
       description,
-      place,
+      place: place?.placeId || null,
       isPhone,
       price,
       select,
@@ -186,7 +186,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
 
   const onSubmit = async () => {
     const isError = checkEnterData();
-    if (userData?.id && !isError) {
+    if (userData?.id && !isError && place) {
       const currentImages = images.map((image) => ({
         id: image.id || "",
         url: image.url || "",
@@ -194,6 +194,14 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         height: image.height,
         image,
       }));
+      const currentPlace =
+        productUser && place?.placeId === productUser?.place_id
+          ? {
+              place_id: productUser.place_id,
+              region_place_id: productUser.region_place_id,
+              country_place_id: productUser.country_place_id,
+            }
+          : { place };
       const newProduct: Omit<ProductType, "id" | "prices"> & {
         place?: ItemSearchPlaceType;
       } = {
@@ -202,10 +210,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         title,
         isNew,
         isBusiness,
-        place:
-          place?.placeId === productUser?.place_id
-            ? undefined
-            : place || undefined,
+        ...currentPlace,
         images: currentImages,
         description,
         price: Number(price),

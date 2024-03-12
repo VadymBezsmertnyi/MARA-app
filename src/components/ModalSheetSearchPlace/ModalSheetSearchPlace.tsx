@@ -108,7 +108,7 @@ export const ModalSheetSearchPlace: FunctionComponent<
 
   useEffect(() => {
     if (isOpen) showOther();
-    if (isOpen && statePlace) {
+    if (isOpen && statePlace?.placeId.length) {
       setSelect(statePlace);
       setList([statePlace]);
     }
