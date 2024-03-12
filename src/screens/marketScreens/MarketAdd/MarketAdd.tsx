@@ -13,7 +13,6 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
 
 // types
-import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 import { CodeCurrenciesType } from "../../../providers/PaymentProvider/PaymentProvider.types";
 import { TypeDataCategory, TypeModalCategories } from "./MarketAdd.types";
@@ -36,7 +35,7 @@ import { Header } from "../../../components/Header/Header";
 import { Input } from "../../../components/Input/Input";
 import { InputPhone } from "../../../components/InputPhone/InputPhone";
 import { InputButton } from "../../../components/InputButton/InputButton";
-import { ModalSheetPlace } from "../../../components/ModalSheetPlace/ModalSheetPlace";
+import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace";
 import { SelectTwoButtons } from "../../../components/SelectTwoButtons/SelectTwoButtons";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { PriceCurrency } from "../../../components/PriceCurrency/PriceCurrency";
@@ -45,6 +44,7 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { BodyCategory } from "./components/BodyCategory/BodyCategory";
 import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
+import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 
 // hooks
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -63,6 +63,7 @@ import {
   NAME_MOTO_PARTS,
 } from "./MarketAdd.constants";
 import { CURRENCY_UAH } from "../../../providers/PaymentProvider/PaymentProvider.constants";
+import { DEFAULT_PRODUCT_DATA } from "../../../providers/MarketProvider/MarketProvider.constants";
 
 // icons
 import { IconArrowRightEvent } from "../../../icons/components";
@@ -82,8 +83,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     useRoute<
       RouteProp<RootMarketScreensParamList & RootSettingsScreensParamList>
     >();
-  const { i18n } = useContext(localesContext);
-  const { places } = useContext(placesContext);
+  const { i18n, language } = useContext(localesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const { userData } = useContext(userContext);
   const { productsUser, addProduct, changeProduct, deleteProduct } =
     useContext(marketContext);
@@ -110,7 +111,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const [yearRelease, setYearRelease] = useState("");
   const [codeCurrency, setCodeCurrency] =
     useState<CodeCurrenciesType>(CURRENCY_UAH);
-  const [place, setPlace] = useState<PlaceType | null>(null);
+  const [place, setPlace] = useState<ItemSearchPlaceType | null>(null);
   const [isShowSelectPlace, setIsShowSelectPlace] = useState(false);
   const [isCleared, setIsCleared] = useState(true);
   const [isNew, setIsNew] = useState(false);
@@ -137,15 +138,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   );
 
   const showTitlePlace = useMemo(() => {
-    const country = places
-      ? Object.keys(places)
-          .map((placeKey) => places[placeKey])
-          .find((country) => country.id === place?.countryId) || null
-      : null;
-    if (country && place)
-      return `${country.title}, ${place.city}, ${place.address}`;
-    return ``;
-  }, [places, place]);
+    if (!place) return "";
+    const placeDB = getPlace(place.placeId);
+    if (!placeDB) return place.title;
+    return placeDB[language].formatted_address;
+  }, [placesDB, place]);
 
   const clearKeyError = (key: string) => {
     if (errorMessage && key in errorMessage) {
@@ -181,7 +178,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     return isError;
   };
 
-  const onSubmitPlace = (data: PlaceType) => {
+  const onSubmitPlace = (data: ItemSearchPlaceType) => {
     setPlace(data);
     setIsShowSelectPlace(false);
     clearKeyError("place");
@@ -189,7 +186,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
 
   const onSubmit = async () => {
     const isError = checkEnterData();
-    if (userData?.id && !isError && place) {
+    if (userData?.id && !isError) {
       const currentImages = images.map((image) => ({
         id: image.id || "",
         url: image.url || "",
@@ -197,12 +194,18 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         height: image.height,
         image,
       }));
-      const newProduct: Omit<ProductType, "id" | "prices"> = {
+      const newProduct: Omit<ProductType, "id" | "prices"> & {
+        place?: ItemSearchPlaceType;
+      } = {
+        ...DEFAULT_PRODUCT_DATA,
         userId: userData?.id,
         title,
         isNew,
         isBusiness,
-        place,
+        place:
+          place?.placeId === productUser?.place_id
+            ? undefined
+            : place || undefined,
         images: currentImages,
         description,
         price: Number(price),
@@ -305,7 +308,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           })
         );
         setTitle(productUser.title);
-        setPlace(productUser.place);
+        const placeDB = getPlace(productUser.place_id);
+        setPlace({
+          placeId: productUser.place_id,
+          title: placeDB ? placeDB[language].formatted_address : "",
+        });
         setImages(imagesWithBath64);
         setIsNew(productUser.isNew);
         setIsBusiness(productUser.isBusiness);
@@ -535,11 +542,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           <View style={styles.containerEmpty} />
         </ScrollView>
       </View>
-      <ModalSheetPlace
-        place={place || productUser?.place}
-        isExactLocation={isBusiness}
+      <ModalSheetSearchPlace
+        statePlace={place || undefined}
         isOpen={isShowSelectPlace}
-        title={i18n._("Location")}
         onClose={() => {
           clearKeyError("place");
           setIsShowSelectPlace(false);

@@ -15,6 +15,7 @@ import {
   ProductType,
   ProductsType,
 } from "./MarketProvider.types";
+import { ItemSearchPlaceType } from "../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 
 // schemas
 import { productSchema, resultProductsSchema } from "./MarketProvider.schemas";
@@ -41,7 +42,9 @@ type MarketContext = {
   products: ProductsType;
   productsUser: ProductsType;
   addProduct: (
-    newProduct: Omit<ProductType, "id" | "prices">
+    newProduct: Omit<ProductType, "id" | "prices"> & {
+      place?: ItemSearchPlaceType;
+    }
   ) => Promise<boolean>;
   changeProduct: (changeProduct: ProductType) => Promise<boolean>;
   deleteProduct: (idProduct: number, type?: "all" | "user") => Promise<boolean>;
@@ -100,6 +103,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       null,
       resultProductsSchema
     );
+
     if (result) {
       setProducts(result.products);
       setCurrencies(result.currencies);
@@ -158,7 +162,11 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
     return false;
   };
 
-  const changeProduct = async (changeProduct: Omit<ProductType, "prices">) => {
+  const changeProduct = async (
+    changeProduct: Omit<ProductType, "id" | "prices"> & {
+      place?: ItemSearchPlaceType;
+    }
+  ) => {
     setLoading(true);
     const result = await api(
       PATHS.marketsProductsChange,
