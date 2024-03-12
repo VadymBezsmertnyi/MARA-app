@@ -11,6 +11,7 @@ import qs from "qs";
 import {
   CountriesType,
   CountryDbType,
+  GetSearchCountryType,
   GetSearchPlaceType,
   RegionsCountryType,
 } from "./PlacesProvider.types";
@@ -18,6 +19,7 @@ import {
 // schemas
 import {
   getCountiesResultSchema,
+  getSearchCountrySchema,
   getSearchPlaceSchema,
 } from "./PlacesProvider.schemas";
 
@@ -34,6 +36,14 @@ import { PATHS } from "../paths.constants";
 
 type PlacesContext = {
   places: CountriesType | null;
+  getSearchCountry: (
+    searchText: string,
+    isDeep?: boolean
+  ) => Promise<GetSearchCountryType | null>;
+  getSearchRegion: (
+    searchText: string,
+    isDeep?: boolean
+  ) => Promise<GetSearchCountryType | null>;
   getSearchPlace: (
     searchText: string,
     isDeep?: boolean
@@ -63,8 +73,6 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
       })),
     [countries, language]
   );
-  console.log("countries", countries);
-  console.log("countriesSelectLanguage", countriesSelectLanguage);
 
   const getCurrentRegion = (array: any) =>
     (array as unknown as { regions: RegionsCountryType }).regions.map(
@@ -120,6 +128,46 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
     if (result) setCountries(result.countries);
   };
 
+  const getSearchCountry = async (
+    searchText: string,
+    isDeep = false
+  ): Promise<GetSearchCountryType | null> => {
+    const queryParams = qs.stringify(
+      {
+        searchText,
+        language,
+        isDeep,
+      },
+      { addQueryPrefix: true }
+    );
+    const result = await api(
+      `${PATHS.placesCountriesSearch}${queryParams}`,
+      { method: "GET" },
+      getSearchCountrySchema
+    );
+    return result;
+  };
+
+  const getSearchRegion = async (
+    searchText: string,
+    isDeep = false
+  ): Promise<GetSearchCountryType | null> => {
+    const queryParams = qs.stringify(
+      {
+        searchText,
+        language,
+        isDeep,
+      },
+      { addQueryPrefix: true }
+    );
+    const result = await api(
+      `${PATHS.placesRegionsSearch}${queryParams}`,
+      { method: "GET" },
+      getSearchCountrySchema
+    );
+    return result;
+  };
+
   const getSearchPlace = async (
     searchText: string,
     isDeep = false
@@ -141,7 +189,7 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   };
 
   const valueContext: PlacesContext = useMemo(
-    () => ({ places, getSearchPlace }),
+    () => ({ places, getSearchCountry, getSearchRegion, getSearchPlace }),
     [places]
   );
 

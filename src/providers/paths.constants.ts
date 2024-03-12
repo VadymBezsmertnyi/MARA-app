@@ -33,6 +33,8 @@ export const PATHS = {
   locationUsersSosDelete: "/location-users/sos/delete/",
   // places
   placesCountries: "/places/countries/",
+  placesCountriesSearch: "/places/countries/search/",
+  placesRegionsSearch: "/places/regions/search/",
   placesCitiesSearch: "/places/cities/search/",
 
   // other

@@ -128,7 +128,7 @@ export const googleLocationResultSchema = z.object({
         offset: z.number(),
       })
     ),
-    secondary_text: z.string(),
+    secondary_text: z.string().optional(),
   }),
   terms: z.array(
     z.object({
@@ -182,5 +182,12 @@ export const getCountiesResultSchema = z.object({
   result: z.boolean(),
   count: z.number(),
   countries: z.array(countryDbSchema),
+  code: z.number(),
+});
+
+export const getSearchCountrySchema = z.object({
+  result: z.boolean(),
+  resultDB: z.array(countryDbSchema),
+  resultGoogle: z.array(googleLocationResultSchema),
   code: z.number(),
 });
