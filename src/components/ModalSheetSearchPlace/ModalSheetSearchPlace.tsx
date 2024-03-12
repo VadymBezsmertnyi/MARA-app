@@ -11,6 +11,9 @@ import { Shadow } from "react-native-shadow-2";
 import { Trans } from "@lingui/macro";
 import lodash from "lodash";
 
+// types
+import { ItemSearchPlaceType } from "./ModalSheetSearchPlace.types";
+
 // providers
 import { localesContext } from "../../../localization/localization.provider";
 import { placesContext } from "../../providers/PlacesProvider/PlacesProvider";
@@ -31,12 +34,7 @@ import { styles } from "./ModalSheetSearchPlace.styles";
 type ModalSheetSearchPlaceProps = {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (placeId: string) => void;
-};
-
-type ItemListType = {
-  placeId: string;
-  title: string;
+  onSubmit: (place: ItemSearchPlaceType) => void;
 };
 
 export const ModalSheetSearchPlace: FunctionComponent<
@@ -45,9 +43,9 @@ export const ModalSheetSearchPlace: FunctionComponent<
   const { i18n, language } = useContext(localesContext);
   const { getSearchPlace } = useContext(placesContext);
   const [isShowOther, setIsShowOther] = useState(false);
-  const [list, setList] = useState<ItemListType[] | null>(null);
+  const [list, setList] = useState<ItemSearchPlaceType[] | null>(null);
   const [value, setValue] = useState("");
-  const [select, setSelect] = useState<ItemListType | null>(null);
+  const [select, setSelect] = useState<ItemSearchPlaceType | null>(null);
   const [isDeepSearch, setIsDeepSearch] = useState(false);
   const isSelectList = useMemo(
     () =>
@@ -72,12 +70,15 @@ export const ModalSheetSearchPlace: FunctionComponent<
             })),
           ]
         : [];
-      const newCurrentList = newList.reduce<ItemListType[]>((state, next) => {
-        const is =
-          state.filter(({ placeId }) => placeId === next.placeId).length > 0;
-        if (is) return state;
-        return [...state, next];
-      }, []);
+      const newCurrentList = newList.reduce<ItemSearchPlaceType[]>(
+        (state, next) => {
+          const is =
+            state.filter(({ placeId }) => placeId === next.placeId).length > 0;
+          if (is) return state;
+          return [...state, next];
+        },
+        []
+      );
       setList(newCurrentList);
     }, 2000)
   );
@@ -85,7 +86,7 @@ export const ModalSheetSearchPlace: FunctionComponent<
   const showOther = () => {
     const timeout = setTimeout(() => {
       setIsShowOther(true);
-    }, 8000);
+    }, 5000);
     return () => {
       clearTimeout(timeout);
     };
@@ -97,7 +98,7 @@ export const ModalSheetSearchPlace: FunctionComponent<
   };
 
   const onPressSubmit = () => {
-    if (select) onSubmit(select.placeId);
+    if (select) onSubmit(select);
   };
 
   useEffect(() => {
@@ -105,8 +106,8 @@ export const ModalSheetSearchPlace: FunctionComponent<
   }, [value]);
 
   useEffect(() => {
-    showOther();
-  }, []);
+    if (isOpen) showOther();
+  }, [isOpen]);
 
   return (
     <Modal visible={isOpen} transparent>

@@ -21,7 +21,7 @@ export const redirectToScreen = (
       navigation.navigate(PATHS_MAIN_SCREENS.registration, {
         screen: PATHS_REGISTRATION_SCREENS.registrationFaceId,
       });
-    else if (user.isNewUser && user.cityUser === null)
+    else if (user.isNewUser && user.place_id === null)
       navigation.navigate(PATHS_MAIN_SCREENS.registration, {
         screen: PATHS_REGISTRATION_SCREENS.registrationLocation,
       });
@@ -30,7 +30,7 @@ export const redirectToScreen = (
         screen: PATHS_REGISTRATION_SCREENS.registrationInfo,
       });
     else navigation.navigate(PATHS_MAIN_SCREENS.main);
-  } else if (user?.isNewUser && user.cityUser === null)
+  } else if (user?.isNewUser && user.place_id === null)
     navigation.navigate(PATHS_MAIN_SCREENS.registration, {
       screen: PATHS_REGISTRATION_SCREENS.registrationLocation,
     });

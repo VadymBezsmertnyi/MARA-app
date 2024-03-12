@@ -81,7 +81,7 @@ export const placeGoogleFullSchema = z.object({
   types: z.array(z.string()),
   url: z.string(),
   utc_offset: z.number(),
-  vicinity: z.string(),
+  vicinity: z.string().optional(),
   language: languagesSchema,
 });
 

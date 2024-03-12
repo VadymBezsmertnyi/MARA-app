@@ -1,20 +1,21 @@
 import React, { FunctionComponent, useContext, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, View, ViewStyle } from "react-native";
+import { ScrollView, Text, View, ViewStyle } from "react-native";
 import { Link } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
-import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
+
+// types
+import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
-import { InputCityModal } from "../../../components/InputCityModal/InputCityModal";
 
 // components
 import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { InputButton } from "../../../components/InputButton/InputButton";
-import { ModalsSheet } from "../../../components/ModalsSheet/ModalsSheet";
+import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace";
 
 // constants
 import { PATHS_REGISTRATION_SCREENS } from "../../../navigators/useNavigator.constants";
@@ -34,7 +35,7 @@ export const RegistrationLocation: FunctionComponent = () => {
   const { heightStatusBar } = useContext(themeContext);
   const { editUser } = useContext(userContext);
   const [isShowModal, setIsShowModal] = useState(false);
-  const [city, setCity] = useState<GoogleLocationDetailResult | null>(null);
+  const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
   const [isGeoLocation, setIsGeolocation] = useState(false);
   const nameApp = "M.A.R.A.";
 
@@ -109,7 +110,7 @@ export const RegistrationLocation: FunctionComponent = () => {
               onPress={() => {
                 setIsShowModal(true);
               }}
-              value={city?.formatted_address || ""}
+              value={city?.title || ""}
               InputIcon={<IconMapGradient width={42} height={32} />}
               inputWrapperStyle={styles.inputCity}
             />
@@ -130,21 +131,16 @@ export const RegistrationLocation: FunctionComponent = () => {
           />
         </View>
       </View>
-      <Modal visible={isShowModal} transparent>
-        <ModalsSheet
-          isShow
-          onClose={() => {
-            setIsShowModal(false);
-          }}
-        >
-          <InputCityModal
-            setCity={setCity}
-            setModalType={() => {
-              setIsShowModal(false);
-            }}
-          />
-        </ModalsSheet>
-      </Modal>
+      <ModalSheetSearchPlace
+        isOpen={isShowModal}
+        onClose={() => {
+          setIsShowModal(false);
+        }}
+        onSubmit={(place) => {
+          setCity(place);
+          setIsShowModal(false);
+        }}
+      />
     </>
   );
 };
