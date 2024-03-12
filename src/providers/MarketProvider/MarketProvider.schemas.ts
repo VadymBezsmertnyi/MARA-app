@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { placeSchema } from "../PlacesProvider/PlacesProvider.schemas";
+
 import {
   codeCurrenciesSchema,
   currenciesSchema,
@@ -32,7 +32,9 @@ export const productSchema = z.object({
   title: z.string(),
   isNew: z.boolean(),
   isBusiness: z.boolean(),
-  place: placeSchema,
+  place_id: z.string(),
+  region_place_id: z.string(),
+  country_place_id: z.string(),
   images: z.array(
     z.object({
       id: z.string(),
@@ -77,6 +79,12 @@ export const placesAllSchema = z.record(
   })
 );
 
+const placesAllIdsSchema = z.object({
+  cityPlaceIds: z.array(z.string()),
+  regionPlaceIds: z.array(z.string()),
+  countryPlaceIds: z.array(z.string()),
+});
+
 export const resultProductsSchema = z.object({
   result: z.boolean(),
   code: z.number(),
@@ -84,7 +92,7 @@ export const resultProductsSchema = z.object({
   currencies: currenciesSchema,
   max: ratesCurrencySchema,
   min: ratesCurrencySchema,
-  places: placesAllSchema.optional(),
+  places: placesAllIdsSchema.optional(),
 });
 
 export const minMaxPricesSchema = z.object({

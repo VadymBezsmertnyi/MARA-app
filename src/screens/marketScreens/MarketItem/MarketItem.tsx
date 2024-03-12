@@ -13,6 +13,7 @@ import { marketContext } from "../../../providers/MarketProvider/MarketProvider"
 import { paymentContext } from "../../../providers/PaymentProvider/PaymentProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
+import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -46,7 +47,7 @@ type MarketItemProps = {
 };
 
 export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const { userData } = useContext(userContext);
   const { products, changeProduct } = useContext(marketContext);
   const { listCurrency } = useContext(paymentContext);
@@ -63,12 +64,19 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     images: string[];
     indexImage?: number;
   } | null>(null);
+  const { placesDB, getPlace } = useContext(placesContext);
   const selectProduct = useMemo(
     () =>
       products.find((product) => product.id === route.params?.productId) ||
       null,
     [route.params]
   );
+  const showTitlePlace = useMemo(() => {
+    if (!selectProduct) return "";
+    const placeDB = getPlace(selectProduct.place_id);
+    if (!placeDB) return "";
+    return placeDB[language].formatted_address;
+  }, [placesDB, selectProduct?.place_id]);
   const isLike = useMemo(
     () =>
       userData && selectProduct
@@ -233,9 +241,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
                 </Text>
                 <View style={styles.containerCity}>
                   <IconLocationMarkerGradient width={14} height={13} />
-                  <Text style={styles.subTitle}>
-                    {selectProduct.place.city}
-                  </Text>
+                  <Text style={styles.subTitle}>{showTitlePlace}</Text>
                 </View>
               </View>
             </View>

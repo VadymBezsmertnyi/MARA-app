@@ -10,6 +10,7 @@ import { localesContext } from "../../../../../../localization/localization.prov
 import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
 import { marketContext } from "../../../../../providers/MarketProvider/MarketProvider";
 import { userContext } from "../../../../../providers/UserProvider/UserProvider";
+import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -38,10 +39,16 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
   product,
   onSelect,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
   const { changeProduct } = useContext(marketContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const { userData } = useContext(userContext);
+  const showTitlePlace = useMemo(() => {
+    const placeDB = getPlace(product.place_id);
+    if (!placeDB) return "";
+    return placeDB[language].formatted_address;
+  }, [placesDB, product.place_id]);
   const isLike = useMemo(
     () => (userData ? product.likeUserIds.includes(userData.id) : false),
     [product?.likeUserIds]
@@ -90,7 +97,7 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
         </Text>
         <View style={styles.containerCity}>
           <IconLocationMarker width={14} height={13} fill={colors.grayCloudy} />
-          <Text style={styles.subTitle}>{product.place.city}</Text>
+          <Text style={styles.subTitle}>{showTitlePlace}</Text>
         </View>
         <TextLinearGradient
           title={`${product.price.toLocaleString("uk")} ${symbolCurrency}`}

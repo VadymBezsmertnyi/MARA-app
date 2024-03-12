@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import qs from "qs";
+import { z } from "zod";
 
 // types
 import {
@@ -13,6 +14,7 @@ import {
   CountryDbType,
   GetSearchCountryType,
   GetSearchPlaceType,
+  PlaceDbType,
   RegionsCountryType,
 } from "./PlacesProvider.types";
 
@@ -21,6 +23,7 @@ import {
   getCountiesResultSchema,
   getSearchCountrySchema,
   getSearchPlaceSchema,
+  placeDbSchema,
 } from "./PlacesProvider.schemas";
 
 // providers
@@ -36,6 +39,7 @@ import { PATHS } from "../paths.constants";
 
 type PlacesContext = {
   places: CountriesType | null;
+  placesDB: PlaceDbType[];
   getSearchCountry: (
     searchText: string,
     isDeep?: boolean
@@ -48,6 +52,7 @@ type PlacesContext = {
     searchText: string,
     isDeep?: boolean
   ) => Promise<GetSearchPlaceType | null>;
+  getPlace: (placeId: string) => PlaceDbType | null;
 };
 
 type PlacesProviderProps = {
@@ -63,15 +68,16 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   const { i18n, language } = useContext(localesContext);
   const [places, setPlaces] = useState<CountriesType | null>(null);
   // TODO NEW LOGICs
-  const [countries, setCountries] = useState<CountryDbType[]>([]);
+  const [countriesDB, setCountriesDB] = useState<CountryDbType[]>([]);
+  const [placesDB, setPlacesDB] = useState<PlaceDbType[]>([]);
   const countriesSelectLanguage = useMemo(
     () =>
-      countries.map(({ id, place_id, [language]: country }) => ({
+      countriesDB.map(({ id, place_id, [language]: country }) => ({
         id,
         place_id,
         ...country,
       })),
-    [countries, language]
+    [countriesDB, language]
   );
 
   const getCurrentRegion = (array: any) =>
@@ -119,13 +125,34 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
     setPlaces(currentPlaces);
   };
 
+  const getPlaceDB = async (placeId: string): Promise<void> => {
+    const queryParams = qs.stringify({
+      placeId,
+    });
+    const placeDB = await api(
+      `${PATHS.placesCityId}?${queryParams}`,
+      { method: "GET" },
+      z.object({
+        resultDB: placeDbSchema,
+      })
+    );
+    if (placeDB) setPlacesDB((state) => [...state, placeDB.resultDB]);
+  };
+
+  const getPlace = (placeId: string): PlaceDbType | null => {
+    const placeState = placesDB.find((placeDB) => placeDB.place_id === placeId);
+    if (placeState) return placeState;
+    getPlaceDB(placeId);
+    return null;
+  };
+
   const getCounties = async () => {
     const result = await api(
       PATHS.placesCountries,
       { method: "GET" },
       getCountiesResultSchema
     );
-    if (result) setCountries(result.countries);
+    if (result) setCountriesDB(result.countries);
   };
 
   const getSearchCountry = async (
@@ -189,8 +216,15 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   };
 
   const valueContext: PlacesContext = useMemo(
-    () => ({ places, getSearchCountry, getSearchRegion, getSearchPlace }),
-    [places]
+    () => ({
+      places,
+      placesDB,
+      getSearchCountry,
+      getSearchRegion,
+      getSearchPlace,
+      getPlace,
+    }),
+    [places, placesDB]
   );
 
   useEffect(() => {

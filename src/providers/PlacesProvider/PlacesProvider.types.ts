@@ -7,6 +7,7 @@ import {
   getSearchPlaceSchema,
   countryDbSchema,
   getSearchCountrySchema,
+  placeDbSchema,
 } from "./PlacesProvider.schemas";
 
 export type RegionsCountryType = z.infer<typeof regionsCountrySchema>;
@@ -19,3 +20,4 @@ export type GetSearchPlaceType = z.infer<typeof getSearchPlaceSchema>;
 export type GetSearchCountryType = z.infer<typeof getSearchCountrySchema>;
 
 export type CountryDbType = z.infer<typeof countryDbSchema>;
+export type PlaceDbType = z.infer<typeof placeDbSchema>;

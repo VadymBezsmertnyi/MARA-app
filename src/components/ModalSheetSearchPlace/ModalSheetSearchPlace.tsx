@@ -33,13 +33,14 @@ import { styles } from "./ModalSheetSearchPlace.styles";
 
 type ModalSheetSearchPlaceProps = {
   isOpen: boolean;
+  statePlace?: ItemSearchPlaceType;
   onClose: () => void;
   onSubmit: (place: ItemSearchPlaceType) => void;
 };
 
 export const ModalSheetSearchPlace: FunctionComponent<
   ModalSheetSearchPlaceProps
-> = ({ isOpen, onClose, onSubmit }) => {
+> = ({ isOpen, statePlace, onClose, onSubmit }) => {
   const { i18n, language } = useContext(localesContext);
   const { getSearchPlace } = useContext(placesContext);
   const [isShowOther, setIsShowOther] = useState(false);
@@ -107,6 +108,10 @@ export const ModalSheetSearchPlace: FunctionComponent<
 
   useEffect(() => {
     if (isOpen) showOther();
+    if (isOpen && statePlace) {
+      setSelect(statePlace);
+      setList([statePlace]);
+    }
   }, [isOpen]);
 
   return (

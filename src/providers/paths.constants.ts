@@ -36,6 +36,7 @@ export const PATHS = {
   placesCountriesSearch: "/places/countries/search/",
   placesRegionsSearch: "/places/regions/search/",
   placesCitiesSearch: "/places/cities/search/",
+  placesCityId: "/places/cities/getPlaceId/",
 
   // other
   ipApiGetCountry: "http://ip-api.com/json",
