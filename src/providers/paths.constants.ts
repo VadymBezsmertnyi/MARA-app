@@ -31,6 +31,10 @@ export const PATHS = {
   locationUsers: "/location-users/",
   locationUsersSosAdd: "/location-users/sos/add/",
   locationUsersSosDelete: "/location-users/sos/delete/",
+  // places
+  placesCountries: "/places/countries/",
+  placesCitiesSearch: "/places/cities/search/",
+
   // other
   ipApiGetCountry: "http://ip-api.com/json",
 } as const;

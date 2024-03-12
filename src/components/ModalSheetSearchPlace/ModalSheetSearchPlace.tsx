@@ -1,0 +1,210 @@
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
+import { Trans } from "@lingui/macro";
+import lodash from "lodash";
+
+// providers
+import { localesContext } from "../../../localization/localization.provider";
+import { placesContext } from "../../providers/PlacesProvider/PlacesProvider";
+
+// components
+import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
+import { Input } from "../Input/Input";
+import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
+import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
+import { CheckboxPoint } from "../CheckboxPoint/CheckboxPoint";
+
+// icons
+import { IconSearchInput } from "../../icons/components";
+
+// styles
+import { styles } from "./ModalSheetSearchPlace.styles";
+
+type ModalSheetSearchPlaceProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (placeId: string) => void;
+};
+
+type ItemListType = {
+  placeId: string;
+  title: string;
+};
+
+export const ModalSheetSearchPlace: FunctionComponent<
+  ModalSheetSearchPlaceProps
+> = ({ isOpen, onClose, onSubmit }) => {
+  const { i18n, language } = useContext(localesContext);
+  const { getSearchPlace } = useContext(placesContext);
+  const [isShowOther, setIsShowOther] = useState(false);
+  const [list, setList] = useState<ItemListType[] | null>(null);
+  const [value, setValue] = useState("");
+  const [select, setSelect] = useState<ItemListType | null>(null);
+  const [isDeepSearch, setIsDeepSearch] = useState(false);
+  const isSelectList = useMemo(
+    () =>
+      list
+        ? list.filter((item) => item.placeId === select?.placeId).length > 0
+        : false,
+    [list, select]
+  );
+
+  const throttled = useRef(
+    lodash.throttle(async (newValue: string, isDeep: boolean) => {
+      const result = await getSearchPlace(newValue, isDeep);
+      const newList = result
+        ? [
+            ...result.resultGoogle.map((item) => ({
+              placeId: item.place_id,
+              title: item.description,
+            })),
+            ...result.resultDB.map((item) => ({
+              placeId: item.place_id,
+              title: item[language].formatted_address,
+            })),
+          ]
+        : [];
+      const newCurrentList = newList.reduce<ItemListType[]>((state, next) => {
+        const is =
+          state.filter(({ placeId }) => placeId === next.placeId).length > 0;
+        if (is) return state;
+        return [...state, next];
+      }, []);
+      setList(newCurrentList);
+    }, 2000)
+  );
+
+  const showOther = () => {
+    const timeout = setTimeout(() => {
+      setIsShowOther(true);
+    }, 8000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  };
+
+  const onToggleDeepSearch = () => {
+    if (value.length > 2 && !isDeepSearch) throttled.current(value, true);
+    setIsDeepSearch((state) => !state);
+  };
+
+  const onPressSubmit = () => {
+    if (select) onSubmit(select.placeId);
+  };
+
+  useEffect(() => {
+    if (value.length > 2) throttled.current(value, isDeepSearch);
+  }, [value]);
+
+  useEffect(() => {
+    showOther();
+  }, []);
+
+  return (
+    <Modal visible={isOpen} transparent>
+      <ModalsSheet isShow={isOpen} onClose={onClose}>
+        <View style={styles.container}>
+          <Shadow stretch>
+            <View style={styles.containerHeader}>
+              <Text style={styles.title}>
+                <Trans>Specify the city</Trans>
+              </Text>
+              <LinearGradientCustom style={styles.lineHeader} />
+              <Input
+                isSelect
+                placeholder={i18n._("Enter text to search")}
+                value={value}
+                onChange={setValue}
+                InputIcon={<IconSearchInput width={26} height={26} />}
+                containerStyle={styles.inputSearch}
+                wrapperStyle={styles.wrapperInput}
+              />
+            </View>
+          </Shadow>
+          <ScrollView contentContainerStyle={styles.containerList}>
+            {select && !isSelectList ? (
+              <TouchableOpacity
+                key={`place-select-${select.placeId}`}
+                style={styles.containerItemList}
+                onPress={() => {
+                  setSelect(select);
+                }}
+              >
+                <Text numberOfLines={2} style={styles.titleItemList}>
+                  {select.title}
+                </Text>
+                <CheckboxPoint isSelect />
+              </TouchableOpacity>
+            ) : null}
+            {list?.length ? (
+              list.map((place, index) => (
+                <TouchableOpacity
+                  key={`place-${place.placeId}-${index + 1}`}
+                  style={styles.containerItemList}
+                  onPress={() => {
+                    setSelect(place);
+                  }}
+                >
+                  <Text numberOfLines={2} style={styles.titleItemList}>
+                    {place.title}
+                  </Text>
+                  <CheckboxPoint isSelect={select?.placeId === place.placeId} />
+                </TouchableOpacity>
+              ))
+            ) : (
+              <Text style={styles.titleEmptyList}>
+                <Trans>Please enter text for searching</Trans>
+              </Text>
+            )}
+            {isShowOther ? (
+              <>
+                {!isDeepSearch ? (
+                  <Text style={styles.titleOtherList}>
+                    <Trans>
+                      If there is no suitable option in the list, use 'Deep
+                      Search'
+                    </Trans>
+                  </Text>
+                ) : null}
+                <ButtonCustom
+                  type={isDeepSearch ? "full" : "transparent"}
+                  onSubmit={onToggleDeepSearch}
+                  title={
+                    isDeepSearch
+                      ? i18n._("Disable Deep Search")
+                      : i18n._("Enable Deep Search")
+                  }
+                />
+              </>
+            ) : null}
+          </ScrollView>
+          <View>
+            <Shadow stretch>
+              <View style={styles.containerSubmitModalTypeWork}>
+                <ButtonCustom
+                  disabled={!select}
+                  title={i18n._("Select")}
+                  onSubmit={onPressSubmit}
+                />
+                <ButtonCustom
+                  type="transparent"
+                  disabled={false}
+                  title={i18n._("Back")}
+                  onSubmit={onClose}
+                />
+              </View>
+            </Shadow>
+          </View>
+        </View>
+      </ModalsSheet>
+    </Modal>
+  );
+};

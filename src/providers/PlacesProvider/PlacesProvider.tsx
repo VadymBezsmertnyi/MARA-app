@@ -15,6 +15,12 @@ import {
   RegionsCountryType,
 } from "./PlacesProvider.types";
 
+// schemas
+import {
+  getCountiesResultSchema,
+  getSearchPlaceSchema,
+} from "./PlacesProvider.schemas";
+
 // providers
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { localesContext } from "../../../localization/localization.provider";
@@ -24,14 +30,14 @@ import REGIONS_UK from "../../../assets/db/places/uk.json";
 import REGIONS_PL from "../../../assets/db/places/pl.json";
 import REGIONS_BY from "../../../assets/db/places/by.json";
 import REGIONS_LT from "../../../assets/db/places/lt.json";
-import {
-  getCountiesResultSchema,
-  getSearchPlaceSchema,
-} from "./PlacesProvider.schemas";
+import { PATHS } from "../paths.constants";
 
 type PlacesContext = {
   places: CountriesType | null;
-  getSearchPlace: (searchText: string) => Promise<GetSearchPlaceType | null>;
+  getSearchPlace: (
+    searchText: string,
+    isDeep?: boolean
+  ) => Promise<GetSearchPlaceType | null>;
 };
 
 type PlacesProviderProps = {
@@ -107,7 +113,7 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
 
   const getCounties = async () => {
     const result = await api(
-      `/places/countries/`,
+      PATHS.placesCountries,
       { method: "GET" },
       getCountiesResultSchema
     );
@@ -115,17 +121,19 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   };
 
   const getSearchPlace = async (
-    searchText: string
+    searchText: string,
+    isDeep = false
   ): Promise<GetSearchPlaceType | null> => {
     const queryParams = qs.stringify(
       {
         searchText,
         language,
+        isDeep,
       },
       { addQueryPrefix: true }
     );
     const result = await api(
-      `/places/cities/search/${queryParams}`,
+      `${PATHS.placesCitiesSearch}${queryParams}`,
       { method: "GET" },
       getSearchPlaceSchema
     );

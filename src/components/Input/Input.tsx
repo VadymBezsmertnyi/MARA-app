@@ -79,7 +79,6 @@ export const Input: FunctionComponent<InputProps> = ({
     return {
       ...styles.container,
       marginTop,
-      flex: customStyles ? 1 : 0,
       ...containerStyle,
       opacity: disabled ? 0.5 : 1,
     };
