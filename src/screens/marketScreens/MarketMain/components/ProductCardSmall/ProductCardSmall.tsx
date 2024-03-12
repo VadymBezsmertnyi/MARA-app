@@ -97,7 +97,9 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
         </Text>
         <View style={styles.containerCity}>
           <IconLocationMarker width={14} height={13} fill={colors.grayCloudy} />
-          <Text style={styles.subTitle}>{showTitlePlace}</Text>
+          <Text numberOfLines={1} style={styles.subTitle}>
+            {showTitlePlace}
+          </Text>
         </View>
         <TextLinearGradient
           title={`${product.price.toLocaleString("uk")} ${symbolCurrency}`}

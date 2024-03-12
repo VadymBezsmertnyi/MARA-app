@@ -98,7 +98,9 @@ export const ProductCardFull: FunctionComponent<ProductCardFullProps> = ({
               height={13}
               fill={colors.grayCloudy}
             />
-            <Text style={styles.subTitle}>{showTitlePlace}</Text>
+            <Text numberOfLines={2} style={styles.subTitle}>
+              {showTitlePlace}
+            </Text>
           </View>
           <Text style={styles.subTitle}>
             {dayjs(product.updateAT).format("DD.MM.YYYY")}

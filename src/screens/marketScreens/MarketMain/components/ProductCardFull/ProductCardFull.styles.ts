@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import { horizontalScale } from "../../../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {
@@ -23,8 +24,10 @@ export const styles = StyleSheet.create({
   containerSubTitle: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
   },
   containerCity: {
+    width: horizontalScale(200),
     flexDirection: "row",
     alignItems: "center",
     gap: 2,

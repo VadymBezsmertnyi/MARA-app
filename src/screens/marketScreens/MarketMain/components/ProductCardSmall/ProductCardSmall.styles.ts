@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import { horizontalScale } from "../../../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,9 +9,9 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
     paddingBottom: 16,
     position: "relative",
+    justifyContent: "space-between",
   },
   image: {
-    width: "100%",
     height: 126,
     borderTopStartRadius: 4,
     borderTopEndRadius: 4,
@@ -25,6 +26,7 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   containerCity: {
+    width: horizontalScale(140),
     flexDirection: "row",
     alignItems: "center",
     gap: 2,
@@ -35,12 +37,10 @@ export const styles = StyleSheet.create({
     color: colors.grayCloudy,
   },
   title: {
-    width: "90%",
     fontFamily: "Montserrat_600SemiBold",
     fontSize: 16,
     color: colors.blackCoffee,
     lineHeight: 16,
-    minHeight: 38,
   },
   containerLike: {
     position: "absolute",
