@@ -74,15 +74,13 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   part: {
-    minWidth: 70,
     justifyContent: "space-around",
+    alignItems: "flex-end",
+    paddingRight: horizontalScale(8),
   },
-  partNow: {
-    paddingRight: horizontalScale(18),
-  },
+  partNow: {},
   containerLocation: { flexDirection: "row", alignItems: "center" },
   distance: {
-    flex: 1,
     fontFamily: "OpenSans_600SemiBold",
     fontSize: 12,
   },

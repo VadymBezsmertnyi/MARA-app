@@ -36,7 +36,7 @@ import { eventSchema, resultEventsSchema } from "./EventsProvider.schemas";
 type EventsContext = {
   eventsList: UpcomingEvents;
   eventsUserList: UpcomingEvents;
-  addEvent: (newEvent: EventType) => Promise<void>;
+  addEvent: (newEvent: Omit<EventType, "id">) => Promise<void>;
   changeEvent: (changeEvent: EventType) => Promise<void>;
   deleteEvent: (idEvent: number, type?: "all" | "user") => Promise<boolean>;
   setIdDeleteEvent: React.Dispatch<React.SetStateAction<number | null>>;
@@ -85,7 +85,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
     }
   };
 
-  const addEvent = async (newEvent: EventType) => {
+  const addEvent = async (newEvent: Omit<EventType, "id">) => {
     setLoading(true);
     if (userData?.id) {
       const data = { ...newEvent, userId: userData.id };

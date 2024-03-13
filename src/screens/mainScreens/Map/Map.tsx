@@ -112,7 +112,7 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
       >
         <MeMarker />
         {eventsList.map((eventItem) =>
-          eventItem.place?.coordinates ? (
+          eventItem?.coordinates ? (
             <EventMarker
               key={`marker-event-${eventItem.id}`}
               location={location}

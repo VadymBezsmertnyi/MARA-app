@@ -1,12 +1,16 @@
 import { z } from "zod";
-import { placeSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import { coordinatesSchema } from "../PlacesProvider/PlacesProvider.schemas";
 import { codeCurrenciesSchema } from "../PaymentProvider/PaymentProvider.schemas";
 
 export const eventSchema = z.object({
   id: z.number(),
   userId: z.number(),
   title: z.string(),
-  place: placeSchema.nullable(),
+  place_id: z.string(),
+  region_place_id: z.string(),
+  country_place_id: z.string(),
+  place_address: z.string(),
+  coordinates: coordinatesSchema,
   date: z.object({
     start: z.number(),
     finish: z.number(),

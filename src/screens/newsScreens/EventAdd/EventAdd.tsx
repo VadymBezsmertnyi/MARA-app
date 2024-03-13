@@ -12,6 +12,7 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import { z } from "zod";
 import * as FileSystem from "expo-file-system";
 import { Trans } from "@lingui/macro";
+import dayjs from "dayjs";
 
 // types
 import {
@@ -20,15 +21,14 @@ import {
   RootSettingsScreensParamList,
 } from "../../../navigators/Navigators.types";
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
-import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
 import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { ModalSheetPlace } from "../../../components/ModalSheetPlace/ModalSheetPlace";
 import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { DEFAULT_EVENT_DATA } from "../../../providers/EventsProvider/EventsProvider.constants";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -39,6 +39,8 @@ import { InputButton } from "../../../components/InputButton/InputButton";
 import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 import { Header } from "../../../components/Header/Header";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
+import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
+import { ModalSheetSearchPlaceAddress } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress";
 
 // icons
 import { IconMapGradient } from "../../../icons/components";
@@ -54,25 +56,31 @@ type AddEventProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
 };
 
+const NOW_TIME_JS = dayjs().minute(0);
+const NOW_TIME_JS_HOUR = dayjs().minute(0).add(1, "hour");
+const CURRENT_DEFAULT_DATE = new Date(NOW_TIME_JS.format());
+const CURRENT_DEFAULT_DATE_HOUR = new Date(NOW_TIME_JS_HOUR.format());
+
 export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const { params } =
     useRoute<
       RouteProp<RootEventsScreensParamList & RootSettingsScreensParamList>
     >();
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const { getErrorText } = useErrors(i18n);
   const { addEvent, changeEvent, eventsUserList, deleteEvent } =
     useContext(eventsContext);
   const { userData } = useContext(userContext);
   const { setLoading } = useContext(loadingContext);
-  const { places } = useContext(placesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const [eventName, setEventName] = useState("");
-  const [place, setPlace] = useState<PlaceType | null>(null);
+  const [placeAddress, setPlaceAddress] =
+    useState<ItemSearchPlaceAddressType | null>(null);
   const [isModalPlace, setIsModalPlace] = useState(false);
-  const [beginDate, setBeginDate] = useState<Date>(new Date());
-  const [beginTime, setBeginTime] = useState<Date>(new Date());
-  const [finishDate, setFinishDate] = useState<Date>(new Date());
-  const [finishTime, setFinishTime] = useState<Date>(new Date());
+  const [beginDate, setBeginDate] = useState<Date>(CURRENT_DEFAULT_DATE);
+  const [beginTime, setBeginTime] = useState<Date>(CURRENT_DEFAULT_DATE);
+  const [finishDate, setFinishDate] = useState<Date>(CURRENT_DEFAULT_DATE_HOUR);
+  const [finishTime, setFinishTime] = useState<Date>(CURRENT_DEFAULT_DATE_HOUR);
   const [priceStart, setPriceStart] = useState("");
   const [priceFinish, setPriceFinish] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
@@ -83,17 +91,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     string,
     { name: string; title: string }
   > | null>(null);
-
   const showTitlePlace = useMemo(() => {
-    const country = places
-      ? Object.keys(places)
-          .map((placeKey) => places[placeKey])
-          .find((country) => country.id === place?.countryId) || null
-      : null;
-    if (country && place)
-      return `${country.title}, ${place.city}, ${place.address}`;
-    return ``;
-  }, [places, place]);
+    if (!placeAddress) return "";
+    const placeDB = getPlace(placeAddress.placeId);
+    if (!placeDB) return placeAddress.title;
+    return placeDB[language].formatted_address;
+  }, [placesDB, placeAddress]);
   const currentParamsChangeEvent = useMemo(
     () => z.object({ eventId: z.number() }).safeParse(params),
     [params]
@@ -126,7 +129,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           otherName: i18n._("event"),
         }),
       }),
-      ...(place === null && {
+      ...(placeAddress === null && {
         location: getErrorText("location", { otherName: i18n._("event") }),
       }),
       ...(start > finish && {
@@ -177,7 +180,19 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
 
   const onSaveEvent = async () => {
     const isError = checkEnterData();
-    if (userData?.id && !isError) {
+    if (userData?.id && !isError && placeAddress) {
+      const currentPlace =
+        eventUser &&
+        placeAddress?.placeId === eventUser.place_id &&
+        placeAddress.address === eventUser.place_address
+          ? {
+              place_id: eventUser.place_id,
+              region_place_id: eventUser.region_place_id,
+              country_place_id: eventUser.country_place_id,
+              place_address: eventUser.place_address,
+              coordinates: eventUser.coordinates,
+            }
+          : { place: placeAddress };
       const currentImages = images.map((image) => ({
         id: image.id || "",
         url: image.url || "",
@@ -186,8 +201,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         image,
       }));
       const newEvent = {
+        ...DEFAULT_EVENT_DATA,
         title: eventName,
-        place,
+        ...currentPlace,
         date: {
           start,
           finish,
@@ -207,9 +223,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
       if (eventUser) await changeEvent({ ...eventUser, ...newEvent });
       else
         await addEvent({
-          id: 0,
-          userId: userData.id,
           ...newEvent,
+          userId: userData.id,
         });
       navigation.goBack();
     }
@@ -238,7 +253,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           })
         );
         setEventName(eventUser.title);
-        setPlace(eventUser.place);
+        const placeDB = getPlace(eventUser.place_id);
+        setPlaceAddress({
+          placeId: eventUser.place_id,
+          title: placeDB ? placeDB[language].formatted_address : "",
+          address: eventUser.place_address,
+          coordinates: eventUser.coordinates,
+        });
         setBeginDate(new Date(eventUser.date.start));
         setBeginTime(new Date(eventUser.date.start));
         setFinishDate(new Date(eventUser.date.finish));
@@ -386,19 +407,17 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               />
             </View>
           </View>
-          <View style={styles.wrapper}>
-            <Input
-              placeholder={i18n._("Briefly describe what will happen")}
-              label={`${i18n._("Tell us about the event:")}*`}
-              value={aboutEvent}
-              customStyles={styles.multipleInput}
-              onChange={(value) => {
-                setErrorMessage(null);
-                setAboutEvent(value);
-              }}
-              errorMessage={errorMessage?.aboutEvent?.title}
-            />
-          </View>
+          <Input
+            placeholder={i18n._("Briefly describe what will happen")}
+            label={`${i18n._("Tell us about the event:")}*`}
+            value={aboutEvent}
+            customStyles={styles.multipleInput}
+            onChange={(value) => {
+              setErrorMessage(null);
+              setAboutEvent(value);
+            }}
+            errorMessage={errorMessage?.aboutEvent?.title}
+          />
           <BoxSelectImages
             images={images}
             setImages={setImages}
@@ -411,16 +430,16 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           <View style={styles.empty} />
         </ScrollView>
       </View>
-      <ModalSheetPlace
+      <ModalSheetSearchPlaceAddress
         isOpen={isModalPlace}
-        title={i18n._("Event address")}
         onClose={() => {
           setIsModalPlace(false);
         }}
         onSubmit={(data) => {
-          setPlace(data);
+          setPlaceAddress(data);
           setIsModalPlace(false);
         }}
+        statePlace={placeAddress || undefined}
       />
       <ModalShowErrors
         isOpen={isShowErrors}

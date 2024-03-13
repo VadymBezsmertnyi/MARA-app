@@ -64,7 +64,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { i18n, language } = useContext(localesContext);
   const { eventsList, changeEvent } = useContext(eventsContext);
   const { location } = useContext(mapContext);
-  const { places } = useContext(placesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const { userData } = useContext(userContext);
   const { getSharedLink } = useContext(sharingContext);
   const tabBarHeight = useBottomTabBarHeight();
@@ -88,31 +88,21 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     [eventSelect?.likeUserIds]
   );
   const showTitlePlace = useMemo(() => {
-    const country = places
-      ? Object.keys(places)
-          .map((placeKey) => places[placeKey])
-          .find((country) => country.id === eventSelect?.place?.countryId) ||
-        null
-      : null;
-
-    const region =
-      country?.regions.find(
-        (region) => region.placeId === eventSelect?.place?.regionPlaceId
-      )?.name[language] || "";
-    if (country && eventSelect?.place)
-      return `${eventSelect?.place.address}, ${eventSelect?.place.city}\n${region}, ${country.title}`;
-    return ``;
-  }, [places, eventSelect?.place]);
+    if (!eventSelect) return "";
+    const placeDB = getPlace(eventSelect.place_id);
+    if (!placeDB) return "";
+    return placeDB[language].formatted_address;
+  }, [placesDB, eventSelect?.place_id]);
   const firstImage = useMemo(
     () => (eventSelect?.images.length ? eventSelect.images[0] : null),
     [eventSelect]
   );
   const distance = useMemo(
     () =>
-      location && eventSelect?.place?.coordinates
+      location && eventSelect?.coordinates
         ? getDistance(location, {
-            longitude: eventSelect.place?.coordinates?.longitude,
-            latitude: eventSelect.place?.coordinates.latitude,
+            longitude: eventSelect?.coordinates?.longitude,
+            latitude: eventSelect?.coordinates.latitude,
           })
         : null,
     [location, eventSelect]
@@ -326,14 +316,14 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               </Text>
             </View>
           </View>
-          <View style={styles.mapWrapper}>
-            {eventSelect.place?.coordinates ? (
+          {eventSelect.coordinates ? (
+            <View style={styles.mapWrapper}>
               <Map
-                longitude={eventSelect.place.coordinates.longitude}
-                latitude={eventSelect.place.coordinates.latitude}
+                longitude={eventSelect.coordinates.longitude}
+                latitude={eventSelect.coordinates.latitude}
               />
-            ) : null}
-          </View>
+            </View>
+          ) : null}
           {eventSelect.images.length ? (
             <View style={styles.gallery}>
               <Text style={styles.subtitle}>{i18n._("Gallery")}:</Text>

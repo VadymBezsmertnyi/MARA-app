@@ -40,8 +40,8 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
   navigation,
 }) => {
   const { location } = useContext(mapContext);
-  const { i18n } = useContext(localesContext);
-  const { places } = useContext(placesContext);
+  const { i18n, language } = useContext(localesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const nowDate = new Date().getTime();
   const isOld = useMemo(
     () => item.date.finish < nowDate,
@@ -57,13 +57,13 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
   );
   const distance = useMemo(
     () =>
-      location && item.place?.coordinates
+      location && item.coordinates
         ? getDistance(location, {
-            longitude: item.place?.coordinates.longitude,
-            latitude: item.place?.coordinates.latitude,
+            longitude: item.coordinates.longitude,
+            latitude: item.coordinates.latitude,
           })
         : null,
-    [location, item.place]
+    [location, item.coordinates]
   );
   const containerStyles = useMemo(
     () => [
@@ -78,15 +78,10 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
     [isNow]
   );
   const showTitlePlace = useMemo(() => {
-    const country = places
-      ? Object.keys(places)
-          .map((placeKey) => places[placeKey])
-          .find((country) => country.id === item.place?.countryId) || null
-      : null;
-    if (country && item.place)
-      return `${country.title}, ${item.place.city}, ${item.place.address}`;
-    return ``;
-  }, [places, item.place]);
+    const placeDB = getPlace(item.place_id);
+    if (!placeDB) return "";
+    return placeDB[language].formatted_address;
+  }, [placesDB, item.place_id]);
 
   const selectEvent = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
@@ -127,7 +122,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
             height={15}
             fill={colors.californiaOrange}
           />
-          <Text numberOfLines={2} style={styles.distance}>
+          <Text numberOfLines={1} style={styles.distance}>
             {distance
               ? `${(distance / 1000).toFixed()} км`
               : i18n._(`Not enabled location`)}

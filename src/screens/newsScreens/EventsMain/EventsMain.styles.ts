@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
     fontSize: scaleFont(FONT_SIZE_TITLE_MORE),
   },
   containerNotList: {
-    height: 300,
+    height: verticalScale(280),
     alignItems: "center",
     justifyContent: "center",
   },

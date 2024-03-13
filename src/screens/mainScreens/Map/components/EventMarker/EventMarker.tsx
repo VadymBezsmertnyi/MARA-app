@@ -38,16 +38,16 @@ export const EventMarker: FunctionComponent<EventMarkerProps> = ({
     }>
   >();
   const distance =
-    location && event.place?.coordinates
+    location && event.coordinates
       ? getDistance(location, {
-          longitude: event.place.coordinates.longitude,
-          latitude: event.place.coordinates.latitude,
+          longitude: event.coordinates.longitude,
+          latitude: event.coordinates.latitude,
         })
       : null;
 
-  if (!event.place?.coordinates) return null;
+  if (!event.coordinates) return null;
   return (
-    <Marker coordinate={event.place.coordinates}>
+    <Marker coordinate={event.coordinates}>
       <IconEventMap width={44} height={44} />
       <Callout
         tooltip

@@ -70,6 +70,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     useState<boolean>(false);
   const [usersMaps, setUsersMap] = useState<UserLocationMapType[] | null>(null);
   const [usersSos, setUsersSos] = useState<UserLocationSosType[] | null>(null);
+  const [countryUser, setCountryUser] = useState<{
+    country: string;
+    countryCode: string;
+  } | null>(null);
 
   const getStatusApp = async () => {
     const { status: statusBackground } =
@@ -116,16 +120,8 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     const { coords } = coordsProps
       ? coordsProps
       : await Location.getCurrentPositionAsync({});
-    const result = await api(
-      PATHS.ipApiGetCountry,
-      null,
-      z.object({
-        country: z.string(),
-        countryCode: z.string(),
-      })
-    );
     const isUkraine =
-      result?.country === "Ukraine" || result?.countryCode === "UA";
+      countryUser?.country === "Ukraine" || countryUser?.countryCode === "UA";
     const date = new Date().getTime();
     if (userData) {
       const dataLocationUser = {
@@ -153,6 +149,20 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
 
     setLocation(coords);
     sendLocation(coords); // Send to websocket
+  };
+
+  const getCountryUser = async () => {
+    const result = countryUser
+      ? countryUser
+      : await api(
+          PATHS.ipApiGetCountry,
+          null,
+          z.object({
+            country: z.string(),
+            countryCode: z.string(),
+          })
+        );
+    if (!countryUser) setCountryUser(result);
   };
 
   const onIntervalGetLocation = () => {
@@ -205,20 +215,6 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     }
   };
 
-  const valueContext: MapContext = useMemo(
-    () => ({
-      location,
-      usersMaps,
-      usersSos,
-      statusForeground,
-      statusBackground,
-      setPermission,
-      onSendSos,
-      onDeleteSos,
-    }),
-    [location, usersMaps, usersSos, statusForeground, statusBackground]
-  );
-
   const startGetLocationBackground = async () => {
     TaskManager.defineTask<{ locations: Location.LocationObject[] }>(
       LOCATION_TASK_NAME,
@@ -246,6 +242,20 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     }
   };
 
+  const valueContext: MapContext = useMemo(
+    () => ({
+      location,
+      usersMaps,
+      usersSos,
+      statusForeground,
+      statusBackground,
+      setPermission,
+      onSendSos,
+      onDeleteSos,
+    }),
+    [location, usersMaps, usersSos, statusForeground, statusBackground]
+  );
+
   useEffect(() => {
     startGetLocationBackground();
   }, []);
@@ -262,8 +272,12 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
       statusForeground === Location.PermissionStatus.GRANTED &&
       !startGetGeolocation
     )
-      onIntervalGetLocation();
+      getCountryUser();
   }, [statusForeground]);
+
+  useEffect(() => {
+    if (countryUser) onIntervalGetLocation();
+  }, [countryUser]);
 
   return (
     <mapContext.Provider value={valueContext}>{children}</mapContext.Provider>
