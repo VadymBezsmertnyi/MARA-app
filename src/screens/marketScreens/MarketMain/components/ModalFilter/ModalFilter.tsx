@@ -381,7 +381,6 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           setIsShowPlaces(false);
         }}
         onSubmit={(value) => {
-          console.log("value", value);
           setSelectPlaces(value);
         }}
       />

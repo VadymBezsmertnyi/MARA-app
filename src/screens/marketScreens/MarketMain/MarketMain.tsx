@@ -127,18 +127,18 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 ).length > 0
               : true;
           const isPlaceCountry = dataFilter.selectPlaces
-            ? dataFilter.selectPlaces.countryIds.filter(
-                (countryId) => countryId === product.place.countryId.toString()
+            ? dataFilter.selectPlaces.countryPlaceIds.filter(
+                (countryPlaceId) => countryPlaceId === product.country_place_id
               ).length > 0
             : true;
           const isPlaceRegion = dataFilter.selectPlaces
-            ? dataFilter.selectPlaces.regionIds.filter(
-                (regionId) => regionId === product.place.regionPlaceId
+            ? dataFilter.selectPlaces.regionPlaceIds.filter(
+                (regionPlaceId) => regionPlaceId === product.region_place_id
               ).length > 0
             : true;
           const isPlaceCity = dataFilter.selectPlaces
-            ? dataFilter.selectPlaces.cityTitles.filter(
-                (cityTitle) => cityTitle === product.place.city
+            ? dataFilter.selectPlaces.cityPlaceIds.filter(
+                (cityPlaceId) => cityPlaceId === product.place_id
               ).length > 0
             : true;
 
