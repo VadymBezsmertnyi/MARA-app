@@ -1,5 +1,6 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import { horizontalScale } from "../../../styles/hooks";
 
 const WIDTH = Dimensions.get("screen").width;
 
@@ -57,6 +58,7 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   titleItemList: {
+    width: horizontalScale(300),
     fontFamily: "OpenSans_400Regular",
     fontSize: 16,
     color: colors.blackCoffee,

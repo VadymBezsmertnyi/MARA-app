@@ -34,7 +34,9 @@ export const PATHS = {
   // places
   placesCountries: "/places/countries/",
   placesCountriesSearch: "/places/countries/search/",
+  placesRegions: "/places/regions/",
   placesRegionsSearch: "/places/regions/search/",
+  placesCities: "/places/cities/",
   placesCitiesSearch: "/places/cities/search/",
   placesCityId: "/places/cities/getPlaceId/",
 

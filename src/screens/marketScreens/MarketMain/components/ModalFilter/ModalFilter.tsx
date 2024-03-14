@@ -46,6 +46,7 @@ import {
   NAME_BRAND_MOTO,
   NAME_MAIN_CATEGORIES,
 } from "../../../MarketAdd/MarketAdd.constants";
+import { DEFAULT_NAME_TYPE_LOCALITY } from "../../../../../providers/PlacesProvider/PlacesProvider.constants";
 
 // styles
 import { styles } from "./ModalFilter.styles";
@@ -66,8 +67,8 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 }) => {
   const { i18n, language } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
-  const { minMaxPrices, placesAll } = useContext(marketContext);
-  const { places } = useContext(placesContext);
+  const { minMaxPrices } = useContext(marketContext);
+  const { placesFindDB, regionsDB, countriesDB } = useContext(placesContext);
   const [selectCurrency, setSelectCurrency] = useState<CurrencyType | null>(
     null
   );
@@ -111,30 +112,6 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
         : false,
     [multiselect?.category]
   );
-  const selectCountries = useMemo(
-    () =>
-      selectPlaces?.countryIds.reduce((a, b) => {
-        const country = places
-          ? Object.values(places).find(
-              (countryOld) => countryOld.id.toString() === b
-            )
-          : null;
-        if (!country) return a;
-        return [...a, country];
-      }, [] as CountryType[]) || null,
-    [selectPlaces?.countryIds]
-  );
-  const selectRegions = useMemo(
-    () =>
-      selectCountries?.reduce((a, b) => {
-        const regions =
-          b.regions.filter(
-            (region) => selectPlaces?.regionIds.includes(region.placeId)
-          ) || [];
-        return [...a, ...regions];
-      }, [] as RegionsCountryType) || null,
-    [selectCountries, selectPlaces?.regionIds]
-  );
   const showTitleCategories = useMemo(() => {
     const category = multiselect?.category
       ? multiselect?.category.map((item) => item.name).join("/")
@@ -148,16 +125,35 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
     return { category, brandMoto, brandAuto };
   }, [multiselect]);
   const showTitleLocation = useMemo(() => {
-    if (selectPlaces?.cityTitles.length)
-      return selectPlaces.cityTitles.join("/");
-    if (selectRegions?.length)
-      return selectRegions
-        .map((region) => region.name[language || "en"])
+    if (selectPlaces?.cityPlaceIds && selectPlaces.cityPlaceIds.length > 0)
+      return placesFindDB
+        .filter((place) => selectPlaces.cityPlaceIds.includes(place.place_id))
+        .map(
+          (place) =>
+            place[language].address_components.find((addressComponent) =>
+              addressComponent.types.includes(DEFAULT_NAME_TYPE_LOCALITY)
+            )?.long_name || ""
+        )
         .join("/");
-    if (selectCountries?.length)
-      return selectCountries.map((country) => country.title).join("/");
+    if (selectPlaces?.regionPlaceIds && selectPlaces.regionPlaceIds.length > 0)
+      return regionsDB
+        .filter((region) =>
+          selectPlaces.regionPlaceIds.includes(region.place_id)
+        )
+        .map((region) => region[language].long_name)
+        .join("/");
+    if (
+      selectPlaces?.countryPlaceIds &&
+      selectPlaces.countryPlaceIds.length > 0
+    )
+      return countriesDB
+        .filter((country) =>
+          selectPlaces.countryPlaceIds.includes(country.place_id)
+        )
+        .map((country) => country[language].long_name)
+        .join("/");
     return "";
-  }, [selectPlaces?.cityTitles, selectRegions, selectCountries]);
+  }, [selectPlaces]);
   const minSlider = useMemo(
     () =>
       minMaxPrices?.min && selectCurrency
@@ -384,8 +380,10 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           if (isClear) setSelectPlaces(null);
           setIsShowPlaces(false);
         }}
-        onSubmit={setSelectPlaces}
-        placesSelected={placesAll}
+        onSubmit={(value) => {
+          console.log("value", value);
+          setSelectPlaces(value);
+        }}
       />
       <ModalSheetCategories
         isMultiSelect

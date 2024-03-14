@@ -9,7 +9,6 @@ import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // types
-import { PlacesAllIdsType } from "../../providers/MarketProvider/MarketProvider.types";
 import {
   FilterCheckboxes,
   StepModalCheckboxes,
@@ -26,6 +25,10 @@ import { Input } from "../Input/Input";
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 import { CheckboxClassic } from "../CheckboxClassic/CheckboxClassic";
 
+// constants
+import { languagesKeys } from "../../../localization/localization.const";
+import { DEFAULT_NAME_TYPE_LOCALITY } from "../../providers/PlacesProvider/PlacesProvider.constants";
+
 // icons
 import { IconSearchInput } from "../../icons/components";
 
@@ -33,7 +36,6 @@ import { IconSearchInput } from "../../icons/components";
 import { styles } from "./ModalSheetPlaceCheckboxes.styles";
 
 type ModalSheetPlaceProps = {
-  placesSelected: PlacesAllIdsType | null;
   isOpen: boolean;
   title: string;
   onClose: (isClear?: boolean) => void;
@@ -44,211 +46,155 @@ const STEPS: StepModalCheckboxes[] = ["country", "region", "city"];
 
 export const ModalSheetPlaceCheckboxes: FunctionComponent<
   ModalSheetPlaceProps
-> = ({ placesSelected, isOpen, title, onClose, onSubmit }) => {
+> = ({ isOpen, title, onClose, onSubmit }) => {
   const { i18n, language } = useContext(localesContext);
-  const { placesDB, getPlace } = useContext(placesContext);
-  const [selectCountriesIso, setSelectCountriesIso] = useState<string[]>([]);
-  const [selectRegionIds, setSelectRegionIds] = useState<string[]>([]);
-  const [selectCitiesTitles, setSelectCitiesTitles] = useState<string[]>([]);
+  const { countriesDB, regionsDB, placesFindDB, getRegions, getPlaces } =
+    useContext(placesContext);
+  const [selectCountriesPlaceIds, setSelectCountriesPlaceIds] = useState<
+    string[]
+  >([]);
+  const [selectRegionsPlaceIds, setSelectRegionPlaceIds] = useState<string[]>(
+    []
+  );
+  const [selectCitiesPlaceIds, setSelectCitiesPlaceIds] = useState<string[]>(
+    []
+  );
   const [search, setSearch] = useState("");
   const [step, setStep] = useState(0);
-  const showCountry = useMemo(
-    () =>
-      placesSelected && places
-        ? Object.values(placesSelected).map((countryMini) => {
-            const countryFull = Object.values(places).find(
-              (country) => country.id.toString() === countryMini.countryId
-            );
-            const regions = countryFull
-              ? Object.values(countryMini.regions).map((region) => {
-                  const regionFull =
-                    countryFull.regions.find(
-                      (regionFull) => regionFull.placeId === region.regionId
-                    ) || null;
-                  return {
-                    regionId: region.regionId,
-                    title: regionFull?.name || { en: "", uk: "" },
-                    cities: region.cities,
-                  };
-                })
-              : [];
-            return {
-              title: countryFull?.title || "",
-              countryId: countryMini.countryId,
-              regions,
-              isShow: countryFull?.isShow || false,
-            };
-          })
-        : [],
-    [places, placesSelected]
-  );
-  const countriesSelectAmount = useMemo(
-    () =>
-      placesSelected
-        ? Object.values(placesSelected).filter((country) =>
-            selectCountriesIso.includes(country.countryId)
-          ).length
-        : 0,
-    [placesSelected, selectCountriesIso]
-  );
-  console.log("placesSelected", placesSelected);
-  const amountData = useMemo(
-    () =>
-      placesSelected
-        ? Object.values(placesSelected).reduce(
-            (a, b) => {
-              const regionsSelectAmount = Object.keys(b.regions).filter(
-                (regionId) => selectRegionIds.includes(regionId)
-              ).length;
-              const citiesSelectAmount = Object.values(b.regions).reduce(
-                (c, d) => {
-                  const amountCities = d.cities.filter((cityName) =>
-                    selectCitiesTitles.includes(cityName)
-                  ).length;
-                  return c + amountCities;
-                },
-                0
-              );
-              return {
-                ...a,
-                regions: a.regions + regionsSelectAmount,
-                cities: a.cities + citiesSelectAmount,
-              };
-            },
-            {
-              countries: countriesSelectAmount,
-              regions: 0,
-              cities: 0,
-            }
-          )
-        : {
-            countries: countriesSelectAmount,
-            regions: 0,
-            cities: 0,
-          },
-    [placesSelected, countriesSelectAmount, selectRegionIds, selectCitiesTitles]
-  );
   const stepName = useMemo(() => STEPS[step], [step]);
 
   const showElement = useMemo(() => {
     if (stepName === "country")
       return (
         <ScrollView style={styles.containerList}>
-          {showCountry.map((country) => {
-            const isFind = search.length
-              ? country.title
-                  .toLocaleLowerCase()
-                  .includes(search.toLocaleLowerCase())
+          {countriesDB.map((country) => {
+            const countryTranslate = country[language];
+            const isFindSearchCountry = search.length
+              ? languagesKeys.filter((languageKey) =>
+                  country[languageKey].long_name
+                    .toLocaleLowerCase()
+                    .includes(search.toLocaleLowerCase())
+                ).length > 0
               : true;
-            const isShow = country?.isShow && isFind;
-            return isShow ? (
+            if (!isFindSearchCountry) return null;
+            return (
               <TouchableOpacity
-                key={`country-${country.countryId}`}
+                key={`country-${country.place_id}`}
                 accessibilityLabel={i18n._("Select country {nameCountry}", {
-                  nameCountry: country.title,
+                  nameCountry: countryTranslate.long_name,
                 })}
                 style={styles.containerItemList}
                 onPress={() => {
-                  setSelectRegionIds([]);
-                  setSelectCitiesTitles([]);
-                  setSelectCountriesIso((state) =>
-                    state.includes(country.countryId)
+                  setSelectCitiesPlaceIds([]);
+                  setSelectRegionPlaceIds([]);
+                  setSelectCountriesPlaceIds((state) =>
+                    state.includes(country.place_id)
                       ? state.filter(
                           (countryIsoList) =>
-                            countryIsoList !== country.countryId
+                            countryIsoList !== country.place_id
                         )
-                      : [...state, country.countryId]
+                      : [...state, country.place_id]
                   );
                 }}
               >
-                <Text style={styles.titleItemList}>{country.title}</Text>
+                <Text style={styles.titleItemList}>
+                  {countryTranslate.long_name}
+                </Text>
                 <CheckboxClassic
                   isGradient
                   accessibilityLabel={i18n._("Select country {nameCountry}", {
-                    nameCountry: country.title,
+                    nameCountry: countryTranslate.long_name,
                   })}
-                  check={selectCountriesIso.includes(country.countryId)}
+                  check={selectCountriesPlaceIds.includes(country.place_id)}
                   setCheck={() => {
-                    setSelectRegionIds([]);
-                    setSelectCitiesTitles([]);
-                    setSelectCountriesIso((state) =>
-                      state.includes(country.countryId)
+                    setSelectCitiesPlaceIds([]);
+                    setSelectRegionPlaceIds([]);
+                    setSelectCountriesPlaceIds((state) =>
+                      state.includes(country.place_id)
                         ? state.filter(
                             (countryIsoList) =>
-                              countryIsoList !== country.countryId
+                              countryIsoList !== country.place_id
                           )
-                        : [...state, country.countryId]
+                        : [...state, country.place_id]
                     );
                   }}
                 />
               </TouchableOpacity>
-            ) : null;
+            );
           })}
         </ScrollView>
       );
     if (stepName === "region") {
       return (
         <ScrollView style={styles.containerList}>
-          {showCountry.map((country) => {
-            const isFindCountry = selectCountriesIso.includes(
-              country.countryId
+          {countriesDB.map((country) => {
+            const isFindCountry = selectCountriesPlaceIds.includes(
+              country.place_id
             );
-
+            const countryTranslate = country[language];
+            const regionsCountry = regionsDB.filter(
+              (region) => region.country_place_id === country.place_id
+            );
             return isFindCountry ? (
-              <View key={`country-${country.countryId}`}>
-                <Text style={styles.titleCountryRegions}>{country.title}</Text>
+              <View key={`country-${country.place_id}`}>
+                <Text style={styles.titleCountryRegions}>
+                  {countryTranslate.long_name}
+                </Text>
                 <View>
-                  {country.regions.map((region) => {
-                    const isFind = search.length
-                      ? Object.values(region.title).filter((name) =>
-                          name
+                  {regionsCountry.map((region) => {
+                    const regionTranslate = region[language];
+                    const isFindSearchRegion = search.length
+                      ? languagesKeys.filter((languageKey) =>
+                          region[languageKey].long_name
                             .toLocaleLowerCase()
                             .includes(search.toLocaleLowerCase())
                         ).length > 0
                       : true;
-
-                    return isFind ? (
+                    if (!isFindSearchRegion) return null;
+                    return (
                       <TouchableOpacity
-                        key={`country-${country.countryId}-region-${region.regionId}`}
+                        key={`country-${country.place_id}-region-${region.place_id}`}
                         accessibilityLabel={i18n._(
                           "Select region {nameRegion}",
-                          { nameRegion: region.title[language || "en"] }
+                          { nameRegion: regionTranslate.long_name }
                         )}
                         style={styles.containerItemList}
                         onPress={() => {
-                          setSelectCitiesTitles([]);
-                          setSelectRegionIds((state) =>
-                            state.includes(region.regionId)
+                          setSelectCitiesPlaceIds([]);
+                          setSelectRegionPlaceIds((state) =>
+                            state.includes(region.place_id)
                               ? state.filter(
-                                  (regionId) => regionId !== region.regionId
+                                  (regionId) => regionId !== region.place_id
                                 )
-                              : [...state, region.regionId]
+                              : [...state, region.place_id]
                           );
                         }}
                       >
                         <Text style={styles.titleItemList}>
-                          {region.title[language || "en"]}
+                          {regionTranslate.long_name}
                         </Text>
                         <CheckboxClassic
                           isGradient
                           accessibilityLabel={i18n._(
                             "Select region {nameRegion}",
-                            { nameRegion: region.title[language || "en"] }
+                            { nameRegion: regionTranslate.long_name }
                           )}
-                          check={selectRegionIds.includes(region.regionId)}
+                          check={selectRegionsPlaceIds.includes(
+                            region.place_id
+                          )}
                           setCheck={() => {
-                            setSelectCitiesTitles([]);
-                            setSelectRegionIds((state) =>
-                              state.includes(region.regionId)
+                            setSelectCitiesPlaceIds([]);
+                            setSelectRegionPlaceIds((state) =>
+                              state.includes(region.place_id)
                                 ? state.filter(
-                                    (regionId) => regionId !== region.regionId
+                                    (regionId) => regionId !== region.place_id
                                   )
-                                : [...state, region.regionId]
+                                : [...state, region.place_id]
                             );
                           }}
                         />
                       </TouchableOpacity>
-                    ) : null;
+                    );
                   })}
                 </View>
               </View>
@@ -261,84 +207,107 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
     if (stepName === "city")
       return (
         <ScrollView style={styles.containerList}>
-          {showCountry.map((country) => {
-            const isFindCountry = selectCountriesIso.includes(
-              country.countryId
+          {countriesDB.map((country) => {
+            const isFindCountry = selectCountriesPlaceIds.includes(
+              country.place_id
             );
-            const isFindRegion =
-              Object.values(country.regions).filter((region) =>
-                selectRegionIds.includes(region.regionId)
-              ).length > 0;
+            const countryTranslate = country[language];
+            const regionsCountry = regionsDB.filter(
+              (region) => region.country_place_id === country.place_id
+            );
 
-            return isFindCountry && isFindRegion ? (
-              <View key={`country-${country.countryId}`}>
+            return isFindCountry ? (
+              <View key={`country-${country.place_id}`}>
                 <Text style={styles.selectTitleCountryRegions}>
-                  {country.title}
+                  {countryTranslate.long_name}
                 </Text>
                 <View>
-                  {country.regions.map((region) => {
-                    const isFindRegion = selectRegionIds.includes(
-                      region.regionId
+                  {regionsCountry.map((region) => {
+                    const regionTranslate = region[language];
+                    const isFindRegion = selectRegionsPlaceIds.includes(
+                      region.place_id
+                    );
+                    const placesRegionCountry = placesFindDB.filter(
+                      (place) => region.place_id === place.region_place_id
                     );
 
                     return isFindRegion ? (
                       <View
-                        key={`country-${country.countryId}-region-${region.regionId}`}
+                        key={`country-${country.place_id}-region-${region.place_id}`}
                       >
                         <Text style={styles.titleCountryRegions}>
-                          {region.title[language || "en"]}
+                          {regionTranslate.long_name}
                         </Text>
                         <View>
-                          {region.cities.map((cityName, index) => {
-                            const isFind = search.length
-                              ? cityName
-                                  .toLocaleLowerCase()
-                                  .includes(search.toLocaleLowerCase())
+                          {placesRegionCountry.map((place) => {
+                            const placeTranslate = place[language];
+                            const isFindSearchPlace = search.length
+                              ? languagesKeys.filter(
+                                  (languageKey) =>
+                                    place[
+                                      languageKey
+                                    ].address_components.filter(
+                                      (addressComponent) =>
+                                        addressComponent.types.includes(
+                                          DEFAULT_NAME_TYPE_LOCALITY
+                                        ) &&
+                                        addressComponent.long_name
+                                          .toLocaleLowerCase()
+                                          .includes(search.toLocaleLowerCase())
+                                    ).length > 0
+                                ).length > 0
                               : true;
-
-                            return isFind ? (
+                            if (!isFindSearchPlace) return null;
+                            return (
                               <TouchableOpacity
-                                key={`country-${country.countryId}-region-${
-                                  region.regionId
-                                }-city-${index + 1}`}
+                                key={`country-${country.place_id}-region-${region.place_id}-place-${place.place_id}`}
                                 accessibilityLabel={i18n._(
                                   "Select region {nameCity}",
-                                  { nameCity: cityName }
+                                  { nameCity: placeTranslate.formatted_address }
                                 )}
                                 style={styles.containerItemList}
                                 onPress={() => {
-                                  setSelectCitiesTitles((state) =>
-                                    state.includes(cityName)
+                                  setSelectCitiesPlaceIds((state) =>
+                                    state.includes(place.place_id)
                                       ? state.filter(
-                                          (regionId) => regionId !== cityName
+                                          (placeId) =>
+                                            placeId !== place.place_id
                                         )
-                                      : [...state, cityName]
+                                      : [...state, place.place_id]
                                   );
                                 }}
                               >
-                                <Text style={styles.titleItemList}>
-                                  {cityName}
+                                <Text
+                                  numberOfLines={1}
+                                  style={styles.titleItemList}
+                                >
+                                  {placeTranslate.formatted_address}
                                 </Text>
                                 <CheckboxClassic
                                   isGradient
                                   accessibilityLabel={i18n._(
                                     "Select region {nameCity}",
-                                    { nameCity: cityName }
+                                    {
+                                      nameCity:
+                                        placeTranslate.formatted_address,
+                                    }
                                   )}
-                                  check={selectCitiesTitles.includes(cityName)}
+                                  check={selectCitiesPlaceIds.includes(
+                                    place.place_id
+                                  )}
                                   setCheck={() => {
-                                    setSelectCitiesTitles((state) =>
-                                      state.includes(cityName)
+                                    setSelectCitiesPlaceIds((state) =>
+                                      state.includes(place.place_id)
                                         ? state.filter(
-                                            (cityNameState) =>
-                                              cityNameState !== cityName
+                                            (placeId) =>
+                                              placeId !== place.place_id
                                           )
-                                        : [...state, cityName]
+                                        : [...state, place.place_id]
                                     );
                                   }}
                                 />
                               </TouchableOpacity>
-                            ) : null;
+                            );
                           })}
                         </View>
                       </View>
@@ -352,14 +321,28 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
         </ScrollView>
       );
     return null;
-  }, [selectCountriesIso, selectRegionIds, selectCitiesTitles, step, search]);
+  }, [
+    selectCountriesPlaceIds,
+    selectRegionsPlaceIds,
+    selectCitiesPlaceIds,
+    countriesDB,
+    regionsDB,
+    placesFindDB,
+    step,
+    search,
+  ]);
 
   const isSelectStep = useMemo(() => {
-    if (stepName === "country") return amountData.countries > 0;
-    if (stepName === "region") return amountData.regions > 0;
-    if (stepName === "city") return amountData.cities > 0;
+    if (stepName === "country") return selectCountriesPlaceIds.length > 0;
+    if (stepName === "region") return selectRegionsPlaceIds.length > 0;
+    if (stepName === "city") return selectCitiesPlaceIds.length > 0;
     return true;
-  }, [stepName, amountData]);
+  }, [
+    stepName,
+    selectCountriesPlaceIds,
+    selectRegionsPlaceIds,
+    selectCitiesPlaceIds,
+  ]);
 
   const onPressBack = () => {
     setSearch("");
@@ -369,14 +352,18 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
 
   const onPressNext = () => {
     setSearch("");
-    if (step === 0 && amountData.countries === 0) onClose(true);
-    else if (isSelectStep && STEPS.length - 1 > step) {
+    if (step === 0 && selectCountriesPlaceIds.length === 0) onClose(true);
+    else if (step === 0 && selectCountriesPlaceIds.length > 0) {
+      getRegions(selectCountriesPlaceIds);
       setStep((state) => state + 1);
+    } else if (isSelectStep && STEPS.length - 1 > step) {
+      setStep((state) => state + 1);
+      getPlaces(selectCountriesPlaceIds, selectRegionsPlaceIds);
     } else {
-      const submitData = {
-        countryIds: selectCountriesIso,
-        regionIds: selectRegionIds,
-        cityTitles: selectCitiesTitles,
+      const submitData: FilterCheckboxes = {
+        countryPlaceIds: selectCountriesPlaceIds,
+        regionPlaceIds: selectRegionsPlaceIds,
+        cityPlaceIds: selectCitiesPlaceIds,
       };
       onSubmit(submitData);
       onClose();
