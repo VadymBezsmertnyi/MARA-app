@@ -11,7 +11,6 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
 
 //types
-import { PlaceType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 import {
   RootAllScreensParamList,
@@ -38,10 +37,11 @@ import { ModalSheetTypeWorkshops } from "../../../components/ModalSheetTypeWorks
 import { ModalSheetTypesAutoWorks } from "../../../components/ModalSheetTypesAutoWorks/ModalSheetTypesAutoWorks";
 import { ModalSheetTypesMotoWorks } from "../../../components/ModalSheetTypesMotoWorks/ModalSheetTypesMotoWorks";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
-import { ModalSheetPlace } from "../../../components/ModalSheetPlace/ModalSheetPlace";
+import { ModalSheetSearchPlaceAddress } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
+import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 
 // helps
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -54,6 +54,7 @@ import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
+import { DEFAULT_WORKSHOP_DATA } from "../../../providers/WorkshopsProvider/WorkshopsProvider.constants";
 
 // styles
 import { styles } from "./WorkshopAdd.styles";
@@ -70,13 +71,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     useRoute<
       RouteProp<RootWorkshopsScreensParamList & RootSettingsScreensParamList>
     >();
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const { getErrorText } = useErrors(i18n);
   const { heightStatusBar } = useContext(themeContext);
   const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
     useContext(workshopsContext);
   const { userData } = useContext(userContext);
-  const { places } = useContext(placesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const { setLoading } = useContext(loadingContext);
   const { typesWorkServices } = useWorkshopsProvider();
   const { verifyPhone } = useAuthorizationRegistration();
@@ -85,7 +86,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const [description, setDescription] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
-  const [place, setPlace] = useState<PlaceType | null>(null);
+  const [place, setPlace] = useState<ItemSearchPlaceAddressType | null>(null);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
   const [isShowTypesMotoWorks, setIsShowTypesMotoWorks] = useState(false);
   const [isShowTypesAutoWorks, setIsShowTypesAutoWorks] = useState(false);
@@ -113,15 +114,11 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     [workshops, params]
   );
   const showTitlePlace = useMemo(() => {
-    const country = places
-      ? Object.keys(places)
-          .map((placeKey) => places[placeKey])
-          .find((country) => country.id === place?.countryId) || null
-      : null;
-    if (country && place)
-      return `${country.title}, ${place.city}, ${place.address}`;
-    return ``;
-  }, [places, place]);
+    if (!place) return "";
+    const placeDB = getPlace(place.placeId);
+    if (!placeDB) return place.title;
+    return placeDB[language].formatted_address;
+  }, [placesDB, place]);
 
   const clearKeyError = (key: string) => {
     if (errorMessage && key in errorMessage) {
@@ -209,7 +206,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     return isError;
   };
 
-  const onSubmitPlace = (data: PlaceType) => {
+  const onSubmitPlace = (data: ItemSearchPlaceAddressType) => {
     setPlace(data);
     setIsShowSelectPlace(false);
     clearKeyError("place");
@@ -251,19 +248,29 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         height: image.height,
         image,
       }));
+      const currentPlace =
+        selectWorkshop &&
+        place?.placeId === selectWorkshop.place_id &&
+        place.address === selectWorkshop.place_address
+          ? {
+              place_id: selectWorkshop.place_id,
+              region_place_id: selectWorkshop.region_place_id,
+              country_place_id: selectWorkshop.country_place_id,
+              place_address: selectWorkshop.place_address,
+              coordinates: selectWorkshop.coordinates,
+            }
+          : { place };
       const newWorkshop = {
+        ...DEFAULT_WORKSHOP_DATA,
         userId: userData.id,
         title,
         description,
         phoneNumber: clearPhoneNumber,
-        place,
+        ...currentPlace,
         motoTypesWorks: selectMotoTypesWorks,
         autoTypesWorks: selectAutoTypesWorks,
         images: currentImages,
-        comments: [],
         dataCreate: new Date().getTime(),
-        rating: null,
-        likeUserIds: [],
       };
       const isCreate = selectWorkshop
         ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })
@@ -306,7 +313,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         })
       );
       setTitle(selectWorkshop.title);
-      setPlace(selectWorkshop.place);
+      const placeDB = getPlace(selectWorkshop.place_id);
+      setPlace({
+        placeId: selectWorkshop.place_id,
+        title: placeDB ? placeDB[language].formatted_address : "",
+        address: selectWorkshop.place_address,
+        coordinates: selectWorkshop.coordinates,
+      });
       setDescription(selectWorkshop.description);
       setPhoneNumber(selectWorkshop.phoneNumber);
       setTypeWorkshops((state) => ({
@@ -325,7 +338,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     if (selectWorkshop) getChangeWorkshop();
     else if (userData?.phoneNumber && phoneNumber.length < 5)
       setPhoneNumber(userData.phoneNumber);
-  }, [selectWorkshop]);
+  }, [selectWorkshop, placesDB]);
 
   return (
     <>
@@ -496,13 +509,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           onSubmit={onSubmitAutoTypeWorks}
         />
       </Modal>
-      <ModalSheetPlace
+      <ModalSheetSearchPlaceAddress
         isOpen={isShowSelectPlace}
-        title={i18n._("Workshop address")}
         onClose={() => {
           setIsShowSelectPlace(false);
         }}
         onSubmit={onSubmitPlace}
+        statePlace={place || undefined}
       />
       <Modal visible={isShowDeleteModal} transparent>
         <ModalDelete

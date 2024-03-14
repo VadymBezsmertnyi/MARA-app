@@ -38,6 +38,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
   subTitle: {
+    width: horizontalScale(220),
     fontFamily: "OpenSans_600SemiBold",
     color: colors.white,
     fontSize: 12,

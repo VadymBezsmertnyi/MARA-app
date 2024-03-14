@@ -112,7 +112,7 @@ export const ModalSheetSearchPlace: FunctionComponent<
       setSelect(statePlace);
       setList([statePlace]);
     }
-  }, [isOpen]);
+  }, [isOpen, statePlace]);
 
   return (
     <Modal visible={isOpen} transparent>

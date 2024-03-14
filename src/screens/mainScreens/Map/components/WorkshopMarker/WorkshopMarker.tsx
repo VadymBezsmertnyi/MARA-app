@@ -38,19 +38,16 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
     }>
   >();
   const distance =
-    location && workshop.place.coordinates
+    location && workshop.coordinates
       ? getDistance(location, {
-          longitude: workshop.place.coordinates.longitude,
-          latitude: workshop.place.coordinates.latitude,
+          longitude: workshop.coordinates.longitude,
+          latitude: workshop.coordinates.latitude,
         })
       : null;
 
-  if (!workshop.place.coordinates) return null;
+  if (!workshop.coordinates) return null;
   return (
-    <Marker
-      identifier={`marker-workshop`}
-      coordinate={workshop.place.coordinates}
-    >
+    <Marker identifier={`marker-workshop`} coordinate={workshop.coordinates}>
       <IconWorkshopMap width={44} height={44} />
       <Callout
         tooltip

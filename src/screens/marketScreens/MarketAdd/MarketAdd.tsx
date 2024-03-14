@@ -372,7 +372,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
 
   useEffect(() => {
     getProductUser();
-  }, [params]);
+  }, [params, placesDB]);
 
   return (
     <>

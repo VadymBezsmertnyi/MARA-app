@@ -63,11 +63,11 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     const filterWorkshop = filters
       ? workshops.filter((workshop) => {
           const distance =
-            location && workshop.place.coordinates
+            location && workshop.coordinates
               ? convertDistance(
                   getDistance(location, {
-                    longitude: workshop.place.coordinates.longitude,
-                    latitude: workshop.place.coordinates.latitude,
+                    longitude: workshop.coordinates.longitude,
+                    latitude: workshop.coordinates.latitude,
                   }),
                   "km"
                 )
@@ -96,21 +96,21 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     const sortWorkshop = sort
       ? filterWorkshop.sort((prev, next) => {
           const distancePrev =
-            location && prev.place.coordinates
+            location && prev.coordinates
               ? convertDistance(
                   getDistance(location, {
-                    longitude: prev.place.coordinates.longitude,
-                    latitude: prev.place.coordinates.latitude,
+                    longitude: prev.coordinates.longitude,
+                    latitude: prev.coordinates.latitude,
                   }),
                   "km"
                 )
               : null;
           const distanceNext =
-            location && next.place.coordinates
+            location && next.coordinates
               ? convertDistance(
                   getDistance(location, {
-                    longitude: next.place.coordinates.longitude,
-                    latitude: next.place.coordinates.latitude,
+                    longitude: next.coordinates.longitude,
+                    latitude: next.coordinates.latitude,
                   }),
                   "km"
                 )
@@ -197,10 +197,10 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
           {workshops.length && workshopsFilterSort.length ? (
             workshopsFilterSort.map((item) => {
               const distance =
-                location && item.place.coordinates
+                location && item.coordinates
                   ? getDistance(location, {
-                      longitude: item.place.coordinates.longitude,
-                      latitude: item.place.coordinates.latitude,
+                      longitude: item.coordinates.longitude,
+                      latitude: item.coordinates.latitude,
                     })
                   : null;
               return (

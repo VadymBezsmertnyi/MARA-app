@@ -275,7 +275,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
 
   useEffect(() => {
     getEventUser();
-  }, [params]);
+  }, [params, placesDB]);
 
   return (
     <>

@@ -37,14 +37,6 @@ export const coordinatesSchema = z.object({
   longitude: z.number(),
 });
 
-export const placeSchema = z.object({
-  countryId: z.number(),
-  regionPlaceId: z.string(),
-  city: z.string(),
-  address: z.string(),
-  coordinates: coordinatesSchema.nullable(),
-});
-
 // new logic
 export const placeGoogleFullSchema = z.object({
   address_components: z.array(

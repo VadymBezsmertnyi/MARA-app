@@ -181,7 +181,6 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
           />
         }
         onPressLeftElement={() => {
-          console.log("navigation", navigation);
           navigation.navigate(PATHS_EVENTS_SCREENS.eventsMain);
         }}
       />

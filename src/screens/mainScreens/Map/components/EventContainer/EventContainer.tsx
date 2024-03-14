@@ -7,6 +7,7 @@ import { Trans } from "@lingui/macro";
 
 // providers
 import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { localesContext } from "../../../../../../localization/localization.provider";
 
 //types
 import { mapMarker } from "../../Map.types";
@@ -28,16 +29,14 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   firstEvent,
   showFirstEvent,
 }) => {
-  const { places } = useContext(placesContext);
-  const selectCountryTitle = useMemo(
-    () =>
-      places
-        ? Object.values(places).find(
-            (country) => country.id === firstEvent?.place?.countryId
-          )?.title || null
-        : null,
-    [places]
-  );
+  const { language } = useContext(localesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
+  const selectCountryTitle = useMemo(() => {
+    if (!firstEvent) return "";
+    const placeDB = getPlace(firstEvent.place_id);
+    if (!placeDB) return "";
+    return placeDB[language].formatted_address;
+  }, [placesDB, firstEvent?.place_id]);
 
   const isDateShow = useMemo(() => {
     if (!firstEvent) return false;
@@ -64,10 +63,10 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
     >
       <TouchableOpacity
         onPress={() => {
-          if (firstEvent.place?.coordinates)
+          if (firstEvent.coordinates)
             showFirstEvent({
-              longitude: firstEvent.place?.coordinates.longitude,
-              latitude: firstEvent.place?.coordinates.latitude,
+              longitude: firstEvent.coordinates.longitude,
+              latitude: firstEvent.coordinates.latitude,
               latitudeDelta: 0,
               longitudeDelta: 0.01,
             });
@@ -85,10 +84,7 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
             <Trans>The nearest event:</Trans>
           </Text>
           <Text style={styles.title}>{firstEvent.title}</Text>
-          <Text style={styles.subTitle}>
-            {firstEvent.place?.city}
-            {selectCountryTitle ? `, ${selectCountryTitle}` : ""}
-          </Text>
+          <Text style={styles.subTitle}>{selectCountryTitle}</Text>
           <Text style={styles.dateTitle}>
             {dateToNMY(new Date(firstEvent.date.start))}
           </Text>

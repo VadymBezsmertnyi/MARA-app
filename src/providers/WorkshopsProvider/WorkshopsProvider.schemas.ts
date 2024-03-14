@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { placeSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import { coordinatesSchema } from "../PlacesProvider/PlacesProvider.schemas";
 
 export const typeWorkSchema = z.object({
   id: z.number(),
@@ -25,7 +25,11 @@ export const workshopSchema = z.object({
   title: z.string(),
   description: z.string(),
   phoneNumber: z.string(),
-  place: placeSchema,
+  place_id: z.string(),
+  region_place_id: z.string(),
+  country_place_id: z.string(),
+  place_address: z.string(),
+  coordinates: coordinatesSchema,
   motoTypesWorks: z.array(z.number()),
   autoTypesWorks: z.array(z.number()),
   images: z.array(

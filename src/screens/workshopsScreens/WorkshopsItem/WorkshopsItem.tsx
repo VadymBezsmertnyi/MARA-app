@@ -70,10 +70,10 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   navigation,
   route,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const { userData } = useContext(userContext);
   const { workshops, changeWorkshop } = useContext(workshopsContext);
-  const { places } = useContext(placesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const { location } = useContext(mapContext);
   const { getSharedLink } = useContext(sharingContext);
   const [amountShow, setAmountShow] = useState(5);
@@ -87,10 +87,10 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     [workshops, route.params]
   );
   const distance =
-    location && selectWorkshop?.place.coordinates
+    location && selectWorkshop?.coordinates
       ? getDistance(location, {
-          longitude: selectWorkshop.place.coordinates.longitude,
-          latitude: selectWorkshop.place.coordinates.latitude,
+          longitude: selectWorkshop.coordinates.longitude,
+          latitude: selectWorkshop.coordinates.latitude,
         })
       : null;
   const isLike = useMemo(
@@ -123,16 +123,11 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     [selectWorkshop?.phoneNumber]
   );
   const showTitlePlace = useMemo(() => {
-    const country = places
-      ? Object.keys(places)
-          .map((placeKey) => places[placeKey])
-          .find((country) => country.id === selectWorkshop?.place.countryId) ||
-        null
-      : null;
-    if (country && selectWorkshop?.place)
-      return `${country.title}, ${selectWorkshop?.place.city}, ${selectWorkshop?.place.address}`;
-    return ``;
-  }, [places, selectWorkshop?.place]);
+    if (!selectWorkshop) return "";
+    const placeDB = getPlace(selectWorkshop.place_id);
+    if (!placeDB) return "";
+    return placeDB[language].formatted_address;
+  }, [placesDB, selectWorkshop?.place_id]);
 
   const onClose = () => {
     setIsShowModalComment(false);
@@ -241,11 +236,11 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
               </View>
             </View>
           </View>
-          {selectWorkshop?.place.coordinates ? (
+          {selectWorkshop?.coordinates ? (
             <View style={styles.containerMap}>
               <Map
-                longitude={selectWorkshop.place.coordinates.longitude}
-                latitude={selectWorkshop.place.coordinates.latitude}
+                longitude={selectWorkshop.coordinates.longitude}
+                latitude={selectWorkshop.coordinates.latitude}
               />
             </View>
           ) : null}

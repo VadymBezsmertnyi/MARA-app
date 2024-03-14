@@ -15,6 +15,7 @@ import {
   WorkshopType,
   WorkshopsType,
 } from "./WorkshopsProvider.types";
+import { ItemSearchPlaceAddressType } from "../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 
 // providers
 import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.provider";
@@ -72,11 +73,11 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   const minMaxDistance = useMemo(() => {
     const distanceMinMax = workshops
       .map((workshop) =>
-        location && workshop.place.coordinates
+        location && workshop.coordinates
           ? convertDistance(
               getDistance(location, {
-                longitude: workshop.place.coordinates.longitude,
-                latitude: workshop.place.coordinates.latitude,
+                longitude: workshop.coordinates.longitude,
+                latitude: workshop.coordinates.latitude,
               }),
               "km"
             )
@@ -128,7 +129,11 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     }
   };
 
-  const addWorkshop = async (newWorkshop: Omit<WorkshopType, "id">) => {
+  const addWorkshop = async (
+    newWorkshop: Omit<WorkshopType, "id"> & {
+      place?: ItemSearchPlaceAddressType;
+    }
+  ) => {
     setLoading(true);
     if (userData?.id) {
       const data = { ...newWorkshop, userId: userData.id };
