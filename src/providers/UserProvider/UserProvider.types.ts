@@ -15,7 +15,7 @@ export type Context = {
   editUser: (
     newInfoUser: Record<
       string,
-      string | number | boolean | Record<string, any> | null
+      string | number | boolean | Record<string, any> | null | undefined
     >
   ) => Promise<boolean>;
   meUser: (isLoading: boolean) => Promise<UserDataT | null>;

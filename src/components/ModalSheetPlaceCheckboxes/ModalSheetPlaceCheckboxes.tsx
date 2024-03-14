@@ -9,7 +9,7 @@ import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // types
-import { PlacesAllType } from "../../providers/MarketProvider/MarketProvider.types";
+import { PlacesAllIdsType } from "../../providers/MarketProvider/MarketProvider.types";
 import {
   FilterCheckboxes,
   StepModalCheckboxes,
@@ -33,7 +33,7 @@ import { IconSearchInput } from "../../icons/components";
 import { styles } from "./ModalSheetPlaceCheckboxes.styles";
 
 type ModalSheetPlaceProps = {
-  placesSelected: PlacesAllType | null;
+  placesSelected: PlacesAllIdsType | null;
   isOpen: boolean;
   title: string;
   onClose: (isClear?: boolean) => void;
@@ -46,7 +46,7 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
   ModalSheetPlaceProps
 > = ({ placesSelected, isOpen, title, onClose, onSubmit }) => {
   const { i18n, language } = useContext(localesContext);
-  const { places } = useContext(placesContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const [selectCountriesIso, setSelectCountriesIso] = useState<string[]>([]);
   const [selectRegionIds, setSelectRegionIds] = useState<string[]>([]);
   const [selectCitiesTitles, setSelectCitiesTitles] = useState<string[]>([]);
@@ -91,6 +91,7 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
         : 0,
     [placesSelected, selectCountriesIso]
   );
+  console.log("placesSelected", placesSelected);
   const amountData = useMemo(
     () =>
       placesSelected

@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import {
   ImageURISource,
-  Modal,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -16,7 +15,6 @@ import {
 import { CommonActions } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
-import { GoogleLocationDetailResult } from "react-native-google-autocomplete/dist/services/Google.service";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
@@ -24,13 +22,11 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { InputCityModal } from "../../../components/InputCityModal/InputCityModal";
-
-// providers
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
+import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
@@ -38,7 +34,8 @@ import { Input } from "../../../components/Input/Input";
 import { InputButton } from "../../../components/InputButton/InputButton";
 import { InputPhone } from "../../../components/InputPhone/InputPhone";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
-import { ModalsSheet } from "../../../components/ModalsSheet/ModalsSheet";
+import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
+import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace";
 
 // helps
 import showErrors from "../../../helps/errors/showError";
@@ -79,16 +76,23 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const { verifyPhone } = useAuthorizationRegistration();
   const { userData, editUser, exitUser, deleteUser, setIsChangeAvatar } =
     useContext(userContext);
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
   const { dataDeepLink } = useContext(sharingContext);
+  const { placesDB, getPlace } = useContext(placesContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [isShowModal, setIsShowModal] = useState(false);
-  const [city, setCity] = useState<GoogleLocationDetailResult | null>(null);
+  const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
   const { warning, success } = showErrors;
+  const showTitlePlace = useMemo(() => {
+    if (!userData?.place_id) return "";
+    const placeDB = getPlace(userData.place_id);
+    if (!placeDB) return "";
+    return placeDB[language].formatted_address;
+  }, [placesDB, userData?.place_id]);
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -158,8 +162,17 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const onSave = async () => {
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
     const clearPhoneNumber = getClearValue(phoneNumber);
+    const currentCityUser =
+      userData && city?.placeId === userData?.place_id
+        ? {
+            place_id: userData.place_id,
+            region_place_id: userData.region_place_id,
+            country_place_id: userData.country_place_id,
+          }
+        : { cityUser: city };
     const resultSave = await editUser({
-      ...(city && { cityUser: city }),
+      ...userData,
+      ...currentCityUser,
       firstName,
       lastName,
       phoneNumber,
@@ -178,8 +191,15 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
       setFirstName(currentNamesUser.firstName);
       setLastName(currentNamesUser.lastName);
       setPhoneNumber(userData.phoneNumber || `+${DEFAULT_CODE_COUNTRY}`);
+      if (userData.place_id) {
+        const placeDB = getPlace(userData.place_id);
+        setCity({
+          placeId: userData.place_id,
+          title: placeDB ? placeDB[language].formatted_address : "",
+        });
+      }
     }
-  }, []);
+  }, [placesDB]);
 
   return (
     <>
@@ -252,11 +272,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
               onPress={() => {
                 setIsShowModal(true);
               }}
-              value={
-                city?.formatted_address ||
-                userData?.cityUser?.formatted_address ||
-                ""
-              }
+              value={showTitlePlace}
               InputIcon={<IconMapGradient width={42} height={32} />}
               containerStyle={styles.containerInput}
               labelStyle={styles.labelInput}
@@ -274,20 +290,17 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
           <ButtonCustom title={i18n._("Save")} onSubmit={onSave} />
         </ScrollView>
       </View>
-      <Modal visible={isShowModal} transparent>
-        <ModalsSheet
-          onClose={() => {
-            setIsShowModal(false);
-          }}
-        >
-          <InputCityModal
-            setCity={setCity}
-            setModalType={() => {
-              setIsShowModal(false);
-            }}
-          />
-        </ModalsSheet>
-      </Modal>
+      <ModalSheetSearchPlace
+        isOpen={isShowModal}
+        onClose={() => {
+          setIsShowModal(false);
+        }}
+        onSubmit={(place) => {
+          setCity(place);
+          setIsShowModal(false);
+        }}
+        statePlace={city || undefined}
+      />
     </>
   );
 };

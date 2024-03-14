@@ -30,7 +30,6 @@ export const facebookBDSchema = z.object({
 });
 
 export const userDataS = z.object({
-  // new
   id: z.number(),
   isGeoLocation: z.boolean(),
   avatar: z

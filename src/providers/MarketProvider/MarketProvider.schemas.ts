@@ -65,21 +65,7 @@ export const productSchema = z.object({
 
 export const productsSchema = z.array(productSchema);
 
-export const placesAllSchema = z.record(
-  z.string(),
-  z.object({
-    countryId: z.string(),
-    regions: z.record(
-      z.string(),
-      z.object({
-        regionId: z.string(),
-        cities: z.array(z.string()),
-      })
-    ),
-  })
-);
-
-const placesAllIdsSchema = z.object({
+export const placesAllIdsSchema = z.object({
   cityPlaceIds: z.array(z.string()),
   regionPlaceIds: z.array(z.string()),
   countryPlaceIds: z.array(z.string()),

@@ -140,6 +140,7 @@ export const RegistrationLocation: FunctionComponent = () => {
           setCity(place);
           setIsShowModal(false);
         }}
+        statePlace={city || undefined}
       />
     </>
   );

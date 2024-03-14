@@ -2,7 +2,7 @@ import { z } from "zod";
 import {
   infoCategorySchema,
   minMaxPricesSchema,
-  placesAllSchema,
+  placesAllIdsSchema,
   productSchema,
   productsSchema,
 } from "./MarketProvider.schemas";
@@ -14,4 +14,4 @@ export type ProductsType = z.infer<typeof productsSchema>;
 
 export type MinMaxPricesType = z.infer<typeof minMaxPricesSchema>;
 
-export type PlacesAllType = z.infer<typeof placesAllSchema>;
+export type PlacesAllIdsType = z.infer<typeof placesAllIdsSchema>;

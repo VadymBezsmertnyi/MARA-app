@@ -141,7 +141,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const editUser = async (
     newInfoUser: Record<
       string,
-      string | number | boolean | Record<string, any> | null
+      string | number | boolean | Record<string, any> | null | undefined
     >
   ): Promise<boolean> => {
     if (userData)
