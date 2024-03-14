@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Зробити головним фото"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Оберіть місто:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Виберіть місто {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Якщо ви вибрали місто, натисніть для підтвердження"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Зменшити максимальну кількість"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Ні"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Введіть назву населеного пункту"
+msgid "Select country {nameCountry}"
+msgstr "Виберіть країну {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Київ"
+msgid "Select region {nameRegion}"
+msgstr "Виберіть регіон {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Введіть точну адресу"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Вулиця Незалежності, 1"
+msgid "Select region {nameCity}"
+msgstr "Виберіть регіон {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Назад"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Виберіть країну {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Вимкнути Глибокий Пошук"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Виберіть регіон {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Увімкнути Глибокий Пошук"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Виберіть регіон {nameCity}"
+msgid "Event address"
+msgstr "Адреса події"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Введіть точну адресу"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Вулиця Незалежності, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Видалити подію"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Оголошення видалено"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Україна"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Польща"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Білорусь"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Литва"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Розкажіть нам про подію:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Адреса події"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} грн."
 
@@ -1084,6 +1056,10 @@ msgstr "Всі фото"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Введіть текст для пошуку"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Події"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Галерея"
 msgid "Hello!"
 msgstr "Привіт!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Якщо в списку немає відповідного варіанту, використовуйте 'Глибокий Пошук'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Введений неправильний номер телефону або неправильно вибраний код країни для введеного номера телефону"
 
@@ -1494,6 +1473,9 @@ msgstr "Внутрішня помилка сервера"
 
 msgid "Language selection"
 msgstr "Вибір мови"
+
+msgid "Last update"
+msgstr "Останнє оновлення"
 
 msgid "Latest"
 msgstr "Останній"
@@ -1512,9 +1494,6 @@ msgstr "Карта"
 
 msgid "Market"
 msgstr "Базар"
-
-msgid "more detail"
-msgstr "більше деталей"
 
 msgid "More events"
 msgstr "Більше подій"
@@ -1563,6 +1542,12 @@ msgstr "Паролі не співпадають"
 
 msgid "Past events:"
 msgstr "Минулі події:"
+
+msgid "Phone number"
+msgstr "Номер телефону"
+
+msgid "Please enter text for searching"
+msgstr "Будь ласка, введіть текст для пошуку"
 
 msgid "Privacy Policy"
 msgstr "Політикою конфіденційності"
@@ -1621,11 +1606,17 @@ msgstr "Вибачте!"
 msgid "SOS signal"
 msgstr "Сигнал SOS"
 
+msgid "Specify the city"
+msgstr "Вкажіть місто"
+
 msgid "Terms of Service"
 msgstr "Умовами користування"
 
 msgid "Terms of Use"
 msgstr "Умовами користування"
+
+msgid "The nearest event:"
+msgstr "Найближча подія:"
 
 msgid "The work we do:"
 msgstr "Роботи, які ми виконуємо:"
@@ -1680,6 +1671,3 @@ msgstr "У вас немає {typeItem}."
 
 msgid "Your contact information"
 msgstr "Ваші контактні дані"
-
-msgid "Your location"
-msgstr "Ваше місцезнаходження"

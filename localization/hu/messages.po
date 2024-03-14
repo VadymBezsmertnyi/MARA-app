@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Fő fénykép készítése"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Válasszon egy várost:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Válassza ki a várost: {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Ha választott várost, nyomja meg a megerősítéshez"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Csökkentse a maximális számot"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Nem"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Írja be a település nevét"
+msgid "Select country {nameCountry}"
+msgstr "Válassza ki az országot: {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kijev"
+msgid "Select region {nameRegion}"
+msgstr "Válassza ki a régiót: {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Írja be a pontos címet"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Függetlenség utca, 1"
+msgid "Select region {nameCity}"
+msgstr "Válassza ki a várost: {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Vissza"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Válassza ki az országot: {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Mélykeresés Letiltása"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Válassza ki a régiót: {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Mélykeresés Engedélyezése"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Válassza ki a várost: {nameCity}"
+msgid "Event address"
+msgstr "Esemény címe"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Írja be a pontos címet"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Függetlenség utca, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Esemény törlése"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Hirdetés törlése"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ukrajna"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Lengyelország"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Fehéroroszország"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Litvánia"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Meséljen az eseményről:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Esemény címe"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Minden fénykép"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Adja meg a keresendő szöveget"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Események"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Galéria"
 msgid "Hello!"
 msgstr "Üdvözöljük!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Ha nincs megfelelő lehetőség a listában, használja a 'Mélykeresést'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Helytelen telefonszám vagy helytelenül választott országkód"
 
@@ -1494,6 +1473,9 @@ msgstr "Belső szerverhiba"
 
 msgid "Language selection"
 msgstr "Nyelvválasztás"
+
+msgid "Last update"
+msgstr "Utolsó frissítés"
 
 msgid "Latest"
 msgstr "Legújabb"
@@ -1512,9 +1494,6 @@ msgstr "Térkép"
 
 msgid "Market"
 msgstr "Piac"
-
-msgid "more detail"
-msgstr "további részletek"
 
 msgid "More events"
 msgstr "További események"
@@ -1563,6 +1542,12 @@ msgstr "A jelszavak nem egyeznek"
 
 msgid "Past events:"
 msgstr "Korábbi események:"
+
+msgid "Phone number"
+msgstr "Telefonszám"
+
+msgid "Please enter text for searching"
+msgstr "Kérem, adja meg a keresendő szöveget"
 
 msgid "Privacy Policy"
 msgstr "Adatvédelmi irányelvek"
@@ -1621,11 +1606,17 @@ msgstr "Sajnáljuk!"
 msgid "SOS signal"
 msgstr "SOS jel"
 
+msgid "Specify the city"
+msgstr "Adja meg a várost"
+
 msgid "Terms of Service"
 msgstr "Szolgáltatási feltételek"
 
 msgid "Terms of Use"
 msgstr "Felhasználási feltételek"
+
+msgid "The nearest event:"
+msgstr "A legközelebbi esemény:"
 
 msgid "The work we do:"
 msgstr "A végezett munka:"
@@ -1680,6 +1671,3 @@ msgstr "Nincs {typeItem}-je."
 
 msgid "Your contact information"
 msgstr "Az Ön elérhetőségi adatai"
-
-msgid "Your location"
-msgstr "Az Ön helyzete"

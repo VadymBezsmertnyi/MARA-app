@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Nastavit jako hlavní fotku"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Vyberte město:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Vyberte město {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Pokud jste vybrali město, stiskněte pro potvrzení"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Snížit maximální počet"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Ne"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Zadejte název lokalitního obvodu"
+msgid "Select country {nameCountry}"
+msgstr "Vyberte zemi {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kyjev"
+msgid "Select region {nameRegion}"
+msgstr "Vyberte region {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Zadejte přesnou adresu"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Ulice Nezávislosti, 1"
+msgid "Select region {nameCity}"
+msgstr "Vyberte region {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Zpět"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Vyberte zemi {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Zakázat Hloubkové Hledání"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Vyberte region {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Povolit Hloubkové Hledání"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Vyberte region {nameCity}"
+msgid "Event address"
+msgstr "Adresa události"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Zadejte přesnou adresu"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Ulice Nezávislosti, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Smazat událost"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Smazat inzerát"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ukrajina"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Polsko"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Bělorusko"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Litva"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Řekněte nám o události:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Adresa události"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Všechny fotografie"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Zadejte text pro vyhledávání"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Události"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Galerie"
 msgid "Hello!"
 msgstr "Ahoj!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Pokud v seznamu není vhodná možnost, použijte 'Hloubkové Hledání'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Bylo zadáno nesprávné telefonní číslo nebo byl nesprávně vybrán telefonní kód země"
 
@@ -1494,6 +1473,9 @@ msgstr "Vnitřní chyba serveru"
 
 msgid "Language selection"
 msgstr "Výběr jazyka"
+
+msgid "Last update"
+msgstr "Poslední aktualizace"
 
 msgid "Latest"
 msgstr "Nejnovější"
@@ -1512,9 +1494,6 @@ msgstr "Mapa"
 
 msgid "Market"
 msgstr "Trh"
-
-msgid "more detail"
-msgstr "více detailů"
 
 msgid "More events"
 msgstr "Více událostí"
@@ -1563,6 +1542,12 @@ msgstr "Hesla se neshodují"
 
 msgid "Past events:"
 msgstr "Minulé události:"
+
+msgid "Phone number"
+msgstr "Telefonní číslo"
+
+msgid "Please enter text for searching"
+msgstr "Zadejte text pro vyhledávání"
 
 msgid "Privacy Policy"
 msgstr "Zásady ochrany osobních údajů"
@@ -1621,11 +1606,17 @@ msgstr "Omlouváme se!"
 msgid "SOS signal"
 msgstr "Signál SOS"
 
+msgid "Specify the city"
+msgstr "Určete město"
+
 msgid "Terms of Service"
 msgstr "Podmínky služby"
 
 msgid "Terms of Use"
 msgstr "Podmínky užívání"
+
+msgid "The nearest event:"
+msgstr "Nejbližší událost:"
 
 msgid "The work we do:"
 msgstr "Práce, kterou děláme:"
@@ -1680,6 +1671,3 @@ msgstr "Nemáte {typeItem}."
 
 msgid "Your contact information"
 msgstr "Vaše kontaktní informace"
-
-msgid "Your location"
-msgstr "Vaše poloha"

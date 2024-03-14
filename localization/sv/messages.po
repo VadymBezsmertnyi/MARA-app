@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Gör huvudfoto"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Välj en stad:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Välj staden {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Om du har valt en stad, tryck för att bekräfta"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Minska det maximala antalet"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Nej"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Ange namn på platsen"
+msgid "Select country {nameCountry}"
+msgstr "Välj land {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kyiv"
+msgid "Select region {nameRegion}"
+msgstr "Välj region {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Ange exakt adress"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Independence Street, 1"
+msgid "Select region {nameCity}"
+msgstr "Välj region {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Tillbaka"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Välj land {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Inaktivera Djup Sökning"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Välj region {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Aktivera Djup Sökning"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Välj region {nameCity}"
+msgid "Event address"
+msgstr "Händelsens adress"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Ange exakt adress"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Independence Street, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Radera evenemang"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Radera annons"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ukraina"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Polen"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Vitryssland"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Litauen"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Berätta om händelsen:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Händelsens adress"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Alla foton"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Skriv in texten för att söka"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Evenemang"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Galleri"
 msgid "Hello!"
 msgstr "Hej!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Om det inte finns något lämpligt alternativ i listan, använd 'Djup Sökning'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Felaktigt telefonnummer angivet eller landskod för telefonnumret vald felaktigt"
 
@@ -1494,6 +1473,9 @@ msgstr "Internt serverfel"
 
 msgid "Language selection"
 msgstr "Språkval"
+
+msgid "Last update"
+msgstr "Senaste uppdatering"
 
 msgid "Latest"
 msgstr "Senaste"
@@ -1512,9 +1494,6 @@ msgstr "Karta"
 
 msgid "Market"
 msgstr "Marknad"
-
-msgid "more detail"
-msgstr "mer detalj"
 
 msgid "More events"
 msgstr "Fler händelser"
@@ -1563,6 +1542,12 @@ msgstr "Lösenorden matchar inte"
 
 msgid "Past events:"
 msgstr "Tidigare händelser:"
+
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+msgid "Please enter text for searching"
+msgstr "Ange text för sökning"
 
 msgid "Privacy Policy"
 msgstr "Integritetspolicy"
@@ -1621,11 +1606,17 @@ msgstr "Tyvärr!"
 msgid "SOS signal"
 msgstr "SOS-signal"
 
+msgid "Specify the city"
+msgstr "Ange staden"
+
 msgid "Terms of Service"
 msgstr "Användarvillkor"
 
 msgid "Terms of Use"
 msgstr "Användarvillkor"
+
+msgid "The nearest event:"
+msgstr "Nästa evenemang:"
 
 msgid "The work we do:"
 msgstr "Arbetet vi gör:"
@@ -1680,6 +1671,3 @@ msgstr "Du har inte {typeItem}."
 
 msgid "Your contact information"
 msgstr "Din kontaktinformation"
-
-msgid "Your location"
-msgstr "Din plats"

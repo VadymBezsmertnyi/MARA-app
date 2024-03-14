@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Nastaviť hlavnú fotografiu"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Vyberte mesto:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Vyberte mesto {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Ak ste vybrali mesto, stlačte pre potvrdenie"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Znížiť maximálny počet"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Nie"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Zadajte názov obce"
+msgid "Select country {nameCountry}"
+msgstr "Vyberte krajinu {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kyjev"
+msgid "Select region {nameRegion}"
+msgstr "Vyberte región {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Zadajte presnú adresu"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Ulica Nezávislosti, 1"
+msgid "Select region {nameCity}"
+msgstr "Vyberte región {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Späť"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Vyberte krajinu {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Zakázať Hĺbkové Vyhľadávanie"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Vyberte región {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Povoliť Hĺbkové Vyhľadávanie"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Vyberte región {nameCity}"
+msgid "Event address"
+msgstr "Adresa udalosti"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Zadajte presnú adresu"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Ulica Nezávislosti, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Zmazať udalosť"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Zmazať inzerát"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ukrajina"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Poľsko"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Bielorusko"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Litva"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Povedzte nám o udalosti:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Adresa udalosti"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Všetky fotografie"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Zadajte text na vyhľadanie"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Udalosti"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Galéria"
 msgid "Hello!"
 msgstr "Ahoj!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Ak v zozname nie je vhodná možnosť, použite 'Hĺbkové Vyhľadávanie'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Zadané nesprávne telefónne číslo alebo nesprávne zvolený kód krajiny telefónneho čísla"
 
@@ -1494,6 +1473,9 @@ msgstr "Interná serverová chyba"
 
 msgid "Language selection"
 msgstr "Výber jazyka"
+
+msgid "Last update"
+msgstr "Posledná aktualizácia"
 
 msgid "Latest"
 msgstr "Najnovšie"
@@ -1512,9 +1494,6 @@ msgstr "Mapa"
 
 msgid "Market"
 msgstr "Trh"
-
-msgid "more detail"
-msgstr "viac detailov"
 
 msgid "More events"
 msgstr "Viac udalostí"
@@ -1563,6 +1542,12 @@ msgstr "Heslá sa nezhodujú"
 
 msgid "Past events:"
 msgstr "Minulé udalosti:"
+
+msgid "Phone number"
+msgstr "Telefónne číslo"
+
+msgid "Please enter text for searching"
+msgstr "Prosím, zadajte text na vyhľadávanie"
 
 msgid "Privacy Policy"
 msgstr "Zásady ochrany osobných údajov"
@@ -1621,11 +1606,17 @@ msgstr "Ľutujeme!"
 msgid "SOS signal"
 msgstr "SOS signál"
 
+msgid "Specify the city"
+msgstr "Špecifikujte mesto"
+
 msgid "Terms of Service"
 msgstr "Podmienky služby"
 
 msgid "Terms of Use"
 msgstr "Podmienky používania"
+
+msgid "The nearest event:"
+msgstr "Najbližšia udalosť:"
 
 msgid "The work we do:"
 msgstr "Práce, ktoré robíme:"
@@ -1680,6 +1671,3 @@ msgstr "Nemáte {typeItem}."
 
 msgid "Your contact information"
 msgstr "Vaše kontaktné informácie"
-
-msgid "Your location"
-msgstr "Vaša poloha"

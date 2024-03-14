@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Tee pääkuvaksi"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Valitse kaupunki:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Valitse kaupunki {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Jos olet valinnut kaupungin, paina vahvistaaksesi"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Vähennä enimmäismäärää"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Ei"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Kirjoita paikkakunnan nimi"
+msgid "Select country {nameCountry}"
+msgstr "Valitse maa {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kiova"
+msgid "Select region {nameRegion}"
+msgstr "Valitse alue {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Kirjoita tarkka osoite"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Itsenaistyntie, 1"
+msgid "Select region {nameCity}"
+msgstr "Valitse alue {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Takaisin"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Valitse maa {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Poista Syvä Haku käytöstä"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Valitse alue {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Ota Syvä Haku käyttöön"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Valitse alue {nameCity}"
+msgid "Event address"
+msgstr "Tapahtuman osoite"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Kirjoita tarkka osoite"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Itsenaistyntie, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Poista tapahtuma"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Mainoksen poistaminen"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ukraina"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Puola"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Valko-Venäjä"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Liettua"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Kerro tapahtumasta:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Tapahtuman osoite"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Kaikki kuvat"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Syötä etsittävä teksti"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Tapahtumat"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Kuvagalleria"
 msgid "Hello!"
 msgstr "Hei!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Jos listalla ei ole sopivaa vaihtoehtoa, käytä 'Syvää Hakua'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Virheellinen puhelinnumero tai valittu maakoodi"
 
@@ -1494,6 +1473,9 @@ msgstr "Sisäinen palvelinvirhe"
 
 msgid "Language selection"
 msgstr "Kielen valinta"
+
+msgid "Last update"
+msgstr "Viimeisin päivitys"
 
 msgid "Latest"
 msgstr "Viimeisimmät"
@@ -1512,9 +1494,6 @@ msgstr "Kartta"
 
 msgid "Market"
 msgstr "Markkinat"
-
-msgid "more detail"
-msgstr "lisätietoja"
 
 msgid "More events"
 msgstr "Lisää tapahtumia"
@@ -1563,6 +1542,12 @@ msgstr "Salasanat eivät täsmää"
 
 msgid "Past events:"
 msgstr "Menneet tapahtumat:"
+
+msgid "Phone number"
+msgstr "Puhelinnumero"
+
+msgid "Please enter text for searching"
+msgstr "Syötä tekstiä etsimistä varten"
 
 msgid "Privacy Policy"
 msgstr "Yksityisyyskäytäntö"
@@ -1621,11 +1606,17 @@ msgstr "Pahoittelut!"
 msgid "SOS signal"
 msgstr "SOS-signaali"
 
+msgid "Specify the city"
+msgstr "Määritä kaupunki"
+
 msgid "Terms of Service"
 msgstr "Palveluehdot"
 
 msgid "Terms of Use"
 msgstr "Käyttöehdot"
+
+msgid "The nearest event:"
+msgstr "Lähin tapahtuma:"
 
 msgid "The work we do:"
 msgstr "Teemme seuraavaa:"
@@ -1680,6 +1671,3 @@ msgstr "Sinulla ei ole {typeItem}."
 
 msgid "Your contact information"
 msgstr "Yhteystietosi"
-
-msgid "Your location"
-msgstr "Sijaintisi"

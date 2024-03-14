@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Зрабіць асноўную фотаздымку"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Выберыце горад:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Выберыце горад {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Калі вы выбралі горад, націсніце, каб пацвердзіць"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Змяніць максімальную колькасць"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Не"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Увядзіце назву населенага пункта"
+msgid "Select country {nameCountry}"
+msgstr "Выбраць краіну {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Кіеў"
+msgid "Select region {nameRegion}"
+msgstr "Выбраць вобласць {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Увядзіце дакладны адрас"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Вуліца Незалежнасці, 1"
+msgid "Select region {nameCity}"
+msgstr "Выбраць вобласць {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Назад"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Выбраць краіну {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Адключыць Глыбокае Пошук"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Выбраць вобласць {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Уключыць Глыбокае Пошук"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Выбраць вобласць {nameCity}"
+msgid "Event address"
+msgstr "Адрас падзеі"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Увядзіце дакладны адрас"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Вуліца Незалежнасці, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Выдаліць падзею"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Выдаліць агукласць"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Украіна"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Польшча"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Беларусь"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Літва"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Раскажыце нам пра падзею:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Адрас падзеі"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} грн."
 
@@ -1084,6 +1056,10 @@ msgstr "Усе фота"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Увядзіце тэкст для пошуку"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Падзеі"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Галерэя"
 msgid "Hello!"
 msgstr "Прывітанне!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Калі ў спісе няма падыходнага варыянту, выкарыстоўвайце 'Глыбокі Пошук'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Уведзены няправільны нумар тэлефона або краінавы код нумара тэлефона выбраны няправільна"
 
@@ -1494,6 +1473,9 @@ msgstr "Внутраная памылка сервера"
 
 msgid "Language selection"
 msgstr "Выбар мовы"
+
+msgid "Last update"
+msgstr "Апошняе абнаўленне"
 
 msgid "Latest"
 msgstr "Апошнія"
@@ -1512,9 +1494,6 @@ msgstr "Карта"
 
 msgid "Market"
 msgstr "Рынак"
-
-msgid "more detail"
-msgstr "больш падрабязна"
 
 msgid "More events"
 msgstr "Больш падзей"
@@ -1563,6 +1542,12 @@ msgstr "Паролі не супадаюць"
 
 msgid "Past events:"
 msgstr "Мінулыя падзеі:"
+
+msgid "Phone number"
+msgstr "Нумар тэлефона"
+
+msgid "Please enter text for searching"
+msgstr "Калі ласка, увядзіце тэкст для пошуку"
 
 msgid "Privacy Policy"
 msgstr "Палітыка прыватнасці"
@@ -1621,11 +1606,17 @@ msgstr "Выбачайце!"
 msgid "SOS signal"
 msgstr "Сігнал SOS"
 
+msgid "Specify the city"
+msgstr "Укажыце горад"
+
 msgid "Terms of Service"
 msgstr "Умовы абслугоўвання"
 
 msgid "Terms of Use"
 msgstr "Умовы выкарыстання"
+
+msgid "The nearest event:"
+msgstr "Найбліжэйшае падзея:"
 
 msgid "The work we do:"
 msgstr "Працы, якія мы рабім:"
@@ -1680,6 +1671,3 @@ msgstr "У вас няма {typeItem}."
 
 msgid "Your contact information"
 msgstr "Ваша кантактная інфармацыя"
-
-msgid "Your location"
-msgstr "Ваша месцазнаходжанне"

@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Κάντε την κύρια φωτογραφία"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Επιλέξτε μια πόλη:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Επιλέξτε την πόλη {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Αν έχετε επιλέξει μια πόλη, πατήστε για επιβεβαίωση"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Μειώστε το μέγιστο αριθμό"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Όχι"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Εισαγάγετε το όνομα της τοποθεσίας"
+msgid "Select country {nameCountry}"
+msgstr "Επιλέξτε χώρα {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Κίεβο"
+msgid "Select region {nameRegion}"
+msgstr "Επιλέξτε περιοχή {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Εισαγάγετε την ακριβή διεύθυνση"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Οδός Ανεξαρτησίας, 1"
+msgid "Select region {nameCity}"
+msgstr "Επιλέξτε περιοχή {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Πίσω"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Επιλέξτε χώρα {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Απενεργοποίηση Βαθιάς Αναζήτησης"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Επιλέξτε περιοχή {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Ενεργοποίηση Βαθιάς Αναζήτησης"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Επιλέξτε περιοχή {nameCity}"
+msgid "Event address"
+msgstr "Διεύθυνση εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Εισαγάγετε την ακριβή διεύθυνση"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Οδός Ανεξαρτησίας, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Διαγραφή εκδήλωσης"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Διαγραφή διαφήμισης"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ουκρανία"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Πολωνία"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Λευκορωσία"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Λιθουανία"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Πείτε μας για την εκδήλωση:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Διεύθυνση εκδήλωσης"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Όλες οι φωτογραφίες"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Εισαγωγή κειμένου για αναζήτηση"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Εκδηλώσεις"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Συλλογή"
 msgid "Hello!"
 msgstr "Γεια σας!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Εάν δεν υπάρχει κατάλληλη επιλογή στη λίστα, χρησιμοποιήστε 'Βαθιά Αναζήτηση'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Εισάγατε εσφαλμένο αριθμό τηλεφώνου ή επιλέξατε εσφαλμένο κωδικό χώρας"
 
@@ -1494,6 +1473,9 @@ msgstr "Εσωτερικό σφάλμα του διακομιστή"
 
 msgid "Language selection"
 msgstr "Επιλογή γλώσσας"
+
+msgid "Last update"
+msgstr "Τελευταία ενημέρωση"
 
 msgid "Latest"
 msgstr "Τελευταίο"
@@ -1512,9 +1494,6 @@ msgstr "Χάρτης"
 
 msgid "Market"
 msgstr "Αγορά"
-
-msgid "more detail"
-msgstr "περισσότερες λεπτομέρειες"
 
 msgid "More events"
 msgstr "Περισσότερες εκδηλώσεις"
@@ -1563,6 +1542,12 @@ msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
 
 msgid "Past events:"
 msgstr "Προηγούμενες εκδηλώσεις:"
+
+msgid "Phone number"
+msgstr "Τηλεφωνικός αριθμός"
+
+msgid "Please enter text for searching"
+msgstr "Παρακαλώ εισάγετε κείμενο για αναζήτηση"
 
 msgid "Privacy Policy"
 msgstr "Πολιτική Απορρήτου"
@@ -1621,11 +1606,17 @@ msgstr "Λυπούμαστε!"
 msgid "SOS signal"
 msgstr "Σήμα SOS"
 
+msgid "Specify the city"
+msgstr "Καθορίστε την πόλη"
+
 msgid "Terms of Service"
 msgstr "Όροι Υπηρεσίας"
 
 msgid "Terms of Use"
 msgstr "Όροι Χρήσης"
+
+msgid "The nearest event:"
+msgstr "Η πλησιέστερη εκδήλωση:"
 
 msgid "The work we do:"
 msgstr "Η δουλειά που κάνουμε:"
@@ -1680,6 +1671,3 @@ msgstr "Δεν έχετε {typeItem}."
 
 msgid "Your contact information"
 msgstr "Οι πληροφορίες επικοινωνίας σας"
-
-msgid "Your location"
-msgstr "Η τοποθεσία σας"

@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Rendi principale la foto"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Scegli una città:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Seleziona la città {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Se hai selezionato una città, premi per confermare"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Diminuisci il numero massimo"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "No"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Inserisci il nome della località"
+msgid "Select country {nameCountry}"
+msgstr "Seleziona il paese {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kyiv"
+msgid "Select region {nameRegion}"
+msgstr "Seleziona la regione {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Inserisci l'indirizzo esatto"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Via dell'Indipendenza, 1"
+msgid "Select region {nameCity}"
+msgstr "Seleziona la regione {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Indietro"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Seleziona il paese {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Disabilita Ricerca Approfondita"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Seleziona la regione {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Abilita Ricerca Approfondita"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Seleziona la regione {nameCity}"
+msgid "Event address"
+msgstr "Indirizzo dell'evento"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Inserisci l'indirizzo esatto"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Via dell'Indipendenza, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Elimina evento"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Elimina annuncio"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ucraina"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Polonia"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Bielorussia"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Lituania"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Parlaci dell'evento:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Indirizzo dell'evento"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Tutte le foto"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Inserisci il testo da cercare"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Eventi"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Galleria"
 msgid "Hello!"
 msgstr "Ciao!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Se non c'è un'opzione adatta nell'elenco, usa 'Ricerca Approfondita'"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Numero di telefono inserito incorrettamente o codice del paese del numero di telefono selezionato incorrettamente"
 
@@ -1494,6 +1473,9 @@ msgstr "Errore interno del server"
 
 msgid "Language selection"
 msgstr "Selezione lingua"
+
+msgid "Last update"
+msgstr "Ultimo aggiornamento"
 
 msgid "Latest"
 msgstr "Più recenti"
@@ -1512,9 +1494,6 @@ msgstr "Mappa"
 
 msgid "Market"
 msgstr "Mercato"
-
-msgid "more detail"
-msgstr "più dettagli"
 
 msgid "More events"
 msgstr "Altri eventi"
@@ -1563,6 +1542,12 @@ msgstr "Le password non corrispondono"
 
 msgid "Past events:"
 msgstr "Eventi passati:"
+
+msgid "Phone number"
+msgstr "Numero di telefono"
+
+msgid "Please enter text for searching"
+msgstr "Si prega di inserire il testo da cercare"
 
 msgid "Privacy Policy"
 msgstr "Informativa sulla privacy"
@@ -1621,11 +1606,17 @@ msgstr "Spiacenti!"
 msgid "SOS signal"
 msgstr "Segnale di SOS"
 
+msgid "Specify the city"
+msgstr "Specificare la città"
+
 msgid "Terms of Service"
 msgstr "Termini di Servizio"
 
 msgid "Terms of Use"
 msgstr "Condizioni d'Uso"
+
+msgid "The nearest event:"
+msgstr "L'evento più vicino:"
 
 msgid "The work we do:"
 msgstr "Il lavoro che facciamo:"
@@ -1680,6 +1671,3 @@ msgstr "Non hai {typeItem}."
 
 msgid "Your contact information"
 msgstr "Le tue informazioni di contatto"
-
-msgid "Your location"
-msgstr "La tua posizione"

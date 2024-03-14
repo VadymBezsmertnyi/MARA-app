@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Faceți fotografia principală"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Alegeți un oraș:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Selectați orașul {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Dacă ați selectat un oraș, apăsați pentru a confirma"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Scădeați numărul maxim"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Nu"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Introduceți numele localității"
+msgid "Select country {nameCountry}"
+msgstr "Selectați țara {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kiev"
+msgid "Select region {nameRegion}"
+msgstr "Selectați regiunea {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Introduceți adresa exactă"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Strada Independenței, 1"
+msgid "Select region {nameCity}"
+msgstr "Selectați regiunea {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Înapoi"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Selectați țara {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Dezactivați Căutarea Profundă"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Selectați regiunea {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Activați Căutarea Profundă"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Selectați regiunea {nameCity}"
+msgid "Event address"
+msgstr "Adresa evenimentului"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Introduceți adresa exactă"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Strada Independenței, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Ștergeți eveniment"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ștergeți anunț"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ucraina"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Polonia"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Belarus"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Lituania"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Spuneți-ne despre eveniment:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Adresa evenimentului"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Toate fotografiile"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Introduceți textul pentru căutare"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Evenimente"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Galerie"
 msgid "Hello!"
 msgstr "Salut!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Dacă nu există o opțiune potrivită în listă, utilizați „Căutarea Profundă”"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Numărul de telefon introdus este incorect sau codul țării pentru numărul de telefon a fost selectat incorect"
 
@@ -1494,6 +1473,9 @@ msgstr "Eroare internă de server"
 
 msgid "Language selection"
 msgstr "Selectare limbă"
+
+msgid "Last update"
+msgstr "Ultima actualizare"
 
 msgid "Latest"
 msgstr "Cele mai recente"
@@ -1512,9 +1494,6 @@ msgstr "Hartă"
 
 msgid "Market"
 msgstr "Piață"
-
-msgid "more detail"
-msgstr "mai multe detalii"
 
 msgid "More events"
 msgstr "Mai multe evenimente"
@@ -1563,6 +1542,12 @@ msgstr "Parolele nu se potrivesc"
 
 msgid "Past events:"
 msgstr "Evenimente anterioare:"
+
+msgid "Phone number"
+msgstr "Număr de telefon"
+
+msgid "Please enter text for searching"
+msgstr "Vă rugăm să introduceți text pentru căutare"
 
 msgid "Privacy Policy"
 msgstr "Politica de confidențialitate"
@@ -1621,11 +1606,17 @@ msgstr "Ne pare rău!"
 msgid "SOS signal"
 msgstr "Semnal SOS"
 
+msgid "Specify the city"
+msgstr "Specificați orașul"
+
 msgid "Terms of Service"
 msgstr "Termeni de serviciu"
 
 msgid "Terms of Use"
 msgstr "Termeni de utilizare"
+
+msgid "The nearest event:"
+msgstr "Cel mai apropiat eveniment:"
 
 msgid "The work we do:"
 msgstr "Lucrările pe care le facem:"
@@ -1680,6 +1671,3 @@ msgstr "Nu aveți {typeItem}."
 
 msgid "Your contact information"
 msgstr "Informațiile dvs. de contact"
-
-msgid "Your location"
-msgstr "Locația dumneavoastră"

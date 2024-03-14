@@ -58,18 +58,6 @@ msgid "Make the main photo"
 msgstr "Padarykite pagrindinę nuotrauką"
 
 #. js-lingui-explicit-id
-msgid "Choose a city:"
-msgstr "Pasirinkite miestą:"
-
-#. js-lingui-explicit-id
-msgid "Select the city {cityName}"
-msgstr "Pasirinkite miestą {cityName}"
-
-#. js-lingui-explicit-id
-msgid "If you have selected a city, press to confirm"
-msgstr "Jei esate pasirinkę miestą, spauskite, kad patvirtintumėte"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Sumažinkite maksimalų skaičių"
 
@@ -90,20 +78,16 @@ msgid "No"
 msgstr "Ne"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the locality"
-msgstr "Įveskite vietovės pavadinimą"
+msgid "Select country {nameCountry}"
+msgstr "Pasirinkite šalį {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Kyiv"
-msgstr "Kijevas"
+msgid "Select region {nameRegion}"
+msgstr "Pasirinkite regioną {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Įveskite tikslų adresą"
-
-#. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Nepriklausomybės gatvė, 1"
+msgid "Select region {nameCity}"
+msgstr "Pasirinkite regioną {nameCity}"
 
 #. js-lingui-explicit-id
 msgid "Select country"
@@ -118,16 +102,24 @@ msgid "Back"
 msgstr "Atgal"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Pasirinkite šalį {nameCountry}"
+msgid "Disable Deep Search"
+msgstr "Išjungti Gilią Paiešką"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Pasirinkite regioną {nameRegion}"
+msgid "Enable Deep Search"
+msgstr "Įjungti Gilią Paiešką"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Pasirinkite regioną {nameCity}"
+msgid "Event address"
+msgstr "Įvykio adresas"
+
+#. js-lingui-explicit-id
+msgid "Enter the exact address"
+msgstr "Įveskite tikslų adresą"
+
+#. js-lingui-explicit-id
+msgid "Independence Street, 1"
+msgstr "Nepriklausomybės gatvė, 1"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -528,22 +520,6 @@ msgstr "Ištrinti renginį"
 #. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ištrinti skelbimą"
-
-#. js-lingui-explicit-id
-msgid "Ukraine"
-msgstr "Ukraina"
-
-#. js-lingui-explicit-id
-msgid "Poland"
-msgstr "Lenkija"
-
-#. js-lingui-explicit-id
-msgid "Belarus"
-msgstr "Baltarusija"
-
-#. js-lingui-explicit-id
-msgid "Lithuania"
-msgstr "Lietuva"
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
@@ -1042,10 +1018,6 @@ msgid "Tell us about the event:"
 msgstr "Papasakokite apie įvykį:"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Įvykio adresas"
-
-#. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
 msgstr "{priceStart}-{priceFinish} grn."
 
@@ -1084,6 +1056,10 @@ msgstr "Visos nuotraukos"
 #. js-lingui-explicit-id
 msgid "Enter the text to search"
 msgstr "Įveskite tekstą, kurį norite ieškoti"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Įvykiai"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1486,6 +1462,9 @@ msgstr "Galerija"
 msgid "Hello!"
 msgstr "Sveiki!"
 
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Jei sąraše nėra tinkamos parinkties, naudokite „Gilią Paiešką“"
+
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Įvestas neteisingas telefono numeris arba neteisingai pasirinktas telefono numerio šalies kodas"
 
@@ -1494,6 +1473,9 @@ msgstr "Vidinė serverio klaida"
 
 msgid "Language selection"
 msgstr "Kalbos pasirinkimas"
+
+msgid "Last update"
+msgstr "Paskutinis atnaujinimas"
 
 msgid "Latest"
 msgstr "Naujausias"
@@ -1512,9 +1494,6 @@ msgstr "Žemėlapis"
 
 msgid "Market"
 msgstr "Rinka"
-
-msgid "more detail"
-msgstr "daugiau informacijos"
 
 msgid "More events"
 msgstr "Daugiau įvykių"
@@ -1563,6 +1542,12 @@ msgstr "Slaptažodžiai nesutampa"
 
 msgid "Past events:"
 msgstr "Praėję įvykiai:"
+
+msgid "Phone number"
+msgstr "Telefono numeris"
+
+msgid "Please enter text for searching"
+msgstr "Įveskite paieškos tekstą"
 
 msgid "Privacy Policy"
 msgstr "Privatumo politika"
@@ -1621,11 +1606,17 @@ msgstr "Atsiprašome!"
 msgid "SOS signal"
 msgstr "SOS signalas"
 
+msgid "Specify the city"
+msgstr "Nurodykite miestą"
+
 msgid "Terms of Service"
 msgstr "Paslaugų teikimo sąlygos"
 
 msgid "Terms of Use"
 msgstr "Naudojimosi sąlygos"
+
+msgid "The nearest event:"
+msgstr "Artimiausias įvykis:"
 
 msgid "The work we do:"
 msgstr "Mūsų darbai:"
@@ -1680,6 +1671,3 @@ msgstr "Neturite {typeItem}."
 
 msgid "Your contact information"
 msgstr "Jūsų kontaktinė informacija"
-
-msgid "Your location"
-msgstr "Jūsų buvimo vieta"
