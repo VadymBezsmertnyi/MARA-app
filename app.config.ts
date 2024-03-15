@@ -84,7 +84,6 @@ export const expo = {
       "GET_ACCOUNTS",
       "SYSTEM_ALERT_WINDOW",
       "RECEIVE_BOOT_COMPLETED",
-      "SCHEDULE_EXACT_ALARM",
       "WAKE_LOCK",
       "com.google.android.gms.permission.AD_ID",
       "com.google.android.c2dm.permission.RECEIVE",
