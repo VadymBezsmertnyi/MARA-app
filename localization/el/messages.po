@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Πολιτική απορρήτου"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Εναλλαγή αυτόματης ανίχνευσης τοποθεσίας στο παρασκήνιο"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Μάρκα/Κατασκευαστής"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Εναλλαγή τοποθεσίας σας"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Ενεργοποίηση της τοποθεσίας σας στο παρασκήνιο"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Επιλογή πόλης"
 
@@ -1366,6 +1374,9 @@ msgstr "Να επιτραπεί η σύνδεση χρησιμοποιώντας
 msgid "Allow login using Touch ID"
 msgstr "Να επιτραπεί η σύνδεση χρησιμοποιώντας το Touch ID"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Να επιτρέπεται στην εφαρμογή {nameApp} να προσδιορίσει την τοποθεσία μου στο παρασκήνιο"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Να επιτραπεί στην εφαρμογή {nameApp} να προσδιορίσει την τοποθεσία μου"
 
@@ -1383,6 +1394,9 @@ msgstr "Εξουσιοδοτήστε χρησιμοποιώντας:"
 
 msgid "Automatically detect location"
 msgstr "Ανίχνευση τοποθεσίας αυτόματα"
+
+msgid "Automatically detect location in the background"
+msgstr "Αυτόματη ανίχνευση τοποθεσίας στο παρασκήνιο"
 
 msgid "Back"
 msgstr "Πίσω"

@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Політика конфіденційності"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Перемикання автоматичного визначення місцезнаходження в фоновому режимі"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Бренд/Виробник"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Перемикач вашого місцезнаходження"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Увімкніть своє місце знаходження в фоновому режимі"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Оберіть місто:"
 
@@ -1366,6 +1374,9 @@ msgstr "Дозволити вхід за допомогою Face ID"
 msgid "Allow login using Touch ID"
 msgstr "Дозволити вхід за допомогою Touch ID"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження в фоновому режимі"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження "
 
@@ -1383,6 +1394,9 @@ msgstr "Авторизуйтесь за допомогою:"
 
 msgid "Automatically detect location"
 msgstr "Автоматично визначати місцезнаходження"
+
+msgid "Automatically detect location in the background"
+msgstr "Автоматичне визначення місцезнаходження в фоновому режимі"
 
 msgid "Back"
 msgstr "Назад"

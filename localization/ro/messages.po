@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Politica de confidențialitate"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Comutați detectarea automată a locației în fundal"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Marcă/Producător"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Comută localizarea dvs."
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Activați-vă locația în fundal"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Selectați orașul"
 
@@ -1366,6 +1374,9 @@ msgstr "Permiteți autentificarea folosind Face ID"
 msgid "Allow login using Touch ID"
 msgstr "Permiteți autentificarea folosind Touch ID"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Permiteți aplicației {nameApp} să îmi determine locația în fundal"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Permiteți aplicației {nameApp} să determine locația mea"
 
@@ -1383,6 +1394,9 @@ msgstr "Autorizați utilizând:"
 
 msgid "Automatically detect location"
 msgstr "Detectați automat locația"
+
+msgid "Automatically detect location in the background"
+msgstr "Detectați automat locația în fundal"
 
 msgid "Back"
 msgstr "Înapoi"

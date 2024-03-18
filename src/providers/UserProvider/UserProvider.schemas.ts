@@ -32,6 +32,7 @@ export const facebookBDSchema = z.object({
 export const userDataS = z.object({
   id: z.number(),
   isGeoLocation: z.boolean(),
+  isGeoLocationBackground: z.boolean(),
   avatar: z
     .object({
       id: z.string(),
@@ -56,7 +57,6 @@ export const userDataS = z.object({
   firstName: z.string().nullable(),
   lastName: z.string().nullable(),
   phoneNumber: z.string().nullable(),
-  subscriptionId: z.string().nullable(),
   settingsSos: z.object({
     isEnable: z.boolean(),
     radiusKm: z.number(),

@@ -3,6 +3,7 @@ import { UserDataT } from "./UserProvider.types";
 export const DEFAULT_USER_DATA: UserDataT = {
   id: 0,
   isGeoLocation: false,
+  isGeoLocationBackground: false,
   avatar: null,
   eventsIds: [],
   workshopsIds: [],
@@ -22,7 +23,6 @@ export const DEFAULT_USER_DATA: UserDataT = {
   lastName: null,
   phoneNumber: null,
   isDeleteUser: false,
-  subscriptionId: null,
   settingsSos: {
     isEnable: false,
     radiusKm: 5,

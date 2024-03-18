@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Adatvédelmi irányelvek"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Hely automatikus háttérben történő észlelésének kapcsolása"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Márka/Gyártó"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Helyzetkapcsoló bekapcsolása"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Kapcsolja be a helyét a háttérben"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Válassza ki a várost"
 
@@ -1366,6 +1374,9 @@ msgstr "Bejelentkezés engedélyezése Face ID használatával"
 msgid "Allow login using Touch ID"
 msgstr "Bejelentkezés engedélyezése Touch ID használatával"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Engedélyezze a {nameApp} alkalmazásnak, hogy meghatározza a helyemet a háttérben"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Engedélyezze a {nameApp} alkalmazásnak a tartózkodási helyem meghatározását"
 
@@ -1383,6 +1394,9 @@ msgstr "Hitelesítés használata:"
 
 msgid "Automatically detect location"
 msgstr "Hely automatikus érzékelése"
+
+msgid "Automatically detect location in the background"
+msgstr "Hely automatikus észlelése a háttérben"
 
 msgid "Back"
 msgstr "Vissza"

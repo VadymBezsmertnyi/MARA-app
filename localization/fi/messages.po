@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Yksityisyydensuoja"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Vaihda taustalla tapahtuva paikan automaattinen tunnistus"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Merkki/Tyyppi"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Vaihda sijaintiasi"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Ota sijaintisi käyttöön taustalla"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Valitse kaupunki"
 
@@ -1366,6 +1374,9 @@ msgstr "Salli kirjautuminen Face ID:llä"
 msgid "Allow login using Touch ID"
 msgstr "Salli kirjautuminen Touch ID:llä"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Salli {nameApp}-sovelluksen määrittää sijaintini taustalla"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Salli {nameApp}-sovelluksen määrittää sijaintini"
 
@@ -1383,6 +1394,9 @@ msgstr "Valtuuta käyttämällä:"
 
 msgid "Automatically detect location"
 msgstr "Tunnista sijainti automaattisesti"
+
+msgid "Automatically detect location in the background"
+msgstr "Tunnista sijainti automaattisesti taustalla"
 
 msgid "Back"
 msgstr "Takaisin"

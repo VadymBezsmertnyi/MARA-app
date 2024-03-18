@@ -116,8 +116,21 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 
   const onToggleLocation = async () => {
     const isGeoLocation = !(userData?.isGeoLocation || false);
+    const isGeoLocationBackground = isGeoLocation
+      ? userData?.isGeoLocationBackground || false
+      : false;
     await editUser({
       isGeoLocation,
+      isGeoLocationBackground,
+    });
+  };
+
+  const onToggleLocationBackground = async () => {
+    const isGeoLocationBackground = !(
+      userData?.isGeoLocationBackground || false
+    );
+    await editUser({
+      isGeoLocationBackground,
     });
   };
 
@@ -223,6 +236,24 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 )}
                 check={userData?.isGeoLocation || false}
                 setCheck={onToggleLocation}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={onToggleLocation}
+              style={[
+                styles.containerCheckbox,
+                { opacity: userData?.isGeoLocation ? 1 : 0.5 },
+              ]}
+            >
+              <Text numberOfLines={2} style={styles.titleDarkTheme}>
+                <Trans>Automatically detect location in the background</Trans>
+              </Text>
+              <Checkbox
+                accessibilityLabel={i18n._(
+                  "Toggle automatically detect location in the background"
+                )}
+                check={userData?.isGeoLocationBackground || false}
+                setCheck={onToggleLocationBackground}
               />
             </TouchableOpacity>
             <View style={styles.containerCheckbox}>

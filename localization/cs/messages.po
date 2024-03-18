@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Zásady ochrany osobních údajů"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Přepnout automatické zjišťování polohy na pozadí"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Značka/Výrobce"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Povolit vaši polohu"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Zapněte svou polohu na pozadí"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Vyberte město"
 
@@ -1366,6 +1374,9 @@ msgstr "Povolit přihlášení pomocí Face ID"
 msgid "Allow login using Touch ID"
 msgstr "Povolit přihlášení pomocí Touch ID"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Povolit aplikaci {nameApp} určit mou polohu na pozadí"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Povolit aplikaci {nameApp} určit moji polohu"
 
@@ -1383,6 +1394,9 @@ msgstr "Ověřit pomocí:"
 
 msgid "Automatically detect location"
 msgstr "Automatické zjištění polohy"
+
+msgid "Automatically detect location in the background"
+msgstr "Automatické zjišťování polohy na pozadí"
 
 msgid "Back"
 msgstr "Zpět"

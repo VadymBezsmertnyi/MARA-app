@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Privatumo politika"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Pārslēdziet automātisko atrašanās vietas noteikšanu fonā"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Prekės ženklas/Gamintojas"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Įjunkite savo vietą"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Ieslēdziet savu atrašanās vietu fonā"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Pasirinkite miestą"
 
@@ -1366,6 +1374,9 @@ msgstr "Atļaut pierakstīties, izmantojot Face ID"
 msgid "Allow login using Touch ID"
 msgstr "Atļaut pierakstīties, izmantojot Touch ID"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Atļaut lietotnei {nameApp} noteikt manu atrašanās vietu fonā"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Atļaut {nameApp} lietotnei noteikt manu atrašanās vietu"
 
@@ -1383,6 +1394,9 @@ msgstr "Autorizēties, izmantojot:"
 
 msgid "Automatically detect location"
 msgstr "Automātiski noteikt atrašanās vietu"
+
+msgid "Automatically detect location in the background"
+msgstr "Automātiska atrašanās vietas noteikšana fonā"
 
 msgid "Back"
 msgstr "Atpakaļ"

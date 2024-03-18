@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Informativa sulla privacy"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Attiva la rilevazione automatica della posizione in background"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Marca"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Attiva la tua posizione"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Attiva la tua posizione in background"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Seleziona la città"
 
@@ -1366,6 +1374,9 @@ msgstr "Consenti l'accesso utilizzando Face ID"
 msgid "Allow login using Touch ID"
 msgstr "Consenti l'accesso utilizzando Touch ID"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Consenti all'applicazione {nameApp} di determinare la mia posizione in background"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Consenti all'applicazione {nameApp} di determinare la mia posizione"
 
@@ -1383,6 +1394,9 @@ msgstr "Autorizza utilizzando:"
 
 msgid "Automatically detect location"
 msgstr "Rileva automaticamente la posizione"
+
+msgid "Automatically detect location in the background"
+msgstr "Rilevamento automatico della posizione in background"
 
 msgid "Back"
 msgstr "Indietro"

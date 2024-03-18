@@ -754,6 +754,10 @@ msgid "Privacy policy"
 msgstr "Integritetspolicy"
 
 #. js-lingui-explicit-id
+msgid "Toggle automatically detect location in the background"
+msgstr "Växla automatisk identifiering av plats i bakgrunden"
+
+#. js-lingui-explicit-id
 msgid "Brand/Make"
 msgstr "Märke/Tillverkare"
 
@@ -1102,6 +1106,10 @@ msgid "Toggle on your location"
 msgstr "Växla på din plats"
 
 #. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Aktivera din plats i bakgrunden"
+
+#. js-lingui-explicit-id
 msgid "Select the city"
 msgstr "Välj staden"
 
@@ -1366,6 +1374,9 @@ msgstr "Tillåt inloggning med Face ID"
 msgid "Allow login using Touch ID"
 msgstr "Tillåt inloggning med Touch ID"
 
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Tillåt {nameApp}-appen att bestämma min plats i bakgrunden"
+
 msgid "Allow the {nameApp} application to determine my location"
 msgstr "Tillåt {nameApp}-applikationen att bestämma min plats"
 
@@ -1383,6 +1394,9 @@ msgstr "Auktorisera med hjälp av:"
 
 msgid "Automatically detect location"
 msgstr "Identifiera plats automatiskt"
+
+msgid "Automatically detect location in the background"
+msgstr "Identifiera plats automatiskt i bakgrunden"
 
 msgid "Back"
 msgstr "Tillbaka"

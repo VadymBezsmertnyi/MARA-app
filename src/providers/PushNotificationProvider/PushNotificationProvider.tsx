@@ -70,7 +70,7 @@ export const PushNotificationProvider: FunctionComponent<
     if (userData) {
       const userSubscriptionId =
         OneSignal.User.pushSubscription.getPushSubscriptionId();
-      if (userData.subscriptionId !== userSubscriptionId)
+      if (userSubscriptionId)
         await editUser({ ...userData, subscriptionId: userSubscriptionId });
     }
   };

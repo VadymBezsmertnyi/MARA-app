@@ -76,17 +76,20 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   } | null>(null);
 
   const getStatusApp = async () => {
-    const { status: statusBackground } =
-      await Location.requestBackgroundPermissionsAsync();
     const { status: statusForeground } =
       await Location.requestForegroundPermissionsAsync();
-    setStatusBackground(statusBackground);
     setStatusForeground(statusForeground);
 
-    if (statusBackground === Location.PermissionStatus.GRANTED) {
-      await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
-        accuracy: Location.Accuracy.Balanced,
-      });
+    if (userData?.isGeoLocationBackground) {
+      const { status: statusBackground } =
+        await Location.requestBackgroundPermissionsAsync();
+      setStatusBackground(statusBackground);
+
+      if (statusBackground === Location.PermissionStatus.GRANTED) {
+        await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
+          accuracy: Location.Accuracy.Balanced,
+        });
+      }
     }
   };
 
@@ -94,7 +97,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     const { status: statusForeground } =
       await Location.requestForegroundPermissionsAsync();
     setStatusForeground(statusForeground);
-    if (statusForeground === Location.PermissionStatus.GRANTED) {
+    if (
+      statusForeground === Location.PermissionStatus.GRANTED &&
+      userData?.isGeoLocationBackground
+    ) {
       const { status: statusBackground } =
         await Location.requestBackgroundPermissionsAsync();
       setStatusBackground(statusBackground);

@@ -37,6 +37,7 @@ export const RegistrationLocation: FunctionComponent = () => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
   const [isGeoLocation, setIsGeolocation] = useState(false);
+  const [isGeoLocationBackground, setIsGeolocationBackground] = useState(false);
   const nameApp = "M.A.R.A.";
 
   const containerStyles: ViewStyle = useMemo(
@@ -69,6 +70,7 @@ export const RegistrationLocation: FunctionComponent = () => {
     if (city) {
       const resultSave = await editUser({
         isGeoLocation,
+        isGeoLocationBackground,
         cityUser: city,
       });
       if (resultSave)
@@ -99,6 +101,26 @@ export const RegistrationLocation: FunctionComponent = () => {
               accessibilityLabel={i18n._("Toggle on your location")}
               check={isGeoLocation}
               setCheck={setIsGeolocation}
+            />
+          </View>
+          <View
+            style={[
+              styles.containerLocation,
+              { opacity: isGeoLocation ? 1 : 0.5 },
+            ]}
+          >
+            <Text style={styles.titleLocation}>
+              <Trans>
+                Allow the {nameApp} app to determine my location in the
+                background
+              </Trans>
+            </Text>
+            <Checkbox
+              accessibilityLabel={i18n._(
+                "Toggle on your location in the background"
+              )}
+              check={isGeoLocationBackground}
+              setCheck={setIsGeolocationBackground}
             />
           </View>
           <View style={styles.containerCity}>
