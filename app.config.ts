@@ -63,7 +63,7 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 21,
+    versionCode: 22,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
@@ -85,6 +85,9 @@ export const expo = {
       "SYSTEM_ALERT_WINDOW",
       "RECEIVE_BOOT_COMPLETED",
       "WAKE_LOCK",
+      "ACCESS_FINE_LOCATION",
+      "ACCESS_COARSE_LOCATION",
+      "ACCESS_BACKGROUND_LOCATION",
       "com.google.android.gms.permission.AD_ID",
       "com.google.android.c2dm.permission.RECEIVE",
       "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
