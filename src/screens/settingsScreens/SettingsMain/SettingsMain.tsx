@@ -39,7 +39,7 @@ type SettingsMainProps = {
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   navigation,
 }) => {
-  const { exitUser } = useContext(userContext);
+  const { userData, exitUser } = useContext(userContext);
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
 
@@ -93,41 +93,44 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
         <View style={styles.containerLineEmpty} />
         <ContainerBusiness onCreateBusiness={onCreateBusiness} />
         <View style={styles.containerList}>
-          <View style={styles.lineEmptyFirst} />
+          <View style={styles.containerLineEmpty} />
           <ItemMyList
-            title={i18n._("My adverts")}
-            titleButton={i18n._("Add advert")}
-            onLinkTo={() => {
+            title={i18n._("Your adverts")}
+            amountUsed={userData?.productsIds.length || 0}
+            amountAvailable={0}
+            onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
             }}
-            onAdd={() => {
+            onPressAdd={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
             }}
           />
-          <View style={styles.lineEmpty} />
+          <View style={styles.containerLineEmpty} />
           <ItemMyList
-            title={i18n._("My workshops")}
-            titleButton={i18n._("Add workshop")}
-            onLinkTo={() => {
+            title={i18n._("Your workshops")}
+            amountUsed={userData?.workshopsIds.length || 0}
+            amountAvailable={0}
+            onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
             }}
-            onAdd={() => {
+            onPressAdd={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopAdd);
             }}
           />
-          <View style={styles.lineEmpty} />
+          <View style={styles.containerLineEmpty} />
           <ItemMyList
-            title={i18n._("My events")}
-            titleButton={i18n._("Add event")}
-            onLinkTo={() => {
+            title={i18n._("Your events")}
+            amountUsed={userData?.eventsIds.length || 0}
+            amountAvailable={0}
+            onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
             }}
-            onAdd={() => {
+            onPressAdd={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
             }}
           />
         </View>
-        <View style={styles.lineEmpty} />
+        <View style={styles.containerLineEmpty} />
         <View style={styles.containerFooter}>
           <ButtonCustom
             type="transparent"

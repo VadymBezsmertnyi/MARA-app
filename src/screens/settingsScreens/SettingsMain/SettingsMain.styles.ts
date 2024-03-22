@@ -1,5 +1,6 @@
 import { Platform, StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import { horizontalScale, verticalScale } from "../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {
@@ -39,24 +40,12 @@ export const styles = StyleSheet.create({
     height: 1,
     backgroundColor: colors.grayMercury,
   },
-  lineEmptyFirst: {
-    marginBottom: 10,
-    width: "100%",
-    height: 1,
-    backgroundColor: colors.grayMercury,
-  },
-  lineEmpty: {
-    marginTop: 16,
-    marginBottom: 10,
-    width: "100%",
-    height: 1,
-    backgroundColor: colors.grayMercury,
-  },
   containerEmpty: {
     height: 100,
   },
   containerList: {},
   containerFooter: {
-    paddingHorizontal: 20,
+    paddingHorizontal: horizontalScale(16),
+    paddingVertical: verticalScale(20),
   },
 });

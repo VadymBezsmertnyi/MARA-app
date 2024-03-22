@@ -1,5 +1,10 @@
 import { StyleSheet } from "react-native";
-import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../../../styles/hooks";
+import colors from "../../../../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,7 +14,11 @@ export const styles = StyleSheet.create({
   },
   containerMain: { flexDirection: "row", gap: horizontalScale(12) },
   titlesMain: { flex: 1, gap: verticalScale(4) },
-  titleInfo: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
+  titleInfo: {
+    fontFamily: "OpenSans_600SemiBold",
+    fontSize: scaleFont(16),
+    color: colors.blackCoffee,
+  },
   containerImage: {
     width: horizontalScale(82),
     height: horizontalScale(82),
@@ -20,6 +29,7 @@ export const styles = StyleSheet.create({
   },
   titleOtherContacts: {
     fontFamily: "OpenSans_400Regular",
-    fontSize: 14,
+    fontSize: scaleFont(14),
+    color: colors.blackRich,
   },
 });

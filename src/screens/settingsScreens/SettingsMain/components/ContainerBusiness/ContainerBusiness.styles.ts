@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
-import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
 
 export const styles = StyleSheet.create({
@@ -13,19 +17,19 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "OpenSans_600SemiBold",
-    fontSize: 17,
+    fontSize: scaleFont(17),
     color: colors.grayCloudy,
   },
   containerButton: {
     height: "auto",
   },
   linearContainerButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 24,
+    paddingHorizontal: horizontalScale(24),
+    paddingVertical: verticalScale(6),
   },
   titleButton: {
     fontFamily: "OpenSans_600SemiBold",
-    fontSize: 12,
+    fontSize: scaleFont(12),
     color: colors.white,
   },
 });
