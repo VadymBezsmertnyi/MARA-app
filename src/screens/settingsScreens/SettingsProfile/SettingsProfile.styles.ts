@@ -50,19 +50,5 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
     gap: 20,
   },
-  containerImage: {
-    width: 84,
-    height: 84,
-    borderRadius: 40,
-  },
   email: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
-  buttonPickImage: {
-    position: "absolute",
-    bottom: 0,
-    right: 0,
-    backgroundColor: colors.grayMercury,
-    padding: 6,
-    borderRadius: 40,
-  },
-  buttonDeleteImage: { position: "absolute", bottom: 8, left: 8 },
 });

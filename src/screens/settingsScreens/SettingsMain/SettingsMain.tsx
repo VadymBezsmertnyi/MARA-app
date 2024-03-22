@@ -67,7 +67,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   };
 
   const onCreateBusiness = () => {
-    console.log("onCreateBusiness");
+    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessCreate);
   };
 
   return (

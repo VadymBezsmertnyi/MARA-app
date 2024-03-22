@@ -42,6 +42,7 @@ export const PATHS_SETTINGS_SCREENS = {
   settingsEventAdd: "settingsEventAdd",
   settingsEventChange: "settingsEventChange",
   settingsProfile: "settingsProfile",
+  settingsBusinessCreate: "settingsBusinessCreate",
 } as const;
 
 export const PATHS_WORKSHOP_SCREENS = {

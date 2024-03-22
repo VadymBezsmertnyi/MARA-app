@@ -139,6 +139,10 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
+  [PATHS_SETTINGS_SCREENS.settingsBusinessCreate]?: Record<
+    string,
+    string | number | boolean
+  >;
 };
 
 export type RootWorkshopsScreensParamList = {

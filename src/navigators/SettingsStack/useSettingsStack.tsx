@@ -19,6 +19,7 @@ import { WorkshopAdd } from "../../screens/workshopsScreens/WorkshopAdd/Workshop
 // Adverts
 import { SettingsProducts } from "../../screens/settingsScreens/SettingsProducts/SettingsProducts";
 import { MarketAdd } from "../../screens/marketScreens/MarketAdd/MarketAdd";
+import { SettingsBusinessCreate } from "../../screens/settingsScreens/SettingsBusinessCreate/SettingsBusinessCreate";
 
 export const useSettingsStack = () => {
   const { i18n } = useContext(localesContext);
@@ -100,6 +101,13 @@ export const useSettingsStack = () => {
       title: i18n._("Change advert"),
       headerShown: false,
       component: MarketAdd,
+    },
+    {
+      id: PATHS_SETTINGS_SCREENS.settingsBusinessCreate,
+      name: PATHS_SETTINGS_SCREENS.settingsBusinessCreate,
+      title: "",
+      headerShown: false,
+      component: SettingsBusinessCreate,
     },
   ] as const;
 

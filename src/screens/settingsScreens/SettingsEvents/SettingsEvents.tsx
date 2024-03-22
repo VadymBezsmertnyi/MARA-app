@@ -17,9 +17,6 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ItemSettingEvents } from "./components/ItemSettingEvents/ItemSettingEvents";
 
-// helps
-import { useAllNavigation } from "../../../navigators/Navigators.helps";
-
 // icons
 import { IconClose, IconPlus } from "../../../icons/components";
 

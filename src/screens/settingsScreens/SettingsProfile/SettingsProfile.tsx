@@ -64,6 +64,7 @@ import {
 
 // styles
 import { styles } from "./SettingsProfile.styles";
+import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
 
 type SettingsProfileProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -227,26 +228,11 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         </View>
         <ScrollView>
           <View style={styles.containerAvatar}>
-            <View style={styles.containerImage}>
-              {imageSource ? (
-                <ImageCache
-                  style={styles.containerImage}
-                  imageSrc={imageSource}
-                />
-              ) : (
-                <IconProfileAvatar />
-              )}
-              <TouchableOpacity
-                style={styles.buttonPickImage}
-                onPress={imageSource ? onChangePhoto : pickImage}
-              >
-                {imageSource ? (
-                  <IconPencilGradient width={24} height={24} />
-                ) : (
-                  <IconPlusGradient width={24} height={24} />
-                )}
-              </TouchableOpacity>
-            </View>
+            <ImageProfile
+              imageSource={imageSource}
+              onChangePhoto={onChangePhoto}
+              pickImage={pickImage}
+            />
             <Text style={styles.email}>{userData?.email}</Text>
           </View>
           <View style={styles.containerInputs}>
