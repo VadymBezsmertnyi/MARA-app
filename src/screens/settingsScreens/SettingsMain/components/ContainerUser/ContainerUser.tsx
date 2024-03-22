@@ -1,21 +1,21 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { ImageURISource, Text, View } from "react-native";
+import { Trans } from "@lingui/macro";
 
 // providers
 import { userContext } from "../../../../../providers/UserProvider/UserProvider";
 import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { localesContext } from "../../../../../../localization/localization.provider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
+import { PhoneWithMassagers } from "../../../../../components/PhoneWithMassagers/PhoneWithMassagers";
 
 // icons
 import { IconProfileAvatar } from "../../../../../icons/components";
 
 // styles
 import { styles } from "./ContainerUser.styles";
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { PhoneWithMassagers } from "../../../../../components/PhoneWithMassagers/PhoneWithMassagers";
-import { Trans } from "@lingui/macro";
 
 export const ContainerUser: FunctionComponent = () => {
   const { language } = useContext(localesContext);

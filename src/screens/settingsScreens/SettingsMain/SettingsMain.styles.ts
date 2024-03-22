@@ -4,8 +4,6 @@ import colors from "../../../../styles/colors";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
-    gap: 10,
   },
   containerHeader: {
     paddingTop: Platform.OS === "android" ? 10 : 0,

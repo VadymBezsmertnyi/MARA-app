@@ -4,7 +4,7 @@ import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
 export const styles = StyleSheet.create({
   container: {
     paddingHorizontal: horizontalScale(16),
-    paddingVertical: verticalScale(0),
+    paddingVertical: verticalScale(16),
     gap: verticalScale(12),
   },
   containerMain: { flexDirection: "row", gap: horizontalScale(12) },

@@ -1,11 +1,5 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import {
-  ImageURISource,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
@@ -22,10 +16,11 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
-import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { ItemMyList } from "./components/ItemMyList/ItemMyList";
+import { ContainerBusiness } from "./components/ContainerBusiness/ContainerBusiness";
+import { ContainerUser } from "./components/ContainerUser/ContainerUser";
 
 // constants
 import {
@@ -33,13 +28,8 @@ import {
   PATHS_SETTINGS_SCREENS,
 } from "../../../navigators/useNavigator.constants";
 
-// icons
-import { IconProfileAvatar } from "../../../icons/components";
-
 // styles
 import { styles } from "./SettingsMain.styles";
-import { ContainerUser } from "./components/ContainerUser/ContainerUser";
-import colors from "../../../../styles/colors";
 
 type SettingsMainProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -49,24 +39,13 @@ type SettingsMainProps = {
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   navigation,
 }) => {
-  const { userData, exitUser } = useContext(userContext);
+  const { exitUser } = useContext(userContext);
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
     [heightStatusBar]
-  );
-
-  const imageSource = useMemo(
-    () =>
-      userData?.avatar
-        ? ({
-            uri: userData.avatar.url,
-            cache: "force-cache",
-          } as ImageURISource)
-        : null,
-    [userData?.avatar]
   );
 
   const onShowMenu = () => {
@@ -87,6 +66,10 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     );
   };
 
+  const onCreateBusiness = () => {
+    console.log("onCreateBusiness");
+  };
+
   return (
     <View style={containerStyles}>
       <View style={styles.containerHeader}>
@@ -105,9 +88,10 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           </Text>
         </TouchableOpacity>
       </View>
-      <ContainerUser />
-      <View style={styles.containerLineEmpty} />
       <ScrollView>
+        <ContainerUser />
+        <View style={styles.containerLineEmpty} />
+        <ContainerBusiness onCreateBusiness={onCreateBusiness} />
         <View style={styles.containerList}>
           <View style={styles.lineEmptyFirst} />
           <ItemMyList
