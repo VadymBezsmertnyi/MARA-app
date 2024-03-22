@@ -98,28 +98,6 @@ export const expo = {
         apiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
       },
     },
-    /* intentFilters: [
-      {
-        action: "VIEW",
-        data: [
-          {
-            scheme: "https",
-            host: "mara-app.onelink.me",
-            pathPrefix: "/13Vx",
-          },
-        ],
-        category: ["BROWSABLE", "DEFAULT"],
-      },
-      {
-        action: "VIEW",
-        data: [
-          {
-            scheme: "maraapp://", // <<-- uri scheme as configured on AF dashboard
-          },
-        ],
-        category: ["BROWSABLE", "DEFAULT"],
-      },
-    ], */
   },
   web: {
     favicon: "./assets/favicon.png",
