@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Painike sulkemaan asetusten tapahtumanäyttö"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Omat ilmoitukset"
+msgid "View"
+msgstr "Näytä"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Omat työpajat"
+msgid "Your adverts"
+msgstr "Ilmoituksesi"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Lisää työpaja"
+msgid "Your workshops"
+msgstr "Työpajasi"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Omat tapahtumat"
+msgid "Your events"
+msgstr "Tapahtumasi"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Virhe työpajan vaihtamisessa"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Virhe työpajan luomisessa"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Lisää työpaja"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Pääsy sijaintiin taustatilassa"
 msgid "Access to geolocation when using the application"
 msgstr "Pääsy sijaintiin sovelluksen käytön aikana"
 
+msgid "Add"
+msgstr "Lisää"
+
 msgid "Add advert"
 msgstr "Lisää ilmoitus"
 
@@ -1352,6 +1359,9 @@ msgstr "Lisää tapahtuma"
 
 msgid "Add workshop"
 msgstr "Lisää työpaja"
+
+msgid "Additional contacts:"
+msgstr "Lisäyhteystiedot:"
 
 msgid "All cities"
 msgstr "Kaikki kaupungit"
@@ -1398,8 +1408,14 @@ msgstr "Tunnista sijainti automaattisesti"
 msgid "Automatically detect location in the background"
 msgstr "Tunnista sijainti automaattisesti taustalla"
 
+msgid "Available"
+msgstr "Saatavilla"
+
 msgid "Back"
 msgstr "Takaisin"
+
+msgid "Business profile"
+msgstr "Yritystilisi"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Klikkaamalla \"Jatka\"-painiketta hyväksyt {buttonTermsService} ja {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Halvin"
 
 msgid "Continue with {typeSocial}"
 msgstr "Jatka {typeSocial}-tilillä"
+
+msgid "Create"
+msgstr "Luo"
 
 msgid "Create event"
 msgstr "Luo tapahtuma"
@@ -1653,6 +1672,9 @@ msgstr "Työtyypit moottoripyöräliikenteelle:"
 msgid "Upcoming events:"
 msgstr "Tulevat tapahtumat:"
 
+msgid "Used"
+msgstr "Käytetty"
+
 msgid "Views:"
 msgstr "Näkymät:"
 
@@ -1685,3 +1707,6 @@ msgstr "Sinulla ei ole {typeItem}."
 
 msgid "Your contact information"
 msgstr "Yhteystietosi"
+
+msgid "Your profile"
+msgstr "Profiilisi"

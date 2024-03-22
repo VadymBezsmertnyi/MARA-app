@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Gomb a beállítások események képernyő bezárásához"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Saját hirdetéseim"
+msgid "View"
+msgstr "Megtekintés"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Saját műhelyeim"
+msgid "Your adverts"
+msgstr "Hirdetéseid"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Műhely hozzáadása"
+msgid "Your workshops"
+msgstr "Műhelyeid"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Saját eseményeim"
+msgid "Your events"
+msgstr "Eseményeid"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Hiba a műhely módosításakor"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Hiba a műhely létrehozásakor"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Műhely hozzáadása"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Hozzáférés a háttérben futó helymeghatározáshoz"
 msgid "Access to geolocation when using the application"
 msgstr "Hozzáférés a helymeghatározáshoz az alkalmazás használatakor"
 
+msgid "Add"
+msgstr "Hozzáadás"
+
 msgid "Add advert"
 msgstr "Hirdetés hozzáadása"
 
@@ -1352,6 +1359,9 @@ msgstr "Esemény hozzáadása"
 
 msgid "Add workshop"
 msgstr "Műhely hozzáadása"
+
+msgid "Additional contacts:"
+msgstr "További kapcsolatok:"
 
 msgid "All cities"
 msgstr "Összes város"
@@ -1398,8 +1408,14 @@ msgstr "Hely automatikus érzékelése"
 msgid "Automatically detect location in the background"
 msgstr "Hely automatikus észlelése a háttérben"
 
+msgid "Available"
+msgstr "Elérhető"
+
 msgid "Back"
 msgstr "Vissza"
+
+msgid "Business profile"
+msgstr "Üzleti profil"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "A „Folytatás” gombra kattintva elfogadja a {buttonTermsService} és a {buttonPrivacyPolicy} feltételeit"
@@ -1421,6 +1437,9 @@ msgstr "Legolcsóbb"
 
 msgid "Continue with {typeSocial}"
 msgstr "Folytatás a(z) {typeSocial} használatával"
+
+msgid "Create"
+msgstr "Létrehozás"
 
 msgid "Create event"
 msgstr "Esemény létrehozása"
@@ -1653,6 +1672,9 @@ msgstr "Munkatípusok motorkerékpár szállításhoz:"
 msgid "Upcoming events:"
 msgstr "Közelgő események:"
 
+msgid "Used"
+msgstr "Használt"
+
 msgid "Views:"
 msgstr "Megtekintések:"
 
@@ -1685,3 +1707,6 @@ msgstr "Nincs {typeItem}-je."
 
 msgid "Your contact information"
 msgstr "Az Ön elérhetőségi adatai"
+
+msgid "Your profile"
+msgstr "Profilod"

@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Кнопка для закриття екрану налаштувань подій"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Мої оголошення"
+msgid "View"
+msgstr "Перегляд"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Мої майстерні"
+msgid "Your adverts"
+msgstr "Ваші оголошення"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Додати майстерню"
+msgid "Your workshops"
+msgstr "Ваші майстерні"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Мої події"
+msgid "Your events"
+msgstr "Ваші події"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Помилка при зміні майстерні"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Помилка при створенні майстерні"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Додати майстерню"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Доступ до геолокації в режимі фонової р
 msgid "Access to geolocation when using the application"
 msgstr "Доступ до геолокації при використанні додатка"
 
+msgid "Add"
+msgstr "Додати"
+
 msgid "Add advert"
 msgstr "Додати оголошення"
 
@@ -1352,6 +1359,9 @@ msgstr "Додати подію"
 
 msgid "Add workshop"
 msgstr "Додати майстерню"
+
+msgid "Additional contacts:"
+msgstr "Додаткові контакти:"
 
 msgid "All cities"
 msgstr "Усі міста"
@@ -1398,8 +1408,14 @@ msgstr "Автоматично визначати місцезнаходженн
 msgid "Automatically detect location in the background"
 msgstr "Автоматичне визначення місцезнаходження в фоновому режимі"
 
+msgid "Available"
+msgstr "Доступно"
+
 msgid "Back"
 msgstr "Назад"
+
+msgid "Business profile"
+msgstr "Бізнес-профіль"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Натискаючи кнопку \"Продовжити\", ви погоджуєтесь із {buttonTermsService} та {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Найдешевший"
 
 msgid "Continue with {typeSocial}"
 msgstr "Продовжити з {typeSocial}"
+
+msgid "Create"
+msgstr "Створити"
 
 msgid "Create event"
 msgstr "Створити подію"
@@ -1653,6 +1672,9 @@ msgstr "Типи робіт для мотоциклів:"
 msgid "Upcoming events:"
 msgstr "Найближчі події:"
 
+msgid "Used"
+msgstr "Використовується"
+
 msgid "Views:"
 msgstr "Перегляди:"
 
@@ -1685,3 +1707,6 @@ msgstr "У вас немає {typeItem}."
 
 msgid "Your contact information"
 msgstr "Ваші контактні дані"
+
+msgid "Your profile"
+msgstr "Ваш профіль"

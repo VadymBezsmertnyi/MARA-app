@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Schaltfläche zum Schließen des Bildschirms „Einstellungen für Veranstaltungen“"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Meine Anzeigen"
+msgid "View"
+msgstr "Anzeigen"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Meine Werkstätten"
+msgid "Your adverts"
+msgstr "Ihre Anzeigen"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Werkstatt hinzufügen"
+msgid "Your workshops"
+msgstr "Ihre Workshops"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Meine Veranstaltungen"
+msgid "Your events"
+msgstr "Ihre Veranstaltungen"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Fehler beim Ändern der Werkstatt"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Fehler beim Erstellen der Werkstatt"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Werkstatt hinzufügen"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Zugriff auf Geolokalisierung im Hintergrundmodus"
 msgid "Access to geolocation when using the application"
 msgstr "Zugriff auf Geolokalisierung bei Verwendung der Anwendung"
 
+msgid "Add"
+msgstr "Hinzufügen"
+
 msgid "Add advert"
 msgstr "Anzeige hinzufügen"
 
@@ -1352,6 +1359,9 @@ msgstr "Veranstaltung hinzufügen"
 
 msgid "Add workshop"
 msgstr "Werkstatt hinzufügen"
+
+msgid "Additional contacts:"
+msgstr "Zusätzliche Kontakte:"
 
 msgid "All cities"
 msgstr "Alle Städte"
@@ -1398,8 +1408,14 @@ msgstr "Standort automatisch erkennen"
 msgid "Automatically detect location in the background"
 msgstr "Automatische Standorterkennung im Hintergrund"
 
+msgid "Available"
+msgstr "Verfügbar"
+
 msgid "Back"
 msgstr "Zurück"
+
+msgid "Business profile"
+msgstr "Geschäftsprofil"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Durch Klicken auf die Schaltfläche „Weiter“ stimmen Sie den {buttonTermsService} und {buttonPrivacyPolicy} zu"
@@ -1421,6 +1437,9 @@ msgstr "Billigster"
 
 msgid "Continue with {typeSocial}"
 msgstr "Weiter mit {typeSocial}"
+
+msgid "Create"
+msgstr "Erstellen"
 
 msgid "Create event"
 msgstr "Veranstaltung erstellen"
@@ -1653,6 +1672,9 @@ msgstr "Arten von Arbeiten für den Motorradtransport:"
 msgid "Upcoming events:"
 msgstr "Bevorstehende Veranstaltungen:"
 
+msgid "Used"
+msgstr "Verwendet"
+
 msgid "Views:"
 msgstr "Ansichten:"
 
@@ -1685,3 +1707,6 @@ msgstr "Sie haben kein {typeItem}."
 
 msgid "Your contact information"
 msgstr "Ihre Kontaktdaten"
+
+msgid "Your profile"
+msgstr "Ihr Profil"

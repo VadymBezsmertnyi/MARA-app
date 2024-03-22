@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Knap til lukning af indstillinger for begivenhedsskærm"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Mine annoncer"
+msgid "View"
+msgstr "Vis"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Mine værksteder"
+msgid "Your adverts"
+msgstr "Dine annoncer"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Tilføj værksted"
+msgid "Your workshops"
+msgstr "Dine workshops"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Mine begivenheder"
+msgid "Your events"
+msgstr "Dine begivenheder"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Fejl ved ændring af værksted"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Fejl ved oprettelse af værksted"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Tilføj værksted"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Adgang til geolokalisering i baggrundstilstand"
 msgid "Access to geolocation when using the application"
 msgstr "Adgang til geolokalisering ved brug af applikationen"
 
+msgid "Add"
+msgstr "Tilføj"
+
 msgid "Add advert"
 msgstr "Tilføj annonce"
 
@@ -1352,6 +1359,9 @@ msgstr "Tilføj begivenhed"
 
 msgid "Add workshop"
 msgstr "Tilføj værksted"
+
+msgid "Additional contacts:"
+msgstr "Yderligere kontakter:"
 
 msgid "All cities"
 msgstr "Alle byer"
@@ -1398,8 +1408,14 @@ msgstr "Registrer placering automatisk"
 msgid "Automatically detect location in the background"
 msgstr "Automatisk detektion af placering i baggrunden"
 
+msgid "Available"
+msgstr "Tilgængelig"
+
 msgid "Back"
 msgstr "Tilbage"
+
+msgid "Business profile"
+msgstr "Forretningsprofil"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Ved at klikke på \"Fortsæt\"-knappen accepterer du {buttonTermsService} og {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Billigste"
 
 msgid "Continue with {typeSocial}"
 msgstr "Fortsæt med {typeSocial}"
+
+msgid "Create"
+msgstr "Opret"
 
 msgid "Create event"
 msgstr "Opret begivenhed"
@@ -1653,6 +1672,9 @@ msgstr "Arbejdstyper for motorcykeltransport:"
 msgid "Upcoming events:"
 msgstr "Kommende begivenheder:"
 
+msgid "Used"
+msgstr "Brugt"
+
 msgid "Views:"
 msgstr "Visninger:"
 
@@ -1685,3 +1707,6 @@ msgstr "Du har ikke {typeItem}."
 
 msgid "Your contact information"
 msgstr "Dine kontaktoplysninger"
+
+msgid "Your profile"
+msgstr "Din profil"

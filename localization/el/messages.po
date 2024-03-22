@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εκδηλώσεων"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Οι αγγελίες μου"
+msgid "View"
+msgstr "Προβολή"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Τα εργαστήριά μου"
+msgid "Your adverts"
+msgstr "Τα διαφημίσεις σας"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Προσθήκη εργαστηρίου"
+msgid "Your workshops"
+msgstr "Τα εργαστήριά σας"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Οι εκδηλώσεις μου"
+msgid "Your events"
+msgstr "Τα συμβάντα σας"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Σφάλμα κατά την αλλαγή του εργαστηρίου"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Σφάλμα κατά τη δημιουργία του εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Προσθήκη εργαστηρίου"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Πρόσβαση στη γεωγραφική τοποθεσία στη �
 msgid "Access to geolocation when using the application"
 msgstr "Πρόσβαση στη γεωγραφική τοποθεσία κατά τη χρήση της εφαρμογής"
 
+msgid "Add"
+msgstr "Προσθήκη"
+
 msgid "Add advert"
 msgstr "Προσθήκη διαφήμισης"
 
@@ -1352,6 +1359,9 @@ msgstr "Προσθήκη εκδήλωσης"
 
 msgid "Add workshop"
 msgstr "Προσθήκη εργαστηρίου"
+
+msgid "Additional contacts:"
+msgstr "Πρόσθετες επαφές:"
 
 msgid "All cities"
 msgstr "Όλες οι πόλεις"
@@ -1398,8 +1408,14 @@ msgstr "Ανίχνευση τοποθεσίας αυτόματα"
 msgid "Automatically detect location in the background"
 msgstr "Αυτόματη ανίχνευση τοποθεσίας στο παρασκήνιο"
 
+msgid "Available"
+msgstr "Διαθέσιμο"
+
 msgid "Back"
 msgstr "Πίσω"
+
+msgid "Business profile"
+msgstr "Επαγγελματικό προφίλ"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Κάνοντας κλικ στο κουμπί \"Συνέχεια\", συμφωνείτε με τους {buttonTermsService} και {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Φθηνότερο"
 
 msgid "Continue with {typeSocial}"
 msgstr "Συνέχεια με {typeSocial}"
+
+msgid "Create"
+msgstr "Δημιουργία"
 
 msgid "Create event"
 msgstr "Δημιουργία εκδήλωσης"
@@ -1653,6 +1672,9 @@ msgstr "Τύποι εργασιών για μεταφορά μοτοσυκλετ
 msgid "Upcoming events:"
 msgstr "Επερχόμενες εκδηλώσεις:"
 
+msgid "Used"
+msgstr "Χρησιμοποιήθηκε"
+
 msgid "Views:"
 msgstr "Προβολές:"
 
@@ -1685,3 +1707,6 @@ msgstr "Δεν έχετε {typeItem}."
 
 msgid "Your contact information"
 msgstr "Οι πληροφορίες επικοινωνίας σας"
+
+msgid "Your profile"
+msgstr "Το προφίλ σας"

@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Tlačidlo pre zatvorenie obrazovky nastavení udalostí"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Moje inzeráty"
+msgid "View"
+msgstr "Zobraziť"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Moje dielne"
+msgid "Your adverts"
+msgstr "Vaše inzeráty"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridať dielňu"
+msgid "Your workshops"
+msgstr "Vaše dielne"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Moje udalosti"
+msgid "Your events"
+msgstr "Vaše udalosti"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Chyba pri zmene dielne"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Chyba pri vytváraní dielne"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridať dielňu"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Prístup k geolokácii v režime pozadia"
 msgid "Access to geolocation when using the application"
 msgstr "Prístup k geolokácii pri používaní aplikácie"
 
+msgid "Add"
+msgstr "Pridať"
+
 msgid "Add advert"
 msgstr "Pridať inzerát"
 
@@ -1352,6 +1359,9 @@ msgstr "Pridať udalosť"
 
 msgid "Add workshop"
 msgstr "Pridať dielňu"
+
+msgid "Additional contacts:"
+msgstr "Ďalšie kontakty:"
 
 msgid "All cities"
 msgstr "Všetky mestá"
@@ -1398,8 +1408,14 @@ msgstr "Automatické zistenie polohy"
 msgid "Automatically detect location in the background"
 msgstr "Automatické zistenie polohy na pozadí"
 
+msgid "Available"
+msgstr "Dostupné"
+
 msgid "Back"
 msgstr "Späť"
+
+msgid "Business profile"
+msgstr "Obchodný profil"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Kliknutím na tlačidlo „Pokračovať“ súhlasíte s {buttonTermsService} a {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Najlacnejší"
 
 msgid "Continue with {typeSocial}"
 msgstr "Pokračovať s {typeSocial}"
+
+msgid "Create"
+msgstr "Vytvoriť"
 
 msgid "Create event"
 msgstr "Vytvoriť udalosť"
@@ -1653,6 +1672,9 @@ msgstr "Typy prác pre motocyklovú dopravu:"
 msgid "Upcoming events:"
 msgstr "Nadchádzajúce udalosti:"
 
+msgid "Used"
+msgstr "Použité"
+
 msgid "Views:"
 msgstr "Zobrazenia:"
 
@@ -1685,3 +1707,6 @@ msgstr "Nemáte {typeItem}."
 
 msgid "Your contact information"
 msgstr "Vaše kontaktné informácie"
+
+msgid "Your profile"
+msgstr "Váš profil"

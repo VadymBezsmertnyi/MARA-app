@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Buton pentru închiderea ecranului de setări al evenimentelor"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Anunțurile mele"
+msgid "View"
+msgstr "Vizualizare"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Atelierele mele"
+msgid "Your adverts"
+msgstr "Anunțurile tale"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Adaugă atelier"
+msgid "Your workshops"
+msgstr "Atelierele tale"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Evenimentele mele"
+msgid "Your events"
+msgstr "Evenimentele tale"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Eroare la modificarea atelierului"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Eroare la crearea atelierului"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Adaugă atelier"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Acces la geolocație în modul de fundal"
 msgid "Access to geolocation when using the application"
 msgstr "Acces la geolocație în timpul utilizării aplicației"
 
+msgid "Add"
+msgstr "Adăugați"
+
 msgid "Add advert"
 msgstr "Adăugați anunț"
 
@@ -1352,6 +1359,9 @@ msgstr "Adăugați eveniment"
 
 msgid "Add workshop"
 msgstr "Adăugați atelier"
+
+msgid "Additional contacts:"
+msgstr "Contacte suplimentare:"
 
 msgid "All cities"
 msgstr "Toate orașele"
@@ -1398,8 +1408,14 @@ msgstr "Detectați automat locația"
 msgid "Automatically detect location in the background"
 msgstr "Detectați automat locația în fundal"
 
+msgid "Available"
+msgstr "Disponibil"
+
 msgid "Back"
 msgstr "Înapoi"
+
+msgid "Business profile"
+msgstr "Profil de afaceri"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Dând clic pe butonul „Continuați”, sunteți de acord cu {buttonTermsService} și {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Cel mai ieftin"
 
 msgid "Continue with {typeSocial}"
 msgstr "Continuați cu {typeSocial}"
+
+msgid "Create"
+msgstr "Creare"
 
 msgid "Create event"
 msgstr "Creați eveniment"
@@ -1653,6 +1672,9 @@ msgstr "Tipuri de lucrări pentru transportul motocicletelor:"
 msgid "Upcoming events:"
 msgstr "Evenimente viitoare:"
 
+msgid "Used"
+msgstr "Utilizat"
+
 msgid "Views:"
 msgstr "Vizualizări:"
 
@@ -1685,3 +1707,6 @@ msgstr "Nu aveți {typeItem}."
 
 msgid "Your contact information"
 msgstr "Informațiile dvs. de contact"
+
+msgid "Your profile"
+msgstr "Profilul tău"

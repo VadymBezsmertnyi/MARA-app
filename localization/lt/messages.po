@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Mygtukas, skirtas uždaryti įvykių nustatymų langą"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Mano skelbimai"
+msgid "View"
+msgstr "Peržiūrėti"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Mano dirbtuvės"
+msgid "Your adverts"
+msgstr "Jūsų skelbimai"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridėti dirbtuvę"
+msgid "Your workshops"
+msgstr "Jūsų dirbtuvės"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Mano įvykiai"
+msgid "Your events"
+msgstr "Jūsų renginiai"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Klaida keičiant dirbtuvę"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Klaida kuriant dirbtuvę"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridėti dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Prieiga prie geolokacijos fono režime"
 msgid "Access to geolocation when using the application"
 msgstr "Prieiga prie geolokacijos naudojant programą"
 
+msgid "Add"
+msgstr "Pridėti"
+
 msgid "Add advert"
 msgstr "Pridėti skelbimą"
 
@@ -1352,6 +1359,9 @@ msgstr "Pridėti renginį"
 
 msgid "Add workshop"
 msgstr "Pridėti dirbtuvę"
+
+msgid "Additional contacts:"
+msgstr "Papildomi kontaktai:"
 
 msgid "All cities"
 msgstr "Visi miestai"
@@ -1398,8 +1408,14 @@ msgstr "Automatiškai aptikti vietą"
 msgid "Automatically detect location in the background"
 msgstr "Automatinis vietos aptikimas fone"
 
+msgid "Available"
+msgstr "Prieinama"
+
 msgid "Back"
 msgstr "Atgal"
+
+msgid "Business profile"
+msgstr "Verslo profilis"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Spausdami mygtuką „Tęsti“, jūs sutinkate su {buttonTermsService} ir {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Pigiausias"
 
 msgid "Continue with {typeSocial}"
 msgstr "Tęsti su {typeSocial}"
+
+msgid "Create"
+msgstr "Sukurti"
 
 msgid "Create event"
 msgstr "Sukurti renginį"
@@ -1653,6 +1672,9 @@ msgstr "Darbų rūšys motociklų transportui:"
 msgid "Upcoming events:"
 msgstr "Artėjantys įvykiai:"
 
+msgid "Used"
+msgstr "Naudotas"
+
 msgid "Views:"
 msgstr "Peržiūros:"
 
@@ -1685,3 +1707,6 @@ msgstr "Neturite {typeItem}."
 
 msgid "Your contact information"
 msgstr "Jūsų kontaktinė informacija"
+
+msgid "Your profile"
+msgstr "Jūsų profilis"

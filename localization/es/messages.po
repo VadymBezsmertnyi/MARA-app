@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Botón para cerrar la pantalla de configuración de eventos"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Mis anuncios"
+msgid "View"
+msgstr "Ver"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Mis talleres"
+msgid "Your adverts"
+msgstr "Sus anuncios"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Agregar taller"
+msgid "Your workshops"
+msgstr "Sus talleres"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Mis eventos"
+msgid "Your events"
+msgstr "Sus eventos"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Error al modificar el taller"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Error al crear el taller"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Agregar taller"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Acceso a la geolocalización en modo de fondo"
 msgid "Access to geolocation when using the application"
 msgstr "Acceso a la geolocalización al usar la aplicación"
 
+msgid "Add"
+msgstr "Agregar"
+
 msgid "Add advert"
 msgstr "Agregar anuncio"
 
@@ -1352,6 +1359,9 @@ msgstr "Agregar evento"
 
 msgid "Add workshop"
 msgstr "Agregar taller"
+
+msgid "Additional contacts:"
+msgstr "Contactos adicionales:"
 
 msgid "All cities"
 msgstr "Todas las ciudades"
@@ -1398,8 +1408,14 @@ msgstr "Detectar ubicación automáticamente"
 msgid "Automatically detect location in the background"
 msgstr "Detección automática de ubicación en segundo plano"
 
+msgid "Available"
+msgstr "Disponible"
+
 msgid "Back"
 msgstr "Atrás"
+
+msgid "Business profile"
+msgstr "Perfil comercial"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Al hacer clic en el botón \"Continuar\", aceptas los {buttonTermsService} y {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Más barato"
 
 msgid "Continue with {typeSocial}"
 msgstr "Continuar con {typeSocial}"
+
+msgid "Create"
+msgstr "Crear"
 
 msgid "Create event"
 msgstr "Crear evento"
@@ -1653,6 +1672,9 @@ msgstr "Tipos de trabajo para transporte de motocicletas:"
 msgid "Upcoming events:"
 msgstr "Próximos eventos:"
 
+msgid "Used"
+msgstr "Usado"
+
 msgid "Views:"
 msgstr "Vistas:"
 
@@ -1685,3 +1707,6 @@ msgstr "No tienes {typeItem}."
 
 msgid "Your contact information"
 msgstr "Tu información de contacto"
+
+msgid "Your profile"
+msgstr "Su perfil"

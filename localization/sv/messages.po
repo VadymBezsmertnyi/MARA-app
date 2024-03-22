@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Knapp för att stänga inställningsskärmen för händelser"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Mina annonser"
+msgid "View"
+msgstr "Visa"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Mina verkstäder"
+msgid "Your adverts"
+msgstr "Dina annonser"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Lägg till verkstad"
+msgid "Your workshops"
+msgstr "Dina workshops"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Mina händelser"
+msgid "Your events"
+msgstr "Dina evenemang"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Fel vid ändring av verkstad"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Fel vid skapande av verkstad"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Lägg till verkstad"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Åtkomst till geoplats i bakgrunds läge"
 msgid "Access to geolocation when using the application"
 msgstr "Åtkomst till geoplats vid användning av applikationen"
 
+msgid "Add"
+msgstr "Lägg till"
+
 msgid "Add advert"
 msgstr "Lägg till annons"
 
@@ -1352,6 +1359,9 @@ msgstr "Lägg till händelse"
 
 msgid "Add workshop"
 msgstr "Lägg till verkstad"
+
+msgid "Additional contacts:"
+msgstr "Ytterligare kontakter:"
 
 msgid "All cities"
 msgstr "Alla städer"
@@ -1398,8 +1408,14 @@ msgstr "Identifiera plats automatiskt"
 msgid "Automatically detect location in the background"
 msgstr "Identifiera plats automatiskt i bakgrunden"
 
+msgid "Available"
+msgstr "Tillgängligt"
+
 msgid "Back"
 msgstr "Tillbaka"
+
+msgid "Business profile"
+msgstr "Företagsprofil"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Genom att klicka på knappen \"Fortsätt\" samtycker du till {buttonTermsService} och {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Billigast"
 
 msgid "Continue with {typeSocial}"
 msgstr "Fortsätt med {typeSocial}"
+
+msgid "Create"
+msgstr "Skapa"
 
 msgid "Create event"
 msgstr "Skapa händelse"
@@ -1653,6 +1672,9 @@ msgstr "Typer av arbete för motorcykeltransport:"
 msgid "Upcoming events:"
 msgstr "Kommande händelser:"
 
+msgid "Used"
+msgstr "Används"
+
 msgid "Views:"
 msgstr "Visningar:"
 
@@ -1685,3 +1707,6 @@ msgstr "Du har inte {typeItem}."
 
 msgid "Your contact information"
 msgstr "Din kontaktinformation"
+
+msgid "Your profile"
+msgstr "Din profil"

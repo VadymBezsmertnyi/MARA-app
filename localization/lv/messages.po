@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Mygtukas uždaryti nustatymų įvykių langą"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Mano skelbimai"
+msgid "View"
+msgstr "Skatīt"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Mano dirbtuvės"
+msgid "Your adverts"
+msgstr "Jūsu reklāmas"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridėti dirbtuvę"
+msgid "Your workshops"
+msgstr "Jūsu darbnīcas"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Mano įvykiai"
+msgid "Your events"
+msgstr "Jūsu pasākumi"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Kļūda mainot darbnīcu"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Kļūda veidojot darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridėti dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Pieeja ģeolokācijai fona režīmā"
 msgid "Access to geolocation when using the application"
 msgstr "Pieeja ģeolokācijai lietojot lietotni"
 
+msgid "Add"
+msgstr "Pievienot"
+
 msgid "Add advert"
 msgstr "Pievienot reklāmu"
 
@@ -1352,6 +1359,9 @@ msgstr "Pievienot notikumu"
 
 msgid "Add workshop"
 msgstr "Pievienot darbnīcu"
+
+msgid "Additional contacts:"
+msgstr "Papildus kontakti:"
 
 msgid "All cities"
 msgstr "Visas pilsētas"
@@ -1398,8 +1408,14 @@ msgstr "Automātiski noteikt atrašanās vietu"
 msgid "Automatically detect location in the background"
 msgstr "Automātiska atrašanās vietas noteikšana fonā"
 
+msgid "Available"
+msgstr "Pieejams"
+
 msgid "Back"
 msgstr "Atpakaļ"
+
+msgid "Business profile"
+msgstr "Biznesa profils"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Noklikšķinot uz pogas \"Turpināt\", jūs piekrītat {buttonTermsService} un {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Lētākais"
 
 msgid "Continue with {typeSocial}"
 msgstr "Turpināt ar {typeSocial}"
+
+msgid "Create"
+msgstr "Izveidot"
 
 msgid "Create event"
 msgstr "Izveidot notikumu"
@@ -1653,6 +1672,9 @@ msgstr "Veicamo darbu veidi motociklu transportam:"
 msgid "Upcoming events:"
 msgstr "Nākamie notikumi:"
 
+msgid "Used"
+msgstr "Izmantots"
+
 msgid "Views:"
 msgstr "Skatījumi:"
 
@@ -1685,3 +1707,6 @@ msgstr "Jums nav {typeItem}."
 
 msgid "Your contact information"
 msgstr "Jūsu kontakta informācija"
+
+msgid "Your profile"
+msgstr "Jūsu profils"

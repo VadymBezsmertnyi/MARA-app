@@ -1134,20 +1134,20 @@ msgid "Button for closing the settings events screen"
 msgstr "Przycisk zamykania ekranu ustawień wydarzeń"
 
 #. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Moje ogłoszenia"
+msgid "View"
+msgstr "Zobacz"
 
 #. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Moje warsztaty"
+msgid "Your adverts"
+msgstr "Twoje ogłoszenia"
 
 #. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Dodaj warsztat"
+msgid "Your workshops"
+msgstr "Twoje warsztaty"
 
 #. js-lingui-explicit-id
-msgid "My events"
-msgstr "Moje wydarzenia"
+msgid "Your events"
+msgstr "Twoje wydarzenia"
 
 #. js-lingui-explicit-id
 msgid "Setting profile"
@@ -1236,6 +1236,10 @@ msgstr "Błąd podczas zmiany warsztatu"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Błąd podczas tworzenia warsztatu"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Dodaj warsztat"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1344,6 +1348,9 @@ msgstr "Dostęp do geolokalizacji w trybie tła"
 msgid "Access to geolocation when using the application"
 msgstr "Dostęp do geolokalizacji podczas korzystania z aplikacji"
 
+msgid "Add"
+msgstr "Dodaj"
+
 msgid "Add advert"
 msgstr "Dodaj reklamę"
 
@@ -1352,6 +1359,9 @@ msgstr "Dodaj wydarzenie"
 
 msgid "Add workshop"
 msgstr "Dodaj warsztat"
+
+msgid "Additional contacts:"
+msgstr "Dodatkowe kontakty:"
 
 msgid "All cities"
 msgstr "Wszystkie miasta"
@@ -1398,8 +1408,14 @@ msgstr "Automatycznie wykryj lokalizację"
 msgid "Automatically detect location in the background"
 msgstr "Automatyczne wykrywanie lokalizacji w tle"
 
+msgid "Available"
+msgstr "Dostępne"
+
 msgid "Back"
 msgstr "Powrót"
+
+msgid "Business profile"
+msgstr "Profil biznesowy"
 
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
 msgstr "Klikając przycisk „Kontynuuj”, zgadzasz się z {buttonTermsService} oraz {buttonPrivacyPolicy}"
@@ -1421,6 +1437,9 @@ msgstr "Najtańsze"
 
 msgid "Continue with {typeSocial}"
 msgstr "Kontynuuj za pomocą {typeSocial}"
+
+msgid "Create"
+msgstr "Utwórz"
 
 msgid "Create event"
 msgstr "Utwórz wydarzenie"
@@ -1653,6 +1672,9 @@ msgstr "Rodzaje prac dla transportu motocyklowego:"
 msgid "Upcoming events:"
 msgstr "Nadchodzące wydarzenia:"
 
+msgid "Used"
+msgstr "Użyte"
+
 msgid "Views:"
 msgstr "Odsłony:"
 
@@ -1685,3 +1707,6 @@ msgstr "Nie masz {typeItem}."
 
 msgid "Your contact information"
 msgstr "Twoje dane kontaktowe"
+
+msgid "Your profile"
+msgstr "Twój profil"
