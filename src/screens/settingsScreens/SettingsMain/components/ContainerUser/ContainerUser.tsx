@@ -9,7 +9,7 @@ import { localesContext } from "../../../../../../localization/localization.prov
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
-import { PhoneWithMassagers } from "../../../../../components/PhoneWithMassagers/PhoneWithMassagers";
+import { PhoneWithMessengers } from "../../../../../components/PhoneWithMessengers/PhoneWithMessengers";
 
 // icons
 import { IconProfileAvatar } from "../../../../../icons/components";
@@ -51,7 +51,7 @@ export const ContainerUser: FunctionComponent = () => {
           <Text style={styles.titleInfo}>{userData?.firstName}</Text>
           <Text style={styles.titleInfo}>{showCity?.name}</Text>
           {userData?.phoneNumber ? (
-            <PhoneWithMassagers
+            <PhoneWithMessengers
               title={userData.phoneNumber}
               isTelegram
               isWhatsApp
@@ -65,7 +65,7 @@ export const ContainerUser: FunctionComponent = () => {
           <Trans>Additional contacts:</Trans>
         </Text>
         {userData?.phoneNumber ? (
-          <PhoneWithMassagers
+          <PhoneWithMessengers
             title={userData.phoneNumber}
             isTelegram
             isWhatsApp

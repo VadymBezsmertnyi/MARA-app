@@ -1,14 +1,21 @@
-import React, { FunctionComponent } from "react";
-import { TouchableOpacity, View } from "react-native";
+import React, { FunctionComponent, useMemo } from "react";
+import { StyleProp, TouchableOpacity, View, ViewStyle } from "react-native";
+
+// components
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
-import { styles } from "./CheckboxClassic.styles";
+
+// icons
 import { IconCheck } from "../../icons/components";
+
+// styles
+import { styles } from "./CheckboxClassic.styles";
 
 type CheckboxClassicProps = {
   check: boolean;
   setCheck: (value: boolean) => void;
   isGradient?: boolean;
   accessibilityLabel?: string;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
 export const CheckboxClassic: FunctionComponent<CheckboxClassicProps> = ({
@@ -16,8 +23,13 @@ export const CheckboxClassic: FunctionComponent<CheckboxClassicProps> = ({
   setCheck,
   isGradient = false,
   accessibilityLabel,
+  containerStyle,
 }) => {
-  const body = check ? <IconCheck /> : <View />;
+  const containerStyles = useMemo(
+    () => [styles.container, containerStyle],
+    [containerStyle]
+  );
+  const body = useMemo(() => (check ? <IconCheck /> : <View />), [check]);
 
   return (
     <TouchableOpacity
@@ -26,7 +38,7 @@ export const CheckboxClassic: FunctionComponent<CheckboxClassicProps> = ({
         setCheck(!check);
       }}
     >
-      <View style={styles.container}>
+      <View style={containerStyles}>
         {isGradient && check ? (
           <LinearGradientCustom style={styles.containerLinearGradient}>
             {body}

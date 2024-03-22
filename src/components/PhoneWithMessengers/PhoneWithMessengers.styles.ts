@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
-  containerMassagers: { flexDirection: "row" },
+  containerMessengers: { flexDirection: "row" },
   secondIcon: { left: 9 },
   thirdIcon: { left: 18 },
 });

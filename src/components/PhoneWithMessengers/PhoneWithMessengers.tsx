@@ -9,22 +9,19 @@ import {
 } from "../../icons/components";
 
 // styles
-import { styles } from "./PhoneWithMassagers.styles";
+import { styles } from "./PhoneWithMessengers.styles";
 
-type PhoneWithMassagersProps = {
+type PhoneWithMessengersProps = {
   title: string;
   isViber?: boolean;
   isWhatsApp?: boolean;
   isTelegram?: boolean;
 };
 
-export const PhoneWithMassagers: FunctionComponent<PhoneWithMassagersProps> = ({
-  title,
-  isViber = false,
-  isWhatsApp = false,
-  isTelegram = false,
-}) => {
-  const listMassagers = useMemo(() => {
+export const PhoneWithMessengers: FunctionComponent<
+  PhoneWithMessengersProps
+> = ({ title, isViber = false, isWhatsApp = false, isTelegram = false }) => {
+  const listMessengers = useMemo(() => {
     const iconLogoTelegram = isTelegram ? [IconLogoTelegram] : [];
     const iconLogoWhatsApp = isWhatsApp ? [IconLogoWhatsApp] : [];
     const iconLogoViber = isViber ? [IconLogoViber] : [];
@@ -34,15 +31,15 @@ export const PhoneWithMassagers: FunctionComponent<PhoneWithMassagersProps> = ({
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <View style={styles.containerMassagers}>
-        {listMassagers.map((Icon, index) => {
+      <View style={styles.containerMessengers}>
+        {listMessengers.map((Icon, index) => {
           const stylesIcon = () => {
             if (
-              (index === 1 && listMassagers.length > 2) ||
-              (index === 0 && listMassagers.length === 2)
+              (index === 1 && listMessengers.length > 2) ||
+              (index === 0 && listMessengers.length === 2)
             )
               return styles.secondIcon;
-            if (index === 0 && listMassagers.length > 2)
+            if (index === 0 && listMessengers.length > 2)
               return styles.thirdIcon;
             return undefined;
           };
