@@ -80,7 +80,7 @@ export const SettingsBusinessCreate: FunctionComponent<
   const [logo, setLogo] = useState<
     ImageType | ImagePicker.ImagePickerAsset | null
   >(null);
-  const { warning, success } = showErrors;
+  const { warning } = showErrors;
 
   const showTitlePlace = useMemo(() => {
     if (!place) return "";

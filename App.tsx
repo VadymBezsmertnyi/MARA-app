@@ -41,6 +41,7 @@ import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider
 import { PushNotificationProvider } from "./src/providers/PushNotificationProvider/PushNotificationProvider";
 import { AnalyticsProvider } from "./src/providers/AnalyticsProvider/AnalyticsProvider";
 import { SharingProvider } from "./src/providers/SharingProvider/SharingProvider";
+import { BusinessProvider } from "./src/providers/BusinessProvider/BusinessProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -131,10 +132,14 @@ function App() {
                                     <WorkshopsProvider>
                                       <MarketProvider>
                                         <SharingProvider>
-                                          <Navigators
-                                            currentRouteName={currentRouteName}
-                                            navigation={navigationRef.current}
-                                          />
+                                          <BusinessProvider>
+                                            <Navigators
+                                              currentRouteName={
+                                                currentRouteName
+                                              }
+                                              navigation={navigationRef.current}
+                                            />
+                                          </BusinessProvider>
                                         </SharingProvider>
                                       </MarketProvider>
                                     </WorkshopsProvider>
