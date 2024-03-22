@@ -29,29 +29,18 @@ export const styles = StyleSheet.create({
   titleHeader: {
     fontFamily: "OpenSans_600SemiBold",
     fontSize: 17,
-    color: colors.blackCoffee,
+    color: colors.grayCloudy,
   },
   titleLogout: {
     fontFamily: "OpenSans_400Regular",
     fontSize: 16,
     color: colors.blackCoffee,
   },
-  containerAvatar: {
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: 20,
-    gap: 20,
+  containerLineEmpty: {
+    width: "100%",
+    height: 1,
+    backgroundColor: colors.grayMercury,
   },
-  containerImage: {
-    width: 84,
-    height: 84,
-    borderRadius: 40,
-  },
-  containerInfo: {
-    alignItems: "center",
-    gap: 6,
-  },
-  infoUser: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
   lineEmptyFirst: {
     marginBottom: 10,
     width: "100%",
@@ -59,7 +48,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.grayMercury,
   },
   lineEmpty: {
-    marginTop: 24,
+    marginTop: 16,
     marginBottom: 10,
     width: "100%",
     height: 1,

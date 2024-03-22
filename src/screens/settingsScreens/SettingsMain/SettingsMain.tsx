@@ -38,6 +38,8 @@ import { IconProfileAvatar } from "../../../icons/components";
 
 // styles
 import { styles } from "./SettingsMain.styles";
+import { ContainerUser } from "./components/ContainerUser/ContainerUser";
+import colors from "../../../../styles/colors";
 
 type SettingsMainProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -92,7 +94,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <MenuBurgerButton onPress={onShowMenu} />
         </View>
         <Text style={styles.titleHeader}>
-          <Trans>Profile</Trans>
+          <Trans>Your profile</Trans>
         </Text>
         <TouchableOpacity
           onPress={onLogoutProfile}
@@ -103,21 +105,8 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           </Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.containerAvatar}>
-        <View style={styles.containerImage}>
-          {imageSource ? (
-            <ImageCache style={styles.containerImage} imageSrc={imageSource} />
-          ) : (
-            <IconProfileAvatar />
-          )}
-        </View>
-        <View style={styles.containerInfo}>
-          <Text style={styles.infoUser}>{userData?.firstName}</Text>
-          <Text style={styles.infoUser}>{userData?.email}</Text>
-          <Text style={styles.infoUser}>{userData?.cityUser?.name}</Text>
-          <Text style={styles.infoUser}>{userData?.phoneNumber}</Text>
-        </View>
-      </View>
+      <ContainerUser />
+      <View style={styles.containerLineEmpty} />
       <ScrollView>
         <View style={styles.containerList}>
           <View style={styles.lineEmptyFirst} />
