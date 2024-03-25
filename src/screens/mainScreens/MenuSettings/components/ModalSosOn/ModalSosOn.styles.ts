@@ -1,5 +1,10 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../../../styles/constants";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("screen").height;
@@ -23,7 +28,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   titleModal: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 18,
     textAlign: "center",
   },
@@ -37,7 +42,7 @@ export const styles = StyleSheet.create({
   },
   titlePermissionsInfo: {
     width: WIDTH - 120,
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -59,7 +64,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   titleDarkTheme: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     color: colors.blackCoffee,
     fontSize: 16,
   },
@@ -67,7 +72,7 @@ export const styles = StyleSheet.create({
     gap: 5,
   },
   labelInputContacts: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -84,7 +89,7 @@ export const styles = StyleSheet.create({
   },
   button: { flex: 1 },
   titleInf: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.errorRed,
     textAlign: "center",

@@ -1,5 +1,11 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   containerMain: { flex: 1 },
@@ -26,7 +32,7 @@ export const styles = StyleSheet.create({
     bottom: 10,
   },
   titleAllImage: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.californiaOrange,
   },
@@ -37,7 +43,7 @@ export const styles = StyleSheet.create({
     marginTop: 10,
   },
   locationTitle: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     lineHeight: 24,
     color: colors.blackCoffee,
@@ -50,17 +56,17 @@ export const styles = StyleSheet.create({
     flex: 2,
   },
   title: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 20,
     color: colors.blackCoffee,
   },
   titleOther: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackCoffee,
   },
   subtitle: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -70,7 +76,7 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
   },
   label: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.blackCoffee,
     marginTop: 12,

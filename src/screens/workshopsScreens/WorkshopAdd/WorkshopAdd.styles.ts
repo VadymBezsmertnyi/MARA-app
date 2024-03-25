@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {},
@@ -9,7 +13,7 @@ export const styles = StyleSheet.create({
   containerStyle: { flex: 0, marginTop: 0 },
   customStylesInput: { height: 180 },
   labelInput: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.grayFuscous,
   },
@@ -28,7 +32,7 @@ export const styles = StyleSheet.create({
     gap: 10,
   },
   errorMessage: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     textAlign: "center",
     color: colors.errorRed,
     minHeight: 20,

@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -22,11 +26,11 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonTitle: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 17,
   },
   title: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 17,
   },
   containerEmpty: { width: 70 },

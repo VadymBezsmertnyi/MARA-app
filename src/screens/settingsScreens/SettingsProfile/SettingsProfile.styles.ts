@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,17 +25,17 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   titleDelete: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.grayCloudy,
   },
   titleHeader: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 17,
     color: colors.blackCoffee,
   },
   titleLogout: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -40,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   containerInput: { marginTop: 0 },
   labelInput: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.grayFuscous,
   },
@@ -50,5 +54,5 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
     gap: 20,
   },
-  email: { fontFamily: "OpenSans_600SemiBold", fontSize: 16 },
+  email: { fontFamily: FONT_600_OPEN_SANS, fontSize: 16 },
 });

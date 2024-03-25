@@ -1,6 +1,10 @@
 import { Platform, StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
 import { horizontalScale, verticalScale } from "../../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,17 +25,17 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   titleDelete: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.grayCloudy,
   },
   titleHeader: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 17,
     color: colors.grayCloudy,
   },
   titleLogout: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },

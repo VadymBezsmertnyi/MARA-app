@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -27,7 +28,7 @@ export const styles = StyleSheet.create({
     borderRadius: 40,
     overflow: "hidden",
   },
-  title: { fontFamily: "OpenSans_600SemiBold", fontSize: 12, width: 110 },
+  title: { fontFamily: FONT_600_OPEN_SANS, fontSize: 12, width: 110 },
   image: {
     flex: 1,
     width: 24,

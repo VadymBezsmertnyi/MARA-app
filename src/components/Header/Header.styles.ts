@@ -6,6 +6,10 @@ import {
   verticalScale,
 } from "../../../styles/hooks";
 import colors from "../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   background: {
@@ -26,7 +30,7 @@ export const styles = StyleSheet.create({
     minWidth: horizontalScale(90),
   },
   title: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     color: colors.blackCoffee,
     fontSize: scaleFont(17),
     textAlign: "center",
@@ -46,11 +50,11 @@ export const styles = StyleSheet.create({
   } as CSSProperties & ViewStyle,
   titleButtonBack: {
     color: colors.blackCoffee,
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(17),
   },
   titleButtonDeleteEvent: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(16),
   },
 });

@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
 import { verticalScale } from "../../../../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,7 +17,7 @@ export const styles = StyleSheet.create({
     gap: 12,
   },
   titleReviews: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
   },
   containerOtherReviews: {
@@ -26,7 +32,7 @@ export const styles = StyleSheet.create({
     gap: 12,
   },
   titleStar: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 28,
   },
   reviewsButton: { paddingVertical: 8 },
@@ -45,12 +51,12 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   titleName: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackCoffee,
   },
   titleDate: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 12,
     color: colors.grayCloudy,
   },
@@ -65,12 +71,12 @@ export const styles = StyleSheet.create({
     gap: 1,
   },
   titleStars: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 10,
     color: colors.blackCoffee,
   },
   comment: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 12,
     color: colors.blackCoffee,
   },

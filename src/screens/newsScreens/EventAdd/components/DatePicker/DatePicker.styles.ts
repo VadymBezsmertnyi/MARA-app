@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,13 +17,13 @@ export const styles = StyleSheet.create({
     paddingRight: 16,
   },
   label: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.blackCoffee,
   },
   labelRegular: { color: colors.errorRed },
   input: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     padding: 16,
     fontSize: 16,
     lineHeight: 24,

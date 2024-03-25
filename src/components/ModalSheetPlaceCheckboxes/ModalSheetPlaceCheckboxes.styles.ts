@@ -1,6 +1,10 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
-import { horizontalScale } from "../../../styles/hooks";
+import { horizontalScale, scaleFont } from "../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+} from "../../../styles/constants";
 
 const WIDTH = Dimensions.get("screen").width;
 
@@ -14,18 +18,18 @@ export const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   title: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
+    fontFamily: FONT_600_MONTSERRAT,
+    fontSize: scaleFont(16),
     color: colors.grayFuscous,
   },
   titleCoordinates: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
+    fontFamily: FONT_600_MONTSERRAT,
+    fontSize: scaleFont(16),
     color: colors.grayFuscous,
     textAlign: "center",
   },
   subTitleCoordinates: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.grayFuscous,
     textAlign: "center",
@@ -46,20 +50,20 @@ export const styles = StyleSheet.create({
     minHeight: 40,
   },
   titleCountryRegions: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 18,
+    fontFamily: FONT_600_MONTSERRAT,
+    fontSize: scaleFont(18),
     color: colors.grayCloudy,
     textAlign: "center",
   },
   selectTitleCountryRegions: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
+    fontFamily: FONT_600_MONTSERRAT,
+    fontSize: scaleFont(16),
     color: colors.blackCoffee,
     textAlign: "center",
   },
   titleItemList: {
     width: horizontalScale(300),
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -92,8 +96,8 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
   },
   titleLineCoordinates: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
+    fontFamily: FONT_600_MONTSERRAT,
+    fontSize: scaleFont(16),
     color: colors.blackRich,
   },
 });

@@ -1,6 +1,10 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 import { horizontalScale } from "../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+} from "../../../styles/constants";
 
 const WIDTH = Dimensions.get("screen").width;
 
@@ -14,18 +18,18 @@ export const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   title: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.grayFuscous,
   },
   titleCoordinates: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.grayFuscous,
     textAlign: "center",
   },
   subTitleCoordinates: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.grayFuscous,
     textAlign: "center",
@@ -49,19 +53,19 @@ export const styles = StyleSheet.create({
   },
   titleItemList: {
     width: horizontalScale(300),
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
   titleEmptyList: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 18,
     color: colors.blackCoffee,
     textAlign: "center",
     marginVertical: 10,
   },
   titleOtherList: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.errorRed,
     textAlign: "center",
@@ -96,7 +100,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
   },
   titleLineCoordinates: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackRich,
   },

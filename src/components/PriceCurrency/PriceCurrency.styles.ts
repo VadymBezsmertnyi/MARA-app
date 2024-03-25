@@ -1,12 +1,16 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import {
+  FONT_600_MONTSERRAT,
+  FONT_700_MONTSERRAT,
+} from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
     gap: 12,
   },
   label: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -22,7 +26,7 @@ export const styles = StyleSheet.create({
     paddingTop: 13,
   },
   errorMessage: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 10,
     color: colors.errorRed,
     marginTop: 4,

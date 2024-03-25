@@ -1,5 +1,10 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+  FONT_700_MONTSERRAT,
+} from "../../../../styles/constants";
 
 const WIDTH = Dimensions.get("window").width;
 
@@ -20,12 +25,12 @@ export const styles = StyleSheet.create({
   },
   titles: { flex: 1, gap: 12 },
   titleInfo: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 20,
     color: colors.blackCoffee,
   },
   subTitleInfo: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -56,7 +61,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.8,
   },
   titlePhone: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -72,12 +77,12 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   titleDescription: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackCoffee,
   },
   description: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -85,7 +90,7 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   titleButtonDescription: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     lineHeight: 24,
     color: colors.blueTufts,

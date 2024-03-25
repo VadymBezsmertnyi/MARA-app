@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+} from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   containerModalType: {
@@ -9,7 +13,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   titleModalType: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.grayFuscous,
   },
@@ -21,7 +25,7 @@ export const styles = StyleSheet.create({
     marginBottom: 40,
   },
   titleSelect: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },

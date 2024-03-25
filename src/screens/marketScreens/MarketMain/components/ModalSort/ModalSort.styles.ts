@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -31,7 +32,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.grayCloudy,
   },
   titleButton: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     textAlign: "center",
     lineHeight: 24,

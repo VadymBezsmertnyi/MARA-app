@@ -6,6 +6,7 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../../styles/hooks";
+import { FONT_700_MONTSERRAT } from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   containerHeader: { justifyContent: "center" },
   title: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(28),
     textAlign: "center",
   },

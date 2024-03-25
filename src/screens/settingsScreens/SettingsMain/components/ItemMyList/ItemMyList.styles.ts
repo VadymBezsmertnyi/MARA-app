@@ -5,6 +5,11 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -17,7 +22,7 @@ export const styles = StyleSheet.create({
     gap: verticalScale(8),
   },
   title: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(16),
     textAlign: "center",
     color: colors.blackRich,
@@ -28,7 +33,7 @@ export const styles = StyleSheet.create({
     gap: horizontalScale(23),
   },
   titleAmount: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(14),
     color: colors.grayCloudy,
   },
@@ -49,7 +54,7 @@ export const styles = StyleSheet.create({
   },
   buttonTitleAdd: {
     color: colors.white,
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: scaleFont(16),
   },
 });

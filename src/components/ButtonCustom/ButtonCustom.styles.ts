@@ -7,6 +7,7 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../styles/hooks";
+import { FONT_600_MONTSERRAT } from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -37,7 +38,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.blackRich,
   },
   buttonSubmitText: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: scaleFont(16),
     color: colors.white,
   },

@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -14,7 +18,7 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   titleModal: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     textAlign: "center",
   },
@@ -31,7 +35,7 @@ export const styles = StyleSheet.create({
     gap: 5,
   },
   titleButton: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 16,
     color: colors.blazeOrange,
   },

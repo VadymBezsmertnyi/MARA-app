@@ -5,6 +5,7 @@ import {
   verticalScale,
 } from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
+import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   containerMain: { flex: 1 },
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(17),
     color: colors.grayCloudy,
   },
@@ -29,7 +30,7 @@ export const styles = StyleSheet.create({
     paddingVertical: verticalScale(6),
   },
   titleButton: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(12),
     color: colors.white,
   },
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
     height: "auto",
   },
   titleButtonTransparent: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(12),
     paddingVertical: verticalScale(6),
   },

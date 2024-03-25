@@ -6,6 +6,7 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../styles/hooks";
+import { FONT_700_MONTSERRAT } from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   containerLogo: {
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   imageLogo: { width: "100%", height: verticalScale(230) },
   titleLogo: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(24),
     textAlign: "center",
     lineHeight: 29,

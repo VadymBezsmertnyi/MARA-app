@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 const MIN_HEIGHT = 44;
 
@@ -28,23 +32,23 @@ export const styles = StyleSheet.create({
     paddingVertical: verticalScale(12),
   },
   mainTitle: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     color: colors.white,
     fontSize: 12,
   },
   title: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     color: colors.white,
     fontSize: 16,
   },
   subTitle: {
     width: horizontalScale(220),
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     color: colors.white,
     fontSize: 12,
   },
   dateTitle: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     color: colors.white,
     fontSize: 12,
   },

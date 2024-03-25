@@ -10,6 +10,10 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+} from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   buttonLanguage: {
@@ -19,7 +23,7 @@ export const styles = StyleSheet.create({
   },
   iconLanguage: { width: horizontalScale(24), height: verticalScale(24) },
   titleLanguage: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: scaleFont(16),
     textTransform: "uppercase",
     color: colors.blackCoffee,
@@ -27,7 +31,7 @@ export const styles = StyleSheet.create({
   containerModal: { flex: 1, position: "relative" },
   headerModal: { paddingHorizontal: horizontalScale(16) },
   titleModal: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: scaleFont(16),
     color: colors.grayFuscous,
   },
@@ -58,7 +62,7 @@ export const styles = StyleSheet.create({
     minHeight: horizontalScale(40),
   },
   titleItemList: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(16),
     color: colors.blackCoffee,
   },

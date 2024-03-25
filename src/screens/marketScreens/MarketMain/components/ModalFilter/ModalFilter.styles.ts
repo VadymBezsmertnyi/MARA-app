@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -26,13 +30,13 @@ export const styles = StyleSheet.create({
   },
   containerTwoButtons: { marginBottom: 0 },
   labelSelect: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     lineHeight: 16,
     color: colors.grayFuscous,
   },
   labelOther: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     lineHeight: 24,
     color: colors.blackCoffee,

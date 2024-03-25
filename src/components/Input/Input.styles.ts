@@ -7,13 +7,18 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
   },
   label: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(16),
     color: colors.blackCoffee,
   },
@@ -28,7 +33,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     paddingTop: verticalScale(13),
     paddingHorizontal: horizontalScale(16),
     paddingBottom: verticalScale(16),
@@ -41,7 +46,7 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   titleMaxLength: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(16),
     color: colors.grayCloudy,
   },
@@ -49,7 +54,7 @@ export const styles = StyleSheet.create({
     color: colors.errorRed,
   },
   errorMessage: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(10),
     color: colors.errorRed,
     marginTop: verticalScale(4),

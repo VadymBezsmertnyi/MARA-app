@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import { FONT_700_MONTSERRAT } from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -36,7 +37,7 @@ export const styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 10,
     minHeight: 20,
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 10,
     color: colors.errorRed,
   },

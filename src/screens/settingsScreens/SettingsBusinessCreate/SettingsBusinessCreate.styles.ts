@@ -5,6 +5,7 @@ import {
   verticalScale,
 } from "../../../../styles/hooks";
 import colors from "../../../../styles/colors";
+import { FONT_400_OPEN_SANS } from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -19,7 +20,7 @@ export const styles = StyleSheet.create({
   containerLogo: { alignItems: "center" },
   containerInput: { paddingHorizontal: horizontalScale(16), marginTop: 0 },
   labelInput: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(14),
     color: colors.grayFuscous,
   },
@@ -38,7 +39,7 @@ export const styles = StyleSheet.create({
     paddingBottom: verticalScale(20),
   },
   labelInputOtherPhone: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(14),
     color: colors.grayFuscous,
     marginBottom: verticalScale(4),

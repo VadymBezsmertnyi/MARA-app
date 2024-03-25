@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import {
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+} from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -27,7 +31,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   titleNotElements: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 20,
   },
   containerElements: {
@@ -37,7 +41,7 @@ export const styles = StyleSheet.create({
     width: 24,
   },
   titleHeader: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 17,
     color: colors.blackCoffee,
   },
@@ -55,7 +59,7 @@ export const styles = StyleSheet.create({
   },
   titleAdd: {
     color: colors.white,
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
   },
 });

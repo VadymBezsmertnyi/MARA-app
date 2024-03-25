@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import { FONT_600_MONTSERRAT } from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   label: { fontSize: 12, fontWeight: "600", color: colors.blackCoffee },
   input: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     padding: 16,
     fontSize: 16,
     lineHeight: 24,

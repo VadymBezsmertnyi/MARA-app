@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
+import { FONT_700_MONTSERRAT } from "../../../../styles/constants";
 
 const HEIGHT = Dimensions.get("window").height;
 
@@ -41,6 +42,6 @@ export const styles = StyleSheet.create({
     height: "90%",
   },
   titleNotList: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
   },
 });

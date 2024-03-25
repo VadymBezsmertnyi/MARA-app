@@ -1,18 +1,23 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+} from "../../../styles/constants";
+import { scaleFont, verticalScale } from "../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {
-    gap: 12,
+    gap: verticalScale(12),
   },
   title: {
-    fontFamily: "Montserrat_600SemiBold",
-    fontSize: 16,
+    fontFamily: FONT_600_MONTSERRAT,
+    fontSize: scaleFont(16),
     color: colors.blackCoffee,
   },
   subTitle: {
-    fontFamily: "OpenSans_400Regular",
-    fontSize: 16,
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: scaleFont(16),
     color: colors.grayCloudy,
   },
 });

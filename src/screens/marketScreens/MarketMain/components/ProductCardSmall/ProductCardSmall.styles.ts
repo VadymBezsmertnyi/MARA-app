@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
 import { horizontalScale } from "../../../../../../styles/hooks";
+import {
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -32,12 +36,12 @@ export const styles = StyleSheet.create({
     gap: 2,
   },
   subTitle: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.grayCloudy,
   },
   title: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.blackCoffee,
     lineHeight: 16,

@@ -5,6 +5,10 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../../styles/hooks";
+import {
+  FONT_600_MONTSERRAT,
+  FONT_700_MONTSERRAT,
+} from "../../../../styles/constants";
 
 const PADDING_HORIZONTAL = 16;
 const PADDING_TOP = 8;
@@ -28,7 +32,7 @@ export const styles = StyleSheet.create({
   },
   containerPart: { gap: verticalScale(GAP_MORE) },
   titleType: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(FONT_SIZE_TITLE_TYPE),
   },
   containerEvents: { gap: 8 },
@@ -40,7 +44,7 @@ export const styles = StyleSheet.create({
     gap: horizontalScale(GAP_MORE),
   },
   titleButtonMore: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     color: colors.blueTufts,
     fontSize: scaleFont(FONT_SIZE_TITLE_MORE),
   },
@@ -54,7 +58,7 @@ export const styles = StyleSheet.create({
     height: "90%",
   },
   titleNotList: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
   },
   containerEmpty: {
     height: verticalScale(40),

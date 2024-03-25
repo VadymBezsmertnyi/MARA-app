@@ -1,5 +1,10 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 const WIDTH = Dimensions.get("screen").width;
 
@@ -29,7 +34,7 @@ export const styles = StyleSheet.create({
     paddingRight: 0,
   },
   labelSectors: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -49,12 +54,12 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
   },
   titleRating: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
   titleSelectRating: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     color: colors.white,
   },
@@ -66,7 +71,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   titleModalType: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: 16,
     color: colors.grayFuscous,
   },
@@ -78,7 +83,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   titleSelect: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },

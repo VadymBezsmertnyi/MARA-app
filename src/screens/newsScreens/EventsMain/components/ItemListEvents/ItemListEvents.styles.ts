@@ -1,6 +1,10 @@
 import { Platform, StyleSheet } from "react-native";
 import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   shadow: {
@@ -62,11 +66,11 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   title: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
   },
   address: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
   },
   containerTitlesNotImage: {
@@ -81,7 +85,7 @@ export const styles = StyleSheet.create({
   partNow: {},
   containerLocation: { flexDirection: "row", alignItems: "center" },
   distance: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
   },
   containerNowLabel: {
@@ -90,7 +94,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 2,
   },
   titleNowLabel: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.white,
     textAlign: "center",

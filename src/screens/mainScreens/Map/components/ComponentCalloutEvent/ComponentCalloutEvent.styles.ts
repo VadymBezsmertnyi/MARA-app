@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,9 +22,9 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     gap: 6,
   },
-  title: { fontFamily: "OpenSans_600SemiBold", fontSize: 12, minWidth: 70 },
+  title: { fontFamily: FONT_600_OPEN_SANS, fontSize: 12, minWidth: 70 },
   titleDate: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     minWidth: 70,
     textAlign: "right",

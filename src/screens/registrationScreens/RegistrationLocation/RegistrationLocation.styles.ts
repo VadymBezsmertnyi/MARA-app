@@ -7,6 +7,11 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../../styles/hooks";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,7 +26,7 @@ export const styles = StyleSheet.create({
     paddingTop: verticalScale(64),
   },
   title: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(20),
     textAlign: "center",
   },
@@ -32,7 +37,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   titleLocation: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     color: colors.grayFuscous,
     maxWidth: horizontalScale(203),
     fontSize: scaleFont(16),
@@ -42,7 +47,7 @@ export const styles = StyleSheet.create({
     gap: verticalScale(20),
   },
   titleCity: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(20),
     textAlign: "center",
   },
@@ -53,7 +58,7 @@ export const styles = StyleSheet.create({
     gap: verticalScale(20),
   },
   titleTermsPolicy: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     color: colors.grayCloudy,
     textAlign: "center",
     fontSize: scaleFont(12),

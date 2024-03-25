@@ -1,5 +1,11 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_MONTSERRAT,
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../styles/constants";
 
 const WIDTH = Dimensions.get("screen").width;
 
@@ -12,7 +18,7 @@ export const styles = StyleSheet.create({
   containerSlider: { height: 184, paddingHorizontal: 20 },
   imagesScroll: { borderRadius: 3, backgroundColor: colors.transparent },
   title: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 20,
     paddingHorizontal: 16,
     color: colors.blackCoffee,
@@ -23,7 +29,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   titleDate: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.grayCloudy,
   },
@@ -33,7 +39,7 @@ export const styles = StyleSheet.create({
     gap: 2,
   },
   subTitle: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.blackCoffee,
   },
@@ -50,7 +56,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.blueLight,
   },
   titlePrice: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 20,
     color: colors.blackRich,
   },
@@ -61,7 +67,7 @@ export const styles = StyleSheet.create({
     gap: 12,
   },
   titleDescription: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: 20,
     paddingHorizontal: 16,
   },
@@ -77,7 +83,7 @@ export const styles = StyleSheet.create({
   },
   description: {
     paddingHorizontal: 16,
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     lineHeight: 24,
     color: colors.blackCoffee,
@@ -88,7 +94,7 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   titleViews: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.blackRich,
   },
@@ -110,7 +116,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 19,
   },
   titleButton: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     color: colors.white,
     fontSize: 16,
   },

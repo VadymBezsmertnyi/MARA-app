@@ -5,6 +5,10 @@ import {
   verticalScale,
 } from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,7 +19,7 @@ export const styles = StyleSheet.create({
   containerMain: { flexDirection: "row", gap: horizontalScale(12) },
   titlesMain: { flex: 1, gap: verticalScale(4) },
   titleInfo: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(16),
     color: colors.blackCoffee,
   },
@@ -28,7 +32,7 @@ export const styles = StyleSheet.create({
     gap: verticalScale(4),
   },
   titleOtherContacts: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(14),
     color: colors.blackRich,
   },

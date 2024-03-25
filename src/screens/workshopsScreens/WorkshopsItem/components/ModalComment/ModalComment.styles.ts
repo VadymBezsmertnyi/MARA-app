@@ -5,12 +5,13 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../../../../styles/hooks";
+import { FONT_700_MONTSERRAT } from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: { flex: 1, gap: verticalScale(28) },
   containerHeader: { alignItems: "center" },
   titleHeader: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(20),
     color: colors.grayFuscous,
   },
@@ -23,7 +24,7 @@ export const styles = StyleSheet.create({
   containerStars: { flexDirection: "row", gap: horizontalScale(8) },
   containerButton: { paddingHorizontal: horizontalScale(52) },
   errorMessage: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(10),
     color: colors.errorRed,
     marginTop: verticalScale(4),

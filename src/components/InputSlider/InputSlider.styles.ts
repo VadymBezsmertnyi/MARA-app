@@ -1,5 +1,9 @@
 import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../styles/constants";
 
 const WIDTH = Dimensions.get("screen").width;
 
@@ -8,7 +12,7 @@ export const styles = StyleSheet.create({
     gap: 16,
   },
   labelSectors: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
   },
@@ -58,7 +62,7 @@ export const styles = StyleSheet.create({
     height: 12,
   },
   numberThumb: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.blackCoffee,
     position: "absolute",
@@ -76,7 +80,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   numbersThumb: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.blackCoffee,
   },

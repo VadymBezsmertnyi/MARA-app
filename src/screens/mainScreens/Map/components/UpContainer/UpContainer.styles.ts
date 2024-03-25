@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
 import colors from "../../../../../../styles/colors";
+import { FONT_700_OPEN_SANS } from "../../../../../../styles/constants";
 
 const MIN_HEIGHT = 44;
 
@@ -31,7 +32,7 @@ export const styles = StyleSheet.create({
   },
   buttonSos: { height: "100%", justifyContent: "center" },
   titleButtonSos: {
-    fontFamily: "OpenSans_700Bold",
+    fontFamily: FONT_700_OPEN_SANS,
     color: colors.white,
   },
 });

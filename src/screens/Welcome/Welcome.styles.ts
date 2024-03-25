@@ -5,6 +5,10 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../styles/hooks";
+import {
+  FONT_600_MONTSERRAT,
+  FONT_700_MONTSERRAT,
+} from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: { flex: 1 },
@@ -29,12 +33,12 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontFamily: "Montserrat_700Bold",
+    fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(28),
     color: colors.blackCoffee,
   },
   subTitle: {
-    fontFamily: "Montserrat_600SemiBold",
+    fontFamily: FONT_600_MONTSERRAT,
     fontSize: scaleFont(16),
     color: colors.blackCoffee,
   },

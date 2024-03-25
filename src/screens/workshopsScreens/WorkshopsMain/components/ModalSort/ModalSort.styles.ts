@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
+import {
+  FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -23,14 +27,14 @@ export const styles = StyleSheet.create({
     marginVertical: 28,
   },
   titleButton: {
-    fontFamily: "OpenSans_600SemiBold",
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     textAlign: "center",
     lineHeight: 24,
     color: colors.blackCoffee,
   },
   subTitleButton: {
-    fontFamily: "OpenSans_400Regular",
+    fontFamily: FONT_400_OPEN_SANS,
     fontSize: 12,
     textAlign: "center",
     lineHeight: 15,
