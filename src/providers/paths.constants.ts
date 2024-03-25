@@ -39,7 +39,9 @@ export const PATHS = {
   placesCities: "/places/cities/",
   placesCitiesSearch: "/places/cities/search/",
   placesCityId: "/places/cities/getPlaceId/",
-
+  // business
+  businessMarket: "/business/market/",
+  businessMarketCreate: "/business/market/create/",
   // other
   ipApiGetCountry: "http://ip-api.com/json",
 } as const;

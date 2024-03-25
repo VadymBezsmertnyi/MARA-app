@@ -23,12 +23,14 @@ type ModalDeleteProps = {
   onClose: () => void;
   onSubmit: () => Promise<void>;
   isGoBack?: boolean;
+  subTitle?: string;
 };
 
 export const ModalDelete: FunctionComponent<ModalDeleteProps> = ({
   onClose,
   onSubmit,
   isGoBack = true,
+  subTitle,
 }) => {
   const { i18n } = useContext(localesContext);
   const navigation = useAllNavigation();
@@ -53,6 +55,7 @@ export const ModalDelete: FunctionComponent<ModalDeleteProps> = ({
         <Text style={styles.titleModal}>
           <Trans>Are you sure you want to delete?</Trans>
         </Text>
+        {subTitle ? <Text style={styles.subTitleModal}>{subTitle}</Text> : null}
         <View style={styles.containerButtons}>
           <ButtonCustom
             title={i18n._("Yes")}

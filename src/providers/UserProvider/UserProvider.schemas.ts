@@ -61,6 +61,7 @@ export const userDataS = z.object({
     isEnable: z.boolean(),
     radiusKm: z.number(),
   }),
+  businessMarketId: z.number().nullable(),
 });
 
 export const resultUserDataS = z.object({

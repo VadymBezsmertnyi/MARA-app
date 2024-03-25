@@ -5,17 +5,37 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { Modal } from "react-native";
+import { z } from "zod";
+
+// schemas
+import { businessMarketSchema } from "./BusinessProvider.schemas";
+
+// types
+import { BusinessMarketType } from "./BusinessProvider.types";
 
 // providers
 import { userContext } from "../UserProvider/UserProvider";
+import { apiContext } from "../ApiProvider/ApiProvider";
 import { localesContext } from "../../../localization/localization.provider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
-import { BusinessMarketType } from "./BusinessProvider.types";
+import { ItemSearchPlaceAddressType } from "../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
+import { ImageType } from "../../components/ImageModal/ImageModal.types";
+
+// constants
+import { PATHS } from "../paths.constants";
 
 type BusinessContext = {
+  businessMarketUser: BusinessMarketType | null;
   setIsDelete: React.Dispatch<React.SetStateAction<boolean>>;
+  onCreateBusinessMarket: (
+    newBusinessMarket: Omit<BusinessMarketType, "place" | "logo" | "id"> & {
+      place: ItemSearchPlaceAddressType;
+      newLogo: ImageType | null;
+    }
+  ) => Promise<void>;
 };
 
 type BusinessProviderProps = {
@@ -28,17 +48,39 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   children,
 }) => {
   const { i18n } = useContext(localesContext);
+  const { api } = useContext(apiContext);
   const { userData } = useContext(userContext);
   const [isDelete, setIsDelete] = useState(false);
-  const [businessUser, setBusinessUser] = useState<BusinessMarketType | null>(
-    null
-  );
-
-  const valueContext: BusinessContext = useMemo(() => ({ setIsDelete }), []);
+  const [businessMarketUser, setBusinessMarketUser] =
+    useState<BusinessMarketType | null>(null);
 
   const getBusinessUser = async () => {
-    if (userData?.id) return null;
+    if (!userData?.id) return null;
+    const result = await api(
+      `${PATHS.businessMarket}?userId=${userData.id}`,
+      null
+    );
+    setBusinessMarketUser(result.businessMarket);
   };
+
+  const onCreateBusinessMarket = async (
+    newBusinessMarket: Omit<BusinessMarketType, "place" | "logo" | "id"> & {
+      place: ItemSearchPlaceAddressType;
+      newLogo: ImageType | null;
+    }
+  ) => {
+    const result = await api(
+      PATHS.businessMarketCreate,
+      { method: "POST", data: newBusinessMarket },
+      z.object({ businessMarket: businessMarketSchema })
+    );
+    if (result?.businessMarket) setBusinessMarketUser(result.businessMarket);
+  };
+
+  const valueContext: BusinessContext = useMemo(
+    () => ({ businessMarketUser, setIsDelete, onCreateBusinessMarket }),
+    [businessMarketUser]
+  );
 
   useEffect(() => {
     if (userData?.id) getBusinessUser();
@@ -47,13 +89,19 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   return (
     <businessContext.Provider value={valueContext}>
       {children}
-      {isDelete ? (
-        <ModalDelete
-          onSubmit={async () => {}}
-          onClose={() => {
-            setIsDelete(false);
-          }}
-        />
+      {isDelete && businessMarketUser ? (
+        <Modal visible transparent>
+          <ModalDelete
+            onSubmit={() => {}}
+            onClose={() => {
+              setIsDelete(false);
+            }}
+            subTitle={i18n._(
+              `Attention! All data related to the "{nameBusiness}" business will be deleted.`,
+              { nameBusiness: businessMarketUser.name }
+            )}
+          />
+        </Modal>
       ) : null}
     </businessContext.Provider>
   );

@@ -42,7 +42,9 @@ export const PATHS_SETTINGS_SCREENS = {
   settingsEventAdd: "settingsEventAdd",
   settingsEventChange: "settingsEventChange",
   settingsProfile: "settingsProfile",
-  settingsBusinessCreate: "settingsBusinessCreate",
+  settingsBusinessMarketCreate: "settingsBusinessMarketCreate",
+  settingsBusinessMarketChange: "settingsBusinessMarketChange",
+  settingsBusinessMarketReview: "settingsBusinessMarketReview",
 } as const;
 
 export const PATHS_WORKSHOP_SCREENS = {

@@ -103,8 +103,8 @@ export const useSettingsStack = () => {
       component: MarketAdd,
     },
     {
-      id: PATHS_SETTINGS_SCREENS.settingsBusinessCreate,
-      name: PATHS_SETTINGS_SCREENS.settingsBusinessCreate,
+      id: PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate,
+      name: PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate,
       title: "",
       headerShown: false,
       component: SettingsBusinessCreate,

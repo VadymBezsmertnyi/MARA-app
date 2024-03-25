@@ -75,7 +75,11 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
         return null;
       }
 
+      // TODO for test
+      /* console.log("currentUrl", currentUrl);
+      console.log("response.data", response.data); */
       const isCurrent = schema.safeParse(response.data);
+      /* console.log("isCurrent", isCurrent); */
       if (isCurrent.success) return isCurrent.data;
 
       return null;

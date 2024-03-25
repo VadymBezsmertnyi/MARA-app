@@ -10,31 +10,37 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
+import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { businessContext } from "../../../providers/BusinessProvider/BusinessProvider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
-
-// styles
-import { styles } from "./SettingsBusinessCreate.styles";
 import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
 import { Input } from "../../../components/Input/Input";
 import { InputButton } from "../../../components/InputButton/InputButton";
 import { ModalSheetSearchPlaceAddress } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress";
 import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { IconMapGradient } from "../../../icons/components";
 import { InputPhoneMessengers } from "../../../components/InputPhoneMessengers/InputPhoneMessengers";
+import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
+import { ImageType } from "../../../components/ImageModal/ImageModal.types";
+
+// hooks
+import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
+import { useErrors } from "../../../helps/useErrors";
+import { compressAndProcessImages } from "../../../helps/helps";
+
+// icons
+import { IconMapGradient } from "../../../icons/components";
+
+// styles
+import { styles } from "./SettingsBusinessCreate.styles";
 import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
-import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
-import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
-import { useErrors } from "../../../helps/useErrors";
-import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 import showErrors from "../../../helps/errors/showError";
-import { ImageType } from "../../../components/ImageModal/ImageModal.types";
-import { compressAndProcessImages } from "../../../helps/helps";
 
 type SettingsBusinessCreateProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -61,7 +67,9 @@ export const SettingsBusinessCreate: FunctionComponent<
 > = () => {
   const { i18n, language } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
+  const { userData } = useContext(userContext);
   const { placesDB, getPlace } = useContext(placesContext);
+  const { onCreateBusinessMarket } = useContext(businessContext);
   const { verifyPhone } = useAuthorizationRegistration();
   const { getErrorText } = useErrors(i18n);
   const [name, setName] = useState<string>("");
@@ -154,28 +162,26 @@ export const SettingsBusinessCreate: FunctionComponent<
 
   const onSubmit = () => {
     const isError = checkEnterData();
-    const currentPhoneNumbers = otherPhoneNumbers
-      .map((otherPhone) => {
-        const isPhone =
-          verifyPhone(otherPhone.phoneNumber, otherPhone.selectCountryIso)
-            .length === 0;
-        if (isPhone) return otherPhone;
-        return null;
-      })
-      .filter((otherPhone) => otherPhone !== null);
-    const newBusiness = {
-      logo,
-      name,
-      place,
-      mainPhoneNumber,
-      otherPhoneNumbers: currentPhoneNumbers.length
-        ? currentPhoneNumbers
-        : null,
-    };
-    console.log("isError", isError);
-    console.log("newBusiness", newBusiness);
+    const currentPhoneNumbers = otherPhoneNumbers.filter((otherPhone) => {
+      const isPhone =
+        verifyPhone(otherPhone.phoneNumber, otherPhone.selectCountryIso)
+          .length === 0;
+      return isPhone;
+    });
+    if (!isError && place && userData) {
+      const newBusiness = {
+        newLogo: logo?.base64 ? { ...logo, base64: logo.base64 || "" } : null,
+        name,
+        place,
+        mainPhoneNumber,
+        otherPhoneNumbers: currentPhoneNumbers.length
+          ? currentPhoneNumbers
+          : null,
+        userId: userData.id,
+      };
+      onCreateBusinessMarket(newBusiness);
+    }
   };
-  console.log("errorMessage", errorMessage);
 
   return (
     <>

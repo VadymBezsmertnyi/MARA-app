@@ -66,8 +66,20 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     );
   };
 
-  const onCreateBusiness = () => {
-    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessCreate);
+  const onCreateBusinessMarket = () => {
+    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate);
+  };
+
+  const onChangeBusinessMarket = (businessMarketId: number) => {
+    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange, {
+      businessMarketId,
+    });
+  };
+
+  const onReviewBusinessMarket = (businessMarketId: number) => {
+    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketReview, {
+      businessMarketId,
+    });
   };
 
   return (
@@ -91,7 +103,11 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
       <ScrollView>
         <ContainerUser />
         <View style={styles.containerLineEmpty} />
-        <ContainerBusiness onCreateBusiness={onCreateBusiness} />
+        <ContainerBusiness
+          onCreateBusiness={onCreateBusinessMarket}
+          onChangeBusiness={onChangeBusinessMarket}
+          onReviewBusiness={onReviewBusinessMarket}
+        />
         <View style={styles.containerList}>
           <View style={styles.containerLineEmpty} />
           <ItemMyList
