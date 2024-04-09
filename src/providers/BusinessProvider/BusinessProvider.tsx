@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { Modal } from "react-native";
 import { z } from "zod";
+import qs from "qs";
 
 // schemas
 import { businessMarketSchema } from "./BusinessProvider.schemas";
@@ -54,12 +55,10 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   const [businessMarketUser, setBusinessMarketUser] =
     useState<BusinessMarketType | null>(null);
 
-  const getBusinessUser = async () => {
+  const getBusinessUser = async (userId?: string | number) => {
     if (!userData?.id) return null;
-    const result = await api(
-      `${PATHS.businessMarket}?userId=${userData.id}`,
-      null
-    );
+    const query = qs.stringify({ userId }, { addQueryPrefix: true });
+    const result = await api(`${PATHS.businessMarket}${query}`, null);
     setBusinessMarketUser(result.businessMarket);
   };
 
@@ -83,7 +82,7 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   );
 
   useEffect(() => {
-    if (userData?.id) getBusinessUser();
+    if (userData?.id) getBusinessUser(userData.id);
   }, [userData?.id]);
 
   return (
