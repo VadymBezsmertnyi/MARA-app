@@ -91,9 +91,8 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   const onApple = async () => {
     try {
       const result = await AppleAuthentication.signInAsync();
-      console.log("result", result);
     } catch (error) {
-      console.log("error", error);
+      console.warn("error", error);
     }
   };
 

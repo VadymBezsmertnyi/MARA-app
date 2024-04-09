@@ -36,7 +36,6 @@ export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
   const userId = useMemo(() => userData?.id || null, [userData?.id]);
 
   const addUserDataDeepLink = () => {
-    console.log("userId, dataDeepLink", userId, dataDeepLink);
     setIsFirstLaunch(false);
   };
 

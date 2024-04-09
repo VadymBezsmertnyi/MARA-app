@@ -61,12 +61,10 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
 
     socketRef.current.onerror = (e) => {
       // an error occurred
-      console.log("error", e);
     };
 
     socketRef.current.onclose = (e) => {
       // connection closed
-      console.log(e.code, e.reason);
       setStateSocket(DEFAULT_STATE_SOCKET);
     };
 
@@ -105,7 +103,6 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
     else if (socketRef.current?.readyState === WebSocket.OPEN)
       socketRef.current.onclose = (e) => {
         // connection closed
-        console.log(e.code, e.reason);
         setStateSocket(DEFAULT_STATE_SOCKET);
       };
   }, [userData?.id]); */

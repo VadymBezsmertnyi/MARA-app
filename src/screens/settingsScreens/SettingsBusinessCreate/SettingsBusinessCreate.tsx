@@ -64,7 +64,7 @@ const DEFAULT_DATA_PHONE_NUMBERS = [
 
 export const SettingsBusinessCreate: FunctionComponent<
   SettingsBusinessCreateProps
-> = () => {
+> = ({ navigation }) => {
   const { i18n, language } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
   const { userData } = useContext(userContext);
@@ -160,7 +160,7 @@ export const SettingsBusinessCreate: FunctionComponent<
     return isError;
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     const isError = checkEnterData();
     const currentPhoneNumbers = otherPhoneNumbers.filter((otherPhone) => {
       const isPhone =
@@ -179,7 +179,8 @@ export const SettingsBusinessCreate: FunctionComponent<
           : null,
         userId: userData.id,
       };
-      onCreateBusinessMarket(newBusiness);
+      await onCreateBusinessMarket(newBusiness);
+      navigation.goBack();
     }
   };
 

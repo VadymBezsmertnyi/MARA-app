@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { Text, View } from "react-native";
+import { StyleProp, Text, TextStyle, View } from "react-native";
 
 // icons
 import {
@@ -16,21 +16,29 @@ type PhoneWithMessengersProps = {
   isViber?: boolean;
   isWhatsApp?: boolean;
   isTelegram?: boolean;
+  titleStyle?: StyleProp<TextStyle>;
 };
 
 export const PhoneWithMessengers: FunctionComponent<
   PhoneWithMessengersProps
-> = ({ title, isViber = false, isWhatsApp = false, isTelegram = false }) => {
+> = ({
+  title,
+  isViber = false,
+  isWhatsApp = false,
+  isTelegram = false,
+  titleStyle,
+}) => {
   const listMessengers = useMemo(() => {
     const iconLogoTelegram = isTelegram ? [IconLogoTelegram] : [];
     const iconLogoWhatsApp = isWhatsApp ? [IconLogoWhatsApp] : [];
     const iconLogoViber = isViber ? [IconLogoViber] : [];
     return [...iconLogoViber, ...iconLogoWhatsApp, ...iconLogoTelegram];
   }, [isViber, isWhatsApp, isTelegram]);
+  const titleStyles = useMemo(() => [styles.title, titleStyle], [titleStyle]);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={titleStyles}>{title}</Text>
       <View style={styles.containerMessengers}>
         {listMessengers.map((Icon, index) => {
           const stylesIcon = () => {

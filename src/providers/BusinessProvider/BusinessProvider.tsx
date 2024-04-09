@@ -5,7 +5,6 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Modal } from "react-native";
 import { z } from "zod";
 import qs from "qs";
 
@@ -18,10 +17,8 @@ import { BusinessMarketType } from "./BusinessProvider.types";
 // providers
 import { userContext } from "../UserProvider/UserProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
-import { localesContext } from "../../../localization/localization.provider";
 
 // components
-import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
 import { ItemSearchPlaceAddressType } from "../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 import { ImageType } from "../../components/ImageModal/ImageModal.types";
 
@@ -30,13 +27,13 @@ import { PATHS } from "../paths.constants";
 
 type BusinessContext = {
   businessMarketUser: BusinessMarketType | null;
-  setIsDelete: React.Dispatch<React.SetStateAction<boolean>>;
   onCreateBusinessMarket: (
     newBusinessMarket: Omit<BusinessMarketType, "place" | "logo" | "id"> & {
       place: ItemSearchPlaceAddressType;
       newLogo: ImageType | null;
     }
-  ) => Promise<void>;
+  ) => Promise<boolean>;
+  onDeleteBusinessMarket: () => Promise<boolean>;
 };
 
 type BusinessProviderProps = {
@@ -48,18 +45,21 @@ export const businessContext = React.createContext({} as BusinessContext);
 export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   children,
 }) => {
-  const { i18n } = useContext(localesContext);
   const { api } = useContext(apiContext);
   const { userData } = useContext(userContext);
-  const [isDelete, setIsDelete] = useState(false);
   const [businessMarketUser, setBusinessMarketUser] =
     useState<BusinessMarketType | null>(null);
 
   const getBusinessUser = async (userId?: string | number) => {
-    if (!userData?.id) return null;
+    if (!userData?.id) return false;
     const query = qs.stringify({ userId }, { addQueryPrefix: true });
-    const result = await api(`${PATHS.businessMarket}${query}`, null);
-    setBusinessMarketUser(result.businessMarket);
+    const result = await api(
+      `${PATHS.businessMarket}${query}`,
+      null,
+      z.object({ businessMarket: businessMarketSchema })
+    );
+    if (result?.businessMarket) setBusinessMarketUser(result.businessMarket);
+    return Boolean(result?.businessMarket);
   };
 
   const onCreateBusinessMarket = async (
@@ -68,16 +68,40 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
       newLogo: ImageType | null;
     }
   ) => {
+    if (!userData?.id || !newBusinessMarket.place) return false;
     const result = await api(
       PATHS.businessMarketCreate,
       { method: "POST", data: newBusinessMarket },
       z.object({ businessMarket: businessMarketSchema })
     );
     if (result?.businessMarket) setBusinessMarketUser(result.businessMarket);
+    return Boolean(result?.businessMarket);
+  };
+
+  const onDeleteBusinessMarket = async () => {
+    if (!businessMarketUser?.id || !userData?.id) return false;
+    const result = await api(
+      PATHS.businessMarketDelete,
+      {
+        method: "DELETE",
+        data: {
+          userId: userData.id,
+          businessMarketId: businessMarketUser.id,
+        },
+      },
+      z.object({ success: z.boolean() })
+    );
+
+    if (result) setBusinessMarketUser(null);
+    return true;
   };
 
   const valueContext: BusinessContext = useMemo(
-    () => ({ businessMarketUser, setIsDelete, onCreateBusinessMarket }),
+    () => ({
+      businessMarketUser,
+      onCreateBusinessMarket,
+      onDeleteBusinessMarket,
+    }),
     [businessMarketUser]
   );
 
@@ -88,20 +112,6 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   return (
     <businessContext.Provider value={valueContext}>
       {children}
-      {isDelete && businessMarketUser ? (
-        <Modal visible transparent>
-          <ModalDelete
-            onSubmit={() => {}}
-            onClose={() => {
-              setIsDelete(false);
-            }}
-            subTitle={i18n._(
-              `Attention! All data related to the "{nameBusiness}" business will be deleted.`,
-              { nameBusiness: businessMarketUser.name }
-            )}
-          />
-        </Modal>
-      ) : null}
     </businessContext.Provider>
   );
 };

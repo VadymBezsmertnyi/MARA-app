@@ -32,9 +32,7 @@ export const UpContainer: FunctionComponent = () => {
     [isSos]
   );
 
-  const pressSosLine = () => {
-    console.log("pressSosLine");
-  };
+  const pressSosLine = () => {};
 
   return (
     <View style={styles.containerUp}>

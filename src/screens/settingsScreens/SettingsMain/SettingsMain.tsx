@@ -107,6 +107,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           onCreateBusiness={onCreateBusinessMarket}
           onChangeBusiness={onChangeBusinessMarket}
           onReviewBusiness={onReviewBusinessMarket}
+          navigation={navigation}
         />
         <View style={styles.containerList}>
           <View style={styles.containerLineEmpty} />
