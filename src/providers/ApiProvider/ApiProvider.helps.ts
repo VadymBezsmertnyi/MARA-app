@@ -26,13 +26,12 @@ export const getEnv = (): AppManifestEnvT => {
 export const getApiUrl = () => {
   const { APP_DOMAIN_WEB, APP_PORT } = getEnv();
   const appDomainApp = "192.168.50.62";
-  const herokuServer =
-    "https://moto-auto-road-assistant-9ba1127a6934.herokuapp.com";
+  const herokuServer = process.env.EXPO_PUBLIC_HEROKU_URL as string;
   const api =
     Platform.OS === "web"
       ? `http://${APP_DOMAIN_WEB}:${APP_PORT}`
       : `http://${appDomainApp}:${APP_PORT}`;
-  return api || herokuServer || api;
+  return herokuServer || api;
 };
 
 export const getDeviceId = async () => {
