@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "Naudojama prisijungimui naudojant Face ID",
+  "UIApplicationShortcutItemTitle": "Greitas prieiga",
+  "NSCameraUsageDescription": "Naudojama fotografijų kūrimui",
+  "NSPhotoLibraryUsageDescription": "Naudojama prieigai prie nuotraukų jūsų bibliotekoje",
+  "NSMicrophoneUsageDescription": "Naudojama garso įrašymui",
+  "NSCalendarsUsageDescription": "Naudojama prieigai prie kalendorių",
+  "NSContactsUsageDescription": "Naudojama prieigai prie kontaktų",
+  "NSAppleMusicUsageDescription": "Naudojama prieigai prie Apple Music"
+}

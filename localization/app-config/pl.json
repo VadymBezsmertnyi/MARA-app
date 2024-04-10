@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "Do logowania za pomocą Face ID",
+  "UIApplicationShortcutItemTitle": "Skrót dostępu",
+  "NSCameraUsageDescription": "Do robienia zdjęć",
+  "NSPhotoLibraryUsageDescription": "Do dostępu do zdjęć w twojej bibliotece",
+  "NSMicrophoneUsageDescription": "Do nagrywania dźwięku",
+  "NSCalendarsUsageDescription": "Do dostępu do kalendarzy",
+  "NSContactsUsageDescription": "Do dostępu do kontaktów",
+  "NSAppleMusicUsageDescription": "Do dostępu do Apple Music"
+}

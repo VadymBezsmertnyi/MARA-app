@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "Kirjautumiseen Face ID:llä",
+  "UIApplicationShortcutItemTitle": "Pikakäynnistys",
+  "NSCameraUsageDescription": "Valokuvien ottamiseen",
+  "NSPhotoLibraryUsageDescription": "Valokuvien käyttöön kirjastossasi",
+  "NSMicrophoneUsageDescription": "Äänen tallentamiseen",
+  "NSCalendarsUsageDescription": "Kalenterien käyttöön",
+  "NSContactsUsageDescription": "Yhteystietoihin pääsyyn",
+  "NSAppleMusicUsageDescription": "Apple Musicin käyttöön"
+}

@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "För att logga in med Face ID",
+  "UIApplicationShortcutItemTitle": "Snabbåtkomst",
+  "NSCameraUsageDescription": "För att ta foton",
+  "NSPhotoLibraryUsageDescription": "För åtkomst till foton i din bibliotek",
+  "NSMicrophoneUsageDescription": "För att spela in ljud",
+  "NSCalendarsUsageDescription": "För åtkomst till kalendrar",
+  "NSContactsUsageDescription": "För åtkomst till kontakter",
+  "NSAppleMusicUsageDescription": "För åtkomst till Apple Music"
+}

@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "Para iniciar sesión con Face ID",
+  "UIApplicationShortcutItemTitle": "Acceso rápido",
+  "NSCameraUsageDescription": "Para tomar fotos",
+  "NSPhotoLibraryUsageDescription": "Para acceder a las fotos en tu biblioteca",
+  "NSMicrophoneUsageDescription": "Para grabar audio",
+  "NSCalendarsUsageDescription": "Para acceder a los calendarios",
+  "NSContactsUsageDescription": "Para acceder a los contactos",
+  "NSAppleMusicUsageDescription": "Para acceder a Apple Music"
+}

@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "Na prihlásenie pomocou Face ID",
+  "UIApplicationShortcutItemTitle": "Rýchly prístup",
+  "NSCameraUsageDescription": "Na fotografovanie",
+  "NSPhotoLibraryUsageDescription": "Na prístup k fotografiám vo vašej knižnici",
+  "NSMicrophoneUsageDescription": "Na nahrávanie zvuku",
+  "NSCalendarsUsageDescription": "Na prístup kalendarom",
+  "NSContactsUsageDescription": "Na prístup k kontaktom",
+  "NSAppleMusicUsageDescription": "Na prístup k Apple Music"
+}

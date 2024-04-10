@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "Для ўваходу з дапамогай Face ID",
+  "UIApplicationShortcutItemTitle": "Хуткі доступ",
+  "NSCameraUsageDescription": "Для стварэння фатаграфій",
+  "NSPhotoLibraryUsageDescription": "Для доступу да фатаграфій у вашай бібліятэцы",
+  "NSMicrophoneUsageDescription": "Для запісу гукавога супрацоўніцтва",
+  "NSCalendarsUsageDescription": "Для доступу да каляндараў",
+  "NSContactsUsageDescription": "Для доступу да кантактаў",
+  "NSAppleMusicUsageDescription": "Для доступу да Apple Music"
+}

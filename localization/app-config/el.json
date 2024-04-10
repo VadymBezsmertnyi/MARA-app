@@ -1,0 +1,10 @@
+{
+  "NSFaceIDUsageDescription": "Για σύνδεση με το Face ID",
+  "UIApplicationShortcutItemTitle": "Γρήγορη πρόσβαση",
+  "NSCameraUsageDescription": "Για λήψη φωτογραφιών",
+  "NSPhotoLibraryUsageDescription": "Για πρόσβαση σε φωτογραφίες στη βιβλιοθήκη σας",
+  "NSMicrophoneUsageDescription": "Για εγγραφή ήχου",
+  "NSCalendarsUsageDescription": "Για πρόσβαση σε ημερολόγια",
+  "NSContactsUsageDescription": "Για πρόσβαση σε επαφές",
+  "NSAppleMusicUsageDescription": "Για πρόσβαση στο Apple Music"
+}
