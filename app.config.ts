@@ -55,7 +55,7 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 23,
+    versionCode: 24,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
