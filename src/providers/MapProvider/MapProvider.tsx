@@ -11,6 +11,7 @@ import * as TaskManager from "expo-task-manager";
 import * as Location from "expo-location";
 import * as BackgroundFetch from "expo-background-fetch";
 import { z } from "zod";
+import Constants from "expo-constants";
 
 // types
 import { UserLocationMapType, UserLocationSosType } from "./MapProvider.types";
@@ -18,6 +19,9 @@ import { UserLocationMapType, UserLocationSosType } from "./MapProvider.types";
 // providers
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
+
+// components
+import { ModalPermission } from "../../components/ModalPermission/ModalPermission";
 
 // schemas
 import {
@@ -62,8 +66,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   const { sendLocation } = useContext(webSocketContext);
   const [statusForeground, setStatusForeground] =
     useState<Location.PermissionStatus | null>(null);
+  const [isForegroundModal, setIsForegroundModal] = useState<boolean>(false);
   const [statusBackground, setStatusBackground] =
     useState<Location.PermissionStatus | null>(null);
+  const [isBackgroundModal, setIsBackgroundModal] = useState<boolean>(false);
   const [location, setLocation] =
     useState<Location.LocationObjectCoords | null>(null);
   const [startGetGeolocation, setStartGetGeolocation] =
@@ -74,13 +80,26 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     country: string;
     countryCode: string;
   } | null>(null);
+  const nameApp = useMemo(
+    () => Constants.expoConfig?.name || "M.A.R.A.(Moto Auto Road Assistance)",
+    [Constants.expoConfig?.name]
+  );
+  const titleLocationForeground = useMemo(
+    () => `Allow ${nameApp} to access this device's location?`,
+    [nameApp]
+  );
+  const titleLocationBackground = useMemo(
+    () =>
+      `Allow ${nameApp} to access this device's location in the background?`,
+    [nameApp]
+  );
 
-  const getStatusApp = async () => {
+  const getStatusAppForeground = async () => {
     const { status: statusForeground } =
       await Location.requestForegroundPermissionsAsync();
     setStatusForeground(statusForeground);
 
-    if (userData?.isGeoLocationBackground) {
+    /* if (userData?.isGeoLocationBackground) {
       const { status: statusBackground } =
         await Location.requestBackgroundPermissionsAsync();
       setStatusBackground(statusBackground);
@@ -90,7 +109,35 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
           accuracy: Location.Accuracy.Balanced,
         });
       }
+    } */
+  };
+
+  const getStatusAppBackground = async () => {
+    const { status: statusBackground } =
+      await Location.requestBackgroundPermissionsAsync();
+    setStatusBackground(statusBackground);
+
+    if (statusBackground === Location.PermissionStatus.GRANTED) {
+      await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
+        accuracy: Location.Accuracy.Balanced,
+      });
     }
+  };
+
+  const checkPermissionForeground = async () => {
+    const { status: statusForeground } =
+      await Location.requestForegroundPermissionsAsync();
+    setStatusForeground(statusForeground);
+
+    return statusForeground === Location.PermissionStatus.GRANTED;
+  };
+
+  const checkPermissionBackground = async () => {
+    const { status: statusBackground } =
+      await Location.requestBackgroundPermissionsAsync();
+    setStatusBackground(statusBackground);
+
+    return statusBackground === Location.PermissionStatus.GRANTED;
   };
 
   const checkPermission = async () => {
@@ -263,29 +310,65 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   );
 
   useEffect(() => {
-    startGetLocationBackground();
-  }, []);
-
-  useEffect(() => {
-    if (userData?.isGeoLocation) getStatusApp();
-  }, [userData?.isGeoLocation]);
-
-  useEffect(() => {
     if (statusForeground !== null)
       if (userData?.isGeoLocation && statusForeground === "undetermined")
-        checkPermission();
+        setIsForegroundModal(true);
     if (
       statusForeground === Location.PermissionStatus.GRANTED &&
-      !startGetGeolocation
-    )
+      !startGetGeolocation &&
+      userData?.isGeoLocationBackground
+    ) {
       getCountryUser();
-  }, [statusForeground]);
+      setIsBackgroundModal(true);
+    }
+  }, [userData?.isGeoLocation, statusForeground]);
+
+  useEffect(() => {
+    if (statusBackground !== null)
+      if (
+        userData?.isGeoLocationBackground &&
+        statusBackground === "undetermined"
+      )
+        getStatusAppBackground();
+  }, [userData?.isGeoLocationBackground, statusBackground]);
+
+  useEffect(() => {
+    if (
+      userData?.isGeoLocationBackground &&
+      statusBackground === Location.PermissionStatus.GRANTED
+    )
+      startGetLocationBackground();
+  }, [statusBackground]);
 
   useEffect(() => {
     if (countryUser) onIntervalGetLocation();
   }, [countryUser]);
 
   return (
-    <mapContext.Provider value={valueContext}>{children}</mapContext.Provider>
+    <mapContext.Provider value={valueContext}>
+      {children}
+      <ModalPermission
+        isOpen={isForegroundModal}
+        title={titleLocationForeground}
+        onCancel={() => {
+          setIsForegroundModal(false);
+        }}
+        onAccept={async () => {
+          setIsForegroundModal(false);
+          await checkPermissionForeground();
+        }}
+      />
+      <ModalPermission
+        isOpen={isBackgroundModal}
+        title={titleLocationBackground}
+        onCancel={() => {
+          setIsBackgroundModal(false);
+        }}
+        onAccept={async () => {
+          setIsBackgroundModal(false);
+          await checkPermissionBackground();
+        }}
+      />
+    </mapContext.Provider>
   );
 };

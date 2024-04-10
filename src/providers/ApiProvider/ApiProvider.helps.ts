@@ -35,9 +35,8 @@ export const getApiUrl = () => {
 };
 
 export const getDeviceId = async () => {
-  if (Platform.OS === "android") {
-    return Application.androidId;
-  }
+  if (Platform.OS === "android") return Application.getAndroidId();
+
   const deviceId = await SecureStore.getItemAsync("deviceId");
 
   if (!deviceId) {
