@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Radera evenemang"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Tillåt {nameApp} att komma åt den här enhetens plats?"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Tillåt {nameApp} att komma åt den här enhetens plats i bakgrunden?"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Radera annons"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Knapp för att stänga registreringen TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "företag"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Företagsprofil"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Företagsnamn"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Ange namnet på ditt företag"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Stad"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Ytterligare nummer 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "händelser"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Knapp för att stänga inställningsskärmen för händelser"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Förbättra"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Tillgängliga annonser: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Publicerade annonser: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Recension"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Varning! Alla data relaterade till företaget \"{nameBusiness}\" kommer att raderas."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Förnamn"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Efternamn"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Stad"
 
 #. js-lingui-explicit-id
 msgid "workshops"

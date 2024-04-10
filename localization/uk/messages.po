@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Видалити подію"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Дозволити {nameApp} доступ до місцезнаходження цього пристрою?"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Дозволити {nameApp} доступ до місцезнаходження цього пристрою у фоновому режимі?"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Оголошення видалено"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Кнопка для закриття реєстрації TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "бізнес"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Профіль бізнесу"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Назва компанії"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Введіть назву свого бізнесу"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Місто"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Додатковий номер 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "події"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Кнопка для закриття екрану налаштувань подій"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Покращити"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Доступні оголошення: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Опубліковані оголошення: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Огляд"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Увага! Всі дані, пов'язані з бізнесом \"{nameBusiness}\", будуть видалені."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Ім'я"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Прізвище"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Місто"
 
 #. js-lingui-explicit-id
 msgid "workshops"

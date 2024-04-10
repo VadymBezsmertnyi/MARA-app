@@ -19,6 +19,7 @@ import { UserLocationMapType, UserLocationSosType } from "./MapProvider.types";
 // providers
 import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
 import { apiContext } from "../ApiProvider/ApiProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // components
 import { ModalPermission } from "../../components/ModalPermission/ModalPermission";
@@ -61,6 +62,7 @@ export const mapContext = React.createContext({} as MapContext);
 export const MapProvider: FunctionComponent<MapProviderProps> = ({
   children,
 }) => {
+  const { i18n } = useContext(localesContext);
   const { api } = useContext(apiContext);
   const { userData } = useContext(userContext);
   const { sendLocation } = useContext(webSocketContext);
@@ -85,32 +87,18 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     [Constants.expoConfig?.name]
   );
   const titleLocationForeground = useMemo(
-    () => `Allow ${nameApp} to access this device's location?`,
+    () =>
+      i18n._("Allow {nameApp} to access this device's location?", { nameApp }),
     [nameApp]
   );
   const titleLocationBackground = useMemo(
     () =>
-      `Allow ${nameApp} to access this device's location in the background?`,
+      i18n._(
+        "Allow {nameApp} to access this device's location in the background?",
+        { nameApp }
+      ),
     [nameApp]
   );
-
-  const getStatusAppForeground = async () => {
-    const { status: statusForeground } =
-      await Location.requestForegroundPermissionsAsync();
-    setStatusForeground(statusForeground);
-
-    /* if (userData?.isGeoLocationBackground) {
-      const { status: statusBackground } =
-        await Location.requestBackgroundPermissionsAsync();
-      setStatusBackground(statusBackground);
-
-      if (statusBackground === Location.PermissionStatus.GRANTED) {
-        await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
-          accuracy: Location.Accuracy.Balanced,
-        });
-      }
-    } */
-  };
 
   const getStatusAppBackground = async () => {
     const { status: statusBackground } =

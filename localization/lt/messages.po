@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Ištrinti renginį"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Leisti {nameApp} prieigą prie šio įrenginio vietos?"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Leisti {nameApp} prieigą prie šio įrenginio vietos fone?"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ištrinti skelbimą"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Mygtukas, skirtas uždaryti registraciją naudojant TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "verslas"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Verslo profilis"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Įmonės pavadinimas"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Įveskite savo verslo pavadinimą"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Miestas"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Papildomas numeris 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "Įvykiai"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Mygtukas, skirtas uždaryti įvykių nustatymų langą"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Pagerinti"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Prieinami skelbimai: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Skelbimai paskelbti: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Peržiūrėti"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Dėmesio! Visi su verslu \"{nameBusiness}\" susiję duomenys bus ištrinti."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Vardas"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Pavardė"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Miestas"
 
 #. js-lingui-explicit-id
 msgid "workshops"

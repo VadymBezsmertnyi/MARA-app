@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Smazat událost"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Povolit {nameApp} přístup k poloze tohoto zařízení?"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Povolit {nameApp} přístup k poloze tohoto zařízení na pozadí?"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Smazat inzerát"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Tlačítko pro zavření registrace TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "podnik"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Podnikový profil"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Název společnosti"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Zadejte název vaší společnosti"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Město"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Další číslo 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "události"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Tlačítko pro zavření obrazovky nastavení událostí"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Vylepšit"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Dostupné reklamy: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Publikované reklamy: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Recenze"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Pozor! Všechna data týkající se podniku \"{nameBusiness}\" budou smazána."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Jméno"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Příjmení"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Město"
 
 #. js-lingui-explicit-id
 msgid "workshops"

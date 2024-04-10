@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Διαγραφή εκδήλωσης"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Να επιτρέψετε στην {nameApp} να έχει πρόσβαση στην τοποθεσία αυτής της συσκευής;"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Να επιτρέψετε στην {nameApp} να έχει πρόσβαση στην τοποθεσία αυτής της συσκευής στο παρασκήνιο;"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Διαγραφή διαφήμισης"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Κουμπί για κλείσιμο εγγραφής TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "επιχείρηση"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Προφίλ επιχείρησης"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Όνομα εταιρείας"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Εισαγάγετε το όνομα της επιχείρησής σας"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Πόλη"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Πρόσθετος αριθμός 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "εκδηλώσεις"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εκδηλώσεων"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Βελτιώστε"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Διαθέσιμες διαφημίσεις: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Δημοσιευμένες διαφημίσεις: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Κριτική"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Προσοχή! Όλα τα δεδομένα που σχετίζονται με την επιχείρηση \"{nameBusiness}\" θα διαγραφούν."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Όνομα"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Επώνυμο"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Πόλη"
 
 #. js-lingui-explicit-id
 msgid "workshops"

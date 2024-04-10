@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Ștergeți eveniment"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Permiteți {nameApp} să acceseze locația acestui dispozitiv?"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Permiteți {nameApp} să acceseze locația acestui dispozitiv în fundal?"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ștergeți anunț"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Buton pentru închiderea înregistrării TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "afacere"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Profil afacere"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Nume companie"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Introduceți numele afacerii dumneavoastră"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Oraș"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Număr suplimentar 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "evenimente"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Buton pentru închiderea ecranului de setări al evenimentelor"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Îmbunătăți"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Anunțuri disponibile: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Anunțuri publicate: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Recenzie"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Atenție! Toate datele legate de afacerea \"{nameBusiness}\" vor fi șterse."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Prenume"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Nume"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Oraș"
 
 #. js-lingui-explicit-id
 msgid "workshops"

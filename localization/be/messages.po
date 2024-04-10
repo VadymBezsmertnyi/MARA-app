@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Выдаліць падзею"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Дазволіць {nameApp} доступ да месца знаходжання гэтага прылады?"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Дазволіць {nameApp} доступ да месца знаходжання гэтага прылады ў фонавым рэжыме?"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Выдаліць агукласць"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Кнопка для закрыцця рэгістрацыі TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "бізнес"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Бізнес-прафіль"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Назва кампаніі"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Увядзіце назву вашага бізнесу"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Горад"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Дадатковы нумар 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "падзеі"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Кнопка для закрыцця экрану налад падзей"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Палепшыць"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Даступныя аб'явы: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Апублікаваныя аб'явы: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Агляд"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Увага! Усе дадзеныя, звязаныя з бізнесам \"{nameBusiness}\", будуць выдаленыя."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Імя"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Прозвішча"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Горад"
 
 #. js-lingui-explicit-id
 msgid "workshops"

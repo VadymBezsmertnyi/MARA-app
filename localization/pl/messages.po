@@ -518,6 +518,14 @@ msgid "Event delete"
 msgstr "Usuń wydarzenie"
 
 #. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location?"
+msgstr "Czy zezwolić {nameApp} na dostęp do lokalizacji tego urządzenia?"
+
+#. js-lingui-explicit-id
+msgid "Allow {nameApp} to access this device's location in the background?"
+msgstr "Czy zezwolić {nameApp} na dostęp do lokalizacji tego urządzenia w tle?"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Usuń ogłoszenie"
 
@@ -1126,12 +1134,56 @@ msgid "Button for closing the registration TouchID"
 msgstr "Przycisk zamykania rejestracji TouchID"
 
 #. js-lingui-explicit-id
+msgid "business"
+msgstr "biznes"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Profil firmy"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Nazwa firmy"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Wprowadź nazwę swojej firmy"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Miasto"
+
+#. js-lingui-explicit-id
+msgid "Additional number 1:"
+msgstr "Dodatkowy numer 1:"
+
+#. js-lingui-explicit-id
 msgid "events"
 msgstr "wydarzenia"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Przycisk zamykania ekranu ustawień wydarzeń"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Poprawić"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Dostępne reklamy: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Opublikowane reklamy: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Recenzja"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Uwaga! Wszystkie dane dotyczące firmy \"{nameBusiness}\" zostaną usunięte."
 
 #. js-lingui-explicit-id
 msgid "View"
@@ -1180,10 +1232,6 @@ msgstr "Imię"
 #. js-lingui-explicit-id
 msgid "Last Name"
 msgstr "Nazwisko"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Miasto"
 
 #. js-lingui-explicit-id
 msgid "workshops"
