@@ -298,9 +298,11 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   );
 
   useEffect(() => {
-    if (statusForeground !== null)
-      if (userData?.isGeoLocation && statusForeground === "undetermined")
-        setIsForegroundModal(true);
+    if (
+      userData?.isGeoLocation &&
+      (statusForeground === "undetermined" || statusForeground === null)
+    )
+      setIsForegroundModal(true);
     if (
       statusForeground === Location.PermissionStatus.GRANTED &&
       !startGetGeolocation &&
@@ -309,16 +311,20 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
       getCountryUser();
       setIsBackgroundModal(true);
     }
-  }, [userData?.isGeoLocation, statusForeground]);
+  }, [
+    userData?.isGeoLocation,
+    userData?.isGeoLocationBackground,
+    statusForeground,
+  ]);
 
   useEffect(() => {
-    if (statusBackground !== null)
-      if (
-        userData?.isGeoLocationBackground &&
-        statusBackground === "undetermined"
-      )
-        getStatusAppBackground();
-  }, [userData?.isGeoLocationBackground, statusBackground]);
+    if (
+      statusForeground === Location.PermissionStatus.GRANTED &&
+      userData?.isGeoLocationBackground &&
+      (statusBackground === "undetermined" || statusBackground === null)
+    )
+      getStatusAppBackground();
+  }, [userData?.isGeoLocationBackground, statusBackground, statusForeground]);
 
   useEffect(() => {
     if (
