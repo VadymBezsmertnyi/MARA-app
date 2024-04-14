@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Zmazať udalosť"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Povoliť aplikácii {nameApp} prístup k polohe tohto zariadenia?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Povoliť aplikácii {nameApp} prístup k polohe tohto zariadenia na pozadí?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Zmazať inzerát"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "nájsť blízke udalosti, dielne"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "pre funkciu „SOS“, aby vám mohli pomôcť ostatní používatelia aplikácie"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Aplikácia {nameApp} zbiera polohové údaje pre umožnenie {firstEvent}, aj keď je aplikácia uzavretá alebo nie je používaná."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Aplikácia {nameApp} zbiera polohové údaje pre umožnenie {secondEvent}, aj keď je aplikácia uzavretá alebo nie je používaná."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

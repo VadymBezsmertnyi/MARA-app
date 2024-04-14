@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Elimina evento"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Consentire a {nameApp} di accedere alla posizione di questo dispositivo?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Consentire a {nameApp} di accedere alla posizione di questo dispositivo in background?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Elimina annuncio"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "trova eventi e officine nelle vicinanze"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "per la funzione \"SOS\" in modo che altri utenti dell'app possano aiutarti"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "L'applicazione {nameApp} raccoglie dati di posizione per consentire {firstEvent}, anche quando l'applicazione è chiusa o non in uso."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "L'applicazione {nameApp} raccoglie dati di posizione per consentire {secondEvent}, anche quando l'applicazione è chiusa o non in uso."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

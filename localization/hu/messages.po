@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Esemény törlése"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Engedélyezze {nameApp}-nak, hogy hozzáférjen ehhez az eszközhöz tartozó helyhez?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Engedélyezze {nameApp}-nak, hogy hozzáférjen ehhez az eszközhöz tartozó helyhez a háttérben?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Hirdetés törlése"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "keressen a közelben lévő eseményeket, műhelyeket"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "a \"SOS\" funkcióhoz, hogy más alkalmazásfelhasználók segíthessenek Önnek"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "z {nameApp} alkalmazás helyzetadatokat gyűjt annak érdekében, hogy a(z) {firstEvent} lehetővé váljon, még akkor is, ha az alkalmazás be van zárva vagy nem használatban van."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Az {nameApp} alkalmazás helyzetadatokat gyűjt annak érdekében, hogy a(z) {secondEvent} lehetővé váljon, még akkor is, ha az alkalmazás be van zárva vagy nem használatban van."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

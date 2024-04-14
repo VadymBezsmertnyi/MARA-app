@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Διαγραφή εκδήλωσης"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Να επιτρέψετε στην {nameApp} να έχει πρόσβαση στην τοποθεσία αυτής της συσκευής;"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Να επιτρέψετε στην {nameApp} να έχει πρόσβαση στην τοποθεσία αυτής της συσκευής στο παρασκήνιο;"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Διαγραφή διαφήμισης"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "βρείτε κοντινές εκδηλώσεις, εργαστήρια"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "για τη λειτουργία \"SOS\" ώστε άλλοι χρήστες της εφαρμογής να μπορούν να σας βοηθήσουν"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Η εφαρμογή {nameApp} συλλέγει δεδομένα τοποθεσίας για να επιτρέπει το {firstEvent}, ακόμα και όταν η εφαρμογή είναι κλειστή ή δεν χρησιμοποιείται."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Η εφαρμογή {nameApp} συλλέγει δεδομένα τοποθεσίας για να επιτρέπει το {secondEvent}, ακόμα και όταν η εφαρμογή είναι κλειστή ή δεν χρησιμοποιείται."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

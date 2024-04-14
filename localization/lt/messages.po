@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Ištrinti renginį"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Leisti {nameApp} prieigą prie šio įrenginio vietos?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Leisti {nameApp} prieigą prie šio įrenginio vietos fone?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ištrinti skelbimą"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "rasti artimiausius renginius, dirbtuves"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "„SOS“ funkcijai, kad kitos programos naudotojai galėtų jums padėti"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Programa {nameApp} renka vietos duomenis, kad būtų galima įgalinti {firstEvent}, net kai programa uždaryta arba neveikia."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Programa {nameApp} renka vietos duomenis, kad būtų galima įgalinti {secondEvent}, net kai programa uždaryta arba neveikia."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

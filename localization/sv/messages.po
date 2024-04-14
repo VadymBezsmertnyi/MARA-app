@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Radera evenemang"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Tillåt {nameApp} att komma åt den här enhetens plats?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Tillåt {nameApp} att komma åt den här enhetens plats i bakgrunden?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Radera annons"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "hitta närliggande evenemang, verkstäder"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "för \"SOS\"-funktionen så att andra appanvändare kan hjälpa dig"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {firstEvent}, även när appen är stängd eller inte används."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {secondEvent}, även när appen är stängd eller inte används."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

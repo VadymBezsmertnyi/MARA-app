@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Ștergeți eveniment"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Permiteți {nameApp} să acceseze locația acestui dispozitiv?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Permiteți {nameApp} să acceseze locația acestui dispozitiv în fundal?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ștergeți anunț"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "găsiți evenimente, ateliere apropiate"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "pentru funcția „SOS” astfel încât alți utilizatori de aplicații să vă poată ajuta"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {firstEvent}, chiar și atunci când aplicația este închisă sau nu este utilizată."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {secondEvent}, chiar și atunci când aplicația este închisă sau nu este utilizată."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

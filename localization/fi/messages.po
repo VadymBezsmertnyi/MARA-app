@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Poista tapahtuma"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Salli {nameApp}:n käyttää tämän laitteen sijaintia?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Salli {nameApp}:n käyttää tämän laitteen sijaintia taustalla?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Mainoksen poistaminen"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "etsi lähellä olevia tapahtumia, työpajoja"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "SOS-toiminnon avulla, jotta muut sovelluksen käyttäjät voivat auttaa sinua"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Sovellus {nameApp} kerää sijaintitietoja mahdollistaakseen {firstEvent}, vaikka sovellus olisi suljettu tai sitä ei käytettäisi."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Sovellus {nameApp} kerää sijaintitietoja mahdollistaakseen {secondEvent}, vaikka sovellus olisi suljettu tai sitä ei käytettäisi."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"

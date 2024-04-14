@@ -518,16 +518,24 @@ msgid "Event delete"
 msgstr "Выдаліць падзею"
 
 #. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location?"
-msgstr "Дазволіць {nameApp} доступ да месца знаходжання гэтага прылады?"
-
-#. js-lingui-explicit-id
-msgid "Allow {nameApp} to access this device's location in the background?"
-msgstr "Дазволіць {nameApp} доступ да месца знаходжання гэтага прылады ў фонавым рэжыме?"
-
-#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Выдаліць агукласць"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "знайсці паблізу падзеі, майстэрні"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "для функцыі \"SOS\", каб іншыя карыстальнікі прыкладалі вам дапамогу"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Прыклад {nameApp} збірае дадзеныя месцазнаходжання, каб уключыць {firstEvent}, нават калі дадзенае прыкладанне закрытае або не выкарыстоўваецца."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Прыклад {nameApp} збірае дадзеныя месцазнаходжання, каб уключыць {secondEvent}, нават калі дадзенае прыкладанне закрытае або не выкарыстоўваецца."
 
 #. js-lingui-explicit-id
 msgid "Sorry, an error occurred"
