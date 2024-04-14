@@ -15,7 +15,6 @@ import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsPro
 import { useAllNavigation } from "../../navigators/Navigators.helps";
 
 // components
-import { Logo } from "../../components/Logo/Logo";
 import { Socials } from "../../components/Socials/Socials";
 import { ChangeLanguage } from "../../components/ChangeLanguage/ChangeLanguage";
 
@@ -63,7 +62,7 @@ export const Welcome: FunctionComponent = () => {
 
   const containerStyles = useMemo(
     () => [
-      styles.containerBlur,
+      styles.containerBody,
       {
         paddingTop: heightStatusBar,
       },
@@ -72,37 +71,31 @@ export const Welcome: FunctionComponent = () => {
   );
 
   return (
-    <ImageBackground style={styles.container} source={imageSplash}>
+    <View style={styles.container}>
+      <ImageBackground style={styles.containerImage} source={imageSplash} />
       <BlurView
         intensity={Platform.OS === "ios" ? 15 : undefined}
         blurReductionFactor={Platform.OS === "android" ? 25 : undefined}
-        style={styles.container}
-      >
-        <View style={containerStyles}>
-          <View style={styles.containerLanguage}>
-            <ChangeLanguage />
-          </View>
-          <View style={styles.containerLogo}>
-            <Logo />
-          </View>
-          <View style={styles.containerTitles}>
-            <Text style={styles.title}>
-              <Trans>Hello!</Trans>
-            </Text>
-            <Text style={styles.subTitle}>
-              <Trans>We're glad to see you on our service.</Trans>
-            </Text>
-            <Text style={styles.subTitle}>
-              <Trans>Authorize using:</Trans>
-            </Text>
-            <Socials
-              styleContainer={styles.containerSocials}
-              onChangeGoogle={onSelectGoogle}
-              onChangeFacebook={onSelectFacebook}
-            />
-          </View>
+        style={styles.containerBlur}
+      />
+      <View style={containerStyles}>
+        <View style={styles.containerLanguage}>
+          <ChangeLanguage />
         </View>
-      </BlurView>
-    </ImageBackground>
+        <View style={styles.containerTitles}>
+          <Text style={styles.title}>
+            <Trans>Glad to see you on our service.</Trans>
+          </Text>
+          <Text style={styles.subTitle}>
+            <Trans>Log in using:</Trans>
+          </Text>
+          <Socials
+            styleContainer={styles.containerSocials}
+            onChangeGoogle={onSelectGoogle}
+            onChangeFacebook={onSelectFacebook}
+          />
+        </View>
+      </View>
+    </View>
   );
 };

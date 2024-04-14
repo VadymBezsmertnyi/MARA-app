@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from "react-native";
+import { Dimensions, Platform, StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 import {
   horizontalScale,
@@ -7,17 +7,32 @@ import {
 } from "../../../styles/hooks";
 import {
   FONT_600_MONTSERRAT,
-  FONT_700_MONTSERRAT,
+  FONT_600_OPEN_SANS,
 } from "../../../styles/constants";
 
+const WIDTH = Dimensions.get("screen").width;
+const HEIGHT = Dimensions.get("screen").height;
+
 export const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: {
+    flex: 1,
+    position: "relative",
+  },
+  containerImage: {
+    width: WIDTH,
+    height: HEIGHT,
+    position: "absolute",
+    bottom: 0,
+  },
   containerBlur: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+  },
+  containerBody: {
     flex: 1,
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor:
-      Platform.OS === "ios" ? colors.white70 : colors.whiteTransparentFifteen,
     paddingBottom: verticalScale(74),
     paddingHorizontal: horizontalScale(15),
   },
@@ -33,14 +48,14 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontFamily: FONT_700_MONTSERRAT,
-    fontSize: scaleFont(28),
-    color: colors.blackCoffee,
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: scaleFont(16),
+    color: colors.white,
   },
   subTitle: {
     fontFamily: FONT_600_MONTSERRAT,
     fontSize: scaleFont(16),
-    color: colors.blackCoffee,
+    color: colors.white,
   },
   containerSocials: {
     width: "100%",

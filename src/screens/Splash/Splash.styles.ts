@@ -1,4 +1,7 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+
+const WIDTH = Dimensions.get("screen").width;
+const HEIGHT = Dimensions.get("screen").height;
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,5 +11,5 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: { fontSize: 20, fontWeight: "700" },
-  image: { width: "100%", height: "100%" },
+  image: { width: WIDTH, height: HEIGHT, position: "absolute", bottom: 0 },
 });

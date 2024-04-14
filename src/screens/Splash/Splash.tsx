@@ -10,9 +10,6 @@ import { userContext } from "../../providers/UserProvider/UserProvider";
 import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
 import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsProvider";
 
-// components
-import { Logo } from "../../components/Logo/Logo";
-
 // constants
 import { PATHS_MAIN_SCREENS } from "../../navigators/useNavigator.constants";
 import { METHOD_NAME_AUTH_AUTO } from "../../providers/AnalyticsProvider/AnalyticsProvider.constants";
@@ -47,7 +44,6 @@ export const Splash: FunctionComponent = () => {
         resizeMode="cover"
         style={styles.image}
       />
-      <Logo />
     </View>
   );
 };
