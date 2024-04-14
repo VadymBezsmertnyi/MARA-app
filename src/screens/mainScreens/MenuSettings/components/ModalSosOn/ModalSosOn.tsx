@@ -36,6 +36,7 @@ import {
 // styles
 import { styles } from "./ModalSosOn.styles";
 import colors from "../../../../../../styles/colors";
+import { permissionsContext } from "../../../../../providers/PermissionsProvider/PermissionsProvider";
 
 type ModalSosOnProps = {
   isOpen: boolean;
@@ -48,8 +49,9 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { userData, editUser } = useContext(userContext);
-  const { statusForeground, statusBackground, setPermission, onSendSos } =
-    useContext(mapContext);
+  const { setPermission, onSendSos } = useContext(mapContext);
+  const { locationForegroundPermission, locationBackgroundPermission } =
+    useContext(permissionsContext);
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [telegram, setTelegram] = useState("");
@@ -61,12 +63,12 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
     [phoneNumber, telegram]
   );
   const isPermissionLocationForeground = useMemo(
-    () => statusForeground === PermissionStatus.GRANTED,
-    [statusForeground]
+    () => locationForegroundPermission === PermissionStatus.GRANTED,
+    [locationForegroundPermission]
   );
   const isPermissionLocationBackground = useMemo(
-    () => statusBackground === PermissionStatus.GRANTED,
-    [statusBackground]
+    () => locationBackgroundPermission === PermissionStatus.GRANTED,
+    [locationBackgroundPermission]
   );
 
   const onPressSos = async () => {

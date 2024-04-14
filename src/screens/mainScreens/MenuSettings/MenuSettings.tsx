@@ -7,6 +7,7 @@ import {
   Share,
   Platform,
   StatusBar,
+  ScrollView,
 } from "react-native";
 import { DrawerNavigationState, ParamListBase } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
@@ -144,7 +145,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         {isShowDrawer ? (
           <StatusBar backgroundColor={colors.lightOrange} />
         ) : null}
-        <View>
+        <ScrollView>
           <View style={styles.containerHeader}>
             <View style={styles.boxHeaderEmpty} />
             <Text style={styles.titleHeader}>
@@ -271,7 +272,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
               />
             </View>
           </View>
-        </View>
+        </ScrollView>
         <View style={styles.containerLanguage}>
           <ChangeLanguage />
         </View>

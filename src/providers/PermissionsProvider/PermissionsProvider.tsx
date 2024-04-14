@@ -95,7 +95,12 @@ export const PermissionsProvider: FunctionComponent<
       locationBackgroundPermission === null
     )
       getPermissionsLocationBackground();
-  }, []);
+  }, [
+    userData?.isGeoLocation,
+    locationForegroundPermission,
+    userData?.isGeoLocationBackground,
+    locationBackgroundPermission,
+  ]);
 
   return (
     <permissionsContext.Provider value={valueContext}>

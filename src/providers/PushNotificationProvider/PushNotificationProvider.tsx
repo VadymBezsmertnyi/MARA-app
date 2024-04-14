@@ -68,8 +68,7 @@ export const PushNotificationProvider: FunctionComponent<
 
   const setSubscriptionNotification = async () => {
     if (userData) {
-      const userSubscriptionId =
-        OneSignal.User.pushSubscription.getPushSubscriptionId();
+      const userSubscriptionId = OneSignal.User.pushSubscription.getIdAsync();
       if (userSubscriptionId)
         await editUser({ ...userData, subscriptionId: userSubscriptionId });
     }

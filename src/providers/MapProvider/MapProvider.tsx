@@ -134,36 +134,9 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     };
   };
 
-  const onSendSos = async (
-    phoneNumber: string,
-    telegram: string,
-    description: string
-  ) => {
-    const date = new Date().getTime();
-    if (userData && location) {
-      const dataLocationUser = {
-        date,
-        userId: userData.id,
-        location,
-        phoneNumber,
-        telegram,
-        description,
-      };
-      const result = await api(
-        PATHS.locationUsersSosAdd,
-        { method: "POST", data: dataLocationUser },
-        z.object({
-          userLocationSos: userLocationSosSchema,
-        })
-      );
-      if (result)
-        setUsersSos((state) =>
-          state ? [...state, result.userLocationSos] : [result.userLocationSos]
-        );
-    }
-  };
-
   const stopGetLocationBackground = async () => {
+    const tasks = await TaskManager.getRegisteredTasksAsync();
+    if (!tasks.find((f) => f.taskName === LOCATION_TASK_NAME)) return;
     await BackgroundFetch.unregisterTaskAsync(LOCATION_TASK_NAME);
   };
 
@@ -188,13 +161,44 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
           await BackgroundFetch.registerTaskAsync(LOCATION_TASK_NAME);
           tasks = await TaskManager.getRegisteredTasksAsync();
         }
-        const timeout = setTimeout(stopGetLocationBackground, 1000 * 60 * 15);
 
         await BackgroundFetch.setMinimumIntervalAsync(INTERVAL_BACKGROUND);
+        await BackgroundFetch.registerTaskAsync(LOCATION_TASK_NAME, {
+          minimumInterval: INTERVAL_BACKGROUND,
+          stopOnTerminate: false,
+          startOnBoot: true,
+        });
+      }
+    }
+  };
 
-        return () => {
-          clearTimeout(timeout);
-        };
+  const onSendSos = async (
+    phoneNumber: string,
+    telegram: string,
+    description: string
+  ) => {
+    const date = new Date().getTime();
+    if (userData && location) {
+      const dataLocationUser = {
+        date,
+        userId: userData.id,
+        location,
+        phoneNumber,
+        telegram,
+        description,
+      };
+      const result = await api(
+        PATHS.locationUsersSosAdd,
+        { method: "POST", data: dataLocationUser },
+        z.object({
+          userLocationSos: userLocationSosSchema,
+        })
+      );
+      if (result) {
+        setUsersSos((state) =>
+          state ? [...state, result.userLocationSos] : [result.userLocationSos]
+        );
+        await startGetLocationBackground();
       }
     }
   };
