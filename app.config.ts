@@ -25,7 +25,7 @@ export const expo = {
   platforms: ["ios", "android"],
   ios: {
     supportsTablet: false,
-    bundleIdentifier: "moto.auto.road.assistant",
+    bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./GoogleService-Info.plist",
     buildNumber: "1",
