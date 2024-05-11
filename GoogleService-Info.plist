@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj.apps.googleusercontent.com</string>
+	<string>549450621533-j6ihc5fr18p8ohgi6gf50pbpl7a83off.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj</string>
+	<string>com.googleusercontent.apps.549450621533-j6ihc5fr18p8ohgi6gf50pbpl7a83off</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>549450621533-8g5jsuuabhuoif3l7clsacukbdr08n80.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -32,7 +32,5 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:549450621533:ios:dbc2966fdd87288bd2a3b4</string>
-	<key>FacebookClientToken</key>
-	<string>9ab6fd53433128459985341b29d5843f</string>
 </dict>
 </plist>
