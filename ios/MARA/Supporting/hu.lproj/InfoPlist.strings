@@ -1,0 +1,8 @@
+NSFaceIDUsageDescription = "Bejelentkezéshez Face ID használata";
+UIApplicationShortcutItemTitle = "Gyors hozzáférés";
+NSCameraUsageDescription = "Fényképek készítéséhez";
+NSPhotoLibraryUsageDescription = "Fényképek eléréséhez a könyvtárában";
+NSMicrophoneUsageDescription = "Hangfelvétel készítéséhez";
+NSCalendarsUsageDescription = "Naptárak eléréséhez";
+NSContactsUsageDescription = "Kapcsolatok eléréséhez";
+NSAppleMusicUsageDescription = "Az Apple Music eléréséhez";

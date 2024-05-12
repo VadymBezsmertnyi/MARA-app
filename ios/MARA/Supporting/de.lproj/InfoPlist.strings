@@ -1,0 +1,8 @@
+NSFaceIDUsageDescription = "Zum Einloggen mit Face ID";
+UIApplicationShortcutItemTitle = "Schnellzugriff";
+NSCameraUsageDescription = "Für das Aufnehmen von Fotos";
+NSPhotoLibraryUsageDescription = "Für den Zugriff auf Fotos in Ihrer Bibliothek";
+NSMicrophoneUsageDescription = "Für die Aufnahme von Audio";
+NSCalendarsUsageDescription = "Für den Zugriff auf Kalender";
+NSContactsUsageDescription = "Für den Zugriff auf Kontakte";
+NSAppleMusicUsageDescription = "Für den Zugriff auf Apple Music";

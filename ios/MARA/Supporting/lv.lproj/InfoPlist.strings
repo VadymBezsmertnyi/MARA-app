@@ -1,0 +1,8 @@
+NSFaceIDUsageDescription = "Lai pieslēgtos ar Face ID";
+UIApplicationShortcutItemTitle = "Ātrā piekļuve";
+NSCameraUsageDescription = "Lai veiktu fotoattēlu uzņemšanu";
+NSPhotoLibraryUsageDescription = "Lai piekļūtu attēliem jūsu bibliotēkā";
+NSMicrophoneUsageDescription = "Lai ierakstītu skaņu";
+NSCalendarsUsageDescription = "Lai piekļūtu kalendāriem";
+NSContactsUsageDescription = "Lai piekļūtu kontaktiem";
+NSAppleMusicUsageDescription = "Lai piekļūtu Apple Music";

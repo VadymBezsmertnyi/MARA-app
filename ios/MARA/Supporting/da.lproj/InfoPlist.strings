@@ -1,0 +1,8 @@
+NSFaceIDUsageDescription = "Til at logge ind med Face ID";
+UIApplicationShortcutItemTitle = "Hurtig adgang";
+NSCameraUsageDescription = "Til at tage billeder";
+NSPhotoLibraryUsageDescription = "Til adgang til fotos i din bibliotek";
+NSMicrophoneUsageDescription = "Til at optage lyd";
+NSCalendarsUsageDescription = "Til adgang til kalendere";
+NSContactsUsageDescription = "Til adgang til kontakter";
+NSAppleMusicUsageDescription = "Til adgang til Apple Music";
