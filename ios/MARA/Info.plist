@@ -76,6 +76,7 @@
       <string>telprompt</string>
       <string>telegram</string>
       <string>tg</string>
+      <string>ip-api.com</string>
       <string>fbapi</string>
       <string>fb-messenger-api</string>
       <string>fbauth2</string>
@@ -86,9 +87,15 @@
     <key>NSAppTransportSecurity</key>
     <dict>
       <key>NSAllowsArbitraryLoads</key>
-      <false/>
-      <key>NSAllowsLocalNetworking</key>
       <true/>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>localhost</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+      </dict>
     </dict>
     <key>NSCameraUsageDescription</key>
     <string>Allow $(PRODUCT_NAME) to access your camera</string>

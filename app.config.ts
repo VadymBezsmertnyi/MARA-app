@@ -37,6 +37,7 @@ export const expo = {
         "telprompt",
         "telegram",
         "tg",
+        "ip-api.com",
       ],
       UIBackgroundModes: ["location", "fetch", "remote-notification", "audio"],
       NSSpeechRecognitionUsageDescription:
@@ -47,6 +48,14 @@ export const expo = {
         },
       ],
       CFBundleAllowMixedLocalizations: true,
+      NSAppTransportSecurity: {
+        NSAllowsArbitraryLoads: true,
+        NSExceptionDomains: {
+          localhost: {
+            NSExceptionAllowsInsecureHTTPLoads: true,
+          },
+        },
+      },
     },
     config: {
       googleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
