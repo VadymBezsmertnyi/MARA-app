@@ -28,7 +28,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./GoogleService-Info.plist",
-    buildNumber: "2",
+    buildNumber: "3",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
