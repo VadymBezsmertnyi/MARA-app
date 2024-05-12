@@ -15,7 +15,7 @@ import { localesContext } from "../../../localization/localization.provider";
 import { useAllNavigation } from "../../navigators/Navigators.helps";
 
 // components
-import { Socials } from "../../components/Socials/Socials";
+import { Socials } from "./components/Socials/Socials";
 import { ChangeLanguage } from "../../components/ChangeLanguage/ChangeLanguage";
 
 // images
@@ -23,6 +23,7 @@ import imageSplash from "../../../assets/splash.png";
 
 // constants
 import {
+  METHOD_NAME_AUTH_APPLE,
   METHOD_NAME_AUTH_FACEBOOK,
   METHOD_NAME_AUTH_GOOGLE,
 } from "../../providers/AnalyticsProvider/AnalyticsProvider.constants";
@@ -39,7 +40,7 @@ export const Welcome: FunctionComponent = () => {
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
   const { onLogLogin, onLogSignUp } = useContext(analyticsContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { signInGoogle, signInFacebook } = useContext(userContext);
+  const { signInGoogle, signInFacebook, signInApple } = useContext(userContext);
 
   const onSelectGoogle = async (userData: User) => {
     const user = await signInGoogle(userData);
@@ -47,6 +48,16 @@ export const Welcome: FunctionComponent = () => {
     if (user) {
       if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_GOOGLE);
       else await onLogLogin(METHOD_NAME_AUTH_GOOGLE);
+      redirectToScreen(navigation, user, isFaceId, isTouchId);
+    }
+  };
+
+  const onSelectApple = async (identityToken: string) => {
+    const user = await signInApple(identityToken);
+
+    if (user) {
+      if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_APPLE);
+      else await onLogLogin(METHOD_NAME_AUTH_APPLE);
       redirectToScreen(navigation, user, isFaceId, isTouchId);
     }
   };
@@ -90,6 +101,7 @@ export const Welcome: FunctionComponent = () => {
             styleContainer={styles.containerSocials}
             onChangeGoogle={onSelectGoogle}
             onChangeFacebook={onSelectFacebook}
+            onChangeApple={onSelectApple}
           />
         </View>
       </View>

@@ -50,8 +50,8 @@ import { styles } from "./MenuSettings.styles";
 import colors from "../../../../styles/colors";
 
 const PACKAGE_NAME = "com.motoauto.mara";
-const APP_NAME = "moto.auto.road.assistant";
-const APP_ID = "";
+const APP_NAME = "com.motoauto.mara";
+const APP_ID = "6502443474";
 
 type MenuSettingsProps = {
   state: DrawerNavigationState<ParamListBase>;

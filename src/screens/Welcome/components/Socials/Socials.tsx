@@ -9,38 +9,39 @@ import { Platform, Text, View, ViewStyle } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin, User } from "@react-native-google-signin/google-signin";
 import * as AppleAuthentication from "expo-apple-authentication";
-import { AccessToken, LoginManager } from "react-native-fbsdk-next";
+//import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { themeContext } from "../../../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import {
-  SocialFacebook,
+  //SocialFacebook,
   SocialGoogle,
   SocialApple,
-} from "../../icons/components";
-import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
+} from "../../../../icons/components";
+import { ButtonCustom } from "../../../../components/ButtonCustom/ButtonCustom";
 
 // constants
-import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
+import { THEME_DARK } from "../../../../providers/ThemeProvider/ThemeProvider.const";
 
 // styles
 import { styles } from "./Socials.styles";
-import colors from "../../../styles/colors";
+import colors from "../../../../../styles/colors";
 
 type SocialsProps = {
   isTitle?: boolean;
   styleContainer?: ViewStyle;
   onChangeGoogle: (value: User) => void;
   onChangeFacebook: (accessToken: string) => void;
+  onChangeApple: (identityToken: string) => void;
 };
 
 export const Socials: FunctionComponent<SocialsProps> = ({
   isTitle = false,
   styleContainer,
   onChangeGoogle,
-  onChangeFacebook,
+  onChangeApple,
 }) => {
   const [focus, setFocus] = useState<number | null>(null);
   const { theme } = useContext(themeContext);
@@ -66,7 +67,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     [theme, focus]
   );
 
-  const onFacebook = async () => {
+  /* const onFacebook = async () => {
     try {
       const result = await LoginManager.logInWithPermissions([
         "email",
@@ -79,7 +80,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
     } catch (error) {
       console.error("Facebook login error:", error);
     }
-  };
+  }; */
 
   const onGoogle = async () => {
     try {
@@ -90,10 +91,15 @@ export const Socials: FunctionComponent<SocialsProps> = ({
 
   const onApple = async () => {
     try {
-      const result = await AppleAuthentication.signInAsync();
-    } catch (error) {
-      console.warn("error", error);
-    }
+      const result = await AppleAuthentication.signInAsync({
+        requestedScopes: [
+          AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+          AppleAuthentication.AppleAuthenticationScope.EMAIL,
+        ],
+      });
+      console.log("Apple result", result);
+      if (result.identityToken) onChangeApple(result.identityToken);
+    } catch (error) {}
   };
 
   const showTitle = useCallback(

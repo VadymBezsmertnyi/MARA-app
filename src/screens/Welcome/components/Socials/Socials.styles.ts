@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import colors from "../../../styles/colors";
+import colors from "../../../../../styles/colors";
 import {
   horizontalScale,
   scaleFont,
   verticalScale,
-} from "../../../styles/hooks";
+} from "../../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   socialConnect: {

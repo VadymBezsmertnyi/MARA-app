@@ -138,6 +138,34 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     }
   };
 
+  const signInApple = async (
+    identityToken: string
+  ): Promise<UserDataT | null> => {
+    setLoading(true);
+    try {
+      const resultCreateNewUser = await api(
+        PATHS.loginApple,
+        {
+          method: "POST",
+          data: {
+            identityToken,
+          },
+        },
+        userDataS
+      );
+      if (resultCreateNewUser) {
+        setNewUserData(resultCreateNewUser.verifyToken, resultCreateNewUser);
+        return resultCreateNewUser;
+      }
+      return null;
+    } catch (error: any) {
+      bug(error);
+      return null;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const editUser = async (
     newInfoUser: Record<
       string,
@@ -271,6 +299,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
       meUser,
       exitUser,
       signInGoogle,
+      signInApple,
       signInFacebook,
       deleteUser,
       setIsChangeAvatar,

@@ -22,6 +22,7 @@ export type Context = {
   exitUser: () => Promise<boolean>;
   signInGoogle: (userData: User) => Promise<UserDataT | null>;
   signInFacebook: (accessToken: string) => Promise<UserDataT | null>;
+  signInApple: (identityToken: string) => Promise<UserDataT | null>;
   deleteUser: () => Promise<boolean>;
   setIsChangeAvatar: React.Dispatch<React.SetStateAction<boolean>>;
 };
