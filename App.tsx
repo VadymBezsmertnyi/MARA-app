@@ -61,13 +61,6 @@ const EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS = process.env
 const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
   .EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB as string;
 
-GoogleSignin.configure({
-  scopes: GOOGLE_SCOPES,
-  webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB || "",
-  offlineAccess: true,
-  iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
-});
-
 SplashScreen.preventAutoHideAsync();
 Settings.initializeSDK();
 
@@ -99,6 +92,12 @@ function App() {
   }, [appIsReady]);
 
   useEffect(() => {
+    GoogleSignin.configure({
+      scopes: GOOGLE_SCOPES,
+      webClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB || "",
+      offlineAccess: true,
+      iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
+    });
     setAppIsReady(true);
   }, []);
 
