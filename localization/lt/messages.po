@@ -1250,6 +1250,14 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Mygtukas, skirtas uždaryti dirbtuvių nustatymų langą"
 
 #. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Sveiki atvykę į mūsų paslaugą."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Prisijungti naudojant:"
+
+#. js-lingui-explicit-id
 msgid "Not information"
 msgstr "Nėra informacijos"
 
@@ -1455,9 +1463,6 @@ msgstr "ir pasirinkti gyvenamąjį miestą:"
 msgid "Are you sure you want to delete?"
 msgstr "Ar tikrai norite ištrinti?"
 
-msgid "Authorize using:"
-msgstr "Autorizuoti naudojant:"
-
 msgid "Automatically detect location"
 msgstr "Automatiškai aptikti vietą"
 
@@ -1547,9 +1552,6 @@ msgstr "nuo aukščiausio iki žemiausio"
 
 msgid "Gallery"
 msgstr "Galerija"
-
-msgid "Hello!"
-msgstr "Sveiki!"
 
 msgid "If there is no suitable option in the list, use 'Deep Search'"
 msgstr "Jei sąraše nėra tinkamos parinkties, naudokite „Gilią Paiešką“"
@@ -1736,9 +1738,6 @@ msgstr "Peržiūros:"
 
 msgid "We recommend filling out the profile information"
 msgstr "Rekomenduojame užpildyti profilio informaciją"
-
-msgid "We're glad to see you on our service."
-msgstr "Džiaugiamės matydami jus mūsų paslaugoje."
 
 msgid "Welcome"
 msgstr "Sveiki atvykę"

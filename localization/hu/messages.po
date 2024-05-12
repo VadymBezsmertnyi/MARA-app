@@ -1250,6 +1250,14 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Gomb a műhelybeállítások képernyő bezárásához"
 
 #. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Üdvözöljük szolgáltatásunkon."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Bejelentkezés a következővel:"
+
+#. js-lingui-explicit-id
 msgid "Not information"
 msgstr "Nincs információ"
 
@@ -1455,9 +1463,6 @@ msgstr "és válassza ki lakhelyének városát:"
 msgid "Are you sure you want to delete?"
 msgstr "Biztosan törölni szeretné?"
 
-msgid "Authorize using:"
-msgstr "Hitelesítés használata:"
-
 msgid "Automatically detect location"
 msgstr "Hely automatikus érzékelése"
 
@@ -1547,9 +1552,6 @@ msgstr "a legmagasabbtól a legalacsonyabbig"
 
 msgid "Gallery"
 msgstr "Galéria"
-
-msgid "Hello!"
-msgstr "Üdvözöljük!"
 
 msgid "If there is no suitable option in the list, use 'Deep Search'"
 msgstr "Ha nincs megfelelő lehetőség a listában, használja a 'Mélykeresést'"
@@ -1736,9 +1738,6 @@ msgstr "Megtekintések:"
 
 msgid "We recommend filling out the profile information"
 msgstr "Ajánljuk, hogy töltse ki a profilinformációkat"
-
-msgid "We're glad to see you on our service."
-msgstr "Örömmel látjuk Önt a szolgáltatásunkon."
 
 msgid "Welcome"
 msgstr "Üdvözöljük"

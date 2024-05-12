@@ -109,7 +109,8 @@ export const Socials: FunctionComponent<SocialsProps> = ({
         </Text>
       ) : null}
       <View style={styles.containerButtons}>
-        <ButtonCustom
+        {/* TODO to do later */}
+        {/* <ButtonCustom
           type="transparent"
           onSubmit={onFacebook}
           onPressFocus={(value) => {
@@ -123,7 +124,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
               {showTitle("Facebook")}
             </Text>
           </View>
-        </ButtonCustom>
+        </ButtonCustom> */}
         {isIos ? (
           <ButtonCustom
             type="transparent"

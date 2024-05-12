@@ -2,7 +2,6 @@ import React, { FunctionComponent, useContext, useMemo } from "react";
 import { Platform, Text, View } from "react-native";
 import { ImageBackground } from "expo-image";
 import { BlurView } from "expo-blur";
-import { Trans } from "@lingui/macro";
 import { User } from "@react-native-google-signin/google-signin";
 
 // providers
@@ -10,6 +9,7 @@ import { userContext } from "../../providers/UserProvider/UserProvider";
 import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // helps
 import { useAllNavigation } from "../../navigators/Navigators.helps";
@@ -35,6 +35,7 @@ import { styles } from "./Welcome.styles";
 
 export const Welcome: FunctionComponent = () => {
   const navigation = useAllNavigation();
+  const { i18n } = useContext(localesContext);
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
   const { onLogLogin, onLogSignUp } = useContext(analyticsContext);
   const { heightStatusBar } = useContext(themeContext);
@@ -83,12 +84,8 @@ export const Welcome: FunctionComponent = () => {
           <ChangeLanguage />
         </View>
         <View style={styles.containerTitles}>
-          <Text style={styles.title}>
-            <Trans>Glad to see you on our service.</Trans>
-          </Text>
-          <Text style={styles.subTitle}>
-            <Trans>Log in using:</Trans>
-          </Text>
+          <Text style={styles.title}>{i18n._("Welcome to our service.")}</Text>
+          <Text style={styles.subTitle}>{i18n._("Log in using:")}</Text>
           <Socials
             styleContainer={styles.containerSocials}
             onChangeGoogle={onSelectGoogle}

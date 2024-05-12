@@ -1250,6 +1250,14 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Painike sulkemaan asetusten työpaja-näyttö"
 
 #. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Tervetuloa palveluumme."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Kirjaudu sisään käyttäen:"
+
+#. js-lingui-explicit-id
 msgid "Not information"
 msgstr "Ei tietoja"
 
@@ -1455,9 +1463,6 @@ msgstr "ja valitse asuinkaupunki:"
 msgid "Are you sure you want to delete?"
 msgstr "Haluatko varmasti poistaa?"
 
-msgid "Authorize using:"
-msgstr "Valtuuta käyttämällä:"
-
 msgid "Automatically detect location"
 msgstr "Tunnista sijainti automaattisesti"
 
@@ -1547,9 +1552,6 @@ msgstr "korkeimmasta matalimpaan"
 
 msgid "Gallery"
 msgstr "Kuvagalleria"
-
-msgid "Hello!"
-msgstr "Hei!"
 
 msgid "If there is no suitable option in the list, use 'Deep Search'"
 msgstr "Jos listalla ei ole sopivaa vaihtoehtoa, käytä 'Syvää Hakua'"
@@ -1736,9 +1738,6 @@ msgstr "Näkymät:"
 
 msgid "We recommend filling out the profile information"
 msgstr "Suosittelemme profiilitietojen täyttämistä"
-
-msgid "We're glad to see you on our service."
-msgstr "Olemme iloisia nähdessämme sinut palvelussamme."
 
 msgid "Welcome"
 msgstr "Tervetuloa"

@@ -1250,6 +1250,14 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Bouton pour fermer l'écran des paramètres des ateliers"
 
 #. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Bienvenue sur notre service."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Connectez-vous en utilisant:"
+
+#. js-lingui-explicit-id
 msgid "Not information"
 msgstr "Pas d'informations"
 
@@ -1455,9 +1463,6 @@ msgstr "et choisissez la ville de résidence :"
 msgid "Are you sure you want to delete?"
 msgstr "Êtes-vous sûr de vouloir supprimer ?"
 
-msgid "Authorize using:"
-msgstr "Autoriser l'utilisation :"
-
 msgid "Automatically detect location"
 msgstr "Détection automatique de la localisation"
 
@@ -1547,9 +1552,6 @@ msgstr "du plus élevé au plus bas"
 
 msgid "Gallery"
 msgstr "Galerie"
-
-msgid "Hello!"
-msgstr "Bonjour !"
 
 msgid "If there is no suitable option in the list, use 'Deep Search'"
 msgstr "S'il n'y a pas d'option appropriée dans la liste, utilisez 'Recherche approfondie'"
@@ -1736,9 +1738,6 @@ msgstr "Vues :"
 
 msgid "We recommend filling out the profile information"
 msgstr "Nous vous recommandons de remplir les informations de profil"
-
-msgid "We're glad to see you on our service."
-msgstr "Nous sommes heureux de vous voir sur notre service."
 
 msgid "Welcome"
 msgstr "Bienvenue"

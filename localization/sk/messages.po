@@ -1250,6 +1250,14 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Tlačidlo pre zatvorenie obrazovky nastavení dielní"
 
 #. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Vitajte v našej službe."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Prihlásiť sa"
+
+#. js-lingui-explicit-id
 msgid "Not information"
 msgstr "Žiadne informácie"
 
@@ -1455,9 +1463,6 @@ msgstr "a vybrať mesto pobytu:"
 msgid "Are you sure you want to delete?"
 msgstr "Ste si istý, že chcete vymazať?"
 
-msgid "Authorize using:"
-msgstr "Autorizovať pomocou:"
-
 msgid "Automatically detect location"
 msgstr "Automatické zistenie polohy"
 
@@ -1547,9 +1552,6 @@ msgstr "od najvyššieho po najnižšie"
 
 msgid "Gallery"
 msgstr "Galéria"
-
-msgid "Hello!"
-msgstr "Ahoj!"
 
 msgid "If there is no suitable option in the list, use 'Deep Search'"
 msgstr "Ak v zozname nie je vhodná možnosť, použite 'Hĺbkové Vyhľadávanie'"
@@ -1736,9 +1738,6 @@ msgstr "Zobrazenia:"
 
 msgid "We recommend filling out the profile information"
 msgstr "Odporúčame vyplniť informácie v profile"
-
-msgid "We're glad to see you on our service."
-msgstr "Teší nás, že vás vídame na našej službe."
 
 msgid "Welcome"
 msgstr "Vitajte"
