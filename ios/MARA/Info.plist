@@ -29,12 +29,6 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>com.googleusercontent.apps.549450621533-jhql06tat9a2qsbans5f0vgr21guq2oj</string>
-        </array>
-      </dict>
-      <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
           <string>com.googleusercontent.apps.549450621533-sm5185ap6bagvrg6lmoerbidcnd5ujga</string>
         </array>
       </dict>
@@ -52,7 +46,7 @@
       </dict>
     </array>
     <key>CFBundleVersion</key>
-    <string>3</string>
+    <string>4</string>
     <key>FacebookAdvertiserIDCollectionEnabled</key>
     <false/>
     <key>FacebookAppID</key>
