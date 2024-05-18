@@ -851,7 +851,7 @@ msgstr "Новий"
 
 #. js-lingui-explicit-id
 msgid "Used"
-msgstr "Вжитий"
+msgstr "Вживаний"
 
 #. js-lingui-explicit-id
 msgid "The state of the goods:"
