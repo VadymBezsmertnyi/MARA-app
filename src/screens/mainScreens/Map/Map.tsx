@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Platform, Text, View, ViewStyle } from "react-native";
+import { Platform, Text, View } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
 import { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -54,7 +54,7 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
   const { userData } = useContext(userContext);
   const { workshops } = useContext(workshopsContext);
   const { location, usersMaps, usersSos } = useContext(mapContext);
-  const { theme, heightStatusBar } = useContext(themeContext);
+  const { theme } = useContext(themeContext);
   const { eventsList } = useContext(eventsContext);
   const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
   const firstEvent = useMemo(
@@ -76,11 +76,6 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
     [usersSos, userData?.id, location]
   );
 
-  const containerStyles: ViewStyle = useMemo(
-    () => [styles.container, { marginTop: heightStatusBar }] as ViewStyle,
-    [heightStatusBar]
-  );
-
   const showFirstEvent = (location: mapMarker) => {
     setRegion(location);
   };
@@ -97,7 +92,7 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={containerStyles}>
+    <View style={styles.container}>
       <MapViewCluster
         provider={PROVIDER_GOOGLE}
         style={styles.map}

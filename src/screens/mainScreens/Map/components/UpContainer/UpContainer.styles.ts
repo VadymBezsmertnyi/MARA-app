@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     minHeight: verticalScale(MIN_HEIGHT),
-    top: verticalScale(12),
   },
   blurViewContainer: {
     position: "absolute",

@@ -16,10 +16,6 @@ export const styles = StyleSheet.create({
     backgroundColor: "blue",
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
-    paddingBottom:
-      Platform.OS === "android"
-        ? verticalScale(10)
-        : getBottomSpace() - verticalScale(10),
   },
   linearGradient: {
     justifyContent: "center",

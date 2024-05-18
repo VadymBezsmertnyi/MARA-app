@@ -97,7 +97,6 @@ export const Socials: FunctionComponent<SocialsProps> = ({
           AppleAuthentication.AppleAuthenticationScope.EMAIL,
         ],
       });
-      console.log("Apple result", result);
       if (result.identityToken) onChangeApple(result.identityToken);
     } catch (error) {}
   };

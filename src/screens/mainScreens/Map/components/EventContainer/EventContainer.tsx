@@ -4,6 +4,7 @@ import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
 import dayjs from "dayjs";
 import { Trans } from "@lingui/macro";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // providers
 import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
@@ -29,6 +30,7 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   firstEvent,
   showFirstEvent,
 }) => {
+  const { top } = useSafeAreaInsets();
   const { language } = useContext(localesContext);
   const { placesDB, getPlace } = useContext(placesContext);
   const selectCountryTitle = useMemo(() => {
@@ -50,6 +52,15 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   const startLinearGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endLinearGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsLinearGradient = useMemo(() => [0, 1], []);
+  const linearGradientContainerStyles = useMemo(
+    () => [
+      styles.linearGradientContainer,
+      {
+        top: 110 + top,
+      },
+    ],
+    [top]
+  );
 
   if (!firstEvent || !isDateShow) return null;
 
@@ -59,7 +70,7 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
       start={startLinearGradient}
       end={endLinearGradient}
       locations={locationsLinearGradient}
-      style={styles.linearGradientContainer}
+      style={linearGradientContainerStyles}
     >
       <TouchableOpacity
         onPress={() => {

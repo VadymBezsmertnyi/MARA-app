@@ -34,68 +34,73 @@ import { RootMainTabsParamList } from "../Navigators.types";
 // styles
 import colors from "../../../styles/colors";
 import { styles } from "./MainTabs.styles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
   const navigation = useNavigation<DrawerNavigationHelpers>();
+  const { bottom } = useSafeAreaInsets();
   const { i18n } = useContext(localesContext);
   const { mainTabs } = useMainTabs();
-  const { durationHeight } = useContext(responsiveLayoutContext);
   const colorsGradient = useMemo(
     () => [colors.californiaOrange, colors.blazeOrange],
     []
   );
-  const containerStyles = useMemo(
-    () => [styles.mainContainer, { bottom: -durationHeight }],
-    [durationHeight]
-  );
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1], []);
+
+  const containerStyles = useMemo(
+    () => [
+      styles.container,
+      {
+        paddingBottom: bottom,
+      },
+    ],
+    [bottom]
+  );
 
   const onShowMenu = () => {
     navigation.openDrawer();
   };
 
   const tabBar = ({ state: { index }, navigation }: BottomTabBarProps) => (
-    <View style={containerStyles}>
-      <View style={styles.absoluteContainer}>
-        <LinearGradient
-          colors={colorsGradient}
-          start={startGradient}
-          end={endGradient}
-          locations={locationsGradient}
-          style={styles.container}
-        >
-          {mainTabs.map((screen, indexScreen) => {
-            const isActive = indexScreen === index;
-            const Icon = isActive
-              ? mainTabs[indexScreen].tabBarIconSelect
-              : mainTabs[indexScreen].tabBarIcon;
-            return (
-              <View key={`tab-button-${screen.id}`}>
-                <TouchableOpacity
-                  accessibilityLabel={i18n._("Select tab {tabName}", {
-                    tabName: screen.title,
-                  })}
-                  onPress={() => {
-                    navigation.navigate(screen.name, {
-                      screen: screen.mainScreen,
-                    });
-                  }}
-                  style={styles.button}
-                >
-                  <Icon
-                    width={horizontalScale(32)}
-                    height={horizontalScale(32)}
-                  />
-                </TouchableOpacity>
-              </View>
-            );
-          })}
-        </LinearGradient>
-      </View>
+    <View style={styles.absoluteContainer}>
+      <LinearGradient
+        colors={colorsGradient}
+        start={startGradient}
+        end={endGradient}
+        locations={locationsGradient}
+        style={containerStyles}
+      >
+        {mainTabs.map((screen, indexScreen) => {
+          const isActive = indexScreen === index;
+          const Icon = isActive
+            ? mainTabs[indexScreen].tabBarIconSelect
+            : mainTabs[indexScreen].tabBarIcon;
+          return (
+            <View key={`tab-button-${screen.id}`}>
+              <TouchableOpacity
+                accessibilityLabel={i18n._("Select tab {tabName}", {
+                  tabName: screen.title,
+                })}
+                onPress={() => {
+                  navigation.navigate(screen.name, {
+                    screen: screen.mainScreen,
+                  });
+                }}
+                style={styles.button}
+              >
+                <Icon
+                  width={horizontalScale(32)}
+                  height={horizontalScale(32)}
+                />
+              </TouchableOpacity>
+            </View>
+          );
+        })}
+      </LinearGradient>
     </View>
   );
 

@@ -9,12 +9,10 @@ import {
 const MIN_HEIGHT = 44;
 
 const MIN_WIDTH_CONTAINER = 222;
-const TOP_CONTAINER = 110;
 
 export const styles = StyleSheet.create({
   linearGradientContainer: {
     position: "absolute",
-    top: verticalScale(TOP_CONTAINER),
     right: 0,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
