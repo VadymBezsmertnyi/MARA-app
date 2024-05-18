@@ -1,0 +1,11 @@
+<resources>
+  <string name="app_name">M.A.R.A</string>
+  <string name="expo_splash_screen_resize_mode" translatable="false">cover</string>
+  <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
+  <string name="expo_system_ui_user_interface_style" translatable="false">automatic</string>
+  <string name="facebook_app_id">392972260073420</string>
+  <string name="facebook_client_token">9ab6fd53433128459985341b29d5843f</string>
+  <string name="fb_login_protocol_scheme">fb392972260073420</string>
+  <string name="expo_runtime_version">1.0.0(27)</string>
+  <string name="ExpoLocalization_supportsRTL" translatable="false">undefined</string>
+</resources>
