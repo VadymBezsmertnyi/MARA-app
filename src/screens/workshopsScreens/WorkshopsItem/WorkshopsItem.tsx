@@ -227,7 +227,11 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
                   <IconAutoService
                     width={40}
                     height={40}
-                    style={styles.autoIcon}
+                    style={
+                      selectWorkshop?.motoTypesWorks.length
+                        ? styles.autoIcon
+                        : undefined
+                    }
                   />
                 ) : null}
                 {selectWorkshop?.motoTypesWorks.length ? (
