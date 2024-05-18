@@ -45,7 +45,7 @@ export const ContainerUser: FunctionComponent = () => {
         {imageSource ? (
           <ImageCache style={styles.containerImage} imageSrc={imageSource} />
         ) : (
-          <IconProfileAvatar />
+          <IconProfileAvatar style={styles.containerImage} />
         )}
         <View style={styles.titlesMain}>
           <Text style={styles.titleInfo}>{userData?.firstName}</Text>
@@ -53,14 +53,14 @@ export const ContainerUser: FunctionComponent = () => {
           {userData?.phoneNumber ? (
             <PhoneWithMessengers
               title={userData.phoneNumber}
-              isTelegram
-              isWhatsApp
-              isViber
+              //isTelegram
+              //isWhatsApp
+              //isViber
             />
           ) : null}
         </View>
       </View>
-      <View style={styles.containerOtherContacts}>
+      {/* <View style={styles.containerOtherContacts}>
         <Text style={styles.titleOtherContacts}>
           <Trans>Additional contacts:</Trans>
         </Text>
@@ -72,7 +72,7 @@ export const ContainerUser: FunctionComponent = () => {
             isViber
           />
         ) : null}
-      </View>
+      </View> */}
     </View>
   );
 };

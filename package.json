@@ -101,7 +101,8 @@
     "react-native-shadow-2": "^7.0.8",
     "react-native-svg": "14.1.0",
     "react-native-webview": "13.6.4",
-    "zod": "^3.22.2"
+    "zod": "^3.22.2",
+    "@expo/vector-icons": "^14.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

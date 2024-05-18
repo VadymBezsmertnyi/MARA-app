@@ -25,17 +25,16 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 
 // components
-import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { Input } from "../../../components/Input/Input";
 import { InputButton } from "../../../components/InputButton/InputButton";
 import { InputPhone } from "../../../components/InputPhone/InputPhone";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace";
+import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
 
 // helps
 import showErrors from "../../../helps/errors/showError";
@@ -55,16 +54,10 @@ import {
 } from "../../../constants/inputs.const";
 
 // icons
-import {
-  IconMapGradient,
-  IconPencilGradient,
-  IconPlusGradient,
-  IconProfileAvatar,
-} from "../../../icons/components";
+import { IconMapGradient } from "../../../icons/components";
 
 // styles
 import { styles } from "./SettingsProfile.styles";
-import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
 
 type SettingsProfileProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -79,7 +72,6 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     useContext(userContext);
   const { i18n, language } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { dataDeepLink } = useContext(sharingContext);
   const { placesDB, getPlace } = useContext(placesContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -271,7 +263,6 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
               setSelectCountryIso={setSelectCountryIso}
               labelStyle={styles.labelInput}
             />
-            <Text>{JSON.stringify(dataDeepLink)}</Text>
           </View>
           <ButtonCustom title={i18n._("Save")} onSubmit={onSave} />
         </ScrollView>

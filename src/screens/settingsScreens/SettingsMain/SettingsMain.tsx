@@ -18,7 +18,7 @@ import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
-import { ItemMyList } from "./components/ItemMyList/ItemMyList";
+import ItemTypeSetting from "./components/ItemTypeSetting/ItemTypeSetting";
 import { ContainerBusiness } from "./components/ContainerBusiness/ContainerBusiness";
 import { ContainerUser } from "./components/ContainerUser/ContainerUser";
 
@@ -111,7 +111,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
         />
         <View style={styles.containerList}>
           <View style={styles.containerLineEmpty} />
-          <ItemMyList
+          <ItemTypeSetting
             title={i18n._("Your adverts")}
             amountUsed={userData?.productsIds.length || 0}
             amountAvailable={0}
@@ -123,7 +123,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
             }}
           />
           <View style={styles.containerLineEmpty} />
-          <ItemMyList
+          <ItemTypeSetting
             title={i18n._("Your workshops")}
             amountUsed={userData?.workshopsIds.length || 0}
             amountAvailable={0}
@@ -135,7 +135,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
             }}
           />
           <View style={styles.containerLineEmpty} />
-          <ItemMyList
+          <ItemTypeSetting
             title={i18n._("Your events")}
             amountUsed={userData?.eventsIds.length || 0}
             amountAvailable={0}
