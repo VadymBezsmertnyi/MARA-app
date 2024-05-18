@@ -28,7 +28,6 @@ import { EventMarker } from "./components/EventMarker/EventMarker";
 import { MeMarker } from "./components/MeMarker/MeMarker";
 import { UpContainer } from "./components/UpContainer/UpContainer";
 import { EventContainer } from "./components/EventContainer/EventContainer";
-import { ButtonSearch } from "./components/ButtonSearch/ButtonSearch";
 import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
 import { SosMarker } from "./components/SosMarker/SosMarker";
 
@@ -165,7 +164,7 @@ export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
       </MapViewCluster>
       <UpContainer />
       <EventContainer firstEvent={firstEvent} showFirstEvent={showFirstEvent} />
-      <ButtonSearch navigation={navigation} />
+      {/* <ButtonSearch navigation={navigation} /> */}
     </View>
   );
 };
