@@ -71,6 +71,7 @@ import { IconArrowRightEvent } from "../../../icons/components";
 // styles
 import { styles } from "./MarketAdd.styles";
 import colors from "../../../../styles/colors";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type MarketAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -83,6 +84,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     useRoute<
       RouteProp<RootMarketScreensParamList & RootSettingsScreensParamList>
     >();
+  const { bottom } = useSafeAreaInsets();
   const { i18n, language } = useContext(localesContext);
   const { placesDB, getPlace } = useContext(placesContext);
   const { userData } = useContext(userContext);
@@ -144,6 +146,13 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     return placeDB[language].formatted_address;
   }, [placesDB, place]);
 
+  const containerScrollStyle = useMemo(
+    () => ({
+      paddingBottom: bottom,
+    }),
+    [bottom]
+  );
+
   const clearKeyError = (key: string) => {
     if (errorMessage && key in errorMessage) {
       const { [key]: _, ...otherErrorMessage } = errorMessage;
@@ -169,6 +178,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
       isParts,
       mileage,
       yearRelease,
+      images: images.map((image) => image.base64).filter(Boolean) as string[],
     });
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
@@ -387,7 +397,10 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               : undefined
           }
         />
-        <ScrollView style={styles.body}>
+        <ScrollView
+          style={styles.body}
+          contentContainerStyle={containerScrollStyle}
+        >
           <Input
             isSelect
             placeholder={i18n._("Enter the name of the advert")}

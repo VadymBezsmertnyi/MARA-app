@@ -19,7 +19,8 @@ type NameKeyType =
   | "yearRelease"
   | "typeFuel"
   | "typeTransmission"
-  | "typeParts";
+  | "typeParts"
+  | "images";
 
 export const useErrors = (i18n: I18n) => {
   const getErrorText = (
@@ -140,6 +141,11 @@ export const useErrors = (i18n: I18n) => {
         };
       if (type === "errorMessage")
         return { name: "", title: i18n._("Incorrectly entered data") };
+      if (type === "images")
+        return {
+          name: i18n._("Images {otherName}", { otherName }),
+          title: i18n._("Please add images for {otherName}", { otherName }),
+        };
       return { name: "", title: "" };
     }
     return { name: "", title: "" };
@@ -156,6 +162,7 @@ export const useErrors = (i18n: I18n) => {
     isParts,
     mileage,
     yearRelease,
+    images,
   }: {
     title: string;
     description: string;
@@ -175,6 +182,7 @@ export const useErrors = (i18n: I18n) => {
     isParts: boolean;
     mileage: string;
     yearRelease: string;
+    images?: string[];
   }) => ({
     ...((title.length < 5 || title.length > 40) && {
       title: getErrorText("title", {
@@ -245,6 +253,12 @@ export const useErrors = (i18n: I18n) => {
     ...(isParts &&
       !(select?.motoParts || select?.autoParts) && {
         typeParts: getErrorText("typeParts", {
+          otherName: i18n._("advert"),
+        }),
+      }),
+    ...(images &&
+      images.length === 0 && {
+        images: getErrorText("images", {
           otherName: i18n._("advert"),
         }),
       }),
