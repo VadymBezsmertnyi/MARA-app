@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
+import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 // types
@@ -90,9 +89,6 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
             <IconProfileAvatar width={160} height={160} />
           )}
         </View>
-        <Text style={styles.titleModal}>
-          <Trans>Are you sure you want to delete?</Trans>
-        </Text>
         <View style={styles.containerButtons}>
           <ButtonCustom
             title={i18n._("Delete")}

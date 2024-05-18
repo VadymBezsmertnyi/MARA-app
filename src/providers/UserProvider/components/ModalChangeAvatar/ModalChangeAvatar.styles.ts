@@ -49,10 +49,6 @@ export const styles = StyleSheet.create({
     height: 160,
     borderRadius: 200,
   },
-  titleModal: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 16,
-  },
   containerButtons: {
     marginTop: 40,
     width: "100%",
