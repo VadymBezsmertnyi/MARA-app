@@ -146,10 +146,6 @@ msgid "The price of the item"
 msgstr "Prekės kaina"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Patvirtinti"
-
-#. js-lingui-explicit-id
 msgid "Motorcycle transport"
 msgstr "Motociklų transportas"
 
@@ -886,10 +882,6 @@ msgid "Advert description"
 msgstr "Skelbimo aprašymas"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefono numeris*:"
-
-#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Skelbti"
 
@@ -980,6 +972,10 @@ msgstr "Įveskite pavadinimą"
 #. js-lingui-explicit-id
 msgid "Add product"
 msgstr "Pridėti produktą"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Patvirtinti"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1324,6 +1320,10 @@ msgstr "Pridėkite aprašymą apie dirbtuves"
 #. js-lingui-explicit-id
 msgid "Workshop description"
 msgstr "Dirbtuvių aprašymas"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Telefono numeris*:"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"

@@ -146,10 +146,6 @@ msgid "The price of the item"
 msgstr "Η τιμή του αντικειμένου"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Επιβεβαιώστε"
-
-#. js-lingui-explicit-id
 msgid "Motorcycle transport"
 msgstr "Μεταφορά μοτοσικλετών"
 
@@ -886,10 +882,6 @@ msgid "Advert description"
 msgstr "Περιγραφή αγγελίας"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Τηλεφωνικός αριθμός*:"
-
-#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Δημοσίευση"
 
@@ -980,6 +972,10 @@ msgstr "Εισαγωγή ονόματος"
 #. js-lingui-explicit-id
 msgid "Add product"
 msgstr "Προσθήκη προϊόντος"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Επιβεβαιώστε"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1324,6 +1320,10 @@ msgstr "Προσθέστε μια περιγραφή για το εργαστή�
 #. js-lingui-explicit-id
 msgid "Workshop description"
 msgstr "Περιγραφή εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Τηλεφωνικός αριθμός*:"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"

@@ -525,7 +525,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               labelStyle={styles.labelInputContacts}
             />
             <InputPhone
-              label={i18n._("Phone number*:")}
+              label={i18n._("Phone number:")}
               phoneNumber={phoneNumber}
               setPhoneNumber={(value) => {
                 clearKeyError("phoneNumber");

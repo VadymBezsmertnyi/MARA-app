@@ -146,10 +146,6 @@ msgid "The price of the item"
 msgstr "Kohteen hinta"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Vahvista"
-
-#. js-lingui-explicit-id
 msgid "Motorcycle transport"
 msgstr "Moottoripyörän kuljetus"
 
@@ -886,10 +882,6 @@ msgid "Advert description"
 msgstr "Mainoksen kuvaus"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Puhelinnumero*:"
-
-#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Julkaise"
 
@@ -980,6 +972,10 @@ msgstr "Syötä nimi"
 #. js-lingui-explicit-id
 msgid "Add product"
 msgstr "Lisää tuote"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Vahvista"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1324,6 +1320,10 @@ msgstr "Lisää kuvaus työpajasta"
 #. js-lingui-explicit-id
 msgid "Workshop description"
 msgstr "Työpajan kuvaus"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Puhelinnumero*:"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"

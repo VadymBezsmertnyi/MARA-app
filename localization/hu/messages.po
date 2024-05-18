@@ -146,10 +146,6 @@ msgid "The price of the item"
 msgstr "Az elem ára"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Megerősítés"
-
-#. js-lingui-explicit-id
 msgid "Motorcycle transport"
 msgstr "Motorkerékpár szállítás"
 
@@ -886,10 +882,6 @@ msgid "Advert description"
 msgstr "Hirdetés leírása"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefonszám*:"
-
-#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Közzététel"
 
@@ -980,6 +972,10 @@ msgstr "Adja meg a nevet"
 #. js-lingui-explicit-id
 msgid "Add product"
 msgstr "Termék hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Megerősítés"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1324,6 +1320,10 @@ msgstr "Adjon meg leírást a műhelyről"
 #. js-lingui-explicit-id
 msgid "Workshop description"
 msgstr "Műhely leírása"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Telefonszám*:"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"

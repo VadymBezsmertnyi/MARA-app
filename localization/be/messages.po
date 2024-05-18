@@ -146,10 +146,6 @@ msgid "The price of the item"
 msgstr "Цана прадмета"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Пацвердзіць"
-
-#. js-lingui-explicit-id
 msgid "Motorcycle transport"
 msgstr "Транспарт мотацыклаў"
 
@@ -886,10 +882,6 @@ msgid "Advert description"
 msgstr "Апісанне аб'явы"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Нумар тэлефона*:"
-
-#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Апублікаваць"
 
@@ -980,6 +972,10 @@ msgstr "Увядзіце імя"
 #. js-lingui-explicit-id
 msgid "Add product"
 msgstr "Дадаць прадукт"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Пацвердзіць"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1324,6 +1320,10 @@ msgstr "Дадайце апісанне аб майстэрні"
 #. js-lingui-explicit-id
 msgid "Workshop description"
 msgstr "Апісанне майстэрні"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Нумар тэлефона*:"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"

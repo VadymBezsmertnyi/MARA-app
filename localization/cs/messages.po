@@ -146,10 +146,6 @@ msgid "The price of the item"
 msgstr "Cena položky"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Potvrdit"
-
-#. js-lingui-explicit-id
 msgid "Motorcycle transport"
 msgstr "Přeprava motocyklů"
 
@@ -886,10 +882,6 @@ msgid "Advert description"
 msgstr "Popis inzerátu"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefonní číslo*:"
-
-#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publikovat"
 
@@ -980,6 +972,10 @@ msgstr "Zadejte jméno"
 #. js-lingui-explicit-id
 msgid "Add product"
 msgstr "Přidat produkt"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Potvrdit"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1324,6 +1320,10 @@ msgstr "Přidejte popis dílny"
 #. js-lingui-explicit-id
 msgid "Workshop description"
 msgstr "Popis dílny"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Telefonní číslo*:"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"

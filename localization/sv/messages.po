@@ -146,10 +146,6 @@ msgid "The price of the item"
 msgstr "Priset på objektet"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Bekräfta"
-
-#. js-lingui-explicit-id
 msgid "Motorcycle transport"
 msgstr "Motorcykeltransport"
 
@@ -886,10 +882,6 @@ msgid "Advert description"
 msgstr "Annonsbeskrivning"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefonnummer*:"
-
-#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publicera"
 
@@ -980,6 +972,10 @@ msgstr "Ange namnet"
 #. js-lingui-explicit-id
 msgid "Add product"
 msgstr "Lägg till produkt"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Bekräfta"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1324,6 +1320,10 @@ msgstr "Lägg till en beskrivning av verkstaden"
 #. js-lingui-explicit-id
 msgid "Workshop description"
 msgstr "Verkstadsbeskrivning"
+
+#. js-lingui-explicit-id
+msgid "Phone number*:"
+msgstr "Telefonnummer*:"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
