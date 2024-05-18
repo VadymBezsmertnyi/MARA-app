@@ -49,7 +49,7 @@ const DEFAULT_LOCATION: mapMarker = {
   longitudeDelta: 7.446565590798844,
 };
 
-export const Map: FunctionComponent<MapProps> = ({ navigation }) => {
+export const Map: FunctionComponent<MapProps> = () => {
   const { userData } = useContext(userContext);
   const { workshops } = useContext(workshopsContext);
   const { location, usersMaps, usersSos } = useContext(mapContext);

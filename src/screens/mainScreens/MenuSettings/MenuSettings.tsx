@@ -8,9 +8,11 @@ import {
   Platform,
   StatusBar,
   ScrollView,
+  Linking,
 } from "react-native";
 import { DrawerNavigationState, ParamListBase } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // types
 import {
@@ -22,7 +24,6 @@ import {
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { mapContext } from "../../../providers/MapProvider/MapProvider";
 
 // components
 import { ItemMenuSettings } from "./components/ItemMenuSettings/ItemMenuSettings";
@@ -30,7 +31,6 @@ import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguage";
 import { ModalSelectPlatform } from "./components/ModalSelectPlatform/ModalSelectPlatform";
-import { ModalSosOn } from "./components/ModalSosOn/ModalSosOn";
 import { ModalSettingsSos } from "./components/ModalSettingsSos/ModalSettingsSos";
 import { ModalAgreements } from "./components/ModalAgreements/ModalAgreements";
 
@@ -65,24 +65,24 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 }) => {
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { usersSos, onDeleteSos } = useContext(mapContext);
+  //const { usersSos, onDeleteSos } = useContext(mapContext);
   const { userData, editUser } = useContext(userContext);
   const [darkTheme, setDarkTheme] = useState(false);
-  const [isSos, setIsSos] = useState(false);
+  //const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
-  const [isShowOnSos, setIsShowOnSos] = useState(false);
+  //const [isShowOnSos, setIsShowOnSos] = useState(false);
   const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
   const [typeAgreements, setTypeAgreements] = useState<
     "terms" | "policy" | null
   >(null);
-  const isOnSos = useMemo(
+  /* const isOnSos = useMemo(
     () =>
       usersSos
         ? usersSos.filter((userSos) => userSos.userId === userData?.id).length >
           0
         : false,
     [usersSos]
-  );
+  ); */
   const isShowDrawer = useMemo(
     () =>
       state.history.length
@@ -115,6 +115,12 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
     });
   };
 
+  const onToFeedbackLinkBrowser = async () => {
+    const link =
+      "https://docs.google.com/forms/d/e/1FAIpQLSfQ4j74qeOKiau4qRwPLNN5sN2pqTjX4K8vPEfwY35TuyoI3g/viewform?usp=sf_link";
+    await Linking.openURL(link);
+  };
+
   const onToggleLocation = async () => {
     const isGeoLocation = !(userData?.isGeoLocation || false);
     const isGeoLocationBackground = isGeoLocation
@@ -126,14 +132,14 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
     });
   };
 
-  const onToggleLocationBackground = async () => {
+  /* const onToggleLocationBackground = async () => {
     const isGeoLocationBackground = !(
       userData?.isGeoLocationBackground || false
     );
     await editUser({
       isGeoLocationBackground,
     });
-  };
+  }; */
 
   const onCloseMenu = () => {
     navigation.closeDrawer();
@@ -215,6 +221,18 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             }}
           />
           <View style={styles.lineWhite} />
+          <ItemMenuSettings
+            title={i18n._("Report an error/improvement")}
+            Icon={() => (
+              <MaterialIcons
+                name="feedback"
+                size={24}
+                color={colors.californiaOrange}
+              />
+            )}
+            onPress={onToFeedbackLinkBrowser}
+          />
+          <View style={styles.lineWhite} />
           <View style={styles.containerCheckboxes}>
             {isToggleTheme ? (
               <View style={styles.containerCheckbox}>
@@ -239,7 +257,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 setCheck={onToggleLocation}
               />
             </TouchableOpacity>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               onPress={onToggleLocation}
               style={[
                 styles.containerCheckbox,
@@ -256,8 +274,8 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 check={userData?.isGeoLocationBackground || false}
                 setCheck={onToggleLocationBackground}
               />
-            </TouchableOpacity>
-            <View style={styles.containerCheckbox}>
+            </TouchableOpacity> */}
+            {/* <View style={styles.containerCheckbox}>
               <Text style={styles.titleSos}>
                 <Trans>SOS signal</Trans>
               </Text>
@@ -270,7 +288,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 }}
                 colorBoxEnabled={colors.electricRed}
               />
-            </View>
+            </View> */}
           </View>
         </ScrollView>
         <View style={styles.containerLanguage}>
@@ -284,13 +302,13 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         }}
         onSelect={shareApp}
       />
-      <ModalSosOn
+      {/* <ModalSosOn
         isOpen={isShowOnSos}
         onClose={() => {
           setIsShowOnSos(false);
           setIsSos(false);
         }}
-      />
+      /> */}
       <ModalSettingsSos
         isOpen={isShowSettingsSos}
         onClose={() => {
