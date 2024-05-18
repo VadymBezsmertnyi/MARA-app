@@ -9,12 +9,12 @@ import {
   getFocusedRouteNameFromRoute,
   useNavigation,
 } from "@react-navigation/native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // providers
-import { responsiveLayoutContext } from "../../providers/responsiveLayout/responsiveLayout.provider";
 import { localesContext } from "../../../localization/localization.provider";
 
 // components
@@ -34,7 +34,6 @@ import { RootMainTabsParamList } from "../Navigators.types";
 // styles
 import colors from "../../../styles/colors";
 import { styles } from "./MainTabs.styles";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 

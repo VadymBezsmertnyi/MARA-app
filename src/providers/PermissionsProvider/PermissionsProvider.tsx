@@ -6,16 +6,15 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { Alert, Linking } from "react-native";
 import * as Location from "expo-location";
 
 // providers
 import { userContext } from "../UserProvider/UserProvider";
+import { localesContext } from "../../../localization/localization.provider";
 
 // helps
 import { usePermissionsProvider } from "./usePermissionsProvider";
-
-// components
-import { ModalPermission } from "../../components/ModalPermission/ModalPermission";
 
 type PermissionsContext = {
   locationForegroundPermission: Location.PermissionStatus | null;
@@ -33,6 +32,7 @@ export const permissionsContext = createContext<PermissionsContext>(
 export const PermissionsProvider: FunctionComponent<
   PermissionsProviderProps
 > = ({ children }) => {
+  const { i18n } = useContext(localesContext);
   const { userData } = useContext(userContext);
   const { titleLocationBackground, titleLocationForeground } =
     usePermissionsProvider();
@@ -40,8 +40,15 @@ export const PermissionsProvider: FunctionComponent<
     useState<Location.PermissionStatus | null>(null);
   const [locationBackgroundPermission, setLocationBackgroundPermission] =
     useState<Location.PermissionStatus | null>(null);
-  const [isForegroundModal, setIsForegroundModal] = useState(false);
-  const [isBackgroundModal, setIsBackgroundModal] = useState(false);
+
+  const checkPermissionForeground = async () => {
+    const { status: statusForeground } =
+      await Location.requestForegroundPermissionsAsync();
+    if (statusForeground !== Location.PermissionStatus.GRANTED)
+      Linking.openSettings();
+    setLocationForegroundPermission(statusForeground);
+    return statusForeground === Location.PermissionStatus.GRANTED;
+  };
 
   const getPermissionsLocationForeground = async () => {
     const { status: statusForeground } =
@@ -51,15 +58,28 @@ export const PermissionsProvider: FunctionComponent<
       statusForeground !== Location.PermissionStatus.GRANTED &&
       userData?.isGeoLocation
     )
-      setIsForegroundModal(true);
+      Alert.alert(titleLocationForeground, undefined, [
+        {
+          text: i18n._("Cancel"),
+          style: "cancel",
+        },
+        {
+          text: i18n._("Accept"),
+          onPress: async () => {
+            await checkPermissionForeground();
+          },
+        },
+      ]);
     return statusForeground === Location.PermissionStatus.GRANTED;
   };
 
-  const checkPermissionForeground = async () => {
-    const { status: statusForeground } =
-      await Location.requestForegroundPermissionsAsync();
-    setLocationForegroundPermission(statusForeground);
-    return statusForeground === Location.PermissionStatus.GRANTED;
+  const checkPermissionBackground = async () => {
+    const { status: statusBackground } =
+      await Location.requestBackgroundPermissionsAsync();
+    if (statusBackground !== Location.PermissionStatus.GRANTED)
+      Linking.openSettings();
+    setLocationBackgroundPermission(statusBackground);
+    return statusBackground === Location.PermissionStatus.GRANTED;
   };
 
   const getPermissionsLocationBackground = async () => {
@@ -70,14 +90,19 @@ export const PermissionsProvider: FunctionComponent<
       statusBackground !== Location.PermissionStatus.GRANTED &&
       userData?.isGeoLocationBackground
     )
-      setIsBackgroundModal(true);
-    return statusBackground === Location.PermissionStatus.GRANTED;
-  };
-
-  const checkPermissionBackground = async () => {
-    const { status: statusBackground } =
-      await Location.requestBackgroundPermissionsAsync();
-    setLocationBackgroundPermission(statusBackground);
+      Alert.alert(titleLocationBackground, undefined, [
+        {
+          text: i18n._("Cancel"),
+          style: "cancel",
+        },
+        {
+          text: i18n._("Accept"),
+          onPress: async () => {
+            await checkPermissionBackground();
+          },
+        },
+      ]);
+    //setIsBackgroundModal(true);
     return statusBackground === Location.PermissionStatus.GRANTED;
   };
 
@@ -105,28 +130,6 @@ export const PermissionsProvider: FunctionComponent<
   return (
     <permissionsContext.Provider value={valueContext}>
       {children}
-      <ModalPermission
-        isOpen={isForegroundModal}
-        title={titleLocationForeground}
-        onCancel={() => {
-          setIsForegroundModal(false);
-        }}
-        onAccept={async () => {
-          setIsForegroundModal(false);
-          await checkPermissionForeground();
-        }}
-      />
-      <ModalPermission
-        isOpen={isBackgroundModal}
-        title={titleLocationBackground}
-        onCancel={() => {
-          setIsBackgroundModal(false);
-        }}
-        onAccept={async () => {
-          setIsBackgroundModal(false);
-          await checkPermissionBackground();
-        }}
-      />
     </permissionsContext.Provider>
   );
 };

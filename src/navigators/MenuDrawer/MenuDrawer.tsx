@@ -1,11 +1,13 @@
 import React, { FunctionComponent, useMemo } from "react";
+import { Dimensions } from "react-native";
 import {
   DrawerNavigationOptions,
   createDrawerNavigator,
 } from "@react-navigation/drawer";
+
+// screens
 import { MenuSettings } from "../../screens/mainScreens/MenuSettings/MenuSettings";
-import { Dimensions } from "react-native";
-import { MainTabs } from "../MainTabs/MainTabs";
+import { MainTabs } from "../MainTabs/mainTabs";
 
 const Drawer = createDrawerNavigator();
 export const MenuDrawer: FunctionComponent = () => {
