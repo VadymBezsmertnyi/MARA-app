@@ -1569,7 +1569,7 @@ msgid "Last update"
 msgstr "Останнє оновлення"
 
 msgid "Latest"
-msgstr "Останній"
+msgstr "Найновіші"
 
 msgid "Leave a review"
 msgstr "Залишити відгук"
