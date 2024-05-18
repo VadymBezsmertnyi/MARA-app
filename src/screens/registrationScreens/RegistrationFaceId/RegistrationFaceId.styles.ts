@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
   },
   containerTitles: { flex: 1, gap: 20, alignItems: "center" },
   title: {
-    width: 200,
     fontSize: 28,
     fontWeight: "700",
     color: colors.blackCoffee,
