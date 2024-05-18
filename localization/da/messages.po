@@ -1090,8 +1090,8 @@ msgid "Button for closing the registration FaceID"
 msgstr "Knap til at lukke registreringen FaceID"
 
 #. js-lingui-explicit-id
-msgid "The length of the name should be between 5 and 20 characters"
-msgstr "Længden af navnet skal være mellem 5 og 20 tegn"
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "Længden af navnet skal være mellem 2 og 20 tegn"
 
 #. js-lingui-explicit-id
 msgid "Registration"

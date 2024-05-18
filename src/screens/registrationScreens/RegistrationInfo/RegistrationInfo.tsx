@@ -42,7 +42,7 @@ export const RegistrationInfo: FunctionComponent = () => {
   const [errorMessageLogin, setErrorMessageLogin] = useState("");
 
   const onSave = async () => {
-    if (login.length >= 5 && login.length <= 20) {
+    if (login.length >= 2 && login.length <= 20) {
       const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
       const clearPhoneNumber = getClearValue(phoneNumber);
       const { firstName, lastName } = getNamesUser(userData);
@@ -57,7 +57,7 @@ export const RegistrationInfo: FunctionComponent = () => {
       if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
     } else
       setErrorMessageLogin(
-        i18n._("The length of the name should be between 5 and 20 characters")
+        i18n._("The length of the name should be between 2 and 20 characters")
       );
   };
 

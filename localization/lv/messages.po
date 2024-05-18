@@ -1090,8 +1090,8 @@ msgid "Button for closing the registration FaceID"
 msgstr "Mygtukas uždaryti registracijos FaceID"
 
 #. js-lingui-explicit-id
-msgid "The length of the name should be between 5 and 20 characters"
-msgstr "Pavadinimo ilgis turi būti nuo 5 iki 20 simbolių"
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "Pavadinimo ilgis turi būti nuo 2 iki 20 simbolių"
 
 #. js-lingui-explicit-id
 msgid "Registration"
