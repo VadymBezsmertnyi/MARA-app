@@ -1436,9 +1436,6 @@ msgstr "Visas fotogrāfijas"
 msgid "Allow"
 msgstr "Atļaut"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Atļaut Face ID piekļūt {nameApp} lietotnei."
-
 msgid "Allow later"
 msgstr "Atļaut vēlāk"
 
@@ -1519,6 +1516,9 @@ msgstr "Apraksts"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Vai vēlaties nosūtīt SOS signālu?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Iespējot pierakstīšanos lietotnē, izmantojot Face ID"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Kļūdas atslēgas žetons: Slepenā atslēga nav definēta vides mainīgajos"

@@ -73,7 +73,7 @@ export const RegistrationFaceId: FunctionComponent = () => {
           <Trans>Allow login using Face ID</Trans>
         </Text>
         <Text numberOfLines={2} style={styles.subTitle}>
-          <Trans>Allow Face ID to access the {nameApp} app.</Trans>
+          <Trans>Enable logging into the app using Face ID</Trans>
         </Text>
       </View>
       <View style={styles.containerIcon}>

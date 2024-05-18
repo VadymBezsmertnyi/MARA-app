@@ -1436,9 +1436,6 @@ msgstr "Усе фота"
 msgid "Allow"
 msgstr "Дазволіць"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Дазволіць Face ID доступ да праграмы {nameApp}."
-
 msgid "Allow later"
 msgstr "Дазволіць пазней"
 
@@ -1519,6 +1516,9 @@ msgstr "Апісанне"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Вы хочаце паслаць сігнал SOS?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Уключыць уваход у прыкладанне праз Face ID"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Памылка ключа токена: Сакрэтны ключ не вызначаны ў зменных асяроддзя"

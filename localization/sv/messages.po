@@ -1436,9 +1436,6 @@ msgstr "Alla foton"
 msgid "Allow"
 msgstr "Tillåt"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Tillåt Face ID att få åtkomst till {nameApp}-appen."
-
 msgid "Allow later"
 msgstr "Tillåt senare"
 
@@ -1519,6 +1516,9 @@ msgstr "Beskrivning"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Vill du skicka en SOS-signal?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Aktivera inloggning i appen med Face ID"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Fel nyckel-token: Hemlig nyckel är inte definierad i miljövariablerna"

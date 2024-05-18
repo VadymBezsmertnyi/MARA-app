@@ -1436,9 +1436,6 @@ msgstr "Összes fénykép"
 msgid "Allow"
 msgstr "Engedélyezés"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Engedélyezze a Face ID-t a {nameApp} alkalmazáshoz való hozzáféréshez."
-
 msgid "Allow later"
 msgstr "Engedélyezés később"
 
@@ -1519,6 +1516,9 @@ msgstr "Leírás"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Szeretne SOS jelzést küldeni?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Engedélyezze a bejelentkezést az alkalmazásba Face ID használatával"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Hiba a kulcs tokenben: A titkos kulcs nincs definiálva a környezeti változókban"

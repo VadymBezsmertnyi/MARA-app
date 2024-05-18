@@ -1436,9 +1436,6 @@ msgstr "Todas las fotos"
 msgid "Allow"
 msgstr "Permitir"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Permitir que Face ID acceda a la aplicación {nameApp}."
-
 msgid "Allow later"
 msgstr "Permitir más tarde"
 
@@ -1519,6 +1516,9 @@ msgstr "Descripción"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "¿Quieres enviar una señal de SOS?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Habilitar el inicio de sesión en la aplicación usando Face ID"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Error de clave de token: la clave secreta no está definida en las variables de entorno"

@@ -1436,9 +1436,6 @@ msgstr "Toate fotografiile"
 msgid "Allow"
 msgstr "Permiteți"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Permiteți accesul cu Face ID la aplicația {nameApp}."
-
 msgid "Allow later"
 msgstr "Permiteți mai târziu"
 
@@ -1519,6 +1516,9 @@ msgstr "Descriere"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Doriți să trimiteți un semnal SOS?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Permiteți conectarea la aplicație folosind Face ID"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Eroare cheie de token: Cheia secretă nu este definită în variabilele de mediu"

@@ -1436,9 +1436,6 @@ msgstr "Όλες οι φωτογραφίες"
 msgid "Allow"
 msgstr "Να επιτραπεί"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Επιτρέψτε στο Face ID να έχει πρόσβαση στην εφαρμογή {nameApp}."
-
 msgid "Allow later"
 msgstr "Να επιτραπεί αργότερα"
 
@@ -1519,6 +1516,9 @@ msgstr "Περιγραφή"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Θέλετε να στείλετε ένα σήμα SOS;"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Ενεργοποίηση σύνδεσης στην εφαρμογή χρησιμοποιώντας το Face ID"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Σφάλμα κλειδιού του token: Το μυστικό κλειδί δεν έχει οριστεί στις μεταβλητές περιβάλλοντος"

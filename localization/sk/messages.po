@@ -1436,9 +1436,6 @@ msgstr "Všetky fotografie"
 msgid "Allow"
 msgstr "Povoliť"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Povoliť prístup cez Face ID k aplikácii {nameApp}."
-
 msgid "Allow later"
 msgstr "Povoliť neskôr"
 
@@ -1519,6 +1516,9 @@ msgstr "Popis"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Chcete odoslať SOS signál?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Povoliť prihlásenie do aplikácie pomocou Face ID"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Chyba kľúčového tokenu: Tajný kľúč nie je definovaný v premenných prostredia"

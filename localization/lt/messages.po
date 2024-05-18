@@ -1436,9 +1436,6 @@ msgstr "Visos nuotraukos"
 msgid "Allow"
 msgstr "Leisti"
 
-msgid "Allow Face ID to access the {nameApp} app."
-msgstr "Leisti „Face ID“ naudoti „{nameApp}“ programoje."
-
 msgid "Allow later"
 msgstr "Leisti vėliau"
 
@@ -1519,6 +1516,9 @@ msgstr "Aprašymas"
 
 msgid "Do you want to send an SOS signal?"
 msgstr "Ar norite siųsti SOS signalą?"
+
+msgid "Enable logging into the app using Face ID"
+msgstr "Įjungti prisijungimą prie programos naudojant „Face ID“"
 
 msgid "Error key token: Secret key is not defined in the environment variables"
 msgstr "Klaida raktų prieigos ženklui: Slaptažodis nėra apibrėžtas aplinkos kintamuosiuose"
