@@ -358,6 +358,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         <ScrollView>
           <View style={styles.containerInputs}>
             <Input
+              isRegular
               placeholder={i18n._("Enter the name of the workshop")}
               label={i18n._("Workshop name")}
               value={title}
@@ -368,6 +369,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               errorMessage={errorMessage?.title ? errorMessage.title.title : ""}
             />
             <InputButton
+              isRegular
               label={i18n._("Workshop address")}
               placeholder={i18n._("Enter the address")}
               value={showTitlePlace}
@@ -379,6 +381,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               errorMessage={errorMessage?.place ? errorMessage.place.title : ""}
             />
             <Input
+              isRegular
               placeholder={i18n._("Add a description about the workshop")}
               label={i18n._("Workshop description")}
               value={description}
@@ -395,7 +398,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
             />
             <View>
               <InputPhone
-                label={i18n._("Phone number*:")}
+                isRegular
+                label={i18n._("Phone number")}
                 phoneNumber={phoneNumber}
                 setPhoneNumber={(value) => {
                   clearKeyError("phoneNumber");
@@ -411,7 +415,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 }
               />
               <InputButton
-                isSelect
+                isRegular
                 value={valueTypesWorkshops}
                 label={i18n._("Type workshop")}
                 placeholder={i18n._("Select type")}
@@ -433,7 +437,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               />
             </View>
             <InputButton
-              isSelect
+              isRegular
               isMultiLines
               disabled={!(typeWorkshops.auto || typeWorkshops.moto)}
               value={valueTypesWork}
@@ -455,7 +459,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                   : ""
               }
             />
-            <BoxSelectImages isSubTitle images={images} setImages={setImages} />
+            <BoxSelectImages
+              isRegular
+              isSubTitle
+              images={images}
+              setImages={setImages}
+            />
             <View style={styles.containerSubmit}>
               <Text style={styles.errorMessage}>
                 {errorMessage?.errorMessage?.title || ""}

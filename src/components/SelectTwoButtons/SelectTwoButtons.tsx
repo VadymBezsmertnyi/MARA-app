@@ -8,6 +8,7 @@ import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 import { styles } from "./SelectTwoButtons.styles";
 
 type SelectTwoButtonsProps = {
+  isRegular?: boolean;
   isSelectFirst: boolean | null;
   titleFirst: string;
   titleSecond: string;
@@ -19,6 +20,7 @@ type SelectTwoButtonsProps = {
 };
 
 export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
+  isRegular = false,
   isSelectFirst,
   titleFirst,
   titleSecond,
@@ -40,7 +42,14 @@ export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
 
   return (
     <View style={containerStyles}>
-      <Text style={titleStyles}>{label}</Text>
+      <Text style={titleStyles}>
+        {label}
+        {isRegular ? (
+          <>
+            :<Text style={styles.labelRegular}>*</Text>
+          </>
+        ) : null}
+      </Text>
       <View style={styles.containerSelectType}>
         <ButtonCustom
           title={titleFirst}

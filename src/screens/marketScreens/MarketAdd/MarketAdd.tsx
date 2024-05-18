@@ -402,7 +402,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           contentContainerStyle={containerScrollStyle}
         >
           <Input
-            isSelect
+            isRegular
             placeholder={i18n._("Enter the name of the advert")}
             label={i18n._("Advert name")}
             value={title}
@@ -413,7 +413,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             errorMessage={errorMessage?.title ? errorMessage.title.title : ""}
           />
           <InputButton
-            isSelect
+            isRegular
             placeholder={i18n._("Category")}
             value={select?.category?.name || i18n._("Category")}
             onPress={() => {
@@ -433,10 +433,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             }
           />
           <SelectTwoButtons
+            isRegular
             isSelectFirst={isNew}
             titleFirst={i18n._("New")}
             titleSecond={i18n._("Used")}
-            label={i18n._("The state of the goods:")}
+            label={i18n._("The state of the goods")}
             onPressFirst={() => {
               clearKeyError("isNew");
               setIsNew(true);
@@ -448,10 +449,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             containerStyle={styles.containerTwoButtons}
           />
           <SelectTwoButtons
+            isRegular
             isSelectFirst={!isBusiness}
             titleFirst={i18n._("Private individual")}
             titleSecond={i18n._("Business")}
-            label={i18n._("Seller:")}
+            label={i18n._("Seller")}
             onPressFirst={() => {
               setPlace(null);
               clearKeyError("isBusiness");
@@ -465,7 +467,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             containerStyle={styles.containerTwoButtons}
           />
           <InputButton
-            isSelect
+            isRegular
             label={i18n._("Location")}
             placeholder={i18n._("Choose a city")}
             value={showTitlePlace}
@@ -495,8 +497,14 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             errorMessage={errorMessage}
             clearKeyError={clearKeyError}
           />
-          <BoxSelectImages isSubTitle images={images} setImages={setImages} />
+          <BoxSelectImages
+            isRegular
+            isSubTitle
+            images={images}
+            setImages={setImages}
+          />
           <Input
+            isRegular
             placeholder={i18n._("Add a description about the advert")}
             label={i18n._("Advert description")}
             value={description}
@@ -512,6 +520,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             }
           />
           <PriceCurrency
+            isRegular
             value={price}
             onChange={setPrice}
             code={codeCurrency}
@@ -524,7 +533,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               <Trans>Your contact information</Trans>*:
             </Text>
             <Input
-              isSelect
+              isRegular
               placeholder={i18n._("@fgt_com")}
               label={i18n._("Your telegram")}
               value={telegram}
@@ -538,7 +547,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               labelStyle={styles.labelInputContacts}
             />
             <InputPhone
-              label={i18n._("Phone number:")}
+              isRegular
+              label={i18n._("Phone number")}
               phoneNumber={phoneNumber}
               setPhoneNumber={(value) => {
                 clearKeyError("phoneNumber");

@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "600",
   },
+  labelRegular: { color: colors.errorRed },
   phoneInput: {
     width: "100%",
     borderColor: colors.gainsboroGray,

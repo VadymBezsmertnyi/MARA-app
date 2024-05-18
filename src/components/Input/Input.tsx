@@ -103,11 +103,12 @@ export const Input: FunctionComponent<InputProps> = ({
       {label && (
         <Text style={labelStyles}>
           {label}
-          {isSelect ? ":" : null}
           {isRegular ? (
             <>
               :<Text style={styles.labelRegular}>*</Text>
             </>
+          ) : isSelect ? (
+            ":"
           ) : null}
         </Text>
       )}

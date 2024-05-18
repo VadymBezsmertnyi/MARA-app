@@ -19,6 +19,7 @@ import { SelectPicker } from "../SelectPicker/SelectPicker";
 import { styles } from "./PriceCurrency.styles";
 
 type PriceCurrencyProps = {
+  isRegular?: boolean;
   label?: string;
   value: string;
   code: CodeCurrenciesType;
@@ -29,6 +30,7 @@ type PriceCurrencyProps = {
 };
 
 export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
+  isRegular = false,
   label,
   value,
   code,
@@ -57,7 +59,14 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
-        {label ? label : i18n._("The price of the item")}:
+        {label ? label : i18n._("The price of the item")}
+        {isRegular ? (
+          <>
+            :<Text style={styles.labelRegular}>*</Text>
+          </>
+        ) : (
+          ":"
+        )}
       </Text>
       <View style={styles.containerInputs}>
         <Input

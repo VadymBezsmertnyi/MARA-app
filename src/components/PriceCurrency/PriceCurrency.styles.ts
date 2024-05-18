@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.blackCoffee,
   },
+  labelRegular: { color: colors.errorRed },
   containerInputs: {
     flexDirection: "row",
     gap: 8,

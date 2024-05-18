@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     fontSize: scaleFont(16),
     color: colors.blackCoffee,
   },
+  labelRegular: { color: colors.errorRed },
   subTitle: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(16),

@@ -14,6 +14,7 @@ import { ImagesSelect } from "../ImagesSelect/ImagesSelect";
 import { styles } from "./BoxSelectImages.styles";
 
 type BoxSelectImagesProps = {
+  isRegular?: boolean;
   images: ImageType[];
   setImages: React.Dispatch<React.SetStateAction<ImageType[]>>;
   isSubTitle?: boolean;
@@ -21,6 +22,7 @@ type BoxSelectImagesProps = {
 };
 
 export const BoxSelectImages: FunctionComponent<BoxSelectImagesProps> = ({
+  isRegular = false,
   images,
   setImages,
   isSubTitle = false,
@@ -35,7 +37,16 @@ export const BoxSelectImages: FunctionComponent<BoxSelectImagesProps> = ({
 
   return (
     <View style={containerStyles}>
-      <Text style={styles.title}>{i18n._("Add a photo")}:</Text>
+      <Text style={styles.title}>
+        {i18n._("Add a photo")}
+        {isRegular ? (
+          <>
+            :<Text style={styles.labelRegular}>*</Text>
+          </>
+        ) : (
+          ":"
+        )}
+      </Text>
       {isSubTitle ? (
         <Text style={styles.subTitle}>
           {i18n._("The first photo will be on the cover of the advertisement.")}
