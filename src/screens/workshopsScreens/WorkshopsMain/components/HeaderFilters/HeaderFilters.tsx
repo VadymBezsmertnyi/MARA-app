@@ -25,6 +25,8 @@ export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
   onPressFilter,
   onPressSort,
 }) => {
+  // TODO: will do later
+  const isFilter = false;
   const IconShowType = useMemo(
     () =>
       isWrap ? (
@@ -46,9 +48,11 @@ export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
           {IconShowType}
         </TouchableOpacity>
       ) : null}
-      <TouchableOpacity onPress={onPressSort}>
-        <IconSort width={20} height={20} />
-      </TouchableOpacity>
+      {isFilter && (
+        <TouchableOpacity onPress={onPressSort}>
+          <IconSort width={20} height={20} />
+        </TouchableOpacity>
+      )}
       <TouchableOpacity onPress={onPressFilter}>
         <IconFilter width={20} height={20} />
       </TouchableOpacity>
