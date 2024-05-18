@@ -106,6 +106,7 @@ export const styles = StyleSheet.create({
   fullTextTitle: {
     fontSize: 16,
     lineHeight: 24,
+    bottom: -2,
     color: colors.blueTufts,
   },
   mapWrapper: { height: 400, marginTop: 20 },

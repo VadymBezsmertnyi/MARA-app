@@ -92,7 +92,7 @@ export const styles = StyleSheet.create({
   titleButtonDescription: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
-    lineHeight: 24,
+    bottom: -2,
     color: colors.blueTufts,
   },
 });
