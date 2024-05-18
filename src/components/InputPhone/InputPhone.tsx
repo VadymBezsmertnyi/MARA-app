@@ -67,13 +67,30 @@ export const InputPhone = ({
     () => [styles.container, containerStyle],
     [containerStyle]
   );
-  const labelStyles = useMemo(
-    () => [styles.label, theme === THEME_DARK && styles.colorWhite, labelStyle],
-    [labelStyle, theme]
+  const labelStyles: StyleProp<TextStyle> = useMemo(
+    () => [
+      styles.label,
+      theme === THEME_DARK && styles.colorWhite,
+      labelStyle,
+      errorMessage?.length
+        ? {
+            color: colors.errorRed,
+          }
+        : {},
+    ],
+    [labelStyle, theme, errorMessage]
   );
-  const phoneInputStyles = useMemo(
-    () => [styles.phoneInput, inputStyle],
-    [inputStyle]
+  const phoneInputStyles: StyleProp<TextStyle> = useMemo(
+    () => [
+      styles.phoneInput,
+      inputStyle,
+      errorMessage?.length
+        ? {
+            borderColor: colors.errorRed,
+          }
+        : {},
+    ],
+    [inputStyle, errorMessage]
   );
   const errorMessageStyles = useMemo(
     () => [styles.errorMessage, errorStyle],

@@ -16,6 +16,7 @@ import { Splash } from "../screens/Splash/Splash";
 
 // main stack
 import { MenuDrawer } from "./MenuDrawer/MenuDrawer";
+import { RegistrationInfo } from "../screens/registrationScreens/RegistrationInfo/RegistrationInfo";
 
 export const useNavigators = () => {
   const { i18n } = useContext(localesContext);
@@ -49,7 +50,7 @@ export const useNavigators = () => {
       id: "main",
       name: PATHS_MAIN_SCREENS.main,
       title: t(i18n)`Main`,
-      component: MenuDrawer,
+      component: RegistrationInfo,
       headerShown: false,
       gestureEnabled: false,
     },

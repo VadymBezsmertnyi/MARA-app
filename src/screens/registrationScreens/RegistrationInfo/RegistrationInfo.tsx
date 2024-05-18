@@ -40,10 +40,11 @@ export const RegistrationInfo: FunctionComponent = () => {
   const [phoneNumber, setPhoneNumber] = useState("+380");
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [errorMessageLogin, setErrorMessageLogin] = useState("");
+  const [errorMessagePhone, setErrorMessagePhone] = useState("");
 
   const onSave = async () => {
-    if (login.length >= 2 && login.length <= 20) {
-      const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
+    const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
+    if (isPhone && login.length >= 2 && login.length <= 20) {
       const clearPhoneNumber = getClearValue(phoneNumber);
       const { firstName, lastName } = getNamesUser(userData);
 
@@ -55,15 +56,16 @@ export const RegistrationInfo: FunctionComponent = () => {
         ...(isPhone && { phoneNumber: clearPhoneNumber }),
       });
       if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
-    } else
+    } else if (!isPhone) setErrorMessagePhone(i18n._("Invalid phone number"));
+    else
       setErrorMessageLogin(
         i18n._("The length of the name should be between 2 and 20 characters")
       );
   };
 
-  const onLater = () => {
+  /* const onLater = () => {
     navigation.navigate(PATHS_MAIN_SCREENS.main);
-  };
+  }; */
 
   const onChangeLogin = (value: string) => {
     setErrorMessageLogin("");
@@ -96,25 +98,29 @@ export const RegistrationInfo: FunctionComponent = () => {
             errorMessage={errorMessageLogin}
           />
           <InputPhone
-            label={i18n._("Phone number:")}
+            label={`${i18n._("Phone number:")}*`}
             phoneNumber={phoneNumber}
             setPhoneNumber={setPhoneNumber}
             selectCountryIso={selectCountryIso}
             setSelectCountryIso={setSelectCountryIso}
+            errorMessage={errorMessagePhone}
           />
         </View>
         <View style={styles.containerButton}>
           <ButtonCustom
-            disabled={errorMessageLogin.length > 0}
+            disabled={
+              errorMessageLogin.length > 0 || errorMessagePhone.length > 0
+            }
             title={i18n._("Save")}
             onSubmit={onSave}
           />
+          {/* TODO: add later
           <ButtonCustom
             disabled={errorMessageLogin.length > 0}
             title={i18n._("Fill out later")}
             onSubmit={onLater}
             type="transparent"
-          />
+          /> */}
         </View>
       </ScrollView>
     </View>
