@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Integritetspolicy"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Växla automatisk identifiering av plats i bakgrunden"
+msgid "Report an error/improvement"
+msgstr "Rapportera ett fel/förbättring"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Använd"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Varans skick:"
+msgid "The state of the goods"
+msgstr "Varans skick"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Företag"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Säljare:"
+msgid "Seller"
+msgstr "Säljare"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Annonsbeskrivning"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publicera"
 
@@ -900,10 +904,6 @@ msgstr "Märke"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Skick"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Säljare"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Typ av delar"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Filter"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Varans skick:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Säljare:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Varning! Alla data relaterade till företaget \"{nameBusiness}\" kommer att raderas."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Visa"
+msgid "Add"
+msgstr "Lägg till"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Förbrukad: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Tillgänglig: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktiv"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Verkstadsbeskrivning"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefonnummer*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Typ av verkstad"
 
@@ -1420,9 +1436,6 @@ msgstr "Åtkomst till geoplats i bakgrunds läge"
 msgid "Access to geolocation when using the application"
 msgstr "Åtkomst till geoplats vid användning av applikationen"
 
-msgid "Add"
-msgstr "Lägg till"
-
 msgid "Add advert"
 msgstr "Lägg till annons"
 
@@ -1431,9 +1444,6 @@ msgstr "Lägg till händelse"
 
 msgid "Add workshop"
 msgstr "Lägg till verkstad"
-
-msgid "Additional contacts:"
-msgstr "Ytterligare kontakter:"
 
 msgid "All cities"
 msgstr "Alla städer"
@@ -1470,12 +1480,6 @@ msgstr "Är du säker på att du vill ta bort?"
 
 msgid "Automatically detect location"
 msgstr "Identifiera plats automatiskt"
-
-msgid "Automatically detect location in the background"
-msgstr "Identifiera plats automatiskt i bakgrunden"
-
-msgid "Available"
-msgstr "Tillgängligt"
 
 msgid "Back"
 msgstr "Tillbaka"
@@ -1702,9 +1706,6 @@ msgstr "Tyvärr finns det inga kommande verkstäder"
 msgid "Sorry!"
 msgstr "Tyvärr!"
 
-msgid "SOS signal"
-msgstr "SOS-signal"
-
 msgid "Specify the city"
 msgstr "Ange staden"
 
@@ -1737,9 +1738,6 @@ msgstr "Typer av arbete för motorcykeltransport:"
 
 msgid "Upcoming events:"
 msgstr "Kommande händelser:"
-
-msgid "Used"
-msgstr "Används"
 
 msgid "Views:"
 msgstr "Visningar:"

@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Politique de confidentialité"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Activer la détection automatique de la localisation en arrière-plan"
+msgid "Report an error/improvement"
+msgstr "Signaler une erreur/amélioration"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Utilisé"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "L'état des biens :"
+msgid "The state of the goods"
+msgstr "L'état des biens"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Entreprise"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Vendeur :"
+msgid "Seller"
+msgstr "Vendeur"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Description de l'annonce"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publier"
 
@@ -900,10 +904,6 @@ msgstr "Marque"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "État"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Vendeur"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Type de pièces"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Filtre"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "L'état des biens :"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Vendeur :"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Attention ! Toutes les données relatives à l'entreprise \"{nameBusiness}\" seront supprimées."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Voir"
+msgid "Add"
+msgstr "Ajouter"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Dépensé : {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Disponible : {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Actif"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Description de l'atelier"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Numéro de téléphone* :"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Type d'atelier"
 
@@ -1420,9 +1436,6 @@ msgstr "Accès à la géolocalisation en mode arrière-plan"
 msgid "Access to geolocation when using the application"
 msgstr "Accès à la géolocalisation lors de l'utilisation de l'application"
 
-msgid "Add"
-msgstr "Ajouter"
-
 msgid "Add advert"
 msgstr "Ajouter une annonce"
 
@@ -1431,9 +1444,6 @@ msgstr "Ajouter un événement"
 
 msgid "Add workshop"
 msgstr "Ajouter un atelier"
-
-msgid "Additional contacts:"
-msgstr "Contacts supplémentaires :"
 
 msgid "All cities"
 msgstr "Toutes les villes"
@@ -1470,12 +1480,6 @@ msgstr "Êtes-vous sûr de vouloir supprimer ?"
 
 msgid "Automatically detect location"
 msgstr "Détection automatique de la localisation"
-
-msgid "Automatically detect location in the background"
-msgstr "Détection automatique de la localisation en arrière-plan"
-
-msgid "Available"
-msgstr "Disponible"
 
 msgid "Back"
 msgstr "Retour"
@@ -1702,9 +1706,6 @@ msgstr "Désolé, il n'y a pas d'ateliers à venir"
 msgid "Sorry!"
 msgstr "Désolé !"
 
-msgid "SOS signal"
-msgstr "Signal SOS"
-
 msgid "Specify the city"
 msgstr "Indiquez la ville"
 
@@ -1737,9 +1738,6 @@ msgstr "Types de travaux pour le transport de motos :"
 
 msgid "Upcoming events:"
 msgstr "Événements à venir :"
-
-msgid "Used"
-msgstr "Utilisé"
 
 msgid "Views:"
 msgstr "Vues :"

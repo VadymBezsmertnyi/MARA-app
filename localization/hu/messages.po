@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Adatvédelmi irányelvek"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Hely automatikus háttérben történő észlelésének kapcsolása"
+msgid "Report an error/improvement"
+msgstr "Hiba/javítás bejelentése"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Használt"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Az árucikk állapota:"
+msgid "The state of the goods"
+msgstr "Az árucikk állapota"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Vállalkozás"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Eladó:"
+msgid "Seller"
+msgstr "Eladó"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Hirdetés leírása"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefonszám"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Közzététel"
 
@@ -900,10 +904,6 @@ msgstr "Márka"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Állapot"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Eladó"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Alkatrésztípus"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Szűrő"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Az árucikk állapota:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Eladó:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Figyelem! Az \"{nameBusiness}\" üzletre vonatkozó összes adat törlődni fog."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Megtekintés"
+msgid "Add"
+msgstr "Hozzáadás"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Felhasznált: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Elérhető: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktív"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Műhely leírása"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefonszám*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Műhely típusa"
 
@@ -1420,9 +1436,6 @@ msgstr "Hozzáférés a háttérben futó helymeghatározáshoz"
 msgid "Access to geolocation when using the application"
 msgstr "Hozzáférés a helymeghatározáshoz az alkalmazás használatakor"
 
-msgid "Add"
-msgstr "Hozzáadás"
-
 msgid "Add advert"
 msgstr "Hirdetés hozzáadása"
 
@@ -1431,9 +1444,6 @@ msgstr "Esemény hozzáadása"
 
 msgid "Add workshop"
 msgstr "Műhely hozzáadása"
-
-msgid "Additional contacts:"
-msgstr "További kapcsolatok:"
 
 msgid "All cities"
 msgstr "Összes város"
@@ -1470,12 +1480,6 @@ msgstr "Biztosan törölni szeretné?"
 
 msgid "Automatically detect location"
 msgstr "Hely automatikus érzékelése"
-
-msgid "Automatically detect location in the background"
-msgstr "Hely automatikus észlelése a háttérben"
-
-msgid "Available"
-msgstr "Elérhető"
 
 msgid "Back"
 msgstr "Vissza"
@@ -1702,9 +1706,6 @@ msgstr "Sajnáljuk, jelenleg nincsenek közelgő műhelyek"
 msgid "Sorry!"
 msgstr "Sajnáljuk!"
 
-msgid "SOS signal"
-msgstr "SOS jel"
-
 msgid "Specify the city"
 msgstr "Adja meg a várost"
 
@@ -1737,9 +1738,6 @@ msgstr "Munkatípusok motorkerékpár szállításhoz:"
 
 msgid "Upcoming events:"
 msgstr "Közelgő események:"
-
-msgid "Used"
-msgstr "Használt"
 
 msgid "Views:"
 msgstr "Megtekintések:"

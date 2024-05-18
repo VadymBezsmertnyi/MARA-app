@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Privatumo politika"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Pārslēdziet automātisko atrašanās vietas noteikšanu fonā"
+msgid "Report an error/improvement"
+msgstr "Pranešti apie klaidą/pokytį"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Lietots"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Preces stāvoklis:"
+msgid "The state of the goods"
+msgstr "Preces stāvoklis"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Uzņēmums"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Pārdevējs:"
+msgid "Seller"
+msgstr "Pārdevējs"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Sludinājuma apraksts"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefona numurs"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publicēt"
 
@@ -900,10 +904,6 @@ msgstr "Marka"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Stāvoklis"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Pārdevējs"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Detaļu tips"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Filtrs"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Preces stāvoklis:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Pārdevējs:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Uzmanību! Visi ar uzņēmumu saistītie dati tiks dzēsti."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Skatīt"
+msgid "Add"
+msgstr "Pievienot"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Izmantots: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Pieejams: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktīvs"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Darbnīcas apraksts"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefona numurs*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Darbnīcas tips"
 
@@ -1420,9 +1436,6 @@ msgstr "Pieeja ģeolokācijai fona režīmā"
 msgid "Access to geolocation when using the application"
 msgstr "Pieeja ģeolokācijai lietojot lietotni"
 
-msgid "Add"
-msgstr "Pievienot"
-
 msgid "Add advert"
 msgstr "Pievienot reklāmu"
 
@@ -1431,9 +1444,6 @@ msgstr "Pievienot notikumu"
 
 msgid "Add workshop"
 msgstr "Pievienot darbnīcu"
-
-msgid "Additional contacts:"
-msgstr "Papildus kontakti:"
 
 msgid "All cities"
 msgstr "Visas pilsētas"
@@ -1470,12 +1480,6 @@ msgstr "Vai tiešām vēlaties dzēst?"
 
 msgid "Automatically detect location"
 msgstr "Automātiski noteikt atrašanās vietu"
-
-msgid "Automatically detect location in the background"
-msgstr "Automātiska atrašanās vietas noteikšana fonā"
-
-msgid "Available"
-msgstr "Pieejams"
 
 msgid "Back"
 msgstr "Atpakaļ"
@@ -1702,9 +1706,6 @@ msgstr "Atvainojiet, nav nākotnes darbnīcu"
 msgid "Sorry!"
 msgstr "Atvainojiet!"
 
-msgid "SOS signal"
-msgstr "SOS signāls"
-
 msgid "Specify the city"
 msgstr "Norādiet pilsētu"
 
@@ -1737,9 +1738,6 @@ msgstr "Veicamo darbu veidi motociklu transportam:"
 
 msgid "Upcoming events:"
 msgstr "Nākamie notikumi:"
-
-msgid "Used"
-msgstr "Izmantots"
 
 msgid "Views:"
 msgstr "Skatījumi:"

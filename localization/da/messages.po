@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Fortrolighedspolitik"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Skift automatisk detektion af placering i baggrunden"
+msgid "Report an error/improvement"
+msgstr "Rapporter en fejl/forbedring"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Brugt"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Tilstand af varerne:"
+msgid "The state of the goods"
+msgstr "Tilstand af varerne"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Virksomhed"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Sælger:"
+msgid "Seller"
+msgstr "Sælger"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Annonsebeskrivelse"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Offentliggør"
 
@@ -900,10 +904,6 @@ msgstr "Mærke"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Tilstand"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Sælger"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Dele type"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Filter"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Tilstand af varerne:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Sælger:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Advarsel! Alle data relateret til virksomheden \"{nameBusiness}\" vil blive slettet."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Vis"
+msgid "Add"
+msgstr "Tilføj"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Udvidet: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Tilgængelig: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktiv"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Beskrivelse af værksted"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefonnummer*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Vælg værkstedstype"
 
@@ -1420,9 +1436,6 @@ msgstr "Adgang til geolokalisering i baggrundstilstand"
 msgid "Access to geolocation when using the application"
 msgstr "Adgang til geolokalisering ved brug af applikationen"
 
-msgid "Add"
-msgstr "Tilføj"
-
 msgid "Add advert"
 msgstr "Tilføj annonce"
 
@@ -1431,9 +1444,6 @@ msgstr "Tilføj begivenhed"
 
 msgid "Add workshop"
 msgstr "Tilføj værksted"
-
-msgid "Additional contacts:"
-msgstr "Yderligere kontakter:"
 
 msgid "All cities"
 msgstr "Alle byer"
@@ -1470,12 +1480,6 @@ msgstr "Er du sikker på, at du vil slette?"
 
 msgid "Automatically detect location"
 msgstr "Registrer placering automatisk"
-
-msgid "Automatically detect location in the background"
-msgstr "Automatisk detektion af placering i baggrunden"
-
-msgid "Available"
-msgstr "Tilgængelig"
 
 msgid "Back"
 msgstr "Tilbage"
@@ -1702,9 +1706,6 @@ msgstr "Beklager, der er ingen kommende værksteder"
 msgid "Sorry!"
 msgstr "Beklager!"
 
-msgid "SOS signal"
-msgstr "SOS-signal"
-
 msgid "Specify the city"
 msgstr "Angiv byen"
 
@@ -1737,9 +1738,6 @@ msgstr "Arbejdstyper for motorcykeltransport:"
 
 msgid "Upcoming events:"
 msgstr "Kommende begivenheder:"
-
-msgid "Used"
-msgstr "Brugt"
 
 msgid "Views:"
 msgstr "Visninger:"

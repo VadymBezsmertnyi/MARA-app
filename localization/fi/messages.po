@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Yksityisyydensuoja"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Vaihda taustalla tapahtuva paikan automaattinen tunnistus"
+msgid "Report an error/improvement"
+msgstr "Ilmoita virheestä/parannuksesta"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Käytetty"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Tavaroiden tila:"
+msgid "The state of the goods"
+msgstr "Tavaroiden tila"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Yritys"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Myyjä:"
+msgid "Seller"
+msgstr "Myyjä"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Mainoksen kuvaus"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Puhelinnumero"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Julkaise"
 
@@ -900,10 +904,6 @@ msgstr "Merkki"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Kunto"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Myyjä"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Osatyyppi"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Suodatin"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Tavaroiden tila:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Myyjä:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Huomio! Kaikki yritykseen \"{nameBusiness}\" liittyvät tiedot poistetaan."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Näytä"
+msgid "Add"
+msgstr "Lisää"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Käytetty: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Saatavilla: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktiivinen"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Työpajan kuvaus"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Puhelinnumero*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Työpajan tyyppi"
 
@@ -1420,9 +1436,6 @@ msgstr "Pääsy sijaintiin taustatilassa"
 msgid "Access to geolocation when using the application"
 msgstr "Pääsy sijaintiin sovelluksen käytön aikana"
 
-msgid "Add"
-msgstr "Lisää"
-
 msgid "Add advert"
 msgstr "Lisää ilmoitus"
 
@@ -1431,9 +1444,6 @@ msgstr "Lisää tapahtuma"
 
 msgid "Add workshop"
 msgstr "Lisää työpaja"
-
-msgid "Additional contacts:"
-msgstr "Lisäyhteystiedot:"
 
 msgid "All cities"
 msgstr "Kaikki kaupungit"
@@ -1470,12 +1480,6 @@ msgstr "Haluatko varmasti poistaa?"
 
 msgid "Automatically detect location"
 msgstr "Tunnista sijainti automaattisesti"
-
-msgid "Automatically detect location in the background"
-msgstr "Tunnista sijainti automaattisesti taustalla"
-
-msgid "Available"
-msgstr "Saatavilla"
 
 msgid "Back"
 msgstr "Takaisin"
@@ -1702,9 +1706,6 @@ msgstr "Pahoittelut, tulevia työpajoja ei ole"
 msgid "Sorry!"
 msgstr "Pahoittelut!"
 
-msgid "SOS signal"
-msgstr "SOS-signaali"
-
 msgid "Specify the city"
 msgstr "Määritä kaupunki"
 
@@ -1737,9 +1738,6 @@ msgstr "Työtyypit moottoripyöräliikenteelle:"
 
 msgid "Upcoming events:"
 msgstr "Tulevat tapahtumat:"
-
-msgid "Used"
-msgstr "Käytetty"
 
 msgid "Views:"
 msgstr "Näkymät:"

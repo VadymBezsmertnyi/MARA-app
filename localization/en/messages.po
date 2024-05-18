@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Privacy policy"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Toggle automatically detect location in the background"
+msgid "Report an error/improvement"
+msgstr "Report an error/improvement"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Used"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "The state of the goods:"
+msgid "The state of the goods"
+msgstr "The state of the goods"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Business"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Seller:"
+msgid "Seller"
+msgstr "Seller"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Advert description"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Phone number"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publish"
 
@@ -900,10 +904,6 @@ msgstr "Brand"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Condition"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Seller"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Type parts"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Filter"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "The state of the goods:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Seller:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "View"
+msgid "Add"
+msgstr "Add"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Expended: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Available: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Active"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Workshop description"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Phone number*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Type workshop"
 
@@ -1420,9 +1436,6 @@ msgstr "Access to geolocation in the background mode"
 msgid "Access to geolocation when using the application"
 msgstr "Access to geolocation when using the application"
 
-msgid "Add"
-msgstr "Add"
-
 msgid "Add advert"
 msgstr "Add advert"
 
@@ -1431,9 +1444,6 @@ msgstr "Add event"
 
 msgid "Add workshop"
 msgstr "Add workshop"
-
-msgid "Additional contacts:"
-msgstr "Additional contacts:"
 
 msgid "All cities"
 msgstr "All cities"
@@ -1470,12 +1480,6 @@ msgstr "Are you sure you want to delete?"
 
 msgid "Automatically detect location"
 msgstr "Automatically detect location"
-
-msgid "Automatically detect location in the background"
-msgstr "Automatically detect location in the background"
-
-msgid "Available"
-msgstr "Available"
 
 msgid "Back"
 msgstr "Back"
@@ -1702,9 +1706,6 @@ msgstr "Sorry, there are no upcoming workshops"
 msgid "Sorry!"
 msgstr "Sorry!"
 
-msgid "SOS signal"
-msgstr "SOS signal"
-
 msgid "Specify the city"
 msgstr "Specify the city"
 
@@ -1737,9 +1738,6 @@ msgstr "Types of work for motorcycle transport:"
 
 msgid "Upcoming events:"
 msgstr "Upcoming events:"
-
-msgid "Used"
-msgstr "Used"
 
 msgid "Views:"
 msgstr "Views:"

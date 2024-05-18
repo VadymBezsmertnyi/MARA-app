@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Політика конфіденційності"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Перемикання автоматичного визначення місцезнаходження в фоновому режимі"
+msgid "Report an error/improvement"
+msgstr "Повідомити про помилку/покращення"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Вживаний"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Стан товару:"
+msgid "The state of the goods"
+msgstr "Стан товару"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Бізнес"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Продавець:"
+msgid "Seller"
+msgstr "Продавець"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Опис оголошення"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Номер телефону"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Опублікувати"
 
@@ -900,10 +904,6 @@ msgstr "Бренд"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Стан"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Продавець"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Тип деталів"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Фільтр"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Стан товару:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Продавець:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Увага! Всі дані, пов'язані з бізнесом \"{nameBusiness}\", будуть видалені."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Перегляд"
+msgid "Add"
+msgstr "Додати"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Витрачено: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Доступно: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Активний"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Опис майстерні"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Номер телефону*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Тип майстерні"
 
@@ -1420,9 +1436,6 @@ msgstr "Доступ до геолокації в режимі фонової р
 msgid "Access to geolocation when using the application"
 msgstr "Доступ до геолокації при використанні додатка"
 
-msgid "Add"
-msgstr "Додати"
-
 msgid "Add advert"
 msgstr "Додати оголошення"
 
@@ -1431,9 +1444,6 @@ msgstr "Додати подію"
 
 msgid "Add workshop"
 msgstr "Додати майстерню"
-
-msgid "Additional contacts:"
-msgstr "Додаткові контакти:"
 
 msgid "All cities"
 msgstr "Усі міста"
@@ -1470,12 +1480,6 @@ msgstr "Ви впевнені, що хочете видалити?"
 
 msgid "Automatically detect location"
 msgstr "Автоматично визначати місцезнаходження"
-
-msgid "Automatically detect location in the background"
-msgstr "Автоматичне визначення місцезнаходження в фоновому режимі"
-
-msgid "Available"
-msgstr "Доступно"
 
 msgid "Back"
 msgstr "Назад"
@@ -1702,9 +1706,6 @@ msgstr "Вибачте, найближчих майстерень немає"
 msgid "Sorry!"
 msgstr "Вибачте!"
 
-msgid "SOS signal"
-msgstr "Сигнал SOS"
-
 msgid "Specify the city"
 msgstr "Вкажіть місто"
 
@@ -1737,9 +1738,6 @@ msgstr "Типи робіт для мотоциклів:"
 
 msgid "Upcoming events:"
 msgstr "Найближчі події:"
-
-msgid "Used"
-msgstr "Використовується"
 
 msgid "Views:"
 msgstr "Перегляди:"

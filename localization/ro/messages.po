@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Politica de confidențialitate"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Comutați detectarea automată a locației în fundal"
+msgid "Report an error/improvement"
+msgstr "Raportați o eroare/îmbunătățire"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Utilizat"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Starea bunurilor:"
+msgid "The state of the goods"
+msgstr "Starea bunurilor"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Companie"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Vânzător:"
+msgid "Seller"
+msgstr "Vânzător"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Descriere anunț"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Număr de telefon"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publică"
 
@@ -900,10 +904,6 @@ msgstr "Marcă"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Stare"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Vânzător"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Tip piese"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Filtru"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Starea bunurilor:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Vânzător:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Atenție! Toate datele legate de afacerea \"{nameBusiness}\" vor fi șterse."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Vizualizare"
+msgid "Add"
+msgstr "Adaugă"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Cheltuit: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Disponibil: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Activ"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Descrierea atelierului"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Număr de telefon*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Tipul atelierului"
 
@@ -1420,9 +1436,6 @@ msgstr "Acces la geolocație în modul de fundal"
 msgid "Access to geolocation when using the application"
 msgstr "Acces la geolocație în timpul utilizării aplicației"
 
-msgid "Add"
-msgstr "Adăugați"
-
 msgid "Add advert"
 msgstr "Adăugați anunț"
 
@@ -1431,9 +1444,6 @@ msgstr "Adăugați eveniment"
 
 msgid "Add workshop"
 msgstr "Adăugați atelier"
-
-msgid "Additional contacts:"
-msgstr "Contacte suplimentare:"
 
 msgid "All cities"
 msgstr "Toate orașele"
@@ -1470,12 +1480,6 @@ msgstr "Sunteți sigur că doriți să ștergeți?"
 
 msgid "Automatically detect location"
 msgstr "Detectați automat locația"
-
-msgid "Automatically detect location in the background"
-msgstr "Detectați automat locația în fundal"
-
-msgid "Available"
-msgstr "Disponibil"
 
 msgid "Back"
 msgstr "Înapoi"
@@ -1702,9 +1706,6 @@ msgstr "Ne pare rău, nu există ateliere viitoare"
 msgid "Sorry!"
 msgstr "Ne pare rău!"
 
-msgid "SOS signal"
-msgstr "Semnal SOS"
-
 msgid "Specify the city"
 msgstr "Specificați orașul"
 
@@ -1737,9 +1738,6 @@ msgstr "Tipuri de lucrări pentru transportul motocicletelor:"
 
 msgid "Upcoming events:"
 msgstr "Evenimente viitoare:"
-
-msgid "Used"
-msgstr "Utilizat"
 
 msgid "Views:"
 msgstr "Vizualizări:"

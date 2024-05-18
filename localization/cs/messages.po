@@ -774,8 +774,8 @@ msgid "Privacy policy"
 msgstr "Zásady ochrany osobních údajů"
 
 #. js-lingui-explicit-id
-msgid "Toggle automatically detect location in the background"
-msgstr "Přepnout automatické zjišťování polohy na pozadí"
+msgid "Report an error/improvement"
+msgstr "Nahlásit chybu/zlepšení"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -858,8 +858,8 @@ msgid "Used"
 msgstr "Použité"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Stav zboží:"
+msgid "The state of the goods"
+msgstr "Stav zboží"
 
 #. js-lingui-explicit-id
 msgid "Private individual"
@@ -870,8 +870,8 @@ msgid "Business"
 msgstr "Podnik"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Prodávající:"
+msgid "Seller"
+msgstr "Prodávající"
 
 #. js-lingui-explicit-id
 msgid "Location"
@@ -890,6 +890,10 @@ msgid "Advert description"
 msgstr "Popis inzerátu"
 
 #. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefonní číslo"
+
+#. js-lingui-explicit-id
 msgid "Publish"
 msgstr "Publikovat"
 
@@ -900,10 +904,6 @@ msgstr "Značka"
 #. js-lingui-explicit-id
 msgid "Condition"
 msgstr "Stav"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Prodávající"
 
 #. js-lingui-explicit-id
 msgid "Mileage"
@@ -940,6 +940,14 @@ msgstr "Typ dílů"
 #. js-lingui-explicit-id
 msgid "Filter"
 msgstr "Filtr"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Stav zboží:"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Prodávající:"
 
 #. js-lingui-explicit-id
 msgid "Price, {symbol}:"
@@ -1198,8 +1206,20 @@ msgid "Attention! All data related to the \"{nameBusiness}\" business will be de
 msgstr "Pozor! Všechna data týkající se podniku \"{nameBusiness}\" budou smazána."
 
 #. js-lingui-explicit-id
-msgid "View"
-msgstr "Zobrazit"
+msgid "Add"
+msgstr "Přidat"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Rozšířeno: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Dostupné: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktivní"
 
 #. js-lingui-explicit-id
 msgid "Your adverts"
@@ -1330,10 +1350,6 @@ msgid "Workshop description"
 msgstr "Popis dílny"
 
 #. js-lingui-explicit-id
-msgid "Phone number*:"
-msgstr "Telefonní číslo*:"
-
-#. js-lingui-explicit-id
 msgid "Type workshop"
 msgstr "Typ dílny"
 
@@ -1420,9 +1436,6 @@ msgstr "Přístup k geolokaci v režimu na pozadí"
 msgid "Access to geolocation when using the application"
 msgstr "Přístup k geolokaci při používání aplikace"
 
-msgid "Add"
-msgstr "Přidat"
-
 msgid "Add advert"
 msgstr "Přidat inzerát"
 
@@ -1431,9 +1444,6 @@ msgstr "Přidat událost"
 
 msgid "Add workshop"
 msgstr "Přidat dílnu"
-
-msgid "Additional contacts:"
-msgstr "Další kontakty:"
 
 msgid "All cities"
 msgstr "Všechna města"
@@ -1470,12 +1480,6 @@ msgstr "Opravdu chcete smazat?"
 
 msgid "Automatically detect location"
 msgstr "Automatické zjištění polohy"
-
-msgid "Automatically detect location in the background"
-msgstr "Automatické zjišťování polohy na pozadí"
-
-msgid "Available"
-msgstr "K dispozici"
 
 msgid "Back"
 msgstr "Zpět"
@@ -1702,9 +1706,6 @@ msgstr "Omlouváme se, ale žádné nadcházející dílny nejsou k dispozici"
 msgid "Sorry!"
 msgstr "Omlouváme se!"
 
-msgid "SOS signal"
-msgstr "Signál SOS"
-
 msgid "Specify the city"
 msgstr "Určete město"
 
@@ -1737,9 +1738,6 @@ msgstr "Typy prací pro motocyklovou dopravu:"
 
 msgid "Upcoming events:"
 msgstr "Nadcházející události:"
-
-msgid "Used"
-msgstr "Použito"
 
 msgid "Views:"
 msgstr "Zobrazení:"
