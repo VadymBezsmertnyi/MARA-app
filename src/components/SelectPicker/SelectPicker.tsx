@@ -96,7 +96,7 @@ export const SelectPicker: FunctionComponent<
           </Picker>
           <ButtonCustom
             styleContainer={styles.button}
-            title={i18n._("Confirm")}
+            title={i18n._("Select")}
             onSubmit={() => {
               setIsShowModal(false);
             }}
