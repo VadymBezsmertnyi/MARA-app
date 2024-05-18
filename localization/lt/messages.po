@@ -474,6 +474,14 @@ msgid "Incorrectly entered data"
 msgstr "Neteisingai įvesti duomenys"
 
 #. js-lingui-explicit-id
+msgid "Images {otherName}"
+msgstr "{otherName} nuotraukos"
+
+#. js-lingui-explicit-id
+msgid "Please add images for {otherName}"
+msgstr "Prašome pridėti nuotraukas už {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "skelbimas"
 
@@ -1030,8 +1038,8 @@ msgid "Briefly describe what will happen"
 msgstr "Trumpai aprašykite, kas vyks"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event:"
-msgstr "Papasakokite apie įvykį:"
+msgid "Tell us about the event"
+msgstr "Papasakokite apie įvykį"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1090,6 +1098,10 @@ msgid "Button for closing the registration FaceID"
 msgstr "Mygtukas, skirtas uždaryti registraciją naudojant FaceID"
 
 #. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Neteisingas telefono numeris"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 2 and 20 characters"
 msgstr "Vardo ilgis turi būti nuo 2 iki 20 simbolių"
 
@@ -1108,10 +1120,6 @@ msgstr "Įveskite savo vardą"
 #. js-lingui-explicit-id
 msgid "Save"
 msgstr "Išsaugoti"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Užpildyti vėliau"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"

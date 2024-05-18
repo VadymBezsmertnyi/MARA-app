@@ -474,6 +474,14 @@ msgid "Incorrectly entered data"
 msgstr "Datos introducidos incorrectamente"
 
 #. js-lingui-explicit-id
+msgid "Images {otherName}"
+msgstr "Imágenes {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please add images for {otherName}"
+msgstr "Por favor, agregue imágenes para {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "anuncio"
 
@@ -1030,8 +1038,8 @@ msgid "Briefly describe what will happen"
 msgstr "Describe brevemente lo que sucederá"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event:"
-msgstr "Cuéntanos sobre el evento:"
+msgid "Tell us about the event"
+msgstr "Cuéntanos sobre el evento"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1090,6 +1098,10 @@ msgid "Button for closing the registration FaceID"
 msgstr "Botón para cerrar el registro de FaceID"
 
 #. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Número de teléfono no válido"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 2 and 20 characters"
 msgstr "La longitud del nombre debe estar entre 2 y 20 caracteres"
 
@@ -1108,10 +1120,6 @@ msgstr "Ingrese su nombre"
 #. js-lingui-explicit-id
 msgid "Save"
 msgstr "Guardar"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Completar más tarde"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"

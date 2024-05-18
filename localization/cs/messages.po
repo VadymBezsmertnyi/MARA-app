@@ -474,6 +474,14 @@ msgid "Incorrectly entered data"
 msgstr "Nesprávně zadaná data"
 
 #. js-lingui-explicit-id
+msgid "Images {otherName}"
+msgstr "Obrázky {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please add images for {otherName}"
+msgstr "Prosím, přidejte obrázky pro {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "inzerát"
 
@@ -1030,8 +1038,8 @@ msgid "Briefly describe what will happen"
 msgstr "Stručně popište, co se bude dít"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event:"
-msgstr "Řekněte nám o události:"
+msgid "Tell us about the event"
+msgstr "Řekněte nám o události"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1090,6 +1098,10 @@ msgid "Button for closing the registration FaceID"
 msgstr "Tlačítko pro zavření registrace FaceID"
 
 #. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Neplatné telefonní číslo"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 2 and 20 characters"
 msgstr "Délka jména by měla být mezi 2 a 20 znaky"
 
@@ -1108,10 +1120,6 @@ msgstr "Zadejte své jméno"
 #. js-lingui-explicit-id
 msgid "Save"
 msgstr "Uložit"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Vyplnit později"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"

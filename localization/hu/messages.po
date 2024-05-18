@@ -474,6 +474,14 @@ msgid "Incorrectly entered data"
 msgstr "Helytelenül bevitt adatok"
 
 #. js-lingui-explicit-id
+msgid "Images {otherName}"
+msgstr "{otherName} képei"
+
+#. js-lingui-explicit-id
+msgid "Please add images for {otherName}"
+msgstr "Kérjük, adjon hozzá képeket a(z) {otherName} számára"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "hirdetés"
 
@@ -1030,8 +1038,8 @@ msgid "Briefly describe what will happen"
 msgstr "Röviden írja le, mi fog történni"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event:"
-msgstr "Meséljen az eseményről:"
+msgid "Tell us about the event"
+msgstr "Meséljen az eseményről"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1090,6 +1098,10 @@ msgid "Button for closing the registration FaceID"
 msgstr "Gomb a FaceID regisztráció bezárásához"
 
 #. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Érvénytelen telefonszám"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 2 and 20 characters"
 msgstr "A név hossza 2 és 20 karakter között kell legyen"
 
@@ -1108,10 +1120,6 @@ msgstr "Adja meg a nevét"
 #. js-lingui-explicit-id
 msgid "Save"
 msgstr "Mentés"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Később kitöltöm"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"

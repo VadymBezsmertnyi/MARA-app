@@ -474,6 +474,14 @@ msgid "Incorrectly entered data"
 msgstr "Εισάχθηκαν λανθασμένα δεδομένα"
 
 #. js-lingui-explicit-id
+msgid "Images {otherName}"
+msgstr "Εικόνες {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please add images for {otherName}"
+msgstr "Παρακαλώ προσθέστε εικόνες για το {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "διαφήμιση"
 
@@ -1030,8 +1038,8 @@ msgid "Briefly describe what will happen"
 msgstr "Περιγράψτε σύντομα τι θα συμβεί"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event:"
-msgstr "Πείτε μας για την εκδήλωση:"
+msgid "Tell us about the event"
+msgstr "Πείτε μας για την εκδήλωση"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1090,6 +1098,10 @@ msgid "Button for closing the registration FaceID"
 msgstr "Κουμπί για κλείσιμο εγγραφής FaceID"
 
 #. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Μη έγκυρος αριθμός τηλεφώνου"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 2 and 20 characters"
 msgstr "Το μήκος του ονόματος πρέπει να είναι μεταξύ 2 και 20 χαρακτήρων"
 
@@ -1108,10 +1120,6 @@ msgstr "Εισαγωγή ονόματος σας"
 #. js-lingui-explicit-id
 msgid "Save"
 msgstr "Αποθήκευση"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Συμπλήρωση αργότερα"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"

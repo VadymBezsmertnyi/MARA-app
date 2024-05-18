@@ -474,6 +474,14 @@ msgid "Incorrectly entered data"
 msgstr "Virheellisesti syötetty tieto"
 
 #. js-lingui-explicit-id
+msgid "Images {otherName}"
+msgstr "{otherName} kuvat"
+
+#. js-lingui-explicit-id
+msgid "Please add images for {otherName}"
+msgstr "Lisää kuvia {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "mainos"
 
@@ -1030,8 +1038,8 @@ msgid "Briefly describe what will happen"
 msgstr "Kuvaile lyhyesti, mitä tapahtuu"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event:"
-msgstr "Kerro tapahtumasta:"
+msgid "Tell us about the event"
+msgstr "Kerro meille tapahtumasta"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1090,6 +1098,10 @@ msgid "Button for closing the registration FaceID"
 msgstr "Painike sulkeaksesi rekisteröinnin FaceID"
 
 #. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Virheellinen puhelinnumero"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 2 and 20 characters"
 msgstr "Nimen pituuden tulee olla 2–20 merkkiä"
 
@@ -1108,10 +1120,6 @@ msgstr "Syötä nimesi"
 #. js-lingui-explicit-id
 msgid "Save"
 msgstr "Tallenna"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Täytä myöhemmin"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"

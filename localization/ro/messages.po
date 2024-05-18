@@ -474,6 +474,14 @@ msgid "Incorrectly entered data"
 msgstr "Date introduse incorect"
 
 #. js-lingui-explicit-id
+msgid "Images {otherName}"
+msgstr "Imagini {otherName}"
+
+#. js-lingui-explicit-id
+msgid "Please add images for {otherName}"
+msgstr "Vă rugăm să adăugați imagini pentru {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "anunț"
 
@@ -1030,8 +1038,8 @@ msgid "Briefly describe what will happen"
 msgstr "Descrieți pe scurt ce se va întâmpla"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event:"
-msgstr "Spuneți-ne despre eveniment:"
+msgid "Tell us about the event"
+msgstr "Spuneți-ne despre eveniment"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1090,6 +1098,10 @@ msgid "Button for closing the registration FaceID"
 msgstr "Buton pentru închiderea înregistrării FaceID"
 
 #. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Număr de telefon invalid"
+
+#. js-lingui-explicit-id
 msgid "The length of the name should be between 2 and 20 characters"
 msgstr "Lungimea numelui ar trebui să fie între 2 și 20 de caractere"
 
@@ -1108,10 +1120,6 @@ msgstr "Introduceți numele dumneavoastră"
 #. js-lingui-explicit-id
 msgid "Save"
 msgstr "Salvează"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Completați mai târziu"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"

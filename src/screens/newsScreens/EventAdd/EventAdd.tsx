@@ -409,7 +409,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           </View>
           <Input
             placeholder={i18n._("Briefly describe what will happen")}
-            label={`${i18n._("Tell us about the event:")}*`}
+            isRegular
+            label={`${i18n._("Tell us about the event")}`}
             value={aboutEvent}
             customStyles={styles.multipleInput}
             onChange={(value) => {
