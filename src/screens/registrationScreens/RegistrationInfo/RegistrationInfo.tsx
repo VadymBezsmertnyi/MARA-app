@@ -98,7 +98,8 @@ export const RegistrationInfo: FunctionComponent = () => {
             errorMessage={errorMessageLogin}
           />
           <InputPhone
-            label={`${i18n._("Phone number:")}*`}
+            isRegular
+            label={i18n._("Phone number")}
             phoneNumber={phoneNumber}
             setPhoneNumber={setPhoneNumber}
             selectCountryIso={selectCountryIso}

@@ -256,7 +256,8 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
               labelStyle={styles.labelInput}
             />
             <InputPhone
-              label={i18n._("Phone number:")}
+              isRegular
+              label={i18n._("Phone number")}
               phoneNumber={phoneNumber}
               setPhoneNumber={setPhoneNumber}
               selectCountryIso={selectCountryIso}

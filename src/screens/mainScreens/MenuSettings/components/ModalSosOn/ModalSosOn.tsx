@@ -165,7 +165,8 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
                     containerStyle={styles.containerInput}
                   />
                   <InputPhone
-                    label={i18n._("Phone number:")}
+                    isRegular
+                    label={i18n._("Phone number")}
                     phoneNumber={phoneNumber}
                     setPhoneNumber={setPhoneNumber}
                     selectCountryIso={selectCountryIso}
