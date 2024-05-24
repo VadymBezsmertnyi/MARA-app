@@ -72,6 +72,11 @@ export const RegistrationInfo: FunctionComponent = () => {
     setLogin(value);
   };
 
+  const onChangePhone = (value: string) => {
+    setErrorMessagePhone("");
+    setPhoneNumber(value);
+  };
+
   useEffect(() => {
     if (userData?.googleDate?.given_name)
       setLogin(userData.googleDate.given_name);
@@ -101,7 +106,7 @@ export const RegistrationInfo: FunctionComponent = () => {
             isRegular
             label={i18n._("Phone number")}
             phoneNumber={phoneNumber}
-            setPhoneNumber={setPhoneNumber}
+            setPhoneNumber={onChangePhone}
             selectCountryIso={selectCountryIso}
             setSelectCountryIso={setSelectCountryIso}
             errorMessage={errorMessagePhone}
