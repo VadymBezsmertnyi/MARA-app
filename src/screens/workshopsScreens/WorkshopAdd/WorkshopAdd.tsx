@@ -355,7 +355,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               : undefined
           }
         />
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollView}>
           <View style={styles.containerInputs}>
             <Input
               isRegular

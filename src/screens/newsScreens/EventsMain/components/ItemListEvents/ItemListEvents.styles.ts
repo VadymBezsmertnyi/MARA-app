@@ -85,6 +85,7 @@ export const styles = StyleSheet.create({
   partNow: {},
   containerLocation: { flexDirection: "row", alignItems: "center" },
   distance: {
+    flex: 1,
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
   },

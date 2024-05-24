@@ -122,7 +122,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
             height={15}
             fill={colors.californiaOrange}
           />
-          <Text numberOfLines={1} style={styles.distance}>
+          <Text numberOfLines={2} style={styles.distance}>
             {distance
               ? `${(distance / 1000).toFixed()} км`
               : i18n._(`Not enabled location`)}

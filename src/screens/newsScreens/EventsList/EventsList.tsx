@@ -24,6 +24,7 @@ import { RootEventsScreensParamList } from "../../../navigators/Navigators.types
 
 // styles
 import { styles } from "./EventsList.styles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type ItemListEventsProps = {
   navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
@@ -38,9 +39,11 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   route,
 }) => {
   const { params } = route;
+  const { top, bottom } = useSafeAreaInsets();
   const { eventsList } = useContext(eventsContext);
   const { i18n } = useContext(localesContext);
   const [valueSearch, setValueSearch] = useState("");
+
   const newDate = useMemo(() => new Date().getTime(), []);
   const showEventsList = useMemo(
     () =>
@@ -51,11 +54,21 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
       ),
     [eventsList, params]
   );
+  const containerStyles = useMemo(
+    () => [
+      styles.container,
+      {
+        paddingTop: top,
+        paddingBottom: bottom,
+      },
+    ],
+    [bottom]
+  );
 
   const onSelectCity = () => {};
 
   return (
-    <View style={styles.container}>
+    <View style={containerStyles}>
       <Text style={styles.title}>
         {params?.isOld ? (
           <Trans>Past events:</Trans>

@@ -7,6 +7,9 @@ import {
 
 export const styles = StyleSheet.create({
   container: {},
+  scrollView: {
+    paddingBottom: 20,
+  },
   containerInputs: {
     paddingHorizontal: 16,
   },
