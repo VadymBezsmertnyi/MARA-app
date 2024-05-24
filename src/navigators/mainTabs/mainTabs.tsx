@@ -34,6 +34,7 @@ import { RootMainTabsParamList } from "../Navigators.types";
 // styles
 import colors from "../../../styles/colors";
 import { styles } from "./MainTabs.styles";
+import { responsiveLayoutContext } from "../../providers/responsiveLayout/responsiveLayout.provider";
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
@@ -41,6 +42,7 @@ export const MainTabs: FunctionComponent = () => {
   const navigation = useNavigation<DrawerNavigationHelpers>();
   const { bottom } = useSafeAreaInsets();
   const { i18n } = useContext(localesContext);
+  const { durationHeight } = useContext(responsiveLayoutContext);
   const { mainTabs } = useMainTabs();
   const colorsGradient = useMemo(
     () => [colors.californiaOrange, colors.blazeOrange],
@@ -49,6 +51,16 @@ export const MainTabs: FunctionComponent = () => {
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1], []);
+
+  const absoluteContainerStyles = useMemo(
+    () => [
+      styles.absoluteContainer,
+      {
+        bottom: -durationHeight,
+      },
+    ],
+    [durationHeight]
+  );
 
   const containerStyles = useMemo(
     () => [
@@ -65,7 +77,7 @@ export const MainTabs: FunctionComponent = () => {
   };
 
   const tabBar = ({ state: { index }, navigation }: BottomTabBarProps) => (
-    <View style={styles.absoluteContainer}>
+    <View style={absoluteContainerStyles}>
       <LinearGradient
         colors={colorsGradient}
         start={startGradient}
