@@ -51,5 +51,6 @@ export const styles = StyleSheet.create({
     padding: 7,
     top: -5,
     right: -5,
+    opacity: 0,
   },
 });

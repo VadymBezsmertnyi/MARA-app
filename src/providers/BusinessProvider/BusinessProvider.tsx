@@ -56,7 +56,7 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
     const result = await api(
       `${PATHS.businessMarket}${query}`,
       null,
-      z.object({ businessMarket: businessMarketSchema })
+      z.object({ businessMarket: businessMarketSchema.nullable() })
     );
     if (result?.businessMarket) setBusinessMarketUser(result.businessMarket);
     return Boolean(result?.businessMarket);
