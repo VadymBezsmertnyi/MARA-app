@@ -271,7 +271,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
           PATHS.delete,
           {
             method: "POST",
-            data: { id: userData.id },
+            data: { _id: userData._id },
           },
           z.object({ result: z.boolean() })
         );

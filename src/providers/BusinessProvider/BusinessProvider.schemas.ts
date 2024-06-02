@@ -10,11 +10,11 @@ export const phoneSchema = z.object({
 });
 
 export const businessMarketSchema = z.object({
-  id: z.number(),
+  _id: z.string(),
   userId: z.number(),
   logo: z
     .object({
-      id: z.string(),
+      _id: z.string(),
       url: z.string(),
       width: z.number(),
       height: z.number(),

@@ -30,12 +30,12 @@ export const facebookBDSchema = z.object({
 });
 
 export const userDataS = z.object({
-  id: z.number(),
+  _id: z.string(),
   isGeoLocation: z.boolean(),
   isGeoLocationBackground: z.boolean(),
   avatar: z
     .object({
-      id: z.string(),
+      _id: z.string(),
       url: z.string(),
     })
     .nullable(),
