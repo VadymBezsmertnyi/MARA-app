@@ -18,7 +18,6 @@ import {
 import { ItemSearchPlaceAddressType } from "../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 
 // providers
-import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.provider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { userContext } from "../UserProvider/UserProvider";
@@ -300,10 +299,8 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   }, [userData?.id]);
 
   return (
-    <ResponsiveLayoutProvider>
-      <workshopsContext.Provider value={valueContext}>
-        {children}
-      </workshopsContext.Provider>
-    </ResponsiveLayoutProvider>
+    <workshopsContext.Provider value={valueContext}>
+      {children}
+    </workshopsContext.Provider>
   );
 };
