@@ -90,7 +90,9 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   };
 
   const getPlace = async (placeId: string): Promise<PlaceDbType | null> => {
-    const placeState = placesDB.find((placeDB) => placeDB._id === placeId);
+    const placeState = placesDB.find(
+      (placeDB) => placeDB._id === placeId || placeDB.place_id === placeId
+    );
     if (placeState) return placeState;
     await getPlaceDB(placeId);
     return null;

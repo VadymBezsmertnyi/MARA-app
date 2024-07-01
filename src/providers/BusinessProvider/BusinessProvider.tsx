@@ -28,7 +28,11 @@ import { PATHS } from "../paths.constants";
 type BusinessContext = {
   businessMarketUser: BusinessMarketType | null;
   onCreateBusinessMarket: (
-    newBusinessMarket: Omit<BusinessMarketType, "place" | "logo" | "id"> & {
+    newBusinessMarket: Omit<
+      BusinessMarketType,
+      "place" | "logo" | "_id" | "userId"
+    > & {
+      userId: string;
       place: ItemSearchPlaceAddressType;
       newLogo: ImageType | null;
     }

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { coordinatesSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import { imageSchema } from "../../components/ImageModal/ImageModal.schemas";
 
 export const phoneSchema = z.object({
   phoneNumber: z.string(),
@@ -11,7 +12,21 @@ export const phoneSchema = z.object({
 
 export const businessMarketSchema = z.object({
   _id: z.string(),
-  userId: z.number(),
+  userId: z
+    .object({
+      _id: z.string(),
+      avatar: z
+        .object({
+          _id: z.any(),
+          url: z.string(),
+          image: imageSchema.optional(),
+        })
+        .nullable(),
+      firstName: z.string(),
+      lastName: z.string(),
+      phoneNumber: z.string(),
+    })
+    .nullable(),
   logo: z
     .object({
       _id: z.string(),

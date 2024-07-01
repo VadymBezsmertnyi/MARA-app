@@ -320,7 +320,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         })
       );
       setTitle(selectWorkshop.title);
-      const placeDB = await getPlace(selectWorkshop.place_id?._id || "");
+      const placeDB = await getPlace(selectWorkshop.place_id?.place_id || "");
       setPlace({
         placeId: selectWorkshop.place_id?._id || "",
         title: placeDB ? placeDB[language].formatted_address : "",

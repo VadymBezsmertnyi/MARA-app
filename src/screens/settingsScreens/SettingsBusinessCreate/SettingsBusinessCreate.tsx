@@ -92,10 +92,17 @@ export const SettingsBusinessCreate: FunctionComponent<
 
   const showTitlePlace = useMemo(() => {
     if (!place) return "";
-    const placeDB = getPlace(place.placeId);
-    if (!placeDB) return place.title;
-    return placeDB[language].formatted_address;
-  }, [placesDB, place]);
+    const findPlace =
+      placesDB.find(
+        (placeDB) =>
+          placeDB._id === place.placeId || placeDB.place_id === place.placeId
+      ) || null;
+    if (!findPlace) {
+      getPlace(place.placeId);
+      return place.title;
+    }
+    return findPlace[language].formatted_address;
+  }, [placesDB, place, language]);
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
     [heightStatusBar]
@@ -177,7 +184,7 @@ export const SettingsBusinessCreate: FunctionComponent<
         otherPhoneNumbers: currentPhoneNumbers.length
           ? currentPhoneNumbers
           : null,
-        userId: userData.id,
+        userId: userData._id,
       };
       await onCreateBusinessMarket(newBusiness);
       navigation.goBack();
