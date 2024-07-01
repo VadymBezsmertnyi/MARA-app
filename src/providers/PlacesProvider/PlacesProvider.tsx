@@ -51,7 +51,7 @@ type PlacesContext = {
     searchText: string,
     isDeep?: boolean
   ) => Promise<GetSearchPlaceType | null>;
-  getPlace: (placeId: string) => PlaceDbType | null;
+  getPlace: (placeId: string) => Promise<PlaceDbType | null>;
   getRegions: (countryPlaceIds: string[]) => Promise<RegionDbType[] | null>;
   getPlaces: (
     countryPlaceIds: string[],
@@ -89,10 +89,10 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
     if (placeDB) setPlacesDB((state) => [...state, placeDB.resultDB]);
   };
 
-  const getPlace = (placeId: string): PlaceDbType | null => {
-    const placeState = placesDB.find((placeDB) => placeDB.place_id === placeId);
+  const getPlace = async (placeId: string): Promise<PlaceDbType | null> => {
+    const placeState = placesDB.find((placeDB) => placeDB._id === placeId);
     if (placeState) return placeState;
-    getPlaceDB(placeId);
+    await getPlaceDB(placeId);
     return null;
   };
 

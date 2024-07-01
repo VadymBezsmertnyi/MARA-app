@@ -205,8 +205,8 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                   : null;
               return (
                 <WorkshopItem
-                  key={`workshop-${item.id}`}
-                  workshopId={item.id}
+                  key={`workshop-${item._id}`}
+                  workshopId={item._id}
                   title={item.title}
                   description={item.description}
                   range={

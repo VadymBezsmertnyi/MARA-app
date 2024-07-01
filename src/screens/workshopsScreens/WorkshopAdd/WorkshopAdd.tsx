@@ -110,15 +110,19 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   > | null>(null);
   const selectWorkshop = useMemo(
     () =>
-      workshops.find((workshop) => workshop.id === params?.workshopId) || null,
+      workshops.find((workshop) => workshop._id === params?.workshopId) || null,
     [workshops, params]
   );
   const showTitlePlace = useMemo(() => {
     if (!place) return "";
-    const placeDB = getPlace(place.placeId);
-    if (!placeDB) return place.title;
-    return placeDB[language].formatted_address;
-  }, [placesDB, place]);
+    const findPlace =
+      placesDB.find((placeDB) => placeDB._id === place.placeId) || null;
+    if (!findPlace) {
+      getPlace(place.placeId);
+      return place.title;
+    }
+    return findPlace[language].formatted_address;
+  }, [placesDB, place, language]);
 
   const clearKeyError = (key: string) => {
     if (errorMessage && key in errorMessage) {
@@ -242,7 +246,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     ) {
       const clearPhoneNumber = getClearValue(phoneNumber);
       const currentImages = images.map((image) => ({
-        id: image.id || "",
+        _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
@@ -250,7 +254,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       }));
       const currentPlace =
         selectWorkshop &&
-        place?.placeId === selectWorkshop.place_id &&
+        place?.placeId === selectWorkshop.place_id?._id &&
         place.address === selectWorkshop.place_address
           ? {
               place_id: selectWorkshop.place_id,
@@ -262,7 +266,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           : { place };
       const newWorkshop = {
         ...DEFAULT_WORKSHOP_DATA,
-        userId: userData.id,
+        userId: userData._id,
         title,
         description,
         phoneNumber: clearPhoneNumber,
@@ -271,10 +275,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         autoTypesWorks: selectAutoTypesWorks,
         images: currentImages,
         dataCreate: new Date().getTime(),
+        rating: selectWorkshop?.rating || 0,
+        comments: selectWorkshop?.comments || [],
       };
       const isCreate = selectWorkshop
         ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })
         : await addWorkshop(newWorkshop);
+
       if (isCreate) {
         navigation.goBack();
         success(
@@ -298,13 +305,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         selectWorkshop.images.map(async (image) => {
           const response = await FileSystem.downloadAsync(
             image.url,
-            `${FileSystem.documentDirectory}temp.jpg`
+            `${FileSystem.documentDirectory}temp-${image._id}.jpg`
           );
           const base64 = await FileSystem.readAsStringAsync(response.uri, {
             encoding: "base64",
           });
           return {
-            id: image.id,
+            _id: image._id,
             url: image.url,
             width: image.width,
             height: image.height,
@@ -313,9 +320,9 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         })
       );
       setTitle(selectWorkshop.title);
-      const placeDB = getPlace(selectWorkshop.place_id);
+      const placeDB = await getPlace(selectWorkshop.place_id?._id || "");
       setPlace({
-        placeId: selectWorkshop.place_id,
+        placeId: selectWorkshop.place_id?._id || "",
         title: placeDB ? placeDB[language].formatted_address : "",
         address: selectWorkshop.place_address,
         coordinates: selectWorkshop.coordinates,
@@ -532,8 +539,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
             setIsShowDeleteModal(false);
           }}
           onSubmit={async () => {
-            if (selectWorkshop?.id) {
-              await deleteWorkshop(selectWorkshop.id, "user");
+            if (selectWorkshop?._id) {
+              await deleteWorkshop(selectWorkshop._id, "user");
               setIsShowDeleteModal(false);
             }
           }}

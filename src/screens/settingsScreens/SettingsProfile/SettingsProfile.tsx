@@ -72,7 +72,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     useContext(userContext);
   const { i18n, language } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
@@ -82,9 +82,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const { warning, success } = showErrors;
   const showTitlePlace = useMemo(() => {
     if (!userData?.place_id) return "";
-    const placeDB = getPlace(userData.place_id);
-    if (!placeDB) return "";
-    return placeDB[language].formatted_address;
+    return userData.place_id[language].formatted_address;
   }, [placesDB, userData?.place_id]);
 
   const containerStyles = useMemo(
@@ -156,7 +154,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
     const clearPhoneNumber = getClearValue(phoneNumber);
     const currentCityUser =
-      userData && city?.placeId === userData?.place_id
+      userData && city?.placeId === userData?.place_id?._id
         ? {
             place_id: userData.place_id,
             region_place_id: userData.region_place_id,
@@ -184,13 +182,13 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
       setFirstName(currentNamesUser.firstName);
       setLastName(currentNamesUser.lastName);
       setPhoneNumber(userData.phoneNumber || `+${DEFAULT_CODE_COUNTRY}`);
-      if (userData.place_id) {
-        const placeDB = getPlace(userData.place_id);
+      if (userData.place_id)
         setCity({
-          placeId: userData.place_id,
-          title: placeDB ? placeDB[language].formatted_address : "",
+          placeId: userData.place_id._id,
+          title: userData.place_id
+            ? userData.place_id[language].formatted_address
+            : "",
         });
-      }
     }
   }, [placesDB]);
 

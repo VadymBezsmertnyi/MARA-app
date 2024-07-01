@@ -119,7 +119,7 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    workshopId: number;
+    workshopId: string;
   };
   [PATHS_SETTINGS_SCREENS.settingsEvents]?: Record<
     string,
@@ -166,7 +166,7 @@ export type RootWorkshopsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    workshopId?: number;
+    workshopId?: string;
   };
   [PATHS_WORKSHOP_SCREENS.workshopAdd]?: Record<
     string,

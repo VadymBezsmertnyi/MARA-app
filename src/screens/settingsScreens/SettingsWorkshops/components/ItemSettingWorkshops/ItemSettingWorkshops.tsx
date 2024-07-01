@@ -60,7 +60,7 @@ export const ItemSettingWorkshops: FunctionComponent<
 
   const onPressChange = () => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopChange, {
-      workshopId: workshop.id,
+      workshopId: workshop._id,
     });
   };
 

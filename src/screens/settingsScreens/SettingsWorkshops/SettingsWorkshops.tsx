@@ -29,6 +29,7 @@ import notItemsImage from "../../../../assets/settingsScreen/notWorkshopsUsers.j
 // styles
 import { styles } from "./SettingsWorkshops.styles";
 import colors from "../../../../styles/colors";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 type SettingsWorkshopsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -38,11 +39,15 @@ type SettingsWorkshopsProps = {
 export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   navigation,
 }) => {
-  const { workshopsUser } = useContext(workshopsContext);
+  const { userData } = useContext(userContext);
   const { heightStatusBar } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-  const typeItem = i18n._("workshops");
 
+  const typeItem = useMemo(() => i18n._("workshops"), []);
+  const workshopsUser = useMemo(
+    () => userData?.workshopsIds || [],
+    [userData?.workshopsIds]
+  );
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
     [heightStatusBar]
@@ -90,7 +95,7 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
             const isStart = index === 0;
             return (
               <ItemSettingWorkshops
-                key={`user-workshop-${workshop.id}`}
+                key={`user-workshop-${workshop._id}`}
                 workshop={workshop}
                 isStart={isStart}
               />
