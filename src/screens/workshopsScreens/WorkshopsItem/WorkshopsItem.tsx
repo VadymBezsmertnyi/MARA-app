@@ -20,7 +20,10 @@ import { Trans } from "@lingui/macro";
 import { getDistance } from "geolib";
 
 // types
-import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
+import {
+  RootMainTabsParamList,
+  RootWorkshopsScreensParamList,
+} from "../../../navigators/Navigators.types";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
@@ -55,11 +58,16 @@ import {
 // image
 import WorkshopPlaceholder from "../../../../assets/default/workshop-placeholder.png";
 
+// constants
+import { PATHS_MAIN_TABS } from "../../../navigators/useNavigator.constants";
+
 // styles
 import { styles } from "./WorkshopsItem.styles";
 
 type WorkshopsItemType = {
-  navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
+  navigation: NativeStackNavigationProp<
+    RootWorkshopsScreensParamList & RootMainTabsParamList
+  >;
   route: RouteProp<
     RootWorkshopsScreensParamList,
     keyof RootWorkshopsScreensParamList
@@ -160,7 +168,12 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
             (likeUserId) => likeUserId !== userData?._id
           )
         : [...selectWorkshop.likeUserIds, userData._id];
-      changeWorkshop({ ...selectWorkshop, images: currentImages, likeUserIds });
+      changeWorkshop({
+        ...selectWorkshop,
+        images: currentImages,
+        likeUserIds,
+        userId: selectWorkshop.userId?._id || userData._id,
+      });
     }
   };
 
@@ -180,7 +193,8 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
           />
         }
         onPressLeftElement={() => {
-          navigation.goBack();
+          if (!route.params?.isMap) navigation.goBack();
+          navigation.navigate(PATHS_MAIN_TABS.map);
         }}
       />
       <ScrollView

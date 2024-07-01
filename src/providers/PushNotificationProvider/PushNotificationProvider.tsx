@@ -59,7 +59,7 @@ export const PushNotificationProvider: FunctionComponent<
       [PATHS_MAIN_SCREENS.main]?: Record<string, string>;
       [PATHS_MAIN_TABS.workshops]?: {
         screen: string;
-        params: { workshopId: number };
+        params: { workshopId: string };
       };
     }>
   >();
@@ -123,7 +123,7 @@ export const PushNotificationProvider: FunctionComponent<
         navigation.navigate(PATHS_MAIN_TABS.workshops, {
           screen: PATHS_WORKSHOP_SCREENS.workshopItem,
           params: {
-            workshopId: Number(tempGoLink.queryParams.workshopId),
+            workshopId: tempGoLink.queryParams.workshopId,
           },
         });
         setTempGoLink(null);

@@ -167,6 +167,7 @@ export type RootWorkshopsScreensParamList = {
     string | number | boolean
   > & {
     workshopId?: string;
+    isMap?: boolean;
   };
   [PATHS_WORKSHOP_SCREENS.workshopAdd]?: Record<
     string,
