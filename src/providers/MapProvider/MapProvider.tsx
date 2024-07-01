@@ -79,7 +79,12 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   const getLocation = async (coordsProps?: Location.LocationObject) => {
     const { coords } = coordsProps
       ? coordsProps
-      : await Location.getCurrentPositionAsync({});
+      : await Location.getCurrentPositionAsync({
+          accuracy: Location.Accuracy.BestForNavigation,
+          mayShowUserSettingsDialog: true,
+          timeInterval: INTERVAL_GET_LOCATION,
+          distanceInterval: 1,
+        });
     const isUkraine =
       countryUser?.country === "Ukraine" || countryUser?.countryCode === "UA";
     const date = new Date().getTime();
