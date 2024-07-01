@@ -28,7 +28,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./GoogleService-Info.plist",
-    buildNumber: "6",
+    buildNumber: "7",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -203,6 +203,8 @@ export const expo = {
       },
     ],
     "expo-router",
+    "expo-font",
+    "expo-secure-store",
     ["react-native-appsflyer", { shouldUseStrictMode: true }],
   ],
   runtimeVersion: {
