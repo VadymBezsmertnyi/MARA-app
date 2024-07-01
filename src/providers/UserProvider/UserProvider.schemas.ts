@@ -7,6 +7,7 @@ import {
 } from "../PlacesProvider/PlacesProvider.schemas";
 import { workshopSchema } from "../WorkshopsProvider/WorkshopsProvider.schemas";
 import { businessMarketSchema } from "../BusinessProvider/BusinessProvider.schemas";
+import { eventSchema } from "../EventsProvider/EventsProvider.schemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),
@@ -47,7 +48,7 @@ export const userDataS = z.object({
     })
     .nullable(),
   email: z.string().nullable(),
-  eventsIds: z.array(z.number()),
+  eventsIds: z.array(eventSchema),
   workshopsIds: z.array(workshopSchema),
   productsIds: z.array(z.number()),
   isCheckBiometric: z.boolean().nullable(),

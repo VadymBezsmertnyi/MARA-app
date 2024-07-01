@@ -32,12 +32,10 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
 }) => {
   const { top } = useSafeAreaInsets();
   const { language } = useContext(localesContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const selectCountryTitle = useMemo(() => {
-    if (!firstEvent) return "";
-    const placeDB = getPlace(firstEvent.place_id);
-    if (!placeDB) return "";
-    return placeDB[language].formatted_address;
+    if (!firstEvent?.place_id) return "";
+    return firstEvent.place_id[language].formatted_address;
   }, [placesDB, firstEvent?.place_id]);
 
   const isDateShow = useMemo(() => {

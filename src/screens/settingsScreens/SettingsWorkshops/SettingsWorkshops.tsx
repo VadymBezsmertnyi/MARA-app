@@ -10,7 +10,7 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
-import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -29,7 +29,6 @@ import notItemsImage from "../../../../assets/settingsScreen/notWorkshopsUsers.j
 // styles
 import { styles } from "./SettingsWorkshops.styles";
 import colors from "../../../../styles/colors";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 type SettingsWorkshopsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &

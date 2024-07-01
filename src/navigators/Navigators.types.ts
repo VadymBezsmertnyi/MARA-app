@@ -71,7 +71,7 @@ export type RootEventsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    eventId?: number;
+    eventId?: string;
   };
   [PATHS_EVENTS_SCREENS.eventsList]?: Record<
     string,
@@ -133,7 +133,7 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    eventId: number;
+    eventId: string;
   };
   [PATHS_SETTINGS_SCREENS.settingsProfile]?: Record<
     string,

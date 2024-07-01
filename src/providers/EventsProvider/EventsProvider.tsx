@@ -33,13 +33,19 @@ import { PATHS } from "../paths.constants";
 // schemas
 import { eventSchema, resultEventsSchema } from "./EventsProvider.schemas";
 
+type NewEventType = Omit<EventType, "_id" | "userId"> & { userId: string };
+type ChangeEventType = Omit<EventType, "userId" | "likeUserIds"> & {
+  userId: string;
+  likeUserIds?: string[];
+};
+
 type EventsContext = {
   eventsList: UpcomingEvents;
   eventsUserList: UpcomingEvents;
-  addEvent: (newEvent: Omit<EventType, "id">) => Promise<void>;
-  changeEvent: (changeEvent: EventType) => Promise<void>;
-  deleteEvent: (idEvent: number, type?: "all" | "user") => Promise<boolean>;
-  setIdDeleteEvent: React.Dispatch<React.SetStateAction<number | null>>;
+  addEvent: (newEvent: NewEventType) => Promise<void>;
+  changeEvent: (changeEvent: ChangeEventType) => Promise<void>;
+  deleteEvent: (idEvent: string, type?: "all" | "user") => Promise<boolean>;
+  setIdDeleteEvent: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 type EventsProviderType = {
@@ -58,7 +64,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   const { onSetUserProperties } = useContext(analyticsContext);
   const [eventsList, setEventsList] = useState<UpcomingEvents>([]);
   const [eventsUserList, setEventsUserList] = useState<UpcomingEvents>([]);
-  const [idDeleteEvent, setIdDeleteEvent] = useState<number | null>(null);
+  const [idDeleteEvent, setIdDeleteEvent] = useState<string | null>(null);
   const { success } = showErrors;
 
   const getEvents = async () => {
@@ -67,10 +73,10 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   };
 
   const getEventsUser = async () => {
-    if (userData?.id) {
+    if (userData?._id) {
       const queryParams = qs.stringify(
         {
-          userId: userData.id,
+          userId: userData._id,
         },
         {
           addQueryPrefix: true,
@@ -85,10 +91,10 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
     }
   };
 
-  const addEvent = async (newEvent: Omit<EventType, "id">) => {
+  const addEvent = async (newEvent: NewEventType) => {
     setLoading(true);
-    if (userData?.id) {
-      const data = { ...newEvent, userId: userData.id };
+    if (userData?._id) {
+      const data = { ...newEvent, userId: userData._id };
       const result = await api(
         PATHS.eventAdd,
         {
@@ -122,14 +128,14 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
       setEventsUserList((state) =>
         getSortEvents(
           state.map((event) =>
-            event.id === result.event.id ? result.event : event
+            event._id === result.event._id ? result.event : event
           )
         )
       );
       setEventsList((state) =>
         getSortEvents(
           state.map((event) =>
-            event.id === result.event.id ? result.event : event
+            event._id === result.event._id ? result.event : event
           )
         )
       );
@@ -138,7 +144,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   };
 
   const deleteEvent = async (
-    idEvent: number,
+    idEvent: string,
     type: "all" | "user" = "all"
   ): Promise<boolean> => {
     try {
@@ -149,10 +155,12 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
         z.object({ result: z.boolean() })
       );
       if (result?.result) {
-        setEventsList((state) => state.filter((event) => event.id !== idEvent));
+        setEventsList((state) =>
+          state.filter((event) => event._id !== idEvent)
+        );
         if (type === "user") {
           setEventsUserList((state) =>
-            state.filter((event) => event.id !== idEvent)
+            state.filter((event) => event._id !== idEvent)
           );
           if (userData && userData.eventsIds.length > 0)
             await onSetUserProperties({
@@ -182,11 +190,11 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
   );
 
   useEffect(() => {
-    if (userData?.id) {
+    if (userData?._id) {
       getEvents();
       getEventsUser();
     }
-  }, [userData?.id]);
+  }, [userData?._id]);
 
   return (
     <eventsContext.Provider value={contextValue}>

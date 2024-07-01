@@ -44,7 +44,7 @@ export const ItemSettingEvents: FunctionComponent<ItemSettingEventsProps> = ({
 
   const onPressChange = () => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventChange, {
-      eventId: event.id,
+      eventId: event._id,
     });
   };
 

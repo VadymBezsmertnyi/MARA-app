@@ -104,7 +104,9 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const isLike = useMemo(
     () =>
       userData && selectWorkshop
-        ? selectWorkshop.likeUserIds.includes(userData._id)
+        ? selectWorkshop.likeUserIds
+            .map((likeUserId) => likeUserId._id)
+            .includes(userData._id)
         : false,
     [selectWorkshop?.likeUserIds]
   );

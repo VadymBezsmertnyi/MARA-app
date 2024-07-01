@@ -63,7 +63,21 @@ export const workshopSchema = z.object({
   dataCreate: z.number(),
   comments: z.array(commentSchema),
   rating: z.number().nullable(),
-  likeUserIds: z.array(z.string()),
+  likeUserIds: z.array(
+    z.object({
+      _id: z.string(),
+      avatar: z
+        .object({
+          _id: z.any(),
+          url: z.string(),
+          image: imageSchema.optional(),
+        })
+        .nullable(),
+      firstName: z.string(),
+      lastName: z.string(),
+      phoneNumber: z.string(),
+    })
+  ),
 });
 
 export const workshopsSchema = z.array(workshopSchema);

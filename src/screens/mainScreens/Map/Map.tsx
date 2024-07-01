@@ -77,7 +77,12 @@ export const Map: FunctionComponent<MapProps> = () => {
   );
 
   const showFirstEvent = (location: mapMarker) => {
-    setRegion(location);
+    if (refMap.current)
+      refMap.current.animateToRegion({
+        ...location,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+      });
   };
 
   const getToUser = () => {
@@ -114,7 +119,7 @@ export const Map: FunctionComponent<MapProps> = () => {
         {eventsList.map((eventItem) =>
           eventItem?.coordinates ? (
             <EventMarker
-              key={`marker-event-${eventItem.id}`}
+              key={`marker-event-${eventItem._id}`}
               location={location}
               event={eventItem}
             />

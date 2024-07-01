@@ -86,7 +86,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
       <ScrollView contentContainerStyle={styles.containerList}>
         {showEventsList.map((eventItem) => (
           <ItemListEvents
-            key={`event-${eventItem.id}`}
+            key={`event-${eventItem._id}`}
             item={eventItem}
             navigation={navigation}
           />

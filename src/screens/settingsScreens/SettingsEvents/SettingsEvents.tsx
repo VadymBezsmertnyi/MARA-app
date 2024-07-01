@@ -90,7 +90,7 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
             const isStart = index === 0;
             return (
               <ItemSettingEvents
-                key={`events-settings-${event.id}`}
+                key={`events-settings-${event._id}`}
                 event={event}
                 isStart={isStart}
               />

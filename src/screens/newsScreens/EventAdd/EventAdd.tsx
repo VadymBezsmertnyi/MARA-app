@@ -9,7 +9,6 @@ import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import { z } from "zod";
 import * as FileSystem from "expo-file-system";
 import { Trans } from "@lingui/macro";
 import dayjs from "dayjs";
@@ -93,23 +92,20 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   > | null>(null);
   const showTitlePlace = useMemo(() => {
     if (!placeAddress) return "";
-    const placeDB = getPlace(placeAddress.placeId);
-    if (!placeDB) return placeAddress.title;
-    return placeDB[language].formatted_address;
+    const findPlace =
+      placesDB.find((placeDB) => placeDB._id === placeAddress.placeId) || null;
+    if (!findPlace) {
+      getPlace(placeAddress.placeId);
+      return placeAddress.title;
+    }
+    return findPlace[language].formatted_address;
   }, [placesDB, placeAddress]);
-  const currentParamsChangeEvent = useMemo(
-    () => z.object({ eventId: z.number() }).safeParse(params),
-    [params]
-  );
   const eventUser = useMemo(
     () =>
-      currentParamsChangeEvent.success
-        ? eventsUserList.find(
-            (eventUser) =>
-              eventUser.id === currentParamsChangeEvent.data.eventId
-          )
+      params?.eventId
+        ? eventsUserList.find((eventUser) => eventUser._id === params?.eventId)
         : null,
-    [currentParamsChangeEvent]
+    [params?.eventId]
   );
   const start = useMemo(
     () => combineDateAndTime(beginDate, beginTime).getTime(),
@@ -180,10 +176,10 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
 
   const onSaveEvent = async () => {
     const isError = checkEnterData();
-    if (userData?.id && !isError && placeAddress) {
+    if (userData?._id && !isError && placeAddress) {
       const currentPlace =
         eventUser &&
-        placeAddress?.placeId === eventUser.place_id &&
+        placeAddress?.placeId === eventUser.place_id?._id &&
         placeAddress.address === eventUser.place_address
           ? {
               place_id: eventUser.place_id,
@@ -194,7 +190,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             }
           : { place: placeAddress };
       const currentImages = images.map((image) => ({
-        id: image.id || "",
+        _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
@@ -224,7 +220,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
       else
         await addEvent({
           ...newEvent,
-          userId: userData.id,
+          userId: userData._id,
         });
       navigation.goBack();
     }
@@ -244,7 +240,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               encoding: "base64",
             });
             return {
-              id: image.id,
+              id: image._id,
               url: image.url,
               width: image.width,
               height: image.height,
@@ -253,13 +249,15 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           })
         );
         setEventName(eventUser.title);
-        const placeDB = getPlace(eventUser.place_id);
-        setPlaceAddress({
-          placeId: eventUser.place_id,
-          title: placeDB ? placeDB[language].formatted_address : "",
-          address: eventUser.place_address,
-          coordinates: eventUser.coordinates,
-        });
+        if (eventUser.place_id?.place_id) {
+          const placeDB = await getPlace(eventUser.place_id?.place_id);
+          setPlaceAddress({
+            placeId: eventUser.place_id.place_id,
+            title: placeDB ? placeDB[language].formatted_address : "",
+            address: eventUser.place_address,
+            coordinates: eventUser.coordinates,
+          });
+        }
         setBeginDate(new Date(eventUser.date.start));
         setBeginTime(new Date(eventUser.date.start));
         setFinishDate(new Date(eventUser.date.finish));
@@ -455,8 +453,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             setIsShowDeleteModal(false);
           }}
           onSubmit={async () => {
-            if (eventUser?.id) {
-              await deleteEvent(eventUser.id, "user");
+            if (eventUser?._id) {
+              await deleteEvent(eventUser._id, "user");
               setIsShowDeleteModal(false);
             }
           }}

@@ -41,7 +41,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
 }) => {
   const { location } = useContext(mapContext);
   const { i18n, language } = useContext(localesContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const nowDate = new Date().getTime();
   const isOld = useMemo(
     () => item.date.finish < nowDate,
@@ -78,14 +78,14 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
     [isNow]
   );
   const showTitlePlace = useMemo(() => {
-    const placeDB = getPlace(item.place_id);
+    const placeDB = item.place_id;
     if (!placeDB) return "";
     return placeDB[language].formatted_address;
   }, [placesDB, item.place_id]);
 
   const selectEvent = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
-      eventId: item.id,
+      eventId: item._id,
     });
   };
 
