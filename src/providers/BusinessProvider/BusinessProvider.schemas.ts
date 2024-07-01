@@ -1,5 +1,10 @@
 import { z } from "zod";
-import { coordinatesSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import {
+  coordinatesSchema,
+  countryDbSchema,
+  placeDbSchema,
+  regionDbSchema,
+} from "../PlacesProvider/PlacesProvider.schemas";
 import { imageSchema } from "../../components/ImageModal/ImageModal.schemas";
 
 export const phoneSchema = z.object({
@@ -38,9 +43,9 @@ export const businessMarketSchema = z.object({
   name: z.string(),
   place: z
     .object({
-      place_id: z.string(),
-      region_place_id: z.string(),
-      country_place_id: z.string(),
+      place_id: placeDbSchema.nullable(),
+      region_place_id: regionDbSchema.nullable(),
+      country_place_id: countryDbSchema.nullable(),
       place_address: z.string(),
       coordinates: coordinatesSchema,
     })

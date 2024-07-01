@@ -1,11 +1,21 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { ScrollView, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import * as ImagePicker from "expo-image-picker";
+import * as FileSystem from "expo-file-system";
 
 // types
-import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
+import {
+  RootAllScreensParamList,
+  RootSettingsScreensParamList,
+} from "../../../navigators/Navigators.types";
 
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -41,6 +51,7 @@ import {
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
 import showErrors from "../../../helps/errors/showError";
+import { RouteProp, useRoute } from "@react-navigation/native";
 
 type SettingsBusinessCreateProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -65,11 +76,13 @@ const DEFAULT_DATA_PHONE_NUMBERS = [
 export const SettingsBusinessCreate: FunctionComponent<
   SettingsBusinessCreateProps
 > = ({ navigation }) => {
+  const { params } = useRoute<RouteProp<RootSettingsScreensParamList>>();
   const { i18n, language } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
   const { userData } = useContext(userContext);
   const { placesDB, getPlace } = useContext(placesContext);
-  const { onCreateBusinessMarket } = useContext(businessContext);
+  const { businessMarketUser, onCreateBusinessMarket, onUpdateBusinessMarket } =
+    useContext(businessContext);
   const { verifyPhone } = useAuthorizationRegistration();
   const { getErrorText } = useErrors(i18n);
   const [name, setName] = useState<string>("");
@@ -90,6 +103,12 @@ export const SettingsBusinessCreate: FunctionComponent<
   >(null);
   const { warning } = showErrors;
 
+  const selectBusinessMarket = useMemo(() => {
+    if (!params?.businessMarketId) return null;
+    if (!businessMarketUser) return null;
+    if (businessMarketUser._id !== params.businessMarketId) return null;
+    return businessMarketUser;
+  }, [params?.businessMarketId, businessMarketUser]);
   const showTitlePlace = useMemo(() => {
     if (!place) return "";
     const findPlace =
@@ -177,7 +196,6 @@ export const SettingsBusinessCreate: FunctionComponent<
     });
     if (!isError && place && userData) {
       const newBusiness = {
-        newLogo: logo?.base64 ? { ...logo, base64: logo.base64 || "" } : null,
         name,
         place,
         mainPhoneNumber,
@@ -186,10 +204,67 @@ export const SettingsBusinessCreate: FunctionComponent<
           : null,
         userId: userData._id,
       };
-      await onCreateBusinessMarket(newBusiness);
-      navigation.goBack();
+      const result = selectBusinessMarket
+        ? await onUpdateBusinessMarket({
+            ...newBusiness,
+            logo: selectBusinessMarket.logo,
+            _id: selectBusinessMarket._id,
+            newLogo:
+              logo?.base64 && logo?.uri !== selectBusinessMarket.logo?.url
+                ? { ...logo, base64: logo.base64 || "" }
+                : null,
+          })
+        : await onCreateBusinessMarket({
+            ...newBusiness,
+            newLogo: logo?.base64
+              ? { ...logo, base64: logo.base64 || "" }
+              : null,
+          });
+      if (result) navigation.goBack();
     }
   };
+
+  const setBusinessMarket = async () => {
+    if (!selectBusinessMarket) return;
+    setName(selectBusinessMarket.name);
+    if (selectBusinessMarket.place?.place_id) {
+      const title =
+        selectBusinessMarket.place.place_id[language].formatted_address || "";
+      setPlace({
+        placeId: selectBusinessMarket.place.place_id.place_id,
+        title,
+        address: selectBusinessMarket.place.place_address,
+        coordinates: selectBusinessMarket.place.coordinates,
+      });
+    }
+    setMainPhoneNumber(selectBusinessMarket.mainPhoneNumber);
+    if (selectBusinessMarket.otherPhoneNumbers)
+      setOtherPhoneNumbers([
+        ...selectBusinessMarket.otherPhoneNumbers,
+        ...DEFAULT_DATA_PHONE_NUMBERS.slice(
+          selectBusinessMarket.otherPhoneNumbers.length
+        ),
+      ]);
+    setMainPhoneNumber(selectBusinessMarket.mainPhoneNumber);
+    if (selectBusinessMarket.logo) {
+      const response = await FileSystem.downloadAsync(
+        selectBusinessMarket.logo.url,
+        `${FileSystem.documentDirectory}temp.jpg`
+      );
+      const base64 = await FileSystem.readAsStringAsync(response.uri, {
+        encoding: "base64",
+      });
+      setLogo({
+        ...selectBusinessMarket.logo,
+        uri: selectBusinessMarket.logo.url,
+        base64,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (selectBusinessMarket) setBusinessMarket();
+  }, [selectBusinessMarket]);
 
   return (
     <>
@@ -234,7 +309,7 @@ export const SettingsBusinessCreate: FunctionComponent<
             errorMessage={errorMessage?.place?.title || ""}
           />
           <InputPhoneMessengers
-            label={i18n._("Phone number:")}
+            label={i18n._("Phone number")}
             phoneNumber={mainPhoneNumber.phoneNumber}
             setPhoneNumber={(phoneNumber) => {
               clearKeyError("phoneNumber");
@@ -262,7 +337,9 @@ export const SettingsBusinessCreate: FunctionComponent<
           {otherPhoneNumbers.map((otherPhoneNumber, index) => (
             <InputPhoneMessengers
               key={`other-phone-number-${index + 1}`}
-              label={i18n._("Additional number 1:")}
+              label={i18n._("Additional number {numberOtherPhone}", {
+                numberOtherPhone: index + 1,
+              })}
               phoneNumber={otherPhoneNumber.phoneNumber}
               setPhoneNumber={(phoneNumber) => {
                 setOtherPhoneNumbers((state) =>

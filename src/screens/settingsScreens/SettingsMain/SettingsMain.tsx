@@ -70,13 +70,13 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate);
   };
 
-  const onChangeBusinessMarket = (businessMarketId: number) => {
+  const onChangeBusinessMarket = (businessMarketId: string) => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange, {
       businessMarketId,
     });
   };
 
-  const onReviewBusinessMarket = (businessMarketId: number) => {
+  const onReviewBusinessMarket = (businessMarketId: string) => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketReview, {
       businessMarketId,
     });
@@ -107,7 +107,6 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           onCreateBusiness={onCreateBusinessMarket}
           onChangeBusiness={onChangeBusinessMarket}
           onReviewBusiness={onReviewBusinessMarket}
-          navigation={navigation}
         />
         <View style={styles.containerList}>
           <View style={styles.containerLineEmpty} />

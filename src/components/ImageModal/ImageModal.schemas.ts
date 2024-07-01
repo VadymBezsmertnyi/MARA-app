@@ -6,6 +6,7 @@ export const imageSchema = z.object({
   height: z.number(),
   base64: z.string(),
   url: z.string().optional(),
+  uri: z.string().optional(),
 });
 
 export const imagesSchema = z.array(imageSchema);

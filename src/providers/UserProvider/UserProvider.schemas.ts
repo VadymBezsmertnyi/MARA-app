@@ -6,6 +6,7 @@ import {
   regionDbSchema,
 } from "../PlacesProvider/PlacesProvider.schemas";
 import { workshopSchema } from "../WorkshopsProvider/WorkshopsProvider.schemas";
+import { businessMarketSchema } from "../BusinessProvider/BusinessProvider.schemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),
@@ -67,7 +68,7 @@ export const userDataS = z.object({
     isEnable: z.boolean(),
     radiusKm: z.number(),
   }),
-  businessMarketId: z.number().nullable(),
+  businessMarketId: businessMarketSchema.nullable(),
 });
 
 export const resultUserDataS = z.object({
