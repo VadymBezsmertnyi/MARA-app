@@ -231,6 +231,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
         if (!isCheckBiometric) return null;
 
         const userData = { ...DEFAULT_USER_DATA, ...result };
+        console.log("userData", userData);
         setUserData(userData);
         setUserDataSocket(userData);
         return userData;

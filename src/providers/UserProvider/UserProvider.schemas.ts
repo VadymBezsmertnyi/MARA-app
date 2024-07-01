@@ -1,5 +1,10 @@
 import { z } from "zod";
 import { languagesKeys } from "../../../localization/localization.const";
+import {
+  countryDbSchema,
+  placeDbSchema,
+  regionDbSchema,
+} from "../PlacesProvider/PlacesProvider.schemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),
@@ -51,9 +56,9 @@ export const userDataS = z.object({
   isDeleteUser: z.boolean(),
   googleDate: googleBDSchema.nullable(),
   facebookDate: facebookBDSchema.nullable(),
-  place_id: z.string().nullable(),
-  region_place_id: z.string().nullable(),
-  country_place_id: z.string().nullable(),
+  place_id: placeDbSchema.nullable(),
+  region_place_id: regionDbSchema.nullable(),
+  country_place_id: countryDbSchema.nullable(),
   firstName: z.string().nullable(),
   lastName: z.string().nullable(),
   phoneNumber: z.string().nullable(),
