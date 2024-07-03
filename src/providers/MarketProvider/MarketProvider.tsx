@@ -38,16 +38,20 @@ import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
 // constants
 import { PATHS } from "../paths.constants";
 
+export type NewProductType = Omit<
+  ProductType,
+  "_id" | "prices" | "userId" | "likeUserIds"
+> & {
+  userId: string;
+  likeUserIds: string[];
+  place?: ItemSearchPlaceType;
+};
+
 type MarketContext = {
   products: ProductsType;
-  productsUser: ProductsType;
-  addProduct: (
-    newProduct: Omit<ProductType, "id" | "prices"> & {
-      place?: ItemSearchPlaceType;
-    }
-  ) => Promise<boolean>;
-  changeProduct: (changeProduct: ProductType) => Promise<boolean>;
-  deleteProduct: (idProduct: number, type?: "all" | "user") => Promise<boolean>;
+  addProduct: (newProduct: NewProductType) => Promise<boolean>;
+  changeProduct: (changeProduct: NewProductType) => Promise<boolean>;
+  deleteProduct: (idProduct: string, type?: "all" | "user") => Promise<boolean>;
   minMaxPrices: MinMaxPricesType | null;
   placesAll: PlacesAllIdsType | null;
 };
@@ -68,8 +72,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   const { setLoading } = useContext(loadingContext);
   const { onSetUserProperties } = useContext(analyticsContext);
   const [products, setProducts] = useState<ProductsType>([]);
-  const [productsUser, setProductsUser] = useState<ProductsType>([]);
-  const [idDeleteProduct, setIdDeleteProduct] = useState<number | null>(null);
+  const [idDeleteProduct, setIdDeleteProduct] = useState<string | null>(null);
   const [minMaxPrices, setMinMaxPrices] = useState<MinMaxPricesType | null>(
     null
   );
@@ -103,6 +106,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       null,
       resultProductsSchema
     );
+    console.log(result);
 
     if (result) {
       setProducts(result.products);
@@ -113,10 +117,10 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   };
 
   const getProductsUser = async () => {
-    if (userData?.id) {
+    if (userData?._id) {
       const queryParams = qs.stringify(
         {
-          userId: userData.id,
+          userId: userData._id,
         },
         {
           addQueryPrefix: true,
@@ -128,16 +132,13 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         resultProductsSchema
       );
       if (result) {
-        setProductsUser(result.products);
         setCurrencies(result.currencies);
         setMinMaxPrices({ min: result.min, max: result.max });
       }
     }
   };
 
-  const addProduct = async (
-    newProduct: Omit<ProductType, "id" | "prices">
-  ): Promise<boolean> => {
+  const addProduct = async (newProduct: NewProductType): Promise<boolean> => {
     setLoading(true);
     const result = await api(
       PATHS.marketsProductsAdd,
@@ -148,7 +149,6 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       z.object({ product: productSchema })
     );
     if (result?.product) {
-      setProductsUser((state) => [...state, result.product]);
       setProducts((state) => [...state, result.product]);
       setLoading(false);
       setMinMaxProduct(result.product);
@@ -162,11 +162,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
     return false;
   };
 
-  const changeProduct = async (
-    changeProduct: Omit<ProductType, "id" | "prices"> & {
-      place?: ItemSearchPlaceType;
-    }
-  ) => {
+  const changeProduct = async (changeProduct: NewProductType) => {
     setLoading(true);
     const result = await api(
       PATHS.marketsProductsChange,
@@ -177,14 +173,9 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       z.object({ product: productSchema })
     );
     if (result?.product) {
-      setProductsUser((state) =>
-        state.map((product) =>
-          product.id === result.product.id ? result.product : product
-        )
-      );
       setProducts((state) =>
         state.map((product) =>
-          product.id === result.product.id ? result.product : product
+          product._id === result.product._id ? result.product : product
         )
       );
       setMinMaxProduct(result.product);
@@ -196,7 +187,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   };
 
   const deleteProduct = async (
-    idProduct: number,
+    idProduct: string,
     type: "all" | "user" = "all"
   ): Promise<boolean> => {
     try {
@@ -208,12 +199,9 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       );
       if (result?.result) {
         setProducts((state) =>
-          state.filter((product) => product.id !== idProduct)
+          state.filter((product) => product._id !== idProduct)
         );
         if (type === "user") {
-          setProductsUser((state) =>
-            state.filter((product) => product.id !== idProduct)
-          );
           if (userData && userData.productsIds.length > 0)
             await onSetUserProperties({
               amountProducts: (userData.productsIds.length - 1).toString(),
@@ -232,27 +220,26 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   const valueContext: MarketContext = useMemo(
     () => ({
       products,
-      productsUser,
       addProduct,
       changeProduct,
       deleteProduct,
       minMaxPrices,
       placesAll,
     }),
-    [products, productsUser, minMaxPrices, placesAll]
+    [products, minMaxPrices, placesAll]
   );
 
   useEffect(() => {
-    if (userData?.id) {
+    if (userData?._id) {
       getProducts();
       getProductsUser();
     }
-  }, [userData?.id]);
+  }, [userData?._id]);
 
   return (
     <marketContext.Provider value={valueContext}>
       {children}
-      {idDeleteProduct ? (
+      {idDeleteProduct?.length ? (
         <ModalDelete
           onSubmit={async () => {
             await deleteProduct(idDeleteProduct, "user");
