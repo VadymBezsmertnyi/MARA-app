@@ -40,11 +40,20 @@ import { PATHS } from "../paths.constants";
 
 export type NewProductType = Omit<
   ProductType,
-  "_id" | "prices" | "userId" | "likeUserIds"
+  | "_id"
+  | "prices"
+  | "userId"
+  | "likeUserIds"
+  | "place_id"
+  | "country_place_id"
+  | "region_place_id"
 > & {
   userId: string;
   likeUserIds: string[];
   place?: ItemSearchPlaceType;
+  place_id?: string;
+  country_place_id?: string;
+  region_place_id?: string;
 };
 
 type MarketContext = {
@@ -66,7 +75,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   children,
 }) => {
   const { i18n } = useContext(localesContext);
-  const { userData } = useContext(userContext);
+  const { userData, setUserData } = useContext(userContext);
   const { setCurrencies } = useContext(paymentContext);
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
@@ -106,7 +115,6 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       null,
       resultProductsSchema
     );
-    console.log(result);
 
     if (result) {
       setProducts(result.products);
@@ -152,10 +160,15 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       setProducts((state) => [...state, result.product]);
       setLoading(false);
       setMinMaxProduct(result.product);
-      if (userData)
+      if (userData) {
+        setUserData({
+          ...userData,
+          productsIds: [...userData.productsIds, result.product],
+        });
         await onSetUserProperties({
           amountWorkshops: (userData.workshopsIds.length + 1).toString(),
         });
+      }
       return true;
     }
     setLoading(false);
@@ -178,6 +191,14 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
           product._id === result.product._id ? result.product : product
         )
       );
+      if (userData) {
+        setUserData({
+          ...userData,
+          productsIds: userData.productsIds.map((product) =>
+            product._id === result.product._id ? result.product : product
+          ),
+        });
+      }
       setMinMaxProduct(result.product);
       setLoading(false);
       return true;
@@ -194,7 +215,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       setLoading(true);
       const result = await api(
         PATHS.marketsProductsDelete,
-        { method: "DELETE", data: { id: idProduct } },
+        { method: "DELETE", data: { _id: idProduct } },
         z.object({ result: z.boolean() })
       );
       if (result?.result) {
@@ -202,10 +223,17 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
           state.filter((product) => product._id !== idProduct)
         );
         if (type === "user") {
-          if (userData && userData.productsIds.length > 0)
+          if (userData && userData.productsIds.length > 0) {
+            setUserData({
+              ...userData,
+              productsIds: userData.productsIds.filter(
+                (product) => product._id !== idProduct
+              ),
+            });
             await onSetUserProperties({
               amountProducts: (userData.productsIds.length - 1).toString(),
             });
+          }
         }
       }
 

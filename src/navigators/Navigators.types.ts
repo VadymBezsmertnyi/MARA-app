@@ -105,7 +105,7 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    productId?: number;
+    productId?: string;
   };
   [PATHS_SETTINGS_SCREENS.settingsWorkshops]?: Record<
     string,

@@ -52,6 +52,8 @@
     // для console.error
     "no-console": "off",
     // для process.env
-    "@typescript-eslint/no-unnecessary-type-assertion": "off"
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    //Async arrow function has a complexity of 27. Maximum allowed is 25.eslint complexity
+    "complexity": ["warning", 30]
   }
 }

@@ -146,7 +146,10 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const showTitlePlace = useMemo(() => {
     if (!place) return "";
     const findPlace =
-      placesDB.find((placeDB) => placeDB._id === place.placeId) || null;
+      placesDB.find(
+        (placeDB) =>
+          placeDB._id === place.placeId || placeDB.place_id === place.placeId
+      ) || null;
     if (!findPlace) {
       getPlace(place.placeId);
       return place.title;
@@ -213,19 +216,27 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         image,
       }));
       const currentPlace =
-        productUser && place?.placeId === productUser?.place_id?._id
+        productUser &&
+        place?.placeId === productUser?.place_id?.place_id &&
+        productUser.region_place_id &&
+        productUser.country_place_id
           ? {
-              place_id: productUser.place_id,
-              region_place_id: productUser.region_place_id,
-              country_place_id: productUser.country_place_id,
+              place_id: productUser.place_id._id,
+              region_place_id: productUser.region_place_id._id,
+              country_place_id: productUser.country_place_id._id,
             }
-          : { place };
+          : {
+              place,
+            };
       const newProduct: NewProductType = {
         ...DEFAULT_PRODUCT_DATA,
         userId: userData?._id,
         title,
         isNew,
         isBusiness,
+        place_id: undefined,
+        region_place_id: undefined,
+        country_place_id: undefined,
         ...currentPlace,
         images: currentImages,
         description,
@@ -280,7 +291,13 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         likeUserIds: productUser?.likeUserIds.map((item) => item._id) || [],
       };
       const isCreate = productUser
-        ? await changeProduct({ ...productUser, ...newProduct })
+        ? await changeProduct({
+            ...productUser,
+            place_id: undefined,
+            region_place_id: undefined,
+            country_place_id: undefined,
+            ...newProduct,
+          })
         : await addProduct(newProduct);
       if (isCreate) {
         navigation.goBack();
@@ -331,7 +348,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         setTitle(productUser.title);
         if (productUser.place_id)
           setPlace({
-            placeId: productUser.place_id._id,
+            placeId: productUser.place_id.place_id,
             title: productUser.place_id[language].formatted_address,
           });
         setImages(imagesWithBath64);

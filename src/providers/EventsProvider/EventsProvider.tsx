@@ -33,10 +33,13 @@ import { PATHS } from "../paths.constants";
 // schemas
 import { eventSchema, resultEventsSchema } from "./EventsProvider.schemas";
 
-type NewEventType = Omit<EventType, "_id" | "userId"> & { userId: string };
+type NewEventType = Omit<EventType, "_id" | "userId" | "likeUserIds"> & {
+  userId: string;
+  likeUserIds: string[];
+};
 type ChangeEventType = Omit<EventType, "userId" | "likeUserIds"> & {
   userId: string;
-  likeUserIds?: string[];
+  likeUserIds: string[];
 };
 
 type EventsContext = {
@@ -114,7 +117,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
     setLoading(false);
   };
 
-  const changeEvent = async (changeEvent: EventType) => {
+  const changeEvent = async (changeEvent: ChangeEventType) => {
     setLoading(true);
     const result = await api(
       PATHS.eventChange,
@@ -151,7 +154,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
       setLoading(true);
       const result = await api(
         PATHS.eventDelete,
-        { method: "DELETE", data: { id: idEvent } },
+        { method: "DELETE", data: { _id: idEvent } },
         z.object({ result: z.boolean() })
       );
       if (result?.result) {

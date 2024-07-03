@@ -116,7 +116,10 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const showTitlePlace = useMemo(() => {
     if (!place) return "";
     const findPlace =
-      placesDB.find((placeDB) => placeDB._id === place.placeId) || null;
+      placesDB.find(
+        (placeDB) =>
+          placeDB._id === place.placeId || placeDB.place_id === place.placeId
+      ) || null;
     if (!findPlace) {
       getPlace(place.placeId);
       return place.title;
@@ -322,7 +325,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       setTitle(selectWorkshop.title);
       const placeDB = await getPlace(selectWorkshop.place_id?.place_id || "");
       setPlace({
-        placeId: selectWorkshop.place_id?._id || "",
+        placeId: selectWorkshop.place_id?.place_id || "",
         title: placeDB ? placeDB[language].formatted_address : "",
         address: selectWorkshop.place_address,
         coordinates: selectWorkshop.coordinates,

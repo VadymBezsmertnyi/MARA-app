@@ -187,7 +187,7 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
       setLoading(true);
       const result = await api(
         PATHS.workshopsDelete,
-        { method: "DELETE", data: { id: idWorkshop } },
+        { method: "DELETE", data: { _id: idWorkshop } },
         z.object({ result: z.boolean() })
       );
       if (result?.result) {
@@ -195,10 +195,17 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
           state.filter((workshop) => workshop._id !== idWorkshop)
         );
         if (type === "user") {
-          if (userData && userData.workshopsIds.length > 0)
+          if (userData && userData.workshopsIds.length > 0) {
+            setUserData({
+              ...userData,
+              workshopsIds: userData.workshopsIds.filter(
+                (workshop) => workshop._id !== idWorkshop
+              ),
+            });
             await onSetUserProperties({
               amountWorkshops: (userData.workshopsIds.length - 1).toString(),
             });
+          }
         }
       }
 

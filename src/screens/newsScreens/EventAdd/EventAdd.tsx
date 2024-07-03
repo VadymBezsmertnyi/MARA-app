@@ -93,7 +93,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const showTitlePlace = useMemo(() => {
     if (!placeAddress) return "";
     const findPlace =
-      placesDB.find((placeDB) => placeDB._id === placeAddress.placeId) || null;
+      placesDB.find(
+        (placeDB) =>
+          placeDB._id === placeAddress.placeId ||
+          placeDB.place_id === placeAddress.placeId
+      ) || null;
     if (!findPlace) {
       getPlace(placeAddress.placeId);
       return placeAddress.title;
@@ -214,9 +218,14 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         currency: "UAH" as const,
         description: aboutEvent,
         images: currentImages,
-        likeUserIds: eventUser?.likeUserIds || [],
+        likeUserIds: eventUser?.likeUserIds.map((item) => item._id) || [],
       };
-      if (eventUser) await changeEvent({ ...eventUser, ...newEvent });
+      if (eventUser && eventUser.userId)
+        await changeEvent({
+          ...eventUser,
+          ...newEvent,
+          userId: eventUser.userId._id,
+        });
       else
         await addEvent({
           ...newEvent,
@@ -240,7 +249,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               encoding: "base64",
             });
             return {
-              id: image._id,
+              _id: image._id,
               url: image.url,
               width: image.width,
               height: image.height,
