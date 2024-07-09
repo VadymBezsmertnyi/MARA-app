@@ -44,7 +44,6 @@ export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
   const { heightStatusBar } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
   const typeItem = useMemo(() => i18n._("adverts"), [i18n]);
-  console.log("userData?.productsIds", userData?.productsIds);
   const productsUser = useMemo(
     () => userData?.productsIds || [],
     [userData?.productsIds]

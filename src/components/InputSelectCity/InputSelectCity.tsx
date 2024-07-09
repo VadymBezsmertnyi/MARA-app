@@ -60,7 +60,6 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
     setValue(city[language].formatted_address || "");
     onSelect(city);
   };
-  console.log("showListCity.length", showListCity.length);
 
   const showCity = useMemo(() => {
     if (value && selectCity)
