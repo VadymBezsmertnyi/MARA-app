@@ -20,7 +20,10 @@ import { Trans } from "@lingui/macro";
 import { getDistance } from "geolib";
 
 // types
-import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
+import {
+  RootMainTabsParamList,
+  RootWorkshopsScreensParamList,
+} from "../../../navigators/Navigators.types";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
@@ -55,11 +58,16 @@ import {
 // image
 import WorkshopPlaceholder from "../../../../assets/default/workshop-placeholder.png";
 
+// constants
+import { PATHS_MAIN_TABS } from "../../../navigators/useNavigator.constants";
+
 // styles
 import { styles } from "./WorkshopsItem.styles";
 
 type WorkshopsItemType = {
-  navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList>;
+  navigation: NativeStackNavigationProp<
+    RootWorkshopsScreensParamList & RootMainTabsParamList
+  >;
   route: RouteProp<
     RootWorkshopsScreensParamList,
     keyof RootWorkshopsScreensParamList
@@ -73,7 +81,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const { i18n, language } = useContext(localesContext);
   const { userData } = useContext(userContext);
   const { workshops, changeWorkshop } = useContext(workshopsContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const { location } = useContext(mapContext);
   const { getSharedLink } = useContext(sharingContext);
   const [amountShow, setAmountShow] = useState(5);
@@ -82,7 +90,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const scrollViewRef = useRef<ScrollView | null>(null);
   const selectWorkshop = useMemo(
     () =>
-      workshops.find((workshop) => workshop.id === route.params?.workshopId) ||
+      workshops.find((workshop) => workshop._id === route.params?.workshopId) ||
       null,
     [workshops, route.params]
   );
@@ -96,7 +104,9 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const isLike = useMemo(
     () =>
       userData && selectWorkshop
-        ? selectWorkshop.likeUserIds.includes(userData.id)
+        ? selectWorkshop.likeUserIds
+            .map((likeUserId) => likeUserId._id)
+            .includes(userData._id)
         : false,
     [selectWorkshop?.likeUserIds]
   );
@@ -105,7 +115,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     () =>
       selectWorkshop && userData
         ? selectWorkshop.comments.filter(
-            (comment) => comment.userId === userData.id
+            (comment) => comment.userId === userData._id
           ).length > 0
         : false,
     [selectWorkshop, userData]
@@ -124,8 +134,10 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   );
   const showTitlePlace = useMemo(() => {
     if (!selectWorkshop) return "";
-    const placeDB = getPlace(selectWorkshop.place_id);
+
+    const placeDB = selectWorkshop.place_id;
     if (!placeDB) return "";
+
     return placeDB[language].formatted_address;
   }, [placesDB, selectWorkshop?.place_id]);
 
@@ -147,7 +159,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const onPressLike = () => {
     if (selectWorkshop && userData) {
       const currentImages = selectWorkshop.images.map((image) => ({
-        id: image.id || "",
+        _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
@@ -155,16 +167,20 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       }));
       const likeUserIds = isLike
         ? selectWorkshop.likeUserIds.filter(
-            (likeUserId) => likeUserId !== userData?.id
+            (likeUserId) => likeUserId !== userData?._id
           )
-        : [...selectWorkshop.likeUserIds, userData.id];
-      changeWorkshop({ ...selectWorkshop, images: currentImages, likeUserIds });
+        : [...selectWorkshop.likeUserIds, userData._id];
+      changeWorkshop({
+        ...selectWorkshop,
+        images: currentImages,
+        likeUserIds,
+        userId: selectWorkshop.userId?._id || userData._id,
+      });
     }
   };
 
   const onPressShare = () => {
-    if (selectWorkshop)
-      getSharedLink({ productId: selectWorkshop.id.toString() });
+    if (selectWorkshop) getSharedLink({ productId: selectWorkshop._id });
   };
 
   return (
@@ -179,7 +195,8 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
           />
         }
         onPressLeftElement={() => {
-          navigation.goBack();
+          if (!route.params?.isMap) navigation.goBack();
+          navigation.navigate(PATHS_MAIN_TABS.map);
         }}
       />
       <ScrollView

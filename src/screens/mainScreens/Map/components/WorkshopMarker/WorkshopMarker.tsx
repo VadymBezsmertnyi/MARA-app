@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useRef } from "react";
 import { LocationObjectCoords } from "expo-location";
-import { Marker, Callout } from "react-native-maps";
+import { Marker, Callout, MapCallout, MapMarker } from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";
@@ -33,10 +33,12 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
     NativeStackNavigationProp<{
       [PATHS_MAIN_TABS.workshops]?: {
         screen: string;
-        params: { workshopId: number };
+        params: { workshopId: string; isMap: boolean };
       };
     }>
   >();
+  const refCallout = useRef<MapMarker>(null);
+
   const distance =
     location && workshop.coordinates
       ? getDistance(location, {
@@ -47,7 +49,11 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
 
   if (!workshop.coordinates) return null;
   return (
-    <Marker identifier={`marker-workshop`} coordinate={workshop.coordinates}>
+    <Marker
+      ref={refCallout}
+      identifier={`marker-workshop`}
+      coordinate={workshop.coordinates}
+    >
       <IconWorkshopMap width={44} height={44} />
       <Callout
         tooltip
@@ -55,9 +61,11 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
           navigation.navigate(PATHS_MAIN_TABS.workshops, {
             screen: PATHS_WORKSHOP_SCREENS.workshopItem,
             params: {
-              workshopId: workshop.id,
+              workshopId: workshop._id,
+              isMap: true,
             },
           });
+          refCallout.current?.hideCallout();
         }}
       >
         <ComponentCalloutWorkshop

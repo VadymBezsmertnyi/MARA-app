@@ -29,7 +29,7 @@ import { styles } from "./WorkshopItem.styles";
 import colors from "../../../../../../styles/colors";
 
 type WorkshopItemProps = {
-  workshopId: number;
+  workshopId: string;
   title: string;
   description: string;
   range: number | string | null;

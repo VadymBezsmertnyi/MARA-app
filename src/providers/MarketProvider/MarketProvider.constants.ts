@@ -1,15 +1,15 @@
 import { ProductType } from "./MarketProvider.types";
 
-export const DEFAULT_PRODUCT_DATA: Omit<ProductType, "id"> = {
-  userId: 0,
+export const DEFAULT_PRODUCT_DATA: Omit<ProductType, "_id"> = {
+  userId: null,
   title: "",
   isNew: false,
   isBusiness: false,
   images: [],
   description: "",
-  place_id: "",
-  region_place_id: "",
-  country_place_id: "",
+  place_id: null,
+  region_place_id: null,
+  country_place_id: null,
   price: 0,
   prices: {
     date: null,

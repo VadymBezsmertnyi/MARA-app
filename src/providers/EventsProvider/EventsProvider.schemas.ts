@@ -1,14 +1,34 @@
 import { z } from "zod";
-import { coordinatesSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import {
+  coordinatesSchema,
+  countryDbSchema,
+  placeDbSchema,
+  regionDbSchema,
+} from "../PlacesProvider/PlacesProvider.schemas";
 import { codeCurrenciesSchema } from "../PaymentProvider/PaymentProvider.schemas";
+import { imageSchema } from "../../components/ImageModal/ImageModal.schemas";
+
+const populateUserData = z.object({
+  _id: z.string(),
+  avatar: z
+    .object({
+      _id: z.any(),
+      url: z.string(),
+      image: imageSchema.optional(),
+    })
+    .nullable(),
+  firstName: z.string(),
+  lastName: z.string(),
+  phoneNumber: z.string(),
+});
 
 export const eventSchema = z.object({
-  id: z.number(),
-  userId: z.number(),
+  _id: z.string(),
+  userId: populateUserData.nullable(),
   title: z.string(),
-  place_id: z.string(),
-  region_place_id: z.string(),
-  country_place_id: z.string(),
+  place_id: placeDbSchema.nullable(),
+  region_place_id: regionDbSchema.nullable(),
+  country_place_id: countryDbSchema.nullable(),
   place_address: z.string(),
   coordinates: coordinatesSchema,
   date: z.object({
@@ -20,13 +40,13 @@ export const eventSchema = z.object({
   description: z.string(),
   images: z.array(
     z.object({
-      id: z.string(),
+      _id: z.string(),
       url: z.string(),
       width: z.number(),
       height: z.number(),
     })
   ),
-  likeUserIds: z.array(z.number()),
+  likeUserIds: z.array(populateUserData),
 });
 
 export const eventsSchema = z.array(eventSchema);

@@ -83,7 +83,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                   .slice(0, 3)
                   .map((eventItem) => (
                     <ItemListEvents
-                      key={`event-${eventItem.id}`}
+                      key={`event-${eventItem._id}`}
                       item={eventItem}
                       navigation={navigation}
                     />
@@ -128,7 +128,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                   .slice(0, 3)
                   .map((itemOld) => (
                     <ItemListEvents
-                      key={`event-${itemOld.id}`}
+                      key={`event-${itemOld._id}`}
                       item={itemOld}
                       navigation={navigation}
                     />

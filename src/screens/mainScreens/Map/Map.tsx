@@ -3,11 +3,12 @@ import React, {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import { Platform, Text, View } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
-import { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
 import dayjs from "dayjs";
@@ -56,6 +57,8 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { theme } = useContext(themeContext);
   const { eventsList } = useContext(eventsContext);
   const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
+  const refMap = useRef<MapView>(null);
+
   const firstEvent = useMemo(
     () => (eventsList.length ? eventsList[0] : null),
     [eventsList]
@@ -63,52 +66,60 @@ export const Map: FunctionComponent<MapProps> = () => {
   const listUsers = useMemo(
     () =>
       usersMaps
-        ? usersMaps.filter(({ userId }) => Number(userId) !== userData?.id)
+        ? usersMaps.filter(({ userId }) => userId !== userData?._id)
         : [],
-    [usersMaps, userData?.id, location]
+    [usersMaps, userData?._id, location]
   );
   const listUsersSos = useMemo(
     () =>
-      usersSos
-        ? usersSos.filter(({ userId }) => Number(userId) !== userData?.id)
-        : [],
-    [usersSos, userData?.id, location]
+      usersSos ? usersSos.filter(({ userId }) => userId !== userData?._id) : [],
+    [usersSos, userData?._id, location]
   );
 
   const showFirstEvent = (location: mapMarker) => {
-    setRegion(location);
+    if (refMap.current)
+      refMap.current.animateToRegion({
+        ...location,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+      });
+  };
+
+  const getToUser = () => {
+    if (location && refMap.current)
+      refMap.current.animateToRegion({
+        ...location,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+      });
   };
 
   useEffect(() => {
-    if (location)
-      setRegion((state) => ({
-        ...state,
-        latitude: location.latitude,
-        longitude: location.longitude,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-      }));
-  }, []);
+    getToUser();
+  }, [!location]);
 
   return (
     <View style={styles.container}>
       <MapViewCluster
+        ref={refMap}
         provider={PROVIDER_GOOGLE}
         style={styles.map}
         mapType={Platform.OS === "ios" ? "terrain" : "standard"}
         initialRegion={DEFAULT_LOCATION}
-        region={region}
         zoomControlEnabled
         userInterfaceStyle={theme}
         showsBuildings={false}
         showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
+        onLayout={() => {
+          getToUser();
+        }}
       >
         <MeMarker />
         {eventsList.map((eventItem) =>
           eventItem?.coordinates ? (
             <EventMarker
-              key={`marker-event-${eventItem.id}`}
+              key={`marker-event-${eventItem._id}`}
               location={location}
               event={eventItem}
             />
@@ -116,7 +127,7 @@ export const Map: FunctionComponent<MapProps> = () => {
         )}
         {workshops.map((workshop) => (
           <WorkshopMarker
-            key={`marker-workshop-${workshop.id}`}
+            key={`marker-workshop-${workshop._id}`}
             workshop={workshop}
             location={location}
           />

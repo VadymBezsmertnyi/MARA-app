@@ -18,7 +18,6 @@ import {
 import { ItemSearchPlaceAddressType } from "../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 
 // providers
-import { ResponsiveLayoutProvider } from "../responsiveLayout/responsiveLayout.provider";
 import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { userContext } from "../UserProvider/UserProvider";
@@ -31,21 +30,25 @@ import { workshopSchema, workshopsSchema } from "./WorkshopsProvider.schemas";
 // constants
 import { PATHS } from "../paths.constants";
 
+type NewWorkshopType = Omit<WorkshopType, "_id" | "userId"> & {
+  userId: string;
+};
+type ChangeWorkshopType = Omit<WorkshopType, "userId"> & { userId: string };
+
 type WorkshopsContext = {
   workshops: WorkshopsType;
-  workshopsUser: WorkshopsType;
-  addWorkshop: (newWorkshop: Omit<WorkshopType, "id">) => Promise<boolean>;
-  changeWorkshop: (changeWorkshop: WorkshopType) => Promise<boolean>;
+  addWorkshop: (newWorkshop: NewWorkshopType) => Promise<boolean>;
+  changeWorkshop: (changeWorkshop: ChangeWorkshopType) => Promise<boolean>;
   deleteWorkshop: (
-    idWorkshop: number,
+    idWorkshop: string,
     type?: "all" | "user"
   ) => Promise<boolean>;
   addComment: (
-    idWorkshop: number,
-    newComment: Omit<CommentType, "id">
+    idWorkshop: string,
+    newComment: Omit<CommentType, "_id">
   ) => Promise<boolean>;
   changeComment: (
-    idWorkshop: number,
+    idWorkshop: string,
     changeComment: CommentType
   ) => Promise<boolean>;
   minMaxDistance: {
@@ -65,11 +68,10 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
 }) => {
   const { api } = useContext(apiContext);
   const { setLoading } = useContext(loadingContext);
-  const { userData } = useContext(userContext);
+  const { userData, setUserData } = useContext(userContext);
   const { location } = useContext(mapContext);
   const { onSetUserProperties } = useContext(analyticsContext);
   const [workshops, setWorkShops] = useState<WorkshopsType>([]);
-  const [workshopsUser, setWorkShopsUser] = useState<WorkshopsType>([]);
   const minMaxDistance = useMemo(() => {
     const distanceMinMax = workshops
       .map((workshop) =>
@@ -106,62 +108,44 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     if (result?.workshops) setWorkShops(result.workshops);
   };
 
-  const getWorkshopsUser = async () => {
-    if (userData?.id) {
-      const queryParams = qs.stringify(
-        {
-          userId: userData.id,
-        },
-        {
-          addQueryPrefix: true,
-        }
-      );
-      const result = await api(
-        `${PATHS.workshopsGetUserId}${queryParams}`,
-        null,
-        z.object({
-          result: z.boolean(),
-          workshops: workshopsSchema,
-          code: z.number(),
-        })
-      );
-      if (result?.workshops) setWorkShopsUser(result.workshops);
-    }
-  };
-
-  const addWorkshop = async (
-    newWorkshop: Omit<WorkshopType, "id"> & {
-      place?: ItemSearchPlaceAddressType;
-    }
-  ) => {
+  const addWorkshop = async (newWorkshop: NewWorkshopType) => {
     setLoading(true);
-    if (userData?.id) {
-      const data = { ...newWorkshop, userId: userData.id };
-      const result = await api(
-        PATHS.workshopsAdd,
-        {
-          method: "POST",
-          data,
-        },
-        z.object({ workshop: workshopSchema })
-      );
-      if (result?.workshop) {
-        setWorkShops((state) => [...state, result.workshop]);
-        setWorkShopsUser((state) => [...state, result.workshop]);
-        setLoading(false);
-        await onSetUserProperties({
-          amountWorkshops: (userData.workshopsIds.length + 1).toString(),
-        });
-        return true;
-      }
+    if (!userData) {
       setLoading(false);
       return false;
+    }
+
+    const data = { ...newWorkshop, userId: userData._id };
+    const result = await api(
+      PATHS.workshopsAdd,
+      {
+        method: "POST",
+        data,
+      },
+      z.object({ workshop: workshopSchema })
+    );
+    if (result?.workshop) {
+      setWorkShops((state) => [...state, result.workshop]);
+      setUserData((state) => {
+        if (state) {
+          return {
+            ...state,
+            workshopsIds: [...state.workshopsIds, result.workshop],
+          };
+        }
+        return state;
+      });
+      setLoading(false);
+      await onSetUserProperties({
+        amountWorkshops: (userData.workshopsIds.length + 1).toString(),
+      });
+      return true;
     }
     setLoading(false);
     return false;
   };
 
-  const changeWorkshop = async (changeWorkshop: WorkshopType) => {
+  const changeWorkshop = async (changeWorkshop: ChangeWorkshopType) => {
     setLoading(true);
     const result = await api(
       PATHS.workshopsChange,
@@ -172,16 +156,22 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
       z.object({ workshop: workshopSchema })
     );
     if (result?.workshop) {
-      setWorkShopsUser((state) =>
-        state.map((workshop) =>
-          workshop.id === result.workshop.id ? result.workshop : workshop
-        )
-      );
       setWorkShops((state) =>
         state.map((workshop) =>
-          workshop.id === result.workshop.id ? result.workshop : workshop
+          workshop._id === result.workshop._id ? result.workshop : workshop
         )
       );
+      setUserData((state) => {
+        if (state) {
+          return {
+            ...state,
+            workshopsIds: state.workshopsIds.map((workshop) =>
+              workshop._id === result.workshop._id ? result.workshop : workshop
+            ),
+          };
+        }
+        return state;
+      });
       setLoading(false);
       return true;
     }
@@ -190,29 +180,32 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   };
 
   const deleteWorkshop = async (
-    idWorkshop: number,
+    idWorkshop: string,
     type: "all" | "user" = "all"
   ): Promise<boolean> => {
     try {
       setLoading(true);
       const result = await api(
         PATHS.workshopsDelete,
-        { method: "DELETE", data: { id: idWorkshop } },
+        { method: "DELETE", data: { _id: idWorkshop } },
         z.object({ result: z.boolean() })
       );
       if (result?.result) {
         setWorkShops((state) =>
-          state.filter((workshop) => workshop.id !== idWorkshop)
+          state.filter((workshop) => workshop._id !== idWorkshop)
         );
         if (type === "user") {
-          setWorkShopsUser((state) =>
-            state.filter((workshop) => workshop.id !== idWorkshop)
-          );
-
-          if (userData && userData.workshopsIds.length > 0)
+          if (userData && userData.workshopsIds.length > 0) {
+            setUserData({
+              ...userData,
+              workshopsIds: userData.workshopsIds.filter(
+                (workshop) => workshop._id !== idWorkshop
+              ),
+            });
             await onSetUserProperties({
               amountWorkshops: (userData.workshopsIds.length - 1).toString(),
             });
+          }
         }
       }
 
@@ -225,8 +218,8 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   };
 
   const addComment = async (
-    idWorkshop: number,
-    newComment: Omit<CommentType, "id">
+    idWorkshop: string,
+    newComment: Omit<CommentType, "_id">
   ) => {
     setLoading(true);
     const result = await api(
@@ -241,7 +234,7 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     if (result?.workshop) {
       setWorkShops((state) =>
         state.map((item) =>
-          item.id === result.workshop.id ? result.workshop : item
+          item._id === result.workshop._id ? result.workshop : item
         )
       );
       setLoading(false);
@@ -252,7 +245,7 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   };
 
   const changeComment = async (
-    idWorkshop: number,
+    idWorkshop: string,
     changeComment: CommentType
   ) => {
     setLoading(true);
@@ -268,7 +261,7 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     if (result?.workshop) {
       setWorkShops((state) =>
         state.map((item) =>
-          item.id === result.workshop.id ? result.workshop : item
+          item._id === result.workshop._id ? result.workshop : item
         )
       );
       setLoading(false);
@@ -281,7 +274,6 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   const valueContext: WorkshopsContext = useMemo(
     () => ({
       workshops,
-      workshopsUser,
       minMaxDistance,
       addWorkshop,
       changeWorkshop,
@@ -289,21 +281,18 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
       addComment,
       changeComment,
     }),
-    [workshops, workshopsUser, minMaxDistance]
+    [workshops, minMaxDistance]
   );
 
   useEffect(() => {
-    if (userData?.id) {
+    if (userData?._id) {
       getWorkshops();
-      getWorkshopsUser();
     }
-  }, [userData?.id]);
+  }, [userData?._id]);
 
   return (
-    <ResponsiveLayoutProvider>
-      <workshopsContext.Provider value={valueContext}>
-        {children}
-      </workshopsContext.Provider>
-    </ResponsiveLayoutProvider>
+    <workshopsContext.Provider value={valueContext}>
+      {children}
+    </workshopsContext.Provider>
   );
 };

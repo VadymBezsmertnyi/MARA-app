@@ -1,5 +1,14 @@
 import { z } from "zod";
 import { languagesKeys } from "../../../localization/localization.const";
+import {
+  countryDbSchema,
+  placeDbSchema,
+  regionDbSchema,
+} from "../PlacesProvider/PlacesProvider.schemas";
+import { workshopSchema } from "../WorkshopsProvider/WorkshopsProvider.schemas";
+import { businessMarketSchema } from "../BusinessProvider/BusinessProvider.schemas";
+import { eventSchema } from "../EventsProvider/EventsProvider.schemas";
+import { productSchema } from "../MarketProvider/MarketProvider.schemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),
@@ -30,19 +39,19 @@ export const facebookBDSchema = z.object({
 });
 
 export const userDataS = z.object({
-  id: z.number(),
+  _id: z.string(),
   isGeoLocation: z.boolean(),
   isGeoLocationBackground: z.boolean(),
   avatar: z
     .object({
-      id: z.string(),
+      _id: z.string(),
       url: z.string(),
     })
     .nullable(),
   email: z.string().nullable(),
-  eventsIds: z.array(z.number()),
-  workshopsIds: z.array(z.number()),
-  productsIds: z.array(z.number()),
+  eventsIds: z.array(eventSchema),
+  workshopsIds: z.array(workshopSchema),
+  productsIds: z.array(productSchema),
   isCheckBiometric: z.boolean().nullable(),
   verifyToken: z.string().nullable(),
   timeToken: z.number(),
@@ -51,9 +60,9 @@ export const userDataS = z.object({
   isDeleteUser: z.boolean(),
   googleDate: googleBDSchema.nullable(),
   facebookDate: facebookBDSchema.nullable(),
-  place_id: z.string().nullable(),
-  region_place_id: z.string().nullable(),
-  country_place_id: z.string().nullable(),
+  place_id: placeDbSchema.nullable(),
+  region_place_id: regionDbSchema.nullable(),
+  country_place_id: countryDbSchema.nullable(),
   firstName: z.string().nullable(),
   lastName: z.string().nullable(),
   phoneNumber: z.string().nullable(),
@@ -61,7 +70,7 @@ export const userDataS = z.object({
     isEnable: z.boolean(),
     radiusKm: z.number(),
   }),
-  businessMarketId: z.number().nullable(),
+  businessMarketId: businessMarketSchema.nullable(),
 });
 
 export const resultUserDataS = z.object({

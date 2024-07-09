@@ -1,7 +1,6 @@
 import { UserDataT } from "./UserProvider.types";
 
-export const DEFAULT_USER_DATA: UserDataT = {
-  id: 0,
+export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
   isGeoLocation: false,
   isGeoLocationBackground: false,
   avatar: null,
@@ -27,6 +26,7 @@ export const DEFAULT_USER_DATA: UserDataT = {
     isEnable: false,
     radiusKm: 5,
   },
+  businessMarketId: null,
 };
 
 export const NUMBER_TWO = 2;

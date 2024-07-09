@@ -52,7 +52,7 @@ export const ItemSettingProducts: FunctionComponent<
 
   const onPressChange = () => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductChange, {
-      productId: product.id,
+      productId: product._id,
     });
   };
 

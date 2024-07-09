@@ -1,7 +1,6 @@
 import { Platform } from "react-native";
 import * as Application from "expo-application";
 import * as SecureStore from "expo-secure-store";
-import Constants from "expo-constants";
 import { z } from "zod";
 
 const appManifestEnvS = z.object({
@@ -31,7 +30,8 @@ export const getApiUrl = () => {
     Platform.OS === "web"
       ? `http://${APP_DOMAIN_WEB}:${APP_PORT}`
       : `http://${appDomainApp}:${APP_PORT}`;
-  return herokuServer || api;
+  if (__DEV__) return api;
+  return herokuServer;
 };
 
 export const getDeviceId = async () => {
@@ -40,8 +40,8 @@ export const getDeviceId = async () => {
   const deviceId = await SecureStore.getItemAsync("deviceId");
 
   if (!deviceId) {
-    const newDeviceId = Constants.installationId;
-    await SecureStore.setItemAsync("deviceId", newDeviceId);
+    const newDeviceId = await Application.getIosIdForVendorAsync();
+    if (newDeviceId) await SecureStore.setItemAsync("deviceId", newDeviceId);
     return newDeviceId;
   }
 

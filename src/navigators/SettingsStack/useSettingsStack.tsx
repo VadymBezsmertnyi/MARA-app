@@ -109,6 +109,13 @@ export const useSettingsStack = () => {
       headerShown: false,
       component: SettingsBusinessCreate,
     },
+    {
+      id: PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange,
+      name: PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange,
+      title: "",
+      headerShown: false,
+      component: SettingsBusinessCreate,
+    },
   ] as const;
 
   return { settingsScreens };

@@ -71,7 +71,7 @@ export type RootEventsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    eventId?: number;
+    eventId?: string;
   };
   [PATHS_EVENTS_SCREENS.eventsList]?: Record<
     string,
@@ -105,7 +105,7 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    productId?: number;
+    productId?: string;
   };
   [PATHS_SETTINGS_SCREENS.settingsWorkshops]?: Record<
     string,
@@ -119,7 +119,7 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    workshopId: number;
+    workshopId: string;
   };
   [PATHS_SETTINGS_SCREENS.settingsEvents]?: Record<
     string,
@@ -133,7 +133,7 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    eventId: number;
+    eventId: string;
   };
   [PATHS_SETTINGS_SCREENS.settingsProfile]?: Record<
     string,
@@ -166,7 +166,8 @@ export type RootWorkshopsScreensParamList = {
     string,
     string | number | boolean
   > & {
-    workshopId?: number;
+    workshopId?: string;
+    isMap?: boolean;
   };
   [PATHS_WORKSHOP_SCREENS.workshopAdd]?: Record<
     string,

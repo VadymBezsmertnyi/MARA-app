@@ -11,6 +11,7 @@ export type UserDataT = z.infer<typeof userDataS>;
 
 export type Context = {
   userData: UserDataT | null;
+  setUserData: React.Dispatch<React.SetStateAction<UserDataT | null>>;
   cleanUserData: () => void;
   editUser: (
     newInfoUser: Record<

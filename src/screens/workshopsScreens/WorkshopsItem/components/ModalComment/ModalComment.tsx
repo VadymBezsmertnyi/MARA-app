@@ -51,7 +51,7 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
   const commentUser = useMemo(
     () =>
       selectWorkshop?.comments.find(
-        (comment) => comment.userId === userData?.id
+        (comment) => comment.userId === userData?._id
       ) || null,
     []
   );
@@ -92,7 +92,7 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
     const isError = checkEnterData();
     if (!isError && selectWorkshop && userData) {
       const newComment = {
-        userId: userData.id,
+        userId: userData._id,
         description,
         userName,
         rating,
@@ -100,12 +100,12 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
         dateUpdate: new Date().getTime(),
       };
       const result = commentUser
-        ? await changeComment(selectWorkshop.id, {
+        ? await changeComment(selectWorkshop._id, {
             ...commentUser,
             ...newComment,
             dateCreate: commentUser.dateCreate,
           })
-        : await addComment(selectWorkshop.id, newComment);
+        : await addComment(selectWorkshop._id, newComment);
       if (result) onClose();
     }
   };

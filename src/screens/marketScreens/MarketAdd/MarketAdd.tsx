@@ -11,12 +11,12 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import dayjs from "dayjs";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 import { CodeCurrenciesType } from "../../../providers/PaymentProvider/PaymentProvider.types";
 import { TypeDataCategory, TypeModalCategories } from "./MarketAdd.types";
-import { ProductType } from "../../../providers/MarketProvider/MarketProvider.types";
 import {
   RootAllScreensParamList,
   RootMarketScreensParamList,
@@ -27,7 +27,10 @@ import {
 import { localesContext } from "../../../../localization/localization.provider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
+import {
+  NewProductType,
+  marketContext,
+} from "../../../providers/MarketProvider/MarketProvider";
 import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
 
 // components
@@ -71,7 +74,6 @@ import { IconArrowRightEvent } from "../../../icons/components";
 // styles
 import { styles } from "./MarketAdd.styles";
 import colors from "../../../../styles/colors";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type MarketAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -88,7 +90,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const { i18n, language } = useContext(localesContext);
   const { placesDB, getPlace } = useContext(placesContext);
   const { userData } = useContext(userContext);
-  const { productsUser, addProduct, changeProduct, deleteProduct } =
+  const { addProduct, changeProduct, deleteProduct } =
     useContext(marketContext);
   const { setLoading } = useContext(loadingContext);
   const { verifyPhone } = useAuthorizationRegistration();
@@ -134,17 +136,26 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const productUser = useMemo(
     () =>
       params?.productId
-        ? productsUser.find((product) => product.id === params.productId)
+        ? userData?.productsIds.find(
+            (product) => product._id === params.productId
+          ) || null
         : null,
-    [params?.productId]
+    [params?.productId, userData?.productsIds]
   );
 
   const showTitlePlace = useMemo(() => {
     if (!place) return "";
-    const placeDB = getPlace(place.placeId);
-    if (!placeDB) return place.title;
-    return placeDB[language].formatted_address;
-  }, [placesDB, place]);
+    const findPlace =
+      placesDB.find(
+        (placeDB) =>
+          placeDB._id === place.placeId || placeDB.place_id === place.placeId
+      ) || null;
+    if (!findPlace) {
+      getPlace(place.placeId);
+      return place.title;
+    }
+    return findPlace[language].formatted_address;
+  }, [placesDB, place, language]);
 
   const containerScrollStyle = useMemo(
     () => ({
@@ -196,30 +207,36 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
 
   const onSubmit = async () => {
     const isError = checkEnterData();
-    if (userData?.id && !isError && place) {
+    if (userData?._id && !isError && place) {
       const currentImages = images.map((image) => ({
-        id: image.id || "",
+        _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
         image,
       }));
       const currentPlace =
-        productUser && place?.placeId === productUser?.place_id
+        productUser &&
+        place?.placeId === productUser?.place_id?.place_id &&
+        productUser.region_place_id &&
+        productUser.country_place_id
           ? {
-              place_id: productUser.place_id,
-              region_place_id: productUser.region_place_id,
-              country_place_id: productUser.country_place_id,
+              place_id: productUser.place_id._id,
+              region_place_id: productUser.region_place_id._id,
+              country_place_id: productUser.country_place_id._id,
             }
-          : { place };
-      const newProduct: Omit<ProductType, "id" | "prices"> & {
-        place?: ItemSearchPlaceType;
-      } = {
+          : {
+              place,
+            };
+      const newProduct: NewProductType = {
         ...DEFAULT_PRODUCT_DATA,
-        userId: userData?.id,
+        userId: userData?._id,
         title,
         isNew,
         isBusiness,
+        place_id: undefined,
+        region_place_id: undefined,
+        country_place_id: undefined,
         ...currentPlace,
         images: currentImages,
         description,
@@ -271,10 +288,16 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             : null,
         updateAT: dayjs().valueOf(),
         quantityViews: 0,
-        likeUserIds: productUser?.likeUserIds || [],
+        likeUserIds: productUser?.likeUserIds.map((item) => item._id) || [],
       };
       const isCreate = productUser
-        ? await changeProduct({ ...productUser, ...newProduct })
+        ? await changeProduct({
+            ...productUser,
+            place_id: undefined,
+            region_place_id: undefined,
+            country_place_id: undefined,
+            ...newProduct,
+          })
         : await addProduct(newProduct);
       if (isCreate) {
         navigation.goBack();
@@ -314,7 +337,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               encoding: "base64",
             });
             return {
-              id: image.id,
+              _id: image._id,
               url: image.url,
               width: image.width,
               height: image.height,
@@ -323,11 +346,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           })
         );
         setTitle(productUser.title);
-        const placeDB = getPlace(productUser.place_id);
-        setPlace({
-          placeId: productUser.place_id,
-          title: placeDB ? placeDB[language].formatted_address : "",
-        });
+        if (productUser.place_id)
+          setPlace({
+            placeId: productUser.place_id.place_id,
+            title: productUser.place_id[language].formatted_address,
+          });
         setImages(imagesWithBath64);
         setIsNew(productUser.isNew);
         setIsBusiness(productUser.isBusiness);
@@ -607,8 +630,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             setIsShowDeleteModal(false);
           }}
           onSubmit={async () => {
-            if (productUser?.id) {
-              await deleteProduct(productUser.id, "user");
+            if (productUser?._id) {
+              await deleteProduct(productUser._id, "user");
               setIsShowDeleteModal(false);
             }
           }}

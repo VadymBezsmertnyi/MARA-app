@@ -30,6 +30,7 @@ import { IconClose, IconPlus } from "../../../icons/components";
 // styles
 import { styles } from "./SettingsProducts.styles";
 import colors from "../../../../styles/colors";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 type SettingsProductsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -39,10 +40,15 @@ type SettingsProductsProps = {
 export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
   navigation,
 }) => {
-  const { productsUser } = useContext(marketContext);
+  const { userData } = useContext(userContext);
   const { heightStatusBar } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-  const typeItem = i18n._("adverts");
+  const typeItem = useMemo(() => i18n._("adverts"), [i18n]);
+  console.log("userData?.productsIds", userData?.productsIds);
+  const productsUser = useMemo(
+    () => userData?.productsIds || [],
+    [userData?.productsIds]
+  );
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -91,7 +97,7 @@ export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
             const isStart = index === 0;
             return (
               <ItemSettingProducts
-                key={`setting-product-${product.id}`}
+                key={`setting-product-${product._id}`}
                 product={product}
                 isStart={isStart}
               />

@@ -32,7 +32,7 @@ import colors from "../../../../../../styles/colors";
 
 type ProductCardFullProps = {
   product: ProductType;
-  onSelect: (idProduct: number) => void;
+  onSelect: (idProduct: string) => void;
 };
 
 export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
@@ -42,15 +42,20 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
   const { i18n, language } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
   const { changeProduct } = useContext(marketContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const { userData } = useContext(userContext);
   const showTitlePlace = useMemo(() => {
-    const placeDB = getPlace(product.place_id);
+    const placeDB = product.place_id;
     if (!placeDB) return "";
     return placeDB[language].formatted_address;
   }, [placesDB, product.place_id]);
   const isLike = useMemo(
-    () => (userData ? product.likeUserIds.includes(userData.id) : false),
+    () =>
+      userData
+        ? product.likeUserIds
+            .map((likeUserId) => likeUserId._id)
+            .includes(userData._id)
+        : false,
     [product?.likeUserIds]
   );
   const firstImage = useMemo(
@@ -64,18 +69,27 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
   const onPressLike = async () => {
     if (userData) {
       const currentImages = product.images.map((image) => ({
-        id: image.id || "",
+        _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
         image,
       }));
       const likeUserIds = isLike
-        ? product.likeUserIds.filter(
-            (likeUserId) => likeUserId !== userData?.id
-          )
-        : [...product.likeUserIds, userData.id];
-      await changeProduct({ ...product, images: currentImages, likeUserIds });
+        ? product.likeUserIds
+            .filter((likeUserId) => likeUserId._id !== userData?._id)
+            .map((likeUserId) => likeUserId._id)
+        : [
+            ...product.likeUserIds.map((likeUserId) => likeUserId._id),
+            userData._id,
+          ];
+      if (product.userId)
+        await changeProduct({
+          ...product,
+          images: currentImages,
+          likeUserIds,
+          userId: product.userId._id,
+        });
     }
   };
 
@@ -83,7 +97,7 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        onSelect(product.id);
+        onSelect(product._id);
       }}
     >
       {firstImage ? (

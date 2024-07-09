@@ -10,7 +10,7 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 // providers
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
-import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -38,11 +38,15 @@ type SettingsWorkshopsProps = {
 export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   navigation,
 }) => {
-  const { workshopsUser } = useContext(workshopsContext);
+  const { userData } = useContext(userContext);
   const { heightStatusBar } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
-  const typeItem = i18n._("workshops");
 
+  const typeItem = useMemo(() => i18n._("workshops"), []);
+  const workshopsUser = useMemo(
+    () => userData?.workshopsIds || [],
+    [userData?.workshopsIds]
+  );
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
     [heightStatusBar]
@@ -90,7 +94,7 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
             const isStart = index === 0;
             return (
               <ItemSettingWorkshops
-                key={`user-workshop-${workshop.id}`}
+                key={`user-workshop-${workshop._id}`}
                 workshop={workshop}
                 isStart={isStart}
               />

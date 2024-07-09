@@ -128,17 +128,19 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
               : true;
           const isPlaceCountry = dataFilter.selectPlaces
             ? dataFilter.selectPlaces.countryPlaceIds.filter(
-                (countryPlaceId) => countryPlaceId === product.country_place_id
+                (countryPlaceId) =>
+                  countryPlaceId === product.country_place_id?._id
               ).length > 0
             : true;
           const isPlaceRegion = dataFilter.selectPlaces
             ? dataFilter.selectPlaces.regionPlaceIds.filter(
-                (regionPlaceId) => regionPlaceId === product.region_place_id
+                (regionPlaceId) =>
+                  regionPlaceId === product.region_place_id?._id
               ).length > 0
             : true;
           const isPlaceCity = dataFilter.selectPlaces
             ? dataFilter.selectPlaces.cityPlaceIds.filter(
-                (cityPlaceId) => cityPlaceId === product.place_id
+                (cityPlaceId) => cityPlaceId === product.place_id?._id
               ).length > 0
             : true;
 
@@ -264,7 +266,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 key={"_"}
                 data={productsFilterSort}
                 renderItem={renderItem}
-                keyExtractor={(item) => `product-${item.id}`}
+                keyExtractor={(item) => `product-${item._id}`}
                 numColumns={1}
                 contentContainerStyle={styles.containerList}
               />
@@ -273,7 +275,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 key={"#"}
                 data={productsFilterSort}
                 renderItem={renderItem}
-                keyExtractor={(item) => `product-wrap-${item.id}`}
+                keyExtractor={(item) => `product-wrap-${item._id}`}
                 numColumns={2}
                 contentContainerStyle={styles.containerList}
                 columnWrapperStyle={styles.columnContainerList}

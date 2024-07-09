@@ -64,23 +64,25 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     images: string[];
     indexImage?: number;
   } | null>(null);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const selectProduct = useMemo(
     () =>
-      products.find((product) => product.id === route.params?.productId) ||
+      products.find((product) => product._id === route.params?.productId) ||
       null,
     [route.params]
   );
   const showTitlePlace = useMemo(() => {
     if (!selectProduct) return "";
-    const placeDB = getPlace(selectProduct.place_id);
+    const placeDB = selectProduct.place_id;
     if (!placeDB) return "";
     return placeDB[language].formatted_address;
   }, [placesDB, selectProduct?.place_id]);
   const isLike = useMemo(
     () =>
       userData && selectProduct
-        ? selectProduct.likeUserIds.includes(userData.id)
+        ? selectProduct.likeUserIds
+            .map((item) => item._id)
+            .includes(userData._id)
         : false,
     [selectProduct?.likeUserIds]
   );
@@ -174,18 +176,24 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
   const onPressLike = () => {
     if (selectProduct && userData) {
       const currentImages = selectProduct.images.map((image) => ({
-        id: image.id || "",
+        _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
         image,
       }));
       const likeUserIds = isLike
-        ? selectProduct.likeUserIds.filter(
-            (likeUserId) => likeUserId !== userData?.id
-          )
-        : [...selectProduct.likeUserIds, userData.id];
-      changeProduct({ ...selectProduct, images: currentImages, likeUserIds });
+        ? selectProduct.likeUserIds
+            .filter((likeUserId) => likeUserId._id !== userData?._id)
+            .map((item) => item._id)
+        : [...selectProduct.likeUserIds.map((item) => item._id), userData._id];
+      if (selectProduct.userId)
+        changeProduct({
+          ...selectProduct,
+          images: currentImages,
+          likeUserIds,
+          userId: selectProduct.userId._id,
+        });
     }
   };
 
@@ -199,8 +207,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
   };
 
   const onPressShare = () => {
-    if (selectProduct)
-      getSharedLink({ productId: selectProduct.id.toString() });
+    if (selectProduct) getSharedLink({ productId: selectProduct._id });
   };
 
   if (!selectProduct) return null;

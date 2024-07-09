@@ -70,13 +70,13 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate);
   };
 
-  const onChangeBusinessMarket = (businessMarketId: number) => {
+  const onChangeBusinessMarket = (businessMarketId: string) => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange, {
       businessMarketId,
     });
   };
 
-  const onReviewBusinessMarket = (businessMarketId: number) => {
+  const onReviewBusinessMarket = (businessMarketId: string) => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketReview, {
       businessMarketId,
     });
@@ -107,14 +107,13 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           onCreateBusiness={onCreateBusinessMarket}
           onChangeBusiness={onChangeBusinessMarket}
           onReviewBusiness={onReviewBusinessMarket}
-          navigation={navigation}
         />
         <View style={styles.containerList}>
           <View style={styles.containerLineEmpty} />
           <ItemTypeSetting
             title={i18n._("Your adverts")}
             amountUsed={userData?.productsIds.length || 0}
-            amountAvailable={0}
+            amountAvailable={userData?.productsIds.length || 0}
             onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
             }}
@@ -126,7 +125,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <ItemTypeSetting
             title={i18n._("Your workshops")}
             amountUsed={userData?.workshopsIds.length || 0}
-            amountAvailable={0}
+            amountAvailable={userData?.workshopsIds.length || 0}
             onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
             }}
@@ -138,7 +137,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <ItemTypeSetting
             title={i18n._("Your events")}
             amountUsed={userData?.eventsIds.length || 0}
-            amountAvailable={0}
+            amountAvailable={userData?.eventsIds.length || 0}
             onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
             }}

@@ -21,6 +21,7 @@ import { businessContext } from "../../../../../providers/BusinessProvider/Busin
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
 import { ModalDelete } from "../../../../../components/ModalDelete/ModalDelete";
+import { PhoneWithMessengers } from "../../../../../components/PhoneWithMessengers/PhoneWithMessengers";
 
 // icons
 import {
@@ -31,18 +32,14 @@ import {
 
 // styles
 import { styles } from "./ContainerBusiness.styles";
-import { PhoneWithMessengers } from "../../../../../components/PhoneWithMessengers/PhoneWithMessengers";
 
 type ContainerBusinessProps = {
-  navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
   onCreateBusiness: () => void;
-  onChangeBusiness: (businessMarketId: number) => void;
-  onReviewBusiness: (businessMarketId: number) => void;
+  onChangeBusiness: (businessMarketId: string) => void;
+  onReviewBusiness: (businessMarketId: string) => void;
 };
 
 export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
-  navigation,
   onCreateBusiness,
   onChangeBusiness,
   onReviewBusiness,
@@ -113,7 +110,7 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
                 <ButtonCustom
                   title={i18n._("Improve")}
                   onSubmit={() => {
-                    onChangeBusiness(businessMarketUser.id);
+                    onChangeBusiness(businessMarketUser._id);
                   }}
                   styleContainer={styles.buttonBusinessLogo}
                   styleTitle={styles.titleButtonBusinessLogo}
@@ -150,7 +147,7 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
                 type="transparent"
                 title={i18n._("Review")}
                 onSubmit={() => {
-                  onReviewBusiness(businessMarketUser.id);
+                  onReviewBusiness(businessMarketUser._id);
                 }}
                 styleContainer={styles.containerButtonTransparent}
                 styleTitle={styles.titleButtonTransparent}
@@ -159,7 +156,7 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
                 type="transparent"
                 title={i18n._("Change")}
                 onSubmit={() => {
-                  onChangeBusiness(businessMarketUser.id);
+                  onChangeBusiness(businessMarketUser._id);
                 }}
                 styleContainer={styles.containerButtonTransparent}
                 styleTitle={styles.titleButtonTransparent}
@@ -180,10 +177,10 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
       {isDelete && businessMarketUser ? (
         <Modal visible={isDelete} transparent>
           <ModalDelete
+            isGoBack={false}
             onSubmit={async () => {
               await onDeleteBusinessMarket();
               setIsDelete(false);
-              navigation.goBack();
             }}
             onClose={() => {
               setIsDelete(false);

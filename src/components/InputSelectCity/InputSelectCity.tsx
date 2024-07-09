@@ -10,6 +10,9 @@ import {
 } from "react-native";
 import { t } from "@lingui/macro";
 
+// types
+import { PlaceDbType } from "../../providers/PlacesProvider/PlacesProvider.types";
+
 // providers
 import { localesContext } from "../../../localization/localization.provider";
 
@@ -20,30 +23,27 @@ import { ArrowDown, IconLocationMarker } from "../../icons/components";
 import colors from "../../../styles/colors";
 import { styles } from "./InputSelectCity.styles";
 
-type Item = {
-  id: number;
-  title: string;
-};
-
 type InputSelectCityProps = {
-  data: Item[];
-  onSelect: (value: Item) => void;
+  data: PlaceDbType[];
+  onSelect: (value: PlaceDbType) => void;
 };
 
 export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
   data,
   onSelect,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n, language } = useContext(localesContext);
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState("");
-  const [selectCity, setSelectCity] = useState<Item | null>(null);
-  const currentCity = useMemo(() => [{ id: 0, title: "" }, ...data], [data]);
+  const [selectCity, setSelectCity] = useState<PlaceDbType | null>(null);
+  const currentCity = useMemo(() => [null, ...data], [data]);
   const showListCity = useMemo(
     () =>
       currentCity.filter((city) =>
-        value.length && city.title
-          ? city.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+        value.length && city
+          ? city[language].formatted_address
+              .toLocaleLowerCase()
+              .includes(value.toLocaleLowerCase())
           : true
       ),
     [currentCity, value]
@@ -54,12 +54,13 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
     [isOpen]
   );
 
-  const onSelectCity = (city: Item) => {
+  const onSelectCity = (city: PlaceDbType) => {
     setSelectCity(city);
     setIsOpen(false);
-    setValue(city.title || "");
+    setValue(city[language].formatted_address || "");
     onSelect(city);
   };
+  console.log("showListCity.length", showListCity.length);
 
   const showCity = useMemo(() => {
     if (value && selectCity)
@@ -123,20 +124,35 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
               }}
               contentContainerStyle={styles.containerList}
             >
-              {showListCity.map((city) => (
-                <TouchableHighlight
-                  underlayColor={colors.grayMercury}
-                  key={`select-input-city-${city.id}`}
-                  onPress={() => {
-                    onSelectCity(city);
+              {showListCity.length > 1 ? (
+                showListCity.map((city) =>
+                  city ? (
+                    <TouchableHighlight
+                      underlayColor={colors.grayMercury}
+                      key={`select-input-city-${city._id}`}
+                      onPress={() => {
+                        onSelectCity(city);
+                      }}
+                      style={styles.city}
+                    >
+                      <Text>
+                        {city[language].formatted_address.length
+                          ? city[language].formatted_address
+                          : i18n._(`All cities`)}
+                      </Text>
+                    </TouchableHighlight>
+                  ) : null
+                )
+              ) : (
+                <Text
+                  style={{
+                    padding: 10,
+                    textAlign: "center",
                   }}
-                  style={styles.city}
                 >
-                  <Text>
-                    {city.title.length ? city.title : t(i18n)`All cities`}
-                  </Text>
-                </TouchableHighlight>
-              ))}
+                  {i18n._("No cities found")}
+                </Text>
+              )}
             </ScrollView>
           ) : null}
         </TouchableOpacity>

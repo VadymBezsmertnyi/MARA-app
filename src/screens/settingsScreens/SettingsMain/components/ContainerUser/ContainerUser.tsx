@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { ImageURISource, Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { userContext } from "../../../../../providers/UserProvider/UserProvider";
@@ -20,12 +19,9 @@ import { styles } from "./ContainerUser.styles";
 export const ContainerUser: FunctionComponent = () => {
   const { language } = useContext(localesContext);
   const { userData } = useContext(userContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const showCity = useMemo(
-    () =>
-      userData?.place_id
-        ? getPlace(userData.place_id)?.[language] || null
-        : null,
+    () => (userData?.place_id ? userData.place_id[language] || null : null),
     [userData?.place_id, placesDB]
   );
   const imageSource = useMemo(

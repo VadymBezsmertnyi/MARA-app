@@ -5,6 +5,26 @@ import {
   currenciesSchema,
   ratesCurrencySchema,
 } from "../PaymentProvider/PaymentProvider.schemas";
+import { imageSchema } from "../../components/ImageModal/ImageModal.schemas";
+import {
+  countryDbSchema,
+  placeDbSchema,
+  regionDbSchema,
+} from "../PlacesProvider/PlacesProvider.schemas";
+
+const populateUserData = z.object({
+  _id: z.string(),
+  avatar: z
+    .object({
+      _id: z.any(),
+      url: z.string(),
+      image: imageSchema.optional(),
+    })
+    .nullable(),
+  firstName: z.string(),
+  lastName: z.string(),
+  phoneNumber: z.string(),
+});
 
 export const infoCategorySchema = z.object({
   id: z.number(),
@@ -27,17 +47,17 @@ export const partsSchema = z.object({
 });
 
 export const productSchema = z.object({
-  id: z.number(),
-  userId: z.number(),
+  _id: z.string(),
+  userId: populateUserData.nullable(),
   title: z.string(),
   isNew: z.boolean(),
   isBusiness: z.boolean(),
-  place_id: z.string(),
-  region_place_id: z.string(),
-  country_place_id: z.string(),
+  place_id: placeDbSchema.nullable(),
+  region_place_id: regionDbSchema.nullable(),
+  country_place_id: countryDbSchema.nullable(),
   images: z.array(
     z.object({
-      id: z.string(),
+      _id: z.string(),
       url: z.string(),
       width: z.number(),
       height: z.number(),
@@ -60,15 +80,15 @@ export const productSchema = z.object({
   autoParts: partsSchema.nullable(),
   updateAT: z.number(),
   quantityViews: z.number(),
-  likeUserIds: z.array(z.number()),
+  likeUserIds: z.array(populateUserData),
 });
 
 export const productsSchema = z.array(productSchema);
 
 export const placesAllIdsSchema = z.object({
-  cityPlaceIds: z.array(z.string()),
-  regionPlaceIds: z.array(z.string()),
-  countryPlaceIds: z.array(z.string()),
+  cityPlaceIds: z.array(placeDbSchema),
+  regionPlaceIds: z.array(regionDbSchema),
+  countryPlaceIds: z.array(countryDbSchema),
 });
 
 export const resultProductsSchema = z.object({

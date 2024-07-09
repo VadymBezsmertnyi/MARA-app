@@ -47,7 +47,7 @@ export const placeGoogleFullSchema = z.object({
 });
 
 export const placeDbSchema = z.object({
-  id: z.string(),
+  _id: z.string(),
   place_id: z.string(),
   country_place_id: z.string(),
   region_place_id: z.string(),
@@ -117,7 +117,7 @@ export const languageCountryDbSchema = z.object({
 });
 
 export const countryDbSchema = z.object({
-  id: z.string(),
+  _id: z.string(),
   place_id: z.string(),
   en: languageCountryDbSchema,
   uk: languageCountryDbSchema,
@@ -140,7 +140,7 @@ export const countryDbSchema = z.object({
 });
 
 export const regionDbSchema = z.object({
-  id: z.string(),
+  _id: z.string(),
   place_id: z.string(),
   country_place_id: z.string(),
   en: languageCountryDbSchema,

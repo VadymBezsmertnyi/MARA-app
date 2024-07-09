@@ -12,7 +12,7 @@ export const locationObjectCoordsSchema = z.object({
 
 export const userLocationMapSchema = z.object({
   date: z.number(),
-  userId: z.number(),
+  userId: z.string(),
   location: z.object({
     latitude: z.number(),
     longitude: z.number(),
@@ -24,7 +24,7 @@ export const usersLocationMapSchema = z.array(userLocationMapSchema);
 
 export const userLocationSosSchema = z.object({
   date: z.number(),
-  userId: z.number(),
+  userId: z.string(),
   location: z.object({
     latitude: z.number(),
     longitude: z.number(),

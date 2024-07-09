@@ -1,5 +1,11 @@
 import { z } from "zod";
-import { coordinatesSchema } from "../PlacesProvider/PlacesProvider.schemas";
+import {
+  coordinatesSchema,
+  countryDbSchema,
+  placeDbSchema,
+  regionDbSchema,
+} from "../PlacesProvider/PlacesProvider.schemas";
+import { imageSchema } from "../../components/ImageModal/ImageModal.schemas";
 
 export const phoneSchema = z.object({
   phoneNumber: z.string(),
@@ -10,11 +16,25 @@ export const phoneSchema = z.object({
 });
 
 export const businessMarketSchema = z.object({
-  id: z.number(),
-  userId: z.number(),
+  _id: z.string(),
+  userId: z
+    .object({
+      _id: z.string(),
+      avatar: z
+        .object({
+          _id: z.any(),
+          url: z.string(),
+          image: imageSchema.optional(),
+        })
+        .nullable(),
+      firstName: z.string(),
+      lastName: z.string(),
+      phoneNumber: z.string(),
+    })
+    .nullable(),
   logo: z
     .object({
-      id: z.string(),
+      _id: z.string(),
       url: z.string(),
       width: z.number(),
       height: z.number(),
@@ -23,9 +43,9 @@ export const businessMarketSchema = z.object({
   name: z.string(),
   place: z
     .object({
-      place_id: z.string(),
-      region_place_id: z.string(),
-      country_place_id: z.string(),
+      place_id: placeDbSchema.nullable(),
+      region_place_id: regionDbSchema.nullable(),
+      country_place_id: countryDbSchema.nullable(),
       place_address: z.string(),
       coordinates: coordinatesSchema,
     })

@@ -13,7 +13,10 @@ import { getDistance } from "geolib";
 import { Trans } from "@lingui/macro";
 
 // types
-import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
+import {
+  RootEventsScreensParamList,
+  RootMainTabsParamList,
+} from "../../../navigators/Navigators.types";
 
 // helps
 import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
@@ -44,13 +47,20 @@ import {
   MingcuteTimeLine,
 } from "../../../icons/components";
 
+// constants
+import {
+  PATHS_EVENTS_SCREENS,
+  PATHS_MAIN_TABS,
+} from "../../../navigators/useNavigator.constants";
+
 // styles
 import { styles } from "./EventItem.styles";
 import colors from "../../../../styles/colors";
-import { PATHS_EVENTS_SCREENS } from "../../../navigators/useNavigator.constants";
 
 type EventItemProps = {
-  navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
+  navigation: NativeStackNavigationProp<
+    RootEventsScreensParamList & RootMainTabsParamList
+  >;
   route: RouteProp<
     RootEventsScreensParamList,
     keyof RootEventsScreensParamList
@@ -64,7 +74,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { i18n, language } = useContext(localesContext);
   const { eventsList, changeEvent } = useContext(eventsContext);
   const { location } = useContext(mapContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { placesDB } = useContext(placesContext);
   const { userData } = useContext(userContext);
   const { getSharedLink } = useContext(sharingContext);
   const tabBarHeight = useBottomTabBarHeight();
@@ -76,20 +86,21 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const eventSelect = useMemo(
     () =>
       route.params?.eventId
-        ? eventsList.find((event) => event.id === route.params?.eventId) || null
+        ? eventsList.find((event) => event._id === route.params?.eventId) ||
+          null
         : null,
     [route.params, eventsList]
   );
   const isLike = useMemo(
     () =>
       userData && eventSelect
-        ? eventSelect.likeUserIds.includes(userData.id)
+        ? eventSelect.likeUserIds.map((item) => item._id).includes(userData._id)
         : false,
     [eventSelect?.likeUserIds]
   );
   const showTitlePlace = useMemo(() => {
     if (!eventSelect) return "";
-    const placeDB = getPlace(eventSelect.place_id);
+    const placeDB = eventSelect.place_id;
     if (!placeDB) return "";
     return placeDB[language].formatted_address;
   }, [placesDB, eventSelect?.place_id]);
@@ -142,18 +153,26 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const onPressLike = () => {
     if (eventSelect && userData) {
       const currentImages = eventSelect.images.map((image) => ({
-        id: image.id || "",
+        _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
         image,
       }));
       const likeUserIds = isLike
-        ? eventSelect.likeUserIds.filter(
-            (likeUserId) => likeUserId !== userData?.id
-          )
-        : [...eventSelect.likeUserIds, userData.id];
-      changeEvent({ ...eventSelect, images: currentImages, likeUserIds });
+        ? eventSelect.likeUserIds
+            .filter((likeUserId) => likeUserId._id !== userData?._id)
+            .map((item) => item._id)
+        : [
+            ...eventSelect.likeUserIds.map((likeUserId) => likeUserId._id),
+            userData._id,
+          ];
+      changeEvent({
+        ...eventSelect,
+        userId: eventSelect.userId?._id || userData._id,
+        images: currentImages,
+        likeUserIds,
+      });
     }
   };
 
@@ -164,7 +183,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   }, []);
 
   const onPressShare = () => {
-    if (eventSelect) getSharedLink({ eventId: eventSelect.id.toString() });
+    if (eventSelect) getSharedLink({ eventId: eventSelect._id });
   };
 
   if (!eventSelect) return null;
@@ -181,7 +200,9 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
           />
         }
         onPressLeftElement={() => {
-          navigation.navigate(PATHS_EVENTS_SCREENS.eventsMain);
+          if (!route.params?.isMap)
+            navigation.navigate(PATHS_EVENTS_SCREENS.eventsMain);
+          navigation.navigate(PATHS_MAIN_TABS.map);
         }}
       />
       <ScrollView>
@@ -329,7 +350,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {eventSelect.images.map((image, indexImage) => (
                   <TouchableOpacity
-                    key={`image-gallery-${image.id}`}
+                    key={`image-gallery-${image._id}`}
                     style={styles.imageGallery}
                     onPress={() => {
                       onShowGallery(indexImage);

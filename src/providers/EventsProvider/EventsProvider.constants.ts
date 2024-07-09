@@ -1,10 +1,10 @@
 import { EventType } from "./EventsProvider.types";
 
-export const DEFAULT_EVENT_DATA: Omit<EventType, "id" | "userId"> = {
+export const DEFAULT_EVENT_DATA: Omit<EventType, "_id" | "userId"> = {
   title: "",
-  place_id: "",
-  region_place_id: "",
-  country_place_id: "",
+  place_id: null,
+  region_place_id: null,
+  country_place_id: null,
   place_address: "",
   coordinates: {
     latitude: 0,

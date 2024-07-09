@@ -28,7 +28,18 @@ import { PATHS } from "../paths.constants";
 type BusinessContext = {
   businessMarketUser: BusinessMarketType | null;
   onCreateBusinessMarket: (
-    newBusinessMarket: Omit<BusinessMarketType, "place" | "logo" | "id"> & {
+    newBusinessMarket: Omit<
+      BusinessMarketType,
+      "place" | "logo" | "_id" | "userId"
+    > & {
+      userId: string;
+      place: ItemSearchPlaceAddressType;
+      newLogo: ImageType | null;
+    }
+  ) => Promise<boolean>;
+  onUpdateBusinessMarket: (
+    newBusinessMarket: Omit<BusinessMarketType, "place" | "userId"> & {
+      userId: string;
       place: ItemSearchPlaceAddressType;
       newLogo: ImageType | null;
     }
@@ -51,7 +62,7 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
     useState<BusinessMarketType | null>(null);
 
   const getBusinessUser = async (userId?: string | number) => {
-    if (!userData?.id) return false;
+    if (!userData?._id) return false;
     const query = qs.stringify({ userId }, { addQueryPrefix: true });
     const result = await api(
       `${PATHS.businessMarket}${query}`,
@@ -63,12 +74,16 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   };
 
   const onCreateBusinessMarket = async (
-    newBusinessMarket: Omit<BusinessMarketType, "place" | "logo" | "id"> & {
+    newBusinessMarket: Omit<
+      BusinessMarketType,
+      "place" | "logo" | "_id" | "userId"
+    > & {
+      userId: string;
       place: ItemSearchPlaceAddressType;
       newLogo: ImageType | null;
     }
   ) => {
-    if (!userData?.id || !newBusinessMarket.place) return false;
+    if (!userData?._id || !newBusinessMarket.place) return false;
     const result = await api(
       PATHS.businessMarketCreate,
       { method: "POST", data: newBusinessMarket },
@@ -78,15 +93,32 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
     return Boolean(result?.businessMarket);
   };
 
+  const onUpdateBusinessMarket = async (
+    newBusinessMarket: Omit<BusinessMarketType, "place" | "userId"> & {
+      userId: string;
+      place: ItemSearchPlaceAddressType;
+      newLogo: ImageType | null;
+    }
+  ) => {
+    if (!userData?._id || !newBusinessMarket.place) return false;
+    const result = await api(
+      PATHS.businessMarketUpdate,
+      { method: "PUT", data: newBusinessMarket },
+      z.object({ businessMarket: businessMarketSchema })
+    );
+    if (result?.businessMarket) setBusinessMarketUser(result.businessMarket);
+    return Boolean(result?.businessMarket);
+  };
+
   const onDeleteBusinessMarket = async () => {
-    if (!businessMarketUser?.id || !userData?.id) return false;
+    if (!businessMarketUser?._id || !userData?._id) return false;
     const result = await api(
       PATHS.businessMarketDelete,
       {
         method: "DELETE",
         data: {
-          userId: userData.id,
-          businessMarketId: businessMarketUser.id,
+          userId: userData._id,
+          businessMarketId: businessMarketUser._id,
         },
       },
       z.object({ success: z.boolean() })
@@ -100,14 +132,20 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
     () => ({
       businessMarketUser,
       onCreateBusinessMarket,
+      onUpdateBusinessMarket,
       onDeleteBusinessMarket,
     }),
-    [businessMarketUser]
+    [
+      businessMarketUser,
+      onCreateBusinessMarket,
+      onUpdateBusinessMarket,
+      onDeleteBusinessMarket,
+    ]
   );
 
   useEffect(() => {
-    if (userData?.id) getBusinessUser(userData.id);
-  }, [userData?.id]);
+    if (userData?._id) getBusinessUser(userData._id);
+  }, [userData?._id]);
 
   return (
     <businessContext.Provider value={valueContext}>

@@ -79,14 +79,19 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
   const getLocation = async (coordsProps?: Location.LocationObject) => {
     const { coords } = coordsProps
       ? coordsProps
-      : await Location.getCurrentPositionAsync({});
+      : await Location.getCurrentPositionAsync({
+          accuracy: Location.Accuracy.BestForNavigation,
+          mayShowUserSettingsDialog: true,
+          timeInterval: INTERVAL_GET_LOCATION,
+          distanceInterval: 1,
+        });
     const isUkraine =
       countryUser?.country === "Ukraine" || countryUser?.countryCode === "UA";
     const date = new Date().getTime();
     if (userData) {
       const dataLocationUser = {
         date,
-        userId: userData.id,
+        userId: userData._id,
         location: {
           latitude: coords.latitude,
           longitude: coords.longitude,
@@ -181,7 +186,7 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     if (userData && location) {
       const dataLocationUser = {
         date,
-        userId: userData.id,
+        userId: userData._id,
         location,
         phoneNumber,
         telegram,
@@ -207,10 +212,10 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     if (userData) {
       await api(PATHS.locationUsersSosDelete, {
         method: "DELETE",
-        data: { userId: userData.id },
+        data: { userId: userData._id },
       });
       setUsersSos((state) =>
-        state ? state.filter((userSos) => userSos.userId !== userData.id) : []
+        state ? state.filter((userSos) => userSos.userId !== userData._id) : []
       );
       stopGetLocationBackground();
     }

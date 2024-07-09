@@ -266,12 +266,12 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const deleteUser = async (): Promise<boolean> => {
     try {
       setLoading(true);
-      if (userData?.id) {
+      if (userData?._id) {
         await api(
           PATHS.delete,
           {
             method: "POST",
-            data: { id: userData.id },
+            data: { _id: userData._id },
           },
           z.object({ result: z.boolean() })
         );
@@ -294,6 +294,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const contextValue: Context = useMemo(
     () => ({
       userData,
+      setUserData,
       cleanUserData,
       editUser,
       meUser,

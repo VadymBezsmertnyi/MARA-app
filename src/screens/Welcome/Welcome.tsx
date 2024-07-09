@@ -10,7 +10,6 @@ import { biometricAuthenticatorContext } from "../../providers/BiometricProvider
 import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
 import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsProvider";
 import { localesContext } from "../../../localization/localization.provider";
-import { responsiveLayoutContext } from "../../providers/responsiveLayout/responsiveLayout.provider";
 
 // helps
 import { useAllNavigation } from "../../navigators/Navigators.helps";
@@ -41,12 +40,10 @@ export const Welcome: FunctionComponent = () => {
   const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
   const { onLogLogin, onLogSignUp } = useContext(analyticsContext);
   const { heightStatusBar } = useContext(themeContext);
-  const { setDurationHeight } = useContext(responsiveLayoutContext);
   const { signInGoogle, signInFacebook, signInApple } = useContext(userContext);
 
   const onSelectGoogle = async (userData: User) => {
     const user = await signInGoogle(userData);
-    setDurationHeight(0);
 
     if (user) {
       if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_GOOGLE);
@@ -57,7 +54,6 @@ export const Welcome: FunctionComponent = () => {
 
   const onSelectApple = async (identityToken: string) => {
     const user = await signInApple(identityToken);
-    setDurationHeight(0);
 
     if (user) {
       if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_APPLE);
@@ -68,7 +64,6 @@ export const Welcome: FunctionComponent = () => {
 
   const onSelectFacebook = async (accessToken: string) => {
     const user = await signInFacebook(accessToken);
-    setDurationHeight(0);
 
     if (user) {
       if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_FACEBOOK);

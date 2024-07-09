@@ -43,6 +43,7 @@ export const PATHS = {
   // business
   businessMarket: "/business/market/",
   businessMarketCreate: "/business/market/create/",
+  businessMarketUpdate: "/business/market/update/",
   businessMarketDelete: "/business/market/delete/",
   // other
   ipApiGetCountry: "http://ip-api.com/json",
