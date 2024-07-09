@@ -99,7 +99,6 @@ export const PushNotificationProvider: FunctionComponent<
     const url = Linking.createURL("/main");
 
     // TODO to server for push notification
-    console.log("url", `${url}${queryParams}`);
   };
 
   const valueContext: PushNotificationContext = useMemo(
