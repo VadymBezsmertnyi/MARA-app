@@ -44,7 +44,7 @@ export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
       appsFlyer.generateInviteLink(
         {
           channel: "app",
-          customerID: userId.toString(),
+          customerID: userId,
           userParams: {
             deep_link_value: `maraapp://?userId=${userId}`,
             userId,

@@ -84,10 +84,8 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
 
       return null;
     } catch (error: any) {
-      if (error.response !== null && error.response !== undefined) {
-        console.error(error.response.data);
-      } else {
-        console.error(error.message);
+      if (__DEV__) {
+        console.warn("error", error);
       }
       return null;
     }

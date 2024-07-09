@@ -56,7 +56,6 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { location, usersMaps, usersSos } = useContext(mapContext);
   const { theme } = useContext(themeContext);
   const { eventsList } = useContext(eventsContext);
-  const [region, setRegion] = useState<mapMarker>(DEFAULT_LOCATION);
   const refMap = useRef<MapView>(null);
 
   const firstEvent = useMemo(
