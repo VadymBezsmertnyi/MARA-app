@@ -9,7 +9,6 @@ export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
   productsIds: [],
   isCheckBiometric: null,
   email: null,
-  verifyToken: null,
   timeToken: 1,
   languageLocal: "en",
   isNewUser: true,
@@ -31,4 +30,4 @@ export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
 
 export const NUMBER_TWO = 2;
 
-export const TOKEN_NAME = "token";
+export const TOKEN_KEY_ASYNC_STORAGE = "user_tokens";

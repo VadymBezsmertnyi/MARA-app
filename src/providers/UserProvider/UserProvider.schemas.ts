@@ -53,7 +53,6 @@ export const userDataS = z.object({
   workshopsIds: z.array(workshopSchema),
   productsIds: z.array(productSchema),
   isCheckBiometric: z.boolean().nullable(),
-  verifyToken: z.string().nullable(),
   timeToken: z.number(),
   languageLocal: z.enum(languagesKeys),
   isNewUser: z.boolean(),
@@ -71,10 +70,4 @@ export const userDataS = z.object({
     radiusKm: z.number(),
   }),
   businessMarketId: businessMarketSchema.nullable(),
-});
-
-export const resultUserDataS = z.object({
-  result: z.boolean(),
-  userData: userDataS,
-  code: z.number(),
 });

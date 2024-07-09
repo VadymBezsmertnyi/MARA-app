@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import qs from "qs";
 import { z } from "zod";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import {
@@ -21,9 +22,6 @@ import { ItemSearchPlaceType } from "../../components/ModalSheetSearchPlace/Moda
 import { productSchema, resultProductsSchema } from "./MarketProvider.schemas";
 import { ratesCurrencySchema } from "../PaymentProvider/PaymentProvider.schemas";
 
-// helps
-import showErrors from "../../helps/errors/showError";
-
 // providers
 import { userContext } from "../UserProvider/UserProvider";
 import { localesContext } from "../../../localization/localization.provider";
@@ -31,6 +29,7 @@ import { apiContext } from "../ApiProvider/ApiProvider";
 import { loadingContext } from "../LoadingProvider/LoadingProvider";
 import { paymentContext } from "../PaymentProvider/PaymentProvider";
 import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
+import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
@@ -74,6 +73,7 @@ export const marketContext = React.createContext({} as MarketContext);
 export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   children,
 }) => {
+  const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useContext(localesContext);
   const { userData, setUserData } = useContext(userContext);
   const { setCurrencies } = useContext(paymentContext);
@@ -86,7 +86,6 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
     null
   );
   const [placesAll, setPlacesAll] = useState<PlacesAllIdsType | null>(null);
-  const { success } = showErrors;
 
   const setMinMaxProduct = async (product: ProductType) => {
     const isMinProduct = minMaxPrices
@@ -271,7 +270,11 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         <ModalDelete
           onSubmit={async () => {
             await deleteProduct(idDeleteProduct, "user");
-            success(i18n._("Advert delete"));
+            messageFromServer(
+              i18n._("Advert delete"),
+              i18n._("Success"),
+              DropdownAlertType.Success
+            );
             setIdDeleteProduct(null);
           }}
           onClose={() => {

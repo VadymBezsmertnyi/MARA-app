@@ -12,6 +12,7 @@ import dayjs from "dayjs";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
@@ -32,6 +33,7 @@ import {
   marketContext,
 } from "../../../providers/MarketProvider/MarketProvider";
 import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -52,7 +54,6 @@ import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/M
 // hooks
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { useErrors } from "../../../helps/useErrors";
-import showErrors from "../../../helps/errors/showError";
 import { useCategoriesMarket } from "../../../helps/useCategoriesMarket";
 
 // constants
@@ -86,6 +87,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     useRoute<
       RouteProp<RootMarketScreensParamList & RootSettingsScreensParamList>
     >();
+  const { messageFromServer } = useDropDownAlertProvider();
   const { bottom } = useSafeAreaInsets();
   const { i18n, language } = useContext(localesContext);
   const { placesDB, getPlace } = useContext(placesContext);
@@ -104,7 +106,6 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     getAutoPart,
   } = useCategoriesMarket(i18n);
   const { getErrorAddProduct } = useErrors(i18n);
-  const { success, bug } = showErrors;
   const [title, setTitle] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [telegram, setTelegram] = useState("");
@@ -301,16 +302,20 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         : await addProduct(newProduct);
       if (isCreate) {
         navigation.goBack();
-        success(
+        messageFromServer(
           productUser
             ? i18n._("Advert change successfully")
-            : i18n._("Advert created successfully")
+            : i18n._("Advert created successfully"),
+          i18n._("Success"),
+          DropdownAlertType.Success
         );
       } else
-        bug(
+        messageFromServer(
           productUser
             ? i18n._("Error changing advert")
-            : i18n._("Error creating advert")
+            : i18n._("Error creating advert"),
+          i18n._("Error"),
+          DropdownAlertType.Warn
         );
     }
   };

@@ -1,15 +1,16 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { UserDataT } from "../../UserProvider.types";
 
 // providers
 import { localesContext } from "../../../../../localization/localization.provider";
+import { useDropDownAlertProvider } from "../../../DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
-import showErrors from "../../../../helps/errors/showError";
 import { compressAndProcessImages } from "../../../../helps/helps";
 
 // components
@@ -38,8 +39,8 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
   onClose,
   editUser,
 }) => {
+  const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useContext(localesContext);
-  const { warning, success } = showErrors;
   const avatarSource = useMemo(
     () => userData?.avatar?.url || null,
     [userData?.avatar?.url]
@@ -63,12 +64,26 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
         },
       });
 
-      if (!resultUpdate) warning(i18n._("Sorry, an error occurred"));
+      if (!resultUpdate)
+        messageFromServer(
+          i18n._("Sorry, an error occurred"),
+          "Error",
+          DropdownAlertType.Error
+        );
       else {
-        success(i18n._("The photo has been changed"));
+        messageFromServer(
+          i18n._("The photo has been changed"),
+          "Success",
+          DropdownAlertType.Info
+        );
         onClose();
       }
-    } else warning(i18n._("Sorry, an error occurred"));
+    } else
+      messageFromServer(
+        i18n._("The photo has not been changed"),
+        "Info",
+        DropdownAlertType.Info
+      );
   };
 
   return (

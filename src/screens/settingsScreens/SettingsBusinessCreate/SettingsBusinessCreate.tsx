@@ -10,6 +10,8 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
+import { RouteProp, useRoute } from "@react-navigation/native";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import {
@@ -23,6 +25,7 @@ import { localesContext } from "../../../../localization/localization.provider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 import { businessContext } from "../../../providers/BusinessProvider/BusinessProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -50,8 +53,6 @@ import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
-import showErrors from "../../../helps/errors/showError";
-import { RouteProp, useRoute } from "@react-navigation/native";
 
 type SettingsBusinessCreateProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -77,6 +78,7 @@ export const SettingsBusinessCreate: FunctionComponent<
   SettingsBusinessCreateProps
 > = ({ navigation }) => {
   const { params } = useRoute<RouteProp<RootSettingsScreensParamList>>();
+  const { messageFromServer } = useDropDownAlertProvider();
   const { i18n, language } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
   const { userData } = useContext(userContext);
@@ -101,7 +103,6 @@ export const SettingsBusinessCreate: FunctionComponent<
   const [logo, setLogo] = useState<
     ImageType | ImagePicker.ImagePickerAsset | null
   >(null);
-  const { warning } = showErrors;
 
   const selectBusinessMarket = useMemo(() => {
     if (!params?.businessMarketId) return null;
@@ -146,7 +147,12 @@ export const SettingsBusinessCreate: FunctionComponent<
     if (!result.canceled) {
       const compressImages = await compressAndProcessImages(result);
       setLogo({ ...compressImages[0], uri: result.assets[0].uri });
-    } else warning(i18n._("Sorry, an error occurred"));
+    } else
+      messageFromServer(
+        i18n._("Sorry, an error occurred"),
+        i18n._("Error"),
+        DropdownAlertType.Warn
+      );
   };
 
   const onSubmitPlace = (data: ItemSearchPlaceAddressType) => {

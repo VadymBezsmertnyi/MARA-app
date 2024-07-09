@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { I18nProvider } from "@lingui/react";
 import { Messages, setupI18n } from "@lingui/core";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { Language, LocalesContext, Props } from "./localization.types";
+
+// providers
+import { useDropDownAlertProvider } from "../src/providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
 import {
@@ -11,7 +15,6 @@ import {
   getDeviceLanguage,
 } from "./localization.helpers";
 import { setDeviceStorage } from "../src/helps/storage.help";
-import showErrors from "../src/helps/errors/showError";
 
 // locales
 import { messages as translationsUk } from "../localization/uk/messages";
@@ -39,6 +42,7 @@ import {
   languageKey,
   languagesLinguiAlias,
 } from "./localization.const";
+
 const CATALOGS_LANGUAGES = {
   uk: translationsUk as Messages,
   en: translationsEn as Messages,
@@ -63,9 +67,9 @@ const CATALOGS_LANGUAGES = {
 export const localesContext = React.createContext({} as LocalesContext);
 
 export const LocalesProvider: React.FC<Props> = ({ children }) => {
+  const { messageFromServer } = useDropDownAlertProvider();
   const [languageUser, setLanguage] = useState<Language>(defaultLanguage);
   const language = languageUser || defaultLanguage;
-  const { bug } = showErrors;
   const i18n = setupI18n({
     messages: CATALOGS_LANGUAGES,
     locale: languagesLinguiAlias[language],
@@ -77,7 +81,11 @@ export const LocalesProvider: React.FC<Props> = ({ children }) => {
       await setDeviceStorage(languageKey, language);
       setLanguage(language);
     } catch (error: any) {
-      bug(error);
+      messageFromServer(
+        error.toString(),
+        "Error set language",
+        DropdownAlertType.Warn
+      );
     }
   };
 
@@ -87,7 +95,11 @@ export const LocalesProvider: React.FC<Props> = ({ children }) => {
       await setLanguageAsync(language);
       setLanguage(language);
     } catch (error: any) {
-      bug(error);
+      messageFromServer(
+        error.toString(),
+        "Error get language",
+        DropdownAlertType.Warn
+      );
     }
   };
 

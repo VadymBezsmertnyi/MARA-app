@@ -9,6 +9,7 @@ import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 //types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
@@ -26,6 +27,7 @@ import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
 import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -47,7 +49,6 @@ import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearch
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { useErrors } from "../../../helps/useErrors";
 import { getClearValue } from "../../../helps/regexp";
-import showErrors from "../../../helps/errors/showError";
 
 // constants
 import {
@@ -71,6 +72,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     useRoute<
       RouteProp<RootWorkshopsScreensParamList & RootSettingsScreensParamList>
     >();
+  const { messageFromServer } = useDropDownAlertProvider();
   const { i18n, language } = useContext(localesContext);
   const { getErrorText } = useErrors(i18n);
   const { heightStatusBar } = useContext(themeContext);
@@ -81,7 +83,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { setLoading } = useContext(loadingContext);
   const { typesWorkServices } = useWorkshopsProvider();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { success, bug } = showErrors;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
@@ -287,16 +288,20 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
 
       if (isCreate) {
         navigation.goBack();
-        success(
+        messageFromServer(
           selectWorkshop
             ? i18n._("Workshop change successfully")
-            : i18n._("Workshop created successfully")
+            : i18n._("Workshop created successfully"),
+          i18n._("Success"),
+          DropdownAlertType.Success
         );
       } else
-        bug(
+        messageFromServer(
           selectWorkshop
             ? i18n._("Error changing workshop")
-            : i18n._("Error creating workshop")
+            : i18n._("Error creating workshop"),
+          i18n._("Error"),
+          DropdownAlertType.Error
         );
     }
   };
