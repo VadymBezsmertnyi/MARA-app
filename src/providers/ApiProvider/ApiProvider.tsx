@@ -40,7 +40,7 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
     const verifyTokensJSON = await getDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
     const verifyTokens = verifyTokensJSON
       ? (JSON.parse(verifyTokensJSON) as {
-          token: string;
+          accessToken: string;
           refreshToken: string;
         })
       : null;
@@ -59,7 +59,7 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
       const response = await axios(currentUrl, {
         headers: {
           "Content-Type": "application/json",
-          authorization: verifyTokens?.token || "",
+          authorization: verifyTokens?.accessToken || "",
         },
         ...currentConfig,
       });

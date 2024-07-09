@@ -71,7 +71,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const setNewUserData = async (
     newUserData: UserDataT,
     tokens?: {
-      token: string;
+      accessToken: string;
       refreshToken: string;
     }
   ) => {
@@ -103,7 +103,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
         z.object({
           userData: userDataS,
           tokens: z.object({
-            token: z.string(),
+            accessToken: z.string(),
             refreshToken: z.string(),
           }),
         })
@@ -138,7 +138,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
         z.object({
           userData: userDataS,
           tokens: z.object({
-            token: z.string(),
+            accessToken: z.string(),
             refreshToken: z.string(),
           }),
         })
@@ -175,7 +175,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
         z.object({
           userData: userDataS,
           tokens: z.object({
-            token: z.string(),
+            accessToken: z.string(),
             refreshToken: z.string(),
           }),
         })
@@ -218,7 +218,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
           z.object({
             userData: userDataS,
             tokens: z.object({
-              token: z.string(),
+              accessToken: z.string(),
               refreshToken: z.string(),
             }),
           })
@@ -260,15 +260,19 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const meUser = async (isLoading: boolean): Promise<UserDataT | null> => {
     try {
       if (isLoading) setLoading(true);
-      const result = await api(PATHS.me, undefined, userDataS);
-      if (result) {
-        const isCheckBiometric = result.isCheckBiometric
+      const result = await api(
+        PATHS.me,
+        undefined,
+        z.object({ userData: userDataS })
+      );
+      if (result?.userData) {
+        const isCheckBiometric = result.userData.isCheckBiometric
           ? await checkBiometric()
           : true;
 
         if (!isCheckBiometric) return null;
 
-        const userData = { ...DEFAULT_USER_DATA, ...result };
+        const userData = { ...DEFAULT_USER_DATA, ...result.userData };
         setUserData(userData);
         setUserDataSocket(userData);
         return userData;
