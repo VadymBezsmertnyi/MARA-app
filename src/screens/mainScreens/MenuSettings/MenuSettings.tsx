@@ -78,7 +78,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   /* const isOnSos = useMemo(
     () =>
       usersSos
-        ? usersSos.filter((userSos) => userSos.userId === userData?.id).length >
+        ? usersSos.filter((userSos) => userSos.userId === userData?._id).length >
           0
         : false,
     [usersSos]

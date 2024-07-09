@@ -108,9 +108,9 @@ export const PushNotificationProvider: FunctionComponent<
   );
 
   useEffect(() => {
-    if (userData?.id) setSubscriptionNotification();
+    if (userData?._id) setSubscriptionNotification();
     getNewParams();
-  }, [userData?.id]);
+  }, [userData?._id]);
 
   useEffect(() => {
     const stateNavigate = navigation.getState();

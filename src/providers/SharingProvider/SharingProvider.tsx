@@ -33,7 +33,7 @@ export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
   const [dataDeepLink, setDataDeepLink] = useState<Record<string, any> | null>(
     null
   );
-  const userId = useMemo(() => userData?.id || null, [userData?.id]);
+  const userId = useMemo(() => userData?._id || null, [userData?._id]);
 
   const addUserDataDeepLink = () => {
     setIsFirstLaunch(false);

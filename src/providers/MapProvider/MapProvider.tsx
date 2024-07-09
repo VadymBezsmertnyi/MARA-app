@@ -215,7 +215,7 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
         data: { userId: userData._id },
       });
       setUsersSos((state) =>
-        state ? state.filter((userSos) => userSos.userId !== userData.id) : []
+        state ? state.filter((userSos) => userSos.userId !== userData._id) : []
       );
       stopGetLocationBackground();
     }

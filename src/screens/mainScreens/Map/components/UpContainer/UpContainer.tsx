@@ -26,7 +26,7 @@ export const UpContainer: FunctionComponent = () => {
   );
   const isSos = useMemo(
     () => (usersSos ? usersSos.length > 0 : false),
-    [usersSos, userData?.id]
+    [usersSos, userData?._id]
   );
 
   const containerStyles = useMemo(

@@ -266,7 +266,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const deleteUser = async (): Promise<boolean> => {
     try {
       setLoading(true);
-      if (userData?.id) {
+      if (userData?._id) {
         await api(
           PATHS.delete,
           {

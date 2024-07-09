@@ -82,7 +82,7 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
       if (userData && socketRef.current?.readyState === WebSocket.OPEN) {
         const dataLocationUser = {
           type: "geoLocation",
-          userId: userData.id,
+          userId: userData._id,
           geoLocation: geoLocationUser,
           date,
         };
@@ -99,13 +99,13 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
 
   // TODO
   /* useEffect(() => {
-    if (userData?.id) connectToWebSocket();
+    if (userData?._id) connectToWebSocket();
     else if (socketRef.current?.readyState === WebSocket.OPEN)
       socketRef.current.onclose = (e) => {
         // connection closed
         setStateSocket(DEFAULT_STATE_SOCKET);
       };
-  }, [userData?.id]); */
+  }, [userData?._id]); */
 
   return (
     <webSocketContext.Provider value={contextValue}>
