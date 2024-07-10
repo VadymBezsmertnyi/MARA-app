@@ -3,7 +3,7 @@ import { ProductType } from "./MarketProvider.types";
 export const DEFAULT_PRODUCT_DATA: Omit<ProductType, "_id"> = {
   userId: null,
   title: "",
-  isNew: false,
+  isNewProduct: false,
   isBusiness: false,
   images: [],
   description: "",

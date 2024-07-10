@@ -119,7 +119,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const [place, setPlace] = useState<ItemSearchPlaceType | null>(null);
   const [isShowSelectPlace, setIsShowSelectPlace] = useState(false);
   const [isCleared, setIsCleared] = useState(true);
-  const [isNew, setIsNew] = useState(false);
+  const [isNewProduct, setIsNewProduct] = useState(false);
   const [isBusiness, setIsBusiness] = useState(false);
   const [isChange, setIsChange] = useState(false);
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
@@ -233,7 +233,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         ...DEFAULT_PRODUCT_DATA,
         userId: userData?._id,
         title,
-        isNew,
+        isNewProduct,
         isBusiness,
         place_id: undefined,
         region_place_id: undefined,
@@ -357,7 +357,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             title: productUser.place_id[language].formatted_address,
           });
         setImages(imagesWithBath64);
-        setIsNew(productUser.isNew);
+        setIsNewProduct(productUser.isNewProduct);
         setIsBusiness(productUser.isBusiness);
         setSelect({
           category: getCategoryFull(),
@@ -462,17 +462,17 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           />
           <SelectTwoButtons
             isRegular
-            isSelectFirst={isNew}
+            isSelectFirst={isNewProduct}
             titleFirst={i18n._("New")}
             titleSecond={i18n._("Used")}
             label={i18n._("The state of the goods")}
             onPressFirst={() => {
-              clearKeyError("isNew");
-              setIsNew(true);
+              clearKeyError("isNewProduct");
+              setIsNewProduct(true);
             }}
             onPressSecond={() => {
-              clearKeyError("isNew");
-              setIsNew(false);
+              clearKeyError("isNewProduct");
+              setIsNewProduct(false);
             }}
             containerStyle={styles.containerTwoButtons}
           />

@@ -73,7 +73,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
     null
   );
   const [price, setPrice] = useState(200);
-  const [isNew, setIsNew] = useState<boolean | null>(null);
+  const [isNewProduct, setIsNewProduct] = useState<boolean | null>(null);
   const [isBusiness, setIsBusiness] = useState<boolean | null>(null);
   const [isShowPlaces, setIsShowPlaces] = useState(false);
   const [selectPlaces, setSelectPlaces] = useState<FilterCheckboxes | null>(
@@ -177,7 +177,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             max: price,
           }
         : null,
-      isNew,
+      isNewProduct,
       isBusiness,
       ...multiselect,
       selectPlaces,
@@ -198,7 +198,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
         brandMoto: dataFilterOld.brandMoto,
       };
       setIsBusiness(dataFilterOld.isBusiness);
-      setIsNew(dataFilterOld.isNew);
+      setIsNewProduct(dataFilterOld.isNewProduct);
       setMultiselect(multiselectOld);
       if (dataFilterOld.price) {
         const currencyOld =
@@ -263,15 +263,15 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
               inputWrapperStyle={styles.inputWrapperStyleInputButton}
             />
             <SelectTwoButtons
-              isSelectFirst={isNew}
+              isSelectFirst={isNewProduct}
               titleFirst={i18n._("New")}
               titleSecond={i18n._("Used")}
               label={i18n._("The state of the goods:")}
               onPressFirst={() => {
-                setIsNew((state) => (state ? null : true));
+                setIsNewProduct((state) => (state ? null : true));
               }}
               onPressSecond={() => {
-                setIsNew((state) => (state === false ? null : false));
+                setIsNewProduct((state) => (state === false ? null : false));
               }}
               containerStyle={styles.containerTwoButtons}
               labelStyle={styles.labelSelect}

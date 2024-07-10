@@ -271,7 +271,11 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
                   <ItemDescriptions title={i18n._("Brand")} value={brand} />
                   <ItemDescriptions
                     title={i18n._("Condition")}
-                    value={selectProduct.isNew ? i18n._("New") : i18n._("Used")}
+                    value={
+                      selectProduct.isNewProduct
+                        ? i18n._("New")
+                        : i18n._("Used")
+                    }
                   />
                   <ItemDescriptions
                     title={i18n._("Seller")}

@@ -50,7 +50,7 @@ export const productSchema = z.object({
   _id: z.string(),
   userId: populateUserData.nullable(),
   title: z.string(),
-  isNew: z.boolean(),
+  isNewProduct: z.boolean(),
   isBusiness: z.boolean(),
   place_id: placeDbSchema.nullable(),
   region_place_id: regionDbSchema.nullable(),

@@ -97,9 +97,9 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
           const brandAutoProductId =
             product.auto?.brandId || product.autoParts?.brandId || null;
           const isPrice = getIsPrice(product, dataFilter);
-          const isNew =
-            dataFilter.isNew !== null
-              ? dataFilter.isNew === product.isNew
+          const isNewProduct =
+            dataFilter.isNewProduct !== null
+              ? dataFilter.isNewProduct === product.isNewProduct
               : true;
           const isBusiness =
             dataFilter.isBusiness !== null
@@ -146,7 +146,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
 
           return (
             isPrice &&
-            isNew &&
+            isNewProduct &&
             isBusiness &&
             isCategory &&
             isBrandMoto &&
