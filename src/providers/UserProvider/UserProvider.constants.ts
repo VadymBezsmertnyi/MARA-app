@@ -26,6 +26,16 @@ export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
     radiusKm: 5,
   },
   businessMarketId: null,
+  subscriptionAdvertIds: [],
+  subscriptionEventIds: [],
+  subscriptionWorkshopIds: [],
+  defaultAmount: {
+    advertAmount: 3,
+    advertBusinessAmount: 5,
+    eventSmallAmount: 1,
+    eventBigAmount: 0,
+    workshopAmount: 1,
+  },
 };
 
 export const NUMBER_TWO = 2;

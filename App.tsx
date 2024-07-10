@@ -44,6 +44,7 @@ import { SharingProvider } from "./src/providers/SharingProvider/SharingProvider
 import { BusinessProvider } from "./src/providers/BusinessProvider/BusinessProvider";
 import { PermissionsProvider } from "./src/providers/PermissionsProvider/PermissionsProvider";
 import { DropDownAlertProvider } from "./src/providers/DropDownAlertProvider/DropDownAlertProvider";
+import SubscriptionProvider from "./src/providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -113,49 +114,51 @@ function App() {
                   <PlacesProvider>
                     <BiometricProvider>
                       <UserProvider>
-                        <NavigationContainer
-                          ref={navigationRef}
-                          onStateChange={() => {
-                            const nameRoute =
-                              navigationRef.current?.getCurrentRoute()?.name;
-                            if (nameRoute) setCurrentRouteName(nameRoute);
-                          }}
-                        >
-                          <EventsProvider>
-                            <SafeAreaProvider>
-                              <PermissionsProvider>
-                                <MapProvider>
-                                  <GestureHandlerRootView
-                                    style={styles.gestureHandlerRootView}
-                                  >
-                                    <PushNotificationProvider
-                                      currentRouteName={currentRouteName}
+                        <SubscriptionProvider>
+                          <NavigationContainer
+                            ref={navigationRef}
+                            onStateChange={() => {
+                              const nameRoute =
+                                navigationRef.current?.getCurrentRoute()?.name;
+                              if (nameRoute) setCurrentRouteName(nameRoute);
+                            }}
+                          >
+                            <EventsProvider>
+                              <SafeAreaProvider>
+                                <PermissionsProvider>
+                                  <MapProvider>
+                                    <GestureHandlerRootView
+                                      style={styles.gestureHandlerRootView}
                                     >
-                                      <PaymentProvider>
-                                        <WorkshopsProvider>
-                                          <MarketProvider>
-                                            <SharingProvider>
-                                              <BusinessProvider>
-                                                <Navigators
-                                                  currentRouteName={
-                                                    currentRouteName
-                                                  }
-                                                  navigation={
-                                                    navigationRef.current
-                                                  }
-                                                />
-                                              </BusinessProvider>
-                                            </SharingProvider>
-                                          </MarketProvider>
-                                        </WorkshopsProvider>
-                                      </PaymentProvider>
-                                    </PushNotificationProvider>
-                                  </GestureHandlerRootView>
-                                </MapProvider>
-                              </PermissionsProvider>
-                            </SafeAreaProvider>
-                          </EventsProvider>
-                        </NavigationContainer>
+                                      <PushNotificationProvider
+                                        currentRouteName={currentRouteName}
+                                      >
+                                        <PaymentProvider>
+                                          <WorkshopsProvider>
+                                            <MarketProvider>
+                                              <SharingProvider>
+                                                <BusinessProvider>
+                                                  <Navigators
+                                                    currentRouteName={
+                                                      currentRouteName
+                                                    }
+                                                    navigation={
+                                                      navigationRef.current
+                                                    }
+                                                  />
+                                                </BusinessProvider>
+                                              </SharingProvider>
+                                            </MarketProvider>
+                                          </WorkshopsProvider>
+                                        </PaymentProvider>
+                                      </PushNotificationProvider>
+                                    </GestureHandlerRootView>
+                                  </MapProvider>
+                                </PermissionsProvider>
+                              </SafeAreaProvider>
+                            </EventsProvider>
+                          </NavigationContainer>
+                        </SubscriptionProvider>
                       </UserProvider>
                     </BiometricProvider>
                   </PlacesProvider>

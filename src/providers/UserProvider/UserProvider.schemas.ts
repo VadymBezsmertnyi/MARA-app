@@ -9,6 +9,11 @@ import { workshopSchema } from "../WorkshopsProvider/WorkshopsProvider.schemas";
 import { businessMarketSchema } from "../BusinessProvider/BusinessProvider.schemas";
 import { eventSchema } from "../EventsProvider/EventsProvider.schemas";
 import { productSchema } from "../MarketProvider/MarketProvider.schemas";
+import {
+  subscriptionAdvertSchema,
+  subscriptionAdvertUpdateSchema,
+  subscriptionWorkshopSchema,
+} from "../SubscriptionProvider/SubscriptionProvider.schemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),
@@ -70,4 +75,14 @@ export const userDataS = z.object({
     radiusKm: z.number(),
   }),
   businessMarketId: businessMarketSchema.nullable(),
+  subscriptionAdvertIds: z.array(subscriptionAdvertSchema),
+  subscriptionEventIds: z.array(subscriptionAdvertUpdateSchema),
+  subscriptionWorkshopIds: z.array(subscriptionWorkshopSchema),
+  defaultAmount: z.object({
+    advertAmount: z.number(),
+    advertBusinessAmount: z.number(),
+    eventSmallAmount: z.number(),
+    eventBigAmount: z.number(),
+    workshopAmount: z.number(),
+  }),
 });

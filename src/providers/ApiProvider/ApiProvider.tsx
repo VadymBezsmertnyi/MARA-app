@@ -63,7 +63,6 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
         },
         ...currentConfig,
       });
-
       if (response.status === 204) return null;
 
       // TODO for test
