@@ -58,7 +58,6 @@ export const userDataS = z.object({
   workshopsIds: z.array(workshopSchema),
   productsIds: z.array(productSchema),
   isCheckBiometric: z.boolean().nullable(),
-  timeToken: z.number(),
   languageLocal: z.enum(languagesKeys),
   isNewUser: z.boolean(),
   isDeleteUser: z.boolean(),

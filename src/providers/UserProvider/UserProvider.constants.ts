@@ -9,7 +9,6 @@ export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
   productsIds: [],
   isCheckBiometric: null,
   email: null,
-  timeToken: 1,
   languageLocal: "en",
   isNewUser: true,
   googleDate: null,
