@@ -11,7 +11,10 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import {
+  userContext,
+  useUserProvider,
+} from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 
@@ -30,6 +33,7 @@ import {
 
 // styles
 import { styles } from "./SettingsMain.styles";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 type SettingsMainProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -39,7 +43,11 @@ type SettingsMainProps = {
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   navigation,
 }) => {
-  const { userData, exitUser } = useContext(userContext);
+  const { exitUser } = useUserProvider();
+  const { infoBusinessAdverts, infoAdverts, infoSmallEvents, infoWorkshops } =
+    useSubscriptionProvider();
+  console.log("infoSmallEvents", infoSmallEvents);
+
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
 
@@ -112,8 +120,14 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <View style={styles.containerLineEmpty} />
           <ItemTypeSetting
             title={i18n._("Your adverts")}
-            amountUsed={userData?.productsIds.length || 0}
-            amountAvailable={userData?.productsIds.length || 0}
+            amountUsed={
+              infoAdverts.useAmountAdvert +
+              infoBusinessAdverts.useAmountBusinessAdvert
+            }
+            amountAvailable={
+              infoAdverts.amountAdvert +
+              infoBusinessAdverts.amountBusinessAdvert
+            }
             onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
             }}
@@ -124,8 +138,8 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <View style={styles.containerLineEmpty} />
           <ItemTypeSetting
             title={i18n._("Your workshops")}
-            amountUsed={userData?.workshopsIds.length || 0}
-            amountAvailable={userData?.workshopsIds.length || 0}
+            amountUsed={infoWorkshops.useAmountWorkshop}
+            amountAvailable={infoWorkshops.amountWorkshop}
             onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
             }}
@@ -136,8 +150,8 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <View style={styles.containerLineEmpty} />
           <ItemTypeSetting
             title={i18n._("Your events")}
-            amountUsed={userData?.eventsIds.length || 0}
-            amountAvailable={userData?.eventsIds.length || 0}
+            amountUsed={infoSmallEvents.useAmountSmallEvent}
+            amountAvailable={infoSmallEvents.amountSmallEvent}
             onPressView={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
             }}

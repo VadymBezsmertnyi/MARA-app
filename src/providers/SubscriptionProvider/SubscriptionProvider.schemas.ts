@@ -10,7 +10,7 @@ export const subscriptionAdvertSchema = z.object({
   amount: z.number(),
   type: z.enum(TYPES_SUBSCRIPTIONS_ADVERT),
   dateCreate: z.number(),
-  dateUpdate: z.number(),
+  dateEnd: z.number(),
 });
 
 export const subscriptionAdvertUpdateSchema = z.object({
@@ -18,7 +18,7 @@ export const subscriptionAdvertUpdateSchema = z.object({
   amount: z.number(),
   type: z.enum(TYPES_SUBSCRIPTIONS_EVENT),
   dateCreate: z.number(),
-  dateUpdate: z.number(),
+  dateEnd: z.number(),
 });
 
 export const subscriptionWorkshopSchema = z.object({
@@ -26,5 +26,5 @@ export const subscriptionWorkshopSchema = z.object({
   userId: z.string(),
   amount: z.number(),
   dateCreate: z.number(),
-  dateUpdate: z.number(),
+  dateEnd: z.number(),
 });

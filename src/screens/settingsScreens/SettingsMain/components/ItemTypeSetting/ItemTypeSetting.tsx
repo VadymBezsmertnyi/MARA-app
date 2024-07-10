@@ -36,14 +36,14 @@ const ItemTypeSetting: FunctionComponent<ItemTypeSettingProps> = ({
           {i18n._("Expended: {amountUsed}", { amountUsed })}
         </Text>
         <Text style={styles.titleMiddleLine}>
-          {i18n._("Available: {amountAvailable}", { amountAvailable: 0 })}
+          {i18n._("Available: {amountAvailable}", { amountAvailable })}
         </Text>
       </View>
       <TouchableOpacity onPress={onPressView} style={styles.containerLine}>
         <Text>{i18n._("Active")}</Text>
         <View style={styles.buttonEndLine}>
           <View style={styles.containerIconEndLine}>
-            <Text style={styles.titleButtonEndLine}>{amountAvailable}</Text>
+            <Text style={styles.titleButtonEndLine}>{amountUsed}</Text>
           </View>
           <MaterialIcons name="arrow-forward-ios" size={12} color="black" />
         </View>

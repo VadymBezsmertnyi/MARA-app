@@ -1,13 +1,13 @@
-const TYPE_BUSINESS_SUBSCRIPTIONS_ADVERT = "business" as const;
-const TYPE_INDIVIDUAL_SUBSCRIPTIONS_ADVERT = "individual" as const;
+export const TYPE_BUSINESS_SUBSCRIPTIONS_ADVERT = "business" as const;
+export const TYPE_INDIVIDUAL_SUBSCRIPTIONS_ADVERT = "individual" as const;
 
 export const TYPES_SUBSCRIPTIONS_ADVERT = [
   TYPE_BUSINESS_SUBSCRIPTIONS_ADVERT,
   TYPE_INDIVIDUAL_SUBSCRIPTIONS_ADVERT,
 ] as const;
 
-const TYPE_SMALL_SUBSCRIPTIONS_EVENT = "small" as const;
-const TYPE_BIG_SUBSCRIPTIONS_EVENT = "big" as const;
+export const TYPE_SMALL_SUBSCRIPTIONS_EVENT = "small" as const;
+export const TYPE_BIG_SUBSCRIPTIONS_EVENT = "big" as const;
 
 export const TYPES_SUBSCRIPTIONS_EVENT = [
   TYPE_SMALL_SUBSCRIPTIONS_EVENT,

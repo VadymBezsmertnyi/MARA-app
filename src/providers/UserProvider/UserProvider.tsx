@@ -368,3 +368,5 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     </userContext.Provider>
   );
 };
+
+export const useUserProvider = () => useContext(userContext);
