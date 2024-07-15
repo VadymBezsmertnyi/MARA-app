@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Faceți fotografia principală"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Toate orașele"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Nu s-au găsit orașe"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Scădeați numărul maxim"
 
@@ -140,6 +148,26 @@ msgstr "Selectați tipul de lucru auto"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Suprapunere fundal pentru închiderea ferestrei modale"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Atenție!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Din păcate, în prezent este imposibil să creșteți numărul de anunțuri, ateliere sau evenimente disponibile, deoarece aplicația este în modul de testare. Dacă aveți întrebări, vă rugăm să contactați administrația sau să lăsați feedback."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- sau --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Raportați o eroare/îmbunătățire"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Vă mulțumim pentru înțelegere!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Ștergeți eveniment"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Succes"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ștergeți anunț"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Anulare"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Acceptare"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Fotografia a fost modificată"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Fotografia nu a fost modificată"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Șterge"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Modifică"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Acces interzis"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Telegrama ta"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Număr de telefon:"
+msgid "Phone number"
+msgstr "Număr de telefon"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Adaugă o descriere"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Descriere"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Anulare"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Condiții de utilizare"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Politica de confidențialitate"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Raportați o eroare/îmbunătățire"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Eroare la crearea anunțului"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Eroare"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Adaugă anunț"
 
@@ -888,10 +932,6 @@ msgstr "Adăugați o descriere despre anunț"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Descriere anunț"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Număr de telefon"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Oraș"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Număr suplimentar 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "evenimente"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Buton pentru închiderea ecranului de setări al evenimentelor"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Cumpără eveniment"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Atenție! Toate datele legate de afacerea \"{nameBusiness}\" vor fi ște
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Adaugă"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Cumpără suplimentar"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Buton pentru închiderea ecranului de setări al produselor"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Cumpără anunț"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Fotografia adăugată"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Salvează profilul"
+msgid "Profile saved"
+msgstr "Profil salvat"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "ateliere"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Buton pentru închiderea ecranului de setări al atelierelor"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Adaugă atelier"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Cumpără atelier"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Eroare la modificarea atelierului"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Eroare la crearea atelierului"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Adaugă atelier"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "Despre noi:"
-
-msgid "Access denied"
-msgstr "Acces interzis"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Acces la geolocație în modul de fundal"
@@ -1532,24 +1585,6 @@ msgstr "Doriți să trimiteți un semnal SOS?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Permiteți conectarea la aplicație folosind Face ID"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Eroare cheie de token: Cheia secretă nu este definită în variabilele de mediu"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Eroare: Număr de telefon sau parolă nevalidă"
-
-msgid "Error: Invalid token"
-msgstr "Eroare: Token nevalid"
-
-msgid "Error: Token expired"
-msgstr "Eroare: Token expirat"
-
-msgid "Error: User already exists"
-msgstr "Eroare: Utilizatorul există deja"
-
-msgid "Error: User not found"
-msgstr "Eroare: Utilizatorul nu a fost găsit"
-
 msgid "Event"
 msgstr "Eveniment"
 
@@ -1570,9 +1605,6 @@ msgstr "Dacă nu există o opțiune potrivită în listă, utilizați „Căutar
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Numărul de telefon introdus este incorect sau codul țării pentru numărul de telefon a fost selectat incorect"
-
-msgid "Internal Server Error"
-msgstr "Eroare internă de server"
 
 msgid "Language selection"
 msgstr "Selectare limbă"

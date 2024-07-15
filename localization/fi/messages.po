@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Tee pääkuvaksi"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Kaikki kaupungit"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Kaupunkeja ei löytynyt"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Vähennä enimmäismäärää"
 
@@ -140,6 +148,26 @@ msgstr "Valitse työtyyppi auto"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Taustapäällyste modaalisen ikkunan sulkemiseksi"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Huomio!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Valitettavasti tällä hetkellä ei ole mahdollista lisätä saatavilla olevien mainosten, työpajojen tai tapahtumien määrää, koska sovellus on testitilassa. Jos sinulla on kysyttävää, ota yhteyttä hallintoon tai jätä palautetta."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- tai --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Ilmoita virheestä/parannuksesta"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Kiitos ymmärryksestä!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Poista tapahtuma"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Onnistui"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Mainoksen poistaminen"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Peruuta"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Hyväksy"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Kuva on vaihdettu"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Kuvaa ei ole vaihdettu"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Poista"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Muuta"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Pääsy kielletty"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Sinun telegramisi"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Puhelinnumero:"
+msgid "Phone number"
+msgstr "Puhelinnumero"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Lisää kuvaus"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Kuvaus"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Peruuta"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Käyttöehdot"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Yksityisyydensuoja"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Ilmoita virheestä/parannuksesta"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Virhe mainoksen luomisessa"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Virhe"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Lisää mainos"
 
@@ -888,10 +932,6 @@ msgstr "Lisää kuvaus mainoksesta"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Mainoksen kuvaus"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Puhelinnumero"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Kaupunki"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Lisänumero 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Lisänumero {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "tapahtumat"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Painike sulkemaan asetusten tapahtumanäyttö"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Osta tapahtuma"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Huomio! Kaikki yritykseen \"{nameBusiness}\" liittyvät tiedot poistetaa
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Lisää"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Osta lisäksi"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Painike sulkemaan asetusten tuote-näyttö"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Osta mainos"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Kuva lisätty"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Tallenna profiili"
+msgid "Profile saved"
+msgstr "Profiili tallennettu"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "työpajat"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Painike sulkemaan asetusten työpaja-näyttö"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Lisää työpaja"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Osta työpaja"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Virhe työpajan vaihtamisessa"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Virhe työpajan luomisessa"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Lisää työpaja"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "Tietoa meistä:"
-
-msgid "Access denied"
-msgstr "Pääsy estetty"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Pääsy sijaintiin taustatilassa"
@@ -1532,24 +1585,6 @@ msgstr "Haluatko lähettää SOS-signaalin?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Ota käyttöön kirjautuminen sovellukseen Face ID:llä"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Virhe avaintokenissa: Salainen avain ei ole määritetty ympäristömuuttujissa"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Virhe: Virheellinen puhelinnumero tai salasana"
-
-msgid "Error: Invalid token"
-msgstr "Virhe: Virheellinen tunniste"
-
-msgid "Error: Token expired"
-msgstr "Virhe: Tunniste vanhentunut"
-
-msgid "Error: User already exists"
-msgstr "Virhe: Käyttäjä on jo olemassa"
-
-msgid "Error: User not found"
-msgstr "Virhe: Käyttäjää ei löydy"
-
 msgid "Event"
 msgstr "Tapahtuma"
 
@@ -1570,9 +1605,6 @@ msgstr "Jos listalla ei ole sopivaa vaihtoehtoa, käytä 'Syvää Hakua'"
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Virheellinen puhelinnumero tai valittu maakoodi"
-
-msgid "Internal Server Error"
-msgstr "Sisäinen palvelinvirhe"
 
 msgid "Language selection"
 msgstr "Kielen valinta"

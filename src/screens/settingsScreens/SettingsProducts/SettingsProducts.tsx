@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -10,13 +10,15 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { localesContext } from "../../../../localization/localization.provider";
-import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
+import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ItemSettingProducts } from "./components/ItemSettingProducts/ItemSettingProducts";
+import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 // constants
 import { PATHS_SETTINGS_SCREENS } from "../../../navigators/useNavigator.constants";
@@ -30,7 +32,6 @@ import { IconClose, IconPlus } from "../../../icons/components";
 // styles
 import { styles } from "./SettingsProducts.styles";
 import colors from "../../../../styles/colors";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
 
 type SettingsProductsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -40,9 +41,18 @@ type SettingsProductsProps = {
 export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
   navigation,
 }) => {
+  const { infoBusinessAdverts, infoAdverts } = useSubscriptionProvider();
   const { userData } = useContext(userContext);
   const { heightStatusBar } = useContext(themeContext);
   const { i18n } = useContext(localesContext);
+  const [isShowPayment, setIsShowPayment] = useState(false);
+
+  const isAmountAdverts = useMemo(
+    () =>
+      infoBusinessAdverts.amountBusinessAdvert > 0 ||
+      infoAdverts.amountAdvert > 0,
+    [infoBusinessAdverts, infoAdverts]
+  );
   const typeItem = useMemo(() => i18n._("adverts"), [i18n]);
   const productsUser = useMemo(
     () => userData?.productsIds || [],
@@ -59,79 +69,77 @@ export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
   };
 
   return (
-    <View style={containerStyles}>
-      <View style={styles.containerHeader}>
-        <View style={styles.boxHeaderEmpty} />
-        <Text style={styles.titleHeader}>
-          <Trans>My adverts</Trans>
-        </Text>
-        <TouchableOpacity
-          accessibilityLabel={i18n._(
-            "Button for closing the settings products screen"
-          )}
-          onPress={onClose}
-        >
-          <IconClose width={24} height={24} fill={colors.blackCoffee} />
-        </TouchableOpacity>
-      </View>
-      {productsUser.length === 0 ? (
-        <View style={styles.containerNotElements}>
-          <ImageCache
-            contentFit="contain"
-            style={styles.imageNotElements}
-            imageSrc={notItemsImage}
-          />
-          <View style={styles.titlesNotElements}>
-            <Text style={styles.titleNotElements}>
-              <Trans>Sorry!</Trans>
-            </Text>
-            <Text style={styles.titleNotElements}>
-              <Trans>You don't have {typeItem}.</Trans>
-            </Text>
-          </View>
-        </View>
-      ) : (
-        <ScrollView style={styles.containerElements}>
-          {productsUser.map((product, index) => {
-            const isStart = index === 0;
-            return (
-              <ItemSettingProducts
-                key={`setting-product-${product._id}`}
-                product={product}
-                isStart={isStart}
-              />
-            );
-          })}
-          <ButtonCustom
-            onSubmit={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
-            }}
-            styleContainer={styles.containerButtonAdd}
+    <>
+      <View style={containerStyles}>
+        <View style={styles.containerHeader}>
+          <View style={styles.boxHeaderEmpty} />
+          <Text style={styles.titleHeader}>
+            <Trans>My adverts</Trans>
+          </Text>
+          <TouchableOpacity
+            accessibilityLabel={i18n._(
+              "Button for closing the settings products screen"
+            )}
+            onPress={onClose}
           >
-            <View style={styles.buttonAdd}>
-              <IconPlus width={16} height={16} fill={colors.white} />
-              <Text style={styles.titleAdd}>
-                <Trans>Add advert</Trans>
+            <IconClose width={24} height={24} fill={colors.blackCoffee} />
+          </TouchableOpacity>
+        </View>
+        {productsUser.length === 0 ? (
+          <View style={styles.containerNotElements}>
+            <ImageCache
+              contentFit="contain"
+              style={styles.imageNotElements}
+              imageSrc={notItemsImage}
+            />
+            <View style={styles.titlesNotElements}>
+              <Text style={styles.titleNotElements}>
+                <Trans>Sorry!</Trans>
+              </Text>
+              <Text style={styles.titleNotElements}>
+                <Trans>You don't have {typeItem}.</Trans>
               </Text>
             </View>
-          </ButtonCustom>
-        </ScrollView>
-      )}
-
-      <View style={styles.containerFooter}>
-        <ButtonCustom
-          onSubmit={() => {
-            navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
-          }}
-        >
-          <View style={styles.buttonAdd}>
-            <IconPlus width={16} height={16} fill={colors.white} />
-            <Text style={styles.titleAdd}>
-              <Trans>Add advert</Trans>
-            </Text>
           </View>
-        </ButtonCustom>
+        ) : (
+          <ScrollView style={styles.containerElements}>
+            {productsUser.map((product, index) => {
+              const isStart = index === 0;
+              return (
+                <ItemSettingProducts
+                  key={`setting-product-${product._id}`}
+                  product={product}
+                  isStart={isStart}
+                />
+              );
+            })}
+            <ButtonCustom
+              onSubmit={() => {
+                if (isAmountAdverts)
+                  navigation.navigate(
+                    PATHS_SETTINGS_SCREENS.settingsProductAdd
+                  );
+                else setIsShowPayment(true);
+              }}
+              styleContainer={styles.containerButtonAdd}
+            >
+              <View style={styles.buttonAdd}>
+                {isAmountAdverts && (
+                  <IconPlus width={16} height={16} fill={colors.white} />
+                )}
+                <Text style={styles.titleAdd}>
+                  {isAmountAdverts
+                    ? i18n._("Add advert")
+                    : i18n._("Buy advert")}
+                </Text>
+              </View>
+            </ButtonCustom>
+          </ScrollView>
+        )}
       </View>
-    </View>
+      {isShowPayment && (
+        <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
+      )}
+    </>
   );
 };

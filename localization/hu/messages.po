@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Fő fénykép készítése"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Minden város"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Nem található város"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Csökkentse a maximális számot"
 
@@ -140,6 +148,26 @@ msgstr "Válassza ki az autó típusát"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Háttér átfedés a párbeszédablak bezárásához"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Figyelem!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Sajnos jelenleg nem lehetséges növelni a rendelkezésre álló hirdetések, műhelyek vagy események számát, mivel az alkalmazás teszt üzemmódban van. Ha kérdése van, kérjük, lépjen kapcsolatba az adminisztrációval, vagy hagyjon visszajelzést."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- vagy --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Hiba/javítás bejelentése"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Köszönjük a megértést!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Esemény törlése"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Siker"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Hirdetés törlése"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Mégsem"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Elfogadás"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "A fénykép megváltozott"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "A fénykép nem változott"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Törlés"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Módosítás"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Hozzáférés megtagadva"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "A televíziód"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Telefonszám:"
+msgid "Phone number"
+msgstr "Telefonszám"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Leírás hozzáadása"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Leírás"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Mégsem"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Felhasználási feltételek"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Adatvédelmi irányelvek"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Hiba/javítás bejelentése"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Hiba történt a hirdetés létrehozásakor"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Hiba"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Hirdetés hozzáadása"
 
@@ -888,10 +932,6 @@ msgstr "Adjon meg leírást a hirdetésről"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Hirdetés leírása"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefonszám"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Város"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "További szám 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "További szám {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "események"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Gomb a beállítások események képernyő bezárásához"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Vásároljon eseményt"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Figyelem! Az \"{nameBusiness}\" üzletre vonatkozó összes adat törlő
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Hozzáadás"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Vásároljon továbbiakat"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Gomb a beállítások termékek képernyő bezárásához"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Hirdetés vásárlása"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "A fotó hozzáadva"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Profil mentése"
+msgid "Profile saved"
+msgstr "Profil mentve"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "műhelyek"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Gomb a műhelybeállítások képernyő bezárásához"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Műhely hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Műhely vásárlása"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Hiba a műhely módosításakor"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Hiba a műhely létrehozásakor"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Műhely hozzáadása"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "Rólunk:"
-
-msgid "Access denied"
-msgstr "Hozzáférés megtagadva"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Hozzáférés a háttérben futó helymeghatározáshoz"
@@ -1532,24 +1585,6 @@ msgstr "Szeretne SOS jelzést küldeni?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Engedélyezze a bejelentkezést az alkalmazásba Face ID használatával"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Hiba a kulcs tokenben: A titkos kulcs nincs definiálva a környezeti változókban"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Hiba: Érvénytelen telefonszám vagy jelszó"
-
-msgid "Error: Invalid token"
-msgstr "Hiba: Érvénytelen token"
-
-msgid "Error: Token expired"
-msgstr "Hiba: Lejárt token"
-
-msgid "Error: User already exists"
-msgstr "Hiba: A felhasználó már létezik"
-
-msgid "Error: User not found"
-msgstr "Hiba: Felhasználó nem található"
-
 msgid "Event"
 msgstr "Esemény"
 
@@ -1570,9 +1605,6 @@ msgstr "Ha nincs megfelelő lehetőség a listában, használja a 'Mélykeresés
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Helytelen telefonszám vagy helytelenül választott országkód"
-
-msgid "Internal Server Error"
-msgstr "Belső szerverhiba"
 
 msgid "Language selection"
 msgstr "Nyelvválasztás"

@@ -10,7 +10,7 @@ import { Trans } from "@lingui/macro";
 
 // providers
 import { localesContext } from "../../../../../../localization/localization.provider";
-import { businessContext } from "../../../../../providers/BusinessProvider/BusinessProvider";
+import { useBusinessProvider } from "../../../../../providers/BusinessProvider/BusinessProvider";
 import { useSubscriptionProvider } from "../../../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -33,17 +33,18 @@ type ContainerBusinessProps = {
   onCreateBusiness: () => void;
   onChangeBusiness: (businessMarketId: string) => void;
   onReviewBusiness: (businessMarketId: string) => void;
+  onPressBuy: () => void;
 };
 
 export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
   onCreateBusiness,
   onChangeBusiness,
   onReviewBusiness,
+  onPressBuy,
 }) => {
   const { i18n } = useContext(localesContext);
   const { infoBusinessAdverts } = useSubscriptionProvider();
-  const { businessMarketUser, onDeleteBusinessMarket } =
-    useContext(businessContext);
+  const { businessMarketUser, onDeleteBusinessMarket } = useBusinessProvider();
   const [isShow, setIsShow] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
 
@@ -51,6 +52,7 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
     () => infoBusinessAdverts,
     [infoBusinessAdverts]
   );
+
   const imageSource = useMemo(
     () =>
       businessMarketUser?.logo
@@ -110,11 +112,16 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
                   <IconProfileAvatar />
                 )}
                 <ButtonCustom
+                  disabled={useAmountBusinessAdvert <= amountBusinessAdvert}
                   title={i18n._("Improve")}
-                  onSubmit={() => {
-                    onChangeBusiness(businessMarketUser._id);
-                  }}
-                  styleContainer={styles.buttonBusinessLogo}
+                  onSubmit={onPressBuy}
+                  styleContainer={[
+                    styles.buttonBusinessLogo,
+                    {
+                      opacity:
+                        useAmountBusinessAdvert <= amountBusinessAdvert ? 0 : 1,
+                    },
+                  ]}
                   styleTitle={styles.titleButtonBusinessLogo}
                 />
               </View>

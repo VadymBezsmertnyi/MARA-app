@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useContext } from "react";
 import { I18nProvider } from "@lingui/react";
 import { Messages, setupI18n } from "@lingui/core";
 import { DropdownAlertType } from "react-native-dropdownalert";
@@ -125,3 +125,5 @@ export const LocalesProvider: React.FC<Props> = ({ children }) => {
     </I18nProvider>
   );
 };
+
+export const useLocalesProvider = () => useContext(localesContext);

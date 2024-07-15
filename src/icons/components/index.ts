@@ -3,6 +3,7 @@ export { default as ArrowLeft } from "./ArrowLeft";
 export { default as ArrowLongRight } from "./ArrowLongRight";
 export { default as EyeHide } from "./EyeHide";
 export { default as EyeShow } from "./EyeShow";
+export { default as IconFontistoEmail } from "./IconFontistoEmail";
 export { default as IconAddEvent } from "./IconAddEvent";
 export { default as IconAppleAppStore } from "./IconAppleAppStore";
 export { default as IconArrowDownGradient } from "./IconArrowDownGradient";

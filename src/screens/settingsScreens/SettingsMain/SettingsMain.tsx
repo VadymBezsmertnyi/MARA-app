@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useContext, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
@@ -11,12 +11,10 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import {
-  userContext,
-  useUserProvider,
-} from "../../../providers/UserProvider/UserProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -24,6 +22,7 @@ import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurge
 import ItemTypeSetting from "./components/ItemTypeSetting/ItemTypeSetting";
 import { ContainerBusiness } from "./components/ContainerBusiness/ContainerBusiness";
 import { ContainerUser } from "./components/ContainerUser/ContainerUser";
+import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 // constants
 import {
@@ -33,7 +32,6 @@ import {
 
 // styles
 import { styles } from "./SettingsMain.styles";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 type SettingsMainProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -46,10 +44,9 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   const { exitUser } = useUserProvider();
   const { infoBusinessAdverts, infoAdverts, infoSmallEvents, infoWorkshops } =
     useSubscriptionProvider();
-  console.log("infoSmallEvents", infoSmallEvents);
-
   const { i18n } = useContext(localesContext);
   const { heightStatusBar } = useContext(themeContext);
+  const [isShowPayment, setIsShowPayment] = useState(false);
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -90,88 +87,104 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     });
   };
 
+  const onPressBuy = () => {
+    setIsShowPayment(true);
+  };
+
   return (
-    <View style={containerStyles}>
-      <View style={styles.containerHeader}>
-        <View style={styles.buttonsHeaderLeft}>
-          <MenuBurgerButton onPress={onShowMenu} />
-        </View>
-        <Text style={styles.titleHeader}>
-          <Trans>Your profile</Trans>
-        </Text>
-        <TouchableOpacity
-          onPress={onLogoutProfile}
-          style={styles.buttonsHeaderRight}
-        >
-          <Text style={styles.titleLogout}>
-            <Trans>Logout</Trans>
+    <>
+      <View style={containerStyles}>
+        <View style={styles.containerHeader}>
+          <View style={styles.buttonsHeaderLeft}>
+            <MenuBurgerButton onPress={onShowMenu} />
+          </View>
+          <Text style={styles.titleHeader}>
+            <Trans>Your profile</Trans>
           </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={onLogoutProfile}
+            style={styles.buttonsHeaderRight}
+          >
+            <Text style={styles.titleLogout}>
+              <Trans>Logout</Trans>
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <ScrollView>
+          <ContainerUser />
+          <View style={styles.containerLineEmpty} />
+          <ContainerBusiness
+            onCreateBusiness={onCreateBusinessMarket}
+            onChangeBusiness={onChangeBusinessMarket}
+            onReviewBusiness={onReviewBusinessMarket}
+            onPressBuy={onPressBuy}
+          />
+          <View style={styles.containerList}>
+            <View style={styles.containerLineEmpty} />
+            <ItemTypeSetting
+              title={i18n._("Your adverts")}
+              amountUsed={
+                infoAdverts.useAmountAdvert +
+                infoBusinessAdverts.useAmountBusinessAdvert
+              }
+              amountAvailable={
+                infoAdverts.amountAdvert +
+                infoBusinessAdverts.amountBusinessAdvert
+              }
+              amountAvailableTitle={`${infoAdverts.amountAdvert}(${infoBusinessAdverts.amountBusinessAdvert})`}
+              onPressView={() => {
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
+              }}
+              onPressAdd={() => {
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
+              }}
+              onPressBuy={onPressBuy}
+            />
+            <View style={styles.containerLineEmpty} />
+            <ItemTypeSetting
+              title={i18n._("Your workshops")}
+              amountUsed={infoWorkshops.useAmountWorkshop}
+              amountAvailable={infoWorkshops.amountWorkshop}
+              amountAvailableTitle={`${infoWorkshops.amountWorkshop}`}
+              onPressView={() => {
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
+              }}
+              onPressAdd={() => {
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopAdd);
+              }}
+              onPressBuy={onPressBuy}
+            />
+            <View style={styles.containerLineEmpty} />
+            <ItemTypeSetting
+              title={i18n._("Your events")}
+              amountUsed={infoSmallEvents.useAmountSmallEvent}
+              amountAvailable={infoSmallEvents.amountSmallEvent}
+              amountAvailableTitle={`${infoSmallEvents.amountSmallEvent}`}
+              onPressView={() => {
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
+              }}
+              onPressAdd={() => {
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
+              }}
+              onPressBuy={onPressBuy}
+            />
+          </View>
+          <View style={styles.containerLineEmpty} />
+          <View style={styles.containerFooter}>
+            <ButtonCustom
+              type="transparent"
+              title={i18n._("Setting profile")}
+              onSubmit={() => {
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
+              }}
+            />
+          </View>
+          <View style={styles.containerEmpty} />
+        </ScrollView>
       </View>
-      <ScrollView>
-        <ContainerUser />
-        <View style={styles.containerLineEmpty} />
-        <ContainerBusiness
-          onCreateBusiness={onCreateBusinessMarket}
-          onChangeBusiness={onChangeBusinessMarket}
-          onReviewBusiness={onReviewBusinessMarket}
-        />
-        <View style={styles.containerList}>
-          <View style={styles.containerLineEmpty} />
-          <ItemTypeSetting
-            title={i18n._("Your adverts")}
-            amountUsed={
-              infoAdverts.useAmountAdvert +
-              infoBusinessAdverts.useAmountBusinessAdvert
-            }
-            amountAvailable={
-              infoAdverts.amountAdvert +
-              infoBusinessAdverts.amountBusinessAdvert
-            }
-            onPressView={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
-            }}
-            onPressAdd={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
-            }}
-          />
-          <View style={styles.containerLineEmpty} />
-          <ItemTypeSetting
-            title={i18n._("Your workshops")}
-            amountUsed={infoWorkshops.useAmountWorkshop}
-            amountAvailable={infoWorkshops.amountWorkshop}
-            onPressView={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
-            }}
-            onPressAdd={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopAdd);
-            }}
-          />
-          <View style={styles.containerLineEmpty} />
-          <ItemTypeSetting
-            title={i18n._("Your events")}
-            amountUsed={infoSmallEvents.useAmountSmallEvent}
-            amountAvailable={infoSmallEvents.amountSmallEvent}
-            onPressView={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
-            }}
-            onPressAdd={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
-            }}
-          />
-        </View>
-        <View style={styles.containerLineEmpty} />
-        <View style={styles.containerFooter}>
-          <ButtonCustom
-            type="transparent"
-            title={i18n._("Setting profile")}
-            onSubmit={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
-            }}
-          />
-        </View>
-        <View style={styles.containerEmpty} />
-      </ScrollView>
-    </View>
+      {isShowPayment && (
+        <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
+      )}
+    </>
   );
 };

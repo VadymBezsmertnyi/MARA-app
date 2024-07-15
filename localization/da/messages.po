@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Gør hovedfotoet"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Alle byer"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Ingen byer fundet"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Formindsk det maksimale antal"
 
@@ -140,6 +148,26 @@ msgstr "Vælg type arbejde auto"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Baggrundsdækning til lukning af modalvinduet"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Opmærksomhed!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Desværre er det i øjeblikket umuligt at øge antallet af tilgængelige annoncer, værksteder eller begivenheder, da applikationen er i testtilstand. Hvis du har spørgsmål, bedes du kontakte administrationen eller give feedback."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- eller --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Rapporter en fejl/forbedring"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Tak for din forståelse!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Slet begivenhed"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Succes"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Slet annonce"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Annuller"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Accepter"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Billedet er blevet ændret"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Billedet er ikke blevet ændret"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Slet"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Ændr"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Adgang nægtet"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Din telegram"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Telefonnummer:"
+msgid "Phone number"
+msgstr "Telefonnummer"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Tilføj en beskrivelse"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Beskrivelse"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Annuller"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Brugsbetingelser"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Fortrolighedspolitik"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Rapporter en fejl/forbedring"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Fejl ved oprettelse af annonce"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Fejl"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Tilføj annonce"
 
@@ -888,10 +932,6 @@ msgstr "Tilføj en beskrivelse af annoncen"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Annonsebeskrivelse"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefonnummer"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "By"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Ekstra nummer 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Yderligere nummer {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "begivenheder"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Knap til lukning af indstillinger for begivenhedsskærm"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Køb begivenhed"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Advarsel! Alle data relateret til virksomheden \"{nameBusiness}\" vil bl
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Tilføj"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Køb yderligere"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Knap til lukning af indstillinger for produktskærm"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Køb annonce"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Billedet tilføjet"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Gem profil"
+msgid "Profile saved"
+msgstr "Profil gemt"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "Værksteder"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Knap til lukning af indstillinger for værkstedsskærm"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Tilføj værksted"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Køb værksted"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Fejl ved ændring af værksted"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Fejl ved oprettelse af værksted"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Tilføj værksted"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "Om os:"
-
-msgid "Access denied"
-msgstr "Adgang nægtet"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Adgang til geolokalisering i baggrundstilstand"
@@ -1532,24 +1585,6 @@ msgstr "Vil du sende et SOS-signal?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Aktivér login i appen ved hjælp af Face ID"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Fejl nøgle-token: Hemmelig nøgle er ikke defineret i miljøvariablerne"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Fejl: Ugyldigt telefonnummer eller adgangskode"
-
-msgid "Error: Invalid token"
-msgstr "Fejl: Ugyldig token"
-
-msgid "Error: Token expired"
-msgstr "Fejl: Token udløbet"
-
-msgid "Error: User already exists"
-msgstr "Fejl: Bruger eksisterer allerede"
-
-msgid "Error: User not found"
-msgstr "Fejl: Bruger blev ikke fundet"
-
 msgid "Event"
 msgstr "Begivenhed"
 
@@ -1570,9 +1605,6 @@ msgstr "Hvis der ikke er nogen passende mulighed på listen, skal du bruge 'Dyb 
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Forkert telefonnummer indtastet eller landekode for telefonnummeret er valgt forkert"
-
-msgid "Internal Server Error"
-msgstr "Intern serverfejl"
 
 msgid "Language selection"
 msgstr "Sprogvalg"

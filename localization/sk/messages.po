@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Nastaviť hlavnú fotografiu"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Všetky mestá"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Nenašli sa žiadne mestá"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Znížiť maximálny počet"
 
@@ -140,6 +148,26 @@ msgstr "Vyberte typ práce auto"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Pozadie pre zatvorenie modálneho okna"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Pozor!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Bohužiaľ, v súčasnej dobe nie je možné zvýšiť počet dostupných inzerátov, dielní alebo udalostí, pretože aplikácia je v testovacom režime. Ak máte nejaké otázky, obráťte sa na administráciu alebo zanechajte spätnú väzbu."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- alebo --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Nahlásiť chybu/zlepšenie"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Ďakujeme za pochopenie!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Zmazať udalosť"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Úspech"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Zmazať inzerát"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Prijať"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Fotografia bola zmenená"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Fotografia nebola zmenená"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Vymazať"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Zmeniť"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Prístup zamietnutý"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Váš telegram"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Telefónne číslo:"
+msgid "Phone number"
+msgstr "Telefónne číslo"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Pridať popis"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Popis"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Zrušiť"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Podmienky používania"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Zásady ochrany osobných údajov"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Nahlásiť chybu/zlepšenie"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Chyba pri vytváraní reklamy"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Chyba"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Pridať inzerát"
 
@@ -888,10 +932,6 @@ msgstr "Pridať popis reklamy"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Popis reklamy"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefónne číslo"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Mesto"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Ďalší číslo 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Ďalšie číslo {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "udalosti"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Tlačidlo pre zatvorenie obrazovky nastavení udalostí"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Kúpiť udalosť"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Pozor! Všetky údaje týkajúce sa podniku „{nameBusiness}“ budú v
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Pridať"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Kúpiť dodatočne"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Tlačidlo pre zatvorenie obrazovky nastavení produktov"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Kúpiť reklamu"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Fotografia pridaná"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Uložiť profil"
+msgid "Profile saved"
+msgstr "Profil uložený"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "dielne"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Tlačidlo pre zatvorenie obrazovky nastavení dielní"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridať dielňu"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Kúpiť dielňu"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Chyba pri zmene dielne"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Chyba pri vytváraní dielne"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridať dielňu"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "O nás:"
-
-msgid "Access denied"
-msgstr "Prístup odmietnutý"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Prístup k geolokácii v režime pozadia"
@@ -1532,24 +1585,6 @@ msgstr "Chcete odoslať SOS signál?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Povoliť prihlásenie do aplikácie pomocou Face ID"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Chyba kľúčového tokenu: Tajný kľúč nie je definovaný v premenných prostredia"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Chyba: Neplatné telefónne číslo alebo heslo"
-
-msgid "Error: Invalid token"
-msgstr "Chyba: Neplatný token"
-
-msgid "Error: Token expired"
-msgstr "Chyba: Token vypršal"
-
-msgid "Error: User already exists"
-msgstr "Chyba: Používateľ už existuje"
-
-msgid "Error: User not found"
-msgstr "Chyba: Používateľ nenájdený"
-
 msgid "Event"
 msgstr "Udalosť"
 
@@ -1570,9 +1605,6 @@ msgstr "Ak v zozname nie je vhodná možnosť, použite 'Hĺbkové Vyhľadávani
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Zadané nesprávne telefónne číslo alebo nesprávne zvolený kód krajiny telefónneho čísla"
-
-msgid "Internal Server Error"
-msgstr "Interná serverová chyba"
 
 msgid "Language selection"
 msgstr "Výber jazyka"

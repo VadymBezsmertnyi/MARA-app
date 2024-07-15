@@ -23,7 +23,7 @@ import {
 import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
 import { localesContext } from "../../../../localization/localization.provider";
 import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { businessContext } from "../../../providers/BusinessProvider/BusinessProvider";
+import { useBusinessProvider } from "../../../providers/BusinessProvider/BusinessProvider";
 import { userContext } from "../../../providers/UserProvider/UserProvider";
 import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
@@ -84,7 +84,7 @@ export const SettingsBusinessCreate: FunctionComponent<
   const { userData } = useContext(userContext);
   const { placesDB, getPlace } = useContext(placesContext);
   const { businessMarketUser, onCreateBusinessMarket, onUpdateBusinessMarket } =
-    useContext(businessContext);
+    useBusinessProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const { getErrorText } = useErrors(i18n);
   const [name, setName] = useState<string>("");

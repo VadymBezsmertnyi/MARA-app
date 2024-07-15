@@ -29,6 +29,7 @@ import { IconEye, IconPencilGradient } from "../../../../../icons/components";
 
 // styles
 import { styles } from "./ItemSettingProducts.styles";
+import { useBusinessProvider } from "../../../../../providers/BusinessProvider/BusinessProvider";
 
 type ItemSettingProductsProps = {
   product: ProductType;
@@ -39,6 +40,7 @@ export const ItemSettingProducts: FunctionComponent<
   ItemSettingProductsProps
 > = ({ product, isStart }) => {
   const navigation = useAllNavigation();
+  const { businessMarketUser } = useBusinessProvider();
   const { i18n } = useContext(localesContext);
   const { listCurrency } = useContext(paymentContext);
   const firstImage = product.images[0] ? product.images[0].url : null;
@@ -62,6 +64,12 @@ export const ItemSettingProducts: FunctionComponent<
         {firstImage ? (
           <ImageCache imageSrc={firstImage} style={styles.image} />
         ) : null}
+        {product.isBusiness && businessMarketUser?.logo && (
+          <ImageCache
+            imageSrc={businessMarketUser.logo.url}
+            style={styles.logoBusiness}
+          />
+        )}
       </View>
       <View style={styles.containerCenter}>
         <Text>{product.title}</Text>

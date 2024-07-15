@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Faire de la photo principale"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Toutes les villes"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Aucune ville trouvée"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Diminuer le nombre maximum"
 
@@ -140,6 +148,26 @@ msgstr "Sélectionnez le type de travail auto"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Fond de superposition pour fermer la fenêtre modale"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Attention!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Malheureusement, il est actuellement impossible d'augmenter le nombre d'annonces, d'ateliers ou d'événements disponibles, car l'application est en mode test. Si vous avez des questions, veuillez contacter l'administration ou laisser un commentaire."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- ou --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Signaler une erreur/amélioration"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Merci de votre compréhension!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Supprimer l'événement"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Succès"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Supprimer l'annonce"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Annuler"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Accepter"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "La photo a été modifiée"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "La photo n'a pas été modifiée"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Supprimer"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Modifier"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Accès refusé"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Votre telegram"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Numéro de téléphone :"
+msgid "Phone number"
+msgstr "Numéro de téléphone"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Ajouter une description"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Description"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Annuler"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Conditions d'utilisation"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Politique de confidentialité"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Signaler une erreur/amélioration"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Erreur lors de la création de l'annonce"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Erreur"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Ajouter une annonce"
 
@@ -888,10 +932,6 @@ msgstr "Ajouter une description sur l'annonce"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Description de l'annonce"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Numéro de téléphone"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Ville"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Numéro supplémentaire 1 :"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Numéro supplémentaire {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "événements"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Bouton pour fermer l'écran des paramètres des événements"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Acheter un événement"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Attention ! Toutes les données relatives à l'entreprise \"{nameBusines
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Ajouter"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Acheter en plus"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Bouton pour fermer l'écran des paramètres des produits"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Acheter une annonce"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "La photo ajoutée"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Enregistrer le profil"
+msgid "Profile saved"
+msgstr "Profil enregistré"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "ateliers"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Bouton pour fermer l'écran des paramètres des ateliers"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Ajouter un atelier"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Acheter un atelier"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Erreur lors de la modification de l'atelier"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Erreur lors de la création de l'atelier"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Ajouter un atelier"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "À propos de nous :"
-
-msgid "Access denied"
-msgstr "Accès refusé"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Accès à la géolocalisation en mode arrière-plan"
@@ -1532,24 +1585,6 @@ msgstr "Voulez-vous envoyer un signal SOS ?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Activer la connexion à l'application avec Face ID"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Erreur de clé de jeton : La clé secrète n'est pas définie dans les variables d'environnement"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Erreur : Numéro de téléphone ou mot de passe invalide"
-
-msgid "Error: Invalid token"
-msgstr "Erreur : Jeton invalide"
-
-msgid "Error: Token expired"
-msgstr "Erreur : Jeton expiré"
-
-msgid "Error: User already exists"
-msgstr "Erreur : L'utilisateur existe déjà"
-
-msgid "Error: User not found"
-msgstr "Erreur : Utilisateur non trouvé"
-
 msgid "Event"
 msgstr "Événement"
 
@@ -1570,9 +1605,6 @@ msgstr "S'il n'y a pas d'option appropriée dans la liste, utilisez 'Recherche a
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Numéro de téléphone incorrect ou indicatif de pays du numéro de téléphone sélectionné incorrectement"
-
-msgid "Internal Server Error"
-msgstr "Erreur interne du serveur"
 
 msgid "Language selection"
 msgstr "Sélection de la langue"

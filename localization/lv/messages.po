@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Padarykite pagrindinę nuotrauką"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Visi miestai"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Miestų nerasta"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Sumažinkite maksimalų skaičių"
 
@@ -140,6 +148,26 @@ msgstr "Pasirinkite automobilio darbo tipą"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Fono sluoksnis uždarant modalinį langą"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Dėmesio!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Deja, šiuo metu negalima padidinti prieinamų skelbimų, darbnīcu vai pasākumu skaitu, jo lietotne ir testa režīmā. Ja jums ir jautājumi, lūdzu, sazinieties ar administrāciju vai atstājiet atsauksmes."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- vai --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Pranešti apie klaidą/pokytį"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Paldies par sapratni!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Dzēst pasākumu"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Veiksmīgi"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Dzēst sludinājumu"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Apstiprināt"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Fotoattēls ir mainīts"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Fotoattēls nav mainīts"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Dzēst"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Mainīt"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Pieeja liegta"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Jūsų telegrama"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Telefono numeris:"
+msgid "Phone number"
+msgstr "Telefona numurs"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Pridėti aprašymą"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Aprašymas"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Atšaukti"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Naudojimo sąlygos"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Privatumo politika"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Pranešti apie klaidą/pokytį"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Kļūda, izveidojot sludinājumu"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Kļūda"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Pievienot sludinājumu"
 
@@ -888,10 +932,6 @@ msgstr "Pievienojiet aprakstu par sludinājumu"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Sludinājuma apraksts"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefona numurs"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Pilsēta"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Papildus numurs 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Papildus numurs {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "įvykiai"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Mygtukas uždaryti nustatymų įvykių langą"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Pirkt įvykį"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Uzmanību! Visi ar uzņēmumu saistītie dati tiks dzēsti."
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Pievienot"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Pirkt papildus"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Poga, lai aizvērtu iestatījumu ekrānu"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Pirkt sludinājumu"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Foto pievienota"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Saglabāt profilu"
+msgid "Profile saved"
+msgstr "Profils saglabāts"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "Darbnīcas"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Poga, lai aizvērtu darbnīcu iestatījumu ekrānu"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridėti dirbtuvę"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Pirkt darbnīcu"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Kļūda mainot darbnīcu"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Kļūda veidojot darbnīcu"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridėti dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "Par mums:"
-
-msgid "Access denied"
-msgstr "Piekļuve liegta"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Pieeja ģeolokācijai fona režīmā"
@@ -1532,24 +1585,6 @@ msgstr "Vai vēlaties nosūtīt SOS signālu?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Iespējot pierakstīšanos lietotnē, izmantojot Face ID"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Kļūdas atslēgas žetons: Slepenā atslēga nav definēta vides mainīgajos"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Kļūda: Nepareizs tālruņa numurs vai parole"
-
-msgid "Error: Invalid token"
-msgstr "Kļūda: Nederīgs žetons"
-
-msgid "Error: Token expired"
-msgstr "Kļūda: Žetons ir beidzies"
-
-msgid "Error: User already exists"
-msgstr "Kļūda: Lietotājs jau eksistē"
-
-msgid "Error: User not found"
-msgstr "Kļūda: Lietotājs nav atrasts"
-
 msgid "Event"
 msgstr "Notikums"
 
@@ -1570,9 +1605,6 @@ msgstr "Ja sarakstā nav piemērotas opcijas, izmantojiet 'Dziļo Meklēšanu'"
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Ievadīts nepareizs tālruņa numurs vai tālruņa numura valsts kods ir izvēlēts nepareizi"
-
-msgid "Internal Server Error"
-msgstr "Iekšējā servera kļūda"
 
 msgid "Language selection"
 msgstr "Valodas izvēle"

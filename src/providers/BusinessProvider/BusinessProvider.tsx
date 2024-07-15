@@ -53,7 +53,7 @@ type BusinessProviderProps = {
 
 export const businessContext = React.createContext({} as BusinessContext);
 
-export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
+const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   children,
 }) => {
   const { api } = useContext(apiContext);
@@ -153,3 +153,7 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
     </businessContext.Provider>
   );
 };
+
+export const useBusinessProvider = () => useContext(businessContext);
+
+export default BusinessProvider;

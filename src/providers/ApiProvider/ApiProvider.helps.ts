@@ -24,7 +24,7 @@ export const getEnv = (): AppManifestEnvT => {
 
 export const getApiUrl = () => {
   const { APP_DOMAIN_WEB, APP_PORT } = getEnv();
-  const appDomainApp = "192.168.1.15";
+  const appDomainApp = "192.168.50.62";
   const herokuServer = process.env.EXPO_PUBLIC_HEROKU_URL as string;
   const api =
     Platform.OS === "web"
