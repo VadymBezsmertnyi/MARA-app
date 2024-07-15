@@ -75,6 +75,7 @@ import { IconArrowRightEvent } from "../../../icons/components";
 // styles
 import { styles } from "./MarketAdd.styles";
 import colors from "../../../../styles/colors";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 type MarketAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -88,6 +89,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
       RouteProp<RootMarketScreensParamList & RootSettingsScreensParamList>
     >();
   const { messageFromServer } = useDropDownAlertProvider();
+  const { infoAdverts, infoBusinessAdverts } = useSubscriptionProvider();
   const { bottom } = useSafeAreaInsets();
   const { i18n, language } = useContext(localesContext);
   const { placesDB, getPlace } = useContext(placesContext);
@@ -322,6 +324,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
 
   const getProductUser = async () => {
     setLoading(true);
+    const isBusinessAdverts = infoBusinessAdverts.amountBusinessAdvert > 0;
     if (params) {
       if (productUser) {
         setIsChange(true);
@@ -397,6 +400,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         setPhoneNumber(productUser.phoneNumber);
       }
     } else if (userData?.phoneNumber) setPhoneNumber(userData.phoneNumber);
+    else {
+      setIsBusiness(isBusinessAdverts ? isBusinessAdverts : false);
+    }
     setLoading(false);
   };
 
@@ -493,6 +499,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               setIsBusiness(true);
             }}
             containerStyle={styles.containerTwoButtons}
+            disabledFirst={infoAdverts.amountAdvert <= 0}
+            disabledSecond={infoBusinessAdverts.amountBusinessAdvert <= 0}
           />
           <InputButton
             isRegular
