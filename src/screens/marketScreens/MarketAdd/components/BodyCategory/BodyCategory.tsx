@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { View } from "react-native";
 
 // types
 import { TypeDataCategory, TypeModalCategories } from "../../MarketAdd.types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { Input } from "../../../../../components/Input/Input";
@@ -62,7 +62,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
   errorMessage,
   clearKeyError,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const isMoto = useMemo(() => select?.category?.id === 1, [select?.category]);
   const isCar = useMemo(() => select?.category?.id === 2, [select?.category]);
   const isMotoParts = useMemo(

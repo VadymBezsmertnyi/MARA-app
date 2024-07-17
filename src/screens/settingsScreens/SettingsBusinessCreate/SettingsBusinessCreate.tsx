@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { ScrollView, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
@@ -20,11 +14,11 @@ import {
 } from "../../../navigators/Navigators.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useBusinessProvider } from "../../../providers/BusinessProvider/BusinessProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
@@ -79,10 +73,10 @@ export const SettingsBusinessCreate: FunctionComponent<
 > = ({ navigation }) => {
   const { params } = useRoute<RouteProp<RootSettingsScreensParamList>>();
   const { messageFromServer } = useDropDownAlertProvider();
-  const { i18n, language } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { userData } = useContext(userContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { i18n, language } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { userData } = useUserProvider();
+  const { placesDB, getPlace } = usePlacesProvider();
   const { businessMarketUser, onCreateBusinessMarket, onUpdateBusinessMarket } =
     useBusinessProvider();
   const { verifyPhone } = useAuthorizationRegistration();

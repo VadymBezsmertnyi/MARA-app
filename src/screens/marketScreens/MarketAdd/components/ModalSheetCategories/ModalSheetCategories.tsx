@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
@@ -12,7 +6,7 @@ import { Shadow } from "react-native-shadow-2";
 import { TypeDataCategory, TypeModalCategories } from "../../MarketAdd.types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // helps
 import { useCategoriesMarket } from "../../../../../helps/useCategoriesMarket";
@@ -69,7 +63,7 @@ export const ModalSheetCategories: FunctionComponent<
   multiselectData = null,
   onSubmitMultiselect,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const {
     mainCategories,
     brandsMoto,

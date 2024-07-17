@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // styles
 import { styles } from "./ItemTypeSetting.styles";
@@ -27,7 +27,7 @@ const ItemTypeSetting: FunctionComponent<ItemTypeSettingProps> = ({
   onPressAdd,
   onPressBuy,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const isAvailable = useMemo(() => amountAvailable > 0, [amountAvailable]);
 
   const onPress = isAvailable ? onPressAdd : onPressBuy;

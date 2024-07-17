@@ -12,12 +12,12 @@ import type { Props, Context, UserDataT } from "./UserProvider.types";
 import { userDataS } from "./UserProvider.schemas";
 
 // providers
-import { loadingContext } from "../LoadingProvider/LoadingProvider";
-import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { biometricAuthenticatorContext } from "../BiometricProvider/BiometricProvider";
-import { localesContext } from "../../../localization/localization.provider";
-import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
+import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
+import { useWebSocketProvider } from "../WebSocketProvider/WebSocketProvider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { useBiometricProvider } from "../BiometricProvider/BiometricProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
 import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
@@ -36,14 +36,14 @@ import { TOKEN_KEY_ASYNC_STORAGE } from "./UserProvider.constants";
 
 export const userContext = createContext<Context>({} as Context);
 
-export const UserProvider: FunctionComponent<Props> = (props) => {
+const UserProvider: FunctionComponent<Props> = (props) => {
   const { messageFromServer } = useDropDownAlertProvider();
-  const { i18n } = useContext(localesContext);
-  const { setUserData: setUserDataSocket } = useContext(webSocketContext);
-  const { checkBiometric } = useContext(biometricAuthenticatorContext);
-  const { api } = useContext(apiContext);
-  const { setLoading } = useContext(loadingContext);
-  const { onSetUserProperties } = useContext(analyticsContext);
+  const { i18n } = useLocalesProvider();
+  const { setUserData: setUserDataSocket } = useWebSocketProvider();
+  const { checkBiometric } = useBiometricProvider();
+  const { api } = useApiProvider();
+  const { setLoading } = useLoadingProvider();
+  const { onSetUserProperties } = useAnalyticsProvider();
   const [userData, setUserData] = useState<UserDataT | null>(null);
   const [isChangeAvatar, setIsChangeAvatar] = useState(false);
 
@@ -370,3 +370,5 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
 };
 
 export const useUserProvider = () => useContext(userContext);
+
+export default UserProvider;

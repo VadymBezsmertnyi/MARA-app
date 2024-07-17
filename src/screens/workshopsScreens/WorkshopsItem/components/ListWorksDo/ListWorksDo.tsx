@@ -1,12 +1,12 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // helps
-import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsProviderState } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
 
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
@@ -27,10 +27,10 @@ export const ListWorksDo: FunctionComponent<ListWorksDoProps> = ({
   motoWorkIds,
   autoWorkIds,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const [isAuto, setIsAuto] = useState(false);
   const [isShortList, setIsShortList] = useState(false);
-  const { typesWorkServices } = useWorkshopsProvider();
+  const { typesWorkServices } = useWorkshopsProviderState();
   const motoList = useMemo(
     () =>
       motoWorkIds.map(

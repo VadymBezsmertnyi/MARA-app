@@ -1,7 +1,5 @@
-import { useContext } from "react";
-
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { PATHS_SETTINGS_SCREENS } from "../useNavigator.constants";
@@ -22,7 +20,7 @@ import { MarketAdd } from "../../screens/marketScreens/MarketAdd/MarketAdd";
 import { SettingsBusinessCreate } from "../../screens/settingsScreens/SettingsBusinessCreate/SettingsBusinessCreate";
 
 export const useSettingsStack = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const settingsScreens = [
     {

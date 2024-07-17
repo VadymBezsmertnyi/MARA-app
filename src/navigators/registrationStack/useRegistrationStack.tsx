@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { PATHS_REGISTRATION_SCREENS } from "../useNavigator.constants";
@@ -16,7 +15,7 @@ import { RegistrationTermsOfUse } from "../../screens/registrationScreens/Regist
 import { RegistrationInfo } from "../../screens/registrationScreens/RegistrationInfo/RegistrationInfo";
 
 export const useRegistrationStack = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const registrationScreens = [
     {

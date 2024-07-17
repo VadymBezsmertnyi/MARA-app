@@ -1,15 +1,10 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useContext,
-  useMemo,
-} from "react";
+import React, { FunctionComponent, useCallback, useMemo } from "react";
 import { Platform, TouchableOpacity, View, ViewStyle } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { BlurView } from "expo-blur";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // icons
 import { IconCloseGradient } from "../../icons/components";
@@ -38,7 +33,7 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
   isIndicator = false,
   children,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const handleIndicatorStyle = useMemo(
     () =>
       ({

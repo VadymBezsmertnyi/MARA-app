@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
@@ -11,7 +11,7 @@ import { THEME_LIGHT } from "../../providers/ThemeProvider/ThemeProvider.const";
 import { useRegistrationStack } from "./useRegistrationStack";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // styles
 import colors from "../../../styles/colors";
@@ -19,7 +19,7 @@ import colors from "../../../styles/colors";
 const Stack = createNativeStackNavigator();
 
 export const RegistrationStack: FunctionComponent = () => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const { registrationScreens } = useRegistrationStack();
 
   const options = (): NativeStackNavigationOptions => ({

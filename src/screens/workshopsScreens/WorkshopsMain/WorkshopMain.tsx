@@ -1,18 +1,19 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
 import { convertDistance, getDistance } from "geolib";
 
 // providers
-import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
-import { mapContext } from "../../../providers/MapProvider/MapProvider";
+import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
-import { localesContext } from "../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { TypeFilters } from "./components/ModalFilter/ModalFilter.types";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -47,9 +48,10 @@ type WorkshopMainProps = {
 export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   navigation,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { workshops, minMaxDistance } = useContext(workshopsContext);
-  const { location } = useContext(mapContext);
+  const { i18n } = useLocalesProvider();
+  const { infoWorkshops } = useSubscriptionProvider();
+  const { workshops, minMaxDistance } = useWorkshopsProvider();
+  const { location } = useMapProvider();
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");
@@ -247,6 +249,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
           <View style={styles.containerEmpty} />
         </ScrollView>
         <AddEventButton
+          disabled={infoWorkshops.amountWorkshop <= 0}
           onPress={onPressAddWorkshop}
           accessibilityLabel={i18n._("Add workshop")}
         />

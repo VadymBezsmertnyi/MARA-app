@@ -23,12 +23,12 @@ import { productSchema, resultProductsSchema } from "./MarketProvider.schemas";
 import { ratesCurrencySchema } from "../PaymentProvider/PaymentProvider.schemas";
 
 // providers
-import { userContext } from "../UserProvider/UserProvider";
-import { localesContext } from "../../../localization/localization.provider";
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { loadingContext } from "../LoadingProvider/LoadingProvider";
-import { paymentContext } from "../PaymentProvider/PaymentProvider";
-import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
+import { useUserProvider } from "../UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
+import { usePaymentProvider } from "../PaymentProvider/PaymentProvider";
+import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
 import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
@@ -70,16 +70,16 @@ type MarketProviderProps = {
 
 export const marketContext = React.createContext({} as MarketContext);
 
-export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
+const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   children,
 }) => {
   const { messageFromServer } = useDropDownAlertProvider();
-  const { i18n } = useContext(localesContext);
-  const { userData, setUserData } = useContext(userContext);
-  const { setCurrencies } = useContext(paymentContext);
-  const { api } = useContext(apiContext);
-  const { setLoading } = useContext(loadingContext);
-  const { onSetUserProperties } = useContext(analyticsContext);
+  const { i18n } = useLocalesProvider();
+  const { userData, setUserData } = useUserProvider();
+  const { setCurrencies } = usePaymentProvider();
+  const { api } = useApiProvider();
+  const { setLoading } = useLoadingProvider();
+  const { onSetUserProperties } = useAnalyticsProvider();
   const [products, setProducts] = useState<ProductsType>([]);
   const [idDeleteProduct, setIdDeleteProduct] = useState<string | null>(null);
   const [minMaxPrices, setMinMaxPrices] = useState<MinMaxPricesType | null>(
@@ -285,3 +285,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
     </marketContext.Provider>
   );
 };
+
+export const useMarketProvider = () => useContext(marketContext);
+
+export default MarketProvider;

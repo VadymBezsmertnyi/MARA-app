@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React, { useMemo } from "react";
 import {
   Image,
   StyleProp,
@@ -11,7 +11,7 @@ import PhoneInput from "react-native-phone-input";
 import infoPhoneCountries from "country-telephone-data";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
 import {
@@ -59,7 +59,7 @@ export const InputPhone = ({
   containerStyle,
   errorStyle,
 }: InputProps) => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const textPropsPhoneInput = useMemo(
     () => ({ value: phoneNumber }),
     [phoneNumber]

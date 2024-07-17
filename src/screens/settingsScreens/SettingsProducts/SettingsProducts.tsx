@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -9,9 +9,9 @@ import { Trans } from "@lingui/macro";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -42,9 +42,9 @@ export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
   navigation,
 }) => {
   const { infoBusinessAdverts, infoAdverts } = useSubscriptionProvider();
-  const { userData } = useContext(userContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { i18n } = useContext(localesContext);
+  const { userData } = useUserProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { i18n } = useLocalesProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
 
   const isAmountAdverts = useMemo(

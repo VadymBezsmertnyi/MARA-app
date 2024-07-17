@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -25,15 +19,16 @@ import {
 } from "../../../navigators/Navigators.types";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import {
   NewProductType,
-  marketContext,
+  useMarketProvider,
 } from "../../../providers/MarketProvider/MarketProvider";
-import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
 import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -75,7 +70,6 @@ import { IconArrowRightEvent } from "../../../icons/components";
 // styles
 import { styles } from "./MarketAdd.styles";
 import colors from "../../../../styles/colors";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 type MarketAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -91,12 +85,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const { messageFromServer } = useDropDownAlertProvider();
   const { infoAdverts, infoBusinessAdverts } = useSubscriptionProvider();
   const { bottom } = useSafeAreaInsets();
-  const { i18n, language } = useContext(localesContext);
-  const { placesDB, getPlace } = useContext(placesContext);
-  const { userData } = useContext(userContext);
-  const { addProduct, changeProduct, deleteProduct } =
-    useContext(marketContext);
-  const { setLoading } = useContext(loadingContext);
+  const { i18n, language } = useLocalesProvider();
+  const { placesDB, getPlace } = usePlacesProvider();
+  const { userData } = useUserProvider();
+  const { addProduct, changeProduct, deleteProduct } = useMarketProvider();
+  const { setLoading } = useLoadingProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const {
     getCategory,

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
@@ -12,8 +12,8 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
 import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -44,8 +44,8 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   const { exitUser } = useUserProvider();
   const { infoBusinessAdverts, infoAdverts, infoSmallEvents, infoWorkshops } =
     useSubscriptionProvider();
-  const { i18n } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
+  const { i18n } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
 
   const containerStyles = useMemo(

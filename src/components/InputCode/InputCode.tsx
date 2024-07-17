@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useContext,
-  useMemo,
-} from "react";
+import React, { FunctionComponent, useCallback, useMemo } from "react";
 import {
   ScrollView,
   StyleProp,
@@ -21,7 +16,7 @@ import {
 import { Trans } from "@lingui/macro";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
 import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
@@ -56,7 +51,7 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
   cellCount,
   errorMessage,
 }) => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const ref = useBlurOnFulfill({ value, cellCount });
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,

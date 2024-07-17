@@ -1,6 +1,7 @@
 import React, {
   FunctionComponent,
   useCallback,
+  useContext,
   useMemo,
   useRef,
   useState,
@@ -31,7 +32,7 @@ const DEFAULT_STATE_SOCKET: StateType = {
 
 export const webSocketContext = React.createContext({} as WebSocketContext);
 
-export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
+const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
   children,
 }) => {
   const [userData, setUserData] = useState<UserDataT | null>(null);
@@ -113,3 +114,7 @@ export const WebSocketProvider: FunctionComponent<WebSocketProviderType> = ({
     </webSocketContext.Provider>
   );
 };
+
+export const useWebSocketProvider = () => useContext(webSocketContext);
+
+export default WebSocketProvider;

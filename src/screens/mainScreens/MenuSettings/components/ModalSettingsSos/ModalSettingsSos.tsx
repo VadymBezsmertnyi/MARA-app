@@ -1,17 +1,11 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { userContext } from "../../../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { themeContext } from "../../../../../providers/ThemeProvider/ThemeProvider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useThemeProvider } from "../../../../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { Input } from "../../../../../components/Input/Input";
@@ -33,9 +27,9 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
   isOpen,
   onClose,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { userData, editUser } = useContext(userContext);
+  const { i18n } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { userData, editUser } = useUserProvider();
   const [radius, setRadius] = useState(0);
 
   const containerStyles = useMemo(

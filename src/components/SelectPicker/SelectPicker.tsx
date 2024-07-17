@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   Modal,
   Pressable,
@@ -12,7 +12,7 @@ import { Picker } from "@react-native-picker/picker";
 import { BlurView } from "expo-blur";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -39,7 +39,7 @@ export const SelectPicker: FunctionComponent<
   containerStyle,
   inputStyle,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const [isShowModal, setIsShowModal] = useState(false);
   const showTitle = useMemo(
     () => otherTitle || data.find((item) => item.key === value)?.title,

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import {
   Appearance,
   Platform,
@@ -27,7 +27,7 @@ import colors from "../../../styles/colors";
 
 export const themeContext = React.createContext({} as ThemeContext);
 
-export const ThemeProvider: React.FC<PropsT> = (props) => {
+const ThemeProvider: React.FC<PropsT> = (props) => {
   const { children } = props;
   const [theme, setTheme] = useState<ThemeT>(THEME_LIGHT);
   const [heightStatusBar, setHeightStatusBar] = useState(0);
@@ -94,3 +94,7 @@ export const ThemeProvider: React.FC<PropsT> = (props) => {
     </themeContext.Provider>
   );
 };
+
+export const useThemeProvider = () => useContext(themeContext);
+
+export default ThemeProvider;

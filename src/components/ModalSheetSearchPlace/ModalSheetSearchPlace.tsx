@@ -1,6 +1,5 @@
 import React, {
   FunctionComponent,
-  useContext,
   useEffect,
   useMemo,
   useRef,
@@ -15,8 +14,8 @@ import lodash from "lodash";
 import { ItemSearchPlaceType } from "./ModalSheetSearchPlace.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
-import { placesContext } from "../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { usePlacesProvider } from "../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
@@ -41,8 +40,8 @@ type ModalSheetSearchPlaceProps = {
 export const ModalSheetSearchPlace: FunctionComponent<
   ModalSheetSearchPlaceProps
 > = ({ isOpen, statePlace, onClose, onSubmit }) => {
-  const { i18n, language } = useContext(localesContext);
-  const { getSearchPlace } = useContext(placesContext);
+  const { i18n, language } = useLocalesProvider();
+  const { getSearchPlace } = usePlacesProvider();
   const [isShowOther, setIsShowOther] = useState(false);
   const [list, setList] = useState<ItemSearchPlaceType[] | null>(null);
   const [value, setValue] = useState("");

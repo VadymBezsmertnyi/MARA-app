@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { StyleProp, Text, View, ViewStyle } from "react-native";
 import { convertDistance } from "geolib";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { IconLocationMarker } from "../../icons/components";
@@ -23,7 +23,7 @@ export const DistanceCard: FunctionComponent<DistanceCardType> = ({
   numberOfLines = 2,
   containerStyle,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const containerStyles = useMemo(
     () => [styles.container, containerStyle],
     [containerStyle]

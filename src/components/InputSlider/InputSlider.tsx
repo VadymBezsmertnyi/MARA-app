@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Slider } from "@miblanchard/react-native-slider";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
@@ -28,7 +28,7 @@ export const InputSlider: FunctionComponent<InputSliderProps> = ({
   onChange,
   disabled = false,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const containerStyle = useMemo(
     () => [styles.container, disabled && { opacity: 0.3 }],
     [disabled]

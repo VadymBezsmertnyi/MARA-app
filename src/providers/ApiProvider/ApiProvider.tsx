@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { Platform } from "react-native";
 import { ZodSchema, z } from "zod";
 import axios, { AxiosRequestConfig } from "axios";
@@ -26,7 +26,7 @@ type ApiProviderProps = {
 
 export const apiContext = React.createContext({} as ApiContext);
 
-export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
+const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
   const { children } = props;
   const urlApi = `${getApiUrl()}/api`;
 
@@ -114,3 +114,7 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
     <apiContext.Provider value={contextValue}>{children}</apiContext.Provider>
   );
 };
+
+export const useApiProvider = () => useContext(apiContext);
+
+export default ApiProvider;

@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Trans, t } from "@lingui/macro";
 
 // providers
-import { biometricAuthenticatorContext } from "../../../providers/BiometricProvider/BiometricProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useBiometricProvider } from "../../../providers/BiometricProvider/BiometricProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -28,9 +28,9 @@ import colors from "../../../../styles/colors";
 
 export const RegistrationTouchId: FunctionComponent = () => {
   const navigation = useAllNavigation();
-  const { userData, editUser } = useContext(userContext);
-  const { i18n } = useContext(localesContext);
-  const { checkBiometric } = useContext(biometricAuthenticatorContext);
+  const { userData, editUser } = useUserProvider();
+  const { i18n } = useLocalesProvider();
+  const { checkBiometric } = useBiometricProvider();
   const nameApp = "MARA";
 
   const redirect = () => {

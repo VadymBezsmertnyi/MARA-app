@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, View, ViewStyle } from "react-native";
 import { Link } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
@@ -7,9 +7,9 @@ import { Trans } from "@lingui/macro";
 import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../localization/localization.provider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // components
 import { Checkbox } from "../../../components/Checkbox/Checkbox";
@@ -31,9 +31,9 @@ import { styles } from "./RegistrationLocation.styles";
 
 export const RegistrationLocation: FunctionComponent = () => {
   const navigation = useAllNavigation();
-  const { i18n } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { editUser } = useContext(userContext);
+  const { i18n } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { editUser } = useUserProvider();
   const [isShowModal, setIsShowModal] = useState(false);
   const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
   const [isGeoLocation, setIsGeolocation] = useState(false);

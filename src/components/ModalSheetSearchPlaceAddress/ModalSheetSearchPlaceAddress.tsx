@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, Platform, ScrollView, Text, View } from "react-native";
 import MapView, {
   MapPressEvent,
@@ -18,7 +12,7 @@ import { Trans } from "@lingui/macro";
 import { ItemSearchPlaceAddressType } from "./ModalSheetSearchPlaceAddress.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 //components
 import { ModalSheetSearchPlace } from "../ModalSheetSearchPlace/ModalSheetSearchPlace";
@@ -57,7 +51,7 @@ const DEFAULT_LOCATION = {
 export const ModalSheetSearchPlaceAddress: FunctionComponent<
   ModalSheetSearchPlaceAddressProps
 > = ({ isOpen, statePlace, onClose, onSubmit }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const [place, setPlace] = useState<ItemSearchPlaceAddressType | null>(null);
   const [step, setStep] = useState(0);
   const currentStatePlace = useMemo(

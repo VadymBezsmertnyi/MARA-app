@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   ImageURISource,
   Modal,
@@ -9,7 +9,7 @@ import {
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 import { useBusinessProvider } from "../../../../../providers/BusinessProvider/BusinessProvider";
 import { useSubscriptionProvider } from "../../../../../providers/SubscriptionProvider/SubscriptionProvider";
 
@@ -42,7 +42,7 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
   onReviewBusiness,
   onPressBuy,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const { infoBusinessAdverts } = useSubscriptionProvider();
   const { businessMarketUser, onDeleteBusinessMarket } = useBusinessProvider();
   const [isShow, setIsShow] = useState(false);

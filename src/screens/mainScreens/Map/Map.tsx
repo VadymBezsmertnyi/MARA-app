@@ -1,11 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useRef } from "react";
 import { Platform, Text, View } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
@@ -18,11 +11,11 @@ import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
 import { mapMarker } from "./Map.types";
 
 // providers
-import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { mapContext } from "../../../providers/MapProvider/MapProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 
 // components
 import { EventMarker } from "./components/EventMarker/EventMarker";
@@ -51,11 +44,11 @@ const DEFAULT_LOCATION: mapMarker = {
 };
 
 export const Map: FunctionComponent<MapProps> = () => {
-  const { userData } = useContext(userContext);
-  const { workshops } = useContext(workshopsContext);
-  const { location, usersMaps, usersSos } = useContext(mapContext);
-  const { theme } = useContext(themeContext);
-  const { eventsList } = useContext(eventsContext);
+  const { userData } = useUserProvider();
+  const { workshops } = useWorkshopsProvider();
+  const { location, usersMaps, usersSos } = useMapProvider();
+  const { theme } = useThemeProvider();
+  const { eventsList } = useEventsProvider();
   const refMap = useRef<MapView>(null);
 
   const firstEvent = useMemo(

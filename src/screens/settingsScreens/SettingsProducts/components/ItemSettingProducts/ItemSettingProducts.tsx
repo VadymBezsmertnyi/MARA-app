@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import {
   StyleProp,
   Text,
@@ -11,8 +11,8 @@ import {
 import { ProductType } from "../../../../../providers/MarketProvider/MarketProvider.types";
 
 // providers
-import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { usePaymentProvider } from "../../../../../providers/PaymentProvider/PaymentProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -41,8 +41,8 @@ export const ItemSettingProducts: FunctionComponent<
 > = ({ product, isStart }) => {
   const navigation = useAllNavigation();
   const { businessMarketUser } = useBusinessProvider();
-  const { i18n } = useContext(localesContext);
-  const { listCurrency } = useContext(paymentContext);
+  const { i18n } = useLocalesProvider();
+  const { listCurrency } = usePaymentProvider();
   const firstImage = product.images[0] ? product.images[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { marginTop: isStart ? 0 : 12 }],

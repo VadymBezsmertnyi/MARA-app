@@ -25,25 +25,25 @@ import { useFonts } from "expo-font";
 import { RootAllScreensParamList } from "./src/navigators/Navigators.types";
 
 // providers
-import { LocalesProvider } from "./localization/localization.provider";
-import { ThemeProvider } from "./src/providers/ThemeProvider/ThemeProvider";
-import { BiometricProvider } from "./src/providers/BiometricProvider/BiometricProvider";
-import { LoadingProvider } from "./src/providers/LoadingProvider/LoadingProvider";
-import { UserProvider } from "./src/providers/UserProvider/UserProvider";
-import { MapProvider } from "./src/providers/MapProvider/MapProvider";
-import { WorkshopsProvider } from "./src/providers/WorkshopsProvider/WorkshopsProvider";
-import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
-import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
-import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
-import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
-import { MarketProvider } from "./src/providers/MarketProvider/MarketProvider";
-import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider";
-import { PushNotificationProvider } from "./src/providers/PushNotificationProvider/PushNotificationProvider";
-import { AnalyticsProvider } from "./src/providers/AnalyticsProvider/AnalyticsProvider";
-import { SharingProvider } from "./src/providers/SharingProvider/SharingProvider";
+import LocalesProvider from "./localization/localization.provider";
+import ThemeProvider from "./src/providers/ThemeProvider/ThemeProvider";
+import BiometricProvider from "./src/providers/BiometricProvider/BiometricProvider";
+import LoadingProvider from "./src/providers/LoadingProvider/LoadingProvider";
+import UserProvider from "./src/providers/UserProvider/UserProvider";
+import MapProvider from "./src/providers/MapProvider/MapProvider";
+import WorkshopsProvider from "./src/providers/WorkshopsProvider/WorkshopsProvider";
+import WebSocketProvider from "./src/providers/WebSocketProvider/WebSocketProvider";
+import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
+import EventsProvider from "./src/providers/EventsProvider/EventsProvider";
+import PlacesProvider from "./src/providers/PlacesProvider/PlacesProvider";
+import MarketProvider from "./src/providers/MarketProvider/MarketProvider";
+import PaymentProvider from "./src/providers/PaymentProvider/PaymentProvider";
+import PushNotificationProvider from "./src/providers/PushNotificationProvider/PushNotificationProvider";
+import AnalyticsProvider from "./src/providers/AnalyticsProvider/AnalyticsProvider";
+import SharingProvider from "./src/providers/SharingProvider/SharingProvider";
 import BusinessProvider from "./src/providers/BusinessProvider/BusinessProvider";
-import { PermissionsProvider } from "./src/providers/PermissionsProvider/PermissionsProvider";
-import { DropDownAlertProvider } from "./src/providers/DropDownAlertProvider/DropDownAlertProvider";
+import PermissionsProvider from "./src/providers/PermissionsProvider/PermissionsProvider";
+import DropDownAlertProvider from "./src/providers/DropDownAlertProvider/DropDownAlertProvider";
 import SubscriptionProvider from "./src/providers/SubscriptionProvider/SubscriptionProvider";
 
 // components

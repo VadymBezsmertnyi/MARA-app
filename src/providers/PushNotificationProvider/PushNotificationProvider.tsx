@@ -18,7 +18,7 @@ import { Language } from "../../../localization/localization.types";
 import { InitialUrlType } from "./PushNotificationProvider.types";
 
 // providers
-import { userContext } from "../UserProvider/UserProvider";
+import { userContext, useUserProvider } from "../UserProvider/UserProvider";
 
 // schemas
 import { typeInitialUrlSchema } from "./PushNotificationProvider.schemas";
@@ -51,7 +51,7 @@ export const pushNotificationContext = React.createContext(
   {} as PushNotificationContext
 );
 
-export const PushNotificationProvider: FunctionComponent<
+const PushNotificationProvider: FunctionComponent<
   PushNotificationProviderProps
 > = ({ children, currentRouteName }) => {
   const navigation = useNavigation<
@@ -63,7 +63,7 @@ export const PushNotificationProvider: FunctionComponent<
       };
     }>
   >();
-  const { userData, editUser } = useContext(userContext);
+  const { userData, editUser } = useUserProvider();
   const [tempGoLink, setTempGoLink] = useState<InitialUrlType | null>(null);
 
   const setSubscriptionNotification = async () => {
@@ -134,3 +134,8 @@ export const PushNotificationProvider: FunctionComponent<
     </pushNotificationContext.Provider>
   );
 };
+
+export const usePushNotificationProvider = () =>
+  useContext(pushNotificationContext);
+
+export default PushNotificationProvider;

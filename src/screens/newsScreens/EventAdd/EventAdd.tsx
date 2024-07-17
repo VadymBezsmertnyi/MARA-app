@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -22,11 +16,11 @@ import {
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { DEFAULT_EVENT_DATA } from "../../../providers/EventsProvider/EventsProvider.constants";
 
 // components
@@ -65,13 +59,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     useRoute<
       RouteProp<RootEventsScreensParamList & RootSettingsScreensParamList>
     >();
-  const { i18n, language } = useContext(localesContext);
-  const { getErrorText } = useErrors(i18n);
+  const { i18n, language } = useLocalesProvider();
   const { addEvent, changeEvent, eventsUserList, deleteEvent } =
-    useContext(eventsContext);
-  const { userData } = useContext(userContext);
-  const { setLoading } = useContext(loadingContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+    useEventsProvider();
+  const { userData } = useUserProvider();
+  const { setLoading } = useLoadingProvider();
+  const { placesDB, getPlace } = usePlacesProvider();
+  const { getErrorText } = useErrors(i18n);
   const [eventName, setEventName] = useState("");
   const [placeAddress, setPlaceAddress] =
     useState<ItemSearchPlaceAddressType | null>(null);

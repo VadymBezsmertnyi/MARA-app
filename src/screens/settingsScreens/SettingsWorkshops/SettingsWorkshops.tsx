@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
@@ -8,9 +8,9 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -40,9 +40,9 @@ type SettingsWorkshopsProps = {
 export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   navigation,
 }) => {
-  const { userData } = useContext(userContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { i18n } = useContext(localesContext);
+  const { userData } = useUserProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { i18n } = useLocalesProvider();
   const { infoWorkshops } = useSubscriptionProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
 

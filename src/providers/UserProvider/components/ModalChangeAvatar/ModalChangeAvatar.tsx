@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { DropdownAlertType } from "react-native-dropdownalert";
@@ -7,7 +7,7 @@ import { DropdownAlertType } from "react-native-dropdownalert";
 import { UserDataT } from "../../UserProvider.types";
 
 // providers
-import { localesContext } from "../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../localization/localization.provider";
 import { useDropDownAlertProvider } from "../../../DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
@@ -40,7 +40,7 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
   editUser,
 }) => {
   const { messageFromServer } = useDropDownAlertProvider();
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const avatarSource = useMemo(
     () => userData?.avatar?.url || null,
     [userData?.avatar?.url]

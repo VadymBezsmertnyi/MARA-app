@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import {
   ImageURISource,
   ScrollView,
@@ -23,10 +17,10 @@ import { DropdownAlertType } from "react-native-dropdownalert";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
@@ -71,10 +65,10 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const { messageFromServer } = useDropDownAlertProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const { userData, editUser, exitUser, deleteUser, setIsChangeAvatar } =
-    useContext(userContext);
-  const { i18n, language } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { placesDB } = useContext(placesContext);
+    useUserProvider();
+  const { i18n, language } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { placesDB } = usePlacesProvider();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
@@ -6,10 +6,10 @@ import { Trans } from "@lingui/macro";
 import { TypeWorkType } from "../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // hooks
-import { useWorkshopsProvider } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsProviderState } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
 
 // components
 import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
@@ -37,8 +37,8 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
   setSelectMotoTypesWorks,
   onSubmit,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { typesWorkServices } = useWorkshopsProvider();
+  const { i18n } = useLocalesProvider();
+  const { typesWorkServices } = useWorkshopsProviderState();
 
   const onSelectMotoTypeWork = (typeMotoWork: TypeWorkType) => {
     const isBe = selectMotoTypesWorks.includes(typeMotoWork.id);

@@ -4,7 +4,7 @@ import Constants from "expo-constants";
 // providers
 import { localesContext } from "../../../localization/localization.provider";
 
-export const usePermissionsProvider = () => {
+export const usePermissionsProviderState = () => {
   const { i18n } = useContext(localesContext);
   const nameApp = useMemo(
     () => Constants.expoConfig?.name || "M.A.R.A.(Moto Auto Road Assistance)",

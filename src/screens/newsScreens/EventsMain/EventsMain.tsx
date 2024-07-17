@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
@@ -8,8 +8,9 @@ import { Trans } from "@lingui/macro";
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
-import { localesContext } from "../../../../localization/localization.provider";
+import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
@@ -40,8 +41,9 @@ type EventsMainProps = {
 export const EventsMain: FunctionComponent<EventsMainProps> = ({
   navigation,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { eventsList } = useContext(eventsContext);
+  const { i18n } = useLocalesProvider();
+  const { infoSmallEvents } = useSubscriptionProvider();
+  const { eventsList } = useEventsProvider();
   const timeNow = useMemo(() => new Date().getTime(), []);
   const eventsWill = useMemo(
     () => eventsList.filter((event) => event.date.finish > timeNow),
@@ -166,6 +168,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
         <View style={styles.containerEmpty} />
       </ScrollView>
       <AddEventButton
+        disabled={infoSmallEvents.amountSmallEvent <= 0}
         onPress={() => {
           navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
         }}

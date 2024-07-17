@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   Pressable,
   ScrollView,
@@ -14,7 +14,7 @@ import { t } from "@lingui/macro";
 import { PlaceDbType } from "../../providers/PlacesProvider/PlacesProvider.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { ArrowDown, IconLocationMarker } from "../../icons/components";
@@ -32,7 +32,7 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
   data,
   onSelect,
 }) => {
-  const { i18n, language } = useContext(localesContext);
+  const { i18n, language } = useLocalesProvider();
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState("");
   const [selectCity, setSelectCity] = useState<PlaceDbType | null>(null);

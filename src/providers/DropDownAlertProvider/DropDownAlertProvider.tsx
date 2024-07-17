@@ -32,9 +32,9 @@ export type DropDownAlertProviderProps = {
 
 export const dropDownAlertContext = createContext({} as DropDownAlertContext);
 
-export const DropDownAlertProvider: FunctionComponent<
-  DropDownAlertProviderProps
-> = ({ children }) => {
+const DropDownAlertProvider: FunctionComponent<DropDownAlertProviderProps> = ({
+  children,
+}) => {
   let alert = (_data: DropdownAlertData) =>
     new Promise<DropdownAlertData>((res) => res);
 
@@ -79,3 +79,5 @@ export const DropDownAlertProvider: FunctionComponent<
 };
 
 export const useDropDownAlertProvider = () => useContext(dropDownAlertContext);
+
+export default DropDownAlertProvider;

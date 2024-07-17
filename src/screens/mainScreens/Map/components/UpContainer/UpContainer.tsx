@@ -1,12 +1,12 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // providers
-import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
-import { userContext } from "../../../../../providers/UserProvider/UserProvider";
+import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
 
 // components
 import { Menu } from "../Menu/Menu";
@@ -18,8 +18,8 @@ const INTENSITY = 5;
 
 export const UpContainer: FunctionComponent = () => {
   const { top } = useSafeAreaInsets();
-  const { userData } = useContext(userContext);
-  const { usersSos } = useContext(mapContext);
+  const { userData } = useUserProvider();
+  const { usersSos } = useMapProvider();
   const distance = useMemo(
     () => userData?.settingsSos.radiusKm || 5,
     [userData?.settingsSos.radiusKm]

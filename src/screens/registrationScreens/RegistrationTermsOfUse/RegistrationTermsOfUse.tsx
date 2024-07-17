@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { View } from "react-native";
 import WebView from "react-native-webview";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -13,7 +13,7 @@ import { Loader } from "../../../providers/LoadingProvider/components/Loader/Loa
 import { styles } from "./RegistrationTermsOfUse.styles";
 
 export const RegistrationTermsOfUse: FunctionComponent = () => {
-  const { i18n, language } = useContext(localesContext);
+  const { i18n, language } = useLocalesProvider();
   const [loading, setLoading] = useState(true);
 
   const source = useMemo(

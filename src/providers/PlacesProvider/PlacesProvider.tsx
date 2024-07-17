@@ -28,8 +28,8 @@ import {
 } from "./PlacesProvider.schemas";
 
 // providers
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { localesContext } from "../../../localization/localization.provider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { PATHS } from "../paths.constants";
@@ -65,11 +65,11 @@ type PlacesProviderProps = {
 
 export const placesContext = React.createContext({} as PlacesContext);
 
-export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
+const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
   children,
 }) => {
-  const { api } = useContext(apiContext);
-  const { language } = useContext(localesContext);
+  const { api } = useApiProvider();
+  const { language } = useLocalesProvider();
   const [countriesDB, setCountriesDB] = useState<CountryDbType[]>([]);
   const [regionsDB, setRegionsDB] = useState<RegionDbType[]>([]);
   const [placesDB, setPlacesDB] = useState<PlaceDbType[]>([]);
@@ -231,3 +231,7 @@ export const PlacesProvider: FunctionComponent<PlacesProviderProps> = ({
     </placesContext.Provider>
   );
 };
+
+export const usePlacesProvider = () => useContext(placesContext);
+
+export default PlacesProvider;

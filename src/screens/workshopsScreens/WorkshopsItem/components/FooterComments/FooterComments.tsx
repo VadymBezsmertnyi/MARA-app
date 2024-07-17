@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { FlatList, ListRenderItem, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
@@ -6,7 +6,7 @@ import { Trans } from "@lingui/macro";
 import { CommentType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
@@ -34,7 +34,7 @@ export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
   rating,
   setIsShowModalComment,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const isComments = useMemo(() => data.length > 0, [data]);
 
   const renderItem: ListRenderItem<CommentType> = ({ item }) => {

@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { StatusBar, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
@@ -12,10 +6,10 @@ import { Trans } from "@lingui/macro";
 import { TypeFilters } from "./ModalFilter.types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // hooks
-import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsProviderState } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
 
 // components
 import { Header } from "../../../../../components/Header/Header";
@@ -47,8 +41,8 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   filters,
   maxDistance = 200,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { typesWorkServices } = useWorkshopsProvider();
+  const { i18n } = useLocalesProvider();
+  const { typesWorkServices } = useWorkshopsProviderState();
   const [distance, setDistance] = useState(5);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
   const [isShowTypesMotoWorks, setIsShowTypesMotoWorks] = useState(false);

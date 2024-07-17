@@ -7,7 +7,9 @@ import React, {
 } from "react";
 import { Alert, Platform, Share } from "react-native";
 import appsFlyer from "react-native-appsflyer";
-import { userContext } from "../UserProvider/UserProvider";
+
+// providers
+import { useUserProvider } from "../UserProvider/UserProvider";
 
 type SharingContextType = {
   getSharedLink: (data: Record<string, string>) => void;
@@ -25,10 +27,10 @@ export const sharingContext = React.createContext<SharingContextType>(
   {} as SharingContextType
 );
 
-export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
+const SharingProvider: FunctionComponent<SharingProviderProps> = ({
   children,
 }) => {
-  const { userData } = useContext(userContext);
+  const { userData } = useUserProvider();
   const [isFirstLaunch, setIsFirstLaunch] = useState(false);
   const [dataDeepLink, setDataDeepLink] = useState<Record<string, any> | null>(
     null
@@ -100,3 +102,7 @@ export const SharingProvider: FunctionComponent<SharingProviderProps> = ({
     </sharingContext.Provider>
   );
 };
+
+export const useSharingProvider = () => useContext(sharingContext);
+
+export default SharingProvider;

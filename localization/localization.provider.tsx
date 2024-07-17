@@ -66,7 +66,7 @@ const CATALOGS_LANGUAGES = {
 
 export const localesContext = React.createContext({} as LocalesContext);
 
-export const LocalesProvider: React.FC<Props> = ({ children }) => {
+const LocalesProvider: React.FC<Props> = ({ children }) => {
   const { messageFromServer } = useDropDownAlertProvider();
   const [languageUser, setLanguage] = useState<Language>(defaultLanguage);
   const language = languageUser || defaultLanguage;
@@ -127,3 +127,5 @@ export const LocalesProvider: React.FC<Props> = ({ children }) => {
 };
 
 export const useLocalesProvider = () => useContext(localesContext);
+
+export default LocalesProvider;

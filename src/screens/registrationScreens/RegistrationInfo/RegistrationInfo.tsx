@@ -1,16 +1,11 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // helps
 import { useAllNavigation } from "../../../navigators/Navigators.helps";
@@ -34,8 +29,8 @@ import { styles } from "./RegistrationInfo.styles";
 export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { i18n } = useContext(localesContext);
-  const { userData, editUser } = useContext(userContext);
+  const { i18n } = useLocalesProvider();
+  const { userData, editUser } = useUserProvider();
   const [login, setLogin] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("+380");
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);

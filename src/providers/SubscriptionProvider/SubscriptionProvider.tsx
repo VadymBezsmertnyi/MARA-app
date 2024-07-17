@@ -4,7 +4,6 @@ import {
   TYPE_BUSINESS_SUBSCRIPTIONS_ADVERT,
   TYPE_INDIVIDUAL_SUBSCRIPTIONS_ADVERT,
   TYPE_SMALL_SUBSCRIPTIONS_EVENT,
-  TYPES_SUBSCRIPTIONS_ADVERT,
 } from "./SubscriptionProvider.constants";
 
 type SubscriptionContext = {
@@ -38,9 +37,9 @@ export const subscriptionContext = React.createContext(
   {} as SubscriptionContext
 );
 
-export const SubscriptionProvider: FunctionComponent<
-  SubscriptionProviderProps
-> = ({ children }) => {
+const SubscriptionProvider: FunctionComponent<SubscriptionProviderProps> = ({
+  children,
+}) => {
   const { userData } = useUserProvider();
 
   const infoBusinessAdverts = useMemo(() => {

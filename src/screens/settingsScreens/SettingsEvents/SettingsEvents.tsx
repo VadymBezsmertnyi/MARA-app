@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -8,9 +8,9 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -41,9 +41,9 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
   navigation,
 }) => {
   const { infoSmallEvents } = useSubscriptionProvider();
-  const { eventsUserList } = useContext(eventsContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { i18n, language } = useContext(localesContext);
+  const { eventsUserList } = useEventsProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { i18n, language } = useLocalesProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
 
   const typeItem = useMemo(() => i18n._("events"), [i18n, language]);

@@ -1,16 +1,10 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal } from "react-native";
 import WebView from "react-native-webview";
 
 // components
 import { ModalsSheet } from "../../../../../components/ModalsSheet/ModalsSheet";
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 import { Loader } from "../../../../../providers/LoadingProvider/components/Loader/Loader";
 
 type ModalAgreementsProps = {
@@ -24,7 +18,7 @@ export const ModalAgreements: FunctionComponent<ModalAgreementsProps> = ({
   onClose,
   type,
 }) => {
-  const { language } = useContext(localesContext);
+  const { language } = useLocalesProvider();
   const [loading, setLoading] = useState(true);
 
   const source = useMemo(() => {

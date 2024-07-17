@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Trans } from "@lingui/macro";
@@ -13,9 +7,9 @@ import { Trans } from "@lingui/macro";
 import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // providers
-import { userContext } from "../../../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { workshopsContext } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
 
 // components
 import { Input } from "../../../../../components/Input/Input";
@@ -37,9 +31,9 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
   selectWorkshop,
   onClose,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { userData } = useContext(userContext);
-  const { addComment, changeComment } = useContext(workshopsContext);
+  const { i18n } = useLocalesProvider();
+  const { userData } = useUserProvider();
+  const { addComment, changeComment } = useWorkshopsProvider();
   const [userName, setUserName] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState(0);

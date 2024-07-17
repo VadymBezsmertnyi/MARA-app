@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // hooks
 import { useMainTabsNavigation } from "../../../../../navigators/Navigators.helps";
@@ -12,7 +12,7 @@ import { useMainTabsNavigation } from "../../../../../navigators/Navigators.help
 import { styles } from "./Menu.styles";
 
 export const Menu: FunctionComponent = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const navigation = useMainTabsNavigation();
 
   const onShowMenu = () => {

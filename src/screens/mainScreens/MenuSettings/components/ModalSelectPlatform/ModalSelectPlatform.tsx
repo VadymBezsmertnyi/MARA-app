@@ -1,15 +1,10 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useContext,
-  useState,
-} from "react";
+import React, { FunctionComponent, useCallback, useState } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { ModalWindow } from "../../../../../components/ModalWindow/ModalWindow";
@@ -36,7 +31,7 @@ type ModalSelectPlatformProps = {
 export const ModalSelectPlatform: FunctionComponent<
   ModalSelectPlatformProps
 > = ({ isOpen, onClose, onSelect }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const [focusPlatform, setFocusPlatform] = useState<"android" | "ios" | null>(
     null
   );

@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { BlurView } from "expo-blur";
 
 // components
@@ -19,7 +25,7 @@ type LoadingProviderType = {
 
 export const loadingContext = React.createContext({} as LoadingContext);
 
-export const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
+const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
   children,
   isLoadingProps = false,
 }) => {
@@ -46,3 +52,7 @@ export const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
     </loadingContext.Provider>
   );
 };
+
+export const useLoadingProvider = () => useContext(loadingContext);
+
+export default LoadingProvider;

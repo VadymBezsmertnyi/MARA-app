@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, StatusBar, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { Shadow } from "react-native-shadow-2";
@@ -12,20 +6,16 @@ import { Shadow } from "react-native-shadow-2";
 // types
 import { CurrencyType } from "../../../../../providers/PaymentProvider/PaymentProvider.types";
 import {
-  CountryType,
-  RegionsCountryType,
-} from "../../../../../providers/PlacesProvider/PlacesProvider.types";
-import {
   TypeDataCategory,
   TypeModalCategories,
 } from "../../../MarketAdd/MarketAdd.types";
 import { ModalFilterSubmitType } from "./ModalFilter.types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
-import { marketContext } from "../../../../../providers/MarketProvider/MarketProvider";
-import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { usePaymentProvider } from "../../../../../providers/PaymentProvider/PaymentProvider";
+import { useMarketProvider } from "../../../../../providers/MarketProvider/MarketProvider";
+import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { Header } from "../../../../../components/Header/Header";
@@ -65,10 +55,10 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   dataFilterOld,
   onSubmit,
 }) => {
-  const { i18n, language } = useContext(localesContext);
-  const { listCurrency } = useContext(paymentContext);
-  const { minMaxPrices } = useContext(marketContext);
-  const { placesFindDB, regionsDB, countriesDB } = useContext(placesContext);
+  const { i18n, language } = useLocalesProvider();
+  const { listCurrency } = usePaymentProvider();
+  const { minMaxPrices } = useMarketProvider();
+  const { placesFindDB, regionsDB, countriesDB } = usePlacesProvider();
   const [selectCurrency, setSelectCurrency] = useState<CurrencyType | null>(
     null
   );

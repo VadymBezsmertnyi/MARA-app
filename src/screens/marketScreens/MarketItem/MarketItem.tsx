@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { Linking, Modal, ScrollView, Text, View } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import dayjs from "dayjs";
@@ -8,12 +8,12 @@ import { Trans } from "@lingui/macro";
 import { RootMarketScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
-import { paymentContext } from "../../../providers/PaymentProvider/PaymentProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useMarketProvider } from "../../../providers/MarketProvider/MarketProvider";
+import { usePaymentProvider } from "../../../providers/PaymentProvider/PaymentProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -47,11 +47,11 @@ type MarketItemProps = {
 };
 
 export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
-  const { i18n, language } = useContext(localesContext);
-  const { userData } = useContext(userContext);
-  const { products, changeProduct } = useContext(marketContext);
-  const { listCurrency } = useContext(paymentContext);
-  const { getSharedLink } = useContext(sharingContext);
+  const { i18n, language } = useLocalesProvider();
+  const { userData } = useUserProvider();
+  const { products, changeProduct } = useMarketProvider();
+  const { listCurrency } = usePaymentProvider();
+  const { getSharedLink } = useSharingProvider();
   const {
     getBrandMoto,
     getBrandAuto,
@@ -64,7 +64,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
     images: string[];
     indexImage?: number;
   } | null>(null);
-  const { placesDB } = useContext(placesContext);
+  const { placesDB } = usePlacesProvider();
   const selectProduct = useMemo(
     () =>
       products.find((product) => product._id === route.params?.productId) ||

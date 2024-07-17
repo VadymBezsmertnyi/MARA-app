@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -20,13 +14,13 @@ import {
 } from "../../../navigators/Navigators.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useWorkshopsProviderState } from "../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
 import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
@@ -73,15 +67,15 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       RouteProp<RootWorkshopsScreensParamList & RootSettingsScreensParamList>
     >();
   const { messageFromServer } = useDropDownAlertProvider();
-  const { i18n, language } = useContext(localesContext);
+  const { i18n, language } = useLocalesProvider();
   const { getErrorText } = useErrors(i18n);
-  const { heightStatusBar } = useContext(themeContext);
+  const { heightStatusBar } = useThemeProvider();
   const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
-    useContext(workshopsContext);
-  const { userData } = useContext(userContext);
-  const { placesDB, getPlace } = useContext(placesContext);
-  const { setLoading } = useContext(loadingContext);
-  const { typesWorkServices } = useWorkshopsProvider();
+    useWorkshopsProvider();
+  const { userData } = useUserProvider();
+  const { placesDB, getPlace } = usePlacesProvider();
+  const { setLoading } = useLoadingProvider();
+  const { typesWorkServices } = useWorkshopsProviderState();
   const { verifyPhone } = useAuthorizationRegistration();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

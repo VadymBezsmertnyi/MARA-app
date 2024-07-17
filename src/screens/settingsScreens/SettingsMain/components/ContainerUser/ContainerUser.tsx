@@ -1,10 +1,10 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { ImageURISource, Text, View } from "react-native";
 
 // providers
-import { userContext } from "../../../../../providers/UserProvider/UserProvider";
-import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -17,9 +17,9 @@ import { IconProfileAvatar } from "../../../../../icons/components";
 import { styles } from "./ContainerUser.styles";
 
 export const ContainerUser: FunctionComponent = () => {
-  const { language } = useContext(localesContext);
-  const { userData } = useContext(userContext);
-  const { placesDB } = useContext(placesContext);
+  const { language } = useLocalesProvider();
+  const { userData } = useUserProvider();
+  const { placesDB } = usePlacesProvider();
   const showCity = useMemo(
     () => (userData?.place_id ? userData.place_id[language] || null : null),
     [userData?.place_id, placesDB]
