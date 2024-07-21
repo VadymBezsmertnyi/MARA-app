@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { ScrollView, View } from "react-native";
+import { KeyboardAvoidingView, ScrollView, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import * as ImagePicker from "expo-image-picker";
@@ -267,7 +267,11 @@ export const SettingsBusinessCreate: FunctionComponent<
   }, [selectBusinessMarket]);
 
   return (
-    <>
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
       <View style={containerStyles}>
         <Header
           title={i18n._("Business profile")}
@@ -411,6 +415,6 @@ export const SettingsBusinessCreate: FunctionComponent<
         }}
         errors={errorMessage}
       />
-    </>
+    </KeyboardAvoidingView>
   );
 };
