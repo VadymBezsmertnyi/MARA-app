@@ -1,5 +1,11 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Modal,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import dayjs from "dayjs";
@@ -412,7 +418,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   }, [params, placesDB]);
 
   return (
-    <>
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
       <View style={styles.container}>
         <Header
           title={productUser ? i18n._("Change advert") : i18n._("Add advert")}
@@ -643,6 +653,6 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           }}
         />
       </Modal>
-    </>
+    </KeyboardAvoidingView>
   );
 };
