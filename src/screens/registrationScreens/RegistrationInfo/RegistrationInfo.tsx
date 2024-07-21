@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { KeyboardAvoidingView, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Trans } from "@lingui/macro";
 
@@ -78,52 +78,58 @@ export const RegistrationInfo: FunctionComponent = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Header
-        title={i18n._("Registration")}
-        isShowLeft={false}
-        isShowRight={false}
-        containerStyle={styles.containerHeader}
-      />
-      <ScrollView>
-        <Text style={styles.title}>
-          <Trans>We recommend filling out the profile information</Trans>
-        </Text>
-        <View style={styles.containerInputs}>
-          <Input
-            label={`${i18n._("Name:")}*`}
-            placeholder={i18n._("Enter your name")}
-            value={login}
-            onChange={onChangeLogin}
-            errorMessage={errorMessageLogin}
-          />
-          <InputPhone
-            isRegular
-            label={i18n._("Phone number")}
-            phoneNumber={phoneNumber}
-            setPhoneNumber={onChangePhone}
-            selectCountryIso={selectCountryIso}
-            setSelectCountryIso={setSelectCountryIso}
-            errorMessage={errorMessagePhone}
-          />
-        </View>
-        <View style={styles.containerButton}>
-          <ButtonCustom
-            disabled={
-              errorMessageLogin.length > 0 || errorMessagePhone.length > 0
-            }
-            title={i18n._("Save")}
-            onSubmit={onSave}
-          />
-          {/* TODO: add later
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
+      <View style={styles.container}>
+        <Header
+          title={i18n._("Registration")}
+          isShowLeft={false}
+          isShowRight={false}
+          containerStyle={styles.containerHeader}
+        />
+        <ScrollView>
+          <Text style={styles.title}>
+            <Trans>We recommend filling out the profile information</Trans>
+          </Text>
+          <View style={styles.containerInputs}>
+            <Input
+              label={`${i18n._("Name:")}*`}
+              placeholder={i18n._("Enter your name")}
+              value={login}
+              onChange={onChangeLogin}
+              errorMessage={errorMessageLogin}
+            />
+            <InputPhone
+              isRegular
+              label={i18n._("Phone number")}
+              phoneNumber={phoneNumber}
+              setPhoneNumber={onChangePhone}
+              selectCountryIso={selectCountryIso}
+              setSelectCountryIso={setSelectCountryIso}
+              errorMessage={errorMessagePhone}
+            />
+          </View>
+          <View style={styles.containerButton}>
+            <ButtonCustom
+              disabled={
+                errorMessageLogin.length > 0 || errorMessagePhone.length > 0
+              }
+              title={i18n._("Save")}
+              onSubmit={onSave}
+            />
+            {/* TODO: add later
           <ButtonCustom
             disabled={errorMessageLogin.length > 0}
             title={i18n._("Fill out later")}
             onSubmit={onLater}
             type="transparent"
           /> */}
-        </View>
-      </ScrollView>
-    </View>
+          </View>
+        </ScrollView>
+      </View>
+    </KeyboardAvoidingView>
   );
 };
