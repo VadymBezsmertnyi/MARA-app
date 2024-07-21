@@ -13,7 +13,9 @@ export const expo = {
   name: "M.A.R.A",
   slug: "mara",
   version: "1.0.0",
-  runtimeVersion: "1.0.0",
+  runtimeVersion: {
+    policy: "appVersion",
+  },
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "automatic",
