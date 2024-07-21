@@ -10,7 +10,7 @@ import { Loader } from "../../../../../providers/LoadingProvider/components/Load
 type ModalAgreementsProps = {
   isOpen: boolean;
   onClose: () => void;
-  type: "terms" | "policy" | null;
+  type: "terms" | "policy" | "about" | null;
 };
 
 export const ModalAgreements: FunctionComponent<ModalAgreementsProps> = ({
@@ -25,6 +25,10 @@ export const ModalAgreements: FunctionComponent<ModalAgreementsProps> = ({
     if (type === "policy")
       return {
         uri: `https://m-a-r-a.netlify.app/mobile/privacy-policy?language=${language}`,
+      };
+    if (type === "about")
+      return {
+        uri: `https://m-a-r-a.netlify.app/mobile/about?language=${language}`,
       };
     return {
       uri: `https://m-a-r-a.netlify.app/mobile/term-of-use?language=${language}`,

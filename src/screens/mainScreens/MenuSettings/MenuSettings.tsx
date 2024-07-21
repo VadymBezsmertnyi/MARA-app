@@ -73,7 +73,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   //const [isShowOnSos, setIsShowOnSos] = useState(false);
   const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
   const [typeAgreements, setTypeAgreements] = useState<
-    "terms" | "policy" | null
+    "terms" | "policy" | "about" | null
   >(null);
   /* const isOnSos = useMemo(
     () =>
@@ -201,7 +201,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             title={i18n._("About the service")}
             Icon={IconWheelGradient}
             onPress={() => {
-              Alert.alert("About the service");
+              setTypeAgreements("about");
             }}
           />
           <View style={styles.lineWhite} />
