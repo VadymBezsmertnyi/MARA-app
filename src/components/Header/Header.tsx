@@ -87,7 +87,11 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
     <SafeAreaView style={backgroundStyles}>
       <View style={containerStyles}>
         {isShowLeft ? (
-          <TouchableOpacity onPress={onBack} style={styles.containerButtonBack}>
+          <TouchableOpacity
+            disabled={Boolean(leftElement)}
+            onPress={onBack}
+            style={styles.containerButtonBack}
+          >
             {leftElement || (
               <>
                 <ArrowLeft
