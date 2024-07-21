@@ -51,6 +51,13 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { eventsList } = useEventsProvider();
   const refMap = useRef<MapView>(null);
 
+  const showEventList = useMemo(
+    () =>
+      eventsList.filter(
+        (eventItem) => eventItem.date.finish > dayjs().valueOf()
+      ),
+    [eventsList]
+  );
   const firstEvent = useMemo(
     () => (eventsList.length ? eventsList[0] : null),
     [eventsList]
@@ -108,7 +115,7 @@ export const Map: FunctionComponent<MapProps> = () => {
         }}
       >
         <MeMarker />
-        {eventsList.map((eventItem) =>
+        {showEventList.map((eventItem) =>
           eventItem?.coordinates ? (
             <EventMarker
               key={`marker-event-${eventItem._id}`}
