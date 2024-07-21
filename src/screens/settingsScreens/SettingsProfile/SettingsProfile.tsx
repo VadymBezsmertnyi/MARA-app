@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import {
   ImageURISource,
+  KeyboardAvoidingView,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -212,7 +213,11 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   }, [placesDB]);
 
   return (
-    <>
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
       <View style={containerStyles}>
         <View style={styles.containerHeader}>
           <TouchableOpacity
@@ -235,7 +240,11 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
             </Text>
           </TouchableOpacity>
         </View>
-        <ScrollView>
+        <ScrollView
+          contentContainerStyle={{
+            paddingHorizontal: 20,
+          }}
+        >
           <View style={styles.containerAvatar}>
             <ImageProfile
               imageSource={imageSource}
@@ -296,6 +305,6 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         }}
         statePlace={city || undefined}
       />
-    </>
+    </KeyboardAvoidingView>
   );
 };
