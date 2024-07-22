@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-exports */ //enabled export default
 /* eslint-disable react/jsx-max-depth */ //For depth>15
 import React, { useEffect, useRef, useState } from "react";
+import { Platform } from "react-native";
 import {
   NavigationContainer,
   NavigationContainerRef,
@@ -63,7 +64,7 @@ const EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS = process.env
 const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
   .EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB as string;
 
-SplashScreen.preventAutoHideAsync();
+if (Platform.OS === "ios") SplashScreen.preventAutoHideAsync();
 Settings.initializeSDK();
 
 function App() {
@@ -80,17 +81,11 @@ function App() {
   });
 
   const hideSplashScreen = async () => {
-    await SplashScreen.hideAsync();
+    if (Platform.OS === "ios") await SplashScreen.hideAsync();
   };
 
   useEffect(() => {
-    if (appIsReady)
-      (() => {
-        const timeout = setTimeout(hideSplashScreen, 1000);
-        return () => {
-          clearTimeout(timeout);
-        };
-      })();
+    if (appIsReady && Platform.OS === "ios") hideSplashScreen();
   }, [appIsReady]);
 
   useEffect(() => {

@@ -26,6 +26,7 @@ import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAva
 // helps
 import {
   deleteDeviceStorage,
+  getDeviceStorage,
   setDeviceStorage,
 } from "../../helps/storage.help";
 
@@ -259,6 +260,8 @@ const UserProvider: FunctionComponent<Props> = (props) => {
 
   const meUser = async (isLoading: boolean): Promise<UserDataT | null> => {
     try {
+      const token = await getDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
+      if (!token) return null;
       if (isLoading) setLoading(true);
       const result = await api(
         PATHS.me,
