@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
@@ -8,9 +8,9 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -29,6 +29,8 @@ import notItemsImage from "../../../../assets/settingsScreen/notWorkshopsUsers.j
 // styles
 import { styles } from "./SettingsWorkshops.styles";
 import colors from "../../../../styles/colors";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
+import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 type SettingsWorkshopsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -38,9 +40,11 @@ type SettingsWorkshopsProps = {
 export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   navigation,
 }) => {
-  const { userData } = useContext(userContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { i18n } = useContext(localesContext);
+  const { userData } = useUserProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { i18n } = useLocalesProvider();
+  const { infoWorkshops } = useSubscriptionProvider();
+  const [isShowPayment, setIsShowPayment] = useState(false);
 
   const typeItem = useMemo(() => i18n._("workshops"), []);
   const workshopsUser = useMemo(
@@ -57,79 +61,77 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   };
 
   return (
-    <View style={containerStyles}>
-      <View style={styles.containerHeader}>
-        <View style={styles.boxHeaderEmpty} />
-        <Text style={styles.titleHeader}>
-          <Trans>My workshops</Trans>
-        </Text>
-        <TouchableOpacity
-          accessibilityLabel={i18n._(
-            "Button for closing the settings workshops screen"
-          )}
-          onPress={onClose}
-        >
-          <IconClose width={24} height={24} fill={colors.blackCoffee} />
-        </TouchableOpacity>
-      </View>
-      {workshopsUser.length === 0 ? (
-        <View style={styles.containerNotElements}>
-          <ImageCache
-            contentFit="contain"
-            style={styles.imageNotElements}
-            imageSrc={notItemsImage}
-          />
-          <View style={styles.titlesNotElements}>
-            <Text style={styles.titleNotElements}>
-              <Trans>Sorry!</Trans>
-            </Text>
-            <Text style={styles.titleNotElements}>
-              <Trans>You don't have {typeItem}.</Trans>
-            </Text>
-          </View>
-        </View>
-      ) : (
-        <ScrollView style={styles.containerElements}>
-          {workshopsUser.map((workshop, index) => {
-            const isStart = index === 0;
-            return (
-              <ItemSettingWorkshops
-                key={`user-workshop-${workshop._id}`}
-                workshop={workshop}
-                isStart={isStart}
-              />
-            );
-          })}
-          <ButtonCustom
-            onSubmit={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopAdd);
-            }}
-            styleContainer={styles.containerButtonAdd}
+    <>
+      <View style={containerStyles}>
+        <View style={styles.containerHeader}>
+          <View style={styles.boxHeaderEmpty} />
+          <Text style={styles.titleHeader}>
+            <Trans>My workshops</Trans>
+          </Text>
+          <TouchableOpacity
+            accessibilityLabel={i18n._(
+              "Button for closing the settings workshops screen"
+            )}
+            onPress={onClose}
           >
-            <View style={styles.buttonAdd}>
-              <IconPlus width={16} height={16} fill={colors.white} />
-              <Text style={styles.titleAdd}>
-                <Trans>Add workshop</Trans>
+            <IconClose width={24} height={24} fill={colors.blackCoffee} />
+          </TouchableOpacity>
+        </View>
+        {workshopsUser.length === 0 ? (
+          <View style={styles.containerNotElements}>
+            <ImageCache
+              contentFit="contain"
+              style={styles.imageNotElements}
+              imageSrc={notItemsImage}
+            />
+            <View style={styles.titlesNotElements}>
+              <Text style={styles.titleNotElements}>
+                <Trans>Sorry!</Trans>
+              </Text>
+              <Text style={styles.titleNotElements}>
+                <Trans>You don't have {typeItem}.</Trans>
               </Text>
             </View>
-          </ButtonCustom>
-        </ScrollView>
-      )}
-
-      <View style={styles.containerFooter}>
-        <ButtonCustom
-          onSubmit={() => {
-            navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopAdd);
-          }}
-        >
-          <View style={styles.buttonAdd}>
-            <IconPlus width={16} height={16} fill={colors.white} />
-            <Text style={styles.titleAdd}>
-              <Trans>Add workshop</Trans>
-            </Text>
           </View>
-        </ButtonCustom>
+        ) : (
+          <ScrollView style={styles.containerElements}>
+            {workshopsUser.map((workshop, index) => {
+              const isStart = index === 0;
+              return (
+                <ItemSettingWorkshops
+                  key={`user-workshop-${workshop._id}`}
+                  workshop={workshop}
+                  isStart={isStart}
+                />
+              );
+            })}
+            <ButtonCustom
+              onSubmit={() => {
+                if (infoWorkshops.amountWorkshop > 0)
+                  navigation.navigate(
+                    PATHS_SETTINGS_SCREENS.settingsWorkshopAdd
+                  );
+                else setIsShowPayment(true);
+              }}
+              styleContainer={styles.containerButtonAdd}
+            >
+              <View style={styles.buttonAdd}>
+                {infoWorkshops.amountWorkshop > 0 && (
+                  <IconPlus width={16} height={16} fill={colors.white} />
+                )}
+                <Text style={styles.titleAdd}>
+                  {infoWorkshops.amountWorkshop > 0
+                    ? i18n._("Add workshop")
+                    : i18n._("Buy workshop")}
+                </Text>
+              </View>
+            </ButtonCustom>
+          </ScrollView>
+        )}
       </View>
-    </View>
+      {isShowPayment && (
+        <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
+      )}
+    </>
   );
 };

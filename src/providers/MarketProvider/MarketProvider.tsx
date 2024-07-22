@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import qs from "qs";
 import { z } from "zod";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import {
@@ -21,16 +22,14 @@ import { ItemSearchPlaceType } from "../../components/ModalSheetSearchPlace/Moda
 import { productSchema, resultProductsSchema } from "./MarketProvider.schemas";
 import { ratesCurrencySchema } from "../PaymentProvider/PaymentProvider.schemas";
 
-// helps
-import showErrors from "../../helps/errors/showError";
-
 // providers
-import { userContext } from "../UserProvider/UserProvider";
-import { localesContext } from "../../../localization/localization.provider";
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { loadingContext } from "../LoadingProvider/LoadingProvider";
-import { paymentContext } from "../PaymentProvider/PaymentProvider";
-import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
+import { useUserProvider } from "../UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
+import { usePaymentProvider } from "../PaymentProvider/PaymentProvider";
+import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
+import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
@@ -71,22 +70,22 @@ type MarketProviderProps = {
 
 export const marketContext = React.createContext({} as MarketContext);
 
-export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
+const MarketProvider: FunctionComponent<MarketProviderProps> = ({
   children,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { userData, setUserData } = useContext(userContext);
-  const { setCurrencies } = useContext(paymentContext);
-  const { api } = useContext(apiContext);
-  const { setLoading } = useContext(loadingContext);
-  const { onSetUserProperties } = useContext(analyticsContext);
+  const { messageFromServer } = useDropDownAlertProvider();
+  const { i18n } = useLocalesProvider();
+  const { userData, setUserData } = useUserProvider();
+  const { setCurrencies } = usePaymentProvider();
+  const { api } = useApiProvider();
+  const { setLoading } = useLoadingProvider();
+  const { onSetUserProperties } = useAnalyticsProvider();
   const [products, setProducts] = useState<ProductsType>([]);
   const [idDeleteProduct, setIdDeleteProduct] = useState<string | null>(null);
   const [minMaxPrices, setMinMaxPrices] = useState<MinMaxPricesType | null>(
     null
   );
   const [placesAll, setPlacesAll] = useState<PlacesAllIdsType | null>(null);
-  const { success } = showErrors;
 
   const setMinMaxProduct = async (product: ProductType) => {
     const isMinProduct = minMaxPrices
@@ -271,7 +270,11 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         <ModalDelete
           onSubmit={async () => {
             await deleteProduct(idDeleteProduct, "user");
-            success(i18n._("Advert delete"));
+            messageFromServer(
+              i18n._("Advert delete"),
+              i18n._("Success"),
+              DropdownAlertType.Success
+            );
             setIdDeleteProduct(null);
           }}
           onClose={() => {
@@ -282,3 +285,7 @@ export const MarketProvider: FunctionComponent<MarketProviderProps> = ({
     </marketContext.Provider>
   );
 };
+
+export const useMarketProvider = () => useContext(marketContext);
+
+export default MarketProvider;

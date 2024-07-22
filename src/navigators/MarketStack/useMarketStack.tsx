@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { PATHS_MARKET_SCREENS } from "../useNavigator.constants";
@@ -13,7 +12,7 @@ import { MarketItem } from "../../screens/marketScreens/MarketItem/MarketItem";
 import { MarketAdd } from "../../screens/marketScreens/MarketAdd/MarketAdd";
 
 export const useMarketStack = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const marketScreens = [
     {

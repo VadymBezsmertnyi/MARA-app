@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   Pressable,
   StyleProp,
@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
 import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
@@ -45,7 +45,7 @@ export const InputPassword: FunctionComponent<InputProps> = ({
   placeholder = "",
   ...props
 }): JSX.Element => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const [isShow, setIsShow] = useState(true);
   const containerStyleState = useMemo(
     () => [styles.container, containerStyle],

@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { t } from "@lingui/macro";
 
 // context
-import { localesContext } from "../../localization/localization.provider";
+import { useLocalesProvider } from "../../localization/localization.provider";
 
 // constants
 import { PATHS_MAIN_SCREENS } from "./useNavigator.constants";
@@ -18,7 +17,7 @@ import { Splash } from "../screens/Splash/Splash";
 import { MenuDrawer } from "./MenuDrawer/MenuDrawer";
 
 export const useNavigators = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const mainScreens = [
     {

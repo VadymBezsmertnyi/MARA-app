@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   Alert,
   Text,
@@ -21,9 +21,9 @@ import {
 } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ItemMenuSettings } from "./components/ItemMenuSettings/ItemMenuSettings";
@@ -63,17 +63,17 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   navigation,
   state,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  //const { usersSos, onDeleteSos } = useContext(mapContext);
-  const { userData, editUser } = useContext(userContext);
+  const { i18n } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
+  //const { usersSos, onDeleteSos } = useMapProvider();
+  const { userData, editUser } = useUserProvider();
   const [darkTheme, setDarkTheme] = useState(false);
   //const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
   //const [isShowOnSos, setIsShowOnSos] = useState(false);
   const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
   const [typeAgreements, setTypeAgreements] = useState<
-    "terms" | "policy" | null
+    "terms" | "policy" | "about" | null
   >(null);
   /* const isOnSos = useMemo(
     () =>
@@ -201,7 +201,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             title={i18n._("About the service")}
             Icon={IconWheelGradient}
             onPress={() => {
-              Alert.alert("About the service");
+              setTypeAgreements("about");
             }}
           />
           <View style={styles.lineWhite} />

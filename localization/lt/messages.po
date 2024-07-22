@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Padarykite pagrindinę nuotrauką"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Visi miestai"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Miestų nerasta"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Sumažinkite maksimalų skaičių"
 
@@ -140,6 +148,26 @@ msgstr "Pasirinkite darbo tipo automobilį"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Fono perdanga uždaryti modalinį langą"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Dėmesio!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Deja, šiuo metu negalima padidinti prieinamų skelbimų, dirbtuvių ar renginių skaičiaus, nes programa yra testavimo režime. Jei turite kokių nors klausimų, prašome susisiekti su administracija ar palikti atsiliepimą."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- arba --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Pranešti apie klaidą/pokytį"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Dėkojame už supratimą!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Ištrinti renginį"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Sėkmė"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Ištrinti skelbimą"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Priimti"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Nuotrauka pakeista"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Nuotrauka nepakeista"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Ištrinti"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Keisti"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Prieiga uždrausta"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Jūsų telegrama"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Telefono numeris:"
+msgid "Phone number"
+msgstr "Telefono numeris"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Pridėti aprašymą"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Aprašymas"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Atšaukti"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Naudojimo sąlygos"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Privatumo politika"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Pranešti apie klaidą/pokytį"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Klaida kuriant skelbimą"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Klaida"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Pridėti skelbimą"
 
@@ -888,10 +932,6 @@ msgstr "Pridėkite aprašymą apie skelbimą"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Skelbimo aprašymas"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefono numeris"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Miestas"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Papildomas numeris 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Papildomas numeris {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "Įvykiai"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Mygtukas, skirtas uždaryti įvykių nustatymų langą"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Pirkti įvykį"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Dėmesio! Visi su verslu \"{nameBusiness}\" susiję duomenys bus ištrin
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Pridėti"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Pirkti papildomai"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Mygtukas, skirtas uždaryti produktų nustatymų langą"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Pirkti skelbimą"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Pridėta nuotrauka"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Išsaugoti profilį"
+msgid "Profile saved"
+msgstr "Profilis išsaugotas"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "Dirbtuvės"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Mygtukas, skirtas uždaryti dirbtuvių nustatymų langą"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridėti dirbtuvę"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Pirkti dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Klaida keičiant dirbtuvę"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Klaida kuriant dirbtuvę"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridėti dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} km"
 
 msgid "About us:"
 msgstr "Apie mus:"
-
-msgid "Access denied"
-msgstr "Prieiga nesuteikta"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Prieiga prie geolokacijos fono režime"
@@ -1532,24 +1585,6 @@ msgstr "Ar norite siųsti SOS signalą?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Įjungti prisijungimą prie programos naudojant „Face ID“"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Klaida raktų prieigos ženklui: Slaptažodis nėra apibrėžtas aplinkos kintamuosiuose"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Klaida: Netinkamas telefono numeris arba slaptažodis"
-
-msgid "Error: Invalid token"
-msgstr "Klaida: Neleistinas ženklas"
-
-msgid "Error: Token expired"
-msgstr "Klaida: Baigėsi ženklo galiojimo laikas"
-
-msgid "Error: User already exists"
-msgstr "Klaida: Vartotojas jau egzistuoja"
-
-msgid "Error: User not found"
-msgstr "Klaida: Vartotojas nerastas"
-
 msgid "Event"
 msgstr "Renginys"
 
@@ -1570,9 +1605,6 @@ msgstr "Jei sąraše nėra tinkamos parinkties, naudokite „Gilią Paiešką“
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Įvestas neteisingas telefono numeris arba neteisingai pasirinktas telefono numerio šalies kodas"
-
-msgid "Internal Server Error"
-msgstr "Vidinė serverio klaida"
 
 msgid "Language selection"
 msgstr "Kalbos pasirinkimas"

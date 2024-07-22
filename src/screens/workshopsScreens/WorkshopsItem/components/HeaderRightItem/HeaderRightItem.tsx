@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { TouchableOpacity, View } from "react-native";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import {
@@ -29,7 +29,7 @@ export const HeaderRightItem: FunctionComponent<HeaderRightItemProps> = ({
   const isLikeEnabled = false;
   // TODO: will do later
   const isSharedEnabled = false;
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const containerStyle = useMemo(
     // TODO: will do later

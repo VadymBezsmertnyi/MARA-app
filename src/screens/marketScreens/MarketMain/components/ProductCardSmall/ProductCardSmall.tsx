@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import dayjs from "dayjs";
 
@@ -6,11 +6,11 @@ import dayjs from "dayjs";
 import { ProductType } from "../../../../../providers/MarketProvider/MarketProvider.types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
-import { marketContext } from "../../../../../providers/MarketProvider/MarketProvider";
-import { userContext } from "../../../../../providers/UserProvider/UserProvider";
-import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { usePaymentProvider } from "../../../../../providers/PaymentProvider/PaymentProvider";
+import { useMarketProvider } from "../../../../../providers/MarketProvider/MarketProvider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -39,11 +39,11 @@ export const ProductCardSmall: FunctionComponent<ProductCardFullProps> = ({
   product,
   onSelect,
 }) => {
-  const { i18n, language } = useContext(localesContext);
-  const { listCurrency } = useContext(paymentContext);
-  const { changeProduct } = useContext(marketContext);
-  const { placesDB } = useContext(placesContext);
-  const { userData } = useContext(userContext);
+  const { i18n, language } = useLocalesProvider();
+  const { listCurrency } = usePaymentProvider();
+  const { changeProduct } = useMarketProvider();
+  const { placesDB } = usePlacesProvider();
+  const { userData } = useUserProvider();
   const showTitlePlace = useMemo(() => {
     const placeDB = product.place_id;
     if (!placeDB) return "";

@@ -1,15 +1,11 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import { ScrollView, View } from "react-native";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
+import { KeyboardAvoidingView, ScrollView, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
+import { RouteProp, useRoute } from "@react-navigation/native";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import {
@@ -18,11 +14,12 @@ import {
 } from "../../../navigators/Navigators.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { businessContext } from "../../../providers/BusinessProvider/BusinessProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useBusinessProvider } from "../../../providers/BusinessProvider/BusinessProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -50,8 +47,6 @@ import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
-import showErrors from "../../../helps/errors/showError";
-import { RouteProp, useRoute } from "@react-navigation/native";
 
 type SettingsBusinessCreateProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -77,12 +72,13 @@ export const SettingsBusinessCreate: FunctionComponent<
   SettingsBusinessCreateProps
 > = ({ navigation }) => {
   const { params } = useRoute<RouteProp<RootSettingsScreensParamList>>();
-  const { i18n, language } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { userData } = useContext(userContext);
-  const { placesDB, getPlace } = useContext(placesContext);
+  const { messageFromServer } = useDropDownAlertProvider();
+  const { i18n, language } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { userData } = useUserProvider();
+  const { placesDB, getPlace } = usePlacesProvider();
   const { businessMarketUser, onCreateBusinessMarket, onUpdateBusinessMarket } =
-    useContext(businessContext);
+    useBusinessProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const { getErrorText } = useErrors(i18n);
   const [name, setName] = useState<string>("");
@@ -101,7 +97,6 @@ export const SettingsBusinessCreate: FunctionComponent<
   const [logo, setLogo] = useState<
     ImageType | ImagePicker.ImagePickerAsset | null
   >(null);
-  const { warning } = showErrors;
 
   const selectBusinessMarket = useMemo(() => {
     if (!params?.businessMarketId) return null;
@@ -146,7 +141,12 @@ export const SettingsBusinessCreate: FunctionComponent<
     if (!result.canceled) {
       const compressImages = await compressAndProcessImages(result);
       setLogo({ ...compressImages[0], uri: result.assets[0].uri });
-    } else warning(i18n._("Sorry, an error occurred"));
+    } else
+      messageFromServer(
+        i18n._("Sorry, an error occurred"),
+        i18n._("Error"),
+        DropdownAlertType.Warn
+      );
   };
 
   const onSubmitPlace = (data: ItemSearchPlaceAddressType) => {
@@ -267,7 +267,11 @@ export const SettingsBusinessCreate: FunctionComponent<
   }, [selectBusinessMarket]);
 
   return (
-    <>
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
       <View style={containerStyles}>
         <Header
           title={i18n._("Business profile")}
@@ -411,6 +415,6 @@ export const SettingsBusinessCreate: FunctionComponent<
         }}
         errors={errorMessage}
       />
-    </>
+    </KeyboardAvoidingView>
   );
 };

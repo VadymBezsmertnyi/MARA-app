@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useMemo, useState } from "react";
+import React, { ReactElement, useMemo, useState } from "react";
 import {
   StyleProp,
   Text,
@@ -11,7 +11,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Shadow } from "react-native-shadow-2";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // constants
 import colors from "../../../styles/colors";
@@ -52,7 +52,7 @@ export const ButtonCustom = ({
   accessibilityLabel,
 }: Props) => {
   const [isFocus, setIsFocus] = useState(false);
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const offsetShadow: [x: string | number, y: string | number] = useMemo(
     () => [0, 3],
     []

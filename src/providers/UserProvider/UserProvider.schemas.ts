@@ -9,6 +9,11 @@ import { workshopSchema } from "../WorkshopsProvider/WorkshopsProvider.schemas";
 import { businessMarketSchema } from "../BusinessProvider/BusinessProvider.schemas";
 import { eventSchema } from "../EventsProvider/EventsProvider.schemas";
 import { productSchema } from "../MarketProvider/MarketProvider.schemas";
+import {
+  subscriptionAdvertSchema,
+  subscriptionAdvertUpdateSchema,
+  subscriptionWorkshopSchema,
+} from "../SubscriptionProvider/SubscriptionProvider.schemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),
@@ -53,8 +58,6 @@ export const userDataS = z.object({
   workshopsIds: z.array(workshopSchema),
   productsIds: z.array(productSchema),
   isCheckBiometric: z.boolean().nullable(),
-  verifyToken: z.string().nullable(),
-  timeToken: z.number(),
   languageLocal: z.enum(languagesKeys),
   isNewUser: z.boolean(),
   isDeleteUser: z.boolean(),
@@ -71,10 +74,14 @@ export const userDataS = z.object({
     radiusKm: z.number(),
   }),
   businessMarketId: businessMarketSchema.nullable(),
-});
-
-export const resultUserDataS = z.object({
-  result: z.boolean(),
-  userData: userDataS,
-  code: z.number(),
+  subscriptionAdvertIds: z.array(subscriptionAdvertSchema),
+  subscriptionEventIds: z.array(subscriptionAdvertUpdateSchema),
+  subscriptionWorkshopIds: z.array(subscriptionWorkshopSchema),
+  defaultAmount: z.object({
+    advertAmount: z.number(),
+    advertBusinessAmount: z.number(),
+    eventSmallAmount: z.number(),
+    eventBigAmount: z.number(),
+    workshopAmount: z.number(),
+  }),
 });

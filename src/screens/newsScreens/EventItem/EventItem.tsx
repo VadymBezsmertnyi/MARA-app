@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
@@ -25,12 +19,12 @@ import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
-import { mapContext } from "../../../providers/MapProvider/MapProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
+import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
 
 // components
 import { Map } from "../../../components/Map/Map";
@@ -71,12 +65,12 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   route,
   navigation,
 }) => {
-  const { i18n, language } = useContext(localesContext);
-  const { eventsList, changeEvent } = useContext(eventsContext);
-  const { location } = useContext(mapContext);
-  const { placesDB } = useContext(placesContext);
-  const { userData } = useContext(userContext);
-  const { getSharedLink } = useContext(sharingContext);
+  const { i18n, language } = useLocalesProvider();
+  const { eventsList, changeEvent } = useEventsProvider();
+  const { location } = useMapProvider();
+  const { placesDB } = usePlacesProvider();
+  const { userData } = useUserProvider();
+  const { getSharedLink } = useSharingProvider();
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [gallery, setGallery] = useState<{

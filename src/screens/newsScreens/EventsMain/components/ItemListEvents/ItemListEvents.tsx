@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { getDistance } from "geolib";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -9,9 +9,9 @@ import { RootEventsScreensParamList } from "../../../../../navigators/Navigators
 import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
 
 // provider
-import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 // hooks
 import { formatDateFromUnixTimestamp } from "../../../../../helps/helps";
@@ -39,9 +39,9 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
   item,
   navigation,
 }) => {
-  const { location } = useContext(mapContext);
-  const { i18n, language } = useContext(localesContext);
-  const { placesDB } = useContext(placesContext);
+  const { location } = useMapProvider();
+  const { i18n, language } = useLocalesProvider();
+  const { placesDB } = usePlacesProvider();
   const nowDate = new Date().getTime();
   const isOld = useMemo(
     () => item.date.finish < nowDate,

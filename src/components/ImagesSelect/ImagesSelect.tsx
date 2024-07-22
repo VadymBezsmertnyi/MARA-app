@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
@@ -12,13 +6,12 @@ import * as ImagePicker from "expo-image-picker";
 import { ImageModalType, ImageType } from "../ImageModal/ImageModal.types";
 
 // providers
-import { loadingContext } from "../../providers/LoadingProvider/LoadingProvider";
+import { useLoadingProvider } from "../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import {
   IconAddEvent,
   IconArrowLeftEventGradient,
-  IconArrowRightEvent,
   IconArrowRightEventGradient,
 } from "../../icons/components";
 import { ImageCache } from "../ImageCache/ImageCache";
@@ -40,7 +33,7 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   images,
   setImages,
 }) => {
-  const { setLoading } = useContext(loadingContext);
+  const { setLoading } = useLoadingProvider();
   const [showImages, setShowImages] = useState({
     start: 0,
     finish: 3,

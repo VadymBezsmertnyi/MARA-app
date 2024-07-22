@@ -15,11 +15,22 @@ export const styles = StyleSheet.create({
     gap: 8,
   },
   containerLeft: {
+    position: "relative",
     flexDirection: "row",
     gap: 8,
     maxWidth: 60,
   },
   image: { width: "100%", borderRadius: 3 },
+  logoBusiness: {
+    position: "absolute",
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: colors.white,
+    right: -5,
+    bottom: -5,
+  },
   containerCenter: {
     flex: 1,
     gap: 12,

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Platform, View } from "react-native";
 import MapView, {
   Details,
@@ -8,7 +8,7 @@ import MapView, {
 } from "react-native-maps";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { OtherMarker } from "../../screens/mainScreens/Map/components/OtherMarker/OtherMarker";
@@ -37,7 +37,7 @@ export const Map: FunctionComponent<MapProps> = ({
   onRegionChange,
   onPress,
 }) => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
 
   const initialRegion = useMemo(
     () => ({ ...DEFAULT_LOCATION, longitude, latitude }),

@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
@@ -25,7 +19,7 @@ import { useSettingsStack } from "./useSettingsStack";
 import { getActiveRouteName } from "../Navigators.helps";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // styles
 import colors from "../../../styles/colors";
@@ -33,7 +27,7 @@ import colors from "../../../styles/colors";
 const Stack = createNativeStackNavigator<RootSettingsScreensParamList>();
 
 export const SettingsStack: FunctionComponent = () => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const { settingsScreens } = useSettingsStack();
   const navigation = useNavigation();
   const [routeName, setRouteName] = useState("");

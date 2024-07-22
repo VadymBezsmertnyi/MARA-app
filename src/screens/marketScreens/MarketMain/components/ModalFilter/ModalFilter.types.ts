@@ -8,7 +8,7 @@ export type ModalFilterSubmitType = {
     min: number;
     max: number;
   } | null;
-  isNew: boolean | null;
+  isNewProduct: boolean | null;
   isBusiness: boolean | null;
   category?: TypeDataCategory[];
   brandAuto?: TypeDataCategory[];

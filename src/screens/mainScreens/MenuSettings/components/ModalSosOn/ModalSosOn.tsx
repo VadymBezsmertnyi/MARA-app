@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 import { Trans } from "@lingui/macro";
@@ -12,9 +6,10 @@ import { PermissionStatus } from "expo-location";
 import { BlurView } from "expo-blur";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { userContext } from "../../../../../providers/UserProvider/UserProvider";
-import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
+import { usePermissionsProvider } from "../../../../../providers/PermissionsProvider/PermissionsProvider";
 
 // components
 import { ModalWindow } from "../../../../../components/ModalWindow/ModalWindow";
@@ -36,7 +31,6 @@ import {
 // styles
 import { styles } from "./ModalSosOn.styles";
 import colors from "../../../../../../styles/colors";
-import { permissionsContext } from "../../../../../providers/PermissionsProvider/PermissionsProvider";
 
 type ModalSosOnProps = {
   isOpen: boolean;
@@ -47,11 +41,11 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
   isOpen,
   onClose,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { userData, editUser } = useContext(userContext);
-  const { setPermission, onSendSos } = useContext(mapContext);
+  const { i18n } = useLocalesProvider();
+  const { userData, editUser } = useUserProvider();
+  const { setPermission, onSendSos } = useMapProvider();
   const { locationForegroundPermission, locationBackgroundPermission } =
-    useContext(permissionsContext);
+    usePermissionsProvider();
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [telegram, setTelegram] = useState("");

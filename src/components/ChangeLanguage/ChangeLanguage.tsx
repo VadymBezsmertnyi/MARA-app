@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { Shadow } from "react-native-shadow-2";
@@ -7,11 +7,11 @@ import { Shadow } from "react-native-shadow-2";
 import { Language } from "../../../localization/localization.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
-import { userContext } from "../../providers/UserProvider/UserProvider";
-import { pushNotificationContext } from "../../providers/PushNotificationProvider/PushNotificationProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useUserProvider } from "../../providers/UserProvider/UserProvider";
+import { usePushNotificationProvider } from "../../providers/PushNotificationProvider/PushNotificationProvider";
 import { Loader } from "../../providers/LoadingProvider/components/Loader/Loader";
-import { loadingContext } from "../../providers/LoadingProvider/LoadingProvider";
+import { useLoadingProvider } from "../../providers/LoadingProvider/LoadingProvider";
 
 // components
 import { ImageCache } from "../ImageCache/ImageCache";
@@ -31,10 +31,10 @@ import { languages } from "../../../localization/localization.const";
 import { styles } from "./ChangeLanguage.styles";
 
 export const ChangeLanguage: FunctionComponent = () => {
-  const { i18n, language, setLanguage } = useContext(localesContext);
-  const { isLoading } = useContext(loadingContext);
-  const { userData, editUser } = useContext(userContext);
-  const { setLanguageNotification } = useContext(pushNotificationContext);
+  const { i18n, language, setLanguage } = useLocalesProvider();
+  const { isLoading } = useLoadingProvider();
+  const { userData, editUser } = useUserProvider();
+  const { setLanguageNotification } = usePushNotificationProvider();
   const [isShowChangeLanguage, setIsShowChangeLanguage] = useState(false);
   const [valueSearch, setValueSearch] = useState("");
   const [selectLanguage, setSelectLanguage] = useState<Language | null>(null);

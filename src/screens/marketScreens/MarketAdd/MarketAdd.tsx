@@ -1,17 +1,18 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import { Modal, ScrollView, Text, View } from "react-native";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
+import {
+  KeyboardAvoidingView,
+  Modal,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import dayjs from "dayjs";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
@@ -24,14 +25,16 @@ import {
 } from "../../../navigators/Navigators.types";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import {
   NewProductType,
-  marketContext,
+  useMarketProvider,
 } from "../../../providers/MarketProvider/MarketProvider";
-import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -52,7 +55,6 @@ import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/M
 // hooks
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { useErrors } from "../../../helps/useErrors";
-import showErrors from "../../../helps/errors/showError";
 import { useCategoriesMarket } from "../../../helps/useCategoriesMarket";
 
 // constants
@@ -86,13 +88,14 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     useRoute<
       RouteProp<RootMarketScreensParamList & RootSettingsScreensParamList>
     >();
+  const { messageFromServer } = useDropDownAlertProvider();
+  const { infoAdverts, infoBusinessAdverts } = useSubscriptionProvider();
   const { bottom } = useSafeAreaInsets();
-  const { i18n, language } = useContext(localesContext);
-  const { placesDB, getPlace } = useContext(placesContext);
-  const { userData } = useContext(userContext);
-  const { addProduct, changeProduct, deleteProduct } =
-    useContext(marketContext);
-  const { setLoading } = useContext(loadingContext);
+  const { i18n, language } = useLocalesProvider();
+  const { placesDB, getPlace } = usePlacesProvider();
+  const { userData } = useUserProvider();
+  const { addProduct, changeProduct, deleteProduct } = useMarketProvider();
+  const { setLoading } = useLoadingProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const {
     getCategory,
@@ -104,7 +107,6 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     getAutoPart,
   } = useCategoriesMarket(i18n);
   const { getErrorAddProduct } = useErrors(i18n);
-  const { success, bug } = showErrors;
   const [title, setTitle] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [telegram, setTelegram] = useState("");
@@ -118,7 +120,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const [place, setPlace] = useState<ItemSearchPlaceType | null>(null);
   const [isShowSelectPlace, setIsShowSelectPlace] = useState(false);
   const [isCleared, setIsCleared] = useState(true);
-  const [isNew, setIsNew] = useState(false);
+  const [isNewProduct, setIsNewProduct] = useState(false);
   const [isBusiness, setIsBusiness] = useState(false);
   const [isChange, setIsChange] = useState(false);
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
@@ -232,7 +234,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         ...DEFAULT_PRODUCT_DATA,
         userId: userData?._id,
         title,
-        isNew,
+        isNewProduct,
         isBusiness,
         place_id: undefined,
         region_place_id: undefined,
@@ -301,22 +303,27 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         : await addProduct(newProduct);
       if (isCreate) {
         navigation.goBack();
-        success(
+        messageFromServer(
           productUser
             ? i18n._("Advert change successfully")
-            : i18n._("Advert created successfully")
+            : i18n._("Advert created successfully"),
+          i18n._("Success"),
+          DropdownAlertType.Success
         );
       } else
-        bug(
+        messageFromServer(
           productUser
             ? i18n._("Error changing advert")
-            : i18n._("Error creating advert")
+            : i18n._("Error creating advert"),
+          i18n._("Error"),
+          DropdownAlertType.Warn
         );
     }
   };
 
   const getProductUser = async () => {
     setLoading(true);
+    const isBusinessAdverts = infoBusinessAdverts.amountBusinessAdvert > 0;
     if (params) {
       if (productUser) {
         setIsChange(true);
@@ -352,7 +359,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             title: productUser.place_id[language].formatted_address,
           });
         setImages(imagesWithBath64);
-        setIsNew(productUser.isNew);
+        setIsNewProduct(productUser.isNewProduct);
         setIsBusiness(productUser.isBusiness);
         setSelect({
           category: getCategoryFull(),
@@ -392,6 +399,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         setPhoneNumber(productUser.phoneNumber);
       }
     } else if (userData?.phoneNumber) setPhoneNumber(userData.phoneNumber);
+    else {
+      setIsBusiness(isBusinessAdverts ? isBusinessAdverts : false);
+    }
     setLoading(false);
   };
 
@@ -408,7 +418,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   }, [params, placesDB]);
 
   return (
-    <>
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
       <View style={styles.container}>
         <Header
           title={productUser ? i18n._("Change advert") : i18n._("Add advert")}
@@ -457,17 +471,17 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           />
           <SelectTwoButtons
             isRegular
-            isSelectFirst={isNew}
+            isSelectFirst={isNewProduct}
             titleFirst={i18n._("New")}
             titleSecond={i18n._("Used")}
             label={i18n._("The state of the goods")}
             onPressFirst={() => {
-              clearKeyError("isNew");
-              setIsNew(true);
+              clearKeyError("isNewProduct");
+              setIsNewProduct(true);
             }}
             onPressSecond={() => {
-              clearKeyError("isNew");
-              setIsNew(false);
+              clearKeyError("isNewProduct");
+              setIsNewProduct(false);
             }}
             containerStyle={styles.containerTwoButtons}
           />
@@ -488,6 +502,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               setIsBusiness(true);
             }}
             containerStyle={styles.containerTwoButtons}
+            disabledFirst={infoAdverts.amountAdvert <= 0}
+            disabledSecond={infoBusinessAdverts.amountBusinessAdvert <= 0}
           />
           <InputButton
             isRegular
@@ -637,6 +653,6 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           }}
         />
       </Modal>
-    </>
+    </KeyboardAvoidingView>
   );
 };

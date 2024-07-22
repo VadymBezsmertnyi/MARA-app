@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -32,7 +32,7 @@ export const ModalDelete: FunctionComponent<ModalDeleteProps> = ({
   isGoBack = true,
   subTitle,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const navigation = useAllNavigation();
 
   const onDelete = async () => {

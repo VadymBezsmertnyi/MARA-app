@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
@@ -7,8 +7,8 @@ import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // providers
-import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 //types
 import { mapMarker } from "../../Map.types";
@@ -31,8 +31,8 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   showFirstEvent,
 }) => {
   const { top } = useSafeAreaInsets();
-  const { language } = useContext(localesContext);
-  const { placesDB } = useContext(placesContext);
+  const { language } = useLocalesProvider();
+  const { placesDB } = usePlacesProvider();
   const selectCountryTitle = useMemo(() => {
     if (!firstEvent?.place_id) return "";
     return firstEvent.place_id[language].formatted_address;

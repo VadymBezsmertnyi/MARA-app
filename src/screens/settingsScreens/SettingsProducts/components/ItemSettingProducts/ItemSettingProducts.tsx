@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import {
   StyleProp,
   Text,
@@ -11,8 +11,8 @@ import {
 import { ProductType } from "../../../../../providers/MarketProvider/MarketProvider.types";
 
 // providers
-import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { usePaymentProvider } from "../../../../../providers/PaymentProvider/PaymentProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -29,6 +29,7 @@ import { IconEye, IconPencilGradient } from "../../../../../icons/components";
 
 // styles
 import { styles } from "./ItemSettingProducts.styles";
+import { useBusinessProvider } from "../../../../../providers/BusinessProvider/BusinessProvider";
 
 type ItemSettingProductsProps = {
   product: ProductType;
@@ -39,8 +40,9 @@ export const ItemSettingProducts: FunctionComponent<
   ItemSettingProductsProps
 > = ({ product, isStart }) => {
   const navigation = useAllNavigation();
-  const { i18n } = useContext(localesContext);
-  const { listCurrency } = useContext(paymentContext);
+  const { businessMarketUser } = useBusinessProvider();
+  const { i18n } = useLocalesProvider();
+  const { listCurrency } = usePaymentProvider();
   const firstImage = product.images[0] ? product.images[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { marginTop: isStart ? 0 : 12 }],
@@ -62,6 +64,12 @@ export const ItemSettingProducts: FunctionComponent<
         {firstImage ? (
           <ImageCache imageSrc={firstImage} style={styles.image} />
         ) : null}
+        {product.isBusiness && businessMarketUser?.logo && (
+          <ImageCache
+            imageSrc={businessMarketUser.logo.url}
+            style={styles.logoBusiness}
+          />
+        )}
       </View>
       <View style={styles.containerCenter}>
         <Text>{product.title}</Text>

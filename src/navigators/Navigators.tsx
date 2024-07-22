@@ -1,7 +1,6 @@
 import React, {
   FunctionComponent,
   useCallback,
-  useContext,
   useEffect,
   useMemo,
 } from "react";
@@ -27,7 +26,7 @@ import {
 import { Header } from "../components/Header/Header";
 
 // provider
-import { themeContext } from "../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../providers/ThemeProvider/ThemeProvider";
 
 // types
 import {
@@ -52,7 +51,7 @@ export const Navigators: FunctionComponent<NavigatorsProps> = ({
   currentRouteName,
   navigation,
 }) => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const { mainScreens } = useNavigators();
 
   const mainBackgroundColor = useMemo(

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, View } from "react-native";
 
 // types
@@ -8,8 +8,8 @@ import { CodeCurrenciesType } from "../../providers/PaymentProvider/PaymentProvi
 import { codeCurrenciesSchema } from "../../providers/PaymentProvider/PaymentProvider.schemas";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
-import { paymentContext } from "../../providers/PaymentProvider/PaymentProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { usePaymentProvider } from "../../providers/PaymentProvider/PaymentProvider";
 
 // components
 import { Input } from "../Input/Input";
@@ -39,8 +39,8 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
   errorMessage,
   clearKeyError,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { listCurrency } = useContext(paymentContext);
+  const { i18n } = useLocalesProvider();
+  const { listCurrency } = usePaymentProvider();
   const data = useMemo(
     () =>
       listCurrency.map((currency) => ({

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   ImageURISource,
   Modal,
@@ -7,15 +7,11 @@ import {
   View,
 } from "react-native";
 import { Trans } from "@lingui/macro";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-
-// types
-import { RootAllScreensParamList } from "../../../../../navigators/Navigators.types";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { businessContext } from "../../../../../providers/BusinessProvider/BusinessProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useBusinessProvider } from "../../../../../providers/BusinessProvider/BusinessProvider";
+import { useSubscriptionProvider } from "../../../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
@@ -37,18 +33,26 @@ type ContainerBusinessProps = {
   onCreateBusiness: () => void;
   onChangeBusiness: (businessMarketId: string) => void;
   onReviewBusiness: (businessMarketId: string) => void;
+  onPressBuy: () => void;
 };
 
 export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
   onCreateBusiness,
   onChangeBusiness,
   onReviewBusiness,
+  onPressBuy,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { businessMarketUser, onDeleteBusinessMarket } =
-    useContext(businessContext);
+  const { i18n } = useLocalesProvider();
+  const { infoBusinessAdverts } = useSubscriptionProvider();
+  const { businessMarketUser, onDeleteBusinessMarket } = useBusinessProvider();
   const [isShow, setIsShow] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
+
+  const { amountBusinessAdvert, useAmountBusinessAdvert } = useMemo(
+    () => infoBusinessAdverts,
+    [infoBusinessAdverts]
+  );
+
   const imageSource = useMemo(
     () =>
       businessMarketUser?.logo
@@ -108,11 +112,16 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
                   <IconProfileAvatar />
                 )}
                 <ButtonCustom
+                  disabled={useAmountBusinessAdvert <= amountBusinessAdvert}
                   title={i18n._("Improve")}
-                  onSubmit={() => {
-                    onChangeBusiness(businessMarketUser._id);
-                  }}
-                  styleContainer={styles.buttonBusinessLogo}
+                  onSubmit={onPressBuy}
+                  styleContainer={[
+                    styles.buttonBusinessLogo,
+                    {
+                      opacity:
+                        useAmountBusinessAdvert <= amountBusinessAdvert ? 0 : 1,
+                    },
+                  ]}
                   styleTitle={styles.titleButtonBusinessLogo}
                 />
               </View>
@@ -132,12 +141,12 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
                 />
                 <Text style={styles.subTitleBusiness}>
                   {i18n._("Available ads: {ads}", {
-                    ads: 7,
+                    ads: amountBusinessAdvert,
                   })}
                 </Text>
                 <Text style={styles.subTitleBusiness}>
                   {i18n._("Published ads: {ads}", {
-                    ads: 43,
+                    ads: useAmountBusinessAdvert,
                   })}
                 </Text>
               </View>

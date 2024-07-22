@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Зробити головним фото"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Всі міста"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Міста не знайдено"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Зменшити максимальну кількість"
 
@@ -140,6 +148,26 @@ msgstr "Виберіть тип роботи авто"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Фонове наложення для закриття модального вікна"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Увага!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "На жаль, на даний момент неможливо збільшити кількість доступних оголошень, майстерень або подій, оскільки додаток знаходиться в тестовому режимі. Якщо у вас є питання, звертайтеся до адміністрації або залишайте відгук."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- або --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Повідомити про помилку/покращення"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Дякуємо за розуміння!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Видалити подію"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Успішно"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Оголошення видалено"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Прийняти"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Фото змінено"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Фото не змінено"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Видалити"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Змінити"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Доступ заборонено"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Ваш телеграм"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Номер телефону:"
+msgid "Phone number"
+msgstr "Номер телефону"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Додати опис"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Опис"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Скасувати"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Умови користування"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Політика конфіденційності"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Повідомити про помилку/покращення"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Помилка створення оголошення"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Помилка"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Додати оголошення"
 
@@ -888,10 +932,6 @@ msgstr "Додайте опис про оголошення"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Опис оголошення"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Номер телефону"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Місто"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Додатковий номер 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Додатковий номер {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "події"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Кнопка для закриття екрану налаштувань подій"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Купити подію"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Увага! Всі дані, пов'язані з бізнесом \"{na
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Додати"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Купити додатково"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Кнопка для закриття екрану налаштувань продуктів"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Купити оголошення"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Додано фото"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Зберегти профіль"
+msgid "Profile saved"
+msgstr "Профіль збережено"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "майстерні"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Кнопка для закриття екрану налаштувань майстерень"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Додати майстерню"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Купити майстерню"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Помилка при зміні майстерні"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Помилка при створенні майстерні"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Додати майстерню"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} км"
 
 msgid "About us:"
 msgstr "Про нас:"
-
-msgid "Access denied"
-msgstr "Доступ заборонено"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Доступ до геолокації в режимі фонової роботи"
@@ -1532,24 +1585,6 @@ msgstr "Бажаєте відправити сигнал SOS?"
 msgid "Enable logging into the app using Face ID"
 msgstr "Увімкнути вхід у додаток за допомогою Face ID"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Помилка ключа токена: Секретний ключ не визначено в змінних середовища"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Помилка: Невірний номер телефону або пароль"
-
-msgid "Error: Invalid token"
-msgstr "Помилка: Недійсний токен"
-
-msgid "Error: Token expired"
-msgstr "Помилка: Токен застарів"
-
-msgid "Error: User already exists"
-msgstr "Помилка: Користувач вже існує"
-
-msgid "Error: User not found"
-msgstr "Помилка: Користувача не знайдено"
-
 msgid "Event"
 msgstr "Подія"
 
@@ -1570,9 +1605,6 @@ msgstr "Якщо в списку немає відповідного варіа�
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Введений неправильний номер телефону або неправильно вибраний код країни для введеного номера телефону"
-
-msgid "Internal Server Error"
-msgstr "Внутрішня помилка сервера"
 
 msgid "Language selection"
 msgstr "Вибір мови"

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import {
   SafeAreaView,
   StyleProp,
@@ -10,8 +10,8 @@ import {
 import { Trans, t } from "@lingui/macro";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../localization/localization.provider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // icons
 import { ArrowLeft } from "../../icons/components";
@@ -52,8 +52,8 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   rightStyle,
 }) => {
   const navigation = useAllNavigation();
-  const { theme } = useContext(themeContext);
-  const { i18n } = useContext(localesContext);
+  const { theme } = useThemeProvider();
+  const { i18n } = useLocalesProvider();
 
   const backgroundStyles = useMemo(
     () => [styles.background, backgroundStyle],
@@ -87,7 +87,11 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
     <SafeAreaView style={backgroundStyles}>
       <View style={containerStyles}>
         {isShowLeft ? (
-          <TouchableOpacity onPress={onBack} style={styles.containerButtonBack}>
+          <TouchableOpacity
+            disabled={Boolean(leftElement)}
+            onPress={onBack}
+            style={styles.containerButtonBack}
+          >
             {leftElement || (
               <>
                 <ArrowLeft

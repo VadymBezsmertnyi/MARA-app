@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // stacks
 import { EventsStack } from "../EventsStack/eventsStack";
@@ -37,7 +36,7 @@ import {
 } from "../useNavigator.constants";
 
 export const useMainTabs = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const mainTabs = [
     {

@@ -1,7 +1,6 @@
 import React, {
   FunctionComponent,
   useCallback,
-  useContext,
   useMemo,
   useState,
 } from "react";
@@ -9,17 +8,12 @@ import { Platform, Text, View, ViewStyle } from "react-native";
 import { Trans } from "@lingui/macro";
 import { GoogleSignin, User } from "@react-native-google-signin/google-signin";
 import * as AppleAuthentication from "expo-apple-authentication";
-//import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 
 // providers
-import { themeContext } from "../../../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../../../providers/ThemeProvider/ThemeProvider";
 
 // components
-import {
-  //SocialFacebook,
-  SocialGoogle,
-  SocialApple,
-} from "../../../../icons/components";
+import { SocialGoogle, SocialApple } from "../../../../icons/components";
 import { ButtonCustom } from "../../../../components/ButtonCustom/ButtonCustom";
 
 // constants
@@ -44,7 +38,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   onChangeApple,
 }) => {
   const [focus, setFocus] = useState<number | null>(null);
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
 
   const isIos = useMemo(() => Platform.OS === "ios", [Platform.OS]);
   const containerStyles = useMemo(

@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from "./AddEventButton.styles";
 
 type AddEventButtonProps = {
+  disabled?: boolean;
   onPress: () => void;
   accessibilityLabel?: string;
 };
@@ -17,6 +18,7 @@ const ANDROID_BOTTOM = 180;
 const CURRENT_BOTTOM = Platform.OS === "ios" ? IOS_BOTTOM : ANDROID_BOTTOM;
 
 export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
+  disabled,
   onPress,
   accessibilityLabel,
 }) => {
@@ -30,13 +32,15 @@ export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
       styles.createNewEvent,
       {
         bottom: bottom + CURRENT_BOTTOM,
+        opacity: disabled ? 0 : 1,
       },
     ],
-    [bottom]
+    [bottom, disabled]
   );
 
   return (
     <TouchableOpacity
+      disabled={disabled}
       accessibilityLabel={accessibilityLabel}
       style={containerStyle}
       onPress={onPress}

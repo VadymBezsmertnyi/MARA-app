@@ -1,13 +1,13 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 import { TypeWorkType } from "../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // hooks
-import { useWorkshopsProvider } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsProviderState } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
 
 // components
 import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
@@ -35,8 +35,8 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
   setSelectAutoTypesWorks,
   onSubmit,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { typesWorkServices } = useWorkshopsProvider();
+  const { i18n } = useLocalesProvider();
+  const { typesWorkServices } = useWorkshopsProviderState();
 
   const onSelectAutoTypeWork = (typeAutoWork: TypeWorkType) => {
     const isBe = selectAutoTypesWorks.includes(typeAutoWork.id);

@@ -16,8 +16,8 @@ import {
 } from "./BiometricProvider.types";
 
 // providers
-import { loadingContext } from "../LoadingProvider/LoadingProvider";
-import { localesContext } from "../../../localization/localization.provider";
+import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // magic numbers
 const TOUCH_TYPE = 1;
@@ -28,11 +28,11 @@ export const biometricAuthenticatorContext = React.createContext(
   {} as BiometricContextType
 );
 
-export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
+const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
   children,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { setLoading } = useContext(loadingContext);
+  const { i18n } = useLocalesProvider();
+  const { setLoading } = useLoadingProvider();
   // SecurityLevel = 0-NONE, 1-SECRET, 2-BIOMETRIC
   const [securityLevel, setSecurityLevel] = useState<number | null>(null);
   // AuthenticationType = 1-FINGERPRINT, 2-FACIAL_RECOGNITION, 3-IRIS(Android)
@@ -114,3 +114,8 @@ export const BiometricProvider: FunctionComponent<BiometricProviderType> = ({
     </biometricAuthenticatorContext.Provider>
   );
 };
+
+export const useBiometricProvider = () =>
+  useContext(biometricAuthenticatorContext);
+
+export default BiometricProvider;

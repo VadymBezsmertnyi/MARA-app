@@ -6,7 +6,6 @@ import React, {
   useState,
 } from "react";
 import { z } from "zod";
-import qs from "qs";
 import { convertDistance, getDistance } from "geolib";
 
 // types
@@ -15,14 +14,13 @@ import {
   WorkshopType,
   WorkshopsType,
 } from "./WorkshopsProvider.types";
-import { ItemSearchPlaceAddressType } from "../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 
 // providers
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { loadingContext } from "../LoadingProvider/LoadingProvider";
-import { userContext } from "../UserProvider/UserProvider";
-import { mapContext } from "../MapProvider/MapProvider";
-import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
+import { useUserProvider } from "../UserProvider/UserProvider";
+import { useMapProvider } from "../MapProvider/MapProvider";
+import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
 
 // schemas
 import { workshopSchema, workshopsSchema } from "./WorkshopsProvider.schemas";
@@ -63,14 +61,14 @@ type WorkshopsProviderProps = {
 
 export const workshopsContext = React.createContext({} as WorkshopsContext);
 
-export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
+const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   children,
 }) => {
-  const { api } = useContext(apiContext);
-  const { setLoading } = useContext(loadingContext);
-  const { userData, setUserData } = useContext(userContext);
-  const { location } = useContext(mapContext);
-  const { onSetUserProperties } = useContext(analyticsContext);
+  const { api } = useApiProvider();
+  const { setLoading } = useLoadingProvider();
+  const { userData, setUserData } = useUserProvider();
+  const { location } = useMapProvider();
+  const { onSetUserProperties } = useAnalyticsProvider();
   const [workshops, setWorkShops] = useState<WorkshopsType>([]);
   const minMaxDistance = useMemo(() => {
     const distanceMinMax = workshops
@@ -296,3 +294,7 @@ export const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     </workshopsContext.Provider>
   );
 };
+
+export const useWorkshopsProvider = () => useContext(workshopsContext);
+
+export default WorkshopsProvider;

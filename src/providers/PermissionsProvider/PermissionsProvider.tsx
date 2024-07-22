@@ -10,11 +10,11 @@ import { Alert, Linking } from "react-native";
 import * as Location from "expo-location";
 
 // providers
-import { userContext } from "../UserProvider/UserProvider";
-import { localesContext } from "../../../localization/localization.provider";
+import { useUserProvider } from "../UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // helps
-import { usePermissionsProvider } from "./usePermissionsProvider";
+import { usePermissionsProviderState } from "./usePermissionsProvider";
 
 type PermissionsContext = {
   locationForegroundPermission: Location.PermissionStatus | null;
@@ -29,13 +29,13 @@ export const permissionsContext = createContext<PermissionsContext>(
   {} as PermissionsContext
 );
 
-export const PermissionsProvider: FunctionComponent<
-  PermissionsProviderProps
-> = ({ children }) => {
-  const { i18n } = useContext(localesContext);
-  const { userData } = useContext(userContext);
+const PermissionsProvider: FunctionComponent<PermissionsProviderProps> = ({
+  children,
+}) => {
+  const { i18n } = useLocalesProvider();
+  const { userData } = useUserProvider();
   const { titleLocationBackground, titleLocationForeground } =
-    usePermissionsProvider();
+    usePermissionsProviderState();
   const [locationForegroundPermission, setLocationForegroundPermission] =
     useState<Location.PermissionStatus | null>(null);
   const [locationBackgroundPermission, setLocationBackgroundPermission] =
@@ -133,3 +133,7 @@ export const PermissionsProvider: FunctionComponent<
     </permissionsContext.Provider>
   );
 };
+
+export const usePermissionsProvider = () => useContext(permissionsContext);
+
+export default PermissionsProvider;

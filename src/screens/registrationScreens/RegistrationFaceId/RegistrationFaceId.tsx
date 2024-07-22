@@ -1,12 +1,12 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Trans, t } from "@lingui/macro";
 
 // providers
-import { biometricAuthenticatorContext } from "../../../providers/BiometricProvider/BiometricProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useBiometricProvider } from "../../../providers/BiometricProvider/BiometricProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -29,10 +29,10 @@ import colors from "../../../../styles/colors";
 
 export const RegistrationFaceId: FunctionComponent = () => {
   const navigation = useAllNavigation();
-  const { i18n } = useContext(localesContext);
-  const { userData, editUser } = useContext(userContext);
-  const { checkBiometric } = useContext(biometricAuthenticatorContext);
-  const { heightStatusBar } = useContext(themeContext);
+  const { i18n } = useLocalesProvider();
+  const { userData, editUser } = useUserProvider();
+  const { checkBiometric } = useBiometricProvider();
+  const { heightStatusBar } = useThemeProvider();
   const nameApp = "MARA";
   const containerStyles: ViewStyle = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }] as ViewStyle,

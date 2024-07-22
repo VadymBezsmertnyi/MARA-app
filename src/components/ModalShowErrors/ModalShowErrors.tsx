@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // hooks
 import { useErrors } from "../../helps/useErrors";
@@ -28,7 +28,7 @@ export const ModalShowErrors: FunctionComponent<ModalErrors> = ({
   onClose,
   errors,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const { getErrorText } = useErrors(i18n);
   const isError = errors ? Object.keys(errors).length > 0 : false;
   const errorMessage = getErrorText("errorMessage", {});

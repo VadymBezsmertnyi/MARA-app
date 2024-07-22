@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { FunctionComponent, useMemo, useRef, useState } from "react";
 import {
   NativeScrollEvent,
   NativeSyntheticEvent,
@@ -26,12 +20,12 @@ import {
 } from "../../../navigators/Navigators.types";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { mapContext } from "../../../providers/MapProvider/MapProvider";
-import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { sharingContext } from "../../../providers/SharingProvider/SharingProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
+import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
 
 // helps
 import { getFormatPhoneNumber } from "../../../helps/helps";
@@ -78,12 +72,12 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   navigation,
   route,
 }) => {
-  const { i18n, language } = useContext(localesContext);
-  const { userData } = useContext(userContext);
-  const { workshops, changeWorkshop } = useContext(workshopsContext);
-  const { placesDB } = useContext(placesContext);
-  const { location } = useContext(mapContext);
-  const { getSharedLink } = useContext(sharingContext);
+  const { i18n, language } = useLocalesProvider();
+  const { userData } = useUserProvider();
+  const { workshops, changeWorkshop } = useWorkshopsProvider();
+  const { placesDB } = usePlacesProvider();
+  const { location } = useMapProvider();
+  const { getSharedLink } = useSharingProvider();
   const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [isShowModalComment, setIsShowModalComment] = useState(false);

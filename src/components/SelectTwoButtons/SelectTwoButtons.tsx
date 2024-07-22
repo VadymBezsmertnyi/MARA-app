@@ -17,6 +17,8 @@ type SelectTwoButtonsProps = {
   onPressSecond: () => void;
   containerStyle?: ViewStyle;
   labelStyle?: TextStyle;
+  disabledFirst?: boolean;
+  disabledSecond?: boolean;
 };
 
 export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
@@ -29,6 +31,8 @@ export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
   onPressSecond,
   containerStyle,
   labelStyle,
+  disabledFirst,
+  disabledSecond,
 }) => {
   const typeFirst = isSelectFirst ? "full" : "transparent";
   const typeSecond = !isSelectFirst ? "full" : "transparent";
@@ -52,16 +56,28 @@ export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
       </Text>
       <View style={styles.containerSelectType}>
         <ButtonCustom
+          disabled={disabledFirst}
           title={titleFirst}
           type={isSelectFirst === null ? "transparent" : typeFirst}
           onSubmit={onPressFirst}
-          styleContainer={styles.buttonSelectType}
+          styleContainer={[
+            styles.buttonSelectType,
+            {
+              opacity: disabledFirst ? 0.5 : 1,
+            },
+          ]}
         />
         <ButtonCustom
+          disabled={disabledSecond}
           title={titleSecond}
           type={isSelectFirst === null ? "transparent" : typeSecond}
           onSubmit={onPressSecond}
-          styleContainer={styles.buttonSelectType}
+          styleContainer={[
+            styles.buttonSelectType,
+            {
+              opacity: disabledSecond ? 0.5 : 1,
+            },
+          ]}
         />
       </View>
     </View>

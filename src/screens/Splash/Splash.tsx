@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useEffect } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import { Image, View } from "react-native";
 
 // hooks
@@ -6,9 +6,9 @@ import { useAllNavigation } from "../../navigators/Navigators.helps";
 import { redirectToScreen } from "../screens.hooks";
 
 // providers
-import { userContext } from "../../providers/UserProvider/UserProvider";
-import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
-import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsProvider";
+import { useUserProvider } from "../../providers/UserProvider/UserProvider";
+import { useBiometricProvider } from "../../providers/BiometricProvider/BiometricProvider";
+import { useAnalyticsProvider } from "../../providers/AnalyticsProvider/AnalyticsProvider";
 
 // constants
 import { PATHS_MAIN_SCREENS } from "../../navigators/useNavigator.constants";
@@ -22,9 +22,9 @@ import { styles } from "./Splash.styles";
 
 export const Splash: FunctionComponent = () => {
   const navigation = useAllNavigation();
-  const { meUser } = useContext(userContext);
-  const { onLogLogin } = useContext(analyticsContext);
-  const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
+  const { meUser } = useUserProvider();
+  const { onLogLogin } = useAnalyticsProvider();
+  const { isFaceId, isTouchId } = useBiometricProvider();
 
   const authorizationInitializer = async () => {
     const result = await meUser(false);

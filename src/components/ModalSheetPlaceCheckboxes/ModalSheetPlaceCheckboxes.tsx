@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
@@ -15,8 +9,8 @@ import {
 } from "./ModalSheetPlaceCheckboxes.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
-import { placesContext } from "../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { usePlacesProvider } from "../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
@@ -47,9 +41,9 @@ const STEPS: StepModalCheckboxes[] = ["country", "region", "city"];
 export const ModalSheetPlaceCheckboxes: FunctionComponent<
   ModalSheetPlaceProps
 > = ({ isOpen, title, onClose, onSubmit }) => {
-  const { i18n, language } = useContext(localesContext);
+  const { i18n, language } = useLocalesProvider();
   const { countriesDB, regionsDB, placesFindDB, getRegions, getPlaces } =
-    useContext(placesContext);
+    usePlacesProvider();
   const [selectCountriesPlaceIds, setSelectCountriesPlaceIds] = useState<
     string[]
   >([]);

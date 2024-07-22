@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import {
   NativeStackNavigationOptions,
   createNativeStackNavigator,
@@ -17,7 +17,7 @@ import { Header } from "../../components/Header/Header";
 import { useWorkshopStack } from "./useWorkshopStack";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // styles
 import colors from "../../../styles/colors";
@@ -25,7 +25,7 @@ import colors from "../../../styles/colors";
 const Stack = createNativeStackNavigator<RootWorkshopsScreensParamList>();
 
 export const WorkshopStack: FunctionComponent = () => {
-  const { theme } = useContext(themeContext);
+  const { theme } = useThemeProvider();
   const { workshopsScreens } = useWorkshopStack();
 
   const options = (

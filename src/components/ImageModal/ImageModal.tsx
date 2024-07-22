@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
@@ -6,8 +6,8 @@ import { Trans } from "@lingui/macro";
 import { ImageModalType } from "./ImageModal.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { ImageCache } from "../ImageCache/ImageCache";
@@ -36,8 +36,8 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
   setIsMain,
   onClose,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
+  const { i18n } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
   const isMain = imageInfo?.index === 0;
   const containerStyles = useMemo(
     () => [styles.container, { marginTop: heightStatusBar }],

@@ -1,16 +1,11 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
-import { Text, View } from "react-native";
+import React, { FunctionComponent, useEffect, useState } from "react";
+import { KeyboardAvoidingView, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../localization/localization.provider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // helps
 import { useAllNavigation } from "../../../navigators/Navigators.helps";
@@ -34,8 +29,8 @@ import { styles } from "./RegistrationInfo.styles";
 export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { i18n } = useContext(localesContext);
-  const { userData, editUser } = useContext(userContext);
+  const { i18n } = useLocalesProvider();
+  const { userData, editUser } = useUserProvider();
   const [login, setLogin] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("+380");
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
@@ -83,52 +78,58 @@ export const RegistrationInfo: FunctionComponent = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Header
-        title={i18n._("Registration")}
-        isShowLeft={false}
-        isShowRight={false}
-        containerStyle={styles.containerHeader}
-      />
-      <ScrollView>
-        <Text style={styles.title}>
-          <Trans>We recommend filling out the profile information</Trans>
-        </Text>
-        <View style={styles.containerInputs}>
-          <Input
-            label={`${i18n._("Name:")}*`}
-            placeholder={i18n._("Enter your name")}
-            value={login}
-            onChange={onChangeLogin}
-            errorMessage={errorMessageLogin}
-          />
-          <InputPhone
-            isRegular
-            label={i18n._("Phone number")}
-            phoneNumber={phoneNumber}
-            setPhoneNumber={onChangePhone}
-            selectCountryIso={selectCountryIso}
-            setSelectCountryIso={setSelectCountryIso}
-            errorMessage={errorMessagePhone}
-          />
-        </View>
-        <View style={styles.containerButton}>
-          <ButtonCustom
-            disabled={
-              errorMessageLogin.length > 0 || errorMessagePhone.length > 0
-            }
-            title={i18n._("Save")}
-            onSubmit={onSave}
-          />
-          {/* TODO: add later
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
+      <View style={styles.container}>
+        <Header
+          title={i18n._("Registration")}
+          isShowLeft={false}
+          isShowRight={false}
+          containerStyle={styles.containerHeader}
+        />
+        <ScrollView>
+          <Text style={styles.title}>
+            <Trans>We recommend filling out the profile information</Trans>
+          </Text>
+          <View style={styles.containerInputs}>
+            <Input
+              label={`${i18n._("Name:")}*`}
+              placeholder={i18n._("Enter your name")}
+              value={login}
+              onChange={onChangeLogin}
+              errorMessage={errorMessageLogin}
+            />
+            <InputPhone
+              isRegular
+              label={i18n._("Phone number")}
+              phoneNumber={phoneNumber}
+              setPhoneNumber={onChangePhone}
+              selectCountryIso={selectCountryIso}
+              setSelectCountryIso={setSelectCountryIso}
+              errorMessage={errorMessagePhone}
+            />
+          </View>
+          <View style={styles.containerButton}>
+            <ButtonCustom
+              disabled={
+                errorMessageLogin.length > 0 || errorMessagePhone.length > 0
+              }
+              title={i18n._("Save")}
+              onSubmit={onSave}
+            />
+            {/* TODO: add later
           <ButtonCustom
             disabled={errorMessageLogin.length > 0}
             title={i18n._("Fill out later")}
             onSubmit={onLater}
             type="transparent"
           /> */}
-        </View>
-      </ScrollView>
-    </View>
+          </View>
+        </ScrollView>
+      </View>
+    </KeyboardAvoidingView>
   );
 };

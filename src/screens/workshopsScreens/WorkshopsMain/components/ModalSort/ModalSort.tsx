@@ -1,10 +1,10 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // icons
 import { IconClose } from "../../../../../icons/components";
@@ -22,7 +22,7 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
   onClose,
   setTypeSort,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   return (
     <Shadow>

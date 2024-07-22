@@ -1,10 +1,4 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, StatusBar, Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 import { Shadow } from "react-native-shadow-2";
@@ -12,20 +6,16 @@ import { Shadow } from "react-native-shadow-2";
 // types
 import { CurrencyType } from "../../../../../providers/PaymentProvider/PaymentProvider.types";
 import {
-  CountryType,
-  RegionsCountryType,
-} from "../../../../../providers/PlacesProvider/PlacesProvider.types";
-import {
   TypeDataCategory,
   TypeModalCategories,
 } from "../../../MarketAdd/MarketAdd.types";
 import { ModalFilterSubmitType } from "./ModalFilter.types";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
-import { paymentContext } from "../../../../../providers/PaymentProvider/PaymentProvider";
-import { marketContext } from "../../../../../providers/MarketProvider/MarketProvider";
-import { placesContext } from "../../../../../providers/PlacesProvider/PlacesProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { usePaymentProvider } from "../../../../../providers/PaymentProvider/PaymentProvider";
+import { useMarketProvider } from "../../../../../providers/MarketProvider/MarketProvider";
+import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
 // components
 import { Header } from "../../../../../components/Header/Header";
@@ -65,15 +55,15 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   dataFilterOld,
   onSubmit,
 }) => {
-  const { i18n, language } = useContext(localesContext);
-  const { listCurrency } = useContext(paymentContext);
-  const { minMaxPrices } = useContext(marketContext);
-  const { placesFindDB, regionsDB, countriesDB } = useContext(placesContext);
+  const { i18n, language } = useLocalesProvider();
+  const { listCurrency } = usePaymentProvider();
+  const { minMaxPrices } = useMarketProvider();
+  const { placesFindDB, regionsDB, countriesDB } = usePlacesProvider();
   const [selectCurrency, setSelectCurrency] = useState<CurrencyType | null>(
     null
   );
   const [price, setPrice] = useState(200);
-  const [isNew, setIsNew] = useState<boolean | null>(null);
+  const [isNewProduct, setIsNewProduct] = useState<boolean | null>(null);
   const [isBusiness, setIsBusiness] = useState<boolean | null>(null);
   const [isShowPlaces, setIsShowPlaces] = useState(false);
   const [selectPlaces, setSelectPlaces] = useState<FilterCheckboxes | null>(
@@ -177,7 +167,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             max: price,
           }
         : null,
-      isNew,
+      isNewProduct,
       isBusiness,
       ...multiselect,
       selectPlaces,
@@ -198,7 +188,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
         brandMoto: dataFilterOld.brandMoto,
       };
       setIsBusiness(dataFilterOld.isBusiness);
-      setIsNew(dataFilterOld.isNew);
+      setIsNewProduct(dataFilterOld.isNewProduct);
       setMultiselect(multiselectOld);
       if (dataFilterOld.price) {
         const currencyOld =
@@ -263,15 +253,15 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
               inputWrapperStyle={styles.inputWrapperStyleInputButton}
             />
             <SelectTwoButtons
-              isSelectFirst={isNew}
+              isSelectFirst={isNewProduct}
               titleFirst={i18n._("New")}
               titleSecond={i18n._("Used")}
               label={i18n._("The state of the goods:")}
               onPressFirst={() => {
-                setIsNew((state) => (state ? null : true));
+                setIsNewProduct((state) => (state ? null : true));
               }}
               onPressSecond={() => {
-                setIsNew((state) => (state === false ? null : false));
+                setIsNewProduct((state) => (state === false ? null : false));
               }}
               containerStyle={styles.containerTwoButtons}
               labelStyle={styles.labelSelect}

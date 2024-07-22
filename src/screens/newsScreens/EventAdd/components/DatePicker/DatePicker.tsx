@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   Modal,
   Platform,
@@ -17,7 +17,7 @@ import { BlurView } from "expo-blur";
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 import { dateToNMY } from "../../../../../helps/helps";
 
 // styles
@@ -41,7 +41,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
   errorMessage,
   isRegular = false,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const [isShowModal, setIsShowModal] = useState(false);
 
   const inputWrapperStyles = useMemo(

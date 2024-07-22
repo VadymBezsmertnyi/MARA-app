@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-exports */ //enabled export default
 /* eslint-disable react/jsx-max-depth */ //For depth>15
 import React, { useEffect, useRef, useState } from "react";
+import { Platform } from "react-native";
 import {
   NavigationContainer,
   NavigationContainerRef,
@@ -25,24 +26,26 @@ import { useFonts } from "expo-font";
 import { RootAllScreensParamList } from "./src/navigators/Navigators.types";
 
 // providers
-import { LocalesProvider } from "./localization/localization.provider";
-import { ThemeProvider } from "./src/providers/ThemeProvider/ThemeProvider";
-import { BiometricProvider } from "./src/providers/BiometricProvider/BiometricProvider";
-import { LoadingProvider } from "./src/providers/LoadingProvider/LoadingProvider";
-import { UserProvider } from "./src/providers/UserProvider/UserProvider";
-import { MapProvider } from "./src/providers/MapProvider/MapProvider";
-import { WorkshopsProvider } from "./src/providers/WorkshopsProvider/WorkshopsProvider";
-import { WebSocketProvider } from "./src/providers/WebSocketProvider/WebSocketProvider";
-import { ApiProvider } from "./src/providers/ApiProvider/ApiProvider";
-import { EventsProvider } from "./src/providers/EventsProvider/EventsProvider";
-import { PlacesProvider } from "./src/providers/PlacesProvider/PlacesProvider";
-import { MarketProvider } from "./src/providers/MarketProvider/MarketProvider";
-import { PaymentProvider } from "./src/providers/PaymentProvider/PaymentProvider";
-import { PushNotificationProvider } from "./src/providers/PushNotificationProvider/PushNotificationProvider";
-import { AnalyticsProvider } from "./src/providers/AnalyticsProvider/AnalyticsProvider";
-import { SharingProvider } from "./src/providers/SharingProvider/SharingProvider";
-import { BusinessProvider } from "./src/providers/BusinessProvider/BusinessProvider";
-import { PermissionsProvider } from "./src/providers/PermissionsProvider/PermissionsProvider";
+import LocalesProvider from "./localization/localization.provider";
+import ThemeProvider from "./src/providers/ThemeProvider/ThemeProvider";
+import BiometricProvider from "./src/providers/BiometricProvider/BiometricProvider";
+import LoadingProvider from "./src/providers/LoadingProvider/LoadingProvider";
+import UserProvider from "./src/providers/UserProvider/UserProvider";
+import MapProvider from "./src/providers/MapProvider/MapProvider";
+import WorkshopsProvider from "./src/providers/WorkshopsProvider/WorkshopsProvider";
+import WebSocketProvider from "./src/providers/WebSocketProvider/WebSocketProvider";
+import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
+import EventsProvider from "./src/providers/EventsProvider/EventsProvider";
+import PlacesProvider from "./src/providers/PlacesProvider/PlacesProvider";
+import MarketProvider from "./src/providers/MarketProvider/MarketProvider";
+import PaymentProvider from "./src/providers/PaymentProvider/PaymentProvider";
+import PushNotificationProvider from "./src/providers/PushNotificationProvider/PushNotificationProvider";
+import AnalyticsProvider from "./src/providers/AnalyticsProvider/AnalyticsProvider";
+import SharingProvider from "./src/providers/SharingProvider/SharingProvider";
+import BusinessProvider from "./src/providers/BusinessProvider/BusinessProvider";
+import PermissionsProvider from "./src/providers/PermissionsProvider/PermissionsProvider";
+import DropDownAlertProvider from "./src/providers/DropDownAlertProvider/DropDownAlertProvider";
+import SubscriptionProvider from "./src/providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Navigators } from "./src/navigators/Navigators";
@@ -61,7 +64,7 @@ const EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS = process.env
 const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
   .EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB as string;
 
-SplashScreen.preventAutoHideAsync();
+if (Platform.OS === "ios") SplashScreen.preventAutoHideAsync();
 Settings.initializeSDK();
 
 function App() {
@@ -78,17 +81,11 @@ function App() {
   });
 
   const hideSplashScreen = async () => {
-    await SplashScreen.hideAsync();
+    if (Platform.OS === "ios") await SplashScreen.hideAsync();
   };
 
   useEffect(() => {
-    if (appIsReady)
-      (() => {
-        const timeout = setTimeout(hideSplashScreen, 1000);
-        return () => {
-          clearTimeout(timeout);
-        };
-      })();
+    if (appIsReady && Platform.OS === "ios") hideSplashScreen();
   }, [appIsReady]);
 
   useEffect(() => {
@@ -102,67 +99,71 @@ function App() {
   }, []);
 
   return (
-    <WebSocketProvider>
-      <ThemeProvider>
-        <LoadingProvider isLoadingProps={fontsLoaded}>
-          <LocalesProvider>
-            <ApiProvider>
-              <AnalyticsProvider currentRouteName={currentRouteName}>
-                <PlacesProvider>
-                  <BiometricProvider>
-                    <UserProvider>
-                      <NavigationContainer
-                        ref={navigationRef}
-                        onStateChange={() => {
-                          const nameRoute =
-                            navigationRef.current?.getCurrentRoute()?.name;
-                          if (nameRoute) setCurrentRouteName(nameRoute);
-                        }}
-                      >
-                        <EventsProvider>
-                          <SafeAreaProvider>
-                            <PermissionsProvider>
-                              <MapProvider>
-                                <GestureHandlerRootView
-                                  style={styles.gestureHandlerRootView}
-                                >
-                                  <PushNotificationProvider
-                                    currentRouteName={currentRouteName}
-                                  >
-                                    <PaymentProvider>
-                                      <WorkshopsProvider>
-                                        <MarketProvider>
-                                          <SharingProvider>
-                                            <BusinessProvider>
-                                              <Navigators
-                                                currentRouteName={
-                                                  currentRouteName
-                                                }
-                                                navigation={
-                                                  navigationRef.current
-                                                }
-                                              />
-                                            </BusinessProvider>
-                                          </SharingProvider>
-                                        </MarketProvider>
-                                      </WorkshopsProvider>
-                                    </PaymentProvider>
-                                  </PushNotificationProvider>
-                                </GestureHandlerRootView>
-                              </MapProvider>
-                            </PermissionsProvider>
-                          </SafeAreaProvider>
-                        </EventsProvider>
-                      </NavigationContainer>
-                    </UserProvider>
-                  </BiometricProvider>
-                </PlacesProvider>
-              </AnalyticsProvider>
-            </ApiProvider>
-          </LocalesProvider>
-        </LoadingProvider>
-      </ThemeProvider>
-    </WebSocketProvider>
+    <DropDownAlertProvider>
+      <WebSocketProvider>
+        <ThemeProvider>
+          <LoadingProvider isLoadingProps={fontsLoaded}>
+            <LocalesProvider>
+              <ApiProvider>
+                <AnalyticsProvider currentRouteName={currentRouteName}>
+                  <PlacesProvider>
+                    <BiometricProvider>
+                      <UserProvider>
+                        <SubscriptionProvider>
+                          <NavigationContainer
+                            ref={navigationRef}
+                            onStateChange={() => {
+                              const nameRoute =
+                                navigationRef.current?.getCurrentRoute()?.name;
+                              if (nameRoute) setCurrentRouteName(nameRoute);
+                            }}
+                          >
+                            <EventsProvider>
+                              <SafeAreaProvider>
+                                <PermissionsProvider>
+                                  <MapProvider>
+                                    <GestureHandlerRootView
+                                      style={styles.gestureHandlerRootView}
+                                    >
+                                      <PushNotificationProvider
+                                        currentRouteName={currentRouteName}
+                                      >
+                                        <PaymentProvider>
+                                          <WorkshopsProvider>
+                                            <MarketProvider>
+                                              <SharingProvider>
+                                                <BusinessProvider>
+                                                  <Navigators
+                                                    currentRouteName={
+                                                      currentRouteName
+                                                    }
+                                                    navigation={
+                                                      navigationRef.current
+                                                    }
+                                                  />
+                                                </BusinessProvider>
+                                              </SharingProvider>
+                                            </MarketProvider>
+                                          </WorkshopsProvider>
+                                        </PaymentProvider>
+                                      </PushNotificationProvider>
+                                    </GestureHandlerRootView>
+                                  </MapProvider>
+                                </PermissionsProvider>
+                              </SafeAreaProvider>
+                            </EventsProvider>
+                          </NavigationContainer>
+                        </SubscriptionProvider>
+                      </UserProvider>
+                    </BiometricProvider>
+                  </PlacesProvider>
+                </AnalyticsProvider>
+              </ApiProvider>
+            </LocalesProvider>
+          </LoadingProvider>
+        </ThemeProvider>
+      </WebSocketProvider>
+    </DropDownAlertProvider>
   );
 }
 

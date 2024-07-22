@@ -5,7 +5,7 @@ import CurrencyList from "currency-list";
 import { CurrenciesType, CurrencyType } from "./PaymentProvider.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { LIST_CURRENCIES } from "./PaymentProvider.constants";
@@ -22,10 +22,10 @@ type PaymentProviderProps = {
 
 export const paymentContext = React.createContext({} as PaymentContext);
 
-export const PaymentProvider: FunctionComponent<PaymentProviderProps> = ({
+const PaymentProvider: FunctionComponent<PaymentProviderProps> = ({
   children,
 }) => {
-  const { language } = useContext(localesContext);
+  const { language } = useLocalesProvider();
   const [currencies, setCurrencies] = useState<CurrenciesType | null>(null);
   const listCurrency = useMemo(
     () =>
@@ -47,3 +47,7 @@ export const PaymentProvider: FunctionComponent<PaymentProviderProps> = ({
     </paymentContext.Provider>
   );
 };
+
+export const usePaymentProvider = () => useContext(paymentContext);
+
+export default PaymentProvider;

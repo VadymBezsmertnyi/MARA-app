@@ -13,6 +13,7 @@ export const expo = {
   name: "M.A.R.A",
   slug: "mara",
   version: "1.0.0",
+  runtimeVersion: "1.0.0",
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "automatic",
@@ -64,7 +65,7 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 29,
+    versionCode: 31,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
@@ -207,9 +208,6 @@ export const expo = {
     "expo-secure-store",
     ["react-native-appsflyer", { shouldUseStrictMode: true }],
   ],
-  runtimeVersion: {
-    policy: "nativeVersion",
-  },
   updates: {
     url: "https://u.expo.dev/c9b5a1d2-759e-4704-9171-69ad591def63",
   },

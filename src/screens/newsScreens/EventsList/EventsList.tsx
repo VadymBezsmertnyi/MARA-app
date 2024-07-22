@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
@@ -6,8 +6,8 @@ import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // providers
-import { localesContext } from "../../../../localization/localization.provider";
-import { eventsContext } from "../../../providers/EventsProvider/EventsProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -40,8 +40,8 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
 }) => {
   const { params } = route;
   const { top, bottom } = useSafeAreaInsets();
-  const { eventsList } = useContext(eventsContext);
-  const { i18n } = useContext(localesContext);
+  const { eventsList } = useEventsProvider();
+  const { i18n } = useLocalesProvider();
   const [valueSearch, setValueSearch] = useState("");
   const [selectPlace, setSelectPlace] = useState<PlaceDbType | null>(null);
 

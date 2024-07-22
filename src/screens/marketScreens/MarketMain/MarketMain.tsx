@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   FlatList,
   ListRenderItem,
@@ -16,9 +16,10 @@ import { RootMarketScreensParamList } from "../../../navigators/Navigators.types
 import { ProductType } from "../../../providers/MarketProvider/MarketProvider.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { marketContext } from "../../../providers/MarketProvider/MarketProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useMarketProvider } from "../../../providers/MarketProvider/MarketProvider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -55,9 +56,10 @@ type MarketMainProps = {
 export const MarketMain: FunctionComponent<MarketMainProps> = ({
   navigation,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { products, minMaxPrices } = useContext(marketContext);
+  const { i18n } = useLocalesProvider();
+  const { infoAdverts, infoBusinessAdverts } = useSubscriptionProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { products, minMaxPrices } = useMarketProvider();
   const [productName, setProductName] = useState("");
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
@@ -97,9 +99,9 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
           const brandAutoProductId =
             product.auto?.brandId || product.autoParts?.brandId || null;
           const isPrice = getIsPrice(product, dataFilter);
-          const isNew =
-            dataFilter.isNew !== null
-              ? dataFilter.isNew === product.isNew
+          const isNewProduct =
+            dataFilter.isNewProduct !== null
+              ? dataFilter.isNewProduct === product.isNewProduct
               : true;
           const isBusiness =
             dataFilter.isBusiness !== null
@@ -146,7 +148,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
 
           return (
             isPrice &&
-            isNew &&
+            isNewProduct &&
             isBusiness &&
             isCategory &&
             isBrandMoto &&
@@ -209,7 +211,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
     navigation.navigate(PATHS_MARKET_SCREENS.marketAdd);
   };
 
-  const onSelectProduct = (productId: number) => {
+  const onSelectProduct = (productId: string) => {
     navigation.navigate(PATHS_MARKET_SCREENS.marketItem, {
       productId,
     });
@@ -306,6 +308,12 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
           )}
         </View>
         <AddEventButton
+          disabled={
+            !Boolean(
+              infoAdverts.amountAdvert > 0 ||
+                infoBusinessAdverts.amountBusinessAdvert > 0
+            )
+          }
           onPress={onPressAddProduct}
           accessibilityLabel={i18n._("Add product")}
         />

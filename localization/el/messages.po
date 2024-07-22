@@ -58,6 +58,14 @@ msgid "Make the main photo"
 msgstr "Κάντε την κύρια φωτογραφία"
 
 #. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Όλες οι πόλεις"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Δεν βρέθηκαν πόλεις"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Μειώστε το μέγιστο αριθμό"
 
@@ -140,6 +148,26 @@ msgstr "Επιλέξτε τύπο εργασίας αυτοκινήτου"
 #. js-lingui-explicit-id
 msgid "Background overlay for closing the modal window"
 msgstr "Υπόβαθρο επικάλυψης για το κλείσιμο του παραθύρου modal"
+
+#. js-lingui-explicit-id
+msgid "Attention!"
+msgstr "Προσοχή!"
+
+#. js-lingui-explicit-id
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Δυστυχώς, επί του παρόντος είναι αδύνατο να αυξηθεί ο αριθμός των διαθέσιμων διαφημίσεων, εργαστηρίων ή εκδηλώσεων, καθώς η εφαρμογή βρίσκεται σε δοκιμαστική λειτουργία. Εάν έχετε οποιεσδήποτε απορίες, παρακαλούμε επικοινωνήστε με τη διαχείριση ή αφήστε σχόλια."
+
+#. js-lingui-explicit-id
+msgid "-- or --"
+msgstr "-- ή --"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Αναφορά σφάλματος/βελτίωσης"
+
+#. js-lingui-explicit-id
+msgid "Thank you for understanding!"
+msgstr "Σας ευχαριστούμε για την κατανόηση!"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -522,8 +550,20 @@ msgid "Event delete"
 msgstr "Διαγραφή εκδήλωσης"
 
 #. js-lingui-explicit-id
+msgid "Success"
+msgstr "Επιτυχία"
+
+#. js-lingui-explicit-id
 msgid "Advert delete"
 msgstr "Διαγραφή διαφήμισης"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Αποδοχή"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -550,12 +590,20 @@ msgid "The photo has been changed"
 msgstr "Η φωτογραφία άλλαξε"
 
 #. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Η φωτογραφία δεν άλλαξε"
+
+#. js-lingui-explicit-id
 msgid "Delete"
 msgstr "Διαγραφή"
 
 #. js-lingui-explicit-id
 msgid "Change"
 msgstr "Αλλαγή"
+
+#. js-lingui-explicit-id
+msgid "Access denied"
+msgstr "Άρνηση πρόσβασης"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -726,8 +774,8 @@ msgid "Your telegram"
 msgstr "Το τηλέγραφός σας"
 
 #. js-lingui-explicit-id
-msgid "Phone number:"
-msgstr "Αριθμός τηλεφώνου:"
+msgid "Phone number"
+msgstr "Αριθμός τηλεφώνου"
 
 #. js-lingui-explicit-id
 msgid "Add a description"
@@ -736,10 +784,6 @@ msgstr "Προσθήκη περιγραφής"
 #. js-lingui-explicit-id
 msgid "Description"
 msgstr "Περιγραφή"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Ακύρωση"
 
 #. js-lingui-explicit-id
 msgid "On SOS"
@@ -772,10 +816,6 @@ msgstr "Όροι χρήσης"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Πολιτική απορρήτου"
-
-#. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Αναφορά σφάλματος/βελτίωσης"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -838,6 +878,10 @@ msgid "Error creating advert"
 msgstr "Σφάλμα κατά τη δημιουργία της αγγελίας"
 
 #. js-lingui-explicit-id
+msgid "Error"
+msgstr "Σφάλμα"
+
+#. js-lingui-explicit-id
 msgid "Add advert"
 msgstr "Προσθήκη αγγελίας"
 
@@ -888,10 +932,6 @@ msgstr "Προσθήκη περιγραφής για την αγγελία"
 #. js-lingui-explicit-id
 msgid "Advert description"
 msgstr "Περιγραφή αγγελίας"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Αριθμός τηλεφώνου"
 
 #. js-lingui-explicit-id
 msgid "Publish"
@@ -1174,8 +1214,8 @@ msgid "City"
 msgstr "Πόλη"
 
 #. js-lingui-explicit-id
-msgid "Additional number 1:"
-msgstr "Πρόσθετος αριθμός 1:"
+msgid "Additional number {numberOtherPhone}"
+msgstr "Επιπλέον αριθμός {numberOtherPhone}"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -1184,6 +1224,10 @@ msgstr "εκδηλώσεις"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εκδηλώσεων"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Αγοράστε εκδήλωση"
 
 #. js-lingui-explicit-id
 msgid "Improve"
@@ -1208,6 +1252,10 @@ msgstr "Προσοχή! Όλα τα δεδομένα που σχετίζοντα
 #. js-lingui-explicit-id
 msgid "Add"
 msgstr "Προσθήκη"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Αγοράστε επιπλέον"
 
 #. js-lingui-explicit-id
 msgid "Expended: {amountUsed}"
@@ -1246,12 +1294,16 @@ msgid "Button for closing the settings products screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων προϊόντων"
 
 #. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Αγοράστε αγγελία"
+
+#. js-lingui-explicit-id
 msgid "The photo added"
 msgstr "Η φωτογραφία προστέθηκε"
 
 #. js-lingui-explicit-id
-msgid "Save profile"
-msgstr "Αποθήκευση προφίλ"
+msgid "Profile saved"
+msgstr "Το προφίλ αποθηκεύτηκε"
 
 #. js-lingui-explicit-id
 msgid "Error: save profile"
@@ -1272,6 +1324,14 @@ msgstr "εργαστήρια"
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εργαστηρίων"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Προσθήκη εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Αγοράστε εργαστήριο"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1324,10 +1384,6 @@ msgstr "Σφάλμα κατά την αλλαγή του εργαστηρίου"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Σφάλμα κατά τη δημιουργία του εργαστηρίου"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Προσθήκη εργαστηρίου"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop"
@@ -1426,9 +1482,6 @@ msgstr "{distance} χλμ"
 
 msgid "About us:"
 msgstr "Σχετικά με εμάς:"
-
-msgid "Access denied"
-msgstr "Άρνηση πρόσβασης"
 
 msgid "Access to geolocation in the background mode"
 msgstr "Πρόσβαση στη γεωγραφική τοποθεσία στη λειτουργία φόντου"
@@ -1532,24 +1585,6 @@ msgstr "Θέλετε να στείλετε ένα σήμα SOS;"
 msgid "Enable logging into the app using Face ID"
 msgstr "Ενεργοποίηση σύνδεσης στην εφαρμογή χρησιμοποιώντας το Face ID"
 
-msgid "Error key token: Secret key is not defined in the environment variables"
-msgstr "Σφάλμα κλειδιού του token: Το μυστικό κλειδί δεν έχει οριστεί στις μεταβλητές περιβάλλοντος"
-
-msgid "Error: Invalid phone number or password"
-msgstr "Σφάλμα: Μη έγκυρος αριθμός τηλεφώνου ή κωδικός πρόσβασης"
-
-msgid "Error: Invalid token"
-msgstr "Σφάλμα: Μη έγκυρο token"
-
-msgid "Error: Token expired"
-msgstr "Σφάλμα: Το token έχει λήξει"
-
-msgid "Error: User already exists"
-msgstr "Σφάλμα: Ο χρήστης υπάρχει ήδη"
-
-msgid "Error: User not found"
-msgstr "Σφάλμα: Ο χρήστης δεν βρέθηκε"
-
 msgid "Event"
 msgstr "Εκδήλωση"
 
@@ -1570,9 +1605,6 @@ msgstr "Εάν δεν υπάρχει κατάλληλη επιλογή στη λ
 
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
 msgstr "Εισάγατε εσφαλμένο αριθμό τηλεφώνου ή επιλέξατε εσφαλμένο κωδικό χώρας"
-
-msgid "Internal Server Error"
-msgstr "Εσωτερικό σφάλμα του διακομιστή"
 
 msgid "Language selection"
 msgstr "Επιλογή γλώσσας"

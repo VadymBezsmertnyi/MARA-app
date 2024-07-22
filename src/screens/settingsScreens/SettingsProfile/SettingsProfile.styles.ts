@@ -9,13 +9,13 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    paddingHorizontal: 20,
     gap: 10,
   },
   containerHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingHorizontal: 20,
   },
   buttonsHeaderLeft: {
     width: "30%",

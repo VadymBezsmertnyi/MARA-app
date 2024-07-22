@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
@@ -42,7 +42,7 @@ export const ModalSheetTypeWorkshops: FunctionComponent<
   setTypeWorkshops,
   onSubmit,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   return (
     <ModalsSheet isShow={isShowTypeWorkshops} onClose={onClose}>

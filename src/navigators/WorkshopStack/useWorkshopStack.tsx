@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { PATHS_WORKSHOP_SCREENS } from "../useNavigator.constants";
@@ -13,7 +12,7 @@ import { WorkshopsItem } from "../../screens/workshopsScreens/WorkshopsItem/Work
 import { WorkshopAdd } from "../../screens/workshopsScreens/WorkshopAdd/WorkshopAdd";
 
 export const useWorkshopStack = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const workshopsScreens = [
     {

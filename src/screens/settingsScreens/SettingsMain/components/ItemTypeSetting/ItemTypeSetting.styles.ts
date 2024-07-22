@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
-import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../../../styles/hooks";
 import {
   FONT_400_OPEN_SANS,
   FONT_600_OPEN_SANS,
@@ -24,6 +28,16 @@ export const styles = StyleSheet.create({
   titleButtonFirstLine: {
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 15,
+  },
+  buttonBusinessLogo: {
+    flex: 1,
+    height: "auto",
+  },
+  titleButtonBusinessLogo: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: scaleFont(12),
+    paddingVertical: verticalScale(2),
+    paddingHorizontal: horizontalScale(5),
   },
   titleMiddleLine: {
     fontFamily: FONT_400_OPEN_SANS,

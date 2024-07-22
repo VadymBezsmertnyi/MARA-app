@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Text, View, ViewStyle } from "react-native";
 
 // types
 import { ImageType } from "../ImageModal/ImageModal.types";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { ImagesSelect } from "../ImagesSelect/ImagesSelect";
@@ -28,7 +28,7 @@ export const BoxSelectImages: FunctionComponent<BoxSelectImagesProps> = ({
   isSubTitle = false,
   containerStyle,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const containerStyles = useMemo(
     () => [styles.container, containerStyle],

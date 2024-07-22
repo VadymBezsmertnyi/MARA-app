@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 import { TypeWorksType } from "./WorkshopsProvider.types";
 
-export const useWorkshopsProvider = () => {
-  const { i18n } = useContext(localesContext);
+export const useWorkshopsProviderState = () => {
+  const { i18n } = useLocalesProvider();
   const typesWorkServices: { auto: TypeWorksType; moto: TypeWorksType } = {
     auto: [
       {

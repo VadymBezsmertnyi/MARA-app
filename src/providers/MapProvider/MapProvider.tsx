@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { Linking } from "react-native";
-import { userContext } from "../UserProvider/UserProvider";
+import { useUserProvider } from "../UserProvider/UserProvider";
 import * as TaskManager from "expo-task-manager";
 import * as Location from "expo-location";
 import * as BackgroundFetch from "expo-background-fetch";
@@ -16,9 +16,9 @@ import { z } from "zod";
 import { UserLocationMapType, UserLocationSosType } from "./MapProvider.types";
 
 // providers
-import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { permissionsContext } from "../PermissionsProvider/PermissionsProvider";
+import { useWebSocketProvider } from "../WebSocketProvider/WebSocketProvider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { usePermissionsProvider } from "../PermissionsProvider/PermissionsProvider";
 
 // schemas
 import {
@@ -53,14 +53,12 @@ const INTERVAL_BACKGROUND = 60;
 
 export const mapContext = React.createContext({} as MapContext);
 
-export const MapProvider: FunctionComponent<MapProviderProps> = ({
-  children,
-}) => {
-  const { api } = useContext(apiContext);
-  const { userData } = useContext(userContext);
-  const { sendLocation } = useContext(webSocketContext);
+const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
+  const { api } = useApiProvider();
+  const { userData } = useUserProvider();
+  const { sendLocation } = useWebSocketProvider();
   const { locationForegroundPermission, locationBackgroundPermission } =
-    useContext(permissionsContext);
+    usePermissionsProvider();
   const [location, setLocation] =
     useState<Location.LocationObjectCoords | null>(null);
   const [startGetGeolocation, setStartGetGeolocation] =
@@ -270,3 +268,7 @@ export const MapProvider: FunctionComponent<MapProviderProps> = ({
     <mapContext.Provider value={valueContext}>{children}</mapContext.Provider>
   );
 };
+
+export const useMapProvider = () => useContext(mapContext);
+
+export default MapProvider;

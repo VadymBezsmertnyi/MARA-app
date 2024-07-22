@@ -1,10 +1,10 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Gallery from "react-native-awesome-gallery";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { ImageCache } from "../ImageCache/ImageCache";
@@ -25,7 +25,7 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
   data,
   onClose,
 }) => {
-  const { heightStatusBar } = useContext(themeContext);
+  const { heightStatusBar } = useThemeProvider();
 
   const containerHeaderStyles = useMemo(
     () => [styles.containerHeader, { paddingTop: heightStatusBar + 4 }],

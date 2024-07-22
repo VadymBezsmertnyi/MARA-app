@@ -1,12 +1,7 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import {
   ImageURISource,
+  KeyboardAvoidingView,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -17,15 +12,17 @@ import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // providers
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -37,7 +34,6 @@ import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace
 import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
 
 // helps
-import showErrors from "../../../helps/errors/showError";
 import { compressAndProcessImages } from "../../../helps/helps";
 import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -67,19 +63,19 @@ type SettingsProfileProps = {
 export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   navigation,
 }) => {
+  const { messageFromServer } = useDropDownAlertProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const { userData, editUser, exitUser, deleteUser, setIsChangeAvatar } =
-    useContext(userContext);
-  const { i18n, language } = useContext(localesContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { placesDB } = useContext(placesContext);
+    useUserProvider();
+  const { i18n, language } = useLocalesProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { placesDB } = usePlacesProvider();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [isShowModal, setIsShowModal] = useState(false);
   const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
-  const { warning, success } = showErrors;
   const showTitlePlace = useMemo(() => {
     if (!userData?.place_id) return "";
     return userData.place_id[language].formatted_address;
@@ -119,9 +115,24 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         },
       });
 
-      if (!resultUpdate) warning(i18n._("Sorry, an error occurred"));
-      else success(i18n._("The photo added"));
-    } else warning(i18n._("Sorry, an error occurred"));
+      if (!resultUpdate)
+        messageFromServer(
+          i18n._("The photo has been changed"),
+          i18n._("Success"),
+          DropdownAlertType.Success
+        );
+      else
+        messageFromServer(
+          i18n._("The photo added"),
+          i18n._("Success"),
+          DropdownAlertType.Success
+        );
+    } else
+      messageFromServer(
+        i18n._("Sorry, an error occurred"),
+        i18n._("Error"),
+        DropdownAlertType.Warn
+      );
   };
 
   const onChangePhoto = () => {
@@ -170,10 +181,19 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
       ...(isPhone && { phoneNumber: clearPhoneNumber }),
     });
     if (resultSave) {
-      success(i18n._("Save profile"));
+      messageFromServer(
+        i18n._("Profile saved"),
+        i18n._("Success"),
+        DropdownAlertType.Success
+      );
       navigation.navigate(PATHS_SETTINGS_SCREENS.settingsMain);
       setCity(null);
-    } else warning(i18n._("Error: save profile"));
+    } else
+      messageFromServer(
+        i18n._("Error: save profile"),
+        i18n._("Error"),
+        DropdownAlertType.Warn
+      );
   };
 
   useEffect(() => {
@@ -193,7 +213,11 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   }, [placesDB]);
 
   return (
-    <>
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
       <View style={containerStyles}>
         <View style={styles.containerHeader}>
           <TouchableOpacity
@@ -216,7 +240,11 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
             </Text>
           </TouchableOpacity>
         </View>
-        <ScrollView>
+        <ScrollView
+          contentContainerStyle={{
+            paddingHorizontal: 20,
+          }}
+        >
           <View style={styles.containerAvatar}>
             <ImageProfile
               imageSource={imageSource}
@@ -277,6 +305,6 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         }}
         statePlace={city || undefined}
       />
-    </>
+    </KeyboardAvoidingView>
   );
 };

@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { t } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { PATHS_EVENTS_SCREENS } from "../useNavigator.constants";
@@ -14,7 +13,7 @@ import { EventItem } from "../../screens/newsScreens/EventItem/EventItem";
 import { AddEvent } from "../../screens/newsScreens/EventAdd/EventAdd";
 
 export const useNewsStack = () => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
 
   const eventsScreens = [
     {

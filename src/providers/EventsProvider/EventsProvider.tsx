@@ -15,23 +15,22 @@ import { EventType, UpcomingEvents } from "./EventsProvider.types";
 import { getSortEvents } from "./EventsProvider.hooks";
 
 // providers
-import { userContext } from "../UserProvider/UserProvider";
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { loadingContext } from "../LoadingProvider/LoadingProvider";
-import { localesContext } from "../../../localization/localization.provider";
-import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
+import { useUserProvider } from "../UserProvider/UserProvider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
+import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
-
-// helps
-import showErrors from "../../helps/errors/showError";
 
 // constants
 import { PATHS } from "../paths.constants";
 
 // schemas
 import { eventSchema, resultEventsSchema } from "./EventsProvider.schemas";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 type NewEventType = Omit<EventType, "_id" | "userId" | "likeUserIds"> & {
   userId: string;
@@ -57,18 +56,18 @@ type EventsProviderType = {
 
 export const eventsContext = React.createContext({} as EventsContext);
 
-export const EventsProvider: FunctionComponent<EventsProviderType> = ({
+const EventsProvider: FunctionComponent<EventsProviderType> = ({
   children,
 }) => {
-  const { i18n } = useContext(localesContext);
-  const { userData } = useContext(userContext);
-  const { api } = useContext(apiContext);
-  const { setLoading } = useContext(loadingContext);
-  const { onSetUserProperties } = useContext(analyticsContext);
+  const { messageFromServer } = useDropDownAlertProvider();
+  const { i18n } = useLocalesProvider();
+  const { userData } = useUserProvider();
+  const { api } = useApiProvider();
+  const { setLoading } = useLoadingProvider();
+  const { onSetUserProperties } = useAnalyticsProvider();
   const [eventsList, setEventsList] = useState<UpcomingEvents>([]);
   const [eventsUserList, setEventsUserList] = useState<UpcomingEvents>([]);
   const [idDeleteEvent, setIdDeleteEvent] = useState<string | null>(null);
-  const { success } = showErrors;
 
   const getEvents = async () => {
     const result = await api(PATHS.eventsGet, null, resultEventsSchema);
@@ -206,7 +205,11 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
         <ModalDelete
           onSubmit={async () => {
             await deleteEvent(idDeleteEvent, "user");
-            success(i18n._("Event delete"));
+            messageFromServer(
+              i18n._("Event delete"),
+              i18n._("Success"),
+              DropdownAlertType.Success
+            );
             setIdDeleteEvent(null);
           }}
           onClose={() => {
@@ -217,3 +220,7 @@ export const EventsProvider: FunctionComponent<EventsProviderType> = ({
     </eventsContext.Provider>
   );
 };
+
+export const useEventsProvider = () => useContext(eventsContext);
+
+export default EventsProvider;

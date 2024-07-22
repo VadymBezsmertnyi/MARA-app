@@ -1,14 +1,9 @@
-import React, {
-  FunctionComponent,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 //types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
@@ -19,13 +14,14 @@ import {
 } from "../../../navigators/Navigators.types";
 
 // providers
-import { themeContext } from "../../../providers/ThemeProvider/ThemeProvider";
-import { localesContext } from "../../../../localization/localization.provider";
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
-import { userContext } from "../../../providers/UserProvider/UserProvider";
-import { workshopsContext } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
-import { placesContext } from "../../../providers/PlacesProvider/PlacesProvider";
-import { loadingContext } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
+import { useWorkshopsProviderState } from "../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
+import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -47,7 +43,6 @@ import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearch
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { useErrors } from "../../../helps/useErrors";
 import { getClearValue } from "../../../helps/regexp";
-import showErrors from "../../../helps/errors/showError";
 
 // constants
 import {
@@ -71,17 +66,17 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     useRoute<
       RouteProp<RootWorkshopsScreensParamList & RootSettingsScreensParamList>
     >();
-  const { i18n, language } = useContext(localesContext);
+  const { messageFromServer } = useDropDownAlertProvider();
+  const { i18n, language } = useLocalesProvider();
   const { getErrorText } = useErrors(i18n);
-  const { heightStatusBar } = useContext(themeContext);
+  const { heightStatusBar } = useThemeProvider();
   const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
-    useContext(workshopsContext);
-  const { userData } = useContext(userContext);
-  const { placesDB, getPlace } = useContext(placesContext);
-  const { setLoading } = useContext(loadingContext);
-  const { typesWorkServices } = useWorkshopsProvider();
+    useWorkshopsProvider();
+  const { userData } = useUserProvider();
+  const { placesDB, getPlace } = usePlacesProvider();
+  const { setLoading } = useLoadingProvider();
+  const { typesWorkServices } = useWorkshopsProviderState();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { success, bug } = showErrors;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
@@ -287,16 +282,20 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
 
       if (isCreate) {
         navigation.goBack();
-        success(
+        messageFromServer(
           selectWorkshop
             ? i18n._("Workshop change successfully")
-            : i18n._("Workshop created successfully")
+            : i18n._("Workshop created successfully"),
+          i18n._("Success"),
+          DropdownAlertType.Success
         );
       } else
-        bug(
+        messageFromServer(
           selectWorkshop
             ? i18n._("Error changing workshop")
-            : i18n._("Error creating workshop")
+            : i18n._("Error creating workshop"),
+          i18n._("Error"),
+          DropdownAlertType.Error
         );
     }
   };

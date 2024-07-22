@@ -1,50 +1,50 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
 import { Platform } from "react-native";
-import { t } from "@lingui/macro";
 import { User } from "@react-native-google-signin/google-signin";
 import { z } from "zod";
+import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import type { FunctionComponent } from "react";
 import type { Props, Context, UserDataT } from "./UserProvider.types";
 
 // schemas
-import { resultUserDataS, userDataS } from "./UserProvider.schemas";
+import { userDataS } from "./UserProvider.schemas";
 
 // providers
-import { loadingContext } from "../LoadingProvider/LoadingProvider";
-import { webSocketContext } from "../WebSocketProvider/WebSocketProvider";
-import { apiContext } from "../ApiProvider/ApiProvider";
-import { biometricAuthenticatorContext } from "../BiometricProvider/BiometricProvider";
-import { localesContext } from "../../../localization/localization.provider";
-import { analyticsContext } from "../AnalyticsProvider/AnalyticsProvider";
+import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
+import { useWebSocketProvider } from "../WebSocketProvider/WebSocketProvider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
+import { useBiometricProvider } from "../BiometricProvider/BiometricProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
+import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
 
 // helps
-import showErrors from "../../helps/errors/showError";
-import { getErrors } from "../../helps/errors/errors.helps";
 import {
   deleteDeviceStorage,
+  getDeviceStorage,
   setDeviceStorage,
 } from "../../helps/storage.help";
 
 // constants
 import { DEFAULT_USER_DATA } from "./UserProvider.constants";
 import { PATHS } from "../paths.constants";
-import { TOKEN_NAME } from "./UserProvider.constants";
+import { TOKEN_KEY_ASYNC_STORAGE } from "./UserProvider.constants";
 
 export const userContext = createContext<Context>({} as Context);
 
-export const UserProvider: FunctionComponent<Props> = (props) => {
-  const { i18n } = useContext(localesContext);
-  const { setUserData: setUserDataSocket } = useContext(webSocketContext);
-  const { checkBiometric } = useContext(biometricAuthenticatorContext);
-  const { api } = useContext(apiContext);
-  const { setLoading } = useContext(loadingContext);
-  const { onSetUserProperties } = useContext(analyticsContext);
-  const { info, bug, warning } = showErrors;
+const UserProvider: FunctionComponent<Props> = (props) => {
+  const { messageFromServer } = useDropDownAlertProvider();
+  const { i18n } = useLocalesProvider();
+  const { setUserData: setUserDataSocket } = useWebSocketProvider();
+  const { checkBiometric } = useBiometricProvider();
+  const { api } = useApiProvider();
+  const { setLoading } = useLoadingProvider();
+  const { onSetUserProperties } = useAnalyticsProvider();
   const [userData, setUserData] = useState<UserDataT | null>(null);
   const [isChangeAvatar, setIsChangeAvatar] = useState(false);
 
@@ -70,10 +70,14 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   };
 
   const setNewUserData = async (
-    verifyToken: string | null,
-    newUserData: UserDataT
+    newUserData: UserDataT,
+    tokens?: {
+      accessToken: string;
+      refreshToken: string;
+    }
   ) => {
-    if (verifyToken) await setDeviceStorage(TOKEN_NAME, verifyToken);
+    if (tokens)
+      await setDeviceStorage(TOKEN_KEY_ASYNC_STORAGE, JSON.stringify(tokens));
     setUserData({
       ...DEFAULT_USER_DATA,
       ...newUserData,
@@ -97,15 +101,24 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
             accessToken,
           },
         },
-        userDataS
+        z.object({
+          userData: userDataS,
+          tokens: z.object({
+            accessToken: z.string(),
+            refreshToken: z.string(),
+          }),
+        })
       );
       if (resultCreateNewUser) {
-        setNewUserData(resultCreateNewUser.verifyToken, resultCreateNewUser);
-        return resultCreateNewUser;
+        setNewUserData(
+          resultCreateNewUser.userData,
+          resultCreateNewUser.tokens
+        );
+        return resultCreateNewUser.userData;
       }
       return null;
     } catch (error: any) {
-      bug(error);
+      messageFromServer(error.toString(), "Error", DropdownAlertType.Error);
       return null;
     } finally {
       setLoading(false);
@@ -123,15 +136,24 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
             idToken: userData.idToken,
           },
         },
-        userDataS
+        z.object({
+          userData: userDataS,
+          tokens: z.object({
+            accessToken: z.string(),
+            refreshToken: z.string(),
+          }),
+        })
       );
       if (resultCreateNewUser) {
-        setNewUserData(resultCreateNewUser.verifyToken, resultCreateNewUser);
-        return resultCreateNewUser;
+        setNewUserData(
+          resultCreateNewUser.userData,
+          resultCreateNewUser.tokens
+        );
+        return resultCreateNewUser.userData;
       }
       return null;
     } catch (error: any) {
-      bug(error);
+      messageFromServer(error.toString(), "Error", DropdownAlertType.Error);
       return null;
     } finally {
       setLoading(false);
@@ -151,15 +173,24 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
             identityToken,
           },
         },
-        userDataS
+        z.object({
+          userData: userDataS,
+          tokens: z.object({
+            accessToken: z.string(),
+            refreshToken: z.string(),
+          }),
+        })
       );
       if (resultCreateNewUser) {
-        setNewUserData(resultCreateNewUser.verifyToken, resultCreateNewUser);
-        return resultCreateNewUser;
+        setNewUserData(
+          resultCreateNewUser.userData,
+          resultCreateNewUser.tokens
+        );
+        return resultCreateNewUser.userData;
       }
       return null;
     } catch (error: any) {
-      bug(error);
+      messageFromServer(error.toString(), "Error", DropdownAlertType.Error);
       return null;
     } finally {
       setLoading(false);
@@ -185,19 +216,22 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
               time_token: 1,
             },
           },
-          resultUserDataS
+          z.object({
+            userData: userDataS,
+            tokens: z.object({
+              accessToken: z.string(),
+              refreshToken: z.string(),
+            }),
+          })
         );
 
         if (resultCreateNewUser && userData)
           await setAnalytics(resultCreateNewUser.userData, userData);
 
-        if (
-          resultCreateNewUser?.result &&
-          resultCreateNewUser.userData.verifyToken
-        ) {
+        if (resultCreateNewUser?.tokens) {
           await setDeviceStorage(
-            TOKEN_NAME,
-            resultCreateNewUser.userData.verifyToken
+            TOKEN_KEY_ASYNC_STORAGE,
+            JSON.stringify(resultCreateNewUser.tokens)
           );
           setUserData({
             ...DEFAULT_USER_DATA,
@@ -207,30 +241,41 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
             ...DEFAULT_USER_DATA,
             ...resultCreateNewUser.userData,
           });
-        } else info(getErrors(i18n)[resultCreateNewUser?.code || ""]);
+        }
         return true;
       } catch (error: any) {
-        bug(error);
+        messageFromServer(error.toString(), "Error", DropdownAlertType.Error);
         return false;
       } finally {
         setLoading(false);
       }
-    else info(t(i18n)`Access denied`);
+    else
+      messageFromServer(
+        i18n._("Access denied"),
+        "Info",
+        DropdownAlertType.Info
+      );
     return false;
   };
 
   const meUser = async (isLoading: boolean): Promise<UserDataT | null> => {
     try {
+      const token = await getDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
+      if (!token) return null;
       if (isLoading) setLoading(true);
-      const result = await api(PATHS.me, undefined, userDataS);
-      if (result) {
-        const isCheckBiometric = result.isCheckBiometric
+      const result = await api(
+        PATHS.me,
+        undefined,
+        z.object({ userData: userDataS })
+      );
+      if (result?.userData) {
+        const isCheckBiometric = result.userData.isCheckBiometric
           ? await checkBiometric()
           : true;
 
         if (!isCheckBiometric) return null;
 
-        const userData = { ...DEFAULT_USER_DATA, ...result };
+        const userData = { ...DEFAULT_USER_DATA, ...result.userData };
         setUserData(userData);
         setUserDataSocket(userData);
         return userData;
@@ -238,8 +283,9 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
       return null;
     } catch (error: any) {
       if (error instanceof Error) {
-        bug(error);
-      } else warning(error);
+        messageFromServer(error.toString(), "Error", DropdownAlertType.Error);
+      } else
+        messageFromServer(error.toString(), "Warning", DropdownAlertType.Warn);
       return null;
     } finally {
       setLoading(false);
@@ -249,14 +295,15 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
   const exitUser = async (): Promise<boolean> => {
     try {
       setLoading(true);
-      await deleteDeviceStorage(TOKEN_NAME);
+      await deleteDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
       setUserData(null);
       setUserDataSocket(null);
       return true;
     } catch (error: any) {
       if (error instanceof Error) {
-        showErrors.bug(error);
-      } else showErrors.warning(error);
+        messageFromServer(error.toString(), "Error", DropdownAlertType.Error);
+      } else
+        messageFromServer(error.toString(), "Warning", DropdownAlertType.Warn);
       return false;
     } finally {
       setLoading(false);
@@ -275,7 +322,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
           },
           z.object({ result: z.boolean() })
         );
-        await deleteDeviceStorage(TOKEN_NAME);
+        await deleteDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
         setUserData(null);
         setUserDataSocket(null);
         return true;
@@ -283,8 +330,9 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
       return false;
     } catch (error: any) {
       if (error instanceof Error) {
-        showErrors.bug(error);
-      } else showErrors.warning(error);
+        messageFromServer(error.toString(), "Error", DropdownAlertType.Error);
+      } else
+        messageFromServer(error.toString(), "Warning", DropdownAlertType.Warn);
       return false;
     } finally {
       setLoading(false);
@@ -323,3 +371,7 @@ export const UserProvider: FunctionComponent<Props> = (props) => {
     </userContext.Provider>
   );
 };
+
+export const useUserProvider = () => useContext(userContext);
+
+export default UserProvider;

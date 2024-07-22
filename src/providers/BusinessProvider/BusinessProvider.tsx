@@ -15,8 +15,8 @@ import { businessMarketSchema } from "./BusinessProvider.schemas";
 import { BusinessMarketType } from "./BusinessProvider.types";
 
 // providers
-import { userContext } from "../UserProvider/UserProvider";
-import { apiContext } from "../ApiProvider/ApiProvider";
+import { useUserProvider } from "../UserProvider/UserProvider";
+import { useApiProvider } from "../ApiProvider/ApiProvider";
 
 // components
 import { ItemSearchPlaceAddressType } from "../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
@@ -53,11 +53,11 @@ type BusinessProviderProps = {
 
 export const businessContext = React.createContext({} as BusinessContext);
 
-export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
+const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
   children,
 }) => {
-  const { api } = useContext(apiContext);
-  const { userData } = useContext(userContext);
+  const { api } = useApiProvider();
+  const { userData } = useUserProvider();
   const [businessMarketUser, setBusinessMarketUser] =
     useState<BusinessMarketType | null>(null);
 
@@ -153,3 +153,7 @@ export const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
     </businessContext.Provider>
   );
 };
+
+export const useBusinessProvider = () => useContext(businessContext);
+
+export default BusinessProvider;

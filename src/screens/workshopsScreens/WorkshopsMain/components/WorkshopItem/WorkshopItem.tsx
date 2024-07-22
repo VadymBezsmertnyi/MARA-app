@@ -1,10 +1,10 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
 
 // providers
-import { localesContext } from "../../../../../../localization/localization.provider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../../../navigators/Navigators.types";
@@ -53,7 +53,7 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
   isAutoService,
   image,
 }) => {
-  const { i18n } = useContext(localesContext);
+  const { i18n } = useLocalesProvider();
   const selectNew = () => {
     navigation.navigate(PATHS_WORKSHOP_SCREENS.workshopItem, { workshopId });
   };

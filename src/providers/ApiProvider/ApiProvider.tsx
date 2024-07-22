@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useContext, useMemo } from "react";
 import { Platform } from "react-native";
 import { ZodSchema, z } from "zod";
 import axios, { AxiosRequestConfig } from "axios";
@@ -9,7 +9,7 @@ import { getApiUrl, getDeviceId } from "./ApiProvider.helps";
 import { getDeviceStorage } from "../../helps/storage.help";
 
 // constants
-import { TOKEN_NAME } from "../UserProvider/UserProvider.constants";
+import { TOKEN_KEY_ASYNC_STORAGE } from "./ApiProvider.constants";
 import { PATHS } from "../paths.constants";
 
 type ApiContext = {
@@ -26,7 +26,7 @@ type ApiProviderProps = {
 
 export const apiContext = React.createContext({} as ApiContext);
 
-export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
+const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
   const { children } = props;
   const urlApi = `${getApiUrl()}/api`;
 
@@ -37,7 +37,13 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
   ): Promise<T | null> {
     const platform = Platform.OS;
     const deviceId = await getDeviceId();
-    const verifyToken = await getDeviceStorage(TOKEN_NAME);
+    const verifyTokensJSON = await getDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
+    const verifyTokens = verifyTokensJSON
+      ? (JSON.parse(verifyTokensJSON) as {
+          accessToken: string;
+          refreshToken: string;
+        })
+      : null;
     const queryParams = qs.stringify(
       { platform, deviceId },
       {
@@ -53,27 +59,11 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
       const response = await axios(currentUrl, {
         headers: {
           "Content-Type": "application/json",
-          ...(verifyToken !== null && { authorization: verifyToken }),
+          authorization: verifyTokens?.accessToken || "",
         },
         ...currentConfig,
       });
-
       if (response.status === 204) return null;
-      if (response.status === 4010 && verifyToken) {
-        const currentUrlToken = url.includes("http")
-          ? url
-          : `${urlApi}${PATHS.token}`;
-        const response = await axios(currentUrlToken, {
-          headers: {
-            "Content-Type": "application/json",
-            ...(verifyToken !== null && { authorization: verifyToken }),
-          },
-          ...currentConfig,
-        });
-        const isCurrent = schema.safeParse(response.data);
-        if (isCurrent.success) return isCurrent.data;
-        return null;
-      }
 
       // TODO for test
       const isCurrent = schema.safeParse(response.data);
@@ -84,12 +74,37 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
 
       return null;
     } catch (error: any) {
-      if (error.response !== null && error.response !== undefined) {
-        console.error(error.response.data);
-      } else {
-        console.error(error.message);
+      try {
+        if (error.status === 402 && verifyTokens?.refreshToken) {
+          const currentUrlToken = url.includes("http")
+            ? url
+            : `${urlApi}${PATHS.token}`;
+          const responseOther = await axios(currentUrlToken, {
+            headers: {
+              "Content-Type": "application/json",
+              authorization: verifyTokens.refreshToken,
+            },
+            ...currentConfig,
+          });
+          const isCurrent = schema.safeParse(responseOther.data);
+          if (isCurrent.success) {
+            return isCurrent.data;
+          }
+          console.warn("error-402-currentUrl", currentUrl);
+          console.warn("error-402-responseOther.data", responseOther.data);
+          console.warn("error-402-isCurrent", isCurrent);
+          return null;
+        }
+        if (__DEV__) {
+          console.warn("error", error);
+        }
+      } catch (error402) {
+        if (__DEV__) {
+          console.warn("error-402-verifyTokens?.refreshToken", error402);
+        }
+        throw error402;
       }
-      return null;
+      throw error;
     }
   }
 
@@ -99,3 +114,7 @@ export const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
     <apiContext.Provider value={contextValue}>{children}</apiContext.Provider>
   );
 };
+
+export const useApiProvider = () => useContext(apiContext);
+
+export default ApiProvider;

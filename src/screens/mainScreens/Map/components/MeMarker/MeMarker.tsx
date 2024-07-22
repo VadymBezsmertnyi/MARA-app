@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Marker } from "react-native-maps";
 
 // providers
-import { mapContext } from "../../../../../providers/MapProvider/MapProvider";
+import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 
 // icons
 import { IconAutoMap } from "../../../../../icons/components";
@@ -11,7 +11,7 @@ import { IconAutoMap } from "../../../../../icons/components";
 import colors from "../../../../../../styles/colors";
 
 export const MeMarker: FunctionComponent = () => {
-  const { location } = useContext(mapContext);
+  const { location } = useMapProvider();
   const coordinateMarker = useMemo(
     () =>
       location?.longitude && location?.latitude

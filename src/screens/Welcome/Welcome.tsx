@@ -1,15 +1,15 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Keyboard, Platform, Text, View } from "react-native";
 import { ImageBackground } from "expo-image";
 import { BlurView } from "expo-blur";
 import { User } from "@react-native-google-signin/google-signin";
 
 // providers
-import { userContext } from "../../providers/UserProvider/UserProvider";
-import { biometricAuthenticatorContext } from "../../providers/BiometricProvider/BiometricProvider";
-import { themeContext } from "../../providers/ThemeProvider/ThemeProvider";
-import { analyticsContext } from "../../providers/AnalyticsProvider/AnalyticsProvider";
-import { localesContext } from "../../../localization/localization.provider";
+import { useUserProvider } from "../../providers/UserProvider/UserProvider";
+import { useBiometricProvider } from "../../providers/BiometricProvider/BiometricProvider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
+import { useAnalyticsProvider } from "../../providers/AnalyticsProvider/AnalyticsProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // helps
 import { useAllNavigation } from "../../navigators/Navigators.helps";
@@ -36,11 +36,11 @@ import { styles } from "./Welcome.styles";
 
 export const Welcome: FunctionComponent = () => {
   const navigation = useAllNavigation();
-  const { i18n } = useContext(localesContext);
-  const { isFaceId, isTouchId } = useContext(biometricAuthenticatorContext);
-  const { onLogLogin, onLogSignUp } = useContext(analyticsContext);
-  const { heightStatusBar } = useContext(themeContext);
-  const { signInGoogle, signInFacebook, signInApple } = useContext(userContext);
+  const { i18n } = useLocalesProvider();
+  const { isFaceId, isTouchId } = useBiometricProvider();
+  const { onLogLogin, onLogSignUp } = useAnalyticsProvider();
+  const { heightStatusBar } = useThemeProvider();
+  const { signInGoogle, signInFacebook, signInApple } = useUserProvider();
 
   const onSelectGoogle = async (userData: User) => {
     const user = await signInGoogle(userData);

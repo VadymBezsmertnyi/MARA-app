@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import analytics from "@react-native-firebase/analytics";
 
 // types
@@ -19,7 +25,7 @@ type AnalyticsProviderProps = {
 
 export const analyticsContext = React.createContext({} as AnalyticsContext);
 
-export const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
+const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
   children,
   currentRouteName,
 }) => {
@@ -85,3 +91,7 @@ export const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
     </analyticsContext.Provider>
   );
 };
+
+export const useAnalyticsProvider = () => useContext(analyticsContext);
+
+export default AnalyticsProvider;
