@@ -166,35 +166,41 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
         title={i18n._("Workshops")}
         rightElement={
-          <HeaderFilters
-            onPressFilter={() => {
-              setIsShowFilter(true);
-            }}
-            onPressSort={() => {
-              setIsShowSort(true);
-            }}
-          />
+          workshops.length ? (
+            <HeaderFilters
+              onPressFilter={() => {
+                setIsShowFilter(true);
+              }}
+              onPressSort={() => {
+                setIsShowSort(true);
+              }}
+            />
+          ) : (
+            <></>
+          )
         }
         containerStyle={styles.containerHeader}
         rightStyle={styles.containerRightHeader}
       />
       <View style={styles.container}>
-        <View style={styles.search}>
-          <Input
-            value={workshopName}
-            placeholder={i18n._(
-              "Enter the name of the workshop or type of work"
-            )}
-            onChange={setWorkshopName}
-            InputIcon={
-              <IconSearchInput
-                width={26}
-                height={26}
-                style={styles.iconInput}
-              />
-            }
-          />
-        </View>
+        {workshops.length ? (
+          <View style={styles.search}>
+            <Input
+              value={workshopName}
+              placeholder={i18n._(
+                "Enter the name of the workshop or type of work"
+              )}
+              onChange={setWorkshopName}
+              InputIcon={
+                <IconSearchInput
+                  width={26}
+                  height={26}
+                  style={styles.iconInput}
+                />
+              }
+            />
+          </View>
+        ) : null}
         <ScrollView contentContainerStyle={styles.wrapper}>
           {workshops.length && workshopsFilterSort.length ? (
             workshopsFilterSort.map((item) => {
