@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   SafeAreaView,
   StyleProp,
@@ -54,6 +54,8 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   const navigation = useAllNavigation();
   const { theme } = useThemeProvider();
   const { i18n } = useLocalesProvider();
+  const [leftWidth, setLeftWidth] = useState(0);
+  const [rightWidth, setRightWidth] = useState(0);
 
   const backgroundStyles = useMemo(
     () => [styles.background, backgroundStyle],
@@ -74,7 +76,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   );
 
   const rightStyles = useMemo(
-    () => [styles.container, rightStyle],
+    () => [styles.containerRight, rightStyle],
     [rightStyle]
   );
 
@@ -90,7 +92,13 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
           <TouchableOpacity
             disabled={Boolean(leftElement)}
             onPress={onBack}
-            style={styles.containerButtonBack}
+            style={[
+              styles.containerButtonBack,
+              {
+                width: rightWidth > leftWidth ? rightWidth : leftWidth,
+              },
+            ]}
+            onLayout={(event) => setLeftWidth(event.nativeEvent.layout.width)}
           >
             {leftElement || (
               <>
@@ -108,13 +116,29 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
 
         <Text style={styles.title}>{title}</Text>
         {onRightDelete ? (
-          <TouchableOpacity onPress={onRightDelete}>
+          <TouchableOpacity
+            onPress={onRightDelete}
+            onLayout={(event) => setRightWidth(event.nativeEvent.layout.width)}
+            style={{
+              width: rightWidth > leftWidth ? rightWidth : leftWidth,
+            }}
+          >
             <Text style={styles.titleButtonDeleteEvent}>
               <Trans>Delete</Trans>
             </Text>
           </TouchableOpacity>
         ) : isShowRight ? (
-          <View style={rightStyles}>{rightElement && rightElement}</View>
+          <View
+            style={[
+              rightStyles,
+              {
+                width: rightWidth > leftWidth ? rightWidth : leftWidth,
+              },
+            ]}
+            onLayout={(event) => setRightWidth(event.nativeEvent.layout.width)}
+          >
+            {rightElement && rightElement}
+          </View>
         ) : null}
       </View>
     </SafeAreaView>

@@ -22,7 +22,7 @@ import { MenuBurgerButton } from "../../components/MenuBurgerButton/MenuBurgerBu
 
 // hooks
 import { useMainTabs } from "./useMainTabs";
-import { horizontalScale } from "../../../styles/hooks";
+import { horizontalScale, verticalScale } from "../../../styles/hooks";
 
 // constants
 import { PATHS_MAIN_TABS } from "../useNavigator.constants";
@@ -56,7 +56,7 @@ export const MainTabs: FunctionComponent = () => {
     () => [
       styles.container,
       {
-        paddingBottom: bottom,
+        paddingBottom: bottom > 0 ? bottom : verticalScale(16),
       },
     ],
     [bottom]

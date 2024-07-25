@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-end",
     gap: horizontalScale(10),
+    paddingRight: horizontalScale(15),
     minWidth: horizontalScale(90),
   },
   title: {

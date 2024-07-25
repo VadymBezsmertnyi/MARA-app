@@ -13,9 +13,7 @@ type AddEventButtonProps = {
   accessibilityLabel?: string;
 };
 
-const IOS_BOTTOM = 100;
-const ANDROID_BOTTOM = 180;
-const CURRENT_BOTTOM = Platform.OS === "ios" ? IOS_BOTTOM : ANDROID_BOTTOM;
+const CURRENT_BOTTOM = 80;
 
 export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
   disabled,

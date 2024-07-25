@@ -281,7 +281,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   return (
     <>
       <Header
-        title={eventUser ? i18n._("Change event") : i18n._("Createt event")}
+        title={eventUser ? i18n._("Change event") : i18n._("Create event")}
         onRightDelete={
           eventUser
             ? () => {

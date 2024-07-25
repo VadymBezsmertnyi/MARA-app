@@ -25,13 +25,11 @@ const ModalWindowBuy: FunctionComponent<ModalWindowBuyProps> = ({
   const { i18n } = useLocalesProvider();
 
   const onPressViber = async () => {
-    console.log("Viber");
     const viberNumber = "380938150664";
     await Linking.openURL(`viber://chat?number=${viberNumber}`);
   };
 
   const onPressTelegram = async () => {
-    console.log("Telegram");
     const telegram = "VadymBezsmertnyi";
     await Linking.openURL(`https://t.me/${telegram}`);
   };
