@@ -10,6 +10,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { Settings } from "react-native-fbsdk-next";
+import { setCustomText, setCustomTextInput } from "react-native-global-props";
 import {
   Montserrat_600SemiBold,
   Montserrat_700Bold,
@@ -94,6 +95,11 @@ function App() {
       offlineAccess: true,
       iosClientId: EXPO_PUBLIC_CLIENT_ID_GOOGLE_IOS,
     });
+    const customTextProps = {
+      allowFontScaling: false,
+    };
+    setCustomText(customTextProps);
+    setCustomTextInput(customTextProps);
     setAppIsReady(true);
   }, []);
 
