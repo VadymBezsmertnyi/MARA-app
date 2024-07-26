@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import {
   Appearance,
   Platform,
@@ -18,19 +24,32 @@ import {
   THEME_LIGHT,
 } from "./ThemeProvider.const";
 
-// types
-import { PropsT, ThemeContext, ThemeT } from "./ThemeProvider.types";
-
 // helpers
 import { styles } from "./ThemeProvider.styles";
 import colors from "../../../styles/colors";
 
+export type ThemeT = "light" | "dark";
+
+export type ThemeContext = {
+  theme: ThemeT;
+  heightStatusBar: number;
+  selectTheme: (newTheme: ThemeT) => Promise<void>;
+  getTheme: () => Promise<void>;
+  heightTabBar: number | null;
+  setHeightTabBar: (height: number | null) => void;
+};
+
+export type ThemeProviderProps = {
+  children: React.ReactNode;
+};
+
 export const themeContext = React.createContext({} as ThemeContext);
 
-const ThemeProvider: React.FC<PropsT> = (props) => {
+const ThemeProvider: FunctionComponent<ThemeProviderProps> = (props) => {
   const { children } = props;
   const [theme, setTheme] = useState<ThemeT>(THEME_LIGHT);
   const [heightStatusBar, setHeightStatusBar] = useState(0);
+  const [heightTabBar, setHeightTabBar] = useState<number | null>(null);
 
   const setBarStyle = useMemo((): StatusBarStyle => {
     if (theme === THEME_LIGHT) return "dark-content";
@@ -72,8 +91,15 @@ const ThemeProvider: React.FC<PropsT> = (props) => {
   };
 
   const contextValue: ThemeContext = useMemo(
-    () => ({ theme, selectTheme, getTheme, heightStatusBar }),
-    [theme, heightStatusBar]
+    () => ({
+      theme,
+      heightStatusBar,
+      heightTabBar,
+      selectTheme,
+      getTheme,
+      setHeightTabBar,
+    }),
+    [theme, heightStatusBar, heightTabBar]
   );
 
   useEffect(() => {

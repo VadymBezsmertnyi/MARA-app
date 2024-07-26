@@ -314,7 +314,7 @@ const UserProvider: FunctionComponent<Props> = (props) => {
     try {
       setLoading(true);
       if (userData?._id) {
-        await api(
+        const request = await api(
           PATHS.delete,
           {
             method: "POST",
@@ -322,6 +322,7 @@ const UserProvider: FunctionComponent<Props> = (props) => {
           },
           z.object({ result: z.boolean() })
         );
+        if (!request || !request.result) return false;
         await deleteDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
         setUserData(null);
         setUserDataSocket(null);

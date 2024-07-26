@@ -4,6 +4,9 @@ import { Shadow } from "react-native-shadow-2";
 import { BlurView } from "expo-blur";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+// providers
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
+
 // styles
 import { styles } from "./AddEventButton.styles";
 
@@ -20,6 +23,7 @@ export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
   onPress,
   accessibilityLabel,
 }) => {
+  const { heightTabBar } = useThemeProvider();
   const { bottom } = useSafeAreaInsets();
   const offsetShadow: [x: string | number, y: string | number] = useMemo(
     () => [0, 3],
@@ -29,7 +33,7 @@ export const AddEventButton: FunctionComponent<AddEventButtonProps> = ({
     () => [
       styles.createNewEvent,
       {
-        bottom: bottom + CURRENT_BOTTOM,
+        bottom: bottom + (heightTabBar || CURRENT_BOTTOM) - 20,
         opacity: disabled ? 0 : 1,
       },
     ],

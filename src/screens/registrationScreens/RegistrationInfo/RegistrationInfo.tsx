@@ -58,9 +58,9 @@ export const RegistrationInfo: FunctionComponent = () => {
       );
   };
 
-  /* const onLater = () => {
+  const onLater = () => {
     navigation.navigate(PATHS_MAIN_SCREENS.main);
-  }; */
+  };
 
   const onChangeLogin = (value: string) => {
     setErrorMessageLogin("");
@@ -120,13 +120,12 @@ export const RegistrationInfo: FunctionComponent = () => {
               title={i18n._("Save")}
               onSubmit={onSave}
             />
-            {/* TODO: add later
-          <ButtonCustom
-            disabled={errorMessageLogin.length > 0}
-            title={i18n._("Fill out later")}
-            onSubmit={onLater}
-            type="transparent"
-          /> */}
+            <ButtonCustom
+              disabled={errorMessageLogin.length > 0}
+              title={i18n._("Fill out later")}
+              onSubmit={onLater}
+              type="transparent"
+            />
           </View>
         </ScrollView>
       </View>

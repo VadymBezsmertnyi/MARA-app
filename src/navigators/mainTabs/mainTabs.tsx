@@ -16,6 +16,7 @@ import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
+import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { MenuBurgerButton } from "../../components/MenuBurgerButton/MenuBurgerButton";
@@ -40,6 +41,7 @@ const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 export const MainTabs: FunctionComponent = () => {
   const navigation = useNavigation<DrawerNavigationHelpers>();
   const { bottom } = useSafeAreaInsets();
+  const { setHeightTabBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
   const { mainTabs } = useMainTabs();
   const colorsGradient = useMemo(
@@ -67,7 +69,13 @@ export const MainTabs: FunctionComponent = () => {
   };
 
   const tabBar = ({ state: { index }, navigation }: BottomTabBarProps) => (
-    <View style={absoluteContainerStyles}>
+    <View
+      style={absoluteContainerStyles}
+      onLayout={(event) => {
+        const { height } = event.nativeEvent.layout;
+        setHeightTabBar(height);
+      }}
+    >
       <LinearGradient
         colors={colorsGradient}
         start={startGradient}
