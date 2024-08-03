@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "udalosť"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Vytvoriť udalosť"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Môžete vytvoriť udalosť"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Uložiť"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Vyplniť neskôr"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Prepínač zapnutia vašej polohy"
 
@@ -1296,6 +1296,18 @@ msgstr "Tlačidlo pre zatvorenie obrazovky nastavení produktov"
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Kúpiť reklamu"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Chyba: nesprávne telefónne číslo"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Chyba: Krstné meno musí byť medzi 3 a 15 znakmi"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Chyba: vyberte mesto"
 
 #. js-lingui-explicit-id
 msgid "The photo added"

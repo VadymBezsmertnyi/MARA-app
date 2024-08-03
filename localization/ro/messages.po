@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "eveniment"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Eveniment creat"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Puteți crea un eveniment"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Salvează"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Completați mai târziu"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Comută localizarea dvs."
 
@@ -1296,6 +1296,18 @@ msgstr "Buton pentru închiderea ecranului de setări al produselor"
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Cumpără anunț"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Eroare: număr de telefon incorect"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Eroare: Prenumele trebuie să fie între 3 și 15 caractere"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Eroare: selectați orașul"
 
 #. js-lingui-explicit-id
 msgid "The photo added"

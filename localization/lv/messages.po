@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "Įvykis"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Sukurta įvykis"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Jūs galite sukurti įvykį"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Išsaugoti"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Užpildyti vėliau"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Įjunkite savo vietą"
 
@@ -1296,6 +1296,18 @@ msgstr "Poga, lai aizvērtu iestatījumu ekrānu"
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Pirkt sludinājumu"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Kļūda: nepareizs telefona numurs"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Kļūda: Vārdam jābūt no 3 līdz 15 simboliem"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Kļūda: izvēlieties pilsētu"
 
 #. js-lingui-explicit-id
 msgid "The photo added"

@@ -54,11 +54,14 @@ import { IconMapGradient } from "../../../icons/components";
 
 // styles
 import { styles } from "./SettingsProfile.styles";
+import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 
 type SettingsProfileProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
     DrawerNavigationHelpers;
 };
+
+type NamesErrorsType = "phoneNumber" | "firstName" | "place";
 
 export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   navigation,
@@ -80,6 +83,12 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     if (!userData?.place_id) return "";
     return userData.place_id[language].formatted_address;
   }, [placesDB, userData?.place_id]);
+  const [errorMessage, setErrorMessage] = useState<Record<
+    string,
+    { name: string; title: string }
+  > | null>(null);
+  const [isShowErrors, setIsShowErrors] = useState(false);
+  const [needCheck, setNeedCheck] = useState<NamesErrorsType | null>(null);
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -96,6 +105,46 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         : null,
     [userData?.avatar]
   );
+
+  const errorsObject = useMemo(() => {
+    const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
+    return {
+      ...(isPhone && {
+        phoneNumber: {
+          name: "phoneNumber",
+          title: i18n._("Error: incorrect phone number"),
+        },
+      }),
+      ...((firstName.length < 3 || firstName.length > 15) && {
+        firstName: {
+          name: "firstName",
+          title: i18n._(
+            "Error: First name must be between 3 and 15 characters"
+          ),
+        },
+      }),
+      ...(city === null && {
+        place: {
+          name: "place",
+          title: i18n._("Error: select the city"),
+        },
+      }),
+    };
+  }, [firstName, phoneNumber, selectCountryIso]);
+
+  const checkValueOnBlur = (key: NamesErrorsType) => {
+    const error = errorsObject[key] || null;
+    if (error) setErrorMessage({ [key]: error });
+  };
+
+  const checkEnterData = () => {
+    const isError = Object.keys(errorsObject).length > 0;
+    if (isError) {
+      setIsShowErrors(true);
+      setErrorMessage(errorsObject);
+    } else setErrorMessage(null);
+    return isError;
+  };
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -162,6 +211,8 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   };
 
   const onSave = async () => {
+    const isError = checkEnterData();
+    if (isError) return;
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
     const clearPhoneNumber = getClearValue(phoneNumber);
     const currentCityUser =
@@ -173,6 +224,13 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
           }
         : { cityUser: city };
     const resultSave = await editUser({
+      ...userData,
+      ...currentCityUser,
+      firstName,
+      lastName,
+      ...(isPhone && { phoneNumber: clearPhoneNumber }),
+    });
+    console.log("resultSave", {
       ...userData,
       ...currentCityUser,
       firstName,
@@ -211,6 +269,13 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         });
     }
   }, [placesDB]);
+
+  useEffect(() => {
+    if (needCheck) {
+      checkValueOnBlur(needCheck);
+      setNeedCheck(null);
+    }
+  }, [needCheck]);
 
   return (
     <KeyboardAvoidingView
@@ -257,10 +322,14 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
             <Input
               label={`${i18n._("First Name")}:`}
               placeholder={i18n._("First Name")}
+              onBlurProp={() => setNeedCheck("firstName")}
               value={firstName}
               onChange={setFirstName}
               containerStyle={styles.containerInput}
               labelStyle={styles.labelInput}
+              errorMessage={
+                errorMessage?.firstName ? errorMessage?.firstName.title : ""
+              }
             />
             <Input
               label={`${i18n._("Last Name")}:`}
@@ -280,15 +349,22 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
               InputIcon={<IconMapGradient width={42} height={32} />}
               containerStyle={styles.containerInput}
               labelStyle={styles.labelInput}
+              errorMessage={
+                errorMessage?.place ? errorMessage?.place.title : ""
+              }
             />
             <InputPhone
               isRegular
               label={i18n._("Phone number")}
+              onBlurProp={() => setNeedCheck("phoneNumber")}
               phoneNumber={phoneNumber}
               setPhoneNumber={setPhoneNumber}
               selectCountryIso={selectCountryIso}
               setSelectCountryIso={setSelectCountryIso}
               labelStyle={styles.labelInput}
+              errorMessage={
+                errorMessage?.phoneNumber ? errorMessage?.phoneNumber.title : ""
+              }
             />
           </View>
           <ButtonCustom title={i18n._("Save")} onSubmit={onSave} />
@@ -302,8 +378,16 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         onSubmit={(place) => {
           setCity(place);
           setIsShowModal(false);
+          setNeedCheck("place");
         }}
         statePlace={city || undefined}
+      />
+      <ModalShowErrors
+        isOpen={isShowErrors}
+        onClose={() => {
+          setIsShowErrors(false);
+        }}
+        errors={errorMessage}
       />
     </KeyboardAvoidingView>
   );

@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "подія"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Створити подію"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Ви можете створити подію"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Зберегти"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Заповнити пізніше"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Перемикач вашого місцезнаходження"
 
@@ -1296,6 +1296,18 @@ msgstr "Кнопка для закриття екрану налаштувань
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Купити оголошення"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Помилка: невірний номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Помилка: Ім'я повинно бути від 3 до 15 символів"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Помилка: виберіть місто"
 
 #. js-lingui-explicit-id
 msgid "The photo added"

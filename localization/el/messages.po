@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "εκδήλωση"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Δημιουργία εκδήλωσης"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Μπορείτε να δημιουργήσετε μια εκδήλωση"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Αποθήκευση"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Συμπληρώστε αργότερα"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Εναλλαγή τοποθεσίας σας"
 
@@ -1296,6 +1296,18 @@ msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων π�
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Αγοράστε αγγελία"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Σφάλμα: μη έγκυρος αριθμός τηλεφώνου"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Σφάλμα: Το όνομα πρέπει να είναι μεταξύ 3 και 15 χαρακτήρων"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Σφάλμα: επιλέξτε την πόλη"
 
 #. js-lingui-explicit-id
 msgid "The photo added"

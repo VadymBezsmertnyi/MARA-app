@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "esemény"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Esemény létrehozása"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Létrehozhat egy eseményt"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Mentés"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Később kitöltöm"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Helyzetkapcsoló bekapcsolása"
 
@@ -1296,6 +1296,18 @@ msgstr "Gomb a beállítások termékek képernyő bezárásához"
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Hirdetés vásárlása"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Hiba: helytelen telefonszám"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Hiba: A keresztnévnek 3 és 15 karakter között kell lennie"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Hiba: válassza ki a várost"
 
 #. js-lingui-explicit-id
 msgid "The photo added"

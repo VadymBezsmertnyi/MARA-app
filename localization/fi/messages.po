@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "tapahtuma"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Tapahtuma luotu"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Voit luoda tapahtuman"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Tallenna"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Täytä myöhemmin"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Vaihda sijaintiasi"
 
@@ -1296,6 +1296,18 @@ msgstr "Painike sulkemaan asetusten tuote-näyttö"
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Osta mainos"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Virhe: virheellinen puhelinnumero"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Virhe: Etunimen tulee olla 3–15 merkkiä pitkä"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Virhe: valitse kaupunki"
 
 #. js-lingui-explicit-id
 msgid "The photo added"

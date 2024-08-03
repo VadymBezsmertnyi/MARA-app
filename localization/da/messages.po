@@ -1038,10 +1038,6 @@ msgid "event"
 msgstr "Begivenhed"
 
 #. js-lingui-explicit-id
-msgid "Createt event"
-msgstr "Oprettet begivenhed"
-
-#. js-lingui-explicit-id
 msgid "You can create an event"
 msgstr "Du kan oprette en begivenhed"
 
@@ -1170,6 +1166,10 @@ msgid "Save"
 msgstr "Gem"
 
 #. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Udfyld senere"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Skift din placering"
 
@@ -1296,6 +1296,18 @@ msgstr "Knap til lukning af indstillinger for produktskærm"
 #. js-lingui-explicit-id
 msgid "Buy advert"
 msgstr "Køb annonce"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Fejl: forkert telefonnummer"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Fejl: Fornavn skal være mellem 3 og 15 tegn"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Fejl: vælg byen"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
