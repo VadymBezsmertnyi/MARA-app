@@ -10,6 +10,7 @@ import {
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { Trans } from "@lingui/macro";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
 import { RootMarketScreensParamList } from "../../../navigators/Navigators.types";
@@ -56,9 +57,10 @@ type MarketMainProps = {
 export const MarketMain: FunctionComponent<MarketMainProps> = ({
   navigation,
 }) => {
+  const { bottom } = useSafeAreaInsets();
   const { i18n } = useLocalesProvider();
   const { infoAdverts, infoBusinessAdverts } = useSubscriptionProvider();
-  const { heightStatusBar } = useThemeProvider();
+  const { heightStatusBar, heightTabBar } = useThemeProvider();
   const { products, minMaxPrices } = useMarketProvider();
   const [productName, setProductName] = useState("");
   const [isShowSort, setIsShowSort] = useState(false);
@@ -270,7 +272,12 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 renderItem={renderItem}
                 keyExtractor={(item) => `product-${item._id}`}
                 numColumns={1}
-                contentContainerStyle={styles.containerList}
+                contentContainerStyle={[
+                  styles.containerList,
+                  {
+                    paddingBottom: (heightTabBar || 0) + bottom + 100,
+                  },
+                ]}
               />
             ) : (
               <FlatList
@@ -279,7 +286,12 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 renderItem={renderItem}
                 keyExtractor={(item) => `product-wrap-${item._id}`}
                 numColumns={2}
-                contentContainerStyle={styles.containerList}
+                contentContainerStyle={[
+                  styles.containerList,
+                  {
+                    paddingBottom: (heightTabBar || 0) + bottom + 100,
+                  },
+                ]}
                 columnWrapperStyle={styles.columnContainerList}
               />
             )

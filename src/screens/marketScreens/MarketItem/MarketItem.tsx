@@ -3,6 +3,7 @@ import { Linking, Modal, ScrollView, Text, View } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import dayjs from "dayjs";
 import { Trans } from "@lingui/macro";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
 import { RootMarketScreensParamList } from "../../../navigators/Navigators.types";
@@ -14,6 +15,7 @@ import { usePaymentProvider } from "../../../providers/PaymentProvider/PaymentPr
 import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -47,6 +49,8 @@ type MarketItemProps = {
 };
 
 export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
+  const { heightTabBar } = useThemeProvider();
+  const { top, bottom } = useSafeAreaInsets();
   const { i18n, language } = useLocalesProvider();
   const { userData } = useUserProvider();
   const { products, changeProduct } = useMarketProvider();
@@ -327,7 +331,14 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
           </View>
           <View style={styles.containerEmpty} />
         </ScrollView>
-        <View style={styles.containerButtons}>
+        <View
+          style={[
+            styles.containerButtons,
+            {
+              paddingBottom: bottom,
+            },
+          ]}
+        >
           {selectProduct.telegram ? (
             <ButtonCustom
               onSubmit={onPressTelegram}

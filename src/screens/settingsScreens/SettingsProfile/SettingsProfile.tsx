@@ -13,6 +13,7 @@ import * as ImagePicker from "expo-image-picker";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DropdownAlertType } from "react-native-dropdownalert";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
@@ -66,12 +67,13 @@ type NamesErrorsType = "phoneNumber" | "firstName" | "place";
 export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   navigation,
 }) => {
+  const { bottom } = useSafeAreaInsets();
   const { messageFromServer } = useDropDownAlertProvider();
   const { verifyPhone } = useAuthorizationRegistration();
   const { userData, editUser, exitUser, deleteUser, setIsChangeAvatar } =
     useUserProvider();
   const { i18n, language } = useLocalesProvider();
-  const { heightStatusBar } = useThemeProvider();
+  const { heightTabBar, heightStatusBar } = useThemeProvider();
   const { placesDB } = usePlacesProvider();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -308,6 +310,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         <ScrollView
           contentContainerStyle={{
             paddingHorizontal: 20,
+            paddingBottom: bottom + (heightTabBar || 0),
           }}
         >
           <View style={styles.containerAvatar}>

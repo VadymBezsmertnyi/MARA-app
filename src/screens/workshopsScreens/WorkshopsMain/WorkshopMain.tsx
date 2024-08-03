@@ -3,10 +3,12 @@ import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Trans } from "@lingui/macro";
 import { convertDistance, getDistance } from "geolib";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // providers
 import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
@@ -48,8 +50,10 @@ type WorkshopMainProps = {
 export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   navigation,
 }) => {
+  const { bottom } = useSafeAreaInsets();
   const { i18n } = useLocalesProvider();
   const { infoWorkshops } = useSubscriptionProvider();
+  const { heightTabBar } = useThemeProvider();
   const { workshops, minMaxDistance } = useWorkshopsProvider();
   const { location } = useMapProvider();
   const [isShowSort, setIsShowSort] = useState(false);
@@ -201,7 +205,14 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             />
           </View>
         ) : null}
-        <ScrollView contentContainerStyle={styles.wrapper}>
+        <ScrollView
+          contentContainerStyle={[
+            styles.wrapper,
+            {
+              paddingBottom: (heightTabBar || 0) + bottom,
+            },
+          ]}
+        >
           {workshops.length && workshopsFilterSort.length ? (
             workshopsFilterSort.map((item) => {
               const distance =

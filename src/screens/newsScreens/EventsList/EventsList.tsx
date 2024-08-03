@@ -5,9 +5,13 @@ import { RouteProp } from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+// types
+import { PlaceDbType } from "../../../providers/PlacesProvider/PlacesProvider.types";
+
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -24,7 +28,6 @@ import { PATHS_EVENTS_SCREENS } from "../../../navigators/useNavigator.constants
 
 // styles
 import { styles } from "./EventsList.styles";
-import { PlaceDbType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 
 type ItemListEventsProps = {
   navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
@@ -39,6 +42,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   route,
 }) => {
   const { params } = route;
+  const { heightTabBar } = useThemeProvider();
   const { top, bottom } = useSafeAreaInsets();
   const { eventsList } = useEventsProvider();
   const { i18n } = useLocalesProvider();
@@ -107,7 +111,14 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
         InputIcon={<IconSearchInput width={26} height={26} />}
       />
       <InputSelectCity data={showCities} onSelect={onSelectCity} />
-      <ScrollView contentContainerStyle={styles.containerList}>
+      <ScrollView
+        contentContainerStyle={[
+          styles.containerList,
+          {
+            paddingBottom: (heightTabBar || 0) + bottom,
+          },
+        ]}
+      >
         {showEventsList.map((eventItem) => (
           <ItemListEvents
             key={`event-${eventItem._id}`}
