@@ -31,6 +31,7 @@ type DatePickerProps = {
   mode: "date" | "time" | "datetime" | "countdown";
   errorMessage?: string;
   isRegular?: boolean;
+  onBlur?: () => void;
 };
 
 export const DatePicker: FunctionComponent<DatePickerProps> = ({
@@ -40,6 +41,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
   onChange,
   errorMessage,
   isRegular = false,
+  onBlur,
 }) => {
   const { i18n } = useLocalesProvider();
   const [isShowModal, setIsShowModal] = useState(false);
@@ -122,6 +124,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
               title={i18n._("Confirm")}
               onSubmit={() => {
                 setIsShowModal(false);
+                onBlur && onBlur();
               }}
             />
           </BlurView>

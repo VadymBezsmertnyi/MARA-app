@@ -113,9 +113,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     () => combineDateAndTime(finishDate, finishTime).getTime(),
     [finishDate, finishTime]
   );
-
-  const checkEnterData = () => {
-    const errorsObject = {
+  const errorsObject = useMemo(
+    () => ({
       ...((eventName.length < 5 || eventName.length > 40) && {
         eventName: getErrorText("eventName", {
           min: 5,
@@ -136,13 +135,23 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           otherName: i18n._("event"),
         }),
       }),
-    };
+    }),
+    [eventName, placeAddress, start, finish, aboutEvent]
+  );
+
+  const checkEnterData = () => {
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
       setIsShowErrors(true);
       setErrorMessage(errorsObject);
     } else setErrorMessage(null);
     return isError;
+  };
+  const checkValueOnBlur = (
+    type: "aboutEvent" | "finish" | "location" | "eventName"
+  ) => {
+    const error = errorsObject[type] || null;
+    if (error) setErrorMessage({ [type]: error });
   };
 
   const onChangeBeginDate = (
@@ -298,6 +307,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             placeholder={i18n._("Enter the name of the event")}
             label={i18n._("Name of the event")}
             value={eventName}
+            onBlurProp={() => checkValueOnBlur("eventName")}
             onChange={(value) => {
               setEventName(value);
               setErrorMessage(null);
@@ -356,6 +366,9 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
                 isRegular
                 value={finishDate}
                 label={i18n._("Conclusion")}
+                onBlur={() => {
+                  checkValueOnBlur("finish");
+                }}
                 onChange={(dataTime, data) => {
                   onChangeFinishDate(dataTime, data);
                   setErrorMessage(null);
@@ -413,6 +426,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             isRegular
             label={`${i18n._("Tell us about the event")}`}
             value={aboutEvent}
+            onBlurProp={() => checkValueOnBlur("aboutEvent")}
             customStyles={styles.multipleInput}
             onChange={(value) => {
               setErrorMessage(null);
@@ -440,6 +454,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         onSubmit={(data) => {
           setPlaceAddress(data);
           setIsModalPlace(false);
+          checkValueOnBlur("location");
         }}
         statePlace={placeAddress || undefined}
       />

@@ -31,6 +31,7 @@ type InputProps = {
   maxLength?: number;
   accessibilityLabel?: string;
   disabled?: boolean;
+  onBlurProp?: () => void;
 };
 
 export const Input: FunctionComponent<InputProps> = ({
@@ -51,6 +52,7 @@ export const Input: FunctionComponent<InputProps> = ({
   maxLength,
   accessibilityLabel,
   disabled = false,
+  onBlurProp,
 }) => {
   const [borderColor, setBorderColor] = useState(colors.platinumGray);
 
@@ -59,6 +61,7 @@ export const Input: FunctionComponent<InputProps> = ({
   };
 
   const onBlur = () => {
+    onBlurProp && onBlurProp();
     setBorderColor(colors.platinumGray);
   };
 
