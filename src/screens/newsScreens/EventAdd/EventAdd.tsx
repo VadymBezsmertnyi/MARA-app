@@ -49,6 +49,8 @@ type AddEventProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
 };
 
+type NamesErrorsType = "aboutEvent" | "finish" | "location" | "eventName";
+
 const NOW_TIME_JS = dayjs().minute(0);
 const NOW_TIME_JS_HOUR = dayjs().minute(0).add(1, "hour");
 const CURRENT_DEFAULT_DATE = new Date(NOW_TIME_JS.format());
@@ -84,6 +86,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     string,
     { name: string; title: string }
   > | null>(null);
+  const [needCheck, setNeedCheck] = useState<NamesErrorsType | null>(null);
+
   const showTitlePlace = useMemo(() => {
     if (!placeAddress) return "";
     const findPlace =
@@ -147,9 +151,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     } else setErrorMessage(null);
     return isError;
   };
-  const checkValueOnBlur = (
-    type: "aboutEvent" | "finish" | "location" | "eventName"
-  ) => {
+  const checkValueOnBlur = (type: NamesErrorsType) => {
     const error = errorsObject[type] || null;
     if (error) setErrorMessage({ [type]: error });
   };
@@ -287,6 +289,13 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     getEventUser();
   }, [params, placesDB]);
 
+  useEffect(() => {
+    if (needCheck) {
+      checkValueOnBlur(needCheck);
+      setNeedCheck(null);
+    }
+  }, [needCheck]);
+
   return (
     <>
       <Header
@@ -415,6 +424,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
                   if (!isNaN(Number(value))) {
                     setPriceFinish(value);
                     setErrorMessage(null);
+                    setNeedCheck("finish");
                   }
                 }}
                 keyboardType="numeric"
@@ -454,7 +464,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         onSubmit={(data) => {
           setPlaceAddress(data);
           setIsModalPlace(false);
-          checkValueOnBlur("location");
+          setNeedCheck("location");
         }}
         statePlace={placeAddress || undefined}
       />

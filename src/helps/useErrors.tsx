@@ -154,6 +154,7 @@ export const useErrors = (i18n: I18n) => {
   const getErrorAddProduct = ({
     title,
     description,
+    telegram,
     place,
     isPhone,
     price,
@@ -166,6 +167,7 @@ export const useErrors = (i18n: I18n) => {
   }: {
     title: string;
     description: string;
+    telegram: string;
     place: any | null;
     isPhone: boolean;
     price: string;
@@ -262,6 +264,13 @@ export const useErrors = (i18n: I18n) => {
           otherName: i18n._("advert"),
         }),
       }),
+    ...((telegram.length < 3 || telegram.length > 40) && {
+      telegram: getErrorText("title", {
+        min: 3,
+        max: 40,
+        otherName: i18n._("advert"),
+      }),
+    }),
   });
 
   return { getErrorText, getErrorAddProduct };

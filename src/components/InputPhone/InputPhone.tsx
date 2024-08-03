@@ -43,6 +43,7 @@ type InputProps = {
   labelStyle?: StyleProp<TextStyle>;
   containerStyle?: StyleProp<ViewStyle>;
   errorStyle?: StyleProp<TextStyle>;
+  onBlurProp?: () => void;
 };
 
 export const InputPhone = ({
@@ -58,11 +59,12 @@ export const InputPhone = ({
   labelStyle,
   containerStyle,
   errorStyle,
+  onBlurProp,
 }: InputProps) => {
   const { theme } = useThemeProvider();
   const textPropsPhoneInput = useMemo(
-    () => ({ value: phoneNumber }),
-    [phoneNumber]
+    () => ({ value: phoneNumber, onBlur: onBlurProp }),
+    [phoneNumber, onBlurProp]
   );
 
   const containerStyles = useMemo(

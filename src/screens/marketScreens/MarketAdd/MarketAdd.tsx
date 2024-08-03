@@ -81,6 +81,22 @@ type MarketAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
 };
 
+type NamesErrorsType =
+  | "title"
+  | "description"
+  | "place"
+  | "phoneNumber"
+  | "price"
+  | "category"
+  | "brand"
+  | "mileage"
+  | "yearRelease"
+  | "typeFuel"
+  | "typeTransmission"
+  | "typeParts"
+  | "images"
+  | "telegram";
+
 export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   navigation,
 }) => {
@@ -135,6 +151,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     string,
     { name: string; title: string }
   > | null>(null);
+  const [needCheck, setNeedCheck] = useState<NamesErrorsType | null>(null);
+
   const productUser = useMemo(
     () =>
       params?.productId
@@ -166,21 +184,13 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     [bottom]
   );
 
-  const clearKeyError = (key: string) => {
-    if (errorMessage && key in errorMessage) {
-      const { [key]: _, ...otherErrorMessage } = errorMessage;
-      if (Object.keys(otherErrorMessage).length === 0) setErrorMessage(null);
-      else setErrorMessage(otherErrorMessage);
-    }
-    setIsChange(false);
-  };
-
-  const checkEnterData = () => {
+  const errorsObject = useMemo(() => {
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
     const isTransport =
       select?.category?.id === 1 || select?.category?.id === 2;
     const isParts = select?.category?.id === 3 || select?.category?.id === 4;
-    const errorsObject = getErrorAddProduct({
+    return getErrorAddProduct({
+      telegram,
       title,
       description,
       place: place?.placeId || null,
@@ -193,6 +203,34 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
       yearRelease,
       images: images.map((image) => image.base64).filter(Boolean) as string[],
     });
+  }, [
+    title,
+    description,
+    place,
+    phoneNumber,
+    selectCountryIso,
+    price,
+    select,
+    mileage,
+    yearRelease,
+    images,
+  ]);
+
+  const checkValueOnBlur = (key: NamesErrorsType) => {
+    const error = errorsObject[key] || null;
+    if (error) setErrorMessage({ [key]: error });
+  };
+
+  const clearKeyError = (key: string) => {
+    if (errorMessage && key in errorMessage) {
+      const { [key]: _, ...otherErrorMessage } = errorMessage;
+      if (Object.keys(otherErrorMessage).length === 0) setErrorMessage(null);
+      else setErrorMessage(otherErrorMessage);
+    }
+    setIsChange(false);
+  };
+
+  const checkEnterData = () => {
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
       setIsShowErrors(true);
@@ -442,6 +480,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             isRegular
             placeholder={i18n._("Enter the name of the advert")}
             label={i18n._("Advert name")}
+            onBlurProp={() => checkValueOnBlur("title")}
             value={title}
             onChange={(value) => {
               clearKeyError("title");
@@ -551,6 +590,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               clearKeyError("description");
               setDescription(value);
             }}
+            onBlurProp={() => checkValueOnBlur("description")}
             containerStyle={styles.containerStyle}
             customStyles={styles.customStylesInput}
             maxLength={9000}
@@ -566,6 +606,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
             setCode={setCodeCurrency}
             errorMessage={errorMessage?.price?.title}
             clearKeyError={clearKeyError}
+            onBlurProp={() => checkValueOnBlur("price")}
           />
           <View style={styles.containerContacts}>
             <Text style={styles.titleContacts}>
@@ -575,6 +616,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               isRegular
               placeholder={i18n._("@fgt_com")}
               label={i18n._("Your telegram")}
+              onBlurProp={() => checkValueOnBlur("telegram")}
               value={telegram}
               onChange={(value) => {
                 clearKeyError("telegram");
@@ -599,6 +641,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               errorMessage={
                 errorMessage?.phoneNumber ? errorMessage.phoneNumber.title : ""
               }
+              onBlurProp={() => checkValueOnBlur("phoneNumber")}
             />
           </View>
           <ButtonCustom
@@ -615,6 +658,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         onClose={() => {
           clearKeyError("place");
           setIsShowSelectPlace(false);
+          setNeedCheck("place");
         }}
         onSubmit={onSubmitPlace}
       />
@@ -627,9 +671,10 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         onSubmit={(type, selectData) => {
           const newSelectList: Record<string, TypeDataCategory | undefined> =
             select ? { ...select, [type]: selectData } : { [type]: selectData };
-          if (type === NAME_MOTO_PARTS || type === NAME_AUTO_PARTS)
+          if (type === NAME_MOTO_PARTS || type === NAME_AUTO_PARTS) {
             clearKeyError("typeParts");
-          else clearKeyError(type);
+            setNeedCheck("typeParts");
+          } else clearKeyError(type);
           setSelect(newSelectList);
         }}
       />

@@ -27,6 +27,7 @@ type PriceCurrencyProps = {
   onChange: (value: string) => void;
   errorMessage?: string;
   clearKeyError: (type: string) => void;
+  onBlurProp?: () => void;
 };
 
 export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
@@ -38,6 +39,7 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
   onChange,
   errorMessage,
   clearKeyError,
+  onBlurProp,
 }) => {
   const { i18n } = useLocalesProvider();
   const { listCurrency } = usePaymentProvider();
@@ -72,6 +74,7 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
         <Input
           keyboardType="numeric"
           placeholder={"100"}
+          onBlurProp={onBlurProp}
           value={value}
           onChange={(value) => {
             onChange(value);
