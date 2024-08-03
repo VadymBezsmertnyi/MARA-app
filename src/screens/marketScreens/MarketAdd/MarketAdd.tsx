@@ -455,6 +455,13 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
     getProductUser();
   }, [params, placesDB]);
 
+  useEffect(() => {
+    if (needCheck) {
+      checkValueOnBlur(needCheck);
+      setNeedCheck(null);
+    }
+  }, [needCheck]);
+
   return (
     <KeyboardAvoidingView
       contentContainerStyle={{ flex: 1 }}

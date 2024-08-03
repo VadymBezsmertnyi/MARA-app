@@ -59,6 +59,13 @@ type WorkshopAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
 };
 
+type NamesErrorsType =
+  | "types"
+  | "title"
+  | "description"
+  | "place"
+  | "phoneNumber";
+
 export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   navigation,
 }) => {
@@ -103,13 +110,15 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     string,
     { name: string; title: string }
   > | null>(null);
+  const [needCheck, setNeedCheck] = useState<NamesErrorsType | null>(null);
+
   const selectWorkshop = useMemo(
     () =>
       workshops.find((workshop) => workshop._id === params?.workshopId) || null,
     [workshops, params]
   );
   const showTitlePlace = useMemo(() => {
-    if (!place) return "";
+    if (!place || place.placeId.length === 0) return "";
     const findPlace =
       placesDB.find(
         (placeDB) =>
@@ -166,9 +175,9 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     return "";
   }, [typeWorkshops]);
 
-  const checkEnterData = () => {
+  const errorsObject = useMemo(() => {
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
-    const errorsObject = {
+    return {
       ...((title.length < 5 || title.length > 40) && {
         title: getErrorText("title", {
           min: 5,
@@ -200,12 +209,28 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           }),
         }),
     };
+  }, [
+    title,
+    place,
+    description,
+    phoneNumber,
+    selectCountryIso,
+    selectMotoTypesWorks,
+    selectAutoTypesWorks,
+  ]);
+
+  const checkEnterData = () => {
     const isError = Object.keys(errorsObject).length > 0;
     if (isError) {
       setIsShowErrors(true);
       setErrorMessage(errorsObject);
     } else setErrorMessage(null);
     return isError;
+  };
+
+  const checkValueOnBlur = (key: NamesErrorsType) => {
+    const error = errorsObject[key] || null;
+    if (error) setErrorMessage({ [key]: error });
   };
 
   const onSubmitPlace = (data: ItemSearchPlaceAddressType) => {
@@ -349,6 +374,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       setPhoneNumber(userData.phoneNumber);
   }, [selectWorkshop, placesDB]);
 
+  useEffect(() => {
+    if (needCheck) {
+      checkValueOnBlur(needCheck);
+      setNeedCheck(null);
+    }
+  }, [needCheck]);
+
   return (
     <>
       <View style={containerStyles}>
@@ -375,6 +407,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 clearKeyError("title");
                 setTitle(value);
               }}
+              onBlurProp={() => checkValueOnBlur("title")}
               errorMessage={errorMessage?.title ? errorMessage.title.title : ""}
             />
             <InputButton
@@ -393,6 +426,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               isRegular
               placeholder={i18n._("Add a description about the workshop")}
               label={i18n._("Workshop description")}
+              onBlurProp={() => checkValueOnBlur("description")}
               value={description}
               onChange={(value) => {
                 clearKeyError("description");
@@ -410,6 +444,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 isRegular
                 label={i18n._("Phone number")}
                 phoneNumber={phoneNumber}
+                onBlurProp={() => checkValueOnBlur("phoneNumber")}
                 setPhoneNumber={(value) => {
                   clearKeyError("phoneNumber");
                   setPhoneNumber(value);
@@ -503,6 +538,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           setTypeWorkshops={(value) => {
             clearKeyError("types");
             setTypeWorkshops(value);
+            setNeedCheck("types");
           }}
           onSubmit={onSubmitTypeWorkshop}
         />
@@ -513,6 +549,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           setSelectMotoTypesWorks={(value) => {
             clearKeyError("types");
             setSelectMotoTypesWorks(value);
+            setNeedCheck("types");
           }}
           onSubmit={onSubmitMotoTypeWorks}
         />
@@ -523,6 +560,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           setSelectAutoTypesWorks={(value) => {
             clearKeyError("types");
             setSelectAutoTypesWorks(value);
+            setNeedCheck("types");
           }}
           onSubmit={onSubmitAutoTypeWorks}
         />
@@ -531,6 +569,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         isOpen={isShowSelectPlace}
         onClose={() => {
           setIsShowSelectPlace(false);
+          setNeedCheck("place");
         }}
         onSubmit={onSubmitPlace}
         statePlace={place || undefined}
