@@ -107,6 +107,8 @@ export const RegistrationLocation: FunctionComponent = () => {
             style={[
               styles.containerLocation,
               { opacity: isGeoLocation ? 1 : 0.5 },
+              // TODO: will do later
+              { opacity: 0 },
             ]}
           >
             <Text style={styles.titleLocation}>
@@ -116,6 +118,8 @@ export const RegistrationLocation: FunctionComponent = () => {
               </Trans>
             </Text>
             <Checkbox
+              // TODO: will do later
+              disabled
               accessibilityLabel={i18n._(
                 "Toggle on your location in the background"
               )}
