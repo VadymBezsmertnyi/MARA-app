@@ -98,7 +98,6 @@ export const Map: FunctionComponent<MapProps> = () => {
   const getToCity = () => {
     const cityCoordinates =
       userData?.place_id?.[language].geometry.location || null;
-    console.log("cityCoordinates", cityCoordinates);
     if (cityCoordinates && refMap.current)
       refMap.current.animateToRegion({
         longitude: cityCoordinates.lng,

@@ -220,14 +220,6 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
       lastName,
       ...(isPhone && { phoneNumber: clearPhoneNumber }),
     });
-    console.log("resultSave", {
-      ...userData,
-      ...currentCityUser,
-      firstName,
-      lastName,
-      phoneNumber,
-      ...(isPhone && { phoneNumber: clearPhoneNumber }),
-    });
     if (resultSave) {
       messageFromServer(
         i18n._("Profile saved"),
