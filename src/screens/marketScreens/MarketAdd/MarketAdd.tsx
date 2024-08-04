@@ -137,7 +137,9 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
   const [isShowSelectPlace, setIsShowSelectPlace] = useState(false);
   const [isCleared, setIsCleared] = useState(true);
   const [isNewProduct, setIsNewProduct] = useState(false);
-  const [isBusiness, setIsBusiness] = useState(false);
+  const [typeSeller, setTypeSeller] = useState<"user" | "business" | null>(
+    null
+  );
   const [isChange, setIsChange] = useState(false);
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [images, setImages] = useState<ImageType[]>([]);
@@ -398,7 +400,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           });
         setImages(imagesWithBath64);
         setIsNewProduct(productUser.isNewProduct);
-        setIsBusiness(productUser.isBusiness);
+        setTypeSeller(productUser.isBusiness ? "business" : "user");
         setSelect({
           category: getCategoryFull(),
           brandMoto: getBrandMoto(
@@ -437,9 +439,8 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         setPhoneNumber(productUser.phoneNumber);
       }
     } else if (userData?.phoneNumber) setPhoneNumber(userData.phoneNumber);
-    else {
-      setIsBusiness(isBusinessAdverts ? isBusinessAdverts : false);
-    }
+    else setTypeSeller(isBusinessAdverts ? "business" : "user");
+
     setLoading(false);
   };
 
@@ -518,6 +519,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           <SelectTwoButtons
             isRegular
             isSelectFirst={isNewProduct}
+            isSelectSecond={!isNewProduct}
             titleFirst={i18n._("New")}
             titleSecond={i18n._("Used")}
             label={i18n._("The state of the goods")}
@@ -533,23 +535,27 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           />
           <SelectTwoButtons
             isRegular
-            isSelectFirst={!isBusiness}
+            isSelectFirst={typeSeller === "user"}
+            isSelectSecond={typeSeller === "business"}
             titleFirst={i18n._("Private individual")}
             titleSecond={i18n._("Business")}
             label={i18n._("Seller")}
             onPressFirst={() => {
               setPlace(null);
               clearKeyError("isBusiness");
-              setIsBusiness(false);
+              setTypeSeller("user");
             }}
             onPressSecond={() => {
               setPlace(null);
               clearKeyError("isBusiness");
-              setIsBusiness(true);
+              setTypeSeller("business");
             }}
             containerStyle={styles.containerTwoButtons}
             disabledFirst={infoAdverts.amountAdvert <= 0}
-            disabledSecond={infoBusinessAdverts.amountBusinessAdvert <= 0}
+            disabledSecond={
+              !userData?.businessMarketId ||
+              infoBusinessAdverts.amountBusinessAdvert <= 0
+            }
           />
           <InputButton
             isRegular

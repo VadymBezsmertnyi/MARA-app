@@ -71,9 +71,11 @@ const ModalWindowBuy: FunctionComponent<ModalWindowBuyProps> = ({
             </TouchableOpacity>
           </View>
           <Text style={styles.titleOr}>{i18n._("-- or --")}</Text>
-          <Text style={styles.titleFeedback}>
-            {i18n._("Report an error/improvement")}
-          </Text>
+          <TouchableOpacity onPress={onToFeedbackLinkBrowser}>
+            <Text style={styles.titleFeedback}>
+              {i18n._("Report an error/improvement")}
+            </Text>
+          </TouchableOpacity>
           <Text style={styles.titleThanks}>
             {i18n._("Thank you for understanding!")}
           </Text>

@@ -10,6 +10,7 @@ import { styles } from "./SelectTwoButtons.styles";
 type SelectTwoButtonsProps = {
   isRegular?: boolean;
   isSelectFirst: boolean | null;
+  isSelectSecond: boolean | null;
   titleFirst: string;
   titleSecond: string;
   label: string;
@@ -24,6 +25,7 @@ type SelectTwoButtonsProps = {
 export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
   isRegular = false,
   isSelectFirst,
+  isSelectSecond,
   titleFirst,
   titleSecond,
   label,
@@ -35,7 +37,7 @@ export const SelectTwoButtons: FunctionComponent<SelectTwoButtonsProps> = ({
   disabledSecond,
 }) => {
   const typeFirst = isSelectFirst ? "full" : "transparent";
-  const typeSecond = !isSelectFirst ? "full" : "transparent";
+  const typeSecond = isSelectSecond ? "full" : "transparent";
 
   const containerStyles = useMemo(
     () => [styles.container, containerStyle],

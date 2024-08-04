@@ -134,6 +134,7 @@ export const BodyCategory: FunctionComponent<BodyCategoryProps> = ({
           </View>
           <SelectTwoButtons
             isSelectFirst={isCleared}
+            isSelectSecond={!isCleared}
             titleFirst={i18n._("Yes")}
             titleSecond={i18n._("No")}
             label={i18n._("Cleared:")}

@@ -254,6 +254,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             />
             <SelectTwoButtons
               isSelectFirst={isNewProduct}
+              isSelectSecond={isNewProduct === false}
               titleFirst={i18n._("New")}
               titleSecond={i18n._("Used")}
               label={i18n._("The state of the goods:")}
@@ -268,6 +269,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             />
             <SelectTwoButtons
               isSelectFirst={isBusiness}
+              isSelectSecond={isBusiness === false}
               titleFirst={i18n._("Business")}
               titleSecond={i18n._("Private individual")}
               label={i18n._("Seller:")}
