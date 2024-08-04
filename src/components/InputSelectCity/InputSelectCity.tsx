@@ -55,9 +55,14 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
   );
 
   const onSelectCity = (city: PlaceDbType) => {
-    setSelectCity(city);
+    if (city._id === selectCity?._id) {
+      setSelectCity(null);
+      setValue("");
+    } else {
+      setSelectCity(city);
+      setValue(city[language].formatted_address || "");
+    }
     setIsOpen(false);
-    setValue(city[language].formatted_address || "");
     onSelect(city);
   };
 
@@ -65,7 +70,7 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
     if (value && selectCity)
       return <Text style={styles.titleInput}>{value}</Text>;
     return <Text style={styles.defaultTitleInput}>{t(i18n)`All cities`}</Text>;
-  }, [value, selectCity, i18n]);
+  }, [value, selectCity]);
 
   return (
     <>

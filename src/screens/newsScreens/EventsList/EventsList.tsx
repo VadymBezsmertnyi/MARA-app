@@ -77,7 +77,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
         .filter((event) =>
           selectPlace ? event.place_id?._id === selectPlace._id : true
         ),
-    [eventsList, params, valueSearch]
+    [eventsList, params, valueSearch, selectPlace]
   );
   const containerStyles = useMemo(
     () => [
