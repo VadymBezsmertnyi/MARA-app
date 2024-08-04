@@ -72,8 +72,7 @@ export const useWorkshopsProviderState = () => {
         id: 10,
         title: i18n._("Painting"),
         description: i18n._(
-          // напиши малярні роботи для мотоциклів
-          "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+          "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
         ),
       },
       {
@@ -159,7 +158,7 @@ export const useWorkshopsProviderState = () => {
         id: 11,
         title: i18n._("Painting"),
         description: i18n._(
-          "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+          "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
         ),
       },
       {
