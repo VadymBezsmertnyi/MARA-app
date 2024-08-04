@@ -1,5 +1,12 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Modal,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -297,7 +304,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   }, [needCheck]);
 
   return (
-    <>
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
       <Header
         title={eventUser ? i18n._("Change event") : i18n._("Create event")}
         onRightDelete={
@@ -488,6 +499,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           }}
         />
       </Modal>
-    </>
+    </KeyboardAvoidingView>
   );
 };
