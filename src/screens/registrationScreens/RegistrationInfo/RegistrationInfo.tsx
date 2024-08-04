@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { KeyboardAvoidingView, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { Trans } from "@lingui/macro";
@@ -36,6 +36,30 @@ export const RegistrationInfo: FunctionComponent = () => {
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [errorMessageLogin, setErrorMessageLogin] = useState("");
   const [errorMessagePhone, setErrorMessagePhone] = useState("");
+
+  const objectErrors = useMemo(() => {
+    const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
+    const isLogin = login.length >= 2 && login.length <= 20;
+
+    return {
+      errorPhone: isPhone ? "" : i18n._("Invalid phone number"),
+      errorLogin: isLogin
+        ? ""
+        : i18n._(
+            "The length of the name should be between 2 and 20 characters"
+          ),
+    };
+  }, [login, phoneNumber, selectCountryIso]);
+  const isError = useMemo(
+    () => Object.values(objectErrors).some(Boolean),
+    [objectErrors]
+  );
+
+  const checkValuesOnBlur = (key: "errorPhone" | "errorLogin") => {
+    if (key === "errorPhone") setErrorMessagePhone(objectErrors[key]);
+    if (key === "errorLogin") setErrorMessageLogin(objectErrors[key]);
+    return objectErrors[key].length > 0;
+  };
 
   const onSave = async () => {
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
@@ -96,32 +120,33 @@ export const RegistrationInfo: FunctionComponent = () => {
           </Text>
           <View style={styles.containerInputs}>
             <Input
-              label={`${i18n._("Name:")}*`}
+              label={i18n._("Name")}
               placeholder={i18n._("Enter your name")}
+              isRegular
               value={login}
               onChange={onChangeLogin}
               errorMessage={errorMessageLogin}
+              onBlurProp={() => checkValuesOnBlur("errorLogin")}
             />
             <InputPhone
               isRegular
               label={i18n._("Phone number")}
+              labelStyle={styles.labelPhoneNumber}
               phoneNumber={phoneNumber}
               setPhoneNumber={onChangePhone}
               selectCountryIso={selectCountryIso}
               setSelectCountryIso={setSelectCountryIso}
               errorMessage={errorMessagePhone}
+              onBlurProp={() => checkValuesOnBlur("errorPhone")}
             />
           </View>
           <View style={styles.containerButton}>
             <ButtonCustom
-              disabled={
-                errorMessageLogin.length > 0 || errorMessagePhone.length > 0
-              }
+              disabled={isError}
               title={i18n._("Save")}
               onSubmit={onSave}
             />
             <ButtonCustom
-              disabled={errorMessageLogin.length > 0}
               title={i18n._("Fill out later")}
               onSubmit={onLater}
               type="transparent"

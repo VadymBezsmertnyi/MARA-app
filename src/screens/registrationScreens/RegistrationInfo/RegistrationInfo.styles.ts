@@ -6,7 +6,10 @@ import {
   scaleFont,
   verticalScale,
 } from "../../../../styles/hooks";
-import { FONT_700_MONTSERRAT } from "../../../../styles/constants";
+import {
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -19,6 +22,10 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(28),
     textAlign: "center",
+  },
+  labelPhoneNumber: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: scaleFont(16),
   },
   containerInputs: { gap: verticalScale(30) },
   containerButton: { gap: verticalScale(16) },
