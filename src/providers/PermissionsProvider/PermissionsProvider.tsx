@@ -77,7 +77,7 @@ const PermissionsProvider: FunctionComponent<PermissionsProviderProps> = ({
     const { status: statusBackground } =
       await Location.requestBackgroundPermissionsAsync();
     if (statusBackground !== Location.PermissionStatus.GRANTED)
-      Linking.openSettings();
+      await Linking.openSettings();
     setLocationBackgroundPermission(statusBackground);
     return statusBackground === Location.PermissionStatus.GRANTED;
   };
@@ -102,7 +102,6 @@ const PermissionsProvider: FunctionComponent<PermissionsProviderProps> = ({
           },
         },
       ]);
-    //setIsBackgroundModal(true);
     return statusBackground === Location.PermissionStatus.GRANTED;
   };
 
