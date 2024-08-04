@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import {
-  Alert,
   Text,
   TouchableOpacity,
   View,
@@ -10,7 +9,11 @@ import {
   ScrollView,
   Linking,
 } from "react-native";
-import { DrawerNavigationState, ParamListBase } from "@react-navigation/native";
+import {
+  CommonActions,
+  DrawerNavigationState,
+  ParamListBase,
+} from "@react-navigation/native";
 import { Trans } from "@lingui/macro";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -33,6 +36,8 @@ import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguag
 import { ModalSelectPlatform } from "./components/ModalSelectPlatform/ModalSelectPlatform";
 import { ModalSettingsSos } from "./components/ModalSettingsSos/ModalSettingsSos";
 import { ModalAgreements } from "./components/ModalAgreements/ModalAgreements";
+import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
+import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 // icons
 import {
@@ -44,6 +49,9 @@ import {
   IconShareGradient,
   IconWheelGradient,
 } from "../../../icons/components";
+
+// constants
+import { PATHS_MAIN_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./MenuSettings.styles";
@@ -66,7 +74,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
   //const { usersSos, onDeleteSos } = useMapProvider();
-  const { userData, editUser } = useUserProvider();
+  const { userData, editUser, deleteUser } = useUserProvider();
   const [darkTheme, setDarkTheme] = useState(false);
   //const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
@@ -75,6 +83,8 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   const [typeAgreements, setTypeAgreements] = useState<
     "terms" | "policy" | "about" | null
   >(null);
+  const [isShowDelete, setIsShowDelete] = useState(false);
+
   /* const isOnSos = useMemo(
     () =>
       usersSos
@@ -143,6 +153,21 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 
   const onCloseMenu = () => {
     navigation.closeDrawer();
+  };
+
+  const toggleDelete = () => {
+    setIsShowDelete(!isShowDelete);
+  };
+
+  const onDeleteProfile = async () => {
+    const result = await deleteUser();
+    if (result)
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 0,
+          routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
+        })
+      );
   };
 
   return (
@@ -289,6 +314,15 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 colorBoxEnabled={colors.electricRed}
               />
             </View> */}
+            <View style={styles.containerCheckbox}>
+              <ButtonCustom
+                title={i18n._("Delete profile")}
+                onSubmit={toggleDelete}
+                styleContainer={{
+                  width: "100%",
+                }}
+              />
+            </View>
           </View>
         </ScrollView>
         <View style={styles.containerLanguage}>
@@ -322,6 +356,15 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         }}
         type={typeAgreements}
       />
+      {isShowDelete && (
+        <ModalDelete
+          onClose={toggleDelete}
+          onSubmit={onDeleteProfile}
+          subTitle={i18n._(
+            "With the deletion of the profile, all your information will be deleted"
+          )}
+        />
+      )}
     </>
   );
 };
