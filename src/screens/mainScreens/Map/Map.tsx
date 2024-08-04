@@ -16,6 +16,7 @@ import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // components
 import { EventMarker } from "./components/EventMarker/EventMarker";
@@ -44,6 +45,7 @@ const DEFAULT_LOCATION: mapMarker = {
 };
 
 export const Map: FunctionComponent<MapProps> = () => {
+  const { language } = useLocalesProvider();
   const { userData } = useUserProvider();
   const { workshops } = useWorkshopsProvider();
   const { location, usersMaps, usersSos } = useMapProvider();
@@ -88,14 +90,28 @@ export const Map: FunctionComponent<MapProps> = () => {
     if (location && refMap.current)
       refMap.current.animateToRegion({
         ...location,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
+        latitudeDelta: 0.02,
+        longitudeDelta: 0.02,
+      });
+  };
+
+  const getToCity = () => {
+    const cityCoordinates =
+      userData?.place_id?.[language].geometry.location || null;
+    console.log("cityCoordinates", cityCoordinates);
+    if (cityCoordinates && refMap.current)
+      refMap.current.animateToRegion({
+        longitude: cityCoordinates.lng,
+        latitude: cityCoordinates.lat,
+        latitudeDelta: 0.1,
+        longitudeDelta: 0.1,
       });
   };
 
   useEffect(() => {
-    getToUser();
-  }, [!location]);
+    if (location) getToUser();
+    else getToCity();
+  }, [!location, userData?._id]);
 
   return (
     <View style={styles.container}>
