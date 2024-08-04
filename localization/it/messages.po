@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Allineamento ruote / Diagnostica allineamento / Ricerca difetti sospensioni / Ricerca difetti corpo vettura"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Verniciatura"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Verniciatura serbatoio / Verniciatura pannello laterale / Verniciatura parafango / Verniciatura carena / Verniciatura copertura faro / Verniciatura sezione posteriore / Verniciatura copertura sella / Verniciatura copertura scarico / Verniciatura forcella anteriore / Ecc."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aerografia"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Aerografia di qualsiasi complessità / Aerografia di qualsiasi complessità su qualsiasi superficie / Aerografia di qualsiasi complessità su qualsiasi parte della motocicletta / Disegni personalizzati di aerografia per serbatoi, parafanghi e carene"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Manutenzione tecnica"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Installazione arco protettivo / Installazione slider / Installazione sistema di scarico / Installazione sistema frenante / Installazione tubo rinforzato / Installazione Xenon / Installazione illuminazione motocicletta / Installazione luce antinebbia (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Verniciatura carrozzeria / Verniciatura paraurti / Verniciatura parafango / Verniciatura portiera / Verniciatura cofano / Verniciatura tetto / Verniciatura baule / Verniciatura ala / Verniciatura spoiler / Verniciatura specchio / Ecc."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Aerografia di qualsiasi complessità / Aerografia di qualsiasi complessità su qualsiasi superficie / Aerografia di qualsiasi complessità su qualsiasi parte dell'auto"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Pulsante per chiudere il menu delle impostazioni SOS"
 
@@ -816,6 +840,14 @@ msgstr "Termini di utilizzo"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Informativa sulla privacy"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Elimina profilo"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Con l'eliminazione del profilo, tutte le tue informazioni verranno eliminate"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Registrazione"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Nome:"
+msgid "Name"
+msgstr "Nome"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Il testo deve contenere un minimo di 3 e un massimo di 40 caratteri."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Il testo deve contenere un minimo di 10 e un massimo di 2000 caratteri."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Nome"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

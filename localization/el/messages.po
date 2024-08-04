@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Ευθυγράμμιση τροχών / Διαγνωστικό ευθυγράμμισης / Αναζήτηση ελαττωμάτων ανάρτησης / Αναζήτηση ελαττωμάτων σώματος"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Βαφή"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Βαφή δεξαμενής / Βαφή πλευρικού πάνελ / Βαφή φτερού / Βαφή καπάκι φαναριού / Βαφή ουράς / Βαφή κάλυμμα καθίσματος / Βαφή καπάκι εξατμίσεων / Βαφή πιρουνιού / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Αερογραφία"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Αερογραφία οποιασδήποτε πολυπλοκότητας / Αερογραφία οποιασδήποτε πολυπλοκότητας σε οποιαδήποτε επιφάνεια / Αερογραφία οποιασδήποτε πολυπλοκότητας σε οποιοδήποτε μέρος της μοτοσυκλέτας / Προσαρμοσμένα σχέδια αερογραφίας για δεξαμενές, φτερά και καπάκια"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Τεχνική συντήρηση"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Εγκατάσταση προστατευτικής καμπάνας / Εγκατάσταση διακλαδωτής / Εγκατάσταση εξατμίσεων / Εγκατάσταση συστήματος φρένων / Εγκατάσταση ενισχυμένου σωλήνα / Εγκατάσταση ξενόν / Εγκατάσταση φωτισμού μοτοσικλέτας / Εγκατάσταση φανών ομίχλης (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Βαφή σώματος / Βαφή προφυλακτήρα / Βαφή φτερού / Βαφή πόρτας / Βαφή καπό / Βαφή οροφής / Βαφή πορτ-μπαγκάζ / Βαφή φτερού / Βαφή αεροτομής / Βαφή καθρέπτη / Κτλ."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Αερογραφία οποιασδήποτε πολυπλοκότητας / Αερογραφία οποιασδήποτε πολυπλοκότητας σε οποιαδήποτε επιφάνεια / Αερογραφία οποιασδήποτε πολυπλοκότητας σε οποιοδήποτε μέρος του αυτοκινήτου"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Κουμπί για κλείσιμο του μενού ρυθμίσεων SOS"
 
@@ -816,6 +840,14 @@ msgstr "Όροι χρήσης"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Πολιτική απορρήτου"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Διαγραφή προφίλ"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Με τη διαγραφή του προφίλ, όλες οι πληροφορίες σας θα διαγραφούν"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Εγγραφή"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Όνομα:"
+msgid "Name"
+msgstr "Όνομα"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Το κείμενο πρέπει να περιέχει τουλάχισ�
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Το κείμενο πρέπει να περιέχει τουλάχιστον 10 και το πολύ 2000 χαρακτήρες."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Όνομα"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Pyörän suuntaus / Suuntauksen diagnostiikka / Jousituksen vikojen etsintä / Korin vikojen etsintä"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Maalaus"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Säiliön maalaus / Sivupaneelin maalaus / Lokasuojan maalaus / Katesarjan maalaus / Ajovalon kuvun maalaus / Takapaneelin maalaus / Istuimen kuvun maalaus / Pakoputken kuvun maalaus / Etuhaarukan maalaus / Jne."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aerografiikka"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Minkä tahansa monimutkaisuuden aerografiikka / Minkä tahansa monimutkaisuuden aerografiikka mille tahansa pinnalle / Minkä tahansa monimutkaisuuden aerografiikka moottoripyörän mille tahansa osalle / Mukautetut aerografiikkasuunnitelmat säiliöille, lokasuojille ja katesarjoille"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Tekninen huolto"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Suojakaaren asennus / Liukusäätimen asennus / Pakoputkiston asennus / Jarrujärjestelmän asennus / Vahvistetun letkun asennus / Xenonin asennus / Moottoripyörän valaistuksen asennus / Sumuvalojen asennus (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Korin maalaus / Puskurin maalaus / Lokasuojan maalaus / Oven maalaus / Hupun maalaus / Katon maalaus / Tavaratilan maalaus / Siiven maalaus / Spoilerin maalaus / Peilin maalaus / Jne."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Minkä tahansa monimutkaisuuden aerografiikka / Minkä tahansa monimutkaisuuden aerografiikka mille tahansa pinnalle / Minkä tahansa monimutkaisuuden aerografiikka mille tahansa auton osalle"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Painike valikon asetusten sulkemiseen SOS"
 
@@ -816,6 +840,14 @@ msgstr "Käyttöehdot"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Yksityisyydensuoja"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Poista profiili"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Profiilin poistamisen yhteydessä kaikki tietosi poistetaan"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Rekisteröinti"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Nimi:"
+msgid "Name"
+msgstr "Nimi"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Tekstin tulee olla vähintään 3 ja enintään 40 merkkiä pitkä."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Tekstin tulee olla vähintään 10 ja enintään 2000 merkkiä pitkä."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Nimi"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

@@ -68,6 +68,21 @@ export const useWorkshopsProviderState = () => {
           "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
         ),
       },
+      {
+        id: 10,
+        title: i18n._("Painting"),
+        description: i18n._(
+          // напиши малярні роботи для мотоциклів
+          "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+        ),
+      },
+      {
+        id: 11,
+        title: i18n._("Airbrushing"),
+        description: i18n._(
+          "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+        ),
+      },
     ],
     moto: [
       {
@@ -138,6 +153,20 @@ export const useWorkshopsProviderState = () => {
         title: i18n._("Tuning and customization"),
         description: i18n._(
           "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+        ),
+      },
+      {
+        id: 11,
+        title: i18n._("Painting"),
+        description: i18n._(
+          "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+        ),
+      },
+      {
+        id: 12,
+        title: i18n._("Airbrushing"),
+        description: i18n._(
+          "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
         ),
       },
     ],

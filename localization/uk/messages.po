@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Вирівнювання коліс / Діагностика вирівнювання / Пошук дефектів підвіски / Пошук дефектів кузова"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Фарбування"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Фарбування бака / Фарбування бокової панелі / Фарбування крила / Фарбування обтекача / Фарбування кришки фари / Фарбування задньої частини / Фарбування сидіння / Фарбування кришки вихлопу / Фарбування передньої вилки / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Аерографія"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Аерографія будь-якої складності / Аерографія будь-якої складності на будь-якій поверхні / Аерографія будь-якої складності на будь-якій частині мотоцикла / Індивідуальні дизайни аерографії для баків, крил та обтекачів"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Технічне обслуговування"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Установка захисного аркуша / Установка слайдера / Установка вихлопної системи / Установка гальмівної системи / Установка посиленого шланга / Установка ксенону / Установка освітлення мотоцикла / Установка протитуманних фар (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Фарбування кузова / Фарбування бампера / Фарбування крила / Фарбування дверей / Фарбування капота / Фарбування даху / Фарбування багажника / Фарбування крила / Фарбування спойлера / Фарбування дзеркала / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Аерографія будь-якої складності / Аерографія будь-якої складності на будь-якій поверхні / Аерографія будь-якої складності на будь-якій частині автомобіля"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Кнопка для закриття меню налаштувань SOS"
 
@@ -816,6 +840,14 @@ msgstr "Умови користування"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Політика конфіденційності"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Видалити профіль"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "При видаленні профілю буде видалена вся ваша інформація"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Реєстрація"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Ім'я:"
+msgid "Name"
+msgstr "Ім'я"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Текст повинен містити принаймні 3, але н
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Текст повинен містити принаймні 10, але не більше 2000 символів."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Ім'я"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

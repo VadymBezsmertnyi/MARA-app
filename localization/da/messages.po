@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Hjuljustering / Justeringsdiagnosticering / Affjedringsfejlsøgning / Karrosserifejlsøgning"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Maling"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tankmaling / Sidepanelmaling / Fendermaling / Fairingmaling / Forlygteovertrækmaling / Bagsektionmaling / Sædeovertrækmaling / Udstødningsdækmaling / Forgaffelmaling / Osv."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Airbrushing"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Airbrushing af enhver kompleksitet / Airbrushing af enhver kompleksitet på enhver overflade / Airbrushing af enhver kompleksitet på enhver del af motorcyklen / Brugerdefinerede airbrushing-designs til tanke, skærme og fairings"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Teknisk vedligeholdelse"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Installation af beskyttelsesbøjle / Installation af skyder / Installation af udstødningssystem / Installation af bremseanlæg / Installation af forstærket slange / Installation af xenon / Installation af motorcykellys / Installation af tågelys (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosserimaling / Kofangermaling / Skærmemaling / Dørmaling / Motorhjelmmaling / Tagmaling / Bagagerumsmaling / Vingemaling / Spoilermaling / Spejlmaling / Osv."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Airbrushing af enhver kompleksitet / Airbrushing af enhver kompleksitet på enhver overflade / Airbrushing af enhver kompleksitet på enhver del af bilen"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Knap til at lukke menuindstillingerne sos"
 
@@ -816,6 +840,14 @@ msgstr "Brugsbetingelser"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Fortrolighedspolitik"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Slet profil"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Med sletningen af profilen slettes alle dine oplysninger"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Registrering"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Navn:"
+msgid "Name"
+msgstr "Navn"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Teksten skal indeholde mellem 3 og 40 tegn."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Teksten skal indeholde mellem 10 og 2000 tegn."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Navn"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

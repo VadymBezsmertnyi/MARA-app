@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Kerek egyenesítés / Egyenesítés diagnosztika / Rugózás hibakeresése / Karosszéria hibakeresése"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Festés"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tank festés / Oldalpanel festés / Sárvédő festés / Kárpit festés / Fényszóró burkolat festés / Farész festés / Ülés borítás festés / Kipufogó burkolat festés / Első villa festés / Stb."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Légkefe"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Bármilyen bonyolultságú légkefe / Bármilyen bonyolultságú légkefe bármilyen felületen / Bármilyen bonyolultságú légkefe bármelyik motorkerékpár részén / Egyedi légkefe tervek tankokhoz, sárvédőkhöz és kárpitokhoz"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Technikai karbantartás"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Védelmi ív telepítése / Csúszda telepítése / Kipufogórendszer telepítése / Fékrrendszer telepítése / Erősített tömlő telepítése / Xenon telepítés / Motorkerékpár világítás telepítése / Ködlámpa telepítése (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosszéria festés / Lökhárító festés / Sárvédő festés / Ajtó festés / Motorháztető festés / Tető festés / Csomagtartó festés / Szárny festés / Spoiler festés / Tükör festés / Stb."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Bármilyen bonyolultságú légkefe / Bármilyen bonyolultságú légkefe bármilyen felületen / Bármilyen bonyolultságú légkefe bármelyik autó részén"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Gomb a menü beállítások bezárásához sos"
 
@@ -816,6 +840,14 @@ msgstr "Felhasználási feltételek"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Adatvédelmi irányelvek"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Profil törlése"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "A profil törlésével minden információt törölnek"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Regisztráció"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Név:"
+msgid "Name"
+msgstr "Név"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "A szövegnek minimum 3 és maximum 40 karaktert kell tartalmaznia."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "A szövegnek minimum 10 és maximum 2000 karaktert kell tartalmaznia."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Név"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

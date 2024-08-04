@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Aliniere roți / Diagnosticare aliniere / Căutare defecte suspensie / Căutare defecte caroserie"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Vopsire"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Vopsire rezervor / Vopsire panou lateral / Vopsire aripă / Vopsire carenă / Vopsire capac far / Vopsire secțiune spate / Vopsire capac șa / Vopsire capac evacuare / Vopsire furcă față / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aerografie"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a motocicletei / Designuri personalizate de aerografie pentru rezervoare, aripi și carene"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Întreținere tehnică"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Instalare arc de protecție / Instalare protecție alunecător / Instalare sistem de evacuare / Instalare sistem de frânare / Instalare furtun consolidat / Instalare xenon / Instalare lumină moto / Instalare lumină ceață (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Vopsire caroserie / Vopsire bară / Vopsire aripă / Vopsire ușă / Vopsire capotă / Vopsire plafon / Vopsire portbagaj / Vopsire aripă / Vopsire spoiler / Vopsire oglindă / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a mașinii"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Buton pentru închiderea meniului de setări sos"
 
@@ -816,6 +840,14 @@ msgstr "Condiții de utilizare"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Politica de confidențialitate"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Ștergeți profilul"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Odată cu ștergerea profilului, toate informațiile dvs. vor fi șterse"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Înregistrare"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Nume:"
+msgid "Name"
+msgstr "Nume"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Textul trebuie să conțină între 3 și 40 de caractere."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Textul trebuie să conțină între 10 și 2000 de caractere."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Nume"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

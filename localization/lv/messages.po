@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Ratų išlyginimas / Išlyginimo diagnostika / Pakabos defektų paieška / Krovinio defektų paieška"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Dažymas"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Bako dažymas / Šoninės plokštės dažymas / Šoninės sijos dažymas / Kėbulo dažymas / Galinio žibinto dangtelio dažymas / Užpakalinės dalies dažymas / Sėdynės dangtelio dažymas / Išmetimo dangtelio dažymas / Priekinės šakės dažymas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aerografija"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Aerografija jebkādai sarežģītībai / Aerografija jebkādai sarežģītībai uz jebkuras virsmas / Aerografija jebkādai sarežģītībai uz jebkuras motocikla daļas / Pasūtījuma aerografijas dizaini bako, šķērsošanas un kėbulo daļām"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Techninė priežiūra"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Apsauginio lanko įrengimas / Slankiojimo įrengimas / Išmetimo sistemos įrengimas / Stabdžių sistemos įrengimas / Sustiprinto vamzdžio įrengimas / Ksenono įrengimas / Motociklo apšvietimo įrengimas / Rūkas įrengimas (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Kėbulo dažymas / Bamperio dažymas / Šoninės sijos dažymas / Durų dažymas / Kapoto dažymas / Stogo dažymas / Bagažinės dažymas / Sparno dažymas / Spoilerio dažymas / Veidrodžio dažymas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Aerografija jebkādai sarežģītībai / Aerografija jebkādai sarežģītībai uz jebkuras virsmas / Aerografija jebkādai sarežģītībai uz jebkuras automašīnas daļas"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Mygtukas, skirtas uždaryti SOS meniu nustatymus"
 
@@ -816,6 +840,14 @@ msgstr "Naudojimo sąlygos"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Privatumo politika"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Ištrinti profilį"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Ištrinant profilį, visi jūsų duomenys bus ištrinti"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Registracija"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Vardas:"
+msgid "Name"
+msgstr "Nosaukums"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Tekstam jābūt vismaz 3 un ne vairāk kā 40 simboliem."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Tekstam jābūt vismaz 10 un ne vairāk kā 2000 simboliem."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Nosaukums"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

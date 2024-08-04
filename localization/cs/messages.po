@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Vyvážení kol / Diagnostika zarovnání / Hledání vad zavěšení / Hledání vad karoserie"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Lakování"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Lakování nádrže / Lakování bočních panelů / Lakování blatníku / Lakování předního krytu / Lakování zadní části / Lakování sedadla / Lakování krytu výfuku / Lakování přední vidlice / Atd."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Airbrush"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Airbrush jakéhokoli stupně složitosti / Airbrush jakéhokoli stupně složitosti na jakoukoli plochu / Airbrush jakéhokoli stupně složitosti na jakoukoli část motocyklu / Vlastní návrhy airbrush na nádrže, blatníky a kryty"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Technická údržba"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Instalace ochranného oblouku / Instalace závěsů / Instalace výfukového systému / Instalace brzdového systému / Instalace zpevněných hadic / Instalace xenonových světel / Instalace osvětlení motocyklu / Instalace mlhových světel (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Lakování karoserie / Lakování nárazníku / Lakování blatníku / Lakování dveří / Lakování kapoty / Lakování střechy / Lakování kufru / Lakování křídla / Lakování spoileru / Lakování zrcátek / Atd."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Airbrush jakéhokoli stupně složitosti / Airbrush jakéhokoli stupně složitosti na jakoukoli plochu / Airbrush jakéhokoli stupně složitosti na jakoukoli část auta"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Tlačítko pro uzavření nabídky nastavení SOS"
 
@@ -816,6 +840,14 @@ msgstr "Podmínky užívání"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Zásady ochrany osobních údajů"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Smazat profil"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Smažením profilu budou smazány všechny vaše informace"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Registrace"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Jméno:"
+msgid "Name"
+msgstr "Jméno"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Text musí obsahovat minimálně 3 a maximálně 40 znaků."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Text musí obsahovat minimálně 10 a maximálně 2000 znaků."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Jméno"
 
 #. js-lingui-explicit-id
 msgid "Workshop"

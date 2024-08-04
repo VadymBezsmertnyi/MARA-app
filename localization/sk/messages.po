@@ -678,6 +678,22 @@ msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body
 msgstr "Vyvážanie kolies / Diagnostika vyvážania / Hľadanie chýb závesu / Hľadanie chýb karosérie"
 
 #. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Maľovanie"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Maľovanie nádrže / Maľovanie bočného panela / Maľovanie blatníka / Maľovanie kapoty / Maľovanie krytu svetlometu / Maľovanie zadnej časti / Maľovanie krytu sedadla / Maľovanie krytu výfuku / Maľovanie prednej vidlice / atď."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Airbrushing"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Airbrushing ľubovoľnej zložitosti / Airbrushing ľubovoľnej zložitosti na ľubovoľnú plochu / Airbrushing ľubovoľnej zložitosti na ľubovoľnú časť motocykla / Vlastné airbrushingové vzory pre nádrže, blatníky a kapoty"
+
+#. js-lingui-explicit-id
 msgid "Technical maintenance"
 msgstr "Technická údržba"
 
@@ -750,6 +766,14 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Montáž ochrannej archy / Montáž šmykačiek / Montáž výfukového systému / Montáž brzdového systému / Montáž zosilnenej hadičky / Montáž xenónu / Montáž osvetlenia motocykla / Montáž hmlových svetlometov (FL)"
 
 #. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Maľovanie karosérie / Maľovanie nárazníka / Maľovanie blatníka / Maľovanie dverí / Maľovanie kapoty / Maľovanie strechy / Maľovanie kufra / Maľovanie krídla / Maľovanie spoileru / Maľovanie zrkadla / atď."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Airbrushing ľubovoľnej zložitosti / Airbrushing ľubovoľnej zložitosti na ľubovoľnú plochu / Airbrushing ľubovoľnej zložitosti na ľubovoľnú časť auta"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the menu settings sos"
 msgstr "Tlačidlo pre zatvorenie ponuky nastavení SOS"
 
@@ -816,6 +840,14 @@ msgstr "Podmienky používania"
 #. js-lingui-explicit-id
 msgid "Privacy policy"
 msgstr "Zásady ochrany osobných údajov"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Zmazať profil"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Pri zmazaní profilu budú všetky vaše informácie zmazané"
 
 #. js-lingui-explicit-id
 msgid "Brand/Make"
@@ -1154,8 +1186,8 @@ msgid "Registration"
 msgstr "Registrácia"
 
 #. js-lingui-explicit-id
-msgid "Name:"
-msgstr "Meno:"
+msgid "Name"
+msgstr "Názov"
 
 #. js-lingui-explicit-id
 msgid "Enter your name"
@@ -1456,10 +1488,6 @@ msgstr "Text musí obsahovať minimálne 3 a maximálne 40 znakov."
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Text musí obsahovať minimálne 10 a maximálne 2000 znakov."
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Názov"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
