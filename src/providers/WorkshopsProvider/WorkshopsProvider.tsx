@@ -31,7 +31,10 @@ import { PATHS } from "../paths.constants";
 type NewWorkshopType = Omit<WorkshopType, "_id" | "userId"> & {
   userId: string;
 };
-type ChangeWorkshopType = Omit<WorkshopType, "userId"> & { userId: string };
+type ChangeWorkshopType = Omit<WorkshopType, "userId" | "likeUserIds"> & {
+  userId: string;
+  likeUserIds: string[];
+};
 
 type WorkshopsContext = {
   workshops: WorkshopsType;

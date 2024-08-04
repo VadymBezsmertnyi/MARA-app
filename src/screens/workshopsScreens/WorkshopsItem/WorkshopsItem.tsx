@@ -26,6 +26,7 @@ import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
+import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // helps
 import { getFormatPhoneNumber } from "../../../helps/helps";
@@ -72,6 +73,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   navigation,
   route,
 }) => {
+  const { heightTabBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
   const { userData } = useUserProvider();
   const { workshops, changeWorkshop } = useWorkshopsProvider();
@@ -160,10 +162,10 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         image,
       }));
       const likeUserIds = isLike
-        ? selectWorkshop.likeUserIds.filter(
-            (likeUserId) => likeUserId !== userData?._id
-          )
-        : [...selectWorkshop.likeUserIds, userData._id];
+        ? selectWorkshop.likeUserIds
+            .filter((likeUserId) => likeUserId._id !== userData?._id)
+            .map((item) => item._id)
+        : [...selectWorkshop.likeUserIds.map((item) => item._id), userData._id];
       changeWorkshop({
         ...selectWorkshop,
         images: currentImages,
@@ -178,7 +180,14 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {
+          paddingBottom: heightTabBar,
+        },
+      ]}
+    >
       <Header
         title={i18n._("Workshop")}
         rightElement={
