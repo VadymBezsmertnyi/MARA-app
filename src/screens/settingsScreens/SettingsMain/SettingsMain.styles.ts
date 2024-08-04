@@ -51,5 +51,6 @@ export const styles = StyleSheet.create({
   containerFooter: {
     paddingHorizontal: horizontalScale(16),
     paddingVertical: verticalScale(20),
+    gap: verticalScale(10),
   },
 });

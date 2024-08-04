@@ -32,6 +32,7 @@ import {
 
 // styles
 import { styles } from "./SettingsMain.styles";
+import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 
 type SettingsMainProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -41,12 +42,13 @@ type SettingsMainProps = {
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   navigation,
 }) => {
-  const { exitUser } = useUserProvider();
+  const { exitUser, deleteUser } = useUserProvider();
   const { infoBusinessAdverts, infoAdverts, infoSmallEvents, infoWorkshops } =
     useSubscriptionProvider();
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
+  const [isShowDelete, setIsShowDelete] = useState(false);
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -89,6 +91,21 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
 
   const onPressBuy = () => {
     setIsShowPayment(true);
+  };
+
+  const onDeleteProfile = async () => {
+    const result = await deleteUser();
+    if (result)
+      navigation.dispatch(
+        CommonActions.reset({
+          index: 0,
+          routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
+        })
+      );
+  };
+
+  const toggleDelete = () => {
+    setIsShowDelete(!isShowDelete);
   };
 
   return (
@@ -178,12 +195,26 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
                 navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
               }}
             />
+            <ButtonCustom
+              type="transparent"
+              title={i18n._("Delete profile")}
+              onSubmit={toggleDelete}
+            />
           </View>
           <View style={styles.containerEmpty} />
         </ScrollView>
       </View>
       {isShowPayment && (
         <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
+      )}
+      {isShowDelete && (
+        <ModalDelete
+          onClose={toggleDelete}
+          onSubmit={onDeleteProfile}
+          subTitle={i18n._(
+            "With the deletion of the profile, all your information will be deleted"
+          )}
+        />
       )}
     </>
   );

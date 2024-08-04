@@ -70,8 +70,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const { bottom } = useSafeAreaInsets();
   const { messageFromServer } = useDropDownAlertProvider();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { userData, editUser, exitUser, deleteUser, setIsChangeAvatar } =
-    useUserProvider();
+  const { userData, editUser, exitUser, setIsChangeAvatar } = useUserProvider();
   const { i18n, language } = useLocalesProvider();
   const { heightTabBar, heightStatusBar } = useThemeProvider();
   const { placesDB } = usePlacesProvider();
@@ -190,17 +189,6 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     setIsChangeAvatar(true);
   };
 
-  const onDeleteProfile = async () => {
-    const result = await deleteUser();
-    if (result)
-      navigation.dispatch(
-        CommonActions.reset({
-          index: 0,
-          routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
-        })
-      );
-  };
-
   const onLogoutProfile = async () => {
     const result = await exitUser();
     if (result)
@@ -288,12 +276,12 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
       <View style={containerStyles}>
         <View style={styles.containerHeader}>
           <TouchableOpacity
-            onPress={onDeleteProfile}
+            onPress={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsMain);
+            }}
             style={styles.buttonsHeaderLeft}
           >
-            <Text style={styles.titleDelete}>
-              <Trans>Delete</Trans>
-            </Text>
+            <Text style={styles.titleDelete}>{i18n._("Back")}</Text>
           </TouchableOpacity>
           <Text style={styles.titleHeader}>
             <Trans>Profile</Trans>
