@@ -69,7 +69,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
 }) => {
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
-  const { userData, setUserData } = useUserProvider();
+  const { userData, setUserData, meUser } = useUserProvider();
   const { location } = useMapProvider();
   const { onSetUserProperties } = useAnalyticsProvider();
   const [workshops, setWorkShops] = useState<WorkshopsType>([]);
@@ -140,6 +140,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
       await onSetUserProperties({
         amountWorkshops: (userData.workshopsIds.length + 1).toString(),
       });
+      meUser(false);
       return true;
     }
     setLoading(false);
@@ -174,6 +175,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         return state;
       });
       setLoading(false);
+      meUser(false);
       return true;
     }
     setLoading(false);
@@ -210,6 +212,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         }
       }
 
+      meUser(false);
       return true;
     } catch (error) {
       return false;
@@ -239,6 +242,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         )
       );
       setLoading(false);
+      meUser(false);
       return true;
     }
     setLoading(false);
@@ -266,6 +270,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         )
       );
       setLoading(false);
+      meUser(false);
       return true;
     }
     setLoading(false);

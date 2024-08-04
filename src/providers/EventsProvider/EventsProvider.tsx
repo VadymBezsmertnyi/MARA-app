@@ -61,7 +61,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
 }) => {
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useLocalesProvider();
-  const { userData } = useUserProvider();
+  const { userData, meUser } = useUserProvider();
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
   const { onSetUserProperties } = useAnalyticsProvider();
@@ -113,6 +113,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
         });
       }
     }
+    meUser(false);
     setLoading(false);
   };
 
@@ -142,6 +143,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
         )
       );
     }
+    meUser(false);
     setLoading(false);
   };
 
@@ -171,6 +173,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
         }
       }
 
+      meUser(false);
       return true;
     } catch (error) {
       return false;

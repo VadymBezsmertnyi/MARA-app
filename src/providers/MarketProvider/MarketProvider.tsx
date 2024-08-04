@@ -75,7 +75,7 @@ const MarketProvider: FunctionComponent<MarketProviderProps> = ({
 }) => {
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useLocalesProvider();
-  const { userData, setUserData } = useUserProvider();
+  const { userData, setUserData, meUser } = useUserProvider();
   const { setCurrencies } = usePaymentProvider();
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
@@ -168,6 +168,7 @@ const MarketProvider: FunctionComponent<MarketProviderProps> = ({
           amountWorkshops: (userData.workshopsIds.length + 1).toString(),
         });
       }
+      meUser(false);
       return true;
     }
     setLoading(false);
@@ -200,6 +201,7 @@ const MarketProvider: FunctionComponent<MarketProviderProps> = ({
       }
       setMinMaxProduct(result.product);
       setLoading(false);
+      meUser(false);
       return true;
     }
     setLoading(false);
@@ -236,6 +238,7 @@ const MarketProvider: FunctionComponent<MarketProviderProps> = ({
         }
       }
 
+      meUser(false);
       return true;
     } catch (error) {
       return false;
