@@ -110,7 +110,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const errorsObject = useMemo(() => {
     const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
     return {
-      ...(isPhone && {
+      ...(!isPhone && {
         phoneNumber: {
           name: "phoneNumber",
           title: i18n._("Error: incorrect phone number"),
