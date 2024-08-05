@@ -47,6 +47,7 @@ import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
+import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
 
 type SettingsBusinessCreateProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -72,6 +73,7 @@ export const SettingsBusinessCreate: FunctionComponent<
   SettingsBusinessCreateProps
 > = ({ navigation }) => {
   const { params } = useRoute<RouteProp<RootSettingsScreensParamList>>();
+  const { setLoading } = useLoadingProvider();
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n, language } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
@@ -187,40 +189,47 @@ export const SettingsBusinessCreate: FunctionComponent<
   };
 
   const onSubmit = async () => {
-    const isError = checkEnterData();
-    const currentPhoneNumbers = otherPhoneNumbers.filter((otherPhone) => {
-      const isPhone =
-        verifyPhone(otherPhone.phoneNumber, otherPhone.selectCountryIso)
-          .length === 0;
-      return isPhone;
-    });
-    if (!isError && place && userData) {
-      const newBusiness = {
-        name,
-        place,
-        mainPhoneNumber,
-        otherPhoneNumbers: currentPhoneNumbers.length
-          ? currentPhoneNumbers
-          : null,
-        userId: userData._id,
-      };
-      const result = selectBusinessMarket
-        ? await onUpdateBusinessMarket({
-            ...newBusiness,
-            logo: selectBusinessMarket.logo,
-            _id: selectBusinessMarket._id,
-            newLogo:
-              logo?.base64 && logo?.uri !== selectBusinessMarket.logo?.url
+    setLoading(true);
+    try {
+      const isError = checkEnterData();
+      const currentPhoneNumbers = otherPhoneNumbers.filter((otherPhone) => {
+        const isPhone =
+          verifyPhone(otherPhone.phoneNumber, otherPhone.selectCountryIso)
+            .length === 0;
+        return isPhone;
+      });
+      if (!isError && place && userData) {
+        const newBusiness = {
+          name,
+          place,
+          mainPhoneNumber,
+          otherPhoneNumbers: currentPhoneNumbers.length
+            ? currentPhoneNumbers
+            : null,
+          userId: userData._id,
+        };
+        const result = selectBusinessMarket
+          ? await onUpdateBusinessMarket({
+              ...newBusiness,
+              logo: selectBusinessMarket.logo,
+              _id: selectBusinessMarket._id,
+              newLogo:
+                logo?.base64 && logo?.uri !== selectBusinessMarket.logo?.url
+                  ? { ...logo, base64: logo.base64 || "" }
+                  : null,
+            })
+          : await onCreateBusinessMarket({
+              ...newBusiness,
+              newLogo: logo?.base64
                 ? { ...logo, base64: logo.base64 || "" }
                 : null,
-          })
-        : await onCreateBusinessMarket({
-            ...newBusiness,
-            newLogo: logo?.base64
-              ? { ...logo, base64: logo.base64 || "" }
-              : null,
-          });
-      if (result) navigation.goBack();
+            });
+        if (result) navigation.goBack();
+      }
+    } catch (error) {
+      if (__DEV__) console.warn(error);
+    } finally {
+      setLoading(false);
     }
   };
 
