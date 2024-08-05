@@ -145,6 +145,8 @@ const BusinessProvider: FunctionComponent<BusinessProviderProps> = ({
 
   useEffect(() => {
     if (userData?._id) getBusinessUser(userData._id);
+    else if (userData === null && businessMarketUser !== null)
+      setBusinessMarketUser(null);
   }, [userData?._id]);
 
   return (

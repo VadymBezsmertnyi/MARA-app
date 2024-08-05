@@ -27,9 +27,9 @@ export const businessMarketSchema = z.object({
           image: imageSchema.optional(),
         })
         .nullable(),
-      firstName: z.string(),
-      lastName: z.string(),
-      phoneNumber: z.string(),
+      firstName: z.string().nullable(),
+      lastName: z.string().nullable(),
+      phoneNumber: z.string().nullable(),
     })
     .nullable(),
   logo: z
