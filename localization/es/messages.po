@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Por favor, agregue imágenes para {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Telegram {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "anuncio"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Pintura"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Pintura de tanque / Pintura de panel lateral / Pintura de guardabarros / Pintura de carenado / Pintura de cubierta de faro / Pintura de sección trasera / Pintura de cubierta de asiento / Pintura de cubierta de escape / Pintura de horquilla delantera / Etc."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Pintura de carrocería / Pintura de parachoques / Pintura de guardabarros / Pintura de puerta / Pintura de capó / Pintura de techo / Pintura de maletero / Pintura de ala / Pintura de spoiler / Pintura de espejo / Etc."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Instalación de arco protector / Instalación de deslizador / Instalación de sistema de escape / Instalación de sistema de frenos / Instalación de manguera reforzada / Instalación de Xenon / Instalación de iluminación de motocicletas / Instalación de luz antiniebla (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Pintura de carrocería / Pintura de parachoques / Pintura de guardabarros / Pintura de puerta / Pintura de capó / Pintura de techo / Pintura de maletero / Pintura de ala / Pintura de spoiler / Pintura de espejo / Etc."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Pintura de tanque / Pintura de panel lateral / Pintura de guardabarros / Pintura de carenado / Pintura de cubierta de faro / Pintura de sección trasera / Pintura de cubierta de asiento / Pintura de cubierta de escape / Pintura de horquilla delantera / Etc."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

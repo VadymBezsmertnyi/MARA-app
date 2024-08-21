@@ -632,8 +632,11 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
               onBlurProp={() => checkValueOnBlur("telegram")}
               value={telegram}
               onChange={(value) => {
+                const isDot = value.includes("@");
                 clearKeyError("telegram");
-                setTelegram(value);
+                setTelegram(
+                  isDot ? value : `@${value.replace(/[^a-zA-Z0-9]/g, "")}`
+                );
               }}
               errorMessage={
                 errorMessage?.telegram ? errorMessage.telegram.title : ""

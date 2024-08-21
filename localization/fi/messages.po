@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Lisää kuvia {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "{otherName} Telegram"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "mainos"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Maalaus"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Säiliön maalaus / Sivupaneelin maalaus / Lokasuojan maalaus / Katesarjan maalaus / Ajovalon kuvun maalaus / Takapaneelin maalaus / Istuimen kuvun maalaus / Pakoputken kuvun maalaus / Etuhaarukan maalaus / Jne."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Korin maalaus / Puskurin maalaus / Lokasuojan maalaus / Oven maalaus / Hupun maalaus / Katon maalaus / Tavaratilan maalaus / Siiven maalaus / Spoilerin maalaus / Peilin maalaus / Jne."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Suojakaaren asennus / Liukusäätimen asennus / Pakoputkiston asennus / Jarrujärjestelmän asennus / Vahvistetun letkun asennus / Xenonin asennus / Moottoripyörän valaistuksen asennus / Sumuvalojen asennus (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Korin maalaus / Puskurin maalaus / Lokasuojan maalaus / Oven maalaus / Hupun maalaus / Katon maalaus / Tavaratilan maalaus / Siiven maalaus / Spoilerin maalaus / Peilin maalaus / Jne."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Säiliön maalaus / Sivupaneelin maalaus / Lokasuojan maalaus / Katesarjan maalaus / Ajovalon kuvun maalaus / Takapaneelin maalaus / Istuimen kuvun maalaus / Pakoputken kuvun maalaus / Etuhaarukan maalaus / Jne."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

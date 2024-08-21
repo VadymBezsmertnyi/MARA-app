@@ -20,7 +20,8 @@ type NameKeyType =
   | "typeFuel"
   | "typeTransmission"
   | "typeParts"
-  | "images";
+  | "images"
+  | "telegram";
 
 export const useErrors = (i18n: I18n) => {
   const getErrorText = (
@@ -146,6 +147,14 @@ export const useErrors = (i18n: I18n) => {
           name: i18n._("Images {otherName}", { otherName }),
           title: i18n._("Please add images for {otherName}", { otherName }),
         };
+      if (type === "telegram")
+        return {
+          name: i18n._("Telegram {otherName}", { otherName }),
+          title: i18n._(
+            "The text must contain a minimum of {min} and a maximum of {max} characters.",
+            { min, max }
+          ),
+        };
       return { name: "", title: "" };
     }
     return { name: "", title: "" };
@@ -264,13 +273,14 @@ export const useErrors = (i18n: I18n) => {
           otherName: i18n._("advert"),
         }),
       }),
-    ...((telegram.length < 3 || telegram.length > 40) && {
-      telegram: getErrorText("title", {
-        min: 3,
-        max: 40,
-        otherName: i18n._("advert"),
+    ...(telegram.length < 3 &&
+      telegram.length > 40 && {
+        telegram: getErrorText("telegram", {
+          min: 3,
+          max: 40,
+          otherName: i18n._("advert"),
+        }),
       }),
-    }),
   });
 
   return { getErrorText, getErrorAddProduct };

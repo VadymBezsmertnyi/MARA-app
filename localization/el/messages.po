@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Παρακαλώ προσθέστε εικόνες για το {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Telegram {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "διαφήμιση"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Βαφή"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Βαφή δεξαμενής / Βαφή πλευρικού πάνελ / Βαφή φτερού / Βαφή καπάκι φαναριού / Βαφή ουράς / Βαφή κάλυμμα καθίσματος / Βαφή καπάκι εξατμίσεων / Βαφή πιρουνιού / Κτλ."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Βαφή σώματος / Βαφή προφυλακτήρα / Βαφή φτερού / Βαφή πόρτας / Βαφή καπό / Βαφή οροφής / Βαφή πορτ-μπαγκάζ / Βαφή φτερού / Βαφή αεροτομής / Βαφή καθρέπτη / Κτλ."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Εγκατάσταση προστατευτικής καμπάνας / Εγκατάσταση διακλαδωτής / Εγκατάσταση εξατμίσεων / Εγκατάσταση συστήματος φρένων / Εγκατάσταση ενισχυμένου σωλήνα / Εγκατάσταση ξενόν / Εγκατάσταση φωτισμού μοτοσικλέτας / Εγκατάσταση φανών ομίχλης (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Βαφή σώματος / Βαφή προφυλακτήρα / Βαφή φτερού / Βαφή πόρτας / Βαφή καπό / Βαφή οροφής / Βαφή πορτ-μπαγκάζ / Βαφή φτερού / Βαφή αεροτομής / Βαφή καθρέπτη / Κτλ."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Βαφή δεξαμενής / Βαφή πλευρικού πάνελ / Βαφή φτερού / Βαφή καπάκι φαναριού / Βαφή ουράς / Βαφή κάλυμμα καθίσματος / Βαφή καπάκι εξατμίσεων / Βαφή πιρουνιού / Κτλ."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

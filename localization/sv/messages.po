@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Lägg till bilder för {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Telegram för {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "annons"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Målning"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tankmålning / Sidopanelmålning / Fendermålning / Fairingmålning / Strålkastarlockmålning / Bakre sektionmålning / Sätesöverdragmålning / Avgaslockmålning / Framgaffelmålning / Osv."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosserimålning / Bumpmålning / Fendermålning / Dörrmålning / Huvmålning / Takmålning / Bagageluckemålning / Vingmålning / Spoilermålning / Spegelmålning / Osv."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Installation av skyddsbåge / Installation av slider / Installation av avgassystem / Installation av bromssystem / Installation av förstärkt slang / Installation av xenon / Installation av motorcykelljus / Installation av dimljus (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Karosserimålning / Bumpmålning / Fendermålning / Dörrmålning / Huvmålning / Takmålning / Bagageluckemålning / Vingmålning / Spoilermålning / Spegelmålning / Osv."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tankmålning / Sidopanelmålning / Fendermålning / Fairingmålning / Strålkastarlockmålning / Bakre sektionmålning / Sätesöverdragmålning / Avgaslockmålning / Framgaffelmålning / Osv."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

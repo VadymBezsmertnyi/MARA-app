@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Калі ласка, дадайце фотаздымкі для {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Тэлеграм {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "агукласць"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Маляванне"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Маляванне танка / Маляванне бокавых панэляў / Маляванне крылаў / Маляванне капотаў / Маляванне крышкі фары / Маляванне хвастовай часткі / Маляванне сядзення / Маляванне крышкі выхлапу / Маляванне перадняга амартызатара / Г. д."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Маляванне кузава / Маляванне бампера / Маляванне крылаў / Маляванне дзвераў / Маляванне капотаў / Маляванне даха / Маляванне багажніка / Маляванне крыла / Маляванне спойлера / Маляванне дзеркалаў / Г. д."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Устаноўка абарончага арка / Устаноўка слайдера / Устаноўка выхлопнай сістэмы / Устаноўка тармазнай сістэмы / Устаноўка адшпалераванага шланга / Устаноўка ксенана / Устаноўка асветлення мотацыкла / Устаноўка праціўатуманнага святла (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Маляванне кузава / Маляванне бампера / Маляванне крылаў / Маляванне дзвераў / Маляванне капотаў / Маляванне даха / Маляванне багажніка / Маляванне крыла / Маляванне спойлера / Маляванне дзеркалаў / Г. д."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Маляванне танка / Маляванне бокавых панэляў / Маляванне крылаў / Маляванне капотаў / Маляванне крышкі фары / Маляванне хвастовай часткі / Маляванне сядзення / Маляванне крышкі выхлапу / Маляванне перадняга амартызатара / Г. д."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

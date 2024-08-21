@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Bitte fügen Sie Bilder für {otherName} hinzu"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Telegramm {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "Anzeige"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Malerei"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tankmalerei / Seitenteilmalerei / Kotflügelmaler / Verkleidungsmalerei / Scheinwerferabdeckungsmalerei / Heckteilmalerei / Sitzbezugsmalerei / Auspuffabdeckungsmalerei / Vorderradgabelmalerei / usw."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosserielackierung / Stoßstangenlackierung / Kotflügellackierung / Tür lackieren / Motorhaubenlackierung / Dachlackierung / Kofferraumlackierung / Flügellackierung / Spoilerlackierung / Spiegellackierung / usw."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Installation eines Überrollbügels / Installation von Schiebern / Installation des Auspuffsystems / Installation des Bremssystems / Installation von verstärkten Schläuchen / Installation von Xenon / Installation von Motorradbeleuchtung / Installation von Nebelscheinwerfern (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Karosserielackierung / Stoßstangenlackierung / Kotflügellackierung / Tür lackieren / Motorhaubenlackierung / Dachlackierung / Kofferraumlackierung / Flügellackierung / Spoilerlackierung / Spiegellackierung / usw."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tankmalerei / Seitenteilmalerei / Kotflügelmaler / Verkleidungsmalerei / Scheinwerferabdeckungsmalerei / Heckteilmalerei / Sitzbezugsmalerei / Auspuffabdeckungsmalerei / Vorderradgabelmalerei / usw."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

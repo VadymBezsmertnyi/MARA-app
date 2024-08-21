@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Kérjük, adjon hozzá képeket a(z) {otherName} számára"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "{otherName} Telegram"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "hirdetés"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Festés"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tank festés / Oldalpanel festés / Sárvédő festés / Kárpit festés / Fényszóró burkolat festés / Farész festés / Ülés borítás festés / Kipufogó burkolat festés / Első villa festés / Stb."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosszéria festés / Lökhárító festés / Sárvédő festés / Ajtó festés / Motorháztető festés / Tető festés / Csomagtartó festés / Szárny festés / Spoiler festés / Tükör festés / Stb."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Védelmi ív telepítése / Csúszda telepítése / Kipufogórendszer telepítése / Fékrrendszer telepítése / Erősített tömlő telepítése / Xenon telepítés / Motorkerékpár világítás telepítése / Ködlámpa telepítése (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Karosszéria festés / Lökhárító festés / Sárvédő festés / Ajtó festés / Motorháztető festés / Tető festés / Csomagtartó festés / Szárny festés / Spoiler festés / Tükör festés / Stb."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tank festés / Oldalpanel festés / Sárvédő festés / Kárpit festés / Fényszóró burkolat festés / Farész festés / Ülés borítás festés / Kipufogó burkolat festés / Első villa festés / Stb."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

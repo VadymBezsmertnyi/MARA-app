@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Lūdzu, pievienojiet attēlus priekš {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Telegram {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "sludinājums"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Dažymas"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Bako dažymas / Šoninės plokštės dažymas / Šoninės sijos dažymas / Kėbulo dažymas / Galinio žibinto dangtelio dažymas / Užpakalinės dalies dažymas / Sėdynės dangtelio dažymas / Išmetimo dangtelio dažymas / Priekinės šakės dažymas / Ir kt."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Kėbulo dažymas / Bamperio dažymas / Šoninės sijos dažymas / Durų dažymas / Kapoto dažymas / Stogo dažymas / Bagažinės dažymas / Sparno dažymas / Spoilerio dažymas / Veidrodžio dažymas / Ir kt."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Apsauginio lanko įrengimas / Slankiojimo įrengimas / Išmetimo sistemos įrengimas / Stabdžių sistemos įrengimas / Sustiprinto vamzdžio įrengimas / Ksenono įrengimas / Motociklo apšvietimo įrengimas / Rūkas įrengimas (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Kėbulo dažymas / Bamperio dažymas / Šoninės sijos dažymas / Durų dažymas / Kapoto dažymas / Stogo dažymas / Bagažinės dažymas / Sparno dažymas / Spoilerio dažymas / Veidrodžio dažymas / Ir kt."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Bako dažymas / Šoninės plokštės dažymas / Šoninės sijos dažymas / Kėbulo dažymas / Galinio žibinto dangtelio dažymas / Užpakalinės dalies dažymas / Sėdynės dangtelio dažymas / Išmetimo dangtelio dažymas / Priekinės šakės dažymas / Ir kt."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

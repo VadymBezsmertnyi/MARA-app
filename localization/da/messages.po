@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Tilføj venligst billeder for {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Telegram {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "annonce"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Maling"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tankmaling / Sidepanelmaling / Fendermaling / Fairingmaling / Forlygteovertrækmaling / Bagsektionmaling / Sædeovertrækmaling / Udstødningsdækmaling / Forgaffelmaling / Osv."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosserimaling / Kofangermaling / Skærmemaling / Dørmaling / Motorhjelmmaling / Tagmaling / Bagagerumsmaling / Vingemaling / Spoilermaling / Spejlmaling / Osv."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Installation af beskyttelsesbøjle / Installation af skyder / Installation af udstødningssystem / Installation af bremseanlæg / Installation af forstærket slange / Installation af xenon / Installation af motorcykellys / Installation af tågelys (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Karosserimaling / Kofangermaling / Skærmemaling / Dørmaling / Motorhjelmmaling / Tagmaling / Bagagerumsmaling / Vingemaling / Spoilermaling / Spejlmaling / Osv."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tankmaling / Sidepanelmaling / Fendermaling / Fairingmaling / Forlygteovertrækmaling / Bagsektionmaling / Sædeovertrækmaling / Udstødningsdækmaling / Forgaffelmaling / Osv."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"

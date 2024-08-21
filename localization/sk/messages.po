@@ -510,6 +510,10 @@ msgid "Please add images for {otherName}"
 msgstr "Prosím, pridajte obrázky pre {otherName}"
 
 #. js-lingui-explicit-id
+msgid "Telegram {otherName}"
+msgstr "Telegram {otherName}"
+
+#. js-lingui-explicit-id
 msgid "advert"
 msgstr "inzerát"
 
@@ -682,8 +686,8 @@ msgid "Painting"
 msgstr "Maľovanie"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Maľovanie nádrže / Maľovanie bočného panela / Maľovanie blatníka / Maľovanie kapoty / Maľovanie krytu svetlometu / Maľovanie zadnej časti / Maľovanie krytu sedadla / Maľovanie krytu výfuku / Maľovanie prednej vidlice / atď."
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Maľovanie karosérie / Maľovanie nárazníka / Maľovanie blatníka / Maľovanie dverí / Maľovanie kapoty / Maľovanie strechy / Maľovanie kufra / Maľovanie krídla / Maľovanie spoileru / Maľovanie zrkadla / atď."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing"
@@ -766,8 +770,8 @@ msgid "Protective arch installation / Slider installation / Exhaust system insta
 msgstr "Montáž ochrannej archy / Montáž šmykačiek / Montáž výfukového systému / Montáž brzdového systému / Montáž zosilnenej hadičky / Montáž xenónu / Montáž osvetlenia motocykla / Montáž hmlových svetlometov (FL)"
 
 #. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Maľovanie karosérie / Maľovanie nárazníka / Maľovanie blatníka / Maľovanie dverí / Maľovanie kapoty / Maľovanie strechy / Maľovanie kufra / Maľovanie krídla / Maľovanie spoileru / Maľovanie zrkadla / atď."
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Maľovanie nádrže / Maľovanie bočného panela / Maľovanie blatníka / Maľovanie kapoty / Maľovanie krytu svetlometu / Maľovanie zadnej časti / Maľovanie krytu sedadla / Maľovanie krytu výfuku / Maľovanie prednej vidlice / atď."
 
 #. js-lingui-explicit-id
 msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
