@@ -95,6 +95,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
             style={[
               styles.containerButtonBack,
               {
+                flex: 1,
                 width: rightWidth > leftWidth ? rightWidth : leftWidth,
               },
             ]}
@@ -120,7 +121,9 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
             onPress={onRightDelete}
             onLayout={(event) => setRightWidth(event.nativeEvent.layout.width)}
             style={{
+              flex: 1,
               width: rightWidth > leftWidth ? rightWidth : leftWidth,
+              alignItems: "flex-end",
             }}
           >
             <Text style={styles.titleButtonDeleteEvent}>
