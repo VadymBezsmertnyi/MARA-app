@@ -109,7 +109,7 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
                     imageSrc={imageSource}
                   />
                 ) : (
-                  <IconProfileAvatar />
+                  <IconProfileAvatar width={82} height={82} />
                 )}
                 <ButtonCustom
                   disabled={useAmountBusinessAdvert <= amountBusinessAdvert}
