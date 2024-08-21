@@ -121,7 +121,7 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
             />
             <ButtonCustom
               styleContainer={styles.button}
-              title={i18n._("Confirm")}
+              title={i18n._("Save")}
               onSubmit={() => {
                 setIsShowModal(false);
                 onBlur && onBlur();
