@@ -88,61 +88,77 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   return (
     <SafeAreaView style={backgroundStyles}>
       <View style={containerStyles}>
-        {isShowLeft ? (
-          <TouchableOpacity
-            disabled={Boolean(leftElement)}
-            onPress={onBack}
-            style={[
-              styles.containerButtonBack,
-              {
-                flex: 1,
-                width: rightWidth > leftWidth ? rightWidth : leftWidth,
-              },
-            ]}
-            onLayout={(event) => setLeftWidth(event.nativeEvent.layout.width)}
-          >
-            {leftElement || (
-              <>
-                <ArrowLeft
-                  width={24}
-                  height={24}
-                  stroke={theme === THEME_DARK ? colors.white : colors.black}
-                  style={styles.iconButtonBack}
-                />
-                <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
-              </>
-            )}
-          </TouchableOpacity>
-        ) : null}
+        <View
+          style={{
+            width: "30%",
+          }}
+        >
+          {isShowLeft ? (
+            <TouchableOpacity
+              disabled={Boolean(leftElement)}
+              onPress={onBack}
+              style={styles.containerButtonBack}
+              onLayout={(event) => setLeftWidth(event.nativeEvent.layout.width)}
+            >
+              {leftElement || (
+                <>
+                  <ArrowLeft
+                    width={24}
+                    height={24}
+                    stroke={theme === THEME_DARK ? colors.white : colors.black}
+                    style={styles.iconButtonBack}
+                  />
+                  <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
+                </>
+              )}
+            </TouchableOpacity>
+          ) : null}
+        </View>
 
-        <Text style={styles.title}>{title}</Text>
-        {onRightDelete ? (
-          <TouchableOpacity
-            onPress={onRightDelete}
-            onLayout={(event) => setRightWidth(event.nativeEvent.layout.width)}
-            style={{
-              flex: 1,
-              width: rightWidth > leftWidth ? rightWidth : leftWidth,
-              alignItems: "flex-end",
-            }}
-          >
-            <Text style={styles.titleButtonDeleteEvent}>
-              <Trans>Delete</Trans>
-            </Text>
-          </TouchableOpacity>
-        ) : isShowRight ? (
-          <View
-            style={[
-              rightStyles,
-              {
-                width: rightWidth > leftWidth ? rightWidth : leftWidth,
-              },
-            ]}
-            onLayout={(event) => setRightWidth(event.nativeEvent.layout.width)}
-          >
-            {rightElement && rightElement}
-          </View>
-        ) : null}
+        <View
+          style={{
+            width: "40%",
+          }}
+        >
+          <Text numberOfLines={1} style={styles.title}>
+            {title}
+          </Text>
+        </View>
+        <View
+          style={{
+            width: "30%",
+          }}
+        >
+          {onRightDelete ? (
+            <TouchableOpacity
+              onPress={onRightDelete}
+              onLayout={(event) =>
+                setRightWidth(event.nativeEvent.layout.width)
+              }
+              style={{
+                alignItems: "flex-end",
+              }}
+            >
+              <Text style={styles.titleButtonDeleteEvent}>
+                <Trans>Delete</Trans>
+              </Text>
+            </TouchableOpacity>
+          ) : isShowRight ? (
+            <View
+              style={[
+                rightStyles,
+                {
+                  width: rightWidth > leftWidth ? rightWidth : leftWidth,
+                },
+              ]}
+              onLayout={(event) =>
+                setRightWidth(event.nativeEvent.layout.width)
+              }
+            >
+              {rightElement && rightElement}
+            </View>
+          ) : null}
+        </View>
       </View>
     </SafeAreaView>
   );
