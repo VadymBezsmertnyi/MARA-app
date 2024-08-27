@@ -1,3 +1,6 @@
+locationAlwaysAndWhenInUsePermission = "Salli $(PRODUCT_NAME) käyttää sijaintiasi etsiäksesi ystäviä kartalla. Voit aina poistaa tämän käytöstä so applikaation valikossa.";
+locationAlwaysPermission = "Salli $(PRODUCT_NAME) aina käyttää sijaintiasi jatkuvan ystävien seurannan tarjoamiseksi kartalla. Voit poistaa tämän käytöstä milloin tahansa sovelluksen valikossa.";
+locationWhenInUsePermission = "Salli $(PRODUCT_NAME) käyttää sijaintiasi sovelluksen käytön aikana auttaaksesi sinua löytämään ystäviä kartalla. Voit poistaa tämän käytöstä so applikaation valikossa.";
 NSFaceIDUsageDescription = "Kirjautumiseen Face ID:llä";
 UIApplicationShortcutItemTitle = "Pikakäynnistys";
 NSCameraUsageDescription = "Valokuvien ottamiseen";

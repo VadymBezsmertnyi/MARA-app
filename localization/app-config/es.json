@@ -1,4 +1,7 @@
 {
+  "locationAlwaysAndWhenInUsePermission": "Permitir a $(PRODUCT_NAME) usar tu ubicación para buscar amigos en el mapa. Siempre puedes desactivar esto en el menú de la aplicación.",
+  "locationAlwaysPermission": "Permitir a $(PRODUCT_NAME) acceder siempre a tu ubicación para proporcionar un seguimiento continuo de amigos en el mapa. Puedes desactivar esto en cualquier momento en el menú de la aplicación.",
+  "locationWhenInUsePermission": "Permitir a $(PRODUCT_NAME) acceder a tu ubicación mientras usas la aplicación para ayudarte a encontrar amigos en el mapa. Puedes desactivar esto en el menú de la aplicación.",
   "NSFaceIDUsageDescription": "Para iniciar sesión con Face ID",
   "UIApplicationShortcutItemTitle": "Acceso rápido",
   "NSCameraUsageDescription": "Para tomar fotos",

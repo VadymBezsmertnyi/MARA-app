@@ -29,7 +29,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./GoogleService-Info.plist",
-    buildNumber: "11",
+    buildNumber: "12",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -40,7 +40,7 @@ export const expo = {
         "tg",
         "ip-api.com",
       ],
-      UIBackgroundModes: ["location", "fetch", "remote-notification", "audio"],
+      UIBackgroundModes: ["location", "fetch", "remote-notification"],
       NSSpeechRecognitionUsageDescription:
         "Allow recognition to access your speech recognition",
       CFBundleURLTypes: [

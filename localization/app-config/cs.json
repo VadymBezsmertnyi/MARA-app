@@ -1,4 +1,7 @@
 {
+  "locationAlwaysAndWhenInUsePermission": "Povolit $(PRODUCT_NAME) používat vaši polohu k vyhledávání přátel na mapě. Tuto funkci můžete kdykoli vypnout v menu aplikace.",
+  "locationAlwaysPermission": "Povolit $(PRODUCT_NAME) neustále přistupovat k vaší poloze pro poskytování nepřetržitého sledování přátel na mapě. Tuto funkci můžete kdykoli vypnout v menu aplikace.",
+  "locationWhenInUsePermission": "Povolit $(PRODUCT_NAME) přístup k vaší poloze při používání aplikace k vyhledávání přátel na mapě. Tuto funkci můžete vypnout v menu aplikace.",
   "NSFaceIDUsageDescription": "Pro přihlášení pomocí Face ID",
   "UIApplicationShortcutItemTitle": "Rychlý přístup",
   "NSCameraUsageDescription": "Pro pořizování fotografií",

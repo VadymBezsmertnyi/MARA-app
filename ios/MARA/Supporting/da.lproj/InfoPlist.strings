@@ -1,3 +1,6 @@
+locationAlwaysAndWhenInUsePermission = "Tillad $(PRODUCT_NAME) at bruge din placering til at søge efter venner på kortet. Du kan altid deaktivere dette i appens menu.";
+locationAlwaysPermission = "Tillad $(PRODUCT_NAME) altid at få adgang til din placering for at give kontinuerlig venesporing på kortet. Du kan deaktivere dette når som helst i appens menu.";
+locationWhenInUsePermission = "Tillad $(PRODUCT_NAME) at få adgang til din placering, mens du bruger appen til at hjælpe dig med at finde venner på kortet. Du kan deaktivere dette i appens menu.";
 NSFaceIDUsageDescription = "Til at logge ind med Face ID";
 UIApplicationShortcutItemTitle = "Hurtig adgang";
 NSCameraUsageDescription = "Til at tage billeder";
