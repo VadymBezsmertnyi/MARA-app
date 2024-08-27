@@ -29,7 +29,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./GoogleService-Info.plist",
-    buildNumber: "10",
+    buildNumber: "11",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -57,6 +57,7 @@ export const expo = {
           },
         },
       },
+      ["UISupportedInterfaceOrientations~ipad"]: [],
     },
     config: {
       googleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
@@ -133,6 +134,7 @@ export const expo = {
   owner: "fop_vadym_bezsmertnyi",
   plugins: [
     //"./plugins/react-native-maps-plugin",
+    "./plugins/withCustomInfoPlist",
     "@react-native-firebase/app",
     [
       "expo-build-properties",
