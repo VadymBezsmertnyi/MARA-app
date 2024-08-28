@@ -1,3 +1,6 @@
+NSLocationAlwaysAndWhenInUseUsageDescription = "Atļaut $(PRODUCT_NAME) izmantot jūsu atrašanās vietu, lai meklētu draugus kartē. Jūs vienmēr varat atspējot šo funkciju lietotnes izvēlnē.";
+NSLocationAlwaysUsageDescription = "Atļaut $(PRODUCT_NAME) vienmēr piekļūt jūsu atrašanās vietai, lai nodrošinātu nepārtrauktu draugu izsekošanu kartē. Jūs varat atspējot šo funkciju jebkurā laikā lietotnes izvēlnē.";
+NSLocationWhenInUseUsageDescription = "Atļaut $(PRODUCT_NAME) piekļūt jūsu atrašanās vietai, izmantojot lietotni, lai palīdzētu jums atrast draugus kartē. Jūs varat atspējot šo funkciju lietotnes izvēlnē.";
 locationAlwaysAndWhenInUsePermission = "Atļaut $(PRODUCT_NAME) izmantot jūsu atrašanās vietu, lai meklētu draugus kartē. Jūs vienmēr varat atspējot šo funkciju lietotnes izvēlnē.";
 locationAlwaysPermission = "Atļaut $(PRODUCT_NAME) vienmēr piekļūt jūsu atrašanās vietai, lai nodrošinātu nepārtrauktu draugu izsekošanu kartē. Jūs varat atspējot šo funkciju jebkurā laikā lietotnes izvēlnē.";
 locationWhenInUsePermission = "Atļaut $(PRODUCT_NAME) piekļūt jūsu atrašanās vietai, izmantojot lietotni, lai palīdzētu jums atrast draugus kartē. Jūs varat atspējot šo funkciju lietotnes izvēlnē.";

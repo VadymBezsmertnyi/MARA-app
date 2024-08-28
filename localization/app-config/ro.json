@@ -1,4 +1,7 @@
 {
+  "NSLocationAlwaysAndWhenInUseUsageDescription": "Permiteți $(PRODUCT_NAME) să folosească locația dvs. pentru a căuta prieteni pe hartă. Puteți dezactiva această funcție în orice moment în meniul aplicației.",
+  "NSLocationAlwaysUsageDescription": "Permiteți $(PRODUCT_NAME) să aibă întotdeauna acces la locația dvs. pentru a oferi urmărirea continuă a prietenilor pe hartă. Puteți dezactiva această funcție în orice moment în meniul aplicației.",
+  "NSLocationWhenInUseUsageDescription": "Permiteți $(PRODUCT_NAME) să aibă acces la locația dvs. în timp ce folosiți aplicația pentru a vă ajuta să găsiți prieteni pe hartă. Puteți dezactiva această funcție în meniul aplicației.",
   "locationAlwaysAndWhenInUsePermission": "Permiteți $(PRODUCT_NAME) să folosească locația dvs. pentru a căuta prieteni pe hartă. Puteți dezactiva această funcție în orice moment în meniul aplicației.",
   "locationAlwaysPermission": "Permiteți $(PRODUCT_NAME) să aibă întotdeauna acces la locația dvs. pentru a oferi urmărirea continuă a prietenilor pe hartă. Puteți dezactiva această funcție în orice moment în meniul aplicației.",
   "locationWhenInUsePermission": "Permiteți $(PRODUCT_NAME) să aibă acces la locația dvs. în timp ce folosiți aplicația pentru a vă ajuta să găsiți prieteni pe hartă. Puteți dezactiva această funcție în meniul aplicației.",

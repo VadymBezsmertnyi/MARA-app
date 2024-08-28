@@ -1,3 +1,6 @@
+NSLocationAlwaysAndWhenInUseUsageDescription = "Tillåt $(PRODUCT_NAME) att använda din plats för att söka efter vänner på kartan. Du kan alltid inaktivera detta i appens meny.";
+NSLocationAlwaysUsageDescription = "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.";
+NSLocationWhenInUseUsageDescription = "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.";
 locationAlwaysAndWhenInUsePermission = "Tillåt $(PRODUCT_NAME) att använda din plats för att söka efter vänner på kartan. Du kan alltid inaktivera detta i appens meny.";
 locationAlwaysPermission = "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.";
 locationWhenInUsePermission = "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.";

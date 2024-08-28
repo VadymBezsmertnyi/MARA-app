@@ -29,7 +29,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./GoogleService-Info.plist",
-    buildNumber: "12",
+    buildNumber: "13",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -40,7 +40,7 @@ export const expo = {
         "tg",
         "ip-api.com",
       ],
-      UIBackgroundModes: ["location", "fetch", "remote-notification"],
+      UIBackgroundModes: ["fetch", "remote-notification"],
       NSSpeechRecognitionUsageDescription:
         "Allow recognition to access your speech recognition",
       CFBundleURLTypes: [
@@ -179,7 +179,7 @@ export const expo = {
         locationAlwaysPermission: "Allow $(PRODUCT_NAME) to use your location",
         locationWhenInUsePermission:
           "Allow $(PRODUCT_NAME) to use your location",
-        isIosBackgroundLocationEnabled: true,
+        isIosBackgroundLocationEnabled: false,
         isAndroidBackgroundLocationEnabled: true,
         isAndroidForegroundServiceEnabled: true,
       },

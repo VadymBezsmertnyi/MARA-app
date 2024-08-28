@@ -46,7 +46,7 @@
       </dict>
     </array>
     <key>CFBundleVersion</key>
-    <string>12</string>
+    <string>13</string>
     <key>FacebookAdvertiserIDCollectionEnabled</key>
     <false/>
     <key>FacebookAppID</key>
@@ -124,7 +124,6 @@
     </array>
     <key>UIBackgroundModes</key>
     <array>
-      <string>location</string>
       <string>fetch</string>
       <string>remote-notification</string>
     </array>

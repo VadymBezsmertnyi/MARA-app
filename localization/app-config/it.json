@@ -1,4 +1,7 @@
 {
+  "NSLocationAlwaysAndWhenInUseUsageDescription": "Permetti a $(PRODUCT_NAME) di utilizzare la tua posizione per cercare amici sulla mappa. Puoi sempre disattivare questa funzione nel menu dell'app.",
+  "NSLocationAlwaysUsageDescription": "Permetti a $(PRODUCT_NAME) di accedere sempre alla tua posizione per fornire un tracciamento continuo degli amici sulla mappa. Puoi disattivare questa funzione in qualsiasi momento nel menu dell'app.",
+  "NSLocationWhenInUseUsageDescription": "Permetti a $(PRODUCT_NAME) di accedere alla tua posizione mentre utilizzi l'app per aiutarti a trovare amici sulla mappa. Puoi disattivare questa funzione nel menu dell'app.",
   "locationAlwaysAndWhenInUsePermission": "Permetti a $(PRODUCT_NAME) di utilizzare la tua posizione per cercare amici sulla mappa. Puoi sempre disattivare questa funzione nel menu dell'app.",
   "locationAlwaysPermission": "Permetti a $(PRODUCT_NAME) di accedere sempre alla tua posizione per fornire un tracciamento continuo degli amici sulla mappa. Puoi disattivare questa funzione in qualsiasi momento nel menu dell'app.",
   "locationWhenInUsePermission": "Permetti a $(PRODUCT_NAME) di accedere alla tua posizione mentre utilizzi l'app per aiutarti a trovare amici sulla mappa. Puoi disattivare questa funzione nel menu dell'app.",

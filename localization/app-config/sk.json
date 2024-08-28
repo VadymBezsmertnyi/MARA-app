@@ -1,4 +1,7 @@
 {
+  "NSLocationAlwaysAndWhenInUseUsageDescription": "Povoliť $(PRODUCT_NAME) používať vašu polohu na vyhľadávanie priateľov na mape. Túto funkciu môžete kedykoľvek vypnúť v menu aplikácie.",
+  "NSLocationAlwaysUsageDescription": "Povoliť $(PRODUCT_NAME) neustále pristupovať k vašej polohe na poskytovanie nepretržitého sledovania priateľov na mape. Túto funkciu môžete kedykoľvek vypnúť v menu aplikácie.",
+  "NSLocationWhenInUseUsageDescription": "Povoliť $(PRODUCT_NAME) prístup k vašej polohe počas používania aplikácie na vyhľadávanie priateľov na mape. Túto funkciu môžete vypnúť v menu aplikácie.",
   "locationAlwaysAndWhenInUsePermission": "Povoliť $(PRODUCT_NAME) používať vašu polohu na vyhľadávanie priateľov na mape. Túto funkciu môžete kedykoľvek vypnúť v menu aplikácie.",
   "locationAlwaysPermission": "Povoliť $(PRODUCT_NAME) neustále pristupovať k vašej polohe na poskytovanie nepretržitého sledovania priateľov na mape. Túto funkciu môžete kedykoľvek vypnúť v menu aplikácie.",
   "locationWhenInUsePermission": "Povoliť $(PRODUCT_NAME) prístup k vašej polohe počas používania aplikácie na vyhľadávanie priateľov na mape. Túto funkciu môžete vypnúť v menu aplikácie.",
