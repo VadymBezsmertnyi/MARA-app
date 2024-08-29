@@ -114,7 +114,7 @@ android {
         applicationId 'com.motoauto.mara'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode 32
         versionName "1.0.1"
     }
     signingConfigs {
