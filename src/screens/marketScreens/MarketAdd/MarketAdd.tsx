@@ -275,7 +275,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         userId: userData?._id,
         title,
         isNewProduct,
-        isBusiness,
+        isBusiness: typeSeller === "business",
         place_id: undefined,
         region_place_id: undefined,
         country_place_id: undefined,
