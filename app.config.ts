@@ -12,8 +12,8 @@ const EXPO_PUBLIC_APP_ID_ONESIGNAL = process.env
 export const expo = {
   name: "M.A.R.A",
   slug: "mara",
-  version: "1.0.1",
-  runtimeVersion: "1.0.1",
+  version: "1.0.2",
+  runtimeVersion: "1.0.2",
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "automatic",
@@ -66,7 +66,7 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 32,
+    versionCode: 33,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
