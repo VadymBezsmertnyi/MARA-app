@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 const EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES = process.env
   .EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES as string;
 const EXPO_PUBLIC_IOS_URL_SCHEME = process.env
