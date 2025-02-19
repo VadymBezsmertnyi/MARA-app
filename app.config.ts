@@ -14,8 +14,8 @@ const EXPO_PUBLIC_APP_ID_ONESIGNAL = process.env
 export const expo = {
   name: "M.A.R.A",
   slug: "mara",
-  version: "1.0.2",
-  runtimeVersion: "1.0.2",
+  version: "1.0.3",
+  runtimeVersion: "1.0.3",
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "automatic",
@@ -31,7 +31,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./GoogleService-Info.plist",
-    buildNumber: "1",
+    buildNumber: "34",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -68,7 +68,7 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 33,
+    versionCode: 34,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
