@@ -7,55 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A5A1F8376714619A5153CDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCA0FD798CEE4A78B65CB079 /* InfoPlist.strings */; };
-		0DCE40E8E6B14CB58A071CB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6130E6BCB2F4CA4BE7D06C0 /* InfoPlist.strings */; };
+		12D4DE9453554D14B2E0729B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B6460F27DDE47DAB82670A3 /* InfoPlist.strings */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		15AA9630821E41A6BFBE871A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB4DDE7C9AFC4B90A4339164 /* InfoPlist.strings */; };
-		192B68FB2FD24A4CBE380C13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CBE9497D07E4D0EAF9E54E1 /* InfoPlist.strings */; };
-		1A71A3D0FF634A318D1B8FE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B72792E8E954E9CB2B56CAD /* InfoPlist.strings */; };
-		1B151A7FF666CD4DB311552B /* Pods_MARA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6434F50942BE840C56B5EC47 /* Pods_MARA.framework */; };
-		1C04BBCBE7364746A4ED85CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2502121241944957A885AE62 /* InfoPlist.strings */; };
-		3B574577964C4F35868119CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14D1B60549874F65AE856CDA /* InfoPlist.strings */; };
+		20DB680F048C433BB29A2C30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92737516BAA541B3A088CAF5 /* InfoPlist.strings */; };
+		233888733B41491785F964CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AA009F6E0734CD9BF56C711 /* InfoPlist.strings */; };
+		3667EB4C035243079DE4CAE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88BBAEC8425F45949C7DBE8C /* InfoPlist.strings */; };
+		384CCCCF33E845E68E2840E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E29A3979F0E4460BAB7E8813 /* InfoPlist.strings */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		60A82A13730643B1A60AC3B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E50B9EB91F54FAB8CDE4533 /* InfoPlist.strings */; };
-		6C024B24125D4A3BBAEA6481 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4782BDD35804FAB94ED5A92 /* InfoPlist.strings */; };
-		6F286329E3EA4866946E0C0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE1B32C8CB124C6E96632A9B /* InfoPlist.strings */; };
-		728787095E344E78A98D001B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D15A4C6BD1B54DD0B934CA70 /* InfoPlist.strings */; };
-		7E83137D77944893B51EA303 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B315687C3EF4DD39A82D52E /* InfoPlist.strings */; };
-		8504B4BE6C7241728FE1EB93 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 528BA6FFD3664E528006B62F /* InfoPlist.strings */; };
-		88DE89BAE19A4B10B9136B12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A36CB1D07B614E13A692FBCD /* GoogleService-Info.plist */; };
-		8EA7D12EAF614E48ACAEB1BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA9B2D0B8BEA4C769462CB48 /* InfoPlist.strings */; };
-		8F78AB199F7CF973B35BA72D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD749F53F5AABA64209B9F7 /* ExpoModulesProvider.swift */; };
-		9D41299754A0423F9051CB4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F227DCB6D9A4BC09C07911C /* InfoPlist.strings */; };
+		48F9D8025F19513588AFB55B /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4E87563DAA120386354C74 /* ExpoModulesProvider.swift */; };
+		59CBD82A35D426D882F5ADD3 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0232348AEA17EA544019CC /* Pods_OneSignalNotificationServiceExtension.framework */; };
+		6F2DD9EDFF984BE3907A5594 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4928BC92C2B04DBBBB999F19 /* InfoPlist.strings */; };
+		73025DB58E1A432F8E3B5977 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F206DE34C16D440392C84B4B /* InfoPlist.strings */; };
+		86A289E4295942BDAA57D893 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92FF99E3E1284774AD9280BA /* InfoPlist.strings */; };
+		9358F0F341754E94A95BD1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3412172619B44F248A5288A3 /* InfoPlist.strings */; };
+		95E63BDEAE070000CB21DB0C /* Pods_MARA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454688777B1075E3E5F3D1E0 /* Pods_MARA.framework */; };
+		981BED3F9ABB404AA61814C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72764801F0A2415AA9150052 /* InfoPlist.strings */; };
+		A9F3C22EF27E488EA567B5B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFE435AD1E554DA18882F549 /* InfoPlist.strings */; };
+		B271F53A4116495E9AF09A24 /* OneSignalNotificationServiceExtension.appex in Copy Files */ = {isa = PBXBuildFile; fileRef = 2AD6EDF3928945B1BFAA63DE /* OneSignalNotificationServiceExtension.appex */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		C1F4E7758514401AB5683325 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CA53A7FEA44E1097FCDA5B /* NotificationService.m */; };
-		C4ADC961F0A14DE48C6EF917 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE6E31E50FDF4E009B5ED48A /* InfoPlist.strings */; };
-		C667D32BEDE3DEB9AF2FE629 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E4273E931082A9686422DC /* Pods_OneSignalNotificationServiceExtension.framework */; };
-		D157A480A9FA4E2A946B7669 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9FE704798D458C9CDBD46B /* InfoPlist.strings */; };
-		D892C4CB5F6A4460AFE3A717 /* OneSignalNotificationServiceExtension.appex in Copy Files */ = {isa = PBXBuildFile; fileRef = 82524471288C40AEAD0195AA /* OneSignalNotificationServiceExtension.appex */; };
-		DA696F57E9FE45219781182D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D622FC117B74C549D3B98FA /* InfoPlist.strings */; };
-		E3303FF79C95FBC68D78F570 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9272EFBED75E9519543E8727 /* PrivacyInfo.xcprivacy */; };
+		BCC2FF5FE224405487456685 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63760771253B44D88340267D /* InfoPlist.strings */; };
+		C3234DB61C864C1D8F9B8E27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC31B9EE3F174B6D99F15B66 /* GoogleService-Info.plist */; };
+		CA67CE4599984848B05B0686 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5E9669DF684E8AADAFBBB0 /* NotificationService.m */; };
+		D54933110D544A07B773DAFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01C9DD23FB44318B9D9A989 /* InfoPlist.strings */; };
+		D84913BDEBB64EFA86BACFD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F4C1BA4116D4B709EA9938C /* InfoPlist.strings */; };
+		DAD3BF3884CD46A888561003 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78448932082444529EEA8B67 /* InfoPlist.strings */; };
+		E04884F58D7D418381673230 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C595803B3C04654B766197B /* InfoPlist.strings */; };
+		E46EC6625D8444E592AF5366 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09AFB9233D2F42AFBDAC0123 /* InfoPlist.strings */; };
+		EBEE731ADD484358A2299C5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73D097477B1448169EF97E8F /* InfoPlist.strings */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
+		F225D2015F982F857E8C6C91 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B9DA84278497BE026D5D5D1B /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D7BA83C54FF747008BED687B /* PBXContainerItemProxy */ = {
+		A9F88B9E3DDC46F1B77A7F1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0FE9B03BB6394B2E9BA323C5;
+			remoteGlobalIDString = E1C1E71ADB8B4C8A91B837CF;
 			remoteInfo = OneSignalNotificationServiceExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9BBF529F78964C7ABA90688C /* Copy Files */ = {
+		91420A14C6504881BEFE23BF /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D892C4CB5F6A4460AFE3A717 /* OneSignalNotificationServiceExtension.appex in Copy Files */,
+				B271F53A4116495E9AF09A24 /* OneSignalNotificationServiceExtension.appex in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,68 +63,76 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09AFB9233D2F42AFBDAC0123 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0AA009F6E0734CD9BF56C711 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = lv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MARA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MARA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MARA/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MARA/Info.plist; sourceTree = "<group>"; };
-		14D1B60549874F65AE856CDA /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2502121241944957A885AE62 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = lt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3BC22BF4D9AF4E339265D31A /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
-		528BA6FFD3664E528006B62F /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5B72792E8E954E9CB2B56CAD /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5E50B9EB91F54FAB8CDE4533 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5F2F9DFD737B068F90273F53 /* Pods-MARA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MARA.debug.xcconfig"; path = "Target Support Files/Pods-MARA/Pods-MARA.debug.xcconfig"; sourceTree = "<group>"; };
-		63EB1E791E9243A794429614 /* OneSignalNotificationServiceExtension-Info.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; path = "OneSignalNotificationServiceExtension-Info.plist"; sourceTree = "<group>"; };
-		6434F50942BE840C56B5EC47 /* Pods_MARA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MARA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B315687C3EF4DD39A82D52E /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6CBE9497D07E4D0EAF9E54E1 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6DD749F53F5AABA64209B9F7 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MARA/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		72CA53A7FEA44E1097FCDA5B /* NotificationService.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
-		755D65931C2C256E13CA222A /* Pods-MARA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MARA.release.xcconfig"; path = "Target Support Files/Pods-MARA/Pods-MARA.release.xcconfig"; sourceTree = "<group>"; };
-		7D622FC117B74C549D3B98FA /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7F227DCB6D9A4BC09C07911C /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = fi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		82524471288C40AEAD0195AA /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; fileEncoding = 9; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9272EFBED75E9519543E8727 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MARA/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		95E4273E931082A9686422DC /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A36CB1D07B614E13A692FBCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MARA/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A6130E6BCB2F4CA4BE7D06C0 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1500A65CD323D1B156606FDC /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		177F55CA326FA6628FA2D02D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		2AD6EDF3928945B1BFAA63DE /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; fileEncoding = 9; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3412172619B44F248A5288A3 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		454688777B1075E3E5F3D1E0 /* Pods_MARA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MARA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4928BC92C2B04DBBBB999F19 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4E0232348AEA17EA544019CC /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58E5948D97A14E1FB69B784F /* NotificationService.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		63760771253B44D88340267D /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = lt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C595803B3C04654B766197B /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6EA16B86100C497DA87E6058 /* OneSignalNotificationServiceExtension-Info.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; path = "OneSignalNotificationServiceExtension-Info.plist"; sourceTree = "<group>"; };
+		72764801F0A2415AA9150052 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73D097477B1448169EF97E8F /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78448932082444529EEA8B67 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = el.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88BBAEC8425F45949C7DBE8C /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8B6460F27DDE47DAB82670A3 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = be.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92737516BAA541B3A088CAF5 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92FF99E3E1284774AD9280BA /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9F4C1BA4116D4B709EA9938C /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A01C9DD23FB44318B9D9A989 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A0F1E21FF6990BCB06F699E5 /* Pods-MARA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MARA.release.xcconfig"; path = "Target Support Files/Pods-MARA/Pods-MARA.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = MARA/SplashScreen.storyboard; sourceTree = "<group>"; };
-		AB4DDE7C9AFC4B90A4339164 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B210D9246151AA0087410199 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		B9DA84278497BE026D5D5D1B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MARA/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		BE1B32C8CB124C6E96632A9B /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BE6E31E50FDF4E009B5ED48A /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CA9B2D0B8BEA4C769462CB48 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = lv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CABEB5BDA4284375A0E028B8 /* NotificationService.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
-		D15A4C6BD1B54DD0B934CA70 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = be.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DC9FE704798D458C9CDBD46B /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E4782BDD35804FAB94ED5A92 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CC5E9669DF684E8AADAFBBB0 /* NotificationService.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		D7B5C13B4D1A97CD01B834E3 /* Pods-MARA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MARA.debug.xcconfig"; path = "Target Support Files/Pods-MARA/Pods-MARA.debug.xcconfig"; sourceTree = "<group>"; };
+		E29A3979F0E4460BAB7E8813 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5A9D1C921274EAAAD5C7F12 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		EC31B9EE3F174B6D99F15B66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MARA/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EDB34E68249D60F822F38A25 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		EF4E87563DAA120386354C74 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MARA/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		EFE435AD1E554DA18882F549 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = fi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MARA/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* MARA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MARA-Bridging-Header.h"; path = "MARA/MARA-Bridging-Header.h"; sourceTree = "<group>"; };
-		FCA0FD798CEE4A78B65CB079 /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = el.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F206DE34C16D440392C84B4B /* InfoPlist.strings */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E01948B880B4CDDB2144922 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C667D32BEDE3DEB9AF2FE629 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B151A7FF666CD4DB311552B /* Pods_MARA.framework in Frameworks */,
+				95E63BDEAE070000CB21DB0C /* Pods_MARA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D9CD0FDB1F048459F56929C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CBD82A35D426D882F5ADD3 /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10AE1207EBAC4EB9BB4F6389 /* ro.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				88BBAEC8425F45949C7DBE8C /* InfoPlist.strings */,
+			);
+			name = ro.lproj;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* MARA */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,116 +142,103 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				A36CB1D07B614E13A692FBCD /* GoogleService-Info.plist */,
-				9272EFBED75E9519543E8727 /* PrivacyInfo.xcprivacy */,
+				EC31B9EE3F174B6D99F15B66 /* GoogleService-Info.plist */,
+				B9DA84278497BE026D5D5D1B /* PrivacyInfo.xcprivacy */,
 			);
 			name = MARA;
 			sourceTree = "<group>";
 		};
-		262DA3268BFA42FA99707F19 /* cs.lproj */ = {
+		14FC32F442A94AFD813BEEEE /* uk.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				14D1B60549874F65AE856CDA /* InfoPlist.strings */,
-			);
-			name = cs.lproj;
-			sourceTree = "<group>";
-		};
-		271C6756F0F54876B3EC293A /* uk.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				E4782BDD35804FAB94ED5A92 /* InfoPlist.strings */,
+				09AFB9233D2F42AFBDAC0123 /* InfoPlist.strings */,
 			);
 			name = uk.lproj;
 			sourceTree = "<group>";
 		};
-		29FAF6AD12D143418A9F1847 /* en.lproj */ = {
+		1B6C96E7190547AEB072C5C1 /* da.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				6B315687C3EF4DD39A82D52E /* InfoPlist.strings */,
+				A01C9DD23FB44318B9D9A989 /* InfoPlist.strings */,
 			);
-			name = en.lproj;
+			name = da.lproj;
+			sourceTree = "<group>";
+		};
+		27040D6DB09D4CEBB647F073 /* lv.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				0AA009F6E0734CD9BF56C711 /* InfoPlist.strings */,
+			);
+			name = lv.lproj;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				6434F50942BE840C56B5EC47 /* Pods_MARA.framework */,
-				95E4273E931082A9686422DC /* Pods_OneSignalNotificationServiceExtension.framework */,
+				454688777B1075E3E5F3D1E0 /* Pods_MARA.framework */,
+				4E0232348AEA17EA544019CC /* Pods_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2D91FEEC4E1B42E9A22D6C30 /* lt.lproj */ = {
+		2D9763C088B3DB6EE5D9D983 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2502121241944957A885AE62 /* InfoPlist.strings */,
+				D7B5C13B4D1A97CD01B834E3 /* Pods-MARA.debug.xcconfig */,
+				A0F1E21FF6990BCB06F699E5 /* Pods-MARA.release.xcconfig */,
+				177F55CA326FA6628FA2D02D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				1500A65CD323D1B156606FDC /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		43611FDA2E3B43B8B9B24A56 /* sv.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				73D097477B1448169EF97E8F /* InfoPlist.strings */,
+			);
+			name = sv.lproj;
+			sourceTree = "<group>";
+		};
+		464649B2556A4D61BCD2D7BF /* fr.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F206DE34C16D440392C84B4B /* InfoPlist.strings */,
+			);
+			name = fr.lproj;
+			sourceTree = "<group>";
+		};
+		51DB9DD922B04C5F91CB16B4 /* it.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				9F4C1BA4116D4B709EA9938C /* InfoPlist.strings */,
+			);
+			name = it.lproj;
+			sourceTree = "<group>";
+		};
+		6B177135557C40FAA9046DC6 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				4928BC92C2B04DBBBB999F19 /* InfoPlist.strings */,
+			);
+			name = en.lproj;
+			sourceTree = "<group>";
+		};
+		7B177BB769604A17A6B0C845 /* lt.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				63760771253B44D88340267D /* InfoPlist.strings */,
 			);
 			name = lt.lproj;
 			sourceTree = "<group>";
 		};
-		2F75033C9ADFB2B3BE404AF1 /* ExpoModulesProviders */ = {
+		7C698F655E7B433D877047A5 /* hu.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				A9C473DAF8509C1C7396EA3E /* MARA */,
-			);
-			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
-		3AF83D5A7FAC45BF9C5F1E44 /* el.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				FCA0FD798CEE4A78B65CB079 /* InfoPlist.strings */,
-			);
-			name = el.lproj;
-			sourceTree = "<group>";
-		};
-		3E10FAB708DB433FA7DB4426 /* hu.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				6CBE9497D07E4D0EAF9E54E1 /* InfoPlist.strings */,
+				92FF99E3E1284774AD9280BA /* InfoPlist.strings */,
 			);
 			name = hu.lproj;
-			sourceTree = "<group>";
-		};
-		59BE2B7EA67141858D4F92C6 /* es.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				5B72792E8E954E9CB2B56CAD /* InfoPlist.strings */,
-			);
-			name = es.lproj;
-			sourceTree = "<group>";
-		};
-		5FCBF5F1A86D4B1D99022DAB /* pl.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				A6130E6BCB2F4CA4BE7D06C0 /* InfoPlist.strings */,
-			);
-			name = pl.lproj;
-			sourceTree = "<group>";
-		};
-		65F0E932CD8744759027E971 /* sk.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				BE6E31E50FDF4E009B5ED48A /* InfoPlist.strings */,
-			);
-			name = sk.lproj;
-			sourceTree = "<group>";
-		};
-		6A61D15837E741548CCE5FF7 /* be.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				D15A4C6BD1B54DD0B934CA70 /* InfoPlist.strings */,
-			);
-			name = be.lproj;
-			sourceTree = "<group>";
-		};
-		747A3C6622FC43BEBA72183B /* fi.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				7F227DCB6D9A4BC09C07911C /* InfoPlist.strings */,
-			);
-			name = fi.lproj;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -260,9 +255,9 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				DE0CBE93D4304BB093BA18F5 /* OneSignalNotificationServiceExtension */,
-				884B2F03989982430231B7C4 /* Pods */,
-				2F75033C9ADFB2B3BE404AF1 /* ExpoModulesProviders */,
+				B6FAFC7A3D5D425F82E561E1 /* OneSignalNotificationServiceExtension */,
+				2D9763C088B3DB6EE5D9D983 /* Pods */,
+				A4481DCAD9602AC6CD454AB9 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -273,135 +268,165 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* MARA.app */,
-				82524471288C40AEAD0195AA /* OneSignalNotificationServiceExtension.appex */,
+				2AD6EDF3928945B1BFAA63DE /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8418A19AE08A4D5099154FC9 /* it.lproj */ = {
+		96AE828DEDB9422E85FA31AF /* el.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				AB4DDE7C9AFC4B90A4339164 /* InfoPlist.strings */,
+				78448932082444529EEA8B67 /* InfoPlist.strings */,
 			);
-			name = it.lproj;
+			name = el.lproj;
 			sourceTree = "<group>";
 		};
-		884B2F03989982430231B7C4 /* Pods */ = {
+		9E491C1B54DA4E5EA997DA1B /* sk.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				5F2F9DFD737B068F90273F53 /* Pods-MARA.debug.xcconfig */,
-				755D65931C2C256E13CA222A /* Pods-MARA.release.xcconfig */,
-				B210D9246151AA0087410199 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
-				EDB34E68249D60F822F38A25 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+				92737516BAA541B3A088CAF5 /* InfoPlist.strings */,
 			);
-			path = Pods;
+			name = sk.lproj;
 			sourceTree = "<group>";
 		};
-		8CD378D080A143E09B624F4D /* de.lproj */ = {
+		A4481DCAD9602AC6CD454AB9 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				5E50B9EB91F54FAB8CDE4533 /* InfoPlist.strings */,
+				B282D068EDA48C0E4F6CD6B4 /* MARA */,
 			);
-			name = de.lproj;
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
-		A1AA4FBFDB42439C98D3D887 /* ro.lproj */ = {
+		B282D068EDA48C0E4F6CD6B4 /* MARA */ = {
 			isa = PBXGroup;
 			children = (
-				7D622FC117B74C549D3B98FA /* InfoPlist.strings */,
-			);
-			name = ro.lproj;
-			sourceTree = "<group>";
-		};
-		A9C473DAF8509C1C7396EA3E /* MARA */ = {
-			isa = PBXGroup;
-			children = (
-				6DD749F53F5AABA64209B9F7 /* ExpoModulesProvider.swift */,
+				EF4E87563DAA120386354C74 /* ExpoModulesProvider.swift */,
 			);
 			name = MARA;
+			sourceTree = "<group>";
+		};
+		B6643FAB80314DF8B1624276 /* es.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				6C595803B3C04654B766197B /* InfoPlist.strings */,
+			);
+			name = es.lproj;
+			sourceTree = "<group>";
+		};
+		B6FAFC7A3D5D425F82E561E1 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				58E5948D97A14E1FB69B784F /* NotificationService.h */,
+				E5A9D1C921274EAAAD5C7F12 /* OneSignalNotificationServiceExtension.entitlements */,
+				6EA16B86100C497DA87E6058 /* OneSignalNotificationServiceExtension-Info.plist */,
+				CC5E9669DF684E8AADAFBBB0 /* NotificationService.m */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
 				BB2F792C24A3F905000567C9 /* Expo.plist */,
-				29FAF6AD12D143418A9F1847 /* en.lproj */,
-				271C6756F0F54876B3EC293A /* uk.lproj */,
-				D8E7FEB3CFFA4A02953E659D /* fr.lproj */,
-				8CD378D080A143E09B624F4D /* de.lproj */,
-				59BE2B7EA67141858D4F92C6 /* es.lproj */,
-				8418A19AE08A4D5099154FC9 /* it.lproj */,
-				F42C9598F4AB498F8E013F8D /* sv.lproj */,
-				C11E352DBEAC4282B4501459 /* da.lproj */,
-				747A3C6622FC43BEBA72183B /* fi.lproj */,
-				5FCBF5F1A86D4B1D99022DAB /* pl.lproj */,
-				262DA3268BFA42FA99707F19 /* cs.lproj */,
-				3E10FAB708DB433FA7DB4426 /* hu.lproj */,
-				3AF83D5A7FAC45BF9C5F1E44 /* el.lproj */,
-				A1AA4FBFDB42439C98D3D887 /* ro.lproj */,
-				2D91FEEC4E1B42E9A22D6C30 /* lt.lproj */,
-				C54291D7629E4CA48199C5C4 /* lv.lproj */,
-				6A61D15837E741548CCE5FF7 /* be.lproj */,
-				65F0E932CD8744759027E971 /* sk.lproj */,
+				6B177135557C40FAA9046DC6 /* en.lproj */,
+				14FC32F442A94AFD813BEEEE /* uk.lproj */,
+				464649B2556A4D61BCD2D7BF /* fr.lproj */,
+				D7DCFF0375F0400B9D7056EE /* de.lproj */,
+				B6643FAB80314DF8B1624276 /* es.lproj */,
+				51DB9DD922B04C5F91CB16B4 /* it.lproj */,
+				43611FDA2E3B43B8B9B24A56 /* sv.lproj */,
+				1B6C96E7190547AEB072C5C1 /* da.lproj */,
+				D5F86D3AAC0C40CFA7676246 /* fi.lproj */,
+				E23D44BB5E274FB4B111AD33 /* pl.lproj */,
+				F1DCB47381AC42D69CE7D755 /* cs.lproj */,
+				7C698F655E7B433D877047A5 /* hu.lproj */,
+				96AE828DEDB9422E85FA31AF /* el.lproj */,
+				10AE1207EBAC4EB9BB4F6389 /* ro.lproj */,
+				7B177BB769604A17A6B0C845 /* lt.lproj */,
+				27040D6DB09D4CEBB647F073 /* lv.lproj */,
+				EB04B079CC894B74B4BFABED /* be.lproj */,
+				9E491C1B54DA4E5EA997DA1B /* sk.lproj */,
 			);
 			name = Supporting;
 			path = MARA/Supporting;
 			sourceTree = "<group>";
 		};
-		C11E352DBEAC4282B4501459 /* da.lproj */ = {
+		D5F86D3AAC0C40CFA7676246 /* fi.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				DC9FE704798D458C9CDBD46B /* InfoPlist.strings */,
+				EFE435AD1E554DA18882F549 /* InfoPlist.strings */,
 			);
-			name = da.lproj;
+			name = fi.lproj;
 			sourceTree = "<group>";
 		};
-		C54291D7629E4CA48199C5C4 /* lv.lproj */ = {
+		D7DCFF0375F0400B9D7056EE /* de.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				CA9B2D0B8BEA4C769462CB48 /* InfoPlist.strings */,
+				E29A3979F0E4460BAB7E8813 /* InfoPlist.strings */,
 			);
-			name = lv.lproj;
+			name = de.lproj;
 			sourceTree = "<group>";
 		};
-		D8E7FEB3CFFA4A02953E659D /* fr.lproj */ = {
+		E23D44BB5E274FB4B111AD33 /* pl.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				528BA6FFD3664E528006B62F /* InfoPlist.strings */,
+				72764801F0A2415AA9150052 /* InfoPlist.strings */,
 			);
-			name = fr.lproj;
+			name = pl.lproj;
 			sourceTree = "<group>";
 		};
-		DE0CBE93D4304BB093BA18F5 /* OneSignalNotificationServiceExtension */ = {
+		EB04B079CC894B74B4BFABED /* be.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				CABEB5BDA4284375A0E028B8 /* NotificationService.h */,
-				3BC22BF4D9AF4E339265D31A /* OneSignalNotificationServiceExtension.entitlements */,
-				63EB1E791E9243A794429614 /* OneSignalNotificationServiceExtension-Info.plist */,
-				72CA53A7FEA44E1097FCDA5B /* NotificationService.m */,
+				8B6460F27DDE47DAB82670A3 /* InfoPlist.strings */,
 			);
-			path = OneSignalNotificationServiceExtension;
+			name = be.lproj;
 			sourceTree = "<group>";
 		};
-		F42C9598F4AB498F8E013F8D /* sv.lproj */ = {
+		F1DCB47381AC42D69CE7D755 /* cs.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				BE1B32C8CB124C6E96632A9B /* InfoPlist.strings */,
+				3412172619B44F248A5288A3 /* InfoPlist.strings */,
 			);
-			name = sv.lproj;
+			name = cs.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0FE9B03BB6394B2E9BA323C5 /* OneSignalNotificationServiceExtension */ = {
+		13B07F861A680F5B00A75B9A /* MARA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD3DB41C1F5F4F4C92AFAF59 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MARA" */;
 			buildPhases = (
-				1E9482E0BA11BBF7330E1361 /* [CP] Check Pods Manifest.lock */,
-				3848B2BD40674535BF03887D /* Sources */,
-				FFE80EB7092B4E77AD6D0050 /* Resources */,
-				0E01948B880B4CDDB2144922 /* Frameworks */,
+				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
+				54F75DB92775C54968F6F99E /* [Expo] Configure project */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
+				91420A14C6504881BEFE23BF /* Copy Files */,
+				0D18218B366E14E992DD89CD /* [CP] Embed Pods Frameworks */,
+				721BF6781F9ECBE2834A24C9 /* [CP-User] [RNFB] Core Configuration */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9AA782E70B0438A9599D8EB /* PBXTargetDependency */,
+			);
+			name = MARA;
+			productName = MARA;
+			productReference = 13B07F961A680F5B00A75B9A /* MARA.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1C1E71ADB8B4C8A91B837CF /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97B7D4C54263407CA7002E69 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				63901E91134A05D072B0EED1 /* [CP] Check Pods Manifest.lock */,
+				35793F9D4D404718A02CB706 /* Sources */,
+				4CE49A717ACB45E3BCB74F0E /* Resources */,
+				6D9CD0FDB1F048459F56929C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,33 +434,8 @@
 			);
 			name = OneSignalNotificationServiceExtension;
 			productName = OneSignalNotificationServiceExtension;
-			productReference = 82524471288C40AEAD0195AA /* OneSignalNotificationServiceExtension.appex */;
+			productReference = 2AD6EDF3928945B1BFAA63DE /* OneSignalNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
-		};
-		13B07F861A680F5B00A75B9A /* MARA */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MARA" */;
-			buildPhases = (
-				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				F9D75DCF0EA72D9EBD98409F /* [Expo] Configure project */,
-				13B07F871A680F5B00A75B9A /* Sources */,
-				13B07F8C1A680F5B00A75B9A /* Frameworks */,
-				13B07F8E1A680F5B00A75B9A /* Resources */,
-				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				9BBF529F78964C7ABA90688C /* Copy Files */,
-				A3DE19C4AC97EAC3ED06E8AB /* [CP] Embed Pods Frameworks */,
-				7BC0B97F125BC1176C55AA03 /* [CP-User] [RNFB] Core Configuration */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				737E48715B2743808C781E56 /* PBXTargetDependency */,
-			);
-			name = MARA;
-			productName = MARA;
-			productReference = 13B07F961A680F5B00A75B9A /* MARA.app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -445,11 +445,11 @@
 			attributes = {
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
-					0FE9B03BB6394B2E9BA323C5 = {
-						DevelopmentTeam = undefined;
-					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
+					};
+					E1C1E71ADB8B4C8A91B837CF = {
+						DevelopmentTeam = undefined;
 					};
 				};
 			};
@@ -467,7 +467,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* MARA */,
-				0FE9B03BB6394B2E9BA323C5 /* OneSignalNotificationServiceExtension */,
+				E1C1E71ADB8B4C8A91B837CF /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -480,30 +480,30 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				7E83137D77944893B51EA303 /* InfoPlist.strings in Resources */,
-				6C024B24125D4A3BBAEA6481 /* InfoPlist.strings in Resources */,
-				8504B4BE6C7241728FE1EB93 /* InfoPlist.strings in Resources */,
-				60A82A13730643B1A60AC3B9 /* InfoPlist.strings in Resources */,
-				1A71A3D0FF634A318D1B8FE7 /* InfoPlist.strings in Resources */,
-				15AA9630821E41A6BFBE871A /* InfoPlist.strings in Resources */,
-				6F286329E3EA4866946E0C0D /* InfoPlist.strings in Resources */,
-				D157A480A9FA4E2A946B7669 /* InfoPlist.strings in Resources */,
-				9D41299754A0423F9051CB4F /* InfoPlist.strings in Resources */,
-				0DCE40E8E6B14CB58A071CB9 /* InfoPlist.strings in Resources */,
-				3B574577964C4F35868119CD /* InfoPlist.strings in Resources */,
-				192B68FB2FD24A4CBE380C13 /* InfoPlist.strings in Resources */,
-				0A5A1F8376714619A5153CDC /* InfoPlist.strings in Resources */,
-				DA696F57E9FE45219781182D /* InfoPlist.strings in Resources */,
-				1C04BBCBE7364746A4ED85CC /* InfoPlist.strings in Resources */,
-				8EA7D12EAF614E48ACAEB1BB /* InfoPlist.strings in Resources */,
-				728787095E344E78A98D001B /* InfoPlist.strings in Resources */,
-				C4ADC961F0A14DE48C6EF917 /* InfoPlist.strings in Resources */,
-				88DE89BAE19A4B10B9136B12 /* GoogleService-Info.plist in Resources */,
-				E3303FF79C95FBC68D78F570 /* PrivacyInfo.xcprivacy in Resources */,
+				6F2DD9EDFF984BE3907A5594 /* InfoPlist.strings in Resources */,
+				E46EC6625D8444E592AF5366 /* InfoPlist.strings in Resources */,
+				73025DB58E1A432F8E3B5977 /* InfoPlist.strings in Resources */,
+				384CCCCF33E845E68E2840E9 /* InfoPlist.strings in Resources */,
+				E04884F58D7D418381673230 /* InfoPlist.strings in Resources */,
+				D84913BDEBB64EFA86BACFD8 /* InfoPlist.strings in Resources */,
+				EBEE731ADD484358A2299C5D /* InfoPlist.strings in Resources */,
+				D54933110D544A07B773DAFA /* InfoPlist.strings in Resources */,
+				A9F3C22EF27E488EA567B5B4 /* InfoPlist.strings in Resources */,
+				981BED3F9ABB404AA61814C8 /* InfoPlist.strings in Resources */,
+				9358F0F341754E94A95BD1E3 /* InfoPlist.strings in Resources */,
+				86A289E4295942BDAA57D893 /* InfoPlist.strings in Resources */,
+				DAD3BF3884CD46A888561003 /* InfoPlist.strings in Resources */,
+				3667EB4C035243079DE4CAE7 /* InfoPlist.strings in Resources */,
+				BCC2FF5FE224405487456685 /* InfoPlist.strings in Resources */,
+				233888733B41491785F964CD /* InfoPlist.strings in Resources */,
+				12D4DE9453554D14B2E0729B /* InfoPlist.strings in Resources */,
+				20DB680F048C433BB29A2C30 /* InfoPlist.strings in Resources */,
+				C3234DB61C864C1D8F9B8E27 /* GoogleService-Info.plist in Resources */,
+				F225D2015F982F857E8C6C91 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FFE80EB7092B4E77AD6D0050 /* Resources */ = {
+		4CE49A717ACB45E3BCB74F0E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -552,7 +552,85 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1E9482E0BA11BBF7330E1361 /* [CP] Check Pods Manifest.lock */ = {
+		0D18218B366E14E992DD89CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MARA/Pods-MARA-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBAEMKit/FBAEMKit.framework/FBAEMKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/FBSDKCoreKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit_Basics/FBSDKCoreKit_Basics.framework/FBSDKCoreKit_Basics",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKGamingServicesKit/FBSDKGamingServicesKit.framework/FBSDKGamingServicesKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework/FBSDKLoginKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKShareKit/FBSDKShareKit.framework/FBSDKShareKit",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignal/OneSignalFramework.framework/OneSignalFramework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalCore/OneSignalCore.framework/OneSignalCore",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalExtension/OneSignalExtension.framework/OneSignalExtension",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalInAppMessages/OneSignalInAppMessages.framework/OneSignalInAppMessages",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalLiveActivities/OneSignalLiveActivities.framework/OneSignalLiveActivities",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalLocation/OneSignalLocation.framework/OneSignalLocation",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalNotifications/OneSignalNotifications.framework/OneSignalNotifications",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalOSCore/OneSignalOSCore.framework/OneSignalOSCore",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalOutcomes/OneSignalOutcomes.framework/OneSignalOutcomes",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalUser/OneSignalUser.framework/OneSignalUser",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBAEMKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit_Basics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKGamingServicesKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalInAppMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalLiveActivities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalNotifications.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalOSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalOutcomes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalUser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MARA/Pods-MARA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54F75DB92775C54968F6F99E /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env",
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/MARA/MARA.entitlements",
+				"$(SRCROOT)/Pods/Target Support Files/Pods-MARA/expo-configure-project.sh",
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Pods/Target Support Files/Pods-MARA/ExpoModulesProvider.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-MARA/expo-configure-project.sh\"\n";
+		};
+		63901E91134A05D072B0EED1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -574,7 +652,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7BC0B97F125BC1176C55AA03 /* [CP-User] [RNFB] Core Configuration */ = {
+		721BF6781F9ECBE2834A24C9 /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -663,84 +741,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MARA/Pods-MARA-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3DE19C4AC97EAC3ED06E8AB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MARA/Pods-MARA-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBAEMKit/FBAEMKit.framework/FBAEMKit",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework/FBSDKCoreKit",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit_Basics/FBSDKCoreKit_Basics.framework/FBSDKCoreKit_Basics",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKGamingServicesKit/FBSDKGamingServicesKit.framework/FBSDKGamingServicesKit",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework/FBSDKLoginKit",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKShareKit/FBSDKShareKit.framework/FBSDKShareKit",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignal/OneSignalFramework.framework/OneSignalFramework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalCore/OneSignalCore.framework/OneSignalCore",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalExtension/OneSignalExtension.framework/OneSignalExtension",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalInAppMessages/OneSignalInAppMessages.framework/OneSignalInAppMessages",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalLiveActivities/OneSignalLiveActivities.framework/OneSignalLiveActivities",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalLocation/OneSignalLocation.framework/OneSignalLocation",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalNotifications/OneSignalNotifications.framework/OneSignalNotifications",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalOSCore/OneSignalOSCore.framework/OneSignalOSCore",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalOutcomes/OneSignalOutcomes.framework/OneSignalOutcomes",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalXCFramework/OneSignalUser/OneSignalUser.framework/OneSignalUser",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBAEMKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit_Basics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKGamingServicesKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalInAppMessages.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalLiveActivities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalLocation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalNotifications.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalOSCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalOutcomes.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneSignalUser.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MARA/Pods-MARA-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F9D75DCF0EA72D9EBD98409F /* [Expo] Configure project */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/.xcode.env",
-				"$(SRCROOT)/.xcode.env.local",
-				"$(SRCROOT)/MARA/MARA.entitlements",
-				"$(SRCROOT)/Pods/Target Support Files/Pods-MARA/expo-configure-project.sh",
-			);
-			name = "[Expo] Configure project";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/Pods/Target Support Files/Pods-MARA/ExpoModulesProvider.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-MARA/expo-configure-project.sh\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -749,32 +749,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				8F78AB199F7CF973B35BA72D /* ExpoModulesProvider.swift in Sources */,
+				48F9D8025F19513588AFB55B /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3848B2BD40674535BF03887D /* Sources */ = {
+		35793F9D4D404718A02CB706 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F4E7758514401AB5683325 /* NotificationService.m in Sources */,
+				CA67CE4599984848B05B0686 /* NotificationService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		737E48715B2743808C781E56 /* PBXTargetDependency */ = {
+		A9AA782E70B0438A9599D8EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0FE9B03BB6394B2E9BA323C5 /* OneSignalNotificationServiceExtension */;
-			targetProxy = D7BA83C54FF747008BED687B /* PBXContainerItemProxy */;
+			target = E1C1E71ADB8B4C8A91B837CF /* OneSignalNotificationServiceExtension */;
+			targetProxy = A9F88B9E3DDC46F1B77A7F1C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0EAEB30625944D5EAB73F595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 177F55CA326FA6628FA2D02D /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = undefined;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.motoauto.mara.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = OneSignalNotificationServiceExtension;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F2F9DFD737B068F90273F53 /* Pods-MARA.debug.xcconfig */;
+			baseConfigurationReference = D7B5C13B4D1A97CD01B834E3 /* Pods-MARA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -811,7 +837,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 755D65931C2C256E13CA222A /* Pods-MARA.release.xcconfig */;
+			baseConfigurationReference = A0F1E21FF6990BCB06F699E5 /* Pods-MARA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -837,28 +863,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		2723290AFE384A17B3491176 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDB34E68249D60F822F38A25 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = undefined;
-				INFOPLIST_FILE = "OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.motoauto.mara.OneSignalNotificationServiceExtension;
-				PRODUCT_NAME = OneSignalNotificationServiceExtension;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1006,17 +1010,13 @@
 			};
 			name = Release;
 		};
-		BB088E65BF9D45A3A5EBB645 /* Debug */ = {
+		999DFA3365BD45D8B1BEC104 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B210D9246151AA0087410199 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			baseConfigurationReference = 1500A65CD323D1B156606FDC /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = undefined;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = "OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1024,13 +1024,13 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.motoauto.mara.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = OneSignalNotificationServiceExtension;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1053,11 +1053,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD3DB41C1F5F4F4C92AFAF59 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+		97B7D4C54263407CA7002E69 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB088E65BF9D45A3A5EBB645 /* Debug */,
-				2723290AFE384A17B3491176 /* Release */,
+				0EAEB30625944D5EAB73F595 /* Debug */,
+				999DFA3365BD45D8B1BEC104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
