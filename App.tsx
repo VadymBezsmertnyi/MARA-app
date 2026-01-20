@@ -53,6 +53,8 @@ import { Navigators } from "./src/navigators/Navigators";
 // styles
 import { styles } from "./App.styles";
 
+if (__DEV__) import("./ReactotronConfig");
+
 const GOOGLE_SCOPES = [
   "https://www.googleapis.com/auth/userinfo.email",
   "openid",
