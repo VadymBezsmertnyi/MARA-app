@@ -6,7 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import colors from "../../../styles/colors";
 
 type LinearGradientCustomProps = {
-  children?: JSX.Element;
+  children?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
 };
 

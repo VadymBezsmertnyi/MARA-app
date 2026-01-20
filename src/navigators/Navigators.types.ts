@@ -12,7 +12,7 @@ export type MainScreenT = {
   id: string;
   name: string;
   title: string;
-  component: () => JSX.Element | null;
+  component: () => React.ReactNode | null;
 };
 
 export type MainScreensT = MainScreenT[];

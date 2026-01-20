@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, JSX, useContext, useMemo } from "react";
 import { Platform } from "react-native";
 import { ZodSchema, z } from "zod";
 import axios, { AxiosRequestConfig } from "axios";
@@ -21,7 +21,7 @@ type ApiContext = {
 };
 
 type ApiProviderProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const apiContext = React.createContext({} as ApiContext);

@@ -51,7 +51,7 @@ type EventsContext = {
 };
 
 type EventsProviderType = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const eventsContext = React.createContext({} as EventsContext);

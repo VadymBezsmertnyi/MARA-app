@@ -19,7 +19,7 @@ type AnalyticsContext = {
 };
 
 type AnalyticsProviderProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
   currentRouteName: string | null;
 };
 

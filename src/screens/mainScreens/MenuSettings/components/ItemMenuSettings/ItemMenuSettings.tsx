@@ -7,7 +7,7 @@ import { styles } from "./ItemMenuSettings.styles";
 
 type ItemMenuSettingsProps = {
   title: string;
-  Icon: (originalProps: IconType) => React.JSX.Element;
+  Icon: (originalProps: IconType) => React.ReactNode;
   onPress: () => void;
 };
 

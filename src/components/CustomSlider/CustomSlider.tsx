@@ -43,13 +43,13 @@ type CustomSliderProps = {
     style: StyleProp<ImageStyle>;
     index: number;
     width: number;
-  }) => JSX.Element;
+  }) => React.ReactNode;
   position?: number;
   onPositionChanged?: (value: number) => void;
   customButtons?: (
     number: number,
     move: (number: number, animated?: boolean) => void
-  ) => JSX.Element;
+  ) => React.ReactNode;
   loop?: boolean;
 };
 

@@ -5,7 +5,7 @@ import { Animated, ScrollView, StyleProp, ViewStyle } from "react-native";
 import { styles } from "./ScrollViewCustom.styles";
 
 type ScrollViewCustomProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
   style?: StyleProp<ViewStyle>;
 };
 

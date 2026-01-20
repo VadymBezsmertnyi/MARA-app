@@ -22,7 +22,7 @@ type ImageCacheProps = {
  * @param {ImageContentFit} [props.contentFit="cover"] - Optional content fitting strategy for the image.
  * @param {ImageContentPosition} [props.contentPosition] - An optional parameter that specifies the content positioning strategy for the displayed image.
  * Possible values are "contain", "cover", "auto", etc.
- * @returns {JSX.Element} A React element that displays the cached image.
+ * @returns {React.ReactNode} A React element that displays the cached image.
  */
 export const ImageCache: FunctionComponent<ImageCacheProps> = ({
   imageSrc,

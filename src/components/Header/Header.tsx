@@ -28,8 +28,8 @@ import colors from "../../../styles/colors";
 
 type HeaderStackProps = {
   title: string;
-  leftElement?: JSX.Element;
-  rightElement?: JSX.Element;
+  leftElement?: React.ReactNode;
+  rightElement?: React.ReactNode;
   onPressLeftElement?: () => void;
   backgroundStyle?: StyleProp<ViewStyle>;
   onRightDelete?: () => void;

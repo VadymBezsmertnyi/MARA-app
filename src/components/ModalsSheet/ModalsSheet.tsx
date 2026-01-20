@@ -17,10 +17,10 @@ type ModalsSheetProps = {
   onChange?: () => void;
   isShowClose?: boolean;
   onClose: () => void;
-  footer?: JSX.Element;
+  footer?: React.ReactNode;
   snapPointsProps?: string[];
   isIndicator?: boolean;
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
@@ -38,7 +38,7 @@ export const ModalsSheet: FunctionComponent<ModalsSheetProps> = ({
     () =>
       ({
         display: isIndicator ? "flex" : "none",
-      }) as ViewStyle,
+      } as ViewStyle),
     [isIndicator]
   );
   const snapPoints = useMemo(() => {

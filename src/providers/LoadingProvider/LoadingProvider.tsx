@@ -19,7 +19,7 @@ type LoadingContext = {
 };
 
 type LoadingProviderType = {
-  children: JSX.Element;
+  children: React.ReactNode;
   isLoadingProps?: boolean;
 };
 

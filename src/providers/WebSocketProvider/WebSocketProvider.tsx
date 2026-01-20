@@ -12,7 +12,7 @@ import { LocationObjectCoords } from "expo-location";
 import { stateSchema } from "./WebSocketProvider.schemas";
 
 type WebSocketProviderType = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 type WebSocketContext = {
