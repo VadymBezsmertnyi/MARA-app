@@ -5,14 +5,8 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import {
-  Appearance,
-  Platform,
-  StatusBar,
-  StatusBarStyle,
-  View,
-} from "react-native";
-import StatusBarHeight from "@expo/status-bar-height";
+import { StatusBar } from "expo-status-bar";
+import { Appearance, View } from "react-native";
 
 // helps
 import { getDeviceStorage, setDeviceStorage } from "../../helps/storage.help";
@@ -27,6 +21,7 @@ import {
 // helpers
 import { styles } from "./ThemeProvider.styles";
 import colors from "../../../styles/colors";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export type ThemeT = "light" | "dark";
 
@@ -47,15 +42,9 @@ export const themeContext = React.createContext({} as ThemeContext);
 
 const ThemeProvider: FunctionComponent<ThemeProviderProps> = (props) => {
   const { children } = props;
+  const { top } = useSafeAreaInsets();
   const [theme, setTheme] = useState<ThemeT>(THEME_LIGHT);
-  const [heightStatusBar, setHeightStatusBar] = useState(0);
   const [heightTabBar, setHeightTabBar] = useState<number | null>(null);
-
-  const setBarStyle = useMemo((): StatusBarStyle => {
-    if (theme === THEME_LIGHT) return "dark-content";
-    if (theme === THEME_DARK) return "light-content";
-    return "default";
-  }, [theme]);
 
   const styleContainer = useMemo(
     () => ({
@@ -64,13 +53,6 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = (props) => {
     }),
     [theme]
   );
-
-  const getHeightStatusBar = async () => {
-    if (Platform.OS !== "android") {
-      const getAsyncHeight = await StatusBarHeight.getAsync();
-      setHeightStatusBar(StatusBar.currentHeight || getAsyncHeight);
-    }
-  };
 
   const selectTheme = async (newTheme: ThemeT) => {
     setTheme(newTheme);
@@ -93,29 +75,22 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = (props) => {
   const contextValue: ThemeContext = useMemo(
     () => ({
       theme,
-      heightStatusBar,
+      heightStatusBar: top,
       heightTabBar,
       selectTheme,
       getTheme,
       setHeightTabBar,
     }),
-    [theme, heightStatusBar, heightTabBar]
+    [theme, top, heightTabBar]
   );
 
   useEffect(() => {
     getTheme();
-    getHeightStatusBar();
   }, []);
 
   return (
     <themeContext.Provider value={contextValue}>
-      <StatusBar
-        barStyle={setBarStyle}
-        showHideTransition={"slide"}
-        backgroundColor={
-          theme === THEME_LIGHT ? colors.white : colors.blackRich
-        }
-      />
+      <StatusBar style={theme === THEME_DARK ? "light" : "dark"} translucent />
       <View style={styleContainer}>{children}</View>
     </themeContext.Provider>
   );
