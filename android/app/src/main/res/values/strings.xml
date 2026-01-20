@@ -6,5 +6,5 @@
   <string name="facebook_app_id">392972260073420</string>
   <string name="facebook_client_token">9ab6fd53433128459985341b29d5843f</string>
   <string name="fb_login_protocol_scheme">fb392972260073420</string>
-  <string name="expo_runtime_version">1.0.3</string>
+  <string name="expo_runtime_version">1.1.0</string>
 </resources>
