@@ -1,0 +1,16 @@
+<resources>
+  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Atļaut $(PRODUCT_NAME) izmantot jūsu atrašanās vietu, lai meklētu draugus kartē. Jūs vienmēr varat atspējot šo funkciju lietotnes izvēlnē."</string>
+  <string name="NSLocationAlwaysUsageDescription">"Atļaut $(PRODUCT_NAME) vienmēr piekļūt jūsu atrašanās vietai, lai nodrošinātu nepārtrauktu draugu izsekošanu kartē. Jūs varat atspējot šo funkciju jebkurā laikā lietotnes izvēlnē."</string>
+  <string name="NSLocationWhenInUseUsageDescription">"Atļaut $(PRODUCT_NAME) piekļūt jūsu atrašanās vietai, izmantojot lietotni, lai palīdzētu jums atrast draugus kartē. Jūs varat atspējot šo funkciju lietotnes izvēlnē."</string>
+  <string name="locationAlwaysAndWhenInUsePermission">"Atļaut $(PRODUCT_NAME) izmantot jūsu atrašanās vietu, lai meklētu draugus kartē. Jūs vienmēr varat atspējot šo funkciju lietotnes izvēlnē."</string>
+  <string name="locationAlwaysPermission">"Atļaut $(PRODUCT_NAME) vienmēr piekļūt jūsu atrašanās vietai, lai nodrošinātu nepārtrauktu draugu izsekošanu kartē. Jūs varat atspējot šo funkciju jebkurā laikā lietotnes izvēlnē."</string>
+  <string name="locationWhenInUsePermission">"Atļaut $(PRODUCT_NAME) piekļūt jūsu atrašanās vietai, izmantojot lietotni, lai palīdzētu jums atrast draugus kartē. Jūs varat atspējot šo funkciju lietotnes izvēlnē."</string>
+  <string name="NSFaceIDUsageDescription">"Lai pieslēgtos ar Face ID"</string>
+  <string name="UIApplicationShortcutItemTitle">"Ātrā piekļuve"</string>
+  <string name="NSCameraUsageDescription">"Lai veiktu fotoattēlu uzņemšanu"</string>
+  <string name="NSPhotoLibraryUsageDescription">"Lai piekļūtu attēliem jūsu bibliotēkā"</string>
+  <string name="NSMicrophoneUsageDescription">"Lai ierakstītu skaņu"</string>
+  <string name="NSCalendarsUsageDescription">"Lai piekļūtu kalendāriem"</string>
+  <string name="NSContactsUsageDescription">"Lai piekļūtu kontaktiem"</string>
+  <string name="NSAppleMusicUsageDescription">"Lai piekļūtu Apple Music"</string>
+</resources>

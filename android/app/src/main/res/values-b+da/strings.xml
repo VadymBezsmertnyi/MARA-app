@@ -1,0 +1,16 @@
+<resources>
+  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Tillad $(PRODUCT_NAME) at bruge din placering til at søge efter venner på kortet. Du kan altid deaktivere dette i appens menu."</string>
+  <string name="NSLocationAlwaysUsageDescription">"Tillad $(PRODUCT_NAME) altid at få adgang til din placering for at give kontinuerlig venesporing på kortet. Du kan deaktivere dette når som helst i appens menu."</string>
+  <string name="NSLocationWhenInUseUsageDescription">"Tillad $(PRODUCT_NAME) at få adgang til din placering, mens du bruger appen til at hjælpe dig med at finde venner på kortet. Du kan deaktivere dette i appens menu."</string>
+  <string name="locationAlwaysAndWhenInUsePermission">"Tillad $(PRODUCT_NAME) at bruge din placering til at søge efter venner på kortet. Du kan altid deaktivere dette i appens menu."</string>
+  <string name="locationAlwaysPermission">"Tillad $(PRODUCT_NAME) altid at få adgang til din placering for at give kontinuerlig venesporing på kortet. Du kan deaktivere dette når som helst i appens menu."</string>
+  <string name="locationWhenInUsePermission">"Tillad $(PRODUCT_NAME) at få adgang til din placering, mens du bruger appen til at hjælpe dig med at finde venner på kortet. Du kan deaktivere dette i appens menu."</string>
+  <string name="NSFaceIDUsageDescription">"Til at logge ind med Face ID"</string>
+  <string name="UIApplicationShortcutItemTitle">"Hurtig adgang"</string>
+  <string name="NSCameraUsageDescription">"Til at tage billeder"</string>
+  <string name="NSPhotoLibraryUsageDescription">"Til adgang til fotos i din bibliotek"</string>
+  <string name="NSMicrophoneUsageDescription">"Til at optage lyd"</string>
+  <string name="NSCalendarsUsageDescription">"Til adgang til kalendere"</string>
+  <string name="NSContactsUsageDescription">"Til adgang til kontakter"</string>
+  <string name="NSAppleMusicUsageDescription">"Til adgang til Apple Music"</string>
+</resources>

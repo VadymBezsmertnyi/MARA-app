@@ -1,0 +1,16 @@
+<resources>
+  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Επιτρέψτε στο $(PRODUCT_NAME) να χρησιμοποιήσει την τοποθεσία σας για να αναζητήσει φίλους στο χάρτη. Μπορείτε πάντα να απενεργοποιήσετε αυτήν τη λειτουργία στο μενού της εφαρμογής."</string>
+  <string name="NSLocationAlwaysUsageDescription">"Επιτρέψτε στο $(PRODUCT_NAME) να έχει πάντα πρόσβαση στην τοποθεσία σας για να παρέχει συνεχή παρακολούθηση φίλων στο χάρτη. Μπορείτε να απενεργοποιήσετε αυτήν τη λειτουργία ανά πάσα στιγμή στο μενού της εφαρμογής."</string>
+  <string name="NSLocationWhenInUseUsageDescription">"Επιτρέψτε στο $(PRODUCT_NAME) να έχει πρόσβαση στην τοποθεσία σας κατά τη χρήση της εφαρμογής για να σας βοηθήσει να βρείτε φίλους στο χάρτη. Μπορείτε να απενεργοποιήσετε αυτήν τη λειτουργία στο μενού της εφαρμογής."</string>
+  <string name="locationAlwaysAndWhenInUsePermission">"Επιτρέψτε στο $(PRODUCT_NAME) να χρησιμοποιήσει την τοποθεσία σας για να αναζητήσει φίλους στο χάρτη. Μπορείτε πάντα να απενεργοποιήσετε αυτήν τη λειτουργία στο μενού της εφαρμογής."</string>
+  <string name="locationAlwaysPermission">"Επιτρέψτε στο $(PRODUCT_NAME) να έχει πάντα πρόσβαση στην τοποθεσία σας για να παρέχει συνεχή παρακολούθηση φίλων στο χάρτη. Μπορείτε να απενεργοποιήσετε αυτήν τη λειτουργία ανά πάσα στιγμή στο μενού της εφαρμογής."</string>
+  <string name="locationWhenInUsePermission">"Επιτρέψτε στο $(PRODUCT_NAME) να έχει πρόσβαση στην τοποθεσία σας κατά τη χρήση της εφαρμογής για να σας βοηθήσει να βρείτε φίλους στο χάρτη. Μπορείτε να απενεργοποιήσετε αυτήν τη λειτουργία στο μενού της εφαρμογής."</string>
+  <string name="NSFaceIDUsageDescription">"Για σύνδεση με το Face ID"</string>
+  <string name="UIApplicationShortcutItemTitle">"Γρήγορη πρόσβαση"</string>
+  <string name="NSCameraUsageDescription">"Για λήψη φωτογραφιών"</string>
+  <string name="NSPhotoLibraryUsageDescription">"Για πρόσβαση σε φωτογραφίες στη βιβλιοθήκη σας"</string>
+  <string name="NSMicrophoneUsageDescription">"Για εγγραφή ήχου"</string>
+  <string name="NSCalendarsUsageDescription">"Για πρόσβαση σε ημερολόγια"</string>
+  <string name="NSContactsUsageDescription">"Για πρόσβαση σε επαφές"</string>
+  <string name="NSAppleMusicUsageDescription">"Για πρόσβαση στο Apple Music"</string>
+</resources>

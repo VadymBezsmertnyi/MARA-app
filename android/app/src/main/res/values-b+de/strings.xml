@@ -1,0 +1,16 @@
+<resources>
+  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren."</string>
+  <string name="NSLocationAlwaysUsageDescription">"Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren."</string>
+  <string name="NSLocationWhenInUseUsageDescription">"Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren."</string>
+  <string name="locationAlwaysAndWhenInUsePermission">"Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren."</string>
+  <string name="locationAlwaysPermission">"Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren."</string>
+  <string name="locationWhenInUsePermission">"Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren."</string>
+  <string name="NSFaceIDUsageDescription">"Zum Einloggen mit Face ID"</string>
+  <string name="UIApplicationShortcutItemTitle">"Schnellzugriff"</string>
+  <string name="NSCameraUsageDescription">"Für das Aufnehmen von Fotos"</string>
+  <string name="NSPhotoLibraryUsageDescription">"Für den Zugriff auf Fotos in Ihrer Bibliothek"</string>
+  <string name="NSMicrophoneUsageDescription">"Für die Aufnahme von Audio"</string>
+  <string name="NSCalendarsUsageDescription">"Für den Zugriff auf Kalender"</string>
+  <string name="NSContactsUsageDescription">"Für den Zugriff auf Kontakte"</string>
+  <string name="NSAppleMusicUsageDescription">"Für den Zugriff auf Apple Music"</string>
+</resources>

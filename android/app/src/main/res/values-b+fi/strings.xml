@@ -1,0 +1,16 @@
+<resources>
+  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Salli $(PRODUCT_NAME) käyttää sijaintiasi etsiäksesi ystäviä kartalla. Voit aina poistaa tämän käytöstä so applikaation valikossa."</string>
+  <string name="NSLocationAlwaysUsageDescription">"Salli $(PRODUCT_NAME) aina käyttää sijaintiasi jatkuvan ystävien seurannan tarjoamiseksi kartalla. Voit poistaa tämän käytöstä milloin tahansa sovelluksen valikossa."</string>
+  <string name="NSLocationWhenInUseUsageDescription">"Salli $(PRODUCT_NAME) käyttää sijaintiasi sovelluksen käytön aikana auttaaksesi sinua löytämään ystäviä kartalla. Voit poistaa tämän käytöstä so  applikaation valikossa."</string>
+  <string name="locationAlwaysAndWhenInUsePermission">"Salli $(PRODUCT_NAME) käyttää sijaintiasi etsiäksesi ystäviä kartalla. Voit aina poistaa tämän käytöstä so applikaation valikossa."</string>
+  <string name="locationAlwaysPermission">"Salli $(PRODUCT_NAME) aina käyttää sijaintiasi jatkuvan ystävien seurannan tarjoamiseksi kartalla. Voit poistaa tämän käytöstä milloin tahansa sovelluksen valikossa."</string>
+  <string name="locationWhenInUsePermission">"Salli $(PRODUCT_NAME) käyttää sijaintiasi sovelluksen käytön aikana auttaaksesi sinua löytämään ystäviä kartalla. Voit poistaa tämän käytöstä so applikaation valikossa."</string>
+  <string name="NSFaceIDUsageDescription">"Kirjautumiseen Face ID:llä"</string>
+  <string name="UIApplicationShortcutItemTitle">"Pikakäynnistys"</string>
+  <string name="NSCameraUsageDescription">"Valokuvien ottamiseen"</string>
+  <string name="NSPhotoLibraryUsageDescription">"Valokuvien käyttöön kirjastossasi"</string>
+  <string name="NSMicrophoneUsageDescription">"Äänen tallentamiseen"</string>
+  <string name="NSCalendarsUsageDescription">"Kalenterien käyttöön"</string>
+  <string name="NSContactsUsageDescription">"Yhteystietoihin pääsyyn"</string>
+  <string name="NSAppleMusicUsageDescription">"Apple Musicin käyttöön"</string>
+</resources>

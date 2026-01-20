@@ -1,0 +1,16 @@
+<resources>
+  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Povolit $(PRODUCT_NAME) používat vaši polohu k vyhledávání přátel na mapě. Tuto funkci můžete kdykoli vypnout v menu aplikace."</string>
+  <string name="NSLocationAlwaysUsageDescription">"Povolit $(PRODUCT_NAME) neustále přistupovat k vaší poloze pro poskytování nepřetržitého sledování přátel na mapě. Tuto funkci můžete kdykoli vypnout v menu aplikace."</string>
+  <string name="NSLocationWhenInUseUsageDescription">"Povolit $(PRODUCT_NAME) přístup k vaší poloze při používání aplikace k vyhledávání přátel na mapě. Tuto funkci můžete vypnout v menu aplikace."</string>
+  <string name="locationAlwaysAndWhenInUsePermission">"Povolit $(PRODUCT_NAME) používat vaši polohu k vyhledávání přátel na mapě. Tuto funkci můžete kdykoli vypnout v menu aplikace."</string>
+  <string name="locationAlwaysPermission">"Povolit $(PRODUCT_NAME) neustále přistupovat k vaší poloze pro poskytování nepřetržitého sledování přátel na mapě. Tuto funkci můžete kdykoli vypnout v menu aplikace."</string>
+  <string name="locationWhenInUsePermission">"Povolit $(PRODUCT_NAME) přístup k vaší poloze při používání aplikace k vyhledávání přátel na mapě. Tuto funkci můžete vypnout v menu aplikace."</string>
+  <string name="NSFaceIDUsageDescription">"Pro přihlášení pomocí Face ID"</string>
+  <string name="UIApplicationShortcutItemTitle">"Rychlý přístup"</string>
+  <string name="NSCameraUsageDescription">"Pro pořizování fotografií"</string>
+  <string name="NSPhotoLibraryUsageDescription">"Pro přístup k fotografiím ve vaší knihovně"</string>
+  <string name="NSMicrophoneUsageDescription">"Pro nahrávání zvuku"</string>
+  <string name="NSCalendarsUsageDescription">"Pro přístup k kalendářům"</string>
+  <string name="NSContactsUsageDescription">"Pro přístup k kontaktům"</string>
+  <string name="NSAppleMusicUsageDescription">"Pro přístup k Apple Music"</string>
+</resources>

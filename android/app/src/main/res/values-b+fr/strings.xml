@@ -1,0 +1,16 @@
+<resources>
+  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Autoriser $(PRODUCT_NAME) à utiliser votre position pour rechercher des amis sur la carte. Vous pouvez toujours désactiver cette fonctionnalité dans le menu de l'application."</string>
+  <string name="NSLocationAlwaysUsageDescription">"Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application."</string>
+  <string name="NSLocationWhenInUseUsageDescription">"Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application."</string>
+  <string name="locationAlwaysAndWhenInUsePermission">"Autoriser $(PRODUCT_NAME) à utiliser votre position pour rechercher des amis sur la carte. Vous pouvez toujours désactiver cette fonctionnalité dans le menu de l'application."</string>
+  <string name="locationAlwaysPermission">"Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application."</string>
+  <string name="locationWhenInUsePermission">"Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application."</string>
+  <string name="NSFaceIDUsageDescription">"Pour vous connecter avec Face ID"</string>
+  <string name="UIApplicationShortcutItemTitle">"Accès rapide"</string>
+  <string name="NSCameraUsageDescription">"Pour prendre des photos"</string>
+  <string name="NSPhotoLibraryUsageDescription">"Pour accéder à vos photos dans la bibliothèque"</string>
+  <string name="NSMicrophoneUsageDescription">"Pour enregistrer l'audio"</string>
+  <string name="NSCalendarsUsageDescription">"Pour accéder aux calendriers"</string>
+  <string name="NSContactsUsageDescription">"Pour accéder aux contacts"</string>
+  <string name="NSAppleMusicUsageDescription">"Pour accéder à Apple Music"</string>
+</resources>
