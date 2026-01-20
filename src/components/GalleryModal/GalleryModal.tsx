@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Gallery from "react-native-awesome-gallery";
+//import Gallery from "react-native-awesome-gallery";
 import { Trans } from "@lingui/macro";
 
 // providers
@@ -34,7 +34,7 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
 
   return (
     <View style={styles.container}>
-      <Gallery
+      {/* <Gallery
         data={data.images}
         loop
         initialIndex={data.indexImage}
@@ -48,7 +48,7 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
             />
           </View>
         )}
-      />
+      /> */}
       <View style={containerHeaderStyles}>
         <TouchableOpacity onPress={onClose} style={styles.buttonBack}>
           <IconArrowLeftEvent
