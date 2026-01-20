@@ -135,14 +135,20 @@ export const expo = {
   },
   owner: "fop_vadym_bezsmertnyi",
   plugins: [
-    //"./plugins/react-native-maps-plugin",
-    "./plugins/withCustomInfoPlist",
+    [
+      "react-native-maps",
+      {
+        iosGoogleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
+        androidGoogleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
+      },
+    ],
     "@react-native-firebase/app",
     [
       "expo-build-properties",
       {
         ios: {
           useFrameworks: "static",
+          forceStaticLinking: ["RNFBApp"],
         },
       },
     ],
