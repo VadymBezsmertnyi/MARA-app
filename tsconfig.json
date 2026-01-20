@@ -1,16 +1,7 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "jsx": "react",
-    "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "types": ["node"],
-    "target": "ES6",
-    "lib": [
-      "es2021",
-      "es2018",
-      "DOM"
-    ],
+    "strict": true
   },
-  "extends": ["expo/tsconfig.base", "@tsconfig/react-native/tsconfig.json"],
+  "exclude": ["src/icons/components/**/*"]
 }
