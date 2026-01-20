@@ -211,6 +211,7 @@ export const expo = {
     "expo-font",
     "expo-secure-store",
     ["react-native-appsflyer", { shouldUseStrictMode: true }],
+    "@react-native-community/datetimepicker"
   ],
   updates: {
     url: "https://u.expo.dev/c9b5a1d2-759e-4704-9171-69ad591def63",
