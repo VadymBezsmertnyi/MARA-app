@@ -1,7 +1,7 @@
 import { setupI18n } from "@lingui/core";
 import { defaultLanguage, languagesLinguiAlias } from "./localization.const";
 import { getDeviceLanguage } from "./localization.helpers";
-import { CATALOGS_LANGUAGES } from "./localization.provider";
+import { CATALOGS_LANGUAGES } from "./localization.messages";
 
 export const globalI18n = setupI18n({
   messages: CATALOGS_LANGUAGES,
