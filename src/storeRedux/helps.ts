@@ -48,10 +48,10 @@ export const getDeviceId = async () => {
   if (Platform.OS === "android") return Application.getAndroidId();
 
   const deviceId = await SecureStore.getItemAsync("deviceId");
-
   if (!deviceId) {
     const newDeviceId = await Application.getIosIdForVendorAsync();
     if (newDeviceId) await SecureStore.setItemAsync("deviceId", newDeviceId);
+
     return newDeviceId;
   }
 
@@ -73,10 +73,9 @@ const rawBaseQuery = fetchBaseQuery({
           refreshToken: string;
         })
       : null;
-
-    if (verifyTokens?.accessToken) {
+    if (verifyTokens?.accessToken)
       headers.set("authorization", verifyTokens.accessToken);
-    }
+
     headers.set("Content-Type", "application/json");
 
     return headers;
@@ -91,7 +90,6 @@ export const baseQueryWithReauth: BaseQueryFn<
   unknown,
   FetchBaseQueryError
 > = async (args, api, extraOptions) => {
-  // Add platform and deviceId to query params if not already present
   if (args && typeof args === "object" && "url" in args) {
     const url = args.url as string;
     if (!url.includes("platform") && !url.includes("deviceId")) {
@@ -109,8 +107,6 @@ export const baseQueryWithReauth: BaseQueryFn<
   }
 
   let result = await rawBaseQuery(args, api, extraOptions);
-
-  // If we get a 401/402, try to refresh the token
   if (
     result.error &&
     (result.error.status === 401 || result.error.status === 402)
@@ -122,7 +118,6 @@ export const baseQueryWithReauth: BaseQueryFn<
           refreshToken: string;
         })
       : null;
-
     if (verifyTokens?.refreshToken) {
       const refreshResult = await rawBaseQuery(
         {
@@ -136,9 +131,8 @@ export const baseQueryWithReauth: BaseQueryFn<
         extraOptions
       );
 
-      if (refreshResult.data) {
+      if (refreshResult.data)
         result = await rawBaseQuery(args, api, extraOptions);
-      }
     }
   }
 
