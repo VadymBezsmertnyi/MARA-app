@@ -17,6 +17,7 @@ import {
   getDeviceLanguage,
 } from "./localization.helpers";
 import { setDeviceStorage } from "../src/helps/storage.help";
+import { updateGlobalI18nLanguage } from "./i18n.global";
 
 // locales
 import { messages as translationsUk } from "../localization/uk/messages";
@@ -45,7 +46,7 @@ import {
   languagesLinguiAlias,
 } from "./localization.const";
 
-const CATALOGS_LANGUAGES = {
+export const CATALOGS_LANGUAGES = {
   uk: translationsUk as Messages,
   en: translationsEn as Messages,
   fr: translationsFr as Messages,
@@ -80,6 +81,7 @@ const LocalesProvider: React.FC<Props> = ({ children }) => {
   const setLanguageAsync = async (language: Language): Promise<void> => {
     try {
       await dynamicActivateLanguage(language, i18n);
+      await updateGlobalI18nLanguage(language); // Update global i18n for middleware
       await setDeviceStorage(languageKey, language);
       setLanguage(language);
     } catch (error: any) {

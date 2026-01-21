@@ -1,6 +1,7 @@
 import { createListenerMiddleware, isAnyOf } from "@reduxjs/toolkit";
 import Toast from "react-native-toast-message";
 import { api } from "../api";
+import { globalI18n } from "../../../localization/i18n.global";
 
 const errorToastMiddleware = createListenerMiddleware();
 
@@ -27,7 +28,7 @@ errorToastMiddleware.startListening({
         }
       | undefined;
 
-    let errorMessage = "Помилка виконання запиту";
+    let errorMessage: string | undefined;
     if (error?.data && typeof error.data === "object") {
       if ("message" in error.data && typeof error.data.message === "string")
         errorMessage = error.data.message;
@@ -36,14 +37,17 @@ errorToastMiddleware.startListening({
     } else if (error?.error && typeof error.error === "string")
       errorMessage = error.error;
     else if (
+      errorWithMessage &&
       "message" in errorWithMessage &&
       typeof errorWithMessage.message === "string"
     )
       errorMessage = errorWithMessage.message;
+
+    const defaultErrorMessage = globalI18n._("Error executing request");
     Toast.show({
       type: "error",
-      text1: "Помилка",
-      text2: errorMessage,
+      text1: globalI18n._("Error"),
+      text2: errorMessage || defaultErrorMessage,
     });
   },
 });
@@ -60,8 +64,10 @@ errorToastMiddleware.startListening({
     if (!action.payload)
       Toast.show({
         type: "error",
-        text1: "Помилка валідації",
-        text2: "Дані від сервера не відповідають очікуваному формату",
+        text1: globalI18n._("Validation error"),
+        text2: globalI18n._(
+          "Data from the server does not match the expected format"
+        ),
       });
   },
 });
