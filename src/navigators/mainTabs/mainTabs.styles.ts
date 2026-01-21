@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "blue",
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
   },
