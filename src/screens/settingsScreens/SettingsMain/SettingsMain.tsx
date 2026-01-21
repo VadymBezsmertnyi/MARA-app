@@ -19,7 +19,6 @@ import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import ItemTypeSetting from "./components/ItemTypeSetting/ItemTypeSetting";
-import { ContainerBusiness } from "./components/ContainerBusiness/ContainerBusiness";
 import { ContainerUser } from "./components/ContainerUser/ContainerUser";
 import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
@@ -41,8 +40,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   navigation,
 }) => {
   const { exitUser } = useUserProvider();
-  const { infoBusinessAdverts, infoAdverts, infoSmallEvents, infoWorkshops } =
-    useSubscriptionProvider();
+  const { infoSmallEvents, infoWorkshops } = useSubscriptionProvider();
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
@@ -70,22 +68,6 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     );
   };
 
-  const onCreateBusinessMarket = () => {
-    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate);
-  };
-
-  const onChangeBusinessMarket = (businessMarketId: string) => {
-    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange, {
-      businessMarketId,
-    });
-  };
-
-  const onReviewBusinessMarket = (businessMarketId: string) => {
-    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketReview, {
-      businessMarketId,
-    });
-  };
-
   const onPressBuy = () => {
     setIsShowPayment(true);
   };
@@ -107,34 +89,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
         </View>
         <ScrollView>
           <ContainerUser />
-          <View style={styles.containerLineEmpty} />
-          <ContainerBusiness
-            onCreateBusiness={onCreateBusinessMarket}
-            onChangeBusiness={onChangeBusinessMarket}
-            onReviewBusiness={onReviewBusinessMarket}
-            onPressBuy={onPressBuy}
-          />
           <View style={styles.containerList}>
-            <View style={styles.containerLineEmpty} />
-            <ItemTypeSetting
-              title={i18n._("Your adverts")}
-              amountUsed={
-                infoAdverts.useAmountAdvert +
-                infoBusinessAdverts.useAmountBusinessAdvert
-              }
-              amountAvailable={
-                infoAdverts.amountAdvert +
-                infoBusinessAdverts.amountBusinessAdvert
-              }
-              amountAvailableTitle={`${infoAdverts.amountAdvert}(${infoBusinessAdverts.amountBusinessAdvert})`}
-              onPressView={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
-              }}
-              onPressAdd={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
-              }}
-              onPressBuy={onPressBuy}
-            />
             <View style={styles.containerLineEmpty} />
             <ItemTypeSetting
               title={i18n._("Your workshops")}
