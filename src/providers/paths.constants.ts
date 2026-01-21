@@ -21,13 +21,6 @@ export const PATHS = {
   workshopsDelete: "/workshops/delete/",
   workshopsCommentsAdd: "/workshops/comments/add/",
   workshopsCommentsChange: "/workshops/comments/change/",
-  // market
-  marketsProductsGet: "/markets/products/",
-  marketsProductsGetUserId: "/markets/products/user/",
-  marketsProductsAdd: "/markets/products/add/",
-  marketsProductsChange: "/markets/products/change/",
-  marketsProductsDelete: "/markets/products/delete/",
-  marketsProductsMinMaxPricesGet: "/markets/products/minMaxPrices/",
   // location
   locationUsers: "/location-users/",
   locationUsersSosAdd: "/location-users/sos/add/",
@@ -40,11 +33,6 @@ export const PATHS = {
   placesCities: "/places/cities/",
   placesCitiesSearch: "/places/cities/search/",
   placesCityId: "/places/cities/getPlaceId/",
-  // business
-  businessMarket: "/business/market/",
-  businessMarketCreate: "/business/market/create/",
-  businessMarketUpdate: "/business/market/update/",
-  businessMarketDelete: "/business/market/delete/",
   // other
   ipApiGetCountry: "http://ip-api.com/json",
 } as const;

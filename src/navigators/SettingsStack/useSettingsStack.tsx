@@ -14,10 +14,6 @@ import { AddEvent } from "../../screens/newsScreens/EventAdd/EventAdd";
 import { SettingsWorkshops } from "../../screens/settingsScreens/SettingsWorkshops/SettingsWorkshops";
 import { WorkshopAdd } from "../../screens/workshopsScreens/WorkshopAdd/WorkshopAdd";
 
-// Adverts
-import { SettingsProducts } from "../../screens/settingsScreens/SettingsProducts/SettingsProducts";
-import { SettingsBusinessCreate } from "../../screens/settingsScreens/SettingsBusinessCreate/SettingsBusinessCreate";
-
 export const useSettingsStack = () => {
   const { i18n } = useLocalesProvider();
 
@@ -77,27 +73,6 @@ export const useSettingsStack = () => {
       title: i18n._("Change workshop"),
       headerShown: false,
       component: WorkshopAdd,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsProducts,
-      name: PATHS_SETTINGS_SCREENS.settingsProducts,
-      title: null,
-      headerShown: false,
-      component: SettingsProducts,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate,
-      name: PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate,
-      title: "",
-      headerShown: false,
-      component: SettingsBusinessCreate,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange,
-      name: PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange,
-      title: "",
-      headerShown: false,
-      component: SettingsBusinessCreate,
     },
   ] as const;
 
