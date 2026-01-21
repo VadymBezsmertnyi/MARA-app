@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -16,6 +16,7 @@ import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ItemSettingEvents } from "./components/ItemSettingEvents/ItemSettingEvents";
+import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 // icons
 import { IconClose, IconPlus } from "../../../icons/components";
@@ -29,11 +30,10 @@ import notItemsImage from "../../../../assets/settingsScreen/notSettings.jpg";
 // styles
 import { styles } from "./SettingsEvents.styles";
 import colors from "../../../../styles/colors";
-import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 type SettingsEventsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootAllScreensParamList>;
 };
 
 export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({

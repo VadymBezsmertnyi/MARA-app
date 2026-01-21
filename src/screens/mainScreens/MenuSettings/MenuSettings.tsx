@@ -15,12 +15,10 @@ import {
   ParamListBase,
 } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
-
-// types
 import {
-  DrawerDescriptorMap,
-  DrawerNavigationHelpers,
-} from "@react-navigation/drawer/lib/typescript/src/types";
+  DrawerContentComponentProps,
+  DrawerNavigationProp,
+} from "@react-navigation/drawer";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -62,8 +60,8 @@ const APP_ID = "6502443474";
 
 type MenuSettingsProps = {
   state: DrawerNavigationState<ParamListBase>;
-  navigation: DrawerNavigationHelpers;
-  descriptors: DrawerDescriptorMap;
+  navigation: DrawerNavigationProp<ParamListBase>;
+  descriptors: DrawerContentComponentProps["descriptors"];
 };
 
 export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({

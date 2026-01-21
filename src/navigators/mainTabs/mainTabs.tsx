@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { ColorValue, TouchableOpacity, View } from "react-native";
 import {
   BottomTabBarProps,
   createBottomTabNavigator,
@@ -12,7 +12,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -39,18 +39,18 @@ import { styles } from "./MainTabs.styles";
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
-  const navigation = useNavigation<DrawerNavigationHelpers>();
+  const navigation = useNavigation<DrawerNavigationProp<RootMainTabsParamList>>();
   const { bottom } = useSafeAreaInsets();
   const { setHeightTabBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
   const { mainTabs } = useMainTabs();
   const colorsGradient = useMemo(
-    () => [colors.californiaOrange, colors.blazeOrange],
+    () => [colors.californiaOrange, colors.blazeOrange] as [ColorValue, ColorValue]
     []
   );
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
-  const locationsGradient = useMemo(() => [0, 1], []);
+  const locationsGradient = useMemo(() => [0, 1] as [number, number], []);
 
   const absoluteContainerStyles = useMemo(() => [styles.absoluteContainer], []);
 

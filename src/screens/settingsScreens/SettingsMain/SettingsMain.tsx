@@ -3,8 +3,8 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 import { CommonActions } from "@react-navigation/native";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
@@ -34,7 +34,7 @@ import { styles } from "./SettingsMain.styles";
 
 type SettingsMainProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootAllScreensParamList>;
 };
 
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({

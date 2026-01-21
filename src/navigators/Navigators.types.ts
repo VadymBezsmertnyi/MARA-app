@@ -182,7 +182,7 @@ export type RootMarketScreensParamList = {
     string,
     string | number | boolean
   > & {
-    productId?: number;
+    productId?: number | string;
   };
 };
 

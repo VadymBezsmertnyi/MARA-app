@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
@@ -34,7 +34,7 @@ import { styles } from "./EventsMain.styles";
 
 type EventsMainProps = {
   navigation: NativeStackNavigationProp<RootEventsScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootEventsScreensParamList>;
 };
 
 export const EventsMain: FunctionComponent<EventsMainProps> = ({

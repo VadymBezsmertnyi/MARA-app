@@ -8,8 +8,8 @@ import {
   ViewStyle,
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // types
 import { RootMarketScreensParamList } from "../../../navigators/Navigators.types";
@@ -50,7 +50,7 @@ import { styles } from "./MarketMain.styles";
 
 type MarketMainProps = {
   navigation: NativeStackNavigationProp<RootMarketScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootMarketScreensParamList>;
 };
 
 export const MarketMain: FunctionComponent<MarketMainProps> = ({

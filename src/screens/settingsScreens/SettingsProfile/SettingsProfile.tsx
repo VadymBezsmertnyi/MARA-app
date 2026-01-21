@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { CommonActions } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -60,7 +60,7 @@ import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowEr
 
 type SettingsProfileProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootAllScreensParamList>;
 };
 
 type NamesErrorsType = "phoneNumber" | "firstName" | "place";

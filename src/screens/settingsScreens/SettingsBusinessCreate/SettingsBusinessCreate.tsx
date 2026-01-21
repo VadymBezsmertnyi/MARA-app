@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { KeyboardAvoidingView, ScrollView, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
 import { RouteProp, useRoute } from "@react-navigation/native";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // types
 import {
@@ -53,7 +53,7 @@ import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingPr
 
 type SettingsBusinessCreateProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootAllScreensParamList>;
 };
 
 type ErrorMessageType = Record<string, { name: string; title: string }>;

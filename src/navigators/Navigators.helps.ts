@@ -5,7 +5,7 @@ import {
   useRoute,
 } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { DrawerNavigationOptions } from "@react-navigation/drawer";
 
 // types
 import {
@@ -21,7 +21,7 @@ export const useRegistrationNavigation = useNavigation<
   NativeStackNavigationProp<RootRegistrationScreensParamList>
 >;
 export const useMainTabsNavigation = useNavigation<
-  NativeStackNavigationProp<RootMainTabsParamList> & DrawerNavigationHelpers
+  NativeStackNavigationProp<RootMainTabsParamList> & DrawerNavigationOptions
 >;
 
 export const useMainRoute = <T extends keyof RootAllScreensParamList>(

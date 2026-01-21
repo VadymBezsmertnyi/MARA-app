@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { DrawerNavigationProp } from "@react-navigation/drawer/";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -34,7 +34,7 @@ import colors from "../../../../styles/colors";
 
 type SettingsProductsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootAllScreensParamList>;
 };
 
 export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({

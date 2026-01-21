@@ -3,6 +3,7 @@ import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // providers
 import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
@@ -13,7 +14,6 @@ import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { TypeFilters } from "./components/ModalFilter/ModalFilter.types";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -43,7 +43,7 @@ import { styles } from "./WorkshopMain.styles";
 
 type WorkshopMainProps = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootWorkshopsScreensParamList>;
 };
 
 export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
