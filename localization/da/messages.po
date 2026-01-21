@@ -14,68 +14,944 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Tilføj et foto"
+msgid "Sorry, but no workshops were found by the filters"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "Det første foto vil være på forsiden af ​​annoncen."
+msgid "Sorry, there are no upcoming workshops"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Indtast tekst for at søge"
+msgid "Not comments"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Press and enter to search for a city"
-msgstr "Tryk og indtast for at søge efter en by"
+msgid "By distance:"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Select"
-msgstr "Vælg"
+msgid "from closest to farthest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By rating:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "from highest to lowest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By number of comments:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "About us:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Profile"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "My adverts"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Your profile"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Create"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow login using Touch ID"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow Touch ID to access the MARA app."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow later"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "We recommend filling out the profile information"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow login using Face ID"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enable logging into the app using Face ID"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, but no products were found by the filters"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no available items"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Latest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Cheapest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Most expensive"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Currency:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Views:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Write"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Call"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Your contact information"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Settings"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Do you want to send an SOS signal?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Access to geolocation when using the application"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Access to geolocation in the background mode"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Settings and permissions should be enabled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Notification of SOS signal"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Last update"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Someone needs help within a {distance} km radius"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Welcome"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Password must contain at least 8 characters"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Passwords do not match"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Types of work for motorcycle transport:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Types of work for automobile transport:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Select a location on the map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Move and change the location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Specify the city"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Please enter text for searching"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Resend the code"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Language selection"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Værksteder"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Indtast navnet på værkstedet eller arbejdstypen"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Tilføj værksted"
 
 #. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
 #. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Ikke aktiveret placering"
-
-#. js-lingui-explicit-id
-msgid "Photo {numberPhoto}"
-msgstr "Foto {numberPhoto}"
-
-#. js-lingui-explicit-id
 msgid "Button for closing the modal window"
 msgstr "Knap til at lukke modalvinduet"
 
 #. js-lingui-explicit-id
-msgid "Main photo"
-msgstr "Hovedfoto"
+msgid "Not information"
+msgstr "Ingen information"
 
 #. js-lingui-explicit-id
-msgid "Make the main photo"
-msgstr "Gør hovedfotoet"
+msgid "Moto"
+msgstr "Moto"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Alle byer"
+msgid "Auto"
+msgstr "Auto"
 
 #. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Ingen byer fundet"
+msgid "All workshops"
+msgstr "Alle værksteder"
 
 #. js-lingui-explicit-id
-msgid "Decrease the maximum number"
-msgstr "Formindsk det maksimale antal"
+msgid "Repair of motorcycles"
+msgstr "Reparation af motorcykler"
 
 #. js-lingui-explicit-id
-msgid "Increase the maximum number"
-msgstr "Forøg det maksimale antal"
+msgid "Repair of automobiles"
+msgstr "Reparation af biler"
 
 #. js-lingui-explicit-id
-msgid "Toggle show menu"
-msgstr "Skift visningsmenu"
+msgid "Filter"
+msgstr "Filter"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Vælg værkstedstype"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Afstand, km:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Alle opgaver"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Vælg arbejdstype"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Filtrering"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Værksted"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Teksten skal indeholde mellem 3 og 40 tegn."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Teksten skal indeholde mellem 10 og 2000 tegn."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Navn"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Indtast dit navn"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Tilføj en beskrivelse af værkstedet"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Beskrivelse af værksted"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Offentliggør"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Vælg delingside"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Skift som produkt"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Udkast til den første anmeldelse"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Ændr en anmeldelse"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Skriv en anmeldelse"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "Værksted"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Værkstedet er ændret med succes"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Værkstedet er oprettet med succes"
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Succes"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Fejl ved ændring af værksted"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Fejl ved oprettelse af værksted"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Fejl"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Ændr værksted"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Indtast navnet på værkstedet"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Navn på værksted"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Værkstedsadresse"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Indtast adressen"
+
+#. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Vælg værkstedstype"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Vælg type"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Arbejdstyper"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Vælg arbejdstyper"
+
+#. js-lingui-explicit-id
+msgid "workshops"
+msgstr "Værksteder"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Knap til lukning af indstillinger for værkstedsskærm"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Køb værksted"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Fejl: forkert telefonnummer"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Fejl: Fornavn skal være mellem 3 og 15 tegn"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Fejl: vælg byen"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Billedet er blevet ændret"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Billedet tilføjet"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Beklager, der opstod en fejl"
+
+#. js-lingui-explicit-id
+msgid "Profile saved"
+msgstr "Profil gemt"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Fejl: gem profil"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Tilbage"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Fornavn"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Efternavn"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "By"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Vælg byen"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Gem"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "Annoncer"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Knap til lukning af indstillinger for produktskærm"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Tilføj annonce"
+
+#. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Køb annonce"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "grn"
+
+#. js-lingui-explicit-id
+msgid "Your adverts"
+msgstr "Dine annoncer"
+
+#. js-lingui-explicit-id
+msgid "Your workshops"
+msgstr "Dine workshops"
+
+#. js-lingui-explicit-id
+msgid "Your events"
+msgstr "Dine begivenheder"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Indstilling af profil"
+
+#. js-lingui-explicit-id
+msgid "Add"
+msgstr "Tilføj"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Køb yderligere"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Udvidet: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Tilgængelig: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktiv"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Forretningsprofil"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Forbedre"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Tilgængelige annoncer: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Offentliggjorte annoncer: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Gennemgang"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Ændr"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Slet"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Advarsel! Alle data relateret til virksomheden \"{nameBusiness}\" vil blive slettet."
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "begivenheder"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Knap til lukning af indstillinger for begivenhedsskærm"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Tilføj begivenhed"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Køb begivenhed"
+
+#. js-lingui-explicit-id
+msgid "business"
+msgstr "forretning"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Firmanavn"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Indtast navnet på din virksomhed"
+
+#. js-lingui-explicit-id
+msgid "Additional number {numberOtherPhone}"
+msgstr "Yderligere nummer {numberOtherPhone}"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Knap til at lukke registreringen TouchID"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Betingelser for brug"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Fortrolighedspolitik"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Skift din placering"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Aktivér din placering i baggrunden"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Fortsæt"
+
+#. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Ugyldigt telefonnummer"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "Længden af navnet skal være mellem 2 og 20 tegn"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Registrering"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Udfyld senere"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Knap til at lukke registreringen FaceID"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Begivenheder"
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Tryk for at vise flere begivenheder"
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Ikke aktiveret placering"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Indtast teksten for at søge"
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Gratis"
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Begivenhed"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Alle billeder"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Dato for begivenheden"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Begyndelse"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Afslut"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Pris for deltagelse"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Om begivenhed"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Galleri"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "Begivenhed"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Ændr begivenhed"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Opret begivenhed"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Du kan oprette en begivenhed"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Indtast navnet på begivenheden"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Navn på begivenheden"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Begivenhedens sted"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Konklusion"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Beskriv kort, hvad der vil ske"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Fortæl os om begivenheden"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Bekræft"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Marked"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Indtast navn"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Tilføj produkt"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategori"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Placering"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Vælg en by"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "Ny"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Brugt"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Tilstand af varerne:"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Virksomhed"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Privatperson"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Sælger:"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Pris, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Bilmærke"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "Motorcykelmærke"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Motorcykelmærke"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -86,100 +962,116 @@ msgid "No"
 msgstr "Nej"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Vælg landet {nameCountry}"
+msgid "Description"
+msgstr "Beskrivelse"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Vælg regionen {nameRegion}"
+msgid "Brand"
+msgstr "Mærke"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Vælg regionen {nameCity}"
+msgid "Condition"
+msgstr "Tilstand"
 
 #. js-lingui-explicit-id
-msgid "Select country"
-msgstr "Vælg land"
+msgid "Seller"
+msgstr "Sælger"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Fortsæt"
+msgid "Mileage"
+msgstr "Kilometerstand"
 
 #. js-lingui-explicit-id
-msgid "Back"
-msgstr "Tilbage"
+msgid "{mileage} km"
+msgstr "{mileage} km"
 
 #. js-lingui-explicit-id
-msgid "Disable Deep Search"
-msgstr "Deaktiver Dyb Søgning"
+msgid "Year of manufacture"
+msgstr "Fremstillingsår"
 
 #. js-lingui-explicit-id
-msgid "Enable Deep Search"
-msgstr "Aktiver Dyb Søgning"
+msgid "{yearRelease} km"
+msgstr "{yearRelease} km"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Begivenhedsadresse"
+msgid "Customs cleared"
+msgstr "Told ryddet"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Indtast den nøjagtige adresse"
+msgid "Fuel type"
+msgstr "Brændstoftype"
 
 #. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Uafhængighedsstræde, 1"
+msgid "Transmission"
+msgstr "Transmission"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto {nameTypeWork}"
-msgstr "Vælg type arbejde auto {nameTypeWork}"
+msgid "Type parts"
+msgstr "Dele type"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto {nameTypeWork}"
-msgstr "Vælg type arbejde moto {nameTypeWork}"
+msgid "Advert change successfully"
+msgstr "Annonce ændret med succes"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto"
-msgstr "Vælg type arbejde moto"
+msgid "Advert created successfully"
+msgstr "Annonce oprettet med succes"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto"
-msgstr "Vælg type arbejde auto"
+msgid "Error changing advert"
+msgstr "Fejl ved ændring af annonce"
 
 #. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Baggrundsdækning til lukning af modalvinduet"
+msgid "Error creating advert"
+msgstr "Fejl ved oprettelse af annonce"
 
 #. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Opmærksomhed!"
+msgid "Change advert"
+msgstr "Ændr annonce"
 
 #. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "Desværre er det i øjeblikket umuligt at øge antallet af tilgængelige annoncer, værksteder eller begivenheder, da applikationen er i testtilstand. Hvis du har spørgsmål, bedes du kontakte administrationen eller give feedback."
+msgid "Enter the name of the advert"
+msgstr "Indtast navnet på annoncen"
 
 #. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- eller --"
+msgid "Advert name"
+msgstr "Annoncenavn"
 
 #. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Rapporter en fejl/forbedring"
+msgid "The state of the goods"
+msgstr "Tilstand af varerne"
 
 #. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Tak for din forståelse!"
+msgid "Add a description about the advert"
+msgstr "Tilføj en beskrivelse af annoncen"
 
 #. js-lingui-explicit-id
-msgid "The price of the item"
-msgstr "Varens pris"
+msgid "Advert description"
+msgstr "Annonsebeskrivelse"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Motorcykeltransport"
+msgid "@fgt_com"
+msgstr "@fgt_com"
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Biltransport"
+msgid "Your telegram"
+msgstr "Din telegram"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle brand"
+msgstr "Motorcykelmærke"
+
+#. js-lingui-explicit-id
+msgid "Car's make"
+msgstr "Bilmærke"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Type brændstof"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Type transmission"
 
 #. js-lingui-explicit-id
 msgid "Motorcycle parts"
@@ -190,200 +1082,344 @@ msgid "Car parts"
 msgstr "Reservedele til biler"
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Benzin"
+msgid "Enter text to search"
+msgstr "Indtast tekst for at søge"
 
 #. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Diesel"
+msgid "Select"
+msgstr "Vælg"
 
 #. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Gas / Benzin"
+msgid "Brand/Make"
+msgstr "Mærke/Fabrikat"
 
 #. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Elektrisk"
+msgid "Mileage, km:"
+msgstr "Kilometerstand, km:"
 
 #. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Hybrid"
+msgid "Year of release:"
+msgstr "Udgivelsesår:"
 
 #. js-lingui-explicit-id
-msgid "Other"
-msgstr "Andet"
+msgid "Cleared:"
+msgstr "Toldklar:"
 
 #. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Manuel"
+msgid "Type fuel"
+msgstr "Type brændstof"
 
 #. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Automatisk"
-
-#. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Kontinuerlig variabel transmission (CVT)"
-
-#. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Tilpasset"
-
-#. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Tiptronic"
-
-#. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Batterier"
-
-#. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Støddæmpere og affjedring"
-
-#. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Variatorer og reduktionsgear"
-
-#. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Udstødningssystemer, lige rør, lyddæmpere"
-
-#. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Motordele"
-
-#. js-lingui-explicit-id
-msgid "Gearbox"
+msgid "Transmission gearbox"
 msgstr "Gearkasse"
 
 #. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Fodstøtter og pedaler"
+msgid "Button for closing the menu settings screen"
+msgstr "Knap til at lukke menuindstillingerne på skærmen"
 
 #. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Belysning og lamper"
+msgid "SOS signal notification"
+msgstr "Meddelelse om SOS-signal"
 
 #. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Lejer"
+msgid "Share the app"
+msgstr "Del appen"
 
 #. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Drivlinie og chassis"
+msgid "About the service"
+msgstr "Om tjenesten"
 
 #. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Ramme, beslag og svingarme"
+msgid "Terms of use"
+msgstr "Brugsbetingelser"
 
 #. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Styr og kontroller"
+msgid "Privacy policy"
+msgstr "Fortrolighedspolitik"
 
 #. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Sæde"
+msgid "Report an error/improvement"
+msgstr "Rapporter en fejl/forbedring"
 
 #. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Kølesystem"
+msgid "Toggle automatically detect location"
+msgstr "Skift automatisk lokationsdetektion"
 
 #. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Kobling"
+msgid "Delete profile"
+msgstr "Slet profil"
 
 #. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Brændstofsystem"
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Med sletningen af profilen slettes alle dine oplysninger"
 
 #. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Bremseanlæg"
+msgid "Add a description"
+msgstr "Tilføj en beskrivelse"
 
 #. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Kabler og slanger"
+msgid "Cancel"
+msgstr "Annuller"
 
 #. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Filtre"
+msgid "On SOS"
+msgstr "På SOS"
 
 #. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Kæder og tandhjul"
+msgid "Check permissions"
+msgstr "Kontroller tilladelser"
 
 #. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Elektrisk system"
+msgid "Button for closing the menu settings sos"
+msgstr "Knap til at lukke menuindstillingerne sos"
 
 #. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Andre motorcykeldele"
+msgid "Radius, km:"
+msgstr "Radius, km:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "Skift meddelelse om SOS-signal"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Skift visningsmenu"
+
+#. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Velkommen til vores service."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Log ind med:"
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Vedligeholdelse"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Olieskift / Filterudskiftning / Tandremsskift / Tændrørsskift / Transmissionsskift / Bremsebetjening / Udskiftning af alle nødvendige væsker / Osv."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnosticering"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Forhåndsdiagnosticering / Chassidiagnosticering / Motordiagnosticering / Transmission diagnosticering / Karrosseri diagnosticering / Computerdiagnosticering / Væskediagnosticering / Osv."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Autoelektrisk"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Kabling reparation / Chip tuning / Installation af enhver kompleks alarmsystem / Odometer korrektion / Nøgle omprogrammering / Motor og transmission tilpasning / EGR fjernelse / DPF fjernelse / Xenon installation / Parkeringssensor installation / Osv."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Chassis reparation"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Støddæmperstrutudskiftning / Fjederudskiftning / Kontrolarmsudskiftning / Balkudskiftning / Støjdæmpende blok presning / Bladfjederudskiftning / Navudskiftning / Savebladsudskiftning / Akseludskiftning / Kugleledudskiftning / Motor og transmissionsmontering udskiftning / Mekanisk arbejde"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Motor, Automatisk og Manuel Transmission"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Motor diagnosticering / Motoreparation / Motorskift / Motoroliekopudskiftning / Automatisk transmissionsdiagnosticering / Automatisk transmissionsolieskift / Automatisk transmissionsudskiftning / Automatisk transmissionsrensning-skylning / Koblingsudskiftning / Manuel transmissionsdiagnosticering / Manuel transmissionsolieskift / Manuel transmissionsudskiftning / Manuel transmissionsrensning-skylning / Osv."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Bremser og Styresystem"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Bremssystem diagnosticering / Bremsevæskeskift / Bremsebetjeningsreparation / Bremseblødning / Styrestangsudskiftning / Styrestangsrestaurering / Servostyringsskift / Servostyringsvæskeskift / Osv."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Tilbehørsudstyr"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Starterreparation / Starterudskiftning / Generatorsreparation / Generatorsudskiftning / Turbocharger restaurering / Turbocharger udskiftning / Osv."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Klimaanlæg"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnosticering / Opladning / Genopladning / Lækagesporing / Rørukskiftning / Radiatorudskiftning / Kompressorreparation / Kompressorudskiftning / Systemdesinfektion / Fjernelse af fremmede lugte"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Hjuljustering"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Hjuljustering / Justeringsdiagnosticering / Affjedringsfejlsøgning / Karrosserifejlsøgning"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Maling"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosserimaling / Kofangermaling / Skærmemaling / Dørmaling / Motorhjelmmaling / Tagmaling / Bagagerumsmaling / Vingemaling / Spoilermaling / Spejlmaling / Osv."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Airbrushing"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Airbrushing af enhver kompleksitet / Airbrushing af enhver kompleksitet på enhver overflade / Airbrushing af enhver kompleksitet på enhver del af motorcyklen / Brugerdefinerede airbrushing-designs til tanke, skærme og fairings"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Teknisk vedligeholdelse"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Kabelsmøring / Karburatorsynkronisering / Luftfilterudskiftning / Tændrørsskift / Transmissionsskift / Differentialolieskift / Kølemiddelskift / Motorolieskift"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Generelle arbejder"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Generel diagnosticering / Kompressionsmåling / Teknisk væskeniveaukontrol / Koblingskabeludskiftning / Gaskableudskiftning / Brændstoftank rengøring og skylning / Brændstoftank fjernelse og installation / Plast fjernelse og installation / Sikkerhedsbøjle, skyderinstallation"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Chassis"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Forhjulsfjernelse og installation / Baghjulsfjernelse og installation / Hjullejeudskiftning / Styrestangslagerjustering / Styrestangslagerudskiftning / Forgaffel fjernelse og installation / Forsegling af forgaffeludskiftning / Forskift af forgaffelolie / Bag svingarm lejeudskiftning / Bag støddæmperudskiftning / Monoshock støddæmperudskiftning / Reparation af bag støddæmper"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Drevkæde"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Drevkæde og tandhjulsudskiftning / Kæderengøring, smøring og justering / Kædejustering, spænding og smøring"
 
 #. js-lingui-explicit-id
 msgid "Engine"
 msgstr "Motor"
 
 #. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Udstødningssystem"
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Fjernelse og installation / Ventiljustering / Koblingsudskiftning / Cylinderhovedreparation / Tandremsskift / Stempelgruppereparation / Gearkasse reparation / Motoroverhaling"
 
 #. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Transmission / Manuel og Automatisk Transmission"
+msgid "Electrics"
+msgstr "Elektrisk"
 
 #. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Styringssystem"
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Regulator relæudskiftning / Generator udskiftning / Starter udskiftning / Starter reparation / Pæreudskiftning / Xenon installation / Batteriudskiftning / Batteriopladning"
 
 #. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Affjedring / Chassis"
+msgid "Brake system"
+msgstr "Bremseanlæg"
 
 #. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Karrosseridele"
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Skivebremseklodsudskiftning / Tromlebremseklodsudskiftning / Bremseblødning / Bremsevæskeskift / Kombineret bremsevæskeskift / Bremserørudskiftning / Forstærket slangeinstallation / Bremse skiveudskiftning / Bremsekaliberreparation"
 
 #. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Interiørdetaljer"
+msgid "Plastic repair"
+msgstr "Plastreparation"
 
 #. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Aircondition, varmelegeme, ventilation"
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Svejsning/Restaurering af fragmenter/Restaurering af fastgørelser"
 
 #. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Luftindtagssystem"
+msgid "Welding works"
+msgstr "Svejsearbejde"
 
 #. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Tændingssystem"
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Elektrisk lysbue svejsning / Halvautomatisk svejsning / Argonbuesvejsning"
 
 #. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Vindues- og forlygtevaskesystem"
+msgid "Tuning and customization"
+msgstr "Tuning og tilpasning"
 
 #. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Forlygter og belysning"
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Installation af beskyttelsesbøjle / Installation af skyder / Installation af udstødningssystem / Installation af bremseanlæg / Installation af forstærket slange / Installation af xenon / Installation af motorcykellys / Installation af tågelys (FL)"
 
 #. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Elektrisk udstyr"
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tankmaling / Sidepanelmaling / Fendermaling / Fairingmaling / Forlygteovertrækmaling / Bagsektionmaling / Sædeovertrækmaling / Udstødningsdækmaling / Forgaffelmaling / Osv."
 
 #. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Bilglas"
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Airbrushing af enhver kompleksitet / Airbrushing af enhver kompleksitet på enhver overflade / Airbrushing af enhver kompleksitet på enhver del af bilen"
 
 #. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Flydende gas system"
+msgid "Access denied"
+msgstr "Adgang nægtet"
 
 #. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Andre typer reservedele"
+msgid "The photo has not been changed"
+msgstr "Billedet er ikke blevet ændret"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "find nærliggende begivenheder, værksteder"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "for \"SOS\"-funktionen, så andre app-brugere kan hjælpe dig"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "App {nameApp} indsamler placeringdata for at muliggøre {firstEvent}, selv når appen er lukket eller ikke i brug."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "App {nameApp} indsamler placeringdata for at muliggøre {secondEvent}, selv når appen er lukket eller ikke i brug."
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Accepter"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Slet annonce"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Slet begivenhed"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Venligst autentificer"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Opret værksted"
+
+#. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Opret annonce"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Vælg fane {tabName}"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -518,1332 +1554,313 @@ msgid "advert"
 msgstr "annonce"
 
 #. js-lingui-explicit-id
-msgid "Select tab {tabName}"
-msgstr "Vælg fane {tabName}"
+msgid "Motorcycle transport"
+msgstr "Motorcykeltransport"
 
 #. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Opret begivenhed"
+msgid "Car transport"
+msgstr "Biltransport"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Ændr begivenhed"
+msgid "Gasoline"
+msgstr "Benzin"
 
 #. js-lingui-explicit-id
-msgid "Create workshop"
-msgstr "Opret værksted"
+msgid "Diesel"
+msgstr "Diesel"
 
 #. js-lingui-explicit-id
-msgid "Change workshop"
-msgstr "Ændr værksted"
+msgid "Gas / Petrol"
+msgstr "Gas / Benzin"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Opret annonce"
-
-#. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Ændr annonce"
-
-#. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Venligst autentificer"
-
-#. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Slet begivenhed"
-
-#. js-lingui-explicit-id
-msgid "Success"
-msgstr "Succes"
-
-#. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Slet annonce"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Annuller"
-
-#. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Accepter"
-
-#. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "find nærliggende begivenheder, værksteder"
-
-#. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "for \"SOS\"-funktionen, så andre app-brugere kan hjælpe dig"
-
-#. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
-msgstr "App {nameApp} indsamler placeringdata for at muliggøre {firstEvent}, selv når appen er lukket eller ikke i brug."
-
-#. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
-msgstr "App {nameApp} indsamler placeringdata for at muliggøre {secondEvent}, selv når appen er lukket eller ikke i brug."
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Beklager, der opstod en fejl"
-
-#. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Billedet er blevet ændret"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Billedet er ikke blevet ændret"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Slet"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Ændr"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Adgang nægtet"
-
-#. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Vedligeholdelse"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Olieskift / Filterudskiftning / Tandremsskift / Tændrørsskift / Transmissionsskift / Bremsebetjening / Udskiftning af alle nødvendige væsker / Osv."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnosticering"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Forhåndsdiagnosticering / Chassidiagnosticering / Motordiagnosticering / Transmission diagnosticering / Karrosseri diagnosticering / Computerdiagnosticering / Væskediagnosticering / Osv."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Autoelektrisk"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Kabling reparation / Chip tuning / Installation af enhver kompleks alarmsystem / Odometer korrektion / Nøgle omprogrammering / Motor og transmission tilpasning / EGR fjernelse / DPF fjernelse / Xenon installation / Parkeringssensor installation / Osv."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Chassis reparation"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Støddæmperstrutudskiftning / Fjederudskiftning / Kontrolarmsudskiftning / Balkudskiftning / Støjdæmpende blok presning / Bladfjederudskiftning / Navudskiftning / Savebladsudskiftning / Akseludskiftning / Kugleledudskiftning / Motor og transmissionsmontering udskiftning / Mekanisk arbejde"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Motor, Automatisk og Manuel Transmission"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Motor diagnosticering / Motoreparation / Motorskift / Motoroliekopudskiftning / Automatisk transmissionsdiagnosticering / Automatisk transmissionsolieskift / Automatisk transmissionsudskiftning / Automatisk transmissionsrensning-skylning / Koblingsudskiftning / Manuel transmissionsdiagnosticering / Manuel transmissionsolieskift / Manuel transmissionsudskiftning / Manuel transmissionsrensning-skylning / Osv."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Bremser og Styresystem"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Bremssystem diagnosticering / Bremsevæskeskift / Bremsebetjeningsreparation / Bremseblødning / Styrestangsudskiftning / Styrestangsrestaurering / Servostyringsskift / Servostyringsvæskeskift / Osv."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Tilbehørsudstyr"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Starterreparation / Starterudskiftning / Generatorsreparation / Generatorsudskiftning / Turbocharger restaurering / Turbocharger udskiftning / Osv."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Klimaanlæg"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnosticering / Opladning / Genopladning / Lækagesporing / Rørukskiftning / Radiatorudskiftning / Kompressorreparation / Kompressorudskiftning / Systemdesinfektion / Fjernelse af fremmede lugte"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Hjuljustering"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Hjuljustering / Justeringsdiagnosticering / Affjedringsfejlsøgning / Karrosserifejlsøgning"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Maling"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Karosserimaling / Kofangermaling / Skærmemaling / Dørmaling / Motorhjelmmaling / Tagmaling / Bagagerumsmaling / Vingemaling / Spoilermaling / Spejlmaling / Osv."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Airbrushing"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Airbrushing af enhver kompleksitet / Airbrushing af enhver kompleksitet på enhver overflade / Airbrushing af enhver kompleksitet på enhver del af motorcyklen / Brugerdefinerede airbrushing-designs til tanke, skærme og fairings"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Teknisk vedligeholdelse"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Kabelsmøring / Karburatorsynkronisering / Luftfilterudskiftning / Tændrørsskift / Transmissionsskift / Differentialolieskift / Kølemiddelskift / Motorolieskift"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Generelle arbejder"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Generel diagnosticering / Kompressionsmåling / Teknisk væskeniveaukontrol / Koblingskabeludskiftning / Gaskableudskiftning / Brændstoftank rengøring og skylning / Brændstoftank fjernelse og installation / Plast fjernelse og installation / Sikkerhedsbøjle, skyderinstallation"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Chassis"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Forhjulsfjernelse og installation / Baghjulsfjernelse og installation / Hjullejeudskiftning / Styrestangslagerjustering / Styrestangslagerudskiftning / Forgaffel fjernelse og installation / Forsegling af forgaffeludskiftning / Forskift af forgaffelolie / Bag svingarm lejeudskiftning / Bag støddæmperudskiftning / Monoshock støddæmperudskiftning / Reparation af bag støddæmper"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Drevkæde"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Drevkæde og tandhjulsudskiftning / Kæderengøring, smøring og justering / Kædejustering, spænding og smøring"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Fjernelse og installation / Ventiljustering / Koblingsudskiftning / Cylinderhovedreparation / Tandremsskift / Stempelgruppereparation / Gearkasse reparation / Motoroverhaling"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
+msgid "Electric"
 msgstr "Elektrisk"
 
 #. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Regulator relæudskiftning / Generator udskiftning / Starter udskiftning / Starter reparation / Pæreudskiftning / Xenon installation / Batteriudskiftning / Batteriopladning"
+msgid "Hybrid"
+msgstr "Hybrid"
 
 #. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Skivebremseklodsudskiftning / Tromlebremseklodsudskiftning / Bremseblødning / Bremsevæskeskift / Kombineret bremsevæskeskift / Bremserørudskiftning / Forstærket slangeinstallation / Bremse skiveudskiftning / Bremsekaliberreparation"
+msgid "Other"
+msgstr "Andet"
 
 #. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Plastreparation"
+msgid "Manual"
+msgstr "Manuel"
 
 #. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Svejsning/Restaurering af fragmenter/Restaurering af fastgørelser"
+msgid "Automatic"
+msgstr "Automatisk"
 
 #. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Svejsearbejde"
+msgid "Continuously variable transmission (CVT)"
+msgstr "Kontinuerlig variabel transmission (CVT)"
 
 #. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Elektrisk lysbue svejsning / Halvautomatisk svejsning / Argonbuesvejsning"
+msgid "Adaptive"
+msgstr "Tilpasset"
 
 #. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Tuning og tilpasning"
+msgid "Tiptronic"
+msgstr "Tiptronic"
 
 #. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Installation af beskyttelsesbøjle / Installation af skyder / Installation af udstødningssystem / Installation af bremseanlæg / Installation af forstærket slange / Installation af xenon / Installation af motorcykellys / Installation af tågelys (FL)"
+msgid "Batteries"
+msgstr "Batterier"
 
 #. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tankmaling / Sidepanelmaling / Fendermaling / Fairingmaling / Forlygteovertrækmaling / Bagsektionmaling / Sædeovertrækmaling / Udstødningsdækmaling / Forgaffelmaling / Osv."
+msgid "Shock absorbers and suspension"
+msgstr "Støddæmpere og affjedring"
 
 #. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Airbrushing af enhver kompleksitet / Airbrushing af enhver kompleksitet på enhver overflade / Airbrushing af enhver kompleksitet på enhver del af bilen"
+msgid "Variators and reducers"
+msgstr "Variatorer og reduktionsgear"
 
 #. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Knap til at lukke menuindstillingerne sos"
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Udstødningssystemer, lige rør, lyddæmpere"
 
 #. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Radius, km:"
+msgid "Engine parts"
+msgstr "Motordele"
 
 #. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Skift meddelelse om SOS-signal"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Skift automatisk lokationsdetektion"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Din telegram"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefonnummer"
-
-#. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Tilføj en beskrivelse"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Beskrivelse"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "På SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Kontroller tilladelser"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings screen"
-msgstr "Knap til at lukke menuindstillingerne på skærmen"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "Meddelelse om SOS-signal"
-
-#. js-lingui-explicit-id
-msgid "Share the app"
-msgstr "Del appen"
-
-#. js-lingui-explicit-id
-msgid "About the service"
-msgstr "Om tjenesten"
-
-#. js-lingui-explicit-id
-msgid "Terms of use"
-msgstr "Brugsbetingelser"
-
-#. js-lingui-explicit-id
-msgid "Privacy policy"
-msgstr "Fortrolighedspolitik"
-
-#. js-lingui-explicit-id
-msgid "Delete profile"
-msgstr "Slet profil"
-
-#. js-lingui-explicit-id
-msgid "With the deletion of the profile, all your information will be deleted"
-msgstr "Med sletningen af profilen slettes alle dine oplysninger"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Mærke/Fabrikat"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Kilometerstand, km:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Udgivelsesår:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Toldklar:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Type brændstof"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
+msgid "Gearbox"
 msgstr "Gearkasse"
 
 #. js-lingui-explicit-id
-msgid "Category"
-msgstr "Kategori"
+msgid "Footrests and pedals"
+msgstr "Fodstøtter og pedaler"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Motorcykelmærke"
+msgid "Lighting and lamps"
+msgstr "Belysning og lamper"
 
 #. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Bilmærke"
+msgid "Bearings"
+msgstr "Lejer"
 
 #. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Type brændstof"
+msgid "Drive and chassis"
+msgstr "Drivlinie og chassis"
 
 #. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Type transmission"
+msgid "Frame, brackets, and swingarms"
+msgstr "Ramme, beslag og svingarme"
 
 #. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Annonce ændret med succes"
+msgid "Handlebars and controls"
+msgstr "Styr og kontroller"
 
 #. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Annonce oprettet med succes"
+msgid "Seat"
+msgstr "Sæde"
 
 #. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Fejl ved ændring af annonce"
+msgid "Cooling system"
+msgstr "Kølesystem"
 
 #. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Fejl ved oprettelse af annonce"
+msgid "Clutch"
+msgstr "Kobling"
 
 #. js-lingui-explicit-id
-msgid "Error"
-msgstr "Fejl"
+msgid "Fuel system"
+msgstr "Brændstofsystem"
 
 #. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Tilføj annonce"
+msgid "Cables and hoses"
+msgstr "Kabler og slanger"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Indtast navnet på annoncen"
+msgid "Filters"
+msgstr "Filtre"
 
 #. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Annoncenavn"
+msgid "Chains and sprockets"
+msgstr "Kæder og tandhjul"
 
 #. js-lingui-explicit-id
-msgid "New"
-msgstr "Ny"
+msgid "Electrical system"
+msgstr "Elektrisk system"
 
 #. js-lingui-explicit-id
-msgid "Used"
-msgstr "Brugt"
+msgid "Other motorcycle parts"
+msgstr "Andre motorcykeldele"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Tilstand af varerne"
+msgid "Exhaust system"
+msgstr "Udstødningssystem"
 
 #. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Privatperson"
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Transmission / Manuel og Automatisk Transmission"
 
 #. js-lingui-explicit-id
-msgid "Business"
-msgstr "Virksomhed"
+msgid "Steering system"
+msgstr "Styringssystem"
 
 #. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Sælger"
+msgid "Suspension / Chassis"
+msgstr "Affjedring / Chassis"
 
 #. js-lingui-explicit-id
-msgid "Location"
-msgstr "Placering"
+msgid "Body parts"
+msgstr "Karrosseridele"
 
 #. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Vælg en by"
+msgid "Interior details"
+msgstr "Interiørdetaljer"
 
 #. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Tilføj en beskrivelse af annoncen"
+msgid "Air conditioning, heater, ventilation"
+msgstr "Aircondition, varmelegeme, ventilation"
 
 #. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Annonsebeskrivelse"
+msgid "Air intake system"
+msgstr "Luftindtagssystem"
 
 #. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Offentliggør"
+msgid "Ignition system"
+msgstr "Tændingssystem"
 
 #. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Mærke"
+msgid "Window and headlight cleaning system"
+msgstr "Vindues- og forlygtevaskesystem"
 
 #. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Tilstand"
+msgid "Headlights and lighting"
+msgstr "Forlygter og belysning"
 
 #. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Kilometerstand"
+msgid "Electrical equipment"
+msgstr "Elektrisk udstyr"
 
 #. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} km"
+msgid "Automotive glass"
+msgstr "Bilglas"
 
 #. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Fremstillingsår"
+msgid "Liquefied gas system"
+msgstr "Flydende gas system"
 
 #. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} km"
+msgid "Other types of spare parts"
+msgstr "Andre typer reservedele"
 
 #. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Told ryddet"
+msgid "The price of the item"
+msgstr "Varens pris"
 
 #. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Brændstoftype"
+msgid "Background overlay for closing the modal window"
+msgstr "Baggrundsdækning til lukning af modalvinduet"
 
 #. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Transmission"
+msgid "Attention!"
+msgstr "Opmærksomhed!"
 
 #. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Dele type"
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Desværre er det i øjeblikket umuligt at øge antallet af tilgængelige annoncer, værksteder eller begivenheder, da applikationen er i testtilstand. Hvis du har spørgsmål, bedes du kontakte administrationen eller give feedback."
 
 #. js-lingui-explicit-id
-msgid "Filter"
-msgstr "Filter"
+msgid "-- or --"
+msgstr "-- eller --"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Tilstand af varerne:"
+msgid "Thank you for understanding!"
+msgstr "Tak for din forståelse!"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Sælger:"
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Vælg type arbejde moto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Pris, {symbol}:"
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Vælg type arbejde auto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Bilmærke"
+msgid "Select type work moto"
+msgstr "Vælg type arbejde moto"
 
 #. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "Motorcykelmærke"
+msgid "Select type work auto"
+msgstr "Vælg type arbejde auto"
 
 #. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Motorcykelmærke"
+msgid "Event address"
+msgstr "Begivenhedsadresse"
 
 #. js-lingui-explicit-id
-msgid "Filtering"
-msgstr "Filtrering"
+msgid "Enter the exact address"
+msgstr "Indtast den nøjagtige adresse"
 
 #. js-lingui-explicit-id
-msgid "grn"
-msgstr "grn"
+msgid "Independence Street, 1"
+msgstr "Uafhængighedsstræde, 1"
 
 #. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Skift som produkt"
+msgid "Disable Deep Search"
+msgstr "Deaktiver Dyb Søgning"
 
 #. js-lingui-explicit-id
-msgid "Market"
-msgstr "Marked"
+msgid "Enable Deep Search"
+msgstr "Aktiver Dyb Søgning"
 
 #. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Indtast navn"
+msgid "Select country {nameCountry}"
+msgstr "Vælg landet {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Tilføj produkt"
+msgid "Select region {nameRegion}"
+msgstr "Vælg regionen {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Bekræft"
+msgid "Select region {nameCity}"
+msgstr "Vælg regionen {nameCity}"
 
 #. js-lingui-explicit-id
-msgid "event"
-msgstr "Begivenhed"
+msgid "Select country"
+msgstr "Vælg land"
 
 #. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Du kan oprette en begivenhed"
+msgid "Decrease the maximum number"
+msgstr "Formindsk det maksimale antal"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Indtast navnet på begivenheden"
+msgid "Increase the maximum number"
+msgstr "Forøg det maksimale antal"
 
 #. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Navn på begivenheden"
-
-#. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Indtast adressen"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Begivenhedens sted"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Dato for begivenheden"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Begyndelse"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Konklusion"
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 uah"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 uah"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Beskriv kort, hvad der vil ske"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Fortæl os om begivenheden"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} grn."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} grn."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Gratis"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Begivenhed"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Afslut"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Pris for deltagelse"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "Om begivenhed"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Galleri"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Alle billeder"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Indtast teksten for at søge"
-
-#. js-lingui-explicit-id
-msgid "Events"
-msgstr "Begivenheder"
-
-#. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Tryk for at vise flere begivenheder"
-
-#. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Tilføj begivenhed"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Knap til at lukke registreringen FaceID"
-
-#. js-lingui-explicit-id
-msgid "Invalid phone number"
-msgstr "Ugyldigt telefonnummer"
-
-#. js-lingui-explicit-id
-msgid "The length of the name should be between 2 and 20 characters"
-msgstr "Længden af navnet skal være mellem 2 og 20 tegn"
-
-#. js-lingui-explicit-id
-msgid "Registration"
-msgstr "Registrering"
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Navn"
-
-#. js-lingui-explicit-id
-msgid "Enter your name"
-msgstr "Indtast dit navn"
-
-#. js-lingui-explicit-id
-msgid "Save"
-msgstr "Gem"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Udfyld senere"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location"
-msgstr "Skift din placering"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Aktivér din placering i baggrunden"
-
-#. js-lingui-explicit-id
-msgid "Select the city"
-msgstr "Vælg byen"
-
-#. js-lingui-explicit-id
-msgid "Privacy Policy"
-msgstr "Fortrolighedspolitik"
-
-#. js-lingui-explicit-id
-msgid "Terms of Use"
-msgstr "Betingelser for brug"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Knap til at lukke registreringen TouchID"
-
-#. js-lingui-explicit-id
-msgid "business"
-msgstr "forretning"
-
-#. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Forretningsprofil"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Firmanavn"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Indtast navnet på din virksomhed"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "By"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Yderligere nummer {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "events"
-msgstr "begivenheder"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings events screen"
-msgstr "Knap til lukning af indstillinger for begivenhedsskærm"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Køb begivenhed"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Forbedre"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Tilgængelige annoncer: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Offentliggjorte annoncer: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Gennemgang"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Advarsel! Alle data relateret til virksomheden \"{nameBusiness}\" vil blive slettet."
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Tilføj"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Køb yderligere"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Udvidet: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Tilgængelig: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Aktiv"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Dine annoncer"
-
-#. js-lingui-explicit-id
-msgid "Your workshops"
-msgstr "Dine workshops"
-
-#. js-lingui-explicit-id
-msgid "Your events"
-msgstr "Dine begivenheder"
-
-#. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Indstilling af profil"
-
-#. js-lingui-explicit-id
-msgid "adverts"
-msgstr "Annoncer"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Knap til lukning af indstillinger for produktskærm"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Køb annonce"
-
-#. js-lingui-explicit-id
-msgid "Error: incorrect phone number"
-msgstr "Fejl: forkert telefonnummer"
-
-#. js-lingui-explicit-id
-msgid "Error: First name must be between 3 and 15 characters"
-msgstr "Fejl: Fornavn skal være mellem 3 og 15 tegn"
-
-#. js-lingui-explicit-id
-msgid "Error: select the city"
-msgstr "Fejl: vælg byen"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "Billedet tilføjet"
-
-#. js-lingui-explicit-id
-msgid "Profile saved"
-msgstr "Profil gemt"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Fejl: gem profil"
-
-#. js-lingui-explicit-id
-msgid "First Name"
-msgstr "Fornavn"
-
-#. js-lingui-explicit-id
-msgid "Last Name"
-msgstr "Efternavn"
-
-#. js-lingui-explicit-id
-msgid "workshops"
-msgstr "Værksteder"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings workshops screen"
-msgstr "Knap til lukning af indstillinger for værkstedsskærm"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Tilføj værksted"
-
-#. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Køb værksted"
-
-#. js-lingui-explicit-id
-msgid "Welcome to our service."
-msgstr "Velkommen til vores service."
-
-#. js-lingui-explicit-id
-msgid "Log in using:"
-msgstr "Log ind med:"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Ingen information"
-
-#. js-lingui-explicit-id
-msgid "Moto"
-msgstr "Moto"
-
-#. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Auto"
-
-#. js-lingui-explicit-id
-msgid "All workshops"
-msgstr "Alle værksteder"
-
-#. js-lingui-explicit-id
-msgid "Repair of motorcycles"
-msgstr "Reparation af motorcykler"
-
-#. js-lingui-explicit-id
-msgid "Repair of automobiles"
-msgstr "Reparation af biler"
-
-#. js-lingui-explicit-id
-msgid "workshop"
-msgstr "Værksted"
-
-#. js-lingui-explicit-id
-msgid "Workshop change successfully"
-msgstr "Værkstedet er ændret med succes"
-
-#. js-lingui-explicit-id
-msgid "Workshop created successfully"
-msgstr "Værkstedet er oprettet med succes"
-
-#. js-lingui-explicit-id
-msgid "Error changing workshop"
-msgstr "Fejl ved ændring af værksted"
-
-#. js-lingui-explicit-id
-msgid "Error creating workshop"
-msgstr "Fejl ved oprettelse af værksted"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop"
-msgstr "Indtast navnet på værkstedet"
-
-#. js-lingui-explicit-id
-msgid "Workshop name"
-msgstr "Navn på værksted"
-
-#. js-lingui-explicit-id
-msgid "Workshop address"
-msgstr "Værkstedsadresse"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the workshop"
-msgstr "Tilføj en beskrivelse af værkstedet"
-
-#. js-lingui-explicit-id
-msgid "Workshop description"
-msgstr "Beskrivelse af værksted"
-
-#. js-lingui-explicit-id
-msgid "Type workshop"
-msgstr "Vælg værkstedstype"
-
-#. js-lingui-explicit-id
-msgid "Select type"
-msgstr "Vælg type"
-
-#. js-lingui-explicit-id
-msgid "Types of work"
-msgstr "Arbejdstyper"
-
-#. js-lingui-explicit-id
-msgid "Select types of work"
-msgstr "Vælg arbejdstyper"
-
-#. js-lingui-explicit-id
-msgid "Draft the first review"
-msgstr "Udkast til den første anmeldelse"
-
-#. js-lingui-explicit-id
-msgid "Change a review"
-msgstr "Ændr en anmeldelse"
-
-#. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Skriv en anmeldelse"
-
-#. js-lingui-explicit-id
-msgid "Select share page"
-msgstr "Vælg delingside"
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
-msgstr "Teksten skal indeholde mellem 3 og 40 tegn."
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
-msgstr "Teksten skal indeholde mellem 10 og 2000 tegn."
-
-#. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Værksted"
-
-#. js-lingui-explicit-id
-msgid "Type workshops"
-msgstr "Vælg værkstedstype"
-
-#. js-lingui-explicit-id
-msgid "Distance, km:"
-msgstr "Afstand, km:"
-
-#. js-lingui-explicit-id
-msgid "All works"
-msgstr "Alle opgaver"
-
-#. js-lingui-explicit-id
-msgid "Type works"
-msgstr "Vælg arbejdstype"
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Værksteder"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Indtast navnet på værkstedet eller arbejdstypen"
-
-msgid "{distance} km"
-msgstr "{distance} km"
-
-msgid "About us:"
-msgstr "Om os:"
-
-msgid "Access to geolocation in the background mode"
-msgstr "Adgang til geolokalisering i baggrundstilstand"
-
-msgid "Access to geolocation when using the application"
-msgstr "Adgang til geolokalisering ved brug af applikationen"
-
-msgid "Add advert"
-msgstr "Tilføj annonce"
-
-msgid "Add event"
-msgstr "Tilføj begivenhed"
-
-msgid "Add workshop"
-msgstr "Tilføj værksted"
-
 msgid "All cities"
 msgstr "Alle byer"
 
-msgid "All photos"
-msgstr "Alle fotos"
-
-msgid "Allow"
-msgstr "Tillad"
-
-msgid "Allow later"
-msgstr "Tillad senere"
-
-msgid "Allow login using Face ID"
-msgstr "Tillad login ved brug af Face ID"
-
-msgid "Allow login using Touch ID"
-msgstr "Tillad login ved brug af Touch ID"
-
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Tillad {nameApp}-appen at bestemme min placering i baggrunden"
-
-msgid "Allow the {nameApp} application to determine my location"
-msgstr "Tillad {nameApp}-applikationen at bestemme min placering"
-
-msgid "Allow Touch ID to access the {nameApp} app."
-msgstr "Tillad Touch ID at få adgang til {nameApp} appen."
-
-msgid "and choose the city of residence:"
-msgstr "og vælg bopælsbyen:"
-
-msgid "Are you sure you want to delete?"
-msgstr "Er du sikker på, at du vil slette?"
-
-msgid "Automatically detect location"
-msgstr "Registrer placering automatisk"
-
-msgid "Back"
-msgstr "Tilbage"
-
-msgid "Business profile"
-msgstr "Forretningsprofil"
-
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr "Ved at klikke på \"Fortsæt\"-knappen accepterer du {buttonTermsService} og {buttonPrivacyPolicy}"
-
-msgid "By distance:"
-msgstr "Efter afstand:"
-
-msgid "By number of comments:"
-msgstr "Efter antal kommentarer:"
-
-msgid "By rating:"
-msgstr "Efter vurdering:"
-
-msgid "Call"
-msgstr "Ring"
-
-msgid "Cheapest"
-msgstr "Billigste"
-
-msgid "Continue with {typeSocial}"
-msgstr "Fortsæt med {typeSocial}"
-
-msgid "Create"
-msgstr "Opret"
-
-msgid "Create event"
-msgstr "Opret begivenhed"
-
-msgid "Currency:"
-msgstr "Valuta:"
-
-msgid "Dark theme"
-msgstr "Mørkt tema"
-
-msgid "Delete"
-msgstr "Slet"
-
-msgid "Description"
-msgstr "Beskrivelse"
-
-msgid "Do you want to send an SOS signal?"
-msgstr "Vil du sende et SOS-signal?"
-
-msgid "Enable logging into the app using Face ID"
-msgstr "Aktivér login i appen ved hjælp af Face ID"
-
-msgid "Event"
-msgstr "Begivenhed"
-
-msgid "Events"
-msgstr "Begivenheder"
-
-msgid "from closest to farthest"
-msgstr "fra nærmeste til fjerneste"
-
-msgid "from highest to lowest"
-msgstr "fra højeste til laveste"
-
-msgid "Gallery"
-msgstr "Galleri"
-
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr "Hvis der ikke er nogen passende mulighed på listen, skal du bruge 'Dyb Søgning'"
-
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr "Forkert telefonnummer indtastet eller landekode for telefonnummeret er valgt forkert"
-
-msgid "Language selection"
-msgstr "Sprogvalg"
-
-msgid "Last update"
-msgstr "Seneste opdatering"
-
-msgid "Latest"
-msgstr "Seneste"
-
-msgid "Leave a review"
-msgstr "Efterlad en anmeldelse"
-
-msgid "Logout"
-msgstr "Log ud"
-
-msgid "Main"
-msgstr "Hoved"
-
-msgid "Map"
-msgstr "Kort"
-
-msgid "Market"
-msgstr "Marked"
-
-msgid "More events"
-msgstr "Flere begivenheder"
-
-msgid "Most expensive"
-msgstr "Dyreste"
-
-msgid "Move and change the location"
-msgstr "Flyt og ændre placering"
-
-msgid "My adverts"
-msgstr "Mine annoncer"
-
-msgid "My events"
-msgstr "Mine begivenheder"
-
-msgid "My workshops"
-msgstr "Mine værksteder"
-
-msgid "No events have passed"
-msgstr "Ingen begivenheder er gået"
-
-msgid "Not comments"
-msgstr "Ingen kommentarer"
-
-msgid "Notification of SOS signal"
-msgstr "Underretning om SOS-signal"
-
-msgid "Now"
-msgstr "Nu"
-
-msgid "Only with rating:"
-msgstr "Kun med vurdering:"
-
-msgid "or sign up using:"
-msgstr "eller tilmeld dig ved hjælp af:"
-
-msgid "Participation fee"
-msgstr "Deltagergebyr"
-
-msgid "Password must contain at least 8 characters"
-msgstr "Adgangskoden skal indeholde mindst 8 tegn"
-
-msgid "Passwords do not match"
-msgstr "Adgangskoderne matcher ikke"
-
-msgid "Past events:"
-msgstr "Tidligere begivenheder:"
-
-msgid "Phone number"
-msgstr "Telefonnummer"
-
-msgid "Please enter text for searching"
-msgstr "Indtast tekst til søgning"
-
-msgid "Privacy Policy"
-msgstr "Privatlivspolitik"
-
-msgid "Profile"
-msgstr "Profil"
-
-msgid "Read the whole description..."
-msgstr "Læs hele beskrivelsen..."
-
-msgid "Registration"
-msgstr "Registrering"
-
-msgid "Repair of automobiles"
-msgstr "Reparation af biler"
-
-msgid "Repair of motorcycles"
-msgstr "Reparation af motorcykler"
-
-msgid "Resend the code"
-msgstr "Gensend koden"
-
-msgid "Reviews:"
-msgstr "Anmeldelser:"
-
-msgid "Select a location on the map"
-msgstr "Vælg en placering på kortet"
-
-msgid "Settings"
-msgstr "Indstillinger"
-
-msgid "Settings and permissions should be enabled"
-msgstr "Indstillinger og tilladelser skal være aktiveret"
-
-msgid "Someone needs help within a {distance} km radius"
-msgstr "Nogen har brug for hjælp inden for en radius på {distance} km"
-
-msgid "Sorry, but no products were found by the filters"
-msgstr "Beklager, men ingen produkter blev fundet af filtrene"
-
-msgid "Sorry, but no workshops were found by the filters"
-msgstr "Beklager, men ingen værksteder blev fundet af filtrene"
-
-msgid "Sorry, there are no available items"
-msgstr "Beklager, der er ingen tilgængelige emner"
-
-msgid "Sorry, there are no upcoming events"
-msgstr "Beklager, der er ingen kommende begivenheder"
-
-msgid "Sorry, there are no upcoming workshops"
-msgstr "Beklager, der er ingen kommende værksteder"
-
-msgid "Sorry!"
-msgstr "Beklager!"
-
-msgid "Specify the city"
-msgstr "Angiv byen"
-
-msgid "Terms of Service"
-msgstr "Servicevilkår"
-
-msgid "Terms of Use"
-msgstr "Brugsbetingelser"
-
-msgid "The nearest event:"
-msgstr "Nærmeste begivenhed:"
-
-msgid "The work we do:"
-msgstr "Det arbejde, vi udfører:"
-
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr "For at udnytte alle funktionerne i tjenesten fuldt ud, skal du give applikationen tilladelse til at bestemme din placering:"
-
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr "For at modtage SOS-signaler, skal du opsætte radius for signalmodtagelse fra centrum af din by:"
-
-msgid "Type workshops"
-msgstr "Type værksteder"
-
-msgid "Types of work for automobile transport:"
-msgstr "Arbejdstyper for biltransport:"
-
-msgid "Types of work for motorcycle transport:"
-msgstr "Arbejdstyper for motorcykeltransport:"
-
-msgid "Upcoming events:"
-msgstr "Kommende begivenheder:"
-
-msgid "Views:"
-msgstr "Visninger:"
-
-msgid "We recommend filling out the profile information"
-msgstr "Vi anbefaler at udfylde profiloplysningerne"
-
-msgid "Welcome"
-msgstr "Velkommen"
-
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr "Hvilken platform vil du sende app-installationsinvitationen til?"
-
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr "Vil automatisk slukke efter 20-30 minutter"
-
-msgid "Workshop"
-msgstr "Værksted"
-
-msgid "Workshops"
-msgstr "Værksteder"
-
-msgid "Write"
-msgstr "Skriv"
-
-msgid "You don't have {typeItem}."
-msgstr "Du har ikke {typeItem}."
-
-msgid "Your contact information"
-msgstr "Dine kontaktoplysninger"
-
-msgid "Your profile"
-msgstr "Din profil"
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Ingen byer fundet"
+
+#. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Foto {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Hovedfoto"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Gør hovedfotoet"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Tryk og indtast for at søge efter en by"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Tilføj et foto"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Det første foto vil være på forsiden af ​​annoncen."

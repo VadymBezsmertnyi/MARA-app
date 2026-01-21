@@ -14,68 +14,944 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Lägg till ett foto"
+msgid "Sorry, but no workshops were found by the filters"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "Det första fotot kommer att vara på omslaget till annonsen."
+msgid "Sorry, there are no upcoming workshops"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Ange text för att söka"
+msgid "Not comments"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Press and enter to search for a city"
-msgstr "Tryck och ange för att söka efter en stad"
+msgid "By distance:"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Select"
-msgstr "Välj"
+msgid "from closest to farthest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By rating:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "from highest to lowest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By number of comments:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "About us:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Profile"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "My adverts"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Your profile"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Create"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow login using Touch ID"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow Touch ID to access the MARA app."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow later"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "We recommend filling out the profile information"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow login using Face ID"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enable logging into the app using Face ID"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, but no products were found by the filters"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no available items"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Latest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Cheapest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Most expensive"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Currency:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Views:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Write"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Call"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Your contact information"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Settings"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Do you want to send an SOS signal?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Access to geolocation when using the application"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Access to geolocation in the background mode"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Settings and permissions should be enabled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Will automatically turn off after 20-30 minutes"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Notification of SOS signal"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Last update"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Someone needs help within a {distance} km radius"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Welcome"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Password must contain at least 8 characters"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Passwords do not match"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Types of work for motorcycle transport:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Types of work for automobile transport:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Select a location on the map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Move and change the location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Specify the city"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Please enter text for searching"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Resend the code"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Language selection"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Verkstäder"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Ange namnet på verkstaden eller arbetstypen"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Lägg till verkstad"
 
 #. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
 #. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Platsen är inte aktiverad"
-
-#. js-lingui-explicit-id
-msgid "Photo {numberPhoto}"
-msgstr "Foto {numberPhoto}"
-
-#. js-lingui-explicit-id
 msgid "Button for closing the modal window"
 msgstr "Knapp för att stänga modal fönstret"
 
 #. js-lingui-explicit-id
-msgid "Main photo"
-msgstr "Huvudfoto"
+msgid "Not information"
+msgstr "Ingen information"
 
 #. js-lingui-explicit-id
-msgid "Make the main photo"
-msgstr "Gör huvudfoto"
+msgid "Moto"
+msgstr "Moto"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Alla städer"
+msgid "Auto"
+msgstr "Auto"
 
 #. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Inga städer hittades"
+msgid "All workshops"
+msgstr "Alla verkstäder"
 
 #. js-lingui-explicit-id
-msgid "Decrease the maximum number"
-msgstr "Minska det maximala antalet"
+msgid "Repair of motorcycles"
+msgstr "Reparation av motorcyklar"
 
 #. js-lingui-explicit-id
-msgid "Increase the maximum number"
-msgstr "Öka det maximala antalet"
+msgid "Repair of automobiles"
+msgstr "Reparation av bilar"
 
 #. js-lingui-explicit-id
-msgid "Toggle show menu"
-msgstr "Växla visa meny"
+msgid "Filter"
+msgstr "Filter"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Typer av verkstäder"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Avstånd, km:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Alla arbeten"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Arbetstyper"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Filtrering"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Verkstad"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Texten måste innehålla minst 3 och högst 40 tecken."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Texten måste innehålla minst 10 och högst 2000 tecken."
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Namn"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Ange ditt namn"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Lägg till en beskrivning av verkstaden"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Verkstadsbeskrivning"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Publicera"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Välj delningssida"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Växla gilla produkt"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Utkast till den första recensionen"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Ändra en recension"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Skriv en recension"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "verkstad"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Verkstaden ändrad framgångsrikt"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Verkstaden skapad framgångsrikt"
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Framgång"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Fel vid ändring av verkstad"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Fel vid skapande av verkstad"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Fel"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Ändra verkstad"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Ange namnet på verkstaden"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Verkstadsnamn"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Verkstadsadress"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Ange adressen"
+
+#. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Typ av verkstad"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Välj typ"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Typer av arbete"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Välj typer av arbete"
+
+#. js-lingui-explicit-id
+msgid "workshops"
+msgstr "verkstäder"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Knapp för att stänga inställningsskärmen för verkstäder"
+
+#. js-lingui-explicit-id
+msgid "Buy workshop"
+msgstr "Köp verkstad"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Fel: felaktigt telefonnummer"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Fel: Förnamnet måste vara mellan 3 och 15 tecken"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Fel: välj staden"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Bilden har ändrats"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Bilden tillagd"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Tyvärr, ett fel uppstod"
+
+#. js-lingui-explicit-id
+msgid "Profile saved"
+msgstr "Profil sparad"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Fel: spara profil"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Tillbaka"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Förnamn"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Efternamn"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Stad"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Välj staden"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Spara"
+
+#. js-lingui-explicit-id
+msgid "adverts"
+msgstr "annonser"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings products screen"
+msgstr "Knapp för att stänga inställningsskärmen för produkter"
+
+#. js-lingui-explicit-id
+msgid "Add advert"
+msgstr "Lägg till annons"
+
+#. js-lingui-explicit-id
+msgid "Buy advert"
+msgstr "Köp annons"
+
+#. js-lingui-explicit-id
+msgid "grn"
+msgstr "grn"
+
+#. js-lingui-explicit-id
+msgid "Your adverts"
+msgstr "Dina annonser"
+
+#. js-lingui-explicit-id
+msgid "Your workshops"
+msgstr "Dina workshops"
+
+#. js-lingui-explicit-id
+msgid "Your events"
+msgstr "Dina evenemang"
+
+#. js-lingui-explicit-id
+msgid "Setting profile"
+msgstr "Inställningsprofil"
+
+#. js-lingui-explicit-id
+msgid "Add"
+msgstr "Lägg till"
+
+#. js-lingui-explicit-id
+msgid "Buy additionally"
+msgstr "Köp ytterligare"
+
+#. js-lingui-explicit-id
+msgid "Expended: {amountUsed}"
+msgstr "Förbrukad: {amountUsed}"
+
+#. js-lingui-explicit-id
+msgid "Available: {amountAvailable}"
+msgstr "Tillgänglig: {amountAvailable}"
+
+#. js-lingui-explicit-id
+msgid "Active"
+msgstr "Aktiv"
+
+#. js-lingui-explicit-id
+msgid "Business profile"
+msgstr "Företagsprofil"
+
+#. js-lingui-explicit-id
+msgid "Improve"
+msgstr "Förbättra"
+
+#. js-lingui-explicit-id
+msgid "Available ads: {ads}"
+msgstr "Tillgängliga annonser: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Published ads: {ads}"
+msgstr "Publicerade annonser: {ads}"
+
+#. js-lingui-explicit-id
+msgid "Review"
+msgstr "Recension"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Ändra"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Radera"
+
+#. js-lingui-explicit-id
+msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
+msgstr "Varning! Alla data relaterade till företaget \"{nameBusiness}\" kommer att raderas."
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "händelser"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Knapp för att stänga inställningsskärmen för händelser"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Lägg till händelse"
+
+#. js-lingui-explicit-id
+msgid "Buy event"
+msgstr "Köp evenemang"
+
+#. js-lingui-explicit-id
+msgid "business"
+msgstr "företag"
+
+#. js-lingui-explicit-id
+msgid "Name company"
+msgstr "Företagsnamn"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of your business"
+msgstr "Ange namnet på ditt företag"
+
+#. js-lingui-explicit-id
+msgid "Additional number {numberOtherPhone}"
+msgstr "Ytterligare nummer {numberOtherPhone}"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration TouchID"
+msgstr "Knapp för att stänga registreringen TouchID"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Användarvillkor"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Integritetspolicy"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Växla på din plats"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location in the background"
+msgstr "Aktivera din plats i bakgrunden"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Fortsätt"
+
+#. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Ogiltigt telefonnummer"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "Namnets längd ska vara mellan 2 och 20 tecken"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Registrering"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Fyll i senare"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the registration FaceID"
+msgstr "Knapp för att stänga registreringen FaceID"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Evenemang"
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Tryck för att visa fler händelser"
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Platsen är inte aktiverad"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Skriv in texten för att söka"
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Gratis"
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Händelse"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Alla foton"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Datum för händelsen"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Början"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Slut"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Pris för deltagande"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Om händelsen"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Galleri"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "händelse"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Ändra evenemang"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Skapa evenemang"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Du kan skapa en händelse"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Ange namnet på händelsen"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Händelsens namn"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Platsen för händelsen"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Avslutning"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Beskriv kortfattat vad som kommer att hända"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Berätta om händelsen"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Bekräfta"
+
+#. js-lingui-explicit-id
+msgid "Market"
+msgstr "Marknad"
+
+#. js-lingui-explicit-id
+msgid "Enter the name"
+msgstr "Ange namnet"
+
+#. js-lingui-explicit-id
+msgid "Add product"
+msgstr "Lägg till produkt"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategori"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Plats"
+
+#. js-lingui-explicit-id
+msgid "Choose a city"
+msgstr "Välj en stad"
+
+#. js-lingui-explicit-id
+msgid "New"
+msgstr "Ny"
+
+#. js-lingui-explicit-id
+msgid "Used"
+msgstr "Använd"
+
+#. js-lingui-explicit-id
+msgid "The state of the goods:"
+msgstr "Varans skick:"
+
+#. js-lingui-explicit-id
+msgid "Business"
+msgstr "Företag"
+
+#. js-lingui-explicit-id
+msgid "Private individual"
+msgstr "Privatperson"
+
+#. js-lingui-explicit-id
+msgid "Seller:"
+msgstr "Säljare:"
+
+#. js-lingui-explicit-id
+msgid "Price, {symbol}:"
+msgstr "Pris, {symbol}:"
+
+#. js-lingui-explicit-id
+msgid "Make of car"
+msgstr "Bilmärke"
+
+#. js-lingui-explicit-id
+msgid "brand of motorcycle"
+msgstr "Motorcykelmärke"
+
+#. js-lingui-explicit-id
+msgid "Brand of motorcycle"
+msgstr "Motorcykelmärke"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -86,100 +962,116 @@ msgid "No"
 msgstr "Nej"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Välj land {nameCountry}"
+msgid "Description"
+msgstr "Beskrivning"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Välj region {nameRegion}"
+msgid "Brand"
+msgstr "Märke"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Välj region {nameCity}"
+msgid "Condition"
+msgstr "Skick"
 
 #. js-lingui-explicit-id
-msgid "Select country"
-msgstr "Välj land"
+msgid "Seller"
+msgstr "Säljare"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Fortsätt"
+msgid "Mileage"
+msgstr "Körsträcka"
 
 #. js-lingui-explicit-id
-msgid "Back"
-msgstr "Tillbaka"
+msgid "{mileage} km"
+msgstr "{mileage} km"
 
 #. js-lingui-explicit-id
-msgid "Disable Deep Search"
-msgstr "Inaktivera Djup Sökning"
+msgid "Year of manufacture"
+msgstr "Tillverkningsår"
 
 #. js-lingui-explicit-id
-msgid "Enable Deep Search"
-msgstr "Aktivera Djup Sökning"
+msgid "{yearRelease} km"
+msgstr "{yearRelease} km"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Händelsens adress"
+msgid "Customs cleared"
+msgstr "Tullklar"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Ange exakt adress"
+msgid "Fuel type"
+msgstr "Bränsletyp"
 
 #. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Independence Street, 1"
+msgid "Transmission"
+msgstr "Växellåda"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto {nameTypeWork}"
-msgstr "Välj typ av arbete auto {nameTypeWork}"
+msgid "Type parts"
+msgstr "Typ av delar"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto {nameTypeWork}"
-msgstr "Välj typ av arbete moto {nameTypeWork}"
+msgid "Advert change successfully"
+msgstr "Annons ändrad framgångsrikt"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto"
-msgstr "Välj typ av arbete moto"
+msgid "Advert created successfully"
+msgstr "Annons skapad framgångsrikt"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto"
-msgstr "Välj typ av arbete auto"
+msgid "Error changing advert"
+msgstr "Fel vid ändring av annons"
 
 #. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Bakgrundsförskikt för att stänga modal fönstret"
+msgid "Error creating advert"
+msgstr "Fel vid skapande av annons"
 
 #. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Uppmärksamhet!"
+msgid "Change advert"
+msgstr "Ändra annons"
 
 #. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "Tyvärr är det för närvarande omöjligt att öka antalet tillgängliga annonser, verkstäder eller evenemang, eftersom applikationen är i testläge. Om du har några frågor, vänligen kontakta administrationen eller lämna feedback."
+msgid "Enter the name of the advert"
+msgstr "Ange namnet på annonsen"
 
 #. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- eller --"
+msgid "Advert name"
+msgstr "Annonsnamn"
 
 #. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Rapportera ett fel/förbättring"
+msgid "The state of the goods"
+msgstr "Varans skick"
 
 #. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Tack för förståelsen!"
+msgid "Add a description about the advert"
+msgstr "Lägg till en beskrivning av annonsen"
 
 #. js-lingui-explicit-id
-msgid "The price of the item"
-msgstr "Priset på objektet"
+msgid "Advert description"
+msgstr "Annonsbeskrivning"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Motorcykeltransport"
+msgid "@fgt_com"
+msgstr "@fgt_com"
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Biltransport"
+msgid "Your telegram"
+msgstr "Din telegram"
+
+#. js-lingui-explicit-id
+msgid "Motorcycle brand"
+msgstr "Motorcykelmärke"
+
+#. js-lingui-explicit-id
+msgid "Car's make"
+msgstr "Bilmärke"
+
+#. js-lingui-explicit-id
+msgid "Type of fuel"
+msgstr "Bränsletyp"
+
+#. js-lingui-explicit-id
+msgid "Type of transmission"
+msgstr "Växellådstyp"
 
 #. js-lingui-explicit-id
 msgid "Motorcycle parts"
@@ -190,200 +1082,344 @@ msgid "Car parts"
 msgstr "Bildelar"
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Bensin"
+msgid "Enter text to search"
+msgstr "Ange text för att söka"
 
 #. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Diesel"
+msgid "Select"
+msgstr "Välj"
 
 #. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Bensin"
+msgid "Brand/Make"
+msgstr "Märke/Tillverkare"
 
 #. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Elektrisk"
+msgid "Mileage, km:"
+msgstr "Mätarställning, km:"
 
 #. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Hybrid"
+msgid "Year of release:"
+msgstr "År för utgivning:"
 
 #. js-lingui-explicit-id
-msgid "Other"
-msgstr "Annat"
+msgid "Cleared:"
+msgstr "Tullklar:"
 
 #. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Manuell"
+msgid "Type fuel"
+msgstr "Bränsletyp"
 
 #. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Automatisk"
-
-#. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Kontinuerligt variabel växellåda (CVT)"
-
-#. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Anpassningsbar"
-
-#. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Tiptronic"
-
-#. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Batterier"
-
-#. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Stötdämpare och fjädring"
-
-#. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Variatorer och reduktorer"
-
-#. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Avgassystem, raka rör, ljuddämpare"
-
-#. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Motordelar"
-
-#. js-lingui-explicit-id
-msgid "Gearbox"
+msgid "Transmission gearbox"
 msgstr "Växellåda"
 
 #. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Fotstöd och pedaler"
+msgid "Button for closing the menu settings screen"
+msgstr "Knapp för att stänga menyn inställningsskärm"
 
 #. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Belysning och lampor"
+msgid "SOS signal notification"
+msgstr "Notifiering om SOS-signal"
 
 #. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Lager"
+msgid "Share the app"
+msgstr "Dela appen"
 
 #. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Drivning och chassi"
+msgid "About the service"
+msgstr "Om tjänsten"
 
 #. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Ram, fästen och svängarmar"
+msgid "Terms of use"
+msgstr "Användarvillkor"
 
 #. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Styre och kontroller"
+msgid "Privacy policy"
+msgstr "Integritetspolicy"
 
 #. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Säte"
+msgid "Report an error/improvement"
+msgstr "Rapportera ett fel/förbättring"
 
 #. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Kylsystem"
+msgid "Toggle automatically detect location"
+msgstr "Växla automatisk upptäckt av plats"
 
 #. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Koppling"
+msgid "Delete profile"
+msgstr "Radera profil"
 
 #. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Bränslesystem"
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Med raderingen av profilen raderas all din information"
 
 #. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Bromssystem"
+msgid "Add a description"
+msgstr "Lägg till en beskrivning"
 
 #. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Kablar och slangar"
+msgid "Cancel"
+msgstr "Avbryt"
 
 #. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Filter"
+msgid "On SOS"
+msgstr "På SOS"
 
 #. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Kedjor och drev"
+msgid "Check permissions"
+msgstr "Kontrollera behörigheter"
 
 #. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Elektriskt system"
+msgid "Button for closing the menu settings sos"
+msgstr "Knapp för att stänga menyn inställningar sos"
 
 #. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Andra motorcykeldelar"
+msgid "Radius, km:"
+msgstr "Radie, km:"
+
+#. js-lingui-explicit-id
+msgid "Toggle notification of SOS signal"
+msgstr "Växla notifiering om SOS-signal"
+
+#. js-lingui-explicit-id
+msgid "Toggle show menu"
+msgstr "Växla visa meny"
+
+#. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Välkommen till vår tjänst."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Logga in med:"
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Underhåll"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Oljebyte / Filterbyte / Tidningsbältesbyte / Tändstiftbyte / Växellådsoljebyte / Bromsservice / Byte av alla nödvändiga vätskor / Osv."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnostik"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Förköpskomplett diagnostik / Chassidiagnostik / Motordiagnostik / Växellådsdiagnostik / Kroppsdiagnostik / Datorer diagnostik / Vätskediagnostik / Osv."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Auto Elektrisk"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Kabelreparation / Chip-tuning / Installation av larm av vilken komplexitet som helst / Odometerkorrigering / Nyckelomprogrammering / Motor och växellådsanpassning / EGR-borttagning / DPF-borttagning / Xenoninstallation / Parkeringssensorinstallation / Osv."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Chassireparation"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Stötdämparebyte / Fjäderbyte / Kontrollarmsbyte / Balkbyte / Tyst blockpressning / Bladfjädersbyte / Navbyte / Sågbladsbyte / Axelbyte / Kullagerbyte / Byte av motor- och växellådslager / Mekaniskt arbete"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Motor, Automatisk och Manuell Växellåda"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Motordiagnostik / Motorreparation / Motorbyte / Byte av oljepanna för motor / Diagnostik av automatisk växellåda / Byte av olja för automatisk växellåda / Byte av automatisk växellåda / Rengöringsspolar för automatisk växellåda / Kopplingsbyte / Diagnostik av manuell växellåda / Byte av olja för manuell växellåda / Byte av manuell växellåda / Rengöringsspolar för manuell växellåda / Osv."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Bromsar och Styrningssystem"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Diagnostik av bromssystem / Byte av bromsvätska / Bromssystemreparation / Bromsning / Byte av styrstag / Återställning av styrstag / Byte av servostyrning / Byte av servostyrningsvätska / Osv."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Tillbehörutrustning"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Startreparation / Byte av startmotor / Generatorreparation / Byte av generator / Återställning av turboaggregat / Byte av turboaggregat / Osv."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Luftkonditioneringssystem"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostik / Laddning / Omladdning / Läckagedetektering / Rörbyte / Byte av kylare / Kompressorreparation / Byte av kompressor / Systemdesinfektion / Borttagning av främmande lukter"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Hjulinställning"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Hjulinställning / Diagnostik av hjulinställning / Sökning av fjädringsdefekt / Sökning av kroppsdefekt"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Målning"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosserimålning / Bumpmålning / Fendermålning / Dörrmålning / Huvmålning / Takmålning / Bagageluckemålning / Vingmålning / Spoilermålning / Spegelmålning / Osv."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Airbrushing"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av motorcykeln som helst / Anpassade airbrushingdesigner för tankar, fenders och fairings"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Tekniskt underhåll"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Smörjning av kablar / Synkronisering av förgasare / Byte av luftfilter / Byte av tändstift / Byte av växellådsolja / Byte av differentialolja / Byte av kylvätska / Byte av motorolja"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Allmänt arbete"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Allmän diagnostik / Kompressionsmätning / Kontroll av tekniska vätskenivåer / Byte av kopplingskabel / Byte av gasreglagekabel / Rengöring och spolning av bränsletank / Borttagning och installation av bränsletank / Borttagning och installation av plast / Installation av säkerhetsbåge, slider"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Chassi"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Borttagning och installation av framhjul / Borttagning och installation av bakhjul / Byte av hjullager / Justering av styrlager / Byte av styrlager / Borttagning och installation av framgaffel / Byte av tätning för framgaffel / Byte av olja för framgaffel / Byte av lager för baksvängarmslager / Byte av bakre stötdämpare / Byte av monostockstötdämpare / Reparation av bakre stötdämpare"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Drivkedja"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Byte av drivkedja och kugghjul / Rengöring, smörjning och justering av kedja / Justering, spänning och smörjning av kedja"
 
 #. js-lingui-explicit-id
 msgid "Engine"
 msgstr "Motor"
 
 #. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Avgassystem"
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Borttagning och installation / Ventiljustering / Kopplingsbyte / Reparation av cylindertopp / Byte av kamkedja / Reparation av kolvgupp / Reparation av växellåda / Motoröverhäulning"
 
 #. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Växellåda / Manuell och Automatisk växellåda"
+msgid "Electrics"
+msgstr "Elektronik"
 
 #. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Styrsystem"
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Byte av reglerrelä / Byte av generator / Byte av startmotor / Startreparation / Byte av glödlampa / Installation av xenon / Byte av batteri / Batteriladdning"
 
 #. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Fjädring / Chassi"
+msgid "Brake system"
+msgstr "Bromssystem"
 
 #. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Karosseridelar"
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Byte av skivbromsklossar / Byte av trumbromsklossar / Bromsning / Byte av bromsvätska / Kombinerat byte av bromsvätska / Byte av bromsslang / Installation av förstärkt slang / Byte av bromsskiva / Reparation av bromsok"
 
 #. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Interiördetaljer"
+msgid "Plastic repair"
+msgstr "Plastreparation"
 
 #. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Luftkonditionering, värmare, ventilation"
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Svetsning/restaurering av fragment/restaurering av fästelement"
 
 #. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Luftintagssystem"
+msgid "Welding works"
+msgstr "Svetsningsarbeten"
 
 #. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Tändningssystem"
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Bågsvetsning / Halvautomatisk svetsning / Argonbågsvetsning"
 
 #. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Fönster- och strålkastarrengöringssystem"
+msgid "Tuning and customization"
+msgstr "Trimning och anpassning"
 
 #. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Strålkastare och belysning"
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Installation av skyddsbåge / Installation av slider / Installation av avgassystem / Installation av bromssystem / Installation av förstärkt slang / Installation av xenon / Installation av motorcykelljus / Installation av dimljus (FL)"
 
 #. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Elektrisk utrustning"
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tankmålning / Sidopanelmålning / Fendermålning / Fairingmålning / Strålkastarlockmålning / Bakre sektionmålning / Sätesöverdragmålning / Avgaslockmålning / Framgaffelmålning / Osv."
 
 #. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Fordonsglas"
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av bilen som helst"
 
 #. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Flytande gas system"
+msgid "Access denied"
+msgstr "Åtkomst nekad"
 
 #. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Andra typer av reservdelar"
+msgid "The photo has not been changed"
+msgstr "Bilden har inte ändrats"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "hitta närliggande evenemang, verkstäder"
+
+#. js-lingui-explicit-id
+msgid "for the \"SOS\" function so that other app users can assist you"
+msgstr "för \"SOS\"-funktionen så att andra appanvändare kan hjälpa dig"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {firstEvent}, även när appen är stängd eller inte används."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {secondEvent}, även när appen är stängd eller inte används."
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Acceptera"
+
+#. js-lingui-explicit-id
+msgid "Advert delete"
+msgstr "Radera annons"
+
+#. js-lingui-explicit-id
+msgid "Event delete"
+msgstr "Radera evenemang"
+
+#. js-lingui-explicit-id
+msgid "Please authenticator"
+msgstr "Vänligen autentisera"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Skapa verkstad"
+
+#. js-lingui-explicit-id
+msgid "Create advert"
+msgstr "Skapa annons"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Välj flik {tabName}"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -518,1332 +1554,313 @@ msgid "advert"
 msgstr "annons"
 
 #. js-lingui-explicit-id
-msgid "Select tab {tabName}"
-msgstr "Välj flik {tabName}"
+msgid "Motorcycle transport"
+msgstr "Motorcykeltransport"
 
 #. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Skapa evenemang"
+msgid "Car transport"
+msgstr "Biltransport"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Ändra evenemang"
+msgid "Gasoline"
+msgstr "Bensin"
 
 #. js-lingui-explicit-id
-msgid "Create workshop"
-msgstr "Skapa verkstad"
+msgid "Diesel"
+msgstr "Diesel"
 
 #. js-lingui-explicit-id
-msgid "Change workshop"
-msgstr "Ändra verkstad"
+msgid "Gas / Petrol"
+msgstr "Bensin"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Skapa annons"
+msgid "Electric"
+msgstr "Elektrisk"
 
 #. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Ändra annons"
+msgid "Hybrid"
+msgstr "Hybrid"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Vänligen autentisera"
+msgid "Other"
+msgstr "Annat"
 
 #. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Radera evenemang"
+msgid "Manual"
+msgstr "Manuell"
 
 #. js-lingui-explicit-id
-msgid "Success"
-msgstr "Framgång"
+msgid "Automatic"
+msgstr "Automatisk"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Radera annons"
+msgid "Continuously variable transmission (CVT)"
+msgstr "Kontinuerligt variabel växellåda (CVT)"
 
 #. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Avbryt"
+msgid "Adaptive"
+msgstr "Anpassningsbar"
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Acceptera"
+msgid "Tiptronic"
+msgstr "Tiptronic"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "hitta närliggande evenemang, verkstäder"
+msgid "Batteries"
+msgstr "Batterier"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "för \"SOS\"-funktionen så att andra appanvändare kan hjälpa dig"
+msgid "Shock absorbers and suspension"
+msgstr "Stötdämpare och fjädring"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
-msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {firstEvent}, även när appen är stängd eller inte används."
+msgid "Variators and reducers"
+msgstr "Variatorer och reduktorer"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
-msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {secondEvent}, även när appen är stängd eller inte används."
+msgid "Exhaust systems, straight pipes, mufflers"
+msgstr "Avgassystem, raka rör, ljuddämpare"
 
 #. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Tyvärr, ett fel uppstod"
+msgid "Engine parts"
+msgstr "Motordelar"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Bilden har ändrats"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Bilden har inte ändrats"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Radera"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Ändra"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Åtkomst nekad"
-
-#. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Underhåll"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Oljebyte / Filterbyte / Tidningsbältesbyte / Tändstiftbyte / Växellådsoljebyte / Bromsservice / Byte av alla nödvändiga vätskor / Osv."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnostik"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Förköpskomplett diagnostik / Chassidiagnostik / Motordiagnostik / Växellådsdiagnostik / Kroppsdiagnostik / Datorer diagnostik / Vätskediagnostik / Osv."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Auto Elektrisk"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Kabelreparation / Chip-tuning / Installation av larm av vilken komplexitet som helst / Odometerkorrigering / Nyckelomprogrammering / Motor och växellådsanpassning / EGR-borttagning / DPF-borttagning / Xenoninstallation / Parkeringssensorinstallation / Osv."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Chassireparation"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Stötdämparebyte / Fjäderbyte / Kontrollarmsbyte / Balkbyte / Tyst blockpressning / Bladfjädersbyte / Navbyte / Sågbladsbyte / Axelbyte / Kullagerbyte / Byte av motor- och växellådslager / Mekaniskt arbete"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Motor, Automatisk och Manuell Växellåda"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Motordiagnostik / Motorreparation / Motorbyte / Byte av oljepanna för motor / Diagnostik av automatisk växellåda / Byte av olja för automatisk växellåda / Byte av automatisk växellåda / Rengöringsspolar för automatisk växellåda / Kopplingsbyte / Diagnostik av manuell växellåda / Byte av olja för manuell växellåda / Byte av manuell växellåda / Rengöringsspolar för manuell växellåda / Osv."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Bromsar och Styrningssystem"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Diagnostik av bromssystem / Byte av bromsvätska / Bromssystemreparation / Bromsning / Byte av styrstag / Återställning av styrstag / Byte av servostyrning / Byte av servostyrningsvätska / Osv."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Tillbehörutrustning"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Startreparation / Byte av startmotor / Generatorreparation / Byte av generator / Återställning av turboaggregat / Byte av turboaggregat / Osv."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Luftkonditioneringssystem"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnostik / Laddning / Omladdning / Läckagedetektering / Rörbyte / Byte av kylare / Kompressorreparation / Byte av kompressor / Systemdesinfektion / Borttagning av främmande lukter"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Hjulinställning"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Hjulinställning / Diagnostik av hjulinställning / Sökning av fjädringsdefekt / Sökning av kroppsdefekt"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Målning"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Karosserimålning / Bumpmålning / Fendermålning / Dörrmålning / Huvmålning / Takmålning / Bagageluckemålning / Vingmålning / Spoilermålning / Spegelmålning / Osv."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Airbrushing"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av motorcykeln som helst / Anpassade airbrushingdesigner för tankar, fenders och fairings"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Tekniskt underhåll"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Smörjning av kablar / Synkronisering av förgasare / Byte av luftfilter / Byte av tändstift / Byte av växellådsolja / Byte av differentialolja / Byte av kylvätska / Byte av motorolja"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Allmänt arbete"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Allmän diagnostik / Kompressionsmätning / Kontroll av tekniska vätskenivåer / Byte av kopplingskabel / Byte av gasreglagekabel / Rengöring och spolning av bränsletank / Borttagning och installation av bränsletank / Borttagning och installation av plast / Installation av säkerhetsbåge, slider"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Chassi"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Borttagning och installation av framhjul / Borttagning och installation av bakhjul / Byte av hjullager / Justering av styrlager / Byte av styrlager / Borttagning och installation av framgaffel / Byte av tätning för framgaffel / Byte av olja för framgaffel / Byte av lager för baksvängarmslager / Byte av bakre stötdämpare / Byte av monostockstötdämpare / Reparation av bakre stötdämpare"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Drivkedja"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Byte av drivkedja och kugghjul / Rengöring, smörjning och justering av kedja / Justering, spänning och smörjning av kedja"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Borttagning och installation / Ventiljustering / Kopplingsbyte / Reparation av cylindertopp / Byte av kamkedja / Reparation av kolvgupp / Reparation av växellåda / Motoröverhäulning"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Elektronik"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Byte av reglerrelä / Byte av generator / Byte av startmotor / Startreparation / Byte av glödlampa / Installation av xenon / Byte av batteri / Batteriladdning"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Byte av skivbromsklossar / Byte av trumbromsklossar / Bromsning / Byte av bromsvätska / Kombinerat byte av bromsvätska / Byte av bromsslang / Installation av förstärkt slang / Byte av bromsskiva / Reparation av bromsok"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Plastreparation"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Svetsning/restaurering av fragment/restaurering av fästelement"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Svetsningsarbeten"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Bågsvetsning / Halvautomatisk svetsning / Argonbågsvetsning"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Trimning och anpassning"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Installation av skyddsbåge / Installation av slider / Installation av avgassystem / Installation av bromssystem / Installation av förstärkt slang / Installation av xenon / Installation av motorcykelljus / Installation av dimljus (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tankmålning / Sidopanelmålning / Fendermålning / Fairingmålning / Strålkastarlockmålning / Bakre sektionmålning / Sätesöverdragmålning / Avgaslockmålning / Framgaffelmålning / Osv."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av bilen som helst"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Knapp för att stänga menyn inställningar sos"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Radie, km:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Växla notifiering om SOS-signal"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Växla automatisk upptäckt av plats"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Din telegram"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefonnummer"
-
-#. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Lägg till en beskrivning"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Beskrivning"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "På SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Kontrollera behörigheter"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings screen"
-msgstr "Knapp för att stänga menyn inställningsskärm"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "Notifiering om SOS-signal"
-
-#. js-lingui-explicit-id
-msgid "Share the app"
-msgstr "Dela appen"
-
-#. js-lingui-explicit-id
-msgid "About the service"
-msgstr "Om tjänsten"
-
-#. js-lingui-explicit-id
-msgid "Terms of use"
-msgstr "Användarvillkor"
-
-#. js-lingui-explicit-id
-msgid "Privacy policy"
-msgstr "Integritetspolicy"
-
-#. js-lingui-explicit-id
-msgid "Delete profile"
-msgstr "Radera profil"
-
-#. js-lingui-explicit-id
-msgid "With the deletion of the profile, all your information will be deleted"
-msgstr "Med raderingen av profilen raderas all din information"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Märke/Tillverkare"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Mätarställning, km:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "År för utgivning:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Tullklar:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Bränsletyp"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
+msgid "Gearbox"
 msgstr "Växellåda"
 
 #. js-lingui-explicit-id
-msgid "Category"
-msgstr "Kategori"
+msgid "Footrests and pedals"
+msgstr "Fotstöd och pedaler"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Motorcykelmärke"
+msgid "Lighting and lamps"
+msgstr "Belysning och lampor"
 
 #. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Bilmärke"
+msgid "Bearings"
+msgstr "Lager"
 
 #. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Bränsletyp"
+msgid "Drive and chassis"
+msgstr "Drivning och chassi"
 
 #. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Växellådstyp"
+msgid "Frame, brackets, and swingarms"
+msgstr "Ram, fästen och svängarmar"
 
 #. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Annons ändrad framgångsrikt"
+msgid "Handlebars and controls"
+msgstr "Styre och kontroller"
 
 #. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Annons skapad framgångsrikt"
+msgid "Seat"
+msgstr "Säte"
 
 #. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Fel vid ändring av annons"
+msgid "Cooling system"
+msgstr "Kylsystem"
 
 #. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Fel vid skapande av annons"
+msgid "Clutch"
+msgstr "Koppling"
 
 #. js-lingui-explicit-id
-msgid "Error"
-msgstr "Fel"
+msgid "Fuel system"
+msgstr "Bränslesystem"
 
 #. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Lägg till annons"
+msgid "Cables and hoses"
+msgstr "Kablar och slangar"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Ange namnet på annonsen"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Annonsnamn"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "Ny"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Använd"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Varans skick"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Privatperson"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Företag"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Säljare"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Plats"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Välj en stad"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Lägg till en beskrivning av annonsen"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Annonsbeskrivning"
-
-#. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Publicera"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Märke"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Skick"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Körsträcka"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} km"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Tillverkningsår"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} km"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Tullklar"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Bränsletyp"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Växellåda"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Typ av delar"
-
-#. js-lingui-explicit-id
-msgid "Filter"
+msgid "Filters"
 msgstr "Filter"
 
 #. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Varans skick:"
+msgid "Chains and sprockets"
+msgstr "Kedjor och drev"
 
 #. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Säljare:"
+msgid "Electrical system"
+msgstr "Elektriskt system"
 
 #. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Pris, {symbol}:"
+msgid "Other motorcycle parts"
+msgstr "Andra motorcykeldelar"
 
 #. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Bilmärke"
+msgid "Exhaust system"
+msgstr "Avgassystem"
 
 #. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "Motorcykelmärke"
+msgid "Transmission / Manual and Automatic Transmission"
+msgstr "Växellåda / Manuell och Automatisk växellåda"
 
 #. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Motorcykelmärke"
+msgid "Steering system"
+msgstr "Styrsystem"
 
 #. js-lingui-explicit-id
-msgid "Filtering"
-msgstr "Filtrering"
+msgid "Suspension / Chassis"
+msgstr "Fjädring / Chassi"
 
 #. js-lingui-explicit-id
-msgid "grn"
-msgstr "grn"
+msgid "Body parts"
+msgstr "Karosseridelar"
 
 #. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Växla gilla produkt"
+msgid "Interior details"
+msgstr "Interiördetaljer"
 
 #. js-lingui-explicit-id
-msgid "Market"
-msgstr "Marknad"
+msgid "Air conditioning, heater, ventilation"
+msgstr "Luftkonditionering, värmare, ventilation"
 
 #. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Ange namnet"
+msgid "Air intake system"
+msgstr "Luftintagssystem"
 
 #. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Lägg till produkt"
+msgid "Ignition system"
+msgstr "Tändningssystem"
 
 #. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Bekräfta"
+msgid "Window and headlight cleaning system"
+msgstr "Fönster- och strålkastarrengöringssystem"
 
 #. js-lingui-explicit-id
-msgid "event"
-msgstr "händelse"
+msgid "Headlights and lighting"
+msgstr "Strålkastare och belysning"
 
 #. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Du kan skapa en händelse"
+msgid "Electrical equipment"
+msgstr "Elektrisk utrustning"
 
 #. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Ange namnet på händelsen"
+msgid "Automotive glass"
+msgstr "Fordonsglas"
 
 #. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Händelsens namn"
+msgid "Liquefied gas system"
+msgstr "Flytande gas system"
 
 #. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Ange adressen"
+msgid "Other types of spare parts"
+msgstr "Andra typer av reservdelar"
 
 #. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Platsen för händelsen"
+msgid "The price of the item"
+msgstr "Priset på objektet"
 
 #. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Datum för händelsen"
+msgid "Background overlay for closing the modal window"
+msgstr "Bakgrundsförskikt för att stänga modal fönstret"
 
 #. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Början"
+msgid "Attention!"
+msgstr "Uppmärksamhet!"
 
 #. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Avslutning"
+msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgstr "Tyvärr är det för närvarande omöjligt att öka antalet tillgängliga annonser, verkstäder eller evenemang, eftersom applikationen är i testläge. Om du har några frågor, vänligen kontakta administrationen eller lämna feedback."
 
 #. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 uah"
+msgid "-- or --"
+msgstr "-- eller --"
 
 #. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 uah"
+msgid "Thank you for understanding!"
+msgstr "Tack för förståelsen!"
 
 #. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Beskriv kortfattat vad som kommer att hända"
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Välj typ av arbete moto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Berätta om händelsen"
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Välj typ av arbete auto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} grn."
+msgid "Select type work moto"
+msgstr "Välj typ av arbete moto"
 
 #. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} grn."
+msgid "Select type work auto"
+msgstr "Välj typ av arbete auto"
 
 #. js-lingui-explicit-id
-msgid "Free"
-msgstr "Gratis"
+msgid "Event address"
+msgstr "Händelsens adress"
 
 #. js-lingui-explicit-id
-msgid "Event"
-msgstr "Händelse"
+msgid "Enter the exact address"
+msgstr "Ange exakt adress"
 
 #. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Slut"
+msgid "Independence Street, 1"
+msgstr "Independence Street, 1"
 
 #. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Pris för deltagande"
+msgid "Disable Deep Search"
+msgstr "Inaktivera Djup Sökning"
 
 #. js-lingui-explicit-id
-msgid "About event"
-msgstr "Om händelsen"
+msgid "Enable Deep Search"
+msgstr "Aktivera Djup Sökning"
 
 #. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Galleri"
+msgid "Select country {nameCountry}"
+msgstr "Välj land {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Alla foton"
+msgid "Select region {nameRegion}"
+msgstr "Välj region {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Skriv in texten för att söka"
+msgid "Select region {nameCity}"
+msgstr "Välj region {nameCity}"
 
 #. js-lingui-explicit-id
-msgid "Events"
-msgstr "Evenemang"
+msgid "Select country"
+msgstr "Välj land"
 
 #. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Tryck för att visa fler händelser"
+msgid "Decrease the maximum number"
+msgstr "Minska det maximala antalet"
 
 #. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Lägg till händelse"
+msgid "Increase the maximum number"
+msgstr "Öka det maximala antalet"
 
 #. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Knapp för att stänga registreringen FaceID"
-
-#. js-lingui-explicit-id
-msgid "Invalid phone number"
-msgstr "Ogiltigt telefonnummer"
-
-#. js-lingui-explicit-id
-msgid "The length of the name should be between 2 and 20 characters"
-msgstr "Namnets längd ska vara mellan 2 och 20 tecken"
-
-#. js-lingui-explicit-id
-msgid "Registration"
-msgstr "Registrering"
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Namn"
-
-#. js-lingui-explicit-id
-msgid "Enter your name"
-msgstr "Ange ditt namn"
-
-#. js-lingui-explicit-id
-msgid "Save"
-msgstr "Spara"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Fyll i senare"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location"
-msgstr "Växla på din plats"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Aktivera din plats i bakgrunden"
-
-#. js-lingui-explicit-id
-msgid "Select the city"
-msgstr "Välj staden"
-
-#. js-lingui-explicit-id
-msgid "Privacy Policy"
-msgstr "Integritetspolicy"
-
-#. js-lingui-explicit-id
-msgid "Terms of Use"
-msgstr "Användarvillkor"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Knapp för att stänga registreringen TouchID"
-
-#. js-lingui-explicit-id
-msgid "business"
-msgstr "företag"
-
-#. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Företagsprofil"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Företagsnamn"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Ange namnet på ditt företag"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Stad"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Ytterligare nummer {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "events"
-msgstr "händelser"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings events screen"
-msgstr "Knapp för att stänga inställningsskärmen för händelser"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Köp evenemang"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Förbättra"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Tillgängliga annonser: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Publicerade annonser: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Recension"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Varning! Alla data relaterade till företaget \"{nameBusiness}\" kommer att raderas."
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Lägg till"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Köp ytterligare"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Förbrukad: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Tillgänglig: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Aktiv"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Dina annonser"
-
-#. js-lingui-explicit-id
-msgid "Your workshops"
-msgstr "Dina workshops"
-
-#. js-lingui-explicit-id
-msgid "Your events"
-msgstr "Dina evenemang"
-
-#. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Inställningsprofil"
-
-#. js-lingui-explicit-id
-msgid "adverts"
-msgstr "annonser"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Knapp för att stänga inställningsskärmen för produkter"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Köp annons"
-
-#. js-lingui-explicit-id
-msgid "Error: incorrect phone number"
-msgstr "Fel: felaktigt telefonnummer"
-
-#. js-lingui-explicit-id
-msgid "Error: First name must be between 3 and 15 characters"
-msgstr "Fel: Förnamnet måste vara mellan 3 och 15 tecken"
-
-#. js-lingui-explicit-id
-msgid "Error: select the city"
-msgstr "Fel: välj staden"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "Bilden tillagd"
-
-#. js-lingui-explicit-id
-msgid "Profile saved"
-msgstr "Profil sparad"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Fel: spara profil"
-
-#. js-lingui-explicit-id
-msgid "First Name"
-msgstr "Förnamn"
-
-#. js-lingui-explicit-id
-msgid "Last Name"
-msgstr "Efternamn"
-
-#. js-lingui-explicit-id
-msgid "workshops"
-msgstr "verkstäder"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings workshops screen"
-msgstr "Knapp för att stänga inställningsskärmen för verkstäder"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Lägg till verkstad"
-
-#. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Köp verkstad"
-
-#. js-lingui-explicit-id
-msgid "Welcome to our service."
-msgstr "Välkommen till vår tjänst."
-
-#. js-lingui-explicit-id
-msgid "Log in using:"
-msgstr "Logga in med:"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Ingen information"
-
-#. js-lingui-explicit-id
-msgid "Moto"
-msgstr "Moto"
-
-#. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Auto"
-
-#. js-lingui-explicit-id
-msgid "All workshops"
-msgstr "Alla verkstäder"
-
-#. js-lingui-explicit-id
-msgid "Repair of motorcycles"
-msgstr "Reparation av motorcyklar"
-
-#. js-lingui-explicit-id
-msgid "Repair of automobiles"
-msgstr "Reparation av bilar"
-
-#. js-lingui-explicit-id
-msgid "workshop"
-msgstr "verkstad"
-
-#. js-lingui-explicit-id
-msgid "Workshop change successfully"
-msgstr "Verkstaden ändrad framgångsrikt"
-
-#. js-lingui-explicit-id
-msgid "Workshop created successfully"
-msgstr "Verkstaden skapad framgångsrikt"
-
-#. js-lingui-explicit-id
-msgid "Error changing workshop"
-msgstr "Fel vid ändring av verkstad"
-
-#. js-lingui-explicit-id
-msgid "Error creating workshop"
-msgstr "Fel vid skapande av verkstad"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop"
-msgstr "Ange namnet på verkstaden"
-
-#. js-lingui-explicit-id
-msgid "Workshop name"
-msgstr "Verkstadsnamn"
-
-#. js-lingui-explicit-id
-msgid "Workshop address"
-msgstr "Verkstadsadress"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the workshop"
-msgstr "Lägg till en beskrivning av verkstaden"
-
-#. js-lingui-explicit-id
-msgid "Workshop description"
-msgstr "Verkstadsbeskrivning"
-
-#. js-lingui-explicit-id
-msgid "Type workshop"
-msgstr "Typ av verkstad"
-
-#. js-lingui-explicit-id
-msgid "Select type"
-msgstr "Välj typ"
-
-#. js-lingui-explicit-id
-msgid "Types of work"
-msgstr "Typer av arbete"
-
-#. js-lingui-explicit-id
-msgid "Select types of work"
-msgstr "Välj typer av arbete"
-
-#. js-lingui-explicit-id
-msgid "Draft the first review"
-msgstr "Utkast till den första recensionen"
-
-#. js-lingui-explicit-id
-msgid "Change a review"
-msgstr "Ändra en recension"
-
-#. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Skriv en recension"
-
-#. js-lingui-explicit-id
-msgid "Select share page"
-msgstr "Välj delningssida"
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
-msgstr "Texten måste innehålla minst 3 och högst 40 tecken."
-
-#. js-lingui-explicit-id
-msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
-msgstr "Texten måste innehålla minst 10 och högst 2000 tecken."
-
-#. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Verkstad"
-
-#. js-lingui-explicit-id
-msgid "Type workshops"
-msgstr "Typer av verkstäder"
-
-#. js-lingui-explicit-id
-msgid "Distance, km:"
-msgstr "Avstånd, km:"
-
-#. js-lingui-explicit-id
-msgid "All works"
-msgstr "Alla arbeten"
-
-#. js-lingui-explicit-id
-msgid "Type works"
-msgstr "Arbetstyper"
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Verkstäder"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Ange namnet på verkstaden eller arbetstypen"
-
-msgid "{distance} km"
-msgstr "{distance} km"
-
-msgid "About us:"
-msgstr "Om oss:"
-
-msgid "Access to geolocation in the background mode"
-msgstr "Åtkomst till geoplats i bakgrunds läge"
-
-msgid "Access to geolocation when using the application"
-msgstr "Åtkomst till geoplats vid användning av applikationen"
-
-msgid "Add advert"
-msgstr "Lägg till annons"
-
-msgid "Add event"
-msgstr "Lägg till händelse"
-
-msgid "Add workshop"
-msgstr "Lägg till verkstad"
-
 msgid "All cities"
 msgstr "Alla städer"
 
-msgid "All photos"
-msgstr "Alla foton"
-
-msgid "Allow"
-msgstr "Tillåt"
-
-msgid "Allow later"
-msgstr "Tillåt senare"
-
-msgid "Allow login using Face ID"
-msgstr "Tillåt inloggning med Face ID"
-
-msgid "Allow login using Touch ID"
-msgstr "Tillåt inloggning med Touch ID"
-
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Tillåt {nameApp}-appen att bestämma min plats i bakgrunden"
-
-msgid "Allow the {nameApp} application to determine my location"
-msgstr "Tillåt {nameApp}-applikationen att bestämma min plats"
-
-msgid "Allow Touch ID to access the {nameApp} app."
-msgstr "Tillåt Touch ID att få åtkomst till {nameApp}-appen."
-
-msgid "and choose the city of residence:"
-msgstr "och välj bostadsstad:"
-
-msgid "Are you sure you want to delete?"
-msgstr "Är du säker på att du vill ta bort?"
-
-msgid "Automatically detect location"
-msgstr "Identifiera plats automatiskt"
-
-msgid "Back"
-msgstr "Tillbaka"
-
-msgid "Business profile"
-msgstr "Företagsprofil"
-
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr "Genom att klicka på knappen \"Fortsätt\" samtycker du till {buttonTermsService} och {buttonPrivacyPolicy}"
-
-msgid "By distance:"
-msgstr "Efter avstånd:"
-
-msgid "By number of comments:"
-msgstr "Efter antal kommentarer:"
-
-msgid "By rating:"
-msgstr "Efter betyg:"
-
-msgid "Call"
-msgstr "Ring"
-
-msgid "Cheapest"
-msgstr "Billigast"
-
-msgid "Continue with {typeSocial}"
-msgstr "Fortsätt med {typeSocial}"
-
-msgid "Create"
-msgstr "Skapa"
-
-msgid "Create event"
-msgstr "Skapa händelse"
-
-msgid "Currency:"
-msgstr "Valuta:"
-
-msgid "Dark theme"
-msgstr "Mörkt tema"
-
-msgid "Delete"
-msgstr "Ta bort"
-
-msgid "Description"
-msgstr "Beskrivning"
-
-msgid "Do you want to send an SOS signal?"
-msgstr "Vill du skicka en SOS-signal?"
-
-msgid "Enable logging into the app using Face ID"
-msgstr "Aktivera inloggning i appen med Face ID"
-
-msgid "Event"
-msgstr "Händelse"
-
-msgid "Events"
-msgstr "Händelser"
-
-msgid "from closest to farthest"
-msgstr "från närmast till längst bort"
-
-msgid "from highest to lowest"
-msgstr "från högst till lägst"
-
-msgid "Gallery"
-msgstr "Galleri"
-
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr "Om det inte finns något lämpligt alternativ i listan, använd 'Djup Sökning'"
-
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr "Felaktigt telefonnummer angivet eller landskod för telefonnumret vald felaktigt"
-
-msgid "Language selection"
-msgstr "Språkval"
-
-msgid "Last update"
-msgstr "Senaste uppdatering"
-
-msgid "Latest"
-msgstr "Senaste"
-
-msgid "Leave a review"
-msgstr "Lämna en recension"
-
-msgid "Logout"
-msgstr "Logga ut"
-
-msgid "Main"
-msgstr "Huvud"
-
-msgid "Map"
-msgstr "Karta"
-
-msgid "Market"
-msgstr "Marknad"
-
-msgid "More events"
-msgstr "Fler händelser"
-
-msgid "Most expensive"
-msgstr "Dyrast"
-
-msgid "Move and change the location"
-msgstr "Flytta och ändra platsen"
-
-msgid "My adverts"
-msgstr "Mina annonser"
-
-msgid "My events"
-msgstr "Mina händelser"
-
-msgid "My workshops"
-msgstr "Mina verkstäder"
-
-msgid "No events have passed"
-msgstr "Inga händelser har passerat"
-
-msgid "Not comments"
-msgstr "Inga kommentarer"
-
-msgid "Notification of SOS signal"
-msgstr "Avisering om SOS-signal"
-
-msgid "Now"
-msgstr "Nu"
-
-msgid "Only with rating:"
-msgstr "Endast med betyg:"
-
-msgid "or sign up using:"
-msgstr "eller registrera dig med:"
-
-msgid "Participation fee"
-msgstr "Deltagaravgift"
-
-msgid "Password must contain at least 8 characters"
-msgstr "Lösenordet måste innehålla minst 8 tecken"
-
-msgid "Passwords do not match"
-msgstr "Lösenorden matchar inte"
-
-msgid "Past events:"
-msgstr "Tidigare händelser:"
-
-msgid "Phone number"
-msgstr "Telefonnummer"
-
-msgid "Please enter text for searching"
-msgstr "Ange text för sökning"
-
-msgid "Privacy Policy"
-msgstr "Integritetspolicy"
-
-msgid "Profile"
-msgstr "Profil"
-
-msgid "Read the whole description..."
-msgstr "Läs hela beskrivningen..."
-
-msgid "Registration"
-msgstr "Registrering"
-
-msgid "Repair of automobiles"
-msgstr "Reparation av bilar"
-
-msgid "Repair of motorcycles"
-msgstr "Reparation av motorcyklar"
-
-msgid "Resend the code"
-msgstr "Skicka koden igen"
-
-msgid "Reviews:"
-msgstr "Recensioner:"
-
-msgid "Select a location on the map"
-msgstr "Välj en plats på kartan"
-
-msgid "Settings"
-msgstr "Inställningar"
-
-msgid "Settings and permissions should be enabled"
-msgstr "Inställningar och behörigheter bör vara aktiverade"
-
-msgid "Someone needs help within a {distance} km radius"
-msgstr "Någon behöver hjälp inom en radie av {distance} km"
-
-msgid "Sorry, but no products were found by the filters"
-msgstr "Tyvärr hittades inga produkter med filtren"
-
-msgid "Sorry, but no workshops were found by the filters"
-msgstr "Tyvärr hittades inga verkstäder med filtren"
-
-msgid "Sorry, there are no available items"
-msgstr "Tyvärr finns det inga tillgängliga objekt"
-
-msgid "Sorry, there are no upcoming events"
-msgstr "Tyvärr finns det inga kommande händelser"
-
-msgid "Sorry, there are no upcoming workshops"
-msgstr "Tyvärr finns det inga kommande verkstäder"
-
-msgid "Sorry!"
-msgstr "Tyvärr!"
-
-msgid "Specify the city"
-msgstr "Ange staden"
-
-msgid "Terms of Service"
-msgstr "Användarvillkor"
-
-msgid "Terms of Use"
-msgstr "Användarvillkor"
-
-msgid "The nearest event:"
-msgstr "Nästa evenemang:"
-
-msgid "The work we do:"
-msgstr "Arbetet vi gör:"
-
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr "För att fullt utnyttja alla funktioner i tjänsten måste du ge applikationen tillstånd att bestämma din plats:"
-
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr "För att ta emot SOS-signaler, ställ in radien för signalmottagning från din stads centrum:"
-
-msgid "Type workshops"
-msgstr "Verkstadstyper"
-
-msgid "Types of work for automobile transport:"
-msgstr "Typer av arbete för biltransport:"
-
-msgid "Types of work for motorcycle transport:"
-msgstr "Typer av arbete för motorcykeltransport:"
-
-msgid "Upcoming events:"
-msgstr "Kommande händelser:"
-
-msgid "Views:"
-msgstr "Visningar:"
-
-msgid "We recommend filling out the profile information"
-msgstr "Vi rekommenderar att du fyller i profilinformationen"
-
-msgid "Welcome"
-msgstr "Välkommen"
-
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr "Vilken plattform vill du skicka appens installationsinbjudan till?"
-
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr "Stängs av automatiskt efter 20-30 minuter"
-
-msgid "Workshop"
-msgstr "Verkstad"
-
-msgid "Workshops"
-msgstr "Verkstäder"
-
-msgid "Write"
-msgstr "Skriv"
-
-msgid "You don't have {typeItem}."
-msgstr "Du har inte {typeItem}."
-
-msgid "Your contact information"
-msgstr "Din kontaktinformation"
-
-msgid "Your profile"
-msgstr "Din profil"
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Inga städer hittades"
+
+#. js-lingui-explicit-id
+msgid "Photo {numberPhoto}"
+msgstr "Foto {numberPhoto}"
+
+#. js-lingui-explicit-id
+msgid "Main photo"
+msgstr "Huvudfoto"
+
+#. js-lingui-explicit-id
+msgid "Make the main photo"
+msgstr "Gör huvudfoto"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Tryck och ange för att söka efter en stad"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Lägg till ett foto"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Det första fotot kommer att vara på omslaget till annonsen."
