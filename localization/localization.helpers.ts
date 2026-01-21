@@ -116,18 +116,20 @@ export const isLanguage = (value: string): value is Language => {
 };
 
 export const getDeviceLanguage = async (): Promise<Language> => {
-  const deviceLanguage = Localization.locale.slice(0, 2);
+  const deviceLanguage = Localization.getLocales()[0].languageCode;
   let localizationLanguage = defaultLanguage;
   if (Platform.OS === "web") {
     const languageLocalStorage = localStorage.getItem(languageKey);
     if (languageLocalStorage && isLanguage(languageLocalStorage))
       localizationLanguage = languageLocalStorage;
-    else if (isLanguage(deviceLanguage)) localizationLanguage = deviceLanguage;
+    else if (deviceLanguage && isLanguage(deviceLanguage))
+      localizationLanguage = deviceLanguage;
   } else {
     const languageAsyncStorage = await AsyncStorage.getItem(languageKey);
     if (languageAsyncStorage && isLanguage(languageAsyncStorage))
       localizationLanguage = languageAsyncStorage;
-    else if (isLanguage(deviceLanguage)) localizationLanguage = deviceLanguage;
+    else if (deviceLanguage && isLanguage(deviceLanguage))
+      localizationLanguage = deviceLanguage;
   }
 
   return localizationLanguage;
