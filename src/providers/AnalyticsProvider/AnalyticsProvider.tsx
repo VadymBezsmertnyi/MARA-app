@@ -9,6 +9,8 @@ import { getApp } from "@react-native-firebase/app";
 import {
   getAnalytics,
   setConsent,
+  setAnalyticsCollectionEnabled,
+  logEvent,
   type ConsentSettings,
 } from "@react-native-firebase/analytics";
 
@@ -39,7 +41,7 @@ const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
   );
   const onLogAppOpen = async () => {
     const analytics = getAnalytics(getApp());
-    await analytics.setAnalyticsCollectionEnabled(true);
+    await setAnalyticsCollectionEnabled(analytics, true);
     const consentSettings: ConsentSettings = {
       ad_personalization: true,
       ad_storage: true,
@@ -50,23 +52,21 @@ const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
       security_storage: "granted",
     };
     await setConsent(analytics, consentSettings);
-    await analytics.logAppOpen();
+    await logEvent(analytics, "app_open");
   };
 
   const onLogSignUp = async (method: MethodAuthType) => {
-    await getAnalytics(getApp()).logSignUp({ method });
+    await logEvent(getAnalytics(getApp()), "sign_up", { method });
   };
 
   const onLogLogin = async (method: MethodAuthType) => {
-    await getAnalytics(getApp()).logLogin({
-      method,
-    });
+    await logEvent(getAnalytics(getApp()), "login", { method });
   };
 
   const onLogScreenView = async () => {
     if (currentRouteName)
       if (currentRouteName !== previousRouteName)
-        await getAnalytics(getApp()).logScreenView({
+        await logEvent(getAnalytics(getApp()), "screen_view", {
           screen_class: currentRouteName,
           screen_name: currentRouteName,
         });
