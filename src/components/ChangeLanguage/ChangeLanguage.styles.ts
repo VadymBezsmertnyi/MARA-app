@@ -49,33 +49,37 @@ export const styles = StyleSheet.create({
   },
   headerModal: {
     paddingHorizontal: horizontalScale(16),
-    paddingTop: verticalScale(16),
+    paddingTop: verticalScale(10),
+    paddingBottom: verticalScale(6),
   },
   headerTitleContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: verticalScale(6),
   },
   titleModal: {
     fontFamily: FONT_600_MONTSERRAT,
-    fontSize: scaleFont(16),
+    fontSize: scaleFont(18),
     color: colors.grayFuscous,
     flex: 1,
   },
   closeButton: {
     padding: horizontalScale(4),
+    marginLeft: horizontalScale(8),
   },
   lineHeader: {
     width: "100%",
     height: verticalScale(1),
-    marginTop: verticalScale(16),
+    marginTop: verticalScale(8),
+    marginBottom: verticalScale(4),
   },
   titleInput: {
     paddingHorizontal: horizontalScale(8),
   },
   containerInput: {
-    marginTop: verticalScale(12),
-    marginBottom: verticalScale(14),
+    marginTop: verticalScale(8),
+    marginBottom: verticalScale(8),
   },
   wrapperInput: {
     paddingRight: horizontalScale(20),
@@ -84,27 +88,30 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   containerScroll: {
-    paddingHorizontal: horizontalScale(24),
-    paddingTop: verticalScale(38),
+    paddingHorizontal: horizontalScale(16),
+    paddingTop: verticalScale(12),
+    paddingBottom: verticalScale(8),
   },
   containerItemList: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     paddingVertical: verticalScale(8),
-    paddingHorizontal: horizontalScale(10),
-    minHeight: horizontalScale(40),
+    paddingHorizontal: horizontalScale(12),
+    borderRadius: horizontalScale(8),
   },
   titleItemList: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: scaleFont(16),
     color: colors.blackCoffee,
+    flex: 1,
   },
   containerEmpty: {
-    height: verticalScale(20),
+    height: verticalScale(12),
   },
   containerButtons: {
-    paddingTop: verticalScale(24),
-    paddingHorizontal: horizontalScale(12),
-    paddingBottom: verticalScale(Platform.OS === "ios" ? getBottomSpace() : 24),
+    paddingTop: verticalScale(12),
+    paddingHorizontal: horizontalScale(8),
+    paddingBottom: verticalScale(12),
   },
 });
