@@ -126,9 +126,7 @@ const UserProvider: FunctionComponent<Props> = (props) => {
         PATHS.loginGoogle,
         {
           method: "POST",
-          data: {
-            idToken: userData.idToken,
-          },
+          data: { idToken: userData.idToken },
         },
         z.object({
           userData: userDataS,
