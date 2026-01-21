@@ -10,8 +10,8 @@ import * as SecureStore from "expo-secure-store";
 import { z } from "zod";
 import qs from "qs";
 import { getDeviceStorage } from "../helps/storage.help";
-import { TOKEN_KEY_ASYNC_STORAGE } from "../providers/ApiProvider/ApiProvider.constants";
-import { PATHS } from "../providers/paths.constants";
+import { TOKEN_KEY_ASYNC_STORAGE } from "./constants/apiProvider.constants";
+import { PATHS } from "./constants/paths.constants";
 
 const appManifestEnvS = z.object({
   APP_DOMAIN_APP: z.string(),
