@@ -48,16 +48,6 @@ export const useMainTabs = () => {
       tabBarIconSelect: IconTabWorkshopsSelect,
     },
     {
-      id: PATHS_MAIN_TABS.map,
-      name: PATHS_MAIN_TABS.map,
-      mainScreen: null,
-      title: i18n._("Map"),
-      component: Map,
-      headerShown: false,
-      tabBarIcon: IconTabMap,
-      tabBarIconSelect: IconTabMapSelect,
-    },
-    {
       id: PATHS_MAIN_TABS.events,
       name: PATHS_MAIN_TABS.events,
       mainScreen: PATHS_EVENTS_SCREENS.eventsMain,
@@ -66,6 +56,16 @@ export const useMainTabs = () => {
       headerShown: false,
       tabBarIcon: IconTabNews,
       tabBarIconSelect: IconTabNewsSelect,
+    },
+    {
+      id: PATHS_MAIN_TABS.map,
+      name: PATHS_MAIN_TABS.map,
+      mainScreen: null,
+      title: i18n._("Map"),
+      component: Map,
+      headerShown: false,
+      tabBarIcon: IconTabMap,
+      tabBarIconSelect: IconTabMapSelect,
     },
     {
       id: PATHS_MAIN_TABS.market,
