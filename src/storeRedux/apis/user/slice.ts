@@ -33,9 +33,14 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addMatcher(api.endpoints.loginFacebook.matchFulfilled, (state, action) => {
-        state.userData = action.payload.userData;
-        state.loading = false;
-        state.error = null;
+        if (action.payload) {
+          state.userData = action.payload.userData;
+          state.loading = false;
+          state.error = null;
+        } else {
+          state.loading = false;
+          state.error = "Помилка валідації даних від сервера (Facebook)";
+        }
       })
       .addMatcher(api.endpoints.loginFacebook.matchRejected, (state, action) => {
         state.loading = false;
@@ -47,9 +52,14 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addMatcher(api.endpoints.loginGoogle.matchFulfilled, (state, action) => {
-        state.userData = action.payload.userData;
-        state.loading = false;
-        state.error = null;
+        if (action.payload) {
+          state.userData = action.payload.userData;
+          state.loading = false;
+          state.error = null;
+        } else {
+          state.loading = false;
+          state.error = "Помилка валідації даних від сервера (Google)";
+        }
       })
       .addMatcher(api.endpoints.loginGoogle.matchRejected, (state, action) => {
         state.loading = false;
@@ -61,9 +71,14 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addMatcher(api.endpoints.loginApple.matchFulfilled, (state, action) => {
-        state.userData = action.payload.userData;
-        state.loading = false;
-        state.error = null;
+        if (action.payload) {
+          state.userData = action.payload.userData;
+          state.loading = false;
+          state.error = null;
+        } else {
+          state.loading = false;
+          state.error = "Помилка валідації даних від сервера (Apple)";
+        }
       })
       .addMatcher(api.endpoints.loginApple.matchRejected, (state, action) => {
         state.loading = false;
@@ -75,9 +90,14 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addMatcher(api.endpoints.getMe.matchFulfilled, (state, action) => {
-        state.userData = action.payload.userData;
-        state.loading = false;
-        state.error = null;
+        if (action.payload) {
+          state.userData = action.payload.userData;
+          state.loading = false;
+          state.error = null;
+        } else {
+          state.loading = false;
+          state.error = "Помилка валідації даних від сервера (getMe)";
+        }
       })
       .addMatcher(api.endpoints.getMe.matchRejected, (state, action) => {
         state.loading = false;
@@ -89,9 +109,14 @@ export const userSlice = createSlice({
         state.error = null;
       })
       .addMatcher(api.endpoints.editUser.matchFulfilled, (state, action) => {
-        state.userData = action.payload.userData;
-        state.loading = false;
-        state.error = null;
+        if (action.payload) {
+          state.userData = action.payload.userData;
+          state.loading = false;
+          state.error = null;
+        } else {
+          state.loading = false;
+          state.error = "Помилка валідації даних від сервера (editUser)";
+        }
       })
       .addMatcher(api.endpoints.editUser.matchRejected, (state, action) => {
         state.loading = false;
