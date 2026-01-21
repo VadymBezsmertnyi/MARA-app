@@ -21,9 +21,13 @@ import {
   OpenSans_700Bold,
 } from "@expo-google-fonts/open-sans";
 import { useFonts } from "expo-font";
+import { Provider } from "react-redux";
 
 // types
 import { RootAllScreensParamList } from "./src/navigators/Navigators.types";
+
+// store
+import { store } from "./src/storeRedux/store";
 
 // providers
 import LocalesProvider from "./localization/localization.provider";
@@ -104,13 +108,14 @@ function App() {
   }, []);
 
   return (
-    <SafeAreaProvider>
-      <DropDownAlertProvider>
-        <WebSocketProvider>
-          <ThemeProvider>
-            <LoadingProvider isLoadingProps={fontsLoaded}>
-              <LocalesProvider>
-                <ApiProvider>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <DropDownAlertProvider>
+          <WebSocketProvider>
+            <ThemeProvider>
+              <LoadingProvider isLoadingProps={fontsLoaded}>
+                <LocalesProvider>
+                  <ApiProvider>
                   <AnalyticsProvider currentRouteName={currentRouteName}>
                     <PlacesProvider>
                       <BiometricProvider>
@@ -166,6 +171,7 @@ function App() {
         </WebSocketProvider>
       </DropDownAlertProvider>
     </SafeAreaProvider>
+    </Provider>
   );
 }
 
