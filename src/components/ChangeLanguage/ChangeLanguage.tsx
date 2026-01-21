@@ -146,7 +146,8 @@ export const ChangeLanguage: FunctionComponent = () => {
                     labelStyle={styles.titleInput}
                     containerStyle={styles.containerInput}
                     wrapperStyle={styles.wrapperInput}
-                    InputIcon={<IconSearchInput width={26} height={26} />}
+                    customStyles={styles.input}
+                    InputIcon={<IconSearchInput width={18} height={18} />}
                   />
                 </View>
               </Shadow>

@@ -78,11 +78,15 @@ export const styles = StyleSheet.create({
     paddingHorizontal: horizontalScale(8),
   },
   containerInput: {
-    marginTop: verticalScale(8),
-    marginBottom: verticalScale(8),
+    marginTop: verticalScale(4),
+    marginBottom: verticalScale(4),
   },
   wrapperInput: {
     paddingRight: horizontalScale(20),
+  },
+  input: {
+    paddingTop: verticalScale(8),
+    paddingBottom: verticalScale(8),
   },
   scrollView: {
     flex: 1,
