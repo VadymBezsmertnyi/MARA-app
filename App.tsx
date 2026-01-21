@@ -106,27 +106,28 @@ function App() {
   }, []);
 
   return (
-    <DropDownAlertProvider>
-      <WebSocketProvider>
-        <ThemeProvider>
-          <LoadingProvider isLoadingProps={fontsLoaded}>
-            <LocalesProvider>
-              <ApiProvider>
-                <AnalyticsProvider currentRouteName={currentRouteName}>
-                  <PlacesProvider>
-                    <BiometricProvider>
-                      <UserProvider>
-                        <SubscriptionProvider>
-                          <NavigationContainer
-                            ref={navigationRef}
-                            onStateChange={() => {
-                              const nameRoute =
-                                navigationRef.current?.getCurrentRoute()?.name;
-                              if (nameRoute) setCurrentRouteName(nameRoute);
-                            }}
-                          >
-                            <EventsProvider>
-                              <SafeAreaProvider>
+    <SafeAreaProvider>
+      <DropDownAlertProvider>
+        <WebSocketProvider>
+          <ThemeProvider>
+            <LoadingProvider isLoadingProps={fontsLoaded}>
+              <LocalesProvider>
+                <ApiProvider>
+                  <AnalyticsProvider currentRouteName={currentRouteName}>
+                    <PlacesProvider>
+                      <BiometricProvider>
+                        <UserProvider>
+                          <SubscriptionProvider>
+                            <NavigationContainer
+                              ref={navigationRef}
+                              onStateChange={() => {
+                                const nameRoute =
+                                  navigationRef.current?.getCurrentRoute()
+                                    ?.name;
+                                if (nameRoute) setCurrentRouteName(nameRoute);
+                              }}
+                            >
+                              <EventsProvider>
                                 <PermissionsProvider>
                                   <MapProvider>
                                     <GestureHandlerRootView
@@ -157,20 +158,20 @@ function App() {
                                     </GestureHandlerRootView>
                                   </MapProvider>
                                 </PermissionsProvider>
-                              </SafeAreaProvider>
-                            </EventsProvider>
-                          </NavigationContainer>
-                        </SubscriptionProvider>
-                      </UserProvider>
-                    </BiometricProvider>
-                  </PlacesProvider>
-                </AnalyticsProvider>
-              </ApiProvider>
-            </LocalesProvider>
-          </LoadingProvider>
-        </ThemeProvider>
-      </WebSocketProvider>
-    </DropDownAlertProvider>
+                              </EventsProvider>
+                            </NavigationContainer>
+                          </SubscriptionProvider>
+                        </UserProvider>
+                      </BiometricProvider>
+                    </PlacesProvider>
+                  </AnalyticsProvider>
+                </ApiProvider>
+              </LocalesProvider>
+            </LoadingProvider>
+          </ThemeProvider>
+        </WebSocketProvider>
+      </DropDownAlertProvider>
+    </SafeAreaProvider>
   );
 }
 
