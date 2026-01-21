@@ -16,7 +16,6 @@ import { z } from "zod";
 import { UserLocationMapType, UserLocationSosType } from "./MapProvider.types";
 
 // providers
-import { useWebSocketProvider } from "../WebSocketProvider/WebSocketProvider";
 import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { usePermissionsProvider } from "../PermissionsProvider/PermissionsProvider";
 
@@ -56,7 +55,6 @@ export const mapContext = React.createContext({} as MapContext);
 const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
   const { api } = useApiProvider();
   const { userData } = useUserProvider();
-  const { sendLocation } = useWebSocketProvider();
   const { locationForegroundPermission, locationBackgroundPermission } =
     usePermissionsProvider();
   const [location, setLocation] =
@@ -111,7 +109,6 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
     }
 
     setLocation(coords);
-    sendLocation(coords); // Send to websocket
   };
 
   const getCountryUser = async () => {

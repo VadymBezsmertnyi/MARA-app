@@ -12,7 +12,6 @@ import { userDataS } from "./UserProvider.schemas";
 
 // providers
 import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
-import { useWebSocketProvider } from "../WebSocketProvider/WebSocketProvider";
 import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { useBiometricProvider } from "../BiometricProvider/BiometricProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -42,7 +41,6 @@ export const userContext = createContext<Context>({} as Context);
 const UserProvider: FunctionComponent<Props> = (props) => {
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useLocalesProvider();
-  const { setUserData: setUserDataSocket } = useWebSocketProvider();
   const { checkBiometric } = useBiometricProvider();
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
@@ -67,7 +65,6 @@ const UserProvider: FunctionComponent<Props> = (props) => {
 
   const cleanUserData = () => {
     setUserData(null);
-    setUserDataSocket(null);
   };
 
   const setNewUserData = async (
@@ -80,10 +77,6 @@ const UserProvider: FunctionComponent<Props> = (props) => {
     if (tokens)
       await setDeviceStorage(TOKEN_KEY_ASYNC_STORAGE, JSON.stringify(tokens));
     setUserData({
-      ...DEFAULT_USER_DATA,
-      ...newUserData,
-    });
-    setUserDataSocket({
       ...DEFAULT_USER_DATA,
       ...newUserData,
     });
@@ -238,10 +231,6 @@ const UserProvider: FunctionComponent<Props> = (props) => {
             ...DEFAULT_USER_DATA,
             ...resultCreateNewUser.userData,
           });
-          setUserDataSocket({
-            ...DEFAULT_USER_DATA,
-            ...resultCreateNewUser.userData,
-          });
         }
         return true;
       } catch (error: any) {
@@ -278,7 +267,6 @@ const UserProvider: FunctionComponent<Props> = (props) => {
 
         const userData = { ...DEFAULT_USER_DATA, ...result.userData };
         setUserData(userData);
-        setUserDataSocket(userData);
         return userData;
       }
       return null;
@@ -298,7 +286,6 @@ const UserProvider: FunctionComponent<Props> = (props) => {
       setLoading(true);
       await deleteDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
       setUserData(null);
-      setUserDataSocket(null);
       return true;
     } catch (error: any) {
       if (error instanceof Error) {
@@ -326,7 +313,6 @@ const UserProvider: FunctionComponent<Props> = (props) => {
         if (!request || !request.result) return false;
         await deleteDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
         setUserData(null);
-        setUserDataSocket(null);
         return true;
       }
       return false;
