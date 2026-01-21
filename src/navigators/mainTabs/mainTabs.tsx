@@ -89,6 +89,11 @@ export const MainTabs: FunctionComponent = () => {
           const Icon = isActive
             ? mainTabs[indexScreen].tabBarIconSelect
             : mainTabs[indexScreen].tabBarIcon;
+          const iconName = isActive
+            ? (mainTabs[indexScreen] as any).tabBarIconNameSelect
+            : (mainTabs[indexScreen] as any).tabBarIconName;
+          const isVectorIcon = iconName !== undefined;
+          
           return (
             <View key={`tab-button-${screen.id}`}>
               <TouchableOpacity
@@ -102,10 +107,18 @@ export const MainTabs: FunctionComponent = () => {
                 }}
                 style={styles.button}
               >
-                <Icon
-                  width={horizontalScale(32)}
-                  height={horizontalScale(32)}
-                />
+                {isVectorIcon ? (
+                  <Icon
+                    name={iconName}
+                    size={horizontalScale(32)}
+                    color={colors.white}
+                  />
+                ) : (
+                  <Icon
+                    width={horizontalScale(32)}
+                    height={horizontalScale(32)}
+                  />
+                )}
               </TouchableOpacity>
             </View>
           );

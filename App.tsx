@@ -37,7 +37,6 @@ import WebSocketProvider from "./src/providers/WebSocketProvider/WebSocketProvid
 import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
 import EventsProvider from "./src/providers/EventsProvider/EventsProvider";
 import PlacesProvider from "./src/providers/PlacesProvider/PlacesProvider";
-import MarketProvider from "./src/providers/MarketProvider/MarketProvider";
 import PaymentProvider from "./src/providers/PaymentProvider/PaymentProvider";
 import PushNotificationProvider from "./src/providers/PushNotificationProvider/PushNotificationProvider";
 import AnalyticsProvider from "./src/providers/AnalyticsProvider/AnalyticsProvider";
@@ -138,20 +137,18 @@ function App() {
                                       >
                                         <PaymentProvider>
                                           <WorkshopsProvider>
-                                            <MarketProvider>
-                                              <SharingProvider>
-                                                <BusinessProvider>
-                                                  <Navigators
-                                                    currentRouteName={
-                                                      currentRouteName
-                                                    }
-                                                    navigation={
-                                                      navigationRef.current
-                                                    }
-                                                  />
-                                                </BusinessProvider>
-                                              </SharingProvider>
-                                            </MarketProvider>
+                                            <SharingProvider>
+                                              <BusinessProvider>
+                                                <Navigators
+                                                  currentRouteName={
+                                                    currentRouteName
+                                                  }
+                                                  navigation={
+                                                    navigationRef.current
+                                                  }
+                                                />
+                                              </BusinessProvider>
+                                            </SharingProvider>
                                           </WorkshopsProvider>
                                         </PaymentProvider>
                                       </PushNotificationProvider>

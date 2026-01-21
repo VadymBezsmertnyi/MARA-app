@@ -17,7 +17,7 @@ import {
   PATHS_EVENTS_SCREENS,
   PATHS_MAIN_SCREENS,
   PATHS_MAIN_TABS,
-  PATHS_MARKET_SCREENS,
+  PATHS_HELP_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
 } from "./useNavigator.constants";
@@ -95,7 +95,7 @@ export const Navigators: FunctionComponent<NavigatorsProps> = ({
         PATHS_WORKSHOP_SCREENS.workshopMain,
         PATHS_MAIN_TABS.map,
         PATHS_EVENTS_SCREENS.eventsMain,
-        PATHS_MARKET_SCREENS.marketMain,
+        PATHS_HELP_SCREENS.helpMain,
         PATHS_SETTINGS_SCREENS.settingsMain,
       ] as string[];
       const isStartTab = tabsNames.includes(currentRouteName);

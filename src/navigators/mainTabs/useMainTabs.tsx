@@ -5,7 +5,7 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { EventsStack } from "../EventsStack/eventsStack";
 import { WorkshopStack } from "../WorkshopStack/workshopStack";
 import { SettingsStack } from "../SettingsStack/settingsStack";
-import { MarketStack } from "../MarketStack/MarketStack";
+import { HelpStack } from "../HelpStack/helpStack";
 
 // screens
 import { Map } from "../../screens/mainScreens/Map/Map";
@@ -14,8 +14,6 @@ import { Map } from "../../screens/mainScreens/Map/Map";
 import {
   IconTabMap,
   IconTabMapSelect,
-  IconTabMarket,
-  IconTabMarketSelect,
   IconTabNews,
   IconTabNewsSelect,
   IconTabSettings,
@@ -23,6 +21,7 @@ import {
   IconTabWorkshops,
   IconTabWorkshopsSelect,
 } from "../../icons/components";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // constants
 import {
@@ -30,7 +29,7 @@ import {
   PATHS_EVENTS_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
-  PATHS_MARKET_SCREENS,
+  PATHS_HELP_SCREENS,
 } from "../useNavigator.constants";
 
 export const useMainTabs = () => {
@@ -68,14 +67,16 @@ export const useMainTabs = () => {
       tabBarIconSelect: IconTabMapSelect,
     },
     {
-      id: PATHS_MAIN_TABS.market,
-      name: PATHS_MAIN_TABS.market,
-      mainScreen: PATHS_MARKET_SCREENS.marketMain,
-      title: i18n._("Market"),
-      component: MarketStack,
+      id: PATHS_MAIN_TABS.help,
+      name: PATHS_MAIN_TABS.help,
+      mainScreen: PATHS_HELP_SCREENS.helpMain,
+      title: i18n._("Help"),
+      component: HelpStack,
       headerShown: false,
-      tabBarIcon: IconTabMarket,
-      tabBarIconSelect: IconTabMarketSelect,
+      tabBarIcon: MaterialIcons,
+      tabBarIconSelect: MaterialIcons,
+      tabBarIconName: "help-outline",
+      tabBarIconNameSelect: "help",
     },
     {
       id: PATHS_MAIN_TABS.settings,

@@ -5,7 +5,6 @@ import {
   PATHS_REGISTRATION_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
-  PATHS_MARKET_SCREENS,
   PATHS_HELP_SCREENS,
 } from "./useNavigator.constants";
 
@@ -35,7 +34,7 @@ export type RootMainTabsParamList = {
   [PATHS_MAIN_TABS.workshops]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.map]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.events]?: Record<string, string | number | boolean>;
-  [PATHS_MAIN_TABS.market]?: Record<string, string | number | boolean>;
+  [PATHS_MAIN_TABS.help]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.settings]?: Record<string, string | number | boolean>;
 };
 
@@ -176,17 +175,6 @@ export type RootWorkshopsScreensParamList = {
   >;
 };
 
-export type RootMarketScreensParamList = {
-  [PATHS_MARKET_SCREENS.marketMain]?: Record<string, string | number | boolean>;
-  [PATHS_MARKET_SCREENS.marketAdd]?: Record<string, string | number | boolean>;
-  [PATHS_MARKET_SCREENS.marketItem]?: Record<
-    string,
-    string | number | boolean
-  > & {
-    productId?: number | string;
-  };
-};
-
 export type RootHelpScreensParamList = {
   [PATHS_HELP_SCREENS.helpMain]?: Record<string, string | number | boolean>;
 };
@@ -194,7 +182,6 @@ export type RootHelpScreensParamList = {
 export type RootAllScreensParamList = RootMainScreensParamList &
   RootRegistrationScreensParamList &
   RootWorkshopsScreensParamList &
-  RootMarketScreensParamList &
   RootSettingsScreensParamList &
   RootEventsScreensParamList &
   RootHelpScreensParamList &

@@ -10,7 +10,7 @@ export const PATHS_MAIN_TABS = {
   workshops: "workshops",
   map: "map",
   events: "events",
-  market: "market",
+  help: "help",
   settings: "settings",
 } as const;
 
@@ -51,12 +51,6 @@ export const PATHS_WORKSHOP_SCREENS = {
   workshopMain: "workshopMain",
   workshopItem: "workshopItem",
   workshopAdd: "workshopAdd",
-} as const;
-
-export const PATHS_MARKET_SCREENS = {
-  marketMain: "marketMain",
-  marketItem: "marketItem",
-  marketAdd: "marketAdd",
 } as const;
 
 export const PATHS_HELP_SCREENS = {
