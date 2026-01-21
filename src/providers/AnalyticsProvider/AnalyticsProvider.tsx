@@ -11,6 +11,7 @@ import {
   setConsent,
   setAnalyticsCollectionEnabled,
   logEvent,
+  setUserProperties,
   type ConsentSettings,
 } from "@react-native-firebase/analytics";
 
@@ -76,7 +77,8 @@ const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
   const onSetUserProperties = async (
     properties: Record<string, string | null>
   ) => {
-    await getAnalytics(getApp()).setUserProperties(properties);
+    const analytics = getAnalytics(getApp());
+    await setUserProperties(analytics, properties);
   };
 
   const contextValue: AnalyticsContext = useMemo(
