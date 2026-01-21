@@ -5,7 +5,12 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import analytics from "@react-native-firebase/analytics";
+import { getApp } from "@react-native-firebase/app";
+import {
+  getAnalytics,
+  setConsent,
+  type ConsentSettings,
+} from "@react-native-firebase/analytics";
 
 // types
 import { MethodAuthType } from "./AnalyticsProvider.types";
@@ -33,25 +38,27 @@ const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
     null
   );
   const onLogAppOpen = async () => {
-    await analytics().setAnalyticsCollectionEnabled(true);
-    await analytics().setConsent({
+    const analytics = getAnalytics(getApp());
+    await analytics.setAnalyticsCollectionEnabled(true);
+    const consentSettings: ConsentSettings = {
       ad_personalization: true,
       ad_storage: true,
       ad_user_data: true,
       analytics_storage: true,
       functionality_storage: true,
       personalization_storage: true,
-      security_storage: true,
-    });
-    await analytics().logAppOpen();
+      security_storage: "granted",
+    };
+    await setConsent(analytics, consentSettings);
+    await analytics.logAppOpen();
   };
 
   const onLogSignUp = async (method: MethodAuthType) => {
-    await analytics().logSignUp({ method });
+    await getAnalytics(getApp()).logSignUp({ method });
   };
 
   const onLogLogin = async (method: MethodAuthType) => {
-    await analytics().logLogin({
+    await getAnalytics(getApp()).logLogin({
       method,
     });
   };
@@ -59,7 +66,7 @@ const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
   const onLogScreenView = async () => {
     if (currentRouteName)
       if (currentRouteName !== previousRouteName)
-        await analytics().logScreenView({
+        await getAnalytics(getApp()).logScreenView({
           screen_class: currentRouteName,
           screen_name: currentRouteName,
         });
@@ -69,7 +76,7 @@ const AnalyticsProvider: FunctionComponent<AnalyticsProviderProps> = ({
   const onSetUserProperties = async (
     properties: Record<string, string | null>
   ) => {
-    await analytics().setUserProperties(properties);
+    await getAnalytics(getApp()).setUserProperties(properties);
   };
 
   const contextValue: AnalyticsContext = useMemo(
