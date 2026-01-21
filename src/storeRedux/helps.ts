@@ -119,22 +119,42 @@ export const baseQueryWithReauth: BaseQueryFn<
         })
       : null;
     if (verifyTokens?.refreshToken) {
-      const refreshResult = await rawBaseQuery(
-        {
-          url: `${getBaseUrl()}${PATHS.token}`,
-          method: "GET",
-          headers: {
-            authorization: verifyTokens.refreshToken,
+      try {
+        const refreshResult = await rawBaseQuery(
+          {
+            url: `${getBaseUrl()}${PATHS.token}`,
+            method: "GET",
+            headers: {
+              authorization: verifyTokens.refreshToken,
+            },
           },
-        },
-        api,
-        extraOptions
-      );
-
-      if (refreshResult.data)
-        result = await rawBaseQuery(args, api, extraOptions);
+          api,
+          extraOptions
+        );
+        if (refreshResult.data)
+          result = await rawBaseQuery(args, api, extraOptions);
+        else
+          console.warn("error-402-currentUrl: ", {
+            currentUrl: args.url,
+            data: refreshResult.data,
+            error: refreshResult.error,
+          });
+      } catch (error402) {
+        if (__DEV__)
+          console.warn("error-402-verifyTokens?.refreshToken", {
+            error402,
+            currentUrl: args.url,
+          });
+        throw error402;
+      }
     }
   }
+  if (result.error && __DEV__)
+    console.warn("error: ", {
+      error: result.error,
+      currentUrl: args.url,
+      args,
+    });
 
   return result;
 };

@@ -116,61 +116,61 @@ function App() {
               <LoadingProvider isLoadingProps={fontsLoaded}>
                 <LocalesProvider>
                   <ApiProvider>
-                  <AnalyticsProvider currentRouteName={currentRouteName}>
-                    <PlacesProvider>
-                      <BiometricProvider>
-                        <UserProvider>
-                          <SubscriptionProvider>
-                            <NavigationContainer
-                              ref={navigationRef}
-                              onStateChange={() => {
-                                const nameRoute =
-                                  navigationRef.current?.getCurrentRoute()
-                                    ?.name;
-                                if (nameRoute) setCurrentRouteName(nameRoute);
-                              }}
-                            >
-                              <EventsProvider>
-                                <PermissionsProvider>
-                                  <MapProvider>
-                                    <GestureHandlerRootView
-                                      style={styles.gestureHandlerRootView}
-                                    >
-                                      <PushNotificationProvider
-                                        currentRouteName={currentRouteName}
+                    <AnalyticsProvider currentRouteName={currentRouteName}>
+                      <PlacesProvider>
+                        <BiometricProvider>
+                          <UserProvider>
+                            <SubscriptionProvider>
+                              <NavigationContainer
+                                ref={navigationRef}
+                                onStateChange={() => {
+                                  const nameRoute =
+                                    navigationRef.current?.getCurrentRoute()
+                                      ?.name;
+                                  if (nameRoute) setCurrentRouteName(nameRoute);
+                                }}
+                              >
+                                <EventsProvider>
+                                  <PermissionsProvider>
+                                    <MapProvider>
+                                      <GestureHandlerRootView
+                                        style={styles.gestureHandlerRootView}
                                       >
-                                        <PaymentProvider>
-                                          <WorkshopsProvider>
-                                            <SharingProvider>
-                                              <Navigators
-                                                currentRouteName={
-                                                  currentRouteName
-                                                }
-                                                navigation={
-                                                  navigationRef.current
-                                                }
-                                              />
-                                            </SharingProvider>
-                                          </WorkshopsProvider>
-                                        </PaymentProvider>
-                                      </PushNotificationProvider>
-                                    </GestureHandlerRootView>
-                                  </MapProvider>
-                                </PermissionsProvider>
-                              </EventsProvider>
-                            </NavigationContainer>
-                          </SubscriptionProvider>
-                        </UserProvider>
-                      </BiometricProvider>
-                    </PlacesProvider>
-                  </AnalyticsProvider>
-                </ApiProvider>
-              </LocalesProvider>
-            </LoadingProvider>
-          </ThemeProvider>
-        </WebSocketProvider>
-      </DropDownAlertProvider>
-    </SafeAreaProvider>
+                                        <PushNotificationProvider
+                                          currentRouteName={currentRouteName}
+                                        >
+                                          <PaymentProvider>
+                                            <WorkshopsProvider>
+                                              <SharingProvider>
+                                                <Navigators
+                                                  currentRouteName={
+                                                    currentRouteName
+                                                  }
+                                                  navigation={
+                                                    navigationRef.current
+                                                  }
+                                                />
+                                              </SharingProvider>
+                                            </WorkshopsProvider>
+                                          </PaymentProvider>
+                                        </PushNotificationProvider>
+                                      </GestureHandlerRootView>
+                                    </MapProvider>
+                                  </PermissionsProvider>
+                                </EventsProvider>
+                              </NavigationContainer>
+                            </SubscriptionProvider>
+                          </UserProvider>
+                        </BiometricProvider>
+                      </PlacesProvider>
+                    </AnalyticsProvider>
+                  </ApiProvider>
+                </LocalesProvider>
+              </LoadingProvider>
+            </ThemeProvider>
+          </WebSocketProvider>
+        </DropDownAlertProvider>
+      </SafeAreaProvider>
     </Provider>
   );
 }
