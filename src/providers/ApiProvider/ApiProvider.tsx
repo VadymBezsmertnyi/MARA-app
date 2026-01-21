@@ -90,18 +90,21 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
           if (isCurrent.success) {
             return isCurrent.data;
           }
-          console.warn("error-402-currentUrl", currentUrl);
-          console.warn("error-402-responseOther.data", responseOther.data);
-          console.warn("error-402-isCurrent", isCurrent);
+          console.warn("error-402-currentUrl: ", currentUrl);
+          console.warn("error-402-responseOther.data: ", responseOther.data);
+          console.warn("error-402-isCurrent: ", isCurrent);
           return null;
         }
-        if (__DEV__) {
-          console.warn("error", error);
-        }
+        if (__DEV__) console.warn("error: ", error, currentUrl, currentConfig);
       } catch (error402) {
-        if (__DEV__) {
-          console.warn("error-402-verifyTokens?.refreshToken", error402);
-        }
+        if (__DEV__)
+          console.warn(
+            "error-402-verifyTokens?.refreshToken",
+            error402,
+            "currentUrl: ",
+            currentUrl
+          );
+
         throw error402;
       }
       throw error;
