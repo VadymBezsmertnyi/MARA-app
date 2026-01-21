@@ -6,6 +6,7 @@ import {
   editUserRequestSchema,
   deleteUserRequestSchema,
   deleteUserResponseSchema,
+  userStateSchema,
 } from "./user.schemas";
 
 export type TUserData = z.infer<typeof userDataSchema>;
@@ -14,6 +15,7 @@ export type TMeResponse = z.infer<typeof meResponseSchema>;
 export type TEditUserRequest = z.infer<typeof editUserRequestSchema>;
 export type TDeleteUserRequest = z.infer<typeof deleteUserRequestSchema>;
 export type TDeleteUserResponse = z.infer<typeof deleteUserResponseSchema>;
+export type TUserState = z.infer<typeof userStateSchema>;
 
 export interface ILoginFacebookRequest {
   accessToken: string;

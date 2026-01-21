@@ -1,17 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { TUserData } from "./user.types";
+import { TUserState } from "./user.types";
 import { RootState } from "../../store";
 import { api } from "../../api";
 
-interface UserState {
-  userData: TUserData | null;
-  isChangeAvatar: boolean;
-  loading: boolean;
-  error: string | null;
-}
-
-const initialState: UserState = {
+const initialState: TUserState = {
   userData: null,
   isChangeAvatar: false,
   loading: false,
