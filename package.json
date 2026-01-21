@@ -13,7 +13,7 @@
     "build:list": "eas build:list",
     "build:auto": "eas build:configure",
     "lingui:add": "lingui add-locale",
-    "lingui:extract": "lingui extract --clean",
+    "lingui:extract": "lingui extract --clean --workers 1",
     "lingui:compile": "lingui compile --typescript",
     "lingui:compile:ci": "lingui compile --strict",
     "lint": "eslint --max-warnings=500 --quiet --ext .js,.jsx,.ts,.tsx,.mjs 'src/**/*' --cache --cache-location './node_modules/.cache/eslint/.eslintcache'",

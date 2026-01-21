@@ -61,7 +61,10 @@ export const RegistrationLocation: FunctionComponent = () => {
   );
   const buttonPrivacyPolicy = useMemo(
     () => (
-      <Link href={`/${PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy}`} action={{ type: "NAVIGATE" }}>
+      <Link
+        href={`/${PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy}`}
+        action={{ type: "NAVIGATE" }}
+      >
         <Text style={styles.linkTermsPolicy}>{i18n._("Privacy Policy")}</Text>
       </Link>
     ),
@@ -95,7 +98,8 @@ export const RegistrationLocation: FunctionComponent = () => {
           <View style={styles.containerLocation}>
             <Text style={styles.titleLocation}>
               {i18n._(
-                `Allow the ${nameApp} application to determine my location`
+                "Allow the {nameApp} application to determine my location",
+                { nameApp }
               )}
             </Text>
             <Checkbox
@@ -114,7 +118,8 @@ export const RegistrationLocation: FunctionComponent = () => {
           >
             <Text style={styles.titleLocation}>
               {i18n._(
-                `Allow the ${nameApp} app to determine my location in the background`
+                "Allow the {nameApp} app to determine my location in the background",
+                { nameApp }
               )}
             </Text>
             <Checkbox
