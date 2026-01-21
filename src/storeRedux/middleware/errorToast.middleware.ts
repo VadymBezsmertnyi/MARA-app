@@ -13,12 +13,17 @@ errorToastMiddleware.startListening({
     api.endpoints.editUser.matchRejected,
     api.endpoints.deleteUser.matchRejected
   ),
-  effect: (action: any) => {
+  effect: (action) => {
     const error = action.payload as
       | {
           status?: number;
           data?: unknown;
           error?: string;
+        }
+      | undefined;
+    const errorWithMessage = action.error as
+      | {
+          message?: string;
         }
       | undefined;
 
@@ -31,10 +36,10 @@ errorToastMiddleware.startListening({
     } else if (error?.error && typeof error.error === "string")
       errorMessage = error.error;
     else if (
-      "message" in action.error &&
-      typeof action.error.message === "string"
+      "message" in errorWithMessage &&
+      typeof errorWithMessage.message === "string"
     )
-      errorMessage = action.error.message;
+      errorMessage = errorWithMessage.message;
     Toast.show({
       type: "error",
       text1: "Помилка",
@@ -51,7 +56,7 @@ errorToastMiddleware.startListening({
     api.endpoints.getMe.matchFulfilled,
     api.endpoints.editUser.matchFulfilled
   ),
-  effect: (action: any) => {
+  effect: (action) => {
     if (!action.payload)
       Toast.show({
         type: "error",
