@@ -58,8 +58,6 @@ export { default as IconSosMap } from "./IconSosMap";
 export { default as IconStar } from "./IconStar";
 export { default as IconTabMapSelect } from "./IconTabMapSelect";
 export { default as IconTabMap } from "./IconTabMap";
-export { default as IconTabMarketSelect } from "./IconTabMarketSelect";
-export { default as IconTabMarket } from "./IconTabMarket";
 export { default as IconTabNewsSelect } from "./IconTabNewsSelect";
 export { default as IconTabNews } from "./IconTabNews";
 export { default as IconTabSettingsSelect } from "./IconTabSettingsSelect";
