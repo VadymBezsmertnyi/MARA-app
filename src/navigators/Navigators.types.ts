@@ -139,22 +139,6 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
-  [PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange]?: Record<
-    string,
-    string | number | boolean
-  > & {
-    businessMarketId: number;
-  };
-  [PATHS_SETTINGS_SCREENS.settingsBusinessMarketReview]?: Record<
-    string,
-    string | number | boolean
-  > & {
-    businessMarketId: number;
-  };
 };
 
 export type RootWorkshopsScreensParamList = {

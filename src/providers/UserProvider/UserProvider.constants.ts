@@ -24,7 +24,6 @@ export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
     isEnable: false,
     radiusKm: 5,
   },
-  businessMarketId: null,
   subscriptionAdvertIds: [],
   subscriptionEventIds: [],
   subscriptionWorkshopIds: [],

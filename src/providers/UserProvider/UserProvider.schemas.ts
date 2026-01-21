@@ -6,7 +6,6 @@ import {
   regionDbSchema,
 } from "../PlacesProvider/PlacesProvider.schemas";
 import { workshopSchema } from "../WorkshopsProvider/WorkshopsProvider.schemas";
-import { businessMarketSchema } from "../BusinessProvider/BusinessProvider.schemas";
 import { eventSchema } from "../EventsProvider/EventsProvider.schemas";
 import {
   subscriptionAdvertSchema,
@@ -71,7 +70,6 @@ export const userDataS = z.object({
     isEnable: z.boolean(),
     radiusKm: z.number(),
   }),
-  businessMarketId: businessMarketSchema.nullable(),
   subscriptionAdvertIds: z.array(subscriptionAdvertSchema),
   subscriptionEventIds: z.array(subscriptionAdvertUpdateSchema),
   subscriptionWorkshopIds: z.array(subscriptionWorkshopSchema),
