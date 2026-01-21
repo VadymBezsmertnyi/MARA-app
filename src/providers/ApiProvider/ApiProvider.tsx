@@ -68,9 +68,14 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
       // TODO for test
       const isCurrent = schema.safeParse(response.data);
       if (isCurrent.success) return isCurrent.data;
-      console.warn("currentUrl", currentUrl);
+      /* console.warn("currentUrl", currentUrl);
       console.warn("response.data", response.data);
-      console.warn("isCurrent", isCurrent);
+      console.warn("isCurrent", isCurrent); */
+      console.warn("error zod:", {
+        currentUrl,
+        data: response.data,
+        isCurrent,
+      });
 
       return null;
     } catch (error: any) {
@@ -90,20 +95,21 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
           if (isCurrent.success) {
             return isCurrent.data;
           }
-          console.warn("error-402-currentUrl: ", currentUrl);
-          console.warn("error-402-responseOther.data: ", responseOther.data);
-          console.warn("error-402-isCurrent: ", isCurrent);
+          console.warn("error-402-currentUrl: ", {
+            currentUrl,
+            data: responseOther.data,
+            isCurrent,
+          });
           return null;
         }
-        if (__DEV__) console.warn("error: ", error, currentUrl, currentConfig);
+        if (__DEV__)
+          console.warn("error: ", { error, currentUrl, currentConfig });
       } catch (error402) {
         if (__DEV__)
-          console.warn(
-            "error-402-verifyTokens?.refreshToken",
+          console.warn("error-402-verifyTokens?.refreshToken", {
             error402,
-            "currentUrl: ",
-            currentUrl
-          );
+            currentUrl,
+          });
 
         throw error402;
       }
