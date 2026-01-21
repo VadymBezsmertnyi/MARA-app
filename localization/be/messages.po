@@ -15,347 +15,347 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
-msgstr ""
+msgstr "Прабачце, але майстэрні не знойдзены па фільтрах"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
-msgstr ""
+msgstr "Прабачце, няма бліжэйшых майстэрняў"
 
 #. js-lingui-explicit-id
 msgid "Not comments"
-msgstr ""
+msgstr "Няма каментарыяў"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
-msgstr ""
+msgstr "Па адлегласці:"
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
-msgstr ""
+msgstr "ад бліжэйшых да найдалейшых"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
-msgstr ""
+msgstr "Па рэйтынгу:"
 
 #. js-lingui-explicit-id
 msgid "from highest to lowest"
-msgstr ""
+msgstr "ад найвышэйшых да найніжэйшых"
 
 #. js-lingui-explicit-id
 msgid "By number of comments:"
-msgstr ""
+msgstr "Па колькасці каментарыяў:"
 
 #. js-lingui-explicit-id
 msgid "Only with rating:"
-msgstr ""
+msgstr "Толькі з рэйтынгам:"
 
 #. js-lingui-explicit-id
 msgid "About us:"
-msgstr ""
+msgstr "Пра нас:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
-msgstr ""
+msgstr "Чытаць поўнае апісанне..."
 
 #. js-lingui-explicit-id
 msgid "Leave a review"
-msgstr ""
+msgstr "Пакінуць водгук"
 
 #. js-lingui-explicit-id
 msgid "The work we do:"
-msgstr ""
+msgstr "Працы, якія мы выконваем:"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
-msgstr ""
+msgstr "Водгукі:"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
-msgstr ""
+msgstr "Мае майстэрні"
 
 #. js-lingui-explicit-id
 msgid "Sorry!"
-msgstr ""
+msgstr "Прабачце!"
 
 #. js-lingui-explicit-id
 msgid "You don't have {typeItem}."
-msgstr ""
+msgstr "У вас няма {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Profile"
-msgstr ""
+msgstr "Профіль"
 
 #. js-lingui-explicit-id
 msgid "Logout"
-msgstr ""
+msgstr "Выйсці"
 
 #. js-lingui-explicit-id
 msgid "My adverts"
-msgstr ""
+msgstr "Мае аб'явы"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
-msgstr ""
+msgstr "Ваш профіль"
 
 #. js-lingui-explicit-id
 msgid "Create"
-msgstr ""
+msgstr "Стварыць"
 
 #. js-lingui-explicit-id
 msgid "My events"
-msgstr ""
+msgstr "Мае падзеі"
 
 #. js-lingui-explicit-id
 msgid "Allow login using Touch ID"
-msgstr ""
+msgstr "Дазволіць уваход з дапамогай Touch ID"
 
 #. js-lingui-explicit-id
 msgid "Allow Touch ID to access the MARA app."
-msgstr ""
+msgstr "Дазволіць Touch ID доступ да дадатка MARA."
 
 #. js-lingui-explicit-id
 msgid "Allow"
-msgstr ""
+msgstr "Дазволіць"
 
 #. js-lingui-explicit-id
 msgid "Allow later"
-msgstr ""
+msgstr "Дазволіць пазней"
 
 #. js-lingui-explicit-id
 msgid "Terms of Service"
-msgstr ""
+msgstr "Умовы абслугоўвання"
 
 #. js-lingui-explicit-id
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
+msgstr "Для поўнага выкарыстання ўсіх функцый сэрвісу неабходна надаць дадатку дазвол на вызначэнне вашага месцазнаходжання:"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
+msgstr "Дазволіць дадатку {nameApp} вызначаць маё месцазнаходжанне"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
+msgstr "Дазволіць дадатку {nameApp} вызначаць маё месцазнаходжанне на заднім плане"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
-msgstr ""
+msgstr "і выбраць горад пражывання:"
 
 #. js-lingui-explicit-id
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
+msgstr "Націснуўшы кнопку \"Працягнуць\", вы згаджаецеся з {buttonTermsService} і {buttonPrivacyPolicy}"
 
 #. js-lingui-explicit-id
 msgid "We recommend filling out the profile information"
-msgstr ""
+msgstr "Рэкамендуем запоўніць інфармацыю прафілю"
 
 #. js-lingui-explicit-id
 msgid "Allow login using Face ID"
-msgstr ""
+msgstr "Дазволіць уваход з дапамогай Face ID"
 
 #. js-lingui-explicit-id
 msgid "Enable logging into the app using Face ID"
-msgstr ""
+msgstr "Уключыць уваход у дадатак з дапамогай Face ID"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events:"
-msgstr ""
+msgstr "Бліжэйшыя падзеі:"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming events"
-msgstr ""
+msgstr "Прабачце, няма бліжэйшых падзей"
 
 #. js-lingui-explicit-id
 msgid "More events"
-msgstr ""
+msgstr "Больш падзей"
 
 #. js-lingui-explicit-id
 msgid "Past events:"
-msgstr ""
+msgstr "Мінулыя падзеі:"
 
 #. js-lingui-explicit-id
 msgid "No events have passed"
-msgstr ""
+msgstr "Падзеі не праходзілі"
 
 #. js-lingui-explicit-id
 msgid "Now"
-msgstr ""
+msgstr "Зараз"
 
 #. js-lingui-explicit-id
 msgid "Participation fee"
-msgstr ""
+msgstr "Плата за ўдзел"
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no products were found by the filters"
-msgstr ""
+msgstr "Прабачце, але прадукты не знойдзены па фільтрах"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no available items"
-msgstr ""
+msgstr "Прабачце, няма даступных тавараў"
 
 #. js-lingui-explicit-id
 msgid "Latest"
-msgstr ""
+msgstr "Апошнія"
 
 #. js-lingui-explicit-id
 msgid "Cheapest"
-msgstr ""
+msgstr "Найтаннейшыя"
 
 #. js-lingui-explicit-id
 msgid "Most expensive"
-msgstr ""
+msgstr "Найдражэйшыя"
 
 #. js-lingui-explicit-id
 msgid "Currency:"
-msgstr ""
+msgstr "Валюта:"
 
 #. js-lingui-explicit-id
 msgid "Views:"
-msgstr ""
+msgstr "Прагляды:"
 
 #. js-lingui-explicit-id
 msgid "Write"
-msgstr ""
+msgstr "Напісаць"
 
 #. js-lingui-explicit-id
 msgid "Call"
-msgstr ""
+msgstr "Патэлефанаваць"
 
 #. js-lingui-explicit-id
 msgid "Your contact information"
-msgstr ""
+msgstr "Ваша кантактная інфармацыя"
 
 #. js-lingui-explicit-id
 msgid "Settings"
-msgstr ""
+msgstr "Налады"
 
 #. js-lingui-explicit-id
 msgid "Dark theme"
-msgstr ""
+msgstr "Цёмная тэма"
 
 #. js-lingui-explicit-id
 msgid "Automatically detect location"
-msgstr ""
+msgstr "Аўтаматычна вызначаць месцазнаходжанне"
 
 #. js-lingui-explicit-id
 msgid "Do you want to send an SOS signal?"
-msgstr ""
+msgstr "Вы хочаце адправіць сігнал SOS?"
 
 #. js-lingui-explicit-id
 msgid "Access to geolocation when using the application"
-msgstr ""
+msgstr "Доступ да геалакацыі пры выкарыстанні дадатка"
 
 #. js-lingui-explicit-id
 msgid "Access to geolocation in the background mode"
-msgstr ""
+msgstr "Доступ да геалакацыі ў фонавым рэжыме"
 
 #. js-lingui-explicit-id
 msgid "Settings and permissions should be enabled"
-msgstr ""
+msgstr "Налады і дазволы павінны быць уключаны"
 
 #. js-lingui-explicit-id
 msgid "Will automatically turn off after 20-30 minutes"
-msgstr ""
+msgstr "Аўтаматычна выключыцца праз 20-30 хвілін"
 
 #. js-lingui-explicit-id
 msgid "Notification of SOS signal"
-msgstr ""
+msgstr "Апавяшчэнне аб сігнале SOS"
 
 #. js-lingui-explicit-id
 msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr ""
+msgstr "Для атрымання сігналаў SOS наладзьце радыус прыёму сігналу ад цэнтра вашага горада:"
 
 #. js-lingui-explicit-id
 msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
+msgstr "На якую платформу вы хочаце адправіць запрашэнне на ўстаноўку дадатка?"
 
 #. js-lingui-explicit-id
 msgid "Last update"
-msgstr ""
+msgstr "Апошняе абнаўленне"
 
 #. js-lingui-explicit-id
 msgid "Someone needs help within a {distance} km radius"
-msgstr ""
+msgstr "Нехта патрабуе дапамогі ў радыусе {distance} км"
 
 #. js-lingui-explicit-id
 msgid "The nearest event:"
-msgstr ""
+msgstr "Бліжэйшая падзея:"
 
 #. js-lingui-explicit-id
 msgid "{distance} km"
-msgstr ""
+msgstr "{distance} км"
 
 #. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
-msgstr ""
+msgstr "Працягнуць з {typeSocial}"
 
 #. js-lingui-explicit-id
 msgid "or sign up using:"
-msgstr ""
+msgstr "або зарэгістравацца праз:"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
-msgstr ""
+msgstr "Сардэчна запрашаем"
 
 #. js-lingui-explicit-id
 msgid "Main"
-msgstr ""
+msgstr "Галоўная"
 
 #. js-lingui-explicit-id
 msgid "Map"
-msgstr ""
+msgstr "Карта"
 
 #. js-lingui-explicit-id
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
+msgstr "Няправільна ўведзены нумар тэлефона або няправільна выбраны код краіны"
 
 #. js-lingui-explicit-id
 msgid "Password must contain at least 8 characters"
-msgstr ""
+msgstr "Пароль павінен змяшчаць мінімум 8 сімвалаў"
 
 #. js-lingui-explicit-id
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Паролі не супадаюць"
 
 #. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
-msgstr ""
+msgstr "Тыпы прац для мотацыклаў:"
 
 #. js-lingui-explicit-id
 msgid "Types of work for automobile transport:"
-msgstr ""
+msgstr "Тыпы прац для аўтамабіляў:"
 
 #. js-lingui-explicit-id
 msgid "Select a location on the map"
-msgstr ""
+msgstr "Выберыце месца на карце"
 
 #. js-lingui-explicit-id
 msgid "Move and change the location"
-msgstr ""
+msgstr "Перамясціць і змяніць месцазнаходжанне"
 
 #. js-lingui-explicit-id
 msgid "Specify the city"
-msgstr ""
+msgstr "Пазначце горад"
 
 #. js-lingui-explicit-id
 msgid "Please enter text for searching"
-msgstr ""
+msgstr "Калі ласка, увядзіце тэкст для пошуку"
 
 #. js-lingui-explicit-id
 msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
+msgstr "Калі ў спісе няма падыходзячага варыянту, выкарыстоўвайце 'Глыбокі пошук'"
 
 #. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
-msgstr ""
+msgstr "Вы ўпэўнены, што хочаце выдаліць?"
 
 #. js-lingui-explicit-id
 msgid "Resend the code"
-msgstr ""
+msgstr "Адправіць код зноў"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
-msgstr ""
+msgstr "Выбар мовы"
 
 #. js-lingui-explicit-id
 msgid "Workshops"

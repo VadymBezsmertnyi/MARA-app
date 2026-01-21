@@ -15,347 +15,347 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
-msgstr ""
+msgstr "Omlouváme se, ale žádné dílny nebyly nalezeny podle filtrů"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
-msgstr ""
+msgstr "Omlouváme se, nejsou žádné nadcházející dílny"
 
 #. js-lingui-explicit-id
 msgid "Not comments"
-msgstr ""
+msgstr "Žádné komentáře"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
-msgstr ""
+msgstr "Podle vzdálenosti:"
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
-msgstr ""
+msgstr "od nejbližších po nejvzdálenější"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
-msgstr ""
+msgstr "Podle hodnocení:"
 
 #. js-lingui-explicit-id
 msgid "from highest to lowest"
-msgstr ""
+msgstr "od nejvyšších po nejnižší"
 
 #. js-lingui-explicit-id
 msgid "By number of comments:"
-msgstr ""
+msgstr "Podle počtu komentářů:"
 
 #. js-lingui-explicit-id
 msgid "Only with rating:"
-msgstr ""
+msgstr "Pouze s hodnocením:"
 
 #. js-lingui-explicit-id
 msgid "About us:"
-msgstr ""
+msgstr "O nás:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
-msgstr ""
+msgstr "Přečíst celý popis..."
 
 #. js-lingui-explicit-id
 msgid "Leave a review"
-msgstr ""
+msgstr "Zanechat recenzi"
 
 #. js-lingui-explicit-id
 msgid "The work we do:"
-msgstr ""
+msgstr "Práce, které děláme:"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
-msgstr ""
+msgstr "Recenze:"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
-msgstr ""
+msgstr "Moje dílny"
 
 #. js-lingui-explicit-id
 msgid "Sorry!"
-msgstr ""
+msgstr "Omlouváme se!"
 
 #. js-lingui-explicit-id
 msgid "You don't have {typeItem}."
-msgstr ""
+msgstr "Nemáte {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #. js-lingui-explicit-id
 msgid "Logout"
-msgstr ""
+msgstr "Odhlásit se"
 
 #. js-lingui-explicit-id
 msgid "My adverts"
-msgstr ""
+msgstr "Moje inzeráty"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
-msgstr ""
+msgstr "Váš profil"
 
 #. js-lingui-explicit-id
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 #. js-lingui-explicit-id
 msgid "My events"
-msgstr ""
+msgstr "Moje události"
 
 #. js-lingui-explicit-id
 msgid "Allow login using Touch ID"
-msgstr ""
+msgstr "Povolit přihlášení pomocí Touch ID"
 
 #. js-lingui-explicit-id
 msgid "Allow Touch ID to access the MARA app."
-msgstr ""
+msgstr "Povolit Touch ID přístup k aplikaci MARA."
 
 #. js-lingui-explicit-id
 msgid "Allow"
-msgstr ""
+msgstr "Povolit"
 
 #. js-lingui-explicit-id
 msgid "Allow later"
-msgstr ""
+msgstr "Povolit později"
 
 #. js-lingui-explicit-id
 msgid "Terms of Service"
-msgstr ""
+msgstr "Podmínky služby"
 
 #. js-lingui-explicit-id
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
+msgstr "Pro plné využití všech funkcí služby je třeba udělit aplikaci oprávnění k určení vaší polohy:"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
+msgstr "Povolit aplikaci {nameApp} určit mou polohu"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
+msgstr "Povolit aplikaci {nameApp} určit mou polohu na pozadí"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
-msgstr ""
+msgstr "a vybrat město bydliště:"
 
 #. js-lingui-explicit-id
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
+msgstr "Kliknutím na tlačítko \"Pokračovat\" souhlasíte s {buttonTermsService} a {buttonPrivacyPolicy}"
 
 #. js-lingui-explicit-id
 msgid "We recommend filling out the profile information"
-msgstr ""
+msgstr "Doporučujeme vyplnit informace o profilu"
 
 #. js-lingui-explicit-id
 msgid "Allow login using Face ID"
-msgstr ""
+msgstr "Povolit přihlášení pomocí Face ID"
 
 #. js-lingui-explicit-id
 msgid "Enable logging into the app using Face ID"
-msgstr ""
+msgstr "Povolit přihlášení do aplikace pomocí Face ID"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events:"
-msgstr ""
+msgstr "Nadcházející události:"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming events"
-msgstr ""
+msgstr "Omlouváme se, nejsou žádné nadcházející události"
 
 #. js-lingui-explicit-id
 msgid "More events"
-msgstr ""
+msgstr "Více událostí"
 
 #. js-lingui-explicit-id
 msgid "Past events:"
-msgstr ""
+msgstr "Minulé události:"
 
 #. js-lingui-explicit-id
 msgid "No events have passed"
-msgstr ""
+msgstr "Žádné události neproběhly"
 
 #. js-lingui-explicit-id
 msgid "Now"
-msgstr ""
+msgstr "Nyní"
 
 #. js-lingui-explicit-id
 msgid "Participation fee"
-msgstr ""
+msgstr "Poplatek za účast"
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no products were found by the filters"
-msgstr ""
+msgstr "Omlouváme se, ale žádné produkty nebyly nalezeny podle filtrů"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no available items"
-msgstr ""
+msgstr "Omlouváme se, nejsou k dispozici žádné položky"
 
 #. js-lingui-explicit-id
 msgid "Latest"
-msgstr ""
+msgstr "Nejnovější"
 
 #. js-lingui-explicit-id
 msgid "Cheapest"
-msgstr ""
+msgstr "Nejlevnější"
 
 #. js-lingui-explicit-id
 msgid "Most expensive"
-msgstr ""
+msgstr "Nejdražší"
 
 #. js-lingui-explicit-id
 msgid "Currency:"
-msgstr ""
+msgstr "Měna:"
 
 #. js-lingui-explicit-id
 msgid "Views:"
-msgstr ""
+msgstr "Zobrazení:"
 
 #. js-lingui-explicit-id
 msgid "Write"
-msgstr ""
+msgstr "Napsat"
 
 #. js-lingui-explicit-id
 msgid "Call"
-msgstr ""
+msgstr "Zavolat"
 
 #. js-lingui-explicit-id
 msgid "Your contact information"
-msgstr ""
+msgstr "Vaše kontaktní informace"
 
 #. js-lingui-explicit-id
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #. js-lingui-explicit-id
 msgid "Dark theme"
-msgstr ""
+msgstr "Tmavý motiv"
 
 #. js-lingui-explicit-id
 msgid "Automatically detect location"
-msgstr ""
+msgstr "Automaticky zjistit polohu"
 
 #. js-lingui-explicit-id
 msgid "Do you want to send an SOS signal?"
-msgstr ""
+msgstr "Chcete odeslat signál SOS?"
 
 #. js-lingui-explicit-id
 msgid "Access to geolocation when using the application"
-msgstr ""
+msgstr "Přístup k geolokaci při používání aplikace"
 
 #. js-lingui-explicit-id
 msgid "Access to geolocation in the background mode"
-msgstr ""
+msgstr "Přístup k geolokaci v režimu na pozadí"
 
 #. js-lingui-explicit-id
 msgid "Settings and permissions should be enabled"
-msgstr ""
+msgstr "Nastavení a oprávnění by měly být povoleny"
 
 #. js-lingui-explicit-id
 msgid "Will automatically turn off after 20-30 minutes"
-msgstr ""
+msgstr "Automaticky se vypne po 20-30 minutách"
 
 #. js-lingui-explicit-id
 msgid "Notification of SOS signal"
-msgstr ""
+msgstr "Oznámení o signálu SOS"
 
 #. js-lingui-explicit-id
 msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr ""
+msgstr "Pro příjem signálů SOS nastavte poloměr příjmu signálu od středu vašeho města:"
 
 #. js-lingui-explicit-id
 msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
+msgstr "Na jakou platformu chcete odeslat pozvánku k instalaci aplikace?"
 
 #. js-lingui-explicit-id
 msgid "Last update"
-msgstr ""
+msgstr "Poslední aktualizace"
 
 #. js-lingui-explicit-id
 msgid "Someone needs help within a {distance} km radius"
-msgstr ""
+msgstr "Někdo potřebuje pomoc v okruhu {distance} km"
 
 #. js-lingui-explicit-id
 msgid "The nearest event:"
-msgstr ""
+msgstr "Nejbližší událost:"
 
 #. js-lingui-explicit-id
 msgid "{distance} km"
-msgstr ""
+msgstr "{distance} km"
 
 #. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
-msgstr ""
+msgstr "Pokračovat s {typeSocial}"
 
 #. js-lingui-explicit-id
 msgid "or sign up using:"
-msgstr ""
+msgstr "nebo se zaregistrovat pomocí:"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
-msgstr ""
+msgstr "Vítejte"
 
 #. js-lingui-explicit-id
 msgid "Main"
-msgstr ""
+msgstr "Hlavní"
 
 #. js-lingui-explicit-id
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
 #. js-lingui-explicit-id
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
+msgstr "Nesprávně zadané telefonní číslo nebo nesprávně vybraný kód země telefonního čísla"
 
 #. js-lingui-explicit-id
 msgid "Password must contain at least 8 characters"
-msgstr ""
+msgstr "Heslo musí obsahovat alespoň 8 znaků"
 
 #. js-lingui-explicit-id
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Hesla se neshodují"
 
 #. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
-msgstr ""
+msgstr "Typy práce pro motocykly:"
 
 #. js-lingui-explicit-id
 msgid "Types of work for automobile transport:"
-msgstr ""
+msgstr "Typy práce pro automobily:"
 
 #. js-lingui-explicit-id
 msgid "Select a location on the map"
-msgstr ""
+msgstr "Vyberte místo na mapě"
 
 #. js-lingui-explicit-id
 msgid "Move and change the location"
-msgstr ""
+msgstr "Přesunout a změnit polohu"
 
 #. js-lingui-explicit-id
 msgid "Specify the city"
-msgstr ""
+msgstr "Zadejte město"
 
 #. js-lingui-explicit-id
 msgid "Please enter text for searching"
-msgstr ""
+msgstr "Zadejte prosím text pro vyhledávání"
 
 #. js-lingui-explicit-id
 msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
+msgstr "Pokud v seznamu není vhodná možnost, použijte 'Hloubkové vyhledávání'"
 
 #. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
-msgstr ""
+msgstr "Jste si jisti, že chcete smazat?"
 
 #. js-lingui-explicit-id
 msgid "Resend the code"
-msgstr ""
+msgstr "Znovu odeslat kód"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
-msgstr ""
+msgstr "Výběr jazyka"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
