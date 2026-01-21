@@ -5,7 +5,6 @@ import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript
 import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import {
@@ -19,7 +18,10 @@ import { useLocalesProvider } from "../../../../localization/localization.provid
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useBusinessProvider } from "../../../providers/BusinessProvider/BusinessProvider";
 import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
-import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+import {
+  useDropDownAlertProvider,
+  DropdownAlertType,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";

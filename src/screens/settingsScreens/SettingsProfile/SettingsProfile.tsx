@@ -11,7 +11,6 @@ import { CommonActions } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { DropdownAlertType } from "react-native-dropdownalert";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
@@ -22,7 +21,10 @@ import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
-import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+import {
+  DropdownAlertType,
+  useDropDownAlertProvider,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";

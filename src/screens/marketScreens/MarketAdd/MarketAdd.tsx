@@ -11,7 +11,6 @@ import dayjs from "dayjs";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
@@ -32,7 +31,10 @@ import {
   useMarketProvider,
 } from "../../../providers/MarketProvider/MarketProvider";
 import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
-import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+import {
+  DropdownAlertType,
+  useDropDownAlertProvider,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components

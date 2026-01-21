@@ -1,14 +1,16 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { UserDataT } from "../../UserProvider.types";
 
 // providers
 import { useLocalesProvider } from "../../../../../localization/localization.provider";
-import { useDropDownAlertProvider } from "../../../DropDownAlertProvider/DropDownAlertProvider";
+import {
+  useDropDownAlertProvider,
+  DropdownAlertType,
+} from "../../../DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
 import { compressAndProcessImages } from "../../../../helps/helps";

@@ -3,7 +3,6 @@ import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 //types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";
@@ -21,7 +20,10 @@ import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
-import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+import {
+  useDropDownAlertProvider,
+  DropdownAlertType,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Header } from "../../../components/Header/Header";
