@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import qs from "qs";
 import { z } from "zod";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import {
@@ -29,7 +28,10 @@ import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
 import { usePaymentProvider } from "../PaymentProvider/PaymentProvider";
 import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
-import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
+import {
+  DropdownAlertType,
+  useDropDownAlertProvider,
+} from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";

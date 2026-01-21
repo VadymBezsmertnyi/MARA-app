@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useMemo, useContext } from "react";
 import { I18nProvider } from "@lingui/react";
 import { Messages, setupI18n } from "@lingui/core";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import { Language, LocalesContext, Props } from "./localization.types";
 
 // providers
-import { useDropDownAlertProvider } from "../src/providers/DropDownAlertProvider/DropDownAlertProvider";
+import {
+  DropdownAlertType,
+  useDropDownAlertProvider,
+} from "../src/providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
 import {

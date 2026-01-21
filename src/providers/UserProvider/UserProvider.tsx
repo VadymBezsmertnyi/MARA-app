@@ -2,7 +2,6 @@ import React, { createContext, useContext, useMemo, useState } from "react";
 import { Platform } from "react-native";
 import { User } from "@react-native-google-signin/google-signin";
 import { z } from "zod";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 // types
 import type { FunctionComponent } from "react";
@@ -18,7 +17,10 @@ import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { useBiometricProvider } from "../BiometricProvider/BiometricProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
 import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
-import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
+import {
+  DropdownAlertType,
+  useDropDownAlertProvider,
+} from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";

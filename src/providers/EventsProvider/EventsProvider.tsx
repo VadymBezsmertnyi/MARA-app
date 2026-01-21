@@ -20,7 +20,10 @@ import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
 import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
-import { useDropDownAlertProvider } from "../DropDownAlertProvider/DropDownAlertProvider";
+import {
+  DropdownAlertType,
+  useDropDownAlertProvider,
+} from "../DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
@@ -30,7 +33,6 @@ import { PATHS } from "../paths.constants";
 
 // schemas
 import { eventSchema, resultEventsSchema } from "./EventsProvider.schemas";
-import { DropdownAlertType } from "react-native-dropdownalert";
 
 type NewEventType = Omit<EventType, "_id" | "userId" | "likeUserIds"> & {
   userId: string;
