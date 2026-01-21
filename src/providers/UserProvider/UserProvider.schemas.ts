@@ -8,7 +8,6 @@ import {
 import { workshopSchema } from "../WorkshopsProvider/WorkshopsProvider.schemas";
 import { businessMarketSchema } from "../BusinessProvider/BusinessProvider.schemas";
 import { eventSchema } from "../EventsProvider/EventsProvider.schemas";
-import { productSchema } from "../MarketProvider/MarketProvider.schemas";
 import {
   subscriptionAdvertSchema,
   subscriptionAdvertUpdateSchema,
@@ -56,7 +55,6 @@ export const userDataS = z.object({
   email: z.string().nullable(),
   eventsIds: z.array(eventSchema),
   workshopsIds: z.array(workshopSchema),
-  productsIds: z.array(productSchema),
   isCheckBiometric: z.boolean().nullable(),
   languageLocal: z.enum(languagesKeys),
   isNewUser: z.boolean(),
