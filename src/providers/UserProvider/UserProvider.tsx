@@ -61,7 +61,7 @@ const UserProvider: FunctionComponent<Props> = (props) => {
       platform: Platform.OS,
       amountWorkshops: newUserData.workshopsIds.length.toString(),
       amountEvents: newUserData.eventsIds.length.toString(),
-      amountProducts: newUserData.productsIds.length.toString(),
+      amountProducts: "0",
     };
     await onSetUserProperties(newUserDataAnalytics);
   };

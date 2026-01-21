@@ -6,7 +6,6 @@ export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
   avatar: null,
   eventsIds: [],
   workshopsIds: [],
-  productsIds: [],
   isCheckBiometric: null,
   email: null,
   languageLocal: "en",
