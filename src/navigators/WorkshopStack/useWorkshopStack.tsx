@@ -1,5 +1,3 @@
-import { t } from "@lingui/macro";
-
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
@@ -18,21 +16,21 @@ export const useWorkshopStack = () => {
     {
       id: PATHS_WORKSHOP_SCREENS.workshopMain,
       name: PATHS_WORKSHOP_SCREENS.workshopMain,
-      title: t(i18n)`Workshops`,
+      title: i18n._("Workshops"),
       headerShown: false,
       component: WorkshopMain,
     },
     {
       id: PATHS_WORKSHOP_SCREENS.workshopItem,
       name: PATHS_WORKSHOP_SCREENS.workshopItem,
-      title: t(i18n)`Workshop`,
+      title: i18n._("Workshop"),
       headerShown: false,
       component: WorkshopsItem,
     },
     {
       id: PATHS_WORKSHOP_SCREENS.workshopAdd,
       name: PATHS_WORKSHOP_SCREENS.workshopAdd,
-      title: t(i18n)`Add workshop`,
+      title: i18n._("Add workshop"),
       headerShown: false,
       component: WorkshopAdd,
     },

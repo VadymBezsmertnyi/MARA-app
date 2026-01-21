@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
@@ -68,7 +67,7 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
         <View style={styles.containerHeader}>
           <View style={styles.boxHeaderEmpty} />
           <Text style={styles.titleHeader}>
-            <Trans>Notification of SOS signal</Trans>
+            {i18n._("Notification of SOS signal")}
           </Text>
           <TouchableOpacity
             accessibilityLabel={i18n._(
@@ -82,10 +81,9 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
         </View>
         <View style={styles.containerBody}>
           <Text style={styles.titleBody}>
-            <Trans>
-              To receive SOS signals, set up the radius of signal reception from
-              the center of your city:
-            </Trans>
+            {i18n._(
+              "To receive SOS signals, set up the radius of signal reception from the center of your city:"
+            )}
           </Text>
           <Input
             disabled={userData?.settingsSos.isEnable}
@@ -110,7 +108,7 @@ export const ModalSettingsSos: FunctionComponent<ModalSettingsSosProps> = ({
             style={containerCheckboxStyles}
           >
             <Text numberOfLines={2} style={styles.titleDarkTheme}>
-              <Trans>Notification of SOS signal</Trans>
+              {i18n._("Notification of SOS signal")}
             </Text>
             <Checkbox
               disabled={radius === 0}

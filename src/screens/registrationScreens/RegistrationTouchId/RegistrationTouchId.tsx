@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { Trans, t } from "@lingui/macro";
 
 // providers
 import { useBiometricProvider } from "../../../providers/BiometricProvider/BiometricProvider";
@@ -64,10 +63,10 @@ export const RegistrationTouchId: FunctionComponent = () => {
       </View>
       <View style={styles.containerTitles}>
         <Text numberOfLines={2} style={styles.title}>
-          <Trans>Allow login using Touch ID</Trans>
+          {i18n._("Allow login using Touch ID")}
         </Text>
         <Text numberOfLines={2} style={styles.subTitle}>
-          <Trans>Allow Touch ID to access the {nameApp} app.</Trans>
+          {i18n._("Allow Touch ID to access the MARA app.")}
         </Text>
       </View>
       <View style={styles.containerIcon}>
@@ -75,9 +74,9 @@ export const RegistrationTouchId: FunctionComponent = () => {
         <Text style={styles.titleIcon}>Touch ID</Text>
       </View>
       <View style={styles.containerButtons}>
-        <ButtonCustom title={t(i18n)`Allow`} onSubmit={onAllow} />
+        <ButtonCustom title={i18n._("Allow")} onSubmit={onAllow} />
         <ButtonCustom
-          title={t(i18n)`Allow later`}
+          title={i18n._("Allow later")}
           onSubmit={onAllowLater}
           type="transparent"
         />

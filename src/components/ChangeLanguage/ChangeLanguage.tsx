@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 import { Shadow } from "react-native-shadow-2";
 
 // types
@@ -104,7 +103,7 @@ export const ChangeLanguage: FunctionComponent = () => {
             <Shadow stretch>
               <View style={styles.headerModal}>
                 <Text style={styles.titleModal}>
-                  <Trans>Language selection</Trans>
+                  {i18n._("Language selection")}
                 </Text>
                 <LinearGradientCustom style={styles.lineHeader} />
                 <Input

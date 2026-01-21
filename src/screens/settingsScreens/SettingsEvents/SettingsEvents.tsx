@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
@@ -61,9 +60,7 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
       <View style={containerStyles}>
         <View style={styles.containerHeader}>
           <View style={styles.boxHeaderEmpty} />
-          <Text style={styles.titleHeader}>
-            <Trans>My events</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("My events")}</Text>
           <TouchableOpacity
             accessibilityLabel={i18n._(
               "Button for closing the settings events screen"
@@ -81,11 +78,9 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
               imageSrc={notItemsImage}
             />
             <View style={styles.titlesNotElements}>
+              <Text style={styles.titleNotElements}>{i18n._("Sorry!")}</Text>
               <Text style={styles.titleNotElements}>
-                <Trans>Sorry!</Trans>
-              </Text>
-              <Text style={styles.titleNotElements}>
-                <Trans>You don't have {typeItem}.</Trans>
+                {i18n._("You don't have {typeItem}.", { typeItem })}
               </Text>
             </View>
           </View>
@@ -131,9 +126,7 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
           >
             <View style={styles.buttonAdd}>
               <IconPlus width={16} height={16} fill={colors.white} />
-              <Text style={styles.titleAdd}>
-                <Trans>Add event</Trans>
-              </Text>
+              <Text style={styles.titleAdd}>{i18n._("Add event")}</Text>
             </View>
           </ButtonCustom>
         </View>

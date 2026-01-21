@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, StatusBar, Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
 import { Shadow } from "react-native-shadow-2";
 
 // types
@@ -283,9 +282,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
               labelStyle={styles.labelSelect}
             />
             <View style={styles.containerCurrencies}>
-              <Text style={styles.labelOther}>
-                <Trans>Currency:</Trans>
-              </Text>
+              <Text style={styles.labelOther}>{i18n._("Currency:")}</Text>
               <View style={styles.listCurrencies}>
                 {listCurrency.map((currency) => (
                   <ButtonCustom

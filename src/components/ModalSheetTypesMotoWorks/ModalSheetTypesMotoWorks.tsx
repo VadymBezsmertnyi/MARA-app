@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import { ScrollView, Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // types
 import { TypeWorkType } from "../../providers/WorkshopsProvider/WorkshopsProvider.types";
@@ -54,7 +53,7 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
       <View style={styles.containerModalTypeWork}>
         <View style={styles.containerHeaderTypeWork}>
           <Text style={styles.titleModalType}>
-            <Trans>Types of work for motorcycle transport:</Trans>
+            {i18n._("Types of work for motorcycle transport:")}
           </Text>
           <LinearGradientCustom style={styles.lineModalType} />
         </View>

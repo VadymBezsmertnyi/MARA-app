@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Trans } from "@lingui/macro";
 import { convertDistance, getDistance } from "geolib";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -79,13 +78,13 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                 )
               : null;
           const isMoto = filters.moto
-            ? workshop.motoTypesWorks.filter(
-                (typeWork) => filters.moto?.includes(typeWork)
+            ? workshop.motoTypesWorks.filter((typeWork) =>
+                filters.moto?.includes(typeWork)
               ).length > 0
             : true;
           const isAuto = filters.auto
-            ? workshop.autoTypesWorks.filter(
-                (typeWork) => filters.auto?.includes(typeWork)
+            ? workshop.autoTypesWorks.filter((typeWork) =>
+                filters.auto?.includes(typeWork)
               ).length > 0
             : true;
           const isDistance =
@@ -248,7 +247,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                 imageSrc={notWorkshopsFilterImage}
               />
               <Text style={styles.titleNotList}>
-                <Trans>Sorry, but no workshops were found by the filters</Trans>
+                {i18n._("Sorry, but no workshops were found by the filters")}
               </Text>
             </View>
           ) : (
@@ -259,7 +258,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                 imageSrc={notWorkshopsImage}
               />
               <Text style={styles.titleNotList}>
-                <Trans>Sorry, there are no upcoming workshops</Trans>
+                {i18n._("Sorry, there are no upcoming workshops")}
               </Text>
             </View>
           )}

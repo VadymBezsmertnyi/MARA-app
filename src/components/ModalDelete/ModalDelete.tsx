@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -53,7 +52,7 @@ export const ModalDelete: FunctionComponent<ModalDeleteProps> = ({
         </View>
         <IconWarningGradient width={130} height={130} />
         <Text style={styles.titleModal}>
-          <Trans>Are you sure you want to delete?</Trans>
+          {i18n._("Are you sure you want to delete?")}
         </Text>
         {subTitle ? <Text style={styles.subTitleModal}>{subTitle}</Text> : null}
         <View style={styles.containerButtons}>

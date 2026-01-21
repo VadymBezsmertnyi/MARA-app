@@ -2,7 +2,6 @@ import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
-import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
@@ -98,11 +97,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   return (
     <View style={containerStyles}>
       <Text style={styles.title}>
-        {params?.isOld ? (
-          <Trans>Past events:</Trans>
-        ) : (
-          <Trans>Upcoming events:</Trans>
-        )}
+        {params?.isOld ? i18n._("Past events:") : i18n._("Upcoming events:")}
       </Text>
       <Input
         value={valueSearch}

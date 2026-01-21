@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, View, ViewStyle } from "react-native";
 import { Link } from "@react-navigation/native";
-import { Trans } from "@lingui/macro";
 
 // types
 import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
@@ -41,16 +40,21 @@ export const RegistrationLocation: FunctionComponent = () => {
   const nameApp = "M.A.R.A.";
 
   const containerStyles: ViewStyle = useMemo(
-    () => [styles.container, { paddingTop: heightStatusBar }] as ViewStyle,
+    () =>
+      [
+        styles.container,
+        { paddingTop: heightStatusBar },
+      ] as unknown as ViewStyle,
     [heightStatusBar]
   );
 
   const buttonTermsService = useMemo(
     () => (
-      <Link to={`/${PATHS_REGISTRATION_SCREENS.registrationTermsOfUse}`}>
-        <Text style={styles.linkTermsPolicy}>
-          <Trans>Terms of Service</Trans>
-        </Text>
+      <Link
+        href={`/${PATHS_REGISTRATION_SCREENS.registrationTermsOfUse}`}
+        action={{ type: "NAVIGATE" }}
+      >
+        <Text style={styles.linkTermsPolicy}>{i18n._("Terms of Service")}</Text>
       </Link>
     ),
     []
@@ -85,17 +89,16 @@ export const RegistrationLocation: FunctionComponent = () => {
         <ScrollView style={styles.containerBody}>
           <View style={styles.containerTitle}>
             <Text style={styles.title}>
-              <Trans>
-                To fully utilize all the features of the service, you need to
-                grant the application permission to determine your location:
-              </Trans>
+              {i18n._(
+                "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+              )}
             </Text>
           </View>
           <View style={styles.containerLocation}>
             <Text style={styles.titleLocation}>
-              <Trans>
-                Allow the {nameApp} application to determine my location
-              </Trans>
+              {i18n._(
+                `Allow the ${nameApp} application to determine my location`
+              )}
             </Text>
             <Checkbox
               accessibilityLabel={i18n._("Toggle on your location")}
@@ -112,10 +115,9 @@ export const RegistrationLocation: FunctionComponent = () => {
             ]}
           >
             <Text style={styles.titleLocation}>
-              <Trans>
-                Allow the {nameApp} app to determine my location in the
-                background
-              </Trans>
+              {i18n._(
+                `Allow the ${nameApp} app to determine my location in the background`
+              )}
             </Text>
             <Checkbox
               // TODO: will do later
@@ -129,7 +131,7 @@ export const RegistrationLocation: FunctionComponent = () => {
           </View>
           <View style={styles.containerCity}>
             <Text style={styles.titleCity}>
-              <Trans>and choose the city of residence:</Trans>
+              {i18n._("and choose the city of residence:")}
             </Text>
             <InputButton
               placeholder={i18n._("Select the city")}
@@ -145,10 +147,13 @@ export const RegistrationLocation: FunctionComponent = () => {
 
         <View style={styles.containerFooter}>
           <Text style={styles.titleTermsPolicy}>
-            <Trans>
-              By clicking the "Continue" button, you agree to the{" "}
-              {buttonTermsService} and {buttonPrivacyPolicy}
-            </Trans>
+            {i18n._(
+              'By clicking the "Continue" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}',
+              {
+                buttonTermsService,
+                buttonPrivacyPolicy,
+              }
+            )}
           </Text>
           <ButtonCustom
             disabled={!city}

@@ -6,7 +6,6 @@ import {
   Text,
   View,
 } from "react-native";
-import { Trans } from "@lingui/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import dayjs from "dayjs";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -376,6 +375,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
         };
         const imagesWithBath64 = await Promise.all(
           productUser.images.map(async (image) => {
+            // TODO: optimize loading images with base64
             const response = await FileSystem.downloadAsync(
               image.url,
               `${FileSystem.documentDirectory}temp.jpg`
@@ -623,7 +623,7 @@ export const MarketAdd: FunctionComponent<MarketAddProps> = ({
           />
           <View style={styles.containerContacts}>
             <Text style={styles.titleContacts}>
-              <Trans>Your contact information</Trans>*:
+              {i18n._("Your contact information")}*:
             </Text>
             <Input
               isRegular

@@ -1,5 +1,3 @@
-import { t } from "@lingui/macro";
-
 // context
 import { useLocalesProvider } from "../../localization/localization.provider";
 
@@ -31,7 +29,7 @@ export const useNavigators = () => {
     {
       id: "welcome",
       name: PATHS_MAIN_SCREENS.welcome,
-      title: t(i18n)`Welcome`,
+      title: i18n._("Welcome"),
       component: Welcome,
       headerShown: false,
       gestureEnabled: false,
@@ -39,7 +37,7 @@ export const useNavigators = () => {
     {
       id: "registration",
       name: PATHS_MAIN_SCREENS.registration,
-      title: t(i18n)`Registration`,
+      title: i18n._("Registration"),
       component: RegistrationStack,
       headerShown: false,
       gestureEnabled: false,
@@ -47,7 +45,7 @@ export const useNavigators = () => {
     {
       id: "main",
       name: PATHS_MAIN_SCREENS.main,
-      title: t(i18n)`Main`,
+      title: i18n._("Main"),
       component: MenuDrawer,
       headerShown: false,
       gestureEnabled: false,

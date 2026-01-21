@@ -3,7 +3,6 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { ScrollView } from "react-native-gesture-handler";
-import { Trans } from "@lingui/macro";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
@@ -73,9 +72,7 @@ export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
       <View style={containerStyles}>
         <View style={styles.containerHeader}>
           <View style={styles.boxHeaderEmpty} />
-          <Text style={styles.titleHeader}>
-            <Trans>My adverts</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("My adverts")}</Text>
           <TouchableOpacity
             accessibilityLabel={i18n._(
               "Button for closing the settings products screen"
@@ -93,11 +90,9 @@ export const SettingsProducts: FunctionComponent<SettingsProductsProps> = ({
               imageSrc={notItemsImage}
             />
             <View style={styles.titlesNotElements}>
+              <Text style={styles.titleNotElements}>{i18n._("Sorry!")}</Text>
               <Text style={styles.titleNotElements}>
-                <Trans>Sorry!</Trans>
-              </Text>
-              <Text style={styles.titleNotElements}>
-                <Trans>You don't have {typeItem}.</Trans>
+                {i18n._("You don't have {typeItem}.", { typeItem })}
               </Text>
             </View>
           </View>

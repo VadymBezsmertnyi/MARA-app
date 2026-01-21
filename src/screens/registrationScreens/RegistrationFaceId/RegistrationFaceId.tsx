@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
-import { Trans, t } from "@lingui/macro";
 
 // providers
 import { useBiometricProvider } from "../../../providers/BiometricProvider/BiometricProvider";
@@ -33,9 +32,12 @@ export const RegistrationFaceId: FunctionComponent = () => {
   const { userData, editUser } = useUserProvider();
   const { checkBiometric } = useBiometricProvider();
   const { heightStatusBar } = useThemeProvider();
-  const nameApp = "MARA";
   const containerStyles: ViewStyle = useMemo(
-    () => [styles.container, { paddingTop: heightStatusBar }] as ViewStyle,
+    () =>
+      [
+        styles.container,
+        { paddingTop: heightStatusBar },
+      ] as unknown as ViewStyle,
     [heightStatusBar]
   );
 
@@ -70,10 +72,10 @@ export const RegistrationFaceId: FunctionComponent = () => {
       </View>
       <View style={styles.containerTitles}>
         <Text numberOfLines={2} style={styles.title}>
-          <Trans>Allow login using Face ID</Trans>
+          {i18n._("Allow login using Face ID")}
         </Text>
         <Text numberOfLines={2} style={styles.subTitle}>
-          <Trans>Enable logging into the app using Face ID</Trans>
+          {i18n._("Enable logging into the app using Face ID")}
         </Text>
       </View>
       <View style={styles.containerIcon}>
@@ -81,9 +83,9 @@ export const RegistrationFaceId: FunctionComponent = () => {
         <Text style={styles.titleIcon}>Face ID</Text>
       </View>
       <View style={styles.containerButtons}>
-        <ButtonCustom title={t(i18n)`Allow`} onSubmit={onAllow} />
+        <ButtonCustom title={i18n._("Allow")} onSubmit={onAllow} />
         <ButtonCustom
-          title={t(i18n)`Allow later`}
+          title={i18n._("Allow later")}
           onSubmit={onAllowLater}
           type="transparent"
         />

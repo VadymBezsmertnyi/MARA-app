@@ -14,7 +14,6 @@ import {
   DrawerNavigationState,
   ParamListBase,
 } from "@react-navigation/native";
-import { Trans } from "@lingui/macro";
 import { MaterialIcons } from "@expo/vector-icons";
 
 // types
@@ -179,9 +178,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         <ScrollView>
           <View style={styles.containerHeader}>
             <View style={styles.boxHeaderEmpty} />
-            <Text style={styles.titleHeader}>
-              <Trans>Settings</Trans>
-            </Text>
+            <Text style={styles.titleHeader}>{i18n._("Settings")}</Text>
             <TouchableOpacity
               accessibilityLabel={i18n._(
                 "Button for closing the menu settings screen"
@@ -262,7 +259,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             {isToggleTheme ? (
               <View style={styles.containerCheckbox}>
                 <Text style={styles.titleDarkTheme}>
-                  <Trans>Dark theme</Trans>
+                  {i18n._("Dark theme")}
                 </Text>
                 <Checkbox check={darkTheme} setCheck={setDarkTheme} />
               </View>
@@ -272,7 +269,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
               style={styles.containerCheckbox}
             >
               <Text numberOfLines={2} style={styles.titleDarkTheme}>
-                <Trans>Automatically detect location</Trans>
+                {i18n._("Automatically detect location")}
               </Text>
               <Checkbox
                 accessibilityLabel={i18n._(

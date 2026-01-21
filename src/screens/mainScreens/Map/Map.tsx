@@ -3,7 +3,6 @@ import { Platform, Text, View } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
 import MapView, { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Trans } from "@lingui/macro";
 import dayjs from "dayjs";
 
 // types
@@ -45,7 +44,7 @@ const DEFAULT_LOCATION: mapMarker = {
 };
 
 export const Map: FunctionComponent<MapProps> = () => {
-  const { language } = useLocalesProvider();
+  const { i18n, language } = useLocalesProvider();
   const { userData } = useUserProvider();
   const { workshops } = useWorkshopsProvider();
   const { location, usersMaps, usersSos } = useMapProvider();
@@ -123,7 +122,6 @@ export const Map: FunctionComponent<MapProps> = () => {
         zoomControlEnabled
         userInterfaceStyle={theme}
         showsBuildings={false}
-        showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
         onLayout={() => {
           getToUser();
@@ -166,7 +164,7 @@ export const Map: FunctionComponent<MapProps> = () => {
                   <Text>{`User #${userLocation.userId}`}</Text>
                   {timeUpdate ? (
                     <Text>
-                      <Trans>Last update</Trans>:{" "}
+                      {i18n._("Last update")}:{" "}
                       {dayjs(timeUpdate).format("mm:ss")}
                     </Text>
                   ) : null}

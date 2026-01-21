@@ -1,7 +1,9 @@
 import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
 import dayjs from "dayjs";
+
+// providers
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { LinearGradientCustom } from "../../../../../components/LinearGradientCustom/LinearGradientCustom";
@@ -17,28 +19,32 @@ type ComponentCalloutEventProps = {
 
 export const ComponentCalloutEvent: FunctionComponent<
   ComponentCalloutEventProps
-> = ({ title, distance, date }) => (
-  <View style={styles.container}>
-    <LinearGradientCustom style={styles.linearGradient}>
-      <View style={styles.containerMain}>
-        <View style={styles.containerTitle}>
-          <Text numberOfLines={1} style={styles.title}>
-            {title}
-          </Text>
+> = ({ title, distance, date }) => {
+  const { i18n } = useLocalesProvider();
+
+  return (
+    <View style={styles.container}>
+      <LinearGradientCustom style={styles.linearGradient}>
+        <View style={styles.containerMain}>
+          <View style={styles.containerTitle}>
+            <Text numberOfLines={1} style={styles.title}>
+              {title}
+            </Text>
+          </View>
+          <View style={styles.containerSubTitles}>
+            <Text style={styles.title}>
+              {i18n._("{distance} km", { distance: distance ?? "0" })}
+            </Text>
+            <Text style={styles.titleDate}>
+              {dayjs(date).format("DD.MM.YYYY")}
+            </Text>
+          </View>
         </View>
-        <View style={styles.containerSubTitles}>
-          <Text style={styles.title}>
-            <Trans>{distance} km</Trans>
-          </Text>
-          <Text style={styles.titleDate}>
-            {dayjs(date).format("DD.MM.YYYY")}
-          </Text>
-        </View>
-      </View>
-    </LinearGradientCustom>
-    <LinearGradientCustom style={styles.containerArrow}>
-      <View style={styles.bodyArrow} />
-    </LinearGradientCustom>
-    <View style={styles.containerEmpty} />
-  </View>
-);
+      </LinearGradientCustom>
+      <LinearGradientCustom style={styles.containerArrow}>
+        <View style={styles.bodyArrow} />
+      </LinearGradientCustom>
+      <View style={styles.containerEmpty} />
+    </View>
+  );
+};

@@ -1,4 +1,3 @@
-import { t } from "@lingui/macro";
 import infoPhoneCountries from "country-telephone-data";
 
 // provider
@@ -10,11 +9,11 @@ import { getClearValue } from "./regexp";
 export const useAuthorizationRegistration = () => {
   const { i18n } = useLocalesProvider();
 
-  const errorPhone = t(
-    i18n
-  )`Incorrect phone number entered or country code of the phone number selected incorrectly`;
-  const errorPassword = t(i18n)`Password must contain at least 8 characters`;
-  const errorConfirmPassword = t(i18n)`Passwords do not match`;
+  const errorPhone = i18n._(
+    "Incorrect phone number entered or country code of the phone number selected incorrectly"
+  );
+  const errorPassword = i18n._("Password must contain at least 8 characters");
+  const errorConfirmPassword = i18n._("Passwords do not match");
 
   const isLoginError = (phoneNumber: string, selectCountryIso: string) => {
     const selectCountry =

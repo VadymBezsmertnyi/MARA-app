@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { StatusBar, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // types
 import { TypeFilters } from "./ModalFilter.types";
@@ -180,9 +179,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           onChange={setDistance}
         />
         <View style={styles.containerSelectRatings}>
-          <Text style={styles.labelSectors}>
-            <Trans>Only with rating:</Trans>
-          </Text>
+          <Text style={styles.labelSectors}>{i18n._("Only with rating:")}</Text>
           <View style={styles.containerRatings}>
             {ratings.map((rating) => {
               const isSelect =

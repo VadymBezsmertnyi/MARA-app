@@ -6,7 +6,6 @@ import MapView, {
   PROVIDER_GOOGLE,
 } from "react-native-maps";
 import { Shadow } from "react-native-shadow-2";
-import { Trans } from "@lingui/macro";
 
 // types
 import { ItemSearchPlaceAddressType } from "./ModalSheetSearchPlaceAddress.types";
@@ -169,10 +168,10 @@ export const ModalSheetSearchPlaceAddress: FunctionComponent<
           <Shadow stretch disabled={step > 1}>
             <View style={styles.containerHeader}>
               <Text style={styles.titleCoordinates}>
-                <Trans>Select a location on the map</Trans>
+                {i18n._("Select a location on the map")}
               </Text>
               <Text style={styles.subTitleCoordinates}>
-                <Trans>Move and change the location</Trans>
+                {i18n._("Move and change the location")}
               </Text>
             </View>
           </Shadow>
@@ -186,7 +185,6 @@ export const ModalSheetSearchPlaceAddress: FunctionComponent<
               mapType={Platform.OS === "ios" ? "terrain" : "standard"}
               zoomControlEnabled
               showsBuildings={false}
-              showsPointsOfInterest={false}
               showsIndoorLevelPicker={false}
             >
               {place?.coordinates ? (

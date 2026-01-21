@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // types
 import { ImageModalType } from "./ImageModal.types";
@@ -94,9 +93,7 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
             }}
             colorsGradientProps={colorsGradientButtonDelete}
           >
-            <Text style={styles.titleButtonDelete}>
-              <Trans>Delete</Trans>
-            </Text>
+            <Text style={styles.titleButtonDelete}>{i18n._("Delete")}</Text>
           </ButtonCustom>
         </View>
       </View>

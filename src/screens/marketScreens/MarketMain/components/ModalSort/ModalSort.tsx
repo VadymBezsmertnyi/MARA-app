@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -50,9 +49,7 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
               }}
               style={styles.button}
             >
-              <Text style={styles.titleButton}>
-                <Trans>Latest</Trans>
-              </Text>
+              <Text style={styles.titleButton}>{i18n._("Latest")}</Text>
             </TouchableOpacity>
             <View style={styles.line} />
             <TouchableOpacity
@@ -61,9 +58,7 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
               }}
               style={styles.button}
             >
-              <Text style={styles.titleButton}>
-                <Trans>Cheapest</Trans>
-              </Text>
+              <Text style={styles.titleButton}>{i18n._("Cheapest")}</Text>
             </TouchableOpacity>
             <View style={styles.line} />
             <TouchableOpacity
@@ -72,9 +67,7 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
               }}
               style={styles.button}
             >
-              <Text style={styles.titleButton}>
-                <Trans>Most expensive</Trans>
-              </Text>
+              <Text style={styles.titleButton}>{i18n._("Most expensive")}</Text>
             </TouchableOpacity>
           </View>
         </View>

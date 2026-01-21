@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { Trans } from "@lingui/macro";
 
 // types
 import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
@@ -117,9 +116,7 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.containerHeader}>
-          <Text style={styles.titleHeader}>
-            <Trans>Leave a review</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("Leave a review")}</Text>
         </View>
         <View style={styles.containerBody}>
           <Input

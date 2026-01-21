@@ -2,7 +2,6 @@ import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { getDistance } from "geolib";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Trans } from "@lingui/macro";
 
 // types
 import { RootEventsScreensParamList } from "../../../../../navigators/Navigators.types";
@@ -109,9 +108,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
       <View style={partStyles}>
         {isNow ? (
           <LinearGradientCustom style={styles.containerNowLabel}>
-            <Text style={styles.titleNowLabel}>
-              <Trans>Now</Trans>
-            </Text>
+            <Text style={styles.titleNowLabel}>{i18n._("Now")}</Text>
           </LinearGradientCustom>
         ) : (
           <Text>{formatDateFromUnixTimestamp(item.date.start)}</Text>

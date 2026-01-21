@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { Platform, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
-import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // providers
 import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { Menu } from "../Menu/Menu";
@@ -17,6 +17,7 @@ import { styles } from "./UpContainer.styles";
 const INTENSITY = 5;
 
 export const UpContainer: FunctionComponent = () => {
+  const { i18n } = useLocalesProvider();
   const { top } = useSafeAreaInsets();
   const { userData } = useUserProvider();
   const { usersSos } = useMapProvider();
@@ -55,7 +56,9 @@ export const UpContainer: FunctionComponent = () => {
         {isSos ? (
           <TouchableOpacity onPress={pressSosLine} style={styles.buttonSos}>
             <Text style={styles.titleButtonSos}>
-              <Trans>Someone needs help within a {distance} km radius</Trans>
+              {i18n._("Someone needs help within a {distance} km radius", {
+                distance,
+              })}
             </Text>
           </TouchableOpacity>
         ) : null}

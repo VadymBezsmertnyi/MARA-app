@@ -2,7 +2,6 @@ import React, { FunctionComponent, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
-import { Trans } from "@lingui/macro";
 
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
@@ -76,9 +75,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.containerPart}>
-            <Text style={styles.titleType}>
-              <Trans>Upcoming events:</Trans>
-            </Text>
+            <Text style={styles.titleType}>{i18n._("Upcoming events:")}</Text>
             <View style={styles.containerEvents}>
               {eventsWill.length ? (
                 eventsWill
@@ -98,7 +95,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                     imageSrc={notEventsImage}
                   />
                   <Text style={styles.titleNotList}>
-                    <Trans>Sorry, there are no upcoming events</Trans>
+                    {i18n._("Sorry, there are no upcoming events")}
                   </Text>
                 </View>
               )}
@@ -110,7 +107,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                 onPress={onToEventsList}
               >
                 <Text style={styles.titleButtonMore}>
-                  <Trans>More events</Trans>
+                  {i18n._("More events")}
                 </Text>
                 <ArrowLongRight
                   width={40}
@@ -121,9 +118,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
             ) : null}
           </View>
           <View style={styles.containerPart}>
-            <Text style={styles.titleType}>
-              <Trans>Past events:</Trans>
-            </Text>
+            <Text style={styles.titleType}>{i18n._("Past events:")}</Text>
             <View style={styles.containerEvents}>
               {eventsOld.length ? (
                 eventsOld
@@ -143,7 +138,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                     imageSrc={notNewsImage}
                   />
                   <Text style={styles.titleNotList}>
-                    <Trans>No events have passed</Trans>
+                    {i18n._("No events have passed")}
                   </Text>
                 </View>
               )}
@@ -154,7 +149,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                 onPress={onToOldNewsList}
               >
                 <Text style={styles.titleButtonMore}>
-                  <Trans>More events</Trans>
+                  {i18n._("More events")}
                 </Text>
                 <ArrowLongRight
                   width={40}

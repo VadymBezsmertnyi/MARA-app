@@ -6,7 +6,6 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // types
 import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
@@ -102,9 +101,7 @@ export const ItemSettingWorkshops: FunctionComponent<
               </View>
             </View>
           ) : (
-            <Text style={styles.notComments}>
-              <Trans>Not comments</Trans>
-            </Text>
+            <Text style={styles.notComments}>{i18n._("Not comments")}</Text>
           )}
         </View>
       </View>

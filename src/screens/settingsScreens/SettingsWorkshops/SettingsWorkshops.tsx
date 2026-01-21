@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
@@ -11,11 +10,13 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ItemSettingWorkshops } from "./components/ItemSettingWorkshops/ItemSettingWorkshops";
+import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 // icons
 import { IconClose, IconPlus } from "../../../icons/components";
@@ -29,8 +30,6 @@ import notItemsImage from "../../../../assets/settingsScreen/notWorkshopsUsers.j
 // styles
 import { styles } from "./SettingsWorkshops.styles";
 import colors from "../../../../styles/colors";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
-import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 type SettingsWorkshopsProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
@@ -65,9 +64,7 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
       <View style={containerStyles}>
         <View style={styles.containerHeader}>
           <View style={styles.boxHeaderEmpty} />
-          <Text style={styles.titleHeader}>
-            <Trans>My workshops</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("My workshops")}</Text>
           <TouchableOpacity
             accessibilityLabel={i18n._(
               "Button for closing the settings workshops screen"
@@ -85,11 +82,9 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
               imageSrc={notItemsImage}
             />
             <View style={styles.titlesNotElements}>
+              <Text style={styles.titleNotElements}>{i18n._("Sorry!")}</Text>
               <Text style={styles.titleNotElements}>
-                <Trans>Sorry!</Trans>
-              </Text>
-              <Text style={styles.titleNotElements}>
-                <Trans>You don't have {typeItem}.</Trans>
+                {i18n._("You don't have {typeItem}.")}
               </Text>
             </View>
           </View>

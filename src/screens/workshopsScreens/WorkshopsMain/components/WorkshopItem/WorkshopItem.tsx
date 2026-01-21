@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -117,9 +116,7 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
                 </View>
               </>
             ) : (
-              <Text style={styles.notComments}>
-                <Trans>Not comments</Trans>
-              </Text>
+              <Text style={styles.notComments}>{i18n._("Not comments")}</Text>
             )}
           </View>
         </View>

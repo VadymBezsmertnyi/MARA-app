@@ -2,7 +2,6 @@ import React, { FunctionComponent, useMemo, useState } from "react";
 import { Linking, Modal, ScrollView, Text, View } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import dayjs from "dayjs";
-import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
@@ -197,6 +196,9 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
           images: currentImages,
           likeUserIds,
           userId: selectProduct.userId._id,
+          place_id: selectProduct.place_id?._id,
+          country_place_id: selectProduct.country_place_id?._id,
+          region_place_id: selectProduct.region_place_id?._id,
         });
     }
   };
@@ -269,7 +271,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
             <View style={styles.containerMainInfo}>
               <View style={styles.containerDescription}>
                 <Text style={styles.titleDescription}>
-                  <Trans>Description</Trans>
+                  {i18n._("Description")}
                 </Text>
                 <View style={styles.containerItemsDescriptions}>
                   <ItemDescriptions title={i18n._("Brand")} value={brand} />
@@ -324,7 +326,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
               </Text>
               <View style={styles.containerViews}>
                 <Text style={styles.titleViews}>
-                  <Trans>Views:</Trans> {selectProduct.quantityViews}
+                  {i18n._("Views:")} {selectProduct.quantityViews}
                 </Text>
               </View>
             </View>
@@ -351,9 +353,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
                   strokeWidth={2}
                   stroke={colors.white}
                 />
-                <Text style={styles.titleButton}>
-                  <Trans>Write</Trans>
-                </Text>
+                <Text style={styles.titleButton}>{i18n._("Write")}</Text>
               </View>
             </ButtonCustom>
           ) : null}
@@ -366,9 +366,7 @@ export const MarketItem: FunctionComponent<MarketItemProps> = ({ route }) => {
             <View style={styles.containerButton}>
               <IconPhone width={29} height={29} fill={colors.white} />
               {!selectProduct.telegram ? (
-                <Text style={styles.titleButton}>
-                  <Trans>Call</Trans>
-                </Text>
+                <Text style={styles.titleButton}>{i18n._("Call")}</Text>
               ) : null}
             </View>
           </ButtonCustom>

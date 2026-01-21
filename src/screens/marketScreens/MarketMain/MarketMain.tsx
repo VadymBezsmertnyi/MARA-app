@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
-import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
@@ -303,7 +302,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 imageSrc={notProductsFilterImage}
               />
               <Text style={styles.titleNotList}>
-                <Trans>Sorry, but no products were found by the filters</Trans>
+                {i18n._("Sorry, but no products were found by the filters")}
               </Text>
             </View>
           ) : (
@@ -314,7 +313,7 @@ export const MarketMain: FunctionComponent<MarketMainProps> = ({
                 imageSrc={notProductsImage}
               />
               <Text style={styles.titleNotList}>
-                <Trans>Sorry, there are no available items</Trans>
+                {i18n._("Sorry, there are no available items")}
               </Text>
             </View>
           )}

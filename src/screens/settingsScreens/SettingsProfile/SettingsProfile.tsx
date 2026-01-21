@@ -8,7 +8,6 @@ import {
   View,
 } from "react-native";
 import { CommonActions } from "@react-navigation/native";
-import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
 import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -275,16 +274,12 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
           >
             <Text style={styles.titleDelete}>{i18n._("Back")}</Text>
           </TouchableOpacity>
-          <Text style={styles.titleHeader}>
-            <Trans>Profile</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("Profile")}</Text>
           <TouchableOpacity
             onPress={onLogoutProfile}
             style={styles.buttonsHeaderRight}
           >
-            <Text style={styles.titleLogout}>
-              <Trans>Logout</Trans>
-            </Text>
+            <Text style={styles.titleLogout}>{i18n._("Logout")}</Text>
           </TouchableOpacity>
         </View>
         <ScrollView

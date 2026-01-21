@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import { ScrollView, Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -52,7 +51,7 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
       <View style={styles.containerModalTypeWork}>
         <View style={styles.containerHeaderTypeWork}>
           <Text style={styles.titleModalType}>
-            <Trans>Types of work for automobile transport:</Trans>
+            {i18n._("Types of work for automobile transport:")}
           </Text>
           <LinearGradientCustom style={styles.lineModalType} />
         </View>

@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 //import Gallery from "react-native-awesome-gallery";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
-import { ImageCache } from "../ImageCache/ImageCache";
+//import { ImageCache } from "../ImageCache/ImageCache";
 
 // icons
 import { IconArrowLeftEvent } from "../../icons/components";
@@ -25,6 +25,7 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
   data,
   onClose,
 }) => {
+  const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
 
   const containerHeaderStyles = useMemo(
@@ -57,13 +58,9 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
             stroke={colors.blackCoffee}
             strokeWidth={2}
           />
-          <Text style={styles.buttonTitle}>
-            <Trans>Back</Trans>
-          </Text>
+          <Text style={styles.buttonTitle}>{i18n._("Back")}</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>
-          <Trans>Gallery</Trans>
-        </Text>
+        <Text style={styles.title}>{i18n._("Gallery")}</Text>
         <View style={styles.containerEmpty} />
       </View>
     </View>

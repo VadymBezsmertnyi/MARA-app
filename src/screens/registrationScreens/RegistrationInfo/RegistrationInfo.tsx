@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { KeyboardAvoidingView, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
@@ -116,7 +115,7 @@ export const RegistrationInfo: FunctionComponent = () => {
         />
         <ScrollView>
           <Text style={styles.title}>
-            <Trans>We recommend filling out the profile information</Trans>
+            {i18n._("We recommend filling out the profile information")}
           </Text>
           <View style={styles.containerInputs}>
             <Input

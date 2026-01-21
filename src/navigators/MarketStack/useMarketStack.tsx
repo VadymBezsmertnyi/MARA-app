@@ -1,5 +1,3 @@
-import { t } from "@lingui/macro";
-
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
@@ -18,21 +16,21 @@ export const useMarketStack = () => {
     {
       id: PATHS_MARKET_SCREENS.marketMain,
       name: PATHS_MARKET_SCREENS.marketMain,
-      title: t(i18n)`Market`,
+      title: i18n._("Market"),
       headerShown: false,
       component: MarketMain,
     },
     {
       id: PATHS_MARKET_SCREENS.marketItem,
       name: PATHS_MARKET_SCREENS.marketItem,
-      title: t(i18n)`Market`,
+      title: i18n._("Market"),
       headerShown: false,
       component: MarketItem,
     },
     {
       id: PATHS_MARKET_SCREENS.marketAdd,
       name: PATHS_MARKET_SCREENS.marketAdd,
-      title: t(i18n)`Add advert`,
+      title: i18n._("Add advert"),
       headerShown: false,
       component: MarketAdd,
     },

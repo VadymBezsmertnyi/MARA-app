@@ -11,7 +11,6 @@ import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system";
-import { Trans } from "@lingui/macro";
 import dayjs from "dayjs";
 
 // types
@@ -409,9 +408,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               />
             </View>
           </View>
-          <Text style={styles.subtitle}>
-            <Trans>Participation fee</Trans>:
-          </Text>
+          <Text style={styles.subtitle}>{i18n._("Participation fee")}:</Text>
           <View style={styles.containerPrices}>
             <View style={styles.inner}>
               <Input

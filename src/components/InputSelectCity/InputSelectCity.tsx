@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { t } from "@lingui/macro";
 
 // types
 import { PlaceDbType } from "../../providers/PlacesProvider/PlacesProvider.types";
@@ -69,7 +68,7 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
   const showCity = useMemo(() => {
     if (value && selectCity)
       return <Text style={styles.titleInput}>{value}</Text>;
-    return <Text style={styles.defaultTitleInput}>{t(i18n)`All cities`}</Text>;
+    return <Text style={styles.defaultTitleInput}>{i18n._("All cities")}</Text>;
   }, [value, selectCity]);
 
   return (
@@ -99,7 +98,7 @@ export const InputSelectCity: FunctionComponent<InputSelectCityProps> = ({
             {isOpen ? (
               <TextInput
                 style={styles.input}
-                placeholder={t(i18n)`All cities`}
+                placeholder={i18n._("All cities")}
                 value={value}
                 onChangeText={setValue}
                 onFocus={() => {

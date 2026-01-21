@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -71,9 +70,7 @@ export const ListWorksDo: FunctionComponent<ListWorksDoProps> = ({
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        <Trans>The work we do:</Trans>
-      </Text>
+      <Text style={styles.title}>{i18n._("The work we do:")}</Text>
       <View style={styles.containerCheckButton}>
         {motoWorkIds.length > 0 && autoWorkIds.length > 0 ? (
           <TouchableOpacity

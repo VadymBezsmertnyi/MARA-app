@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
-import { Trans } from "@lingui/macro";
 import { getDistance } from "geolib";
 
 // types
@@ -269,9 +268,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
             </View>
           ) : null}
           <View style={styles.containerDescription}>
-            <Text style={styles.titleDescription}>
-              <Trans>About us:</Trans>
-            </Text>
+            <Text style={styles.titleDescription}>{i18n._("About us:")}</Text>
             <Text style={styles.description}>
               {isFullDescription
                 ? selectWorkshop?.description
@@ -284,7 +281,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
                   }}
                 >
                   <Text style={styles.titleButtonDescription}>
-                    <Trans>Read the whole description...</Trans>
+                    {i18n._("Read the whole description...")}
                   </Text>
                 </TouchableOpacity>
               )}

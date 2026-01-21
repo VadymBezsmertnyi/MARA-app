@@ -1,8 +1,10 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { Linking, Text } from "react-native";
 import { Callout, Marker } from "react-native-maps";
-import { Trans } from "@lingui/macro";
 import dayjs from "dayjs";
+
+// providers
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // icons
 import { IconSosMap } from "../../../../../icons/components";
@@ -27,6 +29,7 @@ export const SosMarker: FunctionComponent<SosMarkerProps> = ({
   description,
   date,
 }) => {
+  const { i18n } = useLocalesProvider();
   const coordinateMarker = useMemo(
     () => ({
       longitude,
@@ -77,22 +80,18 @@ export const SosMarker: FunctionComponent<SosMarkerProps> = ({
         ) : null}
         {phoneNumber ? (
           <>
-            <Text style={styles.title}>
-              <Trans>Phone number</Trans>:
-            </Text>
+            <Text style={styles.title}>{i18n._("Phone number")}:</Text>
             <Text style={styles.title}>{phoneNumber}</Text>
           </>
         ) : null}
         {description ? (
           <>
-            <Text style={styles.title}>
-              <Trans>Description</Trans>:
-            </Text>
+            <Text style={styles.title}>{i18n._("Description")}:</Text>
             <Text style={styles.title}>{description}</Text>
           </>
         ) : null}
         <Text style={styles.title}>
-          <Trans>Last update</Trans>: {dayjs(timeUpdate).format("mm:ss")}
+          {i18n._("Last update")}: {dayjs(timeUpdate).format("mm:ss")}
         </Text>
       </Callout>
     </Marker>

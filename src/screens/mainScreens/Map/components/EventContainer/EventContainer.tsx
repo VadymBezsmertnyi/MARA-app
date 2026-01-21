@@ -1,9 +1,14 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { Platform, Text, TouchableOpacity, View } from "react-native";
+import {
+  ColorValue,
+  Platform,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
 import dayjs from "dayjs";
-import { Trans } from "@lingui/macro";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // providers
@@ -31,7 +36,7 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   showFirstEvent,
 }) => {
   const { top } = useSafeAreaInsets();
-  const { language } = useLocalesProvider();
+  const { i18n, language } = useLocalesProvider();
   const { placesDB } = usePlacesProvider();
   const selectCountryTitle = useMemo(() => {
     if (!firstEvent?.place_id) return "";
@@ -43,7 +48,7 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
     const dateNow = dayjs().valueOf();
     return dateNow < firstEvent.date.finish;
   }, [firstEvent]);
-  const colorsLinearGradient = useMemo(
+  const colorsLinearGradient: ColorValue[] = useMemo(
     () => [colors.californiaOrange70, colors.blazeOrange70],
     []
   );
@@ -89,9 +94,7 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
           />
         ) : null}
         <View style={styles.container}>
-          <Text style={styles.mainTitle}>
-            <Trans>The nearest event:</Trans>
-          </Text>
+          <Text style={styles.mainTitle}>{i18n._("The nearest event:")}</Text>
           <Text style={styles.title}>{firstEvent.title}</Text>
           <Text style={styles.subTitle}>{selectCountryTitle}</Text>
           <Text style={styles.dateTitle}>

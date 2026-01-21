@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -48,13 +47,11 @@ export const ModalSheetTypeWorkshops: FunctionComponent<
     <ModalsSheet isShow={isShowTypeWorkshops} onClose={onClose}>
       <View style={styles.containerModalType}>
         <View>
-          <Text style={styles.titleModalType}>
-            <Trans>Type workshops</Trans>
-          </Text>
+          <Text style={styles.titleModalType}>{i18n._("Type workshops")}</Text>
           <LinearGradientCustom style={styles.lineModalType} />
           <View style={styles.containerSelect}>
             <Text style={styles.titleSelect}>
-              <Trans>Repair of motorcycles</Trans>
+              {i18n._("Repair of motorcycles")}
             </Text>
             <View style={styles.containerRightSelect}>
               {typeWorkshops.moto ? (
@@ -72,7 +69,7 @@ export const ModalSheetTypeWorkshops: FunctionComponent<
           </View>
           <View style={styles.containerSelect}>
             <Text style={styles.titleSelect}>
-              <Trans>Repair of automobiles</Trans>
+              {i18n._("Repair of automobiles")}
             </Text>
             <View style={styles.containerRightSelect}>
               {typeWorkshops.auto ? (

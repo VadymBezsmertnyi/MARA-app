@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -67,17 +66,13 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
   if (!businessMarketUser)
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>
-          <Trans>Business profile</Trans>
-        </Text>
+        <Text style={styles.title}>{i18n._("Business profile")}</Text>
         <ButtonCustom
           onSubmit={onCreateBusiness}
           styleContainer={styles.containerButton}
           styleLinear={styles.linearContainerButton}
         >
-          <Text style={styles.titleButton}>
-            <Trans>Create</Trans>
-          </Text>
+          <Text style={styles.titleButton}>{i18n._("Create")}</Text>
         </ButtonCustom>
       </View>
     );
@@ -90,9 +85,7 @@ export const ContainerBusiness: FunctionComponent<ContainerBusinessProps> = ({
             setIsShow((state) => !state);
           }}
         >
-          <Text style={styles.title}>
-            <Trans>Business profile</Trans>
-          </Text>
+          <Text style={styles.title}>{i18n._("Business profile")}</Text>
           {isShow ? (
             <IconArrowUpGradient width={16} height={16} />
           ) : (

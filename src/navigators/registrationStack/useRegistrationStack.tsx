@@ -1,5 +1,3 @@
-import { t } from "@lingui/macro";
-
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
@@ -45,7 +43,7 @@ export const useRegistrationStack = () => {
     {
       id: PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy,
       name: PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy,
-      title: t(i18n)`Privacy Policy`,
+      title: i18n._("Privacy Policy"),
       isHeader: true,
       isBackHeader: false,
       component: RegistrationPrivacyPolicy,
@@ -53,7 +51,7 @@ export const useRegistrationStack = () => {
     {
       id: PATHS_REGISTRATION_SCREENS.registrationTermsOfUse,
       name: PATHS_REGISTRATION_SCREENS.registrationTermsOfUse,
-      title: t(i18n)`Terms of Use`,
+      title: i18n._("Terms of Use"),
       isHeader: true,
       isBackHeader: false,
       component: RegistrationTermsOfUse,
@@ -61,7 +59,7 @@ export const useRegistrationStack = () => {
     {
       id: PATHS_REGISTRATION_SCREENS.registrationInfo,
       name: PATHS_REGISTRATION_SCREENS.registrationInfo,
-      title: t(i18n)`Registration`,
+      title: i18n._("Registration"),
       isHeader: true,
       isBackHeader: false,
       component: RegistrationInfo,

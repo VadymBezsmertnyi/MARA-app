@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -41,11 +40,9 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
               setTypeSort("distance");
             }}
           >
-            <Text style={styles.titleButton}>
-              <Trans>By distance:</Trans>
-            </Text>
+            <Text style={styles.titleButton}>{i18n._("By distance:")}</Text>
             <Text style={styles.subTitleButton}>
-              <Trans>from closest to farthest</Trans>
+              {i18n._("from closest to farthest")}
             </Text>
           </TouchableOpacity>
           <View style={styles.line} />
@@ -54,11 +51,9 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
               setTypeSort("rating");
             }}
           >
-            <Text style={styles.titleButton}>
-              <Trans>By rating:</Trans>
-            </Text>
+            <Text style={styles.titleButton}>{i18n._("By rating:")}</Text>
             <Text style={styles.subTitleButton}>
-              <Trans>from highest to lowest</Trans>
+              {i18n._("from highest to lowest")}
             </Text>
           </TouchableOpacity>
           <View style={styles.line} />
@@ -68,10 +63,10 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
             }}
           >
             <Text style={styles.titleButton}>
-              <Trans>By number of comments:</Trans>
+              {i18n._("By number of comments:")}
             </Text>
             <Text style={styles.subTitleButton}>
-              <Trans>from highest to lowest</Trans>
+              {i18n._("from highest to lowest")}
             </Text>
           </TouchableOpacity>
         </View>

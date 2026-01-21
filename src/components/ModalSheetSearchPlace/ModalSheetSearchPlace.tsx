@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
-import { Trans } from "@lingui/macro";
 import lodash from "lodash";
 
 // types
@@ -119,9 +118,7 @@ export const ModalSheetSearchPlace: FunctionComponent<
         <View style={styles.container}>
           <Shadow stretch>
             <View style={styles.containerHeader}>
-              <Text style={styles.title}>
-                <Trans>Specify the city</Trans>
-              </Text>
+              <Text style={styles.title}>{i18n._("Specify the city")}</Text>
               <LinearGradientCustom style={styles.lineHeader} />
               <Input
                 isSelect
@@ -166,17 +163,16 @@ export const ModalSheetSearchPlace: FunctionComponent<
               ))
             ) : (
               <Text style={styles.titleEmptyList}>
-                <Trans>Please enter text for searching</Trans>
+                {i18n._("Please enter text for searching")}
               </Text>
             )}
             {isShowOther ? (
               <>
                 {!isDeepSearch ? (
                   <Text style={styles.titleOtherList}>
-                    <Trans>
-                      If there is no suitable option in the list, use 'Deep
-                      Search'
-                    </Trans>
+                    {i18n._(
+                      "If there is no suitable option in the list, use 'Deep Search'"
+                    )}
                   </Text>
                 ) : null}
                 <ButtonCustom

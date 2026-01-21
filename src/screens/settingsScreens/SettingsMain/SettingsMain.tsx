@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 import { CommonActions } from "@react-navigation/native";
@@ -58,7 +57,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   };
 
   const onLogoutProfile = async () => {
-    const isSignedInGoogle = await GoogleSignin.isSignedIn();
+    const isSignedInGoogle = GoogleSignin.hasPreviousSignIn();
     const isSignedInFacebook = await AccessToken.getCurrentAccessToken();
     if (isSignedInGoogle) await GoogleSignin.signOut();
     if (isSignedInFacebook) LoginManager.logOut();
@@ -98,16 +97,12 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <View style={styles.buttonsHeaderLeft}>
             <MenuBurgerButton onPress={onShowMenu} />
           </View>
-          <Text style={styles.titleHeader}>
-            <Trans>Your profile</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("Your profile")}</Text>
           <TouchableOpacity
             onPress={onLogoutProfile}
             style={styles.buttonsHeaderRight}
           >
-            <Text style={styles.titleLogout}>
-              <Trans>Logout</Trans>
-            </Text>
+            <Text style={styles.titleLogout}>{i18n._("Logout")}</Text>
           </TouchableOpacity>
         </View>
         <ScrollView>

@@ -1,5 +1,3 @@
-import { t } from "@lingui/macro";
-
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
@@ -43,7 +41,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.workshops,
       name: PATHS_MAIN_TABS.workshops,
       mainScreen: PATHS_WORKSHOP_SCREENS.workshopMain,
-      title: t(i18n)`Workshops`,
+      title: i18n._("Workshops"),
       component: WorkshopStack,
       headerShown: false,
       tabBarIcon: IconTabWorkshops,
@@ -53,7 +51,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.map,
       name: PATHS_MAIN_TABS.map,
       mainScreen: null,
-      title: t(i18n)`Map`,
+      title: i18n._("Map"),
       component: Map,
       headerShown: false,
       tabBarIcon: IconTabMap,
@@ -63,7 +61,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.events,
       name: PATHS_MAIN_TABS.events,
       mainScreen: PATHS_EVENTS_SCREENS.eventsMain,
-      title: t(i18n)`Events`,
+      title: i18n._("Events"),
       component: EventsStack,
       headerShown: false,
       tabBarIcon: IconTabNews,
@@ -73,7 +71,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.market,
       name: PATHS_MAIN_TABS.market,
       mainScreen: PATHS_MARKET_SCREENS.marketMain,
-      title: t(i18n)`Market`,
+      title: i18n._("Market"),
       component: MarketStack,
       headerShown: false,
       tabBarIcon: IconTabMarket,
@@ -83,7 +81,7 @@ export const useMainTabs = () => {
       id: PATHS_MAIN_TABS.settings,
       name: PATHS_MAIN_TABS.settings,
       mainScreen: PATHS_SETTINGS_SCREENS.settingsMain,
-      title: t(i18n)`Settings`,
+      title: i18n._("Settings"),
       component: SettingsStack,
       headerShown: false,
       tabBarIcon: IconTabSettings,

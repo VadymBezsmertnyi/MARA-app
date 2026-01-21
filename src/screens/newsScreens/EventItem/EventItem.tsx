@@ -4,7 +4,6 @@ import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { getDistance } from "geolib";
-import { Trans } from "@lingui/macro";
 
 // types
 import {
@@ -218,9 +217,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
                   onShowGallery();
                 }}
               >
-                <Text style={styles.titleAllImage}>
-                  <Trans>All photos</Trans>
-                </Text>
+                <Text style={styles.titleAllImage}>{i18n._("All photos")}</Text>
               </TouchableOpacity>
             ) : null}
           </View>
@@ -323,7 +320,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
                     }}
                   >
                     <Text style={styles.fullTextTitle}>
-                      <Trans>Read the whole description...</Trans>
+                      {i18n._("Read the whole description...")}
                     </Text>
                   </TouchableOpacity>
                 )}

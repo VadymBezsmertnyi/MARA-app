@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
-import { Trans } from "@lingui/macro";
 import { PermissionStatus } from "expo-location";
 import { BlurView } from "expo-blur";
 
@@ -101,14 +100,14 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
               </View>
               <ScrollView style={styles.containerScroll}>
                 <Text style={styles.titleModal}>
-                  <Trans>Do you want to send an SOS signal?</Trans>
+                  {i18n._("Do you want to send an SOS signal?")}
                 </Text>
                 <View style={styles.containerPermissionsInfo}>
                   <View style={styles.linePermissionsInfo}>
                     <Text numberOfLines={2} style={styles.titlePermissionsInfo}>
-                      <Trans>
-                        Access to geolocation when using the application
-                      </Trans>
+                      {i18n._(
+                        "Access to geolocation when using the application"
+                      )}
                     </Text>
                     <View
                       style={
@@ -120,9 +119,7 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
                   </View>
                   <View style={styles.linePermissionsInfo}>
                     <Text numberOfLines={2} style={styles.titlePermissionsInfo}>
-                      <Trans>
-                        Access to geolocation in the background mode
-                      </Trans>
+                      {i18n._("Access to geolocation in the background mode")}
                     </Text>
                     <View
                       style={
@@ -137,7 +134,7 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
                     style={styles.containerCheckbox}
                   >
                     <Text numberOfLines={2} style={styles.titleDarkTheme}>
-                      <Trans>Automatically detect location</Trans>
+                      {i18n._("Automatically detect location")}
                     </Text>
                     <Checkbox
                       accessibilityLabel={i18n._(
@@ -208,12 +205,10 @@ export const ModalSosOn: FunctionComponent<ModalSosOnProps> = ({
                 </View>
                 <View>
                   <Text style={styles.titleInf}>
-                    <Trans>Settings and permissions should be enabled</Trans>
+                    {i18n._("Settings and permissions should be enabled")}
                   </Text>
                   <Text style={styles.titleInf}>
-                    <Trans>
-                      Will automatically turn off after 20-30 minutes
-                    </Trans>
+                    {i18n._("Will automatically turn off after 20-30 minutes")}
                   </Text>
                 </View>
               </ScrollView>

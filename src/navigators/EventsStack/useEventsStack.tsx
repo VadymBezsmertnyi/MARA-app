@@ -1,5 +1,3 @@
-import { t } from "@lingui/macro";
-
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
@@ -26,21 +24,21 @@ export const useNewsStack = () => {
     {
       id: PATHS_EVENTS_SCREENS.eventsList,
       name: PATHS_EVENTS_SCREENS.eventsList,
-      title: t(i18n)`Events`,
+      title: i18n._("Events"),
       headerShown: false,
       component: EventsList,
     },
     {
       id: PATHS_EVENTS_SCREENS.eventItem,
       name: PATHS_EVENTS_SCREENS.eventItem,
-      title: t(i18n)`Event`,
+      title: i18n._("Event"),
       headerShown: false,
       component: EventItem,
     },
     {
       id: PATHS_EVENTS_SCREENS.eventAdd,
       name: PATHS_EVENTS_SCREENS.eventAdd,
-      title: t(i18n)`Create event`,
+      title: i18n._("Create event"),
       headerShown: false,
       component: AddEvent,
     },

@@ -1,13 +1,12 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import {
-  SafeAreaView,
   StyleProp,
   Text,
   TouchableOpacity,
   View,
   ViewStyle,
 } from "react-native";
-import { Trans, t } from "@lingui/macro";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
@@ -108,7 +107,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
                     stroke={theme === THEME_DARK ? colors.white : colors.black}
                     style={styles.iconButtonBack}
                   />
-                  <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
+                  <Text style={backTitleStyle}>{i18n._("Back")}</Text>
                 </>
               )}
             </TouchableOpacity>
@@ -140,7 +139,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
               }}
             >
               <Text style={styles.titleButtonDeleteEvent}>
-                <Trans>Delete</Trans>
+                {i18n._("Delete")}
               </Text>
             </TouchableOpacity>
           ) : isShowRight ? (

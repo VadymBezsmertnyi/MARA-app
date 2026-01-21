@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { FlatList, ListRenderItem, Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // types
 import { CommentType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
@@ -52,7 +51,7 @@ export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
           <View style={styles.stars}>
             {stars.map((star) => (
               <IconStar
-                key={`star-${star}-comment-${item.id}`}
+                key={`star-${star}-comment-${item._id}`}
                 width={12}
                 height={12}
                 fill={colors.yellow}
@@ -73,9 +72,7 @@ export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
   return (
     <View style={styles.container}>
       <View style={styles.containerReviews}>
-        <Text style={styles.titleReviews}>
-          <Trans>Reviews:</Trans>
-        </Text>
+        <Text style={styles.titleReviews}>{i18n._("Reviews:")}</Text>
         <View style={styles.containerOtherReviews}>
           {isComments ? (
             <View style={styles.containerStars}>
