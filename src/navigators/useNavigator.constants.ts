@@ -58,3 +58,7 @@ export const PATHS_MARKET_SCREENS = {
   marketItem: "marketItem",
   marketAdd: "marketAdd",
 } as const;
+
+export const PATHS_HELP_SCREENS = {
+  helpMain: "helpMain",
+} as const;

@@ -6,6 +6,7 @@ import {
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
   PATHS_MARKET_SCREENS,
+  PATHS_HELP_SCREENS,
 } from "./useNavigator.constants";
 
 export type MainScreenT = {
@@ -186,10 +187,15 @@ export type RootMarketScreensParamList = {
   };
 };
 
+export type RootHelpScreensParamList = {
+  [PATHS_HELP_SCREENS.helpMain]?: Record<string, string | number | boolean>;
+};
+
 export type RootAllScreensParamList = RootMainScreensParamList &
   RootRegistrationScreensParamList &
   RootWorkshopsScreensParamList &
   RootMarketScreensParamList &
   RootSettingsScreensParamList &
   RootEventsScreensParamList &
+  RootHelpScreensParamList &
   RootMainTabsParamList;
