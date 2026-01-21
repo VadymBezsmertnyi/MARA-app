@@ -175,7 +175,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   };
 
   const onPressShare = () => {
-    if (selectWorkshop) getSharedLink({ productId: selectWorkshop._id });
+    if (selectWorkshop) getSharedLink({ workshopId: selectWorkshop._id });
   };
 
   return (

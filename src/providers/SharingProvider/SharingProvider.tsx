@@ -53,11 +53,11 @@ const SharingProvider: FunctionComponent<SharingProviderProps> = ({
             ...data,
           },
         },
-        async (link) => {
+        async (link: string) => {
           await Share.share({
             title: "M.A.R.A.(Moto Auto Road Assistant)",
-            url: link as string,
-            message: link as string,
+            url: link,
+            message: link,
           });
         },
         () => {

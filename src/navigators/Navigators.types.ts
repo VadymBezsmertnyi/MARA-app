@@ -93,20 +93,6 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
-  [PATHS_SETTINGS_SCREENS.settingsProducts]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_SETTINGS_SCREENS.settingsProductAdd]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_SETTINGS_SCREENS.settingsProductChange]?: Record<
-    string,
-    string | number | boolean
-  > & {
-    productId?: string;
-  };
   [PATHS_SETTINGS_SCREENS.settingsWorkshops]?: Record<
     string,
     string | number | boolean
