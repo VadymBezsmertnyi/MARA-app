@@ -39,15 +39,16 @@ import { styles } from "./MainTabs.styles";
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
 export const MainTabs: FunctionComponent = () => {
-  const navigation = useNavigation<DrawerNavigationProp<RootMainTabsParamList>>();
+  const navigation =
+    useNavigation<DrawerNavigationProp<RootMainTabsParamList>>();
   const { bottom } = useSafeAreaInsets();
   const { setHeightTabBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
   const { mainTabs } = useMainTabs();
-  const colorsGradient = useMemo(
-    () => [colors.californiaOrange, colors.blazeOrange] as [ColorValue, ColorValue]
-    []
-  );
+  const colorsGradient = [colors.californiaOrange, colors.blazeOrange] as [
+    ColorValue,
+    ColorValue
+  ];
   const startGradient = useMemo(() => ({ x: 0.9, y: 0.5 }), []);
   const endGradient = useMemo(() => ({ x: 0.1, y: 0.5 }), []);
   const locationsGradient = useMemo(() => [0, 1] as [number, number], []);

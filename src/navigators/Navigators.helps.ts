@@ -32,18 +32,16 @@ export const useMainTabsRoute = <T extends keyof RootMainTabsParamList>(
   _routeName: T
 ) => useRoute<RouteProp<RootMainTabsParamList, T>>();
 
-export function getActiveRouteName(navigationState: NavigationState) {
-  if (!navigationState) {
-    return null;
-  }
+export function getActiveRouteName(
+  navigationState: NavigationState | undefined
+) {
+  if (!navigationState) return null;
 
   const route = (navigationState.routes[navigationState.index].state ||
     navigationState.routes[navigationState.index]) as NavigationState & {
     name: string;
   };
+  if (route.routes) return getActiveRouteName(route);
 
-  if (route.routes) {
-    return getActiveRouteName(route);
-  }
   return route.name;
 }
