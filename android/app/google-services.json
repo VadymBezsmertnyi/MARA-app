@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "549450621533",
     "project_id": "moto-auto-road-assistant",
-    "storage_bucket": "moto-auto-road-assistant.appspot.com"
+    "storage_bucket": "moto-auto-road-assistant.firebasestorage.app"
   },
   "client": [
     {
