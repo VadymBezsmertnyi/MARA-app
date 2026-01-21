@@ -61,10 +61,8 @@ export const RegistrationLocation: FunctionComponent = () => {
   );
   const buttonPrivacyPolicy = useMemo(
     () => (
-      <Link to={`/${PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy}`}>
-        <Text style={styles.linkTermsPolicy}>
-          <Trans>Privacy Policy</Trans>
-        </Text>
+      <Link href={`/${PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy}`} action={{ type: "NAVIGATE" }}>
+        <Text style={styles.linkTermsPolicy}>{i18n._("Privacy Policy")}</Text>
       </Link>
     ),
     []

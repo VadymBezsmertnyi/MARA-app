@@ -1,8 +1,5 @@
 import { z } from "zod";
 
-// types
-import type { I18n } from "@lingui/core";
-
 // schemas
 import { userDataS } from "./UserProvider.schemas";
 import { User } from "@react-native-google-signin/google-signin";

@@ -285,7 +285,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
               ]}
             >
               <Text numberOfLines={2} style={styles.titleDarkTheme}>
-                <Trans>Automatically detect location in the background</Trans>
+                {i18n._("Automatically detect location in the background")}
               </Text>
               <Checkbox
                 accessibilityLabel={i18n._(
@@ -297,7 +297,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             </TouchableOpacity> */}
             {/* <View style={styles.containerCheckbox}>
               <Text style={styles.titleSos}>
-                <Trans>SOS signal</Trans>
+                {i18n._("SOS signal")}
               </Text>
               <Checkbox
                 check={isOnSos || isSos}

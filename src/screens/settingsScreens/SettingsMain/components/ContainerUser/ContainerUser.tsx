@@ -58,7 +58,7 @@ export const ContainerUser: FunctionComponent = () => {
       </View>
       {/* <View style={styles.containerOtherContacts}>
         <Text style={styles.titleOtherContacts}>
-          <Trans>Additional contacts:</Trans>
+          {i18n._("Additional contacts:")}
         </Text>
         {userData?.phoneNumber ? (
           <PhoneWithMessengers
