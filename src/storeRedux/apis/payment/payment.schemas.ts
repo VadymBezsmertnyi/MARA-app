@@ -3,7 +3,7 @@ import {
   CURRENCY_UAH,
   CURRENCY_EUR,
   CURRENCY_USD,
-} from "../../../providers/PaymentProvider/PaymentProvider.constants";
+} from "./payment.constants";
 
 export const codeCurrenciesSchema = z.enum([
   CURRENCY_UAH,
