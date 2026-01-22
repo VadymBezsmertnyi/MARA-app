@@ -132,7 +132,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
       });
       Object.keys(newEvent).forEach((key) => {
         if (key !== "imageFiles") {
-          const value = (newEvent as any)[key];
+          const value = newEvent[key as keyof typeof newEvent];
           if (value !== undefined && value !== null) {
             if (
               typeof value === "object" &&
