@@ -59,9 +59,7 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
       const isFormData = currentConfig.data instanceof FormData;
       const response = await axios(currentUrl, {
         headers: {
-          ...(isFormData
-            ? {}
-            : { "Content-Type": "application/json" }),
+          ...(isFormData ? { "Content-Type": "multipart/form-data" } : {}),
           authorization: verifyTokens?.accessToken || "",
         },
         ...currentConfig,
@@ -90,9 +88,7 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
           const isFormData = currentConfig.data instanceof FormData;
           const responseOther = await axios(currentUrlToken, {
             headers: {
-              ...(isFormData
-                ? {}
-                : { "Content-Type": "application/json" }),
+              ...(isFormData ? { "Content-Type": "multipart/form-data" } : {}),
               authorization: verifyTokens.refreshToken,
             },
             ...currentConfig,

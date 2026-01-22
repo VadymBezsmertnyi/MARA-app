@@ -213,7 +213,7 @@ const UserProvider: FunctionComponent<Props> = (props) => {
         let requestData: FormData | Record<string, any>;
         if (hasNewAvatarFile) {
           const formData = new FormData();
-          formData.append("avatar", {
+          formData.append("avatarFile", {
             uri: avatarFile.uri,
             type: "image/jpeg",
             name: "avatar.jpg",
