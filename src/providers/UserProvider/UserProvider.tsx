@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
 import { Platform } from "react-native";
 import { User } from "@react-native-google-signin/google-signin";
+import { ImagePickerAsset } from "expo-image-picker";
 import { z } from "zod";
 
 // types
@@ -199,15 +200,15 @@ const UserProvider: FunctionComponent<Props> = (props) => {
       try {
         setLoading(true);
 
-        const avatarFile = newInfoUser.avatarFile as any;
-        const hasNewAvatarFile =
-          avatarFile && avatarFile.uri && !avatarFile.url;
+        const avatarFile = newInfoUser.avatarFile as
+          | ImagePickerAsset
+          | null
+          | undefined;
+        const hasNewAvatarFile = avatarFile && avatarFile.uri;
         const isDeleteAvatar = avatarFile === null;
-        const existingAvatarUrl =
-          avatarFile?.url ||
-          (userData.avatarFile?.url && !isDeleteAvatar
-            ? userData.avatarFile.url
-            : null);
+        const existingAvatarUrl = isDeleteAvatar
+          ? null
+          : userData.avatarFile?.url;
 
         let requestData: FormData | Record<string, any>;
         if (hasNewAvatarFile) {

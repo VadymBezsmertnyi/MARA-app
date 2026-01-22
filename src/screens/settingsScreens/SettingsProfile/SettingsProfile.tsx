@@ -158,9 +158,8 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     });
 
     if (!result.canceled) {
-      const compressImages = await compressAndProcessImages(result);
       const resultUpdate = await editUser({
-        avatarFile: compressImages[0],
+        avatarFile: result.assets[0],
       });
 
       if (!resultUpdate)
