@@ -249,7 +249,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
 
     Object.keys(changeWorkshop).forEach((key) => {
       if (key !== "imageFiles") {
-        const value = (changeWorkshop as any)[key];
+        const value = changeWorkshop[key as keyof typeof changeWorkshop];
         if (value !== undefined && value !== null) {
           if (
             typeof value === "object" &&
