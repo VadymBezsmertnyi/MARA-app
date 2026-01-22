@@ -152,7 +152,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
 
   const onPressLike = () => {
     if (selectWorkshop && userData) {
-      const currentImages = selectWorkshop.images.map((image) => ({
+      const currentImages = selectWorkshop.imageFiles.map((image) => ({
         _id: image._id || "",
         url: image.url || "",
         width: image.width,
@@ -166,7 +166,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         : [...selectWorkshop.likeUserIds.map((item) => item._id), userData._id];
       changeWorkshop({
         ...selectWorkshop,
-        images: currentImages,
+        imageFiles: currentImages,
         likeUserIds,
         userId: selectWorkshop.userId?._id || userData._id,
       });
@@ -208,9 +208,9 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         <View style={styles.containerMain}>
           <View style={styles.containerInfo}>
             <View style={styles.containerSlider}>
-              {selectWorkshop?.images.length ? (
+              {selectWorkshop?.imageFiles.length ? (
                 <CustomSlider
-                  images={selectWorkshop.images}
+                  images={selectWorkshop.imageFiles}
                   loop
                   styleScroll={(props) => [props, styles.imagesScroll]}
                 />

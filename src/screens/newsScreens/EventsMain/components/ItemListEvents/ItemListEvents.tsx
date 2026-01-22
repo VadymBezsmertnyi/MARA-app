@@ -51,8 +51,8 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
     [item.date, nowDate]
   );
   const image = useMemo(
-    () => (item.images[0] ? item.images[0].url : null),
-    [item.images]
+    () => (item.imageFiles[0] ? item.imageFiles[0].url : null),
+    [item.imageFiles]
   );
   const distance = useMemo(
     () =>
