@@ -37,7 +37,6 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
   data,
   onClose,
 }) => {
-  console.log("GalleryModal render", data);
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
   const carouselRef = useRef<ICarouselInstance>(null);
