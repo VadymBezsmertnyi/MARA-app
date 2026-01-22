@@ -212,7 +212,11 @@ const UserProvider: FunctionComponent<Props> = (props) => {
 
         const formData = new FormData();
         if (hasNewAvatarFile) {
-          formData.append("avatarFile", avatarFile as any);
+          formData.append("avatarFile", {
+            uri: avatarFile.uri,
+            type: "image/jpeg",
+            name: "avatar.jpg",
+          } as any);
         } else if (isDeleteAvatar) formData.append("avatarFile", null as any);
 
         Object.keys({ ...userData, ...newInfoUser }).forEach((key) => {
