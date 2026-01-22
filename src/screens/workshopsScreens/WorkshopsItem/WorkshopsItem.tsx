@@ -38,7 +38,6 @@ import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { Map } from "../../../components/Map/Map";
 import { ListWorksDo } from "./components/ListWorksDo/ListWorksDo";
 import { FooterComments } from "./components/FooterComments/FooterComments";
-import { ModalsSheet } from "../../../components/ModalsSheet/ModalsSheet";
 import { ModalComment } from "./components/ModalComment/ModalComment";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
@@ -302,9 +301,9 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         </View>
         <View style={styles.containerEmpty} />
       </ScrollView>
-      <ModalsSheet isShow={isShowModalComment} onClose={onClose}>
+      {isShowModalComment && (
         <ModalComment selectWorkshop={selectWorkshop} onClose={onClose} />
-      </ModalsSheet>
+      )}
     </View>
   );
 };
