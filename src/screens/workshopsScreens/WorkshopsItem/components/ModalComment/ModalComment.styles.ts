@@ -19,12 +19,13 @@ export const styles = StyleSheet.create({
   modalContent: {
     width: SCREEN_WIDTH * 0.9,
     height: SCREEN_HEIGHT * 0.8,
+  },
+  containerModal: {
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.8,
     backgroundColor: colors.white,
     borderRadius: horizontalScale(16),
     overflow: "hidden",
-  },
-  containerModal: {
-    flex: 1,
     paddingTop: verticalScale(10),
     paddingBottom: verticalScale(12),
   },
