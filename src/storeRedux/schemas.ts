@@ -9,4 +9,10 @@ export const fileSchema = z.object({
   folder: z.string().optional(),
 });
 
+export const tempFileSchema = z.object({
+  uri: z.string(),
+  width: z.number().optional(),
+  height: z.number().optional(),
+});
+
 export const filesSchema = z.array(fileSchema);
