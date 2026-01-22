@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
 
 // types
 import { TypeWorkType } from "../../providers/WorkshopsProvider/WorkshopsProvider.types";
@@ -11,7 +12,6 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { useWorkshopsProviderState } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
 
 // components
-import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
 import { CheckboxClassic } from "../CheckboxClassic/CheckboxClassic";
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -48,55 +48,80 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
     else setSelectMotoTypesWorks((state) => [...state, typeMotoWork.id]);
   };
 
+  if (!isShow) return null;
+
   return (
-    <ModalsSheet isShow={isShow} onClose={onClose}>
-      <View style={styles.containerModalTypeWork}>
-        <View style={styles.containerHeaderTypeWork}>
-          <Text style={styles.titleModalType}>
-            {i18n._("Types of work for motorcycle transport:")}
-          </Text>
-          <LinearGradientCustom style={styles.lineModalType} />
-        </View>
-        <ScrollView>
-          <View style={styles.containerTypesWork}>
-            {typesWorkServices.moto.map((workMoto) => {
-              const isSelect = selectMotoTypesWorks.includes(workMoto.id);
-              return (
-                <View
-                  key={`moto-work-${workMoto.id}`}
-                  style={styles.containerTypeWork}
-                >
-                  <View style={styles.containerTitlesTypeWork}>
-                    <Text style={styles.titleTypeWork}>{workMoto.title}</Text>
-                    <Text style={styles.subTitleTypeWork}>
-                      {workMoto.description}
-                    </Text>
-                  </View>
-                  <CheckboxClassic
-                    isGradient
-                    accessibilityLabel={i18n._(
-                      "Select type work moto {nameTypeWork}",
-                      { nameTypeWork: workMoto.title }
-                    )}
-                    check={isSelect}
-                    setCheck={() => {
-                      onSelectMotoTypeWork(workMoto);
-                    }}
-                  />
-                </View>
-              );
-            })}
+    <Modal
+      visible={isShow}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
+      <TouchableOpacity
+        style={styles.modalOverlay}
+        activeOpacity={1}
+        onPress={onClose}
+      >
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
+          style={styles.modalContent}
+        >
+          <View style={styles.containerModalTypeWork}>
+            <Shadow stretch>
+              <View style={styles.containerHeaderTypeWork}>
+                <Text style={styles.titleModalType}>
+                  {i18n._("Types of work for motorcycle transport:")}
+                </Text>
+                <LinearGradientCustom style={styles.lineModalType} />
+              </View>
+            </Shadow>
+            <ScrollView style={styles.scrollView}>
+              <View style={styles.containerTypesWork}>
+                {typesWorkServices.moto.map((workMoto) => {
+                  const isSelect = selectMotoTypesWorks.includes(workMoto.id);
+                  return (
+                    <View
+                      key={`moto-work-${workMoto.id}`}
+                      style={styles.containerTypeWork}
+                    >
+                      <View style={styles.containerTitlesTypeWork}>
+                        <Text style={styles.titleTypeWork}>
+                          {workMoto.title}
+                        </Text>
+                        <Text style={styles.subTitleTypeWork}>
+                          {workMoto.description}
+                        </Text>
+                      </View>
+                      <CheckboxClassic
+                        isGradient
+                        accessibilityLabel={i18n._(
+                          "Select type work moto {nameTypeWork}",
+                          { nameTypeWork: workMoto.title }
+                        )}
+                        check={isSelect}
+                        setCheck={() => {
+                          onSelectMotoTypeWork(workMoto);
+                        }}
+                      />
+                    </View>
+                  );
+                })}
+              </View>
+            </ScrollView>
+            <Shadow stretch>
+              <View style={styles.containerSubmitModalTypeWork}>
+                <ButtonCustom
+                  disabled={selectMotoTypesWorks.length === 0}
+                  accessibilityLabel={i18n._("Select")}
+                  title={i18n._("Select")}
+                  onSubmit={onSubmit}
+                />
+              </View>
+            </Shadow>
           </View>
-        </ScrollView>
-        <View style={styles.containerSubmitModalTypeWork}>
-          <ButtonCustom
-            disabled={selectMotoTypesWorks.length === 0}
-            accessibilityLabel={i18n._("Select")}
-            title={i18n._("Select")}
-            onSubmit={onSubmit}
-          />
-        </View>
-      </View>
-    </ModalsSheet>
+        </TouchableOpacity>
+      </TouchableOpacity>
+    </Modal>
   );
 };
