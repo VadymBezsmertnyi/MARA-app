@@ -79,12 +79,8 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
   const getEventsUser = async () => {
     if (userData?._id) {
       const queryParams = qs.stringify(
-        {
-          userId: userData._id,
-        },
-        {
-          addQueryPrefix: true,
-        }
+        { userId: userData._id },
+        { addQueryPrefix: true }
       );
       const result = await api(
         `${PATHS.eventsGetUserId}${queryParams}`,
@@ -154,8 +150,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
             }))
           )
         );
-
-      formData.append("userId", userData._id);
+      formData.set("userId", userData._id);
 
       const result = await api(
         PATHS.eventAdd,

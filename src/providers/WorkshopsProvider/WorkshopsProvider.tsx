@@ -177,8 +177,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
           }))
         )
       );
-
-    formData.append("userId", userData._id);
+    formData.set("userId", userData._id);
 
     const result = await api(
       PATHS.workshopsAdd,
