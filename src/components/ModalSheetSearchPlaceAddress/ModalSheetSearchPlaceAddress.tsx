@@ -115,7 +115,6 @@ export const ModalSheetSearchPlaceAddress: FunctionComponent<
         statePlace={currentStatePlace}
       />
     );
-
   if (step === 1 && isOpen)
     return (
       <Modal

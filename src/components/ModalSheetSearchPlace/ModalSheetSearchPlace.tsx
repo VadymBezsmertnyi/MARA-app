@@ -17,7 +17,6 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { usePlacesProvider } from "../../providers/PlacesProvider/PlacesProvider";
 
 // components
-import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
 import { Input } from "../Input/Input";
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -113,99 +112,116 @@ export const ModalSheetSearchPlace: FunctionComponent<
   }, [isOpen, statePlace]);
 
   return (
-    <Modal visible={isOpen} transparent>
-      <ModalsSheet isShow={isOpen} onClose={onClose}>
-        <View style={styles.container}>
-          <Shadow stretch>
-            <View style={styles.containerHeader}>
-              <Text style={styles.title}>{i18n._("Specify the city")}</Text>
-              <LinearGradientCustom style={styles.lineHeader} />
-              <Input
-                isSelect
-                placeholder={i18n._("Enter text to search")}
-                value={value}
-                onChange={setValue}
-                InputIcon={<IconSearchInput width={26} height={26} />}
-                containerStyle={styles.inputSearch}
-                wrapperStyle={styles.wrapperInput}
-              />
-            </View>
-          </Shadow>
-          <ScrollView contentContainerStyle={styles.containerList}>
-            {select && !isSelectList ? (
-              <TouchableOpacity
-                key={`place-select-${select.placeId}`}
-                style={styles.containerItemList}
-                onPress={() => {
-                  setSelect(select);
-                }}
-              >
-                <Text numberOfLines={2} style={styles.titleItemList}>
-                  {select.title}
-                </Text>
-                <CheckboxPoint isSelect />
-              </TouchableOpacity>
-            ) : null}
-            {list?.length ? (
-              list.map((place, index) => (
-                <TouchableOpacity
-                  key={`place-${place.placeId}-${index + 1}`}
-                  style={styles.containerItemList}
-                  onPress={() => {
-                    setSelect(place);
-                  }}
-                >
-                  <Text numberOfLines={2} style={styles.titleItemList}>
-                    {place.title}
-                  </Text>
-                  <CheckboxPoint isSelect={select?.placeId === place.placeId} />
-                </TouchableOpacity>
-              ))
-            ) : (
-              <Text style={styles.titleEmptyList}>
-                {i18n._("Please enter text for searching")}
-              </Text>
-            )}
-            {isShowOther ? (
-              <>
-                {!isDeepSearch ? (
-                  <Text style={styles.titleOtherList}>
-                    {i18n._(
-                      "If there is no suitable option in the list, use 'Deep Search'"
-                    )}
-                  </Text>
-                ) : null}
-                <ButtonCustom
-                  type={isDeepSearch ? "full" : "transparent"}
-                  onSubmit={onToggleDeepSearch}
-                  title={
-                    isDeepSearch
-                      ? i18n._("Disable Deep Search")
-                      : i18n._("Enable Deep Search")
-                  }
-                />
-              </>
-            ) : null}
-          </ScrollView>
-          <View>
+    <Modal
+      visible={isOpen}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
+      <TouchableOpacity
+        style={styles.modalOverlay}
+        activeOpacity={1}
+        onPress={onClose}
+      >
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
+          style={styles.modalContent}
+        >
+          <View style={styles.container}>
             <Shadow stretch>
-              <View style={styles.containerSubmitModalTypeWork}>
-                <ButtonCustom
-                  disabled={!select}
-                  title={i18n._("Select")}
-                  onSubmit={onPressSubmit}
-                />
-                <ButtonCustom
-                  type="transparent"
-                  disabled={false}
-                  title={i18n._("Back")}
-                  onSubmit={onClose}
+              <View style={styles.containerHeader}>
+                <Text style={styles.title}>{i18n._("Specify the city")}</Text>
+                <LinearGradientCustom style={styles.lineHeader} />
+                <Input
+                  isSelect
+                  placeholder={i18n._("Enter text to search")}
+                  value={value}
+                  onChange={setValue}
+                  InputIcon={<IconSearchInput width={26} height={26} />}
+                  containerStyle={styles.inputSearch}
+                  wrapperStyle={styles.wrapperInput}
                 />
               </View>
             </Shadow>
+            <ScrollView contentContainerStyle={styles.containerList}>
+              {select && !isSelectList ? (
+                <TouchableOpacity
+                  key={`place-select-${select.placeId}`}
+                  style={styles.containerItemList}
+                  onPress={() => {
+                    setSelect(select);
+                  }}
+                >
+                  <Text numberOfLines={2} style={styles.titleItemList}>
+                    {select.title}
+                  </Text>
+                  <CheckboxPoint isSelect />
+                </TouchableOpacity>
+              ) : null}
+              {list?.length ? (
+                list.map((place, index) => (
+                  <TouchableOpacity
+                    key={`place-${place.placeId}-${index + 1}`}
+                    style={styles.containerItemList}
+                    onPress={() => {
+                      setSelect(place);
+                    }}
+                  >
+                    <Text numberOfLines={2} style={styles.titleItemList}>
+                      {place.title}
+                    </Text>
+                    <CheckboxPoint
+                      isSelect={select?.placeId === place.placeId}
+                    />
+                  </TouchableOpacity>
+                ))
+              ) : (
+                <Text style={styles.titleEmptyList}>
+                  {i18n._("Please enter text for searching")}
+                </Text>
+              )}
+              {isShowOther ? (
+                <>
+                  {!isDeepSearch ? (
+                    <Text style={styles.titleOtherList}>
+                      {i18n._(
+                        "If there is no suitable option in the list, use 'Deep Search'"
+                      )}
+                    </Text>
+                  ) : null}
+                  <ButtonCustom
+                    type={isDeepSearch ? "full" : "transparent"}
+                    onSubmit={onToggleDeepSearch}
+                    title={
+                      isDeepSearch
+                        ? i18n._("Disable Deep Search")
+                        : i18n._("Enable Deep Search")
+                    }
+                  />
+                </>
+              ) : null}
+            </ScrollView>
+            <View>
+              <Shadow stretch>
+                <View style={styles.containerSubmitModalTypeWork}>
+                  <ButtonCustom
+                    disabled={!select}
+                    title={i18n._("Select")}
+                    onSubmit={onPressSubmit}
+                  />
+                  <ButtonCustom
+                    type="transparent"
+                    disabled={false}
+                    title={i18n._("Back")}
+                    onSubmit={onClose}
+                  />
+                </View>
+              </Shadow>
+            </View>
           </View>
-        </View>
-      </ModalsSheet>
+        </TouchableOpacity>
+      </TouchableOpacity>
     </Modal>
   );
 };
