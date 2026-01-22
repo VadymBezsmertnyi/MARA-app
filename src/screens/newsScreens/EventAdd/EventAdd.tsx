@@ -208,7 +208,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         url: image.url || "",
         width: image.width,
         height: image.height,
-        image: image.url ? undefined : image,
       }));
       const newEvent = {
         ...DEFAULT_EVENT_DATA,

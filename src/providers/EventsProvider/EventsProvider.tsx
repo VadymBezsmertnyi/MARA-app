@@ -101,15 +101,26 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
       const formData = new FormData();
       const newImageFiles =
         newEvent.imageFiles?.filter(
-          (img) => img.url.includes("data:image") || img.url.includes("file://")
+          (img) =>
+            img.url &&
+            (img.url.includes("data:image") ||
+              img.url.includes("file://") ||
+              img.url.startsWith("file://"))
         ) || [];
       const existingImageFiles =
         newEvent.imageFiles?.filter(
           (img) =>
-            !img.url.includes("data:image") && !img.url.includes("file://")
+            img.url &&
+            img._id &&
+            !img.url.includes("data:image") &&
+            !img.url.includes("file://") &&
+            !img.url.startsWith("file://")
         ) || [];
       newImageFiles.forEach((img, index) => {
-        if (img.url.includes("data:image") || img.url.includes("file://")) {
+        if (
+          img.url &&
+          (img.url.includes("file://") || img.url.startsWith("file://"))
+        ) {
           const fileExtension = img.url.split(".").pop() || "jpg";
           const fileName = `image_${index}.${fileExtension}`;
           formData.append("imageFiles", {
@@ -171,17 +182,29 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
     const formData = new FormData();
     const newImageFiles =
       changeEvent.imageFiles?.filter(
-        (img) => img.url.includes("data:image") || img.url.includes("file://")
+        (img) =>
+          img.url &&
+          (img.url.includes("data:image") ||
+            img.url.includes("file://") ||
+            img.url.startsWith("file://"))
       ) || [];
     const existingImageFiles =
       changeEvent.imageFiles?.filter(
-        (img) => !img.url.includes("data:image") && !img.url.includes("file://")
+        (img) =>
+          img.url &&
+          img._id &&
+          !img.url.includes("data:image") &&
+          !img.url.includes("file://") &&
+          !img.url.startsWith("file://")
       ) || [];
     newImageFiles.forEach((img, index) => {
-      if (img.url.includes("data:image") || img.url.includes("file://")) {
+      if (
+        img.url &&
+        (img.url.includes("file://") || img.url.startsWith("file://"))
+      ) {
         const fileExtension = img.url.split(".").pop() || "jpg";
         const fileName = `image_${index}.${fileExtension}`;
-        formData.append("images", {
+        formData.append("imageFiles", {
           uri: img.url,
           type: "image/jpeg",
           name: fileName,

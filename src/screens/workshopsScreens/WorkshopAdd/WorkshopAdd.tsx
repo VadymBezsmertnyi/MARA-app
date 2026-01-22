@@ -275,7 +275,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         url: image.url || "",
         width: image.width,
         height: image.height,
-        image: image.url ? undefined : image,
       }));
       const currentPlace =
         selectWorkshop &&
