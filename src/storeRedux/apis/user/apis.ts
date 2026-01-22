@@ -105,63 +105,50 @@ export const editUser = (builder: Builder) =>
       const existingAvatarUrl = isDeleteAvatar
         ? null
         : existingUserData?.avatarFile?.url;
+      const formData = new FormData();
+      if (hasNewAvatarFile)
+        formData.append("avatarFile", {
+          uri: avatarFile.uri,
+          type: "image/jpeg",
+          name: "avatar.jpg",
+        } as any);
+      else if (isDeleteAvatar) formData.append("avatarFile", null as any);
 
-      let requestBody: FormData;
-      if (hasNewAvatarFile || isDeleteAvatar) {
-        const formData = new FormData();
-        if (hasNewAvatarFile)
-          formData.append("avatarFile", {
-            uri: avatarFile.uri,
-            type: "image/jpeg",
-            name: "avatar.jpg",
-          } as any);
-        else if (isDeleteAvatar) formData.append("avatarFile", null as any);
-
-        const { avatarFile: _, ...bodyWithoutAvatar } = body;
-        Object.keys({ ...existingUserData, ...bodyWithoutAvatar }).forEach(
-          (key) => {
-            if (key !== "avatarFile" && key !== "avatar") {
-              const value =
-                key === "time_token"
-                  ? 1
-                  : bodyWithoutAvatar[key as keyof typeof bodyWithoutAvatar] !==
-                    undefined
-                  ? bodyWithoutAvatar[key as keyof typeof bodyWithoutAvatar]
-                  : (existingUserData as any)?.[key];
-              if (value !== undefined && value !== null) {
-                if (
-                  typeof value === "object" &&
-                  !Array.isArray(value) &&
-                  !(value instanceof Date)
-                )
-                  formData.append(key, JSON.stringify(value));
-                else if (Array.isArray(value))
-                  formData.append(key, JSON.stringify(value));
-                else formData.append(key, String(value));
-              }
+      const { avatarFile: _, ...bodyWithoutAvatar } = body;
+      Object.keys({ ...existingUserData, ...bodyWithoutAvatar }).forEach(
+        (key) => {
+          if (key !== "avatarFile" && key !== "avatar") {
+            const value =
+              key === "time_token"
+                ? 1
+                : bodyWithoutAvatar[key as keyof typeof bodyWithoutAvatar] !==
+                  undefined
+                ? bodyWithoutAvatar[key as keyof typeof bodyWithoutAvatar]
+                : (existingUserData as any)?.[key];
+            if (value !== undefined && value !== null) {
+              if (
+                typeof value === "object" &&
+                !Array.isArray(value) &&
+                !(value instanceof Date)
+              )
+                formData.append(key, JSON.stringify(value));
+              else if (Array.isArray(value))
+                formData.append(key, JSON.stringify(value));
+              else formData.append(key, String(value));
             }
           }
+        }
+      );
+      if (existingAvatarUrl && !isDeleteAvatar && !hasNewAvatarFile)
+        formData.append(
+          "avatarUrl",
+          JSON.stringify({ url: existingAvatarUrl })
         );
-        if (existingAvatarUrl && !isDeleteAvatar)
-          formData.append(
-            "avatarUrl",
-            JSON.stringify({ url: existingAvatarUrl })
-          );
-
-        requestBody = formData;
-      } else {
-        const { avatarFile: _, ...bodyWithoutAvatar } = body;
-        requestBody = {
-          ...existingUserData,
-          ...bodyWithoutAvatar,
-          time_token: 1,
-        };
-      }
 
       return {
         url: PATHS.editUser,
         method: "PUT",
-        body: requestBody,
+        body: formData,
       };
     },
     transformResponse: (response: unknown) => {

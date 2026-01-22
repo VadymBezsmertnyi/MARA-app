@@ -210,55 +210,43 @@ const UserProvider: FunctionComponent<Props> = (props) => {
           ? null
           : userData.avatarFile?.url;
 
-        let requestData: FormData | Record<string, any>;
+        const formData = new FormData();
         if (hasNewAvatarFile) {
-          const formData = new FormData();
-          formData.append("avatarFile", {
-            uri: avatarFile.uri,
-            type: "image/jpeg",
-            name: "avatar.jpg",
-          } as any);
+          formData.append("avatarFile", avatarFile as any);
+        } else if (isDeleteAvatar) formData.append("avatarFile", null as any);
 
-          Object.keys({ ...userData, ...newInfoUser }).forEach((key) => {
-            if (key !== "avatarFile" && key !== "avatar") {
-              const value =
-                key === "time_token"
-                  ? 1
-                  : newInfoUser[key] !== undefined
-                  ? newInfoUser[key]
-                  : (userData as any)[key];
-              if (value !== undefined && value !== null) {
-                if (
-                  typeof value === "object" &&
-                  !Array.isArray(value) &&
-                  !(value instanceof Date)
-                )
-                  formData.append(key, JSON.stringify(value));
-                else if (Array.isArray(value))
-                  formData.append(key, JSON.stringify(value));
-                else formData.append(key, String(value));
-              }
+        Object.keys({ ...userData, ...newInfoUser }).forEach((key) => {
+          if (key !== "avatarFile" && key !== "avatar") {
+            const value =
+              key === "time_token"
+                ? 1
+                : newInfoUser[key] !== undefined
+                ? newInfoUser[key]
+                : (userData as any)[key];
+            if (value !== undefined && value !== null) {
+              if (
+                typeof value === "object" &&
+                !Array.isArray(value) &&
+                !(value instanceof Date)
+              )
+                formData.append(key, JSON.stringify(value));
+              else if (Array.isArray(value))
+                formData.append(key, JSON.stringify(value));
+              else formData.append(key, String(value));
             }
-          });
-          if (existingAvatarUrl)
-            formData.append(
-              "avatarUrl",
-              JSON.stringify({ url: existingAvatarUrl })
-            );
-
-          requestData = formData;
-        } else
-          requestData = {
-            ...userData,
-            ...newInfoUser,
-            time_token: 1,
-          };
+          }
+        });
+        if (existingAvatarUrl && !isDeleteAvatar && !hasNewAvatarFile)
+          formData.append(
+            "avatarUrl",
+            JSON.stringify({ url: existingAvatarUrl })
+          );
 
         const resultCreateNewUser = await api(
           PATHS.editUser,
           {
             method: "PUT",
-            data: requestData,
+            data: formData,
           },
           z.object({
             userData: userDataS,
