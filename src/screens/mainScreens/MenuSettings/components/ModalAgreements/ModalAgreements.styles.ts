@@ -14,12 +14,13 @@ export const styles = StyleSheet.create({
   modalContent: {
     width: SCREEN_WIDTH * 0.9,
     height: SCREEN_HEIGHT * 0.8,
+  },
+  container: {
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.8,
     backgroundColor: colors.white,
     borderRadius: horizontalScale(16),
     overflow: "hidden",
-  },
-  container: {
-    flex: 1,
   },
   webView: {
     flex: 1,
