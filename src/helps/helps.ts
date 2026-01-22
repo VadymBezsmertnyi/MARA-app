@@ -55,34 +55,6 @@ export const combineDateAndTime = (date: Date, time: Date): Date => {
   return combinedDate;
 };
 
-export const compressAndProcessImages = async (
-  result: ImagePickerSuccessResult
-): Promise<TempFileType[]> => {
-  const listImagesCompress = await Promise.all(
-    result.assets.map(async (image) =>
-      ImageManipulator.manipulateAsync(
-        image.uri,
-        [{ resize: { width: image.width / 2 } }],
-        {
-          compress: 0.7,
-          format: ImageManipulator.SaveFormat.JPEG,
-        }
-      )
-    )
-  );
-
-  const listImages = listImagesCompress
-    .map(({ width, height, uri }) => ({
-      width,
-      height,
-      uri: uri || "",
-    }))
-    .filter((image) => image.uri && image.uri.length > 0);
-  const isCurrentListImages = tempFilesSchema.safeParse(listImages);
-  if (isCurrentListImages.success) return isCurrentListImages.data;
-  return [];
-};
-
 export const getStreetNumber = (fullTerms: Array<{ value: string }>) => {
   const address = fullTerms
     .filter(

@@ -36,7 +36,6 @@ import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace
 import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
 
 // helps
-import { compressAndProcessImages } from "../../../helps/helps";
 import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";

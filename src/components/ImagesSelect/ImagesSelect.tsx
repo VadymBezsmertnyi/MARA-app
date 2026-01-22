@@ -17,9 +17,6 @@ import {
 import { ImageCache } from "../ImageCache/ImageCache";
 import { ImageModal } from "../ImageModal/ImageModal";
 
-// helps
-import { compressAndProcessImages } from "../../helps/helps";
-
 // styles
 import { styles } from "./ImagesSelect.styles";
 
@@ -72,10 +69,8 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
       allowsMultipleSelection: true,
     });
 
-    if (!result.canceled) {
-      const listImages = await compressAndProcessImages(result);
-      setImages((state) => [...state, ...listImages]);
-    }
+    if (!result.canceled) setImages((state) => [...state, ...result.assets]);
+
     setLoading(false);
   };
 

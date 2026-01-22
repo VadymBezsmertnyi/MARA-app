@@ -12,9 +12,6 @@ import {
   DropdownAlertType,
 } from "../../../DropDownAlertProvider/DropDownAlertProvider";
 
-// helps
-import { compressAndProcessImages } from "../../../../helps/helps";
-
 // components
 import { ModalWindow } from "../../../../components/ModalWindow/ModalWindow";
 import { IconClose, IconProfileAvatar } from "../../../../icons/components";
@@ -58,9 +55,8 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
     });
 
     if (!result.canceled) {
-      const compressImages = await compressAndProcessImages(result);
       const resultUpdate = await editUser({
-        avatarFile: compressImages[0],
+        avatarFile: result.assets[0],
       });
 
       if (!resultUpdate)
