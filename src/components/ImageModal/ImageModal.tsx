@@ -3,7 +3,7 @@ import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // types
-import { ImageModalType } from "./ImageModal.types";
+import { ImageFileType } from "../../storeRedux/types";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -23,7 +23,7 @@ import { styles } from "./ImageModal.styles";
 import colors from "../../../styles/colors";
 
 type ImageModalProps = {
-  imageInfo: ImageModalType | null;
+  imageInfo: (ImageFileType & { index: number }) | null;
   setIsDelete: (value: boolean) => void;
   setIsMain: (value: boolean) => void;
   onClose: () => void;
@@ -40,7 +40,7 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
   const imageStyles = useMemo(
     () =>
       imageInfo
-        ? [styles.image, getRightSizeImage(imageInfo.image, null, 0.4)]
+        ? [styles.image, getRightSizeImage(imageInfo, null, 0.4)]
         : styles.image,
     [imageInfo]
   );
@@ -88,7 +88,7 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
               <View style={styles.containerBody}>
                 <ImageCache
                   contentFit={"contain"}
-                  imageSrc={`data:image/jpeg;base64,${imageInfo.image.base64}`}
+                  imageSrc={imageInfo.url}
                   style={imageStyles}
                 />
                 <View style={styles.containerButtons}>

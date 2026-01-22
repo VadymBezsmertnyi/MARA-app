@@ -36,7 +36,9 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   });
   const [isDelete, setIsDelete] = useState(false);
   const [isMain, setIsMain] = useState(false);
-  const [image, setImage] = useState<ImageFileType | null>(null);
+  const [image, setImage] = useState<
+    (ImageFileType & { index: number }) | null
+  >(null);
   const isBack = useMemo(
     () => showImages.start > 0 && images.length > 3,
     [images, showImages]
@@ -69,7 +71,14 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
       allowsMultipleSelection: true,
     });
 
-    if (!result.canceled) setImages((state) => [...state, ...result.assets]);
+    if (!result.canceled)
+      setImages((state) => [
+        ...state,
+        ...result.assets.map((asset) => ({
+          ...asset,
+          url: asset.uri,
+        })),
+      ]);
 
     setLoading(false);
   };
@@ -108,7 +117,7 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
       );
       const newListImages = [mainImage, ...notMainList];
       setImages(newListImages);
-      setImage({ image: newListImages[0], index: 0 });
+      setImage({ ...newListImages[0], index: 0 });
       setIsMain(false);
     }
   };
@@ -144,13 +153,10 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
               <TouchableOpacity
                 key={`image-event-${index + 1}`}
                 onPress={() => {
-                  setImage({ image, index });
+                  setImage({ ...image, index });
                 }}
               >
-                <ImageCache
-                  imageSrc={`data:image/jpeg;base64,${image.base64}`}
-                  style={styles.image}
-                />
+                <ImageCache imageSrc={image.url} style={styles.image} />
               </TouchableOpacity>
             ))}
         </View>

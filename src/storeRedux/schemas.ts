@@ -1,7 +1,7 @@
 import z from "zod";
 
 export const fileSchema = z.object({
-  _id: z.string(),
+  _id: z.string().optional(),
   url: z.string(),
   width: z.number().optional(),
   height: z.number().optional(),
