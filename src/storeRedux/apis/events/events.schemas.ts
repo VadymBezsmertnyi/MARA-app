@@ -5,7 +5,7 @@ import {
   placeDbSchema,
   regionDbSchema,
 } from "../../../providers/PlacesProvider/PlacesProvider.schemas";
-import { codeCurrenciesSchema } from "../../../providers/PaymentProvider/PaymentProvider.schemas";
+import { codeCurrenciesSchema } from "../payment/payment.schemas";
 import { fileSchema } from "../../schemas";
 
 const populateUserData = z.object({
@@ -61,7 +61,10 @@ export const addEventRequestSchema = z.object({
     start: z.number(),
     finish: z.number(),
   }),
-  price: z.object({ start: z.number(), finish: z.number() }).nullable().optional(),
+  price: z
+    .object({ start: z.number(), finish: z.number() })
+    .nullable()
+    .optional(),
   currency: codeCurrenciesSchema,
   description: z.string(),
   likeUserIds: z.array(z.string()).default([]),

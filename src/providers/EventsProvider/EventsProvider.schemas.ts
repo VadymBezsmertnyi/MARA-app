@@ -5,7 +5,7 @@ import {
   placeDbSchema,
   regionDbSchema,
 } from "../PlacesProvider/PlacesProvider.schemas";
-import { codeCurrenciesSchema } from "../PaymentProvider/PaymentProvider.schemas";
+import { codeCurrenciesSchema } from "../../storeRedux/apis/payment/payment.schemas";
 import { fileSchema } from "../../storeRedux/schemas";
 
 const populateUserData = z.object({

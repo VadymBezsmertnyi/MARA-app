@@ -40,7 +40,6 @@ import WorkshopsProvider from "./src/providers/WorkshopsProvider/WorkshopsProvid
 import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
 import EventsProvider from "./src/providers/EventsProvider/EventsProvider";
 import PlacesProvider from "./src/providers/PlacesProvider/PlacesProvider";
-import PaymentProvider from "./src/providers/PaymentProvider/PaymentProvider";
 import PushNotificationProvider from "./src/providers/PushNotificationProvider/PushNotificationProvider";
 import AnalyticsProvider from "./src/providers/AnalyticsProvider/AnalyticsProvider";
 import SharingProvider from "./src/providers/SharingProvider/SharingProvider";
@@ -137,20 +136,16 @@ function App() {
                                       <PushNotificationProvider
                                         currentRouteName={currentRouteName}
                                       >
-                                        <PaymentProvider>
-                                          <WorkshopsProvider>
-                                            <SharingProvider>
-                                              <Navigators
-                                                currentRouteName={
-                                                  currentRouteName
-                                                }
-                                                navigation={
-                                                  navigationRef.current
-                                                }
-                                              />
-                                            </SharingProvider>
-                                          </WorkshopsProvider>
-                                        </PaymentProvider>
+                                        <WorkshopsProvider>
+                                          <SharingProvider>
+                                            <Navigators
+                                              currentRouteName={
+                                                currentRouteName
+                                              }
+                                              navigation={navigationRef.current}
+                                            />
+                                          </SharingProvider>
+                                        </WorkshopsProvider>
                                       </PushNotificationProvider>
                                     </GestureHandlerRootView>
                                   </MapProvider>
