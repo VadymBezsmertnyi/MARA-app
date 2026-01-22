@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -29,7 +29,6 @@ import { useSharingProvider } from "../../../providers/SharingProvider/SharingPr
 import { Map } from "../../../components/Map/Map";
 import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { GalleryModal } from "../../../components/GalleryModal/GalleryModal";
-import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
 import { Header } from "../../../components/Header/Header";
 import { HeaderRightItem } from "../../workshopsScreens/WorkshopsItem/components/HeaderRightItem/HeaderRightItem";
 
@@ -370,22 +369,14 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         </View>
         <View style={styles.containerEmpty} />
       </ScrollView>
-      <Modal visible={gallery !== null} transparent>
-        {gallery ? (
-          <ModalWindow
-            onClose={() => {
-              setGallery(null);
-            }}
-          >
-            <GalleryModal
-              data={gallery}
-              onClose={() => {
-                setGallery(null);
-              }}
-            />
-          </ModalWindow>
-        ) : null}
-      </Modal>
+      {gallery && (
+        <GalleryModal
+          data={gallery}
+          onClose={() => {
+            setGallery(null);
+          }}
+        />
+      )}
     </View>
   );
 };
