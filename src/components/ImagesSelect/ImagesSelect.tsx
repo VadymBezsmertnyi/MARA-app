@@ -67,7 +67,7 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   const pickImage = async () => {
     setLoading(true);
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: ["images"],
       aspect: [4, 3],
       quality: 1,
       allowsMultipleSelection: true,
