@@ -21,6 +21,7 @@ import {
   changeEvent,
   deleteEvent,
 } from "./apis/events/apis";
+import { getCurrencies } from "./apis/payment/apis";
 
 export type Builder = EndpointBuilder<
   BaseQueryFn<FetchArgs, unknown, FetchBaseQueryError>,
@@ -46,5 +47,7 @@ export const api = createApi({
     addEvent: addEvent(builder),
     changeEvent: changeEvent(builder),
     deleteEvent: deleteEvent(builder),
+    // Payment APIs
+    getCurrencies: getCurrencies(builder),
   }),
 });
