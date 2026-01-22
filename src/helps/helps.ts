@@ -73,10 +73,11 @@ export const compressAndProcessImages = async (
   );
 
   const listImages = listImagesCompress
-    .map(({ width, height, base64 }) => ({
+    .map(({ width, height, base64, uri }) => ({
       width,
       height,
-      base64,
+      base64: base64 || "",
+      uri: uri || "",
     }))
     .filter((image) => image.base64 && image.base64.length > 0);
   const isCurrentListImages = imagesSchema.safeParse(listImages);
