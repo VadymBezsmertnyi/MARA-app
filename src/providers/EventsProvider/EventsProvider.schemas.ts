@@ -6,17 +6,11 @@ import {
   regionDbSchema,
 } from "../PlacesProvider/PlacesProvider.schemas";
 import { codeCurrenciesSchema } from "../PaymentProvider/PaymentProvider.schemas";
-import { imageSchema } from "../../components/ImageModal/ImageModal.schemas";
+import { fileSchema } from "../../storeRedux/shemas";
 
 const populateUserData = z.object({
   _id: z.string(),
-  avatar: z
-    .object({
-      _id: z.any(),
-      url: z.string(),
-      image: imageSchema.optional(),
-    })
-    .nullable(),
+  avatarFile: fileSchema.nullable().default(null),
   firstName: z.string(),
   lastName: z.string(),
   phoneNumber: z.string(),
@@ -38,14 +32,7 @@ export const eventSchema = z.object({
   price: z.object({ start: z.number(), finish: z.number() }).nullable(),
   currency: codeCurrenciesSchema,
   description: z.string(),
-  images: z.array(
-    z.object({
-      _id: z.string(),
-      url: z.string(),
-      width: z.number(),
-      height: z.number(),
-    })
-  ),
+  imageFiles: z.array(fileSchema).default([]),
   likeUserIds: z.array(populateUserData),
 });
 

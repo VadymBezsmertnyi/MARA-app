@@ -98,12 +98,54 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
   const addEvent = async (newEvent: NewEventType) => {
     setLoading(true);
     if (userData?._id) {
-      const data = { ...newEvent, userId: userData._id };
+      const formData = new FormData();
+      const newImageFiles =
+        newEvent.imageFiles?.filter((img) => img.image && !img.url) || [];
+      const existingImageFiles =
+        newEvent.imageFiles?.filter((img) => img.url) || [];
+      newImageFiles.forEach((img, index) => {
+        if (img.image?.uri) {
+          const fileExtension = img.image.uri.split(".").pop() || "jpg";
+          const fileName = `image_${index}.${fileExtension}`;
+          formData.append("imageFiles", {
+            uri: img.image.uri,
+            type: "image/jpeg",
+            name: fileName,
+          } as any);
+        }
+      });
+      Object.keys(newEvent).forEach((key) => {
+        if (key !== "imageFiles") {
+          const value = (newEvent as any)[key];
+          if (value !== undefined && value !== null) {
+            if (
+              typeof value === "object" &&
+              !Array.isArray(value) &&
+              !(value instanceof Date)
+            )
+              formData.append(key, JSON.stringify(value));
+            else formData.append(key, String(value));
+          }
+        }
+      });
+      if (existingImageFiles.length > 0)
+        formData.append(
+          "existingImages",
+          JSON.stringify(
+            existingImageFiles.map((img) => ({
+              _id: img._id,
+              url: img.url,
+            }))
+          )
+        );
+
+      formData.append("userId", userData._id);
+
       const result = await api(
         PATHS.eventAdd,
         {
           method: "POST",
-          data,
+          data: formData,
         },
         z.object({ event: eventSchema })
       );
@@ -121,11 +163,56 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
 
   const changeEvent = async (changeEvent: ChangeEventType) => {
     setLoading(true);
+    const formData = new FormData();
+    const newImageFiles =
+      changeEvent.imageFiles?.filter((img) => img.image && !img.url) || [];
+    const existingImageFiles =
+      changeEvent.imageFiles?.filter((img) => img.url) || [];
+    newImageFiles.forEach((img, index) => {
+      if (img.image?.uri) {
+        const fileExtension = img.image.uri.split(".").pop() || "jpg";
+        const fileName = `image_${index}.${fileExtension}`;
+        formData.append("images", {
+          uri: img.image.uri,
+          type: "image/jpeg",
+          name: fileName,
+        } as any);
+      }
+    });
+    Object.keys(changeEvent).forEach((key) => {
+      if (key !== "imageFiles") {
+        const value = (changeEvent as any)[key];
+        if (value !== undefined && value !== null) {
+          if (
+            typeof value === "object" &&
+            !Array.isArray(value) &&
+            !(value instanceof Date)
+          )
+            formData.append(key, JSON.stringify(value));
+          else if (Array.isArray(value))
+            formData.append(key, JSON.stringify(value));
+          else formData.append(key, String(value));
+        }
+      }
+    });
+
+    if (existingImageFiles.length > 0) {
+      formData.append(
+        "existingImages",
+        JSON.stringify(
+          existingImageFiles.map((img) => ({
+            _id: img._id,
+            url: img.url,
+          }))
+        )
+      );
+    }
+
     const result = await api(
       PATHS.eventChange,
       {
         method: "POST",
-        data: changeEvent,
+        data: formData,
       },
       z.object({ event: eventSchema })
     );

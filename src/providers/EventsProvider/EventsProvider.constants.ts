@@ -17,6 +17,6 @@ export const DEFAULT_EVENT_DATA: Omit<EventType, "_id" | "userId"> = {
   price: null,
   currency: "UAH",
   description: "",
-  images: [],
+  imageFiles: [],
   likeUserIds: [],
 };
