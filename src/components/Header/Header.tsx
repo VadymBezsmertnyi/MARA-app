@@ -6,7 +6,6 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
@@ -51,14 +50,14 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   rightStyle,
 }) => {
   const navigation = useAllNavigation();
-  const { theme } = useThemeProvider();
+  const { theme, heightStatusBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
   const [leftWidth, setLeftWidth] = useState(0);
   const [rightWidth, setRightWidth] = useState(0);
 
   const backgroundStyles = useMemo(
-    () => [styles.background, backgroundStyle],
-    [backgroundStyle]
+    () => [styles.background, { paddingTop: heightStatusBar }, backgroundStyle],
+    [backgroundStyle, heightStatusBar]
   );
 
   const containerStyles = useMemo(
@@ -85,7 +84,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   };
 
   return (
-    <SafeAreaView style={backgroundStyles}>
+    <View style={backgroundStyles}>
       <View style={containerStyles}>
         <View
           style={{
@@ -159,6 +158,6 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
           ) : null}
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };

@@ -78,7 +78,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n, language } = useLocalesProvider();
   const { getErrorText } = useErrors(i18n);
-  const { heightStatusBar } = useThemeProvider();
+  const { heightTabBar } = useThemeProvider();
   const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
     useWorkshopsProvider();
   const { userData } = useUserProvider();
@@ -141,10 +141,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     }
   };
 
-  const containerStyles = useMemo(
-    () => [styles.container, { paddingTop: heightStatusBar }],
-    [heightStatusBar]
-  );
   const valueTypesWork = useMemo(() => {
     const selectMotoTypes = selectMotoTypesWorks.map(
       (idTypeWork) =>
@@ -390,7 +386,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
 
   return (
     <>
-      <View style={containerStyles}>
+      <View style={[styles.container, { paddingBottom: heightTabBar }]}>
         <Header
           title={
             selectWorkshop ? i18n._("Change workshop") : i18n._("Add workshop")
