@@ -119,16 +119,20 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     const formData = new FormData();
 
     const newImageFiles =
-      newWorkshop.imageFiles?.filter((img) => img.image && !img.url) || [];
+      newWorkshop.imageFiles?.filter(
+        (img) => img.url.includes("data:image") || img.url.includes("file://")
+      ) || [];
     const existingImageFiles =
-      newWorkshop.imageFiles?.filter((img) => img.url) || [];
+      newWorkshop.imageFiles?.filter(
+        (img) => !img.url.includes("data:image") && !img.url.includes("file://")
+      ) || [];
 
     newImageFiles.forEach((img, index) => {
-      if (img.image?.uri) {
-        const fileExtension = img.image.uri.split(".").pop() || "jpg";
+      if (img.url.includes("data:image") || img.url.includes("file://")) {
+        const fileExtension = img.url.split(".").pop() || "jpg";
         const fileName = `image_${index}.${fileExtension}`;
         formData.append("imageFiles", {
-          uri: img.image.uri,
+          uri: img.url,
           type: "image/jpeg",
           name: fileName,
         } as any);
@@ -199,16 +203,20 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     const formData = new FormData();
 
     const newImageFiles =
-      changeWorkshop.imageFiles?.filter((img) => img.image && !img.url) || [];
+      changeWorkshop.imageFiles?.filter(
+        (img) => img.url.includes("data:image") || img.url.includes("file://")
+      ) || [];
     const existingImageFiles =
-      changeWorkshop.imageFiles?.filter((img) => img.url) || [];
+      changeWorkshop.imageFiles?.filter(
+        (img) => !img.url.includes("data:image") && !img.url.includes("file://")
+      ) || [];
 
     newImageFiles.forEach((img, index) => {
-      if (img.image?.uri) {
-        const fileExtension = img.image.uri.split(".").pop() || "jpg";
+      if (img.url.includes("data:image") || img.url.includes("file://")) {
+        const fileExtension = img.url.split(".").pop() || "jpg";
         const fileName = `image_${index}.${fileExtension}`;
         formData.append("imageFiles", {
-          uri: img.image.uri,
+          uri: img.url,
           type: "image/jpeg",
           name: fileName,
         } as any);
