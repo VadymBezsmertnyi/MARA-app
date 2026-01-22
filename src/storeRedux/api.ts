@@ -14,6 +14,13 @@ import {
   editUser,
   deleteUser,
 } from "./apis/user/apis";
+import {
+  getEvents,
+  getEventsUser,
+  addEvent,
+  changeEvent,
+  deleteEvent,
+} from "./apis/events/apis";
 
 export type Builder = EndpointBuilder<
   BaseQueryFn<FetchArgs, unknown, FetchBaseQueryError>,
@@ -33,5 +40,11 @@ export const api = createApi({
     getMe: getMe(builder),
     editUser: editUser(builder),
     deleteUser: deleteUser(builder),
+    // Events APIs
+    getEvents: getEvents(builder),
+    getEventsUser: getEventsUser(builder),
+    addEvent: addEvent(builder),
+    changeEvent: changeEvent(builder),
+    deleteEvent: deleteEvent(builder),
   }),
 });
