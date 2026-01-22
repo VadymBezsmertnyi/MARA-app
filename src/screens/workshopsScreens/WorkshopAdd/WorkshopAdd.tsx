@@ -576,7 +576,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         onSubmit={onSubmitPlace}
         statePlace={place || undefined}
       />
-      <Modal visible={isShowDeleteModal} transparent>
+      {isShowDeleteModal && (
         <ModalDelete
           onClose={() => {
             setIsShowDeleteModal(false);
@@ -588,7 +588,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
             }
           }}
         />
-      </Modal>
+      )}
       <ModalShowErrors
         isOpen={isShowErrors}
         onClose={() => {

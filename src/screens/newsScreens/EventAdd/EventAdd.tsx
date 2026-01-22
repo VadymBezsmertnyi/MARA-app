@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import {
   KeyboardAvoidingView,
-  Modal,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -483,7 +482,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         }}
         errors={errorMessage}
       />
-      <Modal visible={isShowDeleteModal} transparent>
+      {isShowDeleteModal && (
         <ModalDelete
           onClose={() => {
             setIsShowDeleteModal(false);
@@ -495,7 +494,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             }
           }}
         />
-      </Modal>
+      )}
     </KeyboardAvoidingView>
   );
 };
