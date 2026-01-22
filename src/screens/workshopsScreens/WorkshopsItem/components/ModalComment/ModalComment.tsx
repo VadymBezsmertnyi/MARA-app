@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { Shadow } from "react-native-shadow-2";
 
 // types
 import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
@@ -113,77 +114,106 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
   }, [commentUser]);
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={styles.containerHeader}>
-          <Text style={styles.titleHeader}>{i18n._("Leave a review")}</Text>
-        </View>
-        <View style={styles.containerBody}>
-          <Input
-            label={i18n._("Name")}
-            placeholder={i18n._("Enter your name")}
-            value={userName}
-            onChange={(value) => {
-              clearKeyError("userName");
-              setUserName(value);
-            }}
-            errorMessage={errorMessages?.userName}
-          />
-          <Input
-            placeholder={i18n._("Add a description about the workshop")}
-            label={i18n._("Workshop description")}
-            value={description}
-            onChange={(value) => {
-              clearKeyError("description");
-              setDescription(value);
-            }}
-            containerStyle={styles.containerStyle}
-            customStyles={styles.customStylesInput}
-            errorMessage={errorMessages?.description}
-          />
-          <View>
-            <View style={styles.containerStars}>
-              {stars.map((star) => (
-                <TouchableOpacity
-                  key={`star-${star}-comment`}
-                  onPress={() => {
-                    clearKeyError("rating");
-                    setRating(star);
-                  }}
-                >
-                  {rating >= star ? (
-                    <IconStar
-                      width={32}
-                      height={32}
-                      fill={colors.yellow}
-                      stroke={colors.yellow}
+    <Modal
+      visible={true}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
+      <TouchableOpacity
+        style={styles.modalOverlay}
+        activeOpacity={1}
+        onPress={onClose}
+      >
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
+          style={styles.modalContent}
+        >
+          <Shadow stretch>
+            <View style={styles.containerModal}>
+              <ScrollView>
+                <View style={styles.container}>
+                  <View style={styles.containerHeader}>
+                    <Text style={styles.titleHeader}>
+                      {i18n._("Leave a review")}
+                    </Text>
+                  </View>
+                  <View style={styles.containerBody}>
+                    <Input
+                      label={i18n._("Name")}
+                      placeholder={i18n._("Enter your name")}
+                      value={userName}
+                      onChange={(value) => {
+                        clearKeyError("userName");
+                        setUserName(value);
+                      }}
+                      errorMessage={errorMessages?.userName}
                     />
-                  ) : (
-                    <IconStar
-                      width={32}
-                      height={32}
-                      stroke={colors.grayCloudy}
+                    <Input
+                      placeholder={i18n._("Add a description about the workshop")}
+                      label={i18n._("Workshop description")}
+                      value={description}
+                      onChange={(value) => {
+                        clearKeyError("description");
+                        setDescription(value);
+                      }}
+                      containerStyle={styles.containerStyle}
+                      customStyles={styles.customStylesInput}
+                      errorMessage={errorMessages?.description}
                     />
-                  )}
-                </TouchableOpacity>
-              ))}
+                    <View>
+                      <View style={styles.containerStars}>
+                        {stars.map((star) => (
+                          <TouchableOpacity
+                            key={`star-${star}-comment`}
+                            onPress={() => {
+                              clearKeyError("rating");
+                              setRating(star);
+                            }}
+                          >
+                            {rating >= star ? (
+                              <IconStar
+                                width={32}
+                                height={32}
+                                fill={colors.yellow}
+                                stroke={colors.yellow}
+                              />
+                            ) : (
+                              <IconStar
+                                width={32}
+                                height={32}
+                                stroke={colors.grayCloudy}
+                              />
+                            )}
+                          </TouchableOpacity>
+                        ))}
+                      </View>
+                      {errorMessages?.rating ? (
+                        <Text style={styles.errorMessage}>
+                          {errorMessages.rating}
+                        </Text>
+                      ) : null}
+                    </View>
+                  </View>
+                  <View style={styles.containerButton}>
+                    <ButtonCustom
+                      disabled={
+                        errorMessages
+                          ? Object.values(errorMessages).length > 0
+                          : false
+                      }
+                      title={i18n._("Publish")}
+                      onSubmit={onSubmit}
+                    />
+                  </View>
+                </View>
+                <View style={styles.containerEmpty} />
+              </ScrollView>
             </View>
-            {errorMessages?.rating ? (
-              <Text style={styles.errorMessage}>{errorMessages.rating}</Text>
-            ) : null}
-          </View>
-        </View>
-        <View style={styles.containerButton}>
-          <ButtonCustom
-            disabled={
-              errorMessages ? Object.values(errorMessages).length > 0 : false
-            }
-            title={i18n._("Publish")}
-            onSubmit={onSubmit}
-          />
-        </View>
-      </View>
-      <View style={styles.containerEmpty} />
-    </ScrollView>
+          </Shadow>
+        </TouchableOpacity>
+      </TouchableOpacity>
+    </Modal>
   );
 };
