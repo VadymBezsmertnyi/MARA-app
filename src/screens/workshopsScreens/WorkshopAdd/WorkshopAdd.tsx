@@ -2,7 +2,7 @@ import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import * as FileSystem from "expo-file-system";
+import * as FileSystem from "expo-file-system/legacy";
 
 //types
 import { ImageType } from "../../../components/ImageModal/ImageModal.types";

@@ -10,7 +10,7 @@ import {
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import * as FileSystem from "expo-file-system";
+import * as FileSystem from "expo-file-system/legacy";
 import dayjs from "dayjs";
 
 // types
