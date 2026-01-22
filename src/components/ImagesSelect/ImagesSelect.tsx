@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 // types
@@ -15,7 +15,6 @@ import {
   IconArrowRightEventGradient,
 } from "../../icons/components";
 import { ImageCache } from "../ImageCache/ImageCache";
-import { ModalWindow } from "../ModalWindow/ModalWindow";
 import { ImageModal } from "../ImageModal/ImageModal";
 
 // helps
@@ -168,16 +167,12 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
           <IconArrowRightEventGradient width={44} height={44} />
         </TouchableOpacity>
       </View>
-      <Modal visible={Boolean(image)} transparent>
-        <ModalWindow onClose={onClose}>
-          <ImageModal
-            imageInfo={image}
-            setIsDelete={setIsDelete}
-            onClose={onClose}
-            setIsMain={setIsMain}
-          />
-        </ModalWindow>
-      </Modal>
+      <ImageModal
+        imageInfo={image}
+        setIsDelete={setIsDelete}
+        onClose={onClose}
+        setIsMain={setIsMain}
+      />
     </>
   );
 };

@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Modal, Text, TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
 
 // types
 import { ImageModalType } from "./ImageModal.types";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
-import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 
 // components
 import { ImageCache } from "../ImageCache/ImageCache";
@@ -36,12 +36,7 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
   onClose,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { heightStatusBar } = useThemeProvider();
   const isMain = imageInfo?.index === 0;
-  const containerStyles = useMemo(
-    () => [styles.container, { marginTop: heightStatusBar }],
-    [heightStatusBar]
-  );
   const imageStyles = useMemo(
     () =>
       imageInfo
@@ -56,47 +51,76 @@ export const ImageModal: FunctionComponent<ImageModalProps> = ({
 
   if (!imageInfo) return null;
   return (
-    <View style={containerStyles}>
-      <View style={styles.containerHeader}>
-        <View />
-        <Text style={styles.titleHeader}>
-          {i18n._("Photo {numberPhoto}", { numberPhoto: imageInfo.index + 1 })}
-        </Text>
+    <Modal
+      visible={Boolean(imageInfo)}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
+      <TouchableOpacity
+        style={styles.modalOverlay}
+        activeOpacity={1}
+        onPress={onClose}
+      >
         <TouchableOpacity
-          accessibilityLabel={i18n._("Button for closing the modal window")}
-          onPress={onClose}
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
+          style={styles.modalContent}
         >
-          <IconClose width={24} height={24} fill={colors.blackRich} />
+          <Shadow stretch>
+            <View style={styles.container}>
+              <View style={styles.containerHeader}>
+                <View />
+                <Text style={styles.titleHeader}>
+                  {i18n._("Photo {numberPhoto}", {
+                    numberPhoto: imageInfo.index + 1,
+                  })}
+                </Text>
+                <TouchableOpacity
+                  accessibilityLabel={i18n._(
+                    "Button for closing the modal window"
+                  )}
+                  onPress={onClose}
+                >
+                  <IconClose width={24} height={24} fill={colors.blackRich} />
+                </TouchableOpacity>
+              </View>
+              <View style={styles.containerBody}>
+                <ImageCache
+                  contentFit={"contain"}
+                  imageSrc={`data:image/jpeg;base64,${imageInfo.image.base64}`}
+                  style={imageStyles}
+                />
+                <View style={styles.containerButtons}>
+                  <ButtonCustom
+                    disabled={isMain}
+                    type={isMain ? "full" : "transparent"}
+                    title={
+                      isMain
+                        ? i18n._("Main photo")
+                        : i18n._("Make the main photo")
+                    }
+                    onSubmit={() => {
+                      setIsMain(true);
+                    }}
+                  />
+                  <ButtonCustom
+                    type="transparent"
+                    onSubmit={() => {
+                      setIsDelete(true);
+                    }}
+                    colorsGradientProps={colorsGradientButtonDelete}
+                  >
+                    <Text style={styles.titleButtonDelete}>
+                      {i18n._("Delete")}
+                    </Text>
+                  </ButtonCustom>
+                </View>
+              </View>
+            </View>
+          </Shadow>
         </TouchableOpacity>
-      </View>
-      <View style={styles.containerBody}>
-        <ImageCache
-          contentFit={"contain"}
-          imageSrc={`data:image/jpeg;base64,${imageInfo.image.base64}`}
-          style={imageStyles}
-        />
-        <View style={styles.containerButtons}>
-          <ButtonCustom
-            disabled={isMain}
-            type={isMain ? "full" : "transparent"}
-            title={
-              isMain ? i18n._("Main photo") : i18n._("Make the main photo")
-            }
-            onSubmit={() => {
-              setIsMain(true);
-            }}
-          />
-          <ButtonCustom
-            type="transparent"
-            onSubmit={() => {
-              setIsDelete(true);
-            }}
-            colorsGradientProps={colorsGradientButtonDelete}
-          >
-            <Text style={styles.titleButtonDelete}>{i18n._("Delete")}</Text>
-          </ButtonCustom>
-        </View>
-      </View>
-    </View>
+      </TouchableOpacity>
+    </Modal>
   );
 };
