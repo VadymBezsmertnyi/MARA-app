@@ -18,7 +18,7 @@ import {
   RootEventsScreensParamList,
   RootSettingsScreensParamList,
 } from "../../../navigators/Navigators.types";
-import { ImageType } from "../../../components/ImageModal/ImageModal.types";
+import { ImageFileType } from "../../../storeRedux/types";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
@@ -84,7 +84,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [priceStart, setPriceStart] = useState("");
   const [priceFinish, setPriceFinish] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
-  const [images, setImages] = useState<ImageType[]>([]);
+  const [images, setImages] = useState<ImageFileType[]>([]);
   const [isShowErrors, setIsShowErrors] = useState(false);
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
@@ -249,8 +249,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     setLoading(true);
     if (params) {
       if (eventUser) {
-        const imagesWithBath64 = await Promise.all(
-          eventUser.images.map(async (image) => {
+        const images = await Promise.all(
+          eventUser.imageFiles.map(async (image) => {
             const response = await FileSystem.downloadAsync(
               image.url,
               `${FileSystem.documentDirectory}temp.jpg`
@@ -284,7 +284,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         setPriceStart(eventUser.price?.start.toString() || "");
         setPriceFinish(eventUser.price?.finish.toString() || "");
         setAboutEvent(eventUser.description);
-        setImages(imagesWithBath64);
+        setImages(images);
       }
     }
     setLoading(false);

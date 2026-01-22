@@ -5,7 +5,7 @@ import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system/legacy";
 
 //types
-import { ImageType } from "../../../components/ImageModal/ImageModal.types";
+import { ImageFileType } from "../../../storeRedux/types";
 import {
   RootAllScreensParamList,
   RootSettingsScreensParamList,
@@ -106,7 +106,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const [selectAutoTypesWorks, setSelectAutoTypesWorks] = useState<number[]>(
     []
   );
-  const [images, setImages] = useState<ImageType[]>([]);
+  const [images, setImages] = useState<ImageFileType[]>([]);
   const [isShowErrors, setIsShowErrors] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
     string,
@@ -304,7 +304,13 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         comments: selectWorkshop?.comments || [],
       };
       const isCreate = selectWorkshop
-        ? await changeWorkshop({ ...selectWorkshop, ...newWorkshop })
+        ? await changeWorkshop({
+            ...selectWorkshop,
+            ...newWorkshop,
+            likeUserIds: [
+              ...(newWorkshop.likeUserIds || selectWorkshop.likeUserIds || []),
+            ].map((item) => item._id.toString()),
+          })
         : await addWorkshop(newWorkshop);
 
       if (isCreate) {
@@ -330,8 +336,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const getChangeWorkshop = async () => {
     setLoading(true);
     if (selectWorkshop) {
-      const imagesWithBath64 = await Promise.all(
-        selectWorkshop.images.map(async (image) => {
+      const images = await Promise.all(
+        selectWorkshop.imageFiles.map(async (image) => {
           const response = await FileSystem.downloadAsync(
             image.url,
             `${FileSystem.documentDirectory}temp-${image._id}.jpg`
@@ -365,7 +371,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       }));
       setSelectAutoTypesWorks(selectWorkshop.autoTypesWorks);
       setSelectMotoTypesWorks(selectWorkshop.motoTypesWorks);
-      setImages(imagesWithBath64);
+      setImages(images);
     }
     setLoading(false);
   };

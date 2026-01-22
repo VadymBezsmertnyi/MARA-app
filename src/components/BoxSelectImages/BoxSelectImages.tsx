@@ -2,7 +2,7 @@ import React, { FunctionComponent, useMemo } from "react";
 import { Text, View, ViewStyle } from "react-native";
 
 // types
-import { ImageType } from "../ImageModal/ImageModal.types";
+import { ImageFileType } from "../../storeRedux/types";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -15,8 +15,8 @@ import { styles } from "./BoxSelectImages.styles";
 
 type BoxSelectImagesProps = {
   isRegular?: boolean;
-  images: ImageType[];
-  setImages: React.Dispatch<React.SetStateAction<ImageType[]>>;
+  images: ImageFileType[];
+  setImages: React.Dispatch<React.SetStateAction<ImageFileType[]>>;
   isSubTitle?: boolean;
   containerStyle?: ViewStyle;
 };

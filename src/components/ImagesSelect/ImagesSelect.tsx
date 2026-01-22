@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 // types
-import { ImageModalType, ImageType } from "../ImageModal/ImageModal.types";
+import { ImageFileType } from "../../storeRedux/types";
 
 // providers
 import { useLoadingProvider } from "../../providers/LoadingProvider/LoadingProvider";
@@ -24,8 +24,8 @@ import { compressAndProcessImages } from "../../helps/helps";
 import { styles } from "./ImagesSelect.styles";
 
 type ImagesEventProps = {
-  images: ImageType[];
-  setImages: React.Dispatch<React.SetStateAction<ImageType[]>>;
+  images: ImageFileType[];
+  setImages: React.Dispatch<React.SetStateAction<ImageFileType[]>>;
 };
 
 export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
@@ -39,7 +39,7 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   });
   const [isDelete, setIsDelete] = useState(false);
   const [isMain, setIsMain] = useState(false);
-  const [image, setImage] = useState<ImageModalType | null>(null);
+  const [image, setImage] = useState<ImageFileType | null>(null);
   const isBack = useMemo(
     () => showImages.start > 0 && images.length > 3,
     [images, showImages]
