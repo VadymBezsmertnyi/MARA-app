@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import * as FileSystem from "expo-file-system/legacy";
@@ -527,46 +527,39 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           <View style={styles.containerEmpty} />
         </ScrollView>
       </View>
-      <Modal
-        visible={
-          isShowTypeWorkshops || isShowTypesMotoWorks || isShowTypesAutoWorks
-        }
-        transparent
-      >
-        <ModalSheetTypeWorkshops
-          isShowTypeWorkshops={isShowTypeWorkshops}
-          onClose={onSubmitTypeWorkshop}
-          typeWorkshops={typeWorkshops}
-          setTypeWorkshops={(value) => {
-            clearKeyError("types");
-            setTypeWorkshops(value);
-            setNeedCheck("types");
-          }}
-          onSubmit={onSubmitTypeWorkshop}
-        />
-        <ModalSheetTypesMotoWorks
-          isShow={isShowTypesMotoWorks}
-          onClose={onSubmitMotoTypeWorks}
-          selectMotoTypesWorks={selectMotoTypesWorks}
-          setSelectMotoTypesWorks={(value) => {
-            clearKeyError("types");
-            setSelectMotoTypesWorks(value);
-            setNeedCheck("types");
-          }}
-          onSubmit={onSubmitMotoTypeWorks}
-        />
-        <ModalSheetTypesAutoWorks
-          isShow={isShowTypesAutoWorks}
-          onClose={onSubmitAutoTypeWorks}
-          selectAutoTypesWorks={selectAutoTypesWorks}
-          setSelectAutoTypesWorks={(value) => {
-            clearKeyError("types");
-            setSelectAutoTypesWorks(value);
-            setNeedCheck("types");
-          }}
-          onSubmit={onSubmitAutoTypeWorks}
-        />
-      </Modal>
+      <ModalSheetTypeWorkshops
+        isShowTypeWorkshops={isShowTypeWorkshops}
+        onClose={onSubmitTypeWorkshop}
+        typeWorkshops={typeWorkshops}
+        setTypeWorkshops={(value) => {
+          clearKeyError("types");
+          setTypeWorkshops(value);
+          setNeedCheck("types");
+        }}
+        onSubmit={onSubmitTypeWorkshop}
+      />
+      <ModalSheetTypesMotoWorks
+        isShow={isShowTypesMotoWorks}
+        onClose={onSubmitMotoTypeWorks}
+        selectMotoTypesWorks={selectMotoTypesWorks}
+        setSelectMotoTypesWorks={(value) => {
+          clearKeyError("types");
+          setSelectMotoTypesWorks(value);
+          setNeedCheck("types");
+        }}
+        onSubmit={onSubmitMotoTypeWorks}
+      />
+      <ModalSheetTypesAutoWorks
+        isShow={isShowTypesAutoWorks}
+        onClose={onSubmitAutoTypeWorks}
+        selectAutoTypesWorks={selectAutoTypesWorks}
+        setSelectAutoTypesWorks={(value) => {
+          clearKeyError("types");
+          setSelectAutoTypesWorks(value);
+          setNeedCheck("types");
+        }}
+        onSubmit={onSubmitAutoTypeWorks}
+      />
       <ModalSheetSearchPlaceAddress
         isOpen={isShowSelectPlace}
         onClose={() => {
