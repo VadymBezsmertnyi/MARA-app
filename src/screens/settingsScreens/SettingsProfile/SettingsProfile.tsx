@@ -99,13 +99,13 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
 
   const imageSource = useMemo(
     () =>
-      userData?.avatar
+      userData?.avatarFile
         ? ({
-            uri: userData.avatar.url,
+            uri: userData.avatarFile.url,
             cache: "force-cache",
           } as ImageURISource)
         : null,
-    [userData?.avatar]
+    [userData?.avatarFile]
   );
 
   const errorsObject = useMemo(() => {
@@ -160,10 +160,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
     if (!result.canceled) {
       const compressImages = await compressAndProcessImages(result);
       const resultUpdate = await editUser({
-        avatar: {
-          ...userData?.avatar,
-          image: compressImages[0],
-        },
+        avatarFile: compressImages[0],
       });
 
       if (!resultUpdate)

@@ -97,7 +97,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     return placeDB[language].formatted_address;
   }, [placesDB, eventSelect?.place_id]);
   const firstImage = useMemo(
-    () => (eventSelect?.images.length ? eventSelect.images[0] : null),
+    () => (eventSelect?.imageFiles.length ? eventSelect.imageFiles[0] : null),
     [eventSelect]
   );
   const distance = useMemo(
@@ -135,21 +135,20 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   );
 
   const onShowGallery = (indexImage?: number) => {
-    if (eventSelect?.images.length) {
+    if (eventSelect?.imageFiles.length) {
       setGallery({
-        images: eventSelect.images.map((image) => image.url),
+        images: eventSelect.imageFiles.map((image) => image.url),
         indexImage,
       });
     }
   };
   const onPressLike = () => {
     if (eventSelect && userData) {
-      const currentImages = eventSelect.images.map((image) => ({
+      const currentImageFiles = eventSelect.imageFiles.map((image) => ({
         _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
-        image,
       }));
       const likeUserIds = isLike
         ? eventSelect.likeUserIds
@@ -162,7 +161,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
       changeEvent({
         ...eventSelect,
         userId: eventSelect.userId?._id || userData._id,
-        images: currentImages,
+        imageFiles: currentImageFiles,
         likeUserIds,
       });
     }
@@ -334,11 +333,11 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               />
             </View>
           ) : null}
-          {eventSelect.images.length ? (
+          {eventSelect.imageFiles.length ? (
             <View style={styles.gallery}>
               <Text style={styles.subtitle}>{i18n._("Gallery")}:</Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {eventSelect.images.map((image, indexImage) => (
+                {eventSelect.imageFiles.map((image, indexImage) => (
                   <TouchableOpacity
                     key={`image-gallery-${image._id}`}
                     style={styles.imageGallery}

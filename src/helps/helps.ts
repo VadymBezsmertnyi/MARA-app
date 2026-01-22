@@ -4,7 +4,7 @@ import * as ImageManipulator from "expo-image-manipulator";
 import infoPhoneCountries from "country-telephone-data";
 
 // schemas
-import { imagesSchema } from "../components/ImageModal/ImageModal.schemas";
+import { filesSchema } from "../storeRedux/shemas";
 
 // types
 import { ImageType } from "../components/ImageModal/ImageModal.types";
@@ -80,7 +80,7 @@ export const compressAndProcessImages = async (
       uri: uri || "",
     }))
     .filter((image) => image.base64 && image.base64.length > 0);
-  const isCurrentListImages = imagesSchema.safeParse(listImages);
+  const isCurrentListImages = filesSchema.safeParse(listImages);
   if (isCurrentListImages.success) return isCurrentListImages.data;
   return [];
 };

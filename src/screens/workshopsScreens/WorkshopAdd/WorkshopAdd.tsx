@@ -270,12 +270,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       !isError
     ) {
       const clearPhoneNumber = getClearValue(phoneNumber);
-      const currentImages = images.map((image) => ({
+      const currentImageFiles = images.map((image) => ({
         _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
-        image,
+        image: image.url ? undefined : image,
       }));
       const currentPlace =
         selectWorkshop &&
@@ -298,7 +298,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         ...currentPlace,
         motoTypesWorks: selectMotoTypesWorks,
         autoTypesWorks: selectAutoTypesWorks,
-        images: currentImages,
+        imageFiles: currentImageFiles,
         dataCreate: new Date().getTime(),
         rating: selectWorkshop?.rating || 0,
         comments: selectWorkshop?.comments || [],

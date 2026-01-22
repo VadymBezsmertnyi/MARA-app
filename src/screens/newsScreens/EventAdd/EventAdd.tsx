@@ -203,12 +203,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               coordinates: eventUser.coordinates,
             }
           : { place: placeAddress };
-      const currentImages = images.map((image) => ({
+      const currentImageFiles = images.map((image) => ({
         _id: image._id || "",
         url: image.url || "",
         width: image.width,
         height: image.height,
-        image,
+        image: image.url ? undefined : image,
       }));
       const newEvent = {
         ...DEFAULT_EVENT_DATA,
@@ -227,7 +227,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             : null,
         currency: "UAH" as const,
         description: aboutEvent,
-        images: currentImages,
+        imageFiles: currentImageFiles,
         likeUserIds: eventUser?.likeUserIds.map((item) => item._id) || [],
       };
       if (eventUser && eventUser.userId)

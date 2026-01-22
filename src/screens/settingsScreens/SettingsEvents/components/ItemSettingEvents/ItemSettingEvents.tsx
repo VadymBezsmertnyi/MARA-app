@@ -36,7 +36,7 @@ export const ItemSettingEvents: FunctionComponent<ItemSettingEventsProps> = ({
   isStart,
 }) => {
   const navigation = useAllNavigation();
-  const firstImage = event.images[0] ? event.images[0].url : null;
+  const firstImage = event.imageFiles[0] ? event.imageFiles[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { marginTop: isStart ? 0 : 12 }],
     [isStart]

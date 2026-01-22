@@ -188,9 +188,9 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             </TouchableOpacity>
           </View>
           <View style={styles.containerProfile}>
-            {userData?.avatar?.url ? (
+            {userData?.avatarFile?.url ? (
               <ImageCache
-                imageSrc={userData.avatar.url}
+                imageSrc={userData.avatarFile.url}
                 style={styles.imageProfile}
               />
             ) : (

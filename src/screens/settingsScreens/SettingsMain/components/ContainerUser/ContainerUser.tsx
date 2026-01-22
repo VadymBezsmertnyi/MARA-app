@@ -26,13 +26,13 @@ export const ContainerUser: FunctionComponent = () => {
   );
   const imageSource = useMemo(
     () =>
-      userData?.avatar
+      userData?.avatarFile
         ? ({
-            uri: userData.avatar.url,
+            uri: userData.avatarFile.url,
             cache: "force-cache",
           } as ImageURISource)
         : null,
-    [userData?.avatar]
+    [userData?.avatarFile]
   );
 
   return (

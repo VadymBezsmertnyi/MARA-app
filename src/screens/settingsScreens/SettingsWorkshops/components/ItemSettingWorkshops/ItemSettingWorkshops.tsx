@@ -41,7 +41,7 @@ export const ItemSettingWorkshops: FunctionComponent<
   ItemSettingWorkshopsProps
 > = ({ workshop, isStart }) => {
   const navigation = useAllNavigation();
-  const firstImage = workshop.images[0] ? workshop.images[0].url : null;
+  const firstImage = workshop.imageFiles[0] ? workshop.imageFiles[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { marginTop: isStart ? 0 : 12 }],
     [isStart]
