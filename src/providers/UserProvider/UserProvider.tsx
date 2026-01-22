@@ -198,15 +198,66 @@ const UserProvider: FunctionComponent<Props> = (props) => {
     if (userData)
       try {
         setLoading(true);
+
+        const avatarFile = newInfoUser.avatarFile as any;
+        const hasNewAvatarFile =
+          avatarFile && avatarFile.uri && !avatarFile.url;
+        const isDeleteAvatar = avatarFile === null;
+        const existingAvatarUrl =
+          avatarFile?.url ||
+          (userData.avatarFile?.url && !isDeleteAvatar
+            ? userData.avatarFile.url
+            : null);
+
+        let requestData: FormData | Record<string, any>;
+        if (hasNewAvatarFile) {
+          const formData = new FormData();
+          formData.append("avatar", {
+            uri: avatarFile.uri,
+            type: "image/jpeg",
+            name: "avatar.jpg",
+          } as any);
+
+          Object.keys({ ...userData, ...newInfoUser }).forEach((key) => {
+            if (key !== "avatarFile" && key !== "avatar") {
+              const value =
+                key === "time_token"
+                  ? 1
+                  : newInfoUser[key] !== undefined
+                  ? newInfoUser[key]
+                  : (userData as any)[key];
+              if (value !== undefined && value !== null) {
+                if (
+                  typeof value === "object" &&
+                  !Array.isArray(value) &&
+                  !(value instanceof Date)
+                )
+                  formData.append(key, JSON.stringify(value));
+                else if (Array.isArray(value))
+                  formData.append(key, JSON.stringify(value));
+                else formData.append(key, String(value));
+              }
+            }
+          });
+          if (existingAvatarUrl)
+            formData.append(
+              "avatarUrl",
+              JSON.stringify({ url: existingAvatarUrl })
+            );
+
+          requestData = formData;
+        } else
+          requestData = {
+            ...userData,
+            ...newInfoUser,
+            time_token: 1,
+          };
+
         const resultCreateNewUser = await api(
           PATHS.editUser,
           {
             method: "PUT",
-            data: {
-              ...userData,
-              ...newInfoUser,
-              time_token: 1,
-            },
+            data: requestData,
           },
           z.object({
             userData: userDataS,

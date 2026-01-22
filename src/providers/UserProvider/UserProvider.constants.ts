@@ -3,7 +3,7 @@ import { UserDataT } from "./UserProvider.types";
 export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
   isGeoLocation: false,
   isGeoLocationBackground: false,
-  avatar: null,
+  avatarFile: null,
   eventsIds: [],
   workshopsIds: [],
   isCheckBiometric: null,

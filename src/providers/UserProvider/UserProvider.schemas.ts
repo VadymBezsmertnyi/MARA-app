@@ -12,6 +12,7 @@ import {
   subscriptionAdvertUpdateSchema,
   subscriptionWorkshopSchema,
 } from "../SubscriptionProvider/SubscriptionProvider.schemas";
+import { fileSchema } from "../../storeRedux/shemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),
@@ -45,12 +46,7 @@ export const userDataS = z.object({
   _id: z.string(),
   isGeoLocation: z.boolean(),
   isGeoLocationBackground: z.boolean(),
-  avatar: z
-    .object({
-      _id: z.string(),
-      url: z.string(),
-    })
-    .nullable(),
+  avatarFile: fileSchema.nullable().default(null),
   email: z.string().nullable(),
   eventsIds: z.array(eventSchema),
   workshopsIds: z.array(workshopSchema),

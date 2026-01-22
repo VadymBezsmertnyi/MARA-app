@@ -44,8 +44,8 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useLocalesProvider();
   const avatarSource = useMemo(
-    () => userData?.avatar?.url || null,
-    [userData?.avatar?.url]
+    () => userData?.avatarFile?.url || null,
+    [userData?.avatarFile?.url]
   );
 
   const onChangeAvatar = async () => {
@@ -60,10 +60,7 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
     if (!result.canceled) {
       const compressImages = await compressAndProcessImages(result);
       const resultUpdate = await editUser({
-        avatar: {
-          ...userData?.avatar,
-          image: compressImages[0],
-        },
+        avatarFile: compressImages[0],
       });
 
       if (!resultUpdate)
@@ -110,7 +107,7 @@ export const ModalChangeAvatar: FunctionComponent<ModalChangeAvatarProps> = ({
           <ButtonCustom
             title={i18n._("Delete")}
             onSubmit={() => {
-              editUser({ avatar: null });
+              editUser({ avatarFile: null });
               onClose();
             }}
             type="transparent"
