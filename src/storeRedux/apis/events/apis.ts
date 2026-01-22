@@ -89,7 +89,7 @@ export const addEvent = (builder: Builder) =>
         }
       });
 
-      const { imageFiles: _, ...bodyWithoutImages } = body;
+      const { imageFiles: _, userId: __, ...bodyWithoutImages } = body;
       Object.keys(bodyWithoutImages).forEach((key) => {
         const value = (bodyWithoutImages as any)[key];
         if (value !== undefined && value !== null) {
@@ -104,7 +104,6 @@ export const addEvent = (builder: Builder) =>
           else formData.append(key, String(value));
         }
       });
-
       if (existingImageFiles.length > 0)
         formData.append(
           "existingImages",
@@ -115,6 +114,7 @@ export const addEvent = (builder: Builder) =>
             }))
           )
         );
+      if (body.userId) formData.set("userId", body.userId);
 
       return {
         url: PATHS.eventAdd,
@@ -171,7 +171,7 @@ export const changeEvent = (builder: Builder) =>
         }
       });
 
-      const { imageFiles: _, ...bodyWithoutImages } = body;
+      const { imageFiles: _, userId: __, ...bodyWithoutImages } = body;
       Object.keys(bodyWithoutImages).forEach((key) => {
         const value = (bodyWithoutImages as any)[key];
         if (value !== undefined && value !== null) {
@@ -186,7 +186,6 @@ export const changeEvent = (builder: Builder) =>
           else formData.append(key, String(value));
         }
       });
-
       if (existingImageFiles.length > 0)
         formData.append(
           "existingImages",
@@ -197,6 +196,7 @@ export const changeEvent = (builder: Builder) =>
             }))
           )
         );
+      if (body.userId) formData.set("userId", body.userId);
 
       return {
         url: PATHS.eventChange,
