@@ -30,7 +30,7 @@ export const expo = {
     supportsTablet: false,
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
-    googleServicesFile: "./GoogleService-Info.plist",
+    googleServicesFile: "./keys/GoogleService-Info.plist",
     buildNumber: "35",
     usesAppleSignIn: true,
     infoPlist: {
@@ -73,7 +73,7 @@ export const expo = {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
-    googleServicesFile: "./google-services.json",
+    googleServicesFile: "./keys/google-services.json",
     package: "com.motoauto.mara",
     scheme: "maraapp",
     permissions: [
