@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Modal, Text, TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
-import { ModalWindow } from "../ModalWindow/ModalWindow";
 
 // helps
 import { useAllNavigation } from "../../navigators/Navigators.helps";
@@ -40,35 +40,56 @@ export const ModalDelete: FunctionComponent<ModalDeleteProps> = ({
   };
 
   return (
-    <ModalWindow onClose={onClose}>
-      <View style={styles.containerModal}>
-        <View style={styles.containerClose}>
-          <TouchableOpacity
-            accessibilityLabel={i18n._("Button for closing the modal window")}
-            onPress={onClose}
-          >
-            <IconClose width={24} height={24} fill={colors.blackCoffee} />
-          </TouchableOpacity>
-        </View>
-        <IconWarningGradient width={130} height={130} />
-        <Text style={styles.titleModal}>
-          {i18n._("Are you sure you want to delete?")}
-        </Text>
-        {subTitle ? <Text style={styles.subTitleModal}>{subTitle}</Text> : null}
-        <View style={styles.containerButtons}>
-          <ButtonCustom
-            title={i18n._("Yes")}
-            onSubmit={onDelete}
-            type="transparent"
-            styleContainer={styles.buttonModal}
-          />
-          <ButtonCustom
-            title={i18n._("No")}
-            onSubmit={onClose}
-            styleContainer={styles.buttonModal}
-          />
-        </View>
-      </View>
-    </ModalWindow>
+    <Modal
+      visible={true}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
+      <TouchableOpacity
+        style={styles.modalOverlay}
+        activeOpacity={1}
+        onPress={onClose}
+      >
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
+          style={styles.modalContent}
+        >
+          <Shadow stretch>
+            <View style={styles.containerModal}>
+              <View style={styles.containerClose}>
+                <TouchableOpacity
+                  accessibilityLabel={i18n._("Button for closing the modal window")}
+                  onPress={onClose}
+                >
+                  <IconClose width={24} height={24} fill={colors.blackCoffee} />
+                </TouchableOpacity>
+              </View>
+              <IconWarningGradient width={130} height={130} />
+              <Text style={styles.titleModal}>
+                {i18n._("Are you sure you want to delete?")}
+              </Text>
+              {subTitle ? (
+                <Text style={styles.subTitleModal}>{subTitle}</Text>
+              ) : null}
+              <View style={styles.containerButtons}>
+                <ButtonCustom
+                  title={i18n._("Yes")}
+                  onSubmit={onDelete}
+                  type="transparent"
+                  styleContainer={styles.buttonModal}
+                />
+                <ButtonCustom
+                  title={i18n._("No")}
+                  onSubmit={onClose}
+                  styleContainer={styles.buttonModal}
+                />
+              </View>
+            </View>
+          </Shadow>
+        </TouchableOpacity>
+      </TouchableOpacity>
+    </Modal>
   );
 };
