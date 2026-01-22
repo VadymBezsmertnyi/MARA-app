@@ -136,6 +136,8 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
               !(value instanceof Date)
             )
               formData.append(key, JSON.stringify(value));
+            else if (Array.isArray(value))
+              formData.append(key, JSON.stringify(value));
             else formData.append(key, String(value));
           }
         }

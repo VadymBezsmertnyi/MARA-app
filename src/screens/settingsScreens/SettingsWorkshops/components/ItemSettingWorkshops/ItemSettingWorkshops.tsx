@@ -10,6 +10,9 @@ import {
 // types
 import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
+// providers
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
 
@@ -40,6 +43,7 @@ type ItemSettingWorkshopsProps = {
 export const ItemSettingWorkshops: FunctionComponent<
   ItemSettingWorkshopsProps
 > = ({ workshop, isStart }) => {
+  const { i18n } = useLocalesProvider();
   const navigation = useAllNavigation();
   const firstImage = workshop.imageFiles[0] ? workshop.imageFiles[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
