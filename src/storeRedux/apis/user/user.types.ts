@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ImagePickerAsset } from "expo-image-picker";
 import {
   userDataSchema,
   loginResponseSchema,
@@ -30,7 +31,10 @@ export interface ILoginAppleRequest {
 }
 
 export interface IEditUserRequest {
-  body: TEditUserRequest;
+  body: TEditUserRequest & {
+    avatarFile?: ImagePickerAsset | null;
+  };
+  existingUserData?: TUserData | null;
 }
 
 export interface IDeleteUserRequest {

@@ -1,17 +1,7 @@
-import {
-  BaseQueryFn,
-  FetchArgs,
-  fetchBaseQuery,
-  FetchBaseQueryError,
-} from "@reduxjs/toolkit/query/react";
 import { Platform } from "react-native";
 import * as Application from "expo-application";
 import * as SecureStore from "expo-secure-store";
 import { z } from "zod";
-import qs from "qs";
-import { getDeviceStorage } from "../helps/storage.help";
-import { TOKEN_KEY_ASYNC_STORAGE } from "./constants/apiProvider.constants";
-import { PATHS } from "./constants/paths.constants";
 
 const appManifestEnvS = z.object({
   APP_DOMAIN_APP: z.string(),
@@ -56,105 +46,4 @@ export const getDeviceId = async () => {
   }
 
   return deviceId;
-};
-
-const getBaseUrl = () => {
-  const urlApi = `${getApiUrl()}/api`;
-  return urlApi;
-};
-
-const rawBaseQuery = fetchBaseQuery({
-  baseUrl: getBaseUrl(),
-  prepareHeaders: async (headers) => {
-    const verifyTokensJSON = await getDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
-    const verifyTokens = verifyTokensJSON
-      ? (JSON.parse(verifyTokensJSON) as {
-          accessToken: string;
-          refreshToken: string;
-        })
-      : null;
-    if (verifyTokens?.accessToken)
-      headers.set("authorization", verifyTokens.accessToken);
-
-    headers.set("Content-Type", "application/json");
-
-    return headers;
-  },
-  paramsSerializer: (params) => {
-    return qs.stringify(params);
-  },
-});
-
-export const baseQueryWithReauth: BaseQueryFn<
-  FetchArgs,
-  unknown,
-  FetchBaseQueryError
-> = async (args, api, extraOptions) => {
-  if (args && typeof args === "object" && "url" in args) {
-    const url = args.url as string;
-    if (!url.includes("platform") && !url.includes("deviceId")) {
-      const platform = Platform.OS;
-      const deviceId = await getDeviceId();
-      const queryParams = qs.stringify(
-        { platform, deviceId },
-        { addQueryPrefix: !url.includes("?") }
-      );
-      if (queryParams)
-        args.url = `${url}${
-          url.includes("?") ? `&${queryParams.substring(1)}` : queryParams
-        }`;
-    }
-  }
-
-  let result = await rawBaseQuery(args, api, extraOptions);
-  if (
-    result.error &&
-    (result.error.status === 401 || result.error.status === 402)
-  ) {
-    const verifyTokensJSON = await getDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
-    const verifyTokens = verifyTokensJSON
-      ? (JSON.parse(verifyTokensJSON) as {
-          accessToken: string;
-          refreshToken: string;
-        })
-      : null;
-    if (verifyTokens?.refreshToken) {
-      try {
-        const refreshResult = await rawBaseQuery(
-          {
-            url: `${getBaseUrl()}${PATHS.token}`,
-            method: "GET",
-            headers: {
-              authorization: verifyTokens.refreshToken,
-            },
-          },
-          api,
-          extraOptions
-        );
-        if (refreshResult.data)
-          result = await rawBaseQuery(args, api, extraOptions);
-        else
-          console.warn("error-402-currentUrl: ", {
-            currentUrl: args.url,
-            data: refreshResult.data,
-            error: refreshResult.error,
-          });
-      } catch (error402) {
-        if (__DEV__)
-          console.warn("error-402-verifyTokens?.refreshToken", {
-            error402,
-            currentUrl: args.url,
-          });
-        throw error402;
-      }
-    }
-  }
-  if (result.error && __DEV__)
-    console.warn("error: ", {
-      error: result.error,
-      currentUrl: args.url,
-      args,
-    });
-
-  return result;
 };
