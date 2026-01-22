@@ -7,7 +7,10 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Carousel from "react-native-reanimated-carousel";
+import Carousel, {
+  CarouselRenderItem,
+  ICarouselInstance,
+} from "react-native-reanimated-carousel";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
@@ -34,9 +37,10 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
   data,
   onClose,
 }) => {
+  console.log("GalleryModal render", data);
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  const carouselRef = useRef<any>(null);
+  const carouselRef = useRef<ICarouselInstance>(null);
 
   const containerHeaderStyles = useMemo(
     () => [styles.containerHeader, { paddingTop: heightStatusBar + 4 }],
@@ -45,7 +49,7 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
 
   const initialIndex = useMemo(() => data?.indexImage ?? 0, [data?.indexImage]);
 
-  const renderItem = ({ item }: { item: string }) => (
+  const renderItem: CarouselRenderItem<string> = ({ item }) => (
     <View style={styles.containerImage}>
       <ImageCache
         imageSrc={item}
