@@ -15,7 +15,7 @@ export const DEFAULT_WORKSHOP_DATA: Omit<WorkshopType, "_id"> = {
   },
   motoTypesWorks: [],
   autoTypesWorks: [],
-  images: [],
+  imageFiles: [],
   dataCreate: 0,
   comments: [],
   rating: null,

@@ -5,7 +5,7 @@ import {
   placeDbSchema,
   regionDbSchema,
 } from "../PlacesProvider/PlacesProvider.schemas";
-import { imageSchema } from "../../components/ImageModal/ImageModal.schemas";
+import { fileSchema } from "../../storeRedux/shemas";
 
 export const typeWorkSchema = z.object({
   id: z.number(),
@@ -30,13 +30,7 @@ export const workshopSchema = z.object({
   userId: z
     .object({
       _id: z.string(),
-      avatar: z
-        .object({
-          _id: z.any(),
-          url: z.string(),
-          image: imageSchema.optional(),
-        })
-        .nullable(),
+      avatarFile: fileSchema.nullable().default(null),
       firstName: z.string(),
       lastName: z.string(),
       phoneNumber: z.string(),
@@ -52,27 +46,14 @@ export const workshopSchema = z.object({
   coordinates: coordinatesSchema,
   motoTypesWorks: z.array(z.number()),
   autoTypesWorks: z.array(z.number()),
-  images: z.array(
-    z.object({
-      _id: z.string(),
-      url: z.string(),
-      width: z.number(),
-      height: z.number(),
-    })
-  ),
+  imageFiles: z.array(fileSchema).default([]),
   dataCreate: z.number(),
   comments: z.array(commentSchema),
   rating: z.number().nullable(),
   likeUserIds: z.array(
     z.object({
       _id: z.string(),
-      avatar: z
-        .object({
-          _id: z.any(),
-          url: z.string(),
-          image: imageSchema.optional(),
-        })
-        .nullable(),
+      avatarFile: fileSchema.nullable().default(null),
       firstName: z.string(),
       lastName: z.string(),
       phoneNumber: z.string(),
