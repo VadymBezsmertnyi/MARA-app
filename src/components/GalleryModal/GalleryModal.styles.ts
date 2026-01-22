@@ -34,10 +34,15 @@ export const styles = StyleSheet.create({
     fontSize: 17,
   },
   containerEmpty: { width: 70 },
-  containerGallery: { backgroundColor: colors.transparent },
+  containerGallery: {
+    backgroundColor: colors.transparent,
+    flex: 1,
+  },
   containerImage: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    height: "100%",
   },
 });

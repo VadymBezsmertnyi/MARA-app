@@ -1,13 +1,13 @@
-import React, { FunctionComponent, useMemo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-//import Gallery from "react-native-awesome-gallery";
+import React, { FunctionComponent, useMemo, useRef } from "react";
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Carousel from "react-native-reanimated-carousel";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // components
-//import { ImageCache } from "../ImageCache/ImageCache";
+import { ImageCache } from "../ImageCache/ImageCache";
 
 // icons
 import { IconArrowLeftEvent } from "../../icons/components";
@@ -15,6 +15,8 @@ import { IconArrowLeftEvent } from "../../icons/components";
 // styles
 import { styles } from "./GalleryModal.styles";
 import colors from "../../../styles/colors";
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 type GalleryModalProps = {
   data: { images: string[]; indexImage?: number };
@@ -27,29 +29,40 @@ export const GalleryModal: FunctionComponent<GalleryModalProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
+  const carouselRef = useRef<any>(null);
 
   const containerHeaderStyles = useMemo(
     () => [styles.containerHeader, { paddingTop: heightStatusBar + 4 }],
     [heightStatusBar]
   );
 
+  const initialIndex = useMemo(
+    () => data.indexImage || 0,
+    [data.indexImage]
+  );
+
+  const renderItem = ({ item }: { item: string }) => (
+    <View style={styles.containerImage}>
+      <ImageCache
+        imageSrc={item}
+        contentFit="contain"
+        style={StyleSheet.absoluteFillObject}
+      />
+    </View>
+  );
+
   return (
     <View style={styles.container}>
-      {/* <Gallery
+      <Carousel
+        ref={carouselRef}
+        width={SCREEN_WIDTH}
+        height={SCREEN_HEIGHT}
         data={data.images}
-        loop
-        initialIndex={data.indexImage}
+        renderItem={renderItem}
+        loop={data.images.length > 1}
+        defaultIndex={initialIndex}
         style={styles.containerGallery}
-        renderItem={(props) => (
-          <View style={styles.containerImage}>
-            <ImageCache
-              imageSrc={props.item}
-              contentFit="contain"
-              style={StyleSheet.absoluteFillObject}
-            />
-          </View>
-        )}
-      /> */}
+      />
       <View style={containerHeaderStyles}>
         <TouchableOpacity onPress={onClose} style={styles.buttonBack}>
           <IconArrowLeftEvent
