@@ -4,10 +4,10 @@ import * as ImageManipulator from "expo-image-manipulator";
 import infoPhoneCountries from "country-telephone-data";
 
 // schemas
-import { filesSchema } from "../storeRedux/shemas";
+import { tempFilesSchema } from "../storeRedux/schemas";
 
 // types
-import { ImageType } from "../components/ImageModal/ImageModal.types";
+import { ImageFileType, TempFileType } from "../storeRedux/types";
 
 export const formatDateFromUnixTimestamp = (unixTimestamp: number) => {
   const date = new Date(unixTimestamp);
@@ -57,7 +57,7 @@ export const combineDateAndTime = (date: Date, time: Date): Date => {
 
 export const compressAndProcessImages = async (
   result: ImagePickerSuccessResult
-): Promise<ImageType[]> => {
+): Promise<TempFileType[]> => {
   const listImagesCompress = await Promise.all(
     result.assets.map(async (image) =>
       ImageManipulator.manipulateAsync(
@@ -66,21 +66,19 @@ export const compressAndProcessImages = async (
         {
           compress: 0.7,
           format: ImageManipulator.SaveFormat.JPEG,
-          base64: true,
         }
       )
     )
   );
 
   const listImages = listImagesCompress
-    .map(({ width, height, base64, uri }) => ({
+    .map(({ width, height, uri }) => ({
       width,
       height,
-      base64: base64 || "",
       uri: uri || "",
     }))
-    .filter((image) => image.base64 && image.base64.length > 0);
-  const isCurrentListImages = filesSchema.safeParse(listImages);
+    .filter((image) => image.uri && image.uri.length > 0);
+  const isCurrentListImages = tempFilesSchema.safeParse(listImages);
   if (isCurrentListImages.success) return isCurrentListImages.data;
   return [];
 };
@@ -102,16 +100,19 @@ export const getStreetNumber = (fullTerms: Array<{ value: string }>) => {
 };
 
 export const getRightSizeImage = (
-  image: ImageType,
+  image: ImageFileType,
   width?: number | null,
   maxHeight?: number
 ) => {
   const widthWindow = width ? width : Dimensions.get("window").width;
   const coefficientSize =
-    Number(((widthWindow * 100) / image.width).toFixed()) / 100;
+    Number(((widthWindow * 100) / (image.width || 1)).toFixed()) / 100;
   const currentCoefficientSize =
     maxHeight && maxHeight < coefficientSize ? maxHeight : coefficientSize;
-  return { width: widthWindow, height: image.height * currentCoefficientSize };
+  return {
+    width: widthWindow,
+    height: (image.height || 1) * currentCoefficientSize,
+  };
 };
 
 export const getFormatPhoneNumber = (phone: string) => {

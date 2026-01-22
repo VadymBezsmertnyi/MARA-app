@@ -12,7 +12,7 @@ import {
   subscriptionAdvertUpdateSchema,
   subscriptionWorkshopSchema,
 } from "../SubscriptionProvider/SubscriptionProvider.schemas";
-import { fileSchema } from "../../storeRedux/shemas";
+import { fileSchema } from "../../storeRedux/schemas";
 
 export const googleBDSchema = z.object({
   iss: z.string(),

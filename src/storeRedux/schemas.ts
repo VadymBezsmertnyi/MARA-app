@@ -14,5 +14,6 @@ export const tempFileSchema = z.object({
   width: z.number().optional(),
   height: z.number().optional(),
 });
+export const tempFilesSchema = z.array(tempFileSchema);
 
 export const filesSchema = z.array(fileSchema);

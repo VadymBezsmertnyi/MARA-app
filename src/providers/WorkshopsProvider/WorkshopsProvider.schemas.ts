@@ -5,7 +5,7 @@ import {
   placeDbSchema,
   regionDbSchema,
 } from "../PlacesProvider/PlacesProvider.schemas";
-import { fileSchema } from "../../storeRedux/shemas";
+import { fileSchema } from "../../storeRedux/schemas";
 
 export const typeWorkSchema = z.object({
   id: z.number(),
