@@ -80,16 +80,22 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                   "km"
                 )
               : null;
-          const isMoto = filters.moto
-            ? workshop.motoTypesWorks.filter((typeWork) =>
-                filters.moto?.includes(typeWork)
-              ).length > 0
-            : true;
-          const isAuto = filters.auto
-            ? workshop.autoTypesWorks.filter((typeWork) =>
-                filters.auto?.includes(typeWork)
-              ).length > 0
-            : true;
+          const isMoto =
+            filters.moto === null
+              ? true
+              : filters.moto.length === 0
+              ? workshop.motoTypesWorks.length > 0
+              : workshop.motoTypesWorks.filter((typeWork) =>
+                  filters.moto?.includes(typeWork)
+                ).length > 0;
+          const isAuto =
+            filters.auto === null
+              ? true
+              : filters.auto.length === 0
+              ? workshop.autoTypesWorks.length > 0
+              : workshop.autoTypesWorks.filter((typeWork) =>
+                  filters.auto?.includes(typeWork)
+                ).length > 0;
           const isDistance =
             filters.maxDistance && distance
               ? distance <= filters.maxDistance

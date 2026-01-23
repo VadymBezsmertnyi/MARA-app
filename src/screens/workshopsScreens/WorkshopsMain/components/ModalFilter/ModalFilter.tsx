@@ -87,34 +87,26 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 
     if (!filters) {
       const hasAnyFilter =
-        (currentMoto !== null && currentMoto.length > 0) ||
-        (currentAuto !== null && currentAuto.length > 0) ||
+        currentMoto !== null ||
+        currentAuto !== null ||
         currentDistance !== 5 ||
         currentRating !== null;
       return hasAnyFilter;
     }
 
     const motoChanged =
-      (filters.moto === null &&
-        currentMoto !== null &&
-        currentMoto.length > 0) ||
-      (filters.moto !== null &&
-        (currentMoto === null || currentMoto.length === 0)) ||
+      (filters.moto === null && currentMoto !== null) ||
+      (filters.moto !== null && currentMoto === null) ||
       (filters.moto !== null &&
         currentMoto !== null &&
-        currentMoto.length > 0 &&
         JSON.stringify([...filters.moto].sort()) !==
           JSON.stringify([...currentMoto].sort()));
 
     const autoChanged =
-      (filters.auto === null &&
-        currentAuto !== null &&
-        currentAuto.length > 0) ||
-      (filters.auto !== null &&
-        (currentAuto === null || currentAuto.length === 0)) ||
+      (filters.auto === null && currentAuto !== null) ||
+      (filters.auto !== null && currentAuto === null) ||
       (filters.auto !== null &&
         currentAuto !== null &&
-        currentAuto.length > 0 &&
         JSON.stringify([...filters.auto].sort()) !==
           JSON.stringify([...currentAuto].sort()));
 
@@ -208,14 +200,13 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 
   useEffect(() => {
     if (filters) {
-      if (filters.moto || filters.auto)
-        setTypeWorkshops({
-          moto: filters.moto ? filters.moto.length > 0 : false,
-          auto: filters.auto ? filters.auto.length > 0 : false,
-        });
-      if (filters.moto) setSelectMotoTypesWorks(filters.moto);
+      setTypeWorkshops({
+        moto: filters.moto !== null,
+        auto: filters.auto !== null,
+      });
+      if (filters.moto !== null) setSelectMotoTypesWorks(filters.moto);
       else setSelectMotoTypesWorks([]);
-      if (filters.auto) setSelectAutoTypesWorks(filters.auto);
+      if (filters.auto !== null) setSelectAutoTypesWorks(filters.auto);
       else setSelectAutoTypesWorks([]);
       if (filters.maxDistance) setDistance(filters.maxDistance);
       if (filters.minRating) setSelectRating(filters.minRating);
