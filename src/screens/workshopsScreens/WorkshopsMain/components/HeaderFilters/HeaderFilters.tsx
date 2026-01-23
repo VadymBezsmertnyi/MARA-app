@@ -7,6 +7,7 @@ import {
   IconFilter,
   IconWrapItemsGradient,
   IconColumnItemsGradient,
+  IconPlus,
 } from "../../../../../icons/components";
 
 // styles
@@ -17,6 +18,10 @@ type HeaderFiltersProps = {
   setIsWrap?: (value: boolean) => void;
   onPressFilter: () => void;
   onPressSort: () => void;
+  onPressAddWorkshop?: () => void;
+  isAddButtonDisabled?: boolean;
+  addButtonAccessibilityLabel?: string;
+  showFilters?: boolean;
 };
 
 export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
@@ -24,9 +29,11 @@ export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
   setIsWrap,
   onPressFilter,
   onPressSort,
+  onPressAddWorkshop,
+  isAddButtonDisabled = false,
+  addButtonAccessibilityLabel,
+  showFilters = true,
 }) => {
-  // TODO: will do later
-  const isFilter = false;
   const IconShowType = useMemo(
     () =>
       isWrap ? (
@@ -39,7 +46,7 @@ export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
 
   return (
     <View style={styles.container}>
-      {setIsWrap ? (
+      {showFilters && setIsWrap ? (
         <TouchableOpacity
           onPress={() => {
             setIsWrap(!isWrap);
@@ -48,14 +55,26 @@ export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
           {IconShowType}
         </TouchableOpacity>
       ) : null}
-      {isFilter && (
+      {showFilters && (
         <TouchableOpacity onPress={onPressSort}>
           <IconSort width={20} height={20} />
         </TouchableOpacity>
       )}
-      <TouchableOpacity onPress={onPressFilter}>
-        <IconFilter width={20} height={20} />
-      </TouchableOpacity>
+      {showFilters && (
+        <TouchableOpacity onPress={onPressFilter}>
+          <IconFilter width={20} height={20} />
+        </TouchableOpacity>
+      )}
+      {onPressAddWorkshop && (
+        <TouchableOpacity
+          disabled={isAddButtonDisabled}
+          onPress={onPressAddWorkshop}
+          accessibilityLabel={addButtonAccessibilityLabel}
+          style={[styles.addButton, { opacity: isAddButtonDisabled ? 0.5 : 1 }]}
+        >
+          <IconPlus width={20} height={20} fill="black" />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

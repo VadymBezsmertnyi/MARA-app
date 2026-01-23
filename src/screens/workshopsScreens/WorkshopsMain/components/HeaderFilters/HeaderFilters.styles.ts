@@ -9,4 +9,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 12,
   },
+  addButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
