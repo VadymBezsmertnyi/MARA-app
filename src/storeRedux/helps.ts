@@ -58,12 +58,6 @@ export const getDeviceId = async () => {
 
 const baseQuery = fetchBaseQuery({
   baseUrl: `${getApiUrl()}/api`,
-  prepareHeaders: async (headers, { getState }) => {
-    const tokens = await getTokens();
-    if (tokens?.accessToken) headers.set("authorization", tokens.accessToken);
-
-    return headers;
-  },
 });
 
 export const baseQueryWithReauth: BaseQueryFn<
