@@ -5,6 +5,7 @@ import {
 } from "../../../helps/storage.help";
 import { TOKEN_KEY_ASYNC_STORAGE } from "../../constants/apiProvider.constants";
 import { userTokensSchema } from "./user.schemas";
+import { TUserData } from "./user.types";
 
 export const saveTokens = async (tokens: {
   accessToken: string;
@@ -36,4 +37,21 @@ export const getTokens = async (): Promise<{
 
 export const deleteTokens = async (): Promise<boolean> => {
   return await deleteDeviceStorage(TOKEN_KEY_ASYNC_STORAGE);
+};
+
+export const getNamesUser = (
+  userData: TUserData | null
+): { firstName: string; lastName: string } => {
+  if (!userData) return { firstName: "", lastName: "" };
+  if (userData.firstName || userData.lastName)
+    return {
+      firstName: userData.firstName || "",
+      lastName: userData.lastName || "",
+    };
+  if (userData.googleDate?.given_name || userData.googleDate?.family_name)
+    return {
+      firstName: userData.googleDate?.given_name || "",
+      lastName: userData.googleDate?.family_name || "",
+    };
+  return { firstName: "", lastName: "" };
 };

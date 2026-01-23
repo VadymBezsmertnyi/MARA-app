@@ -13,7 +13,7 @@ import { useLocalesProvider } from "../../../../localization/localization.provid
 import { useAllNavigation } from "../../../navigators/Navigators.helps";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";
-import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
+import { getNamesUser } from "../../../storeRedux/apis/user/user.helpers";
 
 // components
 import { InputPhone } from "../../../components/InputPhone/InputPhone";

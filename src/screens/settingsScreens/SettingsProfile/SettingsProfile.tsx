@@ -21,7 +21,6 @@ import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useEditUserMutation } from "../../../storeRedux/api";
 import { useRootDispatch } from "../../../storeRedux/store";
 import { cleanUserData } from "../../../storeRedux/apis/user/slice";
-import { deleteTokens } from "../../../storeRedux/apis/user/user.helpers";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
@@ -43,7 +42,10 @@ import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
 import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
 
 // helps
-import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
+import {
+  deleteTokens,
+  getNamesUser,
+} from "../../../storeRedux/apis/user/user.helpers";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";
 
