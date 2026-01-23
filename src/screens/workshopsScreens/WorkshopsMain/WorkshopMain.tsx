@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo, useState, useEffect } from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";
@@ -55,7 +55,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const { i18n } = useLocalesProvider();
   const { infoWorkshops } = useSubscriptionProvider();
   const { heightTabBar } = useThemeProvider();
-  const { workshopsList: workshops } = useWorkshopsSelector();
+  const { workshopsList: workshops, pagination } = useWorkshopsSelector();
   const { location } = useMapProvider();
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
@@ -64,126 +64,42 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
   );
+  const [page, setPage] = useState(1);
+  const limit = 20;
 
-  useGetWorkshopsQuery(
-    {
+  const queryParams = useMemo(
+    () => ({
+      page,
+      limit,
+      ...(sort && { sort }),
+      ...(filters?.moto !== undefined && { moto: filters.moto }),
+      ...(filters?.auto !== undefined && { auto: filters.auto }),
+      ...(filters?.maxDistance && { maxDistance: filters.maxDistance }),
+      ...(filters?.minRating !== undefined && { minRating: filters.minRating }),
+      ...(workshopName && { workshopName }),
       ...(location && {
         latitude: location.latitude,
         longitude: location.longitude,
       }),
-    },
-    { skip: workshops.length > 0 }
+    }),
+    [page, limit, sort, filters, workshopName, location]
   );
 
-  const minMaxDistance = useMemo(() => {
-    const distanceMinMax = workshops
-      .map((workshop) =>
-        location && workshop.coordinates
-          ? convertDistance(
-              getDistance(location, {
-                longitude: workshop.coordinates.longitude,
-                latitude: workshop.coordinates.latitude,
-              }),
-              "km"
-            )
-          : 0
-      )
-      .sort((a, b) => a - b);
-    return {
-      min: distanceMinMax.length > 0 ? Number(distanceMinMax[0].toFixed()) : 0,
-      max:
-        distanceMinMax.length > 1
-          ? Number(distanceMinMax[distanceMinMax.length - 1].toFixed())
-          : 200,
-    };
-  }, [workshops, location]);
-  const maxDistance = useMemo(() => {
-    if (!minMaxDistance.max) return 5;
-    return Math.ceil((minMaxDistance.max + 1) / 5) * 5;
-  }, [minMaxDistance.max]);
-  const workshopsFilterSort = useMemo(() => {
-    if (filters === null && sort === null && !workshopName.length)
-      return workshops;
-    const filterWorkshop = filters
-      ? workshops.filter((workshop) => {
-          const distance =
-            location && workshop.coordinates
-              ? convertDistance(
-                  getDistance(location, {
-                    longitude: workshop.coordinates.longitude,
-                    latitude: workshop.coordinates.latitude,
-                  }),
-                  "km"
-                )
-              : null;
-          const isMoto =
-            filters.moto === null
-              ? true
-              : filters.moto.length === 0
-              ? workshop.motoTypesWorks.length > 0
-              : workshop.motoTypesWorks.filter((typeWork) =>
-                  filters.moto?.includes(typeWork)
-                ).length > 0;
-          const isAuto =
-            filters.auto === null
-              ? true
-              : filters.auto.length === 0
-              ? workshop.autoTypesWorks.length > 0
-              : workshop.autoTypesWorks.filter((typeWork) =>
-                  filters.auto?.includes(typeWork)
-                ).length > 0;
-          const isDistance =
-            filters.maxDistance && distance
-              ? distance <= filters.maxDistance
-              : true;
-          const isRating =
-            filters.minRating && workshop.rating
-              ? filters.minRating <= workshop.rating
-              : true;
-          return isMoto && isAuto && isDistance && isRating;
-        })
-      : workshops;
-    const sortWorkshop = sort
-      ? filterWorkshop.sort((prev, next) => {
-          const distancePrev =
-            location && prev.coordinates
-              ? convertDistance(
-                  getDistance(location, {
-                    longitude: prev.coordinates.longitude,
-                    latitude: prev.coordinates.latitude,
-                  }),
-                  "km"
-                )
-              : null;
-          const distanceNext =
-            location && next.coordinates
-              ? convertDistance(
-                  getDistance(location, {
-                    longitude: next.coordinates.longitude,
-                    latitude: next.coordinates.latitude,
-                  }),
-                  "km"
-                )
-              : null;
-          if (sort === "comments")
-            return prev.comments.length - next.comments.length;
-          if (sort === "distance" && distancePrev && distanceNext)
-            return distancePrev - distanceNext;
-          if (sort === "rating" && prev.rating && next.rating)
-            return prev.rating - next.rating;
-          return 0;
-        })
-      : filterWorkshop;
-    const findInputWorkshop = workshopName.length
-      ? sortWorkshop.filter((workshop) =>
-          workshop.title
-            .toLocaleLowerCase()
-            .includes(workshopName.toLocaleLowerCase())
-        )
-      : sortWorkshop;
+  const { isLoading } = useGetWorkshopsQuery(queryParams);
 
-    return findInputWorkshop;
-  }, [workshops, filters, sort, workshopName, location]);
+  const maxDistance = useMemo(() => {
+    if (pagination?.total === 0) return 5;
+    return 200;
+  }, [pagination]);
+
+  const hasMorePages = useMemo(
+    () => pagination && pagination.page < pagination.totalPages,
+    [pagination]
+  );
+
+  const loadMore = () => {
+    if (hasMorePages && !isLoading) setPage((prev) => prev + 1);
+  };
 
   const onClose = () => {
     setIsShowSort(false);
@@ -208,6 +124,10 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     navigation.openDrawer();
   };
 
+  useEffect(() => {
+    if (sort !== null || filters !== null || workshopName) setPage(1);
+  }, [sort, filters, workshopName]);
+
   return (
     <>
       <Header
@@ -224,7 +144,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             onPressAddWorkshop={onPressAddWorkshop}
             isAddButtonDisabled={infoWorkshops.amountWorkshop <= 0}
             addButtonAccessibilityLabel={i18n._("Add workshop")}
-            showFilters={workshops.length > 0}
+            showFilters={workshops.length > 0 || filters !== null}
             hasActiveSort={sort !== null}
           />
         }
@@ -257,9 +177,20 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
               paddingBottom: (heightTabBar || 0) + bottom,
             },
           ]}
+          onScroll={({ nativeEvent }) => {
+            const { layoutMeasurement, contentOffset, contentSize } =
+              nativeEvent;
+            const paddingToBottom = 20;
+            if (
+              layoutMeasurement.height + contentOffset.y >=
+              contentSize.height - paddingToBottom
+            )
+              loadMore();
+          }}
+          scrollEventThrottle={400}
         >
-          {workshops.length && workshopsFilterSort.length ? (
-            workshopsFilterSort.map((item) => {
+          {workshops.length ? (
+            workshops.map((item) => {
               const distance =
                 location && item.coordinates
                   ? getDistance(location, {
@@ -285,7 +216,9 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                 />
               );
             })
-          ) : workshops.length ? (
+          ) : pagination &&
+            pagination.total === 0 &&
+            (sort !== null || filters !== null || workshopName) ? (
             <View style={styles.containerNotList}>
               <ImageCache
                 contentFit="contain"
