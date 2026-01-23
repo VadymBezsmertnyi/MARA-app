@@ -1,9 +1,15 @@
 import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
+import { BlurView } from "expo-blur";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
+
+// components
+import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 
 // icons
 import { IconClose } from "../../../../../icons/components";
@@ -24,6 +30,22 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
   currentSort,
 }) => {
   const { i18n } = useLocalesProvider();
+  const { userData, editUser } = useUserProvider();
+  const { location } = useMapProvider();
+
+  const isLocationEnabled = userData?.isGeoLocation || false;
+  const isLocationLoading = isLocationEnabled && !location;
+
+  const onToggleLocation = async () => {
+    const isGeoLocation = !(userData?.isGeoLocation || false);
+    const isGeoLocationBackground = isGeoLocation
+      ? userData?.isGeoLocationBackground || false
+      : false;
+    await editUser({
+      isGeoLocation,
+      isGeoLocationBackground,
+    });
+  };
 
   return (
     <Shadow>
@@ -37,32 +59,65 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
           </TouchableOpacity>
         </View>
         <View style={styles.containerButtons}>
-          <TouchableOpacity
-            onPress={() => {
-              setTypeSort("distance");
-            }}
-            style={[
-              styles.buttonItem,
-              currentSort === "distance" && styles.buttonItemSelected,
-            ]}
-          >
-            <Text
+          <View style={styles.distanceButtonContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                if (isLocationEnabled && !isLocationLoading) {
+                  setTypeSort("distance");
+                }
+              }}
+              disabled={!isLocationEnabled || isLocationLoading}
               style={[
-                styles.titleButton,
-                currentSort === "distance" && styles.titleButtonSelected,
+                styles.buttonItem,
+                currentSort === "distance" && styles.buttonItemSelected,
+                (!isLocationEnabled || isLocationLoading) &&
+                  styles.buttonItemDisabled,
               ]}
             >
-              {i18n._("By distance:")}
-            </Text>
-            <Text
-              style={[
-                styles.subTitleButton,
-                currentSort === "distance" && styles.subTitleButtonSelected,
-              ]}
-            >
-              {i18n._("from closest to farthest")}
-            </Text>
-          </TouchableOpacity>
+              <Text
+                style={[
+                  styles.titleButton,
+                  currentSort === "distance" && styles.titleButtonSelected,
+                ]}
+              >
+                {i18n._("By distance:")}
+              </Text>
+              <Text
+                style={[
+                  styles.subTitleButton,
+                  currentSort === "distance" && styles.subTitleButtonSelected,
+                ]}
+              >
+                {i18n._("from closest to farthest")}
+              </Text>
+            </TouchableOpacity>
+            {isLocationLoading && (
+              <BlurView intensity={5} style={styles.distanceBlur}>
+                <View style={styles.distanceBlurContent}>
+                  <Text style={styles.distanceWarningText}>
+                    {i18n._("Getting location...")}
+                  </Text>
+                </View>
+              </BlurView>
+            )}
+            {!isLocationEnabled && !isLocationLoading && (
+              <BlurView intensity={5} style={styles.distanceBlur}>
+                <View style={styles.distanceBlurContent}>
+                  <Text style={styles.distanceWarningText}>
+                    {i18n._(
+                      "To calculate distance, please enable location services"
+                    )}
+                  </Text>
+                  <ButtonCustom
+                    title={i18n._("Enable location")}
+                    onSubmit={onToggleLocation}
+                    styleContainer={styles.distanceButtonContainer}
+                    styleButton={styles.distanceButton}
+                  />
+                </View>
+              </BlurView>
+            )}
+          </View>
           <View style={styles.line} />
           <TouchableOpacity
             onPress={() => {

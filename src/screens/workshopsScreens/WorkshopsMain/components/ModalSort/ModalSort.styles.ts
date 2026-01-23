@@ -56,4 +56,37 @@ export const styles = StyleSheet.create({
   subTitleButtonSelected: {
     color: colors.white,
   },
+  distanceButtonContainer: {
+    position: "relative",
+    width: "100%",
+  },
+  buttonItemDisabled: {
+    opacity: 0.5,
+  },
+  distanceBlur: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+  },
+  distanceBlurContent: {
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    alignItems: "center",
+    gap: 12,
+  },
+  distanceWarningText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    color: colors.blackCoffee,
+    textAlign: "center",
+  },
+  distanceButton: {
+    minWidth: 200,
+  },
 });
