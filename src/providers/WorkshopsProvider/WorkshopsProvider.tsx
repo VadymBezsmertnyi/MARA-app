@@ -15,10 +15,14 @@ import {
   WorkshopsType,
 } from "./WorkshopsProvider.types";
 
+// redux
+import { useUserSelector, setUserData } from "../../storeRedux/apis/user/slice";
+import { useRootDispatch } from "../../storeRedux/store";
+import { useLazyGetMeQuery } from "../../storeRedux/api";
+
 // providers
 import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
-import { useUserProvider } from "../UserProvider/UserProvider";
 import { useMapProvider } from "../MapProvider/MapProvider";
 import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
 
@@ -69,7 +73,9 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
 }) => {
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
-  const { userData, setUserData, meUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const dispatch = useRootDispatch();
+  const [getMe] = useLazyGetMeQuery();
   const { location } = useMapProvider();
   const { onSetUserProperties } = useAnalyticsProvider();
   const [workshops, setWorkShops] = useState<WorkshopsType>([]);
@@ -189,20 +195,19 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     );
     if (result?.workshop) {
       setWorkShops((state) => [...state, result.workshop]);
-      setUserData((state) => {
-        if (state) {
-          return {
-            ...state,
-            workshopsIds: [...state.workshopsIds, result.workshop],
-          };
-        }
-        return state;
-      });
+      if (userData)
+        dispatch(
+          setUserData({
+            ...userData,
+            workshopsIds: [...userData.workshopsIds, result.workshop],
+          })
+        );
+
       setLoading(false);
       await onSetUserProperties({
-        amountWorkshops: (userData.workshopsIds.length + 1).toString(),
+        amountWorkshops: (userData?.workshopsIds.length || 0 + 1).toString(),
       });
-      meUser(false);
+      await getMe();
       return true;
     }
     setLoading(false);
@@ -287,19 +292,18 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
           workshop._id === result.workshop._id ? result.workshop : workshop
         )
       );
-      setUserData((state) => {
-        if (state) {
-          return {
-            ...state,
-            workshopsIds: state.workshopsIds.map((workshop) =>
+      if (userData)
+        dispatch(
+          setUserData({
+            ...userData,
+            workshopsIds: userData.workshopsIds.map((workshop) =>
               workshop._id === result.workshop._id ? result.workshop : workshop
             ),
-          };
-        }
-        return state;
-      });
+          })
+        );
+
       setLoading(false);
-      meUser(false);
+      await getMe();
       return true;
     }
     setLoading(false);
@@ -323,12 +327,14 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         );
         if (type === "user") {
           if (userData && userData.workshopsIds.length > 0) {
-            setUserData({
-              ...userData,
-              workshopsIds: userData.workshopsIds.filter(
-                (workshop) => workshop._id !== idWorkshop
-              ),
-            });
+            dispatch(
+              setUserData({
+                ...userData,
+                workshopsIds: userData.workshopsIds.filter(
+                  (workshop) => workshop._id !== idWorkshop
+                ),
+              })
+            );
             await onSetUserProperties({
               amountWorkshops: (userData.workshopsIds.length - 1).toString(),
             });
@@ -336,7 +342,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         }
       }
 
-      meUser(false);
+      await getMe();
       return true;
     } catch (error) {
       return false;
@@ -366,7 +372,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         )
       );
       setLoading(false);
-      meUser(false);
+      await getMe();
       return true;
     }
     setLoading(false);
@@ -394,7 +400,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         )
       );
       setLoading(false);
-      meUser(false);
+      await getMe();
       return true;
     }
     setLoading(false);
