@@ -20,7 +20,7 @@ export const UpContainer: FunctionComponent = () => {
   return (
     <View style={mainContainerStyles}>
       {Platform.OS !== "android" ? (
-        <BlurView tint="dark" style={styles.blurViewContainer} />
+        <BlurView intensity={0} tint="dark" style={styles.blurViewContainer} />
       ) : null}
       <View style={styles.container}>
         <Menu />
