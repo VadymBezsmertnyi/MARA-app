@@ -14,6 +14,22 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Εργαστήρια"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Εισάγετε το όνομα του εργαστηρίου ή τον τύπο της εργασίας"
+
+#. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
 msgstr ""
 
@@ -22,8 +38,20 @@ msgid "Sorry, there are no upcoming workshops"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Προσθήκη εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "km"
+msgstr "χλμ"
+
+#. js-lingui-explicit-id
 msgid "Not comments"
 msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Κουμπί για κλείσιμο του παραθύρου modal"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
@@ -44,338 +72,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "By number of comments:"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Only with rating:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "About us:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Read the whole description..."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Leave a review"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "The work we do:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Reviews:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "My workshops"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry!"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "You don't have {typeItem}."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Profile"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Logout"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "My adverts"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Your profile"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Create"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "My events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow login using Touch ID"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow Touch ID to access the MARA app."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow later"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Terms of Service"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "and choose the city of residence:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "We recommend filling out the profile information"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow login using Face ID"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Enable logging into the app using Face ID"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Upcoming events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no upcoming events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "More events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Past events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "No events have passed"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Now"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, but no products were found by the filters"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no available items"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Latest"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Cheapest"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Most expensive"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Currency:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Views:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Write"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Call"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Your contact information"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Settings"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Dark theme"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Automatically detect location"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Do you want to send an SOS signal?"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Access to geolocation when using the application"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Access to geolocation in the background mode"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Settings and permissions should be enabled"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Notification of SOS signal"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Last update"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Someone needs help within a {distance} km radius"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "The nearest event:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "{distance} km"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Continue with {typeSocial}"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "or sign up using:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Welcome"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Main"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Map"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Password must contain at least 8 characters"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Passwords do not match"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Types of work for motorcycle transport:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Types of work for automobile transport:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Select a location on the map"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Move and change the location"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Specify the city"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Please enter text for searching"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Are you sure you want to delete?"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Resend the code"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Language selection"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Εργαστήρια"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Εισάγετε το όνομα του εργαστηρίου ή τον τύπο της εργασίας"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Προσθήκη εργαστηρίου"
-
-#. js-lingui-explicit-id
-msgid "km"
-msgstr "χλμ"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the modal window"
-msgstr "Κουμπί για κλείσιμο του παραθύρου modal"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -414,6 +110,10 @@ msgid "Distance, km:"
 msgstr "Απόσταση, χιλιόμετρα:"
 
 #. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "All works"
 msgstr "Όλες οι εργασίες"
 
@@ -430,12 +130,24 @@ msgid "Workshop"
 msgstr "Εργαστήρι"
 
 #. js-lingui-explicit-id
+msgid "About us:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
 msgstr "Το κείμενο πρέπει να περιέχει τουλάχιστον 3 και το πολύ 40 χαρακτήρες."
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Το κείμενο πρέπει να περιέχει τουλάχιστον 10 και το πολύ 2000 χαρακτήρες."
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -458,12 +170,20 @@ msgid "Publish"
 msgstr "Δημοσίευση"
 
 #. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Επιλέξτε σελίδα κοινοποίησης"
 
 #. js-lingui-explicit-id
 msgid "Toggle like product"
 msgstr "Εναλλαγή σαν προϊόν"
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -550,8 +270,20 @@ msgid "workshops"
 msgstr "εργαστήρια"
 
 #. js-lingui-explicit-id
+msgid "My workshops"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εργαστηρίων"
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Buy workshop"
@@ -594,6 +326,14 @@ msgid "Back"
 msgstr "Πίσω"
 
 #. js-lingui-explicit-id
+msgid "Profile"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "First Name"
 msgstr "Όνομα"
 
@@ -614,28 +354,8 @@ msgid "Save"
 msgstr "Αποθήκευση"
 
 #. js-lingui-explicit-id
-msgid "adverts"
-msgstr "αγγελίες"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων προϊόντων"
-
-#. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Προσθήκη αγγελίας"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Αγοράστε αγγελία"
-
-#. js-lingui-explicit-id
-msgid "grn"
-msgstr "grn"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Τα διαφημίσεις σας"
+msgid "Your profile"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
@@ -670,40 +390,12 @@ msgid "Active"
 msgstr "Ενεργό"
 
 #. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Προφίλ επιχείρησης"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Βελτιώστε"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Διαθέσιμες διαφημίσεις: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Δημοσιευμένες διαφημίσεις: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Κριτική"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Αλλαγή"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Διαγραφή"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Προσοχή! Όλα τα δεδομένα που σχετίζονται με την επιχείρηση \"{nameBusiness}\" θα διαγραφούν."
-
-#. js-lingui-explicit-id
 msgid "events"
 msgstr "εκδηλώσεις"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -718,26 +410,6 @@ msgid "Buy event"
 msgstr "Αγοράστε εκδήλωση"
 
 #. js-lingui-explicit-id
-msgid "business"
-msgstr "επιχείρηση"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Όνομα εταιρείας"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Εισαγάγετε το όνομα της επιχείρησής σας"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Επιπλέον αριθμός {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Κουμπί για κλείσιμο εγγραφής TouchID"
-
-#. js-lingui-explicit-id
 msgid "Terms of Use"
 msgstr "Όροι Χρήσης"
 
@@ -746,12 +418,36 @@ msgid "Privacy Policy"
 msgstr "Πολιτική Απορρήτου"
 
 #. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Εναλλαγή τοποθεσίας σας"
 
 #. js-lingui-explicit-id
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location in the background"
 msgstr "Ενεργοποίηση της τοποθεσίας σας στο παρασκήνιο"
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Continue"
@@ -770,20 +466,44 @@ msgid "Registration"
 msgstr "Εγγραφή"
 
 #. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Συμπληρώστε αργότερα"
+msgid "We recommend filling out the profile information"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Κουμπί για κλείσιμο εγγραφής FaceID"
+msgid "Fill out later"
+msgstr "Συμπληρώστε αργότερα"
 
 #. js-lingui-explicit-id
 msgid "Events"
 msgstr "Εκδηλώσεις"
 
 #. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Press show more events"
 msgstr "Πατήστε για εμφάνιση περισσότερων εκδηλώσεων"
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -870,6 +590,10 @@ msgid "Conclusion"
 msgstr "Συμπέρασμα"
 
 #. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "100 uah"
 msgstr "100 uah"
 
@@ -890,236 +614,12 @@ msgid "Confirm"
 msgstr "Επιβεβαιώστε"
 
 #. js-lingui-explicit-id
-msgid "Market"
-msgstr "Αγορά"
-
-#. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Εισαγωγή ονόματος"
-
-#. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Προσθήκη προϊόντος"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Κατηγορία"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Τοποθεσία"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Επιλέξτε πόλη"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "Νέο"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Χρησιμοποιημένο"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Η κατάσταση του αγαθού:"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Επιχείρηση"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Ιδιώτης"
-
-#. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Πωλητής:"
-
-#. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Τιμή, {symbol}:"
-
-#. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Κατασκευαστής αυτοκινήτου"
-
-#. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "Μάρκα μοτοσυκλέτας"
-
-#. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Μάρκα μοτοσυκλέτας"
-
-#. js-lingui-explicit-id
-msgid "Yes"
-msgstr "Ναι"
-
-#. js-lingui-explicit-id
-msgid "No"
-msgstr "Όχι"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Περιγραφή"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Μάρκα"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Κατάσταση"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Πωλητής"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Χιλιομετρητής"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} χλμ"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Έτος κατασκευής"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} χλμ"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Καθαρισμένο από τελωνείο"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Τύπος καυσίμου"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Μετάδοση"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Τύπος εξαρτημάτων"
-
-#. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Η αγγελία αλλάχθηκε με επιτυχία"
-
-#. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Η αγγελία δημιουργήθηκε με επιτυχία"
-
-#. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Σφάλμα κατά την αλλαγή της αγγελίας"
-
-#. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Σφάλμα κατά τη δημιουργία της αγγελίας"
-
-#. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Αλλαγή διαφήμισης"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Εισαγωγή ονόματος της αγγελίας"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Όνομα αγγελίας"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Η κατάσταση του αγαθού"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Προσθήκη περιγραφής για την αγγελία"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Περιγραφή αγγελίας"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Το τηλέγραφός σας"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Μάρκα μοτοσυκλέτας"
-
-#. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Κατασκευαστής αυτοκινήτου"
-
-#. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Τύπος καυσίμου"
-
-#. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Τύπος μετάδοσης"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle parts"
-msgstr "Ανταλλακτικά μοτοσικλετών"
-
-#. js-lingui-explicit-id
-msgid "Car parts"
-msgstr "Ανταλλακτικά αυτοκινήτων"
-
-#. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Εισαγάγετε κείμενο για αναζήτηση"
-
-#. js-lingui-explicit-id
-msgid "Select"
-msgstr "Επιλέξτε"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Μάρκα/Κατασκευαστής"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Χιλιόμετρα, km:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Έτος κυκλοφορίας:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Τελωνείο καθαρίστηκε:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Τύπος καυσίμου"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
-msgstr "Κιβώτιο ταχυτήτων"
+msgid "Settings"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων μενού"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "Ειδοποίηση σήματος έκτακτης ανάγκης"
 
 #. js-lingui-explicit-id
 msgid "Share the app"
@@ -1142,6 +642,14 @@ msgid "Report an error/improvement"
 msgstr "Αναφορά σφάλματος/βελτίωσης"
 
 #. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Toggle automatically detect location"
 msgstr "Εναλλαγή αυτόματης ανίχνευσης τοποθεσίας"
 
@@ -1154,36 +662,20 @@ msgid "With the deletion of the profile, all your information will be deleted"
 msgstr "Με τη διαγραφή του προφίλ, όλες οι πληροφορίες σας θα διαγραφούν"
 
 #. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Προσθήκη περιγραφής"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Ακύρωση"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "Σε κατάσταση έκτακτης ανάγκης"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Έλεγχος δικαιωμάτων"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Κουμπί για κλείσιμο του μενού ρυθμίσεων SOS"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Ακτίνα, χλμ:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Εναλλαγή ειδοποίησης σήματος SOS"
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
 msgstr "Εναλλαγή εμφάνισης μενού"
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1192,6 +684,14 @@ msgstr "Καλώς ήρθατε στην υπηρεσία μας."
 #. js-lingui-explicit-id
 msgid "Log in using:"
 msgstr "Σύνδεση χρησιμοποιώντας:"
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -1378,12 +878,16 @@ msgid "The photo has not been changed"
 msgstr "Η φωτογραφία δεν άλλαξε"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "βρείτε κοντινές εκδηλώσεις, εργαστήρια"
+msgid "Delete"
+msgstr "Διαγραφή"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "για τη λειτουργία \"SOS\" ώστε άλλοι χρήστες της εφαρμογής να μπορούν να σας βοηθήσουν"
+msgid "Change"
+msgstr "Αλλαγή"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "βρείτε κοντινές εκδηλώσεις, εργαστήρια"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -1394,28 +898,32 @@ msgid "App {nameApp} collects location data to enable {secondEvent} even when th
 msgstr "Η εφαρμογή {nameApp} συλλέγει δεδομένα τοποθεσίας για να επιτρέπει το {secondEvent}, ακόμα και όταν η εφαρμογή είναι κλειστή ή δεν χρησιμοποιείται."
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Αποδοχή"
+msgid "Cancel"
+msgstr "Ακύρωση"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Διαγραφή διαφήμισης"
+msgid "Accept"
+msgstr "Αποδοχή"
 
 #. js-lingui-explicit-id
 msgid "Event delete"
 msgstr "Διαγραφή εκδήλωσης"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Παρακαλώ ελέγξτε τον ταυτοποιητή"
+msgid "Welcome"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
 msgstr "Δημιουργία εργαστηρίου"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Δημιουργία διαφήμισης"
+msgid "Map"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
@@ -1550,212 +1058,24 @@ msgid "Telegram {otherName}"
 msgstr "Telegram {otherName}"
 
 #. js-lingui-explicit-id
-msgid "advert"
-msgstr "διαφήμιση"
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Μεταφορά μοτοσικλετών"
+msgid "Password must contain at least 8 characters"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Μεταφορά αυτοκινήτων"
+msgid "Passwords do not match"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Βενζίνη"
-
-#. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Πετρέλαιο"
-
-#. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Αέριο / Πετρέλαιο"
-
-#. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Ηλεκτρικό"
-
-#. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Υβριδικό"
-
-#. js-lingui-explicit-id
-msgid "Other"
-msgstr "Άλλο"
-
-#. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Χειροκίνητο"
-
-#. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Αυτόματο"
-
-#. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Συνεχώς μεταβλητή μετάδοση (CVT)"
-
-#. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Προσαρμοστικό"
-
-#. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Τιπτρονικό"
-
-#. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Μπαταρίες"
-
-#. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Αμορτισέρ και ανάρτηση"
-
-#. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Μεταβλητές και μειωτές"
-
-#. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Συστήματα εξάτμισης, ευθείες σωληνώσεις, εξατμιστές"
-
-#. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Ανταλλακτικά κινητήρα"
-
-#. js-lingui-explicit-id
-msgid "Gearbox"
-msgstr "Κιβώτιο ταχυτήτων"
-
-#. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Ποδοστηρίων και πεντάλ"
-
-#. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Φωτισμός και λάμπες"
-
-#. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Ρουλεμάν"
-
-#. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Κίνηση και σασί"
-
-#. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Πλαίσιο, βραχίονες και αιωρούμενα χέρια"
-
-#. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Τιμόνια και ελέγχου"
-
-#. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Κάθισμα"
-
-#. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Σύστημα ψύξης"
-
-#. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Συμπλέκτης"
-
-#. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Σύστημα καυσίμου"
-
-#. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Καλώδια και σωλήνες"
-
-#. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Φίλτρα"
-
-#. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Αλυσίδες και γρανάζια"
-
-#. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Ηλεκτρικό σύστημα"
-
-#. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Άλλα ανταλλακτικά μοτοσικλετών"
-
-#. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Σύστημα εξάτμισης"
-
-#. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Μετάδοση / Χειροκίνητη και Αυτόματη μετάδοση"
-
-#. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Σύστημα διεύθυνσης"
-
-#. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Ανάρτηση / Σασί"
-
-#. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Ανταλλακτικά σώματος"
-
-#. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Εσωτερικά στοιχεία"
-
-#. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Κλιματισμός, θερμαντήρας, εξαερισμός"
-
-#. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Σύστημα εισαγωγής αέρα"
-
-#. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Σύστημα ανάφλεξης"
-
-#. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Σύστημα καθαρισμού παραθύρων και φανοστατών"
-
-#. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Φανάρια και φωτισμός"
-
-#. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Ηλεκτρικός εξοπλισμός"
-
-#. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Αυτοκινητικά τζάμια"
-
-#. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Σύστημα υγροποιημένου αερίου"
-
-#. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Άλλοι τύποι ανταλλακτικών"
+msgid "Select"
+msgstr "Επιλέξτε"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
 msgstr "Η τιμή του αντικειμένου"
-
-#. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Υπόβαθρο επικάλυψης για το κλείσιμο του παραθύρου modal"
 
 #. js-lingui-explicit-id
 msgid "Attention!"
@@ -1774,8 +1094,16 @@ msgid "Thank you for understanding!"
 msgstr "Σας ευχαριστούμε για την κατανόηση!"
 
 #. js-lingui-explicit-id
+msgid "Types of work for motorcycle transport:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Select type work moto {nameTypeWork}"
 msgstr "Επιλέξτε τύπο εργασίας μοτο {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Types of work for automobile transport:"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -1802,6 +1130,30 @@ msgid "Independence Street, 1"
 msgstr "Οδός Ανεξαρτησίας, 1"
 
 #. js-lingui-explicit-id
+msgid "Select a location on the map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Move and change the location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Specify the city"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Εισαγάγετε κείμενο για αναζήτηση"
+
+#. js-lingui-explicit-id
+msgid "Please enter text for searching"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Disable Deep Search"
 msgstr "Απενεργοποίηση Βαθιάς Αναζήτησης"
 
@@ -1826,6 +1178,18 @@ msgid "Select country"
 msgstr "Επιλέξτε χώρα"
 
 #. js-lingui-explicit-id
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Ναι"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Όχι"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Μειώστε το μέγιστο αριθμό"
 
@@ -1842,6 +1206,10 @@ msgid "No cities found"
 msgstr "Δεν βρέθηκαν πόλεις"
 
 #. js-lingui-explicit-id
+msgid "Resend the code"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
 msgstr "Φωτογραφία {numberPhoto}"
 
@@ -1852,6 +1220,10 @@ msgstr "Κύρια φωτογραφία"
 #. js-lingui-explicit-id
 msgid "Make the main photo"
 msgstr "Κάντε την κύρια φωτογραφία"
+
+#. js-lingui-explicit-id
+msgid "Language selection"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"

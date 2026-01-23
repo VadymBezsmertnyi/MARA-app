@@ -14,6 +14,22 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr "отримати допомогу у разі надзвичайної ситуації"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr "Допомога"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Майстерні"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Введіть назву майстерні або вид робіт"
+
+#. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
 msgstr "Вибачте, але за фільтрами не знайдено майстерень"
 
@@ -22,8 +38,20 @@ msgid "Sorry, there are no upcoming workshops"
 msgstr "Вибачте, але немає майбутніх майстерень"
 
 #. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Додати майстерню"
+
+#. js-lingui-explicit-id
+msgid "km"
+msgstr "км"
+
+#. js-lingui-explicit-id
 msgid "Not comments"
 msgstr "Немає коментарів"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Кнопка для закриття модального вікна"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
@@ -44,338 +72,6 @@ msgstr "від найвищого до найнижчого"
 #. js-lingui-explicit-id
 msgid "By number of comments:"
 msgstr "За кількістю коментарів:"
-
-#. js-lingui-explicit-id
-msgid "Only with rating:"
-msgstr "Тільки з рейтингом:"
-
-#. js-lingui-explicit-id
-msgid "About us:"
-msgstr "Про нас:"
-
-#. js-lingui-explicit-id
-msgid "Read the whole description..."
-msgstr "Прочитати весь опис..."
-
-#. js-lingui-explicit-id
-msgid "Leave a review"
-msgstr "Залишити відгук"
-
-#. js-lingui-explicit-id
-msgid "The work we do:"
-msgstr "Робота, яку ми виконуємо:"
-
-#. js-lingui-explicit-id
-msgid "Reviews:"
-msgstr "Відгуки:"
-
-#. js-lingui-explicit-id
-msgid "My workshops"
-msgstr "Мої майстерні"
-
-#. js-lingui-explicit-id
-msgid "Sorry!"
-msgstr "Вибачте!"
-
-#. js-lingui-explicit-id
-msgid "You don't have {typeItem}."
-msgstr "У вас немає {typeItem}."
-
-#. js-lingui-explicit-id
-msgid "Profile"
-msgstr "Профіль"
-
-#. js-lingui-explicit-id
-msgid "Logout"
-msgstr "Вийти"
-
-#. js-lingui-explicit-id
-msgid "My adverts"
-msgstr "Мої оголошення"
-
-#. js-lingui-explicit-id
-msgid "Your profile"
-msgstr "Ваш профіль"
-
-#. js-lingui-explicit-id
-msgid "Create"
-msgstr "Створити"
-
-#. js-lingui-explicit-id
-msgid "My events"
-msgstr "Мої події"
-
-#. js-lingui-explicit-id
-msgid "Allow login using Touch ID"
-msgstr "Дозволити вхід за допомогою Touch ID"
-
-#. js-lingui-explicit-id
-msgid "Allow Touch ID to access the MARA app."
-msgstr "Дозволити Touch ID доступ до додатку MARA."
-
-#. js-lingui-explicit-id
-msgid "Allow"
-msgstr "Дозволити"
-
-#. js-lingui-explicit-id
-msgid "Allow later"
-msgstr "Дозволити пізніше"
-
-#. js-lingui-explicit-id
-msgid "Terms of Service"
-msgstr "Умови обслуговування"
-
-#. js-lingui-explicit-id
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr "Щоб повністю використовувати всі функції сервісу, потрібно надати додатку дозвіл на визначення вашого місцезнаходження:"
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} application to determine my location"
-msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження у фоновому режимі"
-
-#. js-lingui-explicit-id
-msgid "and choose the city of residence:"
-msgstr "і вибрати місто проживання:"
-
-#. js-lingui-explicit-id
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr "Натискаючи кнопку \"Продовжити\", ви погоджуєтеся з {buttonTermsService} та {buttonPrivacyPolicy}"
-
-#. js-lingui-explicit-id
-msgid "We recommend filling out the profile information"
-msgstr "Рекомендуємо заповнити інформацію профілю"
-
-#. js-lingui-explicit-id
-msgid "Allow login using Face ID"
-msgstr "Дозволити вхід за допомогою Face ID"
-
-#. js-lingui-explicit-id
-msgid "Enable logging into the app using Face ID"
-msgstr "Увімкнути вхід у додаток за допомогою Face ID"
-
-#. js-lingui-explicit-id
-msgid "Upcoming events:"
-msgstr "Майбутні події:"
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no upcoming events"
-msgstr "Вибачте, але немає майбутніх подій"
-
-#. js-lingui-explicit-id
-msgid "More events"
-msgstr "Більше подій"
-
-#. js-lingui-explicit-id
-msgid "Past events:"
-msgstr "Минулі події:"
-
-#. js-lingui-explicit-id
-msgid "No events have passed"
-msgstr "Немає минулих подій"
-
-#. js-lingui-explicit-id
-msgid "Now"
-msgstr "Зараз"
-
-#. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr "Вартість участі"
-
-#. js-lingui-explicit-id
-msgid "Sorry, but no products were found by the filters"
-msgstr "Вибачте, але за фільтрами не знайдено жодного продукту"
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no available items"
-msgstr "Вибачте, але немає доступних товарів"
-
-#. js-lingui-explicit-id
-msgid "Latest"
-msgstr "Останні"
-
-#. js-lingui-explicit-id
-msgid "Cheapest"
-msgstr "Найдешевші"
-
-#. js-lingui-explicit-id
-msgid "Most expensive"
-msgstr "Найдорожчі"
-
-#. js-lingui-explicit-id
-msgid "Currency:"
-msgstr "Валюта:"
-
-#. js-lingui-explicit-id
-msgid "Views:"
-msgstr "Перегляди:"
-
-#. js-lingui-explicit-id
-msgid "Write"
-msgstr "Написати"
-
-#. js-lingui-explicit-id
-msgid "Call"
-msgstr "Подзвонити"
-
-#. js-lingui-explicit-id
-msgid "Your contact information"
-msgstr "Ваша контактна інформація"
-
-#. js-lingui-explicit-id
-msgid "Settings"
-msgstr "Налаштування"
-
-#. js-lingui-explicit-id
-msgid "Dark theme"
-msgstr "Темна тема"
-
-#. js-lingui-explicit-id
-msgid "Automatically detect location"
-msgstr "Автоматично визначати місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "Do you want to send an SOS signal?"
-msgstr "Ви хочете надіслати сигнал SOS?"
-
-#. js-lingui-explicit-id
-msgid "Access to geolocation when using the application"
-msgstr "Доступ до геолокації під час використання додатку"
-
-#. js-lingui-explicit-id
-msgid "Access to geolocation in the background mode"
-msgstr "Доступ до геолокації у фоновому режимі"
-
-#. js-lingui-explicit-id
-msgid "Settings and permissions should be enabled"
-msgstr "Потрібно увімкнути налаштування та дозволи"
-
-#. js-lingui-explicit-id
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr "Автоматично вимкнеться через 20-30 хвилин"
-
-#. js-lingui-explicit-id
-msgid "Notification of SOS signal"
-msgstr "Повідомлення про сигнал SOS"
-
-#. js-lingui-explicit-id
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr "Щоб отримувати сигнали SOS, налаштуйте радіус прийому сигналу від центру вашого міста:"
-
-#. js-lingui-explicit-id
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr "На яку платформу ви хочете надіслати запрошення на встановлення додатку?"
-
-#. js-lingui-explicit-id
-msgid "Last update"
-msgstr "Останнє оновлення"
-
-#. js-lingui-explicit-id
-msgid "Someone needs help within a {distance} km radius"
-msgstr "Хтось потребує допомоги в радіусі {distance} км"
-
-#. js-lingui-explicit-id
-msgid "The nearest event:"
-msgstr "Найближча подія:"
-
-#. js-lingui-explicit-id
-msgid "{distance} km"
-msgstr "{distance} км"
-
-#. js-lingui-explicit-id
-msgid "Continue with {typeSocial}"
-msgstr "Продовжити з {typeSocial}"
-
-#. js-lingui-explicit-id
-msgid "or sign up using:"
-msgstr "або зареєструватися за допомогою:"
-
-#. js-lingui-explicit-id
-msgid "Welcome"
-msgstr "Ласкаво просимо"
-
-#. js-lingui-explicit-id
-msgid "Main"
-msgstr "Головна"
-
-#. js-lingui-explicit-id
-msgid "Map"
-msgstr "Карта"
-
-#. js-lingui-explicit-id
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr "Введено неправильний номер телефону або неправильно вибрано код країни телефону"
-
-#. js-lingui-explicit-id
-msgid "Password must contain at least 8 characters"
-msgstr "Пароль повинен містити щонайменше 8 символів"
-
-#. js-lingui-explicit-id
-msgid "Passwords do not match"
-msgstr "Паролі не співпадають"
-
-#. js-lingui-explicit-id
-msgid "Types of work for motorcycle transport:"
-msgstr "Види робіт для мотоциклетного транспорту:"
-
-#. js-lingui-explicit-id
-msgid "Types of work for automobile transport:"
-msgstr "Види робіт для автомобільного транспорту:"
-
-#. js-lingui-explicit-id
-msgid "Select a location on the map"
-msgstr "Виберіть місце на карті"
-
-#. js-lingui-explicit-id
-msgid "Move and change the location"
-msgstr "Перемістіть і змініть місце розташування"
-
-#. js-lingui-explicit-id
-msgid "Specify the city"
-msgstr "Вкажіть місто"
-
-#. js-lingui-explicit-id
-msgid "Please enter text for searching"
-msgstr "Будь ласка, введіть текст для пошуку"
-
-#. js-lingui-explicit-id
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr "Якщо в списку немає підходящого варіанту, скористайтеся 'Глибоким пошуком'"
-
-#. js-lingui-explicit-id
-msgid "Are you sure you want to delete?"
-msgstr "Ви впевнені, що хочете видалити?"
-
-#. js-lingui-explicit-id
-msgid "Resend the code"
-msgstr "Відправити код повторно"
-
-#. js-lingui-explicit-id
-msgid "Language selection"
-msgstr "Вибір мови"
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Майстерні"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Введіть назву майстерні або вид робіт"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Додати майстерню"
-
-#. js-lingui-explicit-id
-msgid "km"
-msgstr "км"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the modal window"
-msgstr "Кнопка для закриття модального вікна"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -414,6 +110,10 @@ msgid "Distance, km:"
 msgstr "Відстань, км:"
 
 #. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr "Тільки з рейтингом:"
+
+#. js-lingui-explicit-id
 msgid "All works"
 msgstr "Всі роботи"
 
@@ -430,12 +130,24 @@ msgid "Workshop"
 msgstr "Майстерня"
 
 #. js-lingui-explicit-id
+msgid "About us:"
+msgstr "Про нас:"
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr "Прочитати весь опис..."
+
+#. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
 msgstr "Текст повинен містити принаймні 3, але не більше 40 символів."
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Текст повинен містити принаймні 10, але не більше 2000 символів."
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr "Залишити відгук"
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -458,12 +170,20 @@ msgid "Publish"
 msgstr "Опублікувати"
 
 #. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr "Робота, яку ми виконуємо:"
+
+#. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Виберіть сторінку для поділу"
 
 #. js-lingui-explicit-id
 msgid "Toggle like product"
 msgstr "Перемикання подобається продукт"
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr "Відгуки:"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -550,8 +270,20 @@ msgid "workshops"
 msgstr "майстерні"
 
 #. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Мої майстерні"
+
+#. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Кнопка для закриття екрану налаштувань майстерень"
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr "Вибачте!"
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr "У вас немає {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Buy workshop"
@@ -594,6 +326,14 @@ msgid "Back"
 msgstr "Назад"
 
 #. js-lingui-explicit-id
+msgid "Profile"
+msgstr "Профіль"
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr "Вийти"
+
+#. js-lingui-explicit-id
 msgid "First Name"
 msgstr "Ім'я"
 
@@ -614,28 +354,8 @@ msgid "Save"
 msgstr "Зберегти"
 
 #. js-lingui-explicit-id
-msgid "adverts"
-msgstr "оголошення"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Кнопка для закриття екрану налаштувань продуктів"
-
-#. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Додати оголошення"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Купити оголошення"
-
-#. js-lingui-explicit-id
-msgid "grn"
-msgstr "грн"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Ваші оголошення"
+msgid "Your profile"
+msgstr "Ваш профіль"
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
@@ -670,40 +390,12 @@ msgid "Active"
 msgstr "Активний"
 
 #. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Профіль бізнесу"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Покращити"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Доступні оголошення: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Опубліковані оголошення: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Огляд"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Змінити"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Видалити"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Увага! Всі дані, пов'язані з бізнесом \"{nameBusiness}\", будуть видалені."
-
-#. js-lingui-explicit-id
 msgid "events"
 msgstr "події"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Мої події"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -718,26 +410,6 @@ msgid "Buy event"
 msgstr "Купити подію"
 
 #. js-lingui-explicit-id
-msgid "business"
-msgstr "бізнес"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Назва компанії"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Введіть назву свого бізнесу"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Додатковий номер {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Кнопка для закриття реєстрації TouchID"
-
-#. js-lingui-explicit-id
 msgid "Terms of Use"
 msgstr "Умови використання"
 
@@ -746,12 +418,36 @@ msgid "Privacy Policy"
 msgstr "Політика конфіденційності"
 
 #. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr "Умови обслуговування"
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Щоб повністю використовувати всі функції сервісу, потрібно надати додатку дозвіл на визначення вашого місцезнаходження:"
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Перемикач вашого місцезнаходження"
 
 #. js-lingui-explicit-id
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження у фоновому режимі"
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location in the background"
 msgstr "Увімкніть своє місце знаходження в фоновому режимі"
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr "і вибрати місто проживання:"
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "Натискаючи кнопку \"Продовжити\", ви погоджуєтеся з {buttonTermsService} та {buttonPrivacyPolicy}"
 
 #. js-lingui-explicit-id
 msgid "Continue"
@@ -770,20 +466,44 @@ msgid "Registration"
 msgstr "Реєстрація"
 
 #. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Заповнити пізніше"
+msgid "We recommend filling out the profile information"
+msgstr "Рекомендуємо заповнити інформацію профілю"
 
 #. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Кнопка для закриття реєстрації FaceID"
+msgid "Fill out later"
+msgstr "Заповнити пізніше"
 
 #. js-lingui-explicit-id
 msgid "Events"
 msgstr "Події"
 
 #. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr "Майбутні події:"
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr "Вибачте, але немає майбутніх подій"
+
+#. js-lingui-explicit-id
 msgid "Press show more events"
 msgstr "Натисніть, щоб побачити більше подій"
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr "Більше подій"
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr "Минулі події:"
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr "Немає минулих подій"
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr "Зараз"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -870,6 +590,10 @@ msgid "Conclusion"
 msgstr "Завершення"
 
 #. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr "Вартість участі"
+
+#. js-lingui-explicit-id
 msgid "100 uah"
 msgstr "100 грн"
 
@@ -890,236 +614,12 @@ msgid "Confirm"
 msgstr "Опублікувати"
 
 #. js-lingui-explicit-id
-msgid "Market"
-msgstr "Ринок"
-
-#. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Введіть назву"
-
-#. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Додати продукт"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Категорія"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Виберіть місто"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "Новий"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Вживаний"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Стан товару:"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Бізнес"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Приватна особа"
-
-#. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Продавець:"
-
-#. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Ціна, {symbol}:"
-
-#. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Марка автомобіля"
-
-#. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "марка мотоцикла"
-
-#. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Марка мотоцикла"
-
-#. js-lingui-explicit-id
-msgid "Yes"
-msgstr "Так"
-
-#. js-lingui-explicit-id
-msgid "No"
-msgstr "Ні"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Опис"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Бренд"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Стан"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Продавець"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Пробіг"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} км"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Рік виробництва"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} км"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Мито сплачено"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Тип палива"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Коробка передач"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Тип деталів"
-
-#. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Оголошення успішно змінено"
-
-#. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Оголошення успішно створено"
-
-#. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Помилка зміни оголошення"
-
-#. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Помилка створення оголошення"
-
-#. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Змінити оголошення"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Введіть назву оголошення"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Назва оголошення"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Стан товару"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Додайте опис про оголошення"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Опис оголошення"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Ваш телеграм"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Марка мотоцикла"
-
-#. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Марка автомобіля"
-
-#. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Тип палива"
-
-#. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Тип коробки передач"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle parts"
-msgstr "Деталі для мотоциклів"
-
-#. js-lingui-explicit-id
-msgid "Car parts"
-msgstr "Деталі для автомобілів"
-
-#. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Введіть текст для пошуку"
-
-#. js-lingui-explicit-id
-msgid "Select"
-msgstr "Обрати"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Бренд/Виробник"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Пробіг, км:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Рік випуску:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Розмитнено:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Тип палива"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
-msgstr "Коробка передач"
+msgid "Settings"
+msgstr "Налаштування"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
 msgstr "Кнопка для закриття екрану налаштувань меню"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "Сповіщення сигналу SOS"
 
 #. js-lingui-explicit-id
 msgid "Share the app"
@@ -1142,6 +642,14 @@ msgid "Report an error/improvement"
 msgstr "Повідомити про помилку/покращення"
 
 #. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr "Темна тема"
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr "Автоматично визначати місцезнаходження"
+
+#. js-lingui-explicit-id
 msgid "Toggle automatically detect location"
 msgstr "Перемикач автоматичного визначення місцезнаходження"
 
@@ -1154,36 +662,20 @@ msgid "With the deletion of the profile, all your information will be deleted"
 msgstr "При видаленні профілю буде видалена вся ваша інформація"
 
 #. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Додати опис"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Скасувати"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "Вкоючити SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Перевірити дозволи"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Кнопка для закриття меню налаштувань SOS"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Радіус, км:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Перемикач сповіщення про сигнал SOS"
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "На яку платформу ви хочете надіслати запрошення на встановлення додатку?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
 msgstr "Перемикання відображення меню"
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr "Найближча подія:"
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr "{distance} км"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1192,6 +684,14 @@ msgstr "Ласкаво просимо до нашого сервісу."
 #. js-lingui-explicit-id
 msgid "Log in using:"
 msgstr "Увійти за допомогою:"
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr "Продовжити з {typeSocial}"
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr "або зареєструватися за допомогою:"
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -1378,12 +878,16 @@ msgid "The photo has not been changed"
 msgstr "Фото не змінено"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "знайти поруч події, майстерні"
+msgid "Delete"
+msgstr "Видалити"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "для функції \"SOS\", щоб інші користувачі додатка могли вам допомогти"
+msgid "Change"
+msgstr "Змінити"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "знайти поруч події, майстерні"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -1394,28 +898,32 @@ msgid "App {nameApp} collects location data to enable {secondEvent} even when th
 msgstr "Додаток {nameApp} збирає дані про місцезнаходження, щоб дозволити {secondEvent}, навіть коли додаток закрито або не використовується."
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Прийняти"
+msgid "Cancel"
+msgstr "Скасувати"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Оголошення видалено"
+msgid "Accept"
+msgstr "Прийняти"
 
 #. js-lingui-explicit-id
 msgid "Event delete"
 msgstr "Видалити подію"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Будь ласка, аутентифікатор"
+msgid "Welcome"
+msgstr "Ласкаво просимо"
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr "Головна"
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
 msgstr "Створити майстерню"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Створити оголошення"
+msgid "Map"
+msgstr "Карта"
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
@@ -1550,212 +1058,24 @@ msgid "Telegram {otherName}"
 msgstr "Телеграм {otherName}"
 
 #. js-lingui-explicit-id
-msgid "advert"
-msgstr "оголошення"
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Введено неправильний номер телефону або неправильно вибрано код країни телефону"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Мото транспорт"
+msgid "Password must contain at least 8 characters"
+msgstr "Пароль повинен містити щонайменше 8 символів"
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Авто транспорт"
+msgid "Passwords do not match"
+msgstr "Паролі не співпадають"
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Бензин"
-
-#. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Дизель"
-
-#. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Газ / Бензин"
-
-#. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Електрика"
-
-#. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Гібрид"
-
-#. js-lingui-explicit-id
-msgid "Other"
-msgstr "Інше"
-
-#. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Механічна"
-
-#. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Автоматична"
-
-#. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Безступінчаста трансмісія (CVT)"
-
-#. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Адаптивна"
-
-#. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Тіптронік"
-
-#. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Акумулятори"
-
-#. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Амортизатори та підвіска"
-
-#. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Варіатори та редуктори"
-
-#. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Вихлопні системи, прямі труби, глушники"
-
-#. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Деталі двигуна"
-
-#. js-lingui-explicit-id
-msgid "Gearbox"
-msgstr "Коробка передач"
-
-#. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Підніжки та педалі"
-
-#. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Освітлення та лампи"
-
-#. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Підшипники"
-
-#. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Привід та шасі"
-
-#. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Рама, кронштейни та підвіски"
-
-#. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Кермо та керування"
-
-#. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Сидіння"
-
-#. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Система охолодження"
-
-#. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Зчеплення"
-
-#. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Паливна система"
-
-#. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Кабелі та шланги"
-
-#. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Фільтри"
-
-#. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Ланцюги та зірочки"
-
-#. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Електрична система"
-
-#. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Інші деталі для мотоциклів"
-
-#. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Вихлопна система"
-
-#. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Трансмісія / Механічна та Автоматична"
-
-#. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Система керування"
-
-#. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Підвіска / Шасі"
-
-#. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Деталі кузова"
-
-#. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Деталі інтер'єру"
-
-#. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Кондиціонер, обігрівач, вентиляція"
-
-#. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Система подачі повітря"
-
-#. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Система запалювання"
-
-#. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Система очищення вікон та фар"
-
-#. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Фари та освітлення"
-
-#. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Електрообладнання"
-
-#. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Автомобільне скло"
-
-#. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Система рідкого газу"
-
-#. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Інші типи запчастин"
+msgid "Select"
+msgstr "Обрати"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
 msgstr "Ціна товару"
-
-#. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Фонове наложення для закриття модального вікна"
 
 #. js-lingui-explicit-id
 msgid "Attention!"
@@ -1774,8 +1094,16 @@ msgid "Thank you for understanding!"
 msgstr "Дякуємо за розуміння!"
 
 #. js-lingui-explicit-id
+msgid "Types of work for motorcycle transport:"
+msgstr "Види робіт для мотоциклетного транспорту:"
+
+#. js-lingui-explicit-id
 msgid "Select type work moto {nameTypeWork}"
 msgstr "Виберіть тип роботи мото {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Types of work for automobile transport:"
+msgstr "Види робіт для автомобільного транспорту:"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -1802,6 +1130,30 @@ msgid "Independence Street, 1"
 msgstr "Вулиця Незалежності, 1"
 
 #. js-lingui-explicit-id
+msgid "Select a location on the map"
+msgstr "Виберіть місце на карті"
+
+#. js-lingui-explicit-id
+msgid "Move and change the location"
+msgstr "Перемістіть і змініть місце розташування"
+
+#. js-lingui-explicit-id
+msgid "Specify the city"
+msgstr "Вкажіть місто"
+
+#. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Введіть текст для пошуку"
+
+#. js-lingui-explicit-id
+msgid "Please enter text for searching"
+msgstr "Будь ласка, введіть текст для пошуку"
+
+#. js-lingui-explicit-id
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Якщо в списку немає підходящого варіанту, скористайтеся 'Глибоким пошуком'"
+
+#. js-lingui-explicit-id
 msgid "Disable Deep Search"
 msgstr "Вимкнути Глибокий Пошук"
 
@@ -1826,6 +1178,18 @@ msgid "Select country"
 msgstr "Виберіть країну"
 
 #. js-lingui-explicit-id
+msgid "Are you sure you want to delete?"
+msgstr "Ви впевнені, що хочете видалити?"
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Так"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Ні"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Зменшити максимальну кількість"
 
@@ -1842,6 +1206,10 @@ msgid "No cities found"
 msgstr "Міста не знайдено"
 
 #. js-lingui-explicit-id
+msgid "Resend the code"
+msgstr "Відправити код повторно"
+
+#. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
 msgstr "Фото {numberPhoto}"
 
@@ -1852,6 +1220,10 @@ msgstr "Головне фото"
 #. js-lingui-explicit-id
 msgid "Make the main photo"
 msgstr "Зробити головним фото"
+
+#. js-lingui-explicit-id
+msgid "Language selection"
+msgstr "Вибір мови"
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"

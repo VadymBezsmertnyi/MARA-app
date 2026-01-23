@@ -14,6 +14,22 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Dirbtuvės"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Įveskite dirbtuvių arba darbo tipo pavadinimą"
+
+#. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
 msgstr ""
 
@@ -22,8 +38,20 @@ msgid "Sorry, there are no upcoming workshops"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridėti dirbtuvę"
+
+#. js-lingui-explicit-id
+msgid "km"
+msgstr "km"
+
+#. js-lingui-explicit-id
 msgid "Not comments"
 msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Button for closing the modal window"
+msgstr "Mygtukas uždaryti modalinį langą"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
@@ -44,338 +72,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "By number of comments:"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Only with rating:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "About us:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Read the whole description..."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Leave a review"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "The work we do:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Reviews:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "My workshops"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry!"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "You don't have {typeItem}."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Profile"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Logout"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "My adverts"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Your profile"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Create"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "My events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow login using Touch ID"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow Touch ID to access the MARA app."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow later"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Terms of Service"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "and choose the city of residence:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "We recommend filling out the profile information"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Allow login using Face ID"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Enable logging into the app using Face ID"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Upcoming events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no upcoming events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "More events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Past events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "No events have passed"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Now"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, but no products were found by the filters"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no available items"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Latest"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Cheapest"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Most expensive"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Currency:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Views:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Write"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Call"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Your contact information"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Settings"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Dark theme"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Automatically detect location"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Do you want to send an SOS signal?"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Access to geolocation when using the application"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Access to geolocation in the background mode"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Settings and permissions should be enabled"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Notification of SOS signal"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Last update"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Someone needs help within a {distance} km radius"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "The nearest event:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "{distance} km"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Continue with {typeSocial}"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "or sign up using:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Welcome"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Main"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Map"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Password must contain at least 8 characters"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Passwords do not match"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Types of work for motorcycle transport:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Types of work for automobile transport:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Select a location on the map"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Move and change the location"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Specify the city"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Please enter text for searching"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Are you sure you want to delete?"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Resend the code"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Language selection"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Dirbtuvės"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Įveskite dirbtuvių arba darbo tipo pavadinimą"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridėti dirbtuvę"
-
-#. js-lingui-explicit-id
-msgid "km"
-msgstr "km"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the modal window"
-msgstr "Mygtukas uždaryti modalinį langą"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -414,6 +110,10 @@ msgid "Distance, km:"
 msgstr "Atstumas, km:"
 
 #. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "All works"
 msgstr "Visi darbai"
 
@@ -430,12 +130,24 @@ msgid "Workshop"
 msgstr "Dirbtuvės"
 
 #. js-lingui-explicit-id
+msgid "About us:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
 msgstr "Tekstas turi būti sudarytas iš ne mažiau kaip 3 ir ne daugiau kaip 40 simbolių."
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
 msgstr "Tekstas turi būti sudarytas iš ne mažiau kaip 10 ir ne daugiau kaip 2000 simbolių."
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -458,12 +170,20 @@ msgid "Publish"
 msgstr "Skelbti"
 
 #. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Pasirinkite bendrinimo puslapį"
 
 #. js-lingui-explicit-id
 msgid "Toggle like product"
 msgstr "Perjungti mėgstamą produktą"
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -550,8 +270,20 @@ msgid "workshops"
 msgstr "Dirbtuvės"
 
 #. js-lingui-explicit-id
+msgid "My workshops"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
 msgstr "Mygtukas, skirtas uždaryti dirbtuvių nustatymų langą"
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Buy workshop"
@@ -594,6 +326,14 @@ msgid "Back"
 msgstr "Atgal"
 
 #. js-lingui-explicit-id
+msgid "Profile"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "First Name"
 msgstr "Vardas"
 
@@ -614,28 +354,8 @@ msgid "Save"
 msgstr "Išsaugoti"
 
 #. js-lingui-explicit-id
-msgid "adverts"
-msgstr "Skelbimai"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Mygtukas, skirtas uždaryti produktų nustatymų langą"
-
-#. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Pridėti skelbimą"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Pirkti skelbimą"
-
-#. js-lingui-explicit-id
-msgid "grn"
-msgstr "grn"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Jūsų skelbimai"
+msgid "Your profile"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
@@ -670,40 +390,12 @@ msgid "Active"
 msgstr "Aktyvus"
 
 #. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Verslo profilis"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Pagerinti"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Prieinami skelbimai: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Skelbimai paskelbti: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Peržiūrėti"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Keisti"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Ištrinti"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Dėmesio! Visi su verslu \"{nameBusiness}\" susiję duomenys bus ištrinti."
-
-#. js-lingui-explicit-id
 msgid "events"
 msgstr "Įvykiai"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -718,26 +410,6 @@ msgid "Buy event"
 msgstr "Pirkti įvykį"
 
 #. js-lingui-explicit-id
-msgid "business"
-msgstr "verslas"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Įmonės pavadinimas"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Įveskite savo verslo pavadinimą"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Papildomas numeris {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Mygtukas, skirtas uždaryti registraciją naudojant TouchID"
-
-#. js-lingui-explicit-id
 msgid "Terms of Use"
 msgstr "Naudojimosi sąlygos"
 
@@ -746,12 +418,36 @@ msgid "Privacy Policy"
 msgstr "Privatumo politika"
 
 #. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Įjungti savo vietą"
 
 #. js-lingui-explicit-id
+msgid "Allow the {nameApp} app to determine my location in the background"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Toggle on your location in the background"
 msgstr "Įjunkite savo vietą fone"
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Continue"
@@ -770,20 +466,44 @@ msgid "Registration"
 msgstr "Registracija"
 
 #. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Užpildyti vėliau"
+msgid "We recommend filling out the profile information"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Mygtukas, skirtas uždaryti registraciją naudojant FaceID"
+msgid "Fill out later"
+msgstr "Užpildyti vėliau"
 
 #. js-lingui-explicit-id
 msgid "Events"
 msgstr "Įvykiai"
 
 #. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Press show more events"
 msgstr "Paspauskite, kad pamatytumėte daugiau įvykių"
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -870,6 +590,10 @@ msgid "Conclusion"
 msgstr "Pabaiga"
 
 #. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "100 uah"
 msgstr "100 uah"
 
@@ -890,236 +614,12 @@ msgid "Confirm"
 msgstr "Patvirtinti"
 
 #. js-lingui-explicit-id
-msgid "Market"
-msgstr "Rinka"
-
-#. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Įveskite pavadinimą"
-
-#. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Pridėti produktą"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Kategorija"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Vieta"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Pasirinkite miestą"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "Naujas"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Naudotas"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Prekių būklė:"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Verslas"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Privatus asmuo"
-
-#. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Pardavėjas:"
-
-#. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Kaina, {symbol}:"
-
-#. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Automobilio markė"
-
-#. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "Motociklo prekės ženklas"
-
-#. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Motociklo prekės ženklas"
-
-#. js-lingui-explicit-id
-msgid "Yes"
-msgstr "Taip"
-
-#. js-lingui-explicit-id
-msgid "No"
-msgstr "Ne"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Aprašymas"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Prekės ženklas"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Būklė"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Pardavėjas"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Rida"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} km"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Gamybos metai"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} km"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Išvalyta muitinėje"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Kuro tipas"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Pavarų dėžė"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Detalių tipas"
-
-#. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Skelbimas sėkmingai pakeistas"
-
-#. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Skelbimas sėkmingai sukurtas"
-
-#. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Klaida keičiant skelbimą"
-
-#. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Klaida kuriant skelbimą"
-
-#. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Keisti skelbimą"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Įveskite skelbimo pavadinimą"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Skelbimo pavadinimas"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Prekių būklė"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Pridėkite aprašymą apie skelbimą"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Skelbimo aprašymas"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Jūsų telegrama"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Motociklo prekės ženklas"
-
-#. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Automobilio gamintojas"
-
-#. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Kuro tipas"
-
-#. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Pavarų dėžės tipas"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle parts"
-msgstr "Motociklų dalys"
-
-#. js-lingui-explicit-id
-msgid "Car parts"
-msgstr "Automobilių dalys"
-
-#. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Įveskite tekstą, kurį norite ieškoti"
-
-#. js-lingui-explicit-id
-msgid "Select"
-msgstr "Pasirinkti"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Prekės ženklas"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Rida, km:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Leidimo metai:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Iškrautas muitas:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Kuro tipas"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
-msgstr "Pavarų dėžė"
+msgid "Settings"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
 msgstr "Mygtukas uždaryti meniu nustatymų ekraną"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "SOS signalo pranešimas"
 
 #. js-lingui-explicit-id
 msgid "Share the app"
@@ -1142,6 +642,14 @@ msgid "Report an error/improvement"
 msgstr "Pranešti apie klaidą/pokytį"
 
 #. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Toggle automatically detect location"
 msgstr "Perjungti automatinio vietos nustatymo funkciją"
 
@@ -1154,36 +662,20 @@ msgid "With the deletion of the profile, all your information will be deleted"
 msgstr "Ištrindami profilį, visi jūsų duomenys bus ištrinti"
 
 #. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Pridėti aprašymą"
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Atšaukti"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "Apie SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Patikrinkite leidimus"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Mygtukas uždaryti meniu nustatymus sos"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Spindulys, km:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Perjungti SOS signalo pranešimo funkciją"
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
 msgstr "Perjungti rodyti meniu"
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1192,6 +684,14 @@ msgstr "Sveiki atvykę į mūsų paslaugą."
 #. js-lingui-explicit-id
 msgid "Log in using:"
 msgstr "Prisijungti naudojant:"
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Maintenance"
@@ -1378,12 +878,16 @@ msgid "The photo has not been changed"
 msgstr "Nuotrauka nepakeista"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "rasti artimiausius renginius, dirbtuves"
+msgid "Delete"
+msgstr "Ištrinti"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "„SOS“ funkcijai, kad kitos programos naudotojai galėtų jums padėti"
+msgid "Change"
+msgstr "Keisti"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "rasti artimiausius renginius, dirbtuves"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -1394,28 +898,32 @@ msgid "App {nameApp} collects location data to enable {secondEvent} even when th
 msgstr "Programa {nameApp} renka vietos duomenis, kad būtų galima įgalinti {secondEvent}, net kai programa uždaryta arba neveikia."
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Priimti"
+msgid "Cancel"
+msgstr "Atšaukti"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Ištrinti skelbimą"
+msgid "Accept"
+msgstr "Priimti"
 
 #. js-lingui-explicit-id
 msgid "Event delete"
 msgstr "Ištrinti renginį"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Prašome autentifikatoriaus"
+msgid "Welcome"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
 msgstr "Sukurti dirbtuves"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Sukurti skelbimą"
+msgid "Map"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
@@ -1550,212 +1058,24 @@ msgid "Telegram {otherName}"
 msgstr "{otherName} Telegram"
 
 #. js-lingui-explicit-id
-msgid "advert"
-msgstr "skelbimas"
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Motociklų transportas"
+msgid "Password must contain at least 8 characters"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Automobilių transportas"
+msgid "Passwords do not match"
+msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Benzinas"
-
-#. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Dyzelinas"
-
-#. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Dujos / Benzinas"
-
-#. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Elektrinis"
-
-#. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Hibridinis"
-
-#. js-lingui-explicit-id
-msgid "Other"
-msgstr "Kitas"
-
-#. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Rankinis"
-
-#. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Automatinis"
-
-#. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Nuolat kintamoji pavarų perėjimo (CVT)"
-
-#. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Adaptacinis"
-
-#. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Tiptronikas"
-
-#. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Baterijos"
-
-#. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Stūmokliai ir pakaba"
-
-#. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Variatoriai ir sumažintuvai"
-
-#. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Išmetimo sistemos, tiesios vamzdžiai, tylintuvai"
-
-#. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Variklio dalys"
-
-#. js-lingui-explicit-id
-msgid "Gearbox"
-msgstr "Pavarų dėžė"
-
-#. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Kojinės ir pedalai"
-
-#. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Apšvietimas ir lempos"
-
-#. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Guoliai"
-
-#. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Pavara ir šasi"
-
-#. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Rėmas, laikikliai ir svyravimo rankenėlės"
-
-#. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Vairai ir valdymas"
-
-#. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Sėdynė"
-
-#. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Aušinimo sistema"
-
-#. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Sankabos"
-
-#. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Degalų sistema"
-
-#. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Kabeliai ir vamzdeliai"
-
-#. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Filtrai"
-
-#. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Grandinės ir špagatai"
-
-#. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Elektros sistema"
-
-#. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Kitos motociklo dalys"
-
-#. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Išmetimo sistema"
-
-#. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Pavarų dėžė / Mechaninė ir Automatinė pavarų dėžė"
-
-#. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Vairavimo sistema"
-
-#. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Pakaba / Šasis"
-
-#. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Kūno dalys"
-
-#. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Vidiniai detaliai"
-
-#. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Kondicionavimas, šildymas, vėdinimas"
-
-#. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Orlaivio įsiurbimo sistema"
-
-#. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Užsidegimo sistema"
-
-#. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Langų ir priekinių žibintų valymo sistema"
-
-#. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Priekiniai žibintai ir apšvietimas"
-
-#. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Elektros įranga"
-
-#. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Automobilių stiklai"
-
-#. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Skystos dujos"
-
-#. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Kiti tipo atsarginės dalys"
+msgid "Select"
+msgstr "Pasirinkti"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
 msgstr "Prekės kaina"
-
-#. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Fono perdanga uždaryti modalinį langą"
 
 #. js-lingui-explicit-id
 msgid "Attention!"
@@ -1774,8 +1094,16 @@ msgid "Thank you for understanding!"
 msgstr "Dėkojame už supratimą!"
 
 #. js-lingui-explicit-id
+msgid "Types of work for motorcycle transport:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Select type work moto {nameTypeWork}"
 msgstr "Pasirinkite darbo tipo motociklą {nameTypeWork}"
+
+#. js-lingui-explicit-id
+msgid "Types of work for automobile transport:"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -1802,6 +1130,30 @@ msgid "Independence Street, 1"
 msgstr "Nepriklausomybės gatvė, 1"
 
 #. js-lingui-explicit-id
+msgid "Select a location on the map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Move and change the location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Specify the city"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enter text to search"
+msgstr "Įveskite tekstą, kurį norite ieškoti"
+
+#. js-lingui-explicit-id
+msgid "Please enter text for searching"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Disable Deep Search"
 msgstr "Išjungti Gilią Paiešką"
 
@@ -1826,6 +1178,18 @@ msgid "Select country"
 msgstr "Pasirinkite šalį"
 
 #. js-lingui-explicit-id
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Taip"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Ne"
+
+#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Sumažinkite maksimalų skaičių"
 
@@ -1842,6 +1206,10 @@ msgid "No cities found"
 msgstr "Miestų nerasta"
 
 #. js-lingui-explicit-id
+msgid "Resend the code"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
 msgstr "Nuotrauka {numberPhoto}"
 
@@ -1852,6 +1220,10 @@ msgstr "Pagrindinė nuotrauka"
 #. js-lingui-explicit-id
 msgid "Make the main photo"
 msgstr "Padarykite pagrindinę nuotrauką"
+
+#. js-lingui-explicit-id
+msgid "Language selection"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"
