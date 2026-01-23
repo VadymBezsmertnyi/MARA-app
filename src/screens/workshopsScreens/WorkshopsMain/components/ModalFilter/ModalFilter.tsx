@@ -12,12 +12,8 @@ import { BlurView } from "expo-blur";
 import { TypeFilters } from "./ModalFilter.types";
 
 // redux
-import {
-  useUserSelector,
-  setUserData,
-} from "../../../../../storeRedux/apis/user/slice";
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 import { useEditUserMutation } from "../../../../../storeRedux/api";
-import { useRootDispatch } from "../../../../../storeRedux/store";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -58,7 +54,6 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { userData } = useUserSelector();
-  const dispatch = useRootDispatch();
   const [editUserMutation] = useEditUserMutation();
   const { location } = useMapProvider();
   const { typesWorkServices } = useWorkshopsProviderState();
@@ -199,14 +194,13 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
     const isGeoLocationBackground = isGeoLocation
       ? userData.isGeoLocationBackground || false
       : false;
-    const result = await editUserMutation({
+    await editUserMutation({
       body: {
         isGeoLocation,
         isGeoLocationBackground,
       },
       existingUserData: userData,
     });
-    if (result.data?.userData) dispatch(setUserData(result.data.userData));
   };
 
   const isLocationEnabled = userData?.isGeoLocation || false;

@@ -10,8 +10,6 @@ import {
   useLoginFacebookMutation,
   useLoginAppleMutation,
 } from "../../storeRedux/api";
-import { setUserData } from "../../storeRedux/apis/user/slice";
-import { useRootDispatch } from "../../storeRedux/store";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
@@ -46,7 +44,6 @@ export const Welcome: FunctionComponent = () => {
   const { i18n } = useLocalesProvider();
   const { onLogLogin, onLogSignUp } = useAnalyticsProvider();
   const { heightStatusBar } = useThemeProvider();
-  const dispatch = useRootDispatch();
   const [loginGoogle] = useLoginGoogleMutation();
   const [loginFacebook] = useLoginFacebookMutation();
   const [loginApple] = useLoginAppleMutation();
@@ -54,7 +51,6 @@ export const Welcome: FunctionComponent = () => {
   const onSelectGoogle = async (userData: User) => {
     const result = await loginGoogle({ idToken: userData.idToken || "" });
     if (result.data?.userData) {
-      dispatch(setUserData(result.data.userData));
       if (result.data.userData.isNewUser)
         await onLogSignUp(METHOD_NAME_AUTH_GOOGLE);
       else await onLogLogin(METHOD_NAME_AUTH_GOOGLE);
@@ -65,7 +61,6 @@ export const Welcome: FunctionComponent = () => {
   const onSelectApple = async (identityToken: string) => {
     const result = await loginApple({ identityToken });
     if (result.data?.userData) {
-      dispatch(setUserData(result.data.userData));
       if (result.data.userData.isNewUser)
         await onLogSignUp(METHOD_NAME_AUTH_APPLE);
       else await onLogLogin(METHOD_NAME_AUTH_APPLE);
@@ -76,7 +71,6 @@ export const Welcome: FunctionComponent = () => {
   const onSelectFacebook = async (accessToken: string) => {
     const result = await loginFacebook({ accessToken });
     if (result.data?.userData) {
-      dispatch(setUserData(result.data.userData));
       if (result.data.userData.isNewUser)
         await onLogSignUp(METHOD_NAME_AUTH_FACEBOOK);
       else await onLogLogin(METHOD_NAME_AUTH_FACEBOOK);

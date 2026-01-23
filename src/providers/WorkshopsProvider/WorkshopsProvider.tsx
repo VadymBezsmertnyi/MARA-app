@@ -74,7 +74,6 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
   const { userData } = useUserSelector();
-  const dispatch = useRootDispatch();
   const [getMe] = useLazyGetMeQuery();
   const { location } = useMapProvider();
   const { onSetUserProperties } = useAnalyticsProvider();
@@ -195,14 +194,6 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
     );
     if (result?.workshop) {
       setWorkShops((state) => [...state, result.workshop]);
-      if (userData)
-        dispatch(
-          setUserData({
-            ...userData,
-            workshopsIds: [...userData.workshopsIds, result.workshop],
-          })
-        );
-
       setLoading(false);
       await onSetUserProperties({
         amountWorkshops: (userData?.workshopsIds.length || 0 + 1).toString(),
@@ -292,16 +283,6 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
           workshop._id === result.workshop._id ? result.workshop : workshop
         )
       );
-      if (userData)
-        dispatch(
-          setUserData({
-            ...userData,
-            workshopsIds: userData.workshopsIds.map((workshop) =>
-              workshop._id === result.workshop._id ? result.workshop : workshop
-            ),
-          })
-        );
-
       setLoading(false);
       await getMe();
       return true;
@@ -327,14 +308,6 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
         );
         if (type === "user") {
           if (userData && userData.workshopsIds.length > 0) {
-            dispatch(
-              setUserData({
-                ...userData,
-                workshopsIds: userData.workshopsIds.filter(
-                  (workshop) => workshop._id !== idWorkshop
-                ),
-              })
-            );
             await onSetUserProperties({
               amountWorkshops: (userData.workshopsIds.length - 1).toString(),
             });
