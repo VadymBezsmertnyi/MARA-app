@@ -19,10 +19,6 @@ export const DEFAULT_USER_DATA: Omit<UserDataT, "_id"> = {
   lastName: null,
   phoneNumber: null,
   isDeleteUser: false,
-  settingsSos: {
-    isEnable: false,
-    radiusKm: 5,
-  },
   subscriptionAdvertIds: [],
   subscriptionEventIds: [],
   subscriptionWorkshopIds: [],

@@ -62,10 +62,6 @@ export const userDataS = z.object({
   firstName: z.string().nullable(),
   lastName: z.string().nullable(),
   phoneNumber: z.string().nullable(),
-  settingsSos: z.object({
-    isEnable: z.boolean(),
-    radiusKm: z.number(),
-  }),
   subscriptionAdvertIds: z.array(subscriptionAdvertSchema),
   subscriptionEventIds: z.array(subscriptionAdvertUpdateSchema),
   subscriptionWorkshopIds: z.array(subscriptionWorkshopSchema),

@@ -32,7 +32,6 @@ import {
 
 type PushNotificationContext = {
   setLanguageNotification: (language: Language) => void;
-  addSosNotification: (location: LocationObjectCoords) => Promise<void>;
 };
 
 type PushNotificationProviderProps = {
@@ -87,22 +86,8 @@ const PushNotificationProvider: FunctionComponent<
     if (currentInitialUrl?.success) setTempGoLink(currentInitialUrl.data);
   };
 
-  const addSosNotification = async (location: LocationObjectCoords) => {
-    const queryParams = qs.stringify(
-      {
-        type: "sos",
-        latitude: location.latitude,
-        longitude: location.longitude,
-      },
-      { addQueryPrefix: true }
-    );
-    const url = Linking.createURL("/main");
-
-    // TODO to server for push notification
-  };
-
   const valueContext: PushNotificationContext = useMemo(
-    () => ({ setLanguageNotification, addSosNotification }),
+    () => ({ setLanguageNotification }),
     []
   );
 

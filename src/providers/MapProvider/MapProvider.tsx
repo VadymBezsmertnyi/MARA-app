@@ -12,34 +12,16 @@ import * as Location from "expo-location";
 import * as BackgroundFetch from "expo-background-fetch";
 import { z } from "zod";
 
-// types
-import { UserLocationMapType, UserLocationSosType } from "./MapProvider.types";
-
 // providers
 import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { usePermissionsProvider } from "../PermissionsProvider/PermissionsProvider";
-
-// schemas
-import {
-  userLocationSosSchema,
-  usersLocationMapSchema,
-  usersLocationSosSchema,
-} from "./MapProvider.schemas";
 
 // constants
 import { PATHS } from "../paths.constants";
 
 type MapContext = {
   location: Location.LocationObjectCoords | null;
-  usersMaps: UserLocationMapType[] | null;
-  usersSos: UserLocationSosType[] | null;
   setPermission: () => Promise<void>;
-  onSendSos: (
-    phoneNumber: string,
-    telegram: string,
-    description: string
-  ) => Promise<void>;
-  onDeleteSos: () => Promise<void>;
 };
 
 type MapProviderProps = {
@@ -61,8 +43,6 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
     useState<Location.LocationObjectCoords | null>(null);
   const [startGetGeolocation, setStartGetGeolocation] =
     useState<boolean>(false);
-  const [usersMaps, setUsersMap] = useState<UserLocationMapType[] | null>(null);
-  const [usersSos, setUsersSos] = useState<UserLocationSosType[] | null>(null);
   const [countryUser, setCountryUser] = useState<{
     country: string;
     countryCode: string;
@@ -81,32 +61,6 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
           timeInterval: INTERVAL_GET_LOCATION,
           distanceInterval: 1,
         });
-    const isUkraine =
-      countryUser?.country === "Ukraine" || countryUser?.countryCode === "UA";
-    const date = new Date().getTime();
-    if (userData) {
-      const dataLocationUser = {
-        date,
-        userId: userData._id,
-        location: {
-          latitude: coords.latitude,
-          longitude: coords.longitude,
-        },
-        isUkraine,
-      };
-      const result = await api(
-        PATHS.locationUsers,
-        { method: "POST", data: dataLocationUser },
-        z.object({
-          usersLocation: usersLocationMapSchema,
-          usersSos: usersLocationSosSchema,
-        })
-      );
-      if (result) {
-        setUsersMap(result.usersLocation);
-        setUsersSos(result.usersSos);
-      }
-    }
 
     setLocation(coords);
   };
@@ -172,60 +126,9 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
     }
   };
 
-  const onSendSos = async (
-    phoneNumber: string,
-    telegram: string,
-    description: string
-  ) => {
-    const date = new Date().getTime();
-    if (userData && location) {
-      const dataLocationUser = {
-        date,
-        userId: userData._id,
-        location,
-        phoneNumber,
-        telegram,
-        description,
-      };
-      const result = await api(
-        PATHS.locationUsersSosAdd,
-        { method: "POST", data: dataLocationUser },
-        z.object({
-          userLocationSos: userLocationSosSchema,
-        })
-      );
-      if (result) {
-        setUsersSos((state) =>
-          state ? [...state, result.userLocationSos] : [result.userLocationSos]
-        );
-        await startGetLocationBackground();
-      }
-    }
-  };
-
-  const onDeleteSos = async () => {
-    if (userData) {
-      await api(PATHS.locationUsersSosDelete, {
-        method: "DELETE",
-        data: { userId: userData._id },
-      });
-      setUsersSos((state) =>
-        state ? state.filter((userSos) => userSos.userId !== userData._id) : []
-      );
-      stopGetLocationBackground();
-    }
-  };
-
   const valueContext: MapContext = useMemo(
-    () => ({
-      location,
-      usersMaps,
-      usersSos,
-      setPermission,
-      onSendSos,
-      onDeleteSos,
-    }),
-    [location, usersMaps, usersSos]
+    () => ({ location, setPermission }),
+    [location]
   );
 
   useEffect(() => {
@@ -245,16 +148,13 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
     if (
       locationForegroundPermission === Location.PermissionStatus.GRANTED &&
       userData?.isGeoLocationBackground &&
-      locationBackgroundPermission === Location.PermissionStatus.GRANTED &&
-      userData?.settingsSos?.isEnable
+      locationBackgroundPermission === Location.PermissionStatus.GRANTED
     )
       startGetLocationBackground();
-    if (!userData?.settingsSos?.isEnable) stopGetLocationBackground();
   }, [
     locationForegroundPermission,
     userData?.isGeoLocationBackground,
     locationBackgroundPermission,
-    userData?.settingsSos?.isEnable,
   ]);
 
   useEffect(() => {

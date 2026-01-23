@@ -12,8 +12,7 @@ export const usePermissionsProviderState = () => {
   );
   const firstEvent = useMemo(() => i18n._("find nearby events, workshops"), []);
   const secondEvent = useMemo(
-    () =>
-      i18n._('for the "SOS" function so that other app users can assist you'),
+    () => i18n._("get help in case of an emergency"),
     []
   );
   const titleLocationForeground = useMemo(

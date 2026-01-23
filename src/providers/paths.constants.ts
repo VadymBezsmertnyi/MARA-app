@@ -23,8 +23,6 @@ export const PATHS = {
   workshopsCommentsChange: "/workshops/comments/change/",
   // location
   locationUsers: "/location-users/",
-  locationUsersSosAdd: "/location-users/sos/add/",
-  locationUsersSosDelete: "/location-users/sos/delete/",
   // places
   placesCountries: "/places/countries/",
   placesCountriesSearch: "/places/countries/search/",

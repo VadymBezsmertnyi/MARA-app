@@ -1,12 +1,7 @@
 import { StyleSheet } from "react-native";
 import { horizontalScale, verticalScale } from "../../../../../../styles/hooks";
-import colors from "../../../../../../styles/colors";
-import { FONT_700_OPEN_SANS } from "../../../../../../styles/constants";
 
 const MIN_HEIGHT = 44;
-
-const SOS_PADDING_HORIZONTAL = 16;
-const SOS_PADDING_VERTICAL = 3;
 
 export const styles = StyleSheet.create({
   containerUp: {
@@ -22,16 +17,8 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: horizontalScale(SOS_PADDING_HORIZONTAL),
-    paddingVertical: verticalScale(SOS_PADDING_VERTICAL),
+    paddingHorizontal: horizontalScale(16),
+    paddingVertical: verticalScale(3),
     gap: 13,
-  },
-  sosContainer: {
-    backgroundColor: colors.sosRed,
-  },
-  buttonSos: { height: "100%", justifyContent: "center" },
-  titleButtonSos: {
-    fontFamily: FONT_700_OPEN_SANS,
-    color: colors.white,
   },
 });

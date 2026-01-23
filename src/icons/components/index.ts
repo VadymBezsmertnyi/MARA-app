@@ -54,7 +54,6 @@ export { default as IconSearchInput } from "./IconSearchInput";
 export { default as IconSearchMap } from "./IconSearchMap";
 export { default as IconShareGradient } from "./IconShareGradient";
 export { default as IconSort } from "./IconSort";
-export { default as IconSosMap } from "./IconSosMap";
 export { default as IconStar } from "./IconStar";
 export { default as IconTabMapSelect } from "./IconTabMapSelect";
 export { default as IconTabMap } from "./IconTabMap";

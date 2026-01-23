@@ -31,7 +31,6 @@ import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguage";
 import { ModalSelectPlatform } from "./components/ModalSelectPlatform/ModalSelectPlatform";
-import { ModalSettingsSos } from "./components/ModalSettingsSos/ModalSettingsSos";
 import { ModalAgreements } from "./components/ModalAgreements/ModalAgreements";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
@@ -39,7 +38,6 @@ import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 // icons
 import {
   IconAvatarEmpty,
-  IconBellGradient,
   IconClose,
   IconDocumentGradient,
   IconLockGradient,
@@ -70,26 +68,14 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  //const { usersSos, onDeleteSos } = useMapProvider();
   const { userData, editUser, deleteUser } = useUserProvider();
   const [darkTheme, setDarkTheme] = useState(false);
-  //const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
-  //const [isShowOnSos, setIsShowOnSos] = useState(false);
-  const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
   const [typeAgreements, setTypeAgreements] = useState<
     "terms" | "policy" | "about" | null
   >(null);
   const [isShowDelete, setIsShowDelete] = useState(false);
 
-  /* const isOnSos = useMemo(
-    () =>
-      usersSos
-        ? usersSos.filter((userSos) => userSos.userId === userData?._id).length >
-          0
-        : false,
-    [usersSos]
-  ); */
   const isShowDrawer = useMemo(
     () =>
       state.history.length
@@ -138,15 +124,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
       isGeoLocationBackground,
     });
   };
-
-  /* const onToggleLocationBackground = async () => {
-    const isGeoLocationBackground = !(
-      userData?.isGeoLocationBackground || false
-    );
-    await editUser({
-      isGeoLocationBackground,
-    });
-  }; */
 
   const onCloseMenu = () => {
     navigation.closeDrawer();
@@ -200,14 +177,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             )}
             <Text style={styles.titleProfile}>{userData?.email}</Text>
           </View>
-          <View style={styles.lineWhite} />
-          <ItemMenuSettings
-            title={i18n._("SOS signal notification")}
-            Icon={IconBellGradient}
-            onPress={() => {
-              setIsShowSettingsSos(true);
-            }}
-          />
           <View style={styles.lineWhite} />
           <ItemMenuSettings
             title={i18n._("Share the app")}
@@ -277,38 +246,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 setCheck={onToggleLocation}
               />
             </TouchableOpacity>
-            {/* <TouchableOpacity
-              onPress={onToggleLocation}
-              style={[
-                styles.containerCheckbox,
-                { opacity: userData?.isGeoLocation ? 1 : 0.5 },
-              ]}
-            >
-              <Text numberOfLines={2} style={styles.titleDarkTheme}>
-                {i18n._("Automatically detect location in the background")}
-              </Text>
-              <Checkbox
-                accessibilityLabel={i18n._(
-                  "Toggle automatically detect location in the background"
-                )}
-                check={userData?.isGeoLocationBackground || false}
-                setCheck={onToggleLocationBackground}
-              />
-            </TouchableOpacity> */}
-            {/* <View style={styles.containerCheckbox}>
-              <Text style={styles.titleSos}>
-                {i18n._("SOS signal")}
-              </Text>
-              <Checkbox
-                check={isOnSos || isSos}
-                setCheck={(value) => {
-                  if (value) setIsShowOnSos(true);
-                  else onDeleteSos();
-                  setIsSos(value);
-                }}
-                colorBoxEnabled={colors.electricRed}
-              />
-            </View> */}
             <View style={styles.containerCheckbox}>
               <ButtonCustom
                 title={i18n._("Delete profile")}
@@ -330,19 +267,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
           setIsShowSelectPlatform(false);
         }}
         onSelect={shareApp}
-      />
-      {/* <ModalSosOn
-        isOpen={isShowOnSos}
-        onClose={() => {
-          setIsShowOnSos(false);
-          setIsSos(false);
-        }}
-      /> */}
-      <ModalSettingsSos
-        isOpen={isShowSettingsSos}
-        onClose={() => {
-          setIsShowSettingsSos(false);
-        }}
       />
       <ModalAgreements
         isOpen={typeAgreements !== null}
