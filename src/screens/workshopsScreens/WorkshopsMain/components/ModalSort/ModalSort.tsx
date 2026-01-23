@@ -3,9 +3,12 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 import { BlurView } from "expo-blur";
 
+// redux
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../../../../storeRedux/api";
+
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
-import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
 import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 
 // components
@@ -30,20 +33,23 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
   currentSort,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { userData, editUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
   const { location } = useMapProvider();
 
   const isLocationEnabled = userData?.isGeoLocation || false;
   const isLocationLoading = isLocationEnabled && !location;
 
   const onToggleLocation = async () => {
-    const isGeoLocation = !(userData?.isGeoLocation || false);
+    if (!userData) return;
+
+    const isGeoLocation = !(userData.isGeoLocation || false);
     const isGeoLocationBackground = isGeoLocation
-      ? userData?.isGeoLocationBackground || false
+      ? userData.isGeoLocationBackground || false
       : false;
-    await editUser({
-      isGeoLocation,
-      isGeoLocationBackground,
+    await editUserMutation({
+      body: { isGeoLocation, isGeoLocationBackground },
+      existingUserData: userData,
     });
   };
 
