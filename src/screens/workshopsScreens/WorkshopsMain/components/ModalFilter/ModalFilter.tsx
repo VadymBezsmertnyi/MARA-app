@@ -1,5 +1,11 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { StatusBar, Text, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { BlurView } from "expo-blur";
 
 // types
@@ -8,6 +14,7 @@ import { TypeFilters } from "./ModalFilter.types";
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
+import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 
 // hooks
 import { useWorkshopsProviderState } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
@@ -44,6 +51,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { userData, editUser } = useUserProvider();
+  const { location } = useMapProvider();
   const { typesWorkServices } = useWorkshopsProviderState();
   const [distance, setDistance] = useState(5);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
@@ -144,6 +152,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   };
 
   const isLocationEnabled = userData?.isGeoLocation || false;
+  const isLocationLoading = isLocationEnabled && !location;
 
   useEffect(() => {
     if (filters) {
@@ -161,7 +170,6 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={colors.lightOrange} />
       <Header
         title={i18n._("Filter")}
         onPressLeftElement={onClose}
@@ -194,10 +202,20 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             max={maxDistance}
             value={distance}
             onChange={setDistance}
-            disabled={!isLocationEnabled}
+            disabled={!isLocationEnabled || isLocationLoading}
           />
-          {!isLocationEnabled && (
-            <BlurView intensity={15} style={styles.distanceBlur}>
+          {isLocationLoading && (
+            <BlurView intensity={5} style={styles.distanceBlur}>
+              <View style={styles.distanceBlurContent}>
+                <ActivityIndicator size="large" color={colors.blazeOrange} />
+                <Text style={styles.distanceWarningText}>
+                  {i18n._("Getting location...")}
+                </Text>
+              </View>
+            </BlurView>
+          )}
+          {!isLocationEnabled && !isLocationLoading && (
+            <BlurView intensity={5} style={styles.distanceBlur}>
               <View style={styles.distanceBlurContent}>
                 <Text style={styles.distanceWarningText}>
                   {i18n._(
@@ -207,7 +225,8 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
                 <ButtonCustom
                   title={i18n._("Enable location")}
                   onSubmit={onToggleLocation}
-                  styleContainer={styles.distanceButton}
+                  styleContainer={styles.distanceButtonContainer}
+                  styleButton={styles.distanceButton}
                 />
               </View>
             </BlurView>

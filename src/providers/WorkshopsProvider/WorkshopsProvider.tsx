@@ -94,7 +94,7 @@ const WorkshopsProvider: FunctionComponent<WorkshopsProviderProps> = ({
           ? Number(distanceMinMax[distanceMinMax.length - 1].toFixed())
           : 200,
     };
-  }, [workshops]);
+  }, [workshops, location]);
 
   const getWorkshops = async () => {
     const result = await api(
