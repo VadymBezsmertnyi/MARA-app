@@ -32,7 +32,6 @@ import LocalesProvider from "./localization/localization.provider";
 import ThemeProvider from "./src/providers/ThemeProvider/ThemeProvider";
 import LoadingProvider from "./src/providers/LoadingProvider/LoadingProvider";
 import MapProvider from "./src/providers/MapProvider/MapProvider";
-import WorkshopsProvider from "./src/providers/WorkshopsProvider/WorkshopsProvider";
 import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
 import EventsProvider from "./src/providers/EventsProvider/EventsProvider";
 import PlacesProvider from "./src/providers/PlacesProvider/PlacesProvider";
@@ -129,14 +128,12 @@ function App() {
                                   <PushNotificationProvider
                                     currentRouteName={currentRouteName}
                                   >
-                                    <WorkshopsProvider>
-                                      <SharingProvider>
-                                        <Navigators
-                                          currentRouteName={currentRouteName}
-                                          navigation={navigationRef.current}
-                                        />
-                                      </SharingProvider>
-                                    </WorkshopsProvider>
+                                    <SharingProvider>
+                                      <Navigators
+                                        currentRouteName={currentRouteName}
+                                        navigation={navigationRef.current}
+                                      />
+                                    </SharingProvider>
                                   </PushNotificationProvider>
                                 </GestureHandlerRootView>
                               </MapProvider>
