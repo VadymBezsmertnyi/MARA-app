@@ -7,6 +7,13 @@ import {
 } from "../../../providers/PlacesProvider/PlacesProvider.schemas";
 import { fileSchema } from "../../schemas";
 
+export const paginationSchema = z.object({
+  page: z.number(),
+  limit: z.number(),
+  total: z.number(),
+  totalPages: z.number(),
+});
+
 export const typeWorkSchema = z.object({
   id: z.number(),
   title: z.string(),
@@ -58,6 +65,7 @@ export const workshopsSchema = z.array(workshopSchema);
 export const resultWorkshopsSchema = z.object({
   result: z.boolean(),
   workshops: workshopsSchema,
+  pagination: paginationSchema,
   code: z.number(),
 });
 
@@ -112,6 +120,8 @@ export const changeCommentRequestSchema = addCommentRequestSchema.extend({
 export const workshopsStateSchema = z.object({
   workshopsList: workshopsSchema,
   workshopsUserList: workshopsSchema,
+  pagination: paginationSchema.nullable(),
+  paginationUser: paginationSchema.nullable(),
   loading: z.boolean(),
   error: z.string().nullable(),
 });

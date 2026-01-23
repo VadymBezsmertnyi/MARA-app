@@ -21,6 +21,7 @@ export type TTypeWork = z.infer<typeof typeWorkSchema>;
 export type TTypeWorks = z.infer<typeof typeWorksSchema>;
 export type TWorkshop = z.infer<typeof workshopSchema>;
 export type TWorkshops = z.infer<typeof workshopsSchema>;
+export type TPagination = z.infer<typeof paginationSchema>;
 export type TResultWorkshops = z.infer<typeof resultWorkshopsSchema>;
 export type TWorkshopResponse = z.infer<typeof workshopResponseSchema>;
 export type TDeleteWorkshopResponse = z.infer<
@@ -61,8 +62,31 @@ export interface IChangeCommentRequest {
   body: TChangeCommentRequest;
 }
 
+export interface IGetWorkshopsRequest {
+  page?: number;
+  limit?: number;
+  sort?: "comments" | "distance" | "rating" | null;
+  moto?: number[] | null;
+  auto?: number[] | null;
+  maxDistance?: number;
+  minRating?: number | null;
+  workshopName?: string;
+  latitude?: number;
+  longitude?: number;
+}
+
 export interface IGetWorkshopsUserRequest {
   userId: string;
+  page?: number;
+  limit?: number;
+  sort?: "comments" | "distance" | "rating" | null;
+  moto?: number[] | null;
+  auto?: number[] | null;
+  maxDistance?: number;
+  minRating?: number | null;
+  workshopName?: string;
+  latitude?: number;
+  longitude?: number;
 }
 
 export type TCommentWorkshop = z.infer<typeof commentWorkshopSchema>;
