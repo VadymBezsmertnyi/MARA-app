@@ -5,7 +5,7 @@ import {
   placeDbSchema,
   regionDbSchema,
 } from "../../../providers/PlacesProvider/PlacesProvider.schemas";
-import { workshopSchema } from "../../../providers/WorkshopsProvider/WorkshopsProvider.schemas";
+import { workshopSchema } from "../workshops/workshops.schemas";
 import { eventSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
 import {
   subscriptionAdvertSchema,
