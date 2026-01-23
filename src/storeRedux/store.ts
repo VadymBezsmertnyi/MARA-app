@@ -3,6 +3,7 @@ import { api } from "./api";
 import userSlice from "./apis/user/slice";
 import eventsSlice from "./apis/events/slice";
 import paymentSlice from "./apis/payment/slice";
+import workshopsSlice from "./apis/workshops/slice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import errorToastMiddleware from "./middleware/errorToast.middleware";
@@ -12,6 +13,7 @@ const reducer = {
   user: userSlice,
   events: eventsSlice,
   payment: paymentSlice,
+  workshops: workshopsSlice,
 };
 
 export const store = configureStore({

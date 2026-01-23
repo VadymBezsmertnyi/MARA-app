@@ -11,6 +11,7 @@ import {
   deleteWorkshopRequestSchema,
   addCommentRequestSchema,
   changeCommentRequestSchema,
+  workshopsStateSchema,
 } from "./workshops.schemas";
 
 export type TWorkshop = z.infer<typeof workshopSchema>;
@@ -23,6 +24,7 @@ export type TChangeWorkshopRequest = z.infer<typeof changeWorkshopRequestSchema>
 export type TDeleteWorkshopRequest = z.infer<typeof deleteWorkshopRequestSchema>;
 export type TAddCommentRequest = z.infer<typeof addCommentRequestSchema>;
 export type TChangeCommentRequest = z.infer<typeof changeCommentRequestSchema>;
+export type TWorkshopsState = z.infer<typeof workshopsStateSchema>;
 
 export interface IAddWorkshopRequest {
   body: TAddWorkshopRequest & {
