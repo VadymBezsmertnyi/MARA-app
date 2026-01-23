@@ -11,10 +11,10 @@ import {
 } from "../../../../../icons/components";
 
 // styles
-import { styles } from "./HeaderFilters.styles";
+import { styles } from "./HeaderActions.styles";
 import colors from "../../../../../../styles/colors";
 
-type HeaderFiltersProps = {
+type HeaderActionsProps = {
   isWrap?: boolean;
   setIsWrap?: (value: boolean) => void;
   onPressFilter: () => void;
@@ -25,7 +25,7 @@ type HeaderFiltersProps = {
   showFilters?: boolean;
 };
 
-export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
+export const HeaderActions: FunctionComponent<HeaderActionsProps> = ({
   isWrap,
   setIsWrap,
   onPressFilter,

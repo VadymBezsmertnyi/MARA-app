@@ -21,7 +21,7 @@ import { Input } from "../../../components/Input/Input";
 import { WorkshopItem } from "./components/WorkshopItem/WorkshopItem";
 import { Header } from "../../../components/Header/Header";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
-import { HeaderFilters } from "./components/HeaderFilters/HeaderFilters";
+import { HeaderActions } from "./components/HeaderActions/HeaderActions";
 import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
 import { ModalSort } from "./components/ModalSort/ModalSort";
 import { ModalFilter } from "./components/ModalFilter/ModalFilter";
@@ -168,7 +168,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
         title={i18n._("Workshops")}
         rightElement={
-          <HeaderFilters
+          <HeaderActions
             onPressFilter={() => {
               setIsShowFilter(true);
             }}
