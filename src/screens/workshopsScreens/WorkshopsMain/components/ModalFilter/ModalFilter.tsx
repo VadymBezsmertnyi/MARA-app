@@ -162,11 +162,20 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           auto: filters.auto ? filters.auto.length > 0 : false,
         });
       if (filters.moto) setSelectMotoTypesWorks(filters.moto);
+      else setSelectMotoTypesWorks([]);
       if (filters.auto) setSelectAutoTypesWorks(filters.auto);
+      else setSelectAutoTypesWorks([]);
       if (filters.maxDistance) setDistance(filters.maxDistance);
       if (filters.minRating) setSelectRating(filters.minRating);
+      else setSelectRating(null);
+    } else {
+      setTypeWorkshops({ moto: false, auto: false });
+      setSelectMotoTypesWorks([]);
+      setSelectAutoTypesWorks([]);
+      setDistance(5);
+      setSelectRating(null);
     }
-  }, []);
+  }, [filters]);
 
   return (
     <View style={styles.container}>

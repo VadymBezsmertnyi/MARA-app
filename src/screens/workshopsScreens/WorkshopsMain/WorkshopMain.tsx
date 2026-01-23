@@ -61,6 +61,10 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
   );
+  const maxDistance = useMemo(() => {
+    if (!minMaxDistance.max) return 5;
+    return Math.ceil((minMaxDistance.max + 1) / 5) * 5;
+  }, [minMaxDistance.max]);
   const workshopsFilterSort = useMemo(() => {
     if (filters === null && sort === null && !workshopName.length)
       return workshops;
@@ -137,7 +141,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
       : sortWorkshop;
 
     return findInputWorkshop;
-  }, [workshops, filters, sort, workshopName]);
+  }, [workshops, filters, sort, workshopName, location]);
 
   const onClose = () => {
     setIsShowSort(false);
@@ -280,7 +284,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             onClose={onClose}
             filters={filters}
             onSubmit={onSubmitFilters}
-            maxDistance={minMaxDistance.max}
+            maxDistance={maxDistance}
           />
         </Modal>
       ) : null}
