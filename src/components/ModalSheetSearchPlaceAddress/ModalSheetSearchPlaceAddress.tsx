@@ -140,40 +140,38 @@ export const ModalSheetSearchPlaceAddress: FunctionComponent<
                   <LinearGradientCustom style={styles.lineHeader} />
                 </View>
               </Shadow>
-              <View style={styles.container}>
-                <ScrollView style={styles.containerInputs}>
-                  <Input
-                    isRegular
-                    label={i18n._("Enter the exact address")}
-                    placeholder={i18n._("Independence Street, 1")}
-                    value={place?.address || ""}
-                    onChange={(value) => {
-                      setPlace((state) => ({
-                        ...DEFAULT_PLACE_ADDRESS_DATA,
-                        ...state,
-                        address: value,
-                      }));
-                    }}
-                    containerStyle={styles.input}
-                  />
-                </ScrollView>
-                <View>
-                  <Shadow stretch>
-                    <View style={styles.containerSubmitModalTypeWork}>
-                      <ButtonCustom
-                        disabled={!place?.address.length}
-                        title={i18n._("Continue")}
-                        onSubmit={onPressNext}
-                      />
-                      <ButtonCustom
-                        type="transparent"
-                        disabled={false}
-                        title={i18n._("Back")}
-                        onSubmit={onPressBack}
-                      />
-                    </View>
-                  </Shadow>
-                </View>
+              <ScrollView style={styles.containerInputs}>
+                <Input
+                  isRegular
+                  label={i18n._("Enter the exact address")}
+                  placeholder={i18n._("Independence Street, 1")}
+                  value={place?.address || ""}
+                  onChange={(value) => {
+                    setPlace((state) => ({
+                      ...DEFAULT_PLACE_ADDRESS_DATA,
+                      ...state,
+                      address: value,
+                    }));
+                  }}
+                  containerStyle={styles.input}
+                />
+              </ScrollView>
+              <View>
+                <Shadow stretch>
+                  <View style={styles.containerSubmitModalTypeWork}>
+                    <ButtonCustom
+                      disabled={!place?.address.length}
+                      title={i18n._("Continue")}
+                      onSubmit={onPressNext}
+                    />
+                    <ButtonCustom
+                      type="transparent"
+                      disabled={false}
+                      title={i18n._("Back")}
+                      onSubmit={onPressBack}
+                    />
+                  </View>
+                </Shadow>
               </View>
             </View>
           </TouchableOpacity>

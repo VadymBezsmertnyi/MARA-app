@@ -40,6 +40,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: horizontalScale(16),
     gap: verticalScale(16),
+    paddingTop: verticalScale(16),
   },
   title: {
     fontFamily: FONT_600_MONTSERRAT,
