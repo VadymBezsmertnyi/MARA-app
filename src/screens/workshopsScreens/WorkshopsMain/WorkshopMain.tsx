@@ -22,7 +22,6 @@ import { WorkshopItem } from "./components/WorkshopItem/WorkshopItem";
 import { Header } from "../../../components/Header/Header";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { HeaderFilters } from "./components/HeaderFilters/HeaderFilters";
-import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
 import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
 import { ModalSort } from "./components/ModalSort/ModalSort";
 import { ModalFilter } from "./components/ModalFilter/ModalFilter";
@@ -169,18 +168,18 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
         title={i18n._("Workshops")}
         rightElement={
-          workshops.length ? (
-            <HeaderFilters
-              onPressFilter={() => {
-                setIsShowFilter(true);
-              }}
-              onPressSort={() => {
-                setIsShowSort(true);
-              }}
-            />
-          ) : (
-            <></>
-          )
+          <HeaderFilters
+            onPressFilter={() => {
+              setIsShowFilter(true);
+            }}
+            onPressSort={() => {
+              setIsShowSort(true);
+            }}
+            onPressAddWorkshop={onPressAddWorkshop}
+            isAddButtonDisabled={infoWorkshops.amountWorkshop <= 0}
+            addButtonAccessibilityLabel={i18n._("Add workshop")}
+            showFilters={workshops.length > 0}
+          />
         }
         containerStyle={styles.containerHeader}
         rightStyle={styles.containerRightHeader}
@@ -264,11 +263,6 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
           )}
           <View style={styles.containerEmpty} />
         </ScrollView>
-        <AddEventButton
-          disabled={infoWorkshops.amountWorkshop <= 0}
-          onPress={onPressAddWorkshop}
-          accessibilityLabel={i18n._("Add workshop")}
-        />
       </View>
       {isShowSort ? (
         <ModalWindow onClose={onClose}>

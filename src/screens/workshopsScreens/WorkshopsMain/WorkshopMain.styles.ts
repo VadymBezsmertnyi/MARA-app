@@ -14,7 +14,11 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   containerHeader: { paddingRight: 0 },
-  containerRightHeader: { minHeight: 0 },
+  containerRightHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
   wrapper: {
     gap: verticalScale(GAP_MAIN),
     paddingHorizontal: horizontalScale(PADDING_HORIZONTAL),
