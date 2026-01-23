@@ -6,7 +6,6 @@ import { User } from "@react-native-google-signin/google-signin";
 
 // providers
 import { useUserProvider } from "../../providers/UserProvider/UserProvider";
-import { useBiometricProvider } from "../../providers/BiometricProvider/BiometricProvider";
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 import { useAnalyticsProvider } from "../../providers/AnalyticsProvider/AnalyticsProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -37,7 +36,6 @@ import { styles } from "./Welcome.styles";
 export const Welcome: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { i18n } = useLocalesProvider();
-  const { isFaceId, isTouchId } = useBiometricProvider();
   const { onLogLogin, onLogSignUp } = useAnalyticsProvider();
   const { heightStatusBar } = useThemeProvider();
   const { signInGoogle, signInFacebook, signInApple } = useUserProvider();
@@ -48,7 +46,7 @@ export const Welcome: FunctionComponent = () => {
     if (user) {
       if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_GOOGLE);
       else await onLogLogin(METHOD_NAME_AUTH_GOOGLE);
-      redirectToScreen(navigation, user, isFaceId, isTouchId);
+      redirectToScreen(navigation, user);
     }
   };
 
@@ -58,7 +56,7 @@ export const Welcome: FunctionComponent = () => {
     if (user) {
       if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_APPLE);
       else await onLogLogin(METHOD_NAME_AUTH_APPLE);
-      redirectToScreen(navigation, user, isFaceId, isTouchId);
+      redirectToScreen(navigation, user);
     }
   };
 
@@ -68,7 +66,7 @@ export const Welcome: FunctionComponent = () => {
     if (user) {
       if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_FACEBOOK);
       else await onLogLogin(METHOD_NAME_AUTH_FACEBOOK);
-      redirectToScreen(navigation, user, isFaceId, isTouchId);
+      redirectToScreen(navigation, user);
     }
   };
 

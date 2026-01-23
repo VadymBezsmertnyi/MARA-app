@@ -8,20 +8,10 @@ import {
 
 export const redirectToScreen = (
   navigation: NativeStackNavigationProp<RootAllScreensParamList>,
-  user: UserDataT,
-  isFaceId: boolean,
-  isTouchId: boolean
+  user: UserDataT
 ) => {
-  if (user?.isCheckBiometric === null && (isFaceId || isTouchId)) {
-    if (isTouchId)
-      navigation.navigate(PATHS_MAIN_SCREENS.registration, {
-        screen: PATHS_REGISTRATION_SCREENS.registrationTouchId,
-      });
-    else if (isFaceId)
-      navigation.navigate(PATHS_MAIN_SCREENS.registration, {
-        screen: PATHS_REGISTRATION_SCREENS.registrationFaceId,
-      });
-    else if (user.isNewUser && user.place_id === null)
+  if (user?.isCheckBiometric === null) {
+    if (user.isNewUser && user.place_id === null)
       navigation.navigate(PATHS_MAIN_SCREENS.registration, {
         screen: PATHS_REGISTRATION_SCREENS.registrationLocation,
       });

@@ -14,7 +14,6 @@ import { userDataS } from "./UserProvider.schemas";
 // providers
 import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
 import { useApiProvider } from "../ApiProvider/ApiProvider";
-import { useBiometricProvider } from "../BiometricProvider/BiometricProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
 import { useAnalyticsProvider } from "../AnalyticsProvider/AnalyticsProvider";
 import {
@@ -42,7 +41,6 @@ export const userContext = createContext<Context>({} as Context);
 const UserProvider: FunctionComponent<Props> = (props) => {
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useLocalesProvider();
-  const { checkBiometric } = useBiometricProvider();
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
   const { onSetUserProperties } = useAnalyticsProvider();
@@ -301,12 +299,6 @@ const UserProvider: FunctionComponent<Props> = (props) => {
         z.object({ userData: userDataS })
       );
       if (result?.userData) {
-        const isCheckBiometric = result.userData.isCheckBiometric
-          ? await checkBiometric()
-          : true;
-
-        if (!isCheckBiometric) return null;
-
         const userData = { ...DEFAULT_USER_DATA, ...result.userData };
         setUserData(userData);
         return userData;

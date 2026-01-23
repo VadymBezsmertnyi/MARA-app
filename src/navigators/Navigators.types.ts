@@ -43,14 +43,6 @@ export type RootRegistrationScreensParamList = {
     string,
     string | number | boolean
   >;
-  [PATHS_REGISTRATION_SCREENS.registrationTouchId]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_REGISTRATION_SCREENS.registrationFaceId]?: Record<
-    string,
-    string | number | boolean
-  >;
   [PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy]?: Record<
     string,
     string | number | boolean

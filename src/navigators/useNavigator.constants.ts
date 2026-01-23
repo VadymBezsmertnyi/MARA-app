@@ -16,8 +16,6 @@ export const PATHS_MAIN_TABS = {
 
 export const PATHS_REGISTRATION_SCREENS = {
   registrationLocation: "registrationLocation",
-  registrationTouchId: "registrationTouchId",
-  registrationFaceId: "registrationFaceId",
   registrationPrivacyPolicy: "registrationPrivacyPolicy",
   registrationTermsOfUse: "registrationTermsOfUse",
   registrationInfo: "registrationInfo",

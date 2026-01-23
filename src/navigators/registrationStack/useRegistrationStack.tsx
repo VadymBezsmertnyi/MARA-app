@@ -6,8 +6,6 @@ import { PATHS_REGISTRATION_SCREENS } from "../useNavigator.constants";
 
 // registration
 import { RegistrationLocation } from "../../screens/registrationScreens/RegistrationLocation/RegistrationLocation";
-import { RegistrationTouchId } from "../../screens/registrationScreens/RegistrationTouchId/RegistrationTouchId";
-import { RegistrationFaceId } from "../../screens/registrationScreens/RegistrationFaceId/RegistrationFaceId";
 import { RegistrationPrivacyPolicy } from "../../screens/registrationScreens/RegistrationPrivacyPolicy/RegistrationPrivacyPolicy";
 import { RegistrationTermsOfUse } from "../../screens/registrationScreens/RegistrationTermsOfUse/RegistrationTermsOfUse";
 import { RegistrationInfo } from "../../screens/registrationScreens/RegistrationInfo/RegistrationInfo";
@@ -23,22 +21,6 @@ export const useRegistrationStack = () => {
       isHeader: false,
       isBackHeader: false,
       component: RegistrationLocation,
-    },
-    {
-      id: PATHS_REGISTRATION_SCREENS.registrationTouchId,
-      name: PATHS_REGISTRATION_SCREENS.registrationTouchId,
-      title: null,
-      isHeader: true,
-      isBackHeader: false,
-      component: RegistrationTouchId,
-    },
-    {
-      id: PATHS_REGISTRATION_SCREENS.registrationFaceId,
-      name: PATHS_REGISTRATION_SCREENS.registrationFaceId,
-      title: null,
-      isHeader: true,
-      isBackHeader: false,
-      component: RegistrationFaceId,
     },
     {
       id: PATHS_REGISTRATION_SCREENS.registrationPrivacyPolicy,

@@ -24,12 +24,11 @@ export const Splash: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { meUser } = useUserProvider();
   const { onLogLogin } = useAnalyticsProvider();
-  const { isFaceId, isTouchId } = useBiometricProvider();
 
   const authorizationInitializer = async () => {
     const result = await meUser(false);
     await onLogLogin(METHOD_NAME_AUTH_AUTO);
-    if (result) redirectToScreen(navigation, result, isFaceId, isTouchId);
+    if (result) redirectToScreen(navigation, result);
     else navigation.navigate(PATHS_MAIN_SCREENS.welcome);
   };
 

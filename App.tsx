@@ -32,7 +32,6 @@ import { store } from "./src/storeRedux/store";
 // providers
 import LocalesProvider from "./localization/localization.provider";
 import ThemeProvider from "./src/providers/ThemeProvider/ThemeProvider";
-import BiometricProvider from "./src/providers/BiometricProvider/BiometricProvider";
 import LoadingProvider from "./src/providers/LoadingProvider/LoadingProvider";
 import UserProvider from "./src/providers/UserProvider/UserProvider";
 import MapProvider from "./src/providers/MapProvider/MapProvider";
@@ -115,46 +114,41 @@ function App() {
                 <ApiProvider>
                   <AnalyticsProvider currentRouteName={currentRouteName}>
                     <PlacesProvider>
-                      <BiometricProvider>
-                        <UserProvider>
-                          <SubscriptionProvider>
-                            <NavigationContainer
-                              ref={navigationRef}
-                              onStateChange={() => {
-                                const nameRoute =
-                                  navigationRef.current?.getCurrentRoute()
-                                    ?.name;
-                                if (nameRoute) setCurrentRouteName(nameRoute);
-                              }}
-                            >
-                              <EventsProvider>
-                                <PermissionsProvider>
-                                  <MapProvider>
-                                    <GestureHandlerRootView
-                                      style={styles.gestureHandlerRootView}
+                      <UserProvider>
+                        <SubscriptionProvider>
+                          <NavigationContainer
+                            ref={navigationRef}
+                            onStateChange={() => {
+                              const nameRoute =
+                                navigationRef.current?.getCurrentRoute()?.name;
+                              if (nameRoute) setCurrentRouteName(nameRoute);
+                            }}
+                          >
+                            <EventsProvider>
+                              <PermissionsProvider>
+                                <MapProvider>
+                                  <GestureHandlerRootView
+                                    style={styles.gestureHandlerRootView}
+                                  >
+                                    <PushNotificationProvider
+                                      currentRouteName={currentRouteName}
                                     >
-                                      <PushNotificationProvider
-                                        currentRouteName={currentRouteName}
-                                      >
-                                        <WorkshopsProvider>
-                                          <SharingProvider>
-                                            <Navigators
-                                              currentRouteName={
-                                                currentRouteName
-                                              }
-                                              navigation={navigationRef.current}
-                                            />
-                                          </SharingProvider>
-                                        </WorkshopsProvider>
-                                      </PushNotificationProvider>
-                                    </GestureHandlerRootView>
-                                  </MapProvider>
-                                </PermissionsProvider>
-                              </EventsProvider>
-                            </NavigationContainer>
-                          </SubscriptionProvider>
-                        </UserProvider>
-                      </BiometricProvider>
+                                      <WorkshopsProvider>
+                                        <SharingProvider>
+                                          <Navigators
+                                            currentRouteName={currentRouteName}
+                                            navigation={navigationRef.current}
+                                          />
+                                        </SharingProvider>
+                                      </WorkshopsProvider>
+                                    </PushNotificationProvider>
+                                  </GestureHandlerRootView>
+                                </MapProvider>
+                              </PermissionsProvider>
+                            </EventsProvider>
+                          </NavigationContainer>
+                        </SubscriptionProvider>
+                      </UserProvider>
                     </PlacesProvider>
                   </AnalyticsProvider>
                 </ApiProvider>
