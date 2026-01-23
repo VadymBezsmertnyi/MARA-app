@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-exports */ //enabled export default
-/* eslint-disable react/jsx-max-depth */ //For depth>15
 import React, { useEffect, useRef, useState } from "react";
 import {
   NavigationContainer,
@@ -33,7 +31,6 @@ import { store } from "./src/storeRedux/store";
 import LocalesProvider from "./localization/localization.provider";
 import ThemeProvider from "./src/providers/ThemeProvider/ThemeProvider";
 import LoadingProvider from "./src/providers/LoadingProvider/LoadingProvider";
-import UserProvider from "./src/providers/UserProvider/UserProvider";
 import MapProvider from "./src/providers/MapProvider/MapProvider";
 import WorkshopsProvider from "./src/providers/WorkshopsProvider/WorkshopsProvider";
 import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
@@ -114,41 +111,39 @@ function App() {
                 <ApiProvider>
                   <AnalyticsProvider currentRouteName={currentRouteName}>
                     <PlacesProvider>
-                      <UserProvider>
-                        <SubscriptionProvider>
-                          <NavigationContainer
-                            ref={navigationRef}
-                            onStateChange={() => {
-                              const nameRoute =
-                                navigationRef.current?.getCurrentRoute()?.name;
-                              if (nameRoute) setCurrentRouteName(nameRoute);
-                            }}
-                          >
-                            <EventsProvider>
-                              <PermissionsProvider>
-                                <MapProvider>
-                                  <GestureHandlerRootView
-                                    style={styles.gestureHandlerRootView}
+                      <SubscriptionProvider>
+                        <NavigationContainer
+                          ref={navigationRef}
+                          onStateChange={() => {
+                            const nameRoute =
+                              navigationRef.current?.getCurrentRoute()?.name;
+                            if (nameRoute) setCurrentRouteName(nameRoute);
+                          }}
+                        >
+                          <EventsProvider>
+                            <PermissionsProvider>
+                              <MapProvider>
+                                <GestureHandlerRootView
+                                  style={styles.gestureHandlerRootView}
+                                >
+                                  <PushNotificationProvider
+                                    currentRouteName={currentRouteName}
                                   >
-                                    <PushNotificationProvider
-                                      currentRouteName={currentRouteName}
-                                    >
-                                      <WorkshopsProvider>
-                                        <SharingProvider>
-                                          <Navigators
-                                            currentRouteName={currentRouteName}
-                                            navigation={navigationRef.current}
-                                          />
-                                        </SharingProvider>
-                                      </WorkshopsProvider>
-                                    </PushNotificationProvider>
-                                  </GestureHandlerRootView>
-                                </MapProvider>
-                              </PermissionsProvider>
-                            </EventsProvider>
-                          </NavigationContainer>
-                        </SubscriptionProvider>
-                      </UserProvider>
+                                    <WorkshopsProvider>
+                                      <SharingProvider>
+                                        <Navigators
+                                          currentRouteName={currentRouteName}
+                                          navigation={navigationRef.current}
+                                        />
+                                      </SharingProvider>
+                                    </WorkshopsProvider>
+                                  </PushNotificationProvider>
+                                </GestureHandlerRootView>
+                              </MapProvider>
+                            </PermissionsProvider>
+                          </EventsProvider>
+                        </NavigationContainer>
+                      </SubscriptionProvider>
                     </PlacesProvider>
                   </AnalyticsProvider>
                 </ApiProvider>
