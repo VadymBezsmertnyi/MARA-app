@@ -7,6 +7,14 @@ import {
 } from "../../../providers/PlacesProvider/PlacesProvider.schemas";
 import { fileSchema } from "../../schemas";
 
+export const typeWorkSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  description: z.string(),
+});
+
+export const typeWorksSchema = z.array(typeWorkSchema);
+
 const populateUserData = z.object({
   _id: z.string(),
   avatarFile: fileSchema.nullable().default(null),
