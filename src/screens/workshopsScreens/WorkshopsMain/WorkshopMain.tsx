@@ -5,8 +5,10 @@ import { convertDistance, getDistance } from "geolib";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 
+// redux
+import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
+
 // providers
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
@@ -52,7 +54,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const { i18n } = useLocalesProvider();
   const { infoWorkshops } = useSubscriptionProvider();
   const { heightTabBar } = useThemeProvider();
-  const { workshops, minMaxDistance } = useWorkshopsProvider();
+  const { workshopsList: workshops } = useWorkshopsSelector();
   const { location } = useMapProvider();
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
@@ -61,6 +63,29 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
   );
+
+  const minMaxDistance = useMemo(() => {
+    const distanceMinMax = workshops
+      .map((workshop) =>
+        location && workshop.coordinates
+          ? convertDistance(
+              getDistance(location, {
+                longitude: workshop.coordinates.longitude,
+                latitude: workshop.coordinates.latitude,
+              }),
+              "km"
+            )
+          : 0
+      )
+      .sort((a, b) => a - b);
+    return {
+      min: distanceMinMax.length > 0 ? Number(distanceMinMax[0].toFixed()) : 0,
+      max:
+        distanceMinMax.length > 1
+          ? Number(distanceMinMax[distanceMinMax.length - 1].toFixed())
+          : 200,
+    };
+  }, [workshops, location]);
   const maxDistance = useMemo(() => {
     if (!minMaxDistance.max) return 5;
     return Math.ceil((minMaxDistance.max + 1) / 5) * 5;

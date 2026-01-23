@@ -11,6 +11,7 @@ import {
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { getDistance } from "geolib";
+import Toast from "react-native-toast-message";
 
 // types
 import {
@@ -20,11 +21,12 @@ import {
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
+import { useChangeWorkshopMutation } from "../../../storeRedux/api";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -76,7 +78,8 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const { heightTabBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
   const { userData } = useUserSelector();
-  const { workshops, changeWorkshop } = useWorkshopsProvider();
+  const { workshopsList: workshops } = useWorkshopsSelector();
+  const [changeWorkshopMutation] = useChangeWorkshopMutation();
   const { placesDB } = usePlacesProvider();
   const { location } = useMapProvider();
   const { getSharedLink } = useSharingProvider();
@@ -152,27 +155,35 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       );
   };
 
-  const onPressLike = () => {
-    if (selectWorkshop && userData) {
-      const currentImages = selectWorkshop.imageFiles.map((image) => ({
-        _id: image._id || "",
-        url: image.url || "",
-        width: image.width,
-        height: image.height,
-        image,
-      }));
-      const likeUserIds = isLike
-        ? selectWorkshop.likeUserIds
-            .filter((likeUserId) => likeUserId._id !== userData?._id)
-            .map((item) => item._id)
-        : [...selectWorkshop.likeUserIds.map((item) => item._id), userData._id];
-      changeWorkshop({
+  const onPressLike = async () => {
+    if (!selectWorkshop || !userData) {
+      Toast.show({
+        type: "error",
+        text1: i18n._("Error"),
+        text2: i18n._("Unable to like the workshop"),
+      });
+      return;
+    }
+    const currentImages = selectWorkshop.imageFiles.map((image) => ({
+      _id: image._id || "",
+      url: image.url || "",
+      width: image.width,
+      height: image.height,
+      image,
+    }));
+    const likeUserIds = isLike
+      ? selectWorkshop.likeUserIds
+          .filter((likeUserId) => likeUserId._id !== userData?._id)
+          .map((item) => item._id)
+      : [...selectWorkshop.likeUserIds.map((item) => item._id), userData._id];
+    await changeWorkshopMutation({
+      body: {
         ...selectWorkshop,
         imageFiles: currentImages,
         likeUserIds,
         userId: selectWorkshop.userId?._id || userData._id,
-      });
-    }
+      },
+    });
   };
 
   const onPressShare = () => {

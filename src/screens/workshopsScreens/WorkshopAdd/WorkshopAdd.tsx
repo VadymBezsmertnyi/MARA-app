@@ -14,14 +14,18 @@ import {
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import {
+  useAddWorkshopMutation,
+  useChangeWorkshopMutation,
+  useDeleteWorkshopMutation,
+} from "../../../storeRedux/api";
+import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useWorkshopsProviderState } from "../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
-import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
 import {
   useDropDownAlertProvider,
   DropdownAlertType,
@@ -58,6 +62,7 @@ import { DEFAULT_WORKSHOP_DATA } from "../../../providers/WorkshopsProvider/Work
 // styles
 import { styles } from "./WorkshopAdd.styles";
 import colors from "../../../../styles/colors";
+import Toast from "react-native-toast-message";
 
 type WorkshopAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -82,10 +87,11 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { getErrorText } = useErrors(i18n);
   const { userData } = useUserSelector();
   const { heightTabBar } = useThemeProvider();
-  const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
-    useWorkshopsProvider();
+  const { workshopsList: workshops } = useWorkshopsSelector();
+  const [addWorkshopMutation] = useAddWorkshopMutation();
+  const [changeWorkshopMutation] = useChangeWorkshopMutation();
+  const [deleteWorkshopMutation] = useDeleteWorkshopMutation();
   const { placesDB, getPlace } = usePlacesProvider();
-  const { setLoading } = useLoadingProvider();
   const { typesWorkServices } = useWorkshopsProviderState();
   const { verifyPhone } = useAuthorizationRegistration();
   const [title, setTitle] = useState("");
@@ -300,17 +306,32 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         rating: selectWorkshop?.rating || 0,
         comments: selectWorkshop?.comments || [],
       };
-      const isCreate = selectWorkshop
-        ? await changeWorkshop({
-            ...selectWorkshop,
-            ...newWorkshop,
-            likeUserIds: [
-              ...(newWorkshop.likeUserIds || selectWorkshop.likeUserIds || []),
-            ].map((item) => item._id.toString()),
+      const result = selectWorkshop
+        ? await changeWorkshopMutation({
+            body: {
+              ...selectWorkshop,
+              ...newWorkshop,
+              likeUserIds: [
+                ...(newWorkshop.likeUserIds ||
+                  selectWorkshop.likeUserIds ||
+                  []),
+              ].map((item) =>
+                typeof item === "string" ? item : item._id.toString()
+              ),
+              imageFiles: currentImageFiles,
+            },
           })
-        : await addWorkshop(newWorkshop);
+        : await addWorkshopMutation({
+            body: {
+              ...newWorkshop,
+              imageFiles: currentImageFiles,
+              likeUserIds: newWorkshop.likeUserIds.map((item) =>
+                typeof item === "string" ? item : item._id.toString()
+              ),
+            },
+          });
 
-      if (isCreate) {
+      if (result.data?.workshop) {
         navigation.goBack();
         messageFromServer(
           selectWorkshop
@@ -331,46 +352,70 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   };
 
   const getChangeWorkshop = async () => {
-    setLoading(true);
-    if (selectWorkshop) {
-      const images = await Promise.all(
-        selectWorkshop.imageFiles.map(async (image) => {
-          const response = await FileSystem.downloadAsync(
-            image.url,
-            `${FileSystem.documentDirectory}temp-${image._id}.jpg`
-          );
-          const base64 = await FileSystem.readAsStringAsync(response.uri, {
-            encoding: "base64",
-          });
-          return {
-            _id: image._id,
-            url: image.url,
-            width: image.width,
-            height: image.height,
-            base64,
-          };
-        })
-      );
-      setTitle(selectWorkshop.title);
-      const placeDB = await getPlace(selectWorkshop.place_id?.place_id || "");
-      setPlace({
-        placeId: selectWorkshop.place_id?.place_id || "",
-        title: placeDB ? placeDB[language].formatted_address : "",
-        address: selectWorkshop.place_address,
-        coordinates: selectWorkshop.coordinates,
+    if (!selectWorkshop) return;
+
+    const images = await Promise.all(
+      selectWorkshop.imageFiles.map(async (image) => {
+        const response = await FileSystem.downloadAsync(
+          image.url,
+          `${FileSystem.documentDirectory}temp-${image._id}.jpg`
+        );
+        const base64 = await FileSystem.readAsStringAsync(response.uri, {
+          encoding: "base64",
+        });
+        return {
+          _id: image._id,
+          url: image.url,
+          width: image.width,
+          height: image.height,
+          base64,
+        };
+      })
+    );
+    setTitle(selectWorkshop.title);
+    const placeDB = await getPlace(selectWorkshop.place_id?.place_id || "");
+    setPlace({
+      placeId: selectWorkshop.place_id?.place_id || "",
+      title: placeDB ? placeDB[language].formatted_address : "",
+      address: selectWorkshop.place_address,
+      coordinates: selectWorkshop.coordinates,
+    });
+    setDescription(selectWorkshop.description);
+    setPhoneNumber(selectWorkshop.phoneNumber);
+    setTypeWorkshops((state) => ({
+      ...state,
+      moto: selectWorkshop.motoTypesWorks.length > 0,
+      auto: selectWorkshop.autoTypesWorks.length > 0,
+    }));
+    setSelectAutoTypesWorks(selectWorkshop.autoTypesWorks);
+    setSelectMotoTypesWorks(selectWorkshop.motoTypesWorks);
+    setImages(images);
+  };
+
+  const onDeleteWorkshop = async () => {
+    if (!selectWorkshop?._id) {
+      Toast.show({
+        type: "error",
+        text1: i18n._("Error"),
+        text2: i18n._("Unable to delete the workshop"),
       });
-      setDescription(selectWorkshop.description);
-      setPhoneNumber(selectWorkshop.phoneNumber);
-      setTypeWorkshops((state) => ({
-        ...state,
-        moto: selectWorkshop.motoTypesWorks.length > 0,
-        auto: selectWorkshop.autoTypesWorks.length > 0,
-      }));
-      setSelectAutoTypesWorks(selectWorkshop.autoTypesWorks);
-      setSelectMotoTypesWorks(selectWorkshop.motoTypesWorks);
-      setImages(images);
+      return;
     }
-    setLoading(false);
+
+    const result = await deleteWorkshopMutation({
+      body: { _id: selectWorkshop._id },
+    });
+    if (!result.data || result.error || !result.data.success) {
+      Toast.show({
+        type: "error",
+        text1: i18n._("Error"),
+        text2: i18n._("Unable to delete the workshop"),
+      });
+      return;
+    }
+
+    setIsShowDeleteModal(false);
+    navigation.goBack();
   };
 
   useEffect(() => {
@@ -577,12 +622,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           onClose={() => {
             setIsShowDeleteModal(false);
           }}
-          onSubmit={async () => {
-            if (selectWorkshop?._id) {
-              await deleteWorkshop(selectWorkshop._id, "user");
-              setIsShowDeleteModal(false);
-            }
-          }}
+          onSubmit={onDeleteWorkshop}
         />
       )}
       <ModalShowErrors

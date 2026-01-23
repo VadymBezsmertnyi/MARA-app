@@ -11,9 +11,9 @@ import { mapMarker } from "./Map.types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
 
 // providers
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
@@ -43,7 +43,7 @@ const DEFAULT_LOCATION: mapMarker = {
 export const Map: FunctionComponent<MapProps> = () => {
   const { language } = useLocalesProvider();
   const { userData } = useUserSelector();
-  const { workshops } = useWorkshopsProvider();
+  const { workshopsList: workshops } = useWorkshopsSelector();
   const { location } = useMapProvider();
   const { theme } = useThemeProvider();
   const { eventsList } = useEventsProvider();

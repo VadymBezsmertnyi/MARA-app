@@ -8,10 +8,13 @@ import { WorkshopType } from "../../../../../providers/WorkshopsProvider/Worksho
 
 // redux
 import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
+import {
+  useAddCommentMutation,
+  useChangeCommentMutation,
+} from "../../../../../storeRedux/api";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
-import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
 
 // components
 import { Input } from "../../../../../components/Input/Input";
@@ -35,7 +38,8 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { userData } = useUserSelector();
-  const { addComment, changeComment } = useWorkshopsProvider();
+  const [addCommentMutation] = useAddCommentMutation();
+  const [changeCommentMutation] = useChangeCommentMutation();
   const [userName, setUserName] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState(0);
@@ -96,13 +100,26 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
         dateUpdate: new Date().getTime(),
       };
       const result = commentUser
-        ? await changeComment(selectWorkshop._id, {
-            ...commentUser,
-            ...newComment,
-            dateCreate: commentUser.dateCreate,
+        ? await changeCommentMutation({
+            body: {
+              _id: commentUser._id,
+              idWorkshop: selectWorkshop._id,
+              userId: userData._id,
+              userName: newComment.userName,
+              description: newComment.description,
+              rating: newComment.rating,
+            },
           })
-        : await addComment(selectWorkshop._id, newComment);
-      if (result) onClose();
+        : await addCommentMutation({
+            body: {
+              idWorkshop: selectWorkshop._id,
+              userId: userData._id,
+              userName: newComment.userName,
+              description: newComment.description,
+              rating: newComment.rating,
+            },
+          });
+      if (result.data?.workshop) onClose();
     }
   };
 
