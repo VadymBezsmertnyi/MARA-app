@@ -179,6 +179,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             isAddButtonDisabled={infoWorkshops.amountWorkshop <= 0}
             addButtonAccessibilityLabel={i18n._("Add workshop")}
             showFilters={workshops.length > 0}
+            hasActiveSort={sort !== null}
           />
         }
         containerStyle={styles.containerHeader}
@@ -266,7 +267,11 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
       </View>
       {isShowSort ? (
         <ModalWindow onClose={onClose}>
-          <ModalSort onClose={onClose} setTypeSort={setTypeSort} />
+          <ModalSort
+            onClose={onClose}
+            setTypeSort={setTypeSort}
+            currentSort={sort}
+          />
         </ModalWindow>
       ) : null}
       {isShowFilter ? (
