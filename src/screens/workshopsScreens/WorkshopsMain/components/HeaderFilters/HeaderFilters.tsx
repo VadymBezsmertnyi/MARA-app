@@ -12,6 +12,7 @@ import {
 
 // styles
 import { styles } from "./HeaderFilters.styles";
+import colors from "../../../../../../styles/colors";
 
 type HeaderFiltersProps = {
   isWrap?: boolean;
@@ -72,7 +73,7 @@ export const HeaderFilters: FunctionComponent<HeaderFiltersProps> = ({
           accessibilityLabel={addButtonAccessibilityLabel}
           style={[styles.addButton, { opacity: isAddButtonDisabled ? 0.5 : 1 }]}
         >
-          <IconPlus width={20} height={20} fill="black" />
+          <IconPlus width={20} height={20} fill={colors.blazeOrange} />
         </TouchableOpacity>
       )}
     </View>
