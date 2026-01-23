@@ -23,6 +23,7 @@ type HeaderActionsProps = {
   isAddButtonDisabled?: boolean;
   addButtonAccessibilityLabel?: string;
   showFilters?: boolean;
+  hasActiveSort?: boolean;
 };
 
 export const HeaderActions: FunctionComponent<HeaderActionsProps> = ({
@@ -34,6 +35,7 @@ export const HeaderActions: FunctionComponent<HeaderActionsProps> = ({
   isAddButtonDisabled = false,
   addButtonAccessibilityLabel,
   showFilters = true,
+  hasActiveSort = false,
 }) => {
   const IconShowType = useMemo(
     () =>
@@ -57,9 +59,12 @@ export const HeaderActions: FunctionComponent<HeaderActionsProps> = ({
         </TouchableOpacity>
       ) : null}
       {showFilters && (
-        <TouchableOpacity onPress={onPressSort}>
-          <IconSort width={20} height={20} />
-        </TouchableOpacity>
+        <View style={styles.sortButtonContainer}>
+          <TouchableOpacity onPress={onPressSort}>
+            <IconSort width={20} height={20} />
+          </TouchableOpacity>
+          {hasActiveSort && <View style={styles.sortIndicator} />}
+        </View>
       )}
       {showFilters && (
         <TouchableOpacity onPress={onPressFilter}>
