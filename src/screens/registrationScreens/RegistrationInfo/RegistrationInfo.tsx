@@ -2,8 +2,11 @@ import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { KeyboardAvoidingView, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../../storeRedux/api";
+
 // providers
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // helps
@@ -29,7 +32,8 @@ export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { verifyPhone } = useAuthorizationRegistration();
   const { i18n } = useLocalesProvider();
-  const { userData, editUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
   const [login, setLogin] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("+380");
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
@@ -65,15 +69,18 @@ export const RegistrationInfo: FunctionComponent = () => {
     if (isPhone && login.length >= 2 && login.length <= 20) {
       const clearPhoneNumber = getClearValue(phoneNumber);
       const { firstName, lastName } = getNamesUser(userData);
+      if (!userData) return;
 
-      const resultSave = await editUser({
-        login,
-        isNewUser: false,
-        firstName: login || firstName,
-        lastName,
-        ...(isPhone && { phoneNumber: clearPhoneNumber }),
+      const resultSave = await editUserMutation({
+        body: {
+          isNewUser: false,
+          firstName: login || firstName,
+          lastName,
+          ...(isPhone && { phoneNumber: clearPhoneNumber }),
+        },
+        existingUserData: userData,
       });
-      if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
+      if (resultSave.data) navigation.navigate(PATHS_MAIN_SCREENS.main);
     } else if (!isPhone) setErrorMessagePhone(i18n._("Invalid phone number"));
     else
       setErrorMessageLogin(

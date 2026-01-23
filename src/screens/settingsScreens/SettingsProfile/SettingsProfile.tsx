@@ -16,8 +16,17 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
+// redux
+import {
+  useUserSelector,
+  setIsChangeAvatar,
+} from "../../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../../storeRedux/api";
+import { useRootDispatch } from "../../../storeRedux/store";
+import { cleanUserData } from "../../../storeRedux/apis/user/slice";
+import { deleteTokens } from "../../../storeRedux/apis/user/user.helpers";
+
 // providers
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
@@ -70,7 +79,9 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const { bottom } = useSafeAreaInsets();
   const { messageFromServer } = useDropDownAlertProvider();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { userData, editUser, exitUser, setIsChangeAvatar } = useUserProvider();
+  const { userData } = useUserSelector();
+  const dispatch = useRootDispatch();
+  const [editUserMutation] = useEditUserMutation();
   const { i18n, language } = useLocalesProvider();
   const { heightTabBar, heightStatusBar } = useThemeProvider();
   const { placesDB } = usePlacesProvider();
@@ -156,22 +167,23 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
       base64: true,
     });
 
-    if (!result.canceled) {
-      const resultUpdate = await editUser({
-        avatarFile: result.assets[0],
+    if (!result.canceled && userData) {
+      const resultUpdate = await editUserMutation({
+        body: { avatarFile: result.assets[0] },
+        existingUserData: userData,
       });
 
-      if (!resultUpdate)
+      if (resultUpdate.data)
         messageFromServer(
-          i18n._("The photo has been changed"),
+          i18n._("The photo added"),
           i18n._("Success"),
           DropdownAlertType.Success
         );
       else
         messageFromServer(
-          i18n._("The photo added"),
-          i18n._("Success"),
-          DropdownAlertType.Success
+          i18n._("Sorry, an error occurred"),
+          i18n._("Error"),
+          DropdownAlertType.Warn
         );
     } else
       messageFromServer(
@@ -182,18 +194,18 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   };
 
   const onChangePhoto = () => {
-    setIsChangeAvatar(true);
+    dispatch(setIsChangeAvatar(true));
   };
 
   const onLogoutProfile = async () => {
-    const result = await exitUser();
-    if (result)
-      navigation.dispatch(
-        CommonActions.reset({
-          index: 0,
-          routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
-        })
-      );
+    dispatch(cleanUserData());
+    await deleteTokens();
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
+      })
+    );
   };
 
   const onSave = async () => {
@@ -209,14 +221,17 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
             country_place_id: userData.country_place_id,
           }
         : { cityUser: city };
-    const resultSave = await editUser({
-      ...userData,
-      ...currentCityUser,
-      firstName,
-      lastName,
-      ...(isPhone && { phoneNumber: clearPhoneNumber }),
+    if (!userData) return;
+    const resultSave = await editUserMutation({
+      body: {
+        ...currentCityUser,
+        firstName,
+        lastName,
+        ...(isPhone && { phoneNumber: clearPhoneNumber }),
+      },
+      existingUserData: userData,
     });
-    if (resultSave) {
+    if (resultSave.data) {
       messageFromServer(
         i18n._("Profile saved"),
         i18n._("Success"),

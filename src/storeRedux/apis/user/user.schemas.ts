@@ -88,7 +88,21 @@ export const meResponseSchema = z.object({
   userData: userDataSchema,
 });
 
-export const editUserRequestSchema = userDataSchema.partial();
+export const editUserRequestSchema = userDataSchema.partial().extend({
+  avatarFile: z.any().optional(),
+  subscriptionId: z.string().optional(),
+  cityUser: z
+    .object({
+      placeId: z.string(),
+      description: z.string().optional(),
+      title: z.string().optional(),
+    })
+    .nullable()
+    .optional(),
+  login: z.string().optional(),
+  time_token: z.number().optional(),
+  avatarUrl: z.object({ url: z.string() }).optional(),
+});
 
 export const deleteUserRequestSchema = z.object({
   _id: z.string(),
