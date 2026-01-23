@@ -103,7 +103,7 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
             {!isLocationEnabled && !isLocationLoading && (
               <BlurView intensity={5} style={styles.distanceBlur}>
                 <View style={styles.distanceBlurContent}>
-                  <Text style={styles.distanceWarningText}>
+                  <Text style={styles.distanceWarningText} numberOfLines={2}>
                     {i18n._(
                       "To calculate distance, please enable location services"
                     )}
@@ -111,8 +111,8 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
                   <ButtonCustom
                     title={i18n._("Enable location")}
                     onSubmit={onToggleLocation}
-                    styleContainer={styles.distanceButtonContainer}
-                    styleButton={styles.distanceButton}
+                    styleContainer={styles.distanceButtonContainerStyle}
+                    styleButton={styles.distanceButtonStyle}
                   />
                 </View>
               </BlurView>

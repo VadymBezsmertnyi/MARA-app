@@ -75,18 +75,24 @@ export const styles = StyleSheet.create({
     overflow: "hidden",
   },
   distanceBlurContent: {
-    paddingHorizontal: 20,
-    paddingVertical: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
     gap: 12,
   },
   distanceWarningText: {
     fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 14,
+    fontSize: 10,
     color: colors.blackCoffee,
-    textAlign: "center",
+    flex: 1,
+    textAlign: "left",
   },
-  distanceButton: {
-    minWidth: 200,
+  distanceButtonContainerStyle: {
+    paddingVertical: 6,
+  },
+  distanceButtonStyle: {
+    paddingHorizontal: 6,
   },
 });
