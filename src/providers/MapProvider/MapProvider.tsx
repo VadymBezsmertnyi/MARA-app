@@ -6,11 +6,13 @@ import React, {
   useState,
 } from "react";
 import { Linking } from "react-native";
-import { useUserProvider } from "../UserProvider/UserProvider";
 import * as TaskManager from "expo-task-manager";
 import * as Location from "expo-location";
 import * as BackgroundFetch from "expo-background-fetch";
 import { z } from "zod";
+
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
 
 // providers
 import { useApiProvider } from "../ApiProvider/ApiProvider";
@@ -36,7 +38,7 @@ export const mapContext = React.createContext({} as MapContext);
 
 const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
   const { api } = useApiProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { locationForegroundPermission, locationBackgroundPermission } =
     usePermissionsProvider();
   const [location, setLocation] =

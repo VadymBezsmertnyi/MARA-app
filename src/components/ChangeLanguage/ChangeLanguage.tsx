@@ -5,9 +5,12 @@ import { Shadow } from "react-native-shadow-2";
 // types
 import { Language } from "../../../localization/localization.types";
 
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../storeRedux/api";
+
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
-import { useUserProvider } from "../../providers/UserProvider/UserProvider";
 import { usePushNotificationProvider } from "../../providers/PushNotificationProvider/PushNotificationProvider";
 import { Loader } from "../../providers/LoadingProvider/components/Loader/Loader";
 import { useLoadingProvider } from "../../providers/LoadingProvider/LoadingProvider";
@@ -32,7 +35,8 @@ import colors from "../../../styles/colors";
 export const ChangeLanguage: FunctionComponent = () => {
   const { i18n, language, setLanguage } = useLocalesProvider();
   const { isLoading } = useLoadingProvider();
-  const { userData, editUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
   const { setLanguageNotification } = usePushNotificationProvider();
   const [isShowChangeLanguage, setIsShowChangeLanguage] = useState(false);
   const [valueSearch, setValueSearch] = useState("");
@@ -68,7 +72,10 @@ export const ChangeLanguage: FunctionComponent = () => {
       await setLanguage(selectLanguage);
       setLanguageNotification(selectLanguage);
       if (userData)
-        await editUser({ ...userData, languageLocal: selectLanguage });
+        await editUserMutation({
+          body: { languageLocal: selectLanguage },
+          existingUserData: userData,
+        });
     }
     setSelectLanguage(null);
     setIsShowChangeLanguage(false);

@@ -11,11 +11,11 @@ import qs from "qs";
 // types
 import { EventType, UpcomingEvents } from "./EventsProvider.types";
 
-// hooks
-import { getSortEvents } from "./EventsProvider.hooks";
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
+import { useLazyGetMeQuery } from "../../storeRedux/api";
 
 // providers
-import { useUserProvider } from "../UserProvider/UserProvider";
 import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { useLoadingProvider } from "../LoadingProvider/LoadingProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -24,6 +24,9 @@ import {
   DropdownAlertType,
   useDropDownAlertProvider,
 } from "../DropDownAlertProvider/DropDownAlertProvider";
+
+// hooks
+import { getSortEvents } from "./EventsProvider.hooks";
 
 // components
 import { ModalDelete } from "../../components/ModalDelete/ModalDelete";
@@ -63,7 +66,8 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
 }) => {
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n } = useLocalesProvider();
-  const { userData, meUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [getMe] = useLazyGetMeQuery();
   const { api } = useApiProvider();
   const { setLoading } = useLoadingProvider();
   const { onSetUserProperties } = useAnalyticsProvider();
@@ -170,7 +174,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
         });
       }
     }
-    meUser(false);
+    await getMe();
     setLoading(false);
   };
 
@@ -261,7 +265,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
         )
       );
     }
-    meUser(false);
+    await getMe();
     setLoading(false);
   };
 
@@ -291,7 +295,7 @@ const EventsProvider: FunctionComponent<EventsProviderType> = ({
         }
       }
 
-      meUser(false);
+      await getMe();
       return true;
     } catch (error) {
       return false;

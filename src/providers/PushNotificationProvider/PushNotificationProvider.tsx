@@ -17,8 +17,9 @@ import { LocationObjectCoords } from "expo-location";
 import { Language } from "../../../localization/localization.types";
 import { InitialUrlType } from "./PushNotificationProvider.types";
 
-// providers
-import { userContext, useUserProvider } from "../UserProvider/UserProvider";
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../storeRedux/api";
 
 // schemas
 import { typeInitialUrlSchema } from "./PushNotificationProvider.schemas";
@@ -62,7 +63,8 @@ const PushNotificationProvider: FunctionComponent<
       };
     }>
   >();
-  const { userData, editUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
   const [tempGoLink, setTempGoLink] = useState<InitialUrlType | null>(null);
 
   const setSubscriptionNotification = async () => {
@@ -70,7 +72,10 @@ const PushNotificationProvider: FunctionComponent<
       const userSubscriptionId =
         await OneSignal.User.pushSubscription.getIdAsync();
       if (userSubscriptionId)
-        await editUser({ ...userData, subscriptionId: userSubscriptionId });
+        await editUserMutation({
+          body: { subscriptionId: userSubscriptionId },
+          existingUserData: userData,
+        });
     }
   };
 

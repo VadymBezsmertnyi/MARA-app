@@ -9,8 +9,10 @@ import React, {
 import { Alert, Linking } from "react-native";
 import * as Location from "expo-location";
 
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
+
 // providers
-import { useUserProvider } from "../UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // helps
@@ -33,7 +35,7 @@ const PermissionsProvider: FunctionComponent<PermissionsProviderProps> = ({
   children,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { titleLocationBackground, titleLocationForeground } =
     usePermissionsProviderState();
   const [locationForegroundPermission, setLocationForegroundPermission] =
