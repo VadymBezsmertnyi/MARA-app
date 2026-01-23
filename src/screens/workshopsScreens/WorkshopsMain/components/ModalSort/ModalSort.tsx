@@ -113,6 +113,7 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
                     onSubmit={onToggleLocation}
                     styleContainer={styles.distanceButtonContainerStyle}
                     styleButton={styles.distanceButtonStyle}
+                    styleTitle={styles.distanceButtonTitle}
                   />
                 </View>
               </BlurView>

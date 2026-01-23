@@ -95,4 +95,7 @@ export const styles = StyleSheet.create({
   distanceButtonStyle: {
     paddingHorizontal: 6,
   },
+  distanceButtonTitle: {
+    fontSize: 10,
+  },
 });
