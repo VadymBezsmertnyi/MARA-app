@@ -20,10 +20,16 @@ import {
   DrawerNavigationProp,
 } from "@react-navigation/drawer";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import {
+  useEditUserMutation,
+  useDeleteUserMutation,
+} from "../../../storeRedux/api";
+
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ItemMenuSettings } from "./components/ItemMenuSettings/ItemMenuSettings";
@@ -68,7 +74,9 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  const { userData, editUser, deleteUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
+  const [deleteUserMutation] = useDeleteUserMutation();
   const [darkTheme, setDarkTheme] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
   const [typeAgreements, setTypeAgreements] = useState<
@@ -115,13 +123,17 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   };
 
   const onToggleLocation = async () => {
-    const isGeoLocation = !(userData?.isGeoLocation || false);
+    if (!userData) return;
+    const isGeoLocation = !(userData.isGeoLocation || false);
     const isGeoLocationBackground = isGeoLocation
-      ? userData?.isGeoLocationBackground || false
+      ? userData.isGeoLocationBackground || false
       : false;
-    await editUser({
-      isGeoLocation,
-      isGeoLocationBackground,
+    await editUserMutation({
+      body: {
+        isGeoLocation,
+        isGeoLocationBackground,
+      },
+      existingUserData: userData,
     });
   };
 
@@ -134,8 +146,11 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   };
 
   const onDeleteProfile = async () => {
-    const result = await deleteUser();
-    if (result)
+    if (!userData?._id) return;
+    const result = await deleteUserMutation({
+      body: { _id: userData._id },
+    });
+    if (result.data?.result)
       navigation.dispatch(
         CommonActions.reset({
           index: 0,

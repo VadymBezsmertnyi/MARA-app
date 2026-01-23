@@ -9,11 +9,13 @@ import dayjs from "dayjs";
 import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
 import { mapMarker } from "./Map.types";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+
 // providers
 import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 
@@ -39,8 +41,8 @@ const DEFAULT_LOCATION: mapMarker = {
 };
 
 export const Map: FunctionComponent<MapProps> = () => {
-  const { i18n, language } = useLocalesProvider();
-  const { userData } = useUserProvider();
+  const { language } = useLocalesProvider();
+  const { userData } = useUserSelector();
   const { workshops } = useWorkshopsProvider();
   const { location } = useMapProvider();
   const { theme } = useThemeProvider();

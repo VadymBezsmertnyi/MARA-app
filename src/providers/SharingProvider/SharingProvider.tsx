@@ -8,8 +8,8 @@ import React, {
 import { Alert, Platform, Share } from "react-native";
 import appsFlyer from "react-native-appsflyer";
 
-// providers
-import { useUserProvider } from "../UserProvider/UserProvider";
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
 
 type SharingContextType = {
   getSharedLink: (data: Record<string, string>) => void;
@@ -30,7 +30,7 @@ export const sharingContext = React.createContext<SharingContextType>(
 const SharingProvider: FunctionComponent<SharingProviderProps> = ({
   children,
 }) => {
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const [isFirstLaunch, setIsFirstLaunch] = useState(false);
   const [dataDeepLink, setDataDeepLink] = useState<Record<string, any> | null>(
     null

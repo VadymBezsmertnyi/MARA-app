@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import { useUserProvider } from "../UserProvider/UserProvider";
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
 import {
-  TYPE_BUSINESS_SUBSCRIPTIONS_ADVERT,
   TYPE_INDIVIDUAL_SUBSCRIPTIONS_ADVERT,
   TYPE_SMALL_SUBSCRIPTIONS_EVENT,
 } from "./SubscriptionProvider.constants";
@@ -40,7 +39,7 @@ export const subscriptionContext = React.createContext(
 const SubscriptionProvider: FunctionComponent<SubscriptionProviderProps> = ({
   children,
 }) => {
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
 
   const infoBusinessAdverts = useMemo(() => {
     if (!userData)
