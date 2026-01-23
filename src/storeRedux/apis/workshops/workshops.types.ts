@@ -3,7 +3,7 @@ import { ImagePickerAsset } from "expo-image-picker";
 import {
   typeWorkSchema,
   typeWorksSchema,
-  commentSchema,
+  commentWorkshopSchema,
   workshopSchema,
   workshopsSchema,
   resultWorkshopsSchema,
@@ -65,4 +65,4 @@ export interface IGetWorkshopsUserRequest {
   userId: string;
 }
 
-export type TComment = z.infer<typeof commentSchema>;
+export type TCommentWorkshop = z.infer<typeof commentWorkshopSchema>;

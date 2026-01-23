@@ -6,7 +6,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";
 
 // types
-import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+import { TWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.types";
 
 // components
 import { ComponentCalloutWorkshop } from "../ComponentCalloutWorkshop/ComponentCalloutWorkshop";
@@ -21,7 +21,7 @@ import {
 import { IconWorkshopMap } from "../../../../../icons/components";
 
 type WorkshopMarkerProps = {
-  workshop: WorkshopType;
+  workshop: TWorkshop;
   location: LocationObjectCoords | null;
 };
 
@@ -69,7 +69,9 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
         }}
       >
         <ComponentCalloutWorkshop
-          imageSrc={workshop.imageFiles.length ? workshop.imageFiles[0].url : null}
+          imageSrc={
+            workshop.imageFiles.length ? workshop.imageFiles[0].url : null
+          }
           title={workshop.title}
           distance={distance ? convertDistance(distance, "km").toFixed() : null}
           isMoto={workshop.motoTypesWorks.length > 0}

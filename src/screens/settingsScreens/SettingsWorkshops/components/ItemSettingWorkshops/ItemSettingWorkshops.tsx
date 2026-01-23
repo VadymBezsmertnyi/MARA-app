@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 // types
-import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+import { TWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.types";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -36,7 +36,7 @@ import { styles } from "./ItemSettingWorkshops.styles";
 import colors from "../../../../../../styles/colors";
 
 type ItemSettingWorkshopsProps = {
-  workshop: WorkshopType;
+  workshop: TWorkshop;
   isStart: boolean;
 };
 

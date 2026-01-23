@@ -2,7 +2,7 @@ import React, { FunctionComponent, useMemo } from "react";
 import { FlatList, ListRenderItem, Text, View } from "react-native";
 
 // types
-import { CommentType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+import { TCommentWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.types";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -21,7 +21,7 @@ import { styles } from "./FooterComments.styles";
 import colors from "../../../../../../styles/colors";
 
 type FooterCommentsProps = {
-  data: CommentType[];
+  data: TCommentWorkshop[];
   isCommentUser: boolean;
   rating: number;
   setIsShowModalComment: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,7 +36,7 @@ export const FooterComments: FunctionComponent<FooterCommentsProps> = ({
   const { i18n } = useLocalesProvider();
   const isComments = useMemo(() => data.length > 0, [data]);
 
-  const renderItem: ListRenderItem<CommentType> = ({ item }) => {
+  const renderItem: ListRenderItem<TCommentWorkshop> = ({ item }) => {
     const stars = Array.from({ length: item.rating }, (_, index) => index);
 
     return (

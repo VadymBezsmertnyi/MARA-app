@@ -4,7 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Shadow } from "react-native-shadow-2";
 
 // types
-import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+import { TWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.types";
 
 // redux
 import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
@@ -28,7 +28,7 @@ import { styles } from "./ModalComment.styles";
 import colors from "../../../../../../styles/colors";
 
 type ModalCommentProps = {
-  selectWorkshop: WorkshopType | null;
+  selectWorkshop: TWorkshop | null;
   onClose: () => void;
 };
 

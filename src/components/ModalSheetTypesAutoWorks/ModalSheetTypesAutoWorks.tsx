@@ -2,9 +2,11 @@ import React, { FunctionComponent } from "react";
 import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
+// types
+import { TTypeWork } from "../../storeRedux/apis/workshops/workshops.types";
+
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
-import { TypeWorkType } from "../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // hooks
 import { useWorkshopsProviderState } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
@@ -37,7 +39,7 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
   const { i18n } = useLocalesProvider();
   const { typesWorkServices } = useWorkshopsProviderState();
 
-  const onSelectAutoTypeWork = (typeAutoWork: TypeWorkType) => {
+  const onSelectAutoTypeWork = (typeAutoWork: TTypeWork) => {
     const isBe = selectAutoTypesWorks.includes(typeAutoWork.id);
     if (isBe)
       setSelectAutoTypesWorks((state) =>

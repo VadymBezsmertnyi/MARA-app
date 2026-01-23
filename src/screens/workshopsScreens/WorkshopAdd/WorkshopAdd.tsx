@@ -57,7 +57,7 @@ import {
   DEFAULT_CODE_COUNTRY,
   DEFAULT_COUNTRY,
 } from "../../../constants/inputs.const";
-import { DEFAULT_WORKSHOP_DATA } from "../../../providers/WorkshopsProvider/WorkshopsProvider.constants";
+import { DEFAULT_WORKSHOP_DATA } from "../../../storeRedux/apis/workshops/workshops.constants";
 
 // styles
 import { styles } from "./WorkshopAdd.styles";
@@ -405,7 +405,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     const result = await deleteWorkshopMutation({
       body: { _id: selectWorkshop._id },
     });
-    if (!result.data || result.error || !result.data.success) {
+    if (!result.data || result.error || !result.data.result) {
       Toast.show({
         type: "error",
         text1: i18n._("Error"),

@@ -23,7 +23,7 @@ const populateUserData = z.object({
   phoneNumber: z.string(),
 });
 
-export const commentSchema = z.object({
+export const commentWorkshopSchema = z.object({
   _id: z.string(),
   userId: z.string(),
   userName: z.string(),
@@ -48,7 +48,7 @@ export const workshopSchema = z.object({
   autoTypesWorks: z.array(z.number()),
   imageFiles: z.array(fileSchema).default([]),
   dataCreate: z.number(),
-  comments: z.array(commentSchema),
+  comments: z.array(commentWorkshopSchema).default([]),
   rating: z.number().nullable(),
   likeUserIds: z.array(populateUserData),
 });
