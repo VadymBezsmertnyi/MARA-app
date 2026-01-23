@@ -19,11 +19,13 @@ const appManifestEnvS = z.object({
 
 type AppManifestEnvT = z.infer<typeof appManifestEnvS>;
 
+const DEFAULT_APP_DOMAIN_IP = "192.168.50.248";
+
 export const getEnv = (): AppManifestEnvT => {
   const parsedEnv = z.object({ developer: appManifestEnvS }).parse({
     developer: {
       APP_DOMAIN_WEB: "localhost",
-      APP_DOMAIN_APP: "172.20.10.4",
+      APP_DOMAIN_APP: DEFAULT_APP_DOMAIN_IP,
       APP_PORT: "5008",
     },
   });
@@ -32,7 +34,7 @@ export const getEnv = (): AppManifestEnvT => {
 
 export const getApiUrl = () => {
   const { APP_DOMAIN_WEB, APP_PORT } = getEnv();
-  const appDomainApp = "172.20.10.3";
+  const appDomainApp = DEFAULT_APP_DOMAIN_IP;
   const herokuServer = process.env.EXPO_PUBLIC_HEROKU_URL as string;
   const api =
     Platform.OS === "web"
