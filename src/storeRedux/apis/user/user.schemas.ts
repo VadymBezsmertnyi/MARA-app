@@ -114,7 +114,6 @@ export const deleteUserResponseSchema = z.object({
 
 export const userStateSchema = z.object({
   userData: userDataSchema.nullable(),
-  isChangeAvatar: z.boolean(),
   loading: z.boolean(),
   error: z.string().nullable(),
 });

@@ -17,10 +17,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // redux
-import {
-  useUserSelector,
-  setIsChangeAvatar,
-} from "../../../storeRedux/apis/user/slice";
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useEditUserMutation } from "../../../storeRedux/api";
 import { useRootDispatch } from "../../../storeRedux/store";
 import { cleanUserData } from "../../../storeRedux/apis/user/slice";
@@ -43,6 +40,7 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace";
 import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
+import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
 
 // helps
 import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
@@ -91,6 +89,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [isShowModal, setIsShowModal] = useState(false);
   const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
+  const [isChangeAvatar, setIsChangeAvatar] = useState(false);
   const showTitlePlace = useMemo(() => {
     if (!userData?.place_id) return "";
     return userData.place_id[language].formatted_address;
@@ -173,7 +172,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         existingUserData: userData,
       });
 
-      if (resultUpdate.data)
+      if (resultUpdate.data?.userData)
         messageFromServer(
           i18n._("The photo added"),
           i18n._("Success"),
@@ -194,7 +193,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   };
 
   const onChangePhoto = () => {
-    dispatch(setIsChangeAvatar(true));
+    setIsChangeAvatar(true);
   };
 
   const onLogoutProfile = async () => {
@@ -379,6 +378,13 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         }}
         errors={errorMessage}
       />
+      {isChangeAvatar ? (
+        <ModalChangeAvatar
+          onClose={() => {
+            setIsChangeAvatar(false);
+          }}
+        />
+      ) : null}
     </KeyboardAvoidingView>
   );
 };

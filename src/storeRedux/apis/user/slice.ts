@@ -7,7 +7,6 @@ import { saveTokens, deleteTokens } from "./user.helpers";
 
 const initialState: TUserState = {
   userData: null,
-  isChangeAvatar: false,
   loading: false,
   error: null,
 };
@@ -22,9 +21,6 @@ export const userSlice = createSlice({
     cleanUserData: (state) => {
       state.userData = null;
       deleteTokens().catch(() => {});
-    },
-    setIsChangeAvatar: (state, action) => {
-      state.isChangeAvatar = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -161,8 +157,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUserData, cleanUserData, setIsChangeAvatar } =
-  userSlice.actions;
+export const { setUserData, cleanUserData } = userSlice.actions;
 
 export const useUserSelector = () =>
   useSelector((state: RootState) => state.user);
