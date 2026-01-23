@@ -20,7 +20,7 @@ import { useLocalesProvider } from "../../../../../../localization/localization.
 import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 
 // hooks
-import { useWorkshopsProviderState } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsState } from "../../../../../storeRedux/apis/workshops/useWorkshops.constants";
 
 // components
 import { Header } from "../../../../../components/Header/Header";
@@ -56,7 +56,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const { userData } = useUserSelector();
   const [editUserMutation] = useEditUserMutation();
   const { location } = useMapProvider();
-  const { typesWorkServices } = useWorkshopsProviderState();
+  const { typesWorkServices } = useWorkshopsState();
   const [distance, setDistance] = useState(5);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
   const [isShowTypesMotoWorks, setIsShowTypesMotoWorks] = useState(false);

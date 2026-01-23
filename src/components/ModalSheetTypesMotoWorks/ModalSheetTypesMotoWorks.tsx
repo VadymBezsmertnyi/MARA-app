@@ -9,7 +9,7 @@ import { TTypeWork } from "../../storeRedux/apis/workshops/workshops.types";
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // hooks
-import { useWorkshopsProviderState } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsState } from "../../storeRedux/apis/workshops/useWorkshops.constants";
 
 // components
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
@@ -37,7 +37,7 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
   onSubmit,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { typesWorkServices } = useWorkshopsProviderState();
+  const { typesWorkServices } = useWorkshopsState();
 
   const onSelectMotoTypeWork = (typeMotoWork: TTypeWork) => {
     const isBe = selectMotoTypesWorks.includes(typeMotoWork.id);

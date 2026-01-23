@@ -24,12 +24,14 @@ import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useWorkshopsProviderState } from "../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import {
   useDropDownAlertProvider,
   DropdownAlertType,
 } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+
+// hooks
+import { useWorkshopsState } from "../../../storeRedux/apis/workshops/useWorkshops.constants";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -92,7 +94,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const [changeWorkshopMutation] = useChangeWorkshopMutation();
   const [deleteWorkshopMutation] = useDeleteWorkshopMutation();
   const { placesDB, getPlace } = usePlacesProvider();
-  const { typesWorkServices } = useWorkshopsProviderState();
+  const { typesWorkServices } = useWorkshopsState();
   const { verifyPhone } = useAuthorizationRegistration();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

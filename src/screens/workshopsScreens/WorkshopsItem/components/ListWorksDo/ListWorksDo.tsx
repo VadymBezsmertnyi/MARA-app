@@ -4,8 +4,8 @@ import { Text, TouchableOpacity, View } from "react-native";
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
-// helps
-import { useWorkshopsProviderState } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+// hooks
+import { useWorkshopsState } from "../../../../../storeRedux/apis/workshops/useWorkshops.constants";
 
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
@@ -29,7 +29,7 @@ export const ListWorksDo: FunctionComponent<ListWorksDoProps> = ({
   const { i18n } = useLocalesProvider();
   const [isAuto, setIsAuto] = useState(false);
   const [isShortList, setIsShortList] = useState(false);
-  const { typesWorkServices } = useWorkshopsProviderState();
+  const { typesWorkServices } = useWorkshopsState();
   const motoList = useMemo(
     () =>
       motoWorkIds.map(
