@@ -1,11 +1,13 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { StatusBar, Text, TouchableOpacity, View } from "react-native";
+import { BlurView } from "expo-blur";
 
 // types
 import { TypeFilters } from "./ModalFilter.types";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
 
 // hooks
 import { useWorkshopsProviderState } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
@@ -41,6 +43,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   maxDistance = 200,
 }) => {
   const { i18n } = useLocalesProvider();
+  const { userData, editUser } = useUserProvider();
   const { typesWorkServices } = useWorkshopsProviderState();
   const [distance, setDistance] = useState(5);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
@@ -129,6 +132,19 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
     setIsShowTypesAutoWorks(false);
   };
 
+  const onToggleLocation = async () => {
+    const isGeoLocation = !(userData?.isGeoLocation || false);
+    const isGeoLocationBackground = isGeoLocation
+      ? userData?.isGeoLocationBackground || false
+      : false;
+    await editUser({
+      isGeoLocation,
+      isGeoLocationBackground,
+    });
+  };
+
+  const isLocationEnabled = userData?.isGeoLocation || false;
+
   useEffect(() => {
     if (filters) {
       if (filters.moto || filters.auto)
@@ -171,13 +187,32 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             />
           }
         />
-        <InputSlider
-          label={i18n._("Distance, km:")}
-          min={0}
-          max={maxDistance}
-          value={distance}
-          onChange={setDistance}
-        />
+        <View style={styles.distanceContainer}>
+          <InputSlider
+            label={i18n._("Distance, km:")}
+            min={0}
+            max={maxDistance}
+            value={distance}
+            onChange={setDistance}
+            disabled={!isLocationEnabled}
+          />
+          {!isLocationEnabled && (
+            <BlurView intensity={15} style={styles.distanceBlur}>
+              <View style={styles.distanceBlurContent}>
+                <Text style={styles.distanceWarningText}>
+                  {i18n._(
+                    "To calculate distance, please enable location services"
+                  )}
+                </Text>
+                <ButtonCustom
+                  title={i18n._("Enable location")}
+                  onSubmit={onToggleLocation}
+                  styleContainer={styles.distanceButton}
+                />
+              </View>
+            </BlurView>
+          )}
+        </View>
         <View style={styles.containerSelectRatings}>
           <Text style={styles.labelSectors}>{i18n._("Only with rating:")}</Text>
           <View style={styles.containerRatings}>
