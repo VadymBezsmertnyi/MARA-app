@@ -11,19 +11,18 @@ import {
   RootMainTabsParamList,
 } from "../../../navigators/Navigators.types";
 
-// helps
-import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
-
-// icons
-import { ImageCache } from "../../../components/ImageCache/ImageCache";
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
+
+// helps
+import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
 
 // components
 import { Map } from "../../../components/Map/Map";
@@ -31,6 +30,7 @@ import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { GalleryModal } from "../../../components/GalleryModal/GalleryModal";
 import { Header } from "../../../components/Header/Header";
 import { HeaderRightItem } from "../../workshopsScreens/WorkshopsItem/components/HeaderRightItem/HeaderRightItem";
+import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // icons
 import {
@@ -67,7 +67,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { eventsList, changeEvent } = useEventsProvider();
   const { location } = useMapProvider();
   const { placesDB } = usePlacesProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { getSharedLink } = useSharingProvider();
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);

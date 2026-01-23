@@ -1,8 +1,10 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { ImageURISource, Text, View } from "react-native";
 
+// redux
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
+
 // providers
-import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
 import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
@@ -18,7 +20,7 @@ import { styles } from "./ContainerUser.styles";
 
 export const ContainerUser: FunctionComponent = () => {
   const { language } = useLocalesProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { placesDB } = usePlacesProvider();
   const showCity = useMemo(
     () => (userData?.place_id ? userData.place_id[language] || null : null),

@@ -20,10 +20,12 @@ import {
 } from "../../../navigators/Navigators.types";
 import { ImageFileType } from "../../../storeRedux/types";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { DEFAULT_EVENT_DATA } from "../../../providers/EventsProvider/EventsProvider.constants";
@@ -69,7 +71,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const { i18n, language } = useLocalesProvider();
   const { addEvent, changeEvent, eventsUserList, deleteEvent } =
     useEventsProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { setLoading } = useLoadingProvider();
   const { placesDB, getPlace } = usePlacesProvider();
   const { getErrorText } = useErrors(i18n);

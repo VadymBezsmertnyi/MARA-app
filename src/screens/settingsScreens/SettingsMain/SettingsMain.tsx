@@ -9,8 +9,12 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
+// redux
+import { cleanUserData } from "../../../storeRedux/apis/user/slice";
+import { useRootDispatch } from "../../../storeRedux/store";
+import { deleteTokens } from "../../../storeRedux/apis/user/user.helpers";
+
 // providers
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
@@ -39,7 +43,7 @@ type SettingsMainProps = {
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   navigation,
 }) => {
-  const { exitUser } = useUserProvider();
+  const dispatch = useRootDispatch();
   const { infoSmallEvents, infoWorkshops } = useSubscriptionProvider();
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
@@ -59,7 +63,8 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     const isSignedInFacebook = await AccessToken.getCurrentAccessToken();
     if (isSignedInGoogle) await GoogleSignin.signOut();
     if (isSignedInFacebook) LoginManager.logOut();
-    await exitUser();
+    dispatch(cleanUserData());
+    await deleteTokens();
     navigation.dispatch(
       CommonActions.reset({
         index: 0,

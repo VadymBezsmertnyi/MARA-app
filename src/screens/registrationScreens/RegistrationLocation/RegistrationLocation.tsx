@@ -5,9 +5,12 @@ import { Link } from "@react-navigation/native";
 // types
 import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../../storeRedux/api";
+
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // components
@@ -32,7 +35,8 @@ export const RegistrationLocation: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  const { editUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
   const [isShowModal, setIsShowModal] = useState(false);
   const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
   const [isGeoLocation, setIsGeolocation] = useState(false);
@@ -72,13 +76,16 @@ export const RegistrationLocation: FunctionComponent = () => {
   );
 
   const saveLocationUser = async () => {
-    if (city) {
-      const resultSave = await editUser({
-        isGeoLocation,
-        isGeoLocationBackground,
-        cityUser: city,
+    if (city && userData) {
+      const resultSave = await editUserMutation({
+        body: {
+          isGeoLocation,
+          isGeoLocationBackground,
+          cityUser: city,
+        },
+        existingUserData: userData,
       });
-      if (resultSave)
+      if (resultSave.data)
         navigation.navigate(PATHS_REGISTRATION_SCREENS.registrationInfo);
     }
     setCity(null);
