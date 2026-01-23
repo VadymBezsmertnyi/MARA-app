@@ -70,14 +70,66 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const [selectRating, setSelectRating] = useState<number | null>(null);
 
   const onSubmitFilters = () => {
-    const filters = {
+    const newFilters: TypeFilters = {
       moto: typeWorkshops.moto ? selectMotoTypesWorks : null,
       auto: typeWorkshops.auto ? selectAutoTypesWorks : null,
       maxDistance: distance,
       minRating: selectRating,
     };
-    onSubmit(filters);
+    onSubmit(newFilters);
   };
+
+  const hasFiltersChanged = useMemo(() => {
+    const currentMoto = typeWorkshops.moto ? selectMotoTypesWorks : null;
+    const currentAuto = typeWorkshops.auto ? selectAutoTypesWorks : null;
+    const currentDistance = distance;
+    const currentRating = selectRating;
+
+    if (!filters) {
+      const hasAnyFilter =
+        (currentMoto !== null && currentMoto.length > 0) ||
+        (currentAuto !== null && currentAuto.length > 0) ||
+        currentDistance !== 5 ||
+        currentRating !== null;
+      return hasAnyFilter;
+    }
+
+    const motoChanged =
+      (filters.moto === null &&
+        currentMoto !== null &&
+        currentMoto.length > 0) ||
+      (filters.moto !== null &&
+        (currentMoto === null || currentMoto.length === 0)) ||
+      (filters.moto !== null &&
+        currentMoto !== null &&
+        currentMoto.length > 0 &&
+        JSON.stringify([...filters.moto].sort()) !==
+          JSON.stringify([...currentMoto].sort()));
+
+    const autoChanged =
+      (filters.auto === null &&
+        currentAuto !== null &&
+        currentAuto.length > 0) ||
+      (filters.auto !== null &&
+        (currentAuto === null || currentAuto.length === 0)) ||
+      (filters.auto !== null &&
+        currentAuto !== null &&
+        currentAuto.length > 0 &&
+        JSON.stringify([...filters.auto].sort()) !==
+          JSON.stringify([...currentAuto].sort()));
+
+    const distanceChanged = filters.maxDistance !== currentDistance;
+    const ratingChanged = filters.minRating !== currentRating;
+
+    return motoChanged || autoChanged || distanceChanged || ratingChanged;
+  }, [
+    filters,
+    typeWorkshops,
+    selectMotoTypesWorks,
+    selectAutoTypesWorks,
+    distance,
+    selectRating,
+  ]);
   const valueTypesWork = useMemo(() => {
     const selectMotoTypes = selectMotoTypesWorks.map(
       (idTypeWork) =>
@@ -299,6 +351,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           title={i18n._("Filtering")}
           onSubmit={onSubmitFilters}
           styleContainer={styles.buttonSubmit}
+          disabled={!hasFiltersChanged}
         />
       </View>
       <ModalSheetTypeWorkshops
