@@ -32,7 +32,7 @@ export const getEnv = (): AppManifestEnvT => {
 
 export const getApiUrl = () => {
   const { APP_DOMAIN_WEB, APP_PORT } = getEnv();
-  const appDomainApp = "192.168.50.248";
+  const appDomainApp = "172.20.10.12";
   const herokuServer = process.env.EXPO_PUBLIC_HEROKU_URL as string;
   const api =
     Platform.OS === "web"
@@ -79,9 +79,7 @@ export const baseQueryWithReauth: BaseQueryFn<
     const separator = args.includes("?") ? "&" : "?";
     modifiedArgs = {
       url: `${args}${separator}${queryParams}`,
-      headers: tokens?.accessToken
-        ? { authorization: tokens.accessToken }
-        : {},
+      headers: tokens?.accessToken ? { authorization: tokens.accessToken } : {},
     };
   } else {
     const url = args.url || "";
