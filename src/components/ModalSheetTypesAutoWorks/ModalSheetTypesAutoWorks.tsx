@@ -76,7 +76,11 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
                 <LinearGradientCustom style={styles.lineModalType} />
               </View>
             </Shadow>
-            <ScrollView style={styles.scrollView}>
+            <ScrollView
+              style={styles.scrollView}
+              contentContainerStyle={styles.scrollViewContent}
+              nestedScrollEnabled
+            >
               <View style={styles.containerTypesWork}>
                 {typesWorkServices.auto.map((workAuto) => {
                   const isSelect = selectAutoTypesWorks.includes(workAuto.id);

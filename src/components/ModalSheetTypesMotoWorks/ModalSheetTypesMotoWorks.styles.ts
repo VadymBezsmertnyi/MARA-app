@@ -50,6 +50,9 @@ export const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
+  scrollViewContent: {
+    flexGrow: 1,
+  },
   containerTypesWork: {
     gap: verticalScale(24),
     paddingHorizontal: horizontalScale(16),
