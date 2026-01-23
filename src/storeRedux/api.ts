@@ -68,3 +68,35 @@ export const api = createApi({
     changeComment: changeComment(builder),
   }),
 });
+
+export const {
+  // User Hooks APIs
+  useLoginFacebookMutation,
+  useLoginGoogleMutation,
+  useLoginAppleMutation,
+  useGetMeQuery,
+  useLazyGetMeQuery,
+  useEditUserMutation,
+  useDeleteUserMutation,
+  // Events Hooks APIs
+  useGetEventsQuery,
+  useLazyGetEventsQuery,
+  useGetEventsUserQuery,
+  useLazyGetEventsUserQuery,
+  useAddEventMutation,
+  useChangeEventMutation,
+  useDeleteEventMutation,
+  // Payment Hooks APIs
+  useGetCurrenciesQuery,
+  useLazyGetCurrenciesQuery,
+  // Workshops Hooks APIs
+  useGetWorkshopsQuery,
+  useLazyGetWorkshopsQuery,
+  useGetWorkshopsUserQuery,
+  useLazyGetWorkshopsUserQuery,
+  useAddWorkshopMutation,
+  useChangeWorkshopMutation,
+  useDeleteWorkshopMutation,
+  useAddCommentMutation,
+  useChangeCommentMutation,
+} = api;
