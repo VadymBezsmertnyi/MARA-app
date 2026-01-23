@@ -16,6 +16,7 @@ import {
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
+    gap: verticalScale(4),
   },
   label: {
     fontFamily: FONT_600_OPEN_SANS,
@@ -27,7 +28,6 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.grayCloudy,
     borderRadius: 4,
-    marginTop: 5,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -57,7 +57,5 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(10),
     color: colors.errorRed,
-    marginTop: verticalScale(4),
-    minHeight: verticalScale(20),
   },
 });

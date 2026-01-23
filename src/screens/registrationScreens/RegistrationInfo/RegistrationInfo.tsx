@@ -113,7 +113,7 @@ export const RegistrationInfo: FunctionComponent = () => {
           isShowRight={false}
           containerStyle={styles.containerHeader}
         />
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollView}>
           <Text style={styles.title}>
             {i18n._("We recommend filling out the profile information")}
           </Text>

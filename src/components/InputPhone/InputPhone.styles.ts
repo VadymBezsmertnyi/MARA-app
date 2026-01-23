@@ -36,8 +36,6 @@ export const styles = StyleSheet.create({
   errorMessage: {
     width: "100%",
     paddingTop: 5,
-    paddingBottom: 10,
-    minHeight: 20,
     fontFamily: FONT_700_MONTSERRAT,
     fontSize: 10,
     color: colors.errorRed,

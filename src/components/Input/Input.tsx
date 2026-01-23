@@ -77,15 +77,14 @@ export const Input: FunctionComponent<InputProps> = ({
     () => ({ ...styles.input, ...customStyles }),
     [customStyles]
   );
-  const containerStyles = useMemo(() => {
-    const marginTop = label ? 20 : 0;
-    return {
+  const containerStyles = useMemo(
+    () => ({
       ...styles.container,
-      marginTop,
       ...containerStyle,
       opacity: disabled ? 0.5 : 1,
-    };
-  }, [label, customStyles, containerStyle, disabled]);
+    }),
+    [label, customStyles, containerStyle, disabled]
+  );
 
   const labelStyles = useMemo(() => [styles.label, labelStyle], [labelStyle]);
 

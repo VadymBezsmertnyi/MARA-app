@@ -15,9 +15,10 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: horizontalScale(16),
-    gap: verticalScale(40),
+    gap: verticalScale(8),
   },
   containerHeader: { justifyContent: "center" },
+  scrollView: { gap: verticalScale(4) },
   title: {
     fontFamily: FONT_700_MONTSERRAT,
     fontSize: scaleFont(28),
@@ -27,6 +28,6 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(16),
   },
-  containerInputs: { gap: verticalScale(30) },
+  containerInputs: { gap: verticalScale(2) },
   containerButton: { gap: verticalScale(16) },
 });
