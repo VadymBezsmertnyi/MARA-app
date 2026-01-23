@@ -6,6 +6,7 @@ import {
   IAddWorkshopRequest,
   IChangeWorkshopRequest,
   IDeleteWorkshopRequest,
+  IGetWorkshopsRequest,
   IGetWorkshopsUserRequest,
   IAddCommentRequest,
   IChangeCommentRequest,
@@ -17,10 +18,43 @@ import {
 } from "./workshops.schemas";
 import { PATHS } from "../../../providers/paths.constants";
 
+const buildQueryString = (
+  params: IGetWorkshopsRequest | IGetWorkshopsUserRequest
+): string => {
+  const queryParams: string[] = [];
+  if ("userId" in params && params.userId)
+    queryParams.push(`userId=${encodeURIComponent(params.userId)}`);
+  if (params.page !== undefined) queryParams.push(`page=${params.page}`);
+  if (params.limit !== undefined) queryParams.push(`limit=${params.limit}`);
+  if (params.sort) queryParams.push(`sort=${params.sort}`);
+  if (params.moto !== undefined)
+    queryParams.push(
+      `moto=${params.moto === null ? "null" : JSON.stringify(params.moto)}`
+    );
+  if (params.auto !== undefined)
+    queryParams.push(
+      `auto=${params.auto === null ? "null" : JSON.stringify(params.auto)}`
+    );
+  if (params.maxDistance !== undefined)
+    queryParams.push(`maxDistance=${params.maxDistance}`);
+  if (params.minRating !== undefined)
+    queryParams.push(
+      `minRating=${params.minRating === null ? "null" : params.minRating}`
+    );
+  if (params.workshopName)
+    queryParams.push(`workshopName=${encodeURIComponent(params.workshopName)}`);
+  if (params.latitude !== undefined)
+    queryParams.push(`latitude=${params.latitude}`);
+  if (params.longitude !== undefined)
+    queryParams.push(`longitude=${params.longitude}`);
+
+  return queryParams.length > 0 ? `?${queryParams.join("&")}` : "";
+};
+
 export const getWorkshops = (builder: Builder) =>
-  builder.query<TResultWorkshops | null, void>({
-    query: () => ({
-      url: PATHS.workshopsGet,
+  builder.query<TResultWorkshops | null, IGetWorkshopsRequest>({
+    query: (params = {}) => ({
+      url: `${PATHS.workshopsGet}${buildQueryString(params)}`,
       method: "GET",
     }),
     transformResponse: (response: unknown) => {
@@ -38,8 +72,8 @@ export const getWorkshops = (builder: Builder) =>
 
 export const getWorkshopsUser = (builder: Builder) =>
   builder.query<TResultWorkshops | null, IGetWorkshopsUserRequest>({
-    query: ({ userId }) => ({
-      url: `${PATHS.workshopsGetUserId}?userId=${userId}`,
+    query: (params) => ({
+      url: `${PATHS.workshopsGetUserId}${buildQueryString(params)}`,
       method: "GET",
     }),
     transformResponse: (response: unknown) => {

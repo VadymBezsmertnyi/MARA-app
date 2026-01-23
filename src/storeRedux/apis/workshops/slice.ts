@@ -7,6 +7,8 @@ import { api } from "../../api";
 const initialState: TWorkshopsState = {
   workshopsList: [],
   workshopsUserList: [],
+  pagination: null,
+  paginationUser: null,
   loading: false,
   error: null,
 };
@@ -39,6 +41,7 @@ export const workshopsSlice = createSlice({
         (state, action) => {
           if (action.payload?.workshops) {
             state.workshopsList = action.payload.workshops;
+            state.pagination = action.payload.pagination || null;
             state.loading = false;
             state.error = null;
           } else {
@@ -60,6 +63,7 @@ export const workshopsSlice = createSlice({
         (state, action) => {
           if (action.payload?.workshops) {
             state.workshopsUserList = action.payload.workshops;
+            state.paginationUser = action.payload.pagination || null;
             state.loading = false;
             state.error = null;
           } else {
