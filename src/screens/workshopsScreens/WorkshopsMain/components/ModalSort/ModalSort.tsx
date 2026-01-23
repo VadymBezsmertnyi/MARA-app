@@ -15,11 +15,13 @@ import colors from "../../../../../../styles/colors";
 type ModalSortProps = {
   onClose: () => void;
   setTypeSort: (type: "distance" | "rating" | "comments") => void;
+  currentSort: "comments" | "distance" | "rating" | null;
 };
 
 export const ModalSort: FunctionComponent<ModalSortProps> = ({
   onClose,
   setTypeSort,
+  currentSort,
 }) => {
   const { i18n } = useLocalesProvider();
 
@@ -39,9 +41,25 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
             onPress={() => {
               setTypeSort("distance");
             }}
+            style={[
+              styles.buttonItem,
+              currentSort === "distance" && styles.buttonItemSelected,
+            ]}
           >
-            <Text style={styles.titleButton}>{i18n._("By distance:")}</Text>
-            <Text style={styles.subTitleButton}>
+            <Text
+              style={[
+                styles.titleButton,
+                currentSort === "distance" && styles.titleButtonSelected,
+              ]}
+            >
+              {i18n._("By distance:")}
+            </Text>
+            <Text
+              style={[
+                styles.subTitleButton,
+                currentSort === "distance" && styles.subTitleButtonSelected,
+              ]}
+            >
               {i18n._("from closest to farthest")}
             </Text>
           </TouchableOpacity>
@@ -50,9 +68,25 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
             onPress={() => {
               setTypeSort("rating");
             }}
+            style={[
+              styles.buttonItem,
+              currentSort === "rating" && styles.buttonItemSelected,
+            ]}
           >
-            <Text style={styles.titleButton}>{i18n._("By rating:")}</Text>
-            <Text style={styles.subTitleButton}>
+            <Text
+              style={[
+                styles.titleButton,
+                currentSort === "rating" && styles.titleButtonSelected,
+              ]}
+            >
+              {i18n._("By rating:")}
+            </Text>
+            <Text
+              style={[
+                styles.subTitleButton,
+                currentSort === "rating" && styles.subTitleButtonSelected,
+              ]}
+            >
               {i18n._("from highest to lowest")}
             </Text>
           </TouchableOpacity>
@@ -61,11 +95,25 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
             onPress={() => {
               setTypeSort("comments");
             }}
+            style={[
+              styles.buttonItem,
+              currentSort === "comments" && styles.buttonItemSelected,
+            ]}
           >
-            <Text style={styles.titleButton}>
+            <Text
+              style={[
+                styles.titleButton,
+                currentSort === "comments" && styles.titleButtonSelected,
+              ]}
+            >
               {i18n._("By number of comments:")}
             </Text>
-            <Text style={styles.subTitleButton}>
+            <Text
+              style={[
+                styles.subTitleButton,
+                currentSort === "comments" && styles.subTitleButtonSelected,
+              ]}
+            >
               {i18n._("from highest to lowest")}
             </Text>
           </TouchableOpacity>

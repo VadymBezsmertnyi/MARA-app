@@ -16,15 +16,25 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   containerButtons: {
-    padding: 24,
-    paddingTop: 28,
+    padding: 6,
+    paddingTop: 7,
     alignItems: "center",
   },
   line: {
     width: "100%",
     height: 1,
     backgroundColor: colors.grayCloudy,
-    marginVertical: 28,
+    marginVertical: 7,
+  },
+  buttonItem: {
+    width: "100%",
+    paddingVertical: 4,
+  },
+  buttonItemSelected: {
+    backgroundColor: colors.blazeOrange,
+    borderRadius: 8,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
   },
   titleButton: {
     fontFamily: FONT_600_OPEN_SANS,
@@ -33,11 +43,17 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
     color: colors.blackCoffee,
   },
+  titleButtonSelected: {
+    color: colors.white,
+  },
   subTitleButton: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 12,
     textAlign: "center",
     lineHeight: 15,
     color: colors.blackCoffee,
+  },
+  subTitleButtonSelected: {
+    color: colors.white,
   },
 });
