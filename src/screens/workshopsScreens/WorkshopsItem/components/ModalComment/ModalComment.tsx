@@ -6,8 +6,10 @@ import { Shadow } from "react-native-shadow-2";
 // types
 import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
+// redux
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
+
 // providers
-import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 import { useWorkshopsProvider } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider";
 
@@ -32,7 +34,7 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
   onClose,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { addComment, changeComment } = useWorkshopsProvider();
   const [userName, setUserName] = useState("");
   const [description, setDescription] = useState("");
@@ -151,7 +153,9 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
                       errorMessage={errorMessages?.userName}
                     />
                     <Input
-                      placeholder={i18n._("Add a description about the workshop")}
+                      placeholder={i18n._(
+                        "Add a description about the workshop"
+                      )}
                       label={i18n._("Workshop description")}
                       value={description}
                       onChange={(value) => {

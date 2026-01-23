@@ -18,9 +18,11 @@ import {
   RootWorkshopsScreensParamList,
 } from "../../../navigators/Navigators.types";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
@@ -73,7 +75,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
 }) => {
   const { heightTabBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { workshops, changeWorkshop } = useWorkshopsProvider();
   const { placesDB } = usePlacesProvider();
   const { location } = useMapProvider();

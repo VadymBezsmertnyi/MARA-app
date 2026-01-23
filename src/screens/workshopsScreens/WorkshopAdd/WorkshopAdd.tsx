@@ -12,11 +12,13 @@ import {
   RootWorkshopsScreensParamList,
 } from "../../../navigators/Navigators.types";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useWorkshopsProviderState } from "../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
@@ -78,10 +80,10 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { messageFromServer } = useDropDownAlertProvider();
   const { i18n, language } = useLocalesProvider();
   const { getErrorText } = useErrors(i18n);
+  const { userData } = useUserSelector();
   const { heightTabBar } = useThemeProvider();
   const { workshops, addWorkshop, changeWorkshop, deleteWorkshop } =
     useWorkshopsProvider();
-  const { userData } = useUserProvider();
   const { placesDB, getPlace } = usePlacesProvider();
   const { setLoading } = useLoadingProvider();
   const { typesWorkServices } = useWorkshopsProviderState();

@@ -6,10 +6,12 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -39,7 +41,7 @@ type SettingsWorkshopsProps = {
 export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   navigation,
 }) => {
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { heightStatusBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
   const { infoWorkshops } = useSubscriptionProvider();
