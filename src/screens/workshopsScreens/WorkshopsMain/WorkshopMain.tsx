@@ -7,6 +7,7 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 
 // redux
 import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
+import { useGetWorkshopsQuery } from "../../../storeRedux/api";
 
 // providers
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
@@ -62,6 +63,16 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [filters, setFilters] = useState<TypeFilters | null>(null);
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
+  );
+
+  useGetWorkshopsQuery(
+    {
+      ...(location && {
+        latitude: location.latitude,
+        longitude: location.longitude,
+      }),
+    },
+    { skip: workshops.length > 0 }
   );
 
   const minMaxDistance = useMemo(() => {
