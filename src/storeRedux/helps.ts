@@ -67,35 +67,48 @@ export const baseQueryWithReauth: BaseQueryFn<
 > = async (args, api, extraOptions) => {
   const platform = Platform.OS;
   const deviceId = await getDeviceId();
+  const tokens = await getTokens();
 
   const queryParams = new URLSearchParams({
     platform,
     deviceId: deviceId || "",
   }).toString();
 
-  let modifiedArgs: string | FetchArgs;
+  let modifiedArgs: FetchArgs;
   if (typeof args === "string") {
     const separator = args.includes("?") ? "&" : "?";
-    modifiedArgs = `${args}${separator}${queryParams}`;
+    modifiedArgs = {
+      url: `${args}${separator}${queryParams}`,
+      headers: tokens?.accessToken
+        ? { authorization: tokens.accessToken }
+        : {},
+    };
   } else {
     const url = args.url || "";
     const separator = url.includes("?") ? "&" : "?";
+    const isFormData = args.body instanceof FormData;
     modifiedArgs = {
       ...args,
       url: `${url}${separator}${queryParams}`,
+      headers: {
+        ...(isFormData ? { "Content-Type": "multipart/form-data" } : {}),
+        ...(tokens?.accessToken ? { authorization: tokens.accessToken } : {}),
+        ...(args.headers || {}),
+      },
     };
   }
 
   let result = await baseQuery(modifiedArgs, api, extraOptions);
 
   if (result.error && result.error.status === 402) {
-    const tokens = await getTokens();
     if (tokens?.refreshToken) {
+      const isFormData = modifiedArgs.body instanceof FormData;
       const refreshResult = await baseQuery(
         {
           url: PATHS.token,
           method: "POST",
           headers: {
+            ...(isFormData ? { "Content-Type": "multipart/form-data" } : {}),
             authorization: tokens.refreshToken,
           },
         },
@@ -108,22 +121,24 @@ export const baseQueryWithReauth: BaseQueryFn<
           refreshToken: string;
         };
         await saveTokens(newTokens);
-        if (typeof modifiedArgs === "string")
-          result = await baseQuery(modifiedArgs, api, extraOptions);
-        else {
-          result = await baseQuery(
-            {
-              ...modifiedArgs,
-              headers: {
-                ...modifiedArgs.headers,
-                authorization: newTokens.accessToken,
-              },
+        const isFormDataRetry = modifiedArgs.body instanceof FormData;
+        result = await baseQuery(
+          {
+            ...modifiedArgs,
+            headers: {
+              ...(isFormDataRetry
+                ? { "Content-Type": "multipart/form-data" }
+                : {}),
+              authorization: newTokens.accessToken,
+              ...(modifiedArgs.headers || {}),
             },
-            api,
-            extraOptions
-          );
-        }
-      } else await saveTokens({ accessToken: "", refreshToken: "" });
+          },
+          api,
+          extraOptions
+        );
+      } else {
+        await saveTokens({ accessToken: "", refreshToken: "" });
+      }
     }
   }
 
