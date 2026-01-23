@@ -22,6 +22,15 @@ import {
   deleteEvent,
 } from "./apis/events/apis";
 import { getCurrencies } from "./apis/payment/apis";
+import {
+  getWorkshops,
+  getWorkshopsUser,
+  addWorkshop,
+  changeWorkshop,
+  deleteWorkshop,
+  addComment,
+  changeComment,
+} from "./apis/workshops/apis";
 
 export type Builder = EndpointBuilder<
   BaseQueryFn<FetchArgs, unknown, FetchBaseQueryError>,
@@ -49,5 +58,13 @@ export const api = createApi({
     deleteEvent: deleteEvent(builder),
     // Payment APIs
     getCurrencies: getCurrencies(builder),
+    // Workshops APIs
+    getWorkshops: getWorkshops(builder),
+    getWorkshopsUser: getWorkshopsUser(builder),
+    addWorkshop: addWorkshop(builder),
+    changeWorkshop: changeWorkshop(builder),
+    deleteWorkshop: deleteWorkshop(builder),
+    addComment: addComment(builder),
+    changeComment: changeComment(builder),
   }),
 });
