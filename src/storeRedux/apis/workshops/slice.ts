@@ -32,7 +32,10 @@ export const workshopsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addMatcher(api.endpoints.getWorkshops.matchPending, (state) => {
+      .addMatcher(api.endpoints.getWorkshops.matchPending, (state, action) => {
+        const page = (action.meta.arg as any)?.page || 1;
+        if (page === 1) state.workshopsList = [];
+
         state.loading = true;
         state.error = null;
       })
@@ -40,7 +43,18 @@ export const workshopsSlice = createSlice({
         api.endpoints.getWorkshops.matchFulfilled,
         (state, action) => {
           if (action.payload?.workshops) {
-            state.workshopsList = action.payload.workshops;
+            const currentPage = action.payload.pagination?.page || 1;
+            if (currentPage === 1)
+              state.workshopsList = action.payload.workshops;
+            else {
+              const existingIds = new Set(
+                state.workshopsList.map((w) => w._id)
+              );
+              const newWorkshops = action.payload.workshops.filter(
+                (w) => !existingIds.has(w._id)
+              );
+              state.workshopsList = [...state.workshopsList, ...newWorkshops];
+            }
             state.pagination = action.payload.pagination || null;
             state.loading = false;
             state.error = null;
