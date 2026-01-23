@@ -15,7 +15,7 @@ export const getEnv = (): AppManifestEnvT => {
   const parsedEnv = z.object({ developer: appManifestEnvS }).parse({
     developer: {
       APP_DOMAIN_WEB: "localhost",
-      APP_DOMAIN_APP: "192.168.31.31",
+      APP_DOMAIN_APP: "172.20.10.4",
       APP_PORT: "5008",
     },
   });
