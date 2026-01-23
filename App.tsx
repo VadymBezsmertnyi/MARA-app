@@ -109,7 +109,7 @@ function App() {
       <SafeAreaProvider>
         <DropDownAlertProvider>
           <ThemeProvider>
-            <LoadingProvider isLoadingProps={fontsLoaded}>
+            <LoadingProvider isLoadingProps={!fontsLoaded}>
               <LocalesProvider>
                 <ApiProvider>
                   <AnalyticsProvider currentRouteName={currentRouteName}>

@@ -7,6 +7,11 @@ import React, {
 } from "react";
 import { BlurView } from "expo-blur";
 
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
+import { useEventsSelector } from "../../storeRedux/apis/events/slice";
+import { useWorkshopsSelector } from "../../storeRedux/apis/workshops/slice";
+
 // components
 import { Loader } from "./components/Loader/Loader";
 
@@ -30,7 +35,9 @@ const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
   isLoadingProps = false,
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const { loading: userLoading } = useUserSelector();
+  const { loading: eventsLoading } = useEventsSelector();
+  const { loading: workshopsLoading } = useWorkshopsSelector();
   const setLoading = (state: boolean) => {
     setIsLoading(state);
   };
@@ -43,6 +50,12 @@ const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
   useEffect(() => {
     setIsLoading(!isLoadingProps);
   }, [isLoadingProps]);
+
+  useEffect(() => {
+    const anyLoading = userLoading || eventsLoading || workshopsLoading;
+    if (anyLoading) setIsLoading(true);
+    else if (!isLoadingProps) setIsLoading(false);
+  }, [userLoading, eventsLoading, workshopsLoading, isLoadingProps]);
 
   return (
     <loadingContext.Provider value={contextValue}>
