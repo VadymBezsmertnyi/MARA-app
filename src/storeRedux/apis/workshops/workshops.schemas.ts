@@ -66,6 +66,7 @@ export const resultWorkshopsSchema = z.object({
   result: z.boolean(),
   workshops: workshopsSchema,
   pagination: paginationSchema,
+  maxDistance: z.number(),
   code: z.number(),
 });
 
@@ -122,6 +123,8 @@ export const workshopsStateSchema = z.object({
   workshopsUserList: workshopsSchema,
   pagination: paginationSchema.nullable(),
   paginationUser: paginationSchema.nullable(),
+  maxDistance: z.number().default(5),
+  maxDistanceUser: z.number().default(5),
   loading: z.boolean(),
   error: z.string().nullable(),
 });

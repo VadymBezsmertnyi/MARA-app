@@ -9,6 +9,8 @@ const initialState: TWorkshopsState = {
   workshopsUserList: [],
   pagination: null,
   paginationUser: null,
+  maxDistance: 5,
+  maxDistanceUser: 5,
   loading: false,
   error: null,
 };
@@ -56,6 +58,7 @@ export const workshopsSlice = createSlice({
               state.workshopsList = [...state.workshopsList, ...newWorkshops];
             }
             state.pagination = action.payload.pagination || null;
+            state.maxDistance = action.payload.maxDistance || 5;
             state.loading = false;
             state.error = null;
           } else {
@@ -78,6 +81,7 @@ export const workshopsSlice = createSlice({
           if (action.payload?.workshops) {
             state.workshopsUserList = action.payload.workshops;
             state.paginationUser = action.payload.pagination || null;
+            state.maxDistanceUser = action.payload.maxDistance || 5;
             state.loading = false;
             state.error = null;
           } else {

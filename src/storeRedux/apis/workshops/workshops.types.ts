@@ -15,6 +15,7 @@ import {
   addCommentRequestSchema,
   changeCommentRequestSchema,
   workshopsStateSchema,
+  paginationSchema,
 } from "./workshops.schemas";
 
 export type TTypeWork = z.infer<typeof typeWorkSchema>;
