@@ -15,20 +15,17 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { Image as ExpoImage } from "expo-image";
-import Carousel, {
-  ICarouselInstance,
-  TAnimationStyle,
-} from "react-native-reanimated-carousel";
+import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
 import Animated, {
-  Extrapolate,
+  Extrapolation,
   interpolate,
   useSharedValue,
+  useAnimatedStyle,
 } from "react-native-reanimated";
 
 import { styles } from "./CustomSlider.styles";
-import colors from "../../../styles/colors";
 
-const SLIDER_HEIGHT = 120;
+const SLIDER_HEIGHT = 220;
 
 type CustomSliderProps = {
   images: Array<{ url: string }> | string[];
@@ -83,7 +80,7 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
   );
 
   const carouselContainerStyles = useMemo(() => {
-    const baseStyle = { width: windowWidth };
+    const baseStyle = { width: windowWidth, height: SLIDER_HEIGHT };
     if (styleScroll) {
       const scrollStyles = styleScroll(baseStyle);
       return Array.isArray(scrollStyles) ? scrollStyles : [scrollStyles];
@@ -112,26 +109,25 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
       onPositionChanged(normalizedIndex);
   };
 
-  const foldAnimationStyle: TAnimationStyle = (element: any) => {
-    "worklet";
-    const itemSize = windowWidth / 2;
-    const sideItemWidth = (windowWidth - itemSize) / 6;
-
-    return {
-      width: interpolate(
-        element.progressValue,
-        [-1, 0, 1],
-        [sideItemWidth, itemSize, sideItemWidth],
-        Extrapolate.CLAMP
-      ),
-      opacity: interpolate(
-        element.progressValue,
-        [-1.5, -1, 0, 1, 1.5],
-        [0, 1, 1, 1, 0],
-        Extrapolate.CLAMP
-      ),
-    };
-  };
+  const animatedStyle = (index: number) =>
+    useAnimatedStyle(() => {
+      const scale = interpolate(
+        progressValue.value,
+        [index - 1, index, index + 1],
+        [0.75, 1, 0.75],
+        Extrapolation.CLAMP
+      );
+      const opacity = interpolate(
+        progressValue.value,
+        [index - 1, index, index + 1],
+        [0.6, 1, 0.6],
+        Extrapolation.CLAMP
+      );
+      return {
+        transform: [{ scale }],
+        opacity,
+      };
+    });
 
   const renderImage = (
     image: { url: string } | string,
@@ -140,30 +136,33 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
     if (customSlide) {
       const customNode = customSlide({
         item: image,
-        style: { width: windowWidth / 2, height: "100%" },
+        style: { width: "100%", height: "100%" },
         index,
-        width: windowWidth / 2,
+        width: windowWidth,
       }) as React.JSX.Element | null;
       return customNode || null;
     }
 
     const imageUri = typeof image === "string" ? image : image?.url;
+    const animStyle = animatedStyle(index);
 
     return (
-      <TouchableOpacity
-        disabled={!onPress}
-        style={styles.slideContainer}
-        onPress={() => {
-          if (onPress) onPress({ image, index });
-        }}
-        delayPressIn={200}
-      >
-        <ExpoImage
-          source={{ uri: imageUri }}
-          contentFit="contain"
-          style={styles.imageStyle}
-        />
-      </TouchableOpacity>
+      <Animated.View style={[styles.slideContainer, animStyle]}>
+        <TouchableOpacity
+          disabled={!onPress}
+          style={styles.imageWrapper}
+          onPress={() => {
+            if (onPress) onPress({ image, index });
+          }}
+          delayPressIn={200}
+        >
+          <ExpoImage
+            source={{ uri: imageUri }}
+            contentFit="contain"
+            style={styles.imageStyle}
+          />
+        </TouchableOpacity>
+      </Animated.View>
     );
   };
 
@@ -185,28 +184,23 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
           height={SLIDER_HEIGHT}
           loop={loop}
           data={normalizedImages}
+          mode="parallax"
+          modeConfig={{
+            parallaxScrollingScale: 0.9,
+            parallaxAdjacentItemScale: 0.75,
+          }}
           scrollAnimationDuration={500}
-          windowSize={5}
-          customAnimation={foldAnimationStyle}
           onProgressChange={(_, absoluteProgress) => {
             progressValue.value = absoluteProgress;
-            const roundedIndex = Math.round(absoluteProgress);
-            if (
-              roundedIndex !== currentPosition &&
-              roundedIndex >= 0 &&
-              roundedIndex < images.length
-            ) {
-              setPositionState(roundedIndex);
-              if (onPositionChanged) {
-                onPositionChanged(roundedIndex);
-              }
+          }}
+          onSnapToItem={(index) => {
+            setPositionState(index);
+            if (onPositionChanged) {
+              onPositionChanged(index);
             }
           }}
-          renderItem={({ item, index }) => {
-            const rendered = renderImage(
-              item as { url: string } | string,
-              index
-            );
+          renderItem={({ item }) => {
+            const rendered = renderImage(item as { url: string } | string, 0);
             return rendered || <View />;
           }}
           style={carouselContainerStyles}

@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   containerEmpty: { height: 190 },
   containerMain: { gap: 40, width: "100%" },
   containerInfo: { gap: 20, width: "100%" },
-  containerSlider: { height: 120, paddingHorizontal: 20 },
+  containerSlider: { height: 220, paddingHorizontal: 20 },
   imagesScroll: { borderRadius: 3, backgroundColor: colors.transparent },
   info: {
     width: WIDTH - 20,

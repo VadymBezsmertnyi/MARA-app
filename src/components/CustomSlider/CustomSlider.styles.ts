@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../styles/colors";
 
-const SLIDER_HEIGHT = 120;
+const SLIDER_HEIGHT = 220;
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,20 +9,26 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   sliderFrame: {
-    flex: 1,
+    height: SLIDER_HEIGHT,
     backgroundColor: colors.lightOrange,
     borderRadius: 12,
     overflow: "hidden",
     justifyContent: "center",
   },
   slideContainer: {
-    width: "100%",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "transparent",
+  },
+  imageWrapper: {
+    width: "101%",
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
   imageStyle: {
-    width: "101%",
+    width: "100%",
     height: "100%",
   },
   indicator: {
