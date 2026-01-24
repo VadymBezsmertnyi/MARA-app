@@ -172,7 +172,6 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
         <Carousel
           ref={carouselRef}
           width={windowWidth}
-          height={windowWidth}
           loop={loop}
           data={normalizedImages}
           scrollAnimationDuration={500}
