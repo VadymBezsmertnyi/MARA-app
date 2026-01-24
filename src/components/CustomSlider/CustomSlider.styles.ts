@@ -3,33 +3,43 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  scrollViewContainer: {
-    flexDirection: "row",
     backgroundColor: "#222",
   },
-  image: {
-    width: 200,
+  slideContainer: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  parallaxContainer: {
+    width: "100%",
+    height: "100%",
+    overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  imageStyle: {
+    width: "100%",
     height: "100%",
   },
   buttons: {
-    height: 15,
-    marginTop: -25,
-    marginBottom: 10,
+    height: 30,
+    position: "absolute",
+    bottom: 10,
+    left: 0,
+    right: 0,
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
   },
-  button: {
-    margin: 3,
-    width: 8,
-    height: 8,
-    borderRadius: 8 / 2,
-    backgroundColor: "#ccc",
-    opacity: 0.9,
-  },
-  buttonSelected: {
-    opacity: 1,
-    backgroundColor: "#fff",
+  pageIndicator: {
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "600",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+    overflow: "hidden",
   },
 });

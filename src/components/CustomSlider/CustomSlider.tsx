@@ -6,18 +6,17 @@ import React, {
   useState,
 } from "react";
 import {
-  Image,
   ImageStyle,
-  LayoutChangeEvent,
-  NativeScrollEvent,
-  NativeSyntheticEvent,
-  ScrollView,
   StyleProp,
-  StyleSheet,
+  Text,
   TouchableOpacity,
   View,
   ViewStyle,
+  useWindowDimensions,
 } from "react-native";
+import { Image as ExpoImage } from "expo-image";
+import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
+import Animated, { useSharedValue } from "react-native-reanimated";
 
 // styles
 import { styles } from "./CustomSlider.styles";
@@ -62,180 +61,134 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
   position,
   onPositionChanged,
   customButtons,
-  loop,
+  loop = true,
 }) => {
+  const { width: windowWidth } = useWindowDimensions();
   const [positionState, setPositionState] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [onPositionChangedCalled, setOnPositionChangedCalled] = useState(false);
-  const ref = useRef<ScrollView | null>(null);
+  const carouselRef = useRef<ICarouselInstance>(null);
+  const progressValue = useSharedValue(0);
 
   const containerStyles = useMemo(
     () => [styles.container, style ? style(styles.container) : {}],
     [style]
   );
-  const scrollContainerStyles = useMemo(
-    () => [
-      styles.scrollViewContainer,
-      styleScroll ? styleScroll(styles.scrollViewContainer) : {},
-    ],
-    [styleScroll]
-  );
-
-  const getPosition = () => {
-    if (typeof position === "number") {
-      return position;
+  const carouselContainerStyles = useMemo(() => {
+    const baseStyle = { width: windowWidth };
+    if (styleScroll) {
+      const scrollStyles = styleScroll(baseStyle);
+      return Array.isArray(scrollStyles) ? scrollStyles : [scrollStyles];
     }
-    return positionState;
-  };
+    return [baseStyle];
+  }, [styleScroll, windowWidth]);
 
-  const move = (index: number, animated = true) => {
-    const isUpdating = index !== getPosition();
-    const x = width * index;
+  const currentPosition =
+    typeof position === "number" ? position : positionState;
+  const normalizedImages = useMemo(() => {
+    return images.map((img) => (typeof img === "string" ? { url: img } : img));
+  }, [images]);
 
-    if (ref.current) ref.current.scrollTo({ y: 0, x, animated });
-
-    setPositionState(index);
-
-    if (
-      isUpdating &&
-      onPositionChanged &&
-      index < images.length &&
-      index > -1
-    ) {
-      onPositionChanged(index);
-      setOnPositionChangedCalled(true);
+  const move = (index: number) => {
+    const normalizedIndex = Math.max(0, Math.min(index, images.length - 1));
+    setPositionState(normalizedIndex);
+    if (carouselRef.current) {
+      (carouselRef.current as any).scrollTo({ index: normalizedIndex });
     }
-  };
-
-  const onLayout = (event: LayoutChangeEvent) => {
-    setWidth(event.nativeEvent.layout.width);
-    move(loop ? 1 : 0, false);
-  };
-
-  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const { x } = event.nativeEvent.contentOffset;
-    const newPosition = Math.round(event.nativeEvent.contentOffset.x / width);
-    const isGoStart = loop && x >= width * images.length + 1;
-    const isGoEnd = loop && x <= width && newPosition === 0;
-
-    if (isGoStart) {
-      move(1, false);
-      return;
-    } else if (isGoEnd) {
-      move(images.length, false);
-      return;
-    }
-    move(newPosition, true);
-
-    if (positionState !== -1 && positionState !== images.length) {
-      setPositionState(newPosition);
-    }
-
     if (
       onPositionChanged &&
-      onPositionChangedCalled &&
-      newPosition < images.length &&
-      newPosition > -1
-    ) {
-      onPositionChanged(newPosition);
-    } else {
-      setOnPositionChangedCalled(false);
-    }
+      normalizedIndex >= 0 &&
+      normalizedIndex < images.length
+    )
+      onPositionChanged(normalizedIndex);
   };
 
   const renderImage = (
     image: { url: string } | string,
-    index: number,
-    isLoop?: boolean
-  ) => {
-    const imageStyle = () => [styles.image, { width }];
+    index: number
+  ): React.JSX.Element | null => {
+    if (customSlide) {
+      const customNode = customSlide({
+        item: image,
+        style: { width: windowWidth, height: "100%" },
+        index,
+        width: windowWidth,
+      }) as React.JSX.Element | null;
+      return customNode || null;
+    }
 
-    if (customSlide)
-      return customSlide({ item: image, style: imageStyle(), index, width });
-    const imageObject =
-      typeof image === "string" ? { uri: image } : { uri: image?.url };
-
-    const imageComponent = (
-      <View style={StyleSheet.absoluteFillObject}>
-        {imageObject.uri ? (
-          <Image
-            key={`image-render-item-${index + 1}`}
-            source={imageObject}
-            resizeMode="contain"
-            style={imageStyle()}
-          />
-        ) : null}
-      </View>
-    );
-
-    const containerButtonStyles = () => [imageStyle()];
+    const imageUri = typeof image === "string" ? image : image?.url;
 
     return (
       <TouchableOpacity
-        key={`image-${index + 1}${isLoop ? "-loop" : ""}`}
+        key={`carousel-item-${index}`}
         disabled={!onPress}
-        style={containerButtonStyles()}
+        style={styles.slideContainer}
         onPress={() => {
           if (onPress) onPress({ image, index });
         }}
         delayPressIn={200}
       >
-        {imageComponent}
+        <View style={styles.parallaxContainer}>
+          <ExpoImage
+            source={{ uri: imageUri }}
+            contentFit="contain"
+            style={styles.imageStyle}
+          />
+        </View>
       </TouchableOpacity>
     );
   };
 
   useEffect(() => {
-    if (position && position >= 0) setPositionState(position);
+    if (typeof position === "number") move(position);
   }, [position]);
 
   useEffect(() => {
-    if (positionState >= 0) move(positionState);
-  }, [positionState]);
+    setPositionState(0);
+    if (carouselRef.current) carouselRef.current.scrollTo({ index: 0 });
+  }, [images.length]);
 
   return (
-    <View style={containerStyles} onLayout={onLayout}>
-      <ScrollView
-        onLayout={onLayout}
-        ref={ref}
-        onMomentumScrollEnd={handleScroll}
-        scrollEventThrottle={16}
-        pagingEnabled
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={scrollContainerStyles}
-        showsVerticalScrollIndicator={false}
-      >
-        {loop && renderImage(images[images.length - 1], -1, true)}
-        {images.map((image, index) => renderImage(image, index))}
-        {loop && renderImage(images[0], images.length, true)}
-      </ScrollView>
-      {customButtons && position ? (
+    <View style={containerStyles}>
+      <Carousel
+        ref={carouselRef}
+        width={windowWidth}
+        height={windowWidth}
+        loop={loop}
+        data={normalizedImages}
+        mode="parallax"
+        modeConfig={{
+          parallaxScrollingScale: 0.9,
+          parallaxAdjacentItemScale: 0.75,
+        }}
+        scrollAnimationDuration={500}
+        onProgressChange={(_, absoluteProgress) => {
+          progressValue.value = absoluteProgress;
+          const roundedIndex = Math.round(absoluteProgress);
+          if (
+            roundedIndex !== currentPosition &&
+            roundedIndex >= 0 &&
+            roundedIndex < images.length
+          ) {
+            setPositionState(roundedIndex);
+            if (onPositionChanged) {
+              onPositionChanged(roundedIndex);
+            }
+          }
+        }}
+        renderItem={({ item, index }) => {
+          const rendered = renderImage(item as { url: string } | string, index);
+          return rendered || <View />;
+        }}
+        style={carouselContainerStyles}
+      />
+
+      {customButtons && typeof position === "number" ? (
         customButtons(position, move)
       ) : (
         <View style={styles.buttons}>
-          {images.map((_image, index) => {
-            const currentPosition = position || positionState;
-            const getStyles = () => [
-              styles.button,
-              { backgroundColor: "#ccc" },
-              currentPosition === (loop ? index + 1 : index) &&
-                styles.buttonSelected,
-            ];
-            return (
-              <View
-                key={`slider-button-${index + 1}`}
-                // TODO
-                //underlayColor="#ccc"
-                /* onPress={() => {
-                  move(index);
-                }} */
-                style={getStyles()}
-              >
-                <View />
-              </View>
-            );
-          })}
+          <Text style={styles.pageIndicator}>
+            {currentPosition + 1}/{images.length}
+          </Text>
         </View>
       )}
     </View>
