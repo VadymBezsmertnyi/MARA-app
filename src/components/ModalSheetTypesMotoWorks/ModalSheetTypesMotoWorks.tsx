@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // types
@@ -12,6 +12,7 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { useWorkshopsState } from "../../storeRedux/apis/workshops/useWorkshops.constants";
 
 // components
+import { ModalUniversal } from "../ModalUniversal/ModalUniversal";
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
 import { CheckboxClassic } from "../CheckboxClassic/CheckboxClassic";
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -51,23 +52,13 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
   if (!isShow) return null;
 
   return (
-    <Modal
+    <ModalUniversal
       visible={isShow}
-      transparent
+      onClose={onClose}
+      styleContainer={styles.modalOverlay}
       animationType="fade"
-      onRequestClose={onClose}
     >
-      <TouchableOpacity
-        style={styles.modalOverlay}
-        activeOpacity={1}
-        onPress={onClose}
-      >
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={(e) => e.stopPropagation()}
-          style={styles.modalContent}
-        >
-          <View style={styles.containerModalTypeWork}>
+      <View style={styles.containerModalTypeWork}>
             <Shadow stretch>
               <View style={styles.containerHeaderTypeWork}>
                 <Text style={styles.titleModalType}>
@@ -124,8 +115,6 @@ export const ModalSheetTypesMotoWorks: FunctionComponent<
               </View>
             </Shadow>
           </View>
-        </TouchableOpacity>
-      </TouchableOpacity>
-    </Modal>
+        </ModalUniversal>
   );
 };
