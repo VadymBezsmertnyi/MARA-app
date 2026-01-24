@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     height: SCREEN_HEIGHT,
     justifyContent: "space-between",
     backgroundColor: colors.white,
-    overflow: "hidden",
+    overflow: "visible",
   },
   containerHeader: {
     flexDirection: "row",
@@ -45,10 +45,13 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: SCREEN_WIDTH,
+    paddingHorizontal: horizontalScale(8),
+    overflow: "visible",
   },
   image: {
-    width: SCREEN_WIDTH * 0.9,
-    height: verticalScale(300),
+    width: "100%",
+    height: "100%",
+    flex: 1,
   },
   indicatorContainer: {
     position: "absolute",

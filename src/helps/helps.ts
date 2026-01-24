@@ -71,22 +71,6 @@ export const getStreetNumber = (fullTerms: Array<{ value: string }>) => {
   return { address: address.join(", "), cityCountry: cityCountry.join(", ") };
 };
 
-export const getRightSizeImage = (
-  image: ImageFileType,
-  width?: number | null,
-  maxHeight?: number
-) => {
-  const widthWindow = width ? width : Dimensions.get("window").width;
-  const coefficientSize =
-    Number(((widthWindow * 100) / (image.width || 1)).toFixed()) / 100;
-  const currentCoefficientSize =
-    maxHeight && maxHeight < coefficientSize ? maxHeight : coefficientSize;
-  return {
-    width: widthWindow,
-    height: (image.height || 1) * currentCoefficientSize,
-  };
-};
-
 export const getFormatPhoneNumber = (phone: string) => {
   const country =
     infoPhoneCountries.allCountries.find((country) =>

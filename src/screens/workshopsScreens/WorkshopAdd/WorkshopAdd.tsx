@@ -450,6 +450,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         />
         <ScrollView contentContainerStyle={styles.scrollView}>
           <View style={styles.containerInputs}>
+            <BoxSelectImages
+              isRegular
+              isSubTitle
+              images={images}
+              setImages={setImages}
+            />
             <Input
               isRegular
               placeholder={i18n._("Enter the name of the workshop")}
@@ -554,12 +560,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                   ? errorMessage.types.title
                   : ""
               }
-            />
-            <BoxSelectImages
-              isRegular
-              isSubTitle
-              images={images}
-              setImages={setImages}
             />
             <View style={styles.containerSubmit}>
               <Text style={styles.errorMessage}>

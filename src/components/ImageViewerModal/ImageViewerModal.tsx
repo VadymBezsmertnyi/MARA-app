@@ -24,9 +24,6 @@ import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 // icons
 import { IconClose } from "../../icons/components";
 
-// helps
-import { getRightSizeImage } from "../../helps/helps";
-
 // styles
 import { styles } from "./ImageViewerModal.styles";
 import colors from "../../../styles/colors";
@@ -57,14 +54,6 @@ export const ImageViewerModal: FunctionComponent<ImageViewerModalProps> = ({
   );
 
   const isMainPhoto = currentIndex === 0;
-
-  const imageStyles = useMemo(
-    () =>
-      currentImage
-        ? [styles.image, getRightSizeImage(currentImage, SCREEN_WIDTH, 0.5)]
-        : styles.image,
-    [currentImage]
-  );
 
   const colorsGradientButtonDelete = useMemo<[string, string]>(
     () => [colors.grayCloudy, colors.grayCloudy],
@@ -154,7 +143,7 @@ export const ImageViewerModal: FunctionComponent<ImageViewerModalProps> = ({
                 <ImageCache
                   contentFit="contain"
                   imageSrc={item.url}
-                  style={imageStyles}
+                  style={styles.image}
                 />
               </View>
             )}

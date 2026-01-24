@@ -5,18 +5,19 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
   listContent: {
-    paddingHorizontal: 0,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
     alignItems: "center",
   },
   separator: {
-    width: 13,
+    width: 12,
   },
   image: {
-    width: 48,
-    height: 48,
+    width: 120,
+    height: 120,
     borderRadius: 8,
   },
   addButton: {
-    marginRight: 13,
+    marginRight: 12,
   },
 });
