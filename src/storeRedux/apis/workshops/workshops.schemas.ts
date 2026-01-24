@@ -36,8 +36,8 @@ export const commentWorkshopSchema = z.object({
   userName: z.string(),
   description: z.string(),
   rating: z.number().min(1).max(5),
-  dateCreate: z.number(),
-  dateUpdate: z.number(),
+  dateCreate: z.number().optional(),
+  dateUpdate: z.number().optional(),
 });
 
 export const workshopSchema = z.object({
