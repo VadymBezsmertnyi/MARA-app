@@ -8,7 +8,6 @@ import React, {
 import {
   ImageStyle,
   StyleProp,
-  Text,
   TouchableOpacity,
   View,
   ViewStyle,
@@ -16,9 +15,13 @@ import {
 } from "react-native";
 import { Image as ExpoImage } from "expo-image";
 import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
-import Animated, { useSharedValue } from "react-native-reanimated";
+import Animated, {
+  Extrapolate,
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+} from "react-native-reanimated";
 
-// styles
 import { styles } from "./CustomSlider.styles";
 
 type CustomSliderProps = {
@@ -72,6 +75,7 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
     () => [styles.container, style ? style(styles.container) : {}],
     [style]
   );
+
   const carouselContainerStyles = useMemo(() => {
     const baseStyle = { width: windowWidth };
     if (styleScroll) {
@@ -83,6 +87,7 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
 
   const currentPosition =
     typeof position === "number" ? position : positionState;
+
   const normalizedImages = useMemo(() => {
     return images.map((img) => (typeof img === "string" ? { url: img } : img));
   }, [images]);
@@ -101,6 +106,20 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
       onPositionChanged(normalizedIndex);
   };
 
+  const foldAnimationStyle = (index: number) =>
+    useAnimatedStyle(() => {
+      const rotation = interpolate(
+        progressValue.value,
+        [index - 1, index, index + 1],
+        [45, 0, -45],
+        Extrapolate.CLAMP
+      );
+
+      return {
+        transform: [{ perspective: 1000 }, { rotateY: `${rotation}deg` }],
+      };
+    });
+
   const renderImage = (
     image: { url: string } | string,
     index: number
@@ -116,25 +135,25 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
     }
 
     const imageUri = typeof image === "string" ? image : image?.url;
+    const animStyle = foldAnimationStyle(index);
 
     return (
-      <TouchableOpacity
-        key={`carousel-item-${index}`}
-        disabled={!onPress}
-        style={styles.slideContainer}
-        onPress={() => {
-          if (onPress) onPress({ image, index });
-        }}
-        delayPressIn={200}
-      >
-        <View style={styles.parallaxContainer}>
+      <Animated.View style={[styles.slideContainer, animStyle]}>
+        <TouchableOpacity
+          disabled={!onPress}
+          style={styles.imageWrapper}
+          onPress={() => {
+            if (onPress) onPress({ image, index });
+          }}
+          delayPressIn={200}
+        >
           <ExpoImage
             source={{ uri: imageUri }}
             contentFit="contain"
             style={styles.imageStyle}
           />
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </Animated.View>
     );
   };
 
@@ -149,48 +168,42 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
 
   return (
     <View style={containerStyles}>
-      <Carousel
-        ref={carouselRef}
-        width={windowWidth}
-        height={windowWidth}
-        loop={loop}
-        data={normalizedImages}
-        mode="parallax"
-        modeConfig={{
-          parallaxScrollingScale: 0.9,
-          parallaxAdjacentItemScale: 0.75,
-        }}
-        scrollAnimationDuration={500}
-        onProgressChange={(_, absoluteProgress) => {
-          progressValue.value = absoluteProgress;
-          const roundedIndex = Math.round(absoluteProgress);
-          if (
-            roundedIndex !== currentPosition &&
-            roundedIndex >= 0 &&
-            roundedIndex < images.length
-          ) {
-            setPositionState(roundedIndex);
-            if (onPositionChanged) {
-              onPositionChanged(roundedIndex);
+      <View style={styles.sliderFrame}>
+        <Carousel
+          ref={carouselRef}
+          width={windowWidth}
+          height={windowWidth}
+          loop={loop}
+          data={normalizedImages}
+          scrollAnimationDuration={500}
+          onProgressChange={(_, absoluteProgress) => {
+            progressValue.value = absoluteProgress;
+            const roundedIndex = Math.round(absoluteProgress);
+            if (
+              roundedIndex !== currentPosition &&
+              roundedIndex >= 0 &&
+              roundedIndex < images.length
+            ) {
+              setPositionState(roundedIndex);
+              if (onPositionChanged) {
+                onPositionChanged(roundedIndex);
+              }
             }
-          }
-        }}
-        renderItem={({ item, index }) => {
-          const rendered = renderImage(item as { url: string } | string, index);
-          return rendered || <View />;
-        }}
-        style={carouselContainerStyles}
-      />
+          }}
+          renderItem={({ item, index }) => {
+            const rendered = renderImage(
+              item as { url: string } | string,
+              index
+            );
+            return rendered || <View />;
+          }}
+          style={carouselContainerStyles}
+        />
+      </View>
 
-      {customButtons && typeof position === "number" ? (
-        customButtons(position, move)
-      ) : (
-        <View style={styles.buttons}>
-          <Text style={styles.pageIndicator}>
-            {currentPosition + 1}/{images.length}
-          </Text>
-        </View>
-      )}
+      {customButtons && typeof position === "number"
+        ? customButtons(position, move)
+        : null}
     </View>
   );
 };
