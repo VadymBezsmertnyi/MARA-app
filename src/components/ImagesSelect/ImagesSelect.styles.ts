@@ -2,12 +2,21 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    width: "100%",
   },
-  list: {
-    flexDirection: "row",
-    gap: 13,
+  listContent: {
+    paddingHorizontal: 0,
+    alignItems: "center",
   },
-  image: { width: 48, height: 48 },
+  separator: {
+    width: 13,
+  },
+  image: {
+    width: 48,
+    height: 48,
+    borderRadius: 8,
+  },
+  addButton: {
+    marginRight: 13,
+  },
 });

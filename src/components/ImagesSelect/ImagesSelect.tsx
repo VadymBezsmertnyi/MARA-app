@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { TouchableOpacity, View } from "react-native";
+import React, { FunctionComponent, useState } from "react";
+import { TouchableOpacity, View, FlatList } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 // types
@@ -9,13 +9,9 @@ import { ImageFileType } from "../../storeRedux/types";
 import { useLoadingProvider } from "../../providers/LoadingProvider/LoadingProvider";
 
 // components
-import {
-  IconAddEvent,
-  IconArrowLeftEventGradient,
-  IconArrowRightEventGradient,
-} from "../../icons/components";
+import { IconAddEvent } from "../../icons/components";
 import { ImageCache } from "../ImageCache/ImageCache";
-import { ImageModal } from "../ImageModal/ImageModal";
+import { ImageViewerModal } from "../ImageViewerModal/ImageViewerModal";
 
 // styles
 import { styles } from "./ImagesSelect.styles";
@@ -30,37 +26,9 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   setImages,
 }) => {
   const { setLoading } = useLoadingProvider();
-  const [showImages, setShowImages] = useState({
-    start: 0,
-    finish: 3,
-  });
-  const [isDelete, setIsDelete] = useState(false);
-  const [isMain, setIsMain] = useState(false);
-  const [image, setImage] = useState<
-    (ImageFileType & { index: number }) | null
-  >(null);
-  const isBack = useMemo(
-    () => showImages.start > 0 && images.length > 3,
-    [images, showImages]
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null
   );
-  const isNext = useMemo(
-    () => showImages.finish < images.length && images.length > 3,
-    [images, showImages]
-  );
-  const styleButtonBack = useMemo(
-    () => ({ opacity: isBack ? 1 : 0.3 }),
-    [isBack]
-  );
-  const styleButtonNext = useMemo(
-    () => ({ opacity: isNext ? 1 : 0.3 }),
-    [isNext]
-  );
-
-  const onClose = () => {
-    setImage(null);
-    setIsDelete(false);
-    setIsMain(false);
-  };
 
   const pickImage = async () => {
     setLoading(true);
@@ -71,109 +39,79 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
       allowsMultipleSelection: true,
     });
 
-    if (!result.canceled)
-      setImages((state) => [
-        ...state,
-        ...result.assets.map((asset) => ({
-          ...asset,
-          url: asset.uri,
-        })),
-      ]);
+    if (!result.canceled) {
+      const newImages = result.assets.map((asset) => ({
+        ...asset,
+        url: asset.uri,
+      }));
+
+      setImages((state) => {
+        const combined = [...state, ...newImages];
+        // Забезпечуємо, що не більше 6 фото
+        return combined.slice(0, 6);
+      });
+    }
 
     setLoading(false);
   };
 
-  const onBack = () => {
-    if (isBack)
-      setShowImages((state) => ({
-        start: state.start - 1,
-        finish: state.finish - 1,
-      }));
+  const handleImagePress = (index: number) => {
+    setSelectedImageIndex(index);
   };
 
-  const onNext = () => {
-    if (isNext)
-      setShowImages((state) => ({
-        start: state.start + 1,
-        finish: state.finish + 1,
-      }));
+  const handleCloseViewer = () => {
+    setSelectedImageIndex(null);
   };
 
-  const deleteImage = () => {
-    setImages((state) =>
-      state.filter((_oldImage, index) => index !== image?.index)
+  const handleUpdateImages = (updatedImages: ImageFileType[]) => {
+    setImages(updatedImages);
+  };
+
+  const renderAddButton = () => {
+    if (images.length >= 6) return null;
+
+    return (
+      <TouchableOpacity onPress={pickImage} style={styles.addButton}>
+        <IconAddEvent width={48} height={48} />
+      </TouchableOpacity>
     );
-    onClose();
   };
 
-  const makeMainImage = () => {
-    const mainImage =
-      images.find((_oldImage, index) => image?.index === index) || null;
-
-    if (mainImage === null) onClose();
-    else {
-      const notMainList = images.filter(
-        (_oldImage, index) => index !== image?.index
-      );
-      const newListImages = [mainImage, ...notMainList];
-      setImages(newListImages);
-      setImage({ ...newListImages[0], index: 0 });
-      setIsMain(false);
-    }
+  const renderImageThumbnail = (image: ImageFileType, index: number) => {
+    return (
+      <TouchableOpacity
+        key={`image-thumbnail-${index}`}
+        onPress={() => handleImagePress(index)}
+      >
+        <ImageCache imageSrc={image.url} style={styles.image} />
+      </TouchableOpacity>
+    );
   };
-
-  useEffect(() => {
-    if (isDelete) deleteImage();
-    if (isMain) makeMainImage();
-  }, [isDelete, isMain]);
-
-  useEffect(() => {
-    if (images.length >= 6) setShowImages({ start: 0, finish: 4 });
-  }, [images.length]);
 
   return (
     <>
       <View style={styles.container}>
-        <TouchableOpacity
-          disabled={!isBack}
-          onPress={onBack}
-          style={styleButtonBack}
-        >
-          <IconArrowLeftEventGradient width={44} height={44} />
-        </TouchableOpacity>
-        <View style={styles.list}>
-          {images.length < 6 ? (
-            <TouchableOpacity onPress={pickImage}>
-              <IconAddEvent width={48} height={48} />
-            </TouchableOpacity>
-          ) : null}
-          {images
-            .slice(showImages.start, showImages.finish)
-            .map((image, index) => (
-              <TouchableOpacity
-                key={`image-event-${index + 1}`}
-                onPress={() => {
-                  setImage({ ...image, index });
-                }}
-              >
-                <ImageCache imageSrc={image.url} style={styles.image} />
-              </TouchableOpacity>
-            ))}
-        </View>
-        <TouchableOpacity
-          disabled={!isNext}
-          onPress={onNext}
-          style={styleButtonNext}
-        >
-          <IconArrowRightEventGradient width={44} height={44} />
-        </TouchableOpacity>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          scrollEnabled={true}
+          data={images}
+          renderItem={({ item, index }) => renderImageThumbnail(item, index)}
+          keyExtractor={(_, index) => `image-${index}`}
+          ListHeaderComponent={renderAddButton}
+          contentContainerStyle={styles.listContent}
+          ItemSeparatorComponent={() => <View style={styles.separator} />}
+        />
       </View>
-      <ImageModal
-        imageInfo={image}
-        setIsDelete={setIsDelete}
-        onClose={onClose}
-        setIsMain={setIsMain}
-      />
+
+      {selectedImageIndex !== null && (
+        <ImageViewerModal
+          images={images}
+          initialIndex={selectedImageIndex}
+          onClose={handleCloseViewer}
+          onUpdateImages={handleUpdateImages}
+        />
+      )}
     </>
   );
 };
