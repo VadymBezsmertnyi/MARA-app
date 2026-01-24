@@ -34,7 +34,7 @@ import { RootMainTabsParamList } from "../Navigators.types";
 
 // styles
 import colors from "../../../styles/colors";
-import { styles } from "./MainTabs.styles";
+import styles from "./MainTabs.styles";
 
 const Tab = createBottomTabNavigator<RootMainTabsParamList>();
 
@@ -93,7 +93,7 @@ export const MainTabs: FunctionComponent = () => {
             ? (mainTabs[indexScreen] as any).tabBarIconNameSelect
             : (mainTabs[indexScreen] as any).tabBarIconName;
           const isVectorIcon = iconName !== undefined;
-          
+
           return (
             <View key={`tab-button-${screen.id}`}>
               <TouchableOpacity

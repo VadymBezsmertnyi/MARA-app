@@ -1,5 +1,4 @@
-import { Platform, StyleSheet } from "react-native";
-import { getBottomSpace } from "react-native-iphone-x-helper";
+import { StyleSheet } from "react-native";
 
 // hooks
 import { horizontalScale, verticalScale } from "../../../styles/hooks";
@@ -7,7 +6,7 @@ import { horizontalScale, verticalScale } from "../../../styles/hooks";
 const PADDING_HORIZONTAL = 16;
 const PADDING_VERTICAL = 3;
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   mainContainer: { position: "absolute", width: "100%" },
   absoluteContainer: { position: "absolute", bottom: 0, width: "100%" },
   container: {
@@ -36,3 +35,5 @@ export const styles = StyleSheet.create({
     paddingHorizontal: horizontalScale(20),
   },
 });
+
+export default styles;
