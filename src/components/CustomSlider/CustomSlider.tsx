@@ -110,7 +110,7 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
   const PAGE_WIDTH = windowWidth;
   const ITEM_SIZE = PAGE_WIDTH / 2;
   const CENTER_OFFSET = PAGE_WIDTH / 2 - ITEM_SIZE / 2;
-  const SIDE_ITEM_COUNT = 3;
+  const SIDE_ITEM_COUNT = 2;
   const SIDE_ITEM_WIDTH = (PAGE_WIDTH - ITEM_SIZE) / (2 * SIDE_ITEM_COUNT);
 
   const foldAnimationStyle: TAnimationStyle = React.useCallback(
