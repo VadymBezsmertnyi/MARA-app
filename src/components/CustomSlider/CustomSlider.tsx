@@ -15,14 +15,13 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { Image as ExpoImage } from "expo-image";
-import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
-import Animated, {
-  Extrapolation,
-  interpolate,
-  useSharedValue,
-  useAnimatedStyle,
-} from "react-native-reanimated";
+import Carousel, {
+  ICarouselInstance,
+  TAnimationStyle,
+} from "react-native-reanimated-carousel";
+import { Extrapolation, interpolate } from "react-native-reanimated";
 
+// styles
 import { styles } from "./CustomSlider.styles";
 
 const SLIDER_HEIGHT = 220;
@@ -72,7 +71,6 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
   const { width: windowWidth } = useWindowDimensions();
   const [positionState, setPositionState] = useState(0);
   const carouselRef = useRef<ICarouselInstance>(null);
-  const progressValue = useSharedValue(0);
 
   const containerStyles = useMemo(
     () => [styles.container, style ? style(styles.container) : {}],
@@ -98,9 +96,9 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
   const move = (index: number) => {
     const normalizedIndex = Math.max(0, Math.min(index, images.length - 1));
     setPositionState(normalizedIndex);
-    if (carouselRef.current) {
-      (carouselRef.current as any).scrollTo({ index: normalizedIndex });
-    }
+    if (carouselRef.current)
+      carouselRef.current.scrollTo({ index: normalizedIndex });
+
     if (
       onPositionChanged &&
       normalizedIndex >= 0 &&
@@ -109,25 +107,53 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
       onPositionChanged(normalizedIndex);
   };
 
-  const animatedStyle = (index: number) =>
-    useAnimatedStyle(() => {
-      const scale = interpolate(
-        progressValue.value,
-        [index - 1, index, index + 1],
-        [0.75, 1, 0.75],
+  const PAGE_WIDTH = windowWidth;
+  const ITEM_SIZE = PAGE_WIDTH / 2;
+  const CENTER_OFFSET = PAGE_WIDTH / 2 - ITEM_SIZE / 2;
+  const SIDE_ITEM_COUNT = 3;
+  const SIDE_ITEM_WIDTH = (PAGE_WIDTH - ITEM_SIZE) / (2 * SIDE_ITEM_COUNT);
+
+  const foldAnimationStyle: TAnimationStyle = React.useCallback(
+    (value: number) => {
+      "worklet";
+
+      const itemOffsetInput = new Array(SIDE_ITEM_COUNT * 2 + 1)
+        .fill(null)
+        .map((_, index) => index - SIDE_ITEM_COUNT);
+
+      const itemOffset = interpolate(
+        value,
+        itemOffsetInput,
+        itemOffsetInput.map((item) => {
+          if (item < 0) return (-ITEM_SIZE + SIDE_ITEM_WIDTH) * Math.abs(item);
+
+          if (item > 0)
+            return (ITEM_SIZE - SIDE_ITEM_WIDTH) * (Math.abs(item) - 1);
+
+          return 0;
+        })
+      );
+
+      const translate =
+        interpolate(value, [-1, 0, 1], [-ITEM_SIZE, 0, ITEM_SIZE]) +
+        CENTER_OFFSET -
+        itemOffset;
+
+      const itemWidth = interpolate(
+        value,
+        [-1, 0, 1],
+        [SIDE_ITEM_WIDTH, ITEM_SIZE, SIDE_ITEM_WIDTH],
         Extrapolation.CLAMP
       );
-      const opacity = interpolate(
-        progressValue.value,
-        [index - 1, index, index + 1],
-        [0.6, 1, 0.6],
-        Extrapolation.CLAMP
-      );
+
       return {
-        transform: [{ scale }],
-        opacity,
+        transform: [{ translateX: translate }],
+        width: itemWidth,
+        overflow: "hidden",
       };
-    });
+    },
+    [CENTER_OFFSET, ITEM_SIZE, SIDE_ITEM_WIDTH, SIDE_ITEM_COUNT]
+  );
 
   const renderImage = (
     image: { url: string } | string,
@@ -144,25 +170,24 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
     }
 
     const imageUri = typeof image === "string" ? image : image?.url;
-    const animStyle = animatedStyle(index);
 
     return (
-      <Animated.View style={[styles.slideContainer, animStyle]}>
-        <TouchableOpacity
-          disabled={!onPress}
-          style={styles.imageWrapper}
-          onPress={() => {
-            if (onPress) onPress({ image, index });
-          }}
-          delayPressIn={200}
-        >
+      <TouchableOpacity
+        disabled={!onPress}
+        style={styles.slideContainer}
+        onPress={() => {
+          if (onPress) onPress({ image, index });
+        }}
+        delayPressIn={200}
+      >
+        <View style={styles.imageWrapper}>
           <ExpoImage
             source={{ uri: imageUri }}
             contentFit="contain"
             style={styles.imageStyle}
           />
-        </TouchableOpacity>
-      </Animated.View>
+        </View>
+      </TouchableOpacity>
     );
   };
 
@@ -180,19 +205,13 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
       <View style={styles.sliderFrame}>
         <Carousel
           ref={carouselRef}
-          width={windowWidth}
+          width={PAGE_WIDTH}
           height={SLIDER_HEIGHT}
           loop={loop}
           data={normalizedImages}
-          mode="parallax"
-          modeConfig={{
-            parallaxScrollingScale: 0.9,
-            parallaxAdjacentItemScale: 0.75,
-          }}
           scrollAnimationDuration={500}
-          onProgressChange={(_, absoluteProgress) => {
-            progressValue.value = absoluteProgress;
-          }}
+          windowSize={Math.min(9, Math.max(5, normalizedImages.length))}
+          customAnimation={foldAnimationStyle}
           onSnapToItem={(index) => {
             setPositionState(index);
             if (onPositionChanged) {
@@ -204,6 +223,7 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
             return rendered || <View />;
           }}
           style={carouselContainerStyles}
+          containerStyle={{ width: PAGE_WIDTH, height: SLIDER_HEIGHT }}
         />
         <View style={styles.indicator}>
           <Text style={styles.indicatorText}>
