@@ -66,6 +66,23 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
     ? { ...image, uri: image?.url }
     : WorkshopPlaceholder;
 
+  const getRangeDisplay = useMemo(() => {
+    if (range === null)
+      return {
+        text: i18n._("Geolocation disabled for calculation"),
+        isWarning: true,
+      };
+    if (isNaN(Number(range)))
+      return {
+        text: i18n._("Cannot calculate"),
+        isWarning: false,
+      };
+    return {
+      text: `${range} ${i18n._("km")}`,
+      isWarning: false,
+    };
+  }, [range, i18n]);
+
   return (
     <TouchableOpacity style={styles.container} onPress={selectNew}>
       <View>
@@ -95,9 +112,17 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
               width={12}
               height={12}
             />
-            <Text style={styles.infoText}>
-              {range} {i18n._("km")}
-            </Text>
+            <View>
+              {getRangeDisplay.isWarning ? (
+                <Text style={styles.distanceWarning}>
+                  {getRangeDisplay.text}
+                </Text>
+              ) : isNaN(Number(range)) ? (
+                <Text style={styles.distanceError}>{getRangeDisplay.text}</Text>
+              ) : (
+                <Text style={styles.infoText}>{getRangeDisplay.text}</Text>
+              )}
+            </View>
           </View>
           <View style={styles.comment}>
             {rate ? (
