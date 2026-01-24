@@ -44,8 +44,12 @@ export const styles = StyleSheet.create({
     overflow: "hidden",
   },
   containerModal: {
-    flex: 1,
-    position: "relative",
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.8,
+    backgroundColor: colors.white,
+    borderRadius: horizontalScale(16),
+    overflow: "hidden",
+    justifyContent: "space-between",
   },
   headerModal: {
     paddingHorizontal: horizontalScale(16),
