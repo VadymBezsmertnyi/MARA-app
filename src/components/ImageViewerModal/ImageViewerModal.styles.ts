@@ -16,16 +16,11 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  modalContent: {
-    width: SCREEN_WIDTH * 0.9,
-    height: SCREEN_HEIGHT * 0.8,
-  },
   container: {
-    width: SCREEN_WIDTH * 0.9,
-    height: SCREEN_HEIGHT * 0.8,
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
     justifyContent: "space-between",
     backgroundColor: colors.white,
-    borderRadius: horizontalScale(16),
     overflow: "hidden",
   },
   containerHeader: {
@@ -40,14 +35,34 @@ export const styles = StyleSheet.create({
     fontSize: scaleFont(16),
     fontFamily: FONT_600_MONTSERRAT,
   },
-  containerBody: {
+  carouselContainer: {
     flex: 1,
     justifyContent: "center",
-    gap: verticalScale(60),
+    alignItems: "center",
+  },
+  carouselItemContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: SCREEN_WIDTH,
   },
   image: {
     width: SCREEN_WIDTH * 0.9,
     height: verticalScale(300),
+  },
+  indicatorContainer: {
+    position: "absolute",
+    bottom: verticalScale(16),
+    alignSelf: "center",
+    paddingHorizontal: horizontalScale(12),
+    paddingVertical: verticalScale(8),
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    borderRadius: 20,
+  },
+  indicatorText: {
+    color: colors.white,
+    fontSize: scaleFont(14),
+    fontFamily: FONT_600_MONTSERRAT,
   },
   containerButtons: {
     paddingHorizontal: horizontalScale(16),
