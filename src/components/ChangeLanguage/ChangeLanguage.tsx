@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // types
@@ -16,6 +16,7 @@ import { Loader } from "../../providers/LoadingProvider/components/Loader/Loader
 import { useLoadingProvider } from "../../providers/LoadingProvider/LoadingProvider";
 
 // components
+import { ModalUniversal } from "../ModalUniversal/ModalUniversal";
 import { ImageCache } from "../ImageCache/ImageCache";
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
 import { CheckboxPoint } from "../CheckboxPoint/CheckboxPoint";
@@ -99,101 +100,82 @@ export const ChangeLanguage: FunctionComponent = () => {
         ) : null}
         <Text style={styles.titleLanguage}>{showLanguage}</Text>
       </TouchableOpacity>
-      <Modal
+      <ModalUniversal
         visible={isShowChangeLanguage}
-        transparent
-        animationType="fade"
-        onRequestClose={() => {
+        onClose={() => {
           setIsShowChangeLanguage(false);
           setValueSearch("");
         }}
+        styleContainer={styles.modalOverlay}
+        animationType="fade"
       >
-        <TouchableOpacity
-          style={styles.modalOverlay}
-          activeOpacity={1}
-          onPress={() => {
-            setIsShowChangeLanguage(false);
-            setValueSearch("");
-          }}
-        >
-          <TouchableOpacity
-            activeOpacity={1}
-            onPress={(e) => e.stopPropagation()}
-            style={styles.modalContent}
-          >
-            <View style={styles.containerModal}>
-              <Shadow stretch>
-                <View style={styles.headerModal}>
-                  <View style={styles.headerTitleContainer}>
-                    <Text style={styles.titleModal}>
-                      {i18n._("Language selection")}
-                    </Text>
-                    <TouchableOpacity
-                      onPress={() => {
-                        setIsShowChangeLanguage(false);
-                        setValueSearch("");
-                      }}
-                      style={styles.closeButton}
-                    >
-                      <IconClose
-                        width={24}
-                        height={24}
-                        fill={colors.grayFuscous}
-                      />
-                    </TouchableOpacity>
-                  </View>
-                  <LinearGradientCustom style={styles.lineHeader} />
-                  <Input
-                    placeholder={i18n._("Enter text to search")}
-                    accessibilityLabel={i18n._(
-                      "Press and enter to search for a city"
-                    )}
-                    value={valueSearch}
-                    onChange={setValueSearch}
-                    labelStyle={styles.titleInput}
-                    containerStyle={styles.containerInput}
-                    wrapperStyle={styles.wrapperInput}
-                    customStyles={styles.input}
-                    InputIcon={<IconSearchInput width={18} height={18} />}
-                  />
-                </View>
-              </Shadow>
-              <ScrollView
-                style={styles.scrollView}
-                contentContainerStyle={styles.containerScroll}
-              >
-                {showListLanguage.map((languagesItem) => (
-                  <TouchableOpacity
-                    key={`language-${languagesItem.key}`}
-                    style={styles.containerItemList}
-                    onPress={() => {
-                      setSelectLanguage(languagesItem.key);
-                    }}
-                  >
-                    <Text style={styles.titleItemList}>
-                      {languagesItem.title} ({languagesItem.native})
-                    </Text>
-                    <CheckboxPoint
-                      isSelect={languagesItem.key === selectLanguage}
-                    />
-                  </TouchableOpacity>
-                ))}
-                <View style={styles.containerEmpty} />
-              </ScrollView>
-              <Shadow stretch>
-                <View style={styles.containerButtons}>
-                  <ButtonCustom
-                    disabled={selectLanguage === null}
-                    title={i18n._("Select")}
-                    onSubmit={onChangeLanguage}
-                  />
-                </View>
-              </Shadow>
-              {isLoading ? <Loader /> : null}
+        <View style={styles.containerModal}>
+          <Shadow stretch>
+            <View style={styles.headerModal}>
+              <View style={styles.headerTitleContainer}>
+                <Text style={styles.titleModal}>
+                  {i18n._("Language selection")}
+                </Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    setIsShowChangeLanguage(false);
+                    setValueSearch("");
+                  }}
+                  style={styles.closeButton}
+                >
+                  <IconClose width={24} height={24} fill={colors.grayFuscous} />
+                </TouchableOpacity>
+              </View>
+              <LinearGradientCustom style={styles.lineHeader} />
+              <Input
+                placeholder={i18n._("Enter text to search")}
+                accessibilityLabel={i18n._(
+                  "Press and enter to search for a city"
+                )}
+                value={valueSearch}
+                onChange={setValueSearch}
+                labelStyle={styles.titleInput}
+                containerStyle={styles.containerInput}
+                wrapperStyle={styles.wrapperInput}
+                customStyles={styles.input}
+                InputIcon={<IconSearchInput width={18} height={18} />}
+              />
             </View>
-          </TouchableOpacity>
-        </TouchableOpacity>
-      </Modal>
+          </Shadow>
+          <ScrollView
+            style={styles.scrollView}
+            contentContainerStyle={styles.containerScroll}
+          >
+            {showListLanguage.map((languagesItem) => (
+              <TouchableOpacity
+                key={`language-${languagesItem.key}`}
+                style={styles.containerItemList}
+                onPress={() => {
+                  setSelectLanguage(languagesItem.key);
+                }}
+              >
+                <Text style={styles.titleItemList}>
+                  {languagesItem.title} ({languagesItem.native})
+                </Text>
+                <CheckboxPoint
+                  isSelect={languagesItem.key === selectLanguage}
+                />
+              </TouchableOpacity>
+            ))}
+            <View style={styles.containerEmpty} />
+          </ScrollView>
+          <Shadow stretch>
+            <View style={styles.containerButtons}>
+              <ButtonCustom
+                disabled={selectLanguage === null}
+                title={i18n._("Select")}
+                onSubmit={onChangeLanguage}
+              />
+            </View>
+          </Shadow>
+          {isLoading ? <Loader /> : null}
+        </View>
+      </ModalUniversal>
     </>
   );
 };
