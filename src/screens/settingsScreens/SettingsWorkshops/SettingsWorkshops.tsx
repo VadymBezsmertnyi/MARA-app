@@ -8,6 +8,7 @@ import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useGetWorkshopsUserQuery } from "../../../storeRedux/api";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -47,10 +48,14 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   const { infoWorkshops } = useSubscriptionProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
 
-  const typeItem = useMemo(() => i18n._("workshops"), []);
+  const { data: workshopsData, isLoading } = useGetWorkshopsUserQuery(
+    { userId: userData?._id || "" },
+    { skip: !userData?._id }
+  );
+
   const workshopsUser = useMemo(
-    () => userData?.workshopsIds || [],
-    [userData?.workshopsIds]
+    () => workshopsData?.workshops || [],
+    [workshopsData?.workshops]
   );
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
