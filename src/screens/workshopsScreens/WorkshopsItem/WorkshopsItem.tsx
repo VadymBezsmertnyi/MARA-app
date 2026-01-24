@@ -219,22 +219,16 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         scrollEventThrottle={16}
       >
         <View style={styles.containerMain}>
-          <View style={styles.containerInfo}>
+          {selectWorkshop?.imageFiles.length ? (
             <View style={styles.containerSlider}>
-              {selectWorkshop?.imageFiles.length ? (
-                <CustomSlider
-                  images={selectWorkshop.imageFiles}
-                  loop
-                  styleScroll={(props) => [props, styles.imagesScroll]}
-                />
-              ) : (
-                <ImageCache
-                  imageSrc={WorkshopPlaceholder}
-                  contentFit="contain"
-                  style={StyleSheet.absoluteFillObject}
-                />
-              )}
+              <CustomSlider
+                images={selectWorkshop.imageFiles}
+                loop
+                styleScroll={(props) => [props, styles.imagesScroll]}
+              />
             </View>
+          ) : null}
+          <View style={styles.containerInfo}>
             <View style={styles.info}>
               <View style={styles.titles}>
                 <Text style={styles.titleInfo}>{selectWorkshop?.title}</Text>
@@ -246,18 +240,25 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
                 containerStyle={styles.containerDistance}
               />
             </View>
+            {!distance && location && (
+              <Text style={styles.geoDisabledText}>
+                {i18n._("Unable to calculate distance, location is disabled")}
+              </Text>
+            )}
             <View style={styles.containerContacts}>
               <View style={styles.containerPhone}>
                 <View style={styles.containerIcon}>
-                  <RadixIconsCalendar width={24} height={24} />
+                  <RadixIconsCalendar width={20} height={20} />
                 </View>
-                <Text style={styles.titlePhone}>{showPhone}</Text>
+                <Text style={styles.titlePhone} numberOfLines={1}>
+                  {showPhone}
+                </Text>
               </View>
               <View style={styles.containerIconsService}>
                 {selectWorkshop?.autoTypesWorks.length ? (
                   <IconAutoService
-                    width={40}
-                    height={40}
+                    width={32}
+                    height={32}
                     style={
                       selectWorkshop?.motoTypesWorks.length
                         ? styles.autoIcon
@@ -266,7 +267,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
                   />
                 ) : null}
                 {selectWorkshop?.motoTypesWorks.length ? (
-                  <IconMotoService width={40} height={40} />
+                  <IconMotoService width={32} height={32} />
                 ) : null}
               </View>
             </View>
