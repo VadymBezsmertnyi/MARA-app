@@ -59,62 +59,60 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
       animationType="fade"
     >
       <View style={styles.containerModalTypeWork}>
-            <Shadow stretch>
-              <View style={styles.containerHeaderTypeWork}>
-                <Text style={styles.titleModalType}>
-                  {i18n._("Types of work for automobile transport:")}
-                </Text>
-                <LinearGradientCustom style={styles.lineModalType} />
-              </View>
-            </Shadow>
-            <ScrollView
-              style={styles.scrollView}
-              contentContainerStyle={styles.scrollViewContent}
-              nestedScrollEnabled
-            >
-              <View style={styles.containerTypesWork}>
-                {typesWorkServices.auto.map((workAuto) => {
-                  const isSelect = selectAutoTypesWorks.includes(workAuto.id);
-                  return (
-                    <View
-                      key={`auto-work-${workAuto.id}`}
-                      style={styles.containerTypeWork}
-                    >
-                      <View style={styles.containerTitlesTypeWork}>
-                        <Text style={styles.titleTypeWork}>
-                          {workAuto.title}
-                        </Text>
-                        <Text style={styles.subTitleTypeWork}>
-                          {workAuto.description}
-                        </Text>
-                      </View>
-                      <CheckboxClassic
-                        isGradient
-                        accessibilityLabel={i18n._(
-                          "Select type work auto {nameTypeWork}",
-                          { nameTypeWork: workAuto.title }
-                        )}
-                        check={isSelect}
-                        setCheck={() => {
-                          onSelectAutoTypeWork(workAuto);
-                        }}
-                      />
-                    </View>
-                  );
-                })}
-              </View>
-            </ScrollView>
-            <Shadow stretch>
-              <View style={styles.containerSubmitModalTypeWork}>
-                <ButtonCustom
-                  disabled={selectAutoTypesWorks.length === 0}
-                  accessibilityLabel={i18n._("Select")}
-                  title={i18n._("Select")}
-                  onSubmit={onSubmit}
-                />
-              </View>
-            </Shadow>
+        <Shadow stretch>
+          <View style={styles.containerHeaderTypeWork}>
+            <Text style={styles.titleModalType}>
+              {i18n._("Types of work for automobile transport:")}
+            </Text>
+            <LinearGradientCustom style={styles.lineModalType} />
           </View>
-        </ModalUniversal>
+        </Shadow>
+        <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollViewContent}
+          nestedScrollEnabled
+        >
+          <View style={styles.containerTypesWork}>
+            {typesWorkServices.auto.map((workAuto) => {
+              const isSelect = selectAutoTypesWorks.includes(workAuto.id);
+              return (
+                <View
+                  key={`auto-work-${workAuto.id}`}
+                  style={styles.containerTypeWork}
+                >
+                  <View style={styles.containerTitlesTypeWork}>
+                    <Text style={styles.titleTypeWork}>{workAuto.title}</Text>
+                    <Text style={styles.subTitleTypeWork}>
+                      {workAuto.description}
+                    </Text>
+                  </View>
+                  <CheckboxClassic
+                    isGradient
+                    accessibilityLabel={i18n._(
+                      "Select type work auto {nameTypeWork}",
+                      { nameTypeWork: workAuto.title }
+                    )}
+                    check={isSelect}
+                    setCheck={() => {
+                      onSelectAutoTypeWork(workAuto);
+                    }}
+                  />
+                </View>
+              );
+            })}
+          </View>
+        </ScrollView>
+        <Shadow stretch>
+          <View style={styles.containerSubmitModalTypeWork}>
+            <ButtonCustom
+              disabled={selectAutoTypesWorks.length === 0}
+              accessibilityLabel={i18n._("Select")}
+              title={i18n._("Select")}
+              onSubmit={onSubmit}
+            />
+          </View>
+        </Shadow>
+      </View>
+    </ModalUniversal>
   );
 };

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // types
@@ -13,6 +13,7 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { usePlacesProvider } from "../../providers/PlacesProvider/PlacesProvider";
 
 // components
+import { ModalUniversal } from "../ModalUniversal/ModalUniversal";
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
 import { Input } from "../Input/Input";
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
@@ -368,64 +369,50 @@ export const ModalSheetPlaceCheckboxes: FunctionComponent<
   }, [isOpen]);
 
   return (
-    <Modal
+    <ModalUniversal
       visible={isOpen}
-      transparent
+      onClose={() => onClose()}
+      styleContainer={styles.modalOverlay}
       animationType="fade"
-      onRequestClose={() => onClose()}
     >
-      <TouchableOpacity
-        style={styles.modalOverlay}
-        activeOpacity={1}
-        onPress={() => onClose()}
-      >
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={(e) => e.stopPropagation()}
-          style={styles.modalContent}
-        >
-          <View style={styles.container}>
-            <Shadow stretch>
-              <View style={styles.containerHeader}>
-                <Text style={styles.title}>{title}</Text>
-                <LinearGradientCustom style={styles.lineHeader} />
-                <Input
-                  isSelect
-                  label={i18n._("Select country")}
-                  placeholder={i18n._("Enter text to search")}
-                  value={search}
-                  onChange={setSearch}
-                  InputIcon={<IconSearchInput width={26} height={26} />}
-                  containerStyle={styles.inputSearch}
-                />
-              </View>
-            </Shadow>
-            {showElement}
-            <View>
-              <Shadow stretch>
-                <View style={styles.containerSubmitModalTypeWork}>
-                  <ButtonCustom
-                    accessibilityLabel={
-                      !isSelectStep ? i18n._("Select") : i18n._("Continue")
-                    }
-                    title={
-                      !isSelectStep ? i18n._("Select") : i18n._("Continue")
-                    }
-                    onSubmit={onPressNext}
-                  />
-                  <ButtonCustom
-                    type="transparent"
-                    disabled={false}
-                    accessibilityLabel={i18n._("Back")}
-                    title={i18n._("Back")}
-                    onSubmit={onPressBack}
-                  />
-                </View>
-              </Shadow>
-            </View>
+      <View style={styles.container}>
+        <Shadow stretch>
+          <View style={styles.containerHeader}>
+            <Text style={styles.title}>{title}</Text>
+            <LinearGradientCustom style={styles.lineHeader} />
+            <Input
+              isSelect
+              label={i18n._("Select country")}
+              placeholder={i18n._("Enter text to search")}
+              value={search}
+              onChange={setSearch}
+              InputIcon={<IconSearchInput width={26} height={26} />}
+              containerStyle={styles.inputSearch}
+            />
           </View>
-        </TouchableOpacity>
-      </TouchableOpacity>
-    </Modal>
+        </Shadow>
+        {showElement}
+        <View>
+          <Shadow stretch>
+            <View style={styles.containerSubmitModalTypeWork}>
+              <ButtonCustom
+                accessibilityLabel={
+                  !isSelectStep ? i18n._("Select") : i18n._("Continue")
+                }
+                title={!isSelectStep ? i18n._("Select") : i18n._("Continue")}
+                onSubmit={onPressNext}
+              />
+              <ButtonCustom
+                type="transparent"
+                disabled={false}
+                accessibilityLabel={i18n._("Back")}
+                title={i18n._("Back")}
+                onSubmit={onPressBack}
+              />
+            </View>
+          </Shadow>
+        </View>
+      </View>
+    </ModalUniversal>
   );
 };
