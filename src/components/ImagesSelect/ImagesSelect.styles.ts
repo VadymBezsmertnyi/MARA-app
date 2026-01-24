@@ -1,4 +1,8 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../styles/colors";
+
+const PREVIEW_SIZE = 120;
+const SEPARATOR_WIDTH = 12;
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,14 +14,20 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   separator: {
-    width: 12,
+    width: SEPARATOR_WIDTH,
   },
   image: {
-    width: 120,
-    height: 120,
+    width: PREVIEW_SIZE,
+    height: PREVIEW_SIZE,
     borderRadius: 8,
   },
   addButton: {
-    marginRight: 12,
+    width: PREVIEW_SIZE,
+    height: PREVIEW_SIZE,
+    borderRadius: 8,
+    backgroundColor: colors.grayMercury,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: SEPARATOR_WIDTH,
   },
 });

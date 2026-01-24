@@ -72,7 +72,7 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
 
     return (
       <TouchableOpacity onPress={pickImage} style={styles.addButton}>
-        <IconAddEvent width={48} height={48} />
+        <IconAddEvent width={56} height={56} />
       </TouchableOpacity>
     );
   };
@@ -83,7 +83,11 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
         key={`image-thumbnail-${index}`}
         onPress={() => handleImagePress(index)}
       >
-        <ImageCache imageSrc={image.url} style={styles.image} />
+        <ImageCache
+          contentFit="contain"
+          imageSrc={image.url}
+          style={styles.image}
+        />
       </TouchableOpacity>
     );
   };
