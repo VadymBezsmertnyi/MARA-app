@@ -55,7 +55,11 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const { i18n } = useLocalesProvider();
   const { infoWorkshops } = useSubscriptionProvider();
   const { heightTabBar } = useThemeProvider();
-  const { workshopsList: workshops, pagination } = useWorkshopsSelector();
+  const {
+    workshopsList: workshops,
+    pagination,
+    maxDistance = 5,
+  } = useWorkshopsSelector();
   const { location } = useMapProvider();
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
@@ -86,11 +90,6 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   );
 
   const { isLoading } = useGetWorkshopsQuery(queryParams);
-
-  const maxDistance = useMemo(() => {
-    if (pagination?.total === 0) return 5;
-    return 200;
-  }, [pagination]);
 
   const hasMorePages = useMemo(
     () => pagination && pagination.page < pagination.totalPages,
