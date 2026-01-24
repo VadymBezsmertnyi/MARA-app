@@ -278,7 +278,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       const clearPhoneNumber = getClearValue(phoneNumber);
       const currentImageFiles = images.map((image) => ({
         _id: image._id || "",
-        url: image.url || "",
+        uri: image.url,
         width: image.width,
         height: image.height,
       }));

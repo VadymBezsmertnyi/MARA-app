@@ -39,15 +39,23 @@ export type TAddCommentRequest = z.infer<typeof addCommentRequestSchema>;
 export type TChangeCommentRequest = z.infer<typeof changeCommentRequestSchema>;
 export type TWorkshopsState = z.infer<typeof workshopsStateSchema>;
 
+type ImageFileType =
+  | ImagePickerAsset
+  | {
+      _id?: string;
+      url?: string;
+      uri?: string;
+    };
+
 export interface IAddWorkshopRequest {
   body: TAddWorkshopRequest & {
-    imageFiles?: Array<ImagePickerAsset | { _id?: string; url: string }>;
+    imageFiles?: Array<ImageFileType>;
   };
 }
 
 export interface IChangeWorkshopRequest {
   body: TChangeWorkshopRequest & {
-    imageFiles?: Array<ImagePickerAsset | { _id?: string; url: string }>;
+    imageFiles?: Array<ImageFileType>;
   };
 }
 

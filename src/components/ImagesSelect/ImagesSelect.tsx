@@ -13,6 +13,9 @@ import { IconAddEvent } from "../../icons/components";
 import { ImageCache } from "../ImageCache/ImageCache";
 import { ImageViewerModal } from "../ImageViewerModal/ImageViewerModal";
 
+// helps
+import { compressToMaxSize } from "../../helps/compressImage";
+
 // styles
 import { styles } from "./ImagesSelect.styles";
 
@@ -32,27 +35,38 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
 
   const pickImage = async () => {
     setLoading(true);
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ["images"],
-      aspect: [4, 3],
-      quality: 1,
-      allowsMultipleSelection: true,
-    });
-
-    if (!result.canceled) {
-      const newImages = result.assets.map((asset) => ({
-        ...asset,
-        url: asset.uri,
-      }));
-
-      setImages((state) => {
-        const combined = [...state, ...newImages];
-        // Забезпечуємо, що не більше 6 фото
-        return combined.slice(0, 6);
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ["images"],
+        aspect: [4, 3],
+        quality: 1,
+        allowsMultipleSelection: true,
       });
-    }
 
-    setLoading(false);
+      if (!result.canceled) {
+        const compressedAssets = await Promise.all(
+          result.assets.map(async (asset) => {
+            const compressResult = await compressToMaxSize(asset.uri);
+            return {
+              ...asset,
+              url: compressResult.uri,
+              uri: compressResult.uri,
+              width: compressResult.width ?? asset.width,
+              height: compressResult.height ?? asset.height,
+            };
+          })
+        );
+
+        setImages((state) => {
+          const combined = [...state, ...compressedAssets];
+          return combined.slice(0, 6);
+        });
+      }
+    } catch (error) {
+      console.warn("[ImagesSelect] Error picking images:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleImagePress = (index: number) => {
