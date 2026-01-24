@@ -210,7 +210,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         }
         onPressLeftElement={() => {
           if (!route.params?.isMap) navigation.goBack();
-          navigation.navigate(PATHS_MAIN_TABS.map);
+          else navigation.navigate(PATHS_MAIN_TABS.map);
         }}
       />
       <ScrollView
