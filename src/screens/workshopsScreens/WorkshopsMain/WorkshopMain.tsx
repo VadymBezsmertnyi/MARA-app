@@ -139,7 +139,10 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
       debounceTimerRef.current = setTimeout(() => {
         setDebouncedWorkshopName(workshopName);
       }, 500);
-    else setDebouncedWorkshopName("");
+    else {
+      setDebouncedWorkshopName("");
+      if (!workshopName) setPage(1);
+    }
 
     return () => {
       if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
@@ -174,7 +177,11 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
         rightStyle={styles.containerRightHeader}
       />
       <View style={styles.container}>
-        {workshops.length ? (
+        {workshops.length > 0 ||
+        workshopName ||
+        debouncedWorkshopName ||
+        filters !== null ||
+        sort !== null ? (
           <View style={styles.search}>
             <Input
               value={workshopName}
