@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useMemo, useState, useEffect } from "react";
+import React, {
+  FunctionComponent,
+  useMemo,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
 import { Modal, ScrollView, Text, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";
@@ -64,12 +70,14 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");
+  const [debouncedWorkshopName, setDebouncedWorkshopName] = useState("");
   const [filters, setFilters] = useState<TypeFilters | null>(null);
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
   );
   const [page, setPage] = useState(1);
   const limit = 20;
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const queryParams = useMemo(
     () => ({
@@ -78,15 +86,17 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
       ...(sort && { sort }),
       ...(filters?.moto !== undefined && { moto: filters.moto }),
       ...(filters?.auto !== undefined && { auto: filters.auto }),
-      ...(filters?.maxDistance && { maxDistance: filters.maxDistance }),
+      ...(filters?.maxDistance
+        ? { maxDistance: filters.maxDistance }
+        : { maxDistance }),
       ...(filters?.minRating !== undefined && { minRating: filters.minRating }),
-      ...(workshopName && { workshopName }),
+      ...(debouncedWorkshopName && { workshopName: debouncedWorkshopName }),
       ...(location && {
         latitude: location.latitude,
         longitude: location.longitude,
       }),
     }),
-    [page, limit, sort, filters, workshopName, location]
+    [page, limit, sort, filters, debouncedWorkshopName, location, maxDistance]
   );
 
   const { isLoading } = useGetWorkshopsQuery(queryParams);
@@ -124,8 +134,21 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   };
 
   useEffect(() => {
-    if (sort !== null || filters !== null || workshopName) setPage(1);
-  }, [sort, filters, workshopName]);
+    if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    if (workshopName.length >= 3)
+      debounceTimerRef.current = setTimeout(() => {
+        setDebouncedWorkshopName(workshopName);
+      }, 500);
+    else setDebouncedWorkshopName("");
+
+    return () => {
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    };
+  }, [workshopName]);
+
+  useEffect(() => {
+    if (sort !== null || filters !== null || debouncedWorkshopName) setPage(1);
+  }, [sort, filters, debouncedWorkshopName]);
 
   return (
     <>
@@ -217,7 +240,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             })
           ) : pagination &&
             pagination.total === 0 &&
-            (sort !== null || filters !== null || workshopName) ? (
+            (sort !== null || filters !== null || debouncedWorkshopName) ? (
             <View style={styles.containerNotList}>
               <ImageCache
                 contentFit="contain"
