@@ -141,7 +141,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
       }, 500);
     else {
       setDebouncedWorkshopName("");
-      if (!workshopName) setPage(1);
+      setPage(1);
     }
 
     return () => {
