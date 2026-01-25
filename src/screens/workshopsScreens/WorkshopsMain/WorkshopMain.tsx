@@ -78,6 +78,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [page, setPage] = useState(1);
   const limit = 20;
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const prevDebouncedWorkshopNameRef = useRef<string>("");
 
   const queryParams = useMemo(
     () => ({
@@ -99,7 +100,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     [page, limit, sort, filters, debouncedWorkshopName, location, maxDistance]
   );
 
-  const { isLoading } = useGetWorkshopsQuery(queryParams);
+  const { isLoading, refetch } = useGetWorkshopsQuery(queryParams);
 
   const hasMorePages = useMemo(
     () => pagination && pagination.page < pagination.totalPages,
@@ -139,10 +140,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
       debounceTimerRef.current = setTimeout(() => {
         setDebouncedWorkshopName(workshopName);
       }, 500);
-    else {
-      setDebouncedWorkshopName("");
-      setPage(1);
-    }
+    else setDebouncedWorkshopName("");
 
     return () => {
       if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
@@ -152,6 +150,17 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   useEffect(() => {
     if (sort !== null || filters !== null || debouncedWorkshopName) setPage(1);
   }, [sort, filters, debouncedWorkshopName]);
+
+  useEffect(() => {
+    if (
+      !debouncedWorkshopName &&
+      prevDebouncedWorkshopNameRef.current &&
+      workshopName.length < 3
+    )
+      refetch();
+
+    prevDebouncedWorkshopNameRef.current = debouncedWorkshopName;
+  }, [debouncedWorkshopName, workshopName, refetch]);
 
   return (
     <>
