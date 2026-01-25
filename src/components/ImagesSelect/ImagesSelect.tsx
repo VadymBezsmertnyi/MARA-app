@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState } from "react";
 import { TouchableOpacity, View, FlatList } from "react-native";
 import * as ImagePicker from "expo-image-picker";
+import Toast from "react-native-toast-message";
 
 // types
 import { ImageFileType } from "../../storeRedux/types";
@@ -22,11 +23,13 @@ import { styles } from "./ImagesSelect.styles";
 type ImagesEventProps = {
   images: ImageFileType[];
   setImages: React.Dispatch<React.SetStateAction<ImageFileType[]>>;
+  maxImages?: number;
 };
 
 export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   images,
   setImages,
+  maxImages = 6,
 }) => {
   const { setLoading } = useLoadingProvider();
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
@@ -34,6 +37,18 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   );
 
   const pickImage = async () => {
+    const existingImages = images.filter((img) => img._id);
+    const newImages = images.filter((img) => !img._id);
+    const availableSlots = maxImages - existingImages.length;
+    const remainingSlots = availableSlots - newImages.length;
+    if (remainingSlots <= 0) {
+      Toast.show({
+        type: "info",
+        text1: `You can only add up to ${maxImages} images.`,
+      });
+      return;
+    }
+
     setLoading(true);
     try {
       const result = await ImagePicker.launchImageLibraryAsync({
@@ -41,9 +56,10 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
         aspect: [4, 3],
         quality: 1,
         allowsMultipleSelection: true,
+        selectionLimit: remainingSlots,
       });
 
-      if (!result.canceled) {
+      if (!result.canceled && result.assets.length > 0) {
         const compressedAssets = await Promise.all(
           result.assets.map(async (asset) => {
             const compressResult = await compressToMaxSize(asset.uri);
@@ -58,8 +74,11 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
         );
 
         setImages((state) => {
-          const combined = [...state, ...compressedAssets];
-          return combined.slice(0, 6);
+          const existingImages = state.filter((img) => img._id);
+          const currentNewImages = state.filter((img) => !img._id);
+          const totalNewImages = [...currentNewImages, ...compressedAssets];
+          const maxNewImages = maxImages - existingImages.length;
+          return [...existingImages, ...totalNewImages.slice(0, maxNewImages)];
         });
       }
     } catch (error) {
@@ -82,7 +101,7 @@ export const ImagesSelect: FunctionComponent<ImagesEventProps> = ({
   };
 
   const renderAddButton = () => {
-    if (images.length >= 6) return null;
+    if (images.length >= maxImages) return null;
 
     return (
       <TouchableOpacity onPress={pickImage} style={styles.addButton}>
