@@ -58,6 +58,15 @@ export const workshopSchema = z.object({
   comments: z.array(commentWorkshopSchema).default([]),
   rating: z.number().nullable(),
   likeUserIds: z.array(populateUserData),
+  verification: z
+    .object({
+      status: z.enum(["pending", "verified", "rejected"]),
+      date: z.number(),
+      reason: z.string().nullable().default(null),
+    })
+    .nullable()
+    .optional()
+    .default(null),
 });
 
 export const workshopsSchema = z.array(workshopSchema);

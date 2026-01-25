@@ -77,6 +77,46 @@ export const ItemSettingWorkshops: FunctionComponent<
           <Text numberOfLines={1} style={styles.title}>
             {workshop.title}
           </Text>
+          {workshop.verification && (
+            <View style={styles.containerStatus}>
+              <View
+                style={[
+                  styles.statusBadge,
+                  workshop.verification.status === "pending" &&
+                    styles.statusPending,
+                  workshop.verification.status === "verified" &&
+                    styles.statusVerified,
+                  workshop.verification.status === "rejected" &&
+                    styles.statusRejected,
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.statusText,
+                    workshop.verification.status === "pending" &&
+                      styles.statusTextPending,
+                    workshop.verification.status === "verified" &&
+                      styles.statusTextVerified,
+                    workshop.verification.status === "rejected" &&
+                      styles.statusTextRejected,
+                  ]}
+                >
+                  {workshop.verification.status === "pending" &&
+                    i18n._("На розгляді")}
+                  {workshop.verification.status === "verified" &&
+                    i18n._("Підтверджено")}
+                  {workshop.verification.status === "rejected" &&
+                    i18n._("Відхилено")}
+                </Text>
+              </View>
+            </View>
+          )}
+          {workshop.verification?.status === "rejected" &&
+            workshop.verification.reason && (
+              <Text style={styles.reasonText} numberOfLines={2}>
+                {workshop.verification.reason}
+              </Text>
+            )}
           <View style={styles.containerIcons}>
             {workshop.autoTypesWorks.length > 0 && (
               <View style={styles.auto}>

@@ -54,4 +54,43 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     color: colors.grayCloudy,
   },
+  containerStatus: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 4,
+  },
+  statusBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 4,
+  },
+  statusText: {
+    fontSize: 10,
+    fontFamily: FONT_600_OPEN_SANS,
+  },
+  statusPending: {
+    backgroundColor: colors.yellow,
+  },
+  statusVerified: {
+    backgroundColor: colors.green,
+  },
+  statusRejected: {
+    backgroundColor: colors.errorRed,
+  },
+  statusTextPending: {
+    color: colors.blackCoffee,
+  },
+  statusTextVerified: {
+    color: colors.white,
+  },
+  statusTextRejected: {
+    color: colors.white,
+  },
+  reasonText: {
+    fontSize: 9,
+    color: colors.errorRed,
+    marginTop: 2,
+    fontStyle: "italic",
+  },
 });
