@@ -45,7 +45,6 @@ export const facebookBDSchema = z.object({
 export const userDataSchema = z.object({
   _id: z.string(),
   isGeoLocation: z.boolean(),
-  isGeoLocationBackground: z.boolean(),
   avatarFile: fileSchema.nullable().default(null),
   email: z.string().nullable(),
   eventsIds: z.array(eventSchema),

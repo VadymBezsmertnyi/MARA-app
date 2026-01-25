@@ -191,14 +191,8 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const onToggleLocation = async () => {
     if (!userData) return;
     const isGeoLocation = !(userData.isGeoLocation || false);
-    const isGeoLocationBackground = isGeoLocation
-      ? userData.isGeoLocationBackground || false
-      : false;
     await editUserMutation({
-      body: {
-        isGeoLocation,
-        isGeoLocationBackground,
-      },
+      body: { isGeoLocation },
       existingUserData: userData,
     });
   };

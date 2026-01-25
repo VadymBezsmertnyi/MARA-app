@@ -40,7 +40,6 @@ export const RegistrationLocation: FunctionComponent = () => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
   const [isGeoLocation, setIsGeolocation] = useState(false);
-  const [isGeoLocationBackground, setIsGeolocationBackground] = useState(false);
   const nameApp = "M.A.R.A.";
 
   const containerStyles: ViewStyle = useMemo(
@@ -80,7 +79,6 @@ export const RegistrationLocation: FunctionComponent = () => {
       const resultSave = await editUserMutation({
         body: {
           isGeoLocation,
-          isGeoLocationBackground,
           cityUser: city,
         },
         existingUserData: userData,
@@ -113,30 +111,6 @@ export const RegistrationLocation: FunctionComponent = () => {
               accessibilityLabel={i18n._("Toggle on your location")}
               check={isGeoLocation}
               setCheck={setIsGeolocation}
-            />
-          </View>
-          <View
-            style={[
-              styles.containerLocation,
-              { opacity: isGeoLocation ? 1 : 0.5 },
-              // TODO: will do later
-              { opacity: 0 },
-            ]}
-          >
-            <Text style={styles.titleLocation}>
-              {i18n._(
-                "Allow the {nameApp} app to determine my location in the background",
-                { nameApp }
-              )}
-            </Text>
-            <Checkbox
-              // TODO: will do later
-              disabled
-              accessibilityLabel={i18n._(
-                "Toggle on your location in the background"
-              )}
-              check={isGeoLocationBackground}
-              setCheck={setIsGeolocationBackground}
             />
           </View>
           <View style={styles.containerCity}>

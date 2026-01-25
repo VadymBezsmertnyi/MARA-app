@@ -20,7 +20,6 @@ import { usePermissionsProviderState } from "./usePermissionsProvider";
 
 type PermissionsContext = {
   locationForegroundPermission: Location.PermissionStatus | null;
-  locationBackgroundPermission: Location.PermissionStatus | null;
 };
 
 type PermissionsProviderProps = {
@@ -36,11 +35,8 @@ const PermissionsProvider: FunctionComponent<PermissionsProviderProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { userData } = useUserSelector();
-  const { titleLocationBackground, titleLocationForeground } =
-    usePermissionsProviderState();
+  const { titleLocationForeground } = usePermissionsProviderState();
   const [locationForegroundPermission, setLocationForegroundPermission] =
-    useState<Location.PermissionStatus | null>(null);
-  const [locationBackgroundPermission, setLocationBackgroundPermission] =
     useState<Location.PermissionStatus | null>(null);
 
   const checkPermissionForeground = async () => {
@@ -75,58 +71,15 @@ const PermissionsProvider: FunctionComponent<PermissionsProviderProps> = ({
     return statusForeground === Location.PermissionStatus.GRANTED;
   };
 
-  const checkPermissionBackground = async () => {
-    const { status: statusBackground } =
-      await Location.requestBackgroundPermissionsAsync();
-    if (statusBackground !== Location.PermissionStatus.GRANTED)
-      await Linking.openSettings();
-    setLocationBackgroundPermission(statusBackground);
-    return statusBackground === Location.PermissionStatus.GRANTED;
-  };
-
-  const getPermissionsLocationBackground = async () => {
-    const { status: statusBackground } =
-      await Location.getBackgroundPermissionsAsync();
-    setLocationBackgroundPermission(statusBackground);
-    if (
-      statusBackground !== Location.PermissionStatus.GRANTED &&
-      userData?.isGeoLocationBackground
-    )
-      Alert.alert(titleLocationBackground, undefined, [
-        {
-          text: i18n._("Cancel"),
-          style: "cancel",
-        },
-        {
-          text: i18n._("Accept"),
-          onPress: async () => {
-            await checkPermissionBackground();
-          },
-        },
-      ]);
-    return statusBackground === Location.PermissionStatus.GRANTED;
-  };
-
   const valueContext: PermissionsContext = useMemo(
-    () => ({ locationForegroundPermission, locationBackgroundPermission }),
-    [locationForegroundPermission, locationBackgroundPermission]
+    () => ({ locationForegroundPermission }),
+    [locationForegroundPermission]
   );
 
   useEffect(() => {
     if (userData?.isGeoLocation && locationForegroundPermission === null)
       getPermissionsLocationForeground();
-    if (
-      locationForegroundPermission === Location.PermissionStatus.GRANTED &&
-      userData?.isGeoLocationBackground &&
-      locationBackgroundPermission === null
-    )
-      getPermissionsLocationBackground();
-  }, [
-    userData?.isGeoLocation,
-    locationForegroundPermission,
-    userData?.isGeoLocationBackground,
-    locationBackgroundPermission,
-  ]);
+  }, [userData?.isGeoLocation, locationForegroundPermission]);
 
   return (
     <permissionsContext.Provider value={valueContext}>

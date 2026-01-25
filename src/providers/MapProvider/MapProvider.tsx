@@ -6,9 +6,7 @@ import React, {
   useState,
 } from "react";
 import { Linking } from "react-native";
-import * as TaskManager from "expo-task-manager";
 import * as Location from "expo-location";
-import * as BackgroundFetch from "expo-background-fetch";
 import { z } from "zod";
 
 // redux
@@ -31,8 +29,6 @@ type MapProviderProps = {
 };
 
 const INTERVAL_GET_LOCATION = 15000;
-const LOCATION_TASK_NAME = "background-location-task";
-const INTERVAL_BACKGROUND = 60;
 
 export const mapContext = React.createContext({} as MapContext);
 
@@ -81,53 +77,6 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
     if (!countryUser) setCountryUser(result);
   };
 
-  const onIntervalGetLocation = () => {
-    const intervalId = setInterval(getLocation, INTERVAL_GET_LOCATION);
-    setStartGetGeolocation(true);
-    getLocation();
-    return () => {
-      clearInterval(intervalId);
-    };
-  };
-
-  const stopGetLocationBackground = async () => {
-    const tasks = await TaskManager.getRegisteredTasksAsync();
-    if (!tasks.find((f) => f.taskName === LOCATION_TASK_NAME)) return;
-    await BackgroundFetch.unregisterTaskAsync(LOCATION_TASK_NAME);
-  };
-
-  const startGetLocationBackground = async () => {
-    TaskManager.defineTask<{ locations: Location.LocationObject[] }>(
-      LOCATION_TASK_NAME,
-      async ({ data }) => {
-        if (data) {
-          const { locations } = data;
-          await getLocation(locations[0]);
-        }
-      }
-    );
-    const status = await BackgroundFetch.getStatusAsync();
-    switch (status) {
-      case BackgroundFetch.BackgroundFetchStatus.Restricted:
-      case BackgroundFetch.BackgroundFetchStatus.Denied:
-        return;
-      default: {
-        let tasks = await TaskManager.getRegisteredTasksAsync();
-        if (tasks.find((f) => f.taskName === LOCATION_TASK_NAME) === null) {
-          await BackgroundFetch.registerTaskAsync(LOCATION_TASK_NAME);
-          tasks = await TaskManager.getRegisteredTasksAsync();
-        }
-
-        await BackgroundFetch.setMinimumIntervalAsync(INTERVAL_BACKGROUND);
-        await BackgroundFetch.registerTaskAsync(LOCATION_TASK_NAME, {
-          minimumInterval: INTERVAL_BACKGROUND,
-          stopOnTerminate: false,
-          startOnBoot: true,
-        });
-      }
-    }
-  };
-
   const valueContext: MapContext = useMemo(
     () => ({ location, setPermission }),
     [location]
@@ -147,20 +96,7 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
   ]);
 
   useEffect(() => {
-    if (
-      locationForegroundPermission === Location.PermissionStatus.GRANTED &&
-      userData?.isGeoLocationBackground &&
-      locationBackgroundPermission === Location.PermissionStatus.GRANTED
-    )
-      startGetLocationBackground();
-  }, [
-    locationForegroundPermission,
-    userData?.isGeoLocationBackground,
-    locationBackgroundPermission,
-  ]);
-
-  useEffect(() => {
-    if (countryUser) onIntervalGetLocation();
+    if (countryUser) getLocation();
   }, [countryUser]);
 
   return (
