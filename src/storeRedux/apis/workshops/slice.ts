@@ -34,10 +34,7 @@ export const workshopsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addMatcher(api.endpoints.getWorkshops.matchPending, (state, action) => {
-        const page = (action.meta.arg as any)?.page || 1;
-        if (page === 1) state.workshopsList = [];
-
+      .addMatcher(api.endpoints.getWorkshops.matchPending, (state) => {
         state.loading = true;
         state.error = null;
       })
@@ -106,8 +103,21 @@ export const workshopsSlice = createSlice({
       .addMatcher(api.endpoints.addWorkshop.matchFulfilled, (state, action) => {
         if (action.payload?.workshop) {
           const newWorkshop = action.payload.workshop;
-          state.workshopsList = [...state.workshopsList, newWorkshop];
-          state.workshopsUserList = [...state.workshopsUserList, newWorkshop];
+          const existingIndex = state.workshopsList.findIndex(
+            (w) => w._id === newWorkshop._id
+          );
+          if (existingIndex >= 0)
+            state.workshopsList[existingIndex] = newWorkshop;
+          else state.workshopsList = [...state.workshopsList, newWorkshop];
+
+          const existingUserIndex = state.workshopsUserList.findIndex(
+            (w) => w._id === newWorkshop._id
+          );
+          if (existingUserIndex >= 0)
+            state.workshopsUserList[existingUserIndex] = newWorkshop;
+          else
+            state.workshopsUserList = [...state.workshopsUserList, newWorkshop];
+
           state.loading = false;
           state.error = null;
         } else {
@@ -128,12 +138,23 @@ export const workshopsSlice = createSlice({
         (state, action) => {
           if (action.payload?.workshop) {
             const updatedWorkshop = action.payload.workshop;
-            state.workshopsList = state.workshopsList.map((workshop) =>
-              workshop._id === updatedWorkshop._id ? updatedWorkshop : workshop
+            const existingIndex = state.workshopsList.findIndex(
+              (w) => w._id === updatedWorkshop._id
             );
-            state.workshopsUserList = state.workshopsUserList.map((workshop) =>
-              workshop._id === updatedWorkshop._id ? updatedWorkshop : workshop
+            if (existingIndex >= 0)
+              state.workshopsList[existingIndex] = updatedWorkshop;
+            else state.workshopsList = [...state.workshopsList, updatedWorkshop];
+
+            const existingUserIndex = state.workshopsUserList.findIndex(
+              (w) => w._id === updatedWorkshop._id
             );
+            if (existingUserIndex >= 0)
+              state.workshopsUserList[existingUserIndex] = updatedWorkshop;
+            else
+              state.workshopsUserList = [
+                ...state.workshopsUserList,
+                updatedWorkshop,
+              ];
             state.loading = false;
             state.error = null;
           } else {
