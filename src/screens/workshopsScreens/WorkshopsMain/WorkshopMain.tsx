@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useRef,
 } from "react";
-import { Modal, ScrollView, Text, View } from "react-native";
+import { Modal, ScrollView, Text, View, RefreshControl } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -18,6 +18,10 @@ import { useGetWorkshopsQuery } from "../../../storeRedux/api";
 // providers
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import {
+  useDropDownAlertProvider,
+  DropdownAlertType,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
@@ -61,6 +65,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const { i18n } = useLocalesProvider();
   const { infoWorkshops } = useSubscriptionProvider();
   const { heightTabBar } = useThemeProvider();
+  const { showMessageServer } = useDropDownAlertProvider();
   const {
     workshopsList: workshops,
     pagination,
@@ -76,9 +81,11 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     null
   );
   const [page, setPage] = useState(1);
+  const [refreshing, setRefreshing] = useState(false);
   const limit = 20;
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const prevDebouncedWorkshopNameRef = useRef<string>("");
+  const lastRefreshTimeRef = useRef<number>(0);
 
   const queryParams = useMemo(
     () => ({
@@ -109,6 +116,24 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
 
   const loadMore = () => {
     if (hasMorePages && !isLoading) setPage((prev) => prev + 1);
+  };
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    const currentTime = Date.now();
+    const timeSinceLastRefresh = currentTime - lastRefreshTimeRef.current;
+    const minRefreshInterval = 10000;
+    if (timeSinceLastRefresh >= minRefreshInterval) {
+      lastRefreshTimeRef.current = currentTime;
+      await refetch();
+    } else {
+      showMessageServer(
+        i18n._("Повідомлення"),
+        i18n._("Зачекайте, будь ласка, перед наступним оновленням"),
+        DropdownAlertType.Info
+      );
+    }
+    setRefreshing(false);
   };
 
   const onClose = () => {
@@ -156,11 +181,18 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
       !debouncedWorkshopName &&
       prevDebouncedWorkshopNameRef.current &&
       workshopName.length < 3
-    )
+    ) {
       refetch();
+      lastRefreshTimeRef.current = Date.now();
+    }
 
     prevDebouncedWorkshopNameRef.current = debouncedWorkshopName;
   }, [debouncedWorkshopName, workshopName, refetch]);
+
+  useEffect(() => {
+    if (!isLoading && lastRefreshTimeRef.current === 0)
+      lastRefreshTimeRef.current = Date.now();
+  }, [isLoading]);
 
   return (
     <>
@@ -215,6 +247,9 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
               paddingBottom: (heightTabBar || 0) + bottom,
             },
           ]}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
           onScroll={({ nativeEvent }) => {
             const { layoutMeasurement, contentOffset, contentSize } =
               nativeEvent;
