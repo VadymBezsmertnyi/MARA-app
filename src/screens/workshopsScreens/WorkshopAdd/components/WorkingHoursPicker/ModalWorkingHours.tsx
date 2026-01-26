@@ -92,67 +92,71 @@ export const ModalWorkingHours: FunctionComponent<ModalWorkingHoursProps> = ({
 
   if (!isOpen) return null;
   return (
-    <ModalUniversal visible={isOpen} onClose={onClose} animationType="fade">
-      <View style={styles.modalContent}>
-        <View style={styles.modalContainer}>
-          <Shadow stretch>
-            <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>{i18n._("Working hours")}</Text>
-              <LinearGradientCustom style={styles.modalLine} />
-            </View>
-          </Shadow>
-          <ScrollView style={styles.modalScrollView}>
-            {ALL_DAYS.map((dayKey) => {
-              const dayValue = workingHours[dayKey];
-              const isWorking = dayValue !== null;
-              const dayName = getDayName(dayKey);
-
-              return (
-                <View key={dayKey} style={styles.dayContainer}>
-                  <CheckboxClassic
-                    check={isWorking}
-                    setCheck={() => handleDayToggle(dayKey)}
-                    containerStyle={styles.checkboxContainer}
-                  />
-                  <Text style={styles.dayLabel}>{dayName.full}</Text>
-                  {isWorking ? (
-                    <View style={styles.timeContainer}>
-                      <TimePicker
-                        value={dayValue.open}
-                        onChange={(time) =>
-                          handleTimeChange(dayKey, "open", time)
-                        }
-                      />
-                      <Text style={styles.timeSeparator}>-</Text>
-                      <TimePicker
-                        value={dayValue.close}
-                        onChange={(time) =>
-                          handleTimeChange(dayKey, "close", time)
-                        }
-                      />
-                    </View>
-                  ) : (
-                    <View style={styles.timeContainer}>
-                      <Text style={styles.timeText}>{i18n._("Day off")}</Text>
-                    </View>
-                  )}
-                </View>
-              );
-            })}
-          </ScrollView>
-          <View style={styles.modalFooter}>
-            <Shadow stretch>
-              <View style={styles.modalFooterContent}>
-                <ButtonCustom title={i18n._("Save")} onSubmit={handleSubmit} />
-                <ButtonCustom
-                  type="transparent"
-                  title={i18n._("Cancel")}
-                  onSubmit={onClose}
-                />
-              </View>
-            </Shadow>
+    <ModalUniversal
+      visible={isOpen}
+      onClose={onClose}
+      styleContainer={styles.modalOverlay}
+      animationType="fade"
+    >
+      <View style={styles.containerModal}>
+        <Shadow stretch>
+          <View style={styles.modalHeader}>
+            <Text style={styles.modalTitle}>{i18n._("Working hours")}</Text>
+            <LinearGradientCustom style={styles.modalLine} />
           </View>
-        </View>
+        </Shadow>
+        <ScrollView
+          style={styles.modalScrollView}
+          contentContainerStyle={styles.modalScrollContent}
+        >
+          {ALL_DAYS.map((dayKey) => {
+            const dayValue = workingHours[dayKey];
+            const isWorking = dayValue !== null;
+            const dayName = getDayName(dayKey);
+
+            return (
+              <View key={dayKey} style={styles.dayContainer}>
+                <CheckboxClassic
+                  check={isWorking}
+                  setCheck={() => handleDayToggle(dayKey)}
+                  containerStyle={styles.checkboxContainer}
+                />
+                <Text style={styles.dayLabel}>{dayName.full}</Text>
+                {isWorking ? (
+                  <View style={styles.timeContainer}>
+                    <TimePicker
+                      value={dayValue.open}
+                      onChange={(time) =>
+                        handleTimeChange(dayKey, "open", time)
+                      }
+                    />
+                    <Text style={styles.timeSeparator}>-</Text>
+                    <TimePicker
+                      value={dayValue.close}
+                      onChange={(time) =>
+                        handleTimeChange(dayKey, "close", time)
+                      }
+                    />
+                  </View>
+                ) : (
+                  <View style={styles.timeContainer}>
+                    <Text style={styles.timeText}>{i18n._("Day off")}</Text>
+                  </View>
+                )}
+              </View>
+            );
+          })}
+        </ScrollView>
+        <Shadow stretch>
+          <View style={styles.modalFooterContent}>
+            <ButtonCustom title={i18n._("Save")} onSubmit={handleSubmit} />
+            <ButtonCustom
+              type="transparent"
+              title={i18n._("Cancel")}
+              onSubmit={onClose}
+            />
+          </View>
+        </Shadow>
       </View>
     </ModalUniversal>
   );

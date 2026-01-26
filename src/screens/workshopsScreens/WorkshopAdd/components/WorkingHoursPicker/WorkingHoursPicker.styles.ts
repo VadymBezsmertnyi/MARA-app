@@ -1,9 +1,17 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import colors from "../../../../../../styles/colors";
 import {
   FONT_600_OPEN_SANS,
+  FONT_600_MONTSERRAT,
   FONT_700_MONTSERRAT,
 } from "../../../../../../styles/constants";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../../../styles/hooks";
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   container: {
@@ -54,14 +62,14 @@ export const styles = StyleSheet.create({
   dayContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 16,
-    paddingBottom: 16,
+    marginBottom: verticalScale(16),
+    paddingBottom: verticalScale(16),
     borderBottomWidth: 1,
     borderBottomColor: colors.platinumGray,
   },
   dayLabel: {
     fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: colors.blackCoffee,
     flex: 1,
   },
@@ -127,45 +135,48 @@ export const styles = StyleSheet.create({
     marginTop: 20,
   },
   modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     justifyContent: "center",
     alignItems: "center",
   },
-  modalContent: {
-    width: "90%",
-    maxHeight: "80%",
+  containerModal: {
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.8,
     backgroundColor: colors.white,
-    borderRadius: 16,
+    borderRadius: horizontalScale(16),
     overflow: "hidden",
-  },
-  modalContainer: {
-    flex: 1,
+    justifyContent: "space-between",
   },
   modalHeader: {
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 12,
+    paddingHorizontal: horizontalScale(16),
+    paddingTop: verticalScale(10),
+    paddingBottom: verticalScale(6),
   },
   modalTitle: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 18,
-    color: colors.blackCoffee,
-    marginBottom: 8,
+    fontFamily: FONT_600_MONTSERRAT,
+    fontSize: scaleFont(18),
+    color: colors.grayFuscous,
+    marginBottom: verticalScale(8),
   },
   modalLine: {
-    height: 2,
-    borderRadius: 1,
-    marginTop: 8,
+    width: "100%",
+    height: verticalScale(1),
+    marginTop: verticalScale(8),
+    marginBottom: verticalScale(4),
   },
   modalScrollView: {
-    paddingHorizontal: 20,
     flex: 1,
   },
-  modalFooter: {
-    paddingTop: 12,
+  modalScrollContent: {
+    paddingHorizontal: horizontalScale(16),
+    paddingTop: verticalScale(12),
+    paddingBottom: verticalScale(8),
   },
   modalFooterContent: {
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-    gap: 12,
+    paddingTop: verticalScale(12),
+    paddingHorizontal: horizontalScale(8),
+    paddingBottom: verticalScale(12),
+    gap: verticalScale(12),
   },
 });
