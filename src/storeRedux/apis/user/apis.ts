@@ -2,7 +2,6 @@ import { Builder } from "../../api";
 import {
   TLoginResponse,
   TMeResponse,
-  TEditUserRequest,
   TDeleteUserResponse,
   ILoginFacebookRequest,
   ILoginGoogleRequest,

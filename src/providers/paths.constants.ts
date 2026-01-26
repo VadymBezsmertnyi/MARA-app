@@ -21,6 +21,9 @@ export const PATHS = {
   workshopsDelete: "/workshops/delete/",
   workshopsCommentsAdd: "/workshops/comments/add/",
   workshopsCommentsChange: "/workshops/comments/change/",
+  // sms-verification
+  smsVerificationSend: "/sms-verification/send/",
+  smsVerificationVerify: "/sms-verification/verify/",
   // location
   locationUsers: "/location-users/",
   // places

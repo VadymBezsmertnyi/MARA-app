@@ -31,9 +31,13 @@ import {
   addComment,
   changeComment,
 } from "./apis/workshops/apis";
+import {
+  sendSmsVerification,
+  verifySmsCode,
+} from "./apis/sms-verification/apis";
 
 export type Builder = EndpointBuilder<
-  BaseQueryFn<FetchArgs, unknown, FetchBaseQueryError>,
+  BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError>,
   never,
   "api"
 >;
@@ -66,6 +70,9 @@ export const api = createApi({
     deleteWorkshop: deleteWorkshop(builder),
     addComment: addComment(builder),
     changeComment: changeComment(builder),
+    // SMS Verification APIs
+    sendSmsVerification: sendSmsVerification(builder),
+    verifySmsCode: verifySmsCode(builder),
   }),
 });
 
@@ -99,4 +106,7 @@ export const {
   useDeleteWorkshopMutation,
   useAddCommentMutation,
   useChangeCommentMutation,
+  // SMS Verification Hooks APIs
+  useSendSmsVerificationMutation,
+  useVerifySmsCodeMutation,
 } = api;
