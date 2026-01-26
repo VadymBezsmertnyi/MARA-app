@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import { Modal, Text, TouchableOpacity, View, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
 // types
@@ -13,6 +13,7 @@ import { CheckboxClassic } from "../../../../../components/CheckboxClassic/Check
 import { TimePicker } from "./TimePicker";
 import { LinearGradientCustom } from "../../../../../components/LinearGradientCustom/LinearGradientCustom";
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
+import { ModalUniversal } from "../../../../../components/ModalUniversal/ModalUniversal";
 
 // styles
 import { styles } from "./WorkingHoursPicker.styles";
@@ -85,85 +86,72 @@ export const ModalWorkingHours: FunctionComponent<ModalWorkingHoursProps> = ({
 
   if (!isOpen) return null;
   return (
-    <Modal
+    <ModalUniversal
       visible={isOpen}
-      transparent
+      onClose={onClose}
+      styleContainer={styles.modalOverlay}
       animationType="fade"
-      onRequestClose={onClose}
     >
-      <TouchableOpacity
-        style={styles.modalOverlay}
-        activeOpacity={1}
-        onPress={onClose}
-      >
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={(e) => e.stopPropagation()}
-          style={styles.modalContent}
-        >
-          <View style={styles.modalContainer}>
+      <View style={styles.modalContent}>
+        <View style={styles.modalContainer}>
+          <Shadow stretch>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>{i18n._("Working hours")}</Text>
+              <LinearGradientCustom style={styles.modalLine} />
+            </View>
+          </Shadow>
+          <ScrollView style={styles.modalScrollView}>
+            {DAYS_OF_WEEK.map((day) => {
+              const dayValue = workingHours[day.key];
+              const isWorking = dayValue !== null;
+
+              return (
+                <View key={day.key} style={styles.dayContainer}>
+                  <CheckboxClassic
+                    check={isWorking}
+                    setCheck={() => handleDayToggle(day.key)}
+                    containerStyle={styles.checkboxContainer}
+                  />
+                  <Text style={styles.dayLabel}>{i18n._(day.labelKey)}</Text>
+                  {isWorking ? (
+                    <View style={styles.timeContainer}>
+                      <TimePicker
+                        value={dayValue.open}
+                        onChange={(time) =>
+                          handleTimeChange(day.key, "open", time)
+                        }
+                      />
+                      <Text style={styles.timeSeparator}>-</Text>
+                      <TimePicker
+                        value={dayValue.close}
+                        onChange={(time) =>
+                          handleTimeChange(day.key, "close", time)
+                        }
+                      />
+                    </View>
+                  ) : (
+                    <View style={styles.timeContainer}>
+                      <Text style={styles.timeText}>{i18n._("Day off")}</Text>
+                    </View>
+                  )}
+                </View>
+              );
+            })}
+          </ScrollView>
+          <View style={styles.modalFooter}>
             <Shadow stretch>
-              <View style={styles.modalHeader}>
-                <Text style={styles.modalTitle}>{i18n._("Working hours")}</Text>
-                <LinearGradientCustom style={styles.modalLine} />
+              <View style={styles.modalFooterContent}>
+                <ButtonCustom title={i18n._("Save")} onSubmit={handleSubmit} />
+                <ButtonCustom
+                  type="transparent"
+                  title={i18n._("Cancel")}
+                  onSubmit={onClose}
+                />
               </View>
             </Shadow>
-            <ScrollView style={styles.modalScrollView}>
-              {DAYS_OF_WEEK.map((day) => {
-                const dayValue = workingHours[day.key];
-                const isWorking = dayValue !== null;
-
-                return (
-                  <View key={day.key} style={styles.dayContainer}>
-                    <CheckboxClassic
-                      check={isWorking}
-                      setCheck={() => handleDayToggle(day.key)}
-                      containerStyle={styles.checkboxContainer}
-                    />
-                    <Text style={styles.dayLabel}>{i18n._(day.labelKey)}</Text>
-                    {isWorking ? (
-                      <View style={styles.timeContainer}>
-                        <TimePicker
-                          value={dayValue.open}
-                          onChange={(time) =>
-                            handleTimeChange(day.key, "open", time)
-                          }
-                        />
-                        <Text style={styles.timeSeparator}>-</Text>
-                        <TimePicker
-                          value={dayValue.close}
-                          onChange={(time) =>
-                            handleTimeChange(day.key, "close", time)
-                          }
-                        />
-                      </View>
-                    ) : (
-                      <View style={styles.timeContainer}>
-                        <Text style={styles.timeText}>{i18n._("Day off")}</Text>
-                      </View>
-                    )}
-                  </View>
-                );
-              })}
-            </ScrollView>
-            <View style={styles.modalFooter}>
-              <Shadow stretch>
-                <View style={styles.modalFooterContent}>
-                  <ButtonCustom
-                    title={i18n._("Save")}
-                    onSubmit={handleSubmit}
-                  />
-                  <ButtonCustom
-                    type="transparent"
-                    title={i18n._("Cancel")}
-                    onSubmit={onClose}
-                  />
-                </View>
-              </Shadow>
-            </View>
           </View>
-        </TouchableOpacity>
-      </TouchableOpacity>
-    </Modal>
+        </View>
+      </View>
+    </ModalUniversal>
   );
 };
