@@ -18,7 +18,9 @@ import { useDropDownAlertProvider } from "../../../../../providers/DropDownAlert
 import {
   useSendSmsVerificationMutation,
   useVerifySmsCodeMutation,
+  useLazyGetWorkshopsUserQuery,
 } from "../../../../../storeRedux/api";
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -47,17 +49,18 @@ type ItemSettingWorkshopsProps = {
   workshop: TWorkshop;
   isStart: boolean;
   currentUserId: string | null;
-  onRefresh?: () => void;
 };
 
 export const ItemSettingWorkshops: FunctionComponent<
   ItemSettingWorkshopsProps
-> = ({ workshop, isStart, currentUserId, onRefresh }) => {
+> = ({ workshop, isStart, currentUserId }) => {
   const { i18n } = useLocalesProvider();
   const { showMessageServer } = useDropDownAlertProvider();
   const navigation = useAllNavigation();
-  const [sendSms, { isLoading: sendingSms }] = useSendSmsVerificationMutation();
+  const { userData } = useUserSelector();
+  const [sendSms] = useSendSmsVerificationMutation();
   const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
+  const [getWorkshopsUser] = useLazyGetWorkshopsUserQuery();
   const [showPhoneModal, setShowPhoneModal] = useState(false);
   const [showCodeModal, setShowCodeModal] = useState(false);
   const [codeError, setCodeError] = useState<string | null>(null);
@@ -126,7 +129,7 @@ export const ItemSettingWorkshops: FunctionComponent<
 
     if (result.data?.status === "success") {
       setShowCodeModal(false);
-      if (onRefresh) onRefresh();
+      if (userData?._id) await getWorkshopsUser({ userId: userData._id });
       await showMessageServer(
         i18n._("Success"),
         i18n._("Everything is successful and this is your business"),
