@@ -91,7 +91,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { getErrorText } = useErrors(i18n);
   const { userData } = useUserSelector();
   const { heightTabBar } = useThemeProvider();
-  const { workshopsList: workshops } = useWorkshopsSelector();
+  const { workshopsList: workshops, workshopsUserList: workshopsUser } =
+    useWorkshopsSelector();
   const [addWorkshopMutation] = useAddWorkshopMutation();
   const [changeWorkshopMutation] = useChangeWorkshopMutation();
   const [deleteWorkshopMutation] = useDeleteWorkshopMutation();
@@ -131,7 +132,9 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
 
   const selectWorkshop = useMemo(
     () =>
-      workshops.find((workshop) => workshop._id === params?.workshopId) || null,
+      workshops.find((workshop) => workshop._id === params?.workshopId) ||
+      workshopsUser.find((workshop) => workshop._id === params?.workshopId) ||
+      null,
     [workshops, params]
   );
   const showTitlePlace = useMemo(() => {
