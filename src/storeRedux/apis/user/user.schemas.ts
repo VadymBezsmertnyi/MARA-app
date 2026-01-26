@@ -5,8 +5,6 @@ import {
   placeDbSchema,
   regionDbSchema,
 } from "../../../providers/PlacesProvider/PlacesProvider.schemas";
-import { workshopSchema } from "../workshops/workshops.schemas";
-import { eventSchema } from "../../../providers/EventsProvider/EventsProvider.schemas";
 import {
   subscriptionAdvertSchema,
   subscriptionAdvertUpdateSchema,
@@ -47,8 +45,8 @@ export const userDataSchema = z.object({
   isGeoLocation: z.boolean(),
   avatarFile: fileSchema.nullable().default(null),
   email: z.string().nullable(),
-  eventsIds: z.array(eventSchema),
-  workshopsIds: z.array(workshopSchema),
+  eventsIds: z.array(z.string()),
+  workshopsIds: z.array(z.string()),
   isCheckBiometric: z.boolean().nullable(),
   languageLocal: z.enum(languagesKeys),
   isNewUser: z.boolean(),
