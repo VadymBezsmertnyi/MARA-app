@@ -126,13 +126,13 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     if (timeSinceLastRefresh >= minRefreshInterval) {
       lastRefreshTimeRef.current = currentTime;
       await refetch();
-    } else {
+    } else
       showMessageServer(
-        i18n._("Повідомлення"),
-        i18n._("Зачекайте, будь ласка, перед наступним оновленням"),
+        i18n._("Wait please before the next update"),
+        i18n._("Wait please before the next update"),
         DropdownAlertType.Info
       );
-    }
+
     setRefreshing(false);
   };
 

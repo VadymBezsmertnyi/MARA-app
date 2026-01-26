@@ -102,11 +102,11 @@ export const ItemSettingWorkshops: FunctionComponent<
                   ]}
                 >
                   {workshop.verification.status === "pending" &&
-                    i18n._("На розгляді")}
+                    i18n._("Under review")}
                   {workshop.verification.status === "verified" &&
-                    i18n._("Підтверджено")}
+                    i18n._("Verified")}
                   {workshop.verification.status === "rejected" &&
-                    i18n._("Відхилено")}
+                    i18n._("Rejected")}
                 </Text>
               </View>
             </View>
