@@ -71,7 +71,7 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(14),
     color: colors.blackCoffee,
-    width: horizontalScale(90),
+    width: horizontalScale(85),
   },
   checkboxContainer: {
     marginRight: horizontalScale(8),
@@ -84,12 +84,12 @@ export const styles = StyleSheet.create({
     flexShrink: 0,
   },
   timePicker: {
-    width: horizontalScale(65),
+    minWidth: horizontalScale(85),
     borderWidth: 1,
     borderColor: colors.platinumGray,
     borderRadius: 4,
     paddingVertical: verticalScale(6),
-    paddingHorizontal: horizontalScale(6),
+    paddingHorizontal: horizontalScale(4),
     alignItems: "center",
     justifyContent: "center",
   },
@@ -102,7 +102,7 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(14),
     color: colors.blackCoffee,
-    marginHorizontal: horizontalScale(4),
+    marginHorizontal: horizontalScale(2),
   },
   errorText: {
     fontFamily: FONT_700_MONTSERRAT,

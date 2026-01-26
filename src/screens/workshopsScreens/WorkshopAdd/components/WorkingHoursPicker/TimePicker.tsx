@@ -107,7 +107,9 @@ export const TimePicker: FunctionComponent<TimePickerProps> = ({
         style={[styles.timePicker, disabled && { opacity: 0.5 }]}
         disabled={disabled}
       >
-        <Text style={styles.timeText}>{displayTime}</Text>
+        <Text style={styles.timeText} numberOfLines={1}>
+          {displayTime}
+        </Text>
       </TouchableOpacity>
       <Modal
         style={styles.modal}
