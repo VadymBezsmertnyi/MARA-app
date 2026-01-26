@@ -732,9 +732,31 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         isShow={isShowContactTypeModal}
         onClose={() => setIsShowContactTypeModal(false)}
         onSelect={(type) => {
-          const existingTypes = contacts.map((c) => c.type);
-          if (!existingTypes.includes(type)) {
-            setContacts((prev) => [...prev, { type, value: "" }]);
+          if (type === "phone") {
+            const phoneCount = contacts.filter(
+              (c) => c.type === "phone"
+            ).length;
+            if (phoneCount < 5)
+              setContacts((prev) => [
+                ...prev,
+                { type, value: `+${DEFAULT_CODE_COUNTRY}` },
+              ]);
+            else
+              Toast.show({
+                type: "error",
+                text1: i18n._("Error"),
+                text2: i18n._("You can add up to 5 phone numbers"),
+              });
+          } else {
+            const existingTypes = contacts.map((c) => c.type);
+            if (!existingTypes.includes(type))
+              setContacts((prev) => [...prev, { type, value: "" }]);
+            else
+              Toast.show({
+                type: "error",
+                text1: i18n._("Error"),
+                text2: i18n._("This contact type has already been added"),
+              });
           }
         }}
       />
