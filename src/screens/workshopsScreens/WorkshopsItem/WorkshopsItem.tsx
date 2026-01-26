@@ -27,6 +27,8 @@ import {
   useChangeWorkshopMutation,
   useSendSmsVerificationMutation,
   useVerifySmsCodeMutation,
+  useLazyGetWorkshopsUserQuery,
+  useLazyGetWorkshopByIdQuery,
 } from "../../../storeRedux/api";
 
 // providers
@@ -84,8 +86,10 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const { workshopsList: workshops } = useWorkshopsSelector();
   const { showMessageServer } = useDropDownAlertProvider();
   const [changeWorkshopMutation] = useChangeWorkshopMutation();
-  const [sendSms, { isLoading: sendingSms }] = useSendSmsVerificationMutation();
+  const [sendSms] = useSendSmsVerificationMutation();
   const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
+  const [getWorkshopsUser] = useLazyGetWorkshopsUserQuery();
+  const [getWorkshopById] = useLazyGetWorkshopByIdQuery();
   const { placesDB } = usePlacesProvider();
   const { location } = useMapProvider();
   const { getSharedLink } = useSharingProvider();
@@ -294,6 +298,9 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
 
     if (result.data?.status === "success") {
       setShowCodeModal(false);
+      await getWorkshopById({ workshopId: selectWorkshop._id });
+      if (userData?._id) await getWorkshopsUser({ userId: userData._id });
+
       await showMessageServer(
         i18n._("Success"),
         i18n._("Everything is successful and this is your business"),
