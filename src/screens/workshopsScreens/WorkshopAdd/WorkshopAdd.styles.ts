@@ -32,6 +32,12 @@ export const styles = StyleSheet.create({
     color: colors.blackCoffee,
     marginBottom: verticalScale(4),
   },
+  contactsContainer: {
+    paddingVertical: verticalScale(10),
+  },
+  contactsListContainer: {
+    paddingHorizontal: horizontalScale(5),
+  },
   containerStyleInputButton: {
     backgroundColor: colors.transparent,
     marginTop: 0,
@@ -68,7 +74,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   addContactButtonContainer: {
-    marginTop: verticalScale(10),
+    marginTop: 0,
     height: "auto",
   },
   addContactButton: {

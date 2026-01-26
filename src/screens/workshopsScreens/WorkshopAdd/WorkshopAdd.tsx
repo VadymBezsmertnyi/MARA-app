@@ -530,73 +530,76 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 errorMessage?.description ? errorMessage.description.title : ""
               }
             />
-            <View>
+            <View style={styles.contactsContainer}>
               <Text style={styles.labelContacts}>{i18n._("Contacts")}</Text>
-              {contacts.map((contact, index) => {
-                const isFirstContact = index === 0;
-                const canDelete = !isFirstContact;
-                return (
-                  <View key={`contact-${index}`} style={styles.contactRow}>
-                    <View style={styles.contactInputContainer}>
-                      {contact.type === "phone" ? (
-                        <InputPhone
-                          isRegular
-                          label={i18n._("Phone number")}
-                          phoneNumber={contact.value}
-                          onBlurProp={() => checkValueOnBlur("contacts")}
-                          setPhoneNumber={(value) => {
-                            clearKeyError("contacts");
+              <View style={styles.contactsListContainer}>
+                {contacts.map((contact, index) => {
+                  const isFirstContact = index === 0;
+                  const canDelete = !isFirstContact;
+                  return (
+                    <View key={`contact-${index}`} style={styles.contactRow}>
+                      <View style={styles.contactInputContainer}>
+                        {contact.type === "phone" ? (
+                          <InputPhone
+                            isRegular
+                            label={i18n._("Phone number")}
+                            phoneNumber={contact.value}
+                            onBlurProp={() => checkValueOnBlur("contacts")}
+                            setPhoneNumber={(value) => {
+                              clearKeyError("contacts");
+                              setContacts((prev) =>
+                                prev.map((c, i) =>
+                                  i === index ? { ...c, value } : c
+                                )
+                              );
+                            }}
+                            selectCountryIso={selectCountryIso}
+                            setSelectCountryIso={setSelectCountryIso}
+                            labelStyle={styles.labelInput}
+                            errorMessage={
+                              errorMessage?.contacts && index === 0
+                                ? errorMessage.contacts.title
+                                : ""
+                            }
+                            isErrorMessage={index === 0}
+                          />
+                        ) : (
+                          <Input
+                            isRegular
+                            placeholder={getContactTypeTitle(contact.type)}
+                            label={getContactTypeTitle(contact.type)}
+                            value={contact.value}
+                            onChange={(value) => {
+                              setContacts((prev) =>
+                                prev.map((c, i) =>
+                                  i === index ? { ...c, value } : c
+                                )
+                              );
+                            }}
+                            labelStyle={styles.labelInput}
+                          />
+                        )}
+                      </View>
+                      {canDelete && (
+                        <TouchableOpacity
+                          style={styles.deleteContactIconButton}
+                          onPress={() => {
                             setContacts((prev) =>
-                              prev.map((c, i) =>
-                                i === index ? { ...c, value } : c
-                              )
+                              prev.filter((_, i) => i !== index)
                             );
                           }}
-                          selectCountryIso={selectCountryIso}
-                          setSelectCountryIso={setSelectCountryIso}
-                          labelStyle={styles.labelInput}
-                          errorMessage={
-                            errorMessage?.contacts && index === 0
-                              ? errorMessage.contacts.title
-                              : ""
-                          }
-                        />
-                      ) : (
-                        <Input
-                          isRegular
-                          placeholder={getContactTypeTitle(contact.type)}
-                          label={getContactTypeTitle(contact.type)}
-                          value={contact.value}
-                          onChange={(value) => {
-                            setContacts((prev) =>
-                              prev.map((c, i) =>
-                                i === index ? { ...c, value } : c
-                              )
-                            );
-                          }}
-                          labelStyle={styles.labelInput}
-                        />
+                        >
+                          <MaterialIcons
+                            name="delete"
+                            size={24}
+                            color={colors.errorRed}
+                          />
+                        </TouchableOpacity>
                       )}
                     </View>
-                    {canDelete && (
-                      <TouchableOpacity
-                        style={styles.deleteContactIconButton}
-                        onPress={() => {
-                          setContacts((prev) =>
-                            prev.filter((_, i) => i !== index)
-                          );
-                        }}
-                      >
-                        <MaterialIcons
-                          name="delete"
-                          size={24}
-                          color={colors.errorRed}
-                        />
-                      </TouchableOpacity>
-                    )}
-                  </View>
-                );
-              })}
+                  );
+                })}
+              </View>
               <ButtonCustom
                 type="transparent"
                 title={i18n._("Add contact type")}
@@ -605,28 +608,26 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 styleButton={styles.addContactButton}
                 styleTitle={styles.addContactText}
               />
-              <InputButton
-                isRegular
-                value={valueTypesWorkshops}
-                label={i18n._("Type workshop")}
-                placeholder={i18n._("Select type")}
-                onPress={() => {
-                  setIsShowTypeWorkshops(true);
-                }}
-                containerStyle={styles.containerStyleInputButton}
-                inputWrapperStyle={styles.inputWrapperStyleInputButton}
-                rightElementInput={
-                  <IconArrowRightEvent
-                    width={15}
-                    height={15}
-                    fill={colors.blackCoffee}
-                  />
-                }
-                errorMessage={
-                  errorMessage?.types ? errorMessage.types.title : ""
-                }
-              />
             </View>
+            <InputButton
+              isRegular
+              value={valueTypesWorkshops}
+              label={i18n._("Type workshop")}
+              placeholder={i18n._("Select type")}
+              onPress={() => {
+                setIsShowTypeWorkshops(true);
+              }}
+              containerStyle={styles.containerStyleInputButton}
+              inputWrapperStyle={styles.inputWrapperStyleInputButton}
+              rightElementInput={
+                <IconArrowRightEvent
+                  width={15}
+                  height={15}
+                  fill={colors.blackCoffee}
+                />
+              }
+              errorMessage={errorMessage?.types ? errorMessage.types.title : ""}
+            />
             <InputButton
               isRegular
               isMultiLines
