@@ -44,6 +44,7 @@ type InputProps = {
   containerStyle?: StyleProp<ViewStyle>;
   errorStyle?: StyleProp<TextStyle>;
   onBlurProp?: () => void;
+  isErrorMessage?: boolean;
 };
 
 export const InputPhone = ({
@@ -60,6 +61,7 @@ export const InputPhone = ({
   containerStyle,
   errorStyle,
   onBlurProp,
+  isErrorMessage = true,
 }: InputProps) => {
   const { theme } = useThemeProvider();
   const textPropsPhoneInput = useMemo(
@@ -169,7 +171,7 @@ export const InputPhone = ({
         autoFormat
         renderFlag={renderFlag}
       />
-      <Text style={errorMessageStyles}>{errorMessage}</Text>
+      {isErrorMessage && <Text style={errorMessageStyles}>{errorMessage}</Text>}
     </View>
   );
 };
