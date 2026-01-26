@@ -57,25 +57,25 @@ export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
 
     const parts: string[] = [];
     if (isWeekdaysSame && weekdayHours[0]) {
-      const mon = getDayName("monday", i18n);
-      const fri = getDayName("friday", i18n);
+      const mon = getDayName("monday");
+      const fri = getDayName("friday");
       parts.push(
         `${mon.short}-${fri.short}: ${weekdayHours[0].open} - ${weekdayHours[0].close}`
       );
     } else
       WEEKDAYS.forEach((dayKey) => {
         const hours = value[dayKey];
-        const day = getDayName(dayKey, i18n);
+        const day = getDayName(dayKey);
         if (hours) parts.push(`${day.short}: ${hours.open} - ${hours.close}`);
         else parts.push(`${day.short}: ${i18n._("Day off")}`);
       });
-    const sat = getDayName("saturday", i18n);
+    const sat = getDayName("saturday");
     if (saturdayHours)
       parts.push(
         `${sat.short}: ${saturdayHours.open} - ${saturdayHours.close}`
       );
     else parts.push(`${sat.short}: ${i18n._("Day off")}`);
-    const sun = getDayName("sunday", i18n);
+    const sun = getDayName("sunday");
     if (sundayHours)
       parts.push(`${sun.short}: ${sundayHours.open} - ${sundayHours.close}`);
     else parts.push(`${sun.short}: ${i18n._("Day off")}`);

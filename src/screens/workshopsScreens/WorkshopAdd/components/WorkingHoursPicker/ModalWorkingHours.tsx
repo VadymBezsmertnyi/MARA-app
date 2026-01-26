@@ -105,7 +105,7 @@ export const ModalWorkingHours: FunctionComponent<ModalWorkingHoursProps> = ({
             {ALL_DAYS.map((dayKey) => {
               const dayValue = workingHours[dayKey];
               const isWorking = dayValue !== null;
-              const dayName = getDayName(dayKey, i18n);
+              const dayName = getDayName(dayKey);
 
               return (
                 <View key={dayKey} style={styles.dayContainer}>
