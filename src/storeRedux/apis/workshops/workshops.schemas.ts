@@ -40,6 +40,29 @@ export const commentWorkshopSchema = z.object({
   dateUpdate: z.number().optional(),
 });
 
+export const dayWorkingHoursSchema = z.object({
+  open: z.string().regex(/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/),
+  close: z.string().regex(/^([0-1][0-9]|2[0-3]):[0-5][0-9]$/),
+}).nullable();
+
+export const workingHoursSchema = z.object({
+  monday: dayWorkingHoursSchema,
+  tuesday: dayWorkingHoursSchema,
+  wednesday: dayWorkingHoursSchema,
+  thursday: dayWorkingHoursSchema,
+  friday: dayWorkingHoursSchema,
+  saturday: dayWorkingHoursSchema,
+  sunday: dayWorkingHoursSchema,
+}).default({
+  monday: { open: "08:00", close: "18:00" },
+  tuesday: { open: "08:00", close: "18:00" },
+  wednesday: { open: "08:00", close: "18:00" },
+  thursday: { open: "08:00", close: "18:00" },
+  friday: { open: "08:00", close: "18:00" },
+  saturday: null,
+  sunday: null,
+});
+
 export const workshopSchema = z.object({
   _id: z.string(),
   userId: populateUserData.nullable(),
@@ -67,6 +90,7 @@ export const workshopSchema = z.object({
     .nullable()
     .optional()
     .default(null),
+  workingHours: workingHoursSchema,
 });
 
 export const workshopsSchema = z.array(workshopSchema);
@@ -105,6 +129,7 @@ export const addWorkshopRequestSchema = z.object({
       coordinates: coordinatesSchema.optional(),
     })
     .optional(),
+  workingHours: workingHoursSchema.optional(),
 });
 
 export const changeWorkshopRequestSchema = addWorkshopRequestSchema.extend({

@@ -16,6 +16,8 @@ import {
   changeCommentRequestSchema,
   workshopsStateSchema,
   paginationSchema,
+  dayWorkingHoursSchema,
+  workingHoursSchema,
 } from "./workshops.schemas";
 
 export type TTypeWork = z.infer<typeof typeWorkSchema>;
@@ -99,3 +101,5 @@ export interface IGetWorkshopsUserRequest {
 }
 
 export type TCommentWorkshop = z.infer<typeof commentWorkshopSchema>;
+export type TDayWorkingHours = z.infer<typeof dayWorkingHoursSchema>;
+export type TWorkingHours = z.infer<typeof workingHoursSchema>;
