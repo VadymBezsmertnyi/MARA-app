@@ -329,8 +329,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         userId: userData._id,
         title,
         description,
-        phoneNumber:
-          processedContacts.find((c) => c.type === "phone")?.value || "",
         contacts: processedContacts,
         ...currentPlace,
         motoTypesWorks: selectMotoTypesWorks,
@@ -354,6 +352,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 typeof item === "string" ? item : item._id.toString()
               ),
               imageFiles: currentImageFiles,
+              phoneNumber: undefined,
             },
           })
         : await addWorkshopMutation({

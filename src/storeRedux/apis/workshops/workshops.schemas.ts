@@ -133,7 +133,7 @@ export const addWorkshopRequestSchema = z.object({
   userId: z.string(),
   title: z.string(),
   description: z.string(),
-  phoneNumber: z.string(),
+  phoneNumber: z.string().optional(),
   place_address: z.string().optional(),
   coordinates: coordinatesSchema.optional(),
   motoTypesWorks: z.array(z.number()),
