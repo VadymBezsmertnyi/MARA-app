@@ -8,6 +8,7 @@ import {
   IDeleteWorkshopRequest,
   IGetWorkshopsRequest,
   IGetWorkshopsUserRequest,
+  IGetWorkshopByIdRequest,
   IAddCommentRequest,
   IChangeCommentRequest,
 } from "./workshops.types";
@@ -82,6 +83,25 @@ export const getWorkshopsUser = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod getWorkshopsUser:", {
           url: PATHS.workshopsGetUserId,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const getWorkshopById = (builder: Builder) =>
+  builder.query<TWorkshopResponse | null, IGetWorkshopByIdRequest>({
+    query: ({ workshopId }) => ({
+      url: `${PATHS.workshopsGetById}${workshopId}`,
+      method: "GET",
+    }),
+    transformResponse: (response: unknown) => {
+      const result = workshopResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod getWorkshopById:", {
+          url: PATHS.workshopsGetById,
           data: response,
           error: result.error,
         });

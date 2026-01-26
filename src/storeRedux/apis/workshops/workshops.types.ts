@@ -101,6 +101,10 @@ export interface IGetWorkshopsUserRequest {
   longitude?: number;
 }
 
+export interface IGetWorkshopByIdRequest {
+  workshopId: string;
+}
+
 export type TContact = z.infer<typeof contactSchema>;
 export type TCommentWorkshop = z.infer<typeof commentWorkshopSchema>;
 export type TDayWorkingHours = z.infer<typeof dayWorkingHoursSchema>;

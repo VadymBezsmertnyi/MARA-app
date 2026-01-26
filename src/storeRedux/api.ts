@@ -25,6 +25,7 @@ import { getCurrencies } from "./apis/payment/apis";
 import {
   getWorkshops,
   getWorkshopsUser,
+  getWorkshopById,
   addWorkshop,
   changeWorkshop,
   deleteWorkshop,
@@ -65,6 +66,7 @@ export const api = createApi({
     // Workshops APIs
     getWorkshops: getWorkshops(builder),
     getWorkshopsUser: getWorkshopsUser(builder),
+    getWorkshopById: getWorkshopById(builder),
     addWorkshop: addWorkshop(builder),
     changeWorkshop: changeWorkshop(builder),
     deleteWorkshop: deleteWorkshop(builder),
@@ -101,6 +103,8 @@ export const {
   useLazyGetWorkshopsQuery,
   useGetWorkshopsUserQuery,
   useLazyGetWorkshopsUserQuery,
+  useGetWorkshopByIdQuery,
+  useLazyGetWorkshopByIdQuery,
   useAddWorkshopMutation,
   useChangeWorkshopMutation,
   useDeleteWorkshopMutation,

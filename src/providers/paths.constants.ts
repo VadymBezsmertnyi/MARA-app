@@ -15,6 +15,7 @@ export const PATHS = {
   eventDelete: "/events/delete/",
   //workshops
   workshopsGet: "/workshops/",
+  workshopsGetById: "/workshops/",
   workshopsGetUserId: "/workshops/user/",
   workshopsAdd: "/workshops/add/",
   workshopsChange: "/workshops/change/",

@@ -96,6 +96,46 @@ export const workshopsSlice = createSlice({
             action.error.message || "Помилка отримання майстерень користувача";
         }
       )
+      .addMatcher(api.endpoints.getWorkshopById.matchPending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addMatcher(
+        api.endpoints.getWorkshopById.matchFulfilled,
+        (state, action) => {
+          if (action.payload?.workshop) {
+            const updatedWorkshop = action.payload.workshop;
+            const existingIndex = state.workshopsList.findIndex(
+              (w) => w._id === updatedWorkshop._id
+            );
+            if (existingIndex >= 0)
+              state.workshopsList[existingIndex] = updatedWorkshop;
+            else state.workshopsList = [...state.workshopsList, updatedWorkshop];
+
+            const existingUserIndex = state.workshopsUserList.findIndex(
+              (w) => w._id === updatedWorkshop._id
+            );
+            if (existingUserIndex >= 0)
+              state.workshopsUserList[existingUserIndex] = updatedWorkshop;
+            else
+              state.workshopsUserList = [
+                ...state.workshopsUserList,
+                updatedWorkshop,
+              ];
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error =
+              "Помилка валідації даних від сервера (getWorkshopById)";
+          }
+        }
+      )
+      .addMatcher(api.endpoints.getWorkshopById.matchRejected, (state, action) => {
+        state.loading = false;
+        state.error =
+          action.error.message || "Помилка отримання майстерні";
+      })
       .addMatcher(api.endpoints.addWorkshop.matchPending, (state) => {
         state.loading = true;
         state.error = null;
