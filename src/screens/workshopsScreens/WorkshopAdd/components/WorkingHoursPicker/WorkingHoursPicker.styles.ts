@@ -1,37 +1,54 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
-import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
+import {
+  FONT_600_OPEN_SANS,
+  FONT_700_MONTSERRAT,
+} from "../../../../../../styles/constants";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
-    paddingTop: 12,
+    backgroundColor: colors.transparent,
+    marginTop: 0,
   },
   label: {
     fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 12,
+    fontSize: 16,
     color: colors.blackCoffee,
-    marginBottom: 8,
+    marginBottom: 5,
+  },
+  inputWrapper: {
+    borderWidth: 1,
+    borderColor: colors.grayCloudy,
+    borderRadius: 4,
+    marginTop: 5,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingRight: 16,
+    minHeight: 50,
   },
   scheduleContainer: {
     flexDirection: "row",
-    alignItems: "flex-start",
+    alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 12,
+    flex: 1,
+    paddingTop: 16,
+    paddingHorizontal: 16,
+    paddingBottom: 16,
   },
   scheduleText: {
     fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 14,
+    fontSize: 16,
     color: colors.blackCoffee,
     flex: 1,
-    lineHeight: 20,
+    lineHeight: 24,
   },
   editButton: {
     paddingLeft: 12,
   },
   editButtonText: {
     fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 14,
+    fontSize: 16,
     color: colors.californiaOrange,
   },
   dayContainer: {
@@ -78,10 +95,11 @@ export const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   errorText: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 12,
+    fontFamily: FONT_700_MONTSERRAT,
+    fontSize: 10,
     color: colors.errorRed,
     marginTop: 4,
+    minHeight: 20,
   },
   modal: {
     position: "absolute",

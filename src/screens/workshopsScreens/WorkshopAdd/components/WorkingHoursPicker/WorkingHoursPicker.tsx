@@ -58,29 +58,33 @@ export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
     else
       weekdays.forEach((day) => {
         const hours = value[day.key];
-        if (hours) {
+        if (hours)
           parts.push(`${day.shortKey}: ${hours.open} - ${hours.close}`);
-        }
+        else parts.push(`${day.shortKey}: ${i18n._("Day off")}`);
       });
     if (saturdayHours)
       parts.push(`Сб: ${saturdayHours.open} - ${saturdayHours.close}`);
+    else parts.push(`Сб: ${i18n._("Day off")}`);
     if (sundayHours)
       parts.push(`Нд: ${sundayHours.open} - ${sundayHours.close}`);
+    else parts.push(`Нд: ${i18n._("Day off")}`);
 
-    return parts.length > 0 ? parts.join("\n") : i18n._("Not specified");
+    return parts.join("\n");
   }, [value, i18n]);
 
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{i18n._("Working hours")}</Text>
-      <View style={styles.scheduleContainer}>
-        <Text style={styles.scheduleText}>{scheduleText}</Text>
-        <TouchableOpacity
-          style={styles.editButton}
-          onPress={() => setIsModalOpen(true)}
-        >
-          <Text style={styles.editButtonText}>{i18n._("Edit")}</Text>
-        </TouchableOpacity>
+      <View style={styles.inputWrapper}>
+        <View style={styles.scheduleContainer}>
+          <Text style={styles.scheduleText}>{scheduleText}</Text>
+          <TouchableOpacity
+            style={styles.editButton}
+            onPress={() => setIsModalOpen(true)}
+          >
+            <Text style={styles.editButtonText}>{i18n._("Edit")}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       {errorMessage && <Text style={styles.errorText}>{errorMessage}</Text>}
       <ModalWorkingHours
