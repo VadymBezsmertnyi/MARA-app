@@ -11,6 +11,7 @@ import {
   RootSettingsScreensParamList,
   RootWorkshopsScreensParamList,
 } from "../../../navigators/Navigators.types";
+import { TWorkingHours } from "../../../storeRedux/apis/workshops/workshops.types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
@@ -48,6 +49,7 @@ import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
+import { WorkingHoursPicker } from "./components/WorkingHoursPicker/WorkingHoursPicker";
 
 // helps
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
@@ -117,6 +119,9 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     []
   );
   const [images, setImages] = useState<ImageFileType[]>([]);
+  const [workingHours, setWorkingHours] = useState<TWorkingHours>(
+    DEFAULT_WORKSHOP_DATA.workingHours
+  );
   const [isShowErrors, setIsShowErrors] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
     string,
@@ -307,6 +312,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         dataCreate: new Date().getTime(),
         rating: selectWorkshop?.rating || 0,
         comments: selectWorkshop?.comments || [],
+        workingHours,
       };
       const result = selectWorkshop
         ? await changeWorkshopMutation({
@@ -374,6 +380,9 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     setSelectAutoTypesWorks(selectWorkshop.autoTypesWorks);
     setSelectMotoTypesWorks(selectWorkshop.motoTypesWorks);
     setImages(selectWorkshop.imageFiles || []);
+    setWorkingHours(
+      selectWorkshop.workingHours || DEFAULT_WORKSHOP_DATA.workingHours
+    );
   };
 
   const onDeleteWorkshop = async () => {
@@ -542,6 +551,10 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                   ? errorMessage.types.title
                   : ""
               }
+            />
+            <WorkingHoursPicker
+              value={workingHours}
+              onChange={setWorkingHours}
             />
             <View style={styles.containerSubmit}>
               <Text style={styles.errorMessage}>

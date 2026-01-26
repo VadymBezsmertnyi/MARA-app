@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
 // types
-import { WorkingHoursPickerProps } from "./WorkingHoursPicker.types";
 import { TWorkingHours } from "../../../../../storeRedux/apis/workshops/workshops.types";
 
 // providers
@@ -14,6 +13,12 @@ import { TimePicker } from "./TimePicker";
 
 // styles
 import { styles } from "./WorkingHoursPicker.styles";
+
+export type WorkingHoursPickerProps = {
+  value: TWorkingHours;
+  onChange: (value: TWorkingHours) => void;
+  errorMessage?: string;
+};
 
 const DAYS_OF_WEEK = [
   { key: "monday" as const, labelKey: "Monday" },
