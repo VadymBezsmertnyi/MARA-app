@@ -23,7 +23,11 @@ import {
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
-import { useChangeWorkshopMutation } from "../../../storeRedux/api";
+import {
+  useChangeWorkshopMutation,
+  useSendSmsVerificationMutation,
+  useVerifySmsCodeMutation,
+} from "../../../storeRedux/api";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
@@ -31,6 +35,7 @@ import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
 import { getFormatPhoneNumber } from "../../../helps/helps";
@@ -45,6 +50,9 @@ import { ListWorksDo } from "./components/ListWorksDo/ListWorksDo";
 import { FooterComments } from "./components/FooterComments/FooterComments";
 import { ModalComment } from "./components/ModalComment/ModalComment";
 import { WorkingHoursDisplay } from "./components/WorkingHoursDisplay/WorkingHoursDisplay";
+import { ModalSelectPhone } from "../../../screens/settingsScreens/SettingsWorkshops/components/ModalSelectPhone/ModalSelectPhone";
+import { ModalEnterCode } from "../../../screens/settingsScreens/SettingsWorkshops/components/ModalEnterCode/ModalEnterCode";
+import { ModalReport } from "./components/ModalReport/ModalReport";
 
 // icons
 import { IconAutoService, IconMotoService } from "../../../icons/components";
@@ -74,13 +82,20 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const { i18n, language } = useLocalesProvider();
   const { userData } = useUserSelector();
   const { workshopsList: workshops } = useWorkshopsSelector();
+  const { showMessageServer } = useDropDownAlertProvider();
   const [changeWorkshopMutation] = useChangeWorkshopMutation();
+  const [sendSms, { isLoading: sendingSms }] = useSendSmsVerificationMutation();
+  const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
   const { placesDB } = usePlacesProvider();
   const { location } = useMapProvider();
   const { getSharedLink } = useSharingProvider();
   const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [isShowModalComment, setIsShowModalComment] = useState(false);
+  const [showPhoneModal, setShowPhoneModal] = useState(false);
+  const [showCodeModal, setShowCodeModal] = useState(false);
+  const [showReportModal, setShowReportModal] = useState(false);
+  const [codeError, setCodeError] = useState<string | null>(null);
   const scrollViewRef = useRef<ScrollView | null>(null);
   const selectWorkshop = useMemo(
     () =>
@@ -228,6 +243,66 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     if (selectWorkshop) getSharedLink({ workshopId: selectWorkshop._id });
   };
 
+  const hasOwner = !!selectWorkshop?.ownerUserId;
+  const isCurrentUserOwner =
+    userData &&
+    selectWorkshop?.ownerUserId &&
+    (typeof selectWorkshop.ownerUserId === "string"
+      ? selectWorkshop.ownerUserId === userData._id
+      : selectWorkshop.ownerUserId._id === userData._id);
+  const isCurrentUserCreator =
+    userData &&
+    selectWorkshop?.userId &&
+    (typeof selectWorkshop.userId === "string"
+      ? selectWorkshop.userId === userData._id
+      : selectWorkshop.userId._id === userData._id);
+  const showConfirmButton = !hasOwner && userData;
+  const showReportButton =
+    !isCurrentUserOwner && !isCurrentUserCreator && userData;
+
+  const handlePhoneSelect = async (phoneNumber: string) => {
+    if (!selectWorkshop) return;
+    setShowPhoneModal(false);
+    setCodeError(null);
+
+    const result = await sendSms({
+      body: {
+        workshopId: selectWorkshop._id,
+        phoneNumber,
+      },
+    });
+
+    if (result.data?.status === "success") setShowCodeModal(true);
+    else
+      await showMessageServer(
+        i18n._("Error"),
+        result.data?.reason || i18n._("Failed to send SMS"),
+        "error"
+      );
+  };
+
+  const handleCodeConfirm = async (code: string) => {
+    if (!selectWorkshop) return;
+    setCodeError(null);
+
+    const result = await verifyCode({
+      body: {
+        workshopId: selectWorkshop._id,
+        code,
+      },
+    });
+
+    if (result.data?.status === "success") {
+      setShowCodeModal(false);
+      await showMessageServer(
+        i18n._("Success"),
+        i18n._("Everything is successful and this is your business"),
+        "success"
+      );
+    } else
+      setCodeError(result.data?.reason || i18n._("Invalid or expired code"));
+  };
+
   return (
     <View
       style={[
@@ -372,6 +447,33 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
               autoWorkIds={selectWorkshop.autoTypesWorks}
             />
           ) : null}
+          {showConfirmButton && selectWorkshop && (
+            <View style={styles.containerConfirmOwnership}>
+              <Text style={styles.confirmOwnershipText}>
+                {i18n._("This business has not been confirmed by the owner")}
+              </Text>
+              <TouchableOpacity
+                style={styles.buttonConfirmOwnership}
+                onPress={() => setShowPhoneModal(true)}
+              >
+                <Text style={styles.buttonConfirmOwnershipText}>
+                  {i18n._("Confirm business")}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
+          {showReportButton && (
+            <View style={styles.containerReport}>
+              <TouchableOpacity
+                style={styles.buttonReport}
+                onPress={() => setShowReportModal(true)}
+              >
+                <Text style={styles.buttonReportText}>
+                  {i18n._("Report on business")}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
           <FooterComments
             data={commentsReverse.slice(0, amountShow)}
             isCommentUser={isCommentUser}
@@ -384,6 +486,30 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       {isShowModalComment && (
         <ModalComment selectWorkshop={selectWorkshop} onClose={onClose} />
       )}
+      {selectWorkshop && (
+        <>
+          <ModalSelectPhone
+            visible={showPhoneModal}
+            onClose={() => setShowPhoneModal(false)}
+            workshop={selectWorkshop}
+            onConfirm={handlePhoneSelect}
+          />
+          <ModalEnterCode
+            visible={showCodeModal}
+            onClose={() => {
+              setShowCodeModal(false);
+              setCodeError(null);
+            }}
+            onConfirm={handleCodeConfirm}
+            isLoading={verifyingCode}
+            error={codeError}
+          />
+        </>
+      )}
+      <ModalReport
+        visible={showReportModal}
+        onClose={() => setShowReportModal(false)}
+      />
     </View>
   );
 };
