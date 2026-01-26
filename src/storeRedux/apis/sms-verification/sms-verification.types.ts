@@ -22,3 +22,8 @@ export interface ISendSmsVerificationRequest {
 export interface IVerifySmsCodeRequest {
   body: TVerifySmsCodeRequest;
 }
+
+export interface TSmsVerificationState {
+  loading: boolean;
+  error: string | null;
+}
