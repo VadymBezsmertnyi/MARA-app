@@ -195,15 +195,18 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     return "";
   }, [typeWorkshops]);
 
+  const firstContact = useMemo(() => contacts[0], [contacts]);
   const phoneContact = useMemo(
     () => contacts.find((contact) => contact.type === "phone"),
     [contacts]
   );
 
   const errorsObject = useMemo(() => {
+    const isFirstContactPhone = firstContact?.type === "phone";
     const isPhone =
-      phoneContact &&
-      verifyPhone(phoneContact.value, selectCountryIso).length === 0;
+      isFirstContactPhone &&
+      firstContact &&
+      verifyPhone(firstContact.value, selectCountryIso).length === 0;
     return {
       ...((title.length < 5 || title.length > 40) && {
         title: getErrorText("title", {
@@ -395,9 +398,20 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       coordinates: selectWorkshop.coordinates,
     });
     setDescription(selectWorkshop.description);
-    if (selectWorkshop.contacts && selectWorkshop.contacts.length > 0)
-      setContacts(selectWorkshop.contacts);
-    else if (selectWorkshop.phoneNumber)
+    if (selectWorkshop.contacts && selectWorkshop.contacts.length > 0) {
+      const phoneContact = selectWorkshop.contacts.find(
+        (c) => c.type === "phone"
+      );
+      const otherContacts = selectWorkshop.contacts.filter(
+        (c) => c.type !== "phone"
+      );
+      if (phoneContact) setContacts([phoneContact, ...otherContacts]);
+      else
+        setContacts([
+          { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
+          ...otherContacts,
+        ]);
+    } else if (selectWorkshop.phoneNumber)
       setContacts([{ type: "phone", value: selectWorkshop.phoneNumber }]);
     else setContacts([{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }]);
 

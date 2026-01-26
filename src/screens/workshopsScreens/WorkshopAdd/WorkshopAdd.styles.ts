@@ -69,7 +69,6 @@ export const styles = StyleSheet.create({
   },
   addContactButtonContainer: {
     marginTop: verticalScale(10),
-    alignSelf: "flex-start",
     height: "auto",
   },
   addContactButton: {
