@@ -1,11 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import {
-  ActivityIndicator,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 
 // types
@@ -217,10 +211,10 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
       setTypeWorkshops({ moto: false, auto: false });
       setSelectMotoTypesWorks([]);
       setSelectAutoTypesWorks([]);
-      setDistance(5);
+      setDistance(maxDistance);
       setSelectRating(null);
     }
-  }, [filters]);
+  }, [filters, maxDistance]);
 
   return (
     <View style={styles.container}>
