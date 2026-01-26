@@ -42,7 +42,20 @@ export const styles = StyleSheet.create({
   },
   containerRight: {
     justifyContent: "center",
+    alignItems: "flex-end",
     flexShrink: 0,
+    gap: 8,
+  },
+  buttonEdit: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    backgroundColor: colors.californiaOrange,
+    borderRadius: 4,
+  },
+  buttonEditText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 12,
+    color: colors.white,
   },
   inner: {
     flexDirection: "row",

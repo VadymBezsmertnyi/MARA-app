@@ -27,7 +27,6 @@ import {
   IconAutoService,
   IconChat,
   IconMotoService,
-  IconPencilGradient,
   IconStar,
 } from "../../../../../icons/components";
 
@@ -38,11 +37,12 @@ import colors from "../../../../../../styles/colors";
 type ItemSettingWorkshopsProps = {
   workshop: TWorkshop;
   isStart: boolean;
+  currentUserId: string | null;
 };
 
 export const ItemSettingWorkshops: FunctionComponent<
   ItemSettingWorkshopsProps
-> = ({ workshop, isStart }) => {
+> = ({ workshop, isStart, currentUserId }) => {
   const { i18n } = useLocalesProvider();
   const navigation = useAllNavigation();
   const firstImage = workshop.imageFiles[0] ? workshop.imageFiles[0].url : null;
@@ -61,11 +61,19 @@ export const ItemSettingWorkshops: FunctionComponent<
     [workshop.autoTypesWorks]
   );
 
+  const hasOwner = !!workshop.ownerUserId;
+  const isCurrentUserOwner =
+    currentUserId && workshop.ownerUserId?._id === currentUserId;
+  const canEdit = !hasOwner || isCurrentUserOwner;
+  const showConfirmButton = !hasOwner;
+
   const onPressChange = () => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopChange, {
       workshopId: workshop._id,
     });
   };
+
+  const onPressConfirmOwnership = () => {};
 
   return (
     <View style={containerStyles}>
@@ -150,9 +158,21 @@ export const ItemSettingWorkshops: FunctionComponent<
         </View>
       </View>
       <View style={styles.containerRight}>
-        <TouchableOpacity onPress={onPressChange}>
-          <IconPencilGradient width={24} height={24} />
-        </TouchableOpacity>
+        {canEdit && (
+          <TouchableOpacity style={styles.buttonEdit} onPress={onPressChange}>
+            <Text style={styles.buttonEditText}>{i18n._("Edit")}</Text>
+          </TouchableOpacity>
+        )}
+        {showConfirmButton && (
+          <TouchableOpacity
+            style={styles.buttonEdit}
+            onPress={onPressConfirmOwnership}
+          >
+            <Text style={styles.buttonEditText}>
+              {i18n._("Confirm ownership")}
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

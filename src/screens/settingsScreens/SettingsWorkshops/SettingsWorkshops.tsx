@@ -104,6 +104,7 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
                   key={`user-workshop-${workshop._id}`}
                   workshop={workshop}
                   isStart={isStart}
+                  currentUserId={userData?._id || null}
                 />
               );
             })}

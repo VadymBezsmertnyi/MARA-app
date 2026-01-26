@@ -83,6 +83,7 @@ export const workingHoursSchema = z
 export const workshopSchema = z.object({
   _id: z.string(),
   userId: populateUserData.nullable(),
+  ownerUserId: populateUserData.nullable().optional(),
   title: z.string(),
   description: z.string(),
   phoneNumber: z.string(),
