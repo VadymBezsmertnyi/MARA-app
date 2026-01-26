@@ -44,6 +44,8 @@ export const ModalSelectPhone: FunctionComponent<ModalSelectPhoneProps> = ({
       .filter((contact: TContact) => contact.type === "phone")
       .map((contact: TContact) => contact.value);
     phones.push(...contactPhones);
+    if (workshop.phoneNumber && (!phones || phones.length === 0))
+      return [workshop.phoneNumber];
     return phones;
   }, [workshop]);
 
