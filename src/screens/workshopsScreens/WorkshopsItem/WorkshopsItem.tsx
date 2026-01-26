@@ -3,7 +3,6 @@ import {
   NativeScrollEvent,
   NativeSyntheticEvent,
   ScrollView,
-  StyleSheet,
   Text,
   TouchableOpacity,
   View,
@@ -43,7 +42,7 @@ import { Map } from "../../../components/Map/Map";
 import { ListWorksDo } from "./components/ListWorksDo/ListWorksDo";
 import { FooterComments } from "./components/FooterComments/FooterComments";
 import { ModalComment } from "./components/ModalComment/ModalComment";
-import { ImageCache } from "../../../components/ImageCache/ImageCache";
+import { WorkingHoursDisplay } from "./components/WorkingHoursDisplay/WorkingHoursDisplay";
 
 // icons
 import {
@@ -51,9 +50,6 @@ import {
   IconMotoService,
   RadixIconsCalendar,
 } from "../../../icons/components";
-
-// image
-import WorkshopPlaceholder from "../../../../assets/default/workshop-placeholder.png";
 
 // constants
 import { PATHS_MAIN_TABS } from "../../../navigators/useNavigator.constants";
@@ -244,6 +240,9 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
               <Text style={styles.geoDisabledText}>
                 {i18n._("Unable to calculate distance, location is disabled")}
               </Text>
+            )}
+            {selectWorkshop && (
+              <WorkingHoursDisplay workingHours={selectWorkshop.workingHours} />
             )}
             <View style={styles.containerContacts}>
               <View style={styles.containerPhone}>
