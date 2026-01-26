@@ -3,6 +3,7 @@ import { ImagePickerAsset } from "expo-image-picker";
 import {
   typeWorkSchema,
   typeWorksSchema,
+  contactSchema,
   commentWorkshopSchema,
   workshopSchema,
   workshopsSchema,
@@ -100,6 +101,7 @@ export interface IGetWorkshopsUserRequest {
   longitude?: number;
 }
 
+export type TContact = z.infer<typeof contactSchema>;
 export type TCommentWorkshop = z.infer<typeof commentWorkshopSchema>;
 export type TDayWorkingHours = z.infer<typeof dayWorkingHoursSchema>;
 export type TWorkingHours = z.infer<typeof workingHoursSchema>;
