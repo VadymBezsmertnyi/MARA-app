@@ -28,14 +28,24 @@ type TimePickerProps = {
   disabled?: boolean;
 };
 
+const convert24To12 = (time24: string): string => {
+  if (!time24) return "12:00 AM";
+  const [hours, minutes] = time24.split(":").map(Number);
+  const period = hours >= 12 ? "PM" : "AM";
+  const hours12 = hours % 12 || 12;
+  return `${hours12}:${minutes.toString().padStart(2, "0")} ${period}`;
+};
+
 export const TimePicker: FunctionComponent<TimePickerProps> = ({
   value,
   onChange,
   disabled = false,
 }) => {
-  const { i18n } = useLocalesProvider();
+  const { i18n, language } = useLocalesProvider();
   const [isShowModal, setIsShowModal] = useState(false);
   const [tempTime, setTempTime] = useState<Date | null>(null);
+
+  const is12HourFormat = useMemo(() => language === "en", [language]);
 
   const timeDate = useMemo(() => {
     if (tempTime) return tempTime;
@@ -48,9 +58,9 @@ export const TimePicker: FunctionComponent<TimePickerProps> = ({
   }, [value, tempTime]);
 
   const displayTime = useMemo(() => {
-    if (!value) return "00:00";
-    return value;
-  }, [value]);
+    if (!value) return is12HourFormat ? "12:00 AM" : "00:00";
+    return is12HourFormat ? convert24To12(value) : value;
+  }, [value, is12HourFormat]);
 
   const handleChange = (event: DateTimePickerEvent, selectedDate?: Date) => {
     if (Platform.OS === "android") {
@@ -72,7 +82,7 @@ export const TimePicker: FunctionComponent<TimePickerProps> = ({
         onChange: handleChange,
         mode: "time",
         display: "spinner",
-        is24Hour: true,
+        is24Hour: !is12HourFormat,
       });
     } else {
       setTempTime(null);
@@ -116,7 +126,7 @@ export const TimePicker: FunctionComponent<TimePickerProps> = ({
               mode="time"
               display="spinner"
               onChange={handleChange}
-              is24Hour
+              is24Hour={!is12HourFormat}
               minuteInterval={5}
             />
             <ButtonCustom
