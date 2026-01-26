@@ -3,7 +3,7 @@ import { TWorkingHours } from "../../../storeRedux/apis/workshops/workshops.type
 
 type DayKey = keyof TWorkingHours;
 
-export const useWorkingHoursHelpers = (i18n: I18n) => {
+const useWorkingHoursHelpers = (i18n: I18n) => {
   const getDayName = (dayKey: DayKey): { full: string; short: string } => {
     switch (dayKey) {
       case "monday":
@@ -52,3 +52,5 @@ export const useWorkingHoursHelpers = (i18n: I18n) => {
     getDayName,
   };
 };
+
+export default useWorkingHoursHelpers;
