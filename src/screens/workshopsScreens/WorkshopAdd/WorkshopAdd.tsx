@@ -1,8 +1,7 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import * as FileSystem from "expo-file-system/legacy";
 
 //types
 import { ImageFileType } from "../../../storeRedux/types";
@@ -11,7 +10,10 @@ import {
   RootSettingsScreensParamList,
   RootWorkshopsScreensParamList,
 } from "../../../navigators/Navigators.types";
-import { TWorkingHours } from "../../../storeRedux/apis/workshops/workshops.types";
+import {
+  TWorkingHours,
+  TContact,
+} from "../../../storeRedux/apis/workshops/workshops.types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
@@ -41,6 +43,7 @@ import { Input } from "../../../components/Input/Input";
 import { InputPhone } from "../../../components/InputPhone/InputPhone";
 import { IconArrowRightEvent } from "../../../icons/components";
 import { ModalSheetTypeWorkshops } from "../../../components/ModalSheetTypeWorkshops/ModalSheetTypeWorkshops";
+import { ModalSheetContactType } from "../../../components/ModalSheetContactType/ModalSheetContactType";
 import { ModalSheetTypesAutoWorks } from "../../../components/ModalSheetTypesAutoWorks/ModalSheetTypesAutoWorks";
 import { ModalSheetTypesMotoWorks } from "../../../components/ModalSheetTypesMotoWorks/ModalSheetTypesMotoWorks";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -72,12 +75,7 @@ type WorkshopAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
 };
 
-type NamesErrorsType =
-  | "types"
-  | "title"
-  | "description"
-  | "place"
-  | "phoneNumber";
+type NamesErrorsType = "types" | "title" | "description" | "place" | "contacts";
 
 export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   navigation,
@@ -101,8 +99,11 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { verifyPhone } = useAuthorizationRegistration();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState(`+${DEFAULT_CODE_COUNTRY}`);
+  const [contacts, setContacts] = useState<TContact[]>([
+    { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
+  ]);
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
+  const [isShowContactTypeModal, setIsShowContactTypeModal] = useState(false);
   const [place, setPlace] = useState<ItemSearchPlaceAddressType | null>(null);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
   const [isShowTypesMotoWorks, setIsShowTypesMotoWorks] = useState(false);
@@ -191,8 +192,15 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     return "";
   }, [typeWorkshops]);
 
+  const phoneContact = useMemo(
+    () => contacts.find((contact) => contact.type === "phone"),
+    [contacts]
+  );
+
   const errorsObject = useMemo(() => {
-    const isPhone = verifyPhone(phoneNumber, selectCountryIso).length === 0;
+    const isPhone =
+      phoneContact &&
+      verifyPhone(phoneContact.value, selectCountryIso).length === 0;
     return {
       ...((title.length < 5 || title.length > 40) && {
         title: getErrorText("title", {
@@ -214,7 +222,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         }),
       }),
       ...(!isPhone && {
-        phoneNumber: getErrorText("phoneNumber", {
+        contacts: getErrorText("phoneNumber", {
           otherName: i18n._("workshop"),
         }),
       }),
@@ -229,7 +237,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     title,
     place,
     description,
-    phoneNumber,
+    phoneContact,
     selectCountryIso,
     selectMotoTypesWorks,
     selectAutoTypesWorks,
@@ -283,7 +291,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       (selectMotoTypesWorks.length || selectAutoTypesWorks.length) &&
       !isError
     ) {
-      const clearPhoneNumber = getClearValue(phoneNumber);
       const currentImageFiles = images.map((image) => ({
         _id: image._id || "",
         uri: image.url,
@@ -302,12 +309,23 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               coordinates: selectWorkshop.coordinates,
             }
           : { place };
+      const processedContacts = contacts.map((contact) => {
+        if (contact.type === "phone")
+          return {
+            ...contact,
+            value: getClearValue(contact.value),
+          };
+
+        return contact;
+      });
       const newWorkshop = {
         ...DEFAULT_WORKSHOP_DATA,
         userId: userData._id,
         title,
         description,
-        phoneNumber: clearPhoneNumber,
+        phoneNumber:
+          processedContacts.find((c) => c.type === "phone")?.value || "",
+        contacts: processedContacts,
         ...currentPlace,
         motoTypesWorks: selectMotoTypesWorks,
         autoTypesWorks: selectAutoTypesWorks,
@@ -374,7 +392,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       coordinates: selectWorkshop.coordinates,
     });
     setDescription(selectWorkshop.description);
-    setPhoneNumber(selectWorkshop.phoneNumber);
+    if (selectWorkshop.contacts && selectWorkshop.contacts.length > 0)
+      setContacts(selectWorkshop.contacts);
+    else if (selectWorkshop.phoneNumber)
+      setContacts([{ type: "phone", value: selectWorkshop.phoneNumber }]);
+    else setContacts([{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }]);
+
     setTypeWorkshops((state) => ({
       ...state,
       moto: selectWorkshop.motoTypesWorks.length > 0,
@@ -416,8 +439,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
 
   useEffect(() => {
     if (selectWorkshop) getChangeWorkshop();
-    else if (userData?.phoneNumber && phoneNumber.length < 5)
-      setPhoneNumber(userData.phoneNumber);
+    else if (userData?.phoneNumber && contacts[0]?.value.length < 5)
+      setContacts([{ type: "phone", value: userData.phoneNumber }]);
   }, [selectWorkshop, placesDB]);
 
   useEffect(() => {
@@ -492,24 +515,115 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               }
             />
             <View>
-              <InputPhone
-                isRegular
-                label={i18n._("Phone number")}
-                phoneNumber={phoneNumber}
-                onBlurProp={() => checkValueOnBlur("phoneNumber")}
-                setPhoneNumber={(value) => {
-                  clearKeyError("phoneNumber");
-                  setPhoneNumber(value);
-                }}
-                selectCountryIso={selectCountryIso}
-                setSelectCountryIso={setSelectCountryIso}
-                labelStyle={styles.labelInput}
-                errorMessage={
-                  errorMessage?.phoneNumber
-                    ? errorMessage.phoneNumber.title
-                    : ""
-                }
-              />
+              <Text style={styles.labelInput}>{i18n._("Contacts")}</Text>
+              {contacts.map((contact, index) => (
+                <View key={`contact-${index}`} style={styles.contactContainer}>
+                  {contact.type === "phone" ? (
+                    <InputPhone
+                      isRegular
+                      label={i18n._("Phone number")}
+                      phoneNumber={contact.value}
+                      onBlurProp={() => checkValueOnBlur("contacts")}
+                      setPhoneNumber={(value) => {
+                        clearKeyError("contacts");
+                        setContacts((prev) =>
+                          prev.map((c, i) =>
+                            i === index ? { ...c, value } : c
+                          )
+                        );
+                      }}
+                      selectCountryIso={selectCountryIso}
+                      setSelectCountryIso={setSelectCountryIso}
+                      labelStyle={styles.labelInput}
+                      errorMessage={
+                        errorMessage?.contacts && index === 0
+                          ? errorMessage.contacts.title
+                          : ""
+                      }
+                    />
+                  ) : (
+                    <Input
+                      isRegular
+                      placeholder={
+                        contact.type === "email"
+                          ? "Email"
+                          : contact.type === "viber"
+                          ? "Viber"
+                          : contact.type === "telegram"
+                          ? "Telegram"
+                          : contact.type === "whatsapp"
+                          ? "WhatsApp"
+                          : contact.type === "instagram"
+                          ? "Instagram"
+                          : "Facebook"
+                      }
+                      label={
+                        contact.type === "email"
+                          ? "Email"
+                          : contact.type === "viber"
+                          ? "Viber"
+                          : contact.type === "telegram"
+                          ? "Telegram"
+                          : contact.type === "whatsapp"
+                          ? "WhatsApp"
+                          : contact.type === "instagram"
+                          ? "Instagram"
+                          : "Facebook"
+                      }
+                      value={contact.value}
+                      onChange={(value) => {
+                        setContacts((prev) =>
+                          prev.map((c, i) =>
+                            i === index ? { ...c, value } : c
+                          )
+                        );
+                      }}
+                      labelStyle={styles.labelInput}
+                    />
+                  )}
+                  {contacts.length > 1 && contact.type !== "phone" && (
+                    <TouchableOpacity
+                      style={styles.deleteContactButton}
+                      onPress={() => {
+                        setContacts((prev) =>
+                          prev.filter((_, i) => i !== index)
+                        );
+                      }}
+                    >
+                      <Text style={styles.deleteContactText}>
+                        {i18n._("Delete")}
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+                  {contacts.length > 1 && contact.type === "phone" && (
+                    <TouchableOpacity
+                      style={styles.deleteContactButton}
+                      onPress={() => {
+                        const phoneCount = contacts.filter(
+                          (c) => c.type === "phone"
+                        ).length;
+                        if (phoneCount > 1) {
+                          setContacts((prev) =>
+                            prev.filter((_, i) => i !== index)
+                          );
+                        }
+                      }}
+                    >
+                      <Text style={styles.deleteContactText}>
+                        {i18n._("Delete")}
+                      </Text>
+                    </TouchableOpacity>
+                  )}
+                </View>
+              ))}
+              <TouchableOpacity
+                style={styles.addContactButton}
+                onPress={() => setIsShowContactTypeModal(true)}
+              >
+                <Text style={styles.addContactText}>
+                  {i18n._("Add contact")}
+                </Text>
+              </TouchableOpacity>
               <InputButton
                 isRegular
                 value={valueTypesWorkshops}
@@ -631,6 +745,16 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           setIsShowErrors(false);
         }}
         errors={errorMessage}
+      />
+      <ModalSheetContactType
+        isShow={isShowContactTypeModal}
+        onClose={() => setIsShowContactTypeModal(false)}
+        onSelect={(type) => {
+          const existingTypes = contacts.map((c) => c.type);
+          if (!existingTypes.includes(type)) {
+            setContacts((prev) => [...prev, { type, value: "" }]);
+          }
+        }}
       />
     </>
   );

@@ -40,4 +40,35 @@ export const styles = StyleSheet.create({
     color: colors.errorRed,
     minHeight: 20,
   },
+  contactContainer: {
+    marginBottom: 10,
+  },
+  deleteContactButton: {
+    marginTop: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    backgroundColor: colors.errorRed,
+    borderRadius: 8,
+    alignSelf: "flex-start",
+  },
+  deleteContactText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: 14,
+    color: colors.white,
+  },
+  addContactButton: {
+    marginTop: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    backgroundColor: colors.white,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.grayFuscous,
+    alignItems: "center",
+  },
+  addContactText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: 14,
+    color: colors.grayFuscous,
+  },
 });
