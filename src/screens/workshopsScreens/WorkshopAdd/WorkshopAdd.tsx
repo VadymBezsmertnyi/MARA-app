@@ -356,24 +356,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const getChangeWorkshop = async () => {
     if (!selectWorkshop) return;
 
-    const images = await Promise.all(
-      selectWorkshop.imageFiles.map(async (image) => {
-        const response = await FileSystem.downloadAsync(
-          image.url,
-          `${FileSystem.documentDirectory}temp-${image._id}.jpg`
-        );
-        const base64 = await FileSystem.readAsStringAsync(response.uri, {
-          encoding: "base64",
-        });
-        return {
-          _id: image._id,
-          url: image.url,
-          width: image.width,
-          height: image.height,
-          base64,
-        };
-      })
-    );
     setTitle(selectWorkshop.title);
     const placeDB = await getPlace(selectWorkshop.place_id?.place_id || "");
     setPlace({
@@ -391,7 +373,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     }));
     setSelectAutoTypesWorks(selectWorkshop.autoTypesWorks);
     setSelectMotoTypesWorks(selectWorkshop.motoTypesWorks);
-    setImages(images);
+    setImages(selectWorkshop.imageFiles || []);
   };
 
   const onDeleteWorkshop = async () => {
