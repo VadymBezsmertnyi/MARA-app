@@ -8,7 +8,7 @@ import { TWorkingHours } from "../../../../../storeRedux/apis/workshops/workshop
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // helps
-import useWorkingHoursHelpers from "../../../WorkshopAdd/useWorkingHoursHelpers";
+import useWorkshopHelpers from "../../../WorkshopAdd/useWorkshopHelpers";
 
 // styles
 import { styles } from "./WorkingHoursDisplay.styles";
@@ -39,7 +39,7 @@ export const WorkingHoursDisplay: FunctionComponent<
   WorkingHoursDisplayProps
 > = ({ workingHours }) => {
   const { i18n, language } = useLocalesProvider();
-  const { getDayName } = useWorkingHoursHelpers(i18n);
+  const { getDayName } = useWorkshopHelpers(i18n);
   const is12HourFormat = language === "en";
 
   const hasWorkingHours = useMemo(() => {

@@ -35,6 +35,7 @@ import {
 
 // hooks
 import { useWorkshopsState } from "../../../storeRedux/apis/workshops/useWorkshops.constants";
+import useWorkshopHelpers from "./useWorkshopHelpers";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -97,6 +98,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { placesDB, getPlace } = usePlacesProvider();
   const { typesWorkServices } = useWorkshopsState();
   const { verifyPhone } = useAuthorizationRegistration();
+  const { getContactTypeTitle } = useWorkshopHelpers(i18n);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [contacts, setContacts] = useState<TContact[]>([
@@ -544,32 +546,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                   ) : (
                     <Input
                       isRegular
-                      placeholder={
-                        contact.type === "email"
-                          ? "Email"
-                          : contact.type === "viber"
-                          ? "Viber"
-                          : contact.type === "telegram"
-                          ? "Telegram"
-                          : contact.type === "whatsapp"
-                          ? "WhatsApp"
-                          : contact.type === "instagram"
-                          ? "Instagram"
-                          : "Facebook"
-                      }
-                      label={
-                        contact.type === "email"
-                          ? "Email"
-                          : contact.type === "viber"
-                          ? "Viber"
-                          : contact.type === "telegram"
-                          ? "Telegram"
-                          : contact.type === "whatsapp"
-                          ? "WhatsApp"
-                          : contact.type === "instagram"
-                          ? "Instagram"
-                          : "Facebook"
-                      }
+                      placeholder={getContactTypeTitle(contact.type)}
+                      label={getContactTypeTitle(contact.type)}
                       value={contact.value}
                       onChange={(value) => {
                         setContacts((prev) =>

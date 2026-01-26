@@ -11,7 +11,7 @@ import { useLocalesProvider } from "../../../../../../localization/localization.
 import { ModalWorkingHours } from "./ModalWorkingHours";
 
 // helps
-import useWorkingHoursHelpers from "../../useWorkingHoursHelpers";
+import useWorkshopHelpers from "../../useWorkshopHelpers";
 
 // styles
 import { styles } from "./WorkingHoursPicker.styles";
@@ -39,7 +39,7 @@ export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { getDayName } = useWorkingHoursHelpers(i18n);
+  const { getDayName } = useWorkshopHelpers(i18n);
 
   const scheduleText = useMemo(() => {
     const weekdayHours = WEEKDAYS.map((dayKey) => value[dayKey]).filter(

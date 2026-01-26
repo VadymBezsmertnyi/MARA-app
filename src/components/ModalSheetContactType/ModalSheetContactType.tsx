@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
@@ -12,23 +12,11 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
 import { CheckboxPoint } from "../CheckboxPoint/CheckboxPoint";
 
+// helps
+import useWorkshopHelpers from "../../screens/workshopsScreens/WorkshopAdd/useWorkshopHelpers";
+
 // styles
 import { styles } from "./ModalSheetContactType.styles";
-
-type ContactTypeOption = {
-  type: TContact["type"];
-  title: string;
-};
-
-const CONTACT_TYPES: ContactTypeOption[] = [
-  { type: "phone", title: "Телефон" },
-  { type: "email", title: "Email" },
-  { type: "viber", title: "Viber" },
-  { type: "telegram", title: "Telegram" },
-  { type: "whatsapp", title: "WhatsApp" },
-  { type: "instagram", title: "Instagram" },
-  { type: "facebook", title: "Facebook" },
-];
 
 type ModalSheetContactTypeProps = {
   isShow: boolean;
@@ -40,6 +28,9 @@ export const ModalSheetContactType: FunctionComponent<
   ModalSheetContactTypeProps
 > = ({ isShow, onClose, onSelect }) => {
   const { i18n } = useLocalesProvider();
+  const { getContactTypes } = useWorkshopHelpers(i18n);
+
+  const contactTypes = useMemo(() => getContactTypes(), [getContactTypes]);
 
   if (!isShow) return null;
 
@@ -70,7 +61,7 @@ export const ModalSheetContactType: FunctionComponent<
               </View>
             </Shadow>
             <View style={styles.containerBody}>
-              {CONTACT_TYPES.map((contactType) => (
+              {contactTypes.map((contactType) => (
                 <TouchableOpacity
                   key={contactType.type}
                   style={styles.containerSelect}

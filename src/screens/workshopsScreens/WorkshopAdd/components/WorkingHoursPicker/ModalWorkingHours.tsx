@@ -16,7 +16,7 @@ import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCusto
 import { ModalUniversal } from "../../../../../components/ModalUniversal/ModalUniversal";
 
 // helps
-import useWorkingHoursHelpers from "../../useWorkingHoursHelpers";
+import useWorkshopHelpers from "../../useWorkshopHelpers";
 
 // styles
 import { styles } from "./WorkingHoursPicker.styles";
@@ -48,7 +48,7 @@ export const ModalWorkingHours: FunctionComponent<ModalWorkingHoursProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const [workingHours, setWorkingHours] = useState<TWorkingHours>(value);
-  const { getDayName } = useWorkingHoursHelpers(i18n);
+  const { getDayName } = useWorkshopHelpers(i18n);
 
   const handleDayToggle = (dayKey: keyof TWorkingHours) => {
     const currentDay = workingHours[dayKey];
