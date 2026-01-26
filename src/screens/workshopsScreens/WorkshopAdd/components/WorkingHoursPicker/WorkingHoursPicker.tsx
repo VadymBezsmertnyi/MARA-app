@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
+import { I18n } from "@lingui/core";
 
 // types
 import { TWorkingHours } from "../../../../../storeRedux/apis/workshops/workshops.types";
@@ -19,15 +20,36 @@ export type WorkingHoursPickerProps = {
   errorMessage?: string;
 };
 
-const DAYS_OF_WEEK = [
-  { key: "monday" as const, labelKey: "Monday", shortKey: "Mon" },
-  { key: "tuesday" as const, labelKey: "Tuesday", shortKey: "Tue" },
-  { key: "wednesday" as const, labelKey: "Wednesday", shortKey: "Wed" },
-  { key: "thursday" as const, labelKey: "Thursday", shortKey: "Thu" },
-  { key: "friday" as const, labelKey: "Friday", shortKey: "Fri" },
-  { key: "saturday" as const, labelKey: "Saturday", shortKey: "Sat" },
-  { key: "sunday" as const, labelKey: "Sunday", shortKey: "Sun" },
-] as const;
+type DayKey = keyof TWorkingHours;
+
+const getDayName = (
+  dayKey: DayKey,
+  i18n: I18n
+): { full: string; short: string } => {
+  const dayNames: Record<DayKey, { fullKey: string; shortKey: string }> = {
+    monday: { fullKey: "Monday", shortKey: "Mon" },
+    tuesday: { fullKey: "Tuesday", shortKey: "Tue" },
+    wednesday: { fullKey: "Wednesday", shortKey: "Wed" },
+    thursday: { fullKey: "Thursday", shortKey: "Thu" },
+    friday: { fullKey: "Friday", shortKey: "Fri" },
+    saturday: { fullKey: "Saturday", shortKey: "Sat" },
+    sunday: { fullKey: "Sunday", shortKey: "Sun" },
+  };
+
+  const day = dayNames[dayKey];
+  return {
+    full: i18n._(day.fullKey),
+    short: i18n._(day.shortKey),
+  };
+};
+
+const WEEKDAYS: DayKey[] = [
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+];
 
 export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
   value,
@@ -38,10 +60,9 @@ export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const scheduleText = useMemo(() => {
-    const weekdays = DAYS_OF_WEEK.slice(0, 5);
-    const weekdayHours = weekdays
-      .map((day) => value[day.key])
-      .filter((hours) => hours !== null);
+    const weekdayHours = WEEKDAYS.map((dayKey) => value[dayKey]).filter(
+      (hours) => hours !== null
+    );
     const isWeekdaysSame =
       weekdayHours.length === 5 &&
       weekdayHours.every(
@@ -54,26 +75,28 @@ export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
 
     const parts: string[] = [];
     if (isWeekdaysSame && weekdayHours[0]) {
-      const monShort = i18n._("Mon");
-      const friShort = i18n._("Fri");
+      const mon = getDayName("monday", i18n);
+      const fri = getDayName("friday", i18n);
       parts.push(
-        `${monShort}-${friShort}: ${weekdayHours[0].open} - ${weekdayHours[0].close}`
+        `${mon.short}-${fri.short}: ${weekdayHours[0].open} - ${weekdayHours[0].close}`
       );
     } else
-      weekdays.forEach((day) => {
-        const hours = value[day.key];
-        const dayShort = i18n._(day.shortKey);
-        if (hours) parts.push(`${dayShort}: ${hours.open} - ${hours.close}`);
-        else parts.push(`${dayShort}: ${i18n._("Day off")}`);
+      WEEKDAYS.forEach((dayKey) => {
+        const hours = value[dayKey];
+        const day = getDayName(dayKey, i18n);
+        if (hours) parts.push(`${day.short}: ${hours.open} - ${hours.close}`);
+        else parts.push(`${day.short}: ${i18n._("Day off")}`);
       });
-    const satShort = i18n._("Sat");
+    const sat = getDayName("saturday", i18n);
     if (saturdayHours)
-      parts.push(`${satShort}: ${saturdayHours.open} - ${saturdayHours.close}`);
-    else parts.push(`${satShort}: ${i18n._("Day off")}`);
-    const sunShort = i18n._("Sun");
+      parts.push(
+        `${sat.short}: ${saturdayHours.open} - ${saturdayHours.close}`
+      );
+    else parts.push(`${sat.short}: ${i18n._("Day off")}`);
+    const sun = getDayName("sunday", i18n);
     if (sundayHours)
-      parts.push(`${sunShort}: ${sundayHours.open} - ${sundayHours.close}`);
-    else parts.push(`${sunShort}: ${i18n._("Day off")}`);
+      parts.push(`${sun.short}: ${sundayHours.open} - ${sundayHours.close}`);
+    else parts.push(`${sun.short}: ${i18n._("Day off")}`);
 
     return parts.join("\n");
   }, [value, i18n]);

@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { Text, View, ScrollView } from "react-native";
 import { Shadow } from "react-native-shadow-2";
+import { I18n } from "@lingui/core";
 
 // types
 import { TWorkingHours } from "../../../../../storeRedux/apis/workshops/workshops.types";
@@ -18,15 +19,38 @@ import { ModalUniversal } from "../../../../../components/ModalUniversal/ModalUn
 // styles
 import { styles } from "./WorkingHoursPicker.styles";
 
-const DAYS_OF_WEEK = [
-  { key: "monday" as const, labelKey: "Monday" },
-  { key: "tuesday" as const, labelKey: "Tuesday" },
-  { key: "wednesday" as const, labelKey: "Wednesday" },
-  { key: "thursday" as const, labelKey: "Thursday" },
-  { key: "friday" as const, labelKey: "Friday" },
-  { key: "saturday" as const, labelKey: "Saturday" },
-  { key: "sunday" as const, labelKey: "Sunday" },
-] as const;
+type DayKey = keyof TWorkingHours;
+
+const getDayName = (
+  dayKey: DayKey,
+  i18n: I18n
+): { full: string; short: string } => {
+  const dayNames: Record<DayKey, { fullKey: string; shortKey: string }> = {
+    monday: { fullKey: "Monday", shortKey: "Mon" },
+    tuesday: { fullKey: "Tuesday", shortKey: "Tue" },
+    wednesday: { fullKey: "Wednesday", shortKey: "Wed" },
+    thursday: { fullKey: "Thursday", shortKey: "Thu" },
+    friday: { fullKey: "Friday", shortKey: "Fri" },
+    saturday: { fullKey: "Saturday", shortKey: "Sat" },
+    sunday: { fullKey: "Sunday", shortKey: "Sun" },
+  };
+
+  const day = dayNames[dayKey];
+  return {
+    full: i18n._(day.fullKey),
+    short: i18n._(day.shortKey),
+  };
+};
+
+const ALL_DAYS: DayKey[] = [
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday",
+];
 
 type ModalWorkingHoursProps = {
   isOpen: boolean;
@@ -86,12 +110,7 @@ export const ModalWorkingHours: FunctionComponent<ModalWorkingHoursProps> = ({
 
   if (!isOpen) return null;
   return (
-    <ModalUniversal
-      visible={isOpen}
-      onClose={onClose}
-      styleContainer={styles.modalOverlay}
-      animationType="fade"
-    >
+    <ModalUniversal visible={isOpen} onClose={onClose} animationType="fade">
       <View style={styles.modalContent}>
         <View style={styles.modalContainer}>
           <Shadow stretch>
@@ -101,31 +120,32 @@ export const ModalWorkingHours: FunctionComponent<ModalWorkingHoursProps> = ({
             </View>
           </Shadow>
           <ScrollView style={styles.modalScrollView}>
-            {DAYS_OF_WEEK.map((day) => {
-              const dayValue = workingHours[day.key];
+            {ALL_DAYS.map((dayKey) => {
+              const dayValue = workingHours[dayKey];
               const isWorking = dayValue !== null;
+              const dayName = getDayName(dayKey, i18n);
 
               return (
-                <View key={day.key} style={styles.dayContainer}>
+                <View key={dayKey} style={styles.dayContainer}>
                   <CheckboxClassic
                     check={isWorking}
-                    setCheck={() => handleDayToggle(day.key)}
+                    setCheck={() => handleDayToggle(dayKey)}
                     containerStyle={styles.checkboxContainer}
                   />
-                  <Text style={styles.dayLabel}>{i18n._(day.labelKey)}</Text>
+                  <Text style={styles.dayLabel}>{dayName.full}</Text>
                   {isWorking ? (
                     <View style={styles.timeContainer}>
                       <TimePicker
                         value={dayValue.open}
                         onChange={(time) =>
-                          handleTimeChange(day.key, "open", time)
+                          handleTimeChange(dayKey, "open", time)
                         }
                       />
                       <Text style={styles.timeSeparator}>-</Text>
                       <TimePicker
                         value={dayValue.close}
                         onChange={(time) =>
-                          handleTimeChange(day.key, "close", time)
+                          handleTimeChange(dayKey, "close", time)
                         }
                       />
                     </View>
