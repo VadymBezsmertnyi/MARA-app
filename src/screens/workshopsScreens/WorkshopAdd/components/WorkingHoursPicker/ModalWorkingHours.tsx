@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { Text, View, ScrollView } from "react-native";
 import { Shadow } from "react-native-shadow-2";
-import { I18n } from "@lingui/core";
 
 // types
 import { TWorkingHours } from "../../../../../storeRedux/apis/workshops/workshops.types";
@@ -16,31 +15,13 @@ import { LinearGradientCustom } from "../../../../../components/LinearGradientCu
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 import { ModalUniversal } from "../../../../../components/ModalUniversal/ModalUniversal";
 
+// helps
+import useWorkingHoursHelpers from "../../useWorkingHoursHelpers";
+
 // styles
 import { styles } from "./WorkingHoursPicker.styles";
 
 type DayKey = keyof TWorkingHours;
-
-const getDayName = (
-  dayKey: DayKey,
-  i18n: I18n
-): { full: string; short: string } => {
-  const dayNames: Record<DayKey, { fullKey: string; shortKey: string }> = {
-    monday: { fullKey: "Monday", shortKey: "Mon" },
-    tuesday: { fullKey: "Tuesday", shortKey: "Tue" },
-    wednesday: { fullKey: "Wednesday", shortKey: "Wed" },
-    thursday: { fullKey: "Thursday", shortKey: "Thu" },
-    friday: { fullKey: "Friday", shortKey: "Fri" },
-    saturday: { fullKey: "Saturday", shortKey: "Sat" },
-    sunday: { fullKey: "Sunday", shortKey: "Sun" },
-  };
-
-  const day = dayNames[dayKey];
-  return {
-    full: i18n._(day.fullKey),
-    short: i18n._(day.shortKey),
-  };
-};
 
 const ALL_DAYS: DayKey[] = [
   "monday",
@@ -67,6 +48,7 @@ export const ModalWorkingHours: FunctionComponent<ModalWorkingHoursProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const [workingHours, setWorkingHours] = useState<TWorkingHours>(value);
+  const { getDayName } = useWorkingHoursHelpers(i18n);
 
   const handleDayToggle = (dayKey: keyof TWorkingHours) => {
     const currentDay = workingHours[dayKey];
