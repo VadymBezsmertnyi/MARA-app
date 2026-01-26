@@ -17,10 +17,14 @@ export const styles = StyleSheet.create({
   containerLeft: {
     flexDirection: "row",
     gap: 8,
+    flex: 1,
+    flexShrink: 1,
   },
   image: { width: 73, height: 73, borderRadius: 3 },
   containerInfo: {
     justifyContent: "space-between",
+    flex: 1,
+    flexShrink: 1,
   },
   title: {
     width: horizontalScale(250),
@@ -38,6 +42,7 @@ export const styles = StyleSheet.create({
   },
   containerRight: {
     justifyContent: "center",
+    flexShrink: 0,
   },
   inner: {
     flexDirection: "row",
@@ -92,5 +97,7 @@ export const styles = StyleSheet.create({
     color: colors.errorRed,
     marginTop: 2,
     fontStyle: "italic",
+    flexShrink: 1,
+    maxWidth: horizontalScale(250),
   },
 });
