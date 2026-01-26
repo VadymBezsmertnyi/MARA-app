@@ -20,13 +20,13 @@ export type WorkingHoursPickerProps = {
 };
 
 const DAYS_OF_WEEK = [
-  { key: "monday" as const, labelKey: "Monday", shortKey: "Пн" },
-  { key: "tuesday" as const, labelKey: "Tuesday", shortKey: "Вт" },
-  { key: "wednesday" as const, labelKey: "Wednesday", shortKey: "Ср" },
-  { key: "thursday" as const, labelKey: "Thursday", shortKey: "Чт" },
-  { key: "friday" as const, labelKey: "Friday", shortKey: "Пт" },
-  { key: "saturday" as const, labelKey: "Saturday", shortKey: "Сб" },
-  { key: "sunday" as const, labelKey: "Sunday", shortKey: "Нд" },
+  { key: "monday" as const, labelKey: "Monday", shortKey: "Mon" },
+  { key: "tuesday" as const, labelKey: "Tuesday", shortKey: "Tue" },
+  { key: "wednesday" as const, labelKey: "Wednesday", shortKey: "Wed" },
+  { key: "thursday" as const, labelKey: "Thursday", shortKey: "Thu" },
+  { key: "friday" as const, labelKey: "Friday", shortKey: "Fri" },
+  { key: "saturday" as const, labelKey: "Saturday", shortKey: "Sat" },
+  { key: "sunday" as const, labelKey: "Sunday", shortKey: "Sun" },
 ] as const;
 
 export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
@@ -53,21 +53,27 @@ export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
     const sundayHours = value.sunday;
 
     const parts: string[] = [];
-    if (isWeekdaysSame && weekdayHours[0])
-      parts.push(`Пн-Пт: ${weekdayHours[0].open} - ${weekdayHours[0].close}`);
-    else
+    if (isWeekdaysSame && weekdayHours[0]) {
+      const monShort = i18n._("Mon");
+      const friShort = i18n._("Fri");
+      parts.push(
+        `${monShort}-${friShort}: ${weekdayHours[0].open} - ${weekdayHours[0].close}`
+      );
+    } else
       weekdays.forEach((day) => {
         const hours = value[day.key];
-        if (hours)
-          parts.push(`${day.shortKey}: ${hours.open} - ${hours.close}`);
-        else parts.push(`${day.shortKey}: ${i18n._("Day off")}`);
+        const dayShort = i18n._(day.shortKey);
+        if (hours) parts.push(`${dayShort}: ${hours.open} - ${hours.close}`);
+        else parts.push(`${dayShort}: ${i18n._("Day off")}`);
       });
+    const satShort = i18n._("Sat");
     if (saturdayHours)
-      parts.push(`Сб: ${saturdayHours.open} - ${saturdayHours.close}`);
-    else parts.push(`Сб: ${i18n._("Day off")}`);
+      parts.push(`${satShort}: ${saturdayHours.open} - ${saturdayHours.close}`);
+    else parts.push(`${satShort}: ${i18n._("Day off")}`);
+    const sunShort = i18n._("Sun");
     if (sundayHours)
-      parts.push(`Нд: ${sundayHours.open} - ${sundayHours.close}`);
-    else parts.push(`Нд: ${i18n._("Day off")}`);
+      parts.push(`${sunShort}: ${sundayHours.open} - ${sundayHours.close}`);
+    else parts.push(`${sunShort}: ${i18n._("Day off")}`);
 
     return parts.join("\n");
   }, [value, i18n]);
