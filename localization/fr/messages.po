@@ -14,134 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Wait please before the next update"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Geolocation disabled for calculation"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Cannot calculate"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Getting location..."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "To calculate distance, please enable location services"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Enable location"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Unable to like the workshop"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Unable to calculate distance, location is disabled"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Working hours unknown"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Day off"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Working hours"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Monday"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Mon"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Tuesday"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Tue"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Wednesday"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Wed"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Thursday"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Thu"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Friday"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Fri"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Saturday"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sat"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sunday"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sun"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Unable to delete the workshop"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Edit"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Under review"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Verified"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Rejected"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Info"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "The photo has been deleted"
-msgstr ""
-
-#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Entretien"
 
@@ -318,6 +190,10 @@ msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surf
 msgstr "Aérographie de toute complexité / Aérographie de toute complexité sur n'importe quelle surface / Aérographie de toute complexité sur n'importe quelle partie de la voiture"
 
 #. js-lingui-explicit-id
+msgid "Wait please before the next update"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Ateliers"
 
@@ -338,6 +214,14 @@ msgid "Sorry, there are no upcoming workshops"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Geolocation disabled for calculation"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
@@ -355,6 +239,18 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enable location"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -426,8 +322,16 @@ msgid "Error"
 msgstr "Erreur"
 
 #. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Workshop"
 msgstr "Atelier"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "About us:"
@@ -435,6 +339,18 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -498,6 +414,62 @@ msgid "Write a review"
 msgstr "Écrire un avis"
 
 #. js-lingui-explicit-id
+msgid "Monday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "workshop"
 msgstr "atelier"
 
@@ -520,6 +492,10 @@ msgstr "Erreur lors de la modification de l'atelier"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Erreur lors de la création de l'atelier"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -562,6 +538,10 @@ msgid "Select types of work"
 msgstr "Sélectionnez les types de travail"
 
 #. js-lingui-explicit-id
+msgid "Edit"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -588,6 +568,18 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Buy workshop"
 msgstr "Acheter un atelier"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -652,6 +644,14 @@ msgstr "La photo a été modifiée"
 #. js-lingui-explicit-id
 msgid "The photo has not been changed"
 msgstr "La photo n'a pas été modifiée"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Delete"

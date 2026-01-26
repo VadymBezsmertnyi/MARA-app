@@ -14,134 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Wait please before the next update"
-msgstr "Počkejte prosím před dalším aktualizováním"
-
-#. js-lingui-explicit-id
-msgid "Geolocation disabled for calculation"
-msgstr "Geolokace zakázána pro výpočet"
-
-#. js-lingui-explicit-id
-msgid "Cannot calculate"
-msgstr "Nelze vypočítat"
-
-#. js-lingui-explicit-id
-msgid "Getting location..."
-msgstr "Získávání polohy..."
-
-#. js-lingui-explicit-id
-msgid "To calculate distance, please enable location services"
-msgstr "Chcete-li vypočítat vzdálenost, povolte služby určování polohy"
-
-#. js-lingui-explicit-id
-msgid "Enable location"
-msgstr "Povolit polohu"
-
-#. js-lingui-explicit-id
-msgid "Unable to like the workshop"
-msgstr "Nelze dát like dílně"
-
-#. js-lingui-explicit-id
-msgid "Unable to calculate distance, location is disabled"
-msgstr "Nelze vypočítat vzdálenost, poloha je zakázána"
-
-#. js-lingui-explicit-id
-msgid "Working hours unknown"
-msgstr "Pracovní doba neznámá"
-
-#. js-lingui-explicit-id
-msgid "Day off"
-msgstr "Volno"
-
-#. js-lingui-explicit-id
-msgid "Working hours"
-msgstr "Pracovní doba"
-
-#. js-lingui-explicit-id
-msgid "Monday"
-msgstr "Pondělí"
-
-#. js-lingui-explicit-id
-msgid "Mon"
-msgstr "Po"
-
-#. js-lingui-explicit-id
-msgid "Tuesday"
-msgstr "Úterý"
-
-#. js-lingui-explicit-id
-msgid "Tue"
-msgstr "Út"
-
-#. js-lingui-explicit-id
-msgid "Wednesday"
-msgstr "Středa"
-
-#. js-lingui-explicit-id
-msgid "Wed"
-msgstr "St"
-
-#. js-lingui-explicit-id
-msgid "Thursday"
-msgstr "Čt"
-
-#. js-lingui-explicit-id
-msgid "Thu"
-msgstr "Čt"
-
-#. js-lingui-explicit-id
-msgid "Friday"
-msgstr "Pátek"
-
-#. js-lingui-explicit-id
-msgid "Fri"
-msgstr "Pá"
-
-#. js-lingui-explicit-id
-msgid "Saturday"
-msgstr "Sobota"
-
-#. js-lingui-explicit-id
-msgid "Sat"
-msgstr "So"
-
-#. js-lingui-explicit-id
-msgid "Sunday"
-msgstr "Ned"
-
-#. js-lingui-explicit-id
-msgid "Sun"
-msgstr "Ne"
-
-#. js-lingui-explicit-id
-msgid "Unable to delete the workshop"
-msgstr "Nelze smazat dílnu"
-
-#. js-lingui-explicit-id
-msgid "Edit"
-msgstr "Upravit"
-
-#. js-lingui-explicit-id
-msgid "Under review"
-msgstr "Ve schvalování"
-
-#. js-lingui-explicit-id
-msgid "Verified"
-msgstr "Ověřeno"
-
-#. js-lingui-explicit-id
-msgid "Rejected"
-msgstr "Odmítnuto"
-
-#. js-lingui-explicit-id
-msgid "Info"
-msgstr "Info"
-
-#. js-lingui-explicit-id
-msgid "The photo has been deleted"
-msgstr "Fotografie byla smazána"
-
-#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Údržba"
 
@@ -318,6 +190,10 @@ msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surf
 msgstr "Airbrush jakéhokoli stupně složitosti / Airbrush jakéhokoli stupně složitosti na jakoukoli plochu / Airbrush jakéhokoli stupně složitosti na jakoukoli část auta"
 
 #. js-lingui-explicit-id
+msgid "Wait please before the next update"
+msgstr "Počkejte prosím před dalším aktualizováním"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Dílny"
 
@@ -338,6 +214,14 @@ msgid "Sorry, there are no upcoming workshops"
 msgstr "Omlouváme se, nejsou žádné nadcházející dílny"
 
 #. js-lingui-explicit-id
+msgid "Geolocation disabled for calculation"
+msgstr "Geolokace zakázána pro výpočet"
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr "Nelze vypočítat"
+
+#. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
@@ -356,6 +240,18 @@ msgstr "Podle vzdálenosti:"
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
 msgstr "od nejbližších po nejvzdálenější"
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr "Získávání polohy..."
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr "Chcete-li vypočítat vzdálenost, povolte služby určování polohy"
+
+#. js-lingui-explicit-id
+msgid "Enable location"
+msgstr "Povolit polohu"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
@@ -426,8 +322,16 @@ msgid "Error"
 msgstr "Chyba"
 
 #. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr "Nelze dát like dílně"
+
+#. js-lingui-explicit-id
 msgid "Workshop"
 msgstr "Dílna"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr "Nelze vypočítat vzdálenost, poloha je zakázána"
 
 #. js-lingui-explicit-id
 msgid "About us:"
@@ -436,6 +340,18 @@ msgstr "O nás:"
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
 msgstr "Přečíst celý popis..."
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr "Pracovní doba neznámá"
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr "Volno"
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr "Pracovní doba"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -498,6 +414,62 @@ msgid "Write a review"
 msgstr "Napsat recenzi"
 
 #. js-lingui-explicit-id
+msgid "Monday"
+msgstr "Pondělí"
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr "Po"
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr "Úterý"
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr "Út"
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr "Středa"
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr "St"
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr "Čt"
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr "Čt"
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr "Pátek"
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr "Pá"
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr "Sobota"
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr "So"
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr "Ned"
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr "Ne"
+
+#. js-lingui-explicit-id
 msgid "workshop"
 msgstr "dílna"
 
@@ -520,6 +492,10 @@ msgstr "Chyba při změně dílny"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Chyba při vytváření dílny"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr "Nelze smazat dílnu"
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -562,6 +538,10 @@ msgid "Select types of work"
 msgstr "Vyberte typy práce"
 
 #. js-lingui-explicit-id
+msgid "Edit"
+msgstr "Upravit"
+
+#. js-lingui-explicit-id
 msgid "Save"
 msgstr "Uložit"
 
@@ -588,6 +568,18 @@ msgstr "Nemáte {typeItem}."
 #. js-lingui-explicit-id
 msgid "Buy workshop"
 msgstr "Koupit dílnu"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr "Ve schvalování"
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr "Ověřeno"
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr "Odmítnuto"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -652,6 +644,14 @@ msgstr "Fotografie byla změněna"
 #. js-lingui-explicit-id
 msgid "The photo has not been changed"
 msgstr "Fotografie nebyla změněna"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr "Info"
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr "Fotografie byla smazána"
 
 #. js-lingui-explicit-id
 msgid "Delete"

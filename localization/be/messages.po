@@ -14,134 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Wait please before the next update"
-msgstr "Калі ласка, пачакайце перад наступным абнаўленнем"
-
-#. js-lingui-explicit-id
-msgid "Geolocation disabled for calculation"
-msgstr "Геалакацыя адключана для разліку"
-
-#. js-lingui-explicit-id
-msgid "Cannot calculate"
-msgstr "Немагчыма разлічыць"
-
-#. js-lingui-explicit-id
-msgid "Getting location..."
-msgstr "Атрыманне месцазнаходжання..."
-
-#. js-lingui-explicit-id
-msgid "To calculate distance, please enable location services"
-msgstr "Каб разлічыць адлегласць, уключыце службы вызначэння месцазнаходжання"
-
-#. js-lingui-explicit-id
-msgid "Enable location"
-msgstr "Уключыць месцазнаходжанне"
-
-#. js-lingui-explicit-id
-msgid "Unable to like the workshop"
-msgstr "Немагчыма паставіць лайк майстэрні"
-
-#. js-lingui-explicit-id
-msgid "Unable to calculate distance, location is disabled"
-msgstr "Немагчыма разлічыць адлегласць, месцазнаходжанне адключана"
-
-#. js-lingui-explicit-id
-msgid "Working hours unknown"
-msgstr "Гадзіны працы невядомыя"
-
-#. js-lingui-explicit-id
-msgid "Day off"
-msgstr "Выходны"
-
-#. js-lingui-explicit-id
-msgid "Working hours"
-msgstr "Гадзіны працы"
-
-#. js-lingui-explicit-id
-msgid "Monday"
-msgstr "Панядзелак"
-
-#. js-lingui-explicit-id
-msgid "Mon"
-msgstr "Пн"
-
-#. js-lingui-explicit-id
-msgid "Tuesday"
-msgstr "Аўторак"
-
-#. js-lingui-explicit-id
-msgid "Tue"
-msgstr "Аўт"
-
-#. js-lingui-explicit-id
-msgid "Wednesday"
-msgstr "Серада"
-
-#. js-lingui-explicit-id
-msgid "Wed"
-msgstr "Ср"
-
-#. js-lingui-explicit-id
-msgid "Thursday"
-msgstr "Чацвер"
-
-#. js-lingui-explicit-id
-msgid "Thu"
-msgstr "Чц"
-
-#. js-lingui-explicit-id
-msgid "Friday"
-msgstr "Пятніца"
-
-#. js-lingui-explicit-id
-msgid "Fri"
-msgstr "Пт"
-
-#. js-lingui-explicit-id
-msgid "Saturday"
-msgstr "Субота"
-
-#. js-lingui-explicit-id
-msgid "Sat"
-msgstr "Сб"
-
-#. js-lingui-explicit-id
-msgid "Sunday"
-msgstr "Нядзеля"
-
-#. js-lingui-explicit-id
-msgid "Sun"
-msgstr "Нд"
-
-#. js-lingui-explicit-id
-msgid "Unable to delete the workshop"
-msgstr "Немагчыма выдаліць майстэрню"
-
-#. js-lingui-explicit-id
-msgid "Edit"
-msgstr "Рэдагаваць"
-
-#. js-lingui-explicit-id
-msgid "Under review"
-msgstr "На разглядзе"
-
-#. js-lingui-explicit-id
-msgid "Verified"
-msgstr "Праверана"
-
-#. js-lingui-explicit-id
-msgid "Rejected"
-msgstr "Адхілена"
-
-#. js-lingui-explicit-id
-msgid "Info"
-msgstr "Інфармацыя"
-
-#. js-lingui-explicit-id
-msgid "The photo has been deleted"
-msgstr "Фота было выдалена"
-
-#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Тэхнічнае абслугоўванне"
 
@@ -318,6 +190,10 @@ msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surf
 msgstr "Аэраграфія любой складанасці / Аэраграфія любой складанасці на любой паверхні / Аэраграфія любой складанасці на любой частцы аўтамабіля"
 
 #. js-lingui-explicit-id
+msgid "Wait please before the next update"
+msgstr "Калі ласка, пачакайце перад наступным абнаўленнем"
+
+#. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Майстэрні"
 
@@ -338,6 +214,14 @@ msgid "Sorry, there are no upcoming workshops"
 msgstr "Прабачце, няма бліжэйшых майстэрняў"
 
 #. js-lingui-explicit-id
+msgid "Geolocation disabled for calculation"
+msgstr "Геалакацыя адключана для разліку"
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr "Немагчыма разлічыць"
+
+#. js-lingui-explicit-id
 msgid "km"
 msgstr "км"
 
@@ -356,6 +240,18 @@ msgstr "Па адлегласці:"
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
 msgstr "ад бліжэйшых да найдалейшых"
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr "Атрыманне месцазнаходжання..."
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr "Каб разлічыць адлегласць, уключыце службы вызначэння месцазнаходжання"
+
+#. js-lingui-explicit-id
+msgid "Enable location"
+msgstr "Уключыць месцазнаходжанне"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
@@ -426,8 +322,16 @@ msgid "Error"
 msgstr "Памылка"
 
 #. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr "Немагчыма паставіць лайк майстэрні"
+
+#. js-lingui-explicit-id
 msgid "Workshop"
 msgstr "Майстэрня"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr "Немагчыма разлічыць адлегласць, месцазнаходжанне адключана"
 
 #. js-lingui-explicit-id
 msgid "About us:"
@@ -436,6 +340,18 @@ msgstr "Пра нас:"
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
 msgstr "Чытаць поўнае апісанне..."
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr "Гадзіны працы невядомыя"
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr "Выходны"
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr "Гадзіны працы"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -498,6 +414,62 @@ msgid "Write a review"
 msgstr "Напісаць агляд"
 
 #. js-lingui-explicit-id
+msgid "Monday"
+msgstr "Панядзелак"
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr "Пн"
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr "Аўторак"
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr "Аўт"
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr "Серада"
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr "Ср"
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr "Чацвер"
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr "Чц"
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr "Пятніца"
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr "Пт"
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr "Субота"
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr "Сб"
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr "Нядзеля"
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr "Нд"
+
+#. js-lingui-explicit-id
 msgid "workshop"
 msgstr "майстэрня"
 
@@ -520,6 +492,10 @@ msgstr "Памылка пры змене майстэрні"
 #. js-lingui-explicit-id
 msgid "Error creating workshop"
 msgstr "Памылка пры стварэнні майстэрні"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr "Немагчыма выдаліць майстэрню"
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -562,6 +538,10 @@ msgid "Select types of work"
 msgstr "Выберыце тыпы працоў"
 
 #. js-lingui-explicit-id
+msgid "Edit"
+msgstr "Рэдагаваць"
+
+#. js-lingui-explicit-id
 msgid "Save"
 msgstr "Захаваць"
 
@@ -588,6 +568,18 @@ msgstr "У вас няма {typeItem}."
 #. js-lingui-explicit-id
 msgid "Buy workshop"
 msgstr "Купіць майстэрню"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr "На разглядзе"
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr "Праверана"
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr "Адхілена"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -652,6 +644,14 @@ msgstr "Фотаздымак зменены"
 #. js-lingui-explicit-id
 msgid "The photo has not been changed"
 msgstr "Фотаздымак не зменены"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr "Інфармацыя"
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr "Фота было выдалена"
 
 #. js-lingui-explicit-id
 msgid "Delete"
