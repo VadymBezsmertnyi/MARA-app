@@ -222,16 +222,15 @@ export const changeWorkshop = (builder: Builder) =>
           else formData.append(key, String(value));
         }
       });
-      if (existingImageFiles.length > 0)
-        formData.append(
-          "existingImages",
-          JSON.stringify(
-            existingImageFiles.map((img) => ({
-              _id: img._id,
-              url: (img as { url: string }).url,
-            }))
-          )
-        );
+      formData.append(
+        "existingImages",
+        JSON.stringify(
+          existingImageFiles.map((img) => ({
+            _id: img._id,
+            url: (img as { url: string }).url,
+          }))
+        )
+      );
       if (body.userId) formData.set("userId", body.userId);
 
       return {

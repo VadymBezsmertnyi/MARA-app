@@ -72,6 +72,7 @@ export const ImageViewerModal: FunctionComponent<ImageViewerModalProps> = ({
     const newImages = images.filter((_, index) => index !== currentIndex);
 
     if (newImages.length === 0) {
+      onUpdateImages([]);
       setIsVisible(false);
       setTimeout(() => {
         onClose();
