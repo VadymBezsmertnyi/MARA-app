@@ -14,16 +14,316 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "get help in case of an emergency"
+msgid "Wait please before the next update"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Help"
+msgid "Geolocation disabled for calculation"
 msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enable location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Underhåll"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Oljebyte / Filterbyte / Tidningsbältesbyte / Tändstiftbyte / Växellådsoljebyte / Bromsservice / Byte av alla nödvändiga vätskor / Osv."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnostik"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Förköpskomplett diagnostik / Chassidiagnostik / Motordiagnostik / Växellådsdiagnostik / Kroppsdiagnostik / Datorer diagnostik / Vätskediagnostik / Osv."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Auto Elektrisk"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Kabelreparation / Chip-tuning / Installation av larm av vilken komplexitet som helst / Odometerkorrigering / Nyckelomprogrammering / Motor och växellådsanpassning / EGR-borttagning / DPF-borttagning / Xenoninstallation / Parkeringssensorinstallation / Osv."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Chassireparation"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Stötdämparebyte / Fjäderbyte / Kontrollarmsbyte / Balkbyte / Tyst blockpressning / Bladfjädersbyte / Navbyte / Sågbladsbyte / Axelbyte / Kullagerbyte / Byte av motor- och växellådslager / Mekaniskt arbete"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Motor, Automatisk och Manuell Växellåda"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Motordiagnostik / Motorreparation / Motorbyte / Byte av oljepanna för motor / Diagnostik av automatisk växellåda / Byte av olja för automatisk växellåda / Byte av automatisk växellåda / Rengöringsspolar för automatisk växellåda / Kopplingsbyte / Diagnostik av manuell växellåda / Byte av olja för manuell växellåda / Byte av manuell växellåda / Rengöringsspolar för manuell växellåda / Osv."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Bromsar och Styrningssystem"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Diagnostik av bromssystem / Byte av bromsvätska / Bromssystemreparation / Bromsning / Byte av styrstag / Återställning av styrstag / Byte av servostyrning / Byte av servostyrningsvätska / Osv."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Tillbehörutrustning"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Startreparation / Byte av startmotor / Generatorreparation / Byte av generator / Återställning av turboaggregat / Byte av turboaggregat / Osv."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Luftkonditioneringssystem"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostik / Laddning / Omladdning / Läckagedetektering / Rörbyte / Byte av kylare / Kompressorreparation / Byte av kompressor / Systemdesinfektion / Borttagning av främmande lukter"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Hjulinställning"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Hjulinställning / Diagnostik av hjulinställning / Sökning av fjädringsdefekt / Sökning av kroppsdefekt"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Målning"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Karosserimålning / Bumpmålning / Fendermålning / Dörrmålning / Huvmålning / Takmålning / Bagageluckemålning / Vingmålning / Spoilermålning / Spegelmålning / Osv."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Airbrushing"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av motorcykeln som helst / Anpassade airbrushingdesigner för tankar, fenders och fairings"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Tekniskt underhåll"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Smörjning av kablar / Synkronisering av förgasare / Byte av luftfilter / Byte av tändstift / Byte av växellådsolja / Byte av differentialolja / Byte av kylvätska / Byte av motorolja"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Allmänt arbete"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Allmän diagnostik / Kompressionsmätning / Kontroll av tekniska vätskenivåer / Byte av kopplingskabel / Byte av gasreglagekabel / Rengöring och spolning av bränsletank / Borttagning och installation av bränsletank / Borttagning och installation av plast / Installation av säkerhetsbåge, slider"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Chassi"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Borttagning och installation av framhjul / Borttagning och installation av bakhjul / Byte av hjullager / Justering av styrlager / Byte av styrlager / Borttagning och installation av framgaffel / Byte av tätning för framgaffel / Byte av olja för framgaffel / Byte av lager för baksvängarmslager / Byte av bakre stötdämpare / Byte av monostockstötdämpare / Reparation av bakre stötdämpare"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Drivkedja"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Byte av drivkedja och kugghjul / Rengöring, smörjning och justering av kedja / Justering, spänning och smörjning av kedja"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Motor"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Borttagning och installation / Ventiljustering / Kopplingsbyte / Reparation av cylindertopp / Byte av kamkedja / Reparation av kolvgupp / Reparation av växellåda / Motoröverhäulning"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Elektronik"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Byte av reglerrelä / Byte av generator / Byte av startmotor / Startreparation / Byte av glödlampa / Installation av xenon / Byte av batteri / Batteriladdning"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Bromssystem"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Byte av skivbromsklossar / Byte av trumbromsklossar / Bromsning / Byte av bromsvätska / Kombinerat byte av bromsvätska / Byte av bromsslang / Installation av förstärkt slang / Byte av bromsskiva / Reparation av bromsok"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Plastreparation"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Svetsning/restaurering av fragment/restaurering av fästelement"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Svetsningsarbeten"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Bågsvetsning / Halvautomatisk svetsning / Argonbågsvetsning"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Trimning och anpassning"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Installation av skyddsbåge / Installation av slider / Installation av avgassystem / Installation av bromssystem / Installation av förstärkt slang / Installation av xenon / Installation av motorcykelljus / Installation av dimljus (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tankmålning / Sidopanelmålning / Fendermålning / Fairingmålning / Strålkastarlockmålning / Bakre sektionmålning / Sätesöverdragmålning / Avgaslockmålning / Framgaffelmålning / Osv."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av bilen som helst"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Verkstäder"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Lägg till verkstad"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop or type of work"
@@ -36,10 +336,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Lägg till verkstad"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -124,6 +420,10 @@ msgstr "Arbetstyper"
 #. js-lingui-explicit-id
 msgid "Filtering"
 msgstr "Filtrering"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Fel"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -222,10 +522,6 @@ msgid "Error creating workshop"
 msgstr "Fel vid skapande av verkstad"
 
 #. js-lingui-explicit-id
-msgid "Error"
-msgstr "Fel"
-
-#. js-lingui-explicit-id
 msgid "Change workshop"
 msgstr "Ändra verkstad"
 
@@ -266,8 +562,12 @@ msgid "Select types of work"
 msgstr "Välj typer av arbete"
 
 #. js-lingui-explicit-id
-msgid "workshops"
-msgstr "verkstäder"
+msgid "Save"
+msgstr "Spara"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Avbryt"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
@@ -300,10 +600,6 @@ msgstr "Fel: Förnamnet måste vara mellan 3 och 15 tecken"
 #. js-lingui-explicit-id
 msgid "Error: select the city"
 msgstr "Fel: välj staden"
-
-#. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Bilden har ändrats"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -350,8 +646,20 @@ msgid "Select the city"
 msgstr "Välj staden"
 
 #. js-lingui-explicit-id
-msgid "Save"
-msgstr "Spara"
+msgid "The photo has been changed"
+msgstr "Bilden har ändrats"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Bilden har inte ändrats"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Radera"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Ändra"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
@@ -432,14 +740,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Växla på din plats"
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Aktivera din plats i bakgrunden"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
@@ -694,200 +994,12 @@ msgid "or sign up using:"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Underhåll"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Oljebyte / Filterbyte / Tidningsbältesbyte / Tändstiftbyte / Växellådsoljebyte / Bromsservice / Byte av alla nödvändiga vätskor / Osv."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnostik"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Förköpskomplett diagnostik / Chassidiagnostik / Motordiagnostik / Växellådsdiagnostik / Kroppsdiagnostik / Datorer diagnostik / Vätskediagnostik / Osv."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Auto Elektrisk"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Kabelreparation / Chip-tuning / Installation av larm av vilken komplexitet som helst / Odometerkorrigering / Nyckelomprogrammering / Motor och växellådsanpassning / EGR-borttagning / DPF-borttagning / Xenoninstallation / Parkeringssensorinstallation / Osv."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Chassireparation"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Stötdämparebyte / Fjäderbyte / Kontrollarmsbyte / Balkbyte / Tyst blockpressning / Bladfjädersbyte / Navbyte / Sågbladsbyte / Axelbyte / Kullagerbyte / Byte av motor- och växellådslager / Mekaniskt arbete"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Motor, Automatisk och Manuell Växellåda"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Motordiagnostik / Motorreparation / Motorbyte / Byte av oljepanna för motor / Diagnostik av automatisk växellåda / Byte av olja för automatisk växellåda / Byte av automatisk växellåda / Rengöringsspolar för automatisk växellåda / Kopplingsbyte / Diagnostik av manuell växellåda / Byte av olja för manuell växellåda / Byte av manuell växellåda / Rengöringsspolar för manuell växellåda / Osv."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Bromsar och Styrningssystem"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Diagnostik av bromssystem / Byte av bromsvätska / Bromssystemreparation / Bromsning / Byte av styrstag / Återställning av styrstag / Byte av servostyrning / Byte av servostyrningsvätska / Osv."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Tillbehörutrustning"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Startreparation / Byte av startmotor / Generatorreparation / Byte av generator / Återställning av turboaggregat / Byte av turboaggregat / Osv."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Luftkonditioneringssystem"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnostik / Laddning / Omladdning / Läckagedetektering / Rörbyte / Byte av kylare / Kompressorreparation / Byte av kompressor / Systemdesinfektion / Borttagning av främmande lukter"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Hjulinställning"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Hjulinställning / Diagnostik av hjulinställning / Sökning av fjädringsdefekt / Sökning av kroppsdefekt"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Målning"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Karosserimålning / Bumpmålning / Fendermålning / Dörrmålning / Huvmålning / Takmålning / Bagageluckemålning / Vingmålning / Spoilermålning / Spegelmålning / Osv."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Airbrushing"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av motorcykeln som helst / Anpassade airbrushingdesigner för tankar, fenders och fairings"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Tekniskt underhåll"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Smörjning av kablar / Synkronisering av förgasare / Byte av luftfilter / Byte av tändstift / Byte av växellådsolja / Byte av differentialolja / Byte av kylvätska / Byte av motorolja"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Allmänt arbete"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Allmän diagnostik / Kompressionsmätning / Kontroll av tekniska vätskenivåer / Byte av kopplingskabel / Byte av gasreglagekabel / Rengöring och spolning av bränsletank / Borttagning och installation av bränsletank / Borttagning och installation av plast / Installation av säkerhetsbåge, slider"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Chassi"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Borttagning och installation av framhjul / Borttagning och installation av bakhjul / Byte av hjullager / Justering av styrlager / Byte av styrlager / Borttagning och installation av framgaffel / Byte av tätning för framgaffel / Byte av olja för framgaffel / Byte av lager för baksvängarmslager / Byte av bakre stötdämpare / Byte av monostockstötdämpare / Reparation av bakre stötdämpare"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Drivkedja"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Byte av drivkedja och kugghjul / Rengöring, smörjning och justering av kedja / Justering, spänning och smörjning av kedja"
-
-#. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Motor"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Borttagning och installation / Ventiljustering / Kopplingsbyte / Reparation av cylindertopp / Byte av kamkedja / Reparation av kolvgupp / Reparation av växellåda / Motoröverhäulning"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Elektronik"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Byte av reglerrelä / Byte av generator / Byte av startmotor / Startreparation / Byte av glödlampa / Installation av xenon / Byte av batteri / Batteriladdning"
-
-#. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Bromssystem"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Byte av skivbromsklossar / Byte av trumbromsklossar / Bromsning / Byte av bromsvätska / Kombinerat byte av bromsvätska / Byte av bromsslang / Installation av förstärkt slang / Byte av bromsskiva / Reparation av bromsok"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Plastreparation"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Svetsning/restaurering av fragment/restaurering av fästelement"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Svetsningsarbeten"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Bågsvetsning / Halvautomatisk svetsning / Argonbågsvetsning"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Trimning och anpassning"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Installation av skyddsbåge / Installation av slider / Installation av avgassystem / Installation av bromssystem / Installation av förstärkt slang / Installation av xenon / Installation av motorcykelljus / Installation av dimljus (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tankmålning / Sidopanelmålning / Fendermålning / Fairingmålning / Strålkastarlockmålning / Bakre sektionmålning / Sätesöverdragmålning / Avgaslockmålning / Framgaffelmålning / Osv."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Airbrushing av vilken komplexitet som helst / Airbrushing av vilken komplexitet som helst på vilken yta som helst / Airbrushing av vilken komplexitet som helst på vilken del av bilen som helst"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Åtkomst nekad"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Bilden har inte ändrats"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Radera"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Ändra"
-
-#. js-lingui-explicit-id
 msgid "find nearby events, workshops"
 msgstr "hitta närliggande evenemang, verkstäder"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -896,10 +1008,6 @@ msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {firstEvent}, äv
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
 msgstr "Appen {nameApp} samlar platsdata för att möjliggöra {secondEvent}, även när appen är stängd eller inte används."
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Avbryt"
 
 #. js-lingui-explicit-id
 msgid "Accept"
@@ -923,6 +1031,10 @@ msgstr "Skapa verkstad"
 
 #. js-lingui-explicit-id
 msgid "Map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Help"
 msgstr ""
 
 #. js-lingui-explicit-id

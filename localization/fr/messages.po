@@ -14,16 +14,316 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "get help in case of an emergency"
+msgid "Wait please before the next update"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Help"
+msgid "Geolocation disabled for calculation"
 msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enable location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Entretien"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Changement d'huile / Remplacement du filtre / Remplacement de la courroie de distribution / Remplacement des bougies d'allumage / Changement d'huile de transmission / Service de freinage / Remplacement de tous les fluides nécessaires / Etc."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnostics"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Diagnostics complets avant achat / Diagnostics de châssis / Diagnostics moteur / Diagnostics de transmission / Diagnostics de carrosserie / Diagnostics informatiques / Diagnostics de liquides / etc."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Électrique Automobile"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Réparation de câblage / Tuning de puce / Installation d'une alarme de toute complexité / Correction du compteur kilométrique / Reprogrammation de clé / Adaptation du moteur et de la transmission / Suppression de l'EGR / Suppression du DPF / Installation de Xenon / Installation de capteurs de stationnement / etc."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Réparation du Châssis"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Remplacement du vérin d'amortisseur / Remplacement du ressort / Remplacement du bras de commande / Remplacement de la poutre / Pressage du silentbloc / Remplacement du ressort à lames / Remplacement du moyeu / Remplacement de la lame de scie / Remplacement de l'essieu / Remplacement de la rotule / Remplacement du support moteur et transmission / Travaux mécaniques"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Moteur, Transmission Automatique et Manuelle"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Diagnostics moteur / Réparation moteur / Remplacement moteur / Remplacement du carter d'huile moteur / Diagnostics de transmission automatique / Changement d'huile de transmission automatique / Remplacement de transmission automatique / Nettoyage-flush de transmission automatique / Remplacement d'embrayage / Diagnostics de transmission manuelle / Changement d'huile de transmission manuelle / Remplacement de transmission manuelle / Nettoyage-flush de transmission manuelle / etc."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Système de Freinage et Direction"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Diagnostics du système de freinage / Remplacement du liquide de frein / Réparation du système de freinage / Purge de frein / Remplacement du crémaillère de direction / Restauration du crémaillère de direction / Remplacement de la direction assistée / Remplacement du liquide de direction assistée / etc."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Équipement Accessoire"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Réparation de démarreur / Remplacement de démarreur / Réparation de générateur / Remplacement de générateur / Restauration de turbocompresseur / Remplacement de turbocompresseur / etc."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Systèmes de Climatisation"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostics / Chargement / Recharge / Détection de fuites / Remplacement de tuyaux / Remplacement de radiateur / Réparation de compresseur / Remplacement de compresseur / Désinfection du système / Élimination des odeurs étrangères"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Alignement des Roues"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Alignement des roues / Diagnostics d'alignement / Recherche de défauts de suspension / Recherche de défauts de carrosserie"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Peinture"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Peinture de carrosserie / Peinture de pare-chocs / Peinture de garde-boue / Peinture de porte / Peinture de capot / Peinture de toit / Peinture de coffre / Peinture d'aile / Peinture de spoiler / Peinture de miroir / etc."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aérographie"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Aérographie de toute complexité / Aérographie de toute complexité sur n'importe quelle surface / Aérographie de toute complexité sur n'importe quelle partie de la moto / Conceptions d'aérographie personnalisées pour les réservoirs, les garde-boue et les carénages"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Maintenance Technique"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Lubrification des câbles / Synchronisation des carburateurs / Remplacement du filtre à air / Remplacement de la bougie d'allumage / Changement d'huile de transmission / Changement d'huile de différentiel / Remplacement du liquide de refroidissement / Changement d'huile moteur"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Travaux Généraux"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Diagnostics généraux / Mesure de la compression / Vérification du niveau de liquide technique / Remplacement du câble d'embrayage / Remplacement du câble d'accélérateur / Nettoyage et rinçage du réservoir de carburant / Retrait et installation du réservoir de carburant / Retrait et installation de plastique / Installation d'arche de sécurité, installation de slider"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Châssis"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Retrait et installation de la roue avant / Retrait et installation de la roue arrière / Remplacement des roulements de roue / Réglage des roulements de colonne de direction / Remplacement des roulements de colonne de direction / Retrait et installation de la fourche avant / Remplacement du joint d'étanchéité de la fourche avant / Changement d'huile de la fourche avant / Remplacement des roulements de bras oscillant arrière / Remplacement de l'amortisseur arrière / Remplacement de l'amortisseur monoshock / Réparation de l'amortisseur arrière"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Chaîne de transmission"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Remplacement de la chaîne et du pignon de transmission / Nettoyage, lubrification et réglage de la chaîne / Ajustement, tension et lubrification de la chaîne"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Moteur"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Retrait et installation / Réglage des soupapes / Remplacement de l'embrayage / Réparation de la culasse / Remplacement de la chaîne de distribution / Réparation du groupe piston / Réparation de la boîte de vitesses / Révision du moteur"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Électricité"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Remplacement du relais régulateur / Remplacement de l'alternateur / Remplacement du démarreur / Réparation du démarreur / Remplacement de l'ampoule / Installation de Xenon / Remplacement de la batterie / Recharge de la batterie"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Système de freinage"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Remplacement des plaquettes de frein à disque / Remplacement des plaquettes de frein à tambour / Purge de frein / Remplacement du liquide de frein / Remplacement du liquide de frein combiné / Remplacement du flexible de frein / Installation de tuyau renforcé / Remplacement du disque de frein / Réparation de l'étrier de frein"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Réparation de plastique"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Soudage/restauration de fragments/restauration de fixations"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Travaux de soudure"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Soudage à l'arc électrique / Soudage semi-automatique / Soudage à l'argon"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Tuning et personnalisation"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Installation d'arche de protection / Installation de slider / Installation du système d'échappement / Installation du système de freinage / Installation de tuyau renforcé / Installation de Xenon / Installation d'éclairage de moto / Installation de feux de brouillard (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Peinture de réservoir / Peinture de panneau latéral / Peinture de garde-boue / Peinture de carénage / Peinture de couvercle de phare / Peinture de section arrière / Peinture de couvre-siège / Peinture de couvre-échappement / Peinture de fourche avant / etc."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Aérographie de toute complexité / Aérographie de toute complexité sur n'importe quelle surface / Aérographie de toute complexité sur n'importe quelle partie de la voiture"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Ateliers"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Ajouter un atelier"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop or type of work"
@@ -36,10 +336,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Ajouter un atelier"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -124,6 +420,10 @@ msgstr "Types de travaux"
 #. js-lingui-explicit-id
 msgid "Filtering"
 msgstr "Filtrage"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Erreur"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -222,10 +522,6 @@ msgid "Error creating workshop"
 msgstr "Erreur lors de la création de l'atelier"
 
 #. js-lingui-explicit-id
-msgid "Error"
-msgstr "Erreur"
-
-#. js-lingui-explicit-id
 msgid "Change workshop"
 msgstr "Modifier l'atelier"
 
@@ -266,8 +562,12 @@ msgid "Select types of work"
 msgstr "Sélectionnez les types de travail"
 
 #. js-lingui-explicit-id
-msgid "workshops"
-msgstr "ateliers"
+msgid "Save"
+msgstr "Enregistrer"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Annuler"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
@@ -300,10 +600,6 @@ msgstr "Erreur : le prénom doit contenir entre 3 et 15 caractères"
 #. js-lingui-explicit-id
 msgid "Error: select the city"
 msgstr "Erreur : sélectionnez la ville"
-
-#. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "La photo a été modifiée"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -350,8 +646,20 @@ msgid "Select the city"
 msgstr "Sélectionnez la ville"
 
 #. js-lingui-explicit-id
-msgid "Save"
-msgstr "Enregistrer"
+msgid "The photo has been changed"
+msgstr "La photo a été modifiée"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "La photo n'a pas été modifiée"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Supprimer"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Modifier"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
@@ -432,14 +740,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Activer votre emplacement"
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Activer votre localisation en arrière-plan"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
@@ -694,200 +994,12 @@ msgid "or sign up using:"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Entretien"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Changement d'huile / Remplacement du filtre / Remplacement de la courroie de distribution / Remplacement des bougies d'allumage / Changement d'huile de transmission / Service de freinage / Remplacement de tous les fluides nécessaires / Etc."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnostics"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Diagnostics complets avant achat / Diagnostics de châssis / Diagnostics moteur / Diagnostics de transmission / Diagnostics de carrosserie / Diagnostics informatiques / Diagnostics de liquides / etc."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Électrique Automobile"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Réparation de câblage / Tuning de puce / Installation d'une alarme de toute complexité / Correction du compteur kilométrique / Reprogrammation de clé / Adaptation du moteur et de la transmission / Suppression de l'EGR / Suppression du DPF / Installation de Xenon / Installation de capteurs de stationnement / etc."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Réparation du Châssis"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Remplacement du vérin d'amortisseur / Remplacement du ressort / Remplacement du bras de commande / Remplacement de la poutre / Pressage du silentbloc / Remplacement du ressort à lames / Remplacement du moyeu / Remplacement de la lame de scie / Remplacement de l'essieu / Remplacement de la rotule / Remplacement du support moteur et transmission / Travaux mécaniques"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Moteur, Transmission Automatique et Manuelle"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Diagnostics moteur / Réparation moteur / Remplacement moteur / Remplacement du carter d'huile moteur / Diagnostics de transmission automatique / Changement d'huile de transmission automatique / Remplacement de transmission automatique / Nettoyage-flush de transmission automatique / Remplacement d'embrayage / Diagnostics de transmission manuelle / Changement d'huile de transmission manuelle / Remplacement de transmission manuelle / Nettoyage-flush de transmission manuelle / etc."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Système de Freinage et Direction"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Diagnostics du système de freinage / Remplacement du liquide de frein / Réparation du système de freinage / Purge de frein / Remplacement du crémaillère de direction / Restauration du crémaillère de direction / Remplacement de la direction assistée / Remplacement du liquide de direction assistée / etc."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Équipement Accessoire"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Réparation de démarreur / Remplacement de démarreur / Réparation de générateur / Remplacement de générateur / Restauration de turbocompresseur / Remplacement de turbocompresseur / etc."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Systèmes de Climatisation"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnostics / Chargement / Recharge / Détection de fuites / Remplacement de tuyaux / Remplacement de radiateur / Réparation de compresseur / Remplacement de compresseur / Désinfection du système / Élimination des odeurs étrangères"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Alignement des Roues"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Alignement des roues / Diagnostics d'alignement / Recherche de défauts de suspension / Recherche de défauts de carrosserie"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Peinture"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Peinture de carrosserie / Peinture de pare-chocs / Peinture de garde-boue / Peinture de porte / Peinture de capot / Peinture de toit / Peinture de coffre / Peinture d'aile / Peinture de spoiler / Peinture de miroir / etc."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Aérographie"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Aérographie de toute complexité / Aérographie de toute complexité sur n'importe quelle surface / Aérographie de toute complexité sur n'importe quelle partie de la moto / Conceptions d'aérographie personnalisées pour les réservoirs, les garde-boue et les carénages"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Maintenance Technique"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Lubrification des câbles / Synchronisation des carburateurs / Remplacement du filtre à air / Remplacement de la bougie d'allumage / Changement d'huile de transmission / Changement d'huile de différentiel / Remplacement du liquide de refroidissement / Changement d'huile moteur"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Travaux Généraux"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Diagnostics généraux / Mesure de la compression / Vérification du niveau de liquide technique / Remplacement du câble d'embrayage / Remplacement du câble d'accélérateur / Nettoyage et rinçage du réservoir de carburant / Retrait et installation du réservoir de carburant / Retrait et installation de plastique / Installation d'arche de sécurité, installation de slider"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Châssis"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Retrait et installation de la roue avant / Retrait et installation de la roue arrière / Remplacement des roulements de roue / Réglage des roulements de colonne de direction / Remplacement des roulements de colonne de direction / Retrait et installation de la fourche avant / Remplacement du joint d'étanchéité de la fourche avant / Changement d'huile de la fourche avant / Remplacement des roulements de bras oscillant arrière / Remplacement de l'amortisseur arrière / Remplacement de l'amortisseur monoshock / Réparation de l'amortisseur arrière"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Chaîne de transmission"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Remplacement de la chaîne et du pignon de transmission / Nettoyage, lubrification et réglage de la chaîne / Ajustement, tension et lubrification de la chaîne"
-
-#. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Moteur"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Retrait et installation / Réglage des soupapes / Remplacement de l'embrayage / Réparation de la culasse / Remplacement de la chaîne de distribution / Réparation du groupe piston / Réparation de la boîte de vitesses / Révision du moteur"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Électricité"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Remplacement du relais régulateur / Remplacement de l'alternateur / Remplacement du démarreur / Réparation du démarreur / Remplacement de l'ampoule / Installation de Xenon / Remplacement de la batterie / Recharge de la batterie"
-
-#. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Système de freinage"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Remplacement des plaquettes de frein à disque / Remplacement des plaquettes de frein à tambour / Purge de frein / Remplacement du liquide de frein / Remplacement du liquide de frein combiné / Remplacement du flexible de frein / Installation de tuyau renforcé / Remplacement du disque de frein / Réparation de l'étrier de frein"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Réparation de plastique"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Soudage/restauration de fragments/restauration de fixations"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Travaux de soudure"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Soudage à l'arc électrique / Soudage semi-automatique / Soudage à l'argon"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Tuning et personnalisation"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Installation d'arche de protection / Installation de slider / Installation du système d'échappement / Installation du système de freinage / Installation de tuyau renforcé / Installation de Xenon / Installation d'éclairage de moto / Installation de feux de brouillard (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Peinture de réservoir / Peinture de panneau latéral / Peinture de garde-boue / Peinture de carénage / Peinture de couvercle de phare / Peinture de section arrière / Peinture de couvre-siège / Peinture de couvre-échappement / Peinture de fourche avant / etc."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Aérographie de toute complexité / Aérographie de toute complexité sur n'importe quelle surface / Aérographie de toute complexité sur n'importe quelle partie de la voiture"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Accès refusé"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "La photo n'a pas été modifiée"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Supprimer"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Modifier"
-
-#. js-lingui-explicit-id
 msgid "find nearby events, workshops"
 msgstr "trouver des événements et des ateliers à proximité"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -896,10 +1008,6 @@ msgstr "L'application {nameApp} collecte des données de localisation pour perme
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
 msgstr "L'application {nameApp} collecte des données de localisation pour permettre {secondEvent}, même lorsque l'application est fermée ou n'est pas utilisée."
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Annuler"
 
 #. js-lingui-explicit-id
 msgid "Accept"
@@ -923,6 +1031,10 @@ msgstr "Créer un atelier"
 
 #. js-lingui-explicit-id
 msgid "Map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Help"
 msgstr ""
 
 #. js-lingui-explicit-id

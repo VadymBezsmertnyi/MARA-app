@@ -14,16 +14,316 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "get help in case of an emergency"
+msgid "Wait please before the next update"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Help"
+msgid "Geolocation disabled for calculation"
 msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enable location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Întreținere"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Schimb de ulei / Înlocuire filtru / Înlocuire curea de distribuție / Înlocuire bujie / Schimb de ulei de transmisie / Serviciu de frână / Înlocuirea tuturor fluidelor necesare / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnosticare"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Diagnosticare completă pre-achiziție / Diagnosticare șasiu / Diagnosticare motor / Diagnosticare transmisie / Diagnosticare caroserie / Diagnosticare computer / Diagnosticare fluide / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Electrice auto"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Repararea cablajului / Tuning cip / Instalarea unei alarme de orice complexitate / Corecție kilometraj / Reprogramarea cheii / Adaptarea motorului și a transmisiei / Înlăturarea EGR-ului / Înlăturarea DPF-ului / Instalare Xenon / Instalare senzori de parcare / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Reparare șasiu"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Înlocuire amortizor / Înlocuire arc / Înlocuire braț de control / Înlocuire grinda / Presare silent bloc / Înlocuire arc de frunză / Înlocuire butuc / Înlocuire lamă de ferăstrău / Înlocuire ax / Înlocuire articulație sferică / Înlocuire suport motor și transmisie / Lucrări mecanice"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Motor, Transmisie Automată și Manuală"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Diagnosticare motor / Reparare motor / Înlocuire motor / Înlocuire vas ulei motor / Diagnosticare transmisie automată / Schimb ulei transmisie automată / Înlocuire transmisie automată / Curățare-spălare transmisie automată / Înlocuire ambreiaj / Diagnosticare transmisie manuală / Schimb ulei transmisie manuală / Înlocuire transmisie manuală / Curățare-spălare transmisie manuală / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Sistem de frânare și direcție"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Diagnosticare sistem de frânare / Înlocuire lichid de frână / Reparare sistem de frânare / Sângerare frâne / Înlocuire cremalier de direcție / Restaurare cremalier de direcție / Înlocuire direcție asistată / Înlocuire lichid direcție asistată / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Echipamente accesorii"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Reparare electromotor / Înlocuire electromotor / Reparare generator / Înlocuire generator / Restaurare turbocompresor / Înlocuire turbocompresor / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Sisteme de climatizare"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnosticare / Încărcare / Reîncărcare / Detectare scurgeri / Înlocuire conducte / Înlocuire radiator / Reparare compresor / Înlocuire compresor / Dezinfectare sistem / Eliminare mirosuri străine"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Aliniere roți"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Aliniere roți / Diagnosticare aliniere / Căutare defecte suspensie / Căutare defecte caroserie"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Vopsire"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Vopsire caroserie / Vopsire bară / Vopsire aripă / Vopsire ușă / Vopsire capotă / Vopsire plafon / Vopsire portbagaj / Vopsire aripă / Vopsire spoiler / Vopsire oglindă / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aerografie"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a motocicletei / Designuri personalizate de aerografie pentru rezervoare, aripi și carene"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Întreținere tehnică"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Lubrifiere cablu / Sincronizare carburator / Înlocuire filtru de aer / Înlocuire bujie / Schimb ulei de transmisie / Schimb ulei de diferențial / Înlocuire lichid de răcire / Schimb ulei de motor"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Lucrări generale"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Diagnosticare generală / Măsurare compresie / Verificare nivel lichide tehnice / Înlocuire cablu ambreiaj / Înlocuire cablu accelerație / Curățare și spălare rezervor de carburant / Înlăturare și instalare rezervor de carburant / Înlăturare și instalare plastic / Instalare arc de siguranță, șină"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Şasiu"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Înlăturare și instalare roată față / Înlăturare și instalare roată spate / Înlocuire rulment roată / Ajustare rulment coloană de direcție / Înlocuire rulment coloană de direcție / Înlăturare și instalare furcă față / Înlocuire garnitură furcă față / Schimb ulei furcă față / Înlocuire rulment braț oscilant spate / Înlocuire amortizor spate / Înlocuire amortizor central / Reparare amortizor spate"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Lanț de transmisie"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Înlocuire lanț și pinion / Curățare, lubrifiere și ajustare lanț / Ajustare, întindere și lubrifiere lanț"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Motor"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Înlăturare și instalare / Ajustare supape / Înlocuire ambreiaj / Reparare cap cilindru / Înlocuire lanț distribuție / Reparare grup piston / Reparare cutie de viteze / Revizie motor"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Electrice"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Înlocuire regulator tensiune / Înlocuire alternator / Înlocuire electromotor / Reparare electromotor / Înlocuire bec / Instalare xenon / Înlocuire baterie / Încărcare baterie"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Sistem de frânare"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Înlocuire placă frână disc / Înlocuire placă frână tambur / Sângerare frâne / Înlocuire lichid frână / Înlocuire lichid frână combinat / Înlocuire furtun frână / Instalare furtun consolidat / Înlocuire disc frână / Reparare etrier frână"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Reparare plastic"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Sudură/restaurare fragmente/restaurare elemente de fixare"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Lucrări de sudură"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Sudură electrică cu arc / Sudură semiautomată / Sudură cu argon"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Tuning și personalizare"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Instalare arc de protecție / Instalare protecție alunecător / Instalare sistem de evacuare / Instalare sistem de frânare / Instalare furtun consolidat / Instalare xenon / Instalare lumină moto / Instalare lumină ceață (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Vopsire rezervor / Vopsire panou lateral / Vopsire aripă / Vopsire carenă / Vopsire capac far / Vopsire secțiune spate / Vopsire capac șa / Vopsire capac evacuare / Vopsire furcă față / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a mașinii"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Ateliere"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Adaugă atelier"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop or type of work"
@@ -36,10 +336,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Adaugă atelier"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -124,6 +420,10 @@ msgstr "Tipuri de lucrări"
 #. js-lingui-explicit-id
 msgid "Filtering"
 msgstr "Filtrare"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Eroare"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -222,10 +522,6 @@ msgid "Error creating workshop"
 msgstr "Eroare la crearea atelierului"
 
 #. js-lingui-explicit-id
-msgid "Error"
-msgstr "Eroare"
-
-#. js-lingui-explicit-id
 msgid "Change workshop"
 msgstr "Modificați atelier"
 
@@ -266,8 +562,12 @@ msgid "Select types of work"
 msgstr "Selectați tipurile de lucrări"
 
 #. js-lingui-explicit-id
-msgid "workshops"
-msgstr "ateliere"
+msgid "Save"
+msgstr "Salvează"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Anulare"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
@@ -300,10 +600,6 @@ msgstr "Eroare: Prenumele trebuie să fie între 3 și 15 caractere"
 #. js-lingui-explicit-id
 msgid "Error: select the city"
 msgstr "Eroare: selectați orașul"
-
-#. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Fotografia a fost modificată"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -350,8 +646,20 @@ msgid "Select the city"
 msgstr "Selectați orașul"
 
 #. js-lingui-explicit-id
-msgid "Save"
-msgstr "Salvează"
+msgid "The photo has been changed"
+msgstr "Fotografia a fost modificată"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Fotografia nu a fost modificată"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Șterge"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Modifică"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
@@ -432,14 +740,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Comută localizarea dvs."
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Activați-vă locația în fundal"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
@@ -694,200 +994,12 @@ msgid "or sign up using:"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Întreținere"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Schimb de ulei / Înlocuire filtru / Înlocuire curea de distribuție / Înlocuire bujie / Schimb de ulei de transmisie / Serviciu de frână / Înlocuirea tuturor fluidelor necesare / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnosticare"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Diagnosticare completă pre-achiziție / Diagnosticare șasiu / Diagnosticare motor / Diagnosticare transmisie / Diagnosticare caroserie / Diagnosticare computer / Diagnosticare fluide / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Electrice auto"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Repararea cablajului / Tuning cip / Instalarea unei alarme de orice complexitate / Corecție kilometraj / Reprogramarea cheii / Adaptarea motorului și a transmisiei / Înlăturarea EGR-ului / Înlăturarea DPF-ului / Instalare Xenon / Instalare senzori de parcare / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Reparare șasiu"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Înlocuire amortizor / Înlocuire arc / Înlocuire braț de control / Înlocuire grinda / Presare silent bloc / Înlocuire arc de frunză / Înlocuire butuc / Înlocuire lamă de ferăstrău / Înlocuire ax / Înlocuire articulație sferică / Înlocuire suport motor și transmisie / Lucrări mecanice"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Motor, Transmisie Automată și Manuală"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Diagnosticare motor / Reparare motor / Înlocuire motor / Înlocuire vas ulei motor / Diagnosticare transmisie automată / Schimb ulei transmisie automată / Înlocuire transmisie automată / Curățare-spălare transmisie automată / Înlocuire ambreiaj / Diagnosticare transmisie manuală / Schimb ulei transmisie manuală / Înlocuire transmisie manuală / Curățare-spălare transmisie manuală / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Sistem de frânare și direcție"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Diagnosticare sistem de frânare / Înlocuire lichid de frână / Reparare sistem de frânare / Sângerare frâne / Înlocuire cremalier de direcție / Restaurare cremalier de direcție / Înlocuire direcție asistată / Înlocuire lichid direcție asistată / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Echipamente accesorii"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Reparare electromotor / Înlocuire electromotor / Reparare generator / Înlocuire generator / Restaurare turbocompresor / Înlocuire turbocompresor / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Sisteme de climatizare"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnosticare / Încărcare / Reîncărcare / Detectare scurgeri / Înlocuire conducte / Înlocuire radiator / Reparare compresor / Înlocuire compresor / Dezinfectare sistem / Eliminare mirosuri străine"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Aliniere roți"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Aliniere roți / Diagnosticare aliniere / Căutare defecte suspensie / Căutare defecte caroserie"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Vopsire"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Vopsire caroserie / Vopsire bară / Vopsire aripă / Vopsire ușă / Vopsire capotă / Vopsire plafon / Vopsire portbagaj / Vopsire aripă / Vopsire spoiler / Vopsire oglindă / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Aerografie"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a motocicletei / Designuri personalizate de aerografie pentru rezervoare, aripi și carene"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Întreținere tehnică"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Lubrifiere cablu / Sincronizare carburator / Înlocuire filtru de aer / Înlocuire bujie / Schimb ulei de transmisie / Schimb ulei de diferențial / Înlocuire lichid de răcire / Schimb ulei de motor"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Lucrări generale"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Diagnosticare generală / Măsurare compresie / Verificare nivel lichide tehnice / Înlocuire cablu ambreiaj / Înlocuire cablu accelerație / Curățare și spălare rezervor de carburant / Înlăturare și instalare rezervor de carburant / Înlăturare și instalare plastic / Instalare arc de siguranță, șină"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Şasiu"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Înlăturare și instalare roată față / Înlăturare și instalare roată spate / Înlocuire rulment roată / Ajustare rulment coloană de direcție / Înlocuire rulment coloană de direcție / Înlăturare și instalare furcă față / Înlocuire garnitură furcă față / Schimb ulei furcă față / Înlocuire rulment braț oscilant spate / Înlocuire amortizor spate / Înlocuire amortizor central / Reparare amortizor spate"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Lanț de transmisie"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Înlocuire lanț și pinion / Curățare, lubrifiere și ajustare lanț / Ajustare, întindere și lubrifiere lanț"
-
-#. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Motor"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Înlăturare și instalare / Ajustare supape / Înlocuire ambreiaj / Reparare cap cilindru / Înlocuire lanț distribuție / Reparare grup piston / Reparare cutie de viteze / Revizie motor"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Electrice"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Înlocuire regulator tensiune / Înlocuire alternator / Înlocuire electromotor / Reparare electromotor / Înlocuire bec / Instalare xenon / Înlocuire baterie / Încărcare baterie"
-
-#. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Sistem de frânare"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Înlocuire placă frână disc / Înlocuire placă frână tambur / Sângerare frâne / Înlocuire lichid frână / Înlocuire lichid frână combinat / Înlocuire furtun frână / Instalare furtun consolidat / Înlocuire disc frână / Reparare etrier frână"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Reparare plastic"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Sudură/restaurare fragmente/restaurare elemente de fixare"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Lucrări de sudură"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Sudură electrică cu arc / Sudură semiautomată / Sudură cu argon"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Tuning și personalizare"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Instalare arc de protecție / Instalare protecție alunecător / Instalare sistem de evacuare / Instalare sistem de frânare / Instalare furtun consolidat / Instalare xenon / Instalare lumină moto / Instalare lumină ceață (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Vopsire rezervor / Vopsire panou lateral / Vopsire aripă / Vopsire carenă / Vopsire capac far / Vopsire secțiune spate / Vopsire capac șa / Vopsire capac evacuare / Vopsire furcă față / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a mașinii"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Acces interzis"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Fotografia nu a fost modificată"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Șterge"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Modifică"
-
-#. js-lingui-explicit-id
 msgid "find nearby events, workshops"
 msgstr "găsiți evenimente, ateliere apropiate"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -896,10 +1008,6 @@ msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {fi
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
 msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {secondEvent}, chiar și atunci când aplicația este închisă sau nu este utilizată."
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Anulare"
 
 #. js-lingui-explicit-id
 msgid "Accept"
@@ -923,6 +1031,10 @@ msgstr "Creați atelier"
 
 #. js-lingui-explicit-id
 msgid "Map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Help"
 msgstr ""
 
 #. js-lingui-explicit-id

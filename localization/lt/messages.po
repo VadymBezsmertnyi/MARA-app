@@ -14,16 +14,316 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "get help in case of an emergency"
+msgid "Wait please before the next update"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Help"
+msgid "Geolocation disabled for calculation"
 msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enable location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Priežiūra"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Alyvos keitimas / Filtrų keitimas / Sankabos keitimas / Žvakės keitimas / Pavarų dėžės alyvos keitimas / Stabdžių aptarnavimas / Visų reikalingų skysčių keitimas / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Diagnostika"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Išsami pirkinio diagnostika / Šasijos diagnostika / Variklio diagnostika / Pavarų dėžės diagnostika / Kūno diagnostika / Kompiuterinė diagnostika / Skysto diagnostika / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Automobilinė elektros sistema"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Elektros laidų remontas / Laidų keitimas / Įvairių sudėtingumo signalizacijos įrengimas / Ridaus korekcija / Raktų perdarymas / Variklio ir pavarų dėžės adaptacija / EGR pašalinimas / DPF pašalinimas / Ksenono įrengimas / Parkavimo jutiklių įrengimas / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Šasių remontas"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Stūmoklių strypo keitimas / Spyruoklių keitimas / Skersinės rankos keitimas / Sankabos keitimas / Tylaus bloko spaudimas / Lapų spyruoklių keitimas / Stabdžių diskų keitimas / Disko bloko keitimas / Veleno keitimas / Sankabos keitimas / Variklio ir pavarų dėžės laikiklių keitimas / Mechaniniai darbai"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Variklis, Automatinė ir Mechaninė pavarų dėžė"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Variklio diagnostika / Variklio remontas / Variklio keitimas / Variklio alyvos padėklų keitimas / Automatinės pavarų dėžės diagnostika / Automatinės pavarų dėžės alyvos keitimas / Automatinės pavarų dėžės keitimas / Automatinės pavarų dėžės valymas-plovimas / Sankabos keitimas / Mechaninės pavarų dėžės diagnostika / Mechaninės pavarų dėžės alyvos keitimas / Mechaninės pavarų dėžės keitimas / Mechaninės pavarų dėžės valymas-plovimas / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Stabdžiai ir vairavimo sistema"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Stabdžių sistemos diagnostika / Stabdžių skysčio keitimas / Stabdžių sistemos remontas / Stabdžių kraujavimas / Vairo siurblio keitimas / Vairo siurblio atkūrimas / Galingo vairo keitimas / Galingo vairo skysčio keitimas / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Priedai"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Starterio remontas / Starterio keitimas / Generatoriaus remontas / Generatoriaus keitimas / Turbo kompresoriaus atkūrimas / Turbo kompresoriaus keitimas / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Kondicionavimo sistemos"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostika / Įkrovimas / Įkrovimas / Nutekėjimų aptikimas / Vamzdžių keitimas / Radiatoriaus keitimas / Kompresoriaus remontas / Kompresoriaus keitimas / Sistemos dezinfekcija / Užsienio kvapų pašalinimas"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Ratų išlyginimas"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Ratų išlyginimas / Išlyginimo diagnostika / Pakabos defektų paieška / Kūno defektų paieška"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Dažymas"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Kūno dažymas / Bamperio dažymas / Šoninės panelės dažymas / Durų dažymas / Kaušo dažymas / Stogo dažymas / Baginio dažymas / Sparno dažymas / Spoilerio dažymas / Veidrodžio dažymas / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Oro šepetys"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Oro šepetys bet kokios sudėtingumo / Oro šepetys bet kokios sudėtingumo bet kurioje paviršiaus / Oro šepetys bet kokios sudėtingumo bet kurioje motociklo dalyje / Individualūs oro šepetys dizainai bako, šoninių panelių ir priekinio šakotuvo"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Techninė priežiūra"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Kabelio tepimas / Kuro mišinio sinchronizavimas / Oro filtro keitimas / Žvakės keitimas / Pavarų dėžės alyvos keitimas / Diferencialo alyvos keitimas / Aušinimo skysčio keitimas / Variklio alyvos keitimas"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Bendri darbai"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Bendrų diagnostikos / Suspaudimo matavimas / Techninio skysčio lygio patikrinimas / Sankabos kabelio keitimas / Droselinio vožtuvo kabelio keitimas / Kuro bakų valymas ir praplovimas / Kuro bakų išmontavimas ir įmontavimas / Plastikinių detalių išmontavimas ir įmontavimas / Saugumo lanko, slankiklio įrengimas"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Šasi"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Priekinio rato išmontavimas ir įmontavimas / Galinio rato išmontavimas ir įmontavimas / Rato guolio keitimas / Vairo stulpelio guolio reguliavimas / Vairo stulpelio guolio keitimas / Priekinio šakotuvo išmontavimas ir įmontavimas / Priekinio šakotuvo antspaudų keitimas / Priekinio šakotuvo alyvos keitimas / Galinio svirnelio guolio keitimas / Galinio šoko absorberio keitimas / Monoshoko absorberio keitimas / Galinio šoko absorberio remontas"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Vedamoji grandinė"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Vedamosios grandinės ir pavarų ratelių keitimas / Grandinės valymas, tepimas ir reguliavimas / Grandinės reguliavimas, įtempimas ir tepimas"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Variklis"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Išmontavimas ir įmontavimas / Vožtuvų reguliavimas / Sankabos keitimas / Cilindro galvos remontas / Taimingo grandinės keitimas / Pistono grupės remontas / Pavarų dėžės remontas / Variklio remontas"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Elektra"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Reguliatoriaus relejų keitimas / Generatoriaus keitimas / Starterio keitimas / Starterio remontas / Lempos keitimas / Ksenono įrengimas / Akumuliatoriaus keitimas / Akumuliatoriaus įkrovimas"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Stabdžių sistema"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Disko stabdžių pagalvėlių keitimas / Būgninės stabdžių pagalvėlių keitimas / Stabdžių kraujavimas / Stabdžių skysčio keitimas / Kombinuoto stabdžių skysčio keitimas / Stabdžių vamzdžio keitimas / Stiprinto vamzdžio įrengimas / Disko stabdžių keitimas / Stabdžių suportų remontas"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Plastikinio remontas"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Virinimas / fragmentų atkūrimas / fiksuotuvų atkūrimas"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Virinimo darbai"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Elektrinio lanko virinimas / Pusiau automatinis virinimas / Argono lanko virinimas"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Tuningas ir adaptacija"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Apsauginio lanko įrengimas / Slankiklio įrengimas / Išmetimo sistemos įrengimas / Stabdžių sistemos įrengimas / Stiprinto vamzdžio įrengimas / Ksenono įrengimas / Motociklo apšvietimo įrengimas / Rūkas įrengimas (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Bako dažymas / Šoninės panelės dažymas / Šoninės panelės dažymas / Šoninės panelės dažymas / Priekinio šakotuvo dažymas / Priekinio šakotuvo dažymas / Sėdynės dangos dažymas / Išmetimo dangos dažymas / Priekinio šakotuvo dažymas / Ir t.t."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Oro šepetys bet kokios sudėtingumo / Oro šepetys bet kokios sudėtingumo bet kurioje paviršiaus / Oro šepetys bet kokios sudėtingumo bet kurioje automobilio dalyje"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Dirbtuvės"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridėti dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop or type of work"
@@ -36,10 +336,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridėti dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -124,6 +420,10 @@ msgstr "Darbų tipai"
 #. js-lingui-explicit-id
 msgid "Filtering"
 msgstr "Filtravimas"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Klaida"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -222,10 +522,6 @@ msgid "Error creating workshop"
 msgstr "Klaida kuriant dirbtuvę"
 
 #. js-lingui-explicit-id
-msgid "Error"
-msgstr "Klaida"
-
-#. js-lingui-explicit-id
 msgid "Change workshop"
 msgstr "Keisti dirbtuves"
 
@@ -266,8 +562,12 @@ msgid "Select types of work"
 msgstr "Pasirinkite darbų tipus"
 
 #. js-lingui-explicit-id
-msgid "workshops"
-msgstr "Dirbtuvės"
+msgid "Save"
+msgstr "Išsaugoti"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Atšaukti"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
@@ -300,10 +600,6 @@ msgstr "Klaida: Vardas turi būti nuo 3 iki 15 simbolių"
 #. js-lingui-explicit-id
 msgid "Error: select the city"
 msgstr "Klaida: pasirinkite miestą"
-
-#. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Nuotrauka pakeista"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -350,8 +646,20 @@ msgid "Select the city"
 msgstr "Pasirinkite miestą"
 
 #. js-lingui-explicit-id
-msgid "Save"
-msgstr "Išsaugoti"
+msgid "The photo has been changed"
+msgstr "Nuotrauka pakeista"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Nuotrauka nepakeista"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Ištrinti"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Keisti"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
@@ -432,14 +740,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Įjungti savo vietą"
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Įjunkite savo vietą fone"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
@@ -694,200 +994,12 @@ msgid "or sign up using:"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Priežiūra"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Alyvos keitimas / Filtrų keitimas / Sankabos keitimas / Žvakės keitimas / Pavarų dėžės alyvos keitimas / Stabdžių aptarnavimas / Visų reikalingų skysčių keitimas / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnostika"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Išsami pirkinio diagnostika / Šasijos diagnostika / Variklio diagnostika / Pavarų dėžės diagnostika / Kūno diagnostika / Kompiuterinė diagnostika / Skysto diagnostika / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Automobilinė elektros sistema"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Elektros laidų remontas / Laidų keitimas / Įvairių sudėtingumo signalizacijos įrengimas / Ridaus korekcija / Raktų perdarymas / Variklio ir pavarų dėžės adaptacija / EGR pašalinimas / DPF pašalinimas / Ksenono įrengimas / Parkavimo jutiklių įrengimas / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Šasių remontas"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Stūmoklių strypo keitimas / Spyruoklių keitimas / Skersinės rankos keitimas / Sankabos keitimas / Tylaus bloko spaudimas / Lapų spyruoklių keitimas / Stabdžių diskų keitimas / Disko bloko keitimas / Veleno keitimas / Sankabos keitimas / Variklio ir pavarų dėžės laikiklių keitimas / Mechaniniai darbai"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Variklis, Automatinė ir Mechaninė pavarų dėžė"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Variklio diagnostika / Variklio remontas / Variklio keitimas / Variklio alyvos padėklų keitimas / Automatinės pavarų dėžės diagnostika / Automatinės pavarų dėžės alyvos keitimas / Automatinės pavarų dėžės keitimas / Automatinės pavarų dėžės valymas-plovimas / Sankabos keitimas / Mechaninės pavarų dėžės diagnostika / Mechaninės pavarų dėžės alyvos keitimas / Mechaninės pavarų dėžės keitimas / Mechaninės pavarų dėžės valymas-plovimas / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Stabdžiai ir vairavimo sistema"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Stabdžių sistemos diagnostika / Stabdžių skysčio keitimas / Stabdžių sistemos remontas / Stabdžių kraujavimas / Vairo siurblio keitimas / Vairo siurblio atkūrimas / Galingo vairo keitimas / Galingo vairo skysčio keitimas / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Priedai"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Starterio remontas / Starterio keitimas / Generatoriaus remontas / Generatoriaus keitimas / Turbo kompresoriaus atkūrimas / Turbo kompresoriaus keitimas / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Kondicionavimo sistemos"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnostika / Įkrovimas / Įkrovimas / Nutekėjimų aptikimas / Vamzdžių keitimas / Radiatoriaus keitimas / Kompresoriaus remontas / Kompresoriaus keitimas / Sistemos dezinfekcija / Užsienio kvapų pašalinimas"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Ratų išlyginimas"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Ratų išlyginimas / Išlyginimo diagnostika / Pakabos defektų paieška / Kūno defektų paieška"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Dažymas"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Kūno dažymas / Bamperio dažymas / Šoninės panelės dažymas / Durų dažymas / Kaušo dažymas / Stogo dažymas / Baginio dažymas / Sparno dažymas / Spoilerio dažymas / Veidrodžio dažymas / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Oro šepetys"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Oro šepetys bet kokios sudėtingumo / Oro šepetys bet kokios sudėtingumo bet kurioje paviršiaus / Oro šepetys bet kokios sudėtingumo bet kurioje motociklo dalyje / Individualūs oro šepetys dizainai bako, šoninių panelių ir priekinio šakotuvo"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Techninė priežiūra"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Kabelio tepimas / Kuro mišinio sinchronizavimas / Oro filtro keitimas / Žvakės keitimas / Pavarų dėžės alyvos keitimas / Diferencialo alyvos keitimas / Aušinimo skysčio keitimas / Variklio alyvos keitimas"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Bendri darbai"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Bendrų diagnostikos / Suspaudimo matavimas / Techninio skysčio lygio patikrinimas / Sankabos kabelio keitimas / Droselinio vožtuvo kabelio keitimas / Kuro bakų valymas ir praplovimas / Kuro bakų išmontavimas ir įmontavimas / Plastikinių detalių išmontavimas ir įmontavimas / Saugumo lanko, slankiklio įrengimas"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Šasi"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Priekinio rato išmontavimas ir įmontavimas / Galinio rato išmontavimas ir įmontavimas / Rato guolio keitimas / Vairo stulpelio guolio reguliavimas / Vairo stulpelio guolio keitimas / Priekinio šakotuvo išmontavimas ir įmontavimas / Priekinio šakotuvo antspaudų keitimas / Priekinio šakotuvo alyvos keitimas / Galinio svirnelio guolio keitimas / Galinio šoko absorberio keitimas / Monoshoko absorberio keitimas / Galinio šoko absorberio remontas"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Vedamoji grandinė"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Vedamosios grandinės ir pavarų ratelių keitimas / Grandinės valymas, tepimas ir reguliavimas / Grandinės reguliavimas, įtempimas ir tepimas"
-
-#. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Variklis"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Išmontavimas ir įmontavimas / Vožtuvų reguliavimas / Sankabos keitimas / Cilindro galvos remontas / Taimingo grandinės keitimas / Pistono grupės remontas / Pavarų dėžės remontas / Variklio remontas"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Elektra"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Reguliatoriaus relejų keitimas / Generatoriaus keitimas / Starterio keitimas / Starterio remontas / Lempos keitimas / Ksenono įrengimas / Akumuliatoriaus keitimas / Akumuliatoriaus įkrovimas"
-
-#. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Stabdžių sistema"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Disko stabdžių pagalvėlių keitimas / Būgninės stabdžių pagalvėlių keitimas / Stabdžių kraujavimas / Stabdžių skysčio keitimas / Kombinuoto stabdžių skysčio keitimas / Stabdžių vamzdžio keitimas / Stiprinto vamzdžio įrengimas / Disko stabdžių keitimas / Stabdžių suportų remontas"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Plastikinio remontas"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Virinimas / fragmentų atkūrimas / fiksuotuvų atkūrimas"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Virinimo darbai"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Elektrinio lanko virinimas / Pusiau automatinis virinimas / Argono lanko virinimas"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Tuningas ir adaptacija"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Apsauginio lanko įrengimas / Slankiklio įrengimas / Išmetimo sistemos įrengimas / Stabdžių sistemos įrengimas / Stiprinto vamzdžio įrengimas / Ksenono įrengimas / Motociklo apšvietimo įrengimas / Rūkas įrengimas (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Bako dažymas / Šoninės panelės dažymas / Šoninės panelės dažymas / Šoninės panelės dažymas / Priekinio šakotuvo dažymas / Priekinio šakotuvo dažymas / Sėdynės dangos dažymas / Išmetimo dangos dažymas / Priekinio šakotuvo dažymas / Ir t.t."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Oro šepetys bet kokios sudėtingumo / Oro šepetys bet kokios sudėtingumo bet kurioje paviršiaus / Oro šepetys bet kokios sudėtingumo bet kurioje automobilio dalyje"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Prieiga uždrausta"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Nuotrauka nepakeista"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Ištrinti"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Keisti"
-
-#. js-lingui-explicit-id
 msgid "find nearby events, workshops"
 msgstr "rasti artimiausius renginius, dirbtuves"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -896,10 +1008,6 @@ msgstr "Programa {nameApp} renka vietos duomenis, kad būtų galima įgalinti {f
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
 msgstr "Programa {nameApp} renka vietos duomenis, kad būtų galima įgalinti {secondEvent}, net kai programa uždaryta arba neveikia."
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Atšaukti"
 
 #. js-lingui-explicit-id
 msgid "Accept"
@@ -923,6 +1031,10 @@ msgstr "Sukurti dirbtuves"
 
 #. js-lingui-explicit-id
 msgid "Map"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Help"
 msgstr ""
 
 #. js-lingui-explicit-id

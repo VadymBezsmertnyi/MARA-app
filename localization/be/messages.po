@@ -14,16 +14,316 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "get help in case of an emergency"
-msgstr "атрымаць дапамогу ў выпадку надзвычайнай сітуацыі"
+msgid "Wait please before the next update"
+msgstr "Калі ласка, пачакайце перад наступным абнаўленнем"
 
 #. js-lingui-explicit-id
-msgid "Help"
-msgstr "Дапамога"
+msgid "Geolocation disabled for calculation"
+msgstr "Геалакацыя адключана для разліку"
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr "Немагчыма разлічыць"
+
+#. js-lingui-explicit-id
+msgid "Getting location..."
+msgstr "Атрыманне месцазнаходжання..."
+
+#. js-lingui-explicit-id
+msgid "To calculate distance, please enable location services"
+msgstr "Каб разлічыць адлегласць, уключыце службы вызначэння месцазнаходжання"
+
+#. js-lingui-explicit-id
+msgid "Enable location"
+msgstr "Уключыць месцазнаходжанне"
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr "Немагчыма паставіць лайк майстэрні"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr "Немагчыма разлічыць адлегласць, месцазнаходжанне адключана"
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr "Гадзіны працы невядомыя"
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr "Выходны"
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr "Гадзіны працы"
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr "Панядзелак"
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr "Пн"
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr "Аўторак"
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr "Аўт"
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr "Серада"
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr "Ср"
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr "Чацвер"
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr "Чц"
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr "Пятніца"
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr "Пт"
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr "Субота"
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr "Сб"
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr "Нядзеля"
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr "Нд"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr "Немагчыма выдаліць майстэрню"
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr "Рэдагаваць"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr "На разглядзе"
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr "Праверана"
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr "Адхілена"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr "Інфармацыя"
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr "Фота было выдалена"
+
+#. js-lingui-explicit-id
+msgid "Maintenance"
+msgstr "Тэхнічнае абслугоўванне"
+
+#. js-lingui-explicit-id
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Змяна масла / Замена фільтраў / Замена таймінгаў паскроўных / Замена свячок / Замена масла перадач / Сэрвіс тармазоў / Замена ўсіх неабходных рыхлосцяў / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Diagnostics"
+msgstr "Дыагностыка"
+
+#. js-lingui-explicit-id
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Папярэдні абгляд з агульнай дыягностыкай / Дыагностыка шасі / Дыагностыка рухавіка / Дыагностыка перадач / Дыагностыка кузава / Дыагностыка камп'ютэра / Дыагностыка рыхлосці / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Auto Electrical"
+msgstr "Аўтамабільная электрыка"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Рэмонт электрасувязі / Чып-тюнінг / Ўстаноўка алярму любой складанасці / Карэкцыя адометра / Перапраграмаванне ключоў / Адаптацыя рухавіка і перадач / Выдаленне EGR / Выдаленне DPF / Ўстаноўка ксенана / Ўстаноўка паракавачаў / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Рэмонт шасі"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Замена стойкі амартызатара / Замена пругоў / Замена рычага кіравання / Замена балкі / Замена падушак / Замена лазы / Замена втулак / Замена пілы / Замена валу / Замена шарніраў / Замена крэплення рухавіка і перадач / Механічныя работы"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Рухавік, аўтаматычная і мануальная перадача"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Дыагностыка рухавіка / Рэмонт рухавіка / Замена рухавіка / Замена каркаса рухавіка / Дыагностыка аўтаматычнай перадачы / Замена масла аўтаматычнай перадачы / Замена аўтаматычнай перадачы / Чыстка-плыўныя аўтаматычныя перадачы / Замена зчэплення / Дыагностыка мануальнай перадачы / Замена масла мануальнай перадачы / Замена мануальнай перадачы / Чыстка-плыўныя мануальныя перадачы / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Тармазы і сістэма кіравання"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Дыягностика гальмоўнай сістэмы / Замена гальмоўнага жывёла / Рэмонт гальмоўнай сістэмы / Пургінг гальмоўнай сістэмы / Замена рулявога механізму / Аднаўленне рулявога механізму / Замена гідрасіліка рулявога механізму / Замена гідрасіліка рулявога механізму / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Дадатковае абсталяванне"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Рэмонт старцёра / Замена старцёра / Рэмонт генератара / Замена генератара / Аднаўленне турбачарга / Замена турбачарга / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Сістэмы кандыцыянавання паветра"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Дыягностика / Зарядка / Перазарядка / Выяўленне выцяканняў / Замена трубак / Замена радыятара / Рэмонт кампрэсара / Замена кампрэсара / Дэзінфекцыя сістэмы / Адстраненне замароў"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Балансіравка колаў"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Балансіравка колаў / Дыягностика балансіравкі / Пошук дэфектаў падвескі / Пошук дэфектаў кузава"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Маляванне"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Маляванне кузава / Маляванне бампера / Маляванне крылаў / Маляванне дзвераў / Маляванне капотаў / Маляванне даха / Маляванне багажніка / Маляванне крыла / Маляванне спойлера / Маляванне дзеркалаў / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Аэраграфія"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Аэраграфія любой складанасці / Аэраграфія любой складанасці на любой паверхні / Аэраграфія любой складанасці на любой частцы мотацыкла / Індывідуальныя дызайны аэраграфіі для танкаў, крылаў і капотаў"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Тэхнічнае абслугоўванне"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Змацненне кабеляў / Сінхранізацыя карбюратараў / Замена ачысткі паветра / Замена свечак / Замена масла перадач / Замена масла дыференцыяла / Замена антифрызаў / Замена масла ў рухавіку"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Агульныя работы"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Агульная дыягностика / Мерыяльнік кампрэсіі / Кантроль рыважнасці тэхнічных рыхласцей / Замена клатчавага кабеля / Замена кабеля газу / Ачыстка і плыўныя топлівныя танкі / Зняцце і ўстаноўка топлівных танкоў / Зняцце і ўстаноўка пластыка / Устаноўка абароннага арку, слайдера"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Шасі"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Зняцце і ўстаноўка перадняга кола / Зняцце і ўстаноўка задняга кола / Замена валасоў калодак / Карэкцыя валасоў калодак / Замена валасоў калодак / Зняцце і ўстаноўка перадняга амартызатара / Замена сальнікаў перадняга амартызатара / Замена масла перадняга амартызатара / Замена валасоў амартызатара падвескі / Замена задняга амартызатара / Замена адназначнага амартызатара / Рэмонт задняга амартызатара"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Ланцуг прайзводства"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Замена ланцюга і зірки / Чыстка, змацненне і наладка ланцюга / Наладка, натяг і змацненне ланцюга"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Рухавік"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Выдаленне і ўстаноўка / Наладка клапанаў / Замена зчэплення / Рэмонт галавы цыліндра / Замена ланцюга пазіцыянавага механізму / Рэмонт цыліндраў / Рэмонт скрыні / Капітальны рэмонт рухавіка"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Электрыка"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Замена рэгулятара рэле / Замена генератара / Замена старцавога механізму / Рэмонт старцавога механізму / Замена лямпачкі / Устаноўка ксенана / Замена акамулятара / Зарядка акамулятара"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Гальмоўная сістэма"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Замена коладак тармазнага дыска / Замена коладак барабаннага тармаза / Пургінг тармазной сістэмы / Замена тармазнага жывёла / Камбінованая замена тармазнага жывёла / Замена тармазнага шланга / Устаноўка адшпалераванага шланга / Замена тармазнага дыска / Рэмонт тармазнага цапфера"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Рэмонт пластыка"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Сварка / аднѐўленне фрагментаў / аднавленне фіксатараў"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Сварочныя работы"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Электра дугавая сварка / Паўаўтаматычная сварка / Аргонавая дугавая сварка"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Тюнінг і наладка"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Устаноўка абарончага арка / Устаноўка слайдера / Устаноўка выхлопнай сістэмы / Устаноўка тармазнай сістэмы / Устаноўка адшпалераванага шланга / Устаноўка ксенана / Устаноўка асветлення мотацыкла / Устаноўка праціўатуманнага святла (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Маляванне танка / Маляванне бокавых панэляў / Маляванне крылаў / Маляванне капотаў / Маляванне крышкі фары / Маляванне хвастовай часткі / Маляванне сядзення / Маляванне крышкі выхлапу / Маляванне перадняга амартызатара / Г. д."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Аэраграфія любой складанасці / Аэраграфія любой складанасці на любой паверхні / Аэраграфія любой складанасці на любой частцы аўтамабіля"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
 msgstr "Майстэрні"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Дадаць майстэрню"
 
 #. js-lingui-explicit-id
 msgid "Enter the name of the workshop or type of work"
@@ -36,10 +336,6 @@ msgstr "Прабачце, але майстэрні не знойдзены па
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
 msgstr "Прабачце, няма бліжэйшых майстэрняў"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Дадаць майстэрню"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -124,6 +420,10 @@ msgstr "Тыпы работ"
 #. js-lingui-explicit-id
 msgid "Filtering"
 msgstr "Фільтраванне"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Памылка"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -222,10 +522,6 @@ msgid "Error creating workshop"
 msgstr "Памылка пры стварэнні майстэрні"
 
 #. js-lingui-explicit-id
-msgid "Error"
-msgstr "Памылка"
-
-#. js-lingui-explicit-id
 msgid "Change workshop"
 msgstr "Змяніць майстэрню"
 
@@ -266,8 +562,12 @@ msgid "Select types of work"
 msgstr "Выберыце тыпы працоў"
 
 #. js-lingui-explicit-id
-msgid "workshops"
-msgstr "майстэрні"
+msgid "Save"
+msgstr "Захаваць"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Адмяніць"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
@@ -300,10 +600,6 @@ msgstr "Памылка: Імя павінна быць ад 3 да 15 знака
 #. js-lingui-explicit-id
 msgid "Error: select the city"
 msgstr "Памылка: выберыце горад"
-
-#. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Фотаздымак зменены"
 
 #. js-lingui-explicit-id
 msgid "The photo added"
@@ -350,8 +646,20 @@ msgid "Select the city"
 msgstr "Выберыце горад"
 
 #. js-lingui-explicit-id
-msgid "Save"
-msgstr "Захаваць"
+msgid "The photo has been changed"
+msgstr "Фотаздымак зменены"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Фотаздымак не зменены"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Выдаліць"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Змяніць"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
@@ -432,14 +740,6 @@ msgstr "Дазволіць дадатку {nameApp} вызначаць маё м
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
 msgstr "Уключыць ваша месцазнаходжанне"
-
-#. js-lingui-explicit-id
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Дазволіць дадатку {nameApp} вызначаць маё месцазнаходжанне на заднім плане"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Уключэнне вашага месцазнаходжання на заднім плане"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
@@ -694,200 +994,12 @@ msgid "or sign up using:"
 msgstr "або зарэгістравацца праз:"
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Тэхнічнае абслугоўванне"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Змяна масла / Замена фільтраў / Замена таймінгаў паскроўных / Замена свячок / Замена масла перадач / Сэрвіс тармазоў / Замена ўсіх неабходных рыхлосцяў / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Дыагностыка"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Папярэдні абгляд з агульнай дыягностыкай / Дыагностыка шасі / Дыагностыка рухавіка / Дыагностыка перадач / Дыагностыка кузава / Дыагностыка камп'ютэра / Дыагностыка рыхлосці / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Аўтамабільная электрыка"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Рэмонт электрасувязі / Чып-тюнінг / Ўстаноўка алярму любой складанасці / Карэкцыя адометра / Перапраграмаванне ключоў / Адаптацыя рухавіка і перадач / Выдаленне EGR / Выдаленне DPF / Ўстаноўка ксенана / Ўстаноўка паракавачаў / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Рэмонт шасі"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Замена стойкі амартызатара / Замена пругоў / Замена рычага кіравання / Замена балкі / Замена падушак / Замена лазы / Замена втулак / Замена пілы / Замена валу / Замена шарніраў / Замена крэплення рухавіка і перадач / Механічныя работы"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Рухавік, аўтаматычная і мануальная перадача"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Дыагностыка рухавіка / Рэмонт рухавіка / Замена рухавіка / Замена каркаса рухавіка / Дыагностыка аўтаматычнай перадачы / Замена масла аўтаматычнай перадачы / Замена аўтаматычнай перадачы / Чыстка-плыўныя аўтаматычныя перадачы / Замена зчэплення / Дыагностыка мануальнай перадачы / Замена масла мануальнай перадачы / Замена мануальнай перадачы / Чыстка-плыўныя мануальныя перадачы / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Тармазы і сістэма кіравання"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Дыягностика гальмоўнай сістэмы / Замена гальмоўнага жывёла / Рэмонт гальмоўнай сістэмы / Пургінг гальмоўнай сістэмы / Замена рулявога механізму / Аднаўленне рулявога механізму / Замена гідрасіліка рулявога механізму / Замена гідрасіліка рулявога механізму / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Дадатковае абсталяванне"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Рэмонт старцёра / Замена старцёра / Рэмонт генератара / Замена генератара / Аднаўленне турбачарга / Замена турбачарга / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Сістэмы кандыцыянавання паветра"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Дыягностика / Зарядка / Перазарядка / Выяўленне выцяканняў / Замена трубак / Замена радыятара / Рэмонт кампрэсара / Замена кампрэсара / Дэзінфекцыя сістэмы / Адстраненне замароў"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Балансіравка колаў"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Балансіравка колаў / Дыягностика балансіравкі / Пошук дэфектаў падвескі / Пошук дэфектаў кузава"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Маляванне"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Маляванне кузава / Маляванне бампера / Маляванне крылаў / Маляванне дзвераў / Маляванне капотаў / Маляванне даха / Маляванне багажніка / Маляванне крыла / Маляванне спойлера / Маляванне дзеркалаў / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Аэраграфія"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Аэраграфія любой складанасці / Аэраграфія любой складанасці на любой паверхні / Аэраграфія любой складанасці на любой частцы мотацыкла / Індывідуальныя дызайны аэраграфіі для танкаў, крылаў і капотаў"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Тэхнічнае абслугоўванне"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Змацненне кабеляў / Сінхранізацыя карбюратараў / Замена ачысткі паветра / Замена свечак / Замена масла перадач / Замена масла дыференцыяла / Замена антифрызаў / Замена масла ў рухавіку"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Агульныя работы"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Агульная дыягностика / Мерыяльнік кампрэсіі / Кантроль рыважнасці тэхнічных рыхласцей / Замена клатчавага кабеля / Замена кабеля газу / Ачыстка і плыўныя топлівныя танкі / Зняцце і ўстаноўка топлівных танкоў / Зняцце і ўстаноўка пластыка / Устаноўка абароннага арку, слайдера"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Шасі"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Зняцце і ўстаноўка перадняга кола / Зняцце і ўстаноўка задняга кола / Замена валасоў калодак / Карэкцыя валасоў калодак / Замена валасоў калодак / Зняцце і ўстаноўка перадняга амартызатара / Замена сальнікаў перадняга амартызатара / Замена масла перадняга амартызатара / Замена валасоў амартызатара падвескі / Замена задняга амартызатара / Замена адназначнага амартызатара / Рэмонт задняга амартызатара"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Ланцуг прайзводства"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Замена ланцюга і зірки / Чыстка, змацненне і наладка ланцюга / Наладка, натяг і змацненне ланцюга"
-
-#. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Рухавік"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Выдаленне і ўстаноўка / Наладка клапанаў / Замена зчэплення / Рэмонт галавы цыліндра / Замена ланцюга пазіцыянавага механізму / Рэмонт цыліндраў / Рэмонт скрыні / Капітальны рэмонт рухавіка"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Электрыка"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Замена рэгулятара рэле / Замена генератара / Замена старцавога механізму / Рэмонт старцавога механізму / Замена лямпачкі / Устаноўка ксенана / Замена акамулятара / Зарядка акамулятара"
-
-#. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Гальмоўная сістэма"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Замена коладак тармазнага дыска / Замена коладак барабаннага тармаза / Пургінг тармазной сістэмы / Замена тармазнага жывёла / Камбінованая замена тармазнага жывёла / Замена тармазнага шланга / Устаноўка адшпалераванага шланга / Замена тармазнага дыска / Рэмонт тармазнага цапфера"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Рэмонт пластыка"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Сварка / аднѐўленне фрагментаў / аднавленне фіксатараў"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Сварочныя работы"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Электра дугавая сварка / Паўаўтаматычная сварка / Аргонавая дугавая сварка"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Тюнінг і наладка"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Устаноўка абарончага арка / Устаноўка слайдера / Устаноўка выхлопнай сістэмы / Устаноўка тармазнай сістэмы / Устаноўка адшпалераванага шланга / Устаноўка ксенана / Устаноўка асветлення мотацыкла / Устаноўка праціўатуманнага святла (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Маляванне танка / Маляванне бокавых панэляў / Маляванне крылаў / Маляванне капотаў / Маляванне крышкі фары / Маляванне хвастовай часткі / Маляванне сядзення / Маляванне крышкі выхлапу / Маляванне перадняга амартызатара / Г. д."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Аэраграфія любой складанасці / Аэраграфія любой складанасці на любой паверхні / Аэраграфія любой складанасці на любой частцы аўтамабіля"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Доступ забаронены"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Фотаздымак не зменены"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Выдаліць"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Змяніць"
-
-#. js-lingui-explicit-id
 msgid "find nearby events, workshops"
 msgstr "знайсці паблізу падзеі, майстэрні"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr "атрымаць дапамогу ў выпадку надзвычайнай сітуацыі"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -896,10 +1008,6 @@ msgstr "Прыклад {nameApp} збірае дадзеныя месцазна�
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
 msgstr "Прыклад {nameApp} збірае дадзеныя месцазнаходжання, каб уключыць {secondEvent}, нават калі дадзенае прыкладанне закрытае або не выкарыстоўваецца."
-
-#. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Адмяніць"
 
 #. js-lingui-explicit-id
 msgid "Accept"
@@ -924,6 +1032,10 @@ msgstr "Стварыць майстэрню"
 #. js-lingui-explicit-id
 msgid "Map"
 msgstr "Карта"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr "Дапамога"
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
