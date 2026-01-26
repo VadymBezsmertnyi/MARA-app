@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import { Text, View } from "react-native";
+import React, { FunctionComponent, useMemo, useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 
 // types
 import { TWorkingHours } from "../../../../../storeRedux/apis/workshops/workshops.types";
@@ -8,8 +8,7 @@ import { TWorkingHours } from "../../../../../storeRedux/apis/workshops/workshop
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
-import { CheckboxClassic } from "../../../../../components/CheckboxClassic/CheckboxClassic";
-import { TimePicker } from "./TimePicker";
+import { ModalWorkingHours } from "./ModalWorkingHours";
 
 // styles
 import { styles } from "./WorkingHoursPicker.styles";
@@ -21,13 +20,13 @@ export type WorkingHoursPickerProps = {
 };
 
 const DAYS_OF_WEEK = [
-  { key: "monday" as const, labelKey: "Monday" },
-  { key: "tuesday" as const, labelKey: "Tuesday" },
-  { key: "wednesday" as const, labelKey: "Wednesday" },
-  { key: "thursday" as const, labelKey: "Thursday" },
-  { key: "friday" as const, labelKey: "Friday" },
-  { key: "saturday" as const, labelKey: "Saturday" },
-  { key: "sunday" as const, labelKey: "Sunday" },
+  { key: "monday" as const, labelKey: "Monday", shortKey: "Пн" },
+  { key: "tuesday" as const, labelKey: "Tuesday", shortKey: "Вт" },
+  { key: "wednesday" as const, labelKey: "Wednesday", shortKey: "Ср" },
+  { key: "thursday" as const, labelKey: "Thursday", shortKey: "Чт" },
+  { key: "friday" as const, labelKey: "Friday", shortKey: "Пт" },
+  { key: "saturday" as const, labelKey: "Saturday", shortKey: "Сб" },
+  { key: "sunday" as const, labelKey: "Sunday", shortKey: "Нд" },
 ] as const;
 
 export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
@@ -36,78 +35,60 @@ export const WorkingHoursPicker: FunctionComponent<WorkingHoursPickerProps> = ({
   errorMessage,
 }) => {
   const { i18n } = useLocalesProvider();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleDayToggle = (dayKey: keyof TWorkingHours) => {
-    const currentDay = value[dayKey];
-    if (currentDay) {
-      const newValue = {
-        ...value,
-        [dayKey]: null,
-      };
-      onChange(newValue);
-    } else {
-      const newValue = {
-        ...value,
-        [dayKey]: { open: "08:00", close: "18:00" },
-      };
-      onChange(newValue);
-    }
-  };
+  const scheduleText = useMemo(() => {
+    const weekdays = DAYS_OF_WEEK.slice(0, 5);
+    const weekdayHours = weekdays
+      .map((day) => value[day.key])
+      .filter((hours) => hours !== null);
+    const isWeekdaysSame =
+      weekdayHours.length === 5 &&
+      weekdayHours.every(
+        (hours) =>
+          hours?.open === weekdayHours[0]?.open &&
+          hours?.close === weekdayHours[0]?.close
+      );
+    const saturdayHours = value.saturday;
+    const sundayHours = value.sunday;
 
-  const handleTimeChange = (
-    dayKey: keyof TWorkingHours,
-    timeType: "open" | "close",
-    timeValue: string
-  ) => {
-    const currentDay = value[dayKey];
-    if (!currentDay) return;
+    const parts: string[] = [];
+    if (isWeekdaysSame && weekdayHours[0])
+      parts.push(`Пн-Пт: ${weekdayHours[0].open} - ${weekdayHours[0].close}`);
+    else
+      weekdays.forEach((day) => {
+        const hours = value[day.key];
+        if (hours) {
+          parts.push(`${day.shortKey}: ${hours.open} - ${hours.close}`);
+        }
+      });
+    if (saturdayHours)
+      parts.push(`Сб: ${saturdayHours.open} - ${saturdayHours.close}`);
+    if (sundayHours)
+      parts.push(`Нд: ${sundayHours.open} - ${sundayHours.close}`);
 
-    const newValue = {
-      ...value,
-      [dayKey]: {
-        ...currentDay,
-        [timeType]: timeValue,
-      },
-    };
-    onChange(newValue);
-  };
+    return parts.length > 0 ? parts.join("\n") : i18n._("Not specified");
+  }, [value, i18n]);
 
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{i18n._("Working hours")}</Text>
-      {DAYS_OF_WEEK.map((day) => {
-        const dayValue = value[day.key];
-        const isWorking = dayValue !== null;
-
-        return (
-          <View key={day.key} style={styles.dayContainer}>
-            <CheckboxClassic
-              check={isWorking}
-              setCheck={() => handleDayToggle(day.key)}
-              containerStyle={styles.checkboxContainer}
-            />
-            <Text style={styles.dayLabel}>{i18n._(day.labelKey)}</Text>
-            {isWorking ? (
-              <View style={styles.timeContainer}>
-                <TimePicker
-                  value={dayValue.open}
-                  onChange={(time) => handleTimeChange(day.key, "open", time)}
-                />
-                <Text style={styles.timeSeparator}>-</Text>
-                <TimePicker
-                  value={dayValue.close}
-                  onChange={(time) => handleTimeChange(day.key, "close", time)}
-                />
-              </View>
-            ) : (
-              <View style={styles.timeContainer}>
-                <Text style={styles.timeText}>{i18n._("Day off")}</Text>
-              </View>
-            )}
-          </View>
-        );
-      })}
+      <View style={styles.scheduleContainer}>
+        <Text style={styles.scheduleText}>{scheduleText}</Text>
+        <TouchableOpacity
+          style={styles.editButton}
+          onPress={() => setIsModalOpen(true)}
+        >
+          <Text style={styles.editButtonText}>{i18n._("Edit")}</Text>
+        </TouchableOpacity>
+      </View>
       {errorMessage && <Text style={styles.errorText}>{errorMessage}</Text>}
+      <ModalWorkingHours
+        isOpen={isModalOpen}
+        value={value}
+        onClose={() => setIsModalOpen(false)}
+        onSubmit={onChange}
+      />
     </View>
   );
 };

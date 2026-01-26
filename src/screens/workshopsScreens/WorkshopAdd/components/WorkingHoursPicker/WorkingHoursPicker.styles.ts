@@ -11,7 +11,28 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
     color: colors.blackCoffee,
-    marginBottom: 12,
+    marginBottom: 8,
+  },
+  scheduleContainer: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    paddingVertical: 12,
+  },
+  scheduleText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    color: colors.blackCoffee,
+    flex: 1,
+    lineHeight: 20,
+  },
+  editButton: {
+    paddingLeft: 12,
+  },
+  editButtonText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    color: colors.californiaOrange,
   },
   dayContainer: {
     flexDirection: "row",
@@ -86,5 +107,49 @@ export const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalContent: {
+    width: "90%",
+    maxHeight: "80%",
+    backgroundColor: colors.white,
+    borderRadius: 16,
+    overflow: "hidden",
+  },
+  modalContainer: {
+    flex: 1,
+  },
+  modalHeader: {
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 12,
+  },
+  modalTitle: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 18,
+    color: colors.blackCoffee,
+    marginBottom: 8,
+  },
+  modalLine: {
+    height: 2,
+    borderRadius: 1,
+    marginTop: 8,
+  },
+  modalScrollView: {
+    paddingHorizontal: 20,
+    flex: 1,
+  },
+  modalFooter: {
+    paddingTop: 12,
+  },
+  modalFooterContent: {
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    gap: 12,
   },
 });
