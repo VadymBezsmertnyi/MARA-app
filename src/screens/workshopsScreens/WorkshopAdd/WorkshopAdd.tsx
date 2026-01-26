@@ -297,12 +297,28 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       (selectMotoTypesWorks.length || selectAutoTypesWorks.length) &&
       !isError
     ) {
-      const currentImageFiles = images.map((image) => ({
-        _id: image._id || "",
-        uri: image.url,
-        width: image.width,
-        height: image.height,
-      }));
+      const currentImageFiles = images.map((image) => {
+        if (
+          image._id &&
+          image.url &&
+          !image.url.includes("file://") &&
+          !image.url.startsWith("file://") &&
+          !image.url.includes("data:image")
+        ) {
+          return {
+            _id: image._id,
+            url: image.url,
+            width: image.width,
+            height: image.height,
+          };
+        }
+        return {
+          _id: image._id || "",
+          uri: image.url,
+          width: image.width,
+          height: image.height,
+        };
+      });
       const currentPlace =
         selectWorkshop &&
         place?.placeId === selectWorkshop.place_id?._id &&
