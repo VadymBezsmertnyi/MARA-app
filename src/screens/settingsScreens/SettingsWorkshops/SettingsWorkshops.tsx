@@ -48,7 +48,7 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   const { infoWorkshops } = useSubscriptionProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
 
-  const { data: workshopsData, isLoading } = useGetWorkshopsUserQuery(
+  const { data: workshopsData, refetch } = useGetWorkshopsUserQuery(
     { userId: userData?._id || "" },
     { skip: !userData?._id }
   );
@@ -105,6 +105,7 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
                   workshop={workshop}
                   isStart={isStart}
                   currentUserId={userData?._id || null}
+                  onRefresh={refetch}
                 />
               );
             })}
