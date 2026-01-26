@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   StyleProp,
   Text,
@@ -12,9 +12,18 @@ import { TWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.ty
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useDropDownAlertProvider } from "../../../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+
+// redux
+import {
+  useSendSmsVerificationMutation,
+  useVerifySmsCodeMutation,
+} from "../../../../../storeRedux/api";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
+import { ModalSelectPhone } from "../ModalSelectPhone/ModalSelectPhone";
+import { ModalEnterCode } from "../ModalEnterCode/ModalEnterCode";
 
 // helps
 import { useAllNavigation } from "../../../../../navigators/Navigators.helps";
@@ -38,13 +47,21 @@ type ItemSettingWorkshopsProps = {
   workshop: TWorkshop;
   isStart: boolean;
   currentUserId: string | null;
+  onRefresh?: () => void;
 };
 
 export const ItemSettingWorkshops: FunctionComponent<
   ItemSettingWorkshopsProps
-> = ({ workshop, isStart, currentUserId }) => {
+> = ({ workshop, isStart, currentUserId, onRefresh }) => {
   const { i18n } = useLocalesProvider();
+  const { showMessageServer } = useDropDownAlertProvider();
   const navigation = useAllNavigation();
+  const [sendSms, { isLoading: sendingSms }] = useSendSmsVerificationMutation();
+  const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
+  const [showPhoneModal, setShowPhoneModal] = useState(false);
+  const [showCodeModal, setShowCodeModal] = useState(false);
+  const [codeError, setCodeError] = useState<string | null>(null);
+
   const firstImage = workshop.imageFiles[0] ? workshop.imageFiles[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { marginTop: isStart ? 0 : 12 }],
@@ -73,7 +90,52 @@ export const ItemSettingWorkshops: FunctionComponent<
     });
   };
 
-  const onPressConfirmOwnership = () => {};
+  const onPressConfirmOwnership = () => {
+    setShowPhoneModal(true);
+  };
+
+  const handlePhoneSelect = async (phoneNumber: string) => {
+    setShowPhoneModal(false);
+    setCodeError(null);
+
+    const result = await sendSms({
+      body: {
+        workshopId: workshop._id,
+        phoneNumber,
+      },
+    });
+
+    if (result.data?.status === "success") setShowCodeModal(true);
+    else
+      await showMessageServer(
+        i18n._("Error"),
+        result.data?.reason || i18n._("Failed to send SMS"),
+        "error"
+      );
+  };
+
+  const handleCodeConfirm = async (code: string) => {
+    setCodeError(null);
+
+    const result = await verifyCode({
+      body: {
+        workshopId: workshop._id,
+        code,
+      },
+    });
+
+    if (result.data?.status === "success") {
+      setShowCodeModal(false);
+      if (onRefresh) onRefresh();
+      await showMessageServer(
+        i18n._("Success"),
+        i18n._("Everything is successful and this is your business"),
+        "success"
+      );
+    } else {
+      setCodeError(result.data?.reason || i18n._("Invalid or expired code"));
+    }
+  };
 
   return (
     <View style={containerStyles}>
@@ -174,6 +236,22 @@ export const ItemSettingWorkshops: FunctionComponent<
           </TouchableOpacity>
         )}
       </View>
+      <ModalSelectPhone
+        visible={showPhoneModal}
+        onClose={() => setShowPhoneModal(false)}
+        workshop={workshop}
+        onConfirm={handlePhoneSelect}
+      />
+      <ModalEnterCode
+        visible={showCodeModal}
+        onClose={() => {
+          setShowCodeModal(false);
+          setCodeError(null);
+        }}
+        onConfirm={handleCodeConfirm}
+        isLoading={verifyingCode}
+        error={codeError}
+      />
     </View>
   );
 };
