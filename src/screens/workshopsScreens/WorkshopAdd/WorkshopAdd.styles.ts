@@ -2,8 +2,14 @@ import { StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
 import {
   FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
   FONT_700_MONTSERRAT,
 } from "../../../../styles/constants";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {},
@@ -19,6 +25,12 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.grayFuscous,
+  },
+  labelContacts: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: scaleFont(16),
+    color: colors.blackCoffee,
+    marginBottom: verticalScale(4),
   },
   containerStyleInputButton: {
     backgroundColor: colors.transparent,
@@ -40,35 +52,35 @@ export const styles = StyleSheet.create({
     color: colors.errorRed,
     minHeight: 20,
   },
-  contactContainer: {
-    marginBottom: 10,
+  contactRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    marginBottom: verticalScale(10),
+    gap: horizontalScale(8),
   },
-  deleteContactButton: {
-    marginTop: 5,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    backgroundColor: colors.errorRed,
-    borderRadius: 8,
+  contactInputContainer: {
+    flex: 1,
+  },
+  deleteContactIconButton: {
+    marginTop: verticalScale(25),
+    padding: horizontalScale(8),
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  addContactButtonContainer: {
+    marginTop: verticalScale(10),
     alignSelf: "flex-start",
-  },
-  deleteContactText: {
-    fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 14,
-    color: colors.white,
+    height: "auto",
   },
   addContactButton: {
-    marginTop: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    backgroundColor: colors.white,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: colors.grayFuscous,
-    alignItems: "center",
+    paddingVertical: verticalScale(8),
+    paddingHorizontal: horizontalScale(12),
+    minWidth: 0,
+    height: "auto",
   },
   addContactText: {
     fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 14,
+    fontSize: scaleFont(14),
     color: colors.grayFuscous,
   },
 });

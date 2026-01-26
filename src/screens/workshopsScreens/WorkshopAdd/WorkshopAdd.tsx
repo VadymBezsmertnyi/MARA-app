@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { ScrollView, Text, View, TouchableOpacity } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 
@@ -517,91 +518,80 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               }
             />
             <View>
-              <Text style={styles.labelInput}>{i18n._("Contacts")}</Text>
-              {contacts.map((contact, index) => (
-                <View key={`contact-${index}`} style={styles.contactContainer}>
-                  {contact.type === "phone" ? (
-                    <InputPhone
-                      isRegular
-                      label={i18n._("Phone number")}
-                      phoneNumber={contact.value}
-                      onBlurProp={() => checkValueOnBlur("contacts")}
-                      setPhoneNumber={(value) => {
-                        clearKeyError("contacts");
-                        setContacts((prev) =>
-                          prev.map((c, i) =>
-                            i === index ? { ...c, value } : c
-                          )
-                        );
-                      }}
-                      selectCountryIso={selectCountryIso}
-                      setSelectCountryIso={setSelectCountryIso}
-                      labelStyle={styles.labelInput}
-                      errorMessage={
-                        errorMessage?.contacts && index === 0
-                          ? errorMessage.contacts.title
-                          : ""
-                      }
-                    />
-                  ) : (
-                    <Input
-                      isRegular
-                      placeholder={getContactTypeTitle(contact.type)}
-                      label={getContactTypeTitle(contact.type)}
-                      value={contact.value}
-                      onChange={(value) => {
-                        setContacts((prev) =>
-                          prev.map((c, i) =>
-                            i === index ? { ...c, value } : c
-                          )
-                        );
-                      }}
-                      labelStyle={styles.labelInput}
-                    />
-                  )}
-                  {contacts.length > 1 && contact.type !== "phone" && (
-                    <TouchableOpacity
-                      style={styles.deleteContactButton}
-                      onPress={() => {
-                        setContacts((prev) =>
-                          prev.filter((_, i) => i !== index)
-                        );
-                      }}
-                    >
-                      <Text style={styles.deleteContactText}>
-                        {i18n._("Delete")}
-                      </Text>
-                    </TouchableOpacity>
-                  )}
-                  {contacts.length > 1 && contact.type === "phone" && (
-                    <TouchableOpacity
-                      style={styles.deleteContactButton}
-                      onPress={() => {
-                        const phoneCount = contacts.filter(
-                          (c) => c.type === "phone"
-                        ).length;
-                        if (phoneCount > 1) {
+              <Text style={styles.labelContacts}>{i18n._("Contacts")}</Text>
+              {contacts.map((contact, index) => {
+                const isFirstContact = index === 0;
+                const canDelete = !isFirstContact;
+                return (
+                  <View key={`contact-${index}`} style={styles.contactRow}>
+                    <View style={styles.contactInputContainer}>
+                      {contact.type === "phone" ? (
+                        <InputPhone
+                          isRegular
+                          label={i18n._("Phone number")}
+                          phoneNumber={contact.value}
+                          onBlurProp={() => checkValueOnBlur("contacts")}
+                          setPhoneNumber={(value) => {
+                            clearKeyError("contacts");
+                            setContacts((prev) =>
+                              prev.map((c, i) =>
+                                i === index ? { ...c, value } : c
+                              )
+                            );
+                          }}
+                          selectCountryIso={selectCountryIso}
+                          setSelectCountryIso={setSelectCountryIso}
+                          labelStyle={styles.labelInput}
+                          errorMessage={
+                            errorMessage?.contacts && index === 0
+                              ? errorMessage.contacts.title
+                              : ""
+                          }
+                        />
+                      ) : (
+                        <Input
+                          isRegular
+                          placeholder={getContactTypeTitle(contact.type)}
+                          label={getContactTypeTitle(contact.type)}
+                          value={contact.value}
+                          onChange={(value) => {
+                            setContacts((prev) =>
+                              prev.map((c, i) =>
+                                i === index ? { ...c, value } : c
+                              )
+                            );
+                          }}
+                          labelStyle={styles.labelInput}
+                        />
+                      )}
+                    </View>
+                    {canDelete && (
+                      <TouchableOpacity
+                        style={styles.deleteContactIconButton}
+                        onPress={() => {
                           setContacts((prev) =>
                             prev.filter((_, i) => i !== index)
                           );
-                        }
-                      }}
-                    >
-                      <Text style={styles.deleteContactText}>
-                        {i18n._("Delete")}
-                      </Text>
-                    </TouchableOpacity>
-                  )}
-                </View>
-              ))}
-              <TouchableOpacity
-                style={styles.addContactButton}
-                onPress={() => setIsShowContactTypeModal(true)}
-              >
-                <Text style={styles.addContactText}>
-                  {i18n._("Add contact")}
-                </Text>
-              </TouchableOpacity>
+                        }}
+                      >
+                        <MaterialIcons
+                          name="delete"
+                          size={24}
+                          color={colors.errorRed}
+                        />
+                      </TouchableOpacity>
+                    )}
+                  </View>
+                );
+              })}
+              <ButtonCustom
+                type="transparent"
+                title={i18n._("Add contact type")}
+                onSubmit={() => setIsShowContactTypeModal(true)}
+                styleContainer={styles.addContactButtonContainer}
+                styleButton={styles.addContactButton}
+                styleTitle={styles.addContactText}
+              />
               <InputButton
                 isRegular
                 value={valueTypesWorkshops}
