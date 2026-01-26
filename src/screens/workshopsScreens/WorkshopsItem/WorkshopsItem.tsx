@@ -6,11 +6,13 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Linking,
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { getDistance } from "geolib";
 import Toast from "react-native-toast-message";
+import { MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
 
 // types
 import {
@@ -45,17 +47,14 @@ import { ModalComment } from "./components/ModalComment/ModalComment";
 import { WorkingHoursDisplay } from "./components/WorkingHoursDisplay/WorkingHoursDisplay";
 
 // icons
-import {
-  IconAutoService,
-  IconMotoService,
-  RadixIconsCalendar,
-} from "../../../icons/components";
+import { IconAutoService, IconMotoService } from "../../../icons/components";
 
 // constants
 import { PATHS_MAIN_TABS } from "../../../navigators/useNavigator.constants";
 
 // styles
 import { styles } from "./WorkshopsItem.styles";
+import colors from "../../../../styles/colors";
 
 type WorkshopsItemType = {
   navigation: NativeStackNavigationProp<
@@ -120,13 +119,56 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       selectWorkshop?.comments ? [...selectWorkshop.comments].reverse() : [],
     [selectWorkshop?.comments]
   );
-  const showPhone = useMemo(
-    () =>
-      selectWorkshop?.phoneNumber
-        ? getFormatPhoneNumber(selectWorkshop.phoneNumber)
-        : null,
-    [selectWorkshop?.phoneNumber]
-  );
+  const displayContacts = useMemo(() => {
+    if (!selectWorkshop) return [];
+    if (selectWorkshop.contacts && selectWorkshop.contacts.length > 0)
+      return selectWorkshop.contacts;
+    if (selectWorkshop.phoneNumber)
+      return [{ type: "phone" as const, value: selectWorkshop.phoneNumber }];
+
+    return [];
+  }, [selectWorkshop]);
+
+  const getContactIcon = (type: string) => {
+    switch (type) {
+      case "phone":
+        return <MaterialIcons name="phone" size={20} color={colors.white} />;
+      case "email":
+        return <MaterialIcons name="email" size={20} color={colors.white} />;
+      case "viber":
+        return <FontAwesome5 name="viber" size={20} color={colors.white} />;
+      case "telegram":
+        return <FontAwesome5 name="telegram" size={20} color={colors.white} />;
+      case "whatsapp":
+        return <FontAwesome5 name="whatsapp" size={20} color={colors.white} />;
+      case "instagram":
+        return <FontAwesome5 name="instagram" size={20} color={colors.white} />;
+      case "facebook":
+        return <FontAwesome5 name="facebook" size={20} color={colors.white} />;
+      default:
+        return (
+          <MaterialIcons name="contact-phone" size={20} color={colors.white} />
+        );
+    }
+  };
+
+  const handleContactPress = (contact: { type: string; value: string }) => {
+    if (contact.type === "phone") Linking.openURL(`tel:${contact.value}`);
+    else if (contact.type === "email")
+      Linking.openURL(`mailto:${contact.value}`);
+    else if (contact.type === "viber")
+      Linking.openURL(`viber://chat?number=${contact.value}`);
+    else if (contact.type === "telegram")
+      Linking.openURL(`tg://resolve?domain=${contact.value.replace("@", "")}`);
+    else if (contact.type === "whatsapp")
+      Linking.openURL(`whatsapp://send?phone=${contact.value}`);
+    else if (contact.type === "instagram")
+      Linking.openURL(
+        `https://instagram.com/${contact.value.replace("@", "")}`
+      );
+    else if (contact.type === "facebook")
+      Linking.openURL(`https://facebook.com/${contact.value}`);
+  };
   const showTitlePlace = useMemo(() => {
     if (!selectWorkshop) return "";
 
@@ -245,13 +287,38 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
               <WorkingHoursDisplay workingHours={selectWorkshop.workingHours} />
             )}
             <View style={styles.containerContacts}>
-              <View style={styles.containerPhone}>
-                <View style={styles.containerIcon}>
-                  <RadixIconsCalendar width={20} height={20} />
-                </View>
-                <Text style={styles.titlePhone} numberOfLines={1}>
-                  {showPhone}
-                </Text>
+              <View style={styles.containerContactsList}>
+                {displayContacts.length > 0 ? (
+                  displayContacts.map((contact, index) => (
+                    <TouchableOpacity
+                      key={`contact-${index}`}
+                      style={styles.containerContact}
+                      onPress={() => handleContactPress(contact)}
+                    >
+                      <View style={styles.containerIcon}>
+                        {getContactIcon(contact.type)}
+                      </View>
+                      <Text style={styles.titlePhone} numberOfLines={1}>
+                        {contact.type === "phone"
+                          ? getFormatPhoneNumber(contact.value)
+                          : contact.value}
+                      </Text>
+                    </TouchableOpacity>
+                  ))
+                ) : (
+                  <View style={styles.containerContact}>
+                    <View style={styles.containerIcon}>
+                      <MaterialIcons
+                        name="contact-phone"
+                        size={20}
+                        color={colors.grayCloudy}
+                      />
+                    </View>
+                    <Text style={styles.titlePhoneUnknown} numberOfLines={1}>
+                      {i18n._("Contacts unknown")}
+                    </Text>
+                  </View>
+                )}
               </View>
               <View style={styles.containerIconsService}>
                 {selectWorkshop?.autoTypesWorks.length ? (

@@ -56,6 +56,15 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 4,
   },
+  containerContactsList: {
+    flex: 1,
+    gap: 8,
+  },
+  containerContact: {
+    flexDirection: "row",
+    gap: 6,
+    alignItems: "center",
+  },
   containerPhone: {
     flexDirection: "row",
     gap: 6,
@@ -65,13 +74,19 @@ export const styles = StyleSheet.create({
   containerIcon: {
     padding: 6,
     borderRadius: 6,
-    backgroundColor: colors.blueLight,
+    backgroundColor: colors.blazeOrange70,
   },
   titlePhone: {
     fontFamily: FONT_600_MONTSERRAT,
     fontSize: 14,
     color: colors.blackCoffee,
     flex: 1,
+  },
+  titlePhoneUnknown: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: 14,
+    color: colors.grayCloudy,
+    fontStyle: "italic",
   },
   containerIconsService: {
     flexDirection: "row",
