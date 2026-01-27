@@ -136,7 +136,8 @@ export const deleteEventRequestSchema = z.object({
 });
 
 export const eventsStateSchema = z.object({
-  eventsList: eventsSchema,
+  upcomingEventsList: eventsSchema,
+  pastEventsList: eventsSchema,
   eventsUserList: eventsSchema,
   upcomingClosest: eventsSchema,
   pastClosest: eventsSchema,

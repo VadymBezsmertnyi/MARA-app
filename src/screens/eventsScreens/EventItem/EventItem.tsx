@@ -20,6 +20,7 @@ import {
   useVerifySmsCodeMutation,
   useLazyGetEventByIdQuery,
 } from "../../../storeRedux/api";
+import { TEvent } from "../../../storeRedux/apis/events/events.types";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
@@ -32,7 +33,7 @@ import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvid
 import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
 
 // components
-import { Map } from "../../../components/Map/Map";
+import { Map as MapComponent } from "../../../components/Map/Map";
 import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { GalleryModal } from "../../../components/GalleryModal/GalleryModal";
 import { Header } from "../../../components/Header/Header";
@@ -68,7 +69,13 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   navigation,
 }) => {
   const { i18n, language } = useLocalesProvider();
-  const { eventsList } = useEventsSelector();
+  const {
+    eventsUserList,
+    upcomingEventsList,
+    pastEventsList,
+    upcomingClosest,
+    pastClosest,
+  } = useEventsSelector();
   const { location } = useMapProvider();
   const { placesDB } = usePlacesProvider();
   const { userData } = useUserSelector();
@@ -91,9 +98,28 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     typeof route.params?.eventId === "string"
       ? route.params.eventId
       : undefined;
+  const combinedEvents = useMemo<TEvent[]>(() => {
+    const eventsMap = new Map<string, TEvent>();
+    [
+      ...eventsUserList,
+      ...upcomingEventsList,
+      ...pastEventsList,
+      ...upcomingClosest,
+      ...pastClosest,
+    ].forEach((event) => {
+      eventsMap.set(event._id, event);
+    });
+    return Array.from(eventsMap.values());
+  }, [
+    eventsUserList,
+    upcomingEventsList,
+    pastEventsList,
+    upcomingClosest,
+    pastClosest,
+  ]);
   const eventFromList = useMemo(
-    () => (eventId ? eventsList.find((event) => event._id === eventId) : null),
-    [eventId, eventsList]
+    () => (eventId ? combinedEvents.find((event) => event._id === eventId) : null),
+    [eventId, combinedEvents]
   );
   const eventFromApi = useMemo(
     () =>
@@ -450,7 +476,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
           )}
           {eventSelect.coordinates ? (
             <View style={styles.mapWrapper}>
-              <Map
+              <MapComponent
                 longitude={eventSelect.coordinates.longitude}
                 latitude={eventSelect.coordinates.latitude}
               />

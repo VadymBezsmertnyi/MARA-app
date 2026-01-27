@@ -6,7 +6,8 @@ import { api } from "../../api";
 import { getSortEvents } from "./events.helpers";
 
 const initialState: TEventsState = {
-  eventsList: [],
+  upcomingEventsList: [],
+  pastEventsList: [],
   eventsUserList: [],
   upcomingClosest: [],
   pastClosest: [],
@@ -22,14 +23,8 @@ export const eventsSlice = createSlice({
   name: "events",
   initialState,
   reducers: {
-    setEventsList: (state, action) => {
-      state.eventsList = getSortEvents(action.payload);
-    },
     setEventsUserList: (state, action) => {
       state.eventsUserList = getSortEvents(action.payload);
-    },
-    cleanEventsList: (state) => {
-      state.eventsList = [];
     },
     cleanEventsUserList: (state) => {
       state.eventsUserList = [];
@@ -44,19 +39,13 @@ export const eventsSlice = createSlice({
       })
       .addMatcher(api.endpoints.getEvents.matchFulfilled, (state, action) => {
         if (action.payload?.events) {
-          const currentPage = action.payload.pagination?.page || 1;
-          if (currentPage === 1)
-            state.eventsList = getSortEvents(action.payload.events);
-          else {
-            const existingIds = new Set(state.eventsList.map((e) => e._id));
-            const newEvents = action.payload.events.filter(
-              (e) => !existingIds.has(e._id)
-            );
-            state.eventsList = getSortEvents([
-              ...state.eventsList,
-              ...newEvents,
-            ]);
-          }
+          const eventStatus =
+            action.meta.arg.originalArgs?.eventStatus === "past"
+              ? "past"
+              : "upcoming";
+          if (eventStatus === "past")
+            state.pastEventsList = getSortEvents(action.payload.events);
+          else state.upcomingEventsList = getSortEvents(action.payload.events);
           state.pagination = action.payload.pagination || null;
           state.maxDistance = action.payload.maxDistance || 5;
           state.loading = false;
@@ -103,41 +92,46 @@ export const eventsSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addMatcher(api.endpoints.getEventById.matchFulfilled, (state, action) => {
-        if (action.payload?.event) {
-          const event = action.payload.event;
-          const existingIndex = state.eventsList.findIndex(
-            (item) => item._id === event._id
-          );
-          const nextEventsList =
-            existingIndex >= 0
-              ? state.eventsList.map((item) =>
-                  item._id === event._id ? event : item
-                )
-              : [...state.eventsList, event];
-          state.eventsList = getSortEvents(nextEventsList);
+      .addMatcher(
+        api.endpoints.getEventById.matchFulfilled,
+        (state, action) => {
+          if (action.payload?.event) {
+            const event = action.payload.event;
+            const isPast = event.date.finish < Date.now();
+            const updateList = (list: TEvents) =>
+              list.some((item) => item._id === event._id)
+                ? list.map((item) => (item._id === event._id ? event : item))
+                : [...list, event];
+            if (isPast)
+              state.pastEventsList = getSortEvents(
+                updateList(state.pastEventsList)
+              );
+            else
+              state.upcomingEventsList = getSortEvents(
+                updateList(state.upcomingEventsList)
+              );
 
-          const existingUserIndex = state.eventsUserList.findIndex(
-            (item) => item._id === event._id
-          );
-          const nextEventsUserList =
-            existingUserIndex >= 0
-              ? state.eventsUserList.map((item) =>
-                  item._id === event._id ? event : item
-                )
-              : state.eventsUserList;
-          state.eventsUserList = getSortEvents(nextEventsUserList);
-          state.loading = false;
-          state.error = null;
-        } else {
-          state.loading = false;
-          state.error = "Помилка валідації даних від сервера (getEventById)";
+            const existingUserIndex = state.eventsUserList.findIndex(
+              (item) => item._id === event._id
+            );
+            const nextEventsUserList =
+              existingUserIndex >= 0
+                ? state.eventsUserList.map((item) =>
+                    item._id === event._id ? event : item
+                  )
+                : state.eventsUserList;
+            state.eventsUserList = getSortEvents(nextEventsUserList);
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error = "Помилка валідації даних від сервера (getEventById)";
+          }
         }
-      })
+      )
       .addMatcher(api.endpoints.getEventById.matchRejected, (state, action) => {
         state.loading = false;
-        state.error =
-          action.error.message || "Помилка отримання події по id";
+        state.error = action.error.message || "Помилка отримання події по id";
       })
       // addEvent
       .addMatcher(api.endpoints.addEvent.matchPending, (state) => {
@@ -147,17 +141,6 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.addEvent.matchFulfilled, (state, action) => {
         if (action.payload?.event) {
           const newEvent = action.payload.event;
-          const existingIndex = state.eventsList.findIndex(
-            (event) => event._id === newEvent._id
-          );
-          const nextEventsList =
-            existingIndex >= 0
-              ? state.eventsList.map((event) =>
-                  event._id === newEvent._id ? newEvent : event
-                )
-              : [...state.eventsList, newEvent];
-          state.eventsList = getSortEvents(nextEventsList);
-
           const existingUserIndex = state.eventsUserList.findIndex(
             (event) => event._id === newEvent._id
           );
@@ -168,6 +151,17 @@ export const eventsSlice = createSlice({
                 )
               : [...state.eventsUserList, newEvent];
           state.eventsUserList = getSortEvents(nextEventsUserList);
+          const nowTime = Date.now();
+          const isUpcoming = newEvent.date.finish >= nowTime;
+          if (isUpcoming) {
+            const filtered = state.upcomingClosest.filter(
+              (event) => event._id !== newEvent._id
+            );
+            state.upcomingClosest = getSortEvents([
+              newEvent,
+              ...filtered,
+            ]).slice(0, 3);
+          }
           state.loading = false;
           state.error = null;
         } else {
@@ -187,17 +181,6 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.changeEvent.matchFulfilled, (state, action) => {
         if (action.payload?.event) {
           const updatedEvent = action.payload.event;
-          const existingIndex = state.eventsList.findIndex(
-            (event) => event._id === updatedEvent._id
-          );
-          const nextEventsList =
-            existingIndex >= 0
-              ? state.eventsList.map((event) =>
-                  event._id === updatedEvent._id ? updatedEvent : event
-                )
-              : [...state.eventsList, updatedEvent];
-          state.eventsList = getSortEvents(nextEventsList);
-
           const existingUserIndex = state.eventsUserList.findIndex(
             (event) => event._id === updatedEvent._id
           );
@@ -208,6 +191,21 @@ export const eventsSlice = createSlice({
                 )
               : [...state.eventsUserList, updatedEvent];
           state.eventsUserList = getSortEvents(nextEventsUserList);
+          const nowTime = Date.now();
+          const isUpcoming = updatedEvent.date.finish >= nowTime;
+          if (isUpcoming) {
+            const filtered = state.upcomingClosest.filter(
+              (event) => event._id !== updatedEvent._id
+            );
+            state.upcomingClosest = getSortEvents([
+              updatedEvent,
+              ...filtered,
+            ]).slice(0, 3);
+          } else {
+            state.upcomingClosest = state.upcomingClosest.filter(
+              (event) => event._id !== updatedEvent._id
+            );
+          }
           state.loading = false;
           state.error = null;
         } else {
@@ -227,10 +225,16 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.deleteEvent.matchFulfilled, (state, action) => {
         if (action.payload?.result) {
           const eventId = action.meta.arg.originalArgs.body._id;
-          state.eventsList = state.eventsList.filter(
+          state.upcomingEventsList = state.upcomingEventsList.filter(
+            (event) => event._id !== eventId
+          );
+          state.pastEventsList = state.pastEventsList.filter(
             (event) => event._id !== eventId
           );
           state.eventsUserList = state.eventsUserList.filter(
+            (event) => event._id !== eventId
+          );
+          state.upcomingClosest = state.upcomingClosest.filter(
             (event) => event._id !== eventId
           );
           state.loading = false;
@@ -275,12 +279,7 @@ export const eventsSlice = createSlice({
   },
 });
 
-export const {
-  setEventsList,
-  setEventsUserList,
-  cleanEventsList,
-  cleanEventsUserList,
-} = eventsSlice.actions;
+export const { setEventsUserList, cleanEventsUserList } = eventsSlice.actions;
 
 export const useEventsSelector = () =>
   useSelector((state: RootState) => state.events);

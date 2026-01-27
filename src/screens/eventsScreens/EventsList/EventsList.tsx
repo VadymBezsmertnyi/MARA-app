@@ -63,7 +63,12 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const { bottom } = useSafeAreaInsets();
   const { location } = useMapProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
-  const { eventsList, pagination, maxDistance = 5 } = useEventsSelector();
+  const {
+    upcomingEventsList,
+    pastEventsList,
+    pagination,
+    maxDistance = 5,
+  } = useEventsSelector();
   const { i18n } = useLocalesProvider();
   const [valueSearch, setValueSearch] = useState("");
   const [debouncedValueSearch, setDebouncedValueSearch] = useState("");
@@ -141,6 +146,11 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   );
 
   const { isLoading, refetch } = useGetEventsQuery(queryParams);
+
+  const eventsList = useMemo(
+    () => (eventStatus === "past" ? pastEventsList : upcomingEventsList),
+    [eventStatus, pastEventsList, upcomingEventsList]
+  );
 
   const hasMorePages = useMemo(
     () => pagination && pagination.page < pagination.totalPages,

@@ -46,19 +46,20 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { workshopsList: workshops } = useWorkshopsSelector();
   const { location } = useMapProvider();
   const { theme } = useThemeProvider();
-  const { eventsList } = useEventsSelector();
+  const { upcomingEventsList, upcomingClosest } = useEventsSelector();
   const refMap = useRef<MapView>(null);
 
-  const showEventList = useMemo(
-    () =>
-      eventsList.filter(
-        (eventItem) => eventItem.date.finish > dayjs().valueOf()
-      ),
-    [eventsList]
-  );
+  const showEventList = useMemo(() => {
+    const sourceList = upcomingEventsList.length
+      ? upcomingEventsList
+      : upcomingClosest;
+    return sourceList.filter(
+      (eventItem) => eventItem.date.finish > dayjs().valueOf()
+    );
+  }, [upcomingEventsList, upcomingClosest]);
   const firstEvent = useMemo(
-    () => (eventsList.length ? eventsList[0] : null),
-    [eventsList]
+    () => (showEventList.length ? showEventList[0] : null),
+    [showEventList]
   );
 
   const showFirstEvent = (location: mapMarker) => {
