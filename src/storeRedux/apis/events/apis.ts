@@ -9,13 +9,16 @@ import {
   IGetEventsRequest,
   IGetEventsUserRequest,
   IGetClosestEventsRequest,
+  IGetEventsLocationsRequest,
   TClosestEvents,
+  TEventLocations,
 } from "./events.types";
 import {
   resultEventsSchema,
   eventResponseSchema,
   deleteEventResponseSchema,
   closestEventsSchema,
+  eventLocationsSchema,
 } from "./events.schemas";
 import { PATHS } from "../../../providers/paths.constants";
 
@@ -41,6 +44,10 @@ const buildQueryString = (
     queryParams.push(`latitude=${params.latitude}`);
   if (params.longitude !== undefined)
     queryParams.push(`longitude=${params.longitude}`);
+  if ("countryId" in params && params.countryId)
+    queryParams.push(`countryId=${encodeURIComponent(params.countryId)}`);
+  if ("placeId" in params && params.placeId)
+    queryParams.push(`placeId=${encodeURIComponent(params.placeId)}`);
 
   return queryParams.length > 0 ? `?${queryParams.join("&")}` : "";
 };
@@ -287,6 +294,32 @@ export const deleteEvent = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod deleteEvent:", {
           url: PATHS.eventDelete,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const getEventsLocations = (builder: Builder) =>
+  builder.query<TEventLocations | null, IGetEventsLocationsRequest>({
+    query: (params = {}) => {
+      const queryParams: string[] = [];
+      if (params.eventStatus)
+        queryParams.push(`eventStatus=${params.eventStatus}`);
+      const queryString =
+        queryParams.length > 0 ? `?${queryParams.join("&")}` : "";
+      return {
+        url: `${PATHS.eventsGetLocations}${queryString}`,
+        method: "GET",
+      };
+    },
+    transformResponse: (response: unknown) => {
+      const result = eventLocationsSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod getEventsLocations:", {
+          url: PATHS.eventsGetLocations,
           data: response,
           error: result.error,
         });

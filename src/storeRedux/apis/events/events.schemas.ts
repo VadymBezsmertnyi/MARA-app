@@ -120,3 +120,10 @@ export const eventsStateSchema = z.object({
   loading: z.boolean(),
   error: z.string().nullable(),
 });
+
+export const eventLocationsSchema = z.object({
+  result: z.boolean(),
+  countries: z.array(countryDbSchema),
+  places: z.array(placeDbSchema),
+  code: z.number(),
+});

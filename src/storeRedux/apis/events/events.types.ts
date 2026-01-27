@@ -55,6 +55,8 @@ export interface IGetEventsRequest {
   eventStatus?: "past" | "current" | "future";
   latitude?: number;
   longitude?: number;
+  countryId?: string;
+  placeId?: string;
 }
 
 export interface IGetEventsUserRequest {
@@ -69,9 +71,18 @@ export interface IGetEventsUserRequest {
   eventStatus?: "past" | "current" | "future";
   latitude?: number;
   longitude?: number;
+  countryId?: string;
+  placeId?: string;
 }
 
 export interface IGetClosestEventsRequest {
   latitude?: number;
   longitude?: number;
 }
+
+export interface IGetEventsLocationsRequest {
+  eventStatus?: "past" | "current" | "future";
+}
+
+import { eventLocationsSchema } from "./events.schemas";
+export type TEventLocations = z.infer<typeof eventLocationsSchema>;

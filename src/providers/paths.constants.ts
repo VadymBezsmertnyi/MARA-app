@@ -11,6 +11,7 @@ export const PATHS = {
   eventsGet: "/events/",
   eventsGetUserId: "/events/user/",
   eventsGetClosest: "/events/closest/",
+  eventsGetLocations: "/events/locations/",
   eventAdd: "/events/add/",
   eventChange: "/events/change/",
   eventDelete: "/events/delete/",
