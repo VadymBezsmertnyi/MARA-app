@@ -368,6 +368,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.scrollView}>
           <Text style={styles.title}>{i18n._("You can create an event")}:</Text>
+          <BoxSelectImages
+            isRegular
+            isSubTitle
+            images={images}
+            setImages={setImages}
+          />
           <Input
             isRegular
             placeholder={i18n._("Enter the name of the event")}
@@ -498,12 +504,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               setAboutEvent(value);
             }}
             errorMessage={errorMessage?.aboutEvent?.title}
-          />
-          <BoxSelectImages
-            isRegular
-            isSubTitle
-            images={images}
-            setImages={setImages}
           />
           <Text style={styles.errorMessage}>
             {errorMessage?.errorMessage?.title || ""}
