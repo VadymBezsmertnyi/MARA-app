@@ -33,7 +33,6 @@ import ThemeProvider from "./src/providers/ThemeProvider/ThemeProvider";
 import LoadingProvider from "./src/providers/LoadingProvider/LoadingProvider";
 import MapProvider from "./src/providers/MapProvider/MapProvider";
 import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
-import EventsProvider from "./src/providers/EventsProvider/EventsProvider";
 import PlacesProvider from "./src/providers/PlacesProvider/PlacesProvider";
 import PushNotificationProvider from "./src/providers/PushNotificationProvider/PushNotificationProvider";
 import AnalyticsProvider from "./src/providers/AnalyticsProvider/AnalyticsProvider";
@@ -119,26 +118,24 @@ function App() {
                             if (nameRoute) setCurrentRouteName(nameRoute);
                           }}
                         >
-                          <EventsProvider>
-                            <PermissionsProvider>
-                              <MapProvider>
-                                <GestureHandlerRootView
-                                  style={styles.gestureHandlerRootView}
+                          <PermissionsProvider>
+                            <MapProvider>
+                              <GestureHandlerRootView
+                                style={styles.gestureHandlerRootView}
+                              >
+                                <PushNotificationProvider
+                                  currentRouteName={currentRouteName}
                                 >
-                                  <PushNotificationProvider
-                                    currentRouteName={currentRouteName}
-                                  >
-                                    <SharingProvider>
-                                      <Navigators
-                                        currentRouteName={currentRouteName}
-                                        navigation={navigationRef.current}
-                                      />
-                                    </SharingProvider>
-                                  </PushNotificationProvider>
-                                </GestureHandlerRootView>
-                              </MapProvider>
-                            </PermissionsProvider>
-                          </EventsProvider>
+                                  <SharingProvider>
+                                    <Navigators
+                                      currentRouteName={currentRouteName}
+                                      navigation={navigationRef.current}
+                                    />
+                                  </SharingProvider>
+                                </PushNotificationProvider>
+                              </GestureHandlerRootView>
+                            </MapProvider>
+                          </PermissionsProvider>
                         </NavigationContainer>
                       </SubscriptionProvider>
                     </PlacesProvider>

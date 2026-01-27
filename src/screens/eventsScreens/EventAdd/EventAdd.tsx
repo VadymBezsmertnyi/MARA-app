@@ -36,7 +36,6 @@ import {
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
-import { DEFAULT_EVENT_DATA } from "../../../providers/EventsProvider/EventsProvider.constants";
 import { useAnalyticsProvider } from "../../../providers/AnalyticsProvider/AnalyticsProvider";
 
 // components
@@ -51,12 +50,15 @@ import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 import { ModalSheetSearchPlaceAddress } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress";
 
-// icons
-import { IconMapGradient } from "../../../icons/components";
-
 // helps
 import { combineDateAndTime } from "../../../helps/helps";
 import { useErrors } from "../../../helps/useErrors";
+
+// constants
+import { DEFAULT_EVENT_DATA } from "../../../storeRedux/apis/events/events.constants";
+
+// icons
+import { IconMapGradient } from "../../../icons/components";
 
 // styles
 import { styles } from "./EventAdd.styles";
@@ -336,6 +338,29 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     setLoading(false);
   };
 
+  const onDeleteEvent = async () => {
+    if (!eventUser?._id) return;
+    setLoading(true);
+    try {
+      await deleteEventMutation({
+        body: { _id: eventUser._id },
+      }).unwrap();
+      await refetchEvents();
+      if (userData?._id) await refetchEventsUser({ userId: userData._id });
+      await refetchMe();
+      if (userData && userData.eventsIds.length > 0)
+        await onSetUserProperties({
+          amountEvents: (userData.eventsIds.length - 1).toString(),
+        });
+      setIsShowDeleteModal(false);
+      navigation.goBack();
+    } catch (error) {
+      console.warn("error deleteEvent:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     getEventUser();
   }, [params, placesDB]);
@@ -533,32 +558,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           onClose={() => {
             setIsShowDeleteModal(false);
           }}
-          onSubmit={async () => {
-            if (eventUser?._id) {
-              setLoading(true);
-              try {
-                await deleteEventMutation({
-                  body: { _id: eventUser._id },
-                }).unwrap();
-                await refetchEvents();
-                if (userData?._id)
-                  await refetchEventsUser({ userId: userData._id });
-
-                await refetchMe();
-                if (userData && userData.eventsIds.length > 0)
-                  await onSetUserProperties({
-                    amountEvents: (userData.eventsIds.length - 1).toString(),
-                  });
-
-                setIsShowDeleteModal(false);
-                navigation.goBack();
-              } catch (error) {
-                console.warn("error deleteEvent:", error);
-              } finally {
-                setLoading(false);
-              }
-            }
-          }}
+          onSubmit={onDeleteEvent}
         />
       )}
     </KeyboardAvoidingView>

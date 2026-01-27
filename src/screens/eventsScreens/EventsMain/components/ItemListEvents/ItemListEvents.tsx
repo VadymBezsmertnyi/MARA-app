@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // types
 import { RootEventsScreensParamList } from "../../../../../navigators/Navigators.types";
-import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
+import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
 // provider
 import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
@@ -30,7 +30,7 @@ import { styles } from "./ItemListEvents.styles";
 import colors from "../../../../../../styles/colors";
 
 type ItemListEventsProps = {
-  item: EventType;
+  item: TEvent;
   navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
 };
 

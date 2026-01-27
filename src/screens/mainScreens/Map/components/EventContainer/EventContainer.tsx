@@ -17,7 +17,7 @@ import { useLocalesProvider } from "../../../../../../localization/localization.
 
 //types
 import { mapMarker } from "../../Map.types";
-import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
+import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
 // helps
 import { dateToNMY } from "../../../../../helps/helps";
@@ -27,7 +27,7 @@ import { styles } from "./EventContainer.styles";
 import colors from "../../../../../../styles/colors";
 
 type EventContainerProps = {
-  firstEvent: EventType | null;
+  firstEvent: TEvent | null;
   showFirstEvent: (location: mapMarker) => void;
 };
 

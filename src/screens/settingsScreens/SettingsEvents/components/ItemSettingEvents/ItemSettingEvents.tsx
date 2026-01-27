@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 // types
-import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
+import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -27,7 +27,7 @@ import { IconPencilGradient } from "../../../../../icons/components";
 import { styles } from "./ItemSettingEvents.styles";
 
 type ItemSettingEventsProps = {
-  event: EventType;
+  event: TEvent;
   isStart: boolean;
 };
 

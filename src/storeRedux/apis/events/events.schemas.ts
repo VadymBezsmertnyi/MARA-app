@@ -80,6 +80,12 @@ export const addEventRequestSchema = z.object({
     .optional(),
 });
 
+export const upcomingEventSchema = z.object({
+  ...eventSchema.shape,
+  isOld: z.boolean(),
+  isNow: z.boolean(),
+});
+
 export const changeEventRequestSchema = addEventRequestSchema.extend({
   _id: z.string(),
 });

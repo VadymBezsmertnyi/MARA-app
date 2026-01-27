@@ -6,7 +6,7 @@ import { LocationObjectCoords } from "expo-location";
 import { convertDistance, getDistance } from "geolib";
 
 // types
-import { EventType } from "../../../../../providers/EventsProvider/EventsProvider.types";
+import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
 // components
 import { ComponentCalloutEvent } from "../ComponentCalloutEvent/ComponentCalloutEvent";
@@ -21,7 +21,7 @@ import {
 } from "../../../../../navigators/useNavigator.constants";
 
 type EventMarkerProps = {
-  event: EventType;
+  event: TEvent;
   location: LocationObjectCoords | null;
 };
 

@@ -10,6 +10,7 @@ import {
   changeEventRequestSchema,
   deleteEventRequestSchema,
   eventsStateSchema,
+  upcomingEventSchema,
 } from "./events.schemas";
 
 export type TEvent = z.infer<typeof eventSchema>;
@@ -21,6 +22,7 @@ export type TAddEventRequest = z.infer<typeof addEventRequestSchema>;
 export type TChangeEventRequest = z.infer<typeof changeEventRequestSchema>;
 export type TDeleteEventRequest = z.infer<typeof deleteEventRequestSchema>;
 export type TEventsState = z.infer<typeof eventsStateSchema>;
+export type TUpcomingEvent = z.infer<typeof upcomingEventSchema>;
 
 export interface IAddEventRequest {
   body: TAddEventRequest & {

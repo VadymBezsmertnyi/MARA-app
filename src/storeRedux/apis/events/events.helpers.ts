@@ -1,6 +1,6 @@
-import { EventsType, UpcomingEvents } from "./EventsProvider.types";
+import { TEvents, TUpcomingEvent } from "./events.types";
 
-export const getSortEvents = (oldEvents: EventsType): UpcomingEvents => {
+export const getSortEvents = (oldEvents: TEvents): TUpcomingEvent[] => {
   const nowDateMilliseconds = new Date().getTime();
   return oldEvents
     .map((event) => ({

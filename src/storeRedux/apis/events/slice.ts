@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { TEventsState, TEvents } from "./events.types";
 import { RootState } from "../../store";
 import { api } from "../../api";
-import { getSortEvents } from "../../../providers/EventsProvider/EventsProvider.hooks";
+import { getSortEvents } from "./events.helpers";
 
 const initialState: TEventsState = {
   eventsList: [],
