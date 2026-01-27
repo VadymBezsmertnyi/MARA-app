@@ -80,6 +80,11 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
     [draftCountry]
   );
 
+  const draftPlace = useMemo(
+    () => places.find((p) => p._id === draftPlaceId),
+    [places, draftPlaceId]
+  );
+
   const filteredPlaces = useMemo(() => {
     if (!draftCountryPlaceId) return places;
     return places.filter(
@@ -158,22 +163,38 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
     setIsOpenSheet(true);
   };
 
+  const setCountrySearchFromDraft = () => {
+    setCountrySearchValue(
+      draftCountry ? draftCountry[language].long_name || "" : ""
+    );
+  };
+
+  const setPlaceSearchFromDraft = () => {
+    setPlaceSearchValue(
+      draftPlace ? draftPlace[language].formatted_address || "" : ""
+    );
+  };
+
   const onSelectCountryHandler = (country: CountryDbType | null) => {
     if (!country) {
       setDraftCountryId(null);
       setCountrySearchValue("");
-      setDraftPlaceId(null);
-      setPlaceSearchValue("");
     } else if (country._id === draftCountryId) {
       setDraftCountryId(null);
       setCountrySearchValue("");
-      setDraftPlaceId(null);
-      setPlaceSearchValue("");
     } else {
       setDraftCountryId(country._id);
       setCountrySearchValue(country[language].long_name || "");
-      setDraftPlaceId(null);
-      setPlaceSearchValue("");
+
+      if (draftPlaceId) {
+        const currentPlace = places.find((p) => p._id === draftPlaceId);
+        const isSameCountry =
+          currentPlace?.country_place_id === country.place_id;
+        if (!isSameCountry) {
+          setDraftPlaceId(null);
+          setPlaceSearchValue("");
+        }
+      }
     }
     setIsCountryOpen(false);
   };
@@ -192,7 +213,10 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
         const inferred = countries.find(
           (c) => c.place_id === place.country_place_id
         );
-        if (inferred) setDraftCountryId(inferred._id);
+        if (inferred) {
+          setDraftCountryId(inferred._id);
+          setCountrySearchValue(inferred[language].long_name || "");
+        }
       }
     }
     setIsPlaceOpen(false);
@@ -281,7 +305,12 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
         >
           <TouchableOpacity
             onPress={() => {
-              setIsCountryOpen((s) => !s);
+              setIsCountryOpen((s) => {
+                const next = !s;
+                if (next) setCountrySearchValue("");
+                else setCountrySearchFromDraft();
+                return next;
+              });
               setIsPlaceOpen(false);
             }}
           >
@@ -358,7 +387,12 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
         >
           <TouchableOpacity
             onPress={() => {
-              setIsPlaceOpen((s) => !s);
+              setIsPlaceOpen((s) => {
+                const next = !s;
+                if (next) setPlaceSearchValue("");
+                else setPlaceSearchFromDraft();
+                return next;
+              });
               setIsCountryOpen(false);
             }}
           >
