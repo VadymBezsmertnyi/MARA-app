@@ -11,8 +11,12 @@ const appManifestEnvS = z.object({
 
 type AppManifestEnvT = z.infer<typeof appManifestEnvS>;
 
-const DEFAULT_APP_DOMAIN_IP = "192.168.50.248";
-// const DEFAULT_APP_DOMAIN_IP = "172.20.10.3";
+const IS_MOBILE_INTERNET = true;
+const DEFAULT_APP_DOMAIN_IP_LAN = "192.168.50.248";
+const DEFAULT_APP_DOMAIN_IP_MOBILE = "172.20.10.12";
+const DEFAULT_APP_DOMAIN_IP = IS_MOBILE_INTERNET
+  ? DEFAULT_APP_DOMAIN_IP_MOBILE
+  : DEFAULT_APP_DOMAIN_IP_LAN;
 
 export const getEnv = (): AppManifestEnvT => {
   const parsedEnv = z.object({ developer: appManifestEnvS }).parse({
