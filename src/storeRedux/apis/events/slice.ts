@@ -173,7 +173,33 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.deleteEvent.matchRejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Помилка видалення події";
-      });
+      })
+      // getClosestEvents
+      .addMatcher(api.endpoints.getClosestEvents.matchPending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addMatcher(
+        api.endpoints.getClosestEvents.matchFulfilled,
+        (state, action) => {
+          if (action.payload?.upcomingAndCurrent || action.payload?.past) {
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error =
+              "Помилка валідації даних від сервера (getClosestEvents)";
+          }
+        }
+      )
+      .addMatcher(
+        api.endpoints.getClosestEvents.matchRejected,
+        (state, action) => {
+          state.loading = false;
+          state.error =
+            action.error.message || "Помилка отримання найближчих подій";
+        }
+      );
   },
 });
 
