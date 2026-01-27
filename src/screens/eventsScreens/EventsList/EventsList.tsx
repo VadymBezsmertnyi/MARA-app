@@ -21,13 +21,15 @@ import { useGetEventsQuery } from "../../../storeRedux/api";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
+import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
 import { InputSelectCity } from "../../../components/InputSelectCity/InputSelectCity";
 import { ItemListEvents } from "../EventsMain/components/ItemListEvents/ItemListEvents";
 import { IconSearchInput } from "../../../icons/components";
-import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
+import { Header } from "../../../components/Header/Header";
+import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
 
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
@@ -54,6 +56,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const { heightTabBar } = useThemeProvider();
   const { top, bottom } = useSafeAreaInsets();
   const { location } = useMapProvider();
+  const { infoSmallEvents } = useSubscriptionProvider();
   const { eventsList, pagination } = useEventsSelector();
   const { i18n } = useLocalesProvider();
   const [valueSearch, setValueSearch] = useState("");
@@ -125,7 +128,6 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
     () => [
       styles.container,
       {
-        paddingTop: top,
         paddingBottom: bottom,
       },
     ],
@@ -135,6 +137,10 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const onSelectCity = (place: PlaceDbType) => {
     if (place._id === selectPlace?._id) setSelectPlace(null);
     else setSelectPlace(place);
+  };
+
+  const onPressAddEvent = () => {
+    navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
   };
 
   useEffect(() => {
@@ -154,51 +160,62 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   }, [params?.isOld, debouncedValueSearch, selectPlace]);
 
   return (
-    <View style={containerStyles}>
-      <Text style={styles.title}>
-        {params?.isOld ? i18n._("Past events:") : i18n._("Upcoming events:")}
-      </Text>
-      <Input
-        value={valueSearch}
-        onChange={setValueSearch}
-        placeholder={i18n._("Enter the text to search")}
-        InputIcon={<IconSearchInput width={26} height={26} />}
-      />
-      <InputSelectCity data={showCities} onSelect={onSelectCity} />
-      <ScrollView
-        contentContainerStyle={[
-          styles.containerList,
-          {
-            paddingBottom: (heightTabBar || 0) + bottom,
-          },
-        ]}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+    <>
+      <Header
+        title={
+          params?.isOld ? i18n._("Past events:") : i18n._("Upcoming events:")
         }
-        onScroll={({ nativeEvent }) => {
-          const { layoutMeasurement, contentOffset, contentSize } = nativeEvent;
-          const paddingToBottom = 20;
-          if (
-            layoutMeasurement.height + contentOffset.y >=
-            contentSize.height - paddingToBottom
-          )
-            loadMore();
-        }}
-        scrollEventThrottle={400}
-      >
-        {showEventsList.map((eventItem) => (
-          <ItemListEvents
-            key={`event-${eventItem._id}`}
-            item={eventItem}
-            navigation={navigation}
+        rightElement={
+          <HeaderActions
+            onPressFilter={() => {}}
+            onPressSort={() => {}}
+            onPressAddWorkshop={onPressAddEvent}
+            isAddButtonDisabled={infoSmallEvents.amountSmallEvent <= 0}
+            addButtonAccessibilityLabel={i18n._("Add event")}
+            showFilters={false}
+            hasActiveSort={false}
           />
-        ))}
-      </ScrollView>
-      <AddEventButton
-        onPress={() => {
-          navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
-        }}
+        }
       />
-    </View>
+      <View style={containerStyles}>
+        <Input
+          value={valueSearch}
+          onChange={setValueSearch}
+          placeholder={i18n._("Enter the text to search")}
+          InputIcon={<IconSearchInput width={26} height={26} />}
+        />
+        <InputSelectCity data={showCities} onSelect={onSelectCity} />
+        <ScrollView
+          contentContainerStyle={[
+            styles.containerList,
+            {
+              paddingBottom: (heightTabBar || 0) + bottom,
+            },
+          ]}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+          onScroll={({ nativeEvent }) => {
+            const { layoutMeasurement, contentOffset, contentSize } =
+              nativeEvent;
+            const paddingToBottom = 20;
+            if (
+              layoutMeasurement.height + contentOffset.y >=
+              contentSize.height - paddingToBottom
+            )
+              loadMore();
+          }}
+          scrollEventThrottle={400}
+        >
+          {showEventsList.map((eventItem) => (
+            <ItemListEvents
+              key={`event-${eventItem._id}`}
+              item={eventItem}
+              navigation={navigation}
+            />
+          ))}
+        </ScrollView>
+      </View>
+    </>
   );
 };

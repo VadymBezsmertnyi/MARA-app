@@ -29,7 +29,7 @@ import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 // components
 import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
-import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
+import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
 import { Header } from "../../../components/Header/Header";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 
@@ -100,6 +100,10 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
     navigation.openDrawer();
   };
 
+  const onPressAddEvent = () => {
+    navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
+  };
+
   useEffect(() => {
     if (location && !lastLocation) setLastLocation(location);
   }, [location]);
@@ -109,6 +113,17 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
       <Header
         leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
         title={i18n._("Events")}
+        rightElement={
+          <HeaderActions
+            onPressFilter={() => {}}
+            onPressSort={() => {}}
+            onPressAddWorkshop={onPressAddEvent}
+            isAddButtonDisabled={infoSmallEvents.amountSmallEvent <= 0}
+            addButtonAccessibilityLabel={i18n._("Add event")}
+            showFilters={false}
+            hasActiveSort={false}
+          />
+        }
         containerStyle={styles.containerHeader}
         rightStyle={styles.containerRightHeader}
       />
@@ -206,13 +221,6 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
         </View>
         <View style={styles.containerEmpty} />
       </ScrollView>
-      <AddEventButton
-        disabled={infoSmallEvents.amountSmallEvent <= 0}
-        onPress={() => {
-          navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
-        }}
-        accessibilityLabel={i18n._("Add event")}
-      />
     </>
   );
 };
