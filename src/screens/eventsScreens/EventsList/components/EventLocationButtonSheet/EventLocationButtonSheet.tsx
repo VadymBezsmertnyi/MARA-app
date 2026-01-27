@@ -63,17 +63,22 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
   );
   const places = useMemo(() => locationsData?.places || [], [locationsData]);
 
-  const filteredPlaces = useMemo(() => {
-    if (!selectedCountryId) return places;
-    return places.filter(
-      (place) => place.country_place_id === selectedCountryId
-    );
-  }, [places, selectedCountryId]);
-
   const selectedCountry = useMemo(
     () => countries.find((c) => c._id === selectedCountryId),
     [countries, selectedCountryId]
   );
+  const selectedCountryPlaceId = useMemo(
+    () => selectedCountry?.place_id || null,
+    [selectedCountry]
+  );
+
+  const filteredPlaces = useMemo(() => {
+    if (!selectedCountryPlaceId) return places;
+    return places.filter(
+      (place) => place.country_place_id === selectedCountryPlaceId
+    );
+  }, [places, selectedCountryPlaceId]);
+
   const selectedPlace = useMemo(
     () => filteredPlaces.find((p) => p._id === selectedPlaceId),
     [filteredPlaces, selectedPlaceId]
