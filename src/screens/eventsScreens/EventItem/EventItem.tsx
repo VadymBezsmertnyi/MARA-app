@@ -13,10 +13,15 @@ import {
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+import {
+  useChangeEventMutation,
+  useLazyGetEventsQuery,
+  useLazyGetEventsUserQuery,
+} from "../../../storeRedux/api";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
@@ -64,11 +69,14 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   navigation,
 }) => {
   const { i18n, language } = useLocalesProvider();
-  const { eventsList, changeEvent } = useEventsProvider();
+  const { eventsList } = useEventsSelector();
   const { location } = useMapProvider();
   const { placesDB } = usePlacesProvider();
   const { userData } = useUserSelector();
   const { getSharedLink } = useSharingProvider();
+  const [changeEventMutation] = useChangeEventMutation();
+  const [refetchEvents] = useLazyGetEventsQuery();
+  const [refetchEventsUser] = useLazyGetEventsUserQuery();
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [gallery, setGallery] = useState<{
@@ -142,13 +150,11 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
       });
     }
   };
-  const onPressLike = () => {
+  const onPressLike = async () => {
     if (eventSelect && userData) {
       const currentImageFiles = eventSelect.imageFiles.map((image) => ({
         _id: image._id || "",
         url: image.url || "",
-        width: image.width,
-        height: image.height,
       }));
       const likeUserIds = isLike
         ? eventSelect.likeUserIds
@@ -158,12 +164,20 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
             ...eventSelect.likeUserIds.map((likeUserId) => likeUserId._id),
             userData._id,
           ];
-      changeEvent({
-        ...eventSelect,
-        userId: eventSelect.userId?._id || userData._id,
-        imageFiles: currentImageFiles,
-        likeUserIds,
-      });
+      try {
+        await changeEventMutation({
+          body: {
+            ...eventSelect,
+            userId: eventSelect.userId?._id || userData._id,
+            imageFiles: currentImageFiles,
+            likeUserIds,
+          },
+        }).unwrap();
+        await refetchEvents();
+        if (userData._id) await refetchEventsUser({ userId: userData._id });
+      } catch (error) {
+        console.warn("error onPressLike:", error);
+      }
     }
   };
 

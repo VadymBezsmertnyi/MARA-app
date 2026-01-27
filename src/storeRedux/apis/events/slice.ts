@@ -136,8 +136,13 @@ export const eventsSlice = createSlice({
       })
       .addMatcher(api.endpoints.deleteEvent.matchFulfilled, (state, action) => {
         if (action.payload?.result) {
-          // Видалення з обох списків буде виконуватися через optimistic update
-          // або через refetch після успішного видалення
+          const eventId = action.meta.arg.originalArgs.body._id;
+          state.eventsList = state.eventsList.filter(
+            (event) => event._id !== eventId
+          );
+          state.eventsUserList = state.eventsUserList.filter(
+            (event) => event._id !== eventId
+          );
           state.loading = false;
           state.error = null;
         } else {

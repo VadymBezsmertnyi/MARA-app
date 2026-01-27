@@ -7,9 +7,11 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 // types
 import { PlaceDbType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 
+// redux
+import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
@@ -43,7 +45,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const { params } = route;
   const { heightTabBar } = useThemeProvider();
   const { top, bottom } = useSafeAreaInsets();
-  const { eventsList } = useEventsProvider();
+  const { eventsList } = useEventsSelector();
   const { i18n } = useLocalesProvider();
   const [valueSearch, setValueSearch] = useState("");
   const [selectPlace, setSelectPlace] = useState<PlaceDbType | null>(null);

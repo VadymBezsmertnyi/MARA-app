@@ -6,10 +6,12 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
+// redux
+import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -40,7 +42,7 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
   navigation,
 }) => {
   const { infoSmallEvents } = useSubscriptionProvider();
-  const { eventsUserList } = useEventsProvider();
+  const { eventsUserList } = useEventsSelector();
   const { heightStatusBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);

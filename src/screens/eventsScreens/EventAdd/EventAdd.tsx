@@ -22,13 +22,22 @@ import { ImageFileType } from "../../../storeRedux/types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+import {
+  useAddEventMutation,
+  useChangeEventMutation,
+  useDeleteEventMutation,
+  useLazyGetEventsQuery,
+  useLazyGetEventsUserQuery,
+  useLazyGetMeQuery,
+} from "../../../storeRedux/api";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useLoadingProvider } from "../../../providers/LoadingProvider/LoadingProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { DEFAULT_EVENT_DATA } from "../../../providers/EventsProvider/EventsProvider.constants";
+import { useAnalyticsProvider } from "../../../providers/AnalyticsProvider/AnalyticsProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -69,12 +78,18 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
       RouteProp<RootEventsScreensParamList & RootSettingsScreensParamList>
     >();
   const { i18n, language } = useLocalesProvider();
-  const { addEvent, changeEvent, eventsUserList, deleteEvent } =
-    useEventsProvider();
+  const { eventsUserList } = useEventsSelector();
   const { userData } = useUserSelector();
   const { setLoading } = useLoadingProvider();
   const { placesDB, getPlace } = usePlacesProvider();
   const { getErrorText } = useErrors(i18n);
+  const { onSetUserProperties } = useAnalyticsProvider();
+  const [addEventMutation] = useAddEventMutation();
+  const [changeEventMutation] = useChangeEventMutation();
+  const [deleteEventMutation] = useDeleteEventMutation();
+  const [refetchEvents] = useLazyGetEventsQuery();
+  const [refetchEventsUser] = useLazyGetEventsUserQuery();
+  const [refetchMe] = useLazyGetMeQuery();
   const [eventName, setEventName] = useState("");
   const [placeAddress, setPlaceAddress] =
     useState<ItemSearchPlaceAddressType | null>(null);
@@ -193,56 +208,86 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const onSaveEvent = async () => {
     const isError = checkEnterData();
     if (userData?._id && !isError && placeAddress) {
-      const currentPlace =
-        eventUser &&
-        placeAddress?.placeId === eventUser.place_id?._id &&
-        placeAddress.address === eventUser.place_address
-          ? {
-              place_id: eventUser.place_id,
-              region_place_id: eventUser.region_place_id,
-              country_place_id: eventUser.country_place_id,
-              place_address: eventUser.place_address,
-              coordinates: eventUser.coordinates,
-            }
-          : { place: placeAddress };
-      const currentImageFiles = images.map((image) => ({
-        _id: image._id || "",
-        url: image.url || "",
-        width: image.width,
-        height: image.height,
-      }));
-      const newEvent = {
-        ...DEFAULT_EVENT_DATA,
-        title: eventName,
-        ...currentPlace,
-        date: {
-          start,
-          finish,
-        },
-        price:
-          Number(priceStart) > 0
+      setLoading(true);
+      try {
+        const currentPlace =
+          eventUser &&
+          placeAddress?.placeId === eventUser.place_id?._id &&
+          placeAddress.address === eventUser.place_address
             ? {
-                start: Number(priceStart),
-                finish: Number(priceFinish) > 0 ? Number(priceFinish) : 0,
+                place_id: eventUser.place_id,
+                region_place_id: eventUser.region_place_id,
+                country_place_id: eventUser.country_place_id,
+                place_address: eventUser.place_address,
+                coordinates: eventUser.coordinates,
               }
-            : null,
-        currency: "UAH" as const,
-        description: aboutEvent,
-        imageFiles: currentImageFiles,
-        likeUserIds: eventUser?.likeUserIds.map((item) => item._id) || [],
-      };
-      if (eventUser && eventUser.userId)
-        await changeEvent({
-          ...eventUser,
-          ...newEvent,
-          userId: eventUser.userId._id,
+            : { place: placeAddress };
+        const currentImageFiles = images.map((image) => {
+          if (
+            image.url &&
+            (image.url.includes("file://") || image.url.startsWith("file://"))
+          )
+            return {
+              uri: image.url,
+              width: image.width,
+              height: image.height,
+            } as any;
+
+          return {
+            _id: image._id || "",
+            url: image.url || "",
+          };
         });
-      else
-        await addEvent({
-          ...newEvent,
-          userId: userData._id,
-        });
-      navigation.goBack();
+        const newEvent = {
+          ...DEFAULT_EVENT_DATA,
+          title: eventName,
+          ...currentPlace,
+          date: {
+            start,
+            finish,
+          },
+          price:
+            Number(priceStart) > 0
+              ? {
+                  start: Number(priceStart),
+                  finish: Number(priceFinish) > 0 ? Number(priceFinish) : 0,
+                }
+              : null,
+          currency: "UAH" as const,
+          description: aboutEvent,
+          imageFiles: currentImageFiles,
+          likeUserIds: eventUser?.likeUserIds.map((item) => item._id) || [],
+        };
+        if (eventUser && eventUser.userId)
+          await changeEventMutation({
+            body: {
+              ...eventUser,
+              ...newEvent,
+              userId: eventUser.userId._id,
+            },
+          }).unwrap();
+        else {
+          const result = await addEventMutation({
+            body: {
+              ...newEvent,
+              userId: userData._id,
+            },
+          }).unwrap();
+          if (result?.event && userData.eventsIds)
+            await onSetUserProperties({
+              amountEvents: (userData.eventsIds.length + 1).toString(),
+            });
+        }
+        await refetchEvents();
+        if (userData._id) await refetchEventsUser({ userId: userData._id });
+
+        await refetchMe();
+        navigation.goBack();
+      } catch (error) {
+        console.warn("error onSaveEvent:", error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -490,8 +535,28 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           }}
           onSubmit={async () => {
             if (eventUser?._id) {
-              await deleteEvent(eventUser._id, "user");
-              setIsShowDeleteModal(false);
+              setLoading(true);
+              try {
+                await deleteEventMutation({
+                  body: { _id: eventUser._id },
+                }).unwrap();
+                await refetchEvents();
+                if (userData?._id)
+                  await refetchEventsUser({ userId: userData._id });
+
+                await refetchMe();
+                if (userData && userData.eventsIds.length > 0)
+                  await onSetUserProperties({
+                    amountEvents: (userData.eventsIds.length - 1).toString(),
+                  });
+
+                setIsShowDeleteModal(false);
+                navigation.goBack();
+              } catch (error) {
+                console.warn("error deleteEvent:", error);
+              } finally {
+                setLoading(false);
+              }
             }
           }}
         />

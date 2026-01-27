@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useEffect, useMemo } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
@@ -6,8 +6,15 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
 
+// redux
+import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import {
+  useLazyGetEventsQuery,
+  useLazyGetEventsUserQuery,
+} from "../../../storeRedux/api";
+
 // providers
-import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
@@ -42,7 +49,11 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
-  const { eventsList } = useEventsProvider();
+  const { eventsList } = useEventsSelector();
+  const { userData } = useUserSelector();
+  const [getEvents] = useLazyGetEventsQuery();
+  const [getEventsUser] = useLazyGetEventsUserQuery();
+
   const timeNow = useMemo(() => new Date().getTime(), []);
   const eventsWill = useMemo(
     () => eventsList.filter((event) => event.date.finish > timeNow),
@@ -63,6 +74,13 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   const onPressShowMenu = () => {
     navigation.openDrawer();
   };
+
+  useEffect(() => {
+    if (userData?._id) {
+      getEvents();
+      getEventsUser({ userId: userData._id });
+    }
+  }, [userData?._id]);
 
   return (
     <>
