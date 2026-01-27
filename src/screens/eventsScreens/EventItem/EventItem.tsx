@@ -16,8 +16,7 @@ import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
 import {
   useChangeEventMutation,
-  useLazyGetEventsQuery,
-  useLazyGetEventsUserQuery,
+  useLazyGetEventByIdQuery,
 } from "../../../storeRedux/api";
 
 // providers
@@ -70,21 +69,31 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { userData } = useUserSelector();
   const { getSharedLink } = useSharingProvider();
   const [changeEventMutation] = useChangeEventMutation();
-  const [refetchEvents] = useLazyGetEventsQuery();
-  const [refetchEventsUser] = useLazyGetEventsUserQuery();
+  const [fetchEventById, { data: eventByIdData }] = useLazyGetEventByIdQuery();
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [gallery, setGallery] = useState<{
     images: string[];
     indexImage?: number;
   } | null>(null);
-  const eventSelect = useMemo(
+  const eventId =
+    typeof route.params?.eventId === "string"
+      ? route.params.eventId
+      : undefined;
+  const eventFromList = useMemo(
+    () => (eventId ? eventsList.find((event) => event._id === eventId) : null),
+    [eventId, eventsList]
+  );
+  const eventFromApi = useMemo(
     () =>
-      route.params?.eventId
-        ? eventsList.find((event) => event._id === route.params?.eventId) ||
-          null
+      eventByIdData?.event && eventByIdData.event._id === eventId
+        ? eventByIdData.event
         : null,
-    [route.params, eventsList]
+    [eventByIdData?.event, eventId]
+  );
+  const eventSelect = useMemo(
+    () => eventFromList || eventFromApi,
+    [eventFromList, eventFromApi]
   );
   const isLike = useMemo(
     () =>
@@ -127,7 +136,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     else if (eventSelect?.price?.start)
       return i18n._(`{price} grn.`, { price: eventSelect.price.start });
     return i18n._("Free");
-  }, []);
+  }, [eventSelect?.price, language]);
   const containerStyles = useMemo(
     () => ({ ...styles.container, paddingBottom: tabBarHeight || 0 }),
     [tabBarHeight]
@@ -168,8 +177,6 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
             likeUserIds,
           },
         }).unwrap();
-        await refetchEvents();
-        if (userData._id) await refetchEventsUser({ userId: userData._id });
       } catch (error) {
         console.warn("error onPressLike:", error);
       }
@@ -180,7 +187,14 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     if (eventSelect && eventSelect.description.length > 300)
       setIsFullDescription(false);
     else setIsFullDescription(true);
-  }, []);
+  }, [eventSelect?.description]);
+
+  useEffect(() => {
+    if (!eventId) return;
+    if (eventFromList) return;
+    if (eventFromApi) return;
+    fetchEventById({ eventId });
+  }, [eventId, eventFromList, eventFromApi]);
 
   const onPressShare = () => {
     if (eventSelect) getSharedLink({ eventId: eventSelect._id });
