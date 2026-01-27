@@ -104,11 +104,27 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.addEvent.matchFulfilled, (state, action) => {
         if (action.payload?.event) {
           const newEvent = action.payload.event;
-          state.eventsList = getSortEvents([...state.eventsList, newEvent]);
-          state.eventsUserList = getSortEvents([
-            ...state.eventsUserList,
-            newEvent,
-          ]);
+          const existingIndex = state.eventsList.findIndex(
+            (event) => event._id === newEvent._id
+          );
+          const nextEventsList =
+            existingIndex >= 0
+              ? state.eventsList.map((event) =>
+                  event._id === newEvent._id ? newEvent : event
+                )
+              : [...state.eventsList, newEvent];
+          state.eventsList = getSortEvents(nextEventsList);
+
+          const existingUserIndex = state.eventsUserList.findIndex(
+            (event) => event._id === newEvent._id
+          );
+          const nextEventsUserList =
+            existingUserIndex >= 0
+              ? state.eventsUserList.map((event) =>
+                  event._id === newEvent._id ? newEvent : event
+                )
+              : [...state.eventsUserList, newEvent];
+          state.eventsUserList = getSortEvents(nextEventsUserList);
           state.loading = false;
           state.error = null;
         } else {
@@ -128,16 +144,27 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.changeEvent.matchFulfilled, (state, action) => {
         if (action.payload?.event) {
           const updatedEvent = action.payload.event;
-          state.eventsList = getSortEvents(
-            state.eventsList.map((event) =>
-              event._id === updatedEvent._id ? updatedEvent : event
-            )
+          const existingIndex = state.eventsList.findIndex(
+            (event) => event._id === updatedEvent._id
           );
-          state.eventsUserList = getSortEvents(
-            state.eventsUserList.map((event) =>
-              event._id === updatedEvent._id ? updatedEvent : event
-            )
+          const nextEventsList =
+            existingIndex >= 0
+              ? state.eventsList.map((event) =>
+                  event._id === updatedEvent._id ? updatedEvent : event
+                )
+              : [...state.eventsList, updatedEvent];
+          state.eventsList = getSortEvents(nextEventsList);
+
+          const existingUserIndex = state.eventsUserList.findIndex(
+            (event) => event._id === updatedEvent._id
           );
+          const nextEventsUserList =
+            existingUserIndex >= 0
+              ? state.eventsUserList.map((event) =>
+                  event._id === updatedEvent._id ? updatedEvent : event
+                )
+              : [...state.eventsUserList, updatedEvent];
+          state.eventsUserList = getSortEvents(nextEventsUserList);
           state.loading = false;
           state.error = null;
         } else {

@@ -26,9 +26,6 @@ import {
   useAddEventMutation,
   useChangeEventMutation,
   useDeleteEventMutation,
-  useLazyGetEventsQuery,
-  useLazyGetEventsUserQuery,
-  useLazyGetMeQuery,
 } from "../../../storeRedux/api";
 
 // providers
@@ -88,9 +85,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [addEventMutation] = useAddEventMutation();
   const [changeEventMutation] = useChangeEventMutation();
   const [deleteEventMutation] = useDeleteEventMutation();
-  const [refetchEvents] = useLazyGetEventsQuery();
-  const [refetchEventsUser] = useLazyGetEventsUserQuery();
-  const [refetchMe] = useLazyGetMeQuery();
   const [eventName, setEventName] = useState("");
   const [placeAddress, setPlaceAddress] =
     useState<ItemSearchPlaceAddressType | null>(null);
@@ -288,10 +282,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               amountEvents: (userData.eventsIds.length + 1).toString(),
             });
         }
-        await refetchEvents();
-        if (userData._id) await refetchEventsUser({ userId: userData._id });
-
-        await refetchMe();
         navigation.goBack();
       } catch (error) {
         console.warn("error onSaveEvent:", error);
@@ -335,9 +325,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
       await deleteEventMutation({
         body: { _id: eventUser._id },
       }).unwrap();
-      await refetchEvents();
-      if (userData?._id) await refetchEventsUser({ userId: userData._id });
-      await refetchMe();
       if (userData && userData.eventsIds.length > 0)
         await onSetUserProperties({
           amountEvents: (userData.eventsIds.length - 1).toString(),
