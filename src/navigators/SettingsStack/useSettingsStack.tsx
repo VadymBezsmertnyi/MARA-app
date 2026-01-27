@@ -8,7 +8,7 @@ import { PATHS_SETTINGS_SCREENS } from "../useNavigator.constants";
 import { SettingsMain } from "../../screens/settingsScreens/SettingsMain/SettingsMain";
 import { SettingsProfile } from "../../screens/settingsScreens/SettingsProfile/SettingsProfile";
 import { SettingsEvents } from "../../screens/settingsScreens/SettingsEvents/SettingsEvents";
-import { AddEvent } from "../../screens/newsScreens/EventAdd/EventAdd";
+import { AddEvent } from "../../screens/eventsScreens/EventAdd/EventAdd";
 
 // Workshops
 import { SettingsWorkshops } from "../../screens/settingsScreens/SettingsWorkshops/SettingsWorkshops";

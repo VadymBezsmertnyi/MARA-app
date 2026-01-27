@@ -5,10 +5,10 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { PATHS_EVENTS_SCREENS } from "../useNavigator.constants";
 
 // News and events
-import { EventsMain } from "../../screens/newsScreens/EventsMain/EventsMain";
-import { EventsList } from "../../screens/newsScreens/EventsList/EventsList";
-import { EventItem } from "../../screens/newsScreens/EventItem/EventItem";
-import { AddEvent } from "../../screens/newsScreens/EventAdd/EventAdd";
+import { EventsMain } from "../../screens/eventsScreens/EventsMain/EventsMain";
+import { EventsList } from "../../screens/eventsScreens/EventsList/EventsList";
+import { EventItem } from "../../screens/eventsScreens/EventItem/EventItem";
+import { AddEvent } from "../../screens/eventsScreens/EventAdd/EventAdd";
 
 export const useNewsStack = () => {
   const { i18n } = useLocalesProvider();
