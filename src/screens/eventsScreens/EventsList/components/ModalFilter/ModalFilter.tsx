@@ -20,16 +20,16 @@ import { InputSlider } from "../../../../../components/InputSlider/InputSlider";
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
 
-export type TypeFilters = {
+export type TypeEventFilters = {
   maxDistance: number;
   minPrice: number | null;
   maxPrice: number | null;
 };
 
 type ModalFilterProps = {
-  filters: TypeFilters | null;
+  filters: TypeEventFilters | null;
   onClose: () => void;
-  onSubmit: (filters: TypeFilters) => void;
+  onSubmit: (filters: TypeEventFilters) => void;
   maxDistance?: number;
 };
 
@@ -71,7 +71,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   };
 
   const onSubmitFilters = () => {
-    const newFilters: TypeFilters = {
+    const newFilters: TypeEventFilters = {
       maxDistance: distance,
       minPrice,
       maxPrice,
@@ -80,7 +80,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   };
 
   const hasFiltersChanged = useMemo(() => {
-    const current: TypeFilters = {
+    const current: TypeEventFilters = {
       maxDistance: distance,
       minPrice,
       maxPrice,

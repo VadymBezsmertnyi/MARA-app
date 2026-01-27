@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useRef,
 } from "react";
-import { ScrollView, View, RefreshControl } from "react-native";
+import { Modal, ScrollView, View, RefreshControl } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -30,6 +30,12 @@ import { IconSearchInput } from "../../../icons/components";
 import { Header } from "../../../components/Header/Header";
 import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
 import { EventLocationButtonSheet } from "./components/EventLocationButtonSheet/EventLocationButtonSheet";
+import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
+import { ModalSort } from "./components/ModalSort/ModalSort";
+import {
+  ModalFilter,
+  TypeEventFilters,
+} from "./components/ModalFilter/ModalFilter";
 
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
@@ -57,7 +63,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const { bottom } = useSafeAreaInsets();
   const { location } = useMapProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
-  const { eventsList, pagination } = useEventsSelector();
+  const { eventsList, pagination, maxDistance = 5 } = useEventsSelector();
   const { i18n } = useLocalesProvider();
   const [valueSearch, setValueSearch] = useState("");
   const [debouncedValueSearch, setDebouncedValueSearch] = useState("");
@@ -65,6 +71,10 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
     null
   );
   const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null);
+  const [isShowSort, setIsShowSort] = useState(false);
+  const [isShowFilter, setIsShowFilter] = useState(false);
+  const [filters, setFilters] = useState<TypeEventFilters | null>(null);
+  const [sort, setSort] = useState<"distance" | "date" | null>(null);
   const [page, setPage] = useState(1);
   const [refreshing, setRefreshing] = useState(false);
   const limit = 20;
@@ -74,11 +84,34 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
 
   const eventStatus = params?.isOld ? "past" : "upcoming";
 
+  const onClose = () => {
+    setIsShowSort(false);
+    setIsShowFilter(false);
+  };
+
+  const setTypeSort = (type: "distance" | "date") => {
+    setSort((state) => (state === type ? null : type));
+    onClose();
+  };
+
+  const onSubmitFilters = (newFilters: TypeEventFilters) => {
+    setFilters(newFilters);
+    onClose();
+  };
+
   const queryParams: IGetEventsRequest = useMemo(
     () => ({
       page,
       limit,
       eventStatus,
+      ...(sort && { sort }),
+      ...(filters?.minPrice !== null && filters?.minPrice !== undefined
+        ? { minPrice: filters.minPrice }
+        : {}),
+      ...(filters?.maxPrice !== null && filters?.maxPrice !== undefined
+        ? { maxPrice: filters.maxPrice }
+        : {}),
+      ...(filters ? { maxDistance: filters.maxDistance } : { maxDistance }),
       ...(debouncedValueSearch && { eventName: debouncedValueSearch }),
       ...(selectedCountryId && { countryId: selectedCountryId }),
       ...(selectedPlaceId && { placeId: selectedPlaceId }),
@@ -91,6 +124,9 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
       page,
       limit,
       eventStatus,
+      sort,
+      filters,
+      maxDistance,
       debouncedValueSearch,
       selectedCountryId,
       selectedPlaceId,
@@ -169,7 +205,14 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
 
   useEffect(() => {
     setPage(1);
-  }, [params?.isOld, debouncedValueSearch, selectedCountryId, selectedPlaceId]);
+  }, [
+    params?.isOld,
+    debouncedValueSearch,
+    selectedCountryId,
+    selectedPlaceId,
+    sort,
+    filters,
+  ]);
 
   useEffect(() => {
     if (page === 1) refetch();
@@ -183,13 +226,17 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
         }
         rightElement={
           <HeaderActions
-            onPressFilter={() => {}}
-            onPressSort={() => {}}
+            onPressFilter={() => {
+              setIsShowFilter(true);
+            }}
+            onPressSort={() => {
+              setIsShowSort(true);
+            }}
             onPressAddWorkshop={onPressAddEvent}
             isAddButtonDisabled={infoSmallEvents.amountSmallEvent <= 0}
             addButtonAccessibilityLabel={i18n._("Add event")}
-            showFilters={false}
-            hasActiveSort={false}
+            showFilters
+            hasActiveSort={sort !== null}
           />
         }
       />
@@ -238,6 +285,25 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
           ))}
         </ScrollView>
       </View>
+      {isShowSort ? (
+        <ModalWindow onClose={onClose}>
+          <ModalSort
+            onClose={onClose}
+            setTypeSort={setTypeSort}
+            currentSort={sort}
+          />
+        </ModalWindow>
+      ) : null}
+      {isShowFilter ? (
+        <Modal>
+          <ModalFilter
+            onClose={onClose}
+            filters={filters}
+            onSubmit={onSubmitFilters}
+            maxDistance={maxDistance}
+          />
+        </Modal>
+      ) : null}
     </>
   );
 };
