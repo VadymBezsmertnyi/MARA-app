@@ -54,7 +54,7 @@ import { ModalComment } from "./components/ModalComment/ModalComment";
 import { WorkingHoursDisplay } from "./components/WorkingHoursDisplay/WorkingHoursDisplay";
 import { ModalSelectPhone } from "../../../screens/settingsScreens/SettingsWorkshops/components/ModalSelectPhone/ModalSelectPhone";
 import { ModalEnterCode } from "../../../screens/settingsScreens/SettingsWorkshops/components/ModalEnterCode/ModalEnterCode";
-import { ModalReport } from "./components/ModalReport/ModalReport";
+import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
 
 // icons
 import { IconAutoService, IconMotoService } from "../../../icons/components";
@@ -511,7 +511,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
           />
         </>
       )}
-      <ModalReport
+      <ModalReportContact
         visible={showReportModal}
         onClose={() => setShowReportModal(false)}
       />

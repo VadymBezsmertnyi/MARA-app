@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import colors from "../../../../../../styles/colors";
-import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
+import colors from "../../../styles/colors";
+import { FONT_600_OPEN_SANS } from "../../../styles/constants";
 
 export const styles = StyleSheet.create({
   modalOverlay: {

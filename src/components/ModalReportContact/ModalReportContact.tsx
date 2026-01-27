@@ -2,18 +2,25 @@ import React, { FunctionComponent } from "react";
 import { Linking, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
-import { useLocalesProvider } from "../../../../../../localization/localization.provider";
-import { ModalUniversal } from "../../../../../components/ModalUniversal/ModalUniversal";
-import { IconClose } from "../../../../../icons/components";
-import { styles } from "./ModalReport.styles";
-import colors from "../../../../../../styles/colors";
+// providers
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
-type ModalReportProps = {
+// components
+import { ModalUniversal } from "../ModalUniversal/ModalUniversal";
+
+// icons
+import { IconClose } from "../../icons/components";
+
+// styles
+import { styles } from "./ModalReportContact.styles";
+import colors from "../../../styles/colors";
+
+type ModalReportContactProps = {
   visible: boolean;
   onClose: () => void;
 };
 
-export const ModalReport: FunctionComponent<ModalReportProps> = ({
+export const ModalReportContact: FunctionComponent<ModalReportContactProps> = ({
   visible,
   onClose,
 }) => {
