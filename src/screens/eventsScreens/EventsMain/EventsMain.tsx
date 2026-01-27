@@ -46,6 +46,7 @@ import { PATHS_EVENTS_SCREENS } from "../../../navigators/useNavigator.constants
 // styles
 import colors from "../../../../styles/colors";
 import { styles } from "./EventsMain.styles";
+import { LocationObjectCoords } from "expo-location";
 
 type EventsMainProps = {
   navigation: NativeStackNavigationProp<RootEventsScreensParamList> &
@@ -58,11 +59,13 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   const { i18n } = useLocalesProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
   const { location } = useMapProvider();
-  const hasRequestedRef = useRef(false);
   const [refreshing, setRefreshing] = useState(false);
+  const [lastLocation, setLastLocation] = useState<LocationObjectCoords | null>(
+    null
+  );
   const lastRefreshTimeRef = useRef<number>(0);
   const { data: closestEventsData, refetch } = useGetClosestEventsQuery(
-    location ? location : {}
+    lastLocation ? lastLocation : {}
   );
 
   const eventsWill = useMemo(
@@ -96,6 +99,10 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   const onPressShowMenu = () => {
     navigation.openDrawer();
   };
+
+  useEffect(() => {
+    if (location && !lastLocation) setLastLocation(location);
+  }, [location]);
 
   return (
     <>
