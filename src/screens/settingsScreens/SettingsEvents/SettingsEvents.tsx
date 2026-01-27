@@ -1,5 +1,17 @@
-import React, { FunctionComponent, useMemo, useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import React, {
+  FunctionComponent,
+  useMemo,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
+import {
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+  RefreshControl,
+} from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 
@@ -7,12 +19,18 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
 // redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+import { useGetEventsUserQuery } from "../../../storeRedux/api";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
+import {
+  useDropDownAlertProvider,
+  DropdownAlertType,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
@@ -38,24 +56,68 @@ type SettingsEventsProps = {
     DrawerNavigationProp<RootAllScreensParamList>;
 };
 
+type TabType = "upcoming" | "past";
+
 export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
   navigation,
 }) => {
+  const { userData } = useUserSelector();
   const { infoSmallEvents } = useSubscriptionProvider();
   const { eventsUserList } = useEventsSelector();
   const { heightStatusBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
+  const { showMessageServer } = useDropDownAlertProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
+  const [activeTab, setActiveTab] = useState<TabType>("upcoming");
+  const [refreshing, setRefreshing] = useState(false);
+  const lastRefreshTimeRef = useRef<number>(0);
+  const hasInitialLoadRef = useRef<boolean>(false);
 
   const typeItem = useMemo(() => i18n._("events"), [i18n, language]);
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
     [heightStatusBar]
   );
+  const { refetch } = useGetEventsUserQuery(
+    { userId: userData?._id || "" },
+    { skip: !userData?._id }
+  );
+
+  const filteredEvents = useMemo(() => {
+    const nowTime = Date.now();
+    if (activeTab === "past")
+      return eventsUserList.filter((event) => event.date.finish < nowTime);
+    return eventsUserList.filter((event) => event.date.finish >= nowTime);
+  }, [eventsUserList, activeTab]);
 
   const onClose = () => {
     navigation.goBack();
   };
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    const currentTime = Date.now();
+    const timeSinceLastRefresh = currentTime - lastRefreshTimeRef.current;
+    const minRefreshInterval = 10000;
+    if (timeSinceLastRefresh >= minRefreshInterval) {
+      lastRefreshTimeRef.current = currentTime;
+      await refetch();
+    } else
+      showMessageServer(
+        i18n._("Wait please before the next update"),
+        i18n._("Wait please before the next update"),
+        DropdownAlertType.Info
+      );
+    setRefreshing(false);
+  };
+
+  useEffect(() => {
+    if (!userData?._id || hasInitialLoadRef.current) return;
+    if (eventsUserList.length === 0) {
+      hasInitialLoadRef.current = true;
+      refetch();
+    }
+  }, [userData?._id, eventsUserList.length, refetch]);
 
   return (
     <>
@@ -72,7 +134,35 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
             <IconClose width={24} height={24} fill={colors.blackCoffee} />
           </TouchableOpacity>
         </View>
-        {eventsUserList.length === 0 ? (
+        <View style={styles.containerTabs}>
+          <TouchableOpacity
+            style={[styles.tab, activeTab === "upcoming" && styles.tabActive]}
+            onPress={() => setActiveTab("upcoming")}
+          >
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === "upcoming" && styles.tabTextActive,
+              ]}
+            >
+              {i18n._("Upcoming events")}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.tab, activeTab === "past" && styles.tabActive]}
+            onPress={() => setActiveTab("past")}
+          >
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === "past" && styles.tabTextActive,
+              ]}
+            >
+              {i18n._("Past events")}
+            </Text>
+          </TouchableOpacity>
+        </View>
+        {filteredEvents.length === 0 ? (
           <View style={styles.containerNotElements}>
             <ImageCache
               contentFit="contain"
@@ -87,12 +177,17 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
             </View>
           </View>
         ) : (
-          <ScrollView style={styles.containerElements}>
-            {eventsUserList.map((event, index) => {
+          <ScrollView
+            style={styles.containerElements}
+            refreshControl={
+              <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }
+          >
+            {filteredEvents.map((event, index) => {
               const isStart = index === 0;
               return (
                 <ItemSettingEvents
-                  key={`events-settings-${event._id}`}
+                  key={`${activeTab}-events-settings-${event._id}`}
                   event={event}
                   isStart={isStart}
                 />
