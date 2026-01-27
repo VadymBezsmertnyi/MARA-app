@@ -26,7 +26,6 @@ import {
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { TypeFilters } from "./components/ModalFilter/ModalFilter.types";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -37,7 +36,10 @@ import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurge
 import { HeaderActions } from "./components/HeaderActions/HeaderActions";
 import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
 import { ModalSort } from "./components/ModalSort/ModalSort";
-import { ModalFilter } from "./components/ModalFilter/ModalFilter";
+import {
+  ModalFilter,
+  TypeWorkshopFilters,
+} from "./components/ModalFilter/ModalFilter";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // icons
@@ -76,7 +78,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");
   const [debouncedWorkshopName, setDebouncedWorkshopName] = useState("");
-  const [filters, setFilters] = useState<TypeFilters | null>(null);
+  const [filters, setFilters] = useState<TypeWorkshopFilters | null>(null);
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
   );
@@ -146,7 +148,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     onClose();
   };
 
-  const onSubmitFilters = (newFilters: TypeFilters) => {
+  const onSubmitFilters = (newFilters: TypeWorkshopFilters) => {
     setFilters(newFilters);
     onClose();
   };

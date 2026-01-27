@@ -2,9 +2,6 @@ import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 import { BlurView } from "expo-blur";
 
-// types
-import { TypeFilters } from "./ModalFilter.types";
-
 // redux
 import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 import { useEditUserMutation } from "../../../../../storeRedux/api";
@@ -33,10 +30,17 @@ import { IconArrowRightEvent } from "../../../../../icons/components";
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
 
+export type TypeWorkshopFilters = {
+  moto: number[] | null;
+  auto: number[] | null;
+  maxDistance: number;
+  minRating: number | null;
+};
+
 type ModalFilterProps = {
-  filters: TypeFilters | null;
+  filters: TypeWorkshopFilters | null;
   onClose: () => void;
-  onSubmit: (filters: TypeFilters) => void;
+  onSubmit: (filters: TypeWorkshopFilters) => void;
   maxDistance?: number;
 };
 
@@ -68,7 +72,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const [selectRating, setSelectRating] = useState<number | null>(null);
 
   const onSubmitFilters = () => {
-    const newFilters: TypeFilters = {
+    const newFilters: TypeWorkshopFilters = {
       moto: typeWorkshops.moto ? selectMotoTypesWorks : null,
       auto: typeWorkshops.auto ? selectAutoTypesWorks : null,
       maxDistance: distance,
