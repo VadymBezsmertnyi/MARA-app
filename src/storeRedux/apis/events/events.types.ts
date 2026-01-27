@@ -28,15 +28,23 @@ export type TUpcomingEvent = z.infer<typeof upcomingEventSchema>;
 export type TPagination = z.infer<typeof paginationSchema>;
 export type TClosestEvents = z.infer<typeof closestEventsSchema>;
 
+type ImageFileType =
+  | ImagePickerAsset
+  | {
+      _id?: string;
+      url?: string;
+      uri?: string;
+    };
+
 export interface IAddEventRequest {
   body: TAddEventRequest & {
-    imageFiles?: Array<ImagePickerAsset | { _id?: string; url: string }>;
+    imageFiles?: Array<ImageFileType>;
   };
 }
 
 export interface IChangeEventRequest {
   body: TChangeEventRequest & {
-    imageFiles?: Array<ImagePickerAsset | { _id?: string; url: string }>;
+    imageFiles?: Array<ImageFileType>;
   };
 }
 
