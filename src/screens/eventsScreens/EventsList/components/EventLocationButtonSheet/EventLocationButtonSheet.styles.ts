@@ -37,6 +37,9 @@ export const styles = StyleSheet.create({
     paddingTop: verticalScale(12),
     gap: verticalScale(12),
   },
+  sheetContentBottomPadding: {
+    paddingBottom: verticalScale(12),
+  },
   sheetTitle: {
     fontSize: scaleFont(16),
     fontWeight: "700",
@@ -50,12 +53,20 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     overflow: "hidden",
   },
+  selectContainerOpen: {
+    borderWidth: 0,
+  },
   selectHeader: {
     flexDirection: "row",
     alignItems: "center",
     gap: horizontalScale(10),
     paddingRight: horizontalScale(16),
     paddingLeft: horizontalScale(12),
+  },
+  selectHeaderOpen: {
+    paddingLeft: 0,
+    paddingRight: 0,
+    gap: 0,
   },
   input: {
     flex: 1,
@@ -64,11 +75,17 @@ export const styles = StyleSheet.create({
     fontSize: scaleFont(14),
     color: colors.blackCoffee,
   },
+  inputOpen: {
+    paddingHorizontal: horizontalScale(12),
+  },
   dropdownList: {
-    maxHeight: verticalScale(220),
+    maxHeight: verticalScale(320),
     backgroundColor: colors.white,
-    borderTopWidth: 1,
-    borderTopColor: colors.grayMercury,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: colors.grayMercury,
+    width: "100%",
   },
   dropdownItem: {
     paddingHorizontal: horizontalScale(12),

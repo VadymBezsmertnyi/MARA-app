@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // redux
 import { useGetEventsLocationsQuery } from "../../../../../storeRedux/api";
@@ -44,6 +45,7 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
   onSelectPlace,
 }) => {
   const { i18n, language } = useLocalesProvider();
+  const { bottom } = useSafeAreaInsets();
   const [isOpenSheet, setIsOpenSheet] = useState(false);
 
   const [isCountryOpen, setIsCountryOpen] = useState(false);
@@ -114,6 +116,17 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
     setIsPlaceOpen(false);
   };
 
+  const sheetContentStyle = useMemo(
+    () => [
+      styles.sheetContent,
+      styles.sheetContentBottomPadding,
+      {
+        paddingBottom: bottom + styles.sheetContentBottomPadding.paddingBottom,
+      },
+    ],
+    [bottom]
+  );
+
   const onSelectCountryHandler = (country: CountryDbType | null) => {
     if (!country) {
       onSelectCountry(null);
@@ -172,38 +185,50 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
         </View>
         <ArrowDown width={16} height={16} fill={colors.black} />
       </TouchableOpacity>
-
       <BottomSheetUniversal
         isOpen={isOpenSheet}
         onClose={closeSheet}
-        snapPoints={["60%"]}
-        styleContent={styles.sheetContent}
+        snapPoints={["70%"]}
+        styleContent={sheetContentStyle}
       >
         <Text style={styles.sheetTitle}>{i18n._("Location")}</Text>
-
-        {/* Country */}
-        <View style={styles.selectContainer}>
+        <View
+          style={[
+            styles.selectContainer,
+            isCountryOpen && styles.selectContainerOpen,
+          ]}
+        >
           <TouchableOpacity
             onPress={() => {
               setIsCountryOpen((s) => !s);
               setIsPlaceOpen(false);
             }}
           >
-            <View style={styles.selectHeader}>
-              <IconLocationMarker
-                width={16}
-                height={16}
-                fill={colors.californiaOrange}
-              />
+            <View
+              style={[
+                styles.selectHeader,
+                isCountryOpen && styles.selectHeaderOpen,
+              ]}
+            >
+              {!isCountryOpen ? (
+                <IconLocationMarker
+                  width={16}
+                  height={16}
+                  fill={colors.californiaOrange}
+                />
+              ) : null}
               <TextInput
-                style={styles.input}
+                style={[styles.input, isCountryOpen && styles.inputOpen]}
                 placeholder={i18n._("All countries")}
                 value={countrySearchValue}
                 onChangeText={setCountrySearchValue}
                 editable={isCountryOpen}
                 pointerEvents={isCountryOpen ? "auto" : "none"}
+                autoFocus={isCountryOpen}
               />
-              <ArrowDown width={16} height={16} fill={colors.black} />
+              {!isCountryOpen ? (
+                <ArrowDown width={16} height={16} fill={colors.black} />
+              ) : null}
             </View>
           </TouchableOpacity>
 
@@ -243,30 +268,44 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
             </ScrollView>
           ) : null}
         </View>
-
-        {/* City */}
-        <View style={styles.selectContainer}>
+        <View style={styles.divider} />
+        <View
+          style={[
+            styles.selectContainer,
+            isPlaceOpen && styles.selectContainerOpen,
+          ]}
+        >
           <TouchableOpacity
             onPress={() => {
               setIsPlaceOpen((s) => !s);
               setIsCountryOpen(false);
             }}
           >
-            <View style={styles.selectHeader}>
-              <IconLocationMarker
-                width={16}
-                height={16}
-                fill={colors.californiaOrange}
-              />
+            <View
+              style={[
+                styles.selectHeader,
+                isPlaceOpen && styles.selectHeaderOpen,
+              ]}
+            >
+              {!isPlaceOpen ? (
+                <IconLocationMarker
+                  width={16}
+                  height={16}
+                  fill={colors.californiaOrange}
+                />
+              ) : null}
               <TextInput
-                style={styles.input}
+                style={[styles.input, isPlaceOpen && styles.inputOpen]}
                 placeholder={i18n._("All cities")}
                 value={placeSearchValue}
                 onChangeText={setPlaceSearchValue}
                 editable={isPlaceOpen}
                 pointerEvents={isPlaceOpen ? "auto" : "none"}
+                autoFocus={isPlaceOpen}
               />
-              <ArrowDown width={16} height={16} fill={colors.black} />
+              {!isPlaceOpen ? (
+                <ArrowDown width={16} height={16} fill={colors.black} />
+              ) : null}
             </View>
           </TouchableOpacity>
 
