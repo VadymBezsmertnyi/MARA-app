@@ -29,7 +29,7 @@ import { ItemListEvents } from "../EventsMain/components/ItemListEvents/ItemList
 import { IconSearchInput } from "../../../icons/components";
 import { Header } from "../../../components/Header/Header";
 import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
-import { EventLocationFilter } from "./components/EventLocationFilter/EventLocationFilter";
+import { EventLocationButtonSheet } from "./components/EventLocationButtonSheet/EventLocationButtonSheet";
 
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
@@ -179,7 +179,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
           placeholder={i18n._("Enter the text to search")}
           InputIcon={<IconSearchInput width={26} height={26} />}
         />
-        <EventLocationFilter
+        <EventLocationButtonSheet
           eventStatus={eventStatus}
           selectedCountryId={selectedCountryId}
           selectedPlaceId={selectedPlaceId}
