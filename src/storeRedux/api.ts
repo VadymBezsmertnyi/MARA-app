@@ -17,6 +17,7 @@ import {
 import {
   getEvents,
   getEventsUser,
+  getClosestEvents,
   addEvent,
   changeEvent,
   deleteEvent,
@@ -58,6 +59,7 @@ export const api = createApi({
     // Events APIs
     getEvents: getEvents(builder),
     getEventsUser: getEventsUser(builder),
+    getClosestEvents: getClosestEvents(builder),
     addEvent: addEvent(builder),
     changeEvent: changeEvent(builder),
     deleteEvent: deleteEvent(builder),
@@ -92,6 +94,8 @@ export const {
   useLazyGetEventsQuery,
   useGetEventsUserQuery,
   useLazyGetEventsUserQuery,
+  useGetClosestEventsQuery,
+  useLazyGetClosestEventsQuery,
   useAddEventMutation,
   useChangeEventMutation,
   useDeleteEventMutation,

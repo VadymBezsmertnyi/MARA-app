@@ -1,5 +1,17 @@
-import React, { FunctionComponent, useEffect, useMemo } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import React, {
+  FunctionComponent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import {
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+  RefreshControl,
+} from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 
@@ -7,16 +19,12 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
 
 // redux
-import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
-import { useUserSelector } from "../../../storeRedux/apis/user/slice";
-import {
-  useLazyGetEventsQuery,
-  useLazyGetEventsUserQuery,
-} from "../../../storeRedux/api";
+import { useLazyGetClosestEventsQuery } from "../../../storeRedux/api";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
+import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 
 // components
 import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
@@ -49,20 +57,37 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
-  const { eventsList } = useEventsSelector();
-  const { userData } = useUserSelector();
-  const [getEvents] = useLazyGetEventsQuery();
-  const [getEventsUser] = useLazyGetEventsUserQuery();
+  const { location } = useMapProvider();
+  const [getClosestEvents, { data: closestEventsData }] =
+    useLazyGetClosestEventsQuery();
+  const hasRequestedRef = useRef(false);
+  const [refreshing, setRefreshing] = useState(false);
+  const lastRefreshTimeRef = useRef<number>(0);
 
-  const timeNow = useMemo(() => new Date().getTime(), []);
   const eventsWill = useMemo(
-    () => eventsList.filter((event) => event.date.finish > timeNow),
-    [eventsList, timeNow]
+    () => closestEventsData?.upcomingAndCurrent || [],
+    [closestEventsData]
   );
   const eventsOld = useMemo(
-    () => eventsList.filter((event) => event.date.finish < timeNow),
-    [eventsList, timeNow]
+    () => closestEventsData?.past || [],
+    [closestEventsData]
   );
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    const currentTime = Date.now();
+    const timeSinceLastRefresh = currentTime - lastRefreshTimeRef.current;
+    const minRefreshInterval = 10000;
+    if (timeSinceLastRefresh >= minRefreshInterval) {
+      lastRefreshTimeRef.current = currentTime;
+      if (location)
+        await getClosestEvents({
+          latitude: location.latitude,
+          longitude: location.longitude,
+        });
+    }
+    setRefreshing(false);
+  };
 
   const onToEventsList = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventsList);
@@ -76,11 +101,14 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   };
 
   useEffect(() => {
-    if (userData?._id) {
-      getEvents();
-      getEventsUser({ userId: userData._id });
+    if (location && !hasRequestedRef.current) {
+      hasRequestedRef.current = true;
+      getClosestEvents({
+        latitude: location.latitude,
+        longitude: location.longitude,
+      });
     }
-  }, [userData?._id]);
+  }, [location, getClosestEvents]);
 
   return (
     <>
@@ -90,7 +118,11 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
         containerStyle={styles.containerHeader}
         rightStyle={styles.containerRightHeader}
       />
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
         <View style={styles.container}>
           <View style={styles.containerPart}>
             <Text style={styles.titleType}>{i18n._("Upcoming events:")}</Text>
