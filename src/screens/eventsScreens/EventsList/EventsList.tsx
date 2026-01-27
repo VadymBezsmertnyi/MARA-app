@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useRef,
 } from "react";
-import { ScrollView, Text, View, RefreshControl } from "react-native";
+import { ScrollView, View, RefreshControl } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -54,7 +54,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
 }) => {
   const { params } = route;
   const { heightTabBar } = useThemeProvider();
-  const { top, bottom } = useSafeAreaInsets();
+  const { bottom } = useSafeAreaInsets();
   const { location } = useMapProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
   const { eventsList, pagination } = useEventsSelector();
