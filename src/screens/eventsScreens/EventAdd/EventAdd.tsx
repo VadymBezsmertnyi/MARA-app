@@ -214,14 +214,25 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     _event: DateTimePickerEvent,
     selectedDate: Date | undefined
   ) => {
-    if (selectedDate) setBeginDate(selectedDate);
+    if (selectedDate) {
+      setBeginDate(selectedDate);
+      const isAfterFinish = dayjs(selectedDate)
+        .startOf("day")
+        .isAfter(dayjs(finishDate).startOf("day"));
+      if (isAfterFinish) setFinishDate(selectedDate);
+    }
   };
 
   const onChangeBeginTime = (
     _event: DateTimePickerEvent,
     selectedDate: Date | undefined
   ) => {
-    if (selectedDate) setBeginTime(selectedDate);
+    if (selectedDate) {
+      setBeginTime(selectedDate);
+      const isAfterFinish = dayjs(selectedDate).isAfter(dayjs(finishTime));
+      if (isAfterFinish)
+        setFinishTime(dayjs(selectedDate).add(1, "hour").toDate());
+    }
   };
 
   const onChangeFinishDate = (
@@ -308,25 +319,40 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               typeof item === "string" ? item : item._id.toString()
             ) || [],
         };
-        if (eventUser && eventUser.userId)
-          await changeEventMutation({
+        if (eventUser && eventUser.userId) {
+          const updatedEventResult = await changeEventMutation({
             body: {
               ...eventUser,
               ...newEvent,
               userId: eventUser.userId._id,
             },
           }).unwrap();
-        else {
+          if (updatedEventResult?.event) {
+            Toast.show({
+              type: "success",
+              text1: i18n._(
+                "Your event is under review and will appear after verification"
+              ),
+            });
+          }
+        } else {
           const result = await addEventMutation({
             body: {
               ...newEvent,
               userId: userData._id,
             },
           }).unwrap();
-          if (result?.event && userData.eventsIds)
+          if (result?.event) {
             await onSetUserProperties({
-              amountEvents: (userData.eventsIds.length + 1).toString(),
+              amountEvents: ((userData.eventsIds?.length || 0) + 1).toString(),
             });
+            Toast.show({
+              type: "success",
+              text1: i18n._(
+                "Your event is under review and will appear after verification"
+              ),
+            });
+          }
         }
         navigation.goBack();
       } catch (error) {
