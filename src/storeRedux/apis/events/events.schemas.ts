@@ -23,6 +23,19 @@ const populateUserData = z.object({
   phoneNumber: z.string(),
 });
 
+export const contactSchema = z.object({
+  type: z.enum([
+    "phone",
+    "email",
+    "viber",
+    "telegram",
+    "whatsapp",
+    "instagram",
+    "facebook",
+  ]),
+  value: z.string(),
+});
+
 export const eventSchema = z.object({
   _id: z.string(),
   userId: populateUserData.nullable(),
@@ -42,6 +55,7 @@ export const eventSchema = z.object({
   description: z.string(),
   imageFiles: z.array(fileSchema).default([]),
   likeUserIds: z.array(populateUserData),
+  contacts: z.array(contactSchema).default([]),
   verification: z
     .object({
       status: z.enum(["pending", "verified", "rejected"]),
@@ -104,6 +118,7 @@ export const addEventRequestSchema = z.object({
       coordinates: coordinatesSchema.optional(),
     })
     .optional(),
+  contacts: z.array(contactSchema).default([]).optional(),
 });
 
 export const upcomingEventSchema = z.object({
