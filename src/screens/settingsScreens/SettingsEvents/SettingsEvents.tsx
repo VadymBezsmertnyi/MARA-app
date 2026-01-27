@@ -57,6 +57,7 @@ type SettingsEventsProps = {
 };
 
 type TabType = "upcoming" | "past";
+type MainTabType = "all" | "created" | "owned";
 
 export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
   navigation,
@@ -68,6 +69,7 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
   const { i18n, language } = useLocalesProvider();
   const { showMessageServer } = useDropDownAlertProvider();
   const [isShowPayment, setIsShowPayment] = useState(false);
+  const [activeMainTab, setActiveMainTab] = useState<MainTabType>("all");
   const [activeTab, setActiveTab] = useState<TabType>("upcoming");
   const [refreshing, setRefreshing] = useState(false);
   const lastRefreshTimeRef = useRef<number>(0);
@@ -83,12 +85,56 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
     { skip: !userData?._id }
   );
 
+  const hasCreatedByMe = useMemo(() => {
+    if (!userData?._id) return false;
+    return eventsUserList.some((event) => {
+      if (!event.userId) return false;
+      const eventUserId =
+        typeof event.userId === "string" ? event.userId : event.userId?._id;
+      return eventUserId === userData._id;
+    });
+  }, [eventsUserList, userData?._id]);
+  const hasOwned = useMemo(() => {
+    if (!userData?._id) return false;
+    return eventsUserList.some((event) => {
+      if (!event.ownerUserId) return false;
+      const eventOwnerId =
+        typeof event.ownerUserId === "string"
+          ? event.ownerUserId
+          : event.ownerUserId?._id;
+      return eventOwnerId === userData._id;
+    });
+  }, [eventsUserList, userData?._id]);
+  const showMainTabs = (hasCreatedByMe ? 1 : 0) + (hasOwned ? 1 : 0) > 1;
+
+  const eventsByMainTab = useMemo(() => {
+    if (!userData?._id) return [];
+    if (activeMainTab === "all") return eventsUserList;
+    if (activeMainTab === "created")
+      return eventsUserList.filter((event) => {
+        if (!event.userId) return false;
+        const eventUserId =
+          typeof event.userId === "string" ? event.userId : event.userId?._id;
+        return eventUserId === userData._id;
+      });
+    if (activeMainTab === "owned")
+      return eventsUserList.filter((event) => {
+        if (!event.ownerUserId) return false;
+        const eventOwnerId =
+          typeof event.ownerUserId === "string"
+            ? event.ownerUserId
+            : event.ownerUserId?._id;
+        return eventOwnerId === userData._id;
+      });
+    return [];
+  }, [eventsUserList, activeMainTab, userData?._id]);
+
   const filteredEvents = useMemo(() => {
     const nowTime = Date.now();
     if (activeTab === "past")
-      return eventsUserList.filter((event) => event.date.finish < nowTime);
-    return eventsUserList.filter((event) => event.date.finish >= nowTime);
-  }, [eventsUserList, activeTab]);
+      return eventsByMainTab.filter((event) => event.date.finish < nowTime);
+    return eventsByMainTab.filter((event) => event.date.finish >= nowTime);
+  }, [eventsByMainTab, activeTab]);
 
   const onClose = () => {
     navigation.goBack();
@@ -134,6 +180,55 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
             <IconClose width={24} height={24} fill={colors.blackCoffee} />
           </TouchableOpacity>
         </View>
+        {showMainTabs && (
+          <View style={styles.containerTabs}>
+            <TouchableOpacity
+              style={[styles.tab, activeMainTab === "all" && styles.tabActive]}
+              onPress={() => setActiveMainTab("all")}
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  activeMainTab === "all" && styles.tabTextActive,
+                ]}
+              >
+                {i18n._("All")}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.tab,
+                activeMainTab === "created" && styles.tabActive,
+              ]}
+              onPress={() => setActiveMainTab("created")}
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  activeMainTab === "created" && styles.tabTextActive,
+                ]}
+              >
+                {i18n._("Created by me")}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.tab,
+                activeMainTab === "owned" && styles.tabActive,
+              ]}
+              onPress={() => setActiveMainTab("owned")}
+            >
+              <Text
+                style={[
+                  styles.tabText,
+                  activeMainTab === "owned" && styles.tabTextActive,
+                ]}
+              >
+                {i18n._("Mine")}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
         <View style={styles.containerTabs}>
           <TouchableOpacity
             style={[styles.tab, activeTab === "upcoming" && styles.tabActive]}
