@@ -81,6 +81,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const prevDebouncedValueSearchRef = useRef<string>("");
   const lastRefreshTimeRef = useRef<number>(0);
+  const didInitFiltersRef = useRef(false);
 
   const eventStatus = params?.isOld ? "past" : "upcoming";
 
@@ -95,7 +96,12 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   };
 
   const onSubmitFilters = (newFilters: TypeEventFilters) => {
-    setFilters(newFilters);
+    const isClearFilters =
+      newFilters.minPrice === null &&
+      newFilters.maxPrice === null &&
+      newFilters.maxDistance === maxDistance;
+
+    setFilters(isClearFilters ? null : newFilters);
     onClose();
   };
 
@@ -215,8 +221,12 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   ]);
 
   useEffect(() => {
+    if (!didInitFiltersRef.current) {
+      didInitFiltersRef.current = true;
+      if (!selectedCountryId && !selectedPlaceId) return;
+    }
     if (page === 1) refetch();
-  }, [selectedCountryId, selectedPlaceId]);
+  }, [filters, page, selectedCountryId, selectedPlaceId]);
 
   return (
     <>
