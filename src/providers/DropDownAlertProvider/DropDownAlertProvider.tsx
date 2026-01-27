@@ -4,7 +4,7 @@ import React, {
   useContext,
   useMemo,
 } from "react";
-import Toast, { BaseToast } from "react-native-toast-message";
+import Toast, { BaseToast, ToastConfig } from "react-native-toast-message";
 
 import { styles } from "./DropDownAlertProvider.styles";
 
@@ -37,26 +37,35 @@ export type DropDownAlertProviderProps = {
 
 export const dropDownAlertContext = createContext({} as DropDownAlertContext);
 
-const toastConfig = {
-  success: (props: any) => (
+const toastConfig: ToastConfig = {
+  success: (props) => (
     <BaseToast
       {...props}
+      contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.titleTextStyle}
       text2Style={styles.messageTextStyle}
+      text1NumberOfLines={2}
+      text2NumberOfLines={3}
     />
   ),
-  error: (props: any) => (
+  error: (props) => (
     <BaseToast
       {...props}
+      contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.titleTextStyle}
       text2Style={styles.messageTextStyle}
+      text1NumberOfLines={2}
+      text2NumberOfLines={3}
     />
   ),
-  info: (props: any) => (
+  info: (props) => (
     <BaseToast
       {...props}
+      contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.titleTextStyle}
       text2Style={styles.messageTextStyle}
+      text1NumberOfLines={2}
+      text2NumberOfLines={3}
     />
   ),
 };
@@ -96,8 +105,8 @@ const DropDownAlertProvider: FunctionComponent<DropDownAlertProviderProps> = ({
 
   return (
     <dropDownAlertContext.Provider value={contextValue}>
-      <Toast config={toastConfig} />
       {children}
+      <Toast config={toastConfig} />
     </dropDownAlertContext.Provider>
   );
 };

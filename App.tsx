@@ -100,9 +100,9 @@ function App() {
   }, []);
 
   return (
-    <Provider store={store}>
-      <SafeAreaProvider>
-        <DropDownAlertProvider>
+    <DropDownAlertProvider>
+      <Provider store={store}>
+        <SafeAreaProvider>
           <ThemeProvider>
             <LoadingProvider isLoadingProps={!fontsLoaded}>
               <LocalesProvider>
@@ -144,9 +144,9 @@ function App() {
               </LocalesProvider>
             </LoadingProvider>
           </ThemeProvider>
-        </DropDownAlertProvider>
-      </SafeAreaProvider>
-    </Provider>
+        </SafeAreaProvider>
+      </Provider>
+    </DropDownAlertProvider>
   );
 }
 
