@@ -1,17 +1,17 @@
 import React, { FunctionComponent, useEffect, useMemo, useRef } from "react";
 import { Platform, ScrollView, StyleProp, View, ViewStyle } from "react-native";
 import {
-  BottomSheetModal,
-  BottomSheetView,
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
+  BottomSheetModal,
+  BottomSheetView,
 } from "@gorhom/bottom-sheet";
 import { SharedValue } from "react-native-reanimated";
 
 // styles
-import styles from "./BottomSheetCustom.styles";
+import styles from "./BottomSheetUniversal.styles";
 
-type BottomSheetCustomProps = {
+type BottomSheetUniversalProps = {
   children: React.ReactNode;
   isOpen: boolean;
   index?: number;
@@ -25,7 +25,7 @@ type BottomSheetCustomProps = {
   styleContent?: StyleProp<ViewStyle>;
 };
 
-const BottomSheetCustom: FunctionComponent<BottomSheetCustomProps> = ({
+const BottomSheetUniversal: FunctionComponent<BottomSheetUniversalProps> = ({
   children,
   isOpen,
   index = 0,
@@ -85,4 +85,4 @@ const BottomSheetCustom: FunctionComponent<BottomSheetCustomProps> = ({
   );
 };
 
-export default BottomSheetCustom;
+export default BottomSheetUniversal;
