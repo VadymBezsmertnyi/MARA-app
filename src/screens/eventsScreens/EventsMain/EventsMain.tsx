@@ -19,7 +19,7 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
 
 // redux
-import { useLazyGetClosestEventsQuery } from "../../../storeRedux/api";
+import { useGetClosestEventsQuery } from "../../../storeRedux/api";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
@@ -58,11 +58,12 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   const { i18n } = useLocalesProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
   const { location } = useMapProvider();
-  const [getClosestEvents, { data: closestEventsData }] =
-    useLazyGetClosestEventsQuery();
   const hasRequestedRef = useRef(false);
   const [refreshing, setRefreshing] = useState(false);
   const lastRefreshTimeRef = useRef<number>(0);
+  const { data: closestEventsData, refetch } = useGetClosestEventsQuery(
+    location ? location : {}
+  );
 
   const eventsWill = useMemo(
     () => closestEventsData?.upcomingAndCurrent || [],
@@ -80,11 +81,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
     const minRefreshInterval = 10000;
     if (timeSinceLastRefresh >= minRefreshInterval) {
       lastRefreshTimeRef.current = currentTime;
-      if (location)
-        await getClosestEvents({
-          latitude: location.latitude,
-          longitude: location.longitude,
-        });
+      await refetch();
     }
     setRefreshing(false);
   };
@@ -99,16 +96,6 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   const onPressShowMenu = () => {
     navigation.openDrawer();
   };
-
-  useEffect(() => {
-    if (location && !hasRequestedRef.current) {
-      hasRequestedRef.current = true;
-      getClosestEvents({
-        latitude: location.latitude,
-        longitude: location.longitude,
-      });
-    }
-  }, [location, getClosestEvents]);
 
   return (
     <>
