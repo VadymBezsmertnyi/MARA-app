@@ -13,4 +13,6 @@ export const DEFAULT_EVENT_DATA: Omit<TEvent, "_id" | "userId"> = {
   description: "",
   imageFiles: [],
   likeUserIds: [],
+  contacts: [],
+  verification: null,
 };

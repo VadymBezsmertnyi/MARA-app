@@ -9,6 +9,7 @@ import {
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
+import { MaterialIcons } from "@expo/vector-icons";
 import dayjs from "dayjs";
 
 // types
@@ -18,6 +19,7 @@ import {
   RootSettingsScreensParamList,
 } from "../../../navigators/Navigators.types";
 import { ImageFileType } from "../../../storeRedux/types";
+import { TContact } from "../../../storeRedux/apis/events/events.types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
@@ -40,17 +42,24 @@ import { DatePicker } from "./components/DatePicker/DatePicker";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { InputButton } from "../../../components/InputButton/InputButton";
+import { InputPhone } from "../../../components/InputPhone/InputPhone";
 import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowErrors";
 import { Header } from "../../../components/Header/Header";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 import { ItemSearchPlaceAddressType } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress.types";
 import { ModalSheetSearchPlaceAddress } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress";
+import { ModalSheetContactType } from "../../../components/ModalSheetContactType/ModalSheetContactType";
 
 // helps
 import { combineDateAndTime } from "../../../helps/helps";
 import { useErrors } from "../../../helps/useErrors";
+import { getClearValue } from "../../../helps/regexp";
 
 // constants
+import {
+  DEFAULT_CODE_COUNTRY,
+  DEFAULT_COUNTRY,
+} from "../../../constants/inputs.const";
 import { DEFAULT_EVENT_DATA } from "../../../storeRedux/apis/events/events.constants";
 
 // icons
@@ -58,6 +67,8 @@ import { IconMapGradient } from "../../../icons/components";
 
 // styles
 import { styles } from "./EventAdd.styles";
+import colors from "../../../../styles/colors";
+import Toast from "react-native-toast-message";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -97,6 +108,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [priceFinish, setPriceFinish] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
   const [images, setImages] = useState<ImageFileType[]>([]);
+  const [contacts, setContacts] = useState<TContact[]>([
+    { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
+  ]);
+  const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
+  const [isShowContactTypeModal, setIsShowContactTypeModal] = useState(false);
   const [isShowErrors, setIsShowErrors] = useState(false);
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState<Record<
@@ -173,6 +189,27 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     if (error) setErrorMessage({ [type]: error });
   };
 
+  const getContactTypeTitle = (type: TContact["type"]) => {
+    switch (type) {
+      case "phone":
+        return i18n._("Phone");
+      case "email":
+        return i18n._("Email");
+      case "viber":
+        return i18n._("Viber");
+      case "telegram":
+        return i18n._("Telegram");
+      case "whatsapp":
+        return i18n._("WhatsApp");
+      case "instagram":
+        return i18n._("Instagram");
+      case "facebook":
+        return i18n._("Facebook");
+      default:
+        return "";
+    }
+  };
+
   const onChangeBeginDate = (
     _event: DateTimePickerEvent,
     selectedDate: Date | undefined
@@ -239,6 +276,14 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             height: image.height,
           };
         });
+        const processedContacts = contacts.map((contact) => {
+          if (contact.type === "phone")
+            return {
+              ...contact,
+              value: getClearValue(contact.value),
+            };
+          return contact;
+        });
         const newEvent = {
           ...DEFAULT_EVENT_DATA,
           title: eventName,
@@ -257,6 +302,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           currency: "UAH" as const,
           description: aboutEvent,
           imageFiles: currentImageFiles,
+          contacts: processedContacts,
           likeUserIds:
             eventUser?.likeUserIds.map((item) =>
               typeof item === "string" ? item : item._id.toString()
@@ -313,6 +359,21 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         setPriceFinish(eventUser.price?.finish.toString() || "");
         setAboutEvent(eventUser.description);
         setImages(eventUser.imageFiles || []);
+        if (eventUser.contacts && eventUser.contacts.length > 0) {
+          const phoneContact = eventUser.contacts.find(
+            (contact) => contact.type === "phone"
+          );
+          const otherContacts = eventUser.contacts.filter(
+            (contact) => contact.type !== "phone"
+          );
+          if (phoneContact) setContacts([phoneContact, ...otherContacts]);
+          else
+            setContacts([
+              { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
+              ...otherContacts,
+            ]);
+        } else
+          setContacts([{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }]);
       }
     }
     setLoading(false);
@@ -341,6 +402,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   useEffect(() => {
     getEventUser();
   }, [params, placesDB]);
+
+  useEffect(() => {
+    if (!eventUser && userData?.phoneNumber && contacts[0]?.value.length < 5)
+      setContacts([{ type: "phone", value: userData.phoneNumber }]);
+  }, [userData, eventUser]);
 
   useEffect(() => {
     if (needCheck) {
@@ -406,6 +472,78 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             >
               <IconMapGradient width={41} height={32} />
             </TouchableOpacity>
+          </View>
+          <View style={styles.contactsContainer}>
+            <Text style={styles.labelContacts}>{i18n._("Contacts")}</Text>
+            <View style={styles.contactsListContainer}>
+              {contacts.map((contact, index) => {
+                const isFirstContact = index === 0;
+                const canDelete = !isFirstContact;
+                return (
+                  <View key={`contact-${index}`} style={styles.contactRow}>
+                    <View style={styles.contactInputContainer}>
+                      {contact.type === "phone" ? (
+                        <InputPhone
+                          isRegular
+                          label={i18n._("Phone number")}
+                          phoneNumber={contact.value}
+                          setPhoneNumber={(value) => {
+                            setContacts((prev) =>
+                              prev.map((c, i) =>
+                                i === index ? { ...c, value } : c
+                              )
+                            );
+                          }}
+                          selectCountryIso={selectCountryIso}
+                          setSelectCountryIso={setSelectCountryIso}
+                          labelStyle={styles.labelInput}
+                          isErrorMessage={false}
+                        />
+                      ) : (
+                        <Input
+                          isRegular
+                          placeholder={getContactTypeTitle(contact.type)}
+                          label={getContactTypeTitle(contact.type)}
+                          value={contact.value}
+                          onChange={(value) => {
+                            setContacts((prev) =>
+                              prev.map((c, i) =>
+                                i === index ? { ...c, value } : c
+                              )
+                            );
+                          }}
+                          labelStyle={styles.labelInput}
+                        />
+                      )}
+                    </View>
+                    {canDelete && (
+                      <TouchableOpacity
+                        style={styles.deleteContactIconButton}
+                        onPress={() => {
+                          setContacts((prev) =>
+                            prev.filter((_, i) => i !== index)
+                          );
+                        }}
+                      >
+                        <MaterialIcons
+                          name="delete"
+                          size={24}
+                          color={colors.errorRed}
+                        />
+                      </TouchableOpacity>
+                    )}
+                  </View>
+                );
+              })}
+            </View>
+            <ButtonCustom
+              type="transparent"
+              title={i18n._("Add contact type")}
+              onSubmit={() => setIsShowContactTypeModal(true)}
+              styleContainer={styles.addContactButtonContainer}
+              styleButton={styles.addContactButton}
+              styleTitle={styles.addContactText}
+            />
           </View>
           <Text style={styles.subtitle}>{i18n._("Date of the event")}</Text>
           <View style={styles.wrapper}>
@@ -530,6 +668,38 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           setIsShowErrors(false);
         }}
         errors={errorMessage}
+      />
+      <ModalSheetContactType
+        isShow={isShowContactTypeModal}
+        onClose={() => setIsShowContactTypeModal(false)}
+        onSelect={(type) => {
+          if (type === "phone") {
+            const phoneCount = contacts.filter(
+              (c) => c.type === "phone"
+            ).length;
+            if (phoneCount < 5)
+              setContacts((prev) => [
+                ...prev,
+                { type, value: `+${DEFAULT_CODE_COUNTRY}` },
+              ]);
+            else
+              Toast.show({
+                type: "error",
+                text1: i18n._("Error"),
+                text2: i18n._("You can add up to 5 phone numbers"),
+              });
+          } else {
+            const existingTypes = contacts.map((c) => c.type);
+            if (!existingTypes.includes(type))
+              setContacts((prev) => [...prev, { type, value: "" }]);
+            else
+              Toast.show({
+                type: "error",
+                text1: i18n._("Error"),
+                text2: i18n._("This contact type has already been added"),
+              });
+          }
+        }}
       />
       {isShowDeleteModal && (
         <ModalDelete

@@ -47,6 +47,22 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     color: colors.blackCoffee,
   },
+  labelInput: {
+    fontSize: scaleFont(14),
+    color: colors.grayFuscous,
+  },
+  labelContacts: {
+    fontSize: scaleFont(16),
+    fontWeight: "600",
+    color: colors.blackCoffee,
+    marginBottom: verticalScale(4),
+  },
+  contactsContainer: {
+    paddingVertical: verticalScale(10),
+  },
+  contactsListContainer: {
+    paddingHorizontal: horizontalScale(5),
+  },
   multipleInput: {
     height: verticalScale(110),
     width: "100%",
@@ -61,6 +77,35 @@ export const styles = StyleSheet.create({
     paddingTop: verticalScale(16),
     paddingLeft: horizontalScale(12),
     paddingBottom: verticalScale(8),
+  },
+  contactRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    marginBottom: verticalScale(10),
+    gap: horizontalScale(8),
+  },
+  contactInputContainer: {
+    flex: 1,
+  },
+  deleteContactIconButton: {
+    marginTop: verticalScale(25),
+    padding: horizontalScale(8),
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  addContactButtonContainer: {
+    marginTop: 0,
+    height: "auto",
+  },
+  addContactButton: {
+    paddingVertical: verticalScale(8),
+    paddingHorizontal: horizontalScale(12),
+    minWidth: 0,
+    height: "auto",
+  },
+  addContactText: {
+    fontSize: scaleFont(14),
+    color: colors.grayFuscous,
   },
   errorMessage: { textAlign: "center", color: colors.errorRed },
   empty: {
