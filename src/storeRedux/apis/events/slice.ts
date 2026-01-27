@@ -96,6 +96,47 @@ export const eventsSlice = createSlice({
             action.error.message || "Помилка отримання подій користувача";
         }
       )
+      // getEventById
+      .addMatcher(api.endpoints.getEventById.matchPending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addMatcher(api.endpoints.getEventById.matchFulfilled, (state, action) => {
+        if (action.payload?.event) {
+          const event = action.payload.event;
+          const existingIndex = state.eventsList.findIndex(
+            (item) => item._id === event._id
+          );
+          const nextEventsList =
+            existingIndex >= 0
+              ? state.eventsList.map((item) =>
+                  item._id === event._id ? event : item
+                )
+              : [...state.eventsList, event];
+          state.eventsList = getSortEvents(nextEventsList);
+
+          const existingUserIndex = state.eventsUserList.findIndex(
+            (item) => item._id === event._id
+          );
+          const nextEventsUserList =
+            existingUserIndex >= 0
+              ? state.eventsUserList.map((item) =>
+                  item._id === event._id ? event : item
+                )
+              : state.eventsUserList;
+          state.eventsUserList = getSortEvents(nextEventsUserList);
+          state.loading = false;
+          state.error = null;
+        } else {
+          state.loading = false;
+          state.error = "Помилка валідації даних від сервера (getEventById)";
+        }
+      })
+      .addMatcher(api.endpoints.getEventById.matchRejected, (state, action) => {
+        state.loading = false;
+        state.error =
+          action.error.message || "Помилка отримання події по id";
+      })
       // addEvent
       .addMatcher(api.endpoints.addEvent.matchPending, (state) => {
         state.loading = true;
