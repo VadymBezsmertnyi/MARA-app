@@ -7,7 +7,9 @@ import React, {
 } from "react";
 import { Linking } from "react-native";
 import * as Location from "expo-location";
-import { z } from "zod";
+
+// schemas
+import { ipApiGetCountryResponseSchema } from "./MapProvider.schemas";
 
 // redux
 import { useUserSelector } from "../../storeRedux/apis/user/slice";
@@ -18,6 +20,7 @@ import { usePermissionsProvider } from "../PermissionsProvider/PermissionsProvid
 
 // constants
 import { PATHS } from "../paths.constants";
+import { TIpApiGetCountryResponse } from "./MapProvider.types";
 
 type MapContext = {
   location: Location.LocationObjectCoords | null;
@@ -35,16 +38,13 @@ export const mapContext = React.createContext({} as MapContext);
 const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
   const { api } = useApiProvider();
   const { userData } = useUserSelector();
-  const { locationForegroundPermission, locationBackgroundPermission } =
-    usePermissionsProvider();
+  const { locationForegroundPermission } = usePermissionsProvider();
   const [location, setLocation] =
     useState<Location.LocationObjectCoords | null>(null);
   const [startGetGeolocation, setStartGetGeolocation] =
     useState<boolean>(false);
-  const [countryUser, setCountryUser] = useState<{
-    country: string;
-    countryCode: string;
-  } | null>(null);
+  const [countryUser, setCountryUser] =
+    useState<TIpApiGetCountryResponse | null>(null);
 
   const setPermission = async () => {
     await Linking.openSettings();
@@ -66,14 +66,8 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
   const getCountryUser = async () => {
     const result = countryUser
       ? countryUser
-      : await api(
-          PATHS.ipApiGetCountry,
-          null,
-          z.object({
-            country: z.string(),
-            countryCode: z.string(),
-          })
-        );
+      : await api(PATHS.ipApiGetCountry, null, ipApiGetCountryResponseSchema);
+    console.log("result countryUser:", result);
     if (!countryUser) setCountryUser(result);
   };
 
