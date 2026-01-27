@@ -129,6 +129,16 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
     return [];
   }, [eventsUserList, activeMainTab, userData?._id]);
 
+  const hasUpcoming = useMemo(
+    () => eventsByMainTab.some((event) => event.date.finish >= Date.now()),
+    [eventsByMainTab]
+  );
+  const hasPast = useMemo(
+    () => eventsByMainTab.some((event) => event.date.finish < Date.now()),
+    [eventsByMainTab]
+  );
+  const showDateTabs = (hasUpcoming ? 1 : 0) + (hasPast ? 1 : 0) > 1;
+
   const filteredEvents = useMemo(() => {
     const nowTime = Date.now();
     if (activeTab === "past")
@@ -156,6 +166,13 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
       );
     setRefreshing(false);
   };
+
+  useEffect(() => {
+    if (showDateTabs) return;
+    if (hasPast && !hasUpcoming && activeTab !== "past") setActiveTab("past");
+    if (hasUpcoming && !hasPast && activeTab !== "upcoming")
+      setActiveTab("upcoming");
+  }, [showDateTabs, hasPast, hasUpcoming, activeTab]);
 
   useEffect(() => {
     if (!userData?._id || hasInitialLoadRef.current) return;
@@ -229,34 +246,36 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
             </TouchableOpacity>
           </View>
         )}
-        <View style={styles.containerTabs}>
-          <TouchableOpacity
-            style={[styles.tab, activeTab === "upcoming" && styles.tabActive]}
-            onPress={() => setActiveTab("upcoming")}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                activeTab === "upcoming" && styles.tabTextActive,
-              ]}
+        {showDateTabs && (
+          <View style={styles.containerTabs}>
+            <TouchableOpacity
+              style={[styles.tab, activeTab === "upcoming" && styles.tabActive]}
+              onPress={() => setActiveTab("upcoming")}
             >
-              {i18n._("Upcoming events")}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.tab, activeTab === "past" && styles.tabActive]}
-            onPress={() => setActiveTab("past")}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                activeTab === "past" && styles.tabTextActive,
-              ]}
+              <Text
+                style={[
+                  styles.tabText,
+                  activeTab === "upcoming" && styles.tabTextActive,
+                ]}
+              >
+                {i18n._("Upcoming events")}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.tab, activeTab === "past" && styles.tabActive]}
+              onPress={() => setActiveTab("past")}
             >
-              {i18n._("Past events")}
-            </Text>
-          </TouchableOpacity>
-        </View>
+              <Text
+                style={[
+                  styles.tabText,
+                  activeTab === "past" && styles.tabTextActive,
+                ]}
+              >
+                {i18n._("Past events")}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
         {filteredEvents.length === 0 ? (
           <View style={styles.containerNotElements}>
             <ImageCache
