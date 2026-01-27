@@ -150,6 +150,10 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
     setPage(1);
   }, [params?.isOld, debouncedValueSearch, selectedCountryId, selectedPlaceId]);
 
+  useEffect(() => {
+    if (page === 1) refetch();
+  }, [selectedCountryId, selectedPlaceId]);
+
   return (
     <>
       <Header
