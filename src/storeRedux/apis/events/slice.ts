@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { TEventsState, TEvents } from "./events.types";
 import { RootState } from "../../store";
 import { api } from "../../api";
-import { EventsType } from "../../../providers/EventsProvider/EventsProvider.types";
 import { getSortEvents } from "../../../providers/EventsProvider/EventsProvider.hooks";
 
 const initialState: TEventsState = {
@@ -39,7 +38,7 @@ export const eventsSlice = createSlice({
       })
       .addMatcher(api.endpoints.getEvents.matchFulfilled, (state, action) => {
         if (action.payload?.events) {
-          state.eventsList = getSortEvents(action.payload.events as EventsType);
+          state.eventsList = getSortEvents(action.payload.events);
           state.loading = false;
           state.error = null;
         } else {
@@ -60,9 +59,7 @@ export const eventsSlice = createSlice({
         api.endpoints.getEventsUser.matchFulfilled,
         (state, action) => {
           if (action.payload?.events) {
-            state.eventsUserList = getSortEvents(
-              action.payload.events as EventsType
-            );
+            state.eventsUserList = getSortEvents(action.payload.events);
             state.loading = false;
             state.error = null;
           } else {
@@ -87,12 +84,9 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.addEvent.matchFulfilled, (state, action) => {
         if (action.payload?.event) {
           const newEvent = action.payload.event;
-          state.eventsList = getSortEvents([
-            ...(state.eventsList as EventsType),
-            newEvent,
-          ]);
+          state.eventsList = getSortEvents([...state.eventsList, newEvent]);
           state.eventsUserList = getSortEvents([
-            ...(state.eventsUserList as EventsType),
+            ...state.eventsUserList,
             newEvent,
           ]);
           state.loading = false;
@@ -115,12 +109,12 @@ export const eventsSlice = createSlice({
         if (action.payload?.event) {
           const updatedEvent = action.payload.event;
           state.eventsList = getSortEvents(
-            (state.eventsList as EventsType).map((event) =>
+            state.eventsList.map((event) =>
               event._id === updatedEvent._id ? updatedEvent : event
             )
           );
           state.eventsUserList = getSortEvents(
-            (state.eventsUserList as EventsType).map((event) =>
+            state.eventsUserList.map((event) =>
               event._id === updatedEvent._id ? updatedEvent : event
             )
           );
