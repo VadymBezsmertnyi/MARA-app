@@ -91,6 +91,7 @@ export const workshopsSlice = createSlice({
       .addMatcher(
         api.endpoints.getWorkshopsUser.matchRejected,
         (state, action) => {
+          if (action.error?.name === "ConditionError") return;
           state.loading = false;
           state.error =
             action.error.message || "Помилка отримання майстерень користувача";
@@ -110,7 +111,8 @@ export const workshopsSlice = createSlice({
             );
             if (existingIndex >= 0)
               state.workshopsList[existingIndex] = updatedWorkshop;
-            else state.workshopsList = [...state.workshopsList, updatedWorkshop];
+            else
+              state.workshopsList = [...state.workshopsList, updatedWorkshop];
 
             const existingUserIndex = state.workshopsUserList.findIndex(
               (w) => w._id === updatedWorkshop._id
@@ -131,11 +133,13 @@ export const workshopsSlice = createSlice({
           }
         }
       )
-      .addMatcher(api.endpoints.getWorkshopById.matchRejected, (state, action) => {
-        state.loading = false;
-        state.error =
-          action.error.message || "Помилка отримання майстерні";
-      })
+      .addMatcher(
+        api.endpoints.getWorkshopById.matchRejected,
+        (state, action) => {
+          state.loading = false;
+          state.error = action.error.message || "Помилка отримання майстерні";
+        }
+      )
       .addMatcher(api.endpoints.addWorkshop.matchPending, (state) => {
         state.loading = true;
         state.error = null;
@@ -183,7 +187,8 @@ export const workshopsSlice = createSlice({
             );
             if (existingIndex >= 0)
               state.workshopsList[existingIndex] = updatedWorkshop;
-            else state.workshopsList = [...state.workshopsList, updatedWorkshop];
+            else
+              state.workshopsList = [...state.workshopsList, updatedWorkshop];
 
             const existingUserIndex = state.workshopsUserList.findIndex(
               (w) => w._id === updatedWorkshop._id

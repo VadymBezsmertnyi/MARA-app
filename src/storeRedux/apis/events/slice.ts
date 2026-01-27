@@ -111,6 +111,7 @@ export const eventsSlice = createSlice({
       .addMatcher(
         api.endpoints.getEventsUser.matchRejected,
         (state, action) => {
+          if (action.error?.name === "ConditionError") return;
           state.loading = false;
           state.error =
             action.error.message || "Помилка отримання подій користувача";
