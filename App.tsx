@@ -6,6 +6,7 @@ import {
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { Settings } from "react-native-fbsdk-next";
 import { setCustomText, setCustomTextInput } from "react-native-global-props";
@@ -123,16 +124,18 @@ function App() {
                               <GestureHandlerRootView
                                 style={styles.gestureHandlerRootView}
                               >
-                                <PushNotificationProvider
-                                  currentRouteName={currentRouteName}
-                                >
-                                  <SharingProvider>
-                                    <Navigators
-                                      currentRouteName={currentRouteName}
-                                      navigation={navigationRef.current}
-                                    />
-                                  </SharingProvider>
-                                </PushNotificationProvider>
+                                <BottomSheetModalProvider>
+                                  <PushNotificationProvider
+                                    currentRouteName={currentRouteName}
+                                  >
+                                    <SharingProvider>
+                                      <Navigators
+                                        currentRouteName={currentRouteName}
+                                        navigation={navigationRef.current}
+                                      />
+                                    </SharingProvider>
+                                  </PushNotificationProvider>
+                                </BottomSheetModalProvider>
                               </GestureHandlerRootView>
                             </MapProvider>
                           </PermissionsProvider>
