@@ -10,6 +10,9 @@ import {
 // types
 import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
+// providers
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
 
@@ -35,6 +38,7 @@ export const ItemSettingEvents: FunctionComponent<ItemSettingEventsProps> = ({
   event,
   isStart,
 }) => {
+  const { i18n } = useLocalesProvider();
   const navigation = useAllNavigation();
   const firstImage = event.imageFiles[0] ? event.imageFiles[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
@@ -55,7 +59,49 @@ export const ItemSettingEvents: FunctionComponent<ItemSettingEventsProps> = ({
           <ImageCache imageSrc={firstImage} style={styles.image} />
         ) : null}
         <View style={styles.containerInfo}>
-          <Text style={styles.title}>{event.title}</Text>
+          <Text numberOfLines={1} style={styles.title}>
+            {event.title}
+          </Text>
+          {event.verification && (
+            <View style={styles.containerStatus}>
+              <View
+                style={[
+                  styles.statusBadge,
+                  event.verification.status === "pending" &&
+                    styles.statusPending,
+                  event.verification.status === "verified" &&
+                    styles.statusVerified,
+                  event.verification.status === "rejected" &&
+                    styles.statusRejected,
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.statusText,
+                    event.verification.status === "pending" &&
+                      styles.statusTextPending,
+                    event.verification.status === "verified" &&
+                      styles.statusTextVerified,
+                    event.verification.status === "rejected" &&
+                      styles.statusTextRejected,
+                  ]}
+                >
+                  {event.verification.status === "pending" &&
+                    i18n._("Under review")}
+                  {event.verification.status === "verified" &&
+                    i18n._("Verified")}
+                  {event.verification.status === "rejected" &&
+                    i18n._("Rejected")}
+                </Text>
+              </View>
+            </View>
+          )}
+          {event.verification?.status === "rejected" &&
+            event.verification.reason && (
+              <Text style={styles.reasonText} numberOfLines={2}>
+                {event.verification.reason}
+              </Text>
+            )}
           <Text style={styles.data}>
             {formatDateFromUnixTimestamp(event.date.start)}
           </Text>
