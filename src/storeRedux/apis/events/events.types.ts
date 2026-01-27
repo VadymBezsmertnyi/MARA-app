@@ -67,6 +67,10 @@ export interface IGetEventsRequest {
   placeId?: string;
 }
 
+export interface IGetEventByIdRequest {
+  eventId: string;
+}
+
 export interface IGetEventsUserRequest {
   userId: string;
   page?: number;

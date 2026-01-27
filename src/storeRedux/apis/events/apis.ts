@@ -8,6 +8,7 @@ import {
   IDeleteEventRequest,
   IGetEventsRequest,
   IGetEventsUserRequest,
+  IGetEventByIdRequest,
   IGetClosestEventsRequest,
   IGetEventsLocationsRequest,
   TClosestEvents,
@@ -83,6 +84,25 @@ export const getEventsUser = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod getEventsUser:", {
           url: PATHS.eventsGetUserId,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const getEventById = (builder: Builder) =>
+  builder.query<TEventResponse | null, IGetEventByIdRequest>({
+    query: ({ eventId }) => ({
+      url: `${PATHS.eventsGetById}${eventId}`,
+      method: "GET",
+    }),
+    transformResponse: (response: unknown) => {
+      const result = eventResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod getEventById:", {
+          url: PATHS.eventsGetById,
           data: response,
           error: result.error,
         });
