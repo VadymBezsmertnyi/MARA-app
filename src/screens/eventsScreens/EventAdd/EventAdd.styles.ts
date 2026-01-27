@@ -41,10 +41,6 @@ export const styles = StyleSheet.create({
     height: 110,
     width: "100%",
   },
-  containerImages: {
-    marginTop: 20,
-    marginBottom: 40,
-  },
   containerLocation: {
     flexDirection: "row",
     justifyContent: "space-between",

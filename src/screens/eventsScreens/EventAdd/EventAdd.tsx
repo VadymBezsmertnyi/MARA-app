@@ -9,7 +9,6 @@ import {
 import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import * as FileSystem from "expo-file-system/legacy";
 import dayjs from "dayjs";
 
 // types
@@ -226,18 +225,24 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             : { place: placeAddress };
         const currentImageFiles = images.map((image) => {
           if (
+            image._id &&
             image.url &&
-            (image.url.includes("file://") || image.url.startsWith("file://"))
+            !image.url.includes("file://") &&
+            !image.url.startsWith("file://") &&
+            !image.url.includes("data:image")
           )
             return {
-              uri: image.url,
+              _id: image._id,
+              url: image.url,
               width: image.width,
               height: image.height,
-            } as any;
+            };
 
           return {
             _id: image._id || "",
-            url: image.url || "",
+            uri: image.url,
+            width: image.width,
+            height: image.height,
           };
         });
         const newEvent = {
@@ -258,7 +263,10 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           currency: "UAH" as const,
           description: aboutEvent,
           imageFiles: currentImageFiles,
-          likeUserIds: eventUser?.likeUserIds.map((item) => item._id) || [],
+          likeUserIds:
+            eventUser?.likeUserIds.map((item) =>
+              typeof item === "string" ? item : item._id.toString()
+            ) || [],
         };
         if (eventUser && eventUser.userId)
           await changeEventMutation({
@@ -297,24 +305,6 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     setLoading(true);
     if (params) {
       if (eventUser) {
-        const images = await Promise.all(
-          eventUser.imageFiles.map(async (image) => {
-            const response = await FileSystem.downloadAsync(
-              image.url,
-              `${FileSystem.documentDirectory}temp.jpg`
-            );
-            const base64 = await FileSystem.readAsStringAsync(response.uri, {
-              encoding: "base64",
-            });
-            return {
-              _id: image._id,
-              url: image.url,
-              width: image.width,
-              height: image.height,
-              base64,
-            };
-          })
-        );
         setEventName(eventUser.title);
         if (eventUser.place_id?.place_id) {
           const placeDB = await getPlace(eventUser.place_id?.place_id);
@@ -332,7 +322,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         setPriceStart(eventUser.price?.start.toString() || "");
         setPriceFinish(eventUser.price?.finish.toString() || "");
         setAboutEvent(eventUser.description);
-        setImages(images);
+        setImages(eventUser.imageFiles || []);
       }
     }
     setLoading(false);
@@ -523,9 +513,10 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             errorMessage={errorMessage?.aboutEvent?.title}
           />
           <BoxSelectImages
+            isRegular
+            isSubTitle
             images={images}
             setImages={setImages}
-            containerStyle={styles.containerImages}
           />
           <Text style={styles.errorMessage}>
             {errorMessage?.errorMessage?.title || ""}
