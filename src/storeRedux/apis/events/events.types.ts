@@ -11,6 +11,7 @@ import {
   deleteEventRequestSchema,
   eventsStateSchema,
   upcomingEventSchema,
+  paginationSchema,
 } from "./events.schemas";
 
 export type TEvent = z.infer<typeof eventSchema>;
@@ -23,6 +24,7 @@ export type TChangeEventRequest = z.infer<typeof changeEventRequestSchema>;
 export type TDeleteEventRequest = z.infer<typeof deleteEventRequestSchema>;
 export type TEventsState = z.infer<typeof eventsStateSchema>;
 export type TUpcomingEvent = z.infer<typeof upcomingEventSchema>;
+export type TPagination = z.infer<typeof paginationSchema>;
 
 export interface IAddEventRequest {
   body: TAddEventRequest & {
@@ -40,6 +42,29 @@ export interface IDeleteEventRequest {
   body: TDeleteEventRequest;
 }
 
+export interface IGetEventsRequest {
+  page?: number;
+  limit?: number;
+  sort?: "distance" | "date" | null;
+  maxDistance?: number;
+  minPrice?: number;
+  maxPrice?: number;
+  eventName?: string;
+  eventStatus?: "past" | "current" | "future";
+  latitude?: number;
+  longitude?: number;
+}
+
 export interface IGetEventsUserRequest {
   userId: string;
+  page?: number;
+  limit?: number;
+  sort?: "distance" | "date" | null;
+  maxDistance?: number;
+  minPrice?: number;
+  maxPrice?: number;
+  eventName?: string;
+  eventStatus?: "past" | "current" | "future";
+  latitude?: number;
+  longitude?: number;
 }

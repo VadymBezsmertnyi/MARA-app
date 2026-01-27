@@ -8,6 +8,13 @@ import {
 import { codeCurrenciesSchema } from "../payment/payment.schemas";
 import { fileSchema } from "../../schemas";
 
+export const paginationSchema = z.object({
+  page: z.number(),
+  limit: z.number(),
+  total: z.number(),
+  totalPages: z.number(),
+});
+
 const populateUserData = z.object({
   _id: z.string(),
   avatarFile: fileSchema.nullable().default(null),
@@ -41,6 +48,8 @@ export const eventsSchema = z.array(eventSchema);
 export const resultEventsSchema = z.object({
   result: z.boolean(),
   events: eventsSchema,
+  pagination: paginationSchema,
+  maxDistance: z.number(),
   code: z.number(),
 });
 
@@ -97,6 +106,10 @@ export const deleteEventRequestSchema = z.object({
 export const eventsStateSchema = z.object({
   eventsList: eventsSchema,
   eventsUserList: eventsSchema,
+  pagination: paginationSchema.nullable(),
+  paginationUser: paginationSchema.nullable(),
+  maxDistance: z.number(),
+  maxDistanceUser: z.number(),
   loading: z.boolean(),
   error: z.string().nullable(),
 });

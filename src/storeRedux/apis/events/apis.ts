@@ -6,6 +6,7 @@ import {
   IAddEventRequest,
   IChangeEventRequest,
   IDeleteEventRequest,
+  IGetEventsRequest,
   IGetEventsUserRequest,
 } from "./events.types";
 import {
@@ -15,10 +16,36 @@ import {
 } from "./events.schemas";
 import { PATHS } from "../../../providers/paths.constants";
 
+const buildQueryString = (
+  params: IGetEventsRequest | IGetEventsUserRequest
+): string => {
+  const queryParams: string[] = [];
+  if ("userId" in params && params.userId)
+    queryParams.push(`userId=${encodeURIComponent(params.userId)}`);
+  if (params.page !== undefined) queryParams.push(`page=${params.page}`);
+  if (params.limit !== undefined) queryParams.push(`limit=${params.limit}`);
+  if (params.sort) queryParams.push(`sort=${params.sort}`);
+  if (params.maxDistance !== undefined)
+    queryParams.push(`maxDistance=${params.maxDistance}`);
+  if (params.minPrice !== undefined)
+    queryParams.push(`minPrice=${params.minPrice}`);
+  if (params.maxPrice !== undefined)
+    queryParams.push(`maxPrice=${params.maxPrice}`);
+  if (params.eventName)
+    queryParams.push(`eventName=${encodeURIComponent(params.eventName)}`);
+  if (params.eventStatus) queryParams.push(`eventStatus=${params.eventStatus}`);
+  if (params.latitude !== undefined)
+    queryParams.push(`latitude=${params.latitude}`);
+  if (params.longitude !== undefined)
+    queryParams.push(`longitude=${params.longitude}`);
+
+  return queryParams.length > 0 ? `?${queryParams.join("&")}` : "";
+};
+
 export const getEvents = (builder: Builder) =>
-  builder.query<TResultEvents | null, void>({
-    query: () => ({
-      url: PATHS.eventsGet,
+  builder.query<TResultEvents | null, IGetEventsRequest>({
+    query: (params = {}) => ({
+      url: `${PATHS.eventsGet}${buildQueryString(params)}`,
       method: "GET",
     }),
     transformResponse: (response: unknown) => {
@@ -36,8 +63,8 @@ export const getEvents = (builder: Builder) =>
 
 export const getEventsUser = (builder: Builder) =>
   builder.query<TResultEvents | null, IGetEventsUserRequest>({
-    query: ({ userId }) => ({
-      url: `${PATHS.eventsGetUserId}?userId=${userId}`,
+    query: (params) => ({
+      url: `${PATHS.eventsGetUserId}${buildQueryString(params)}`,
       method: "GET",
     }),
     transformResponse: (response: unknown) => {

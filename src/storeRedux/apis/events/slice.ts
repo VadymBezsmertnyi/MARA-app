@@ -8,6 +8,10 @@ import { getSortEvents } from "./events.helpers";
 const initialState: TEventsState = {
   eventsList: [],
   eventsUserList: [],
+  pagination: null,
+  paginationUser: null,
+  maxDistance: 5,
+  maxDistanceUser: 5,
   loading: false,
   error: null,
 };
@@ -38,7 +42,21 @@ export const eventsSlice = createSlice({
       })
       .addMatcher(api.endpoints.getEvents.matchFulfilled, (state, action) => {
         if (action.payload?.events) {
-          state.eventsList = getSortEvents(action.payload.events);
+          const currentPage = action.payload.pagination?.page || 1;
+          if (currentPage === 1)
+            state.eventsList = getSortEvents(action.payload.events);
+          else {
+            const existingIds = new Set(state.eventsList.map((e) => e._id));
+            const newEvents = action.payload.events.filter(
+              (e) => !existingIds.has(e._id)
+            );
+            state.eventsList = getSortEvents([
+              ...state.eventsList,
+              ...newEvents,
+            ]);
+          }
+          state.pagination = action.payload.pagination || null;
+          state.maxDistance = action.payload.maxDistance || 5;
           state.loading = false;
           state.error = null;
         } else {
@@ -60,6 +78,8 @@ export const eventsSlice = createSlice({
         (state, action) => {
           if (action.payload?.events) {
             state.eventsUserList = getSortEvents(action.payload.events);
+            state.paginationUser = action.payload.pagination || null;
+            state.maxDistanceUser = action.payload.maxDistance || 5;
             state.loading = false;
             state.error = null;
           } else {
