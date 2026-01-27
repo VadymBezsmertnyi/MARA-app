@@ -20,6 +20,7 @@ import { RootEventsScreensParamList } from "../../../navigators/Navigators.types
 
 // redux
 import { useGetClosestEventsQuery } from "../../../storeRedux/api";
+import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
@@ -59,23 +60,18 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   const { i18n } = useLocalesProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
   const { location } = useMapProvider();
+  const { upcomingClosest, pastClosest } = useEventsSelector();
   const [refreshing, setRefreshing] = useState(false);
   const [lastLocation, setLastLocation] = useState<LocationObjectCoords | null>(
     null
   );
   const lastRefreshTimeRef = useRef<number>(0);
-  const { data: closestEventsData, refetch } = useGetClosestEventsQuery(
+  const { refetch } = useGetClosestEventsQuery(
     lastLocation ? lastLocation : {}
   );
 
-  const eventsWill = useMemo(
-    () => closestEventsData?.upcomingAndCurrent || [],
-    [closestEventsData]
-  );
-  const eventsOld = useMemo(
-    () => closestEventsData?.past || [],
-    [closestEventsData]
-  );
+  const eventsWill = useMemo(() => upcomingClosest || [], [upcomingClosest]);
+  const eventsOld = useMemo(() => pastClosest || [], [pastClosest]);
 
   const onRefresh = async () => {
     setRefreshing(true);

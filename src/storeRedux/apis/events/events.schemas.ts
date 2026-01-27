@@ -138,6 +138,8 @@ export const deleteEventRequestSchema = z.object({
 export const eventsStateSchema = z.object({
   eventsList: eventsSchema,
   eventsUserList: eventsSchema,
+  upcomingClosest: eventsSchema,
+  pastClosest: eventsSchema,
   pagination: paginationSchema.nullable(),
   paginationUser: paginationSchema.nullable(),
   maxDistance: z.number(),

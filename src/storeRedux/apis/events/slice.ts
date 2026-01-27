@@ -8,6 +8,8 @@ import { getSortEvents } from "./events.helpers";
 const initialState: TEventsState = {
   eventsList: [],
   eventsUserList: [],
+  upcomingClosest: [],
+  pastClosest: [],
   pagination: null,
   paginationUser: null,
   maxDistance: 5,
@@ -251,6 +253,8 @@ export const eventsSlice = createSlice({
         api.endpoints.getClosestEvents.matchFulfilled,
         (state, action) => {
           if (action.payload?.upcomingAndCurrent || action.payload?.past) {
+            state.upcomingClosest = action.payload?.upcomingAndCurrent || [];
+            state.pastClosest = action.payload?.past || [];
             state.loading = false;
             state.error = null;
           } else {
