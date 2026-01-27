@@ -11,7 +11,6 @@ import { RouteProp } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
-import { PlaceDbType } from "../../../providers/PlacesProvider/PlacesProvider.types";
 import { IGetEventsRequest } from "../../../storeRedux/apis/events/events.types";
 
 // redux
@@ -26,11 +25,11 @@ import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider
 
 // components
 import { Input } from "../../../components/Input/Input";
-import { InputSelectCity } from "../../../components/InputSelectCity/InputSelectCity";
 import { ItemListEvents } from "../EventsMain/components/ItemListEvents/ItemListEvents";
 import { IconSearchInput } from "../../../icons/components";
 import { Header } from "../../../components/Header/Header";
 import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
+import { EventLocationFilter } from "./components/EventLocationFilter/EventLocationFilter";
 
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
@@ -62,25 +61,40 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const { i18n } = useLocalesProvider();
   const [valueSearch, setValueSearch] = useState("");
   const [debouncedValueSearch, setDebouncedValueSearch] = useState("");
-  const [selectPlace, setSelectPlace] = useState<PlaceDbType | null>(null);
+  const [selectedCountryId, setSelectedCountryId] = useState<string | null>(
+    null
+  );
+  const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [refreshing, setRefreshing] = useState(false);
   const limit = 20;
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const lastRefreshTimeRef = useRef<number>(0);
 
+  const eventStatus = params?.isOld ? "past" : "upcoming";
+
   const queryParams: IGetEventsRequest = useMemo(
     () => ({
       page,
       limit,
-      eventStatus: params?.isOld ? "past" : "upcoming",
+      eventStatus,
       ...(debouncedValueSearch && { eventName: debouncedValueSearch }),
+      ...(selectedCountryId && { countryId: selectedCountryId }),
+      ...(selectedPlaceId && { placeId: selectedPlaceId }),
       ...(location && {
         latitude: location.latitude,
         longitude: location.longitude,
       }),
     }),
-    [page, limit, params?.isOld, debouncedValueSearch, location]
+    [
+      page,
+      limit,
+      eventStatus,
+      debouncedValueSearch,
+      selectedCountryId,
+      selectedPlaceId,
+      location,
+    ]
   );
 
   const { isLoading, refetch } = useGetEventsQuery(queryParams);
@@ -106,25 +120,6 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
     setRefreshing(false);
   };
 
-  const showCities = useMemo(() => {
-    const placesAll = eventsList.map((event) => event.place_id);
-    const places = placesAll.reduce((acc, place) => {
-      if (!place) return acc;
-      const isPlace = acc.find((item) => item._id === place._id);
-      if (!isPlace) return [...acc, place];
-      return acc;
-    }, [] as PlaceDbType[]);
-
-    return places;
-  }, [eventsList]);
-
-  const showEventsList = useMemo(
-    () =>
-      eventsList.filter((event) =>
-        selectPlace ? event.place_id?._id === selectPlace._id : true
-      ),
-    [eventsList, selectPlace]
-  );
   const containerStyles = useMemo(
     () => [
       styles.container,
@@ -134,11 +129,6 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
     ],
     [bottom]
   );
-
-  const onSelectCity = (place: PlaceDbType) => {
-    if (place._id === selectPlace?._id) setSelectPlace(null);
-    else setSelectPlace(place);
-  };
 
   const onPressAddEvent = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventAdd);
@@ -158,7 +148,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
 
   useEffect(() => {
     setPage(1);
-  }, [params?.isOld, debouncedValueSearch, selectPlace]);
+  }, [params?.isOld, debouncedValueSearch, selectedCountryId, selectedPlaceId]);
 
   return (
     <>
@@ -185,7 +175,13 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
           placeholder={i18n._("Enter the text to search")}
           InputIcon={<IconSearchInput width={26} height={26} />}
         />
-        <InputSelectCity data={showCities} onSelect={onSelectCity} />
+        <EventLocationFilter
+          eventStatus={eventStatus}
+          selectedCountryId={selectedCountryId}
+          selectedPlaceId={selectedPlaceId}
+          onSelectCountry={setSelectedCountryId}
+          onSelectPlace={setSelectedPlaceId}
+        />
         <ScrollView
           contentContainerStyle={[
             styles.containerList,
@@ -208,7 +204,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
           }}
           scrollEventThrottle={400}
         >
-          {showEventsList.map((eventItem) => (
+          {eventsList.map((eventItem) => (
             <ItemListEvents
               key={`event-${eventItem._id}`}
               item={eventItem}

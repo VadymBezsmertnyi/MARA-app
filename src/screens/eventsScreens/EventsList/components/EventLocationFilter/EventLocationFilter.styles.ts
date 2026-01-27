@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import colors from "../../../styles/colors";
+import colors from "../../../../../../styles/colors";
 
 export const styles = StyleSheet.create({
   backgroundButton: {
@@ -10,17 +10,20 @@ export const styles = StyleSheet.create({
     width: "110%",
     height: "100%",
   },
+  container: {
+    gap: 12,
+  },
   mainContainer: {
     zIndex: 1,
     height: 40,
   },
-  container: {
+  selectContainer: {
     borderColor: colors.grayCloudy,
     borderWidth: 1,
     borderRadius: 4,
   },
-  containerPosition: {
-    zIndex: 1,
+  selectContainerOpen: {
+    zIndex: 100,
     position: "absolute",
     width: "100%",
     maxHeight: 200,
@@ -36,11 +39,28 @@ export const styles = StyleSheet.create({
   titleInput: {
     color: colors.blackCoffee,
   },
-  defaultTitleInput: {
-    color: colors.grayCloudy,
+  input: {
+    flex: 1,
+    padding: 8,
+    paddingLeft: 0,
   },
-  input: { flex: 1, padding: 8, paddingLeft: 0 },
-  arrowToUp: { transform: [{ rotate: "180deg" }] },
-  containerList: { paddingVertical: 8 },
-  city: { paddingHorizontal: 12, paddingVertical: 8 },
+  arrowToUp: {
+    transform: [{ rotate: "180deg" }],
+  },
+  dropdownList: {
+    zIndex: 100,
+    backgroundColor: colors.white,
+    maxHeight: 200,
+  },
+  dropdownListContent: {
+    paddingVertical: 8,
+  },
+  dropdownItem: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  noResultsText: {
+    padding: 10,
+    textAlign: "center",
+  },
 });
