@@ -16,6 +16,8 @@ import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
 import {
   useChangeEventMutation,
+  useSendSmsVerificationMutation,
+  useVerifySmsCodeMutation,
   useLazyGetEventByIdQuery,
 } from "../../../storeRedux/api";
 
@@ -24,6 +26,7 @@ import { useLocalesProvider } from "../../../../localization/localization.provid
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
+import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
 import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
@@ -35,6 +38,8 @@ import { GalleryModal } from "../../../components/GalleryModal/GalleryModal";
 import { Header } from "../../../components/Header/Header";
 import { HeaderRightItem } from "../../workshopsScreens/WorkshopsItem/components/HeaderRightItem/HeaderRightItem";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
+import { ModalEnterCode } from "../../settingsScreens/SettingsWorkshops/components/ModalEnterCode/ModalEnterCode";
+import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
 
 // icons
 import {
@@ -68,10 +73,16 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { placesDB } = usePlacesProvider();
   const { userData } = useUserSelector();
   const { getSharedLink } = useSharingProvider();
+  const { showMessageServer } = useDropDownAlertProvider();
   const [changeEventMutation] = useChangeEventMutation();
+  const [sendSms] = useSendSmsVerificationMutation();
+  const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
   const [fetchEventById, { data: eventByIdData }] = useLazyGetEventByIdQuery();
   const tabBarHeight = useBottomTabBarHeight();
   const [isFullDescription, setIsFullDescription] = useState(false);
+  const [showCodeModal, setShowCodeModal] = useState(false);
+  const [showReportModal, setShowReportModal] = useState(false);
+  const [codeError, setCodeError] = useState<string | null>(null);
   const [gallery, setGallery] = useState<{
     images: string[];
     indexImage?: number;
@@ -102,6 +113,22 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         : false,
     [eventSelect?.likeUserIds]
   );
+  const hasOwner = !!eventSelect?.ownerUserId;
+  const isCurrentUserOwner =
+    userData &&
+    eventSelect?.ownerUserId &&
+    (typeof eventSelect.ownerUserId === "string"
+      ? eventSelect.ownerUserId === userData._id
+      : eventSelect.ownerUserId._id === userData._id);
+  const isCurrentUserCreator =
+    userData &&
+    eventSelect?.userId &&
+    (typeof eventSelect.userId === "string"
+      ? eventSelect.userId === userData._id
+      : eventSelect.userId._id === userData._id);
+  const showConfirmButton = !hasOwner && userData;
+  const showReportButton =
+    !isCurrentUserOwner && !isCurrentUserCreator && userData;
   const showTitlePlace = useMemo(() => {
     if (!eventSelect) return "";
     const placeDB = eventSelect.place_id;
@@ -181,6 +208,53 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         console.warn("error onPressLike:", error);
       }
     }
+  };
+
+  const handleConfirmOwnership = async () => {
+    if (!eventSelect || !userData) return;
+    if (!userData.phoneNumber) {
+      await showMessageServer(
+        i18n._("Error"),
+        i18n._("Phone number not found"),
+        "error"
+      );
+      return;
+    }
+    setCodeError(null);
+    const result = await sendSms({
+      body: {
+        eventId: eventSelect._id,
+        phoneNumber: userData.phoneNumber,
+      },
+    });
+    if (result.data?.status === "success") setShowCodeModal(true);
+    else
+      await showMessageServer(
+        i18n._("Error"),
+        result.data?.reason || i18n._("Failed to send SMS"),
+        "error"
+      );
+  };
+
+  const handleCodeConfirm = async (code: string) => {
+    if (!eventSelect) return;
+    setCodeError(null);
+    const result = await verifyCode({
+      body: {
+        eventId: eventSelect._id,
+        code,
+      },
+    });
+    if (result.data?.status === "success") {
+      setShowCodeModal(false);
+      await fetchEventById({ eventId: eventSelect._id });
+      await showMessageServer(
+        i18n._("Success"),
+        i18n._("Everything is successful and this is your business"),
+        "success"
+      );
+    } else
+      setCodeError(result.data?.reason || i18n._("Invalid or expired code"));
   };
 
   useEffect(() => {
@@ -347,6 +421,33 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               </Text>
             </View>
           </View>
+          {showConfirmButton && eventSelect && (
+            <View style={styles.containerConfirmOwnership}>
+              <Text style={styles.confirmOwnershipText}>
+                {i18n._("This business has not been confirmed by the owner")}
+              </Text>
+              <TouchableOpacity
+                style={styles.buttonConfirmOwnership}
+                onPress={handleConfirmOwnership}
+              >
+                <Text style={styles.buttonConfirmOwnershipText}>
+                  {i18n._("Confirm business")}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
+          {showReportButton && (
+            <View style={styles.containerReport}>
+              <TouchableOpacity
+                style={styles.buttonReport}
+                onPress={() => setShowReportModal(true)}
+              >
+                <Text style={styles.buttonReportText}>
+                  {i18n._("Report on business")}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
           {eventSelect.coordinates ? (
             <View style={styles.mapWrapper}>
               <Map
@@ -398,6 +499,20 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
           }}
         />
       )}
+      <ModalEnterCode
+        visible={showCodeModal}
+        onClose={() => {
+          setShowCodeModal(false);
+          setCodeError(null);
+        }}
+        onConfirm={handleCodeConfirm}
+        isLoading={verifyingCode}
+        error={codeError}
+      />
+      <ModalReportContact
+        visible={showReportModal}
+        onClose={() => setShowReportModal(false)}
+      />
     </View>
   );
 };
