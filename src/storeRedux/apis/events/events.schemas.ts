@@ -26,6 +26,7 @@ const populateUserData = z.object({
 export const eventSchema = z.object({
   _id: z.string(),
   userId: populateUserData.nullable(),
+  ownerUserId: populateUserData.nullable().optional(),
   title: z.string(),
   place_id: placeDbSchema.nullable(),
   region_place_id: regionDbSchema.nullable(),
@@ -41,6 +42,15 @@ export const eventSchema = z.object({
   description: z.string(),
   imageFiles: z.array(fileSchema).default([]),
   likeUserIds: z.array(populateUserData),
+  verification: z
+    .object({
+      status: z.enum(["pending", "verified", "rejected"]),
+      date: z.number(),
+      reason: z.string().nullable().default(null),
+    })
+    .nullable()
+    .optional()
+    .default(null),
 });
 
 export const eventsSchema = z.array(eventSchema);

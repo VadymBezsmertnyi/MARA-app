@@ -6,12 +6,24 @@ export const smsVerificationResponseSchema = z.object({
   type: z.string().optional(),
 });
 
-export const sendSmsVerificationRequestSchema = z.object({
-  workshopId: z.string(),
-  phoneNumber: z.string(),
-});
+export const sendSmsVerificationRequestSchema = z.union([
+  z.object({
+    workshopId: z.string(),
+    phoneNumber: z.string(),
+  }),
+  z.object({
+    eventId: z.string(),
+    phoneNumber: z.string(),
+  }),
+]);
 
-export const verifySmsCodeRequestSchema = z.object({
-  workshopId: z.string(),
-  code: z.string().length(6),
-});
+export const verifySmsCodeRequestSchema = z.union([
+  z.object({
+    workshopId: z.string(),
+    code: z.string().length(6),
+  }),
+  z.object({
+    eventId: z.string(),
+    code: z.string().length(6),
+  }),
+]);
