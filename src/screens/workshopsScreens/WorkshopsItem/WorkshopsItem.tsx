@@ -59,12 +59,10 @@ import { ModalReport } from "./components/ModalReport/ModalReport";
 // icons
 import { IconAutoService, IconMotoService } from "../../../icons/components";
 
-// constants
-import { PATHS_MAIN_TABS } from "../../../navigators/useNavigator.constants";
-
 // styles
 import { styles } from "./WorkshopsItem.styles";
 import colors from "../../../../styles/colors";
+import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
 type WorkshopsItemType = {
   navigation: NativeStackNavigationProp<
@@ -330,7 +328,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         }
         onPressLeftElement={() => {
           if (!route.params?.isMap) navigation.goBack();
-          else navigation.navigate(PATHS_MAIN_TABS.map);
+          else resetNavigationToMap(navigation);
         }}
       />
       <ScrollView

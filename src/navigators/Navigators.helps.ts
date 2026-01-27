@@ -1,4 +1,5 @@
 import {
+  CommonActions,
   NavigationState,
   RouteProp,
   useNavigation,
@@ -13,6 +14,7 @@ import {
   RootMainTabsParamList,
   RootRegistrationScreensParamList,
 } from "./Navigators.types";
+import { PATHS_MAIN_SCREENS, PATHS_MAIN_TABS } from "./useNavigator.constants";
 
 export const useAllNavigation = useNavigation<
   NativeStackNavigationProp<RootAllScreensParamList>
@@ -45,3 +47,22 @@ export function getActiveRouteName(
 
   return route.name;
 }
+
+export const resetNavigationToMap = (
+  navigation: NativeStackNavigationProp<any>
+) => {
+  navigation.dispatch(
+    CommonActions.reset({
+      index: 0,
+      routes: [
+        {
+          name: PATHS_MAIN_SCREENS.main,
+          state: {
+            index: 1,
+            routes: [{ name: PATHS_MAIN_TABS.map }],
+          },
+        },
+      ],
+    })
+  );
+};

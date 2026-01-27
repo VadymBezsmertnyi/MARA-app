@@ -44,15 +44,10 @@ import {
   MingcuteTimeLine,
 } from "../../../icons/components";
 
-// constants
-import {
-  PATHS_EVENTS_SCREENS,
-  PATHS_MAIN_TABS,
-} from "../../../navigators/useNavigator.constants";
-
 // styles
 import { styles } from "./EventItem.styles";
 import colors from "../../../../styles/colors";
+import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
 type EventItemProps = {
   navigation: NativeStackNavigationProp<
@@ -205,9 +200,8 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
           />
         }
         onPressLeftElement={() => {
-          if (!route.params?.isMap)
-            navigation.navigate(PATHS_EVENTS_SCREENS.eventsMain);
-          navigation.navigate(PATHS_MAIN_TABS.map);
+          if (!route.params?.isMap) navigation.goBack();
+          else resetNavigationToMap(navigation);
         }}
       />
       <ScrollView>
