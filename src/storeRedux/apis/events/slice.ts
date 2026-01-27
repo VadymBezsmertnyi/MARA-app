@@ -43,9 +43,38 @@ export const eventsSlice = createSlice({
             action.meta.arg.originalArgs?.eventStatus === "past"
               ? "past"
               : "upcoming";
-          if (eventStatus === "past")
-            state.pastEventsList = getSortEvents(action.payload.events);
-          else state.upcomingEventsList = getSortEvents(action.payload.events);
+          const currentPage = action.payload.pagination?.page || 1;
+          if (eventStatus === "past") {
+            if (currentPage === 1)
+              state.pastEventsList = getSortEvents(action.payload.events);
+            else {
+              const existingIds = new Set(
+                state.pastEventsList.map((event) => event._id)
+              );
+              const newEvents = action.payload.events.filter(
+                (event) => !existingIds.has(event._id)
+              );
+              state.pastEventsList = getSortEvents([
+                ...state.pastEventsList,
+                ...newEvents,
+              ]);
+            }
+          } else {
+            if (currentPage === 1)
+              state.upcomingEventsList = getSortEvents(action.payload.events);
+            else {
+              const existingIds = new Set(
+                state.upcomingEventsList.map((event) => event._id)
+              );
+              const newEvents = action.payload.events.filter(
+                (event) => !existingIds.has(event._id)
+              );
+              state.upcomingEventsList = getSortEvents([
+                ...state.upcomingEventsList,
+                ...newEvents,
+              ]);
+            }
+          }
           state.pagination = action.payload.pagination || null;
           state.maxDistance = action.payload.maxDistance || 5;
           state.loading = false;
