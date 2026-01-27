@@ -8,11 +8,14 @@ import {
   IDeleteEventRequest,
   IGetEventsRequest,
   IGetEventsUserRequest,
+  IGetClosestEventsRequest,
+  TClosestEvents,
 } from "./events.types";
 import {
   resultEventsSchema,
   eventResponseSchema,
   deleteEventResponseSchema,
+  closestEventsSchema,
 } from "./events.schemas";
 import { PATHS } from "../../../providers/paths.constants";
 
@@ -73,6 +76,34 @@ export const getEventsUser = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod getEventsUser:", {
           url: PATHS.eventsGetUserId,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const getClosestEvents = (builder: Builder) =>
+  builder.query<TClosestEvents | null, IGetClosestEventsRequest>({
+    query: (params = {}) => {
+      const queryParams: string[] = [];
+      if (params.latitude !== undefined)
+        queryParams.push(`latitude=${params.latitude}`);
+      if (params.longitude !== undefined)
+        queryParams.push(`longitude=${params.longitude}`);
+      const queryString =
+        queryParams.length > 0 ? `?${queryParams.join("&")}` : "";
+      return {
+        url: `${PATHS.eventsGetClosest}${queryString}`,
+        method: "GET",
+      };
+    },
+    transformResponse: (response: unknown) => {
+      const result = closestEventsSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod getClosestEvents:", {
+          url: PATHS.eventsGetClosest,
           data: response,
           error: result.error,
         });

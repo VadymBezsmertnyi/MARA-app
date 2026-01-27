@@ -53,6 +53,13 @@ export const resultEventsSchema = z.object({
   code: z.number(),
 });
 
+export const closestEventsSchema = z.object({
+  result: z.boolean(),
+  upcomingAndCurrent: eventsSchema,
+  past: eventsSchema,
+  code: z.number(),
+});
+
 export const eventResponseSchema = z.object({
   event: eventSchema,
 });

@@ -10,6 +10,7 @@ export const PATHS = {
   // events
   eventsGet: "/events/",
   eventsGetUserId: "/events/user/",
+  eventsGetClosest: "/events/closest/",
   eventAdd: "/events/add/",
   eventChange: "/events/change/",
   eventDelete: "/events/delete/",
