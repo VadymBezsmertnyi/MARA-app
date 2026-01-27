@@ -52,7 +52,7 @@ export interface IGetEventsRequest {
   minPrice?: number;
   maxPrice?: number;
   eventName?: string;
-  eventStatus?: "past" | "current" | "future";
+  eventStatus?: "past" | "upcoming";
   latitude?: number;
   longitude?: number;
   countryId?: string;
@@ -68,7 +68,7 @@ export interface IGetEventsUserRequest {
   minPrice?: number;
   maxPrice?: number;
   eventName?: string;
-  eventStatus?: "past" | "current" | "future";
+  eventStatus?: "past" | "upcoming";
   latitude?: number;
   longitude?: number;
   countryId?: string;
@@ -81,7 +81,7 @@ export interface IGetClosestEventsRequest {
 }
 
 export interface IGetEventsLocationsRequest {
-  eventStatus?: "past" | "current" | "future";
+  eventStatus?: "past" | "upcoming";
 }
 
 import { eventLocationsSchema } from "./events.schemas";

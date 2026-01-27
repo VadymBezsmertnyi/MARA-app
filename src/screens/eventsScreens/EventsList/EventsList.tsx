@@ -12,6 +12,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
 import { PlaceDbType } from "../../../providers/PlacesProvider/PlacesProvider.types";
+import { IGetEventsRequest } from "../../../storeRedux/apis/events/events.types";
 
 // redux
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
@@ -68,11 +69,11 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const lastRefreshTimeRef = useRef<number>(0);
 
-  const queryParams = useMemo(
+  const queryParams: IGetEventsRequest = useMemo(
     () => ({
       page,
       limit,
-      eventStatus: params?.isOld ? "past" : "future",
+      eventStatus: params?.isOld ? "past" : "upcoming",
       ...(debouncedValueSearch && { eventName: debouncedValueSearch }),
       ...(location && {
         latitude: location.latitude,
