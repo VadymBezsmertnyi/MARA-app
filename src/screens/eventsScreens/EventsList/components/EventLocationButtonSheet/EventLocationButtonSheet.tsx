@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo, useState } from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import {
   ScrollView,
   Text,
@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // redux
 import { useGetEventsLocationsQuery } from "../../../../../storeRedux/api";
@@ -18,6 +19,7 @@ import { useLocalesProvider } from "../../../../../../localization/localization.
 // components
 import BottomSheetUniversal from "../../../../../components/BottomSheetUniversal/BottomSheetUniversal";
 import { ArrowDown, IconLocationMarker } from "../../../../../icons/components";
+import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
 
 // types
 import {
@@ -47,11 +49,12 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
   const { i18n, language } = useLocalesProvider();
   const { bottom } = useSafeAreaInsets();
   const [isOpenSheet, setIsOpenSheet] = useState(false);
-
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const [isPlaceOpen, setIsPlaceOpen] = useState(false);
   const [countrySearchValue, setCountrySearchValue] = useState("");
   const [placeSearchValue, setPlaceSearchValue] = useState("");
+  const [draftCountryId, setDraftCountryId] = useState<string | null>(null);
+  const [draftPlaceId, setDraftPlaceId] = useState<string | null>(null);
 
   const { data: locationsData } = useGetEventsLocationsQuery({
     eventStatus,
@@ -67,17 +70,22 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
     () => countries.find((c) => c._id === selectedCountryId),
     [countries, selectedCountryId]
   );
-  const selectedCountryPlaceId = useMemo(
-    () => selectedCountry?.place_id || null,
-    [selectedCountry]
+
+  const draftCountry = useMemo(
+    () => countries.find((c) => c._id === draftCountryId),
+    [countries, draftCountryId]
+  );
+  const draftCountryPlaceId = useMemo(
+    () => draftCountry?.place_id || null,
+    [draftCountry]
   );
 
   const filteredPlaces = useMemo(() => {
-    if (!selectedCountryPlaceId) return places;
+    if (!draftCountryPlaceId) return places;
     return places.filter(
-      (place) => place.country_place_id === selectedCountryPlaceId
+      (place) => place.country_place_id === draftCountryPlaceId
     );
-  }, [places, selectedCountryPlaceId]);
+  }, [places, draftCountryPlaceId]);
 
   const selectedPlace = useMemo(
     () => filteredPlaces.find((p) => p._id === selectedPlaceId),
@@ -115,12 +123,6 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
     });
   }, [filteredPlaces, placeSearchValue, language]);
 
-  const closeSheet = () => {
-    setIsOpenSheet(false);
-    setIsCountryOpen(false);
-    setIsPlaceOpen(false);
-  };
-
   const sheetContentStyle = useMemo(
     () => [
       styles.sheetContent,
@@ -132,18 +134,45 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
     [bottom]
   );
 
+  const hasChanges = useMemo(() => {
+    const currentCountry = selectedCountryId || null;
+    const currentPlace = selectedPlaceId || null;
+    return draftCountryId !== currentCountry || draftPlaceId !== currentPlace;
+  }, [draftCountryId, draftPlaceId, selectedCountryId, selectedPlaceId]);
+
+  const closeSheet = () => {
+    setIsOpenSheet(false);
+    setIsCountryOpen(false);
+    setIsPlaceOpen(false);
+  };
+
+  const openSheet = () => {
+    setDraftCountryId(selectedCountryId || null);
+    setDraftPlaceId(selectedPlaceId || null);
+    setCountrySearchValue(
+      selectedCountry ? selectedCountry[language].long_name || "" : ""
+    );
+    setPlaceSearchValue(
+      selectedPlace ? selectedPlace[language].formatted_address || "" : ""
+    );
+    setIsOpenSheet(true);
+  };
+
   const onSelectCountryHandler = (country: CountryDbType | null) => {
     if (!country) {
-      onSelectCountry(null);
+      setDraftCountryId(null);
       setCountrySearchValue("");
-    } else if (country._id === selectedCountryId) {
-      onSelectCountry(null);
+      setDraftPlaceId(null);
+      setPlaceSearchValue("");
+    } else if (country._id === draftCountryId) {
+      setDraftCountryId(null);
       setCountrySearchValue("");
+      setDraftPlaceId(null);
+      setPlaceSearchValue("");
     } else {
-      onSelectCountry(country._id);
+      setDraftCountryId(country._id);
       setCountrySearchValue(country[language].long_name || "");
-      // when country changes, reset place
-      onSelectPlace(null);
+      setDraftPlaceId(null);
       setPlaceSearchValue("");
     }
     setIsCountryOpen(false);
@@ -151,25 +180,51 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
 
   const onSelectPlaceHandler = (place: PlaceDbType | null) => {
     if (!place) {
-      onSelectPlace(null);
+      setDraftPlaceId(null);
       setPlaceSearchValue("");
-    } else if (place._id === selectedPlaceId) {
-      onSelectPlace(null);
+    } else if (place._id === draftPlaceId) {
+      setDraftPlaceId(null);
       setPlaceSearchValue("");
     } else {
-      onSelectPlace(place._id);
+      setDraftPlaceId(place._id);
       setPlaceSearchValue(place[language].formatted_address || "");
+      if (!draftCountryId) {
+        const inferred = countries.find(
+          (c) => c.place_id === place.country_place_id
+        );
+        if (inferred) setDraftCountryId(inferred._id);
+      }
     }
     setIsPlaceOpen(false);
   };
+
+  const onPressSave = () => {
+    onSelectCountry(draftCountryId);
+    onSelectPlace(draftPlaceId);
+    closeSheet();
+  };
+
+  const onClearLocations = () => {
+    onSelectCountry(null);
+    onSelectPlace(null);
+    setDraftCountryId(null);
+    setDraftPlaceId(null);
+    setCountrySearchValue("");
+    setPlaceSearchValue("");
+  };
+
+  useEffect(() => {
+    if (!isOpenSheet) {
+      setIsCountryOpen(false);
+      setIsPlaceOpen(false);
+    }
+  }, [isOpenSheet]);
 
   return (
     <>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => {
-          setIsOpenSheet(true);
-        }}
+        onPress={openSheet}
         accessibilityLabel={i18n._("Select country or city")}
       >
         <View style={styles.buttonLeft}>
@@ -188,7 +243,18 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
             {buttonTitle}
           </Text>
         </View>
-        <ArrowDown width={16} height={16} fill={colors.black} />
+        <View style={styles.buttonRight}>
+          {!isPlaceholder ? (
+            <TouchableOpacity
+              style={styles.clearButton}
+              onPress={onClearLocations}
+              accessibilityLabel={i18n._("Clear location filter")}
+            >
+              <MaterialIcons name="close" size={18} color={colors.grayCloudy} />
+            </TouchableOpacity>
+          ) : null}
+          <ArrowDown width={16} height={16} fill={colors.black} />
+        </View>
       </TouchableOpacity>
       <BottomSheetUniversal
         isOpen={isOpenSheet}
@@ -196,7 +262,17 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
         snapPoints={["70%"]}
         styleContent={sheetContentStyle}
       >
-        <Text style={styles.sheetTitle}>{i18n._("Location")}</Text>
+        <View style={styles.sheetHeader}>
+          <View style={styles.sheetHeaderSide} />
+          <Text style={styles.sheetTitle}>{i18n._("Location")}</Text>
+          <TouchableOpacity
+            style={styles.sheetCloseButton}
+            onPress={closeSheet}
+            accessibilityLabel={i18n._("Close")}
+          >
+            <MaterialIcons name="close" size={22} color={colors.blackCoffee} />
+          </TouchableOpacity>
+        </View>
         <View
           style={[
             styles.selectContainer,
@@ -350,6 +426,15 @@ export const EventLocationButtonSheet: FunctionComponent<Props> = ({
             </ScrollView>
           ) : null}
         </View>
+
+        {hasChanges ? (
+          <ButtonCustom
+            title={i18n._("Save")}
+            onSubmit={onPressSave}
+            styleContainer={styles.saveButton}
+            accessibilityLabel={i18n._("Save location filter")}
+          />
+        ) : null}
       </BottomSheetUniversal>
     </>
   );

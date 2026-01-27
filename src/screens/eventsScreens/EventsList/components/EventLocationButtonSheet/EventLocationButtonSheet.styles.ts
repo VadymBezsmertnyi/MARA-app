@@ -24,6 +24,19 @@ export const styles = StyleSheet.create({
     gap: horizontalScale(10),
     flex: 1,
   },
+  buttonRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: horizontalScale(8),
+    paddingLeft: horizontalScale(8),
+  },
+  clearButton: {
+    width: horizontalScale(28),
+    height: verticalScale(28),
+    borderRadius: 14,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   buttonText: {
     color: colors.blackCoffee,
     fontSize: scaleFont(14),
@@ -39,6 +52,23 @@ export const styles = StyleSheet.create({
   },
   sheetContentBottomPadding: {
     paddingBottom: verticalScale(12),
+  },
+  sheetHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  sheetHeaderSide: {
+    width: horizontalScale(36),
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  sheetCloseButton: {
+    width: horizontalScale(36),
+    height: verticalScale(36),
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 18,
   },
   sheetTitle: {
     fontSize: scaleFont(16),
@@ -99,5 +129,8 @@ export const styles = StyleSheet.create({
     padding: horizontalScale(12),
     textAlign: "center",
     color: colors.grayCloudy,
+  },
+  saveButton: {
+    height: verticalScale(46),
   },
 });

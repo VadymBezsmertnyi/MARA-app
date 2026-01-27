@@ -69,6 +69,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const [refreshing, setRefreshing] = useState(false);
   const limit = 20;
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const prevDebouncedValueSearchRef = useRef<string>("");
   const lastRefreshTimeRef = useRef<number>(0);
 
   const eventStatus = params?.isOld ? "past" : "upcoming";
@@ -136,15 +137,35 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
 
   useEffect(() => {
     if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    if (valueSearch.length >= 3)
+      debounceTimerRef.current = setTimeout(() => {
+        setDebouncedValueSearch(valueSearch);
+      }, 500);
+    else setDebouncedValueSearch("");
 
-    debounceTimerRef.current = setTimeout(() => {
-      setDebouncedValueSearch(valueSearch);
-      setPage(1);
-    }, 500);
+    setPage(1);
     return () => {
       if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
     };
   }, [valueSearch]);
+
+  useEffect(() => {
+    if (
+      !debouncedValueSearch &&
+      prevDebouncedValueSearchRef.current &&
+      valueSearch.length < 3
+    ) {
+      refetch();
+      lastRefreshTimeRef.current = Date.now();
+    }
+
+    prevDebouncedValueSearchRef.current = debouncedValueSearch;
+  }, [debouncedValueSearch, valueSearch, refetch]);
+
+  useEffect(() => {
+    if (!isLoading && lastRefreshTimeRef.current === 0)
+      lastRefreshTimeRef.current = Date.now();
+  }, [isLoading]);
 
   useEffect(() => {
     setPage(1);
