@@ -152,9 +152,11 @@ export const addWorkshopRequestSchema = z.object({
   contacts: z.array(contactSchema).default([]).optional(),
 });
 
-export const changeWorkshopRequestSchema = addWorkshopRequestSchema.extend({
-  _id: z.string(),
-});
+export const changeWorkshopRequestSchema = addWorkshopRequestSchema
+  .partial()
+  .extend({
+    _id: z.string(),
+  });
 
 export const deleteWorkshopRequestSchema = z.object({
   _id: z.string(),

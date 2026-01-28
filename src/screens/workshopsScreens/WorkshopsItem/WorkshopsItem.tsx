@@ -258,7 +258,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       : [...selectWorkshop.likeUserIds, userData._id];
     await changeWorkshopMutation({
       body: {
-        ...selectWorkshop,
+        _id: selectWorkshop._id,
         imageFiles: currentImages,
         likeUserIds,
         userId: selectWorkshop.userId?._id || userData._id,

@@ -28,8 +28,6 @@ import {
   useSendSmsVerificationMutation,
   useVerifySmsCodeMutation,
   useLazyGetEventByIdQuery,
-  useAddEventGoingMutation,
-  useRemoveEventGoingMutation,
 } from "../../../storeRedux/api";
 import { TEvent } from "../../../storeRedux/apis/events/events.types";
 
@@ -98,8 +96,6 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { createSharedLink } = useSharingProvider();
   const { showMessageServer } = useDropDownAlertProvider();
   const [changeEventMutation] = useChangeEventMutation();
-  const [addEventGoingMutation] = useAddEventGoingMutation();
-  const [removeEventGoingMutation] = useRemoveEventGoingMutation();
   const [sendSms] = useSendSmsVerificationMutation();
   const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
   const [fetchEventById, { data: eventByIdData }] = useLazyGetEventByIdQuery();
@@ -279,7 +275,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
       try {
         await changeEventMutation({
           body: {
-            ...eventSelect,
+            _id: eventSelect._id,
             userId: eventSelect.userId?._id || userData._id,
             imageFiles: currentImageFiles,
             likeUserIds,
@@ -386,14 +382,16 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
       return;
     }
     try {
-      if (isGoing)
-        await removeEventGoingMutation({
-          body: { eventId: eventSelect._id, userId: userData._id },
-        }).unwrap();
-      else
-        await addEventGoingMutation({
-          body: { eventId: eventSelect._id, userId: userData._id },
-        }).unwrap();
+      const goingUserIds = isGoing
+        ? eventSelect.goingUserIds.filter((id) => id !== userData._id)
+        : [...eventSelect.goingUserIds, userData._id];
+      await changeEventMutation({
+        body: {
+          _id: eventSelect._id,
+          userId: eventSelect.userId?._id || userData._id,
+          goingUserIds,
+        },
+      }).unwrap();
     } catch (error) {
       console.warn("error onPressGoing:", error);
     }
@@ -462,7 +460,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               />
               <Text style={styles.goingText}>{goingCount}</Text>
               <Text style={styles.goingLabel}>
-                {isGoing ? i18n._("Not going") : i18n._("I'm going")}
+                {isGoing ? i18n._("Не йду") : i18n._("Йду")}
               </Text>
             </TouchableOpacity>
           </View>

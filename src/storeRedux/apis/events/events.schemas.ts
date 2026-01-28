@@ -141,7 +141,7 @@ export const upcomingEventSchema = z.object({
   isNow: z.boolean(),
 });
 
-export const changeEventRequestSchema = addEventRequestSchema.extend({
+export const changeEventRequestSchema = addEventRequestSchema.partial().extend({
   _id: z.string(),
 });
 
