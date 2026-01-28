@@ -23,7 +23,10 @@ export const redirectToScreen = (
     navigation.navigate(PATHS_MAIN_SCREENS.registration, {
       screen: PATHS_REGISTRATION_SCREENS.registrationInfo,
     });
-  else navigation.navigate(PATHS_MAIN_SCREENS.main);
+  else {
+    navigation.navigate(PATHS_MAIN_SCREENS.main);
+    redirectToWorkshopFromLink(navigation);
+  }
 };
 
 const navigateToWorkshop = (
@@ -32,14 +35,25 @@ const navigateToWorkshop = (
 ) => {
   navigation.dispatch(
     CommonActions.reset({
-      index: 1,
+      index: 0,
       routes: [
-        { name: PATHS_MAIN_SCREENS.main },
         {
-          name: PATHS_MAIN_TABS.workshops,
-          params: {
-            screen: PATHS_WORKSHOP_SCREENS.workshopItem,
-            params: { workshopId },
+          name: PATHS_MAIN_SCREENS.main,
+          state: {
+            routes: [
+              {
+                name: PATHS_MAIN_TABS.workshops,
+                state: {
+                  index: 0,
+                  routes: [
+                    {
+                      name: PATHS_WORKSHOP_SCREENS.workshopItem,
+                      params: { workshopId },
+                    },
+                  ],
+                },
+              },
+            ],
           },
         },
       ],
