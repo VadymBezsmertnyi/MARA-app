@@ -15,6 +15,7 @@ export const DEFAULT_EVENT_DATA: Omit<TEvent, "_id" | "userId"> = {
   comments: [],
   rating: null,
   likeUserIds: [],
+  goingUserIds: [],
   contacts: [],
   verification: null,
 };

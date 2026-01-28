@@ -11,6 +11,8 @@ import {
   deleteEventRequestSchema,
   addCommentRequestSchema,
   changeCommentRequestSchema,
+  addGoingRequestSchema,
+  removeGoingRequestSchema,
   eventsStateSchema,
   upcomingEventSchema,
   paginationSchema,
@@ -29,6 +31,8 @@ export type TChangeEventRequest = z.infer<typeof changeEventRequestSchema>;
 export type TDeleteEventRequest = z.infer<typeof deleteEventRequestSchema>;
 export type TAddCommentRequest = z.infer<typeof addCommentRequestSchema>;
 export type TChangeCommentRequest = z.infer<typeof changeCommentRequestSchema>;
+export type TAddGoingRequest = z.infer<typeof addGoingRequestSchema>;
+export type TRemoveGoingRequest = z.infer<typeof removeGoingRequestSchema>;
 export type TEventsState = z.infer<typeof eventsStateSchema>;
 export type TUpcomingEvent = z.infer<typeof upcomingEventSchema>;
 export type TPagination = z.infer<typeof paginationSchema>;
@@ -66,6 +70,14 @@ export interface IAddCommentRequest {
 
 export interface IChangeCommentRequest {
   body: TChangeCommentRequest;
+}
+
+export interface IAddGoingRequest {
+  body: TAddGoingRequest;
+}
+
+export interface IRemoveGoingRequest {
+  body: TRemoveGoingRequest;
 }
 
 export interface IGetEventsRequest {

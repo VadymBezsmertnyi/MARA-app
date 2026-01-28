@@ -15,6 +15,8 @@ import {
   TEventLocations,
   IAddCommentRequest,
   IChangeCommentRequest,
+  IAddGoingRequest,
+  IRemoveGoingRequest,
 } from "./events.types";
 import {
   resultEventsSchema,
@@ -382,6 +384,46 @@ export const changeEventComment = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod changeEventComment:", {
           url: PATHS.eventsCommentsChange,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const addEventGoing = (builder: Builder) =>
+  builder.mutation<TEventResponse | null, IAddGoingRequest>({
+    query: ({ body }) => ({
+      url: PATHS.eventsGoingAdd,
+      method: "POST",
+      body,
+    }),
+    transformResponse: (response: unknown) => {
+      const result = eventResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod addEventGoing:", {
+          url: PATHS.eventsGoingAdd,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const removeEventGoing = (builder: Builder) =>
+  builder.mutation<TEventResponse | null, IRemoveGoingRequest>({
+    query: ({ body }) => ({
+      url: PATHS.eventsGoingRemove,
+      method: "POST",
+      body,
+    }),
+    transformResponse: (response: unknown) => {
+      const result = eventResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod removeEventGoing:", {
+          url: PATHS.eventsGoingRemove,
           data: response,
           error: result.error,
         });

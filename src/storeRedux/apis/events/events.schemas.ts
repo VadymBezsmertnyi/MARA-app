@@ -67,6 +67,7 @@ export const eventSchema = z.object({
   comments: z.array(commentEventSchema).default([]),
   rating: z.number().nullable().default(null),
   likeUserIds: z.array(z.string()).default([]),
+  goingUserIds: z.array(z.string()).default([]),
   contacts: z.array(contactSchema).default([]),
   verification: z
     .object({
@@ -120,6 +121,7 @@ export const addEventRequestSchema = z.object({
   currency: codeCurrenciesSchema,
   description: z.string(),
   likeUserIds: z.array(z.string()).default([]),
+  goingUserIds: z.array(z.string()).default([]),
   isNow: z.boolean().optional(),
   isOld: z.boolean().optional(),
   place: z
@@ -158,6 +160,13 @@ export const addCommentRequestSchema = z.object({
 export const changeCommentRequestSchema = addCommentRequestSchema.extend({
   _id: z.string(),
 });
+
+export const addGoingRequestSchema = z.object({
+  eventId: z.string(),
+  userId: z.string(),
+});
+
+export const removeGoingRequestSchema = addGoingRequestSchema;
 
 export const eventsStateSchema = z.object({
   upcomingEventsList: eventsSchema,
