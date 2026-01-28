@@ -80,6 +80,14 @@ type AddEventProps = {
 };
 
 type NamesErrorsType = "aboutEvent" | "finish" | "location" | "eventName";
+type FormStateType = {
+  eventName: string;
+  placeAddress: ItemSearchPlaceAddressType | null;
+  aboutEvent: string;
+  images: ImageFileType[];
+  contacts: TContact[];
+  selectCountryIso: string;
+};
 
 const NOW_TIME_JS = dayjs().minute(0);
 const NOW_TIME_JS_HOUR = dayjs().minute(0).add(1, "hour");
@@ -101,23 +109,23 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [addEventMutation] = useAddEventMutation();
   const [changeEventMutation] = useChangeEventMutation();
   const [deleteEventMutation] = useDeleteEventMutation();
-  const [eventName, setEventName] = useState("");
-  const [placeAddress, setPlaceAddress] =
-    useState<ItemSearchPlaceAddressType | null>(null);
+  const [form, setForm] = useState<FormStateType>({
+    eventName: "",
+    placeAddress: null,
+    aboutEvent: "",
+    images: [],
+    contacts: [{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }],
+    selectCountryIso: DEFAULT_COUNTRY,
+  });
   const [isModalPlace, setIsModalPlace] = useState(false);
-  const [beginDate, setBeginDate] = useState<Date>(CURRENT_DEFAULT_DATE);
-  const [beginTime, setBeginTime] = useState<Date>(CURRENT_DEFAULT_DATE);
-  const [finishDate, setFinishDate] = useState<Date>(CURRENT_DEFAULT_DATE_HOUR);
-  const [finishTime, setFinishTime] = useState<Date>(CURRENT_DEFAULT_DATE_HOUR);
-  const [priceStart, setPriceStart] = useState("");
-  const [priceFinish, setPriceFinish] = useState("");
-  const [aboutEvent, setAboutEvent] = useState("");
-  const [images, setImages] = useState<ImageFileType[]>([]);
+  const [eventDates, setEventDates] = useState({
+    beginDate: CURRENT_DEFAULT_DATE,
+    beginTime: CURRENT_DEFAULT_DATE,
+    finishDate: CURRENT_DEFAULT_DATE_HOUR,
+    finishTime: CURRENT_DEFAULT_DATE_HOUR,
+  });
+  const [prices, setPrices] = useState({ start: "", finish: "" });
   const [timelineItems, setTimelineItems] = useState<TimelineItemDraft[]>([]);
-  const [contacts, setContacts] = useState<TContact[]>([
-    { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
-  ]);
-  const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [isShowContactTypeModal, setIsShowContactTypeModal] = useState(false);
   const [isShowErrors, setIsShowErrors] = useState(false);
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
@@ -128,19 +136,20 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [needCheck, setNeedCheck] = useState<NamesErrorsType | null>(null);
 
   const showTitlePlace = useMemo(() => {
-    if (!placeAddress) return "";
+    const currentPlaceAddress = form.placeAddress;
+    if (!currentPlaceAddress) return "";
     const findPlace =
       placesDB.find(
         (placeDB) =>
-          placeDB._id === placeAddress.placeId ||
-          placeDB.place_id === placeAddress.placeId
+          placeDB._id === currentPlaceAddress.placeId ||
+          placeDB.place_id === currentPlaceAddress.placeId
       ) || null;
     if (!findPlace) {
-      getPlace(placeAddress.placeId);
-      return placeAddress.title;
+      getPlace(currentPlaceAddress.placeId);
+      return currentPlaceAddress.title;
     }
     return findPlace[language].formatted_address;
-  }, [placesDB, placeAddress]);
+  }, [placesDB, form.placeAddress]);
   const eventUser = useMemo(
     () =>
       params?.eventId
@@ -149,12 +158,17 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     [params?.eventId]
   );
   const start = useMemo(
-    () => combineDateAndTime(beginDate, beginTime).getTime(),
-    [beginDate, beginTime]
+    () =>
+      combineDateAndTime(eventDates.beginDate, eventDates.beginTime).getTime(),
+    [eventDates.beginDate, eventDates.beginTime]
   );
   const finish = useMemo(
-    () => combineDateAndTime(finishDate, finishTime).getTime(),
-    [finishDate, finishTime]
+    () =>
+      combineDateAndTime(
+        eventDates.finishDate,
+        eventDates.finishTime
+      ).getTime(),
+    [eventDates.finishDate, eventDates.finishTime]
   );
   const eventRange = useMemo(() => {
     const min = Math.min(start, finish);
@@ -163,20 +177,20 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   }, [start, finish]);
   const errorsObject = useMemo(
     () => ({
-      ...((eventName.length < 5 || eventName.length > 40) && {
+      ...((form.eventName.length < 5 || form.eventName.length > 40) && {
         eventName: getErrorText("eventName", {
           min: 5,
           max: 40,
           otherName: i18n._("event"),
         }),
       }),
-      ...(placeAddress === null && {
+      ...(form.placeAddress === null && {
         location: getErrorText("location", { otherName: i18n._("event") }),
       }),
       ...(start > finish && {
         finish: getErrorText("finish", {}),
       }),
-      ...((aboutEvent.length < 20 || aboutEvent.length > 2000) && {
+      ...((form.aboutEvent.length < 20 || form.aboutEvent.length > 2000) && {
         aboutEvent: getErrorText("aboutEvent", {
           min: 20,
           max: 2000,
@@ -184,7 +198,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         }),
       }),
     }),
-    [eventName, placeAddress, start, finish, aboutEvent]
+    [form.eventName, form.placeAddress, start, finish, form.aboutEvent]
   );
 
   const checkEnterData = () => {
@@ -226,11 +240,16 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     selectedDate: Date | undefined
   ) => {
     if (selectedDate) {
-      setBeginDate(selectedDate);
-      const isAfterFinish = dayjs(selectedDate)
-        .startOf("day")
-        .isAfter(dayjs(finishDate).startOf("day"));
-      if (isAfterFinish) setFinishDate(selectedDate);
+      setEventDates((prev) => {
+        const isAfterFinish = dayjs(selectedDate)
+          .startOf("day")
+          .isAfter(dayjs(prev.finishDate).startOf("day"));
+        return {
+          ...prev,
+          beginDate: selectedDate,
+          ...(isAfterFinish ? { finishDate: selectedDate } : {}),
+        };
+      });
     }
   };
 
@@ -239,10 +258,18 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     selectedDate: Date | undefined
   ) => {
     if (selectedDate) {
-      setBeginTime(selectedDate);
-      const isAfterFinish = dayjs(selectedDate).isAfter(dayjs(finishTime));
-      if (isAfterFinish)
-        setFinishTime(dayjs(selectedDate).add(1, "hour").toDate());
+      setEventDates((prev) => {
+        const isAfterFinish = dayjs(selectedDate).isAfter(
+          dayjs(prev.finishTime)
+        );
+        return {
+          ...prev,
+          beginTime: selectedDate,
+          ...(isAfterFinish
+            ? { finishTime: dayjs(selectedDate).add(1, "hour").toDate() }
+            : {}),
+        };
+      });
     }
   };
 
@@ -250,25 +277,27 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     _event: DateTimePickerEvent,
     selectedDate: Date | undefined
   ) => {
-    if (selectedDate) setFinishDate(selectedDate);
+    if (selectedDate)
+      setEventDates((prev) => ({ ...prev, finishDate: selectedDate }));
   };
   const onChangeFinishTime = (
     _event: DateTimePickerEvent,
     selectedDate: Date | undefined
   ) => {
-    if (selectedDate) setFinishTime(selectedDate);
+    if (selectedDate)
+      setEventDates((prev) => ({ ...prev, finishTime: selectedDate }));
   };
 
   const onSaveEvent = async () => {
     const isError = checkEnterData();
-    if (userData?._id && !isError && placeAddress) {
+    if (userData?._id && !isError && form.placeAddress) {
       if (!validateTimelineItems(timelineItems, eventRange, i18n)) return;
       setLoading(true);
       try {
         const currentPlace =
           eventUser &&
-          placeAddress?.placeId === eventUser.place_id?._id &&
-          placeAddress.address === eventUser.place_address
+          form.placeAddress?.placeId === eventUser.place_id?._id &&
+          form.placeAddress.address === eventUser.place_address
             ? {
                 place_id: eventUser.place_id,
                 region_place_id: eventUser.region_place_id,
@@ -276,8 +305,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
                 place_address: eventUser.place_address,
                 coordinates: eventUser.coordinates,
               }
-            : { place: placeAddress };
-        const currentImageFiles = images.map((image) => {
+            : { place: form.placeAddress };
+        const currentImageFiles = form.images.map((image) => {
           if (
             image._id &&
             image.url &&
@@ -299,7 +328,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             height: image.height,
           };
         });
-        const processedContacts = contacts.map((contact) => {
+        const processedContacts = form.contacts.map((contact) => {
           if (contact.type === "phone")
             return {
               ...contact,
@@ -319,18 +348,18 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           .sort((a, b) => a.start - b.start);
         const newEvent = {
           ...DEFAULT_EVENT_DATA,
-          title: eventName,
+          title: form.eventName,
           ...currentPlace,
           date: { start, finish },
           price:
-            Number(priceStart) > 0
+            Number(prices.start) > 0
               ? {
-                  start: Number(priceStart),
-                  finish: Number(priceFinish) > 0 ? Number(priceFinish) : 0,
+                  start: Number(prices.start),
+                  finish: Number(prices.finish) > 0 ? Number(prices.finish) : 0,
                 }
               : null,
           currency: "UAH" as const,
-          description: aboutEvent,
+          description: form.aboutEvent,
           imageFiles: currentImageFiles || [],
           contacts: processedContacts || [],
           likeUserIds: eventUser?.likeUserIds || [],
@@ -386,28 +415,39 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     setLoading(true);
     if (params) {
       if (eventUser) {
-        setEventName(eventUser.title);
-        if (eventUser.place_id?.place_id) {
+        setForm((prev) => ({ ...prev, eventName: eventUser.title }));
+        const eventPlaceId = eventUser.place_id?.place_id;
+        if (eventPlaceId) {
           try {
-            const placeDB = await getPlace(eventUser.place_id?.place_id);
-            setPlaceAddress({
-              placeId: eventUser.place_id.place_id,
-              title: placeDB ? placeDB[language].formatted_address : "",
-              address: eventUser.place_address,
-              coordinates: eventUser.coordinates,
-            });
+            const placeDB = await getPlace(eventPlaceId);
+            setForm((prev) => ({
+              ...prev,
+              placeAddress: {
+                placeId: eventPlaceId,
+                title: placeDB ? placeDB[language].formatted_address : "",
+                address: eventUser.place_address,
+                coordinates: eventUser.coordinates,
+              },
+            }));
           } catch (error) {
             console.warn("error getEventUser getPlace:", error);
           }
         }
-        setBeginDate(new Date(eventUser.date.start));
-        setBeginTime(new Date(eventUser.date.start));
-        setFinishDate(new Date(eventUser.date.finish));
-        setFinishTime(new Date(eventUser.date.finish));
-        setPriceStart(eventUser.price?.start.toString() || "");
-        setPriceFinish(eventUser.price?.finish.toString() || "");
-        setAboutEvent(eventUser.description);
-        setImages(eventUser.imageFiles || []);
+        setEventDates({
+          beginDate: new Date(eventUser.date.start),
+          beginTime: new Date(eventUser.date.start),
+          finishDate: new Date(eventUser.date.finish),
+          finishTime: new Date(eventUser.date.finish),
+        });
+        setPrices({
+          start: eventUser.price?.start.toString() || "",
+          finish: eventUser.price?.finish.toString() || "",
+        });
+        setForm((prev) => ({
+          ...prev,
+          aboutEvent: eventUser.description,
+          images: eventUser.imageFiles || [],
+        }));
         const timelineDrafts = (eventUser.timeline || []).map(
           (item, index) => ({
             id: `${item.start}-${index}`,
@@ -425,14 +465,24 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           const otherContacts = eventUser.contacts.filter(
             (contact) => contact.type !== "phone"
           );
-          if (phoneContact) setContacts([phoneContact, ...otherContacts]);
+          if (phoneContact)
+            setForm((prev) => ({
+              ...prev,
+              contacts: [phoneContact, ...otherContacts],
+            }));
           else
-            setContacts([
-              { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
-              ...otherContacts,
-            ]);
+            setForm((prev) => ({
+              ...prev,
+              contacts: [
+                { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
+                ...otherContacts,
+              ],
+            }));
         } else
-          setContacts([{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }]);
+          setForm((prev) => ({
+            ...prev,
+            contacts: [{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }],
+          }));
       }
     }
     setLoading(false);
@@ -463,9 +513,16 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   }, [params, placesDB]);
 
   useEffect(() => {
-    if (!eventUser && userData?.phoneNumber && contacts[0]?.value.length < 5)
-      setContacts([{ type: "phone", value: userData.phoneNumber }]);
-  }, [userData, eventUser]);
+    if (
+      !eventUser &&
+      userData?.phoneNumber &&
+      form.contacts[0]?.value.length < 5
+    )
+      setForm((prev) => ({
+        ...prev,
+        contacts: [{ type: "phone", value: userData.phoneNumber || "" }],
+      }));
+  }, [userData, eventUser, form.contacts]);
 
   useEffect(() => {
     if (needCheck) {
@@ -496,17 +553,23 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           <BoxSelectImages
             isRegular
             isSubTitle
-            images={images}
-            setImages={setImages}
+            images={form.images}
+            setImages={(value) =>
+              setForm((prev) => ({
+                ...prev,
+                images:
+                  typeof value === "function" ? value(prev.images) : value,
+              }))
+            }
           />
           <Input
             isRegular
             placeholder={i18n._("Enter the name of the event")}
             label={i18n._("Name of the event")}
-            value={eventName}
+            value={form.eventName}
             onBlurProp={() => checkValueOnBlur("eventName")}
             onChange={(value) => {
-              setEventName(value);
+              setForm((prev) => ({ ...prev, eventName: value }));
               setErrorMessage(null);
             }}
             errorMessage={errorMessage?.eventName?.title}
@@ -535,7 +598,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           <View style={styles.contactsContainer}>
             <Text style={styles.labelContacts}>{i18n._("Contacts")}</Text>
             <View style={styles.contactsListContainer}>
-              {contacts.map((contact, index) => {
+              {form.contacts.map((contact, index) => {
                 const isFirstContact = index === 0;
                 const canDelete = !isFirstContact;
                 return (
@@ -547,14 +610,20 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
                           label={i18n._("Phone number")}
                           phoneNumber={contact.value}
                           setPhoneNumber={(value) => {
-                            setContacts((prev) =>
-                              prev.map((c, i) =>
+                            setForm((prev) => ({
+                              ...prev,
+                              contacts: prev.contacts.map((c, i) =>
                                 i === index ? { ...c, value } : c
-                              )
-                            );
+                              ),
+                            }));
                           }}
-                          selectCountryIso={selectCountryIso}
-                          setSelectCountryIso={setSelectCountryIso}
+                          selectCountryIso={form.selectCountryIso}
+                          setSelectCountryIso={(value) =>
+                            setForm((prev) => ({
+                              ...prev,
+                              selectCountryIso: value,
+                            }))
+                          }
                           labelStyle={styles.labelInput}
                           isErrorMessage={false}
                         />
@@ -565,11 +634,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
                           label={getContactTypeTitle(contact.type)}
                           value={contact.value}
                           onChange={(value) => {
-                            setContacts((prev) =>
-                              prev.map((c, i) =>
+                            setForm((prev) => ({
+                              ...prev,
+                              contacts: prev.contacts.map((c, i) =>
                                 i === index ? { ...c, value } : c
-                              )
-                            );
+                              ),
+                            }));
                           }}
                           labelStyle={styles.labelInput}
                         />
@@ -579,9 +649,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
                       <TouchableOpacity
                         style={styles.deleteContactIconButton}
                         onPress={() => {
-                          setContacts((prev) =>
-                            prev.filter((_, i) => i !== index)
-                          );
+                          setForm((prev) => ({
+                            ...prev,
+                            contacts: prev.contacts.filter(
+                              (_, i) => i !== index
+                            ),
+                          }));
                         }}
                       >
                         <MaterialIcons
@@ -609,7 +682,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             <View style={styles.inner}>
               <DatePicker
                 isRegular
-                value={beginDate}
+                value={eventDates.beginDate}
                 label={i18n._("The beginning")}
                 onChange={(dataTime, data) => {
                   onChangeBeginDate(dataTime, data);
@@ -620,7 +693,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             </View>
             <View style={styles.inner}>
               <DatePicker
-                value={beginTime}
+                value={eventDates.beginTime}
                 onChange={(dataTime, data) => {
                   onChangeBeginTime(dataTime, data);
                   setErrorMessage(null);
@@ -633,7 +706,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             <View style={styles.inner}>
               <DatePicker
                 isRegular
-                value={finishDate}
+                value={eventDates.finishDate}
                 label={i18n._("Conclusion")}
                 onBlur={() => {
                   checkValueOnBlur("finish");
@@ -648,7 +721,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             </View>
             <View style={styles.inner}>
               <DatePicker
-                value={finishTime}
+                value={eventDates.finishTime}
                 onChange={(dataTime, data) => {
                   onChangeFinishTime(dataTime, data);
                   setErrorMessage(null);
@@ -668,10 +741,10 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             <View style={styles.inner}>
               <Input
                 placeholder={i18n._("100 uah")}
-                value={priceStart}
+                value={prices.start}
                 onChange={(value) => {
                   if (!isNaN(Number(value))) {
-                    setPriceStart(value);
+                    setPrices((prev) => ({ ...prev, start: value }));
                     setErrorMessage(null);
                   }
                 }}
@@ -682,10 +755,10 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             <View style={styles.inner}>
               <Input
                 placeholder={i18n._("200 uah")}
-                value={priceFinish}
+                value={prices.finish}
                 onChange={(value) => {
                   if (!isNaN(Number(value))) {
-                    setPriceFinish(value);
+                    setPrices((prev) => ({ ...prev, finish: value }));
                     setErrorMessage(null);
                     setNeedCheck("finish");
                   }
@@ -698,12 +771,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             placeholder={i18n._("Briefly describe what will happen")}
             isRegular
             label={`${i18n._("Tell us about the event")}`}
-            value={aboutEvent}
+            value={form.aboutEvent}
             onBlurProp={() => checkValueOnBlur("aboutEvent")}
             customStyles={styles.multipleInput}
             onChange={(value) => {
               setErrorMessage(null);
-              setAboutEvent(value);
+              setForm((prev) => ({ ...prev, aboutEvent: value }));
             }}
             errorMessage={errorMessage?.aboutEvent?.title}
           />
@@ -720,11 +793,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           setIsModalPlace(false);
         }}
         onSubmit={(data) => {
-          setPlaceAddress(data);
+          setForm((prev) => ({ ...prev, placeAddress: data }));
           setIsModalPlace(false);
           setNeedCheck("location");
         }}
-        statePlace={placeAddress || undefined}
+        statePlace={form.placeAddress || undefined}
       />
       <ModalShowErrors
         isOpen={isShowErrors}
@@ -738,14 +811,17 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         onClose={() => setIsShowContactTypeModal(false)}
         onSelect={(type) => {
           if (type === "phone") {
-            const phoneCount = contacts.filter(
+            const phoneCount = form.contacts.filter(
               (c) => c.type === "phone"
             ).length;
             if (phoneCount < 5)
-              setContacts((prev) => [
+              setForm((prev) => ({
                 ...prev,
-                { type, value: `+${DEFAULT_CODE_COUNTRY}` },
-              ]);
+                contacts: [
+                  ...prev.contacts,
+                  { type, value: `+${DEFAULT_CODE_COUNTRY}` },
+                ],
+              }));
             else
               Toast.show({
                 type: "error",
@@ -753,9 +829,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
                 text2: i18n._("You can add up to 5 phone numbers"),
               });
           } else {
-            const existingTypes = contacts.map((c) => c.type);
+            const existingTypes = form.contacts.map((c) => c.type);
             if (!existingTypes.includes(type))
-              setContacts((prev) => [...prev, { type, value: "" }]);
+              setForm((prev) => ({
+                ...prev,
+                contacts: [...prev.contacts, { type, value: "" }],
+              }));
             else
               Toast.show({
                 type: "error",

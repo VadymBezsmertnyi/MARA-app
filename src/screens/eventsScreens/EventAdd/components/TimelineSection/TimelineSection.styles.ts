@@ -1,10 +1,12 @@
-import { StyleSheet } from "react-native";
-import colors from "../../../../../styles/colors";
+import { Dimensions, StyleSheet } from "react-native";
+import colors from "../../../../../../styles/colors";
 import {
   horizontalScale,
   scaleFont,
   verticalScale,
-} from "../../../../../styles/hooks";
+} from "../../../../../../styles/hooks";
+
+const WIDTH_WINDOW = Dimensions.get("window").width;
 
 export const styles = StyleSheet.create({
   container: {
@@ -61,7 +63,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 12,
     padding: horizontalScale(12),
-    width: "90%",
+    width: WIDTH_WINDOW - horizontalScale(32),
     gap: verticalScale(8),
   },
   modalTitle: {
