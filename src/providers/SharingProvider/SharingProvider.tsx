@@ -84,7 +84,6 @@ const SharingProvider: FunctionComponent<SharingProviderProps> = ({
   };
 
   const setAppsFlyer = async () => {
-    console.log("Setting up AppsFlyer...");
     const onDeepLinkCanceller = appsFlyer.onDeepLink((res: any) => {
       if (res && res.deepLinkStatus !== "NOT_FOUND") setDataDeepLink(res.data);
     });
