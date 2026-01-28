@@ -493,13 +493,21 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   };
 
   useEffect(() => {
-    if (selectWorkshop) getChangeWorkshop();
-    else if (userData?.phoneNumber && form.contacts[0]?.value.length < 5)
-      setForm((prev) => ({
+    if (selectWorkshop) {
+      getChangeWorkshop();
+      return;
+    }
+    if (!userData?.phoneNumber) return;
+
+    setForm((prev) => {
+      const currentValue = prev.contacts[0]?.value || "";
+      if (currentValue.length >= 5) return prev;
+      return {
         ...prev,
         contacts: [{ type: "phone", value: userData.phoneNumber || "" }],
-      }));
-  }, [selectWorkshop, placesDB, userData?.phoneNumber, form.contacts]);
+      };
+    });
+  }, [selectWorkshop, userData?.phoneNumber]);
 
   useEffect(() => {
     if (needCheck) {
