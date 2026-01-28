@@ -6,4 +6,8 @@ export const styles = StyleSheet.create({
     gap: 9,
     alignItems: "center",
   },
+  button: {
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+  },
 });
