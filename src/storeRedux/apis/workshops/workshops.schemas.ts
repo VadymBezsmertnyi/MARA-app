@@ -97,7 +97,7 @@ export const workshopSchema = z.object({
   imageFiles: z.array(fileSchema).default([]),
   dataCreate: z.number(),
   comments: z.array(commentWorkshopSchema).default([]),
-  rating: z.number().nullable(),
+  rating: z.number().nullable().default(null),
   likeUserIds: z.array(z.string()).default([]),
   verification: z
     .object({

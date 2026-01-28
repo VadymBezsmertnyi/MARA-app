@@ -65,7 +65,7 @@ export const eventSchema = z.object({
   description: z.string(),
   imageFiles: z.array(fileSchema).default([]),
   comments: z.array(commentEventSchema).default([]),
-  rating: z.number().nullable(),
+  rating: z.number().nullable().default(null),
   likeUserIds: z.array(z.string()).default([]),
   contacts: z.array(contactSchema).default([]),
   verification: z

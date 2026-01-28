@@ -1,5 +1,13 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { ScrollView, Share, Text, TouchableOpacity, View } from "react-native";
+import {
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  ScrollView,
+  Share,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -41,6 +49,8 @@ import { HeaderRightActions } from "../../../components/HeaderRightActions/Heade
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ModalEnterCode } from "../../settingsScreens/SettingsWorkshops/components/ModalEnterCode/ModalEnterCode";
 import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
+import { FooterComments } from "./components/FooterComments/FooterComments";
+import { ModalComment } from "./components/ModalComment/ModalComment";
 
 // icons
 import {
@@ -89,7 +99,9 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
   const [fetchEventById, { data: eventByIdData }] = useLazyGetEventByIdQuery();
   const tabBarHeight = useBottomTabBarHeight();
+  const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
+  const [isShowModalComment, setIsShowModalComment] = useState(false);
   const [showCodeModal, setShowCodeModal] = useState(false);
   const [showReportModal, setShowReportModal] = useState(false);
   const [codeError, setCodeError] = useState<string | null>(null);
@@ -142,6 +154,19 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         ? eventSelect.likeUserIds.includes(userData._id)
         : false,
     [eventSelect?.likeUserIds]
+  );
+  const isCommentUser = useMemo(
+    () =>
+      eventSelect && userData
+        ? eventSelect.comments.filter(
+            (comment) => comment.userId === userData._id
+          ).length > 0
+        : false,
+    [eventSelect, userData]
+  );
+  const commentsReverse = useMemo(
+    () => (eventSelect?.comments ? [...eventSelect.comments].reverse() : []),
+    [eventSelect?.comments]
   );
   const hasOwner = !!eventSelect?.ownerUserId;
   const isCurrentUserOwner =
@@ -202,6 +227,21 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     () => [styles.iconWrapper, styles.iconWrapperLightBlue],
     []
   );
+
+  const onClose = () => {
+    setIsShowModalComment(false);
+  };
+
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const { layoutMeasurement, contentOffset, contentSize } = event.nativeEvent;
+    if (
+      amountShow < commentsReverse.length &&
+      layoutMeasurement.height + contentOffset.y >= contentSize.height
+    )
+      setAmountShow((state) =>
+        state + 5 <= commentsReverse.length ? state + 5 : commentsReverse.length
+      );
+  };
 
   const onShowGallery = (indexImage?: number) => {
     if (eventSelect?.imageFiles.length) {
@@ -341,7 +381,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         }}
         containerStyle={{ paddingRight: 0 }}
       />
-      <ScrollView>
+      <ScrollView onScroll={handleScroll} scrollEventThrottle={16}>
         <View style={containerStyles}>
           <View style={styles.imageWrapper}>
             {firstImage ? (
@@ -537,9 +577,18 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               </TouchableOpacity>
             </View>
           ) : null}
+          <FooterComments
+            data={commentsReverse.slice(0, amountShow)}
+            isCommentUser={isCommentUser}
+            setIsShowModalComment={setIsShowModalComment}
+            rating={eventSelect.rating || 0}
+          />
         </View>
         <View style={styles.containerEmpty} />
       </ScrollView>
+      {isShowModalComment && (
+        <ModalComment selectEvent={eventSelect} onClose={onClose} />
+      )}
       {gallery && (
         <GalleryModal
           data={gallery}
