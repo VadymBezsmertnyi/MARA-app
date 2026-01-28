@@ -13,6 +13,7 @@ import { useUserSelector } from "../../storeRedux/apis/user/slice";
 
 type SharingContextType = {
   getSharedLink: (data: Record<string, string>) => void;
+  createSharedLink: (data: Record<string, string>) => Promise<string | null>;
   dataDeepLink: Record<string, any> | null;
 };
 
@@ -41,8 +42,12 @@ const SharingProvider: FunctionComponent<SharingProviderProps> = ({
     setIsFirstLaunch(false);
   };
 
-  const getSharedLink = (data: Record<string, string>) => {
-    if (userId)
+  const buildSharedLink = (data: Record<string, string>) =>
+    new Promise<string | null>((resolve) => {
+      if (!userId) {
+        resolve(null);
+        return;
+      }
       appsFlyer.generateInviteLink(
         {
           channel: "app",
@@ -53,24 +58,37 @@ const SharingProvider: FunctionComponent<SharingProviderProps> = ({
             ...data,
           },
         },
-        async (link: string) => {
-          await Share.share({
-            title: "M.A.R.A.(Moto Auto Road Assistant)",
-            url: link,
-            message: link,
-          });
+        (link: string) => {
+          resolve(link);
         },
         () => {
-          Alert.alert("Error: Sorry");
+          resolve(null);
         }
       );
+    });
+
+  const createSharedLink = (data: Record<string, string>) =>
+    buildSharedLink(data);
+
+  const getSharedLink = async (data: Record<string, string>) => {
+    const link = await buildSharedLink(data);
+    if (!link) {
+      Alert.alert("Error: Sorry");
+      return;
+    }
+    await Share.share({
+      title: "M.A.R.A.(Moto Auto Road Assistant)",
+      url: link,
+      message: link,
+    });
   };
 
   const setAppsFlyer = async () => {
-    const onDeepLinkCanceller = appsFlyer.onDeepLink((res) => {
+    console.log("Setting up AppsFlyer...");
+    const onDeepLinkCanceller = appsFlyer.onDeepLink((res: any) => {
       if (res && res.deepLinkStatus !== "NOT_FOUND") setDataDeepLink(res.data);
     });
-    appsFlyer.onInstallConversionData(({ data }) => {
+    appsFlyer.onInstallConversionData(({ data }: any) => {
       setIsFirstLaunch(data.is_first_launch === "true");
     });
     await appsFlyer.initSdk({
@@ -78,18 +96,19 @@ const SharingProvider: FunctionComponent<SharingProviderProps> = ({
       isDebug: true,
       onInstallConversionDataListener: true,
       onDeepLinkListener: true,
+      appId: Platform.OS === "ios" ? "6502443474" : undefined,
     });
     appsFlyer.setAppInviteOneLinkID("13Vx");
     onDeepLinkCanceller();
   };
 
   const contextValue: SharingContextType = useMemo(
-    () => ({ getSharedLink, dataDeepLink }),
-    [dataDeepLink]
+    () => ({ getSharedLink, createSharedLink, dataDeepLink }),
+    [dataDeepLink, userId]
   );
 
   useEffect(() => {
-    if (Platform.OS !== "ios") setAppsFlyer();
+    setAppsFlyer();
   }, []);
 
   useEffect(() => {

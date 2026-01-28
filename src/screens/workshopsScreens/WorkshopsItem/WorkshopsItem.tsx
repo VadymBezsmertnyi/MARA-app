@@ -3,6 +3,7 @@ import {
   NativeScrollEvent,
   NativeSyntheticEvent,
   ScrollView,
+  Share,
   Text,
   TouchableOpacity,
   View,
@@ -44,7 +45,6 @@ import { getFormatPhoneNumber } from "../../../helps/helps";
 
 // components
 import { Header } from "../../../components/Header/Header";
-import { HeaderRightItem } from "./components/HeaderRightItem/HeaderRightItem";
 import { CustomSlider } from "../../../components/CustomSlider/CustomSlider";
 import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { Map } from "../../../components/Map/Map";
@@ -63,6 +63,9 @@ import { IconAutoService, IconMotoService } from "../../../icons/components";
 import { styles } from "./WorkshopsItem.styles";
 import colors from "../../../../styles/colors";
 import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
+
+const EXPO_PUBLIC_WEB_SITE_URL =
+  process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
 type WorkshopsItemType = {
   navigation: NativeStackNavigationProp<
@@ -90,7 +93,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const [getWorkshopById] = useLazyGetWorkshopByIdQuery();
   const { placesDB } = usePlacesProvider();
   const { location } = useMapProvider();
-  const { getSharedLink } = useSharingProvider();
+  const { createSharedLink } = useSharingProvider();
   const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);
   const [isShowModalComment, setIsShowModalComment] = useState(false);
@@ -241,8 +244,27 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     });
   };
 
-  const onPressShare = () => {
-    if (selectWorkshop) getSharedLink({ workshopId: selectWorkshop._id });
+  const onPressShare = async () => {
+    if (!selectWorkshop) return;
+    const appLink = await createSharedLink({ workshopId: selectWorkshop._id });
+    if (!appLink) {
+      await showMessageServer(
+        i18n._("Error"),
+        i18n._("Failed to create share link"),
+        "error"
+      );
+      return;
+    }
+    const shortLink = selectWorkshop._id; // TODO: implement real short link if needed
+    const webLink = `${EXPO_PUBLIC_WEB_SITE_URL}/share/${shortLink}`;
+    const message = i18n._(
+      "Open the workshop in the app:\n{appLink}\n\nOpen in the browser:\n{webLink}",
+      { appLink, webLink }
+    );
+    await Share.share({
+      title: i18n._("Share workshop"),
+      message,
+    });
   };
 
   const hasOwner = !!selectWorkshop?.ownerUserId;
@@ -320,11 +342,13 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       <Header
         title={i18n._("Workshop")}
         rightElement={
-          <HeaderRightItem
-            onPressLike={onPressLike}
-            isLike={isLike}
-            onPressShare={onPressShare}
-          />
+          <TouchableOpacity
+            accessibilityLabel={i18n._("Select share page")}
+            style={styles.headerShareButton}
+            onPress={onPressShare}
+          >
+            <MaterialIcons name="share" size={22} color={colors.blazeOrange} />
+          </TouchableOpacity>
         }
         onPressLeftElement={() => {
           if (!route.params?.isMap) navigation.goBack();
