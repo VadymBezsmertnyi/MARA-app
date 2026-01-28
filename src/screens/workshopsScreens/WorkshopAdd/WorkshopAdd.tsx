@@ -3,6 +3,7 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
+import Toast from "react-native-toast-message";
 
 //types
 import { ImageFileType } from "../../../storeRedux/types";
@@ -71,13 +72,20 @@ import { DEFAULT_WORKSHOP_DATA } from "../../../storeRedux/apis/workshops/worksh
 // styles
 import { styles } from "./WorkshopAdd.styles";
 import colors from "../../../../styles/colors";
-import Toast from "react-native-toast-message";
 
 type WorkshopAddProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
 };
 
 type NamesErrorsType = "types" | "title" | "description" | "place" | "contacts";
+type FormStateType = {
+  title: string;
+  description: string;
+  contacts: TContact[];
+  selectCountryIso: string;
+  place: ItemSearchPlaceAddressType | null;
+  images: ImageFileType[];
+};
 
 export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   navigation,
@@ -100,14 +108,15 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const { typesWorkServices } = useWorkshopsState();
   const { verifyPhone } = useAuthorizationRegistration();
   const { getContactTypeTitle } = useWorkshopHelpers(i18n);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [contacts, setContacts] = useState<TContact[]>([
-    { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
-  ]);
-  const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
+  const [form, setForm] = useState<FormStateType>({
+    title: "",
+    description: "",
+    contacts: [{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }],
+    selectCountryIso: DEFAULT_COUNTRY,
+    place: null,
+    images: [],
+  });
   const [isShowContactTypeModal, setIsShowContactTypeModal] = useState(false);
-  const [place, setPlace] = useState<ItemSearchPlaceAddressType | null>(null);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
   const [isShowTypesMotoWorks, setIsShowTypesMotoWorks] = useState(false);
   const [isShowTypesAutoWorks, setIsShowTypesAutoWorks] = useState(false);
@@ -123,7 +132,6 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const [selectAutoTypesWorks, setSelectAutoTypesWorks] = useState<number[]>(
     []
   );
-  const [images, setImages] = useState<ImageFileType[]>([]);
   const [workingHours, setWorkingHours] = useState<TWorkingHours>(
     DEFAULT_WORKSHOP_DATA.workingHours
   );
@@ -142,18 +150,20 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     [workshops, params]
   );
   const showTitlePlace = useMemo(() => {
-    if (!place || place.placeId.length === 0) return "";
+    const currentPlace = form.place;
+    if (!currentPlace || currentPlace.placeId.length === 0) return "";
     const findPlace =
       placesDB.find(
         (placeDB) =>
-          placeDB._id === place.placeId || placeDB.place_id === place.placeId
+          placeDB._id === currentPlace.placeId ||
+          placeDB.place_id === currentPlace.placeId
       ) || null;
     if (!findPlace) {
-      getPlace(place.placeId);
-      return place.title;
+      getPlace(currentPlace.placeId);
+      return currentPlace.title;
     }
     return findPlace[language].formatted_address;
-  }, [placesDB, place, language]);
+  }, [placesDB, form.place, language]);
 
   const clearKeyError = (key: string) => {
     if (errorMessage && key in errorMessage) {
@@ -195,10 +205,10 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     return "";
   }, [typeWorkshops]);
 
-  const firstContact = useMemo(() => contacts[0], [contacts]);
+  const firstContact = useMemo(() => form.contacts[0], [form.contacts]);
   const phoneContact = useMemo(
-    () => contacts.find((contact) => contact.type === "phone"),
-    [contacts]
+    () => form.contacts.find((contact) => contact.type === "phone"),
+    [form.contacts]
   );
 
   const errorsObject = useMemo(() => {
@@ -206,21 +216,21 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     const isPhone =
       isFirstContactPhone &&
       firstContact &&
-      verifyPhone(firstContact.value, selectCountryIso).length === 0;
+      verifyPhone(firstContact.value, form.selectCountryIso).length === 0;
     return {
-      ...((title.length < 5 || title.length > 40) && {
+      ...((form.title.length < 5 || form.title.length > 40) && {
         title: getErrorText("title", {
           min: 5,
           max: 40,
           otherName: i18n._("workshop"),
         }),
       }),
-      ...(place === null && {
+      ...(form.place === null && {
         place: getErrorText("place", {
           otherName: i18n._("workshop"),
         }),
       }),
-      ...((description.length < 50 || description.length > 9000) && {
+      ...((form.description.length < 50 || form.description.length > 9000) && {
         description: getErrorText("description", {
           min: 50,
           max: 9000,
@@ -240,11 +250,11 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         }),
     };
   }, [
-    title,
-    place,
-    description,
+    form.title,
+    form.place,
+    form.description,
     phoneContact,
-    selectCountryIso,
+    form.selectCountryIso,
     selectMotoTypesWorks,
     selectAutoTypesWorks,
   ]);
@@ -264,7 +274,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   };
 
   const onSubmitPlace = (data: ItemSearchPlaceAddressType) => {
-    setPlace(data);
+    setForm((prev) => ({ ...prev, place: data }));
     setIsShowSelectPlace(false);
     clearKeyError("place");
   };
@@ -293,11 +303,11 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     const isError = checkEnterData();
     if (
       userData &&
-      place &&
+      form.place &&
       (selectMotoTypesWorks.length || selectAutoTypesWorks.length) &&
       !isError
     ) {
-      const currentImageFiles = images.map((image) => {
+      const currentImageFiles = form.images.map((image) => {
         if (
           image._id &&
           image.url &&
@@ -321,8 +331,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       });
       const currentPlace =
         selectWorkshop &&
-        place?.placeId === selectWorkshop.place_id?._id &&
-        place.address === selectWorkshop.place_address
+        form.place?.placeId === selectWorkshop.place_id?._id &&
+        form.place.address === selectWorkshop.place_address
           ? {
               place_id: selectWorkshop.place_id,
               region_place_id: selectWorkshop.region_place_id,
@@ -330,8 +340,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               place_address: selectWorkshop.place_address,
               coordinates: selectWorkshop.coordinates,
             }
-          : { place };
-      const processedContacts = contacts.map((contact) => {
+          : { place: form.place };
+      const processedContacts = form.contacts.map((contact) => {
         if (contact.type === "phone")
           return {
             ...contact,
@@ -343,8 +353,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       const newWorkshop = {
         ...DEFAULT_WORKSHOP_DATA,
         userId: userData._id,
-        title,
-        description,
+        title: form.title,
+        description: form.description,
         contacts: processedContacts,
         ...currentPlace,
         motoTypesWorks: selectMotoTypesWorks,
@@ -360,13 +370,8 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
             body: {
               ...selectWorkshop,
               ...newWorkshop,
-              likeUserIds: [
-                ...(newWorkshop.likeUserIds ||
-                  selectWorkshop.likeUserIds ||
-                  []),
-              ].map((item) =>
-                typeof item === "string" ? item : item._id.toString()
-              ),
+              likeUserIds:
+                newWorkshop.likeUserIds || selectWorkshop.likeUserIds || [],
               imageFiles: currentImageFiles,
               phoneNumber: undefined,
             },
@@ -375,9 +380,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
             body: {
               ...newWorkshop,
               imageFiles: currentImageFiles,
-              likeUserIds: newWorkshop.likeUserIds.map((item) =>
-                typeof item === "string" ? item : item._id.toString()
-              ),
+              likeUserIds: newWorkshop.likeUserIds || [],
             },
           });
 
@@ -404,15 +407,18 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
   const getChangeWorkshop = async () => {
     if (!selectWorkshop) return;
 
-    setTitle(selectWorkshop.title);
     const placeDB = await getPlace(selectWorkshop.place_id?.place_id || "");
-    setPlace({
-      placeId: selectWorkshop.place_id?.place_id || "",
-      title: placeDB ? placeDB[language].formatted_address : "",
-      address: selectWorkshop.place_address,
-      coordinates: selectWorkshop.coordinates,
-    });
-    setDescription(selectWorkshop.description);
+    setForm((prev) => ({
+      ...prev,
+      title: selectWorkshop.title,
+      description: selectWorkshop.description,
+      place: {
+        placeId: selectWorkshop.place_id?.place_id || "",
+        title: placeDB ? placeDB[language].formatted_address : "",
+        address: selectWorkshop.place_address,
+        coordinates: selectWorkshop.coordinates,
+      },
+    }));
     if (selectWorkshop.contacts && selectWorkshop.contacts.length > 0) {
       const phoneContact = selectWorkshop.contacts.find(
         (c) => c.type === "phone"
@@ -420,15 +426,29 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
       const otherContacts = selectWorkshop.contacts.filter(
         (c) => c.type !== "phone"
       );
-      if (phoneContact) setContacts([phoneContact, ...otherContacts]);
+      if (phoneContact)
+        setForm((prev) => ({
+          ...prev,
+          contacts: [phoneContact, ...otherContacts],
+        }));
       else
-        setContacts([
-          { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
-          ...otherContacts,
-        ]);
+        setForm((prev) => ({
+          ...prev,
+          contacts: [
+            { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
+            ...otherContacts,
+          ],
+        }));
     } else if (selectWorkshop.phoneNumber)
-      setContacts([{ type: "phone", value: selectWorkshop.phoneNumber }]);
-    else setContacts([{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }]);
+      setForm((prev) => ({
+        ...prev,
+        contacts: [{ type: "phone", value: selectWorkshop.phoneNumber }],
+      }));
+    else
+      setForm((prev) => ({
+        ...prev,
+        contacts: [{ type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` }],
+      }));
 
     setTypeWorkshops((state) => ({
       ...state,
@@ -437,7 +457,10 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
     }));
     setSelectAutoTypesWorks(selectWorkshop.autoTypesWorks);
     setSelectMotoTypesWorks(selectWorkshop.motoTypesWorks);
-    setImages(selectWorkshop.imageFiles || []);
+    setForm((prev) => ({
+      ...prev,
+      images: selectWorkshop.imageFiles || [],
+    }));
     setWorkingHours(
       selectWorkshop.workingHours || DEFAULT_WORKSHOP_DATA.workingHours
     );
@@ -471,9 +494,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
 
   useEffect(() => {
     if (selectWorkshop) getChangeWorkshop();
-    else if (userData?.phoneNumber && contacts[0]?.value.length < 5)
-      setContacts([{ type: "phone", value: userData.phoneNumber }]);
-  }, [selectWorkshop, placesDB]);
+    else if (userData?.phoneNumber && form.contacts[0]?.value.length < 5)
+      setForm((prev) => ({
+        ...prev,
+        contacts: [{ type: "phone", value: userData.phoneNumber || "" }],
+      }));
+  }, [selectWorkshop, placesDB, userData?.phoneNumber, form.contacts]);
 
   useEffect(() => {
     if (needCheck) {
@@ -502,17 +528,23 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
             <BoxSelectImages
               isRegular
               isSubTitle
-              images={images}
-              setImages={setImages}
+              images={form.images}
+              setImages={(value) =>
+                setForm((prev) => ({
+                  ...prev,
+                  images:
+                    typeof value === "function" ? value(prev.images) : value,
+                }))
+              }
             />
             <Input
               isRegular
               placeholder={i18n._("Enter the name of the workshop")}
               label={i18n._("Workshop name")}
-              value={title}
+              value={form.title}
               onChange={(value) => {
                 clearKeyError("title");
-                setTitle(value);
+                setForm((prev) => ({ ...prev, title: value }));
               }}
               onBlurProp={() => checkValueOnBlur("title")}
               errorMessage={errorMessage?.title ? errorMessage.title.title : ""}
@@ -534,10 +566,10 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
               placeholder={i18n._("Add a description about the workshop")}
               label={i18n._("Workshop description")}
               onBlurProp={() => checkValueOnBlur("description")}
-              value={description}
+              value={form.description}
               onChange={(value) => {
                 clearKeyError("description");
-                setDescription(value);
+                setForm((prev) => ({ ...prev, description: value }));
               }}
               containerStyle={styles.containerStyle}
               customStyles={styles.customStylesInput}
@@ -549,7 +581,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
             <View style={styles.contactsContainer}>
               <Text style={styles.labelContacts}>{i18n._("Contacts")}</Text>
               <View style={styles.contactsListContainer}>
-                {contacts.map((contact, index) => {
+                {form.contacts.map((contact, index) => {
                   const isFirstContact = index === 0;
                   const canDelete = !isFirstContact;
                   return (
@@ -563,14 +595,20 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                             onBlurProp={() => checkValueOnBlur("contacts")}
                             setPhoneNumber={(value) => {
                               clearKeyError("contacts");
-                              setContacts((prev) =>
-                                prev.map((c, i) =>
+                              setForm((prev) => ({
+                                ...prev,
+                                contacts: prev.contacts.map((c, i) =>
                                   i === index ? { ...c, value } : c
-                                )
-                              );
+                                ),
+                              }));
                             }}
-                            selectCountryIso={selectCountryIso}
-                            setSelectCountryIso={setSelectCountryIso}
+                            selectCountryIso={form.selectCountryIso}
+                            setSelectCountryIso={(value) =>
+                              setForm((prev) => ({
+                                ...prev,
+                                selectCountryIso: value,
+                              }))
+                            }
                             labelStyle={styles.labelInput}
                             errorMessage={
                               errorMessage?.contacts && index === 0
@@ -586,11 +624,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                             label={getContactTypeTitle(contact.type)}
                             value={contact.value}
                             onChange={(value) => {
-                              setContacts((prev) =>
-                                prev.map((c, i) =>
+                              setForm((prev) => ({
+                                ...prev,
+                                contacts: prev.contacts.map((c, i) =>
                                   i === index ? { ...c, value } : c
-                                )
-                              );
+                                ),
+                              }));
                             }}
                             labelStyle={styles.labelInput}
                           />
@@ -600,9 +639,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                         <TouchableOpacity
                           style={styles.deleteContactIconButton}
                           onPress={() => {
-                            setContacts((prev) =>
-                              prev.filter((_, i) => i !== index)
-                            );
+                            setForm((prev) => ({
+                              ...prev,
+                              contacts: prev.contacts.filter(
+                                (_, i) => i !== index
+                              ),
+                            }));
                           }}
                         >
                           <MaterialIcons
@@ -727,7 +769,7 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
           setNeedCheck("place");
         }}
         onSubmit={onSubmitPlace}
-        statePlace={place || undefined}
+        statePlace={form.place || undefined}
       />
       {isShowDeleteModal && (
         <ModalDelete
@@ -749,14 +791,17 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
         onClose={() => setIsShowContactTypeModal(false)}
         onSelect={(type) => {
           if (type === "phone") {
-            const phoneCount = contacts.filter(
+            const phoneCount = form.contacts.filter(
               (c) => c.type === "phone"
             ).length;
             if (phoneCount < 5)
-              setContacts((prev) => [
+              setForm((prev) => ({
                 ...prev,
-                { type, value: `+${DEFAULT_CODE_COUNTRY}` },
-              ]);
+                contacts: [
+                  ...prev.contacts,
+                  { type, value: `+${DEFAULT_CODE_COUNTRY}` },
+                ],
+              }));
             else
               Toast.show({
                 type: "error",
@@ -764,9 +809,12 @@ export const WorkshopAdd: FunctionComponent<WorkshopAddProps> = ({
                 text2: i18n._("You can add up to 5 phone numbers"),
               });
           } else {
-            const existingTypes = contacts.map((c) => c.type);
+            const existingTypes = form.contacts.map((c) => c.type);
             if (!existingTypes.includes(type))
-              setContacts((prev) => [...prev, { type, value: "" }]);
+              setForm((prev) => ({
+                ...prev,
+                contacts: [...prev.contacts, { type, value: "" }],
+              }));
             else
               Toast.show({
                 type: "error",
