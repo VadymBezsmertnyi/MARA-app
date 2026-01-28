@@ -7,7 +7,7 @@ import { PATHS_EVENTS_SCREENS } from "../useNavigator.constants";
 // News and events
 import { EventsMain } from "../../screens/eventsScreens/EventsMain/EventsMain";
 import { EventsList } from "../../screens/eventsScreens/EventsList/EventsList";
-import { EventDetailsScreen } from "../../screens/eventsScreens/EventItem/EventItem";
+import { EventDetailsScreen } from "../../screens/eventsScreens/EventDetails/EventDetails";
 import { AddEvent } from "../../screens/eventsScreens/EventAdd/EventAdd";
 
 export const useNewsStack = () => {

@@ -62,7 +62,7 @@ import {
 } from "../../../icons/components";
 
 // styles
-import { styles } from "./EventItem.styles";
+import { styles } from "./EventDetails.styles";
 import colors from "../../../../styles/colors";
 import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
@@ -172,7 +172,8 @@ export const EventDetailsScreen: FunctionComponent<EventDetailsScreenProps> = ({
     if (!eventSelect?.comments) return [];
     return eventSelect.comments
       .filter((comment) => {
-        if (comment.status === "pending") return comment.userId === currentUserId;
+        if (comment.status === "pending")
+          return comment.userId === currentUserId;
         return comment.status === "verify" || comment.status === undefined;
       })
       .map((comment) =>
