@@ -40,6 +40,11 @@ import { useAnalyticsProvider } from "../../../providers/AnalyticsProvider/Analy
 // components
 import { Input } from "../../../components/Input/Input";
 import { DatePicker } from "./components/DatePicker/DatePicker";
+import {
+  TimelineSection,
+  TimelineItemDraft,
+  validateTimelineItems,
+} from "./components/TimelineSection/TimelineSection";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { BoxSelectImages } from "../../../components/BoxSelectImages/BoxSelectImages";
 import { InputButton } from "../../../components/InputButton/InputButton";
@@ -108,6 +113,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const [priceFinish, setPriceFinish] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
   const [images, setImages] = useState<ImageFileType[]>([]);
+  const [timelineItems, setTimelineItems] = useState<TimelineItemDraft[]>([]);
   const [contacts, setContacts] = useState<TContact[]>([
     { type: "phone", value: `+${DEFAULT_CODE_COUNTRY}` },
   ]);
@@ -150,6 +156,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
     () => combineDateAndTime(finishDate, finishTime).getTime(),
     [finishDate, finishTime]
   );
+  const eventRange = useMemo(() => {
+    const min = Math.min(start, finish);
+    const max = Math.max(start, finish);
+    return { min, max };
+  }, [start, finish]);
   const errorsObject = useMemo(
     () => ({
       ...((eventName.length < 5 || eventName.length > 40) && {
@@ -251,6 +262,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
   const onSaveEvent = async () => {
     const isError = checkEnterData();
     if (userData?._id && !isError && placeAddress) {
+      if (!validateTimelineItems(timelineItems, eventRange, i18n)) return;
       setLoading(true);
       try {
         const currentPlace =
@@ -295,6 +307,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             };
           return contact;
         });
+        const timelinePayload = timelineItems.map((item) => ({
+          start: item.start,
+          finish: item.finish,
+          title: item.title.trim(),
+          description: item.description.trim() ? item.description.trim() : null,
+        }));
         const newEvent = {
           ...DEFAULT_EVENT_DATA,
           title: eventName,
@@ -314,7 +332,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           likeUserIds: eventUser?.likeUserIds || [],
           goingUserIds: eventUser?.goingUserIds || [],
           comments: eventUser?.comments || [],
-          timeline: eventUser?.timeline || [],
+          timeline: timelinePayload || eventUser?.timeline || [],
         };
         if (eventUser && eventUser.userId) {
           const updatedEventResult = await changeEventMutation({
@@ -386,6 +404,16 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
         setPriceFinish(eventUser.price?.finish.toString() || "");
         setAboutEvent(eventUser.description);
         setImages(eventUser.imageFiles || []);
+        const timelineDrafts = (eventUser.timeline || []).map(
+          (item, index) => ({
+            id: `${item.start}-${index}`,
+            title: item.title || "",
+            description: item.description || "",
+            start: item.start,
+            finish: item.finish ?? null,
+          })
+        );
+        setTimelineItems(timelineDrafts);
         if (eventUser.contacts && eventUser.contacts.length > 0) {
           const phoneContact = eventUser.contacts.find(
             (contact) => contact.type === "phone"
@@ -626,6 +654,11 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               />
             </View>
           </View>
+          <TimelineSection
+            timelineItems={timelineItems}
+            setTimelineItems={setTimelineItems}
+            eventRange={eventRange}
+          />
           <Text style={styles.subtitle}>{i18n._("Participation fee")}:</Text>
           <View style={styles.containerPrices}>
             <View style={styles.inner}>
