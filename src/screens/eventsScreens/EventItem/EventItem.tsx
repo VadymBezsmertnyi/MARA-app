@@ -254,12 +254,11 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   };
 
   const onShowGallery = (indexImage?: number) => {
-    if (eventSelect?.imageFiles.length) {
+    if (eventSelect?.imageFiles.length)
       setGallery({
         images: eventSelect.imageFiles.map((image) => image.url),
         indexImage,
       });
-    }
   };
   const onPressLike = async () => {
     if (eventSelect && userData) {
@@ -279,6 +278,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
             userId: eventSelect.userId?._id || userData._id,
             imageFiles: currentImageFiles,
             likeUserIds,
+            goingUserIds: eventSelect.goingUserIds,
           },
         }).unwrap();
       } catch (error) {
@@ -382,6 +382,10 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
       return;
     }
     try {
+      const currentImageFiles = eventSelect.imageFiles.map((image) => ({
+        _id: image._id || "",
+        url: image.url || "",
+      }));
       const goingUserIds = isGoing
         ? eventSelect.goingUserIds.filter((id) => id !== userData._id)
         : [...eventSelect.goingUserIds, userData._id];
@@ -390,6 +394,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
           _id: eventSelect._id,
           userId: eventSelect.userId?._id || userData._id,
           goingUserIds,
+          imageFiles: currentImageFiles,
         },
       }).unwrap();
     } catch (error) {

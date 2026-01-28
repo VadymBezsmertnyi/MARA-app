@@ -314,10 +314,8 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           description: aboutEvent,
           imageFiles: currentImageFiles,
           contacts: processedContacts,
-          likeUserIds:
-            eventUser?.likeUserIds.map((item) =>
-              typeof item === "string" ? item : item._id.toString()
-            ) || [],
+          likeUserIds: eventUser?.likeUserIds || [],
+          goingUserIds: eventUser?.goingUserIds || [],
         };
         if (eventUser && eventUser.userId) {
           const updatedEventResult = await changeEventMutation({
