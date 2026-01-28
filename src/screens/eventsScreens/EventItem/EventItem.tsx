@@ -279,6 +279,8 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
             imageFiles: currentImageFiles,
             likeUserIds,
             goingUserIds: eventSelect.goingUserIds,
+            comments: eventSelect.comments || [],
+            timeline: eventSelect.timeline || [],
           },
         }).unwrap();
       } catch (error) {

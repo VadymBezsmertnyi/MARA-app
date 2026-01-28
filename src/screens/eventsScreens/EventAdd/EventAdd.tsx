@@ -10,6 +10,7 @@ import { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
+import Toast from "react-native-toast-message";
 import dayjs from "dayjs";
 
 // types
@@ -68,7 +69,6 @@ import { IconMapGradient } from "../../../icons/components";
 // styles
 import { styles } from "./EventAdd.styles";
 import colors from "../../../../styles/colors";
-import Toast from "react-native-toast-message";
 
 type AddEventProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList>;
@@ -299,10 +299,7 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
           ...DEFAULT_EVENT_DATA,
           title: eventName,
           ...currentPlace,
-          date: {
-            start,
-            finish,
-          },
+          date: { start, finish },
           price:
             Number(priceStart) > 0
               ? {
@@ -312,10 +309,12 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
               : null,
           currency: "UAH" as const,
           description: aboutEvent,
-          imageFiles: currentImageFiles,
-          contacts: processedContacts,
+          imageFiles: currentImageFiles || [],
+          contacts: processedContacts || [],
           likeUserIds: eventUser?.likeUserIds || [],
           goingUserIds: eventUser?.goingUserIds || [],
+          comments: eventUser?.comments || [],
+          timeline: eventUser?.timeline || [],
         };
         if (eventUser && eventUser.userId) {
           const updatedEventResult = await changeEventMutation({

@@ -141,6 +141,7 @@ export const addEventRequestSchema = z.object({
     })
     .optional(),
   contacts: z.array(contactSchema).default([]).optional(),
+  comments: z.array(commentEventSchema).default([]).optional(),
   timeline: z.array(timelineItemSchema).default([]).optional(),
 });
 
