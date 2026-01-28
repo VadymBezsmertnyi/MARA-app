@@ -40,7 +40,7 @@ export const HeaderRightActions: FunctionComponent<HeaderRightActionsProps> = ({
         <TouchableOpacity
           accessibilityLabel={i18n._("Select share page")}
           onPress={onPressShare}
-          style={styles.button}
+          style={[styles.button, { padding: 8 }]}
         >
           <MaterialIcons name="share" size={22} color={colors.blazeOrange} />
         </TouchableOpacity>
