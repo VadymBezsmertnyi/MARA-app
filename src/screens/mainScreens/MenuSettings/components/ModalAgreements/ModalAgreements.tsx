@@ -25,16 +25,20 @@ export const ModalAgreements: FunctionComponent<ModalAgreementsProps> = ({
   const [loading, setLoading] = useState(true);
 
   const source = useMemo(() => {
+    const EXPO_PUBLIC_WEB_SITE_URL = process.env
+      .EXPO_PUBLIC_WEB_SITE_URL as string;
+    const currentUrl =
+      EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
     if (type === "policy")
       return {
-        uri: `https://m-a-r-a.netlify.app/mobile/privacy-policy?language=${language}`,
+        uri: `${currentUrl}/mobile/privacy-policy?language=${language}`,
       };
     if (type === "about")
       return {
-        uri: `https://m-a-r-a.netlify.app/mobile/about?language=${language}`,
+        uri: `${currentUrl}/mobile/about?language=${language}`,
       };
     return {
-      uri: `https://m-a-r-a.netlify.app/mobile/term-of-use?language=${language}`,
+      uri: `${currentUrl}/mobile/term-of-use?language=${language}`,
     };
   }, [type]);
 
