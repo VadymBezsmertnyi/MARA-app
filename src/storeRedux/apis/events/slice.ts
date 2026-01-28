@@ -211,30 +211,36 @@ export const eventsSlice = createSlice({
       .addMatcher(api.endpoints.changeEvent.matchFulfilled, (state, action) => {
         if (action.payload?.event) {
           const updatedEvent = action.payload.event;
+          const updateList = (list: TEvents) =>
+            list.map((event) =>
+              event._id === updatedEvent._id ? updatedEvent : event
+            );
           const existingUserIndex = state.eventsUserList.findIndex(
             (event) => event._id === updatedEvent._id
           );
           const nextEventsUserList =
             existingUserIndex >= 0
-              ? state.eventsUserList.map((event) =>
-                  event._id === updatedEvent._id ? updatedEvent : event
-                )
+              ? updateList(state.eventsUserList)
               : [...state.eventsUserList, updatedEvent];
           state.eventsUserList = getSortEvents(nextEventsUserList);
+          state.upcomingEventsList = getSortEvents(
+            updateList(state.upcomingEventsList)
+          );
+          state.pastEventsList = getSortEvents(
+            updateList(state.pastEventsList)
+          );
           const nowTime = Date.now();
           const isUpcoming = updatedEvent.date.finish >= nowTime;
           if (isUpcoming) {
-            const filtered = state.upcomingClosest.filter(
-              (event) => event._id !== updatedEvent._id
-            );
-            state.upcomingClosest = getSortEvents([
-              updatedEvent,
-              ...filtered,
-            ]).slice(0, 3);
+            state.upcomingClosest = getSortEvents(
+              updateList(state.upcomingClosest)
+            ).slice(0, 3);
+            state.pastClosest = getSortEvents(updateList(state.pastClosest));
           } else {
             state.upcomingClosest = state.upcomingClosest.filter(
               (event) => event._id !== updatedEvent._id
             );
+            state.pastClosest = getSortEvents(updateList(state.pastClosest));
           }
           state.loading = false;
           state.error = null;
