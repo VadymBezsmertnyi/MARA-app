@@ -3,11 +3,8 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    gap: 9,
+    gap: 8,
     alignItems: "center",
   },
-  button: {
-    paddingHorizontal: 6,
-    paddingVertical: 4,
-  },
+  button: {},
 });

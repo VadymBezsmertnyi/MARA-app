@@ -339,6 +339,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
           if (!route.params?.isMap) navigation.goBack();
           else resetNavigationToMap(navigation);
         }}
+        containerStyle={{ paddingRight: 0 }}
       />
       <ScrollView>
         <View style={containerStyles}>

@@ -381,6 +381,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
           if (!route.params?.isMap) navigation.goBack();
           else resetNavigationToMap(navigation);
         }}
+        containerStyle={{ paddingRight: 0 }}
       />
       <ScrollView
         ref={scrollViewRef}
