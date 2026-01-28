@@ -60,6 +60,11 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.blackCoffee,
   },
+  goingLabel: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 12,
+    color: colors.grayFuscous,
+  },
   locationTitle: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,

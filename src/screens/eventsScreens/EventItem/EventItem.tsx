@@ -12,6 +12,7 @@ import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { getDistance } from "geolib";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // types
 import {
@@ -27,6 +28,8 @@ import {
   useSendSmsVerificationMutation,
   useVerifySmsCodeMutation,
   useLazyGetEventByIdQuery,
+  useAddEventGoingMutation,
+  useRemoveEventGoingMutation,
 } from "../../../storeRedux/api";
 import { TEvent } from "../../../storeRedux/apis/events/events.types";
 
@@ -57,7 +60,6 @@ import {
   RadixIconsCash,
   RadixIconsCalendar,
   MingcuteTimeLine,
-  IconProfileAvatar,
 } from "../../../icons/components";
 
 // styles
@@ -96,6 +98,8 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { createSharedLink } = useSharingProvider();
   const { showMessageServer } = useDropDownAlertProvider();
   const [changeEventMutation] = useChangeEventMutation();
+  const [addEventGoingMutation] = useAddEventGoingMutation();
+  const [removeEventGoingMutation] = useRemoveEventGoingMutation();
   const [sendSms] = useSendSmsVerificationMutation();
   const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
   const [fetchEventById, { data: eventByIdData }] = useLazyGetEventByIdQuery();
@@ -206,6 +210,14 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     [location, eventSelect]
   );
   const goingCount = eventSelect?.goingUserIds?.length || 0;
+  const isGoing = useMemo(
+    () =>
+      !!(
+        userData &&
+        eventSelect?.goingUserIds?.some((userId) => userId === userData._id)
+      ),
+    [eventSelect?.goingUserIds, userData]
+  );
   const showDescription = useMemo(() => {
     if (!eventSelect) return null;
     if (!isFullDescription) return `${eventSelect.description.slice(0, 300)}. `;
@@ -364,6 +376,29 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     });
   };
 
+  const onPressGoing = async () => {
+    if (!eventSelect || !userData) {
+      await showMessageServer(
+        i18n._("Error"),
+        i18n._("Please sign in to continue"),
+        "error"
+      );
+      return;
+    }
+    try {
+      if (isGoing)
+        await removeEventGoingMutation({
+          body: { eventId: eventSelect._id, userId: userData._id },
+        }).unwrap();
+      else
+        await addEventGoingMutation({
+          body: { eventId: eventSelect._id, userId: userData._id },
+        }).unwrap();
+    } catch (error) {
+      console.warn("error onPressGoing:", error);
+    }
+  };
+
   if (!eventSelect) return null;
 
   return (
@@ -419,9 +454,16 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
             <DistanceCard distance={distance} />
           </View>
           <View style={styles.goingButtonContainer}>
-            <TouchableOpacity style={styles.goingButton}>
-              <IconProfileAvatar width={18} height={18} />
+            <TouchableOpacity style={styles.goingButton} onPress={onPressGoing}>
+              <MaterialIcons
+                name="groups"
+                size={18}
+                color={colors.californiaOrange}
+              />
               <Text style={styles.goingText}>{goingCount}</Text>
+              <Text style={styles.goingLabel}>
+                {isGoing ? i18n._("Not going") : i18n._("I'm going")}
+              </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.dateOfEvent}>

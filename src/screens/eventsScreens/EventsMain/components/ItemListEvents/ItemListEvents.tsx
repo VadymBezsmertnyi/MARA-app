@@ -2,6 +2,7 @@ import React, { FunctionComponent, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { getDistance } from "geolib";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // types
 import { RootEventsScreensParamList } from "../../../../../navigators/Navigators.types";
@@ -26,7 +27,6 @@ import { PATHS_EVENTS_SCREENS } from "../../../../../navigators/useNavigator.con
 import {
   IconChat,
   IconLocationMarker,
-  IconProfileAvatar,
   IconStar,
 } from "../../../../../icons/components";
 
@@ -152,7 +152,11 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
             ) : null}
             {goingCount > 0 ? (
               <View style={styles.inner}>
-                <IconProfileAvatar width={12} height={12} />
+                <MaterialIcons
+                  name="groups"
+                  size={12}
+                  color={colors.californiaOrange}
+                />
                 <Text style={styles.infoText}>{goingCount}</Text>
               </View>
             ) : null}

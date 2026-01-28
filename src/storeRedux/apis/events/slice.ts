@@ -286,38 +286,38 @@ export const eventsSlice = createSlice({
       .addMatcher(
         api.endpoints.addEventComment.matchFulfilled,
         (state, action) => {
-        if (action.payload?.event) {
-          const updatedEvent = action.payload.event;
-          const updateList = (list: TEvents) =>
-            list.map((event) =>
-              event._id === updatedEvent._id ? updatedEvent : event
+          if (action.payload?.event) {
+            const updatedEvent = action.payload.event;
+            const updateList = (list: TEvents) =>
+              list.map((event) =>
+                event._id === updatedEvent._id ? updatedEvent : event
+              );
+            state.upcomingEventsList = getSortEvents(
+              updateList(state.upcomingEventsList)
             );
-          state.upcomingEventsList = getSortEvents(
-            updateList(state.upcomingEventsList)
-          );
-          state.pastEventsList = getSortEvents(
-            updateList(state.pastEventsList)
-          );
-          state.eventsUserList = getSortEvents(
-            updateList(state.eventsUserList)
-          );
-          state.upcomingClosest = getSortEvents(
-            updateList(state.upcomingClosest)
-          ).slice(0, 3);
-          state.pastClosest = getSortEvents(updateList(state.pastClosest));
-          state.loading = false;
-          state.error = null;
-        } else {
-          state.loading = false;
-          state.error = "Помилка валідації даних від сервера (addComment)";
-        }
+            state.pastEventsList = getSortEvents(
+              updateList(state.pastEventsList)
+            );
+            state.eventsUserList = getSortEvents(
+              updateList(state.eventsUserList)
+            );
+            state.upcomingClosest = getSortEvents(
+              updateList(state.upcomingClosest)
+            ).slice(0, 3);
+            state.pastClosest = getSortEvents(updateList(state.pastClosest));
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error = "Помилка валідації даних від сервера (addComment)";
+          }
         }
       )
       .addMatcher(
         api.endpoints.addEventComment.matchRejected,
         (state, action) => {
-        state.loading = false;
-        state.error = action.error.message || "Помилка додавання коментаря";
+          state.loading = false;
+          state.error = action.error.message || "Помилка додавання коментаря";
         }
       )
       // changeComment
@@ -360,6 +360,90 @@ export const eventsSlice = createSlice({
         (state, action) => {
           state.loading = false;
           state.error = action.error.message || "Помилка редагування коментаря";
+        }
+      )
+      // addGoing
+      .addMatcher(api.endpoints.addEventGoing.matchPending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addMatcher(
+        api.endpoints.addEventGoing.matchFulfilled,
+        (state, action) => {
+          if (action.payload?.event) {
+            const updatedEvent = action.payload.event;
+            const updateList = (list: TEvents) =>
+              list.map((event) =>
+                event._id === updatedEvent._id ? updatedEvent : event
+              );
+            state.upcomingEventsList = getSortEvents(
+              updateList(state.upcomingEventsList)
+            );
+            state.pastEventsList = getSortEvents(
+              updateList(state.pastEventsList)
+            );
+            state.eventsUserList = getSortEvents(
+              updateList(state.eventsUserList)
+            );
+            state.upcomingClosest = getSortEvents(
+              updateList(state.upcomingClosest)
+            ).slice(0, 3);
+            state.pastClosest = getSortEvents(updateList(state.pastClosest));
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error = "Помилка валідації даних від сервера (addGoing)";
+          }
+        }
+      )
+      .addMatcher(
+        api.endpoints.addEventGoing.matchRejected,
+        (state, action) => {
+          state.loading = false;
+          state.error = action.error.message || "Помилка додавання в список";
+        }
+      )
+      // removeGoing
+      .addMatcher(api.endpoints.removeEventGoing.matchPending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addMatcher(
+        api.endpoints.removeEventGoing.matchFulfilled,
+        (state, action) => {
+          if (action.payload?.event) {
+            const updatedEvent = action.payload.event;
+            const updateList = (list: TEvents) =>
+              list.map((event) =>
+                event._id === updatedEvent._id ? updatedEvent : event
+              );
+            state.upcomingEventsList = getSortEvents(
+              updateList(state.upcomingEventsList)
+            );
+            state.pastEventsList = getSortEvents(
+              updateList(state.pastEventsList)
+            );
+            state.eventsUserList = getSortEvents(
+              updateList(state.eventsUserList)
+            );
+            state.upcomingClosest = getSortEvents(
+              updateList(state.upcomingClosest)
+            ).slice(0, 3);
+            state.pastClosest = getSortEvents(updateList(state.pastClosest));
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error = "Помилка валідації даних від сервера (removeGoing)";
+          }
+        }
+      )
+      .addMatcher(
+        api.endpoints.removeEventGoing.matchRejected,
+        (state, action) => {
+          state.loading = false;
+          state.error = action.error.message || "Помилка видалення зі списку";
         }
       )
       // getClosestEvents
