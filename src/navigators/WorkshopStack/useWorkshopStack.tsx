@@ -6,7 +6,7 @@ import { PATHS_WORKSHOP_SCREENS } from "../useNavigator.constants";
 
 // screens
 import { WorkshopMain } from "../../screens/workshopsScreens/WorkshopsMain/WorkshopMain";
-import { WorkshopsItem } from "../../screens/workshopsScreens/WorkshopsItem/WorkshopsItem";
+import { WorkshopDetailsScreen } from "../../screens/workshopsScreens/WorkshopsItem/WorkshopsItem";
 import { WorkshopAdd } from "../../screens/workshopsScreens/WorkshopAdd/WorkshopAdd";
 
 export const useWorkshopStack = () => {
@@ -25,7 +25,7 @@ export const useWorkshopStack = () => {
       name: PATHS_WORKSHOP_SCREENS.workshopItem,
       title: i18n._("Workshop"),
       headerShown: false,
-      component: WorkshopsItem,
+      component: WorkshopDetailsScreen,
     },
     {
       id: PATHS_WORKSHOP_SCREENS.workshopAdd,

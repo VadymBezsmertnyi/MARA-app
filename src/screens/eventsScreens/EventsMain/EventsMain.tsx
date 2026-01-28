@@ -28,7 +28,7 @@ import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider
 import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 
 // components
-import { ItemListEvents } from "./components/ItemListEvents/ItemListEvents";
+import { EventListItem } from "./components/ItemListEvents/ItemListEvents";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
 import { Header } from "../../../components/Header/Header";
@@ -136,7 +136,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                 eventsWill
                   .slice(0, 3)
                   .map((eventItem) => (
-                    <ItemListEvents
+                    <EventListItem
                       key={`event-${eventItem._id}`}
                       item={eventItem}
                       navigation={navigation}
@@ -179,7 +179,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
                 eventsOld
                   .slice(0, 3)
                   .map((itemOld) => (
-                    <ItemListEvents
+                    <EventListItem
                       key={`event-${itemOld._id}`}
                       item={itemOld}
                       navigation={navigation}

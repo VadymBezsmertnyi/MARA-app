@@ -30,7 +30,7 @@ import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider
 
 // components
 import { Input } from "../../../components/Input/Input";
-import { WorkshopItem } from "./components/WorkshopItem/WorkshopItem";
+import { WorkshopListItem } from "./components/WorkshopItem/WorkshopItem";
 import { Header } from "../../../components/Header/Header";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { HeaderActions } from "./components/HeaderActions/HeaderActions";
@@ -274,7 +274,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                     })
                   : null;
               return (
-                <WorkshopItem
+                <WorkshopListItem
                   key={`workshop-${item._id}`}
                   workshopId={item._id}
                   title={item.title}

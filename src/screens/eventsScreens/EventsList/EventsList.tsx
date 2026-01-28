@@ -25,7 +25,7 @@ import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider
 
 // components
 import { Input } from "../../../components/Input/Input";
-import { ItemListEvents } from "../EventsMain/components/ItemListEvents/ItemListEvents";
+import { EventListItem } from "../EventsMain/components/ItemListEvents/ItemListEvents";
 import { IconSearchInput } from "../../../icons/components";
 import { Header } from "../../../components/Header/Header";
 import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
@@ -297,7 +297,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
           scrollEventThrottle={400}
         >
           {eventsList.map((eventItem) => (
-            <ItemListEvents
+            <EventListItem
               key={`event-${eventItem._id}`}
               item={eventItem}
               navigation={navigation}

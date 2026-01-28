@@ -27,7 +27,7 @@ import WorkshopPlaceholder from "../../../../../../assets/default/workshop-place
 import { styles } from "./WorkshopItem.styles";
 import colors from "../../../../../../styles/colors";
 
-type WorkshopItemProps = {
+type WorkshopListItemProps = {
   workshopId: string;
   title: string;
   description: string;
@@ -40,7 +40,7 @@ type WorkshopItemProps = {
   image: { url: string } | null;
 };
 
-export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
+export const WorkshopListItem: FunctionComponent<WorkshopListItemProps> = ({
   workshopId,
   title,
   description,

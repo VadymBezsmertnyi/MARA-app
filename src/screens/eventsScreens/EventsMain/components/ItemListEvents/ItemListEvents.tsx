@@ -34,12 +34,12 @@ import {
 import { styles } from "./ItemListEvents.styles";
 import colors from "../../../../../../styles/colors";
 
-type ItemListEventsProps = {
+type EventListItemProps = {
   item: TEvent;
   navigation: NativeStackNavigationProp<RootEventsScreensParamList>;
 };
 
-export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
+export const EventListItem: FunctionComponent<EventListItemProps> = ({
   item,
   navigation,
 }) => {
