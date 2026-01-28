@@ -47,7 +47,6 @@ export const userDataSchema = z.object({
   email: z.string().nullable(),
   eventsIds: z.array(z.string()),
   workshopsIds: z.array(z.string()),
-  isCheckBiometric: z.boolean().nullable(),
   languageLocal: z.enum(languagesKeys),
   isNewUser: z.boolean(),
   isDeleteUser: z.boolean(),
