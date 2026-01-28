@@ -118,7 +118,8 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     pastClosest,
   ]);
   const eventFromList = useMemo(
-    () => (eventId ? combinedEvents.find((event) => event._id === eventId) : null),
+    () =>
+      eventId ? combinedEvents.find((event) => event._id === eventId) : null,
     [eventId, combinedEvents]
   );
   const eventFromApi = useMemo(
