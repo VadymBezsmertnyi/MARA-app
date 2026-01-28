@@ -89,6 +89,21 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
   },
+  comment: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: horizontalScale(6),
+  },
+  inner: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: horizontalScale(4),
+  },
+  infoText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 12,
+    color: colors.grayFuscous,
+  },
   containerNowLabel: {
     borderRadius: 2,
     paddingHorizontal: 5,

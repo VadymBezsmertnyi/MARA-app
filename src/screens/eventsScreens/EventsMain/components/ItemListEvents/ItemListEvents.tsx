@@ -23,7 +23,11 @@ import { LinearGradientCustom } from "../../../../../components/LinearGradientCu
 import { PATHS_EVENTS_SCREENS } from "../../../../../navigators/useNavigator.constants";
 
 // icons
-import { IconLocationMarker } from "../../../../../icons/components";
+import {
+  IconChat,
+  IconLocationMarker,
+  IconStar,
+} from "../../../../../icons/components";
 
 // styles
 import { styles } from "./ItemListEvents.styles";
@@ -81,6 +85,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
     if (!placeDB) return "";
     return placeDB[language].formatted_address;
   }, [placesDB, item.place_id]);
+  const commentsCount = item.comments?.length || 0;
 
   const selectEvent = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
@@ -125,6 +130,18 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
               : i18n._(`Not enabled location`)}
           </Text>
         </View>
+        {commentsCount > 0 && item.rating ? (
+          <View style={styles.comment}>
+            <View style={styles.inner}>
+              <IconChat width={12} height={12} fill={colors.californiaOrange} />
+              <Text style={styles.infoText}>{commentsCount}</Text>
+            </View>
+            <View style={styles.inner}>
+              <IconStar width={12} height={12} fill={colors.yellow} />
+              <Text style={styles.infoText}>{item.rating}</Text>
+            </View>
+          </View>
+        ) : null}
       </View>
     </TouchableOpacity>
   );
