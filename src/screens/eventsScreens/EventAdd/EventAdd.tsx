@@ -369,13 +369,17 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
       if (eventUser) {
         setEventName(eventUser.title);
         if (eventUser.place_id?.place_id) {
-          const placeDB = await getPlace(eventUser.place_id?.place_id);
-          setPlaceAddress({
-            placeId: eventUser.place_id.place_id,
-            title: placeDB ? placeDB[language].formatted_address : "",
-            address: eventUser.place_address,
-            coordinates: eventUser.coordinates,
-          });
+          try {
+            const placeDB = await getPlace(eventUser.place_id?.place_id);
+            setPlaceAddress({
+              placeId: eventUser.place_id.place_id,
+              title: placeDB ? placeDB[language].formatted_address : "",
+              address: eventUser.place_address,
+              coordinates: eventUser.coordinates,
+            });
+          } catch (error) {
+            console.warn("error getEventUser getPlace:", error);
+          }
         }
         setBeginDate(new Date(eventUser.date.start));
         setBeginTime(new Date(eventUser.date.start));
