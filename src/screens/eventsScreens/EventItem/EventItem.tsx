@@ -52,6 +52,7 @@ import { ModalEnterCode } from "../../settingsScreens/SettingsWorkshops/componen
 import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
 import { FooterComments } from "./components/FooterComments/FooterComments";
 import { ModalComment } from "./components/ModalComment/ModalComment";
+import { TimelineSection } from "./components/TimelineSection/TimelineSection";
 
 // icons
 import {
@@ -528,6 +529,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               </View>
             </View>
           </View>
+          <TimelineSection timeline={eventSelect.timeline} />
           <View style={styles.dateOfEvent}>
             <Text style={styles.titleOther}>
               {i18n._("Price for participation")}:
