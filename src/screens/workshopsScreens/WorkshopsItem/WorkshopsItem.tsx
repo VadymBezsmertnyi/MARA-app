@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useMemo, useRef, useState } from "react";
+import React, {
+  FunctionComponent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import {
   NativeScrollEvent,
   NativeSyntheticEvent,
@@ -90,7 +96,8 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const [sendSms] = useSendSmsVerificationMutation();
   const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
   const [getWorkshopsUser] = useLazyGetWorkshopsUserQuery();
-  const [getWorkshopById] = useLazyGetWorkshopByIdQuery();
+  const [getWorkshopById, { data: workshopByIdData }] =
+    useLazyGetWorkshopByIdQuery();
   const { placesDB } = usePlacesProvider();
   const { location } = useMapProvider();
   const { createSharedLink } = useSharingProvider();
@@ -102,11 +109,27 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const [showReportModal, setShowReportModal] = useState(false);
   const [codeError, setCodeError] = useState<string | null>(null);
   const scrollViewRef = useRef<ScrollView | null>(null);
-  const selectWorkshop = useMemo(
+  const workshopId =
+    typeof route.params?.workshopId === "string"
+      ? route.params.workshopId
+      : undefined;
+  const workshopFromList = useMemo(
     () =>
-      workshops.find((workshop) => workshop._id === route.params?.workshopId) ||
-      null,
-    [workshops, route.params]
+      workshopId
+        ? workshops.find((workshop) => workshop._id === workshopId) || null
+        : null,
+    [workshopId, workshops]
+  );
+  const workshopFromApi = useMemo(
+    () =>
+      workshopByIdData?.workshop && workshopByIdData.workshop._id === workshopId
+        ? workshopByIdData.workshop
+        : null,
+    [workshopByIdData?.workshop, workshopId]
+  );
+  const selectWorkshop = useMemo(
+    () => workshopFromList || workshopFromApi,
+    [workshopFromList, workshopFromApi]
   );
   const distance =
     location && selectWorkshop?.coordinates
@@ -329,6 +352,13 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
     } else
       setCodeError(result.data?.reason || i18n._("Invalid or expired code"));
   };
+
+  useEffect(() => {
+    if (!workshopId) return;
+    if (workshopFromList) return;
+    if (workshopFromApi) return;
+    getWorkshopById({ workshopId });
+  }, [workshopId, workshopFromList, workshopFromApi, getWorkshopById]);
 
   return (
     <View
