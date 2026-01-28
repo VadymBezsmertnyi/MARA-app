@@ -51,6 +51,7 @@ import { getFormatPhoneNumber } from "../../../helps/helps";
 
 // components
 import { Header } from "../../../components/Header/Header";
+import { HeaderRightActions } from "../../../components/HeaderRightActions/HeaderRightActions";
 import { CustomSlider } from "../../../components/CustomSlider/CustomSlider";
 import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { Map } from "../../../components/Map/Map";
@@ -372,13 +373,11 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       <Header
         title={i18n._("Workshop")}
         rightElement={
-          <TouchableOpacity
-            accessibilityLabel={i18n._("Select share page")}
-            style={styles.headerShareButton}
-            onPress={onPressShare}
-          >
-            <MaterialIcons name="share" size={22} color={colors.blazeOrange} />
-          </TouchableOpacity>
+          <HeaderRightActions
+            onPressLike={onPressLike}
+            isLike={isLike}
+            onPressShare={onPressShare}
+          />
         }
         onPressLeftElement={() => {
           if (!route.params?.isMap) navigation.goBack();

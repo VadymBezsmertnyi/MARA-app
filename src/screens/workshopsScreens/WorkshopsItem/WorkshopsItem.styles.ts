@@ -10,7 +10,6 @@ const WIDTH = Dimensions.get("window").width;
 
 export const styles = StyleSheet.create({
   container: { gap: 8 },
-  headerShareButton: { paddingHorizontal: 8, paddingVertical: 4 },
   containerEmpty: { height: 190 },
   containerMain: { gap: 8, width: "100%" },
   containerInfo: { gap: 6, width: "100%", paddingHorizontal: 12 },

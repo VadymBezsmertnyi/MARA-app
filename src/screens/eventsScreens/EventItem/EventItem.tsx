@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Share, Text, TouchableOpacity, View } from "react-native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -37,7 +37,7 @@ import { Map as MapComponent } from "../../../components/Map/Map";
 import { DistanceCard } from "../../../components/DistanceCard/DistanceCard";
 import { GalleryModal } from "../../../components/GalleryModal/GalleryModal";
 import { Header } from "../../../components/Header/Header";
-import { HeaderRightItem } from "../../workshopsScreens/WorkshopsItem/components/HeaderRightItem/HeaderRightItem";
+import { HeaderRightActions } from "../../../components/HeaderRightActions/HeaderRightActions";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ModalEnterCode } from "../../settingsScreens/SettingsWorkshops/components/ModalEnterCode/ModalEnterCode";
 import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
@@ -53,6 +53,9 @@ import {
 import { styles } from "./EventItem.styles";
 import colors from "../../../../styles/colors";
 import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
+
+const EXPO_PUBLIC_WEB_SITE_URL =
+  process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
 type EventItemProps = {
   navigation: NativeStackNavigationProp<
@@ -79,7 +82,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const { location } = useMapProvider();
   const { placesDB } = usePlacesProvider();
   const { userData } = useUserSelector();
-  const { getSharedLink } = useSharingProvider();
+  const { createSharedLink } = useSharingProvider();
   const { showMessageServer } = useDropDownAlertProvider();
   const [changeEventMutation] = useChangeEventMutation();
   const [sendSms] = useSendSmsVerificationMutation();
@@ -297,8 +300,29 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
     fetchEventById({ eventId });
   }, [eventId, eventFromList, eventFromApi]);
 
-  const onPressShare = () => {
-    if (eventSelect) getSharedLink({ eventId: eventSelect._id });
+  const onPressShare = async () => {
+    if (!eventSelect) return;
+
+    const appLink = await createSharedLink({ eventId: eventSelect._id });
+    if (!appLink) {
+      await showMessageServer(
+        i18n._("Error"),
+        i18n._("Failed to create share link"),
+        "error"
+      );
+      return;
+    }
+
+    const shortLink = eventSelect._id;
+    const webLink = `${EXPO_PUBLIC_WEB_SITE_URL}/share/${shortLink}`;
+    const message = i18n._(
+      "Open the event in the app:\n{appLink}\n\nOpen in the browser:\n{webLink}",
+      { appLink, webLink }
+    );
+    await Share.share({
+      title: i18n._("Share event"),
+      message,
+    });
   };
 
   if (!eventSelect) return null;
@@ -308,7 +332,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
       <Header
         title={i18n._("Event")}
         rightElement={
-          <HeaderRightItem
+          <HeaderRightActions
             onPressLike={onPressLike}
             isLike={isLike}
             onPressShare={onPressShare}
