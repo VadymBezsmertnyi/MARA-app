@@ -59,22 +59,22 @@ import { ListWorksDo } from "./components/ListWorksDo/ListWorksDo";
 import { FooterComments } from "./components/FooterComments/FooterComments";
 import { ModalComment } from "./components/ModalComment/ModalComment";
 import { WorkingHoursDisplay } from "./components/WorkingHoursDisplay/WorkingHoursDisplay";
-import { ModalSelectPhone } from "../../../screens/settingsScreens/SettingsWorkshops/components/ModalSelectPhone/ModalSelectPhone";
-import { ModalEnterCode } from "../../../screens/settingsScreens/SettingsWorkshops/components/ModalEnterCode/ModalEnterCode";
+import { ModalSelectPhone } from "../../settingsScreens/SettingsWorkshops/components/ModalSelectPhone/ModalSelectPhone";
+import { ModalEnterCode } from "../../settingsScreens/SettingsWorkshops/components/ModalEnterCode/ModalEnterCode";
 import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
 
 // icons
 import { IconAutoService, IconMotoService } from "../../../icons/components";
 
 // styles
-import { styles } from "./WorkshopsItem.styles";
+import { styles } from "./WorkshopsDetails.styles";
 import colors from "../../../../styles/colors";
 import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
 const EXPO_PUBLIC_WEB_SITE_URL =
   process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
-type WorkshopDetailsScreenProps = {
+type WorkshopsDetailsProps = {
   navigation: NativeStackNavigationProp<
     RootWorkshopsScreensParamList & RootMainTabsParamList
   >;
@@ -84,9 +84,10 @@ type WorkshopDetailsScreenProps = {
   >;
 };
 
-export const WorkshopDetailsScreen: FunctionComponent<
-  WorkshopDetailsScreenProps
-> = ({ navigation, route }) => {
+export const WorkshopsDetails: FunctionComponent<WorkshopsDetailsProps> = ({
+  navigation,
+  route,
+}) => {
   const { heightTabBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
   const { userData } = useUserSelector();

@@ -7,7 +7,7 @@ import { PATHS_EVENTS_SCREENS } from "../useNavigator.constants";
 // News and events
 import { EventsMain } from "../../screens/eventsScreens/EventsMain/EventsMain";
 import { EventsList } from "../../screens/eventsScreens/EventsList/EventsList";
-import { EventDetailsScreen } from "../../screens/eventsScreens/EventDetails/EventDetails";
+import { EventDetails } from "../../screens/eventsScreens/EventDetails/EventDetails";
 import { AddEvent } from "../../screens/eventsScreens/EventAdd/EventAdd";
 
 export const useNewsStack = () => {
@@ -33,7 +33,7 @@ export const useNewsStack = () => {
       name: PATHS_EVENTS_SCREENS.eventItem,
       title: i18n._("Event"),
       headerShown: false,
-      component: EventDetailsScreen,
+      component: EventDetails,
     },
     {
       id: PATHS_EVENTS_SCREENS.eventAdd,

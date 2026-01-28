@@ -69,7 +69,7 @@ import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 const EXPO_PUBLIC_WEB_SITE_URL =
   process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
-type EventDetailsScreenProps = {
+type EventDetailsProps = {
   navigation: NativeStackNavigationProp<
     RootEventsScreensParamList & RootMainTabsParamList
   >;
@@ -79,7 +79,7 @@ type EventDetailsScreenProps = {
   >;
 };
 
-export const EventDetailsScreen: FunctionComponent<EventDetailsScreenProps> = ({
+export const EventDetails: FunctionComponent<EventDetailsProps> = ({
   route,
   navigation,
 }) => {
