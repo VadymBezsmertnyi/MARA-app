@@ -307,12 +307,16 @@ export const AddEvent: FunctionComponent<AddEventProps> = ({ navigation }) => {
             };
           return contact;
         });
-        const timelinePayload = timelineItems.map((item) => ({
-          start: item.start,
-          finish: item.finish,
-          title: item.title.trim(),
-          description: item.description.trim() ? item.description.trim() : null,
-        }));
+        const timelinePayload = timelineItems
+          .map((item) => ({
+            start: item.start,
+            finish: item.finish,
+            title: item.title.trim(),
+            description: item.description.trim()
+              ? item.description.trim()
+              : null,
+          }))
+          .sort((a, b) => a.start - b.start);
         const newEvent = {
           ...DEFAULT_EVENT_DATA,
           title: eventName,

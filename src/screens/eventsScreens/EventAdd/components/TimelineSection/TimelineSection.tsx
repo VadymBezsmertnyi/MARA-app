@@ -34,6 +34,16 @@ type TimelineSectionProps = {
   eventRange: { min: number; max: number };
 };
 
+type FormStateType = {
+  title: string;
+  description: string;
+  startDate: Date;
+  startTime: Date;
+  finishDate: Date;
+  finishTime: Date;
+  hasFinish: boolean;
+};
+
 export const validateTimelineItems = (
   items: TimelineItemDraft[],
   eventRange: { min: number; max: number },
@@ -87,13 +97,15 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
   const { i18n } = useLocalesProvider();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [startDate, setStartDate] = useState<Date>(new Date(eventRange.min));
-  const [startTime, setStartTime] = useState<Date>(new Date(eventRange.min));
-  const [finishDate, setFinishDate] = useState<Date>(new Date(eventRange.min));
-  const [finishTime, setFinishTime] = useState<Date>(new Date(eventRange.min));
-  const [hasFinish, setHasFinish] = useState(false);
+  const [form, setForm] = useState<FormStateType>({
+    title: "",
+    description: "",
+    startDate: new Date(eventRange.min),
+    startTime: new Date(eventRange.min),
+    finishDate: new Date(eventRange.min),
+    finishTime: new Date(eventRange.min),
+    hasFinish: false,
+  });
 
   const minDate = useMemo(() => new Date(eventRange.min), [eventRange.min]);
   const maxDate = useMemo(() => new Date(eventRange.max), [eventRange.max]);
@@ -106,30 +118,38 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
   const openModalWithItem = (item?: TimelineItemDraft) => {
     if (item) {
       setEditingId(item.id);
-      setTitle(item.title);
-      setDescription(item.description);
-      setStartDate(new Date(item.start));
-      setStartTime(new Date(item.start));
+      setForm((prev) => ({
+        ...prev,
+        title: item.title,
+        description: item.description,
+        startDate: new Date(item.start),
+        startTime: new Date(item.start),
+      }));
       const finishTimestamp = item.finish ?? item.start;
-      setFinishDate(new Date(finishTimestamp));
-      setFinishTime(new Date(finishTimestamp));
-      setHasFinish(item.finish !== null);
+      setForm((prev) => ({
+        ...prev,
+        finishDate: new Date(finishTimestamp),
+        finishTime: new Date(finishTimestamp),
+        hasFinish: item.finish !== null,
+      }));
     } else {
       const startTimestamp = clampToRange(eventRange.min);
       setEditingId(null);
-      setTitle("");
-      setDescription("");
-      setStartDate(new Date(startTimestamp));
-      setStartTime(new Date(startTimestamp));
-      setFinishDate(new Date(startTimestamp));
-      setFinishTime(new Date(startTimestamp));
-      setHasFinish(false);
+      setForm({
+        title: "",
+        description: "",
+        startDate: new Date(startTimestamp),
+        startTime: new Date(startTimestamp),
+        finishDate: new Date(startTimestamp),
+        finishTime: new Date(startTimestamp),
+        hasFinish: false,
+      });
     }
     setIsModalVisible(true);
   };
 
   const handleSaveItem = () => {
-    if (!title.trim()) {
+    if (!form.title.trim()) {
       Toast.show({
         type: "error",
         text1: i18n._("Error"),
@@ -138,22 +158,22 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
       return;
     }
     const startTimestamp = clampToRange(
-      combineDateAndTime(startDate, startTime).getTime()
+      combineDateAndTime(form.startDate, form.startTime).getTime()
     );
     let finishTimestamp: number | null = null;
-    if (hasFinish) {
+    if (form.hasFinish) {
       finishTimestamp = clampToRange(
-        combineDateAndTime(finishDate, finishTime).getTime()
+        combineDateAndTime(form.finishDate, form.finishTime).getTime()
       );
       if (finishTimestamp < startTimestamp) finishTimestamp = startTimestamp;
     }
 
     const nextItem: TimelineItemDraft = {
       id: editingId || createDraftId(),
-      title: title.trim(),
-      description: description.trim(),
+      title: form.title.trim(),
+      description: form.description.trim(),
       start: startTimestamp,
-      finish: hasFinish ? finishTimestamp : null,
+      finish: form.hasFinish ? finishTimestamp : null,
     };
 
     setTimelineItems((prev) => {
@@ -237,33 +257,44 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
             isRegular
             placeholder={i18n._("Title")}
             label={i18n._("Title")}
-            value={title}
-            onChange={setTitle}
+            value={form.title}
+            onChange={(value) => setForm((prev) => ({ ...prev, title: value }))}
           />
           <Input
             placeholder={i18n._("Description (optional)")}
             label={i18n._("Description")}
-            value={description}
-            onChange={setDescription}
+            value={form.description}
+            onChange={(value) =>
+              setForm((prev) => ({ ...prev, description: value }))
+            }
             customStyles={styles.modalDescription}
           />
           <View style={styles.pickerRow}>
             <View style={styles.pickerItem}>
               <DatePicker
                 isRegular
-                value={startDate}
+                value={form.startDate}
                 label={i18n._("Start")}
                 onChange={(_k, d) => {
                   if (!d) return;
-                  setStartDate(d);
-                  const nextStart = combineDateAndTime(d, startTime).getTime();
+                  setForm((prev) => ({ ...prev, startDate: d }));
+                  const nextStart = combineDateAndTime(
+                    d,
+                    form.startTime
+                  ).getTime();
                   if (
-                    hasFinish &&
+                    form.hasFinish &&
                     nextStart >
-                      combineDateAndTime(finishDate, finishTime).getTime()
+                      combineDateAndTime(
+                        form.finishDate,
+                        form.finishTime
+                      ).getTime()
                   ) {
-                    setFinishDate(d);
-                    setFinishTime(d);
+                    setForm((prev) => ({
+                      ...prev,
+                      finishDate: d,
+                      finishTime: d,
+                    }));
                   }
                 }}
                 mode="date"
@@ -273,10 +304,10 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
             </View>
             <View style={styles.pickerItem}>
               <DatePicker
-                value={startTime}
+                value={form.startTime}
                 onChange={(_k, d) => {
                   if (!d) return;
-                  setStartTime(d);
+                  setForm((prev) => ({ ...prev, startTime: d }));
                 }}
                 mode="time"
                 minimumDate={minDate}
@@ -284,15 +315,15 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
               />
             </View>
           </View>
-          {hasFinish && (
+          {form.hasFinish && (
             <View style={styles.pickerRow}>
               <View style={styles.pickerItem}>
                 <DatePicker
-                  value={finishDate}
+                  value={form.finishDate}
                   label={i18n._("Finish")}
                   onChange={(_k, d) => {
                     if (!d) return;
-                    setFinishDate(d);
+                    setForm((prev) => ({ ...prev, finishDate: d }));
                   }}
                   mode="date"
                   minimumDate={minDate}
@@ -301,10 +332,10 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
               </View>
               <View style={styles.pickerItem}>
                 <DatePicker
-                  value={finishTime}
+                  value={form.finishTime}
                   onChange={(_k, d) => {
                     if (!d) return;
-                    setFinishTime(d);
+                    setForm((prev) => ({ ...prev, finishTime: d }));
                   }}
                   mode="time"
                   minimumDate={minDate}
@@ -316,10 +347,12 @@ export const TimelineSection: FunctionComponent<TimelineSectionProps> = ({
 
           <TouchableOpacity
             style={styles.finishToggle}
-            onPress={() => setHasFinish((prev) => !prev)}
+            onPress={() =>
+              setForm((prev) => ({ ...prev, hasFinish: !prev.hasFinish }))
+            }
           >
             <Text style={styles.finishToggleText}>
-              {hasFinish
+              {form.hasFinish
                 ? i18n._("Remove finish time")
                 : i18n._("Add finish time")}
             </Text>
