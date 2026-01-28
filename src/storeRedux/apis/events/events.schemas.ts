@@ -54,7 +54,7 @@ export const eventSchema = z.object({
   currency: codeCurrenciesSchema,
   description: z.string(),
   imageFiles: z.array(fileSchema).default([]),
-  likeUserIds: z.array(populateUserData),
+  likeUserIds: z.array(z.string()).default([]),
   contacts: z.array(contactSchema).default([]),
   verification: z
     .object({

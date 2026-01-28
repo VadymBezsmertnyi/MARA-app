@@ -139,7 +139,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
   const isLike = useMemo(
     () =>
       userData && eventSelect
-        ? eventSelect.likeUserIds.map((item) => item._id).includes(userData._id)
+        ? eventSelect.likeUserIds.includes(userData._id)
         : false,
     [eventSelect?.likeUserIds]
   );
@@ -218,13 +218,10 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         url: image.url || "",
       }));
       const likeUserIds = isLike
-        ? eventSelect.likeUserIds
-            .filter((likeUserId) => likeUserId._id !== userData?._id)
-            .map((item) => item._id)
-        : [
-            ...eventSelect.likeUserIds.map((likeUserId) => likeUserId._id),
-            userData._id,
-          ];
+        ? eventSelect.likeUserIds.filter(
+            (likeUserId) => likeUserId !== userData?._id
+          )
+        : [...eventSelect.likeUserIds, userData._id];
       try {
         await changeEventMutation({
           body: {

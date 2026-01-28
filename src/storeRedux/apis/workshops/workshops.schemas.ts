@@ -98,7 +98,7 @@ export const workshopSchema = z.object({
   dataCreate: z.number(),
   comments: z.array(commentWorkshopSchema).default([]),
   rating: z.number().nullable(),
-  likeUserIds: z.array(populateUserData),
+  likeUserIds: z.array(z.string()).default([]),
   verification: z
     .object({
       status: z.enum(["pending", "verified", "rejected"]),

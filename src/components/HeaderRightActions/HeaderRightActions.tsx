@@ -6,10 +6,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // icons
-import {
-  IconLikeFullGradient,
-  IconLikeGradient,
-} from "../../icons/components";
+import { IconLikeFullGradient, IconLikeGradient } from "../../icons/components";
 
 // styles
 import { styles } from "./HeaderRightActions.styles";
@@ -45,7 +42,7 @@ export const HeaderRightActions: FunctionComponent<HeaderRightActionsProps> = ({
           onPress={onPressShare}
           style={styles.button}
         >
-          <MaterialIcons name="share" size={22} color={colors.white} />
+          <MaterialIcons name="share" size={22} color={colors.blazeOrange} />
         </TouchableOpacity>
       )}
       {showLike && onPressLike && (

@@ -142,9 +142,7 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
   const isLike = useMemo(
     () =>
       userData && selectWorkshop
-        ? selectWorkshop.likeUserIds
-            .map((likeUserId) => likeUserId._id)
-            .includes(userData._id)
+        ? selectWorkshop.likeUserIds.includes(userData._id)
         : false,
     [selectWorkshop?.likeUserIds]
   );
@@ -254,10 +252,10 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
       image,
     }));
     const likeUserIds = isLike
-      ? selectWorkshop.likeUserIds
-          .filter((likeUserId) => likeUserId._id !== userData?._id)
-          .map((item) => item._id)
-      : [...selectWorkshop.likeUserIds.map((item) => item._id), userData._id];
+      ? selectWorkshop.likeUserIds.filter(
+          (likeUserId) => likeUserId !== userData?._id
+        )
+      : [...selectWorkshop.likeUserIds, userData._id];
     await changeWorkshopMutation({
       body: {
         ...selectWorkshop,
