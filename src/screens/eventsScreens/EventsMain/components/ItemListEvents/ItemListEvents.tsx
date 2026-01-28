@@ -26,6 +26,7 @@ import { PATHS_EVENTS_SCREENS } from "../../../../../navigators/useNavigator.con
 import {
   IconChat,
   IconLocationMarker,
+  IconProfileAvatar,
   IconStar,
 } from "../../../../../icons/components";
 
@@ -86,6 +87,7 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
     return placeDB[language].formatted_address;
   }, [placesDB, item.place_id]);
   const commentsCount = item.comments?.length || 0;
+  const goingCount = item.goingUserIds?.length || 0;
 
   const selectEvent = () => {
     navigation.navigate(PATHS_EVENTS_SCREENS.eventItem, {
@@ -130,16 +132,30 @@ export const ItemListEvents: FunctionComponent<ItemListEventsProps> = ({
               : i18n._(`Not enabled location`)}
           </Text>
         </View>
-        {commentsCount > 0 && item.rating ? (
-          <View style={styles.comment}>
-            <View style={styles.inner}>
-              <IconChat width={12} height={12} fill={colors.californiaOrange} />
-              <Text style={styles.infoText}>{commentsCount}</Text>
-            </View>
-            <View style={styles.inner}>
-              <IconStar width={12} height={12} fill={colors.yellow} />
-              <Text style={styles.infoText}>{item.rating}</Text>
-            </View>
+        {commentsCount > 0 || goingCount > 0 ? (
+          <View style={styles.statsRow}>
+            {commentsCount > 0 && item.rating ? (
+              <View style={styles.comment}>
+                <View style={styles.inner}>
+                  <IconChat
+                    width={12}
+                    height={12}
+                    fill={colors.californiaOrange}
+                  />
+                  <Text style={styles.infoText}>{commentsCount}</Text>
+                </View>
+                <View style={styles.inner}>
+                  <IconStar width={12} height={12} fill={colors.yellow} />
+                  <Text style={styles.infoText}>{item.rating}</Text>
+                </View>
+              </View>
+            ) : null}
+            {goingCount > 0 ? (
+              <View style={styles.inner}>
+                <IconProfileAvatar width={12} height={12} />
+                <Text style={styles.infoText}>{goingCount}</Text>
+              </View>
+            ) : null}
           </View>
         ) : null}
       </View>

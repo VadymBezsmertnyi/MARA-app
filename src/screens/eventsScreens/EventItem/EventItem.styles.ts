@@ -42,6 +42,24 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
   },
+  goingButtonContainer: {
+    alignItems: "flex-end",
+    marginTop: 8,
+  },
+  goingButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+    backgroundColor: colors.lightOrange,
+  },
+  goingText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    color: colors.blackCoffee,
+  },
   locationTitle: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,

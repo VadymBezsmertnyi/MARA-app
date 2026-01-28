@@ -57,6 +57,7 @@ import {
   RadixIconsCash,
   RadixIconsCalendar,
   MingcuteTimeLine,
+  IconProfileAvatar,
 } from "../../../icons/components";
 
 // styles
@@ -204,6 +205,7 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         : null,
     [location, eventSelect]
   );
+  const goingCount = eventSelect?.goingUserIds?.length || 0;
   const showDescription = useMemo(() => {
     if (!eventSelect) return null;
     if (!isFullDescription) return `${eventSelect.description.slice(0, 300)}. `;
@@ -415,6 +417,12 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
               {showTitlePlace}
             </Text>
             <DistanceCard distance={distance} />
+          </View>
+          <View style={styles.goingButtonContainer}>
+            <TouchableOpacity style={styles.goingButton}>
+              <IconProfileAvatar width={18} height={18} />
+              <Text style={styles.goingText}>{goingCount}</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.dateOfEvent}>
             <Text style={styles.titleOther}>{i18n._("Date of the event")}</Text>

@@ -89,6 +89,11 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
   },
+  statsRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: horizontalScale(8),
+  },
   comment: {
     flexDirection: "row",
     alignItems: "center",
