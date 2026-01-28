@@ -32,6 +32,8 @@ type DatePickerProps = {
   errorMessage?: string;
   isRegular?: boolean;
   onBlur?: () => void;
+  minimumDate?: Date;
+  maximumDate?: Date;
 };
 
 export const DatePicker: FunctionComponent<DatePickerProps> = ({
@@ -42,6 +44,8 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
   errorMessage,
   isRegular = false,
   onBlur,
+  minimumDate,
+  maximumDate,
 }) => {
   const { i18n } = useLocalesProvider();
   const [isShowModal, setIsShowModal] = useState(false);
@@ -78,6 +82,8 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
                   : mode,
               display: "spinner",
               is24Hour: true,
+              minimumDate,
+              maximumDate,
             });
           else setIsShowModal(true);
         }}
@@ -116,7 +122,8 @@ export const DatePicker: FunctionComponent<DatePickerProps> = ({
               mode={mode}
               display="spinner"
               onChange={onChange}
-              minimumDate={new Date(0)}
+              minimumDate={minimumDate || new Date(0)}
+              maximumDate={maximumDate}
               minuteInterval={5}
             />
             <ButtonCustom
