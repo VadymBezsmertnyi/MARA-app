@@ -9,6 +9,7 @@ export const DEFAULT_EVENT_DATA: Omit<TEvent, "_id" | "userId"> = {
   coordinates: { latitude: 0, longitude: 0 },
   date: { start: 0, finish: 0 },
   price: null,
+  timeline: [],
   currency: "UAH",
   description: "",
   imageFiles: [],

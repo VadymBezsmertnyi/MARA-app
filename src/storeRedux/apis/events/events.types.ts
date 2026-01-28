@@ -19,6 +19,7 @@ import {
   closestEventsSchema,
   contactSchema,
   commentEventSchema,
+  timelineItemSchema,
 } from "./events.schemas";
 
 export type TEvent = z.infer<typeof eventSchema>;
@@ -39,6 +40,7 @@ export type TPagination = z.infer<typeof paginationSchema>;
 export type TClosestEvents = z.infer<typeof closestEventsSchema>;
 export type TContact = z.infer<typeof contactSchema>;
 export type TCommentEvent = z.infer<typeof commentEventSchema>;
+export type TTimelineItem = z.infer<typeof timelineItemSchema>;
 
 type ImageFileType =
   | ImagePickerAsset

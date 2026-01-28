@@ -46,6 +46,13 @@ export const commentEventSchema = z.object({
   dateUpdate: z.number().optional(),
 });
 
+export const timelineItemSchema = z.object({
+  start: z.number(),
+  finish: z.number().nullable().optional(),
+  title: z.string(),
+  description: z.string().nullable().optional(),
+});
+
 export const eventSchema = z.object({
   _id: z.string(),
   userId: populateUserData.nullable(),
@@ -61,6 +68,7 @@ export const eventSchema = z.object({
     finish: z.number(),
   }),
   price: z.object({ start: z.number(), finish: z.number() }).nullable(),
+  timeline: z.array(timelineItemSchema).default([]),
   currency: codeCurrenciesSchema,
   description: z.string(),
   imageFiles: z.array(fileSchema).default([]),
@@ -133,6 +141,7 @@ export const addEventRequestSchema = z.object({
     })
     .optional(),
   contacts: z.array(contactSchema).default([]).optional(),
+  timeline: z.array(timelineItemSchema).default([]).optional(),
 });
 
 export const upcomingEventSchema = z.object({
