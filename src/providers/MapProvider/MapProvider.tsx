@@ -67,7 +67,6 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
     const result = countryUser
       ? countryUser
       : await api(PATHS.ipApiGetCountry, null, ipApiGetCountryResponseSchema);
-    console.log("result countryUser:", result);
     if (!countryUser) setCountryUser(result);
   };
 
