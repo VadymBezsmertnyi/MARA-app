@@ -13,6 +13,8 @@ import {
   IGetEventsLocationsRequest,
   TClosestEvents,
   TEventLocations,
+  IAddCommentRequest,
+  IChangeCommentRequest,
 } from "./events.types";
 import {
   resultEventsSchema,
@@ -340,6 +342,46 @@ export const getEventsLocations = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod getEventsLocations:", {
           url: PATHS.eventsGetLocations,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const addEventComment = (builder: Builder) =>
+  builder.mutation<TEventResponse | null, IAddCommentRequest>({
+    query: ({ body }) => ({
+      url: PATHS.eventsCommentsAdd,
+      method: "POST",
+      body,
+    }),
+    transformResponse: (response: unknown) => {
+      const result = eventResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod addEventComment:", {
+          url: PATHS.eventsCommentsAdd,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const changeEventComment = (builder: Builder) =>
+  builder.mutation<TEventResponse | null, IChangeCommentRequest>({
+    query: ({ body }) => ({
+      url: PATHS.eventsCommentsChange,
+      method: "PUT",
+      body,
+    }),
+    transformResponse: (response: unknown) => {
+      const result = eventResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod changeEventComment:", {
+          url: PATHS.eventsCommentsChange,
           data: response,
           error: result.error,
         });

@@ -9,11 +9,14 @@ import {
   addEventRequestSchema,
   changeEventRequestSchema,
   deleteEventRequestSchema,
+  addCommentRequestSchema,
+  changeCommentRequestSchema,
   eventsStateSchema,
   upcomingEventSchema,
   paginationSchema,
   closestEventsSchema,
   contactSchema,
+  commentEventSchema,
 } from "./events.schemas";
 
 export type TEvent = z.infer<typeof eventSchema>;
@@ -24,11 +27,14 @@ export type TDeleteEventResponse = z.infer<typeof deleteEventResponseSchema>;
 export type TAddEventRequest = z.infer<typeof addEventRequestSchema>;
 export type TChangeEventRequest = z.infer<typeof changeEventRequestSchema>;
 export type TDeleteEventRequest = z.infer<typeof deleteEventRequestSchema>;
+export type TAddCommentRequest = z.infer<typeof addCommentRequestSchema>;
+export type TChangeCommentRequest = z.infer<typeof changeCommentRequestSchema>;
 export type TEventsState = z.infer<typeof eventsStateSchema>;
 export type TUpcomingEvent = z.infer<typeof upcomingEventSchema>;
 export type TPagination = z.infer<typeof paginationSchema>;
 export type TClosestEvents = z.infer<typeof closestEventsSchema>;
 export type TContact = z.infer<typeof contactSchema>;
+export type TCommentEvent = z.infer<typeof commentEventSchema>;
 
 type ImageFileType =
   | ImagePickerAsset
@@ -52,6 +58,14 @@ export interface IChangeEventRequest {
 
 export interface IDeleteEventRequest {
   body: TDeleteEventRequest;
+}
+
+export interface IAddCommentRequest {
+  body: TAddCommentRequest;
+}
+
+export interface IChangeCommentRequest {
+  body: TChangeCommentRequest;
 }
 
 export interface IGetEventsRequest {

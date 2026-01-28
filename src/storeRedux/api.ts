@@ -23,6 +23,8 @@ import {
   addEvent,
   changeEvent,
   deleteEvent,
+  addEventComment,
+  changeEventComment,
 } from "./apis/events/apis";
 import { getCurrencies } from "./apis/payment/apis";
 import {
@@ -67,6 +69,8 @@ export const api = createApi({
     addEvent: addEvent(builder),
     changeEvent: changeEvent(builder),
     deleteEvent: deleteEvent(builder),
+    addEventComment: addEventComment(builder),
+    changeEventComment: changeEventComment(builder),
     // Payment APIs
     getCurrencies: getCurrencies(builder),
     // Workshops APIs
@@ -107,6 +111,8 @@ export const {
   useAddEventMutation,
   useChangeEventMutation,
   useDeleteEventMutation,
+  useAddEventCommentMutation,
+  useChangeEventCommentMutation,
   // Payment Hooks APIs
   useGetCurrenciesQuery,
   useLazyGetCurrenciesQuery,

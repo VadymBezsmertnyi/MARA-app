@@ -36,6 +36,16 @@ export const contactSchema = z.object({
   value: z.string(),
 });
 
+export const commentEventSchema = z.object({
+  _id: z.string(),
+  userId: z.string(),
+  userName: z.string(),
+  description: z.string(),
+  rating: z.number().min(1).max(5),
+  dateCreate: z.number().optional(),
+  dateUpdate: z.number().optional(),
+});
+
 export const eventSchema = z.object({
   _id: z.string(),
   userId: populateUserData.nullable(),
@@ -54,6 +64,8 @@ export const eventSchema = z.object({
   currency: codeCurrenciesSchema,
   description: z.string(),
   imageFiles: z.array(fileSchema).default([]),
+  comments: z.array(commentEventSchema).default([]),
+  rating: z.number().nullable(),
   likeUserIds: z.array(z.string()).default([]),
   contacts: z.array(contactSchema).default([]),
   verification: z
@@ -132,6 +144,18 @@ export const changeEventRequestSchema = addEventRequestSchema.extend({
 });
 
 export const deleteEventRequestSchema = z.object({
+  _id: z.string(),
+});
+
+export const addCommentRequestSchema = z.object({
+  idEvent: z.string(),
+  userId: z.string(),
+  userName: z.string(),
+  description: z.string(),
+  rating: z.number().min(1).max(5),
+});
+
+export const changeCommentRequestSchema = addCommentRequestSchema.extend({
   _id: z.string(),
 });
 

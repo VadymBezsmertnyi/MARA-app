@@ -12,6 +12,8 @@ export const DEFAULT_EVENT_DATA: Omit<TEvent, "_id" | "userId"> = {
   currency: "UAH",
   description: "",
   imageFiles: [],
+  comments: [],
+  rating: null,
   likeUserIds: [],
   contacts: [],
   verification: null,

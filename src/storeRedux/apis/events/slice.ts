@@ -278,6 +278,90 @@ export const eventsSlice = createSlice({
         state.loading = false;
         state.error = action.error.message || "Помилка видалення події";
       })
+      // addComment
+      .addMatcher(api.endpoints.addEventComment.matchPending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addMatcher(
+        api.endpoints.addEventComment.matchFulfilled,
+        (state, action) => {
+        if (action.payload?.event) {
+          const updatedEvent = action.payload.event;
+          const updateList = (list: TEvents) =>
+            list.map((event) =>
+              event._id === updatedEvent._id ? updatedEvent : event
+            );
+          state.upcomingEventsList = getSortEvents(
+            updateList(state.upcomingEventsList)
+          );
+          state.pastEventsList = getSortEvents(
+            updateList(state.pastEventsList)
+          );
+          state.eventsUserList = getSortEvents(
+            updateList(state.eventsUserList)
+          );
+          state.upcomingClosest = getSortEvents(
+            updateList(state.upcomingClosest)
+          ).slice(0, 3);
+          state.pastClosest = getSortEvents(updateList(state.pastClosest));
+          state.loading = false;
+          state.error = null;
+        } else {
+          state.loading = false;
+          state.error = "Помилка валідації даних від сервера (addComment)";
+        }
+        }
+      )
+      .addMatcher(
+        api.endpoints.addEventComment.matchRejected,
+        (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Помилка додавання коментаря";
+        }
+      )
+      // changeComment
+      .addMatcher(api.endpoints.changeEventComment.matchPending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addMatcher(
+        api.endpoints.changeEventComment.matchFulfilled,
+        (state, action) => {
+          if (action.payload?.event) {
+            const updatedEvent = action.payload.event;
+            const updateList = (list: TEvents) =>
+              list.map((event) =>
+                event._id === updatedEvent._id ? updatedEvent : event
+              );
+            state.upcomingEventsList = getSortEvents(
+              updateList(state.upcomingEventsList)
+            );
+            state.pastEventsList = getSortEvents(
+              updateList(state.pastEventsList)
+            );
+            state.eventsUserList = getSortEvents(
+              updateList(state.eventsUserList)
+            );
+            state.upcomingClosest = getSortEvents(
+              updateList(state.upcomingClosest)
+            ).slice(0, 3);
+            state.pastClosest = getSortEvents(updateList(state.pastClosest));
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error = "Помилка валідації даних від сервера (changeComment)";
+          }
+        }
+      )
+      .addMatcher(
+        api.endpoints.changeEventComment.matchRejected,
+        (state, action) => {
+          state.loading = false;
+          state.error = action.error.message || "Помилка редагування коментаря";
+        }
+      )
       // getClosestEvents
       .addMatcher(api.endpoints.getClosestEvents.matchPending, (state) => {
         state.loading = true;
