@@ -15,6 +15,7 @@ import {
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useDropDownAlertProvider } from "../../../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Input } from "../../../../../components/Input/Input";
@@ -37,6 +38,7 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
   onClose,
 }) => {
   const { i18n } = useLocalesProvider();
+  const { showMessageServer } = useDropDownAlertProvider();
   const { userData } = useUserSelector();
   const [addCommentMutation] = useAddEventCommentMutation();
   const [changeCommentMutation] = useChangeEventCommentMutation();
@@ -119,6 +121,8 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
               rating: newComment.rating,
             },
           });
+      if (result.data?.comment?.status === "pending")
+        await showMessageServer("", "Коментар на перевірці", "info");
       if (result.data?.event) onClose();
     }
   };

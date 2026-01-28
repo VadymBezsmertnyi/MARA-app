@@ -69,7 +69,7 @@ import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 const EXPO_PUBLIC_WEB_SITE_URL =
   process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
-type EventItemProps = {
+type EventDetailsScreenProps = {
   navigation: NativeStackNavigationProp<
     RootEventsScreensParamList & RootMainTabsParamList
   >;
@@ -79,7 +79,7 @@ type EventItemProps = {
   >;
 };
 
-export const EventItem: FunctionComponent<EventItemProps> = ({
+export const EventDetailsScreen: FunctionComponent<EventDetailsScreenProps> = ({
   route,
   navigation,
 }) => {
@@ -166,9 +166,24 @@ export const EventItem: FunctionComponent<EventItemProps> = ({
         : false,
     [eventSelect, userData]
   );
+  const commentsForDisplay = useMemo(() => {
+    const currentUserId = userData?._id;
+    const pendingLabel = "На перевірці";
+    if (!eventSelect?.comments) return [];
+    return eventSelect.comments
+      .filter((comment) => {
+        if (comment.status === "pending") return comment.userId === currentUserId;
+        return comment.status === "verify" || comment.status === undefined;
+      })
+      .map((comment) =>
+        comment.status === "pending" && comment.userId === currentUserId
+          ? { ...comment, userName: `${comment.userName} (${pendingLabel})` }
+          : comment
+      );
+  }, [eventSelect?.comments, userData?._id]);
   const commentsReverse = useMemo(
-    () => (eventSelect?.comments ? [...eventSelect.comments].reverse() : []),
-    [eventSelect?.comments]
+    () => [...commentsForDisplay].reverse(),
+    [commentsForDisplay]
   );
   const hasOwner = !!eventSelect?.ownerUserId;
   const isCurrentUserOwner =

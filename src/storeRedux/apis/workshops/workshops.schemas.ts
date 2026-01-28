@@ -49,6 +49,7 @@ export const commentWorkshopSchema = z.object({
   userName: z.string(),
   description: z.string(),
   rating: z.number().min(1).max(5),
+  status: z.enum(["pending", "verify"]).optional().default("verify"),
   dateCreate: z.number().optional(),
   dateUpdate: z.number().optional(),
 });

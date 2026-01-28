@@ -74,7 +74,7 @@ import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 const EXPO_PUBLIC_WEB_SITE_URL =
   process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
-type WorkshopsItemType = {
+type WorkshopDetailsScreenProps = {
   navigation: NativeStackNavigationProp<
     RootWorkshopsScreensParamList & RootMainTabsParamList
   >;
@@ -84,10 +84,9 @@ type WorkshopsItemType = {
   >;
 };
 
-export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
-  navigation,
-  route,
-}) => {
+export const WorkshopDetailsScreen: FunctionComponent<
+  WorkshopDetailsScreenProps
+> = ({ navigation, route }) => {
   const { heightTabBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
   const { userData } = useUserSelector();
@@ -156,10 +155,25 @@ export const WorkshopsItem: FunctionComponent<WorkshopsItemType> = ({
         : false,
     [selectWorkshop, userData]
   );
+  const commentsForDisplay = useMemo(() => {
+    const currentUserId = userData?._id;
+    const pendingLabel = "На перевірці";
+    if (!selectWorkshop?.comments) return [];
+    return selectWorkshop.comments
+      .filter((comment) => {
+        if (comment.status === "pending")
+          return comment.userId === currentUserId;
+        return comment.status === "verify" || comment.status === undefined;
+      })
+      .map((comment) =>
+        comment.status === "pending" && comment.userId === currentUserId
+          ? { ...comment, userName: `${comment.userName} (${pendingLabel})` }
+          : comment
+      );
+  }, [selectWorkshop?.comments, userData?._id]);
   const commentsReverse = useMemo(
-    () =>
-      selectWorkshop?.comments ? [...selectWorkshop.comments].reverse() : [],
-    [selectWorkshop?.comments]
+    () => [...commentsForDisplay].reverse(),
+    [commentsForDisplay]
   );
   const displayContacts = useMemo(() => {
     if (!selectWorkshop) return [];
