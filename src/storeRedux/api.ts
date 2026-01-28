@@ -34,8 +34,8 @@ import {
   addWorkshop,
   changeWorkshop,
   deleteWorkshop,
-  addComment,
-  changeComment,
+  addWorkshopComment,
+  changeWorkshopComment,
 } from "./apis/workshops/apis";
 import {
   sendSmsVerification,
@@ -80,8 +80,8 @@ export const api = createApi({
     addWorkshop: addWorkshop(builder),
     changeWorkshop: changeWorkshop(builder),
     deleteWorkshop: deleteWorkshop(builder),
-    addComment: addComment(builder),
-    changeComment: changeComment(builder),
+    addWorkshopComment: addWorkshopComment(builder),
+    changeWorkshopComment: changeWorkshopComment(builder),
     // SMS Verification APIs
     sendSmsVerification: sendSmsVerification(builder),
     verifySmsCode: verifySmsCode(builder),
@@ -126,8 +126,8 @@ export const {
   useAddWorkshopMutation,
   useChangeWorkshopMutation,
   useDeleteWorkshopMutation,
-  useAddCommentMutation,
-  useChangeCommentMutation,
+  useAddWorkshopCommentMutation,
+  useChangeWorkshopCommentMutation,
   // SMS Verification Hooks APIs
   useSendSmsVerificationMutation,
   useVerifySmsCodeMutation,

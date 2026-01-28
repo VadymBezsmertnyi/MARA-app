@@ -9,8 +9,8 @@ import { TWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.ty
 // redux
 import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 import {
-  useAddCommentMutation,
-  useChangeCommentMutation,
+  useAddWorkshopCommentMutation,
+  useChangeWorkshopCommentMutation,
 } from "../../../../../storeRedux/api";
 
 // providers
@@ -38,8 +38,8 @@ export const ModalComment: FunctionComponent<ModalCommentProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { userData } = useUserSelector();
-  const [addCommentMutation] = useAddCommentMutation();
-  const [changeCommentMutation] = useChangeCommentMutation();
+  const [addCommentMutation] = useAddWorkshopCommentMutation();
+  const [changeCommentMutation] = useChangeWorkshopCommentMutation();
   const [userName, setUserName] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState(0);

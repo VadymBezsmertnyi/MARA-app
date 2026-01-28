@@ -240,11 +240,13 @@ export const workshopsSlice = createSlice({
           state.error = action.error.message || "Помилка видалення майстерні";
         }
       )
-      .addMatcher(api.endpoints.addComment.matchPending, (state) => {
+      .addMatcher(api.endpoints.addWorkshopComment.matchPending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addMatcher(api.endpoints.addComment.matchFulfilled, (state, action) => {
+      .addMatcher(
+        api.endpoints.addWorkshopComment.matchFulfilled,
+        (state, action) => {
         if (action.payload?.workshop) {
           const updatedWorkshop = action.payload.workshop;
           state.workshopsList = state.workshopsList.map((workshop) =>
@@ -259,17 +261,21 @@ export const workshopsSlice = createSlice({
           state.loading = false;
           state.error = "Помилка валідації даних від сервера (addComment)";
         }
-      })
-      .addMatcher(api.endpoints.addComment.matchRejected, (state, action) => {
+        }
+      )
+      .addMatcher(
+        api.endpoints.addWorkshopComment.matchRejected,
+        (state, action) => {
         state.loading = false;
         state.error = action.error.message || "Помилка додавання коментаря";
-      })
-      .addMatcher(api.endpoints.changeComment.matchPending, (state) => {
+        }
+      )
+      .addMatcher(api.endpoints.changeWorkshopComment.matchPending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addMatcher(
-        api.endpoints.changeComment.matchFulfilled,
+        api.endpoints.changeWorkshopComment.matchFulfilled,
         (state, action) => {
           if (action.payload?.workshop) {
             const updatedWorkshop = action.payload.workshop;
@@ -288,7 +294,7 @@ export const workshopsSlice = createSlice({
         }
       )
       .addMatcher(
-        api.endpoints.changeComment.matchRejected,
+        api.endpoints.changeWorkshopComment.matchRejected,
         (state, action) => {
           state.loading = false;
           state.error = action.error.message || "Помилка редагування коментаря";

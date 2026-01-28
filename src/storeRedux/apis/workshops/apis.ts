@@ -292,7 +292,7 @@ export const deleteWorkshop = (builder: Builder) =>
     },
   });
 
-export const addComment = (builder: Builder) =>
+export const addWorkshopComment = (builder: Builder) =>
   builder.mutation<TWorkshopResponse | null, IAddCommentRequest>({
     query: ({ body }) => ({
       url: PATHS.workshopsCommentsAdd,
@@ -303,7 +303,7 @@ export const addComment = (builder: Builder) =>
       const result = workshopResponseSchema.safeParse(response);
       if (result.success) return result.data;
       if (__DEV__)
-        console.warn("error zod addComment:", {
+        console.warn("error zod addWorkshopComment:", {
           url: PATHS.workshopsCommentsAdd,
           data: response,
           error: result.error,
@@ -312,7 +312,7 @@ export const addComment = (builder: Builder) =>
     },
   });
 
-export const changeComment = (builder: Builder) =>
+export const changeWorkshopComment = (builder: Builder) =>
   builder.mutation<TWorkshopResponse | null, IChangeCommentRequest>({
     query: ({ body }) => ({
       url: PATHS.workshopsCommentsChange,
@@ -323,7 +323,7 @@ export const changeComment = (builder: Builder) =>
       const result = workshopResponseSchema.safeParse(response);
       if (result.success) return result.data;
       if (__DEV__)
-        console.warn("error zod changeComment:", {
+        console.warn("error zod changeWorkshopComment:", {
           url: PATHS.workshopsCommentsChange,
           data: response,
           error: result.error,
