@@ -19,6 +19,14 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     gap: 8,
   },
+  group: {
+    gap: 6,
+  },
+  groupTitle: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 13,
+    color: colors.grayFuscous,
+  },
   row: {
     flexDirection: "row",
     alignItems: "flex-start",
