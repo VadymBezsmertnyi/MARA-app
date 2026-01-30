@@ -326,6 +326,39 @@ msgid "Unable to like the workshop"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Failed to create share link"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Share workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Failed to send SMS"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Επιτυχία"
+
+#. js-lingui-explicit-id
+msgid "Everything is successful and this is your business"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Invalid or expired code"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Workshop"
 msgstr "Εργαστήρι"
 
@@ -334,11 +367,27 @@ msgid "Unable to calculate distance, location is disabled"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Contacts unknown"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "About us:"
 msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "This business has not been confirmed by the owner"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Confirm business"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Report on business"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -388,14 +437,6 @@ msgstr "Δημοσίευση"
 #. js-lingui-explicit-id
 msgid "The work we do:"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Select share page"
-msgstr "Επιλέξτε σελίδα κοινοποίησης"
-
-#. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Εναλλαγή σαν προϊόν"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
@@ -470,6 +511,34 @@ msgid "Sun"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Phone"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Email"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Viber"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Telegram"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "WhatsApp"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Instagram"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Facebook"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "workshop"
 msgstr "εργαστήριο"
 
@@ -480,10 +549,6 @@ msgstr "Το εργαστήριο άλλαξε με επιτυχία"
 #. js-lingui-explicit-id
 msgid "Workshop created successfully"
 msgstr "Το εργαστήριο δημιουργήθηκε με επιτυχία"
-
-#. js-lingui-explicit-id
-msgid "Success"
-msgstr "Επιτυχία"
 
 #. js-lingui-explicit-id
 msgid "Error changing workshop"
@@ -518,8 +583,16 @@ msgid "Enter the address"
 msgstr "Εισαγωγή διεύθυνσης"
 
 #. js-lingui-explicit-id
+msgid "Contacts"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Phone number"
 msgstr "Αριθμός τηλεφώνου"
+
+#. js-lingui-explicit-id
+msgid "Add contact type"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -536,6 +609,14 @@ msgstr "Τύποι εργασίας"
 #. js-lingui-explicit-id
 msgid "Select types of work"
 msgstr "Επιλέξτε τύπους εργασίας"
+
+#. js-lingui-explicit-id
+msgid "You can add up to 5 phone numbers"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "This contact type has already been added"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Edit"
@@ -558,6 +639,18 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εργαστηρίων"
 
 #. js-lingui-explicit-id
+msgid "All"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Created by me"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Mine"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Sorry!"
 msgstr ""
 
@@ -570,6 +663,22 @@ msgid "Buy workshop"
 msgstr "Αγοράστε εργαστήριο"
 
 #. js-lingui-explicit-id
+msgid "Select phone number"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Επιβεβαιώστε"
+
+#. js-lingui-explicit-id
+msgid "Enter verification code"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enter 6-digit code"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Under review"
 msgstr ""
 
@@ -579,6 +688,10 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Rejected"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Confirm ownership"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -710,6 +823,14 @@ msgid "Button for closing the settings events screen"
 msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων εκδηλώσεων"
 
 #. js-lingui-explicit-id
+msgid "Upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Add event"
 msgstr "Προσθήκη εκδήλωσης"
 
@@ -772,146 +893,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Fill out later"
 msgstr "Συμπληρώστε αργότερα"
-
-#. js-lingui-explicit-id
-msgid "Events"
-msgstr "Εκδηλώσεις"
-
-#. js-lingui-explicit-id
-msgid "Upcoming events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no upcoming events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Πατήστε για εμφάνιση περισσότερων εκδηλώσεων"
-
-#. js-lingui-explicit-id
-msgid "More events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Past events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "No events have passed"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Now"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Η τοποθεσία δεν είναι ενεργοποιημένη"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Εισαγωγή κειμένου για αναζήτηση"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} grn."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} grn."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Δωρεάν"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Εκδήλωση"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Όλες οι φωτογραφίες"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Ημερομηνία της εκδήλωσης"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Η αρχή"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Τέλος"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Τιμή για συμμετοχή"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "Σχετικά με την εκδήλωση"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Γκαλερί"
-
-#. js-lingui-explicit-id
-msgid "event"
-msgstr "εκδήλωση"
-
-#. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Αλλαγή εκδήλωσης"
-
-#. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Δημιουργία εκδήλωσης"
-
-#. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Μπορείτε να δημιουργήσετε μια εκδήλωση"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Εισαγωγή ονόματος της εκδήλωσης"
-
-#. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Όνομα της εκδήλωσης"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Τοποθεσία της εκδήλωσης"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Συμπέρασμα"
-
-#. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 uah"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 uah"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Περιγράψτε σύντομα τι θα συμβεί"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Πείτε μας για την εκδήλωση"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Επιβεβαιώστε"
 
 #. js-lingui-explicit-id
 msgid "Settings"
@@ -978,6 +959,311 @@ msgid "{distance} km"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "No date"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Εκδηλώσεις"
+
+#. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Πατήστε για εμφάνιση περισσότερων εκδηλώσεων"
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Η τοποθεσία δεν είναι ενεργοποιημένη"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Εισαγωγή κειμένου για αναζήτηση"
+
+#. js-lingui-explicit-id
+msgid "By date:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "from soonest to latest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Price range:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "From"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "All locations"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Select country or city"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Clear location filter"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Close"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "All countries"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No countries found"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Όλες οι πόλεις"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Δεν βρέθηκαν πόλεις"
+
+#. js-lingui-explicit-id
+msgid "Save location filter"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Δωρεάν"
+
+#. js-lingui-explicit-id
+msgid "Phone number not found"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Share event"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Please sign in to continue"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Όλες οι φωτογραφίες"
+
+#. js-lingui-explicit-id
+msgid "Not going"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Going"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Ημερομηνία της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Η αρχή"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Τέλος"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Τιμή για συμμετοχή"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Σχετικά με την εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Γκαλερί"
+
+#. js-lingui-explicit-id
+msgid "Timeline"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Add a description about the event"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Event description"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Your event is under review and will appear after verification"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Αλλαγή εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Δημιουργία εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Μπορείτε να δημιουργήσετε μια εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Εισαγωγή ονόματος της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Όνομα της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Τοποθεσία της εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Συμπέρασμα"
+
+#. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 uah"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Περιγράψτε σύντομα τι θα συμβεί"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Πείτε μας για την εκδήλωση"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to each timeline item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item start time is outside event dates"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish must be after start"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish time is outside event dates"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Please add a title to the timeline item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Add item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No timeline items yet"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Step"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Title"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Description (optional)"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Start"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Remove finish time"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Add finish time"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Welcome to our service."
 msgstr "Καλώς ήρθατε στην υπηρεσία μας."
 
@@ -1012,10 +1298,6 @@ msgstr "Η εφαρμογή {nameApp} συλλέγει δεδομένα τοπο
 #. js-lingui-explicit-id
 msgid "Accept"
 msgstr "Αποδοχή"
-
-#. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Διαγραφή εκδήλωσης"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
@@ -1290,6 +1572,14 @@ msgid "Select country"
 msgstr "Επιλέξτε χώρα"
 
 #. js-lingui-explicit-id
+msgid "Select contact type"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Contact us via:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
 msgstr ""
 
@@ -1310,14 +1600,6 @@ msgid "Increase the maximum number"
 msgstr "Αυξήστε το μέγιστο αριθμό"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Όλες οι πόλεις"
-
-#. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Δεν βρέθηκαν πόλεις"
-
-#. js-lingui-explicit-id
 msgid "Resend the code"
 msgstr ""
 
@@ -1332,6 +1614,14 @@ msgstr "Κύρια φωτογραφία"
 #. js-lingui-explicit-id
 msgid "Make the main photo"
 msgstr "Κάντε την κύρια φωτογραφία"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Επιλέξτε σελίδα κοινοποίησης"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Εναλλαγή σαν προϊόν"
 
 #. js-lingui-explicit-id
 msgid "Language selection"

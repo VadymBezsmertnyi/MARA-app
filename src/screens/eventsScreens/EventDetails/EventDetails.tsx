@@ -484,7 +484,7 @@ export const EventDetails: FunctionComponent<EventDetailsProps> = ({
               />
               <Text style={styles.goingText}>{goingCount}</Text>
               <Text style={styles.goingLabel}>
-                {isGoing ? i18n._("Не йду") : i18n._("Йду")}
+                {isGoing ? i18n._("Not going") : i18n._("Going")}
               </Text>
             </TouchableOpacity>
           </View>

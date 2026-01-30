@@ -326,6 +326,44 @@ msgid "Unable to like the workshop"
 msgstr "Не вдалося поставити лайк майстерні"
 
 #. js-lingui-explicit-id
+msgid "Failed to create share link"
+msgstr "Не вдалося створити посилання для спільного доступу"
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Відкрити майстерню в додатку:\n"
+"{appLink}\n"
+"\n"
+"Відкрити в браузері:\n"
+"{webLink}"
+
+#. js-lingui-explicit-id
+msgid "Share workshop"
+msgstr "Поділитися майстернею"
+
+#. js-lingui-explicit-id
+msgid "Failed to send SMS"
+msgstr "Не вдалося надіслати SMS"
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Успішно"
+
+#. js-lingui-explicit-id
+msgid "Everything is successful and this is your business"
+msgstr "Все успішно, і це ваш бізнес"
+
+#. js-lingui-explicit-id
+msgid "Invalid or expired code"
+msgstr "Недійсний або прострочений код"
+
+#. js-lingui-explicit-id
 msgid "Workshop"
 msgstr "Майстерня"
 
@@ -334,12 +372,28 @@ msgid "Unable to calculate distance, location is disabled"
 msgstr "Не вдалося розрахувати відстань, місцезнаходження вимкнено"
 
 #. js-lingui-explicit-id
+msgid "Contacts unknown"
+msgstr "Контакти невідомі"
+
+#. js-lingui-explicit-id
 msgid "About us:"
 msgstr "Про нас:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
 msgstr "Прочитати весь опис..."
+
+#. js-lingui-explicit-id
+msgid "This business has not been confirmed by the owner"
+msgstr "Цей бізнес не підтверджений власником"
+
+#. js-lingui-explicit-id
+msgid "Confirm business"
+msgstr "Підтвердити бізнес"
+
+#. js-lingui-explicit-id
+msgid "Report on business"
+msgstr "Повідомити про бізнес"
 
 #. js-lingui-explicit-id
 msgid "Working hours unknown"
@@ -388,14 +442,6 @@ msgstr "Опублікувати"
 #. js-lingui-explicit-id
 msgid "The work we do:"
 msgstr "Робота, яку ми виконуємо:"
-
-#. js-lingui-explicit-id
-msgid "Select share page"
-msgstr "Виберіть сторінку для поділу"
-
-#. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Перемикання подобається продукт"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
@@ -470,6 +516,34 @@ msgid "Sun"
 msgstr "Нд"
 
 #. js-lingui-explicit-id
+msgid "Phone"
+msgstr "Телефон"
+
+#. js-lingui-explicit-id
+msgid "Email"
+msgstr "Електронна пошта"
+
+#. js-lingui-explicit-id
+msgid "Viber"
+msgstr "Viber"
+
+#. js-lingui-explicit-id
+msgid "Telegram"
+msgstr "Telegram"
+
+#. js-lingui-explicit-id
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#. js-lingui-explicit-id
+msgid "Instagram"
+msgstr "Instagram"
+
+#. js-lingui-explicit-id
+msgid "Facebook"
+msgstr "Facebook"
+
+#. js-lingui-explicit-id
 msgid "workshop"
 msgstr "майстерня"
 
@@ -480,10 +554,6 @@ msgstr "Майстерню успішно змінено"
 #. js-lingui-explicit-id
 msgid "Workshop created successfully"
 msgstr "Майстерню успішно створено"
-
-#. js-lingui-explicit-id
-msgid "Success"
-msgstr "Успішно"
 
 #. js-lingui-explicit-id
 msgid "Error changing workshop"
@@ -518,8 +588,16 @@ msgid "Enter the address"
 msgstr "Введіть адресу"
 
 #. js-lingui-explicit-id
+msgid "Contacts"
+msgstr "Контакти"
+
+#. js-lingui-explicit-id
 msgid "Phone number"
 msgstr "Номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Add contact type"
+msgstr "Додати тип контакту"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -536,6 +614,14 @@ msgstr "Типи робіт"
 #. js-lingui-explicit-id
 msgid "Select types of work"
 msgstr "Виберіть типи робіт"
+
+#. js-lingui-explicit-id
+msgid "You can add up to 5 phone numbers"
+msgstr "Ви можете додати до 5 номерів телефонів"
+
+#. js-lingui-explicit-id
+msgid "This contact type has already been added"
+msgstr "Цей тип контакту вже додано"
 
 #. js-lingui-explicit-id
 msgid "Edit"
@@ -558,6 +644,18 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Кнопка для закриття екрану налаштувань майстерень"
 
 #. js-lingui-explicit-id
+msgid "All"
+msgstr "Всі"
+
+#. js-lingui-explicit-id
+msgid "Created by me"
+msgstr "Створено мною"
+
+#. js-lingui-explicit-id
+msgid "Mine"
+msgstr "Мої"
+
+#. js-lingui-explicit-id
 msgid "Sorry!"
 msgstr "Вибачте!"
 
@@ -570,6 +668,22 @@ msgid "Buy workshop"
 msgstr "Купити майстерню"
 
 #. js-lingui-explicit-id
+msgid "Select phone number"
+msgstr "Виберіть номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "Enter verification code"
+msgstr "Введіть код підтвердження"
+
+#. js-lingui-explicit-id
+msgid "Enter 6-digit code"
+msgstr "Введіть 6-значний код"
+
+#. js-lingui-explicit-id
 msgid "Under review"
 msgstr "На розгляді"
 
@@ -580,6 +694,10 @@ msgstr "Перевірено"
 #. js-lingui-explicit-id
 msgid "Rejected"
 msgstr "Відхилено"
+
+#. js-lingui-explicit-id
+msgid "Confirm ownership"
+msgstr "Підтвердити власність"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -710,6 +828,14 @@ msgid "Button for closing the settings events screen"
 msgstr "Кнопка для закриття екрану налаштувань подій"
 
 #. js-lingui-explicit-id
+msgid "Upcoming events"
+msgstr "Майбутні події"
+
+#. js-lingui-explicit-id
+msgid "Past events"
+msgstr "Минулі події"
+
+#. js-lingui-explicit-id
 msgid "Add event"
 msgstr "Додати подію"
 
@@ -772,146 +898,6 @@ msgstr "Рекомендуємо заповнити інформацію про�
 #. js-lingui-explicit-id
 msgid "Fill out later"
 msgstr "Заповнити пізніше"
-
-#. js-lingui-explicit-id
-msgid "Events"
-msgstr "Події"
-
-#. js-lingui-explicit-id
-msgid "Upcoming events:"
-msgstr "Майбутні події:"
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no upcoming events"
-msgstr "Вибачте, але немає майбутніх подій"
-
-#. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Натисніть, щоб побачити більше подій"
-
-#. js-lingui-explicit-id
-msgid "More events"
-msgstr "Більше подій"
-
-#. js-lingui-explicit-id
-msgid "Past events:"
-msgstr "Минулі події:"
-
-#. js-lingui-explicit-id
-msgid "No events have passed"
-msgstr "Немає минулих подій"
-
-#. js-lingui-explicit-id
-msgid "Now"
-msgstr "Зараз"
-
-#. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Не ввімкнено місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Введіть текст для пошуку"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} грн."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} грн."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Безкоштовно"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Подія"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Всі фото"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Дата проведення"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Початок"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Фініш"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Ціна за участь"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "Про подію"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Галерея"
-
-#. js-lingui-explicit-id
-msgid "event"
-msgstr "подія"
-
-#. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Змінити подію"
-
-#. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Створити подію"
-
-#. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Ви можете створити подію"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Введіть назву події"
-
-#. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Назва події"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Місце події"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Завершення"
-
-#. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr "Вартість участі"
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 грн"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 грн"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Коротко опишіть, що відбуватиметься"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Розкажіть про подію"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Опублікувати"
 
 #. js-lingui-explicit-id
 msgid "Settings"
@@ -978,6 +964,316 @@ msgid "{distance} km"
 msgstr "{distance} км"
 
 #. js-lingui-explicit-id
+msgid "No date"
+msgstr "Без дати"
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Події"
+
+#. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr "Майбутні події:"
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr "Вибачте, але немає майбутніх подій"
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Натисніть, щоб побачити більше подій"
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr "Більше подій"
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr "Минулі події:"
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr "Немає минулих подій"
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr "Зараз"
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Не ввімкнено місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Введіть текст для пошуку"
+
+#. js-lingui-explicit-id
+msgid "By date:"
+msgstr "За датою:"
+
+#. js-lingui-explicit-id
+msgid "from soonest to latest"
+msgstr "від найближчої до найвіддаленішої"
+
+#. js-lingui-explicit-id
+msgid "Price range:"
+msgstr "Ціновий діапазон:"
+
+#. js-lingui-explicit-id
+msgid "From"
+msgstr "Від"
+
+#. js-lingui-explicit-id
+msgid "To"
+msgstr "До"
+
+#. js-lingui-explicit-id
+msgid "All locations"
+msgstr "Всі місця"
+
+#. js-lingui-explicit-id
+msgid "Select country or city"
+msgstr "Виберіть країну або місто"
+
+#. js-lingui-explicit-id
+msgid "Clear location filter"
+msgstr "Очистити фільтр місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr "Місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "Close"
+msgstr "Закрити"
+
+#. js-lingui-explicit-id
+msgid "All countries"
+msgstr "Всі країни"
+
+#. js-lingui-explicit-id
+msgid "No countries found"
+msgstr "Країни не знайдені"
+
+#. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Всі міста"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Міста не знайдено"
+
+#. js-lingui-explicit-id
+msgid "Save location filter"
+msgstr "Зберегти фільтр місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} грн."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} грн."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Безкоштовно"
+
+#. js-lingui-explicit-id
+msgid "Phone number not found"
+msgstr "Номер телефону не знайдено"
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Відкрити подію в додатку:\n"
+"{appLink}\n"
+"\n"
+"Відкрити в браузері:\n"
+"{webLink}"
+
+#. js-lingui-explicit-id
+msgid "Share event"
+msgstr "Поділитися подією"
+
+#. js-lingui-explicit-id
+msgid "Please sign in to continue"
+msgstr "Будь ласка, увійдіть, щоб продовжити"
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Подія"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Всі фото"
+
+#. js-lingui-explicit-id
+msgid "Not going"
+msgstr "Не йду"
+
+#. js-lingui-explicit-id
+msgid "Going"
+msgstr "Йду"
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Дата проведення"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Початок"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Фініш"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Ціна за участь"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "Про подію"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Галерея"
+
+#. js-lingui-explicit-id
+msgid "Timeline"
+msgstr "Хронологія"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the event"
+msgstr "Додайте опис події"
+
+#. js-lingui-explicit-id
+msgid "Event description"
+msgstr "Опис події"
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "подія"
+
+#. js-lingui-explicit-id
+msgid "Your event is under review and will appear after verification"
+msgstr "Ваша подія знаходиться на перевірці і з'явиться після підтвердження"
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Змінити подію"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Створити подію"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Ви можете створити подію"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Введіть назву події"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Назва події"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Місце події"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Завершення"
+
+#. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr "Вартість участі"
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 грн"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 грн"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Коротко опишіть, що відбуватиметься"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Розкажіть про подію"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to each timeline item"
+msgstr "Будь ласка, додайте заголовок до кожного елемента хронології"
+
+#. js-lingui-explicit-id
+msgid "Timeline item start time is outside event dates"
+msgstr "Час початку елемента хронології виходить за межі дат події"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish must be after start"
+msgstr "Завершення елемента хронології має бути після початку"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish time is outside event dates"
+msgstr "Час завершення елемента хронології виходить за межі дат події"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to the timeline item"
+msgstr "Будь ласка, додайте заголовок до елемента хронології"
+
+#. js-lingui-explicit-id
+msgid "Add item"
+msgstr "Додати елемент"
+
+#. js-lingui-explicit-id
+msgid "No timeline items yet"
+msgstr "Поки що немає елементів хронології"
+
+#. js-lingui-explicit-id
+msgid "Step"
+msgstr "Крок"
+
+#. js-lingui-explicit-id
+msgid "Timeline item"
+msgstr "Елемент хронології"
+
+#. js-lingui-explicit-id
+msgid "Title"
+msgstr "Заголовок"
+
+#. js-lingui-explicit-id
+msgid "Description (optional)"
+msgstr "Опис (необов'язково)"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr "Опис"
+
+#. js-lingui-explicit-id
+msgid "Start"
+msgstr "Початок"
+
+#. js-lingui-explicit-id
+msgid "Remove finish time"
+msgstr "Видалити час завершення"
+
+#. js-lingui-explicit-id
+msgid "Add finish time"
+msgstr "Додати час завершення"
+
+#. js-lingui-explicit-id
 msgid "Welcome to our service."
 msgstr "Ласкаво просимо до нашого сервісу."
 
@@ -1012,10 +1308,6 @@ msgstr "Додаток {nameApp} збирає дані про місцезнах
 #. js-lingui-explicit-id
 msgid "Accept"
 msgstr "Прийняти"
-
-#. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Видалити подію"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
@@ -1290,6 +1582,14 @@ msgid "Select country"
 msgstr "Виберіть країну"
 
 #. js-lingui-explicit-id
+msgid "Select contact type"
+msgstr "Виберіть тип контакту"
+
+#. js-lingui-explicit-id
+msgid "Contact us via:"
+msgstr "Зв'яжіться з нами через:"
+
+#. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
 msgstr "Ви впевнені, що хочете видалити?"
 
@@ -1310,14 +1610,6 @@ msgid "Increase the maximum number"
 msgstr "Збільшити максимальну кількість"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Всі міста"
-
-#. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Міста не знайдено"
-
-#. js-lingui-explicit-id
 msgid "Resend the code"
 msgstr "Відправити код повторно"
 
@@ -1332,6 +1624,14 @@ msgstr "Головне фото"
 #. js-lingui-explicit-id
 msgid "Make the main photo"
 msgstr "Зробити головним фото"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Виберіть сторінку для поділу"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Перемикання подобається продукт"
 
 #. js-lingui-explicit-id
 msgid "Language selection"

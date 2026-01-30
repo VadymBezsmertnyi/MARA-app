@@ -326,6 +326,39 @@ msgid "Unable to like the workshop"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Failed to create share link"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Share workshop"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Failed to send SMS"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Succès"
+
+#. js-lingui-explicit-id
+msgid "Everything is successful and this is your business"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Invalid or expired code"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Workshop"
 msgstr "Atelier"
 
@@ -334,11 +367,27 @@ msgid "Unable to calculate distance, location is disabled"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Contacts unknown"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "About us:"
 msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "This business has not been confirmed by the owner"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Confirm business"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Report on business"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -388,14 +437,6 @@ msgstr "Publier"
 #. js-lingui-explicit-id
 msgid "The work we do:"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Select share page"
-msgstr "Sélectionnez la page à partager"
-
-#. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Basculer comme produit"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
@@ -470,6 +511,34 @@ msgid "Sun"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Phone"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Email"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Viber"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Telegram"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "WhatsApp"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Instagram"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Facebook"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "workshop"
 msgstr "atelier"
 
@@ -480,10 +549,6 @@ msgstr "Modification de l'atelier réussie"
 #. js-lingui-explicit-id
 msgid "Workshop created successfully"
 msgstr "Création de l'atelier réussie"
-
-#. js-lingui-explicit-id
-msgid "Success"
-msgstr "Succès"
 
 #. js-lingui-explicit-id
 msgid "Error changing workshop"
@@ -518,8 +583,16 @@ msgid "Enter the address"
 msgstr "Entrez l'adresse"
 
 #. js-lingui-explicit-id
+msgid "Contacts"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Phone number"
 msgstr "Numéro de téléphone"
+
+#. js-lingui-explicit-id
+msgid "Add contact type"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -536,6 +609,14 @@ msgstr "Types de travail"
 #. js-lingui-explicit-id
 msgid "Select types of work"
 msgstr "Sélectionnez les types de travail"
+
+#. js-lingui-explicit-id
+msgid "You can add up to 5 phone numbers"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "This contact type has already been added"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Edit"
@@ -558,6 +639,18 @@ msgid "Button for closing the settings workshops screen"
 msgstr "Bouton pour fermer l'écran des paramètres des ateliers"
 
 #. js-lingui-explicit-id
+msgid "All"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Created by me"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Mine"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Sorry!"
 msgstr ""
 
@@ -570,6 +663,22 @@ msgid "Buy workshop"
 msgstr "Acheter un atelier"
 
 #. js-lingui-explicit-id
+msgid "Select phone number"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. js-lingui-explicit-id
+msgid "Enter verification code"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Enter 6-digit code"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Under review"
 msgstr ""
 
@@ -579,6 +688,10 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Rejected"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Confirm ownership"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -710,6 +823,14 @@ msgid "Button for closing the settings events screen"
 msgstr "Bouton pour fermer l'écran des paramètres des événements"
 
 #. js-lingui-explicit-id
+msgid "Upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Add event"
 msgstr "Ajouter un événement"
 
@@ -772,146 +893,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Fill out later"
 msgstr "Remplir plus tard"
-
-#. js-lingui-explicit-id
-msgid "Events"
-msgstr "Événements"
-
-#. js-lingui-explicit-id
-msgid "Upcoming events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Sorry, there are no upcoming events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Appuyez pour afficher plus d'événements"
-
-#. js-lingui-explicit-id
-msgid "More events"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Past events:"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "No events have passed"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Now"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Emplacement non activé"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Entrez le texte à rechercher"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} grn."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} grn."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Gratuit"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Événement"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Toutes les photos"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Date de l'événement"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Le début"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Fin"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Prix de participation"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "À propos de l'événement"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Galerie"
-
-#. js-lingui-explicit-id
-msgid "event"
-msgstr "événement"
-
-#. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Modifier l'événement"
-
-#. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Créer un événement"
-
-#. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Vous pouvez créer un événement"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Entrez le nom de l'événement"
-
-#. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Nom de l'événement"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Lieu de l'événement"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Conclusion"
-
-#. js-lingui-explicit-id
-msgid "Participation fee"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 UAH"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 UAH"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Décrivez brièvement ce qui va se passer"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Parlez-nous de l'événement"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Confirmer"
 
 #. js-lingui-explicit-id
 msgid "Settings"
@@ -978,6 +959,311 @@ msgid "{distance} km"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "No date"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Events"
+msgstr "Événements"
+
+#. js-lingui-explicit-id
+msgid "Upcoming events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Press show more events"
+msgstr "Appuyez pour afficher plus d'événements"
+
+#. js-lingui-explicit-id
+msgid "More events"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Past events:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No events have passed"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Now"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Not enabled location"
+msgstr "Emplacement non activé"
+
+#. js-lingui-explicit-id
+msgid "Enter the text to search"
+msgstr "Entrez le texte à rechercher"
+
+#. js-lingui-explicit-id
+msgid "By date:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "from soonest to latest"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Price range:"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "From"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "To"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "All locations"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Select country or city"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Clear location filter"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Close"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "All countries"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No countries found"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "All cities"
+msgstr "Toutes les villes"
+
+#. js-lingui-explicit-id
+msgid "No cities found"
+msgstr "Aucune ville trouvée"
+
+#. js-lingui-explicit-id
+msgid "Save location filter"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
+
+#. js-lingui-explicit-id
+msgid "{price} grn."
+msgstr "{price} grn."
+
+#. js-lingui-explicit-id
+msgid "Free"
+msgstr "Gratuit"
+
+#. js-lingui-explicit-id
+msgid "Phone number not found"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Share event"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Please sign in to continue"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Event"
+msgstr "Événement"
+
+#. js-lingui-explicit-id
+msgid "All photos"
+msgstr "Toutes les photos"
+
+#. js-lingui-explicit-id
+msgid "Not going"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Going"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Date of the event"
+msgstr "Date de l'événement"
+
+#. js-lingui-explicit-id
+msgid "The beginning"
+msgstr "Le début"
+
+#. js-lingui-explicit-id
+msgid "Finish"
+msgstr "Fin"
+
+#. js-lingui-explicit-id
+msgid "Price for participation"
+msgstr "Prix de participation"
+
+#. js-lingui-explicit-id
+msgid "About event"
+msgstr "À propos de l'événement"
+
+#. js-lingui-explicit-id
+msgid "Gallery"
+msgstr "Galerie"
+
+#. js-lingui-explicit-id
+msgid "Timeline"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Add a description about the event"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Event description"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "event"
+msgstr "événement"
+
+#. js-lingui-explicit-id
+msgid "Your event is under review and will appear after verification"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Change event"
+msgstr "Modifier l'événement"
+
+#. js-lingui-explicit-id
+msgid "Create event"
+msgstr "Créer un événement"
+
+#. js-lingui-explicit-id
+msgid "You can create an event"
+msgstr "Vous pouvez créer un événement"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the event"
+msgstr "Entrez le nom de l'événement"
+
+#. js-lingui-explicit-id
+msgid "Name of the event"
+msgstr "Nom de l'événement"
+
+#. js-lingui-explicit-id
+msgid "The place of the event"
+msgstr "Lieu de l'événement"
+
+#. js-lingui-explicit-id
+msgid "Conclusion"
+msgstr "Conclusion"
+
+#. js-lingui-explicit-id
+msgid "Participation fee"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "100 uah"
+msgstr "100 UAH"
+
+#. js-lingui-explicit-id
+msgid "200 uah"
+msgstr "200 UAH"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Décrivez brièvement ce qui va se passer"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Parlez-nous de l'événement"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to each timeline item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item start time is outside event dates"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish must be after start"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish time is outside event dates"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Please add a title to the timeline item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Add item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "No timeline items yet"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Step"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Timeline item"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Title"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Description (optional)"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Start"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Remove finish time"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Add finish time"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Welcome to our service."
 msgstr "Bienvenue sur notre service."
 
@@ -1012,10 +1298,6 @@ msgstr "L'application {nameApp} collecte des données de localisation pour perme
 #. js-lingui-explicit-id
 msgid "Accept"
 msgstr "Accepter"
-
-#. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Supprimer l'événement"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
@@ -1290,6 +1572,14 @@ msgid "Select country"
 msgstr "Sélectionnez le pays"
 
 #. js-lingui-explicit-id
+msgid "Select contact type"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Contact us via:"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
 msgstr ""
 
@@ -1310,14 +1600,6 @@ msgid "Increase the maximum number"
 msgstr "Augmenter le nombre maximum"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Toutes les villes"
-
-#. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Aucune ville trouvée"
-
-#. js-lingui-explicit-id
 msgid "Resend the code"
 msgstr ""
 
@@ -1332,6 +1614,14 @@ msgstr "Photo principale"
 #. js-lingui-explicit-id
 msgid "Make the main photo"
 msgstr "Faire de la photo principale"
+
+#. js-lingui-explicit-id
+msgid "Select share page"
+msgstr "Sélectionnez la page à partager"
+
+#. js-lingui-explicit-id
+msgid "Toggle like product"
+msgstr "Basculer comme produit"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
