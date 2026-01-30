@@ -1,5 +1,6 @@
 import React, {
   FunctionComponent,
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -16,6 +17,7 @@ import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
 import { mapMarker } from "./Map.types";
 
 // redux
+import { useLazyGetMapPointsQuery } from "../../../storeRedux/api";
 import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
 import { useMapSelector } from "../../../storeRedux/apis/map/slice";
@@ -31,10 +33,12 @@ import { EventContainer } from "./components/EventContainer/EventContainer";
 import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
 
 // hooks
-import { useMapLocation } from "./useMapLocation";
+import { useMapLocation, regionToBounds } from "./useMapLocation";
 
 // styles
 import { styles } from "./Map.styles";
+
+const MAP_POINTS_THROTTLE_MS = 1200;
 
 type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
@@ -52,9 +56,35 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { location } = useMapSelector();
   const { theme, heightStatusBar } = useThemeProvider();
   const { upcomingEventsList, upcomingClosest } = useEventsSelector();
-  const { location: hookLocation, statusText } = useMapLocation();
+  const [getMapPoints] = useLazyGetMapPointsQuery();
+  const {
+    location: hookLocation,
+    statusText,
+    isLocationLoading,
+    getMapPointsRequestParams,
+  } = useMapLocation();
   const refMap = useRef<MapView>(null);
   const [hasUserMoved, setHasUserMoved] = useState(false);
+  const lastFirstFetchKeyRef = useRef<string | null>(null);
+  const lastMapPointsAtRef = useRef<number>(0);
+
+  const fetchMapPoints = useCallback(
+    (bounds: { minLat: number; maxLat: number; minLon: number; maxLon: number }, includeNearest: boolean) => {
+      getMapPoints(getMapPointsRequestParams(bounds, { includeNearest }));
+    },
+    [getMapPoints, getMapPointsRequestParams]
+  );
+
+  const handleRegionChangeComplete = useCallback(
+    (region: { latitude: number; longitude: number; latitudeDelta: number; longitudeDelta: number }) => {
+      const now = Date.now();
+      if (now - lastMapPointsAtRef.current < MAP_POINTS_THROTTLE_MS) return;
+      lastMapPointsAtRef.current = now;
+      const bounds = regionToBounds(region);
+      fetchMapPoints(bounds, false);
+    },
+    [fetchMapPoints]
+  );
 
   const showEventList = useMemo(() => {
     const sourceList = upcomingEventsList.length
@@ -83,6 +113,15 @@ export const Map: FunctionComponent<MapProps> = () => {
     refMap.current.animateToRegion(hookLocation);
   }, [hookLocation, hasUserMoved]);
 
+  useEffect(() => {
+    if (isLocationLoading || !hookLocation) return;
+    const key = `${hookLocation.latitude.toFixed(5)}-${hookLocation.longitude.toFixed(5)}`;
+    if (lastFirstFetchKeyRef.current === key) return;
+    lastFirstFetchKeyRef.current = key;
+    const bounds = regionToBounds(hookLocation);
+    fetchMapPoints(bounds, true);
+  }, [hookLocation, isLocationLoading, fetchMapPoints]);
+
   return (
     <View style={styles.container}>
       {statusText ? (
@@ -104,6 +143,7 @@ export const Map: FunctionComponent<MapProps> = () => {
         onPanDrag={() => {
           if (!hasUserMoved) setHasUserMoved(true);
         }}
+        onRegionChangeComplete={handleRegionChangeComplete}
       >
         <MeMarker />
         {showEventList.map((eventItem) =>

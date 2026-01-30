@@ -1,7 +1,8 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 // types
 import { mapMarker } from "./Map.types";
+import type { TMapBounds, TMapPointsRequest } from "../../../storeRedux/apis/map/map.types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
@@ -15,10 +16,28 @@ type MapLocationSource = "user" | "ip" | "city" | null;
 const USER_DELTA = 0.1;
 const CITY_DELTA = 0.5;
 
+/** Конвертує регіон карти (lat, lng, deltas) у bounds для API */
+export const regionToBounds = (region: {
+  latitude: number;
+  longitude: number;
+  latitudeDelta: number;
+  longitudeDelta: number;
+}): TMapBounds => ({
+  minLat: region.latitude - region.latitudeDelta / 2,
+  maxLat: region.latitude + region.latitudeDelta / 2,
+  minLon: region.longitude - region.longitudeDelta / 2,
+  maxLon: region.longitude + region.longitudeDelta / 2,
+});
+
 export const useMapLocation = (): {
   location: mapMarker | null;
   source: MapLocationSource;
   statusText: string | null;
+  isLocationLoading: boolean;
+  getMapPointsRequestParams: (
+    bounds: TMapBounds,
+    options: { includeNearest: boolean }
+  ) => TMapPointsRequest;
 } => {
   const { language } = useLocalesProvider();
   const { userData } = useUserSelector();
@@ -33,7 +52,9 @@ export const useMapLocation = (): {
     return "Отримуємо геолокацію міста...";
   }, [sources]);
 
-  return useMemo(() => {
+  const isLocationLoading = sources.length > 0;
+
+  const resolved = useMemo(() => {
     if (userLocation)
       return {
         location: {
@@ -43,7 +64,6 @@ export const useMapLocation = (): {
           longitudeDelta: USER_DELTA,
         },
         source: "user" as const,
-        statusText,
       };
 
     if (ipLocation)
@@ -55,7 +75,6 @@ export const useMapLocation = (): {
           longitudeDelta: CITY_DELTA,
         },
         source: "ip" as const,
-        statusText,
       };
 
     const cityCoordinates = userData?.place_id?.[language]?.geometry?.location;
@@ -72,9 +91,48 @@ export const useMapLocation = (): {
           longitudeDelta: CITY_DELTA,
         },
         source: "city" as const,
-        statusText,
       };
 
-    return { location: null, source: null, statusText };
-  }, [userLocation, ipLocation, userData?.place_id, language, statusText]);
+    return { location: null, source: null };
+  }, [userLocation, ipLocation, userData?.place_id, language]);
+
+  const getMapPointsRequestParams = useCallback(
+    (
+      bounds: TMapBounds,
+      options: { includeNearest: boolean }
+    ): TMapPointsRequest => {
+      const coords =
+        resolved.location &&
+        (resolved.source === "user" || resolved.source === "ip" || resolved.source === "city")
+          ? { latitude: resolved.location.latitude, longitude: resolved.location.longitude }
+          : undefined;
+
+      const request: TMapPointsRequest = {
+        bounds,
+        includeNearest: options.includeNearest,
+      };
+      if (resolved.source === "user" && coords) request.userLocation = coords;
+      if ((resolved.source === "ip" || resolved.source === "city") && coords)
+        request.cityLocation = coords;
+      return request;
+    },
+    [resolved.location, resolved.source]
+  );
+
+  return useMemo(
+    () => ({
+      location: resolved.location,
+      source: resolved.source,
+      statusText,
+      isLocationLoading,
+      getMapPointsRequestParams,
+    }),
+    [
+      resolved.location,
+      resolved.source,
+      statusText,
+      isLocationLoading,
+      getMapPointsRequestParams,
+    ]
+  );
 };
