@@ -19,19 +19,6 @@ type MapLocationSource = "user" | "ip" | "city" | null;
 const USER_DELTA = 0.1;
 const CITY_DELTA = 0.5;
 
-/** Конвертує регіон карти (lat, lng, deltas) у bounds для API */
-export const regionToBounds = (region: {
-  latitude: number;
-  longitude: number;
-  latitudeDelta: number;
-  longitudeDelta: number;
-}): TMapBounds => ({
-  minLat: region.latitude - region.latitudeDelta / 2,
-  maxLat: region.latitude + region.latitudeDelta / 2,
-  minLon: region.longitude - region.longitudeDelta / 2,
-  maxLon: region.longitude + region.longitudeDelta / 2,
-});
-
 export const useMapLocation = (): {
   location: TMapMarker | null;
   source: MapLocationSource;

@@ -33,7 +33,8 @@ import { EventContainer } from "./components/EventContainer/EventContainer";
 import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
 
 // hooks
-import { useMapLocation, regionToBounds } from "./useMapLocation";
+import { useMapLocation } from "./useMapLocation";
+import { regionToBounds } from "../../../storeRedux/apis/map/map.helpers";
 
 // styles
 import { styles } from "./Map.styles";
