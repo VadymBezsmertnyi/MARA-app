@@ -3,11 +3,11 @@ import { z } from "zod";
 export const mapCoordinatesSchema = z.object({
   latitude: z.number(),
   longitude: z.number(),
-  altitude: z.number().nullable().optional(),
-  accuracy: z.number().nullable().optional(),
-  altitudeAccuracy: z.number().nullable().optional(),
-  heading: z.number().nullable().optional(),
-  speed: z.number().nullable().optional(),
+  altitude: z.number().nullable(),
+  accuracy: z.number().nullable(),
+  altitudeAccuracy: z.number().nullable(),
+  heading: z.number().nullable(),
+  speed: z.number().nullable(),
 });
 
 export const ipApiGetCountryResponseSchema = z.object({

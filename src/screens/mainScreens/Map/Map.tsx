@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useEffect, useMemo, useRef } from "react";
+import React, {
+  FunctionComponent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Platform, View } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
@@ -10,14 +16,12 @@ import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
 import { mapMarker } from "./Map.types";
 
 // redux
-import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
 import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // components
 import { EventMarker } from "./components/EventMarker/EventMarker";
@@ -25,6 +29,9 @@ import { MeMarker } from "./components/MeMarker/MeMarker";
 import { UpContainer } from "./components/UpContainer/UpContainer";
 import { EventContainer } from "./components/EventContainer/EventContainer";
 import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
+
+// hooks
+import { useMapLocation } from "./useMapLocation";
 
 // styles
 import { styles } from "./Map.styles";
@@ -41,13 +48,13 @@ const DEFAULT_LOCATION: mapMarker = {
 };
 
 export const Map: FunctionComponent<MapProps> = () => {
-  const { language } = useLocalesProvider();
-  const { userData } = useUserSelector();
   const { workshopsList: workshops } = useWorkshopsSelector();
   const { location } = useMapSelector();
   const { theme } = useThemeProvider();
   const { upcomingEventsList, upcomingClosest } = useEventsSelector();
+  const { location: hookLocation } = useMapLocation();
   const refMap = useRef<MapView>(null);
+  const [hasUserMoved, setHasUserMoved] = useState(false);
 
   const showEventList = useMemo(() => {
     const sourceList = upcomingEventsList.length
@@ -71,31 +78,10 @@ export const Map: FunctionComponent<MapProps> = () => {
       });
   };
 
-  const getToUser = () => {
-    if (location && refMap.current)
-      refMap.current.animateToRegion({
-        ...location,
-        latitudeDelta: 0.02,
-        longitudeDelta: 0.02,
-      });
-  };
-
-  const getToCity = () => {
-    const cityCoordinates =
-      userData?.place_id?.[language].geometry.location || null;
-    if (cityCoordinates && refMap.current)
-      refMap.current.animateToRegion({
-        longitude: cityCoordinates.lng,
-        latitude: cityCoordinates.lat,
-        latitudeDelta: 0.1,
-        longitudeDelta: 0.1,
-      });
-  };
-
   useEffect(() => {
-    if (location) getToUser();
-    else getToCity();
-  }, [!location, userData?._id]);
+    if (!hookLocation || hasUserMoved || !refMap.current) return;
+    refMap.current.animateToRegion(hookLocation);
+  }, [hookLocation, hasUserMoved]);
 
   return (
     <View style={styles.container}>
@@ -109,8 +95,8 @@ export const Map: FunctionComponent<MapProps> = () => {
         userInterfaceStyle={theme}
         showsBuildings={false}
         showsIndoorLevelPicker={false}
-        onLayout={() => {
-          getToUser();
+        onPanDrag={() => {
+          if (!hasUserMoved) setHasUserMoved(true);
         }}
       >
         <MeMarker />
