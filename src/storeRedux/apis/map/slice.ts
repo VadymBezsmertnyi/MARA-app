@@ -9,6 +9,7 @@ const initialState: TMapState = {
   userLocation: null,
   ipLocation: null,
   source: null,
+  sources: [],
   loading: false,
   error: null,
 };
@@ -22,9 +23,11 @@ export const mapSlice = createSlice({
       if (action.payload) {
         state.location = action.payload;
         state.source = "user";
+        if (!state.sources.includes("user")) state.sources.push("user");
       } else if (state.source === "user") {
         state.location = state.ipLocation;
         state.source = state.ipLocation ? "ip" : null;
+        state.sources = state.sources.filter((item) => item !== "user");
       }
     },
     setIpLocation: (state, action: PayloadAction<TMapCoordinates | null>) => {
@@ -32,6 +35,7 @@ export const mapSlice = createSlice({
       if (!state.userLocation && action.payload) {
         state.location = action.payload;
         state.source = "ip";
+        if (!state.sources.includes("ip")) state.sources.push("ip");
       } else if (
         !state.userLocation &&
         !action.payload &&
@@ -39,6 +43,7 @@ export const mapSlice = createSlice({
       ) {
         state.location = null;
         state.source = null;
+        state.sources = state.sources.filter((item) => item !== "ip");
       }
     },
     resetLocation: (state) => {
@@ -46,6 +51,7 @@ export const mapSlice = createSlice({
       state.userLocation = null;
       state.ipLocation = null;
       state.source = null;
+      state.sources = [];
       state.loading = false;
       state.error = null;
     },
@@ -66,6 +72,8 @@ export const mapSlice = createSlice({
               state.location = action.payload;
               state.source = "ip";
             }
+            if (!state.sources.includes("ip")) state.sources.push("ip");
+
             state.loading = false;
             state.error = null;
           } else {
@@ -94,6 +102,8 @@ export const mapSlice = createSlice({
             state.userLocation = action.payload;
             state.location = action.payload;
             state.source = "user";
+            if (!state.sources.includes("user")) state.sources.push("user");
+
             state.loading = false;
             state.error = null;
           } else {

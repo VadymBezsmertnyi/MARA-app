@@ -34,6 +34,7 @@ export const mapStateSchema = z.object({
   userLocation: mapCoordinatesSchema.nullable(),
   ipLocation: mapCoordinatesSchema.nullable(),
   source: mapLocationSourceSchema.nullable(),
+  sources: z.array(mapLocationSourceSchema),
   loading: z.boolean(),
   error: z.string().nullable(),
 });
