@@ -5,25 +5,26 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { Linking } from "react-native";
 import * as Location from "expo-location";
-
-// schemas
-import { ipApiGetCountryResponseSchema } from "./MapProvider.schemas";
 
 // redux
 import { useUserSelector } from "../../storeRedux/apis/user/slice";
+import { useMapSelector, setUserLocation } from "../../storeRedux/apis/map/slice";
+import {
+  useGetIpLocationQuery,
+  useLazyGetUserLocationQuery,
+  useOpenLocationSettingsMutation,
+} from "../../storeRedux/api";
+import { useRootDispatch } from "../../storeRedux/store";
 
 // providers
-import { useApiProvider } from "../ApiProvider/ApiProvider";
 import { usePermissionsProvider } from "../PermissionsProvider/PermissionsProvider";
 
 // constants
-import { PATHS } from "../paths.constants";
-import { TIpApiGetCountryResponse } from "./MapProvider.types";
+import { TMapCoordinates } from "../../storeRedux/apis/map/map.types";
 
 type MapContext = {
-  location: Location.LocationObjectCoords | null;
+  location: TMapCoordinates | null;
   setPermission: () => Promise<void>;
 };
 
@@ -31,43 +32,22 @@ type MapProviderProps = {
   children: React.ReactNode;
 };
 
-const INTERVAL_GET_LOCATION = 15000;
-
 export const mapContext = React.createContext({} as MapContext);
 
 const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
-  const { api } = useApiProvider();
   const { userData } = useUserSelector();
   const { locationForegroundPermission } = usePermissionsProvider();
-  const [location, setLocation] =
-    useState<Location.LocationObjectCoords | null>(null);
-  const [startGetGeolocation, setStartGetGeolocation] =
+  const dispatch = useRootDispatch();
+  const { location, ipLocation, userLocation } = useMapSelector();
+  const [hasRequestedUserLocation, setHasRequestedUserLocation] =
     useState<boolean>(false);
-  const [countryUser, setCountryUser] =
-    useState<TIpApiGetCountryResponse | null>(null);
+  const [getUserLocation] = useLazyGetUserLocationQuery();
+  const [openLocationSettings] = useOpenLocationSettingsMutation();
+
+  useGetIpLocationQuery(undefined, { skip: Boolean(ipLocation) });
 
   const setPermission = async () => {
-    await Linking.openSettings();
-  };
-
-  const getLocation = async (coordsProps?: Location.LocationObject) => {
-    const { coords } = coordsProps
-      ? coordsProps
-      : await Location.getCurrentPositionAsync({
-          accuracy: Location.Accuracy.BestForNavigation,
-          mayShowUserSettingsDialog: true,
-          timeInterval: INTERVAL_GET_LOCATION,
-          distanceInterval: 1,
-        });
-
-    setLocation(coords);
-  };
-
-  const getCountryUser = async () => {
-    const result = countryUser
-      ? countryUser
-      : await api(PATHS.ipApiGetCountry, null, ipApiGetCountryResponseSchema);
-    if (!countryUser) setCountryUser(result);
+    await openLocationSettings().unwrap().catch(() => {});
   };
 
   const valueContext: MapContext = useMemo(
@@ -79,18 +59,26 @@ const MapProvider: FunctionComponent<MapProviderProps> = ({ children }) => {
     if (
       userData?.isGeoLocation &&
       locationForegroundPermission === Location.PermissionStatus.GRANTED &&
-      !startGetGeolocation
-    )
-      getCountryUser();
+      !hasRequestedUserLocation &&
+      userData?._id
+    ) {
+      setHasRequestedUserLocation(true);
+      getUserLocation({ userId: userData._id });
+    }
   }, [
     userData?.isGeoLocation,
     locationForegroundPermission,
-    startGetGeolocation,
+    hasRequestedUserLocation,
+    userData?._id,
+    getUserLocation,
   ]);
 
   useEffect(() => {
-    if (countryUser) getLocation();
-  }, [countryUser]);
+    if (!userData?.isGeoLocation && userLocation)
+      dispatch(setUserLocation(null));
+    if (!userData?.isGeoLocation && hasRequestedUserLocation)
+      setHasRequestedUserLocation(false);
+  }, [userData?.isGeoLocation, userLocation, hasRequestedUserLocation, dispatch]);
 
   return (
     <mapContext.Provider value={valueContext}>{children}</mapContext.Provider>
