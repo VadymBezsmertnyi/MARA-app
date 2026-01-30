@@ -23,11 +23,9 @@ export const mapSlice = createSlice({
       if (action.payload) {
         state.location = action.payload;
         state.source = "user";
-        if (!state.sources.includes("user")) state.sources.push("user");
       } else if (state.source === "user") {
         state.location = state.ipLocation;
         state.source = state.ipLocation ? "ip" : null;
-        state.sources = state.sources.filter((item) => item !== "user");
       }
     },
     setIpLocation: (state, action: PayloadAction<TMapCoordinates | null>) => {
@@ -35,7 +33,6 @@ export const mapSlice = createSlice({
       if (!state.userLocation && action.payload) {
         state.location = action.payload;
         state.source = "ip";
-        if (!state.sources.includes("ip")) state.sources.push("ip");
       } else if (
         !state.userLocation &&
         !action.payload &&
@@ -43,7 +40,6 @@ export const mapSlice = createSlice({
       ) {
         state.location = null;
         state.source = null;
-        state.sources = state.sources.filter((item) => item !== "ip");
       }
     },
     resetLocation: (state) => {
@@ -62,18 +58,18 @@ export const mapSlice = createSlice({
       .addMatcher(api.endpoints.getIpLocation.matchPending, (state) => {
         state.loading = true;
         state.error = null;
+        if (!state.sources.includes("ip")) state.sources.push("ip");
       })
       .addMatcher(
         api.endpoints.getIpLocation.matchFulfilled,
         (state, action) => {
+          state.sources = state.sources.filter((item) => item !== "ip");
           if (action.payload) {
             state.ipLocation = action.payload;
             if (!state.userLocation) {
               state.location = action.payload;
               state.source = "ip";
             }
-            if (!state.sources.includes("ip")) state.sources.push("ip");
-
             state.loading = false;
             state.error = null;
           } else {
@@ -85,6 +81,7 @@ export const mapSlice = createSlice({
       .addMatcher(
         api.endpoints.getIpLocation.matchRejected,
         (state, action) => {
+          state.sources = state.sources.filter((item) => item !== "ip");
           state.loading = false;
           state.error =
             action.error.message || "Помилка отримання координат по IP";
@@ -94,16 +91,16 @@ export const mapSlice = createSlice({
       .addMatcher(api.endpoints.getUserLocation.matchPending, (state) => {
         state.loading = true;
         state.error = null;
+        if (!state.sources.includes("user")) state.sources.push("user");
       })
       .addMatcher(
         api.endpoints.getUserLocation.matchFulfilled,
         (state, action) => {
+          state.sources = state.sources.filter((item) => item !== "user");
           if (action.payload) {
             state.userLocation = action.payload;
             state.location = action.payload;
             state.source = "user";
-            if (!state.sources.includes("user")) state.sources.push("user");
-
             state.loading = false;
             state.error = null;
           } else {
@@ -116,6 +113,7 @@ export const mapSlice = createSlice({
       .addMatcher(
         api.endpoints.getUserLocation.matchRejected,
         (state, action) => {
+          state.sources = state.sources.filter((item) => item !== "user");
           state.loading = false;
           state.error =
             action.error.message || "Помилка отримання геолокації користувача";
