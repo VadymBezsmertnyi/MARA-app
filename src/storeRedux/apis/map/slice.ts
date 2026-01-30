@@ -32,7 +32,11 @@ export const mapSlice = createSlice({
       if (!state.userLocation && action.payload) {
         state.location = action.payload;
         state.source = "ip";
-      } else if (!state.userLocation && !action.payload && state.source === "ip") {
+      } else if (
+        !state.userLocation &&
+        !action.payload &&
+        state.source === "ip"
+      ) {
         state.location = null;
         state.source = null;
       }
@@ -53,25 +57,31 @@ export const mapSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addMatcher(api.endpoints.getIpLocation.matchFulfilled, (state, action) => {
-        if (action.payload) {
-          state.ipLocation = action.payload;
-          if (!state.userLocation) {
-            state.location = action.payload;
-            state.source = "ip";
+      .addMatcher(
+        api.endpoints.getIpLocation.matchFulfilled,
+        (state, action) => {
+          if (action.payload) {
+            state.ipLocation = action.payload;
+            if (!state.userLocation) {
+              state.location = action.payload;
+              state.source = "ip";
+            }
+            state.loading = false;
+            state.error = null;
+          } else {
+            state.loading = false;
+            state.error = "Помилка валідації даних від сервера (getIpLocation)";
           }
-          state.loading = false;
-          state.error = null;
-        } else {
-          state.loading = false;
-          state.error = "Помилка валідації даних від сервера (getIpLocation)";
         }
-      })
-      .addMatcher(api.endpoints.getIpLocation.matchRejected, (state, action) => {
-        state.loading = false;
-        state.error =
-          action.error.message || "Помилка отримання координат по IP";
-      })
+      )
+      .addMatcher(
+        api.endpoints.getIpLocation.matchRejected,
+        (state, action) => {
+          state.loading = false;
+          state.error =
+            action.error.message || "Помилка отримання координат по IP";
+        }
+      )
       // getUserLocation
       .addMatcher(api.endpoints.getUserLocation.matchPending, (state) => {
         state.loading = true;
@@ -100,7 +110,7 @@ export const mapSlice = createSlice({
           state.error =
             action.error.message || "Помилка отримання геолокації користувача";
         }
-      });
+      );
   },
 });
 
