@@ -53,39 +53,28 @@ export const ContainerUser: FunctionComponent = () => {
         </View>
 
         <View style={styles.profileInfo}>
-          <Text style={styles.profileName}>
-            {userData?.firstName || "John Doe"}
-          </Text>
+          <View style={styles.nameRow}>
+            <Text style={styles.profileName}>
+              {userData?.firstName || "Вадим"}
+            </Text>
+            <View style={styles.verifiedBadge}>
+              <MaterialIcons name="check-circle" size={16} color="#4CAF50" />
+              <Text style={styles.verifiedText}>Верифікований</Text>
+            </View>
+          </View>
           <Text style={styles.profileLocation}>
-            {showCity?.name || "San Francisco, CA"}
+            {showCity?.name || "Cherkasy"}
           </Text>
           {userData?.phoneNumber ? (
             <PhoneWithMessengers title={userData.phoneNumber} />
           ) : (
-            <Text style={styles.profilePhone}>+1 234 567 8900</Text>
+            <Text style={styles.profilePhone}>+3809729909007</Text>
           )}
         </View>
 
         <TouchableOpacity style={styles.settingsButton}>
           <MaterialIcons name="settings" size={24} color="#666" />
         </TouchableOpacity>
-      </View>
-
-      <View style={styles.statsContainer}>
-        <View style={styles.statItem}>
-          <Text style={styles.statNumber}>128</Text>
-          <Text style={styles.statLabel}>Followers</Text>
-        </View>
-        <View style={styles.statDivider} />
-        <View style={styles.statItem}>
-          <Text style={styles.statNumber}>64</Text>
-          <Text style={styles.statLabel}>Following</Text>
-        </View>
-        <View style={styles.statDivider} />
-        <View style={styles.statItem}>
-          <Text style={styles.statNumber}>12</Text>
-          <Text style={styles.statLabel}>Events</Text>
-        </View>
       </View>
     </View>
   );

@@ -46,33 +46,48 @@ type SettingsMainProps = {
     DrawerNavigationProp<RootAllScreensParamList>;
 };
 
-// Mock data for profile sections
+// Mock data for profile sections based on the design
 const mockRoles = [
-  { id: "1", name: "Event Organizer", icon: "event" },
-  { id: "2", name: "Workshop Instructor", icon: "school" },
-  { id: "3", name: "Community Leader", icon: "people" },
+  { id: "1", name: "Owner of workshops", icon: "business", count: 1 },
+  { id: "2", name: "Adder of workshops", icon: "build", count: 2 },
+  { id: "3", name: "Organizator of events", icon: "event", count: 1 },
 ];
 
 const mockActions = [
-  { id: "1", name: "Create Event", count: 12 },
-  { id: "2", name: "Join Workshop", count: 8 },
-  { id: "3", name: "Share Content", count: 24 },
+  {
+    id: "1",
+    name: "Workshops",
+    icon: "school",
+    subItems: [
+      { label: "Active", value: 1, icon: "check-circle", color: "#4CAF50" },
+      { label: "On review", value: 1, icon: "clock", color: "#FF9800" },
+      { label: "Rejected", value: 0, icon: "cancel", color: "#F44336" },
+    ],
+  },
+  {
+    id: "2",
+    name: "Events",
+    icon: "event",
+    subItems: [
+      { label: "Active", value: 1, icon: "check-circle", color: "#4CAF50" },
+      { label: "On review", value: 0, icon: "clock", color: "#FF9800" },
+    ],
+  },
+  { id: "3", name: "Comments", icon: "comment", count: 21 },
+  { id: "4", name: "Rating", icon: "star", count: "4.5", isRating: true },
 ];
 
 const mockInteractions = [
-  { id: "1", name: "Comments", count: 45 },
-  { id: "2", name: "Likes", count: 128 },
-  { id: "3", name: "Shares", count: 67 },
+  { id: "1", name: "Events I'm going to", icon: "event-note" },
+  { id: "2", name: "Workshops I commented / saved", icon: "bookmark" },
 ];
 
 const mockWorkshops = [
-  { id: "1", name: "Photography Basics", participants: 15 },
-  { id: "2", name: "Digital Marketing", participants: 23 },
+  { id: "1", name: "Active", icon: "check-circle", color: "#4CAF50", count: 1 },
 ];
 
 const mockEvents = [
-  { id: "1", name: "Community Meetup", attendees: 45 },
-  { id: "2", name: "Tech Conference", attendees: 120 },
+  { id: "1", name: "Active", icon: "check-circle", color: "#4CAF50", count: 1 },
 ];
 
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
@@ -127,22 +142,49 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
         )}
       </View>
       <View style={styles.sectionItems}>
-        {items.slice(0, 3).map((item) => (
+        {items.slice(0, 4).map((item) => (
           <View key={item.id} style={styles.sectionItem}>
             <View style={styles.itemLeft}>
               {item.icon && (
                 <MaterialIcons
                   name={item.icon}
                   size={20}
-                  color="#666"
+                  color={item.color || "#666"}
                   style={styles.itemIcon}
                 />
               )}
-              <Text style={styles.itemText}>{item.name}</Text>
+              <View style={styles.itemContent}>
+                <Text style={styles.itemText}>{item.name}</Text>
+                {item.subItems && (
+                  <View style={styles.subItemsContainer}>
+                    {item.subItems.map((subItem: any, index: number) => (
+                      <View key={index} style={styles.subItem}>
+                        <MaterialIcons
+                          name={subItem.icon}
+                          size={16}
+                          color={subItem.color}
+                          style={styles.subItemIcon}
+                        />
+                        <Text style={styles.subItemText}>
+                          {subItem.label}: {subItem.value}
+                        </Text>
+                      </View>
+                    ))}
+                  </View>
+                )}
+              </View>
             </View>
-            <Text style={styles.itemCount}>
-              {item.participants || item.attendees || item.count || ""}
-            </Text>
+            <View style={styles.itemRight}>
+              {item.isRating ? (
+                <View style={styles.ratingContainer}>
+                  <Text style={styles.itemCount}>{item.count}</Text>
+                  <MaterialIcons name="star" size={16} color="#FFD700" />
+                </View>
+              ) : item.count !== undefined ? (
+                <Text style={styles.itemCount}>{item.count}</Text>
+              ) : null}
+              <MaterialIcons name="arrow-forward-ios" size={12} color="#666" />
+            </View>
           </View>
         ))}
       </View>

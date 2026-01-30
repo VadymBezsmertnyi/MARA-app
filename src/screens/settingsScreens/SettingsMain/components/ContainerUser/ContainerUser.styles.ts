@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: verticalScale(16),
   },
   avatarContainer: {
     position: "relative",
@@ -47,11 +46,30 @@ export const styles = StyleSheet.create({
     flex: 1,
     marginLeft: horizontalScale(12),
   },
+  nameRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: verticalScale(4),
+  },
   profileName: {
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: scaleFont(18),
     color: colors.blackCoffee,
-    marginBottom: verticalScale(2),
+  },
+  verifiedBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#E8F5E8",
+    paddingHorizontal: horizontalScale(8),
+    paddingVertical: verticalScale(2),
+    borderRadius: 12,
+  },
+  verifiedText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: scaleFont(10),
+    color: "#4CAF50",
+    marginLeft: horizontalScale(2),
   },
   profileLocation: {
     fontFamily: FONT_400_OPEN_SANS,
@@ -66,35 +84,6 @@ export const styles = StyleSheet.create({
   },
   settingsButton: {
     padding: horizontalScale(8),
-  },
-  // Stats container styles
-  statsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    paddingVertical: verticalScale(16),
-    backgroundColor: "#f8f9fa",
-    borderRadius: 12,
-  },
-  statItem: {
-    alignItems: "center",
-    flex: 1,
-  },
-  statNumber: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: scaleFont(20),
-    color: colors.blackCoffee,
-    marginBottom: verticalScale(2),
-  },
-  statLabel: {
-    fontFamily: FONT_400_OPEN_SANS,
-    fontSize: scaleFont(12),
-    color: colors.grayCloudy,
-  },
-  statDivider: {
-    width: 1,
-    height: verticalScale(40),
-    backgroundColor: colors.grayMercury,
   },
   // Legacy styles (kept for compatibility)
   containerMain: { flexDirection: "row", gap: horizontalScale(12) },

@@ -98,21 +98,51 @@ export const styles = StyleSheet.create({
   sectionItem: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
     paddingVertical: 8,
   },
   itemLeft: {
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
     flex: 1,
   },
   itemIcon: {
     marginRight: 12,
+    marginTop: 2,
+  },
+  itemContent: {
+    flex: 1,
   },
   itemText: {
-    fontFamily: FONT_400_OPEN_SANS,
+    fontFamily: FONT_600_OPEN_SANS,
     fontSize: 14,
     color: "#333",
+    marginBottom: 4,
+  },
+  subItemsContainer: {
+    gap: 2,
+  },
+  subItem: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  subItemIcon: {
+    marginRight: 6,
+  },
+  subItemText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: 12,
+    color: "#666",
+  },
+  itemRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  ratingContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
   },
   itemCount: {
     fontFamily: FONT_600_OPEN_SANS,
