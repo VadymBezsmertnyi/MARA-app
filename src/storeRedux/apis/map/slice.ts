@@ -12,7 +12,7 @@ const initialState: TMapState = {
   sources: [],
   mapPoints: null,
   mapPointsLoading: false,
-  loading: false,
+  loading: true,
   error: null,
 };
 
@@ -55,10 +55,7 @@ export const mapSlice = createSlice({
       state.loading = false;
       state.error = null;
     },
-    setMapPoints: (
-      state,
-      action: PayloadAction<TMapPointsResponse | null>
-    ) => {
+    setMapPoints: (state, action: PayloadAction<TMapPointsResponse | null>) => {
       state.mapPoints = action.payload;
     },
   },
@@ -137,7 +134,20 @@ export const mapSlice = createSlice({
         api.endpoints.getMapPoints.matchFulfilled,
         (state, action) => {
           state.mapPointsLoading = false;
-          state.mapPoints = action.payload;
+          if (!action.payload) {
+            state.mapPoints = null;
+            return;
+          }
+          if (
+            state.mapPoints?.nearestEvent &&
+            action.payload.nearestEvent === null
+          )
+            state.mapPoints = {
+              ...action.payload,
+              nearestEvent: state.mapPoints.nearestEvent,
+              nearestEventDistance: state.mapPoints.nearestEventDistance,
+            };
+          else state.mapPoints = action.payload;
         }
       )
       .addMatcher(api.endpoints.getMapPoints.matchRejected, (state) => {
