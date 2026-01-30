@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import errorToastMiddleware from "./middleware/errorToast.middleware";
 import loadWorkshopsMiddleware from "./middleware/loadWorkshops.middleware";
+import mapLocationMiddleware from "./middleware/mapLocation.middleware";
 
 const reducer = {
   [api.reducerPath]: api.reducer,
@@ -29,7 +30,8 @@ export const store = configureStore({
     })
       .concat(api.middleware)
       .concat(errorToastMiddleware.middleware)
-      .concat(loadWorkshopsMiddleware.middleware),
+      .concat(loadWorkshopsMiddleware.middleware)
+      .concat(mapLocationMiddleware.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
