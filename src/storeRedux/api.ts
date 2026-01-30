@@ -41,6 +41,11 @@ import {
   sendSmsVerification,
   verifySmsCode,
 } from "./apis/sms-verification/apis";
+import {
+  getIpLocation,
+  getUserLocation,
+  openLocationSettings,
+} from "./apis/map/apis";
 
 export type Builder = EndpointBuilder<
   BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError>,
@@ -85,6 +90,10 @@ export const api = createApi({
     // SMS Verification APIs
     sendSmsVerification: sendSmsVerification(builder),
     verifySmsCode: verifySmsCode(builder),
+    // Map APIs
+    getIpLocation: getIpLocation(builder),
+    getUserLocation: getUserLocation(builder),
+    openLocationSettings: openLocationSettings(builder),
   }),
 });
 
@@ -131,4 +140,10 @@ export const {
   // SMS Verification Hooks APIs
   useSendSmsVerificationMutation,
   useVerifySmsCodeMutation,
+  // Map Hooks APIs
+  useGetIpLocationQuery,
+  useLazyGetIpLocationQuery,
+  useGetUserLocationQuery,
+  useLazyGetUserLocationQuery,
+  useOpenLocationSettingsMutation,
 } = api;

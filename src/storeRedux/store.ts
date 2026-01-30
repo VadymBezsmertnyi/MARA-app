@@ -5,6 +5,7 @@ import eventsSlice from "./apis/events/slice";
 import paymentSlice from "./apis/payment/slice";
 import workshopsSlice from "./apis/workshops/slice";
 import smsVerificationSlice from "./apis/sms-verification/slice";
+import mapSlice from "./apis/map/slice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import errorToastMiddleware from "./middleware/errorToast.middleware";
@@ -17,6 +18,7 @@ const reducer = {
   payment: paymentSlice,
   workshops: workshopsSlice,
   smsVerification: smsVerificationSlice,
+  map: mapSlice,
 };
 
 export const store = configureStore({
