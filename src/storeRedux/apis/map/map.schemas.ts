@@ -61,6 +61,15 @@ export const ipApiGetCountryResponseSchema = z.object({
 
 export const mapLocationSourceSchema = z.enum(["user", "ip"]);
 
+export const mapPointsResponseSchema = z.object({
+  result: z.boolean(),
+  events: z.array(mapPointEventSchema),
+  workshops: z.array(mapPointWorkshopSchema),
+  nearestEvent: mapPointEventSchema.nullable(),
+  nearestEventDistance: z.number().nullable(),
+  code: z.number(),
+});
+
 export const mapStateSchema = z.object({
   location: mapCoordinatesSchema.nullable(),
   userLocation: mapCoordinatesSchema.nullable(),
@@ -71,15 +80,6 @@ export const mapStateSchema = z.object({
   mapPointsLoading: z.boolean(),
   loading: z.boolean(),
   error: z.string().nullable(),
-});
-
-export const mapPointsResponseSchema = z.object({
-  result: z.boolean(),
-  events: z.array(mapPointEventSchema),
-  workshops: z.array(mapPointWorkshopSchema),
-  nearestEvent: mapPointEventSchema.nullable(),
-  nearestEventDistance: z.number().nullable(),
-  code: z.number(),
 });
 
 export const mapMarkerSchema = z.object({
