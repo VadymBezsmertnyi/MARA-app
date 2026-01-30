@@ -4,6 +4,7 @@ import {
   mapBoundsSchema,
   mapCoordinatesSchema,
   mapLocationSourceSchema,
+  mapMarkerSchema,
   mapPointCoordinatesSchema,
   mapPointEventSchema,
   mapPointWorkshopSchema,
@@ -30,3 +31,4 @@ export type TMapPointsRequest = {
   cityLocation?: TMapPointCoordinates;
   includeNearest?: boolean;
 };
+export type TMapMarker = z.infer<typeof mapMarkerSchema>;

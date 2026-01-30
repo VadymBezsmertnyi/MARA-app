@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useRef } from "react";
 import { LocationObjectCoords } from "expo-location";
-import { Marker, Callout, MapCallout, MapMarker } from "react-native-maps";
+import { Marker, Callout, MapMarker } from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";

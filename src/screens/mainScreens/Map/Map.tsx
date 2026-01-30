@@ -14,7 +14,7 @@ import dayjs from "dayjs";
 
 // types
 import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
-import { mapMarker } from "./Map.types";
+import { TMapMarker } from "../../../storeRedux/apis/map/map.types";
 
 // redux
 import { useLazyGetMapPointsQuery } from "../../../storeRedux/api";
@@ -44,7 +44,7 @@ type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
 };
 
-const DEFAULT_LOCATION: mapMarker = {
+const DEFAULT_LOCATION: TMapMarker = {
   longitude: 31.976197008043528,
   latitude: 49.63489179964168,
   latitudeDelta: 7.273602506374104,
@@ -69,14 +69,27 @@ export const Map: FunctionComponent<MapProps> = () => {
   const lastMapPointsAtRef = useRef<number>(0);
 
   const fetchMapPoints = useCallback(
-    (bounds: { minLat: number; maxLat: number; minLon: number; maxLon: number }, includeNearest: boolean) => {
+    (
+      bounds: {
+        minLat: number;
+        maxLat: number;
+        minLon: number;
+        maxLon: number;
+      },
+      includeNearest: boolean
+    ) => {
       getMapPoints(getMapPointsRequestParams(bounds, { includeNearest }));
     },
     [getMapPoints, getMapPointsRequestParams]
   );
 
   const handleRegionChangeComplete = useCallback(
-    (region: { latitude: number; longitude: number; latitudeDelta: number; longitudeDelta: number }) => {
+    (region: {
+      latitude: number;
+      longitude: number;
+      latitudeDelta: number;
+      longitudeDelta: number;
+    }) => {
       const now = Date.now();
       if (now - lastMapPointsAtRef.current < MAP_POINTS_THROTTLE_MS) return;
       lastMapPointsAtRef.current = now;
@@ -99,7 +112,7 @@ export const Map: FunctionComponent<MapProps> = () => {
     [showEventList]
   );
 
-  const showFirstEvent = (location: mapMarker) => {
+  const showFirstEvent = (location: TMapMarker) => {
     if (refMap.current)
       refMap.current.animateToRegion({
         ...location,
@@ -115,7 +128,9 @@ export const Map: FunctionComponent<MapProps> = () => {
 
   useEffect(() => {
     if (isLocationLoading || !hookLocation) return;
-    const key = `${hookLocation.latitude.toFixed(5)}-${hookLocation.longitude.toFixed(5)}`;
+    const key = `${hookLocation.latitude.toFixed(
+      5
+    )}-${hookLocation.longitude.toFixed(5)}`;
     if (lastFirstFetchKeyRef.current === key) return;
     lastFirstFetchKeyRef.current = key;
     const bounds = regionToBounds(hookLocation);

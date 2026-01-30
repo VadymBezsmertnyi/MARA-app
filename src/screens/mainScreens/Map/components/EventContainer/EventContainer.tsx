@@ -16,7 +16,7 @@ import { usePlacesProvider } from "../../../../../providers/PlacesProvider/Place
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 //types
-import { mapMarker } from "../../Map.types";
+import { TMapMarker } from "../../../../../storeRedux/apis/map/map.types";
 import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
 // helps
@@ -28,7 +28,7 @@ import colors from "../../../../../../styles/colors";
 
 type EventContainerProps = {
   firstEvent: TEvent | null;
-  showFirstEvent: (location: mapMarker) => void;
+  showFirstEvent: (location: TMapMarker) => void;
 };
 
 export const EventContainer: FunctionComponent<EventContainerProps> = ({

@@ -1,8 +1,11 @@
 import { useCallback, useMemo } from "react";
 
 // types
-import { mapMarker } from "./Map.types";
-import type { TMapBounds, TMapPointsRequest } from "../../../storeRedux/apis/map/map.types";
+import { TMapMarker } from "../../../storeRedux/apis/map/map.types";
+import type {
+  TMapBounds,
+  TMapPointsRequest,
+} from "../../../storeRedux/apis/map/map.types";
 
 // redux
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
@@ -30,7 +33,7 @@ export const regionToBounds = (region: {
 });
 
 export const useMapLocation = (): {
-  location: mapMarker | null;
+  location: TMapMarker | null;
   source: MapLocationSource;
   statusText: string | null;
   isLocationLoading: boolean;
@@ -103,8 +106,13 @@ export const useMapLocation = (): {
     ): TMapPointsRequest => {
       const coords =
         resolved.location &&
-        (resolved.source === "user" || resolved.source === "ip" || resolved.source === "city")
-          ? { latitude: resolved.location.latitude, longitude: resolved.location.longitude }
+        (resolved.source === "user" ||
+          resolved.source === "ip" ||
+          resolved.source === "city")
+          ? {
+              latitude: resolved.location.latitude,
+              longitude: resolved.location.longitude,
+            }
           : undefined;
 
       const request: TMapPointsRequest = {

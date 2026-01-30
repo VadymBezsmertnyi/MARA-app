@@ -81,3 +81,10 @@ export const mapPointsResponseSchema = z.object({
   nearestEventDistance: z.number().nullable(),
   code: z.number(),
 });
+
+export const mapMarkerSchema = z.object({
+  longitude: z.number(),
+  latitude: z.number(),
+  latitudeDelta: z.number(),
+  longitudeDelta: z.number(),
+});
