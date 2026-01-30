@@ -53,4 +53,70 @@ export const styles = StyleSheet.create({
     paddingVertical: verticalScale(20),
     gap: verticalScale(10),
   },
+  profileSections: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  sectionContainer: {
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    marginBottom: 16,
+    padding: 16,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  sectionTitle: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 16,
+    color: "#333",
+  },
+  seeAllButton: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  seeAllText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: 14,
+    color: "#007AFF",
+    marginRight: 4,
+  },
+  sectionItems: {
+    gap: 8,
+  },
+  sectionItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 8,
+  },
+  itemLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    flex: 1,
+  },
+  itemIcon: {
+    marginRight: 12,
+  },
+  itemText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: 14,
+    color: "#333",
+  },
+  itemCount: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    color: "#666",
+  },
 });

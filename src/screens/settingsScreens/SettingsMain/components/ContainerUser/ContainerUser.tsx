@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { ImageURISource, Text, View } from "react-native";
+import { ImageURISource, Text, View, TouchableOpacity } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // redux
 import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
@@ -39,38 +40,53 @@ export const ContainerUser: FunctionComponent = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.containerMain}>
-        {imageSource ? (
-          <ImageCache style={styles.containerImage} imageSrc={imageSource} />
-        ) : (
-          <IconProfileAvatar style={styles.containerImage} />
-        )}
-        <View style={styles.titlesMain}>
-          <Text style={styles.titleInfo}>{userData?.firstName}</Text>
-          <Text style={styles.titleInfo}>{showCity?.name}</Text>
+      <View style={styles.profileHeader}>
+        <View style={styles.avatarContainer}>
+          {imageSource ? (
+            <ImageCache style={styles.avatarImage} imageSrc={imageSource} />
+          ) : (
+            <IconProfileAvatar style={styles.avatarImage} />
+          )}
+          <TouchableOpacity style={styles.editButton}>
+            <MaterialIcons name="edit" size={16} color="#fff" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.profileInfo}>
+          <Text style={styles.profileName}>
+            {userData?.firstName || "John Doe"}
+          </Text>
+          <Text style={styles.profileLocation}>
+            {showCity?.name || "San Francisco, CA"}
+          </Text>
           {userData?.phoneNumber ? (
-            <PhoneWithMessengers
-              title={userData.phoneNumber}
-              //isTelegram
-              //isWhatsApp
-              //isViber
-            />
-          ) : null}
+            <PhoneWithMessengers title={userData.phoneNumber} />
+          ) : (
+            <Text style={styles.profilePhone}>+1 234 567 8900</Text>
+          )}
+        </View>
+
+        <TouchableOpacity style={styles.settingsButton}>
+          <MaterialIcons name="settings" size={24} color="#666" />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.statsContainer}>
+        <View style={styles.statItem}>
+          <Text style={styles.statNumber}>128</Text>
+          <Text style={styles.statLabel}>Followers</Text>
+        </View>
+        <View style={styles.statDivider} />
+        <View style={styles.statItem}>
+          <Text style={styles.statNumber}>64</Text>
+          <Text style={styles.statLabel}>Following</Text>
+        </View>
+        <View style={styles.statDivider} />
+        <View style={styles.statItem}>
+          <Text style={styles.statNumber}>12</Text>
+          <Text style={styles.statLabel}>Events</Text>
         </View>
       </View>
-      {/* <View style={styles.containerOtherContacts}>
-        <Text style={styles.titleOtherContacts}>
-          {i18n._("Additional contacts:")}
-        </Text>
-        {userData?.phoneNumber ? (
-          <PhoneWithMessengers
-            title={userData.phoneNumber}
-            isTelegram
-            isWhatsApp
-            isViber
-          />
-        ) : null}
-      </View> */}
     </View>
   );
 };
