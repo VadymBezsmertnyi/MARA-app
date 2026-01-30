@@ -43,6 +43,7 @@ import {
 } from "./apis/sms-verification/apis";
 import {
   getIpLocation,
+  getMapPoints,
   getUserLocation,
   openLocationSettings,
 } from "./apis/map/apis";
@@ -94,6 +95,7 @@ export const api = createApi({
     getIpLocation: getIpLocation(builder),
     getUserLocation: getUserLocation(builder),
     openLocationSettings: openLocationSettings(builder),
+    getMapPoints: getMapPoints(builder),
   }),
 });
 
@@ -146,4 +148,6 @@ export const {
   useGetUserLocationQuery,
   useLazyGetUserLocationQuery,
   useOpenLocationSettingsMutation,
+  useGetMapPointsQuery,
+  useLazyGetMapPointsQuery,
 } = api;

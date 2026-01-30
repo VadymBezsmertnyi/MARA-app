@@ -10,6 +10,38 @@ export const mapCoordinatesSchema = z.object({
   speed: z.number().nullable(),
 });
 
+export const mapPointCoordinatesSchema = z.object({
+  latitude: z.number(),
+  longitude: z.number(),
+});
+
+export const mapBoundsSchema = z.object({
+  minLat: z.number(),
+  maxLat: z.number(),
+  minLon: z.number(),
+  maxLon: z.number(),
+});
+
+const mapPointBaseSchema = z.object({
+  _id: z.string(),
+  coordinates: mapPointCoordinatesSchema.nullable(),
+  title: z.string().optional(),
+  imageFiles: z.array(z.any()).optional(),
+});
+
+export const mapPointEventSchema = mapPointBaseSchema.extend({
+  date: z
+    .object({
+      start: z.number().optional(),
+      finish: z.number().optional(),
+    })
+    .optional(),
+});
+
+export const mapPointWorkshopSchema = mapPointBaseSchema.extend({
+  rating: z.number().nullable().optional(),
+});
+
 export const ipApiGetCountryResponseSchema = z.object({
   status: z.string(),
   country: z.string(),
@@ -37,4 +69,13 @@ export const mapStateSchema = z.object({
   sources: z.array(mapLocationSourceSchema),
   loading: z.boolean(),
   error: z.string().nullable(),
+});
+
+export const mapPointsResponseSchema = z.object({
+  result: z.boolean(),
+  events: z.array(mapPointEventSchema),
+  workshops: z.array(mapPointWorkshopSchema),
+  nearestEvent: mapPointEventSchema.nullable(),
+  nearestEventDistance: z.number().nullable(),
+  code: z.number(),
 });

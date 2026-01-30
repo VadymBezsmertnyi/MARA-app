@@ -2,8 +2,8 @@ import { z } from "zod";
 import { Linking } from "react-native";
 import { Builder } from "../../api";
 import { PATHS } from "../../../providers/paths.constants";
-import { ipApiGetCountryResponseSchema } from "./map.schemas";
-import { TMapCoordinates } from "./map.types";
+import { ipApiGetCountryResponseSchema, mapPointsResponseSchema } from "./map.schemas";
+import { TMapCoordinates, TMapPointsRequest, TMapPointsResponse } from "./map.types";
 import * as Location from "expo-location";
 
 const INTERVAL_GET_LOCATION = 15000;
@@ -115,5 +115,51 @@ export const openLocationSettings = (builder: Builder) =>
           } as any,
         };
       }
+    },
+  });
+
+export const getMapPoints = (builder: Builder) =>
+  builder.query<TMapPointsResponse | null, TMapPointsRequest>({
+    query: ({
+      bounds,
+      types,
+      userLocation,
+      cityLocation,
+      includeNearest,
+    }) => {
+      const queryParams: string[] = [];
+      const boundsValue = `${bounds.minLat},${bounds.minLon},${bounds.maxLat},${bounds.maxLon}`;
+      queryParams.push(`bounds=${encodeURIComponent(boundsValue)}`);
+      if (types?.length)
+        queryParams.push(`types=${encodeURIComponent(types.join(","))}`);
+      if (userLocation)
+        queryParams.push(
+          `userLocation=${encodeURIComponent(
+            `${userLocation.latitude},${userLocation.longitude}`
+          )}`
+        );
+      if (cityLocation)
+        queryParams.push(
+          `cityLocation=${encodeURIComponent(
+            `${cityLocation.latitude},${cityLocation.longitude}`
+          )}`
+        );
+      if (includeNearest) queryParams.push("nearest=true");
+
+      return {
+        url: `${PATHS.mapPoints}?${queryParams.join("&")}`,
+        method: "GET",
+      };
+    },
+    transformResponse: (response: unknown) => {
+      const result = mapPointsResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod getMapPoints:", {
+          url: PATHS.mapPoints,
+          data: response,
+          error: result.error,
+        });
+      return null;
     },
   });
