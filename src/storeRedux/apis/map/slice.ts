@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { api } from "../../api";
-import { TMapCoordinates, TMapState } from "./map.types";
+import { TMapCoordinates, TMapPointsResponse, TMapState } from "./map.types";
 
 const initialState: TMapState = {
   location: null,
@@ -10,6 +10,8 @@ const initialState: TMapState = {
   ipLocation: null,
   source: null,
   sources: [],
+  mapPoints: null,
+  mapPointsLoading: false,
   loading: false,
   error: null,
 };
@@ -48,8 +50,16 @@ export const mapSlice = createSlice({
       state.ipLocation = null;
       state.source = null;
       state.sources = [];
+      state.mapPoints = null;
+      state.mapPointsLoading = false;
       state.loading = false;
       state.error = null;
+    },
+    setMapPoints: (
+      state,
+      action: PayloadAction<TMapPointsResponse | null>
+    ) => {
+      state.mapPoints = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -118,11 +128,25 @@ export const mapSlice = createSlice({
           state.error =
             action.error.message || "Помилка отримання геолокації користувача";
         }
-      );
+      )
+      // getMapPoints
+      .addMatcher(api.endpoints.getMapPoints.matchPending, (state) => {
+        state.mapPointsLoading = true;
+      })
+      .addMatcher(
+        api.endpoints.getMapPoints.matchFulfilled,
+        (state, action) => {
+          state.mapPointsLoading = false;
+          state.mapPoints = action.payload;
+        }
+      )
+      .addMatcher(api.endpoints.getMapPoints.matchRejected, (state) => {
+        state.mapPointsLoading = false;
+      });
   },
 });
 
-export const { setUserLocation, setIpLocation, resetLocation } =
+export const { setUserLocation, setIpLocation, resetLocation, setMapPoints } =
   mapSlice.actions;
 
 export const useMapSelector = () =>
