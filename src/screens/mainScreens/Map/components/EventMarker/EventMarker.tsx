@@ -7,6 +7,7 @@ import { convertDistance, getDistance } from "geolib";
 
 // types
 import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
+import { TMapPointEvent } from "../../../../../storeRedux/apis/map/map.types";
 
 // components
 import { ComponentCalloutEvent } from "../ComponentCalloutEvent/ComponentCalloutEvent";
@@ -21,7 +22,7 @@ import {
 } from "../../../../../navigators/useNavigator.constants";
 
 type EventMarkerProps = {
-  event: TEvent;
+  event: TEvent | TMapPointEvent;
   location: LocationObjectCoords | null;
 };
 
@@ -66,9 +67,9 @@ export const EventMarker: FunctionComponent<EventMarkerProps> = ({
         }}
       >
         <ComponentCalloutEvent
-          title={event.title}
+          title={event.title || ""}
           distance={distance ? convertDistance(distance, "km").toFixed() : null}
-          date={event.date.start}
+          date={event.date?.start || null}
         />
       </Callout>
     </Marker>

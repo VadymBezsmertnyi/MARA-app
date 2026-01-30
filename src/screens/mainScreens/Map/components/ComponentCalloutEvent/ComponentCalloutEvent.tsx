@@ -14,7 +14,7 @@ import { styles } from "./ComponentCalloutEvent.styles";
 type ComponentCalloutEventProps = {
   title: string;
   distance: string | null;
-  date: number;
+  date: number | null;
 };
 
 export const ComponentCalloutEvent: FunctionComponent<
@@ -36,7 +36,7 @@ export const ComponentCalloutEvent: FunctionComponent<
               {i18n._("{distance} km", { distance: distance ?? "0" })}
             </Text>
             <Text style={styles.titleDate}>
-              {dayjs(date).format("DD.MM.YYYY")}
+              {date ? dayjs(date).format("DD.MM.YYYY") : i18n._("No date")}
             </Text>
           </View>
         </View>

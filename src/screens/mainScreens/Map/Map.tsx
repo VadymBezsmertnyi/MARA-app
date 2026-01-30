@@ -14,12 +14,14 @@ import dayjs from "dayjs";
 
 // types
 import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
-import { TMapMarker } from "../../../storeRedux/apis/map/map.types";
+import {
+  TMapMarker,
+  TMapPointEvent,
+  TMapPointWorkshop,
+} from "../../../storeRedux/apis/map/map.types";
 
 // redux
 import { useLazyGetMapPointsQuery } from "../../../storeRedux/api";
-import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
-import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
 import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
@@ -53,10 +55,8 @@ const DEFAULT_LOCATION: TMapMarker = {
 };
 
 export const Map: FunctionComponent<MapProps> = () => {
-  const { workshopsList: workshops } = useWorkshopsSelector();
-  const { location } = useMapSelector();
+  const { location, mapPoints } = useMapSelector();
   const { theme, heightStatusBar } = useThemeProvider();
-  const { upcomingEventsList, upcomingClosest } = useEventsSelector();
   const [getMapPoints] = useLazyGetMapPointsQuery();
   const {
     location: hookLocation,
@@ -68,6 +68,19 @@ export const Map: FunctionComponent<MapProps> = () => {
   const [hasUserMoved, setHasUserMoved] = useState(false);
   const lastFirstFetchKeyRef = useRef<string | null>(null);
   const lastMapPointsAtRef = useRef<number>(0);
+
+  const mapEvents = useMemo(
+    (): TMapPointEvent[] =>
+      (mapPoints?.events ?? []).filter(
+        (event) => (event.date?.finish ?? 0) > dayjs().valueOf()
+      ),
+    [mapPoints?.events]
+  );
+  const mapWorkshops = useMemo(
+    (): TMapPointWorkshop[] => mapPoints?.workshops ?? [],
+    [mapPoints?.workshops]
+  );
+  const nearestEvent: TMapPointEvent | null = mapPoints?.nearestEvent ?? null;
 
   const fetchMapPoints = useCallback(
     (
@@ -98,19 +111,6 @@ export const Map: FunctionComponent<MapProps> = () => {
       fetchMapPoints(bounds, false);
     },
     [fetchMapPoints]
-  );
-
-  const showEventList = useMemo(() => {
-    const sourceList = upcomingEventsList.length
-      ? upcomingEventsList
-      : upcomingClosest;
-    return sourceList.filter(
-      (eventItem) => eventItem.date.finish > dayjs().valueOf()
-    );
-  }, [upcomingEventsList, upcomingClosest]);
-  const firstEvent = useMemo(
-    () => (showEventList.length ? showEventList[0] : null),
-    [showEventList]
   );
 
   const showFirstEvent = (location: TMapMarker) => {
@@ -162,7 +162,7 @@ export const Map: FunctionComponent<MapProps> = () => {
         onRegionChangeComplete={handleRegionChangeComplete}
       >
         <MeMarker />
-        {showEventList.map((eventItem) =>
+        {mapEvents.map((eventItem) =>
           eventItem?.coordinates ? (
             <EventMarker
               key={`marker-event-${eventItem._id}`}
@@ -171,7 +171,7 @@ export const Map: FunctionComponent<MapProps> = () => {
             />
           ) : null
         )}
-        {workshops.map((workshop) => (
+        {mapWorkshops.map((workshop) => (
           <WorkshopMarker
             key={`marker-workshop-${workshop._id}`}
             workshop={workshop}
@@ -180,7 +180,10 @@ export const Map: FunctionComponent<MapProps> = () => {
         ))}
       </MapViewCluster>
       <UpContainer />
-      <EventContainer firstEvent={firstEvent} showFirstEvent={showFirstEvent} />
+      <EventContainer
+        firstEvent={nearestEvent}
+        showFirstEvent={showFirstEvent}
+      />
     </View>
   );
 };

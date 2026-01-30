@@ -16,7 +16,10 @@ import { usePlacesProvider } from "../../../../../providers/PlacesProvider/Place
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 //types
-import { TMapMarker } from "../../../../../storeRedux/apis/map/map.types";
+import {
+  TMapMarker,
+  TMapPointEvent,
+} from "../../../../../storeRedux/apis/map/map.types";
 import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
 // helps
@@ -27,7 +30,7 @@ import { styles } from "./EventContainer.styles";
 import colors from "../../../../../../styles/colors";
 
 type EventContainerProps = {
-  firstEvent: TEvent | null;
+  firstEvent: (TEvent | TMapPointEvent) | null;
   showFirstEvent: (location: TMapMarker) => void;
 };
 
@@ -39,12 +42,13 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
   const { i18n, language } = useLocalesProvider();
   const { placesDB } = usePlacesProvider();
   const selectCountryTitle = useMemo(() => {
-    if (!firstEvent?.place_id) return "";
+    if (!firstEvent || !("place_id" in firstEvent) || !firstEvent.place_id)
+      return "";
     return firstEvent.place_id[language].formatted_address;
-  }, [placesDB, firstEvent?.place_id]);
+  }, [placesDB, firstEvent, language]);
 
   const isDateShow = useMemo(() => {
-    if (!firstEvent) return false;
+    if (!firstEvent?.date?.finish) return false;
     const dateNow = dayjs().valueOf();
     return dateNow < firstEvent.date.finish;
   }, [firstEvent]);
@@ -98,7 +102,9 @@ export const EventContainer: FunctionComponent<EventContainerProps> = ({
           <Text style={styles.title}>{firstEvent.title}</Text>
           <Text style={styles.subTitle}>{selectCountryTitle}</Text>
           <Text style={styles.dateTitle}>
-            {dateToNMY(new Date(firstEvent.date.start))}
+            {firstEvent.date?.start
+              ? dateToNMY(new Date(firstEvent.date.start))
+              : ""}
           </Text>
         </View>
       </TouchableOpacity>
