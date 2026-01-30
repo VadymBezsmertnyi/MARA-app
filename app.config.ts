@@ -31,7 +31,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./keys/GoogleService-Info.plist",
-    buildNumber: "38",
+    buildNumber: "39",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -68,7 +68,7 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 38,
+    versionCode: 39,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
