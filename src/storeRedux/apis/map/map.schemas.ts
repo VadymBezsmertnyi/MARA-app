@@ -27,6 +27,20 @@ const mapPointBaseSchema = z.object({
   coordinates: mapPointCoordinatesSchema.nullable(),
   title: z.string().optional(),
   imageFiles: z.array(z.any()).optional(),
+  place_id: z
+    .object({
+      place_id: z.string().optional(),
+      country_place_id: z.string().optional(),
+      region_place_id: z.string().optional(),
+      __v: z.number().optional(),
+      _id: z.string().optional(),
+    })
+    .catchall(
+      z.object({
+        formatted_address: z.string().optional(),
+      })
+    )
+    .optional(),
 });
 
 export const mapPointEventSchema = mapPointBaseSchema.extend({

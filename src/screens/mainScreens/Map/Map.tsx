@@ -42,6 +42,7 @@ import { regionToBounds } from "../../../storeRedux/apis/map/map.helpers";
 import { styles } from "./Map.styles";
 
 const MAP_POINTS_THROTTLE_MS = 1200;
+const EVENT_DELTA = 0.1;
 
 type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
@@ -117,8 +118,8 @@ export const Map: FunctionComponent<MapProps> = () => {
     if (refMap.current)
       refMap.current.animateToRegion({
         ...location,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
+        latitudeDelta: EVENT_DELTA,
+        longitudeDelta: EVENT_DELTA,
       });
   };
 
