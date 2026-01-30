@@ -18,10 +18,20 @@ const CITY_DELTA = 0.5;
 export const useMapLocation = (): {
   location: mapMarker | null;
   source: MapLocationSource;
+  statusText: string | null;
 } => {
   const { language } = useLocalesProvider();
   const { userData } = useUserSelector();
-  const { userLocation, ipLocation } = useMapSelector();
+  const { userLocation, ipLocation, sources } = useMapSelector();
+
+  const statusText = useMemo(() => {
+    if (!sources.length) return null;
+    const hasUser = sources.includes("user");
+    const hasIp = sources.includes("ip");
+    if (hasUser && hasIp) return "Отримуємо геолокацію...";
+    if (hasUser) return "Отримуємо геолокацію користувача...";
+    return "Отримуємо геолокацію міста...";
+  }, [sources]);
 
   return useMemo(() => {
     if (userLocation)
@@ -33,6 +43,7 @@ export const useMapLocation = (): {
           longitudeDelta: USER_DELTA,
         },
         source: "user" as const,
+        statusText,
       };
 
     if (ipLocation)
@@ -44,6 +55,7 @@ export const useMapLocation = (): {
           longitudeDelta: CITY_DELTA,
         },
         source: "ip" as const,
+        statusText,
       };
 
     const cityCoordinates = userData?.place_id?.[language]?.geometry?.location;
@@ -60,8 +72,9 @@ export const useMapLocation = (): {
           longitudeDelta: CITY_DELTA,
         },
         source: "city" as const,
+        statusText,
       };
 
-    return { location: null, source: null };
-  }, [userLocation, ipLocation, userData?.place_id, language]);
+    return { location: null, source: null, statusText };
+  }, [userLocation, ipLocation, userData?.place_id, language, statusText]);
 };

@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Platform, View } from "react-native";
+import { ActivityIndicator, Platform, Text, View } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -50,9 +50,9 @@ const DEFAULT_LOCATION: mapMarker = {
 export const Map: FunctionComponent<MapProps> = () => {
   const { workshopsList: workshops } = useWorkshopsSelector();
   const { location } = useMapSelector();
-  const { theme } = useThemeProvider();
+  const { theme, heightStatusBar } = useThemeProvider();
   const { upcomingEventsList, upcomingClosest } = useEventsSelector();
-  const { location: hookLocation } = useMapLocation();
+  const { location: hookLocation, statusText } = useMapLocation();
   const refMap = useRef<MapView>(null);
   const [hasUserMoved, setHasUserMoved] = useState(false);
 
@@ -85,6 +85,12 @@ export const Map: FunctionComponent<MapProps> = () => {
 
   return (
     <View style={styles.container}>
+      {statusText ? (
+        <View style={[styles.statusContainer, { top: heightStatusBar + 12 }]}>
+          <ActivityIndicator size="small" color="#2E7D32" />
+          <Text style={styles.statusText}>{statusText}</Text>
+        </View>
+      ) : null}
       <MapViewCluster
         ref={refMap}
         provider={PROVIDER_GOOGLE}
