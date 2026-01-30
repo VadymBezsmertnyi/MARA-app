@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { LocationObjectCoords } from "expo-location";
 
 // types
 import { RootEventsScreensParamList } from "../../../navigators/Navigators.types";
@@ -21,11 +22,11 @@ import { RootEventsScreensParamList } from "../../../navigators/Navigators.types
 // redux
 import { useGetClosestEventsQuery } from "../../../storeRedux/api";
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 
 // components
 import { EventListItem } from "./components/ItemListEvents/ItemListEvents";
@@ -47,7 +48,6 @@ import { PATHS_EVENTS_SCREENS } from "../../../navigators/useNavigator.constants
 // styles
 import colors from "../../../../styles/colors";
 import { styles } from "./EventsMain.styles";
-import { LocationObjectCoords } from "expo-location";
 
 type EventsMainProps = {
   navigation: NativeStackNavigationProp<RootEventsScreensParamList> &
@@ -59,7 +59,7 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { infoSmallEvents } = useSubscriptionProvider();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const { upcomingClosest, pastClosest } = useEventsSelector();
   const [refreshing, setRefreshing] = useState(false);
   const [lastLocation, setLastLocation] = useState<LocationObjectCoords | null>(

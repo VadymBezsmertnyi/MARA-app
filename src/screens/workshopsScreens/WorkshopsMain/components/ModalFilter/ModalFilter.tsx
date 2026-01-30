@@ -5,10 +5,10 @@ import { BlurView } from "expo-blur";
 // redux
 import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 import { useEditUserMutation } from "../../../../../storeRedux/api";
+import { useMapSelector } from "../../../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
-import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 
 // hooks
 import { useWorkshopsState } from "../../../../../storeRedux/apis/workshops/useWorkshops.constants";
@@ -53,7 +53,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const { i18n } = useLocalesProvider();
   const { userData } = useUserSelector();
   const [editUserMutation] = useEditUserMutation();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const { typesWorkServices } = useWorkshopsState();
   const [distance, setDistance] = useState(5);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);

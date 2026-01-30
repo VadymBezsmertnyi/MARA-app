@@ -16,11 +16,11 @@ import { IGetEventsRequest } from "../../../storeRedux/apis/events/events.types"
 // redux
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
 import { useGetEventsQuery } from "../../../storeRedux/api";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
@@ -61,7 +61,7 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const { params } = route;
   const { heightTabBar } = useThemeProvider();
   const { bottom } = useSafeAreaInsets();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const { infoSmallEvents } = useSubscriptionProvider();
   const {
     upcomingEventsList,

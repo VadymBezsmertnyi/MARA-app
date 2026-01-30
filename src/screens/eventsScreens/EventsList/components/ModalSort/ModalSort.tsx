@@ -6,10 +6,10 @@ import { BlurView } from "expo-blur";
 // redux
 import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 import { useEditUserMutation } from "../../../../../storeRedux/api";
+import { useMapSelector } from "../../../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
-import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 
 // components
 import { ButtonCustom } from "../../../../../components/ButtonCustom/ButtonCustom";
@@ -35,7 +35,7 @@ export const ModalSort: FunctionComponent<ModalSortProps> = ({
   const { i18n } = useLocalesProvider();
   const { userData } = useUserSelector();
   const [editUserMutation] = useEditUserMutation();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
 
   const isLocationEnabled = userData?.isGeoLocation || false;
   const isLocationLoading = isLocationEnabled && !location;

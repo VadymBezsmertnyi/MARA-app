@@ -14,9 +14,9 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 // redux
 import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
 import { useGetWorkshopsQuery } from "../../../storeRedux/api";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import {
   useDropDownAlertProvider,
@@ -73,7 +73,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     pagination,
     maxDistance = 5,
   } = useWorkshopsSelector();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");

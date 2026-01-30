@@ -13,10 +13,10 @@ import { mapMarker } from "./Map.types";
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
 import { useEventsSelector } from "../../../storeRedux/apis/events/slice";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // components
@@ -44,7 +44,7 @@ export const Map: FunctionComponent<MapProps> = () => {
   const { language } = useLocalesProvider();
   const { userData } = useUserSelector();
   const { workshopsList: workshops } = useWorkshopsSelector();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const { theme } = useThemeProvider();
   const { upcomingEventsList, upcomingClosest } = useEventsSelector();
   const refMap = useRef<MapView>(null);

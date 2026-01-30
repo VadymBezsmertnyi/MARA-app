@@ -32,7 +32,6 @@ import { store } from "./src/storeRedux/store";
 import LocalesProvider from "./localization/localization.provider";
 import ThemeProvider from "./src/providers/ThemeProvider/ThemeProvider";
 import LoadingProvider from "./src/providers/LoadingProvider/LoadingProvider";
-import MapProvider from "./src/providers/MapProvider/MapProvider";
 import ApiProvider from "./src/providers/ApiProvider/ApiProvider";
 import PlacesProvider from "./src/providers/PlacesProvider/PlacesProvider";
 import PushNotificationProvider from "./src/providers/PushNotificationProvider/PushNotificationProvider";
@@ -120,24 +119,22 @@ function App() {
                           }}
                         >
                           <PermissionsProvider>
-                            <MapProvider>
-                              <GestureHandlerRootView
-                                style={styles.gestureHandlerRootView}
-                              >
-                                <BottomSheetModalProvider>
-                                  <PushNotificationProvider
-                                    currentRouteName={currentRouteName}
-                                  >
-                                    <SharingProvider>
-                                      <Navigators
-                                        currentRouteName={currentRouteName}
-                                        navigation={navigationRef.current}
-                                      />
-                                    </SharingProvider>
-                                  </PushNotificationProvider>
-                                </BottomSheetModalProvider>
-                              </GestureHandlerRootView>
-                            </MapProvider>
+                            <GestureHandlerRootView
+                              style={styles.gestureHandlerRootView}
+                            >
+                              <BottomSheetModalProvider>
+                                <PushNotificationProvider
+                                  currentRouteName={currentRouteName}
+                                >
+                                  <SharingProvider>
+                                    <Navigators
+                                      currentRouteName={currentRouteName}
+                                      navigation={navigationRef.current}
+                                    />
+                                  </SharingProvider>
+                                </PushNotificationProvider>
+                              </BottomSheetModalProvider>
+                            </GestureHandlerRootView>
                           </PermissionsProvider>
                         </NavigationContainer>
                       </SubscriptionProvider>

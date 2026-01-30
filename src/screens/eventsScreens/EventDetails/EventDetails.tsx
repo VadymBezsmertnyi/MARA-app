@@ -30,16 +30,17 @@ import {
   useLazyGetEventByIdQuery,
 } from "../../../storeRedux/api";
 import { TEvent } from "../../../storeRedux/apis/events/events.types";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
 import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // helps
 import { dateToNMY, getTimeFromMilliseconds } from "../../../helps/helps";
+import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
 // components
 import { Map as MapComponent } from "../../../components/Map/Map";
@@ -64,7 +65,6 @@ import {
 // styles
 import { styles } from "./EventDetails.styles";
 import colors from "../../../../styles/colors";
-import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
 const EXPO_PUBLIC_WEB_SITE_URL =
   process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
@@ -91,7 +91,7 @@ export const EventDetails: FunctionComponent<EventDetailsProps> = ({
     upcomingClosest,
     pastClosest,
   } = useEventsSelector();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const { placesDB } = usePlacesProvider();
   const { userData } = useUserSelector();
   const { createSharedLink } = useSharingProvider();

@@ -37,10 +37,10 @@ import {
   useLazyGetWorkshopsUserQuery,
   useLazyGetWorkshopByIdQuery,
 } from "../../../storeRedux/api";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
 import { useSharingProvider } from "../../../providers/SharingProvider/SharingProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -48,6 +48,7 @@ import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvid
 
 // helps
 import { getFormatPhoneNumber } from "../../../helps/helps";
+import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
 // components
 import { Header } from "../../../components/Header/Header";
@@ -69,7 +70,6 @@ import { IconAutoService, IconMotoService } from "../../../icons/components";
 // styles
 import { styles } from "./WorkshopsDetails.styles";
 import colors from "../../../../styles/colors";
-import { resetNavigationToMap } from "../../../navigators/Navigators.helps";
 
 const EXPO_PUBLIC_WEB_SITE_URL =
   process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
@@ -100,7 +100,7 @@ export const WorkshopsDetails: FunctionComponent<WorkshopsDetailsProps> = ({
   const [getWorkshopById, { data: workshopByIdData }] =
     useLazyGetWorkshopByIdQuery();
   const { placesDB } = usePlacesProvider();
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const { createSharedLink } = useSharingProvider();
   const [amountShow, setAmountShow] = useState(5);
   const [isFullDescription, setIsFullDescription] = useState(false);

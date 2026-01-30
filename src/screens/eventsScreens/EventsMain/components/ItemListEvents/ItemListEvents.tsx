@@ -8,8 +8,10 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { RootEventsScreensParamList } from "../../../../../navigators/Navigators.types";
 import { TEvent } from "../../../../../storeRedux/apis/events/events.types";
 
+// redux
+import { useMapSelector } from "../../../../../storeRedux/apis/map/slice";
+
 // provider
-import { useMapProvider } from "../../../../../providers/MapProvider/MapProvider";
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
 
@@ -43,7 +45,7 @@ export const EventListItem: FunctionComponent<EventListItemProps> = ({
   item,
   navigation,
 }) => {
-  const { location } = useMapProvider();
+  const { location } = useMapSelector();
   const { i18n, language } = useLocalesProvider();
   const { placesDB } = usePlacesProvider();
   const nowDate = new Date().getTime();
