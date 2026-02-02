@@ -149,4 +149,16 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: "#666",
   },
+  loadingContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 20,
+    gap: 8,
+  },
+  loadingText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: 14,
+    color: "#666",
+  },
 });
