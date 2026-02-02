@@ -6,13 +6,24 @@ import {
 
 export const styles = StyleSheet.create({
   sectionContainer: {
-    marginBottom: 20,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   sectionHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 12,
+    marginBottom: 8,
   },
   sectionTitle: {
     fontFamily: FONT_600_OPEN_SANS,
@@ -34,7 +45,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 20,
+    paddingVertical: 16,
     gap: 8,
   },
   loadingText: {
@@ -43,7 +54,7 @@ export const styles = StyleSheet.create({
     color: "#666",
   },
   sectionItems: {
-    gap: 4,
+    gap: 2,
   },
   sectionTouchable: {
     borderRadius: 8,
@@ -52,17 +63,15 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    backgroundColor: "#F8F9FA",
-    borderRadius: 8,
-    marginBottom: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginBottom: 2,
   },
   itemLeft: {
     flexDirection: "row",
     alignItems: "center",
     flex: 1,
-    gap: 12,
+    gap: 10,
   },
   itemIcon: {
     width: 20,
@@ -78,13 +87,13 @@ export const styles = StyleSheet.create({
     color: "#1A1A1A",
   },
   subItemsContainer: {
-    marginTop: 8,
-    gap: 4,
+    marginTop: 6,
+    gap: 3,
   },
   subItem: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+    gap: 6,
   },
   subItemIcon: {
     width: 16,
@@ -98,12 +107,12 @@ export const styles = StyleSheet.create({
   itemRight: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+    gap: 6,
   },
   ratingContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 4,
+    gap: 3,
   },
   itemCount: {
     fontFamily: FONT_600_OPEN_SANS,
