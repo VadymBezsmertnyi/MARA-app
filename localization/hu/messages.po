@@ -379,7 +379,7 @@ msgstr "Bármilyen bonyolultságú légkefe / Bármilyen bonyolultságú légkef
 
 #. js-lingui-explicit-id
 msgid "Wait please before the next update"
-msgstr ""
+msgstr "Kérem várjon a következő frissítésig"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
@@ -395,19 +395,19 @@ msgstr "Adja meg a műhely nevét vagy a munka típusát"
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
-msgstr ""
+msgstr "Elnézést, de a szűrőkkel nem találtunk műhelyeket"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
-msgstr ""
+msgstr "Elnézést, nincsenek közelgő műhelyek"
 
 #. js-lingui-explicit-id
 msgid "Geolocation disabled for calculation"
-msgstr ""
+msgstr "A földrajzi helymeghatározás ki van kapcsolva a számításhoz"
 
 #. js-lingui-explicit-id
 msgid "Cannot calculate"
-msgstr ""
+msgstr "Nem lehet kiszámolni"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -415,7 +415,7 @@ msgstr "km"
 
 #. js-lingui-explicit-id
 msgid "Not comments"
-msgstr ""
+msgstr "Nincsenek hozzászólások"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
@@ -423,35 +423,35 @@ msgstr "Gomb a párbeszédablak bezárásához"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
-msgstr ""
+msgstr "Távolság szerint:"
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
-msgstr ""
+msgstr "a legközelebbtől a legtávolabbig"
 
 #. js-lingui-explicit-id
 msgid "Getting location..."
-msgstr ""
+msgstr "Helymeghatározás..."
 
 #. js-lingui-explicit-id
 msgid "To calculate distance, please enable location services"
-msgstr ""
+msgstr "A távolság kiszámításához kérem engedélyezze a helymeghatározó szolgáltatásokat"
 
 #. js-lingui-explicit-id
 msgid "Enable location"
-msgstr ""
+msgstr "Helymeghatározás engedélyezése"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
-msgstr ""
+msgstr "Értékelés szerint:"
 
 #. js-lingui-explicit-id
 msgid "from highest to lowest"
-msgstr ""
+msgstr "a legmagasabbtól a legalacsonyabbig"
 
 #. js-lingui-explicit-id
 msgid "By number of comments:"
-msgstr ""
+msgstr "Hozzászólások száma szerint:"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -491,7 +491,7 @@ msgstr "Távolság, km:"
 
 #. js-lingui-explicit-id
 msgid "Only with rating:"
-msgstr ""
+msgstr "Csak értékeléssel:"
 
 #. js-lingui-explicit-id
 msgid "All works"
@@ -511,11 +511,11 @@ msgstr "Hiba"
 
 #. js-lingui-explicit-id
 msgid "Unable to like the workshop"
-msgstr ""
+msgstr "Nem lehet kedvelni a műhelyt"
 
 #. js-lingui-explicit-id
 msgid "Failed to create share link"
-msgstr ""
+msgstr "Nem sikerült megosztási linket létrehozni"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -525,14 +525,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Nyissa meg a műhelyt az alkalmazásban:\n"
+"{appLink}\n"
+"\n"
+"Megnyitás böngészőben:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share workshop"
-msgstr ""
+msgstr "Műhely megosztása"
 
 #. js-lingui-explicit-id
 msgid "Failed to send SMS"
-msgstr ""
+msgstr "SMS küldése sikertelen"
 
 #. js-lingui-explicit-id
 msgid "Success"
@@ -540,11 +545,11 @@ msgstr "Siker"
 
 #. js-lingui-explicit-id
 msgid "Everything is successful and this is your business"
-msgstr ""
+msgstr "Minden sikeres, és ez az Ön vállalkozása"
 
 #. js-lingui-explicit-id
 msgid "Invalid or expired code"
-msgstr ""
+msgstr "Érvénytelen vagy lejárt kód"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -552,43 +557,43 @@ msgstr "Műhely"
 
 #. js-lingui-explicit-id
 msgid "Unable to calculate distance, location is disabled"
-msgstr ""
+msgstr "Nem lehet kiszámolni a távolságot, a helymeghatározás ki van kapcsolva"
 
 #. js-lingui-explicit-id
 msgid "Contacts unknown"
-msgstr ""
+msgstr "Ismeretlen kapcsolatok"
 
 #. js-lingui-explicit-id
 msgid "About us:"
-msgstr ""
+msgstr "Rólunk:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
-msgstr ""
+msgstr "Olvassa el a teljes leírást..."
 
 #. js-lingui-explicit-id
 msgid "This business has not been confirmed by the owner"
-msgstr ""
+msgstr "Ezt a vállalkozást a tulajdonos még nem erősítette meg"
 
 #. js-lingui-explicit-id
 msgid "Confirm business"
-msgstr ""
+msgstr "Vállalkozás megerősítése"
 
 #. js-lingui-explicit-id
 msgid "Report on business"
-msgstr ""
+msgstr "Jelentés a vállalkozásról"
 
 #. js-lingui-explicit-id
 msgid "Working hours unknown"
-msgstr ""
+msgstr "Ismeretlen nyitvatartási idő"
 
 #. js-lingui-explicit-id
 msgid "Day off"
-msgstr ""
+msgstr "Szabadnap"
 
 #. js-lingui-explicit-id
 msgid "Working hours"
-msgstr ""
+msgstr "Nyitvatartási idő"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -600,7 +605,7 @@ msgstr "A szövegnek minimum 10 és maximum 2000 karaktert kell tartalmaznia."
 
 #. js-lingui-explicit-id
 msgid "Leave a review"
-msgstr ""
+msgstr "Értékelés hagyása"
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -624,11 +629,11 @@ msgstr "Közzététel"
 
 #. js-lingui-explicit-id
 msgid "The work we do:"
-msgstr ""
+msgstr "Az általunk végzett munka:"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
-msgstr ""
+msgstr "Értékelések:"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -644,87 +649,87 @@ msgstr "Írjon egy értékelést"
 
 #. js-lingui-explicit-id
 msgid "Monday"
-msgstr ""
+msgstr "Hétfő"
 
 #. js-lingui-explicit-id
 msgid "Mon"
-msgstr ""
+msgstr "Hét"
 
 #. js-lingui-explicit-id
 msgid "Tuesday"
-msgstr ""
+msgstr "Kedd"
 
 #. js-lingui-explicit-id
 msgid "Tue"
-msgstr ""
+msgstr "Ked"
 
 #. js-lingui-explicit-id
 msgid "Wednesday"
-msgstr ""
+msgstr "Szerda"
 
 #. js-lingui-explicit-id
 msgid "Wed"
-msgstr ""
+msgstr "Sze"
 
 #. js-lingui-explicit-id
 msgid "Thursday"
-msgstr ""
+msgstr "Csütörtök"
 
 #. js-lingui-explicit-id
 msgid "Thu"
-msgstr ""
+msgstr "Csü"
 
 #. js-lingui-explicit-id
 msgid "Friday"
-msgstr ""
+msgstr "Péntek"
 
 #. js-lingui-explicit-id
 msgid "Fri"
-msgstr ""
+msgstr "Pén"
 
 #. js-lingui-explicit-id
 msgid "Saturday"
-msgstr ""
+msgstr "Szombat"
 
 #. js-lingui-explicit-id
 msgid "Sat"
-msgstr ""
+msgstr "Szo"
 
 #. js-lingui-explicit-id
 msgid "Sunday"
-msgstr ""
+msgstr "Vasárnap"
 
 #. js-lingui-explicit-id
 msgid "Sun"
-msgstr ""
+msgstr "Vas"
 
 #. js-lingui-explicit-id
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. js-lingui-explicit-id
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #. js-lingui-explicit-id
 msgid "Viber"
-msgstr ""
+msgstr "Viber"
 
 #. js-lingui-explicit-id
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #. js-lingui-explicit-id
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #. js-lingui-explicit-id
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #. js-lingui-explicit-id
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #. js-lingui-explicit-id
 msgid "workshop"
@@ -748,7 +753,7 @@ msgstr "Hiba a műhely létrehozásakor"
 
 #. js-lingui-explicit-id
 msgid "Unable to delete the workshop"
-msgstr ""
+msgstr "Nem lehet törölni a műhelyt"
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -772,7 +777,7 @@ msgstr "Adja meg az címet"
 
 #. js-lingui-explicit-id
 msgid "Contacts"
-msgstr ""
+msgstr "Kapcsolatok"
 
 #. js-lingui-explicit-id
 msgid "Phone number"
@@ -780,7 +785,7 @@ msgstr "Telefonszám"
 
 #. js-lingui-explicit-id
 msgid "Add contact type"
-msgstr ""
+msgstr "Kapcsolattípus hozzáadása"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -800,15 +805,15 @@ msgstr "Válassza ki a munkatípusokat"
 
 #. js-lingui-explicit-id
 msgid "You can add up to 5 phone numbers"
-msgstr ""
+msgstr "Legfeljebb 5 telefonszámot adhat hozzá"
 
 #. js-lingui-explicit-id
 msgid "This contact type has already been added"
-msgstr ""
+msgstr "Ezt a kapcsolattípust már hozzáadta"
 
 #. js-lingui-explicit-id
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 #. js-lingui-explicit-id
 msgid "Save"
@@ -820,7 +825,7 @@ msgstr "Mégsem"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
-msgstr ""
+msgstr "Műhelyeim"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
@@ -828,27 +833,27 @@ msgstr "Gomb a műhelybeállítások képernyő bezárásához"
 
 #. js-lingui-explicit-id
 msgid "All"
-msgstr ""
+msgstr "Összes"
 
 #. js-lingui-explicit-id
 msgid "Created by me"
-msgstr ""
+msgstr "Általam létrehozott"
 
 #. js-lingui-explicit-id
 msgid "Mine"
-msgstr ""
+msgstr "Enyém"
 
 #. js-lingui-explicit-id
 msgid "Sorry!"
-msgstr ""
+msgstr "Elnézést!"
 
 #. js-lingui-explicit-id
 msgid "You don't have {typeItem}."
-msgstr ""
+msgstr "Nincs {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Select phone number"
-msgstr ""
+msgstr "Telefonszám kiválasztása"
 
 #. js-lingui-explicit-id
 msgid "Confirm"
@@ -856,27 +861,27 @@ msgstr "Megerősítés"
 
 #. js-lingui-explicit-id
 msgid "Enter verification code"
-msgstr ""
+msgstr "Adja meg az ellenőrző kódot"
 
 #. js-lingui-explicit-id
 msgid "Enter 6-digit code"
-msgstr ""
+msgstr "Adja meg a 6 számjegyű kódot"
 
 #. js-lingui-explicit-id
 msgid "Under review"
-msgstr ""
+msgstr "Ellenőrzés alatt"
 
 #. js-lingui-explicit-id
 msgid "Verified"
-msgstr ""
+msgstr "Ellenőrizve"
 
 #. js-lingui-explicit-id
 msgid "Rejected"
-msgstr ""
+msgstr "Elutasítva"
 
 #. js-lingui-explicit-id
 msgid "Confirm ownership"
-msgstr ""
+msgstr "Tulajdonjog megerősítése"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -912,11 +917,11 @@ msgstr "Vissza"
 
 #. js-lingui-explicit-id
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #. js-lingui-explicit-id
 msgid "Logout"
-msgstr ""
+msgstr "Kijelentkezés"
 
 #. js-lingui-explicit-id
 msgid "First Name"
@@ -944,11 +949,11 @@ msgstr "A fénykép nem változott"
 
 #. js-lingui-explicit-id
 msgid "Info"
-msgstr ""
+msgstr "Információ"
 
 #. js-lingui-explicit-id
 msgid "The photo has been deleted"
-msgstr ""
+msgstr "A fénykép törölve lett"
 
 #. js-lingui-explicit-id
 msgid "Delete"
@@ -960,7 +965,7 @@ msgstr "Módosítás"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
-msgstr ""
+msgstr "Az Ön profilja"
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
@@ -976,7 +981,7 @@ msgstr "események"
 
 #. js-lingui-explicit-id
 msgid "My events"
-msgstr ""
+msgstr "Eseményeim"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -984,11 +989,11 @@ msgstr "Gomb a beállítások események képernyő bezárásához"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events"
-msgstr ""
+msgstr "Közelgő események"
 
 #. js-lingui-explicit-id
 msgid "Past events"
-msgstr ""
+msgstr "Múltbeli események"
 
 #. js-lingui-explicit-id
 msgid "Add event"
@@ -1004,15 +1009,15 @@ msgstr "Adatvédelmi irányelvek"
 
 #. js-lingui-explicit-id
 msgid "Terms of Service"
-msgstr ""
+msgstr "Szolgáltatási feltételek"
 
 #. js-lingui-explicit-id
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
+msgstr "A szolgáltatás összes funkciójának teljes kihasználásához engedélyeznie kell az alkalmazásnak a helymeghatározást:"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
+msgstr "Engedélyezze a {nameApp} alkalmazásnak a helymeghatározást"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
@@ -1020,11 +1025,11 @@ msgstr "Helyzetkapcsoló bekapcsolása"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
-msgstr ""
+msgstr "és válassza ki a lakhely városát:"
 
 #. js-lingui-explicit-id
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
+msgstr "A \"Folytatás\" gombra kattintva elfogadja a {buttonTermsService} és a {buttonPrivacyPolicy}"
 
 #. js-lingui-explicit-id
 msgid "Continue"
@@ -1044,7 +1049,7 @@ msgstr "Regisztráció"
 
 #. js-lingui-explicit-id
 msgid "We recommend filling out the profile information"
-msgstr ""
+msgstr "Javasoljuk a profilinformációk kitöltését"
 
 #. js-lingui-explicit-id
 msgid "Fill out later"
@@ -1052,7 +1057,7 @@ msgstr "Később kitöltöm"
 
 #. js-lingui-explicit-id
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
@@ -1080,11 +1085,11 @@ msgstr "Hiba/javítás bejelentése"
 
 #. js-lingui-explicit-id
 msgid "Dark theme"
-msgstr ""
+msgstr "Sötét téma"
 
 #. js-lingui-explicit-id
 msgid "Automatically detect location"
-msgstr ""
+msgstr "Helymeghatározás automatikus észlelése"
 
 #. js-lingui-explicit-id
 msgid "Toggle automatically detect location"
@@ -1100,7 +1105,7 @@ msgstr "A profil törlésével minden információt törölnek"
 
 #. js-lingui-explicit-id
 msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
+msgstr "Melyik platformra szeretné küldeni az alkalmazás telepítési meghívását?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
@@ -1108,15 +1113,15 @@ msgstr "Menü megjelenítése kapcsoló"
 
 #. js-lingui-explicit-id
 msgid "The nearest event:"
-msgstr ""
+msgstr "A legközelebbi esemény:"
 
 #. js-lingui-explicit-id
 msgid "{distance} km"
-msgstr ""
+msgstr "{distance} km"
 
 #. js-lingui-explicit-id
 msgid "No date"
-msgstr ""
+msgstr "Nincs dátum"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -1128,11 +1133,11 @@ msgstr "Nem"
 
 #. js-lingui-explicit-id
 msgid "Description"
-msgstr ""
+msgstr "Leírás"
 
 #. js-lingui-explicit-id
 msgid "Location"
-msgstr ""
+msgstr "Helyszín"
 
 #. js-lingui-explicit-id
 msgid "Events"
@@ -1140,11 +1145,11 @@ msgstr "Események"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events:"
-msgstr ""
+msgstr "Közelgő események:"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming events"
-msgstr ""
+msgstr "Elnézést, nincsenek közelgő események"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1152,19 +1157,19 @@ msgstr "Nyomja meg a többi esemény megjelenítéséhez"
 
 #. js-lingui-explicit-id
 msgid "More events"
-msgstr ""
+msgstr "Több esemény"
 
 #. js-lingui-explicit-id
 msgid "Past events:"
-msgstr ""
+msgstr "Múltbeli események:"
 
 #. js-lingui-explicit-id
 msgid "No events have passed"
-msgstr ""
+msgstr "Nem telt el esemény"
 
 #. js-lingui-explicit-id
 msgid "Now"
-msgstr ""
+msgstr "Most"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -1176,47 +1181,47 @@ msgstr "Adja meg a keresendő szöveget"
 
 #. js-lingui-explicit-id
 msgid "By date:"
-msgstr ""
+msgstr "Dátum szerint:"
 
 #. js-lingui-explicit-id
 msgid "from soonest to latest"
-msgstr ""
+msgstr "a legkorábbitól a legkésőbbig"
 
 #. js-lingui-explicit-id
 msgid "Price range:"
-msgstr ""
+msgstr "Ár tartomány:"
 
 #. js-lingui-explicit-id
 msgid "From"
-msgstr ""
+msgstr "Tól"
 
 #. js-lingui-explicit-id
 msgid "To"
-msgstr ""
+msgstr "Ig"
 
 #. js-lingui-explicit-id
 msgid "All locations"
-msgstr ""
+msgstr "Minden helyszín"
 
 #. js-lingui-explicit-id
 msgid "Select country or city"
-msgstr ""
+msgstr "Válasszon országot vagy várost"
 
 #. js-lingui-explicit-id
 msgid "Clear location filter"
-msgstr ""
+msgstr "Helyszín szűrő törlése"
 
 #. js-lingui-explicit-id
 msgid "Close"
-msgstr ""
+msgstr "Bezárás"
 
 #. js-lingui-explicit-id
 msgid "All countries"
-msgstr ""
+msgstr "Minden ország"
 
 #. js-lingui-explicit-id
 msgid "No countries found"
-msgstr ""
+msgstr "Nem található ország"
 
 #. js-lingui-explicit-id
 msgid "All cities"
@@ -1228,7 +1233,7 @@ msgstr "Nem található város"
 
 #. js-lingui-explicit-id
 msgid "Save location filter"
-msgstr ""
+msgstr "Helyszín szűrő mentése"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1244,7 +1249,7 @@ msgstr "Ingyenes"
 
 #. js-lingui-explicit-id
 msgid "Phone number not found"
-msgstr ""
+msgstr "A telefonszám nem található"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -1254,14 +1259,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Nyissa meg az eseményt az alkalmazásban:\n"
+"{appLink}\n"
+"\n"
+"Megnyitás böngészőben:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share event"
-msgstr ""
+msgstr "Esemény megosztása"
 
 #. js-lingui-explicit-id
 msgid "Please sign in to continue"
-msgstr ""
+msgstr "Kérem jelentkezzen be a folytatáshoz"
 
 #. js-lingui-explicit-id
 msgid "Event"
@@ -1273,11 +1283,11 @@ msgstr "Minden fénykép"
 
 #. js-lingui-explicit-id
 msgid "Not going"
-msgstr ""
+msgstr "Nem megyek"
 
 #. js-lingui-explicit-id
 msgid "Going"
-msgstr ""
+msgstr "Megyek"
 
 #. js-lingui-explicit-id
 msgid "Date of the event"
@@ -1305,15 +1315,15 @@ msgstr "Galéria"
 
 #. js-lingui-explicit-id
 msgid "Timeline"
-msgstr ""
+msgstr "Idővonal"
 
 #. js-lingui-explicit-id
 msgid "Add a description about the event"
-msgstr ""
+msgstr "Adjon leírást az eseményről"
 
 #. js-lingui-explicit-id
 msgid "Event description"
-msgstr ""
+msgstr "Esemény leírása"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1321,7 +1331,7 @@ msgstr "esemény"
 
 #. js-lingui-explicit-id
 msgid "Your event is under review and will appear after verification"
-msgstr ""
+msgstr "Az Ön eseménye felülvizsgálat alatt áll, és ellenőrzés után jelenik meg"
 
 #. js-lingui-explicit-id
 msgid "Change event"
@@ -1353,7 +1363,7 @@ msgstr "Befejezése"
 
 #. js-lingui-explicit-id
 msgid "Participation fee"
-msgstr ""
+msgstr "Részvételi díj"
 
 #. js-lingui-explicit-id
 msgid "100 uah"
@@ -1373,63 +1383,63 @@ msgstr "Meséljen az eseményről"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to each timeline item"
-msgstr ""
+msgstr "Kérem adjon címet minden idővonal elemhez"
 
 #. js-lingui-explicit-id
 msgid "Timeline item start time is outside event dates"
-msgstr ""
+msgstr "Az idővonal elem kezdési ideje az esemény dátumain kívül esik"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish must be after start"
-msgstr ""
+msgstr "Az idővonal elem befejezésének a kezdés után kell lennie"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish time is outside event dates"
-msgstr ""
+msgstr "Az idővonal elem befejezési ideje az esemény dátumain kívül esik"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to the timeline item"
-msgstr ""
+msgstr "Kérem adjon címet az idővonal elemhez"
 
 #. js-lingui-explicit-id
 msgid "Add item"
-msgstr ""
+msgstr "Elem hozzáadása"
 
 #. js-lingui-explicit-id
 msgid "No timeline items yet"
-msgstr ""
+msgstr "Még nincsenek idővonal elemek"
 
 #. js-lingui-explicit-id
 msgid "Step"
-msgstr ""
+msgstr "Lépés"
 
 #. js-lingui-explicit-id
 msgid "Timeline item"
-msgstr ""
+msgstr "Idővonal elem"
 
 #. js-lingui-explicit-id
 msgid "Title"
-msgstr ""
+msgstr "Cím"
 
 #. js-lingui-explicit-id
 msgid "Description (optional)"
-msgstr ""
+msgstr "Leírás (opcionális)"
 
 #. js-lingui-explicit-id
 msgid "Start"
-msgstr ""
+msgstr "Kezdés"
 
 #. js-lingui-explicit-id
 msgid "Remove finish time"
-msgstr ""
+msgstr "Befejezési idő eltávolítása"
 
 #. js-lingui-explicit-id
 msgid "Add finish time"
-msgstr ""
+msgstr "Befejezési idő hozzáadása"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
-msgstr "Üdvözöljük szolgáltatásunkon."
+msgstr "Üdvözöljük szolgáltatásunkban."
 
 #. js-lingui-explicit-id
 msgid "Log in using:"
@@ -1437,11 +1447,11 @@ msgstr "Bejelentkezés a következővel:"
 
 #. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
-msgstr ""
+msgstr "Folytatás {typeSocial} segítségével"
 
 #. js-lingui-explicit-id
 msgid "or sign up using:"
-msgstr ""
+msgstr "vagy regisztráljon a következőkkel:"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -1449,11 +1459,11 @@ msgstr "keressen a közelben lévő eseményeket, műhelyeket"
 
 #. js-lingui-explicit-id
 msgid "get help in case of an emergency"
-msgstr ""
+msgstr "segítség kérése vészhelyzet esetén"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
-msgstr "z {nameApp} alkalmazás helyzetadatokat gyűjt annak érdekében, hogy a(z) {firstEvent} lehetővé váljon, még akkor is, ha az alkalmazás be van zárva vagy nem használatban van."
+msgstr "Az {nameApp} alkalmazás helyzetadatokat gyűjt annak érdekében, hogy a(z) {firstEvent} lehetővé váljon, még akkor is, ha az alkalmazás be van zárva vagy nem használatban van."
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
@@ -1465,11 +1475,11 @@ msgstr "Elfogadás"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
-msgstr ""
+msgstr "Üdvözöljük"
 
 #. js-lingui-explicit-id
 msgid "Main"
-msgstr ""
+msgstr "Főoldal"
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
@@ -1477,7 +1487,7 @@ msgstr "Műhely létrehozása"
 
 #. js-lingui-explicit-id
 msgid "Map"
-msgstr ""
+msgstr "Térkép"
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
@@ -1485,7 +1495,7 @@ msgstr "Válassza ki a(z) {tabName} lapot"
 
 #. js-lingui-explicit-id
 msgid "Help"
-msgstr ""
+msgstr "Segítség"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -1617,19 +1627,19 @@ msgstr "{otherName} Telegram"
 
 #. js-lingui-explicit-id
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
+msgstr "Helytelen telefonszám vagy országkód beírva"
 
 #. js-lingui-explicit-id
 msgid "Password must contain at least 8 characters"
-msgstr ""
+msgstr "A jelszónak legalább 8 karaktert kell tartalmaznia"
 
 #. js-lingui-explicit-id
 msgid "Passwords do not match"
-msgstr ""
+msgstr "A jelszavak nem egyeznek"
 
 #. js-lingui-explicit-id
 msgid "Select"
-msgstr "Válasszon"
+msgstr "Kiválasztás"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -1637,7 +1647,7 @@ msgstr "Az elem ára"
 
 #. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
-msgstr ""
+msgstr "Motorkerékpár szállítási munkatípusok:"
 
 #. js-lingui-explicit-id
 msgid "Select type work moto {nameTypeWork}"
@@ -1645,7 +1655,7 @@ msgstr "Válassza ki a motorkerékpár típusát: {nameTypeWork}"
 
 #. js-lingui-explicit-id
 msgid "Types of work for automobile transport:"
-msgstr ""
+msgstr "Autó szállítási munkatípusok:"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -1673,15 +1683,15 @@ msgstr "Függetlenség utca, 1"
 
 #. js-lingui-explicit-id
 msgid "Select a location on the map"
-msgstr ""
+msgstr "Válasszon helyszínt a térképen"
 
 #. js-lingui-explicit-id
 msgid "Move and change the location"
-msgstr ""
+msgstr "Mozgassa és módosítsa a helyszínt"
 
 #. js-lingui-explicit-id
 msgid "Specify the city"
-msgstr ""
+msgstr "Adja meg a várost"
 
 #. js-lingui-explicit-id
 msgid "Enter text to search"
@@ -1689,11 +1699,11 @@ msgstr "Írjon be szöveget a kereséshez"
 
 #. js-lingui-explicit-id
 msgid "Please enter text for searching"
-msgstr ""
+msgstr "Kérem írja be a keresendő szöveget"
 
 #. js-lingui-explicit-id
 msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
+msgstr "Ha nincs megfelelő opció a listában, használja a 'Mélykeresést'"
 
 #. js-lingui-explicit-id
 msgid "Disable Deep Search"
@@ -1721,15 +1731,15 @@ msgstr "Válasszon országot"
 
 #. js-lingui-explicit-id
 msgid "Select contact type"
-msgstr ""
+msgstr "Válasszon kapcsolattípust"
 
 #. js-lingui-explicit-id
 msgid "Contact us via:"
-msgstr ""
+msgstr "Lépjen velünk kapcsolatba:"
 
 #. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
-msgstr ""
+msgstr "Biztosan törölni szeretné?"
 
 #. js-lingui-explicit-id
 msgid "Decrease the maximum number"
@@ -1741,7 +1751,7 @@ msgstr "Növelje a maximális számot"
 
 #. js-lingui-explicit-id
 msgid "Resend the code"
-msgstr ""
+msgstr "Kód újraküldése"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -1765,7 +1775,7 @@ msgstr "Kedvenc termék kapcsoló"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
-msgstr ""
+msgstr "Nyelv kiválasztása"
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"

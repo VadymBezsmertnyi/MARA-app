@@ -379,7 +379,7 @@ msgstr "Minkä tahansa monimutkaisuuden aerografiikka / Minkä tahansa monimutka
 
 #. js-lingui-explicit-id
 msgid "Wait please before the next update"
-msgstr ""
+msgstr "Ole hyvä ja odota ennen seuraavaa päivitystä"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
@@ -395,19 +395,19 @@ msgstr "Syötä työpajan nimi tai työn tyyppi"
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
-msgstr ""
+msgstr "Pahoittelut, mutta suodattimilla ei löytynyt työpajoja"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
-msgstr ""
+msgstr "Pahoittelut, tulevia työpajoja ei ole"
 
 #. js-lingui-explicit-id
 msgid "Geolocation disabled for calculation"
-msgstr ""
+msgstr "Geolokaatio pois käytöstä laskentaa varten"
 
 #. js-lingui-explicit-id
 msgid "Cannot calculate"
-msgstr ""
+msgstr "Ei voi laskea"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -415,7 +415,7 @@ msgstr "km"
 
 #. js-lingui-explicit-id
 msgid "Not comments"
-msgstr ""
+msgstr "Ei kommentteja"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
@@ -423,35 +423,35 @@ msgstr "Painike modaalisen ikkunan sulkemiseksi"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
-msgstr ""
+msgstr "Etäisyyden mukaan:"
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
-msgstr ""
+msgstr "lähimmästä kauimpaiseen"
 
 #. js-lingui-explicit-id
 msgid "Getting location..."
-msgstr ""
+msgstr "Haetaan sijaintia..."
 
 #. js-lingui-explicit-id
 msgid "To calculate distance, please enable location services"
-msgstr ""
+msgstr "Etäisyyden laskemiseksi, ota sijaintipalvelut käyttöön"
 
 #. js-lingui-explicit-id
 msgid "Enable location"
-msgstr ""
+msgstr "Ota sijainti käyttöön"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
-msgstr ""
+msgstr "Arvosanan mukaan:"
 
 #. js-lingui-explicit-id
 msgid "from highest to lowest"
-msgstr ""
+msgstr "korkeimmasta matalimpaan"
 
 #. js-lingui-explicit-id
 msgid "By number of comments:"
-msgstr ""
+msgstr "Kommenttien määrän mukaan:"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -491,7 +491,7 @@ msgstr "Etäisyys, km:"
 
 #. js-lingui-explicit-id
 msgid "Only with rating:"
-msgstr ""
+msgstr "Vain arvosanalla:"
 
 #. js-lingui-explicit-id
 msgid "All works"
@@ -511,11 +511,11 @@ msgstr "Virhe"
 
 #. js-lingui-explicit-id
 msgid "Unable to like the workshop"
-msgstr ""
+msgstr "Työpajan tykkääminen epäonnistui"
 
 #. js-lingui-explicit-id
 msgid "Failed to create share link"
-msgstr ""
+msgstr "Jakolinkin luominen epäonnistui"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -525,14 +525,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Avaa työpaja sovelluksessa:\n"
+"{appLink}\n"
+"\n"
+"Avaa selaimessa:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share workshop"
-msgstr ""
+msgstr "Jaa työpaja"
 
 #. js-lingui-explicit-id
 msgid "Failed to send SMS"
-msgstr ""
+msgstr "SMS:n lähettäminen epäonnistui"
 
 #. js-lingui-explicit-id
 msgid "Success"
@@ -540,11 +545,11 @@ msgstr "Onnistui"
 
 #. js-lingui-explicit-id
 msgid "Everything is successful and this is your business"
-msgstr ""
+msgstr "Kaikki onnistui ja tämä on sinun yrityksesi"
 
 #. js-lingui-explicit-id
 msgid "Invalid or expired code"
-msgstr ""
+msgstr "Virheellinen tai vanhentunut koodi"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -552,43 +557,43 @@ msgstr "Työpaja"
 
 #. js-lingui-explicit-id
 msgid "Unable to calculate distance, location is disabled"
-msgstr ""
+msgstr "Etäisyyden laskeminen epäonnistui, sijainti on pois käytöstä"
 
 #. js-lingui-explicit-id
 msgid "Contacts unknown"
-msgstr ""
+msgstr "Yhteystiedot tuntemattomat"
 
 #. js-lingui-explicit-id
 msgid "About us:"
-msgstr ""
+msgstr "Meistä:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
-msgstr ""
+msgstr "Lue koko kuvaus..."
 
 #. js-lingui-explicit-id
 msgid "This business has not been confirmed by the owner"
-msgstr ""
+msgstr "Tätä yritystä ei ole vahvistanut omistaja"
 
 #. js-lingui-explicit-id
 msgid "Confirm business"
-msgstr ""
+msgstr "Vahvista yritys"
 
 #. js-lingui-explicit-id
 msgid "Report on business"
-msgstr ""
+msgstr "Raportoi yrityksestä"
 
 #. js-lingui-explicit-id
 msgid "Working hours unknown"
-msgstr ""
+msgstr "Aukioloajat tuntemattomat"
 
 #. js-lingui-explicit-id
 msgid "Day off"
-msgstr ""
+msgstr "Vapaapäivä"
 
 #. js-lingui-explicit-id
 msgid "Working hours"
-msgstr ""
+msgstr "Aukioloajat"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -600,7 +605,7 @@ msgstr "Tekstin tulee olla vähintään 10 ja enintään 2000 merkkiä pitkä."
 
 #. js-lingui-explicit-id
 msgid "Leave a review"
-msgstr ""
+msgstr "Jätä arvostelu"
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -624,11 +629,11 @@ msgstr "Julkaise"
 
 #. js-lingui-explicit-id
 msgid "The work we do:"
-msgstr ""
+msgstr "Tekemämme työ:"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
-msgstr ""
+msgstr "Arvostelut:"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -644,87 +649,87 @@ msgstr "Kirjoita arvostelu"
 
 #. js-lingui-explicit-id
 msgid "Monday"
-msgstr ""
+msgstr "Maanantai"
 
 #. js-lingui-explicit-id
 msgid "Mon"
-msgstr ""
+msgstr "Ma"
 
 #. js-lingui-explicit-id
 msgid "Tuesday"
-msgstr ""
+msgstr "Tiistai"
 
 #. js-lingui-explicit-id
 msgid "Tue"
-msgstr ""
+msgstr "Ti"
 
 #. js-lingui-explicit-id
 msgid "Wednesday"
-msgstr ""
+msgstr "Keskiviikko"
 
 #. js-lingui-explicit-id
 msgid "Wed"
-msgstr ""
+msgstr "Ke"
 
 #. js-lingui-explicit-id
 msgid "Thursday"
-msgstr ""
+msgstr "Torstai"
 
 #. js-lingui-explicit-id
 msgid "Thu"
-msgstr ""
+msgstr "To"
 
 #. js-lingui-explicit-id
 msgid "Friday"
-msgstr ""
+msgstr "Perjantai"
 
 #. js-lingui-explicit-id
 msgid "Fri"
-msgstr ""
+msgstr "Pe"
 
 #. js-lingui-explicit-id
 msgid "Saturday"
-msgstr ""
+msgstr "Lauantai"
 
 #. js-lingui-explicit-id
 msgid "Sat"
-msgstr ""
+msgstr "La"
 
 #. js-lingui-explicit-id
 msgid "Sunday"
-msgstr ""
+msgstr "Sunnuntai"
 
 #. js-lingui-explicit-id
 msgid "Sun"
-msgstr ""
+msgstr "Su"
 
 #. js-lingui-explicit-id
 msgid "Phone"
-msgstr ""
+msgstr "Puhelin"
 
 #. js-lingui-explicit-id
 msgid "Email"
-msgstr ""
+msgstr "Sähköposti"
 
 #. js-lingui-explicit-id
 msgid "Viber"
-msgstr ""
+msgstr "Viber"
 
 #. js-lingui-explicit-id
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #. js-lingui-explicit-id
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #. js-lingui-explicit-id
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #. js-lingui-explicit-id
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #. js-lingui-explicit-id
 msgid "workshop"
@@ -748,7 +753,7 @@ msgstr "Virhe työpajan luomisessa"
 
 #. js-lingui-explicit-id
 msgid "Unable to delete the workshop"
-msgstr ""
+msgstr "Työpajan poistaminen epäonnistui"
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -772,7 +777,7 @@ msgstr "Syötä osoite"
 
 #. js-lingui-explicit-id
 msgid "Contacts"
-msgstr ""
+msgstr "Yhteystiedot"
 
 #. js-lingui-explicit-id
 msgid "Phone number"
@@ -780,7 +785,7 @@ msgstr "Puhelinnumero"
 
 #. js-lingui-explicit-id
 msgid "Add contact type"
-msgstr ""
+msgstr "Lisää yhteystietotyyppi"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -800,15 +805,15 @@ msgstr "Valitse työtyypit"
 
 #. js-lingui-explicit-id
 msgid "You can add up to 5 phone numbers"
-msgstr ""
+msgstr "Voit lisätä enintään 5 puhelinnumeroa"
 
 #. js-lingui-explicit-id
 msgid "This contact type has already been added"
-msgstr ""
+msgstr "Tämä yhteystietotyyppi on jo lisätty"
 
 #. js-lingui-explicit-id
 msgid "Edit"
-msgstr ""
+msgstr "Muokkaa"
 
 #. js-lingui-explicit-id
 msgid "Save"
@@ -820,7 +825,7 @@ msgstr "Peruuta"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
-msgstr ""
+msgstr "Omat työpajat"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
@@ -828,27 +833,27 @@ msgstr "Painike sulkemaan asetusten työpaja-näyttö"
 
 #. js-lingui-explicit-id
 msgid "All"
-msgstr ""
+msgstr "Kaikki"
 
 #. js-lingui-explicit-id
 msgid "Created by me"
-msgstr ""
+msgstr "Minun luomani"
 
 #. js-lingui-explicit-id
 msgid "Mine"
-msgstr ""
+msgstr "Omani"
 
 #. js-lingui-explicit-id
 msgid "Sorry!"
-msgstr ""
+msgstr "Pahoittelut!"
 
 #. js-lingui-explicit-id
 msgid "You don't have {typeItem}."
-msgstr ""
+msgstr "Sinulla ei ole {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Select phone number"
-msgstr ""
+msgstr "Valitse puhelinnumero"
 
 #. js-lingui-explicit-id
 msgid "Confirm"
@@ -856,27 +861,27 @@ msgstr "Vahvista"
 
 #. js-lingui-explicit-id
 msgid "Enter verification code"
-msgstr ""
+msgstr "Syötä vahvistuskoodi"
 
 #. js-lingui-explicit-id
 msgid "Enter 6-digit code"
-msgstr ""
+msgstr "Syötä 6-numeroinen koodi"
 
 #. js-lingui-explicit-id
 msgid "Under review"
-msgstr ""
+msgstr "Tarkastuksessa"
 
 #. js-lingui-explicit-id
 msgid "Verified"
-msgstr ""
+msgstr "Vahvistettu"
 
 #. js-lingui-explicit-id
 msgid "Rejected"
-msgstr ""
+msgstr "Hylätty"
 
 #. js-lingui-explicit-id
 msgid "Confirm ownership"
-msgstr ""
+msgstr "Vahvista omistajuus"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -912,11 +917,11 @@ msgstr "Takaisin"
 
 #. js-lingui-explicit-id
 msgid "Profile"
-msgstr ""
+msgstr "Profiili"
 
 #. js-lingui-explicit-id
 msgid "Logout"
-msgstr ""
+msgstr "Kirjaudu ulos"
 
 #. js-lingui-explicit-id
 msgid "First Name"
@@ -944,11 +949,11 @@ msgstr "Kuvaa ei ole vaihdettu"
 
 #. js-lingui-explicit-id
 msgid "Info"
-msgstr ""
+msgstr "Tiedot"
 
 #. js-lingui-explicit-id
 msgid "The photo has been deleted"
-msgstr ""
+msgstr "Kuva on poistettu"
 
 #. js-lingui-explicit-id
 msgid "Delete"
@@ -960,7 +965,7 @@ msgstr "Muuta"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
-msgstr ""
+msgstr "Oma profiili"
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
@@ -976,7 +981,7 @@ msgstr "tapahtumat"
 
 #. js-lingui-explicit-id
 msgid "My events"
-msgstr ""
+msgstr "Omat tapahtumat"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -984,11 +989,11 @@ msgstr "Painike sulkemaan asetusten tapahtumanäyttö"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events"
-msgstr ""
+msgstr "Tulevat tapahtumat"
 
 #. js-lingui-explicit-id
 msgid "Past events"
-msgstr ""
+msgstr "Menneet tapahtumat"
 
 #. js-lingui-explicit-id
 msgid "Add event"
@@ -1004,15 +1009,15 @@ msgstr "Yksityisyyskäytäntö"
 
 #. js-lingui-explicit-id
 msgid "Terms of Service"
-msgstr ""
+msgstr "Käyttöehdot"
 
 #. js-lingui-explicit-id
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
+msgstr "Käyttääksesi palvelun kaikkia ominaisuuksia täysin, sinun on annettava sovellukselle lupa määrittää sijaintisi:"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
+msgstr "Salli {nameApp} -sovelluksen määrittää sijaintini"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
@@ -1020,11 +1025,11 @@ msgstr "Vaihda sijaintiasi"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
-msgstr ""
+msgstr "ja valitse asuinpaikkakunta:"
 
 #. js-lingui-explicit-id
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
+msgstr "Napsauttamalla \"Jatka\" -painiketta hyväksyt {buttonTermsService} ja {buttonPrivacyPolicy}"
 
 #. js-lingui-explicit-id
 msgid "Continue"
@@ -1044,7 +1049,7 @@ msgstr "Rekisteröinti"
 
 #. js-lingui-explicit-id
 msgid "We recommend filling out the profile information"
-msgstr ""
+msgstr "Suosittelemme täyttämään profiilitiedot"
 
 #. js-lingui-explicit-id
 msgid "Fill out later"
@@ -1052,7 +1057,7 @@ msgstr "Täytä myöhemmin"
 
 #. js-lingui-explicit-id
 msgid "Settings"
-msgstr ""
+msgstr "Asetukset"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
@@ -1080,11 +1085,11 @@ msgstr "Ilmoita virheestä/parannuksesta"
 
 #. js-lingui-explicit-id
 msgid "Dark theme"
-msgstr ""
+msgstr "Tumma teema"
 
 #. js-lingui-explicit-id
 msgid "Automatically detect location"
-msgstr ""
+msgstr "Tunnista sijainti automaattisesti"
 
 #. js-lingui-explicit-id
 msgid "Toggle automatically detect location"
@@ -1100,7 +1105,7 @@ msgstr "Profiilin poistamisen yhteydessä kaikki tietosi poistetaan"
 
 #. js-lingui-explicit-id
 msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
+msgstr "Mille alustalle haluat lähettää sovelluksen asennuskutsun?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
@@ -1108,15 +1113,15 @@ msgstr "Vaihda näytä-valikko"
 
 #. js-lingui-explicit-id
 msgid "The nearest event:"
-msgstr ""
+msgstr "Lähin tapahtuma:"
 
 #. js-lingui-explicit-id
 msgid "{distance} km"
-msgstr ""
+msgstr "{distance} km"
 
 #. js-lingui-explicit-id
 msgid "No date"
-msgstr ""
+msgstr "Ei päivämäärää"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -1128,11 +1133,11 @@ msgstr "Ei"
 
 #. js-lingui-explicit-id
 msgid "Description"
-msgstr ""
+msgstr "Kuvaus"
 
 #. js-lingui-explicit-id
 msgid "Location"
-msgstr ""
+msgstr "Sijainti"
 
 #. js-lingui-explicit-id
 msgid "Events"
@@ -1140,11 +1145,11 @@ msgstr "Tapahtumat"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events:"
-msgstr ""
+msgstr "Tulevat tapahtumat:"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming events"
-msgstr ""
+msgstr "Pahoittelut, tulevia tapahtumia ei ole"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1152,19 +1157,19 @@ msgstr "Paina näyttääksesi lisää tapahtumia"
 
 #. js-lingui-explicit-id
 msgid "More events"
-msgstr ""
+msgstr "Lisää tapahtumia"
 
 #. js-lingui-explicit-id
 msgid "Past events:"
-msgstr ""
+msgstr "Menneet tapahtumat:"
 
 #. js-lingui-explicit-id
 msgid "No events have passed"
-msgstr ""
+msgstr "Tapahtumia ei ole mennyt"
 
 #. js-lingui-explicit-id
 msgid "Now"
-msgstr ""
+msgstr "Nyt"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -1176,47 +1181,47 @@ msgstr "Syötä etsittävä teksti"
 
 #. js-lingui-explicit-id
 msgid "By date:"
-msgstr ""
+msgstr "Päivämäärän mukaan:"
 
 #. js-lingui-explicit-id
 msgid "from soonest to latest"
-msgstr ""
+msgstr "ensiimmästä viimeisimpään"
 
 #. js-lingui-explicit-id
 msgid "Price range:"
-msgstr ""
+msgstr "Hintaväli:"
 
 #. js-lingui-explicit-id
 msgid "From"
-msgstr ""
+msgstr "Alkaen"
 
 #. js-lingui-explicit-id
 msgid "To"
-msgstr ""
+msgstr "Asti"
 
 #. js-lingui-explicit-id
 msgid "All locations"
-msgstr ""
+msgstr "Kaikki sijainnit"
 
 #. js-lingui-explicit-id
 msgid "Select country or city"
-msgstr ""
+msgstr "Valitse maa tai kaupunki"
 
 #. js-lingui-explicit-id
 msgid "Clear location filter"
-msgstr ""
+msgstr "Tyhjennä sijaintisuodatin"
 
 #. js-lingui-explicit-id
 msgid "Close"
-msgstr ""
+msgstr "Sulje"
 
 #. js-lingui-explicit-id
 msgid "All countries"
-msgstr ""
+msgstr "Kaikki maat"
 
 #. js-lingui-explicit-id
 msgid "No countries found"
-msgstr ""
+msgstr "Maita ei löytynyt"
 
 #. js-lingui-explicit-id
 msgid "All cities"
@@ -1228,7 +1233,7 @@ msgstr "Kaupunkeja ei löytynyt"
 
 #. js-lingui-explicit-id
 msgid "Save location filter"
-msgstr ""
+msgstr "Tallenna sijaintisuodatin"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1244,7 +1249,7 @@ msgstr "Ilmainen"
 
 #. js-lingui-explicit-id
 msgid "Phone number not found"
-msgstr ""
+msgstr "Puhelinnumeroa ei löytynyt"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -1254,14 +1259,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Avaa tapahtuma sovelluksessa:\n"
+"{appLink}\n"
+"\n"
+"Avaa selaimessa:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share event"
-msgstr ""
+msgstr "Jaa tapahtuma"
 
 #. js-lingui-explicit-id
 msgid "Please sign in to continue"
-msgstr ""
+msgstr "Kirjaudu sisään jatkaaksesi"
 
 #. js-lingui-explicit-id
 msgid "Event"
@@ -1273,11 +1283,11 @@ msgstr "Kaikki kuvat"
 
 #. js-lingui-explicit-id
 msgid "Not going"
-msgstr ""
+msgstr "En osallistu"
 
 #. js-lingui-explicit-id
 msgid "Going"
-msgstr ""
+msgstr "Osallistun"
 
 #. js-lingui-explicit-id
 msgid "Date of the event"
@@ -1305,15 +1315,15 @@ msgstr "Galleria"
 
 #. js-lingui-explicit-id
 msgid "Timeline"
-msgstr ""
+msgstr "Aikajana"
 
 #. js-lingui-explicit-id
 msgid "Add a description about the event"
-msgstr ""
+msgstr "Lisää kuvaus tapahtumasta"
 
 #. js-lingui-explicit-id
 msgid "Event description"
-msgstr ""
+msgstr "Tapahtuman kuvaus"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1321,7 +1331,7 @@ msgstr "tapahtuma"
 
 #. js-lingui-explicit-id
 msgid "Your event is under review and will appear after verification"
-msgstr ""
+msgstr "Tapahtumasi on tarkastuksessa ja ilmestyy vahvistuksen jälkeen"
 
 #. js-lingui-explicit-id
 msgid "Change event"
@@ -1353,7 +1363,7 @@ msgstr "Lopetus"
 
 #. js-lingui-explicit-id
 msgid "Participation fee"
-msgstr ""
+msgstr "Osallistumismaksu"
 
 #. js-lingui-explicit-id
 msgid "100 uah"
@@ -1373,59 +1383,59 @@ msgstr "Kerro meille tapahtumasta"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to each timeline item"
-msgstr ""
+msgstr "Lisää otsikko jokaiseen aikajanakohdan"
 
 #. js-lingui-explicit-id
 msgid "Timeline item start time is outside event dates"
-msgstr ""
+msgstr "Aikajanakohdan alkuaika on tapahtumapäivien ulkopuolella"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish must be after start"
-msgstr ""
+msgstr "Aikajanakohdan loppu on oltava alun jälkeen"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish time is outside event dates"
-msgstr ""
+msgstr "Aikajanakohdan loppuaika on tapahtumapäivien ulkopuolella"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to the timeline item"
-msgstr ""
+msgstr "Lisää otsikko aikajanakohdalle"
 
 #. js-lingui-explicit-id
 msgid "Add item"
-msgstr ""
+msgstr "Lisää kohde"
 
 #. js-lingui-explicit-id
 msgid "No timeline items yet"
-msgstr ""
+msgstr "Ei vielä aikajanakohtia"
 
 #. js-lingui-explicit-id
 msgid "Step"
-msgstr ""
+msgstr "Vaihe"
 
 #. js-lingui-explicit-id
 msgid "Timeline item"
-msgstr ""
+msgstr "Aikajanakohdan"
 
 #. js-lingui-explicit-id
 msgid "Title"
-msgstr ""
+msgstr "Otsikko"
 
 #. js-lingui-explicit-id
 msgid "Description (optional)"
-msgstr ""
+msgstr "Kuvaus (valinnainen)"
 
 #. js-lingui-explicit-id
 msgid "Start"
-msgstr ""
+msgstr "Aloitus"
 
 #. js-lingui-explicit-id
 msgid "Remove finish time"
-msgstr ""
+msgstr "Poista loppuaika"
 
 #. js-lingui-explicit-id
 msgid "Add finish time"
-msgstr ""
+msgstr "Lisää loppuaika"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1437,11 +1447,11 @@ msgstr "Kirjaudu sisään käyttäen:"
 
 #. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
-msgstr ""
+msgstr "Jatka palvelulla {typeSocial}"
 
 #. js-lingui-explicit-id
 msgid "or sign up using:"
-msgstr ""
+msgstr "tai rekisteröidy käyttäen:"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -1449,7 +1459,7 @@ msgstr "etsi lähellä olevia tapahtumia, työpajoja"
 
 #. js-lingui-explicit-id
 msgid "get help in case of an emergency"
-msgstr ""
+msgstr "saada apua hätätilanteessa"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -1465,11 +1475,11 @@ msgstr "Hyväksy"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
-msgstr ""
+msgstr "Tervetuloa"
 
 #. js-lingui-explicit-id
 msgid "Main"
-msgstr ""
+msgstr "Pääsivu"
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
@@ -1477,7 +1487,7 @@ msgstr "Luo työpaja"
 
 #. js-lingui-explicit-id
 msgid "Map"
-msgstr ""
+msgstr "Kartta"
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
@@ -1485,7 +1495,7 @@ msgstr "Valitse välilehti {tabName}"
 
 #. js-lingui-explicit-id
 msgid "Help"
-msgstr ""
+msgstr "Apua"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -1617,15 +1627,15 @@ msgstr "{otherName} Telegram"
 
 #. js-lingui-explicit-id
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
+msgstr "Syötetty virheellinen puhelinnumero tai puhelinnumeron maakoodi valittu väärin"
 
 #. js-lingui-explicit-id
 msgid "Password must contain at least 8 characters"
-msgstr ""
+msgstr "Salasanan tulee sisältää vähintään 8 merkkiä"
 
 #. js-lingui-explicit-id
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Salasanat eivät täsmää"
 
 #. js-lingui-explicit-id
 msgid "Select"
@@ -1637,7 +1647,7 @@ msgstr "Kohteen hinta"
 
 #. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
-msgstr ""
+msgstr "Moottoripyöräkuljetuksen työtyypit:"
 
 #. js-lingui-explicit-id
 msgid "Select type work moto {nameTypeWork}"
@@ -1645,7 +1655,7 @@ msgstr "Valitse työtyyppi moto {nameTypeWork}"
 
 #. js-lingui-explicit-id
 msgid "Types of work for automobile transport:"
-msgstr ""
+msgstr "Autokuljetuksen työtyypit:"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -1673,15 +1683,15 @@ msgstr "Itsenaistyntie, 1"
 
 #. js-lingui-explicit-id
 msgid "Select a location on the map"
-msgstr ""
+msgstr "Valitse sijainti kartalta"
 
 #. js-lingui-explicit-id
 msgid "Move and change the location"
-msgstr ""
+msgstr "Siirrä ja vaihda sijaintia"
 
 #. js-lingui-explicit-id
 msgid "Specify the city"
-msgstr ""
+msgstr "Määritä kaupunki"
 
 #. js-lingui-explicit-id
 msgid "Enter text to search"
@@ -1689,11 +1699,11 @@ msgstr "Kirjoita etsittävä teksti"
 
 #. js-lingui-explicit-id
 msgid "Please enter text for searching"
-msgstr ""
+msgstr "Syötä hakuteksti"
 
 #. js-lingui-explicit-id
 msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
+msgstr "Jos listasta ei löydy sopivaa vaihtoehtoa, käytä 'Syähaku'"
 
 #. js-lingui-explicit-id
 msgid "Disable Deep Search"
@@ -1721,15 +1731,15 @@ msgstr "Valitse maa"
 
 #. js-lingui-explicit-id
 msgid "Select contact type"
-msgstr ""
+msgstr "Valitse yhteystietotyyppi"
 
 #. js-lingui-explicit-id
 msgid "Contact us via:"
-msgstr ""
+msgstr "Ota meihin yhteyttä:"
 
 #. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
-msgstr ""
+msgstr "Oletko varma, että haluat poistaa?"
 
 #. js-lingui-explicit-id
 msgid "Decrease the maximum number"
@@ -1741,7 +1751,7 @@ msgstr "Lisää enimmäismäärää"
 
 #. js-lingui-explicit-id
 msgid "Resend the code"
-msgstr ""
+msgstr "Lähetä koodi uudelleen"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -1765,7 +1775,7 @@ msgstr "Vaihda tuotteen tykkäystä"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
-msgstr ""
+msgstr "Kielivalinta"
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"
