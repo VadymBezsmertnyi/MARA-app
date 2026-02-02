@@ -1,17 +1,17 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useMemo, useEffect } from "react";
 import {
   ScrollView,
   Text,
   TouchableOpacity,
   View,
-  ActivityIndicator,
+  RefreshControl,
 } from "react-native";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 import { CommonActions } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
-import { MaterialIcons } from "@expo/vector-icons";
+import Toast from "react-native-toast-message";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
@@ -54,7 +54,13 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   const dispatch = useRootDispatch();
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  const { data: userStats, isLoading, error } = useGetUserStatsQuery();
+  const {
+    data: userStats,
+    isLoading,
+    isFetching,
+    error,
+    refetch,
+  } = useGetUserStatsQuery();
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -180,6 +186,20 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     ];
   }, [userStats]);
 
+  const onRefresh = async () => {
+    try {
+      await refetch();
+    } catch (refreshError) {
+      Toast.show({
+        type: "error",
+        text1: "Refresh Failed",
+        text2: "Failed to refresh data. Please pull down to try again.",
+        position: "top",
+        visibilityTime: 3000,
+      });
+    }
+  };
+
   const onShowMenu = () => {
     navigation.openDrawer();
   };
@@ -199,6 +219,17 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     );
   };
 
+  useEffect(() => {
+    if (error)
+      Toast.show({
+        type: "error",
+        text1: "Error",
+        text2: "Failed to load user statistics. Please try again.",
+        position: "top",
+        visibilityTime: 3000,
+      });
+  }, [error]);
+
   return (
     <>
       <View style={containerStyles}>
@@ -214,7 +245,16 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
             <Text style={styles.titleLogout}>{i18n._("Logout")}</Text>
           </TouchableOpacity>
         </View>
-        <ScrollView>
+        <ScrollView
+          refreshControl={
+            <RefreshControl
+              refreshing={isLoading || isFetching}
+              onRefresh={onRefresh}
+              colors={["#007AFF"]}
+              tintColor="#007AFF"
+            />
+          }
+        >
           <ContainerUser
             onPressEditProfile={() => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
@@ -225,12 +265,12 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
             <SectionItemComponent
               title={i18n._("My roles")}
               items={rolesData}
-              sectionLoading={isLoading}
+              sectionLoading={isLoading || isFetching}
             />
             <SectionItemComponent
               title={i18n._("My actions")}
               items={actionsData}
-              sectionLoading={isLoading}
+              sectionLoading={isLoading || isFetching}
             />
             <SectionItemComponent
               title={i18n._("Your workshops")}
@@ -238,7 +278,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
               onPress={() => {
                 navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
               }}
-              sectionLoading={isLoading}
+              sectionLoading={isLoading || isFetching}
             />
             <SectionItemComponent
               title={i18n._("Your events")}
@@ -246,7 +286,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
               onPress={() => {
                 navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
               }}
-              sectionLoading={isLoading}
+              sectionLoading={isLoading || isFetching}
             />
           </View>
           <View style={styles.containerEmpty} />
