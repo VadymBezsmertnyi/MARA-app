@@ -46,12 +46,12 @@ import {
   useGetTelegramCategoriesQuery,
   useGetTelegramCountriesQuery,
   useGetTelegramCitiesQuery,
-  useGetTelegramLocationsQuery,
 } from "../../../storeRedux/api";
 
 // styles
 import { styles } from "./HelpMain.styles";
 import colors from "../../../../styles/colors";
+import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 
 type HelpMainProps = {
   navigation: NativeStackNavigationProp<RootHelpScreensParamList> &
@@ -146,6 +146,10 @@ export const HelpMain: FunctionComponent<HelpMainProps> = ({ navigation }) => {
     navigation.navigate(PATHS_HELP_SCREENS.addTelegramChannel);
   };
 
+  const onPressShowMenu = () => {
+    navigation.openDrawer();
+  };
+
   const onRefresh = async () => {
     setRefreshing(true);
     await refetchChannels();
@@ -217,6 +221,7 @@ export const HelpMain: FunctionComponent<HelpMainProps> = ({ navigation }) => {
     <>
       <Header
         title={i18n._("Help & Resources")}
+        leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
         rightElement={
           <HeaderActions
             onPressFilter={() => {
