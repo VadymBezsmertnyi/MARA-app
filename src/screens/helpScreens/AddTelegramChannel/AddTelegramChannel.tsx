@@ -111,7 +111,6 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
 
   return (
     <View style={containerStyles}>
-      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <MaterialIcons name="arrow-back" size={24} color="#007AFF" />
@@ -126,9 +125,7 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
           </Text>
         </TouchableOpacity>
       </View>
-
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-        {/* Channel Name */}
         <View style={styles.formGroup}>
           <Text style={styles.formLabel}>{i18n._("Channel Name")} *</Text>
           <TextInput
@@ -138,8 +135,6 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
             placeholder={i18n._("Enter channel name")}
           />
         </View>
-
-        {/* Channel URL */}
         <View style={styles.formGroup}>
           <Text style={styles.formLabel}>{i18n._("Channel URL")} *</Text>
           <TextInput
@@ -150,8 +145,6 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
             keyboardType="url"
           />
         </View>
-
-        {/* Description */}
         <View style={styles.formGroup}>
           <Text style={styles.formLabel}>{i18n._("Description")}</Text>
           <TextInput
@@ -163,8 +156,6 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
             numberOfLines={3}
           />
         </View>
-
-        {/* Category */}
         <View style={styles.formGroup}>
           <Text style={styles.formLabel}>{i18n._("Category")} *</Text>
           {categoriesLoading ? (
@@ -195,8 +186,6 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
             </ScrollView>
           )}
         </View>
-
-        {/* Location Selection */}
         <View style={styles.formGroup}>
           <Text style={styles.formLabel}>{i18n._("Location")}</Text>
           <InputButton
@@ -211,8 +200,6 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
           />
         </View>
       </ScrollView>
-
-      {/* Place Selection Modal */}
       <ModalSheetSearchPlaceAddress
         isOpen={isModalPlace}
         onClose={() => {
