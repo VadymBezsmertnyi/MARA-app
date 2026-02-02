@@ -108,6 +108,34 @@ export const deleteUserResponseSchema = z.object({
   result: z.boolean(),
 });
 
+export const userStatsResponseSchema = z.object({
+  userRoles: z.object({
+    ownerWorkshopIds: z.array(z.string()),
+    addedWorkshopIds: z.array(z.string()),
+    ownerEventIds: z.array(z.string()),
+    addedEventIds: z.array(z.string()),
+  }),
+  userActions: z.object({
+    workshops: z.object({
+      active: z.number(),
+      onReview: z.number(),
+      rejected: z.number(),
+    }),
+    events: z.object({
+      active: z.number(),
+      onReview: z.number(),
+    }),
+  }),
+  userComments: z.object({
+    totalComments: z.number(),
+    averageRating: z.number(),
+  }),
+  totals: z.object({
+    totalWorkshops: z.number(),
+    totalEvents: z.number(),
+  }),
+});
+
 export const userStateSchema = z.object({
   userData: userDataSchema.nullable(),
   loading: z.boolean(),

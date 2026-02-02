@@ -13,6 +13,7 @@ import {
   getMe,
   editUser,
   deleteUser,
+  getUserStats,
 } from "./apis/user/apis";
 import {
   getEvents,
@@ -66,6 +67,7 @@ export const api = createApi({
     getMe: getMe(builder),
     editUser: editUser(builder),
     deleteUser: deleteUser(builder),
+    getUserStats: getUserStats(builder),
     // Events APIs
     getEvents: getEvents(builder),
     getEventsUser: getEventsUser(builder),
@@ -108,6 +110,8 @@ export const {
   useLazyGetMeQuery,
   useEditUserMutation,
   useDeleteUserMutation,
+  useGetUserStatsQuery,
+  useLazyGetUserStatsQuery,
   // Events Hooks APIs
   useGetEventsQuery,
   useLazyGetEventsQuery,

@@ -7,4 +7,5 @@ export const PATHS = {
   token: "/user/login/token",
   editUser: "/user/login/editUser",
   delete: "/user/login/delete",
+  userStats: "/user/login/user-stats",
 } as const;

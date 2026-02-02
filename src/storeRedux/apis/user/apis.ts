@@ -3,6 +3,7 @@ import {
   TLoginResponse,
   TMeResponse,
   TDeleteUserResponse,
+  TUserStatsResponse,
   ILoginFacebookRequest,
   ILoginGoogleRequest,
   ILoginAppleRequest,
@@ -14,6 +15,7 @@ import {
   loginResponseSchema,
   meResponseSchema,
   deleteUserResponseSchema,
+  userStatsResponseSchema,
 } from "./user.schemas";
 
 export const loginFacebook = (builder: Builder) =>
@@ -176,6 +178,25 @@ export const deleteUser = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod deleteUser:", {
           url: PATHS.delete,
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const getUserStats = (builder: Builder) =>
+  builder.query<TUserStatsResponse | null, void>({
+    query: () => ({
+      url: PATHS.userStats,
+      method: "GET",
+    }),
+    transformResponse: (response: unknown) => {
+      const result = userStatsResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod getUserStats:", {
+          url: PATHS.userStats,
           data: response,
           error: result.error,
         });
