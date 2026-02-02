@@ -1,4 +1,9 @@
 import { z } from "zod";
+import {
+  countryDbSchema,
+  placeDbSchema,
+  regionDbSchema,
+} from "../../../providers/PlacesProvider/PlacesProvider.schemas";
 
 export const telegramChannelCategorySchema = z.enum([
   "dispute",
@@ -12,7 +17,7 @@ export const telegramChannelSchema = z.object({
   _id: z.string(),
   name: z.string(),
   description: z.string().optional(),
-  channelUrl: z.string().url(),
+  channelUrl: z.string(),
   category: telegramChannelCategorySchema,
   place_id: z.string().optional(),
   country_place_id: z.string().optional(),
@@ -71,28 +76,15 @@ export const telegramCitiesResponseSchema = z.object({
 export const telegramLocationsResponseSchema = z.object({
   success: z.boolean(),
   data: z.object({
-    countries: z.array(
-      z.object({
-        _id: z.string(),
-        name: z.string(),
-        code: z.string().optional(),
-      })
-    ),
-    places: z.array(
-      z.object({
-        _id: z.string(),
-        name: z.string(),
-        countryId: z.string().optional(),
-      })
-    ),
+    countries: z.array(countryDbSchema).default([]),
+    places: z.array(placeDbSchema).default([]),
   }),
 });
 
-// Request Schemas
 export const addTelegramChannelRequestSchema = z.object({
   name: z.string(),
   description: z.string().optional(),
-  channelUrl: z.string().url(),
+  channelUrl: z.string(),
   category: telegramChannelCategorySchema,
   place_id: z.string().optional(),
   country_place_id: z.string().optional(),
