@@ -36,11 +36,6 @@ export const SectionItemComponent: FunctionComponent<
         <Text style={styles.sectionTitle}>{title}</Text>
         {sectionLoading ? (
           <ActivityIndicator size="small" color="#007AFF" />
-        ) : onPress ? (
-          <TouchableOpacity onPress={onPress} style={styles.seeAllButton}>
-            <Text style={styles.seeAllText}>See all</Text>
-            <MaterialIcons name="arrow-forward-ios" size={12} color="#007AFF" />
-          </TouchableOpacity>
         ) : null}
       </View>
       {sectionLoading ? (
@@ -49,57 +44,65 @@ export const SectionItemComponent: FunctionComponent<
           <Text style={styles.loadingText}>Loading...</Text>
         </View>
       ) : (
-        <View style={styles.sectionItems}>
-          {items.slice(0, 4).map((item) => (
-            <View key={item.id} style={styles.sectionItem}>
-              <View style={styles.itemLeft}>
-                {item.icon && (
-                  <MaterialIcons
-                    name={item.icon}
-                    size={20}
-                    color={item.color || "#666"}
-                    style={styles.itemIcon}
-                  />
-                )}
-                <View style={styles.itemContent}>
-                  <Text style={styles.itemText}>{item.name}</Text>
-                  {item.subItems && (
-                    <View style={styles.subItemsContainer}>
-                      {item.subItems.map((subItem, index) => (
-                        <View key={index} style={styles.subItem}>
-                          <MaterialIcons
-                            name={subItem.icon}
-                            size={16}
-                            color={subItem.color}
-                            style={styles.subItemIcon}
-                          />
-                          <Text style={styles.subItemText}>
-                            {subItem.label}: {subItem.value}
-                          </Text>
-                        </View>
-                      ))}
+        <TouchableOpacity
+          onPress={onPress}
+          disabled={!onPress}
+          style={styles.sectionTouchable}
+        >
+          <View style={styles.sectionItems}>
+            {items.slice(0, 4).map((item) => (
+              <View key={item.id} style={styles.sectionItem}>
+                <View style={styles.itemLeft}>
+                  {item.icon && (
+                    <MaterialIcons
+                      name={item.icon}
+                      size={20}
+                      color={item.color || "#666"}
+                      style={styles.itemIcon}
+                    />
+                  )}
+                  <View style={styles.itemContent}>
+                    <Text style={styles.itemText}>{item.name}</Text>
+                    {item.subItems && (
+                      <View style={styles.subItemsContainer}>
+                        {item.subItems.map((subItem, index) => (
+                          <View key={index} style={styles.subItem}>
+                            <MaterialIcons
+                              name={subItem.icon}
+                              size={16}
+                              color={subItem.color}
+                              style={styles.subItemIcon}
+                            />
+                            <Text style={styles.subItemText}>
+                              {subItem.label}: {subItem.value}
+                            </Text>
+                          </View>
+                        ))}
+                      </View>
+                    )}
+                  </View>
+                </View>
+                <View style={styles.itemRight}>
+                  {item.isRating ? (
+                    <View style={styles.ratingContainer}>
+                      <Text style={styles.itemCount}>{item.count}</Text>
+                      <MaterialIcons name="star" size={16} color="#FFD700" />
                     </View>
+                  ) : item.count !== undefined ? (
+                    <Text style={styles.itemCount}>{item.count}</Text>
+                  ) : null}
+                  {onPress && (
+                    <MaterialIcons
+                      name="arrow-forward-ios"
+                      size={12}
+                      color="#666"
+                    />
                   )}
                 </View>
               </View>
-              <View style={styles.itemRight}>
-                {item.isRating ? (
-                  <View style={styles.ratingContainer}>
-                    <Text style={styles.itemCount}>{item.count}</Text>
-                    <MaterialIcons name="star" size={16} color="#FFD700" />
-                  </View>
-                ) : item.count !== undefined ? (
-                  <Text style={styles.itemCount}>{item.count}</Text>
-                ) : null}
-                <MaterialIcons
-                  name="arrow-forward-ios"
-                  size={12}
-                  color="#666"
-                />
-              </View>
-            </View>
-          ))}
-        </View>
+            ))}
+          </View>
+        </TouchableOpacity>
       )}
     </View>
   );
