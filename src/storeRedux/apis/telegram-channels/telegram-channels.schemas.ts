@@ -48,7 +48,7 @@ export const telegramChannelsResponseSchema = z.object({
       place_id: z.string().optional(),
       country_place_id: z.string().optional(),
       category: telegramChannelCategorySchema.optional(),
-      verified: z.boolean().optional(),
+      verified: z.boolean().or(z.string()).optional(),
     }),
   }),
 });
