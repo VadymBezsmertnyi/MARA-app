@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  FunctionComponent,
+  useMemo,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
 import {
-  View,
-  Text,
   ScrollView,
-  TouchableOpacity,
-  TextInput,
-  Alert,
-  ActivityIndicator,
+  View,
   RefreshControl,
   Modal,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
   Linking,
 } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-import Toast from "react-native-toast-message";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { MaterialIcons } from "@expo/vector-icons";
+import Toast from "react-native-toast-message";
 
 // types
 import { RootHelpScreensParamList } from "../../../navigators/Navigators.types";
@@ -24,10 +29,14 @@ import { PATHS_HELP_SCREENS } from "../../../navigators/useNavigator.constants";
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 
 // components
 import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
+import { Header } from "../../../components/Header/Header";
+import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/HeaderActions/HeaderActions";
+import { Input } from "../../../components/Input/Input";
+import { IconSearchInput } from "../../../icons/components";
+import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
 
 // API
 import {
@@ -36,7 +45,6 @@ import {
   useGetTelegramCountriesQuery,
   useGetTelegramCitiesQuery,
   useGetTelegramLocationsQuery,
-  useAddTelegramChannelMutation,
 } from "../../../storeRedux/api";
 
 // styles
@@ -48,110 +56,98 @@ type HelpMainProps = {
     DrawerNavigationProp<RootHelpScreensParamList>;
 };
 
-export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
-  const { heightStatusBar } = useThemeProvider();
+type SortOption = "name" | "category" | "verified" | null;
+type FiltersState = {
+  category: TTelegramChannelCategory | null;
+  country: string;
+  city: string;
+  verified: boolean;
+};
+
+export const HelpMain: FunctionComponent<HelpMainProps> = ({ navigation }) => {
+  const { heightTabBar } = useThemeProvider();
+  const { bottom } = useSafeAreaInsets();
   const { i18n } = useLocalesProvider();
-  const userData = useUserSelector();
-  const [selectedCategory, setSelectedCategory] =
-    useState<TTelegramChannelCategory | null>(null);
-  const [selectedCountry, setSelectedCountry] = useState<string>("");
-  const [selectedCity, setSelectedCity] = useState<string>("");
-  const [verifiedOnly, setVerifiedOnly] = useState<boolean>(false);
-  const [showAddModal, setShowAddModal] = useState<boolean>(false);
+  const [valueSearch, setValueSearch] = useState("");
+  const [debouncedValueSearch, setDebouncedValueSearch] = useState("");
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const prevDebouncedValueSearchRef = useRef<string>("");
+  const [isShowSort, setIsShowSort] = useState(false);
+  const [isShowFilter, setIsShowFilter] = useState(false);
+  const [filters, setFilters] = useState<FiltersState | null>(null);
+  const [sort, setSort] = useState<SortOption>(null);
   const [showReportModal, setShowReportModal] = useState<boolean>(false);
   const [refreshing, setRefreshing] = useState<boolean>(false);
-  const [channelName, setChannelName] = useState<string>("");
-  const [channelUrl, setChannelUrl] = useState<string>("");
-  const [channelDescription, setChannelDescription] = useState<string>("");
-  const [channelCategory, setChannelCategory] =
-    useState<TTelegramChannelCategory | null>(null);
-  const [channelCountry, setChannelCountry] = useState<string>("");
-  const [channelCity, setChannelCity] = useState<string>("");
+  const [page, setPage] = useState(1);
+  const limit = 20;
 
+  const queryParams = useMemo(
+    () => ({
+      page,
+      limit,
+      ...(filters?.category && { category: filters.category }),
+      ...(filters?.country && { country_place_id: filters.country }),
+      ...(filters?.city && { place_id: filters.city }),
+      ...(filters?.verified && { verified: filters.verified }),
+      ...(debouncedValueSearch && { search: debouncedValueSearch }),
+      ...(sort && { sort }),
+    }),
+    [page, limit, filters, debouncedValueSearch, sort]
+  );
   const {
     data: channelsData,
     isLoading: channelsLoading,
     error: channelsError,
     refetch: refetchChannels,
-  } = useGetTelegramChannelsQuery({
-    category: selectedCategory || undefined,
-    country_place_id: selectedCountry || undefined,
-    place_id: selectedCity || undefined,
-    verified: verifiedOnly || undefined,
-    page: 1,
-    limit: 20,
-  });
+  } = useGetTelegramChannelsQuery(queryParams);
   const { data: categoriesData, isLoading: categoriesLoading } =
     useGetTelegramCategoriesQuery();
   const { data: countriesData, isLoading: countriesLoading } =
     useGetTelegramCountriesQuery();
   const { data: citiesData, isLoading: citiesLoading } =
     useGetTelegramCitiesQuery({
-      country_place_id: selectedCountry || undefined,
+      country_place_id: filters?.country || undefined,
     });
-  const { data: locationsData, isLoading: locationsLoading } =
-    useGetTelegramLocationsQuery();
-  const [addChannel, { isLoading: addChannelLoading }] =
-    useAddTelegramChannelMutation();
 
-  const containerStyles = [styles.container, { paddingTop: heightStatusBar }];
+  const containerStyles = useMemo(
+    () => [
+      styles.container,
+      {
+        paddingBottom: bottom,
+      },
+    ],
+    [bottom]
+  );
+
+  const onClose = () => {
+    setIsShowSort(false);
+    setIsShowFilter(false);
+  };
+
+  const setTypeSort = (type: SortOption) => {
+    setSort((state) => (state === type ? null : type));
+    onClose();
+  };
+
+  const onSubmitFilters = (newFilters: FiltersState) => {
+    const isClearFilters =
+      !newFilters.category &&
+      !newFilters.country &&
+      !newFilters.city &&
+      !newFilters.verified;
+
+    setFilters(isClearFilters ? null : newFilters);
+    onClose();
+  };
+
+  const onPressAddChannel = () => {
+    navigation.navigate(PATHS_HELP_SCREENS.addTelegramChannel);
+  };
 
   const onRefresh = async () => {
     setRefreshing(true);
     await refetchChannels();
     setRefreshing(false);
-  };
-
-  const handleAddChannel = async () => {
-    if (
-      !channelName ||
-      !channelUrl ||
-      !channelCategory ||
-      !userData?.userData?._id
-    ) {
-      Alert.alert(i18n._("Error"), i18n._("Please fill all required fields"));
-      return;
-    }
-
-    try {
-      await addChannel({
-        name: channelName,
-        description: channelDescription,
-        channelUrl,
-        category: channelCategory as any,
-        place_id: channelCity || undefined,
-        country_place_id: channelCountry || undefined,
-        addedBy: userData.userData._id,
-      }).unwrap();
-
-      Toast.show({
-        type: "success",
-        text1: i18n._("Success"),
-        text2: i18n._("Channel submitted for review"),
-        position: "top",
-        visibilityTime: 3000,
-      });
-
-      setChannelName("");
-      setChannelUrl("");
-      setChannelDescription("");
-      setChannelCategory(null);
-      setChannelCountry("");
-      setChannelCity("");
-      setShowAddModal(false);
-    } catch (error: any) {
-      Toast.show({
-        type: "error",
-        text1: i18n._("Error"),
-        text2: error.message || i18n._("Failed to add channel"),
-        position: "top",
-        visibilityTime: 3000,
-      });
-    }
-  };
-
-  const handleReportChannel = () => {
-    setShowReportModal(true);
   };
 
   const handleOpenChannel = (url: string) => {
@@ -171,11 +167,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
     });
   };
 
-  const clearFilters = () => {
-    setSelectedCategory(null);
-    setSelectedCountry("");
-    setSelectedCity("");
-    setVerifiedOnly(false);
+  const handleReportChannel = () => {
+    setShowReportModal(true);
   };
 
   useEffect(() => {
@@ -189,157 +182,105 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
       });
   }, [channelsError]);
 
+  useEffect(() => {
+    if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    if (valueSearch.length >= 3)
+      debounceTimerRef.current = setTimeout(() => {
+        setDebouncedValueSearch(valueSearch);
+      }, 500);
+    else setDebouncedValueSearch("");
+
+    setPage(1);
+    return () => {
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    };
+  }, [valueSearch]);
+
+  useEffect(() => {
+    if (
+      !debouncedValueSearch &&
+      prevDebouncedValueSearchRef.current &&
+      valueSearch.length < 3
+    ) {
+      refetchChannels();
+    }
+    prevDebouncedValueSearchRef.current = debouncedValueSearch;
+  }, [debouncedValueSearch, valueSearch, refetchChannels]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [debouncedValueSearch, filters, sort]);
+
   return (
-    <View style={containerStyles}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <MaterialIcons name="arrow-back" size={24} color="#007AFF" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>{i18n._("Help & Resources")}</Text>
-        <TouchableOpacity
-          onPress={() =>
-            navigation.navigate(PATHS_HELP_SCREENS.addTelegramChannel)
+    <>
+      <Header
+        title={i18n._("Help & Resources")}
+        rightElement={
+          <HeaderActions
+            onPressFilter={() => {
+              setIsShowFilter(true);
+            }}
+            onPressSort={() => {
+              setIsShowSort(true);
+            }}
+            onPressAddWorkshop={onPressAddChannel}
+            addButtonAccessibilityLabel={i18n._("Add Telegram channel")}
+            showFilters
+            hasActiveSort={sort !== null}
+          />
+        }
+      />
+      <View style={containerStyles}>
+        <Input
+          value={valueSearch}
+          onChange={setValueSearch}
+          placeholder={i18n._("Search channels...")}
+          InputIcon={<IconSearchInput width={26} height={26} />}
+        />
+        {(filters || sort) && (
+          <View style={styles.activeFiltersContainer}>
+            <Text style={styles.activeFiltersTitle}>
+              {i18n._("Active filters:")}
+            </Text>
+            {filters?.category && (
+              <Text style={styles.activeFilter}>
+                {i18n._("Category")}: {filters.category}
+              </Text>
+            )}
+            {filters?.country && (
+              <Text style={styles.activeFilter}>
+                {i18n._("Country")}: {filters.country}
+              </Text>
+            )}
+            {filters?.city && (
+              <Text style={styles.activeFilter}>
+                {i18n._("City")}: {filters.city}
+              </Text>
+            )}
+            {filters?.verified && (
+              <Text style={styles.activeFilter}>{i18n._("Verified only")}</Text>
+            )}
+            {sort && (
+              <Text style={styles.activeFilter}>
+                {i18n._("Sort by")}: {sort}
+              </Text>
+            )}
+          </View>
+        )}
+        <ScrollView
+          contentContainerStyle={[
+            styles.containerList,
+            {
+              paddingBottom: (heightTabBar || 0) + bottom,
+            },
+          ]}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }
         >
-          <MaterialIcons name="add" size={24} color="#007AFF" />
-        </TouchableOpacity>
-      </View>
-      <ScrollView
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-        style={styles.content}
-      >
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{i18n._("Filters")}</Text>
-          <View style={styles.filterRow}>
-            <Text style={styles.filterLabel}>{i18n._("Category")}:</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {categoriesData?.data?.map((category: any) => (
-                <TouchableOpacity
-                  key={category.value}
-                  style={[
-                    styles.filterChip,
-                    selectedCategory === category.value &&
-                      styles.filterChipActive,
-                  ]}
-                  onPress={() =>
-                    setSelectedCategory(
-                      selectedCategory === category.value
-                        ? null
-                        : category.value
-                    )
-                  }
-                >
-                  <Text
-                    style={[
-                      styles.filterChipText,
-                      selectedCategory === category.value &&
-                        styles.filterChipTextActive,
-                    ]}
-                  >
-                    {category.label}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
-          <View style={styles.filterRow}>
-            <Text style={styles.filterLabel}>{i18n._("Country")}:</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {countriesData?.data?.map((country: string) => (
-                <TouchableOpacity
-                  key={country}
-                  style={[
-                    styles.filterChip,
-                    selectedCountry === country && styles.filterChipActive,
-                  ]}
-                  onPress={() => {
-                    setSelectedCountry(
-                      selectedCountry === country ? "" : country
-                    );
-                    setSelectedCity("");
-                  }}
-                >
-                  <Text
-                    style={[
-                      styles.filterChipText,
-                      selectedCountry === country &&
-                        styles.filterChipTextActive,
-                    ]}
-                  >
-                    {country}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
-          {selectedCountry && (
-            <View style={styles.filterRow}>
-              <Text style={styles.filterLabel}>{i18n._("City")}:</Text>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {citiesData?.data?.map((city: string) => (
-                  <TouchableOpacity
-                    key={city}
-                    style={[
-                      styles.filterChip,
-                      selectedCity === city && styles.filterChipActive,
-                    ]}
-                    onPress={() =>
-                      setSelectedCity(selectedCity === city ? "" : city)
-                    }
-                  >
-                    <Text
-                      style={[
-                        styles.filterChipText,
-                        selectedCity === city && styles.filterChipTextActive,
-                      ]}
-                    >
-                      {city}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
-            </View>
-          )}
-          <View style={styles.filterRow}>
-            <Text style={styles.filterLabel}>{i18n._("Verified Only")}:</Text>
-            <TouchableOpacity
-              style={[
-                styles.filterChip,
-                verifiedOnly && styles.filterChipActive,
-              ]}
-              onPress={() => setVerifiedOnly(!verifiedOnly)}
-            >
-              <Text
-                style={[
-                  styles.filterChipText,
-                  verifiedOnly && styles.filterChipTextActive,
-                ]}
-              >
-                {verifiedOnly ? "Yes" : "No"}
-              </Text>
-            </TouchableOpacity>
-          </View>
-          {(selectedCategory ||
-            selectedCountry ||
-            selectedCity ||
-            verifiedOnly) && (
-            <TouchableOpacity style={styles.clearButton} onPress={clearFilters}>
-              <Text style={styles.clearButtonText}>
-                {i18n._("Clear Filters")}
-              </Text>
-            </TouchableOpacity>
-          )}
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
-            {i18n._("Telegram Channels")} (
-            {channelsData?.data?.pagination?.totalItems || 0})
-          </Text>
           {channelsLoading ? (
             <View style={styles.loadingContainer}>
-              <ActivityIndicator size="large" color="#007AFF" />
+              <ActivityIndicator size="large" color={colors.blueTufts} />
               <Text style={styles.loadingText}>
                 {i18n._("Loading channels...")}
               </Text>
@@ -414,146 +355,185 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
               </View>
             ))
           )}
-        </View>
-      </ScrollView>
-      <Modal
-        visible={showAddModal}
-        animationType="slide"
-        presentationStyle="pageSheet"
-        onRequestClose={() => setShowAddModal(false)}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalHeader}>
-            <TouchableOpacity onPress={() => setShowAddModal(false)}>
-              <MaterialIcons name="close" size={24} color="#007AFF" />
-            </TouchableOpacity>
-            <Text style={styles.modalTitle}>
-              {i18n._("Add Telegram Channel")}
-            </Text>
-            <TouchableOpacity
-              onPress={handleAddChannel}
-              disabled={addChannelLoading}
-            >
-              <Text style={styles.modalSaveButton}>
-                {addChannelLoading ? i18n._("Adding...") : i18n._("Add")}
-              </Text>
-            </TouchableOpacity>
+        </ScrollView>
+      </View>
+      {isShowSort ? (
+        <ModalWindow onClose={onClose}>
+          <View style={styles.sortModalContent}>
+            <Text style={styles.modalTitle}>{i18n._("Sort by")}</Text>
+            {(["name", "category", "verified"] as SortOption[]).map(
+              (sortOption) => (
+                <TouchableOpacity
+                  key={sortOption}
+                  style={[
+                    styles.sortOption,
+                    sort === sortOption && styles.sortOptionSelected,
+                  ]}
+                  onPress={() => setTypeSort(sortOption)}
+                >
+                  <Text
+                    style={[
+                      styles.sortOptionText,
+                      sort === sortOption && styles.sortOptionTextSelected,
+                    ]}
+                  >
+                    {i18n._(sortOption || "")}
+                  </Text>
+                </TouchableOpacity>
+              )
+            )}
           </View>
-          <ScrollView style={styles.modalContent}>
-            <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>{i18n._("Channel Name")} *</Text>
-              <TextInput
-                style={styles.formInput}
-                value={channelName}
-                onChangeText={setChannelName}
-                placeholder="Enter channel name"
-              />
-            </View>
-            <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>{i18n._("Channel URL")} *</Text>
-              <TextInput
-                style={styles.formInput}
-                value={channelUrl}
-                onChangeText={setChannelUrl}
-                placeholder="https://t.me/channelname"
-                keyboardType="url"
-              />
-            </View>
-            <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>Description</Text>
-              <TextInput
-                style={[styles.formInput, styles.formInputMultiline]}
-                value={channelDescription}
-                onChangeText={setChannelDescription}
-                placeholder="Enter channel description"
-                multiline
-                numberOfLines={3}
-              />
-            </View>
-            <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>Category *</Text>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {categoriesData?.data?.map((category: any) => (
-                  <TouchableOpacity
-                    key={category.value}
-                    style={[
-                      styles.categoryChip,
-                      channelCategory === category.value &&
-                        styles.categoryChipActive,
-                    ]}
-                    onPress={() => setChannelCategory(category.value)}
-                  >
-                    <Text
-                      style={[
-                        styles.categoryChipText,
-                        channelCategory === category.value &&
-                          styles.categoryChipTextActive,
-                      ]}
-                    >
-                      {category.label}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
-            </View>
-            <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>Country</Text>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {countriesData?.data?.map((country: string) => (
-                  <TouchableOpacity
-                    key={country}
-                    style={[
-                      styles.categoryChip,
-                      channelCountry === country && styles.categoryChipActive,
-                    ]}
-                    onPress={() => setChannelCountry(country)}
-                  >
-                    <Text
-                      style={[
-                        styles.categoryChipText,
-                        channelCountry === country &&
-                          styles.categoryChipTextActive,
-                      ]}
-                    >
-                      {country}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
-              </ScrollView>
-            </View>
-            {channelCountry && (
-              <View style={styles.formGroup}>
-                <Text style={styles.formLabel}>City</Text>
+        </ModalWindow>
+      ) : null}
+      {isShowFilter ? (
+        <Modal>
+          <View style={styles.filterModalContent}>
+            <Text style={styles.modalTitle}>{i18n._("Filters")}</Text>
+            <ScrollView>
+              {/* Category Filter */}
+              <View style={styles.filterSection}>
+                <Text style={styles.filterLabel}>{i18n._("Category")}</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                  {citiesData?.data?.map((city: string) => (
+                  {categoriesData?.data?.map((category: any) => (
                     <TouchableOpacity
-                      key={city}
+                      key={category.value}
                       style={[
-                        styles.categoryChip,
-                        channelCity === city && styles.categoryChipActive,
+                        styles.filterChip,
+                        filters?.category === category.value &&
+                          styles.filterChipActive,
                       ]}
-                      onPress={() => setChannelCity(city)}
+                      onPress={() =>
+                        onSubmitFilters({
+                          ...filters,
+                          category:
+                            filters?.category === category.value
+                              ? null
+                              : category.value,
+                        } as FiltersState)
+                      }
                     >
                       <Text
                         style={[
-                          styles.categoryChipText,
-                          channelCity === city && styles.categoryChipTextActive,
+                          styles.filterChipText,
+                          filters?.category === category.value &&
+                            styles.filterChipTextActive,
                         ]}
                       >
-                        {city}
+                        {category.label}
                       </Text>
                     </TouchableOpacity>
                   ))}
                 </ScrollView>
               </View>
-            )}
-          </ScrollView>
-        </View>
-      </Modal>
+              <View style={styles.filterSection}>
+                <Text style={styles.filterLabel}>{i18n._("Country")}</Text>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                  {countriesData?.data?.map((country: string) => (
+                    <TouchableOpacity
+                      key={country}
+                      style={[
+                        styles.filterChip,
+                        filters?.country === country && styles.filterChipActive,
+                      ]}
+                      onPress={() =>
+                        onSubmitFilters({
+                          ...filters,
+                          country: filters?.country === country ? "" : country,
+                          city:
+                            filters?.country === country ? "" : filters?.city,
+                        } as FiltersState)
+                      }
+                    >
+                      <Text
+                        style={[
+                          styles.filterChipText,
+                          filters?.country === country &&
+                            styles.filterChipTextActive,
+                        ]}
+                      >
+                        {country}
+                      </Text>
+                    </TouchableOpacity>
+                  ))}
+                </ScrollView>
+              </View>
+              {filters?.country && (
+                <View style={styles.filterSection}>
+                  <Text style={styles.filterLabel}>{i18n._("City")}</Text>
+                  <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                    {citiesData?.data?.map((city: string) => (
+                      <TouchableOpacity
+                        key={city}
+                        style={[
+                          styles.filterChip,
+                          filters?.city === city && styles.filterChipActive,
+                        ]}
+                        onPress={() =>
+                          onSubmitFilters({
+                            ...filters,
+                            city: filters?.city === city ? "" : city,
+                          } as FiltersState)
+                        }
+                      >
+                        <Text
+                          style={[
+                            styles.filterChipText,
+                            filters?.city === city &&
+                              styles.filterChipTextActive,
+                          ]}
+                        >
+                          {city}
+                        </Text>
+                      </TouchableOpacity>
+                    ))}
+                  </ScrollView>
+                </View>
+              )}
+              <View style={styles.filterSection}>
+                <Text style={styles.filterLabel}>
+                  {i18n._("Verified Only")}
+                </Text>
+                <TouchableOpacity
+                  style={[
+                    styles.filterChip,
+                    filters?.verified && styles.filterChipActive,
+                  ]}
+                  onPress={() =>
+                    onSubmitFilters({
+                      ...filters,
+                      verified: !filters?.verified,
+                    } as FiltersState)
+                  }
+                >
+                  <Text
+                    style={[
+                      styles.filterChipText,
+                      filters?.verified && styles.filterChipTextActive,
+                    ]}
+                  >
+                    {filters?.verified ? "Yes" : "No"}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              {filters && (
+                <TouchableOpacity
+                  style={styles.clearButton}
+                  onPress={() => onSubmitFilters({} as FiltersState)}
+                >
+                  <Text style={styles.clearButtonText}>
+                    {i18n._("Clear Filters")}
+                  </Text>
+                </TouchableOpacity>
+              )}
+            </ScrollView>
+          </View>
+        </Modal>
+      ) : null}
       <ModalReportContact
         visible={showReportModal}
         onClose={() => setShowReportModal(false)}
+        type="telegram-channel"
       />
-    </View>
+    </>
   );
 };

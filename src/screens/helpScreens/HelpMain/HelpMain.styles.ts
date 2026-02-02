@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../../styles/colors";
 import {
   FONT_400_OPEN_SANS,
   FONT_600_OPEN_SANS,
@@ -7,85 +8,38 @@ import {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: colors.white,
+    paddingHorizontal: 16,
+    gap: 12,
   },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-    paddingVertical: 16,
-    backgroundColor: "#FFFFFF",
-    borderBottomWidth: 1,
-    borderBottomColor: "#E0E0E0",
+  containerList: {
+    gap: 12,
   },
-  headerTitle: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#1A1A1A",
+  activeFiltersContainer: {
+    backgroundColor: colors.white,
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: colors.grayCloudy,
   },
-  content: {
-    flex: 1,
-    padding: 20,
-  },
-  section: {
-    backgroundColor: "#FFFFFF",
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 16,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  sectionTitle: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#1A1A1A",
-    marginBottom: 16,
-  },
-  filterRow: {
-    marginBottom: 12,
-  },
-  filterLabel: {
+  activeFiltersTitle: {
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 14,
     fontWeight: "600",
-    color: "#1A1A1A",
+    color: colors.blackCoffee,
     marginBottom: 8,
   },
-  filterChip: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    backgroundColor: "#F0F0F0",
-    borderRadius: 16,
-    marginRight: 8,
-  },
-  filterChipActive: {
-    backgroundColor: "#007AFF",
-  },
-  filterChipText: {
+  activeFilter: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 12,
-    color: "#666",
-  },
-  filterChipTextActive: {
-    color: "#FFFFFF",
-  },
-  clearButton: {
-    alignSelf: "flex-start",
-    marginTop: 8,
-  },
-  clearButtonText: {
-    fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 14,
-    color: "#007AFF",
+    color: colors.blueTufts,
+    backgroundColor: colors.blueLight,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+    marginRight: 8,
+    marginBottom: 4,
   },
   loadingContainer: {
     flexDirection: "row",
@@ -97,15 +51,23 @@ export const styles = StyleSheet.create({
   loadingText: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
-    color: "#666",
+    color: colors.gray50,
   },
   channelCard: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: colors.white,
     borderRadius: 8,
     padding: 16,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: "#E0E0E0",
+    borderColor: colors.grayCloudy,
+    shadowColor: colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   channelHeader: {
     flexDirection: "row",
@@ -120,13 +82,13 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     fontWeight: "600",
-    color: "#1A1A1A",
+    color: colors.blackCoffee,
     marginBottom: 4,
   },
   channelDescription: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
-    color: "#666",
+    color: colors.gray50,
     marginBottom: 8,
   },
   channelMeta: {
@@ -137,8 +99,8 @@ export const styles = StyleSheet.create({
   channelCategory: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 12,
-    color: "#007AFF",
-    backgroundColor: "#E3F2FD",
+    color: colors.blueTufts,
+    backgroundColor: colors.blueLight,
     paddingHorizontal: 8,
     paddingVertical: 2,
     borderRadius: 8,
@@ -146,8 +108,8 @@ export const styles = StyleSheet.create({
   channelLocation: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 12,
-    color: "#666",
-    backgroundColor: "#F5F5F5",
+    color: colors.gray50,
+    backgroundColor: colors.grayCloudy,
     paddingHorizontal: 8,
     paddingVertical: 2,
     borderRadius: 8,
@@ -179,7 +141,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: 8,
-    backgroundColor: "#0088CC",
+    backgroundColor: colors.blueTufts,
     paddingVertical: 12,
     borderRadius: 8,
   },
@@ -187,7 +149,7 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 14,
     fontWeight: "600",
-    color: "#FFFFFF",
+    color: colors.white,
   },
   reportButton: {
     flexDirection: "row",
@@ -205,75 +167,83 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#F44336",
   },
-  modalContainer: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-  },
-  modalHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-    paddingVertical: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: "#E0E0E0",
-  },
+  // Modal styles
   modalTitle: {
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 18,
     fontWeight: "600",
-    color: "#1A1A1A",
+    color: colors.blackCoffee,
+    marginBottom: 16,
   },
-  modalSaveButton: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#007AFF",
-  },
-  modalContent: {
-    flex: 1,
+  sortModalContent: {
+    backgroundColor: colors.white,
+    borderRadius: 12,
     padding: 20,
+    margin: 20,
   },
-  formGroup: {
-    marginBottom: 20,
-  },
-  formLabel: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#1A1A1A",
+  sortOption: {
+    padding: 16,
+    borderRadius: 8,
+    backgroundColor: colors.grayCloudy,
     marginBottom: 8,
   },
-  formInput: {
-    borderWidth: 1,
-    borderColor: "#E0E0E0",
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    fontSize: 16,
+  sortOptionSelected: {
+    backgroundColor: colors.blueTufts,
+  },
+  sortOptionText: {
     fontFamily: FONT_400_OPEN_SANS,
-    color: "#1A1A1A",
+    fontSize: 16,
+    color: colors.blackCoffee,
+    textAlign: "center",
   },
-  formInputMultiline: {
-    height: 80,
-    textAlignVertical: "top",
+  sortOptionTextSelected: {
+    color: colors.white,
   },
-  categoryChip: {
+  filterModalContent: {
+    flex: 1,
+    backgroundColor: colors.white,
+    padding: 20,
+  },
+  filterSection: {
+    marginBottom: 20,
+  },
+  filterLabel: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 16,
+    fontWeight: "600",
+    color: colors.blackCoffee,
+    marginBottom: 12,
+  },
+  filterChip: {
     paddingHorizontal: 12,
     paddingVertical: 6,
-    backgroundColor: "#F0F0F0",
+    backgroundColor: colors.grayCloudy,
     borderRadius: 16,
     marginRight: 8,
+    marginBottom: 8,
   },
-  categoryChipActive: {
-    backgroundColor: "#007AFF",
+  filterChipActive: {
+    backgroundColor: colors.blueTufts,
   },
-  categoryChipText: {
+  filterChipText: {
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
-    color: "#666",
+    color: colors.blackCoffee,
   },
-  categoryChipTextActive: {
-    color: "#FFFFFF",
+  filterChipTextActive: {
+    color: colors.white,
+  },
+  clearButton: {
+    alignSelf: "flex-start",
+    marginTop: 16,
+    padding: 12,
+    backgroundColor: colors.errorRed,
+    borderRadius: 8,
+  },
+  clearButtonText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    fontWeight: "600",
+    color: colors.white,
   },
 });
