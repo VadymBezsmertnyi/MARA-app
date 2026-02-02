@@ -33,6 +33,10 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 
 // styles
 import { styles } from "./AddTelegramChannel.styles";
+import {
+  CountryDbType,
+  PlaceDbType,
+} from "../../../providers/PlacesProvider/PlacesProvider.types";
 
 type AddTelegramChannelProps = {
   navigation: NativeStackNavigationProp<RootHelpScreensParamList>;
@@ -41,15 +45,17 @@ type AddTelegramChannelProps = {
 export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
   navigation,
 }) => {
-  const { i18n } = useLocalesProvider();
+  const { i18n, language } = useLocalesProvider();
   const userData = useUserSelector();
   const [channelName, setChannelName] = useState<string>("");
   const [channelUrl, setChannelUrl] = useState<string>("");
   const [channelDescription, setChannelDescription] = useState<string>("");
   const [channelCategory, setChannelCategory] =
     useState<TTelegramChannelCategory | null>(null);
-  const [selectedCountry, setSelectedCountry] = useState<string>("");
-  const [selectedCity, setSelectedCity] = useState<string>("");
+  const [selectedCountry, setSelectedCountry] = useState<CountryDbType | null>(
+    null
+  );
+  const [selectedCity, setSelectedCity] = useState<PlaceDbType | null>(null);
   const [isLocationModalOpen, setIsLocationModalOpen] =
     useState<boolean>(false);
 
@@ -66,9 +72,9 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
 
   const handleLocationSelect = (type: "country" | "city", item: any) => {
     if (type === "country") {
-      setSelectedCountry(item._id);
-      setSelectedCity("");
-    } else setSelectedCity(item._id);
+      setSelectedCountry(item);
+      setSelectedCity(null);
+    } else setSelectedCity(item);
   };
 
   const handleAddChannel = async () => {
@@ -83,8 +89,8 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
         description: channelDescription,
         channelUrl,
         category: channelCategory,
-        place_id: selectedCity,
-        country_place_id: selectedCountry,
+        place_id: selectedCity._id,
+        country_place_id: selectedCountry._id,
         addedBy: userData.userData._id,
       }).unwrap();
 
@@ -190,7 +196,10 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
             >
               <Text style={styles.locationText}>
                 {selectedCountry && selectedCity
-                  ? `${selectedCountry}, ${selectedCity}`
+                  ? `${
+                      selectedCountry[language].long_name ||
+                      selectedCountry.en.long_name
+                    }, ${selectedCity[language]?.name || selectedCity.en.name}`
                   : i18n._("Select location...")}
               </Text>
             </TouchableOpacity>
@@ -207,7 +216,10 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
         isOpen={isLocationModalOpen}
         onClose={() => setIsLocationModalOpen(false)}
         onSelect={handleLocationSelect}
-        selectedCountry={selectedCountry}
+        selectedLocation={{
+          country: selectedCountry,
+          city: selectedCity,
+        }}
       />
     </KeyboardAvoidingView>
   );

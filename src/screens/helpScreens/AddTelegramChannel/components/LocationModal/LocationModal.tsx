@@ -31,8 +31,8 @@ export type LocationModalProps = {
   ) => void;
   selectedCountry?: string;
   selectedLocation?: {
-    country?: CountryDbType;
-    city?: PlaceDbType;
+    country?: CountryDbType | null;
+    city?: PlaceDbType | null;
   };
 };
 
@@ -51,8 +51,8 @@ export const LocationModal: React.FC<LocationModalProps> = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<"country" | "city">("country");
   const [selectedData, setSelectedData] = useState<{
-    country?: CountryDbType;
-    city?: PlaceDbType;
+    country?: CountryDbType | null;
+    city?: PlaceDbType | null;
   }>({});
 
   const handleSelect = (item: any) => {
