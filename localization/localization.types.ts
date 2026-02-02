@@ -3,24 +3,24 @@ import type { I18n as i18Type } from "@lingui/core";
 import { ImageSource } from "expo-image";
 
 export type Language =
-  | "uk"
-  | "en"
-  | "fr"
-  | "de"
-  | "es"
-  | "it"
-  | "sk"
-  | "sv"
-  | "da"
-  | "fi"
-  | "pl"
+  | "be"
   | "cs"
-  | "hu"
+  | "da"
+  | "de"
   | "el"
-  | "ro"
+  | "en"
+  | "es"
+  | "fi"
+  | "fr"
+  | "hu"
+  | "it"
   | "lt"
   | "lv"
-  | "be";
+  | "pl"
+  | "ro"
+  | "sk"
+  | "sv"
+  | "uk";
 
 export type LocalesContext = {
   i18n: i18Type;
