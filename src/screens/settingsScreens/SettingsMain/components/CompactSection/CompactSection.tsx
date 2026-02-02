@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 // styles
-import { styles } from "../../SettingsMain.styles";
+import { styles } from "./CompactSection.styles";
 
 export type CompactSectionItem = {
   id: string;
@@ -27,49 +27,46 @@ export type CompactSectionProps = {
   sectionLoading?: boolean;
 };
 
-export const CompactSectionComponent: FunctionComponent<CompactSectionProps> = ({
-  title,
-  items,
-  onPress,
-  sectionLoading,
-}) => {
+export const CompactSectionComponent: FunctionComponent<
+  CompactSectionProps
+> = ({ title, items, onPress, sectionLoading }) => {
   return (
-    <View style={styles.compactSectionContainer}>
-      <Text style={styles.compactSectionTitle}>{title}</Text>
+    <View style={styles.sectionContainer}>
+      <Text style={styles.sectionTitle}>{title}</Text>
       {sectionLoading ? (
-        <View style={styles.compactLoadingContainer}>
+        <View style={styles.loadingContainer}>
           <ActivityIndicator size="small" color="#007AFF" />
-          <Text style={styles.compactLoadingText}>Loading...</Text>
+          <Text style={styles.loadingText}>Loading...</Text>
         </View>
       ) : (
-        <View style={styles.compactItemsContainer}>
+        <View style={styles.itemsContainer}>
           {items.map((item) => (
             <TouchableOpacity
               key={item.id}
               onPress={onPress}
               disabled={!onPress}
-              style={styles.compactItemTouchable}
+              style={styles.itemTouchable}
             >
-              <View style={styles.compactItem}>
-                <View style={styles.compactItemLeft}>
+              <View style={styles.item}>
+                <View style={styles.itemLeft}>
                   {item.icon && (
                     <MaterialIcons
                       name={item.icon}
                       size={20}
                       color={item.color || "#666"}
-                      style={styles.compactItemIcon}
+                      style={styles.itemIcon}
                     />
                   )}
-                  <Text style={styles.compactItemText}>{item.name}</Text>
+                  <Text style={styles.itemText}>{item.name}</Text>
                 </View>
-                <View style={styles.compactItemRight}>
+                <View style={styles.itemRight}>
                   {item.isRating ? (
-                    <View style={styles.compactRatingContainer}>
-                      <Text style={styles.compactItemCount}>{item.count}</Text>
+                    <View style={styles.ratingContainer}>
+                      <Text style={styles.itemCount}>{item.count}</Text>
                       <MaterialIcons name="star" size={16} color="#FFD700" />
                     </View>
                   ) : item.count !== undefined ? (
-                    <Text style={styles.compactItemCount}>{item.count}</Text>
+                    <Text style={styles.itemCount}>{item.count}</Text>
                   ) : null}
                   {onPress && (
                     <MaterialIcons
@@ -81,16 +78,16 @@ export const CompactSectionComponent: FunctionComponent<CompactSectionProps> = (
                 </View>
               </View>
               {item.subItems && (
-                <View style={styles.compactSubItemsContainer}>
+                <View style={styles.subItemsContainer}>
                   {item.subItems.map((subItem, index) => (
-                    <View key={index} style={styles.compactSubItem}>
+                    <View key={index} style={styles.subItem}>
                       <MaterialIcons
                         name={subItem.icon}
                         size={14}
                         color={subItem.color}
-                        style={styles.compactSubItemIcon}
+                        style={styles.subItemIcon}
                       />
-                      <Text style={styles.compactSubItemText}>
+                      <Text style={styles.subItemText}>
                         {subItem.label}: {subItem.value}
                       </Text>
                     </View>

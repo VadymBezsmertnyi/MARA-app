@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 // styles
-import { styles } from "../../SettingsMain.styles";
+import { styles } from "./SectionItem.styles";
 
 export type SectionItem = {
   id: string;
