@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
   ScrollView,
-  TextInput,
   TouchableOpacity,
   Alert,
   ActivityIndicator,
+  KeyboardAvoidingView,
 } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
 import Toast from "react-native-toast-message";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
@@ -17,19 +16,20 @@ import { RootHelpScreensParamList } from "../../../navigators/Navigators.types";
 import { TTelegramChannelCategory } from "../../../storeRedux/apis/telegram-channels/telegram-channels.types";
 
 // providers
-import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 
 // API
 import {
   useGetTelegramCategoriesQuery,
-  useGetTelegramLocationsQuery,
   useAddTelegramChannelMutation,
 } from "../../../storeRedux/api";
 
 // components
+import { Input } from "../../../components/Input/Input";
 import { InputButton } from "../../../components/InputButton/InputButton";
+import { Header } from "../../../components/Header/Header";
+import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ModalSheetSearchPlaceAddress } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress";
 
 // styles
@@ -42,30 +42,18 @@ type AddTelegramChannelProps = {
 export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
   navigation,
 }) => {
-  const { heightStatusBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
   const userData = useUserSelector();
-
-  // Form state
   const [channelName, setChannelName] = useState<string>("");
   const [channelUrl, setChannelUrl] = useState<string>("");
   const [channelDescription, setChannelDescription] = useState<string>("");
   const [channelCategory, setChannelCategory] =
     useState<TTelegramChannelCategory | null>(null);
-  const [selectedCountry, setSelectedCountry] = useState<string>("");
-  const [selectedCity, setSelectedCity] = useState<string>("");
   const [isModalPlace, setIsModalPlace] = useState<boolean>(false);
   const [placeAddress, setPlaceAddress] = useState<any>(null);
-
-  // API queries
   const { data: categoriesData, isLoading: categoriesLoading } =
     useGetTelegramCategoriesQuery();
-  const { data: locationsData, isLoading: locationsLoading } =
-    useGetTelegramLocationsQuery();
-  const [addChannel, { isLoading: addChannelLoading }] =
-    useAddTelegramChannelMutation();
-
-  const containerStyles = [styles.container, { paddingTop: heightStatusBar }];
+  const [addChannel] = useAddTelegramChannelMutation();
 
   const handleAddChannel = async () => {
     if (
@@ -110,96 +98,99 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
   };
 
   return (
-    <View style={containerStyles}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <MaterialIcons name="arrow-back" size={24} color="#007AFF" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>{i18n._("Add Telegram Channel")}</Text>
-        <TouchableOpacity
-          onPress={handleAddChannel}
-          disabled={addChannelLoading}
-        >
-          <Text style={styles.saveButton}>
-            {addChannelLoading ? i18n._("Adding...") : i18n._("Add")}
+    <KeyboardAvoidingView
+      contentContainerStyle={{ flex: 1 }}
+      style={{ flex: 1 }}
+      behavior="padding"
+    >
+      <Header
+        title={i18n._("Add Telegram Channel")}
+        onRightDelete={undefined}
+      />
+      <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.scrollView}>
+          <Text style={styles.title}>
+            {i18n._("You can add a telegram channel")}:
           </Text>
-        </TouchableOpacity>
-      </View>
-      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-        <View style={styles.formGroup}>
-          <Text style={styles.formLabel}>{i18n._("Channel Name")} *</Text>
-          <TextInput
-            style={styles.formInput}
-            value={channelName}
-            onChangeText={setChannelName}
-            placeholder={i18n._("Enter channel name")}
-          />
-        </View>
-        <View style={styles.formGroup}>
-          <Text style={styles.formLabel}>{i18n._("Channel URL")} *</Text>
-          <TextInput
-            style={styles.formInput}
-            value={channelUrl}
-            onChangeText={setChannelUrl}
-            placeholder={i18n._("https://t.me/channelname")}
-            keyboardType="url"
-          />
-        </View>
-        <View style={styles.formGroup}>
-          <Text style={styles.formLabel}>{i18n._("Description")}</Text>
-          <TextInput
-            style={[styles.formInput, styles.formInputMultiline]}
-            value={channelDescription}
-            onChangeText={setChannelDescription}
-            placeholder={i18n._("Enter channel description")}
-            multiline
-            numberOfLines={3}
-          />
-        </View>
-        <View style={styles.formGroup}>
-          <Text style={styles.formLabel}>{i18n._("Category")} *</Text>
-          {categoriesLoading ? (
-            <ActivityIndicator size="small" color="#007AFF" />
-          ) : (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {categoriesData?.data?.map((category: any) => (
-                <TouchableOpacity
-                  key={category.value}
-                  style={[
-                    styles.categoryChip,
-                    channelCategory === category.value &&
-                      styles.categoryChipActive,
-                  ]}
-                  onPress={() => setChannelCategory(category.value)}
-                >
-                  <Text
-                    style={[
-                      styles.categoryChipText,
-                      channelCategory === category.value &&
-                        styles.categoryChipTextActive,
-                    ]}
-                  >
-                    {category.label}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          )}
-        </View>
-        <View style={styles.formGroup}>
-          <Text style={styles.formLabel}>{i18n._("Location")}</Text>
-          <InputButton
+          <Input
             isRegular
-            placeholder={i18n._("Enter the address")}
-            label={i18n._("Channel location")}
-            value={placeAddress?.title || ""}
-            customStyles={styles.buttonLocation}
-            onPress={() => {
-              setIsModalPlace(true);
+            placeholder={i18n._("Enter channel name")}
+            label={i18n._("Channel Name")}
+            value={channelName}
+            onChange={(value) => {
+              setChannelName(value);
             }}
           />
-        </View>
-      </ScrollView>
+          <Input
+            isRegular
+            placeholder={i18n._("https://t.me/channelname")}
+            label={i18n._("Channel URL")}
+            value={channelUrl}
+            onChange={(value) => {
+              setChannelUrl(value);
+            }}
+            keyboardType="url"
+          />
+          <Input
+            isRegular
+            placeholder={i18n._("Enter channel description")}
+            label={i18n._("Description")}
+            value={channelDescription}
+            onChange={(value) => {
+              setChannelDescription(value);
+            }}
+            customStyles={styles.formInputMultiline}
+          />
+          <View style={styles.formGroup}>
+            <Text style={styles.labelInput}>{i18n._("Category")} *</Text>
+            {categoriesLoading ? (
+              <ActivityIndicator size="small" color="#007AFF" />
+            ) : (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                {categoriesData?.data?.map((category: any) => (
+                  <TouchableOpacity
+                    key={category.value}
+                    style={[
+                      styles.categoryChip,
+                      channelCategory === category.value &&
+                        styles.categoryChipActive,
+                    ]}
+                    onPress={() => setChannelCategory(category.value)}
+                  >
+                    <Text
+                      style={[
+                        styles.categoryChipText,
+                        channelCategory === category.value &&
+                          styles.categoryChipTextActive,
+                      ]}
+                    >
+                      {category.label}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            )}
+          </View>
+          <View style={styles.containerLocation}>
+            <InputButton
+              isRegular
+              placeholder={i18n._("Enter the address")}
+              label={i18n._("Channel location")}
+              value={placeAddress?.title || ""}
+              customStyles={styles.buttonLocation}
+              onPress={() => {
+                setIsModalPlace(true);
+              }}
+            />
+          </View>
+          <ButtonCustom
+            title={i18n._("Add Channel")}
+            onSubmit={handleAddChannel}
+          />
+          <View style={styles.empty} />
+        </ScrollView>
+      </View>
+
       <ModalSheetSearchPlaceAddress
         isOpen={isModalPlace}
         onClose={() => {
@@ -210,6 +201,6 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
           setIsModalPlace(false);
         }}
       />
-    </View>
+    </KeyboardAvoidingView>
   );
 };

@@ -1,46 +1,50 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../../styles/colors";
 import {
   horizontalScale,
   scaleFont,
   verticalScale,
 } from "../../../../styles/hooks";
-import colors from "../../../../styles/colors";
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: "white",
+    paddingTop: verticalScale(10),
   },
-  header: {
+  scrollView: {
+    paddingHorizontal: horizontalScale(15),
+    paddingBottom: verticalScale(16),
+    paddingTop: verticalScale(6),
+    gap: verticalScale(8),
+  },
+  title: {
+    fontSize: scaleFont(20),
+    fontWeight: "700",
+    color: colors.blackRich,
+  },
+  subtitle: {
+    fontSize: scaleFont(16),
+    fontWeight: "600",
+    color: colors.blackCoffee,
+  },
+  labelInput: {
+    fontSize: scaleFont(14),
+    color: colors.grayFuscous,
+  },
+  containerLocation: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: horizontalScale(16),
-    paddingVertical: verticalScale(12),
-    borderBottomWidth: 1,
-    borderBottomColor: colors.grayMercury,
+    alignItems: "flex-end",
   },
-  headerTitle: {
-    fontSize: scaleFont(18),
-    fontWeight: "600",
-    color: colors.blackCoffee,
-  },
-  saveButton: {
-    fontSize: scaleFont(16),
-    fontWeight: "600",
-    color: colors.blueTufts,
-  },
-  content: {
+  buttonLocation: {
     flex: 1,
-    padding: horizontalScale(16),
+  },
+  buttonMap: {
+    paddingTop: verticalScale(16),
+    paddingLeft: horizontalScale(12),
+    paddingBottom: verticalScale(8),
   },
   formGroup: {
-    marginBottom: verticalScale(20),
-  },
-  formLabel: {
-    fontSize: scaleFont(16),
-    fontWeight: "600",
-    color: colors.blackCoffee,
     marginBottom: verticalScale(8),
   },
   formInput: {
@@ -77,7 +81,7 @@ export const styles = StyleSheet.create({
   categoryChipTextActive: {
     color: colors.white,
   },
-  buttonLocation: {
-    marginBottom: verticalScale(8),
+  empty: {
+    height: verticalScale(20),
   },
 });
