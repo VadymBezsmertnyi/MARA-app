@@ -77,11 +77,6 @@ const mockActions = [
   { id: "4", name: "Rating", icon: "star", count: "4.5", isRating: true },
 ];
 
-const mockInteractions = [
-  { id: "1", name: "Events I'm going to", icon: "event-note" },
-  { id: "2", name: "Workshops I commented / saved", icon: "bookmark" },
-];
-
 const mockWorkshops = [
   { id: "1", name: "Active", icon: "check-circle", color: "#4CAF50", count: 1 },
 ];
@@ -210,13 +205,12 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <ContainerUser />
 
           <View style={styles.profileSections}>
-            {renderSectionItem("My roles", mockRoles)}
-            {renderSectionItem("My actions", mockActions)}
-            {renderSectionItem("My interactions", mockInteractions)}
-            {renderSectionItem("Your workshops", mockWorkshops, () => {
+            {renderSectionItem(i18n._("My roles"), mockRoles)}
+            {renderSectionItem(i18n._("My actions"), mockActions)}
+            {renderSectionItem(i18n._("Your workshops"), mockWorkshops, () => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
             })}
-            {renderSectionItem("Your events", mockEvents, () => {
+            {renderSectionItem(i18n._("Your events"), mockEvents, () => {
               navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
             })}
           </View>
