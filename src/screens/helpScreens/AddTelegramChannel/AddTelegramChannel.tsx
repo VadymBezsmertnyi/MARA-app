@@ -140,7 +140,7 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
           />
           <Input
             isRegular
-            placeholder={i18n._("https://t.me/channelname")}
+            placeholder={i18n._("https://t.me/channelname or @channelname")}
             label={i18n._("Channel URL")}
             value={channelUrl}
             onChange={(value) => {
