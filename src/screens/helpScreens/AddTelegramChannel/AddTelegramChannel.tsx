@@ -27,10 +27,9 @@ import {
 
 // components
 import { Input } from "../../../components/Input/Input";
-import { InputButton } from "../../../components/InputButton/InputButton";
+import { LocationSelector } from "./components/LocationSelector/LocationSelector";
 import { Header } from "../../../components/Header/Header";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
-import { ModalSheetSearchPlaceAddress } from "../../../components/ModalSheetSearchPlaceAddress/ModalSheetSearchPlaceAddress";
 
 // styles
 import { styles } from "./AddTelegramChannel.styles";
@@ -49,19 +48,22 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
   const [channelDescription, setChannelDescription] = useState<string>("");
   const [channelCategory, setChannelCategory] =
     useState<TTelegramChannelCategory | null>(null);
-  const [isModalPlace, setIsModalPlace] = useState<boolean>(false);
-  const [placeAddress, setPlaceAddress] = useState<any>(null);
+  const [selectedCountry, setSelectedCountry] = useState<string>("");
+  const [selectedCity, setSelectedCity] = useState<string>("");
+
   const { data: categoriesData, isLoading: categoriesLoading } =
     useGetTelegramCategoriesQuery();
   const [addChannel] = useAddTelegramChannelMutation();
 
+  const isFormValid =
+    channelName &&
+    channelUrl &&
+    channelCategory &&
+    selectedCountry &&
+    selectedCity;
+
   const handleAddChannel = async () => {
-    if (
-      !channelName ||
-      !channelUrl ||
-      !channelCategory ||
-      !userData?.userData?._id
-    ) {
+    if (!isFormValid || !userData?.userData?._id) {
       Alert.alert(i18n._("Error"), i18n._("Please fill all required fields"));
       return;
     }
@@ -72,8 +74,8 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
         description: channelDescription,
         channelUrl,
         category: channelCategory,
-        place_id: placeAddress?.placeId || undefined,
-        country_place_id: placeAddress?.address?.countryId || undefined,
+        place_id: selectedCity,
+        country_place_id: selectedCountry,
         addedBy: userData.userData._id,
       }).unwrap();
 
@@ -171,36 +173,20 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
               </ScrollView>
             )}
           </View>
-          <View style={styles.containerLocation}>
-            <InputButton
-              isRegular
-              placeholder={i18n._("Enter the address")}
-              label={i18n._("Channel location")}
-              value={placeAddress?.title || ""}
-              customStyles={styles.buttonLocation}
-              onPress={() => {
-                setIsModalPlace(true);
-              }}
-            />
-          </View>
+          <LocationSelector
+            selectedCountry={selectedCountry}
+            selectedCity={selectedCity}
+            onCountryChange={setSelectedCountry}
+            onCityChange={setSelectedCity}
+          />
           <ButtonCustom
             title={i18n._("Add Channel")}
             onSubmit={handleAddChannel}
+            disabled={!isFormValid}
           />
           <View style={styles.empty} />
         </ScrollView>
       </View>
-
-      <ModalSheetSearchPlaceAddress
-        isOpen={isModalPlace}
-        onClose={() => {
-          setIsModalPlace(false);
-        }}
-        onSubmit={(data) => {
-          setPlaceAddress(data);
-          setIsModalPlace(false);
-        }}
-      />
     </KeyboardAvoidingView>
   );
 };
