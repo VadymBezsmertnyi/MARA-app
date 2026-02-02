@@ -68,6 +68,26 @@ export const telegramCitiesResponseSchema = z.object({
   data: z.array(z.string()),
 });
 
+export const telegramLocationsResponseSchema = z.object({
+  success: z.boolean(),
+  data: z.object({
+    countries: z.array(
+      z.object({
+        _id: z.string(),
+        name: z.string(),
+        code: z.string().optional(),
+      })
+    ),
+    places: z.array(
+      z.object({
+        _id: z.string(),
+        name: z.string(),
+        countryId: z.string().optional(),
+      })
+    ),
+  }),
+});
+
 // Request Schemas
 export const addTelegramChannelRequestSchema = z.object({
   name: z.string(),

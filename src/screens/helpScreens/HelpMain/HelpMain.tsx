@@ -27,9 +27,11 @@ import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 // API
 import {
   useGetTelegramChannelsQuery,
+  useLazyGetTelegramChannelsQuery,
   useGetTelegramCategoriesQuery,
   useGetTelegramCountriesQuery,
   useGetTelegramCitiesQuery,
+  useGetTelegramLocationsQuery,
   useAddTelegramChannelMutation,
   useReportTelegramChannelMutation,
 } from "../../../storeRedux/api";
@@ -55,7 +57,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
   const [channelName, setChannelName] = useState<string>("");
   const [channelUrl, setChannelUrl] = useState<string>("");
   const [channelDescription, setChannelDescription] = useState<string>("");
-  const [channelCategory, setChannelCategory] = useState<string>("");
+  const [channelCategory, setChannelCategory] =
+    useState<TTelegramChannelCategory | null>(null);
   const [channelCountry, setChannelCountry] = useState<string>("");
   const [channelCity, setChannelCity] = useState<string>("");
 
@@ -80,6 +83,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
     useGetTelegramCitiesQuery({
       country_place_id: selectedCountry || undefined,
     });
+  const { data: locationsData, isLoading: locationsLoading } =
+    useGetTelegramLocationsQuery();
   const [addChannel, { isLoading: addChannelLoading }] =
     useAddTelegramChannelMutation();
   const [reportChannel, { isLoading: reportChannelLoading }] =
@@ -94,7 +99,12 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
   };
 
   const handleAddChannel = async () => {
-    if (!channelName || !channelUrl || !channelCategory || !userData?._id) {
+    if (
+      !channelName ||
+      !channelUrl ||
+      !channelCategory ||
+      !userData?.userData?._id
+    ) {
       Alert.alert("Error", "Please fill all required fields");
       return;
     }
@@ -107,7 +117,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
         category: channelCategory as any,
         place_id: channelCity || undefined,
         country_place_id: channelCountry || undefined,
-        addedBy: userData._id,
+        addedBy: userData.userData._id,
       }).unwrap();
 
       Toast.show({
@@ -121,7 +131,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
       setChannelName("");
       setChannelUrl("");
       setChannelDescription("");
-      setChannelCategory("");
+      setChannelCategory(null);
       setChannelCountry("");
       setChannelCity("");
       setShowAddModal(false);
@@ -151,7 +161,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                 channelId,
                 reportData: {
                   reason: "Inappropriate content",
-                  reportedBy: userData?._id || "",
+                  reportedBy: userData?.userData?._id || "",
                 },
               }).unwrap();
 
@@ -190,7 +200,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
   };
 
   const clearFilters = () => {
-    setSelectedCategory("");
+    setSelectedCategory(null);
     setSelectedCountry("");
     setSelectedCity("");
     setVerifiedOnly(false);
@@ -244,7 +254,9 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                   ]}
                   onPress={() =>
                     setSelectedCategory(
-                      selectedCategory === category.value ? "" : category.value
+                      selectedCategory === category.value
+                        ? null
+                        : category.value
                     )
                   }
                 >

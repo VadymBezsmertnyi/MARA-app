@@ -4,6 +4,7 @@ import {
   TTelegramCategoriesResponse,
   TTelegramCountriesResponse,
   TTelegramCitiesResponse,
+  TTelegramLocationsResponse,
   TAddTelegramChannelResponse,
   TReportChannelResponse,
   IGetTelegramChannelsRequest,
@@ -16,6 +17,7 @@ import {
   telegramCategoriesResponseSchema,
   telegramCountriesResponseSchema,
   telegramCitiesResponseSchema,
+  telegramLocationsResponseSchema,
   addTelegramChannelResponseSchema,
   reportChannelResponseSchema,
 } from "./telegram-channels.schemas";
@@ -120,6 +122,25 @@ export const getTelegramCities = (builder: Builder) =>
       if (__DEV__)
         console.warn("error zod getTelegramCities:", {
           url: "/telegram-channels/cities",
+          data: response,
+          error: result.error,
+        });
+      return null;
+    },
+  });
+
+export const getTelegramLocations = (builder: Builder) =>
+  builder.query<TTelegramLocationsResponse | null, void>({
+    query: () => ({
+      url: "/telegram-channels/locations",
+      method: "GET",
+    }),
+    transformResponse: (response: unknown) => {
+      const result = telegramLocationsResponseSchema.safeParse(response);
+      if (result.success) return result.data;
+      if (__DEV__)
+        console.warn("error zod getTelegramLocations:", {
+          url: "/telegram-channels/locations",
           data: response,
           error: result.error,
         });

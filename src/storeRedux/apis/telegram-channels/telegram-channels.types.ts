@@ -7,6 +7,7 @@ import {
   telegramCategoriesResponseSchema,
   telegramCountriesResponseSchema,
   telegramCitiesResponseSchema,
+  telegramLocationsResponseSchema,
   addTelegramChannelRequestSchema,
   addTelegramChannelResponseSchema,
   reportChannelRequestSchema,
@@ -32,6 +33,9 @@ export type TTelegramCountriesResponse = z.infer<
 >;
 export type TTelegramCitiesResponse = z.infer<
   typeof telegramCitiesResponseSchema
+>;
+export type TTelegramLocationsResponse = z.infer<
+  typeof telegramLocationsResponseSchema
 >;
 export type TAddTelegramChannelRequest = z.infer<
   typeof addTelegramChannelRequestSchema

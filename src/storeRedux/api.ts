@@ -33,6 +33,7 @@ import {
   getTelegramCategories,
   getTelegramCountries,
   getTelegramCities,
+  getTelegramLocations,
   addTelegramChannel,
   reportTelegramChannel,
 } from "./apis/telegram-channels/apis";
@@ -94,6 +95,7 @@ export const api = createApi({
     getTelegramCategories: getTelegramCategories(builder),
     getTelegramCountries: getTelegramCountries(builder),
     getTelegramCities: getTelegramCities(builder),
+    getTelegramLocations: getTelegramLocations(builder),
     addTelegramChannel: addTelegramChannel(builder),
     reportTelegramChannel: reportTelegramChannel(builder),
     // Workshops APIs
@@ -155,6 +157,8 @@ export const {
   useLazyGetTelegramCountriesQuery,
   useGetTelegramCitiesQuery,
   useLazyGetTelegramCitiesQuery,
+  useGetTelegramLocationsQuery,
+  useLazyGetTelegramLocationsQuery,
   useAddTelegramChannelMutation,
   useReportTelegramChannelMutation,
   // Workshops Hooks APIs
