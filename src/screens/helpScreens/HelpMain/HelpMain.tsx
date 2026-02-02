@@ -39,6 +39,7 @@ import {
 
 // styles
 import { styles } from "./HelpMain.styles";
+import colors from "../../../../styles/colors";
 
 type HelpMainProps = {
   navigation: NativeStackNavigationProp<RootHelpScreensParamList> &
@@ -190,7 +191,12 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
   };
 
   const handleOpenChannel = (url: string) => {
-    Linking.openURL(url).catch(() => {
+    let telegramUrl = url;
+    if (url.startsWith("@")) telegramUrl = `https://t.me/${url.substring(1)}`;
+    else if (!url.startsWith("https://t.me/") && !url.startsWith("tg://"))
+      telegramUrl = `https://t.me/${url}`;
+
+    Linking.openURL(telegramUrl).catch(() => {
       Toast.show({
         type: "error",
         text1: i18n._("Error"),
@@ -421,7 +427,11 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                     style={styles.channelButton}
                     onPress={() => handleOpenChannel(channel.channelUrl)}
                   >
-                    <MaterialIcons name="telegram" size={20} color="#0088CC" />
+                    <MaterialIcons
+                      name="telegram"
+                      size={20}
+                      color={colors.white}
+                    />
                     <Text style={styles.channelButtonText}>
                       {i18n._("Open Channel")}
                     </Text>
