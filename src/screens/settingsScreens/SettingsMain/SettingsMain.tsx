@@ -29,6 +29,10 @@ import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider
 // components
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { ContainerUser } from "./components/ContainerUser/ContainerUser";
+import {
+  SectionItemComponent,
+  SectionItem,
+} from "./components/SectionItem/SectionItem";
 
 // constants
 import {
@@ -57,7 +61,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     [heightStatusBar]
   );
 
-  const rolesData = useMemo(() => {
+  const rolesData: SectionItem[] = useMemo(() => {
     if (!userStats) return [];
     return [
       {
@@ -87,7 +91,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     ];
   }, [userStats]);
 
-  const actionsData = useMemo(() => {
+  const actionsData: SectionItem[] = useMemo(() => {
     if (!userStats) return [];
     return [
       {
@@ -150,7 +154,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     ];
   }, [userStats]);
 
-  const workshopsData = useMemo(() => {
+  const workshopsData: SectionItem[] = useMemo(() => {
     if (!userStats) return [];
     return [
       {
@@ -163,7 +167,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     ];
   }, [userStats]);
 
-  const eventsData = useMemo(() => {
+  const eventsData: SectionItem[] = useMemo(() => {
     if (!userStats) return [];
     return [
       {
@@ -195,85 +199,6 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     );
   };
 
-  const renderSectionItem = (
-    title: string,
-    items: any[],
-    onPress?: () => void,
-    sectionLoading?: boolean
-  ) => (
-    <View style={styles.sectionContainer}>
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>{title}</Text>
-        {sectionLoading ? (
-          <ActivityIndicator size="small" color="#007AFF" />
-        ) : onPress ? (
-          <TouchableOpacity onPress={onPress} style={styles.seeAllButton}>
-            <Text style={styles.seeAllText}>See all</Text>
-            <MaterialIcons name="arrow-forward-ios" size={12} color="#007AFF" />
-          </TouchableOpacity>
-        ) : null}
-      </View>
-      {sectionLoading ? (
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="small" color="#666" />
-          <Text style={styles.loadingText}>Loading...</Text>
-        </View>
-      ) : (
-        <View style={styles.sectionItems}>
-          {items.slice(0, 4).map((item) => (
-            <View key={item.id} style={styles.sectionItem}>
-              <View style={styles.itemLeft}>
-                {item.icon && (
-                  <MaterialIcons
-                    name={item.icon}
-                    size={20}
-                    color={item.color || "#666"}
-                    style={styles.itemIcon}
-                  />
-                )}
-                <View style={styles.itemContent}>
-                  <Text style={styles.itemText}>{item.name}</Text>
-                  {item.subItems && (
-                    <View style={styles.subItemsContainer}>
-                      {item.subItems.map((subItem: any, index: number) => (
-                        <View key={index} style={styles.subItem}>
-                          <MaterialIcons
-                            name={subItem.icon}
-                            size={16}
-                            color={subItem.color}
-                            style={styles.subItemIcon}
-                          />
-                          <Text style={styles.subItemText}>
-                            {subItem.label}: {subItem.value}
-                          </Text>
-                        </View>
-                      ))}
-                    </View>
-                  )}
-                </View>
-              </View>
-              <View style={styles.itemRight}>
-                {item.isRating ? (
-                  <View style={styles.ratingContainer}>
-                    <Text style={styles.itemCount}>{item.count}</Text>
-                    <MaterialIcons name="star" size={16} color="#FFD700" />
-                  </View>
-                ) : item.count !== undefined ? (
-                  <Text style={styles.itemCount}>{item.count}</Text>
-                ) : null}
-                <MaterialIcons
-                  name="arrow-forward-ios"
-                  size={12}
-                  color="#666"
-                />
-              </View>
-            </View>
-          ))}
-        </View>
-      )}
-    </View>
-  );
-
   return (
     <>
       <View style={containerStyles}>
@@ -297,34 +222,32 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           />
 
           <View style={styles.profileSections}>
-            {renderSectionItem(
-              i18n._("My roles"),
-              rolesData,
-              undefined,
-              isLoading
-            )}
-            {renderSectionItem(
-              i18n._("My actions"),
-              actionsData,
-              undefined,
-              isLoading
-            )}
-            {renderSectionItem(
-              i18n._("Your workshops"),
-              workshopsData,
-              () => {
+            <SectionItemComponent
+              title={i18n._("My roles")}
+              items={rolesData}
+              sectionLoading={isLoading}
+            />
+            <SectionItemComponent
+              title={i18n._("My actions")}
+              items={actionsData}
+              sectionLoading={isLoading}
+            />
+            <SectionItemComponent
+              title={i18n._("Your workshops")}
+              items={workshopsData}
+              onPress={() => {
                 navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
-              },
-              isLoading
-            )}
-            {renderSectionItem(
-              i18n._("Your events"),
-              eventsData,
-              () => {
+              }}
+              sectionLoading={isLoading}
+            />
+            <SectionItemComponent
+              title={i18n._("Your events")}
+              items={eventsData}
+              onPress={() => {
                 navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
-              },
-              isLoading
-            )}
+              }}
+              sectionLoading={isLoading}
+            />
           </View>
           <View style={styles.containerEmpty} />
         </ScrollView>
