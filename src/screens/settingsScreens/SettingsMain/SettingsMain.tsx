@@ -33,6 +33,10 @@ import {
   SectionItemComponent,
   SectionItem,
 } from "./components/SectionItem/SectionItem";
+import {
+  CompactSectionComponent,
+  CompactSectionItem,
+} from "./components/CompactSection/CompactSection";
 
 // constants
 import {
@@ -67,7 +71,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     [heightStatusBar]
   );
 
-  const rolesData: SectionItem[] = useMemo(() => {
+  const rolesData: CompactSectionItem[] = useMemo(() => {
     if (!userStats) return [];
     return [
       {
@@ -97,7 +101,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     ];
   }, [userStats]);
 
-  const actionsData: SectionItem[] = useMemo(() => {
+  const actionsData: CompactSectionItem[] = useMemo(() => {
     if (!userStats) return [];
     return [
       {
@@ -262,12 +266,12 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           />
 
           <View style={styles.profileSections}>
-            <SectionItemComponent
+            <CompactSectionComponent
               title={i18n._("My roles")}
               items={rolesData}
               sectionLoading={isLoading || isFetching}
             />
-            <SectionItemComponent
+            <CompactSectionComponent
               title={i18n._("My actions")}
               items={actionsData}
               sectionLoading={isLoading || isFetching}
