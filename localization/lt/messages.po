@@ -379,7 +379,7 @@ msgstr "Oro šepetys bet kokios sudėtingumo / Oro šepetys bet kokios sudėting
 
 #. js-lingui-explicit-id
 msgid "Wait please before the next update"
-msgstr ""
+msgstr "Prašome palaukite prieš kitą atnaujinimą"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
@@ -395,19 +395,19 @@ msgstr "Įveskite dirbtuvių arba darbo tipo pavadinimą"
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
-msgstr ""
+msgstr "Atsiprašome, bet filtrų nerasta jokių dirbtuvių"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
-msgstr ""
+msgstr "Atsiprašome, artimiausių dirbtuvių nėra"
 
 #. js-lingui-explicit-id
 msgid "Geolocation disabled for calculation"
-msgstr ""
+msgstr "Geolokacijos skaičiavimui išjungta"
 
 #. js-lingui-explicit-id
 msgid "Cannot calculate"
-msgstr ""
+msgstr "Negalima apskaičiuoti"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -415,7 +415,7 @@ msgstr "km"
 
 #. js-lingui-explicit-id
 msgid "Not comments"
-msgstr ""
+msgstr "Komentarų nėra"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
@@ -423,35 +423,35 @@ msgstr "Mygtukas uždaryti modalinį langą"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
-msgstr ""
+msgstr "Pagal atstumą:"
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
-msgstr ""
+msgstr "nuo artimiausio iki tolimiausio"
 
 #. js-lingui-explicit-id
 msgid "Getting location..."
-msgstr ""
+msgstr "Nustatoma vieta..."
 
 #. js-lingui-explicit-id
 msgid "To calculate distance, please enable location services"
-msgstr ""
+msgstr "Norėdami apskaičiuoti atstumą, įjunkite vietos nustatymo paslaugas"
 
 #. js-lingui-explicit-id
 msgid "Enable location"
-msgstr ""
+msgstr "Įjungti vietos nustatymą"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
-msgstr ""
+msgstr "Pagal reitingą:"
 
 #. js-lingui-explicit-id
 msgid "from highest to lowest"
-msgstr ""
+msgstr "nuo aukščiausio iki žemiausio"
 
 #. js-lingui-explicit-id
 msgid "By number of comments:"
-msgstr ""
+msgstr "Pagal komentarų skaičių:"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -491,7 +491,7 @@ msgstr "Atstumas, km:"
 
 #. js-lingui-explicit-id
 msgid "Only with rating:"
-msgstr ""
+msgstr "Tik su reitingu:"
 
 #. js-lingui-explicit-id
 msgid "All works"
@@ -511,11 +511,11 @@ msgstr "Klaida"
 
 #. js-lingui-explicit-id
 msgid "Unable to like the workshop"
-msgstr ""
+msgstr "Nepavyko patikti dirbtuvės"
 
 #. js-lingui-explicit-id
 msgid "Failed to create share link"
-msgstr ""
+msgstr "Nepavyko sukurti dalinimosi nuorodos"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -525,14 +525,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Atidaryti dirbtuvę programėlėje:\n"
+"{appLink}\n"
+"\n"
+"Atidaryti naršyklėje:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share workshop"
-msgstr ""
+msgstr "Dalintis dirbtuve"
 
 #. js-lingui-explicit-id
 msgid "Failed to send SMS"
-msgstr ""
+msgstr "Nepavyko išsiųsti SMS"
 
 #. js-lingui-explicit-id
 msgid "Success"
@@ -540,11 +545,11 @@ msgstr "Sėkmė"
 
 #. js-lingui-explicit-id
 msgid "Everything is successful and this is your business"
-msgstr ""
+msgstr "Viskas sėkmingai ir tai jūsų verslas"
 
 #. js-lingui-explicit-id
 msgid "Invalid or expired code"
-msgstr ""
+msgstr "Netinkamas arba pasenęs kodas"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -552,43 +557,43 @@ msgstr "Dirbtuvės"
 
 #. js-lingui-explicit-id
 msgid "Unable to calculate distance, location is disabled"
-msgstr ""
+msgstr "Negalima apskaičiuoti atstumo, vietos nustatymas išjungtas"
 
 #. js-lingui-explicit-id
 msgid "Contacts unknown"
-msgstr ""
+msgstr "Kontaktai nežinomi"
 
 #. js-lingui-explicit-id
 msgid "About us:"
-msgstr ""
+msgstr "Apie mus:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
-msgstr ""
+msgstr "Skaityti visą aprašymą..."
 
 #. js-lingui-explicit-id
 msgid "This business has not been confirmed by the owner"
-msgstr ""
+msgstr "Šis verslas dar nepatvirtintas savininko"
 
 #. js-lingui-explicit-id
 msgid "Confirm business"
-msgstr ""
+msgstr "Patvirtinti verslą"
 
 #. js-lingui-explicit-id
 msgid "Report on business"
-msgstr ""
+msgstr "Pranešti apie verslą"
 
 #. js-lingui-explicit-id
 msgid "Working hours unknown"
-msgstr ""
+msgstr "Darbo valandos nežinomos"
 
 #. js-lingui-explicit-id
 msgid "Day off"
-msgstr ""
+msgstr "Poilsio diena"
 
 #. js-lingui-explicit-id
 msgid "Working hours"
-msgstr ""
+msgstr "Darbo valandos"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -600,7 +605,7 @@ msgstr "Tekstas turi būti sudarytas iš ne mažiau kaip 10 ir ne daugiau kaip 2
 
 #. js-lingui-explicit-id
 msgid "Leave a review"
-msgstr ""
+msgstr "Palikti atsiliepimą"
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -624,11 +629,11 @@ msgstr "Skelbti"
 
 #. js-lingui-explicit-id
 msgid "The work we do:"
-msgstr ""
+msgstr "Darbai, kuriuos atliekame:"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
-msgstr ""
+msgstr "Atsiliepimai:"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -644,87 +649,87 @@ msgstr "Parašyti apžvalgą"
 
 #. js-lingui-explicit-id
 msgid "Monday"
-msgstr ""
+msgstr "Pirmadienis"
 
 #. js-lingui-explicit-id
 msgid "Mon"
-msgstr ""
+msgstr "Pr"
 
 #. js-lingui-explicit-id
 msgid "Tuesday"
-msgstr ""
+msgstr "Antradienis"
 
 #. js-lingui-explicit-id
 msgid "Tue"
-msgstr ""
+msgstr "An"
 
 #. js-lingui-explicit-id
 msgid "Wednesday"
-msgstr ""
+msgstr "Trečiadienis"
 
 #. js-lingui-explicit-id
 msgid "Wed"
-msgstr ""
+msgstr "Tr"
 
 #. js-lingui-explicit-id
 msgid "Thursday"
-msgstr ""
+msgstr "Ketvirtadienis"
 
 #. js-lingui-explicit-id
 msgid "Thu"
-msgstr ""
+msgstr "Kt"
 
 #. js-lingui-explicit-id
 msgid "Friday"
-msgstr ""
+msgstr "Penktadienis"
 
 #. js-lingui-explicit-id
 msgid "Fri"
-msgstr ""
+msgstr "Pn"
 
 #. js-lingui-explicit-id
 msgid "Saturday"
-msgstr ""
+msgstr "Šeštadienis"
 
 #. js-lingui-explicit-id
 msgid "Sat"
-msgstr ""
+msgstr "Št"
 
 #. js-lingui-explicit-id
 msgid "Sunday"
-msgstr ""
+msgstr "Sekmadienis"
 
 #. js-lingui-explicit-id
 msgid "Sun"
-msgstr ""
+msgstr "Sk"
 
 #. js-lingui-explicit-id
 msgid "Phone"
-msgstr ""
+msgstr "Telefonas"
 
 #. js-lingui-explicit-id
 msgid "Email"
-msgstr ""
+msgstr "El. paštas"
 
 #. js-lingui-explicit-id
 msgid "Viber"
-msgstr ""
+msgstr "Viber"
 
 #. js-lingui-explicit-id
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #. js-lingui-explicit-id
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #. js-lingui-explicit-id
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #. js-lingui-explicit-id
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #. js-lingui-explicit-id
 msgid "workshop"
@@ -748,7 +753,7 @@ msgstr "Klaida kuriant dirbtuvę"
 
 #. js-lingui-explicit-id
 msgid "Unable to delete the workshop"
-msgstr ""
+msgstr "Nepavyko ištrinti dirbtuvės"
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -772,7 +777,7 @@ msgstr "Įveskite adresą"
 
 #. js-lingui-explicit-id
 msgid "Contacts"
-msgstr ""
+msgstr "Kontaktai"
 
 #. js-lingui-explicit-id
 msgid "Phone number"
@@ -780,7 +785,7 @@ msgstr "Telefono numeris"
 
 #. js-lingui-explicit-id
 msgid "Add contact type"
-msgstr ""
+msgstr "Pridėti kontakto tipą"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -800,15 +805,15 @@ msgstr "Pasirinkite darbų tipus"
 
 #. js-lingui-explicit-id
 msgid "You can add up to 5 phone numbers"
-msgstr ""
+msgstr "Galite pridėti iki 5 telefonų numerių"
 
 #. js-lingui-explicit-id
 msgid "This contact type has already been added"
-msgstr ""
+msgstr "Šis kontakto tipas jau pridėtas"
 
 #. js-lingui-explicit-id
 msgid "Edit"
-msgstr ""
+msgstr "Redaguoti"
 
 #. js-lingui-explicit-id
 msgid "Save"
@@ -820,7 +825,7 @@ msgstr "Atšaukti"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
-msgstr ""
+msgstr "Mano dirbtuvės"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
@@ -828,27 +833,27 @@ msgstr "Mygtukas, skirtas uždaryti dirbtuvių nustatymų langą"
 
 #. js-lingui-explicit-id
 msgid "All"
-msgstr ""
+msgstr "Visi"
 
 #. js-lingui-explicit-id
 msgid "Created by me"
-msgstr ""
+msgstr "Sukurta manęs"
 
 #. js-lingui-explicit-id
 msgid "Mine"
-msgstr ""
+msgstr "Mano"
 
 #. js-lingui-explicit-id
 msgid "Sorry!"
-msgstr ""
+msgstr "Atsiprašome!"
 
 #. js-lingui-explicit-id
 msgid "You don't have {typeItem}."
-msgstr ""
+msgstr "Jūs neturite {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Select phone number"
-msgstr ""
+msgstr "Pasirinkite telefono numerį"
 
 #. js-lingui-explicit-id
 msgid "Confirm"
@@ -856,27 +861,27 @@ msgstr "Patvirtinti"
 
 #. js-lingui-explicit-id
 msgid "Enter verification code"
-msgstr ""
+msgstr "Įveskite patvirtinimo kodą"
 
 #. js-lingui-explicit-id
 msgid "Enter 6-digit code"
-msgstr ""
+msgstr "Įveskite 6 skaitmenų kodą"
 
 #. js-lingui-explicit-id
 msgid "Under review"
-msgstr ""
+msgstr "Peržiūrima"
 
 #. js-lingui-explicit-id
 msgid "Verified"
-msgstr ""
+msgstr "Patvirtinta"
 
 #. js-lingui-explicit-id
 msgid "Rejected"
-msgstr ""
+msgstr "Atmesta"
 
 #. js-lingui-explicit-id
 msgid "Confirm ownership"
-msgstr ""
+msgstr "Patvirtinti nuosavybę"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -912,11 +917,11 @@ msgstr "Atgal"
 
 #. js-lingui-explicit-id
 msgid "Profile"
-msgstr ""
+msgstr "Profilis"
 
 #. js-lingui-explicit-id
 msgid "Logout"
-msgstr ""
+msgstr "Atsijungti"
 
 #. js-lingui-explicit-id
 msgid "First Name"
@@ -944,11 +949,11 @@ msgstr "Nuotrauka nepakeista"
 
 #. js-lingui-explicit-id
 msgid "Info"
-msgstr ""
+msgstr "Informacija"
 
 #. js-lingui-explicit-id
 msgid "The photo has been deleted"
-msgstr ""
+msgstr "Nuotrauka ištrinta"
 
 #. js-lingui-explicit-id
 msgid "Delete"
@@ -960,7 +965,7 @@ msgstr "Keisti"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
-msgstr ""
+msgstr "Jūsų profilis"
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
@@ -976,7 +981,7 @@ msgstr "Įvykiai"
 
 #. js-lingui-explicit-id
 msgid "My events"
-msgstr ""
+msgstr "Mano renginiai"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -984,11 +989,11 @@ msgstr "Mygtukas, skirtas uždaryti įvykių nustatymų langą"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events"
-msgstr ""
+msgstr "Artėjantys renginiai"
 
 #. js-lingui-explicit-id
 msgid "Past events"
-msgstr ""
+msgstr "Praėję renginiai"
 
 #. js-lingui-explicit-id
 msgid "Add event"
@@ -1004,15 +1009,15 @@ msgstr "Privatumo politika"
 
 #. js-lingui-explicit-id
 msgid "Terms of Service"
-msgstr ""
+msgstr "Paslaugų sąlygos"
 
 #. js-lingui-explicit-id
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
+msgstr "Norėdami naudoti visas paslaugos funkcijas, turite suteikti programėlei leidimą nustatyti jūsų vietą:"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
+msgstr "Leisti {nameApp} programėlei nustatyti mano vietą"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
@@ -1020,11 +1025,11 @@ msgstr "Įjungti savo vietą"
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
-msgstr ""
+msgstr "ir pasirinkite gyvenamąjį miestą:"
 
 #. js-lingui-explicit-id
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
+msgstr "Spustelėdami mygtuką \"Tęsti\", jūs sutinkate su {buttonTermsService} ir {buttonPrivacyPolicy}"
 
 #. js-lingui-explicit-id
 msgid "Continue"
@@ -1044,7 +1049,7 @@ msgstr "Registracija"
 
 #. js-lingui-explicit-id
 msgid "We recommend filling out the profile information"
-msgstr ""
+msgstr "Rekomenduojame užpildyti profilio informaciją"
 
 #. js-lingui-explicit-id
 msgid "Fill out later"
@@ -1052,7 +1057,7 @@ msgstr "Užpildyti vėliau"
 
 #. js-lingui-explicit-id
 msgid "Settings"
-msgstr ""
+msgstr "Nustatymai"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
@@ -1080,11 +1085,11 @@ msgstr "Pranešti apie klaidą/pokytį"
 
 #. js-lingui-explicit-id
 msgid "Dark theme"
-msgstr ""
+msgstr "Tamsi tema"
 
 #. js-lingui-explicit-id
 msgid "Automatically detect location"
-msgstr ""
+msgstr "Automatiškai nustatyti vietą"
 
 #. js-lingui-explicit-id
 msgid "Toggle automatically detect location"
@@ -1100,7 +1105,7 @@ msgstr "Ištrindami profilį, visi jūsų duomenys bus ištrinti"
 
 #. js-lingui-explicit-id
 msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
+msgstr "Kuriai platformai norite siųsti programėlės diegimo kvietimą?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
@@ -1108,15 +1113,15 @@ msgstr "Perjungti rodyti meniu"
 
 #. js-lingui-explicit-id
 msgid "The nearest event:"
-msgstr ""
+msgstr "Artimiausias renginys:"
 
 #. js-lingui-explicit-id
 msgid "{distance} km"
-msgstr ""
+msgstr "{distance} km"
 
 #. js-lingui-explicit-id
 msgid "No date"
-msgstr ""
+msgstr "Nėra datos"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -1128,11 +1133,11 @@ msgstr "Ne"
 
 #. js-lingui-explicit-id
 msgid "Description"
-msgstr ""
+msgstr "Aprašymas"
 
 #. js-lingui-explicit-id
 msgid "Location"
-msgstr ""
+msgstr "Vieta"
 
 #. js-lingui-explicit-id
 msgid "Events"
@@ -1140,11 +1145,11 @@ msgstr "Įvykiai"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events:"
-msgstr ""
+msgstr "Artėjantys renginiai:"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming events"
-msgstr ""
+msgstr "Atsiprašome, artėjančių renginių nėra"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1152,19 +1157,19 @@ msgstr "Paspauskite, kad pamatytumėte daugiau įvykių"
 
 #. js-lingui-explicit-id
 msgid "More events"
-msgstr ""
+msgstr "Daugiau renginių"
 
 #. js-lingui-explicit-id
 msgid "Past events:"
-msgstr ""
+msgstr "Praėję renginiai:"
 
 #. js-lingui-explicit-id
 msgid "No events have passed"
-msgstr ""
+msgstr "Nėra praėjusių renginių"
 
 #. js-lingui-explicit-id
 msgid "Now"
-msgstr ""
+msgstr "Dabar"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -1176,47 +1181,47 @@ msgstr "Įveskite tekstą, kurį norite ieškoti"
 
 #. js-lingui-explicit-id
 msgid "By date:"
-msgstr ""
+msgstr "Pagal datą:"
 
 #. js-lingui-explicit-id
 msgid "from soonest to latest"
-msgstr ""
+msgstr "nuo artimiausio iki tolimiausio"
 
 #. js-lingui-explicit-id
 msgid "Price range:"
-msgstr ""
+msgstr "Kainų diapazonas:"
 
 #. js-lingui-explicit-id
 msgid "From"
-msgstr ""
+msgstr "Nuo"
 
 #. js-lingui-explicit-id
 msgid "To"
-msgstr ""
+msgstr "Iki"
 
 #. js-lingui-explicit-id
 msgid "All locations"
-msgstr ""
+msgstr "Visos vietos"
 
 #. js-lingui-explicit-id
 msgid "Select country or city"
-msgstr ""
+msgstr "Pasirinkite šalį arba miestą"
 
 #. js-lingui-explicit-id
 msgid "Clear location filter"
-msgstr ""
+msgstr "Išvalyti vietos filtrą"
 
 #. js-lingui-explicit-id
 msgid "Close"
-msgstr ""
+msgstr "Uždaryti"
 
 #. js-lingui-explicit-id
 msgid "All countries"
-msgstr ""
+msgstr "Visos šalys"
 
 #. js-lingui-explicit-id
 msgid "No countries found"
-msgstr ""
+msgstr "Šalių nerasta"
 
 #. js-lingui-explicit-id
 msgid "All cities"
@@ -1228,7 +1233,7 @@ msgstr "Miestų nerasta"
 
 #. js-lingui-explicit-id
 msgid "Save location filter"
-msgstr ""
+msgstr "Išsaugoti vietos filtrą"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1244,7 +1249,7 @@ msgstr "Nemokamai"
 
 #. js-lingui-explicit-id
 msgid "Phone number not found"
-msgstr ""
+msgstr "Telefono numeris nerastas"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -1254,14 +1259,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Atidaryti renginį programėlėje:\n"
+"{appLink}\n"
+"\n"
+"Atidaryti naršyklėje:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share event"
-msgstr ""
+msgstr "Dalintis renginiu"
 
 #. js-lingui-explicit-id
 msgid "Please sign in to continue"
-msgstr ""
+msgstr "Prašome prisijungti, kad tęstumėte"
 
 #. js-lingui-explicit-id
 msgid "Event"
@@ -1273,11 +1283,11 @@ msgstr "Visos nuotraukos"
 
 #. js-lingui-explicit-id
 msgid "Not going"
-msgstr ""
+msgstr "Neinu"
 
 #. js-lingui-explicit-id
 msgid "Going"
-msgstr ""
+msgstr "Einu"
 
 #. js-lingui-explicit-id
 msgid "Date of the event"
@@ -1305,15 +1315,15 @@ msgstr "Galerija"
 
 #. js-lingui-explicit-id
 msgid "Timeline"
-msgstr ""
+msgstr "Laiko juosta"
 
 #. js-lingui-explicit-id
 msgid "Add a description about the event"
-msgstr ""
+msgstr "Pridėti renginio aprašymą"
 
 #. js-lingui-explicit-id
 msgid "Event description"
-msgstr ""
+msgstr "Renginio aprašymas"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1321,7 +1331,7 @@ msgstr "Įvykis"
 
 #. js-lingui-explicit-id
 msgid "Your event is under review and will appear after verification"
-msgstr ""
+msgstr "Jūsų renginys peržiūrimas ir pasirodys po patvirtinimo"
 
 #. js-lingui-explicit-id
 msgid "Change event"
@@ -1353,7 +1363,7 @@ msgstr "Pabaiga"
 
 #. js-lingui-explicit-id
 msgid "Participation fee"
-msgstr ""
+msgstr "Dalyvavimo mokestis"
 
 #. js-lingui-explicit-id
 msgid "100 uah"
@@ -1373,59 +1383,59 @@ msgstr "Papasakokite apie įvykį"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to each timeline item"
-msgstr ""
+msgstr "Prašome pridėti pavadinimą kiekvienam laiko juostos elementui"
 
 #. js-lingui-explicit-id
 msgid "Timeline item start time is outside event dates"
-msgstr ""
+msgstr "Laiko juostos elemento pradžios laikas yra už renginio datų ribų"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish must be after start"
-msgstr ""
+msgstr "Laiko juostos elemento pabaiga turi būti po pradžios"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish time is outside event dates"
-msgstr ""
+msgstr "Laiko juostos elemento pabaigos laikas yra už renginio datų ribų"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to the timeline item"
-msgstr ""
+msgstr "Prašome pridėti pavadinimą laiko juostos elementui"
 
 #. js-lingui-explicit-id
 msgid "Add item"
-msgstr ""
+msgstr "Pridėti elementą"
 
 #. js-lingui-explicit-id
 msgid "No timeline items yet"
-msgstr ""
+msgstr "Dar nėra laiko juostos elementų"
 
 #. js-lingui-explicit-id
 msgid "Step"
-msgstr ""
+msgstr "Žingsnis"
 
 #. js-lingui-explicit-id
 msgid "Timeline item"
-msgstr ""
+msgstr "Laiko juostos elementas"
 
 #. js-lingui-explicit-id
 msgid "Title"
-msgstr ""
+msgstr "Pavadinimas"
 
 #. js-lingui-explicit-id
 msgid "Description (optional)"
-msgstr ""
+msgstr "Aprašymas (neprivalomas)"
 
 #. js-lingui-explicit-id
 msgid "Start"
-msgstr ""
+msgstr "Pradžia"
 
 #. js-lingui-explicit-id
 msgid "Remove finish time"
-msgstr ""
+msgstr "Pašalinti pabaigos laiką"
 
 #. js-lingui-explicit-id
 msgid "Add finish time"
-msgstr ""
+msgstr "Pridėti pabaigos laiką"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1437,11 +1447,11 @@ msgstr "Prisijungti naudojant:"
 
 #. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
-msgstr ""
+msgstr "Tęsti su {typeSocial}"
 
 #. js-lingui-explicit-id
 msgid "or sign up using:"
-msgstr ""
+msgstr "arba registruotis naudojant:"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -1449,7 +1459,7 @@ msgstr "rasti artimiausius renginius, dirbtuves"
 
 #. js-lingui-explicit-id
 msgid "get help in case of an emergency"
-msgstr ""
+msgstr "gauti pagalbos avarinės atvejais"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -1465,11 +1475,11 @@ msgstr "Priimti"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
-msgstr ""
+msgstr "Sveiki"
 
 #. js-lingui-explicit-id
 msgid "Main"
-msgstr ""
+msgstr "Pagrindinis"
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
@@ -1477,7 +1487,7 @@ msgstr "Sukurti dirbtuves"
 
 #. js-lingui-explicit-id
 msgid "Map"
-msgstr ""
+msgstr "Žemėlapis"
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
@@ -1485,7 +1495,7 @@ msgstr "Pasirinkite skirtuką {tabName}"
 
 #. js-lingui-explicit-id
 msgid "Help"
-msgstr ""
+msgstr "Pagalba"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -1617,15 +1627,15 @@ msgstr "{otherName} Telegram"
 
 #. js-lingui-explicit-id
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
+msgstr "Neteisingai įvestas telefono numeris arba šalies kodas pasirinktas neteisingai"
 
 #. js-lingui-explicit-id
 msgid "Password must contain at least 8 characters"
-msgstr ""
+msgstr "Slaptažodis turi turėti bent 8 simbolių"
 
 #. js-lingui-explicit-id
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Slaptažodžiai nesutampa"
 
 #. js-lingui-explicit-id
 msgid "Select"
@@ -1637,7 +1647,7 @@ msgstr "Prekės kaina"
 
 #. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
-msgstr ""
+msgstr "Motociklų transporto darbų tipai:"
 
 #. js-lingui-explicit-id
 msgid "Select type work moto {nameTypeWork}"
@@ -1645,7 +1655,7 @@ msgstr "Pasirinkite darbo tipo motociklą {nameTypeWork}"
 
 #. js-lingui-explicit-id
 msgid "Types of work for automobile transport:"
-msgstr ""
+msgstr "Automobilių transporto darbų tipai:"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -1673,15 +1683,15 @@ msgstr "Nepriklausomybės gatvė, 1"
 
 #. js-lingui-explicit-id
 msgid "Select a location on the map"
-msgstr ""
+msgstr "Pasirinkite vietą žemėlapyje"
 
 #. js-lingui-explicit-id
 msgid "Move and change the location"
-msgstr ""
+msgstr "Perkelkite ir pakeiskite vietą"
 
 #. js-lingui-explicit-id
 msgid "Specify the city"
-msgstr ""
+msgstr "Nurodykite miestą"
 
 #. js-lingui-explicit-id
 msgid "Enter text to search"
@@ -1689,11 +1699,11 @@ msgstr "Įveskite tekstą, kurį norite ieškoti"
 
 #. js-lingui-explicit-id
 msgid "Please enter text for searching"
-msgstr ""
+msgstr "Prašome įvesti teksto paieškai"
 
 #. js-lingui-explicit-id
 msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
+msgstr "Jei sąraše nėra tinkamo varianto, naudokite 'Gilią paiešką'"
 
 #. js-lingui-explicit-id
 msgid "Disable Deep Search"
@@ -1721,15 +1731,15 @@ msgstr "Pasirinkite šalį"
 
 #. js-lingui-explicit-id
 msgid "Select contact type"
-msgstr ""
+msgstr "Pasirinkite kontakto tipą"
 
 #. js-lingui-explicit-id
 msgid "Contact us via:"
-msgstr ""
+msgstr "Susisiekite su mumis:"
 
 #. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
-msgstr ""
+msgstr "Ar tikrai norite ištrinti?"
 
 #. js-lingui-explicit-id
 msgid "Decrease the maximum number"
@@ -1741,7 +1751,7 @@ msgstr "Padidinkite maksimalų skaičių"
 
 #. js-lingui-explicit-id
 msgid "Resend the code"
-msgstr ""
+msgstr "Siųsti kodą iš naujo"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -1765,7 +1775,7 @@ msgstr "Perjungti mėgstamą produktą"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
-msgstr ""
+msgstr "Kalbos pasirinkimas"
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"
