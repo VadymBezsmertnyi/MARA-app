@@ -27,7 +27,7 @@ import {
 
 // components
 import { Input } from "../../../components/Input/Input";
-import { LocationSelector } from "./components/LocationSelector/LocationSelector";
+import { LocationModal } from "./components/LocationModal/LocationModal";
 import { Header } from "../../../components/Header/Header";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 
@@ -50,6 +50,8 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
     useState<TTelegramChannelCategory | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<string>("");
+  const [isLocationModalOpen, setIsLocationModalOpen] =
+    useState<boolean>(false);
 
   const { data: categoriesData, isLoading: categoriesLoading } =
     useGetTelegramCategoriesQuery();
@@ -61,6 +63,13 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
     channelCategory &&
     selectedCountry &&
     selectedCity;
+
+  const handleLocationSelect = (type: "country" | "city", item: any) => {
+    if (type === "country") {
+      setSelectedCountry(item._id);
+      setSelectedCity("");
+    } else setSelectedCity(item._id);
+  };
 
   const handleAddChannel = async () => {
     if (!isFormValid || !userData?.userData?._id) {
@@ -173,12 +182,19 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
               </ScrollView>
             )}
           </View>
-          <LocationSelector
-            selectedCountry={selectedCountry}
-            selectedCity={selectedCity}
-            onCountryChange={setSelectedCountry}
-            onCityChange={setSelectedCity}
-          />
+          <View style={styles.formGroup}>
+            <Text style={styles.labelInput}>{i18n._("Location")} *</Text>
+            <TouchableOpacity
+              style={styles.formInput}
+              onPress={() => setIsLocationModalOpen(true)}
+            >
+              <Text style={styles.locationText}>
+                {selectedCountry && selectedCity
+                  ? `${selectedCountry}, ${selectedCity}`
+                  : i18n._("Select location...")}
+              </Text>
+            </TouchableOpacity>
+          </View>
           <ButtonCustom
             title={i18n._("Add Channel")}
             onSubmit={handleAddChannel}
@@ -187,6 +203,12 @@ export const AddTelegramChannel: React.FC<AddTelegramChannelProps> = ({
           <View style={styles.empty} />
         </ScrollView>
       </View>
+      <LocationModal
+        isOpen={isLocationModalOpen}
+        onClose={() => setIsLocationModalOpen(false)}
+        onSelect={handleLocationSelect}
+        selectedCountry={selectedCountry}
+      />
     </KeyboardAvoidingView>
   );
 };

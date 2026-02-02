@@ -61,6 +61,10 @@ export const styles = StyleSheet.create({
     height: verticalScale(80),
     textAlignVertical: "top",
   },
+  locationText: {
+    fontSize: scaleFont(16),
+    color: colors.blackCoffee,
+  },
   categoryChip: {
     borderWidth: 1,
     borderColor: colors.grayMercury,
