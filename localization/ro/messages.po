@@ -379,7 +379,7 @@ msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe o
 
 #. js-lingui-explicit-id
 msgid "Wait please before the next update"
-msgstr ""
+msgstr "Vă rugăm așteptați înainte de următoarea actualizare"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
@@ -395,19 +395,19 @@ msgstr "Introduceți numele atelierului sau tipul de lucrare"
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
-msgstr ""
+msgstr "Ne pare rău, dar nu s-au găsit ateliere conform filtrelor"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
-msgstr ""
+msgstr "Ne pare rău, nu există ateliere viitoare"
 
 #. js-lingui-explicit-id
 msgid "Geolocation disabled for calculation"
-msgstr ""
+msgstr "Geolocație dezactivată pentru calcul"
 
 #. js-lingui-explicit-id
 msgid "Cannot calculate"
-msgstr ""
+msgstr "Nu se poate calcula"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -415,7 +415,7 @@ msgstr "km"
 
 #. js-lingui-explicit-id
 msgid "Not comments"
-msgstr ""
+msgstr "Fără comentarii"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
@@ -423,35 +423,35 @@ msgstr "Buton pentru închiderea ferestrei modale"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
-msgstr ""
+msgstr "După distanță:"
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
-msgstr ""
+msgstr "de la cel mai apropiat la cel mai îndepărtat"
 
 #. js-lingui-explicit-id
 msgid "Getting location..."
-msgstr ""
+msgstr "Se obține locația..."
 
 #. js-lingui-explicit-id
 msgid "To calculate distance, please enable location services"
-msgstr ""
+msgstr "Pentru a calcula distanța, vă rugăm activați serviciile de locație"
 
 #. js-lingui-explicit-id
 msgid "Enable location"
-msgstr ""
+msgstr "Activați locația"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
-msgstr ""
+msgstr "După evaluare:"
 
 #. js-lingui-explicit-id
 msgid "from highest to lowest"
-msgstr ""
+msgstr "de la cel mai mare la cel mai mic"
 
 #. js-lingui-explicit-id
 msgid "By number of comments:"
-msgstr ""
+msgstr "După numărul de comentarii:"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -491,7 +491,7 @@ msgstr "Distanța, km:"
 
 #. js-lingui-explicit-id
 msgid "Only with rating:"
-msgstr ""
+msgstr "Doar cu evaluare:"
 
 #. js-lingui-explicit-id
 msgid "All works"
@@ -511,11 +511,11 @@ msgstr "Eroare"
 
 #. js-lingui-explicit-id
 msgid "Unable to like the workshop"
-msgstr ""
+msgstr "Nu se poate aprecia atelierul"
 
 #. js-lingui-explicit-id
 msgid "Failed to create share link"
-msgstr ""
+msgstr "Eșec la crearea linkului de partajare"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -525,14 +525,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Deschideți atelierul în aplicație:\n"
+"{appLink}\n"
+"\n"
+"Deschideți în browser:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share workshop"
-msgstr ""
+msgstr "Partajează atelierul"
 
 #. js-lingui-explicit-id
 msgid "Failed to send SMS"
-msgstr ""
+msgstr "Eșec la trimiterea SMS"
 
 #. js-lingui-explicit-id
 msgid "Success"
@@ -540,11 +545,11 @@ msgstr "Succes"
 
 #. js-lingui-explicit-id
 msgid "Everything is successful and this is your business"
-msgstr ""
+msgstr "Totul este cu succes și aceasta este afacerea dumneavoastră"
 
 #. js-lingui-explicit-id
 msgid "Invalid or expired code"
-msgstr ""
+msgstr "Cod invalid sau expirat"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -552,43 +557,43 @@ msgstr "Atelier"
 
 #. js-lingui-explicit-id
 msgid "Unable to calculate distance, location is disabled"
-msgstr ""
+msgstr "Nu se poate calcula distanța, locația este dezactivată"
 
 #. js-lingui-explicit-id
 msgid "Contacts unknown"
-msgstr ""
+msgstr "Contacte necunoscute"
 
 #. js-lingui-explicit-id
 msgid "About us:"
-msgstr ""
+msgstr "Despre noi:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
-msgstr ""
+msgstr "Citiți întreaga descriere..."
 
 #. js-lingui-explicit-id
 msgid "This business has not been confirmed by the owner"
-msgstr ""
+msgstr "Această afacere nu a fost confirmată de proprietar"
 
 #. js-lingui-explicit-id
 msgid "Confirm business"
-msgstr ""
+msgstr "Confirmați afacerea"
 
 #. js-lingui-explicit-id
 msgid "Report on business"
-msgstr ""
+msgstr "Raportați despre afacere"
 
 #. js-lingui-explicit-id
 msgid "Working hours unknown"
-msgstr ""
+msgstr "Program de lucru necunoscut"
 
 #. js-lingui-explicit-id
 msgid "Day off"
-msgstr ""
+msgstr "Zi liberă"
 
 #. js-lingui-explicit-id
 msgid "Working hours"
-msgstr ""
+msgstr "Program de lucru"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -600,7 +605,7 @@ msgstr "Textul trebuie să conțină între 10 și 2000 de caractere."
 
 #. js-lingui-explicit-id
 msgid "Leave a review"
-msgstr ""
+msgstr "Lăsați o recenzie"
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -624,11 +629,11 @@ msgstr "Publică"
 
 #. js-lingui-explicit-id
 msgid "The work we do:"
-msgstr ""
+msgstr "Munca pe care o facem:"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
-msgstr ""
+msgstr "Recenzii:"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -644,87 +649,87 @@ msgstr "Scrieți o recenzie"
 
 #. js-lingui-explicit-id
 msgid "Monday"
-msgstr ""
+msgstr "Luni"
 
 #. js-lingui-explicit-id
 msgid "Mon"
-msgstr ""
+msgstr "Lu"
 
 #. js-lingui-explicit-id
 msgid "Tuesday"
-msgstr ""
+msgstr "Marți"
 
 #. js-lingui-explicit-id
 msgid "Tue"
-msgstr ""
+msgstr "Ma"
 
 #. js-lingui-explicit-id
 msgid "Wednesday"
-msgstr ""
+msgstr "Miercuri"
 
 #. js-lingui-explicit-id
 msgid "Wed"
-msgstr ""
+msgstr "Mi"
 
 #. js-lingui-explicit-id
 msgid "Thursday"
-msgstr ""
+msgstr "Joi"
 
 #. js-lingui-explicit-id
 msgid "Thu"
-msgstr ""
+msgstr "Jo"
 
 #. js-lingui-explicit-id
 msgid "Friday"
-msgstr ""
+msgstr "Vineri"
 
 #. js-lingui-explicit-id
 msgid "Fri"
-msgstr ""
+msgstr "Vi"
 
 #. js-lingui-explicit-id
 msgid "Saturday"
-msgstr ""
+msgstr "Sâmbătă"
 
 #. js-lingui-explicit-id
 msgid "Sat"
-msgstr ""
+msgstr "Sâ"
 
 #. js-lingui-explicit-id
 msgid "Sunday"
-msgstr ""
+msgstr "Duminică"
 
 #. js-lingui-explicit-id
 msgid "Sun"
-msgstr ""
+msgstr "Du"
 
 #. js-lingui-explicit-id
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. js-lingui-explicit-id
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #. js-lingui-explicit-id
 msgid "Viber"
-msgstr ""
+msgstr "Viber"
 
 #. js-lingui-explicit-id
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #. js-lingui-explicit-id
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #. js-lingui-explicit-id
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #. js-lingui-explicit-id
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #. js-lingui-explicit-id
 msgid "workshop"
@@ -748,7 +753,7 @@ msgstr "Eroare la crearea atelierului"
 
 #. js-lingui-explicit-id
 msgid "Unable to delete the workshop"
-msgstr ""
+msgstr "Nu se poate șterge atelierul"
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -772,7 +777,7 @@ msgstr "Introduceți adresa"
 
 #. js-lingui-explicit-id
 msgid "Contacts"
-msgstr ""
+msgstr "Contacte"
 
 #. js-lingui-explicit-id
 msgid "Phone number"
@@ -780,7 +785,7 @@ msgstr "Număr de telefon"
 
 #. js-lingui-explicit-id
 msgid "Add contact type"
-msgstr ""
+msgstr "Adăugați tip de contact"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -800,19 +805,19 @@ msgstr "Selectați tipurile de lucrări"
 
 #. js-lingui-explicit-id
 msgid "You can add up to 5 phone numbers"
-msgstr ""
+msgstr "Puteți adăuga până la 5 numere de telefon"
 
 #. js-lingui-explicit-id
 msgid "This contact type has already been added"
-msgstr ""
+msgstr "Acest tip de contact a fost deja adăugat"
 
 #. js-lingui-explicit-id
 msgid "Edit"
-msgstr ""
+msgstr "Editați"
 
 #. js-lingui-explicit-id
 msgid "Save"
-msgstr "Salvează"
+msgstr "Salvați"
 
 #. js-lingui-explicit-id
 msgid "Cancel"
@@ -820,7 +825,7 @@ msgstr "Anulare"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
-msgstr ""
+msgstr "Atelierele mele"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
@@ -828,27 +833,27 @@ msgstr "Buton pentru închiderea ecranului de setări al atelierelor"
 
 #. js-lingui-explicit-id
 msgid "All"
-msgstr ""
+msgstr "Toate"
 
 #. js-lingui-explicit-id
 msgid "Created by me"
-msgstr ""
+msgstr "Creat de mine"
 
 #. js-lingui-explicit-id
 msgid "Mine"
-msgstr ""
+msgstr "Ale mele"
 
 #. js-lingui-explicit-id
 msgid "Sorry!"
-msgstr ""
+msgstr "Ne pare rău!"
 
 #. js-lingui-explicit-id
 msgid "You don't have {typeItem}."
-msgstr ""
+msgstr "Nu aveți {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Select phone number"
-msgstr ""
+msgstr "Selectați numărul de telefon"
 
 #. js-lingui-explicit-id
 msgid "Confirm"
@@ -856,27 +861,27 @@ msgstr "Confirmați"
 
 #. js-lingui-explicit-id
 msgid "Enter verification code"
-msgstr ""
+msgstr "Introduceți codul de verificare"
 
 #. js-lingui-explicit-id
 msgid "Enter 6-digit code"
-msgstr ""
+msgstr "Introduceți cod de 6 cifre"
 
 #. js-lingui-explicit-id
 msgid "Under review"
-msgstr ""
+msgstr "În revizuire"
 
 #. js-lingui-explicit-id
 msgid "Verified"
-msgstr ""
+msgstr "Verificat"
 
 #. js-lingui-explicit-id
 msgid "Rejected"
-msgstr ""
+msgstr "Respins"
 
 #. js-lingui-explicit-id
 msgid "Confirm ownership"
-msgstr ""
+msgstr "Confirmați proprietatea"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -912,11 +917,11 @@ msgstr "Înapoi"
 
 #. js-lingui-explicit-id
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #. js-lingui-explicit-id
 msgid "Logout"
-msgstr ""
+msgstr "Delogare"
 
 #. js-lingui-explicit-id
 msgid "First Name"
@@ -944,15 +949,15 @@ msgstr "Fotografia nu a fost modificată"
 
 #. js-lingui-explicit-id
 msgid "Info"
-msgstr ""
+msgstr "Informații"
 
 #. js-lingui-explicit-id
 msgid "The photo has been deleted"
-msgstr ""
+msgstr "Fotografia a fost ștearsă"
 
 #. js-lingui-explicit-id
 msgid "Delete"
-msgstr "Șterge"
+msgstr "Ștergeți"
 
 #. js-lingui-explicit-id
 msgid "Change"
@@ -960,15 +965,15 @@ msgstr "Modifică"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
-msgstr ""
+msgstr "Profilul dumneavoastră"
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
-msgstr "Atelierele tale"
+msgstr "Atelierele dumneavoastră"
 
 #. js-lingui-explicit-id
 msgid "Your events"
-msgstr "Evenimentele tale"
+msgstr "Evenimentele dumneavoastră"
 
 #. js-lingui-explicit-id
 msgid "events"
@@ -976,7 +981,7 @@ msgstr "evenimente"
 
 #. js-lingui-explicit-id
 msgid "My events"
-msgstr ""
+msgstr "Evenimentele mele"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -984,15 +989,15 @@ msgstr "Buton pentru închiderea ecranului de setări al evenimentelor"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events"
-msgstr ""
+msgstr "Evenimente viitoare"
 
 #. js-lingui-explicit-id
 msgid "Past events"
-msgstr ""
+msgstr "Evenimente trecute"
 
 #. js-lingui-explicit-id
 msgid "Add event"
-msgstr "Adaugă eveniment"
+msgstr "Adăugați eveniment"
 
 #. js-lingui-explicit-id
 msgid "Terms of Use"
@@ -1004,15 +1009,15 @@ msgstr "Politica de confidențialitate"
 
 #. js-lingui-explicit-id
 msgid "Terms of Service"
-msgstr ""
+msgstr "Termenii de Serviciu"
 
 #. js-lingui-explicit-id
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr ""
+msgstr "Pentru a utiliza pe deplin toate funcționalitățile serviciului, trebuie să acordați aplicației permisiunea de a vă determina locația:"
 
 #. js-lingui-explicit-id
 msgid "Allow the {nameApp} application to determine my location"
-msgstr ""
+msgstr "Permiteți aplicației {nameApp} să determine locația mea"
 
 #. js-lingui-explicit-id
 msgid "Toggle on your location"
@@ -1020,11 +1025,11 @@ msgstr "Comută localizarea dvs."
 
 #. js-lingui-explicit-id
 msgid "and choose the city of residence:"
-msgstr ""
+msgstr "și alegeți orașul de reședință:"
 
 #. js-lingui-explicit-id
 msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr ""
+msgstr "Apăsând butonul \"Continuați\", sunteți de acord cu {buttonTermsService} și {buttonPrivacyPolicy}"
 
 #. js-lingui-explicit-id
 msgid "Continue"
@@ -1044,7 +1049,7 @@ msgstr "Înregistrare"
 
 #. js-lingui-explicit-id
 msgid "We recommend filling out the profile information"
-msgstr ""
+msgstr "Recomandăm completarea informațiilor din profil"
 
 #. js-lingui-explicit-id
 msgid "Fill out later"
@@ -1052,7 +1057,7 @@ msgstr "Completați mai târziu"
 
 #. js-lingui-explicit-id
 msgid "Settings"
-msgstr ""
+msgstr "Setări"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
@@ -1080,11 +1085,11 @@ msgstr "Raportați o eroare/îmbunătățire"
 
 #. js-lingui-explicit-id
 msgid "Dark theme"
-msgstr ""
+msgstr "Temă întunecată"
 
 #. js-lingui-explicit-id
 msgid "Automatically detect location"
-msgstr ""
+msgstr "Detectare automată a locației"
 
 #. js-lingui-explicit-id
 msgid "Toggle automatically detect location"
@@ -1100,7 +1105,7 @@ msgstr "Odată cu ștergerea profilului, toate informațiile dvs. vor fi șterse
 
 #. js-lingui-explicit-id
 msgid "What platform do you want to send the app installation invitation to?"
-msgstr ""
+msgstr "Pe ce platformă doriți să trimiteți invitația de instalare a aplicației?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
@@ -1108,15 +1113,15 @@ msgstr "Comută afișarea meniului"
 
 #. js-lingui-explicit-id
 msgid "The nearest event:"
-msgstr ""
+msgstr "Cel mai apropiat eveniment:"
 
 #. js-lingui-explicit-id
 msgid "{distance} km"
-msgstr ""
+msgstr "{distance} km"
 
 #. js-lingui-explicit-id
 msgid "No date"
-msgstr ""
+msgstr "Fără dată"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -1128,11 +1133,11 @@ msgstr "Nu"
 
 #. js-lingui-explicit-id
 msgid "Description"
-msgstr ""
+msgstr "Descriere"
 
 #. js-lingui-explicit-id
 msgid "Location"
-msgstr ""
+msgstr "Locație"
 
 #. js-lingui-explicit-id
 msgid "Events"
@@ -1140,11 +1145,11 @@ msgstr "Evenimente"
 
 #. js-lingui-explicit-id
 msgid "Upcoming events:"
-msgstr ""
+msgstr "Evenimente viitoare:"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming events"
-msgstr ""
+msgstr "Ne pare rău, nu există evenimente viitoare"
 
 #. js-lingui-explicit-id
 msgid "Press show more events"
@@ -1152,19 +1157,19 @@ msgstr "Apăsați pentru a arăta mai multe evenimente"
 
 #. js-lingui-explicit-id
 msgid "More events"
-msgstr ""
+msgstr "Mai multe evenimente"
 
 #. js-lingui-explicit-id
 msgid "Past events:"
-msgstr ""
+msgstr "Evenimente trecute:"
 
 #. js-lingui-explicit-id
 msgid "No events have passed"
-msgstr ""
+msgstr "Nu au trecut evenimente"
 
 #. js-lingui-explicit-id
 msgid "Now"
-msgstr ""
+msgstr "Acum"
 
 #. js-lingui-explicit-id
 msgid "Not enabled location"
@@ -1176,47 +1181,47 @@ msgstr "Introduceți textul pentru căutare"
 
 #. js-lingui-explicit-id
 msgid "By date:"
-msgstr ""
+msgstr "După dată:"
 
 #. js-lingui-explicit-id
 msgid "from soonest to latest"
-msgstr ""
+msgstr "de la cel mai devreme la cel mai târziu"
 
 #. js-lingui-explicit-id
 msgid "Price range:"
-msgstr ""
+msgstr "Interval de prețuri:"
 
 #. js-lingui-explicit-id
 msgid "From"
-msgstr ""
+msgstr "De la"
 
 #. js-lingui-explicit-id
 msgid "To"
-msgstr ""
+msgstr "La"
 
 #. js-lingui-explicit-id
 msgid "All locations"
-msgstr ""
+msgstr "Toate locațiile"
 
 #. js-lingui-explicit-id
 msgid "Select country or city"
-msgstr ""
+msgstr "Selectați țara sau orașul"
 
 #. js-lingui-explicit-id
 msgid "Clear location filter"
-msgstr ""
+msgstr "Ștergeți filtrul de locație"
 
 #. js-lingui-explicit-id
 msgid "Close"
-msgstr ""
+msgstr "Închideți"
 
 #. js-lingui-explicit-id
 msgid "All countries"
-msgstr ""
+msgstr "Toate țările"
 
 #. js-lingui-explicit-id
 msgid "No countries found"
-msgstr ""
+msgstr "Nu s-au găsit țări"
 
 #. js-lingui-explicit-id
 msgid "All cities"
@@ -1228,7 +1233,7 @@ msgstr "Nu s-au găsit orașe"
 
 #. js-lingui-explicit-id
 msgid "Save location filter"
-msgstr ""
+msgstr "Salvați filtrul de locație"
 
 #. js-lingui-explicit-id
 msgid "{priceStart}-{priceFinish} grn."
@@ -1244,7 +1249,7 @@ msgstr "Gratuit"
 
 #. js-lingui-explicit-id
 msgid "Phone number not found"
-msgstr ""
+msgstr "Numărul de telefon nu a fost găsit"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -1254,14 +1259,19 @@ msgid ""
 "Open in the browser:\n"
 "{webLink}"
 msgstr ""
+"Deschideți evenimentul în aplicație:\n"
+"{appLink}\n"
+"\n"
+"Deschideți în browser:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
 msgid "Share event"
-msgstr ""
+msgstr "Partajează evenimentul"
 
 #. js-lingui-explicit-id
 msgid "Please sign in to continue"
-msgstr ""
+msgstr "Vă rugăm să vă autentificați pentru a continua"
 
 #. js-lingui-explicit-id
 msgid "Event"
@@ -1273,11 +1283,11 @@ msgstr "Toate fotografiile"
 
 #. js-lingui-explicit-id
 msgid "Not going"
-msgstr ""
+msgstr "Nu particip"
 
 #. js-lingui-explicit-id
 msgid "Going"
-msgstr ""
+msgstr "Particip"
 
 #. js-lingui-explicit-id
 msgid "Date of the event"
@@ -1305,15 +1315,15 @@ msgstr "Galerie"
 
 #. js-lingui-explicit-id
 msgid "Timeline"
-msgstr ""
+msgstr "Cronologie"
 
 #. js-lingui-explicit-id
 msgid "Add a description about the event"
-msgstr ""
+msgstr "Adăugați o descriere despre eveniment"
 
 #. js-lingui-explicit-id
 msgid "Event description"
-msgstr ""
+msgstr "Descrierea evenimentului"
 
 #. js-lingui-explicit-id
 msgid "event"
@@ -1321,7 +1331,7 @@ msgstr "eveniment"
 
 #. js-lingui-explicit-id
 msgid "Your event is under review and will appear after verification"
-msgstr ""
+msgstr "Evenimentul dumneavoastră este în revizuire și va apărea după verificare"
 
 #. js-lingui-explicit-id
 msgid "Change event"
@@ -1353,7 +1363,7 @@ msgstr "Concluzie"
 
 #. js-lingui-explicit-id
 msgid "Participation fee"
-msgstr ""
+msgstr "Taxă de participare"
 
 #. js-lingui-explicit-id
 msgid "100 uah"
@@ -1373,59 +1383,59 @@ msgstr "Spuneți-ne despre eveniment"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to each timeline item"
-msgstr ""
+msgstr "Vă rugăm adăugați un titlu pentru fiecare element al cronologiei"
 
 #. js-lingui-explicit-id
 msgid "Timeline item start time is outside event dates"
-msgstr ""
+msgstr "Ora de început a elementului cronologiei este în afara datelor evenimentului"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish must be after start"
-msgstr ""
+msgstr "Ora de sfârșit a elementului cronologiei trebuie să fie după început"
 
 #. js-lingui-explicit-id
 msgid "Timeline item finish time is outside event dates"
-msgstr ""
+msgstr "Ora de sfârșit a elementului cronologiei este în afara datelor evenimentului"
 
 #. js-lingui-explicit-id
 msgid "Please add a title to the timeline item"
-msgstr ""
+msgstr "Vă rugăm adăugați un titlu elementului cronologiei"
 
 #. js-lingui-explicit-id
 msgid "Add item"
-msgstr ""
+msgstr "Adăugați element"
 
 #. js-lingui-explicit-id
 msgid "No timeline items yet"
-msgstr ""
+msgstr "Nu există încă elemente de cronologie"
 
 #. js-lingui-explicit-id
 msgid "Step"
-msgstr ""
+msgstr "Pas"
 
 #. js-lingui-explicit-id
 msgid "Timeline item"
-msgstr ""
+msgstr "Element cronologie"
 
 #. js-lingui-explicit-id
 msgid "Title"
-msgstr ""
+msgstr "Titlu"
 
 #. js-lingui-explicit-id
 msgid "Description (optional)"
-msgstr ""
+msgstr "Descriere (opțional)"
 
 #. js-lingui-explicit-id
 msgid "Start"
-msgstr ""
+msgstr "Început"
 
 #. js-lingui-explicit-id
 msgid "Remove finish time"
-msgstr ""
+msgstr "Eliminați ora de sfârșit"
 
 #. js-lingui-explicit-id
 msgid "Add finish time"
-msgstr ""
+msgstr "Adăugați ora de sfârșit"
 
 #. js-lingui-explicit-id
 msgid "Welcome to our service."
@@ -1437,11 +1447,11 @@ msgstr "Conectare folosind:"
 
 #. js-lingui-explicit-id
 msgid "Continue with {typeSocial}"
-msgstr ""
+msgstr "Continuați cu {typeSocial}"
 
 #. js-lingui-explicit-id
 msgid "or sign up using:"
-msgstr ""
+msgstr "sau înregistrați-vă folosind:"
 
 #. js-lingui-explicit-id
 msgid "find nearby events, workshops"
@@ -1449,7 +1459,7 @@ msgstr "găsiți evenimente, ateliere apropiate"
 
 #. js-lingui-explicit-id
 msgid "get help in case of an emergency"
-msgstr ""
+msgstr "obțineți ajutor în caz de urgență"
 
 #. js-lingui-explicit-id
 msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
@@ -1465,11 +1475,11 @@ msgstr "Acceptare"
 
 #. js-lingui-explicit-id
 msgid "Welcome"
-msgstr ""
+msgstr "Bun venit"
 
 #. js-lingui-explicit-id
 msgid "Main"
-msgstr ""
+msgstr "Principal"
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
@@ -1477,7 +1487,7 @@ msgstr "Creați atelier"
 
 #. js-lingui-explicit-id
 msgid "Map"
-msgstr ""
+msgstr "Hartă"
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
@@ -1485,7 +1495,7 @@ msgstr "Selectați fila {tabName}"
 
 #. js-lingui-explicit-id
 msgid "Help"
-msgstr ""
+msgstr "Ajutor"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -1617,19 +1627,19 @@ msgstr "Telegram {otherName}"
 
 #. js-lingui-explicit-id
 msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr ""
+msgstr "Numărul de telefon introdus incorect sau codul țării numărului de telefon selectat incorect"
 
 #. js-lingui-explicit-id
 msgid "Password must contain at least 8 characters"
-msgstr ""
+msgstr "Parola trebuie să conțină cel puțin 8 caractere"
 
 #. js-lingui-explicit-id
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Parolele nu se potrivesc"
 
 #. js-lingui-explicit-id
 msgid "Select"
-msgstr "Selectează"
+msgstr "Selectați"
 
 #. js-lingui-explicit-id
 msgid "The price of the item"
@@ -1637,7 +1647,7 @@ msgstr "Prețul produsului"
 
 #. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
-msgstr ""
+msgstr "Tipuri de lucrări pentru transport motociclist:"
 
 #. js-lingui-explicit-id
 msgid "Select type work moto {nameTypeWork}"
@@ -1645,7 +1655,7 @@ msgstr "Selectați tipul de lucru moto {nameTypeWork}"
 
 #. js-lingui-explicit-id
 msgid "Types of work for automobile transport:"
-msgstr ""
+msgstr "Tipuri de lucrări pentru transport auto:"
 
 #. js-lingui-explicit-id
 msgid "Select type work auto {nameTypeWork}"
@@ -1673,15 +1683,15 @@ msgstr "Strada Independenței, 1"
 
 #. js-lingui-explicit-id
 msgid "Select a location on the map"
-msgstr ""
+msgstr "Selectați o locație pe hartă"
 
 #. js-lingui-explicit-id
 msgid "Move and change the location"
-msgstr ""
+msgstr "Mutați și schimbați locația"
 
 #. js-lingui-explicit-id
 msgid "Specify the city"
-msgstr ""
+msgstr "Specificați orașul"
 
 #. js-lingui-explicit-id
 msgid "Enter text to search"
@@ -1689,11 +1699,11 @@ msgstr "Introduceți text pentru căutare"
 
 #. js-lingui-explicit-id
 msgid "Please enter text for searching"
-msgstr ""
+msgstr "Vă rugăm introduceți textul pentru căutare"
 
 #. js-lingui-explicit-id
 msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr ""
+msgstr "Dacă nu există o opțiune potrivită în listă, folosiți 'Căutare profundă'"
 
 #. js-lingui-explicit-id
 msgid "Disable Deep Search"
@@ -1721,15 +1731,15 @@ msgstr "Selectați țara"
 
 #. js-lingui-explicit-id
 msgid "Select contact type"
-msgstr ""
+msgstr "Selectați tipul de contact"
 
 #. js-lingui-explicit-id
 msgid "Contact us via:"
-msgstr ""
+msgstr "Contactați-ne prin:"
 
 #. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
-msgstr ""
+msgstr "Sunteți sigur că doriți să ștergeți?"
 
 #. js-lingui-explicit-id
 msgid "Decrease the maximum number"
@@ -1741,7 +1751,7 @@ msgstr "Creșteți numărul maxim"
 
 #. js-lingui-explicit-id
 msgid "Resend the code"
-msgstr ""
+msgstr "Retrimiteți codul"
 
 #. js-lingui-explicit-id
 msgid "Photo {numberPhoto}"
@@ -1765,7 +1775,7 @@ msgstr "Comută produsul preferat"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
-msgstr ""
+msgstr "Selectarea limbii"
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"
