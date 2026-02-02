@@ -14,194 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "My roles"
-msgstr "Mine roller"
-
-#. js-lingui-explicit-id
-msgid "My actions"
-msgstr "Mine handlinger"
-
-#. js-lingui-explicit-id
-msgid "Cannot open channel URL"
-msgstr "Kan ikke åbne kanal-URL"
-
-#. js-lingui-explicit-id
-msgid "Failed to load telegram channels"
-msgstr "Kunne ikke indlæse telegram-kanaler"
-
-#. js-lingui-explicit-id
-msgid "Help & Resources"
-msgstr "Hjælp og ressourcer"
-
-#. js-lingui-explicit-id
-msgid "Add Telegram channel"
-msgstr "Tilføj telegram-kanal"
-
-#. js-lingui-explicit-id
-msgid "Search channels..."
-msgstr "Søg kanaler..."
-
-#. js-lingui-explicit-id
-msgid "Active filters:"
-msgstr "Aktive filtre:"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Kategori"
-
-#. js-lingui-explicit-id
-msgid "Country"
-msgstr "Land"
-
-#. js-lingui-explicit-id
-msgid "Verified only"
-msgstr "Kun verificerede"
-
-#. js-lingui-explicit-id
-msgid "Sort by"
-msgstr "Sorter efter"
-
-#. js-lingui-explicit-id
-msgid "Loading channels..."
-msgstr "Indlæser kanaler..."
-
-#. js-lingui-explicit-id
-msgid "Open Channel"
-msgstr "Åbn kanal"
-
-#. js-lingui-explicit-id
-msgid "Report"
-msgstr "Rapporter"
-
-#. js-lingui-explicit-id
-msgid "Report Channel"
-msgstr "Rapporter kanal"
-
-#. js-lingui-explicit-id
-msgid "Are you sure you want to report this channel?"
-msgstr "Er du sikker på, at du vil rapportere denne kanal?"
-
-#. js-lingui-explicit-id
-msgid "AI Verified"
-msgstr "AI-verificeret"
-
-#. js-lingui-explicit-id
-msgid "Telegram Channel"
-msgstr "Telegram-kanal"
-
-#. js-lingui-explicit-id
-msgid "reports"
-msgstr "rapporter"
-
-#. js-lingui-explicit-id
-msgid "By name:"
-msgstr "Efter navn:"
-
-#. js-lingui-explicit-id
-msgid "alphabetically"
-msgstr "alfabetisk"
-
-#. js-lingui-explicit-id
-msgid "By category:"
-msgstr "Efter kategori:"
-
-#. js-lingui-explicit-id
-msgid "grouped by category"
-msgstr "grupperet efter kategori"
-
-#. js-lingui-explicit-id
-msgid "By verification:"
-msgstr "Efter verifikation:"
-
-#. js-lingui-explicit-id
-msgid "verified first"
-msgstr "verificerede først"
-
-#. js-lingui-explicit-id
-msgid "Verified Only"
-msgstr "Kun verificerede"
-
-#. js-lingui-explicit-id
-msgid "Clear Filters"
-msgstr "Ryd filtre"
-
-#. js-lingui-explicit-id
-msgid "Apply Filters"
-msgstr "Anvend filtre"
-
-#. js-lingui-explicit-id
-msgid "Add Channel"
-msgstr "Tilføj kanal"
-
-#. js-lingui-explicit-id
-msgid "Please fill all required fields"
-msgstr "Udfyld venligst alle påkrævede felter"
-
-#. js-lingui-explicit-id
-msgid "Channel submitted for review"
-msgstr "Kanal indsendt til gennemgang"
-
-#. js-lingui-explicit-id
-msgid "Failed to add channel"
-msgstr "Kunne ikke tilføje kanal"
-
-#. js-lingui-explicit-id
-msgid "Add Telegram Channel"
-msgstr "Tilføj telegram-kanal"
-
-#. js-lingui-explicit-id
-msgid "You can add a telegram channel"
-msgstr "Du kan tilføje en telegram-kanal"
-
-#. js-lingui-explicit-id
-msgid "Enter channel name"
-msgstr "Indtast kanalnavn"
-
-#. js-lingui-explicit-id
-msgid "Channel Name"
-msgstr "Kanalnavn"
-
-#. js-lingui-explicit-id
-msgid "https://t.me/channelname or @channelname"
-msgstr "https://t.me/channelname eller @channelname"
-
-#. js-lingui-explicit-id
-msgid "Channel URL"
-msgstr "Kanal-URL"
-
-#. js-lingui-explicit-id
-msgid "Enter channel description"
-msgstr "Indtast kanalbeskrivelse"
-
-#. js-lingui-explicit-id
-msgid "Select location..."
-msgstr "Vælg placering..."
-
-#. js-lingui-explicit-id
-msgid "Search country..."
-msgstr "Søg land..."
-
-#. js-lingui-explicit-id
-msgid "Search city..."
-msgstr "Søg by..."
-
-#. js-lingui-explicit-id
-msgid "No results found"
-msgstr "Ingen resultater fundet"
-
-#. js-lingui-explicit-id
-msgid "Report on event"
-msgstr "Rapporter begivenhed"
-
-#. js-lingui-explicit-id
-msgid "Report on workshop"
-msgstr "Rapporter værksted"
-
-#. js-lingui-explicit-id
-msgid "Report on telegram channel"
-msgstr "Rapporter telegram-kanal"
-
-#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Vedligeholdelse"
 
@@ -968,6 +780,14 @@ msgid "Your profile"
 msgstr "Din profil"
 
 #. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Mine roller"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Mine handlinger"
+
+#. js-lingui-explicit-id
 msgid "Your workshops"
 msgstr "Dine workshops"
 
@@ -1124,6 +944,106 @@ msgid "No date"
 msgstr "Ingen dato"
 
 #. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Kan ikke åbne kanal-URL"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Kunne ikke indlæse telegram-kanaler"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Hjælp og ressourcer"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Tilføj telegram-kanal"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Søg kanaler..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Aktive filtre:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategori"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Land"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Kun verificerede"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Sorter efter"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Indlæser kanaler..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Åbn kanal"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Rapporter"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Rapporter kanal"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Er du sikker på, at du vil rapportere denne kanal?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "AI-verificeret"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Telegram-kanal"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "rapporter"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "Efter navn:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "alfabetisk"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "Efter kategori:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "grupperet efter kategori"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "Efter verifikation:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "verificerede først"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Kun verificerede"
+
+#. js-lingui-explicit-id
 msgid "Yes"
 msgstr "Ja"
 
@@ -1132,12 +1052,80 @@ msgid "No"
 msgstr "Nej"
 
 #. js-lingui-explicit-id
+msgid "Clear Filters"
+msgstr "Ryd filtre"
+
+#. js-lingui-explicit-id
+msgid "Apply Filters"
+msgstr "Anvend filtre"
+
+#. js-lingui-explicit-id
+msgid "Add Channel"
+msgstr "Tilføj kanal"
+
+#. js-lingui-explicit-id
+msgid "Please fill all required fields"
+msgstr "Udfyld venligst alle påkrævede felter"
+
+#. js-lingui-explicit-id
+msgid "Channel submitted for review"
+msgstr "Kanal indsendt til gennemgang"
+
+#. js-lingui-explicit-id
+msgid "Failed to add channel"
+msgstr "Kunne ikke tilføje kanal"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram Channel"
+msgstr "Tilføj telegram-kanal"
+
+#. js-lingui-explicit-id
+msgid "You can add a telegram channel"
+msgstr "Du kan tilføje en telegram-kanal"
+
+#. js-lingui-explicit-id
+msgid "Enter channel name"
+msgstr "Indtast kanalnavn"
+
+#. js-lingui-explicit-id
+msgid "Channel Name"
+msgstr "Kanalnavn"
+
+#. js-lingui-explicit-id
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname eller @channelname"
+
+#. js-lingui-explicit-id
+msgid "Channel URL"
+msgstr "Kanal-URL"
+
+#. js-lingui-explicit-id
+msgid "Enter channel description"
+msgstr "Indtast kanalbeskrivelse"
+
+#. js-lingui-explicit-id
 msgid "Description"
 msgstr "Beskrivelse"
 
 #. js-lingui-explicit-id
 msgid "Location"
 msgstr "Placering"
+
+#. js-lingui-explicit-id
+msgid "Select location..."
+msgstr "Vælg placering..."
+
+#. js-lingui-explicit-id
+msgid "Search country..."
+msgstr "Søg land..."
+
+#. js-lingui-explicit-id
+msgid "Search city..."
+msgstr "Søg by..."
+
+#. js-lingui-explicit-id
+msgid "No results found"
+msgstr "Ingen resultater fundet"
 
 #. js-lingui-explicit-id
 msgid "Events"
@@ -1732,6 +1720,18 @@ msgstr "Vælg land"
 #. js-lingui-explicit-id
 msgid "Select contact type"
 msgstr "Vælg kontakttype"
+
+#. js-lingui-explicit-id
+msgid "Report on event"
+msgstr "Rapporter begivenhed"
+
+#. js-lingui-explicit-id
+msgid "Report on workshop"
+msgstr "Rapporter værksted"
+
+#. js-lingui-explicit-id
+msgid "Report on telegram channel"
+msgstr "Rapporter telegram-kanal"
 
 #. js-lingui-explicit-id
 msgid "Contact us via:"

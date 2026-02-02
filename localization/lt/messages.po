@@ -14,194 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "My roles"
-msgstr "Mano vaidmenys"
-
-#. js-lingui-explicit-id
-msgid "My actions"
-msgstr "Mano veiksmai"
-
-#. js-lingui-explicit-id
-msgid "Cannot open channel URL"
-msgstr "Negalima atidaryti kanalo URL"
-
-#. js-lingui-explicit-id
-msgid "Failed to load telegram channels"
-msgstr "Nepavyko įkelti telegram kanalų"
-
-#. js-lingui-explicit-id
-msgid "Help & Resources"
-msgstr "Pagalba ir ištekliai"
-
-#. js-lingui-explicit-id
-msgid "Add Telegram channel"
-msgstr "Pridėti telegram kanalą"
-
-#. js-lingui-explicit-id
-msgid "Search channels..."
-msgstr "Ieškoti kanalų..."
-
-#. js-lingui-explicit-id
-msgid "Active filters:"
-msgstr "Aktyvūs filtrai:"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Kategorija"
-
-#. js-lingui-explicit-id
-msgid "Country"
-msgstr "Šalis"
-
-#. js-lingui-explicit-id
-msgid "Verified only"
-msgstr "Tik patvirtinti"
-
-#. js-lingui-explicit-id
-msgid "Sort by"
-msgstr "Rūšiuoti pagal"
-
-#. js-lingui-explicit-id
-msgid "Loading channels..."
-msgstr "Įkeliama kanalus..."
-
-#. js-lingui-explicit-id
-msgid "Open Channel"
-msgstr "Atidaryti kanalą"
-
-#. js-lingui-explicit-id
-msgid "Report"
-msgstr "Pranešti"
-
-#. js-lingui-explicit-id
-msgid "Report Channel"
-msgstr "Pranešti apie kanalą"
-
-#. js-lingui-explicit-id
-msgid "Are you sure you want to report this channel?"
-msgstr "Ar tikrai norite pranešti apie šį kanalą?"
-
-#. js-lingui-explicit-id
-msgid "AI Verified"
-msgstr "Patvirtinta AI"
-
-#. js-lingui-explicit-id
-msgid "Telegram Channel"
-msgstr "Telegram kanalas"
-
-#. js-lingui-explicit-id
-msgid "reports"
-msgstr "pranešimai"
-
-#. js-lingui-explicit-id
-msgid "By name:"
-msgstr "Pagal pavadinimą:"
-
-#. js-lingui-explicit-id
-msgid "alphabetically"
-msgstr "abėcėlės tvarka"
-
-#. js-lingui-explicit-id
-msgid "By category:"
-msgstr "Pagal kategoriją:"
-
-#. js-lingui-explicit-id
-msgid "grouped by category"
-msgstr "grupuota pagal kategoriją"
-
-#. js-lingui-explicit-id
-msgid "By verification:"
-msgstr "Pagal patvirtinimą:"
-
-#. js-lingui-explicit-id
-msgid "verified first"
-msgstr "pirmiausia patvirtinti"
-
-#. js-lingui-explicit-id
-msgid "Verified Only"
-msgstr "Tik patvirtinti"
-
-#. js-lingui-explicit-id
-msgid "Clear Filters"
-msgstr "Išvalyti filtrus"
-
-#. js-lingui-explicit-id
-msgid "Apply Filters"
-msgstr "Taikyti filtrus"
-
-#. js-lingui-explicit-id
-msgid "Add Channel"
-msgstr "Pridėti kanalą"
-
-#. js-lingui-explicit-id
-msgid "Please fill all required fields"
-msgstr "Prašome užpildyti visus privalomus laukus"
-
-#. js-lingui-explicit-id
-msgid "Channel submitted for review"
-msgstr "Kanalas pateiktas peržiūrai"
-
-#. js-lingui-explicit-id
-msgid "Failed to add channel"
-msgstr "Nepavyko pridėti kanalo"
-
-#. js-lingui-explicit-id
-msgid "Add Telegram Channel"
-msgstr "Pridėti telegram kanalą"
-
-#. js-lingui-explicit-id
-msgid "You can add a telegram channel"
-msgstr "Galite pridėti telegram kanalą"
-
-#. js-lingui-explicit-id
-msgid "Enter channel name"
-msgstr "Įveskite kanalo pavadinimą"
-
-#. js-lingui-explicit-id
-msgid "Channel Name"
-msgstr "Kanalo pavadinimas"
-
-#. js-lingui-explicit-id
-msgid "https://t.me/channelname or @channelname"
-msgstr "https://t.me/channelname arba @channelname"
-
-#. js-lingui-explicit-id
-msgid "Channel URL"
-msgstr "Kanalo URL"
-
-#. js-lingui-explicit-id
-msgid "Enter channel description"
-msgstr "Įveskite kanalo aprašymą"
-
-#. js-lingui-explicit-id
-msgid "Select location..."
-msgstr "Pasirinkite vietą..."
-
-#. js-lingui-explicit-id
-msgid "Search country..."
-msgstr "Ieškoti šalies..."
-
-#. js-lingui-explicit-id
-msgid "Search city..."
-msgstr "Ieškoti miesto..."
-
-#. js-lingui-explicit-id
-msgid "No results found"
-msgstr "Rezultatų nerasta"
-
-#. js-lingui-explicit-id
-msgid "Report on event"
-msgstr "Pranešti apie renginį"
-
-#. js-lingui-explicit-id
-msgid "Report on workshop"
-msgstr "Pranešti apie dirbtuvę"
-
-#. js-lingui-explicit-id
-msgid "Report on telegram channel"
-msgstr "Pranešti apie telegram kanalą"
-
-#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Priežiūra"
 
@@ -968,6 +780,14 @@ msgid "Your profile"
 msgstr "Jūsų profilis"
 
 #. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Mano vaidmenys"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Mano veiksmai"
+
+#. js-lingui-explicit-id
 msgid "Your workshops"
 msgstr "Jūsų dirbtuvės"
 
@@ -1124,6 +944,106 @@ msgid "No date"
 msgstr "Nėra datos"
 
 #. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Negalima atidaryti kanalo URL"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Nepavyko įkelti telegram kanalų"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Pagalba ir ištekliai"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Pridėti telegram kanalą"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Ieškoti kanalų..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Aktyvūs filtrai:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategorija"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Šalis"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Tik patvirtinti"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Rūšiuoti pagal"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Įkeliama kanalus..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Atidaryti kanalą"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Pranešti"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Pranešti apie kanalą"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Ar tikrai norite pranešti apie šį kanalą?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "Patvirtinta AI"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Telegram kanalas"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "pranešimai"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "Pagal pavadinimą:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "abėcėlės tvarka"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "Pagal kategoriją:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "grupuota pagal kategoriją"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "Pagal patvirtinimą:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "pirmiausia patvirtinti"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Tik patvirtinti"
+
+#. js-lingui-explicit-id
 msgid "Yes"
 msgstr "Taip"
 
@@ -1132,12 +1052,80 @@ msgid "No"
 msgstr "Ne"
 
 #. js-lingui-explicit-id
+msgid "Clear Filters"
+msgstr "Išvalyti filtrus"
+
+#. js-lingui-explicit-id
+msgid "Apply Filters"
+msgstr "Taikyti filtrus"
+
+#. js-lingui-explicit-id
+msgid "Add Channel"
+msgstr "Pridėti kanalą"
+
+#. js-lingui-explicit-id
+msgid "Please fill all required fields"
+msgstr "Prašome užpildyti visus privalomus laukus"
+
+#. js-lingui-explicit-id
+msgid "Channel submitted for review"
+msgstr "Kanalas pateiktas peržiūrai"
+
+#. js-lingui-explicit-id
+msgid "Failed to add channel"
+msgstr "Nepavyko pridėti kanalo"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram Channel"
+msgstr "Pridėti telegram kanalą"
+
+#. js-lingui-explicit-id
+msgid "You can add a telegram channel"
+msgstr "Galite pridėti telegram kanalą"
+
+#. js-lingui-explicit-id
+msgid "Enter channel name"
+msgstr "Įveskite kanalo pavadinimą"
+
+#. js-lingui-explicit-id
+msgid "Channel Name"
+msgstr "Kanalo pavadinimas"
+
+#. js-lingui-explicit-id
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname arba @channelname"
+
+#. js-lingui-explicit-id
+msgid "Channel URL"
+msgstr "Kanalo URL"
+
+#. js-lingui-explicit-id
+msgid "Enter channel description"
+msgstr "Įveskite kanalo aprašymą"
+
+#. js-lingui-explicit-id
 msgid "Description"
 msgstr "Aprašymas"
 
 #. js-lingui-explicit-id
 msgid "Location"
 msgstr "Vieta"
+
+#. js-lingui-explicit-id
+msgid "Select location..."
+msgstr "Pasirinkite vietą..."
+
+#. js-lingui-explicit-id
+msgid "Search country..."
+msgstr "Ieškoti šalies..."
+
+#. js-lingui-explicit-id
+msgid "Search city..."
+msgstr "Ieškoti miesto..."
+
+#. js-lingui-explicit-id
+msgid "No results found"
+msgstr "Rezultatų nerasta"
 
 #. js-lingui-explicit-id
 msgid "Events"
@@ -1732,6 +1720,18 @@ msgstr "Pasirinkite šalį"
 #. js-lingui-explicit-id
 msgid "Select contact type"
 msgstr "Pasirinkite kontakto tipą"
+
+#. js-lingui-explicit-id
+msgid "Report on event"
+msgstr "Pranešti apie renginį"
+
+#. js-lingui-explicit-id
+msgid "Report on workshop"
+msgstr "Pranešti apie dirbtuvę"
+
+#. js-lingui-explicit-id
+msgid "Report on telegram channel"
+msgstr "Pranešti apie telegram kanalą"
 
 #. js-lingui-explicit-id
 msgid "Contact us via:"

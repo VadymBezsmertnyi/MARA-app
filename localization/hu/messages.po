@@ -14,194 +14,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "My roles"
-msgstr "Szerepeim"
-
-#. js-lingui-explicit-id
-msgid "My actions"
-msgstr "Tevékenységeim"
-
-#. js-lingui-explicit-id
-msgid "Cannot open channel URL"
-msgstr "Nem lehet megnyitni a csatorna URL-jét"
-
-#. js-lingui-explicit-id
-msgid "Failed to load telegram channels"
-msgstr "A telegram csatornák betöltése sikertelen"
-
-#. js-lingui-explicit-id
-msgid "Help & Resources"
-msgstr "Segítség és erőforrások"
-
-#. js-lingui-explicit-id
-msgid "Add Telegram channel"
-msgstr "Telegram csatorna hozzáadása"
-
-#. js-lingui-explicit-id
-msgid "Search channels..."
-msgstr "Csatornák keresése..."
-
-#. js-lingui-explicit-id
-msgid "Active filters:"
-msgstr "Aktív szűrők:"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Kategória"
-
-#. js-lingui-explicit-id
-msgid "Country"
-msgstr "Ország"
-
-#. js-lingui-explicit-id
-msgid "Verified only"
-msgstr "Csak ellenőrzött"
-
-#. js-lingui-explicit-id
-msgid "Sort by"
-msgstr "Rendezés"
-
-#. js-lingui-explicit-id
-msgid "Loading channels..."
-msgstr "Csatornák betöltése..."
-
-#. js-lingui-explicit-id
-msgid "Open Channel"
-msgstr "Csatorna megnyitása"
-
-#. js-lingui-explicit-id
-msgid "Report"
-msgstr "Jelentés"
-
-#. js-lingui-explicit-id
-msgid "Report Channel"
-msgstr "Csatorna jelentése"
-
-#. js-lingui-explicit-id
-msgid "Are you sure you want to report this channel?"
-msgstr "Biztosan jelenteni szeretné ezt a csatornát?"
-
-#. js-lingui-explicit-id
-msgid "AI Verified"
-msgstr "AI által ellenőrzött"
-
-#. js-lingui-explicit-id
-msgid "Telegram Channel"
-msgstr "Telegram csatorna"
-
-#. js-lingui-explicit-id
-msgid "reports"
-msgstr "jelentések"
-
-#. js-lingui-explicit-id
-msgid "By name:"
-msgstr "Név szerint:"
-
-#. js-lingui-explicit-id
-msgid "alphabetically"
-msgstr "ábécé sorrendben"
-
-#. js-lingui-explicit-id
-msgid "By category:"
-msgstr "Kategória szerint:"
-
-#. js-lingui-explicit-id
-msgid "grouped by category"
-msgstr "kategóriánként csoportosítva"
-
-#. js-lingui-explicit-id
-msgid "By verification:"
-msgstr "Ellenőrzés szerint:"
-
-#. js-lingui-explicit-id
-msgid "verified first"
-msgstr "először ellenőrzött"
-
-#. js-lingui-explicit-id
-msgid "Verified Only"
-msgstr "Csak ellenőrzött"
-
-#. js-lingui-explicit-id
-msgid "Clear Filters"
-msgstr "Szűrők törlése"
-
-#. js-lingui-explicit-id
-msgid "Apply Filters"
-msgstr "Szűrők alkalmazása"
-
-#. js-lingui-explicit-id
-msgid "Add Channel"
-msgstr "Csatorna hozzáadása"
-
-#. js-lingui-explicit-id
-msgid "Please fill all required fields"
-msgstr "Kérjük, töltse ki az összes kötelező mezőt"
-
-#. js-lingui-explicit-id
-msgid "Channel submitted for review"
-msgstr "Csatorna ellenőrzésre küldve"
-
-#. js-lingui-explicit-id
-msgid "Failed to add channel"
-msgstr "A csatorna hozzáadása sikertelen"
-
-#. js-lingui-explicit-id
-msgid "Add Telegram Channel"
-msgstr "Telegram csatorna hozzáadása"
-
-#. js-lingui-explicit-id
-msgid "You can add a telegram channel"
-msgstr "Hozzáadhat egy telegram csatornát"
-
-#. js-lingui-explicit-id
-msgid "Enter channel name"
-msgstr "Adja meg a csatorna nevét"
-
-#. js-lingui-explicit-id
-msgid "Channel Name"
-msgstr "Csatorna neve"
-
-#. js-lingui-explicit-id
-msgid "https://t.me/channelname or @channelname"
-msgstr "https://t.me/channelname vagy @channelname"
-
-#. js-lingui-explicit-id
-msgid "Channel URL"
-msgstr "Csatorna URL"
-
-#. js-lingui-explicit-id
-msgid "Enter channel description"
-msgstr "Adja meg a csatorna leírását"
-
-#. js-lingui-explicit-id
-msgid "Select location..."
-msgstr "Helyszín kiválasztása..."
-
-#. js-lingui-explicit-id
-msgid "Search country..."
-msgstr "Ország keresése..."
-
-#. js-lingui-explicit-id
-msgid "Search city..."
-msgstr "Város keresése..."
-
-#. js-lingui-explicit-id
-msgid "No results found"
-msgstr "Nem található eredmény"
-
-#. js-lingui-explicit-id
-msgid "Report on event"
-msgstr "Esemény jelentése"
-
-#. js-lingui-explicit-id
-msgid "Report on workshop"
-msgstr "Műhely jelentése"
-
-#. js-lingui-explicit-id
-msgid "Report on telegram channel"
-msgstr "Telegram csatorna jelentése"
-
-#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Karbantartás"
 
@@ -968,6 +780,14 @@ msgid "Your profile"
 msgstr "Az Ön profilja"
 
 #. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Szerepeim"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Tevékenységeim"
+
+#. js-lingui-explicit-id
 msgid "Your workshops"
 msgstr "Műhelyeid"
 
@@ -1124,6 +944,106 @@ msgid "No date"
 msgstr "Nincs dátum"
 
 #. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Nem lehet megnyitni a csatorna URL-jét"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "A telegram csatornák betöltése sikertelen"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Segítség és erőforrások"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Telegram csatorna hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Csatornák keresése..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Aktív szűrők:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategória"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Ország"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Csak ellenőrzött"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Rendezés"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Csatornák betöltése..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Csatorna megnyitása"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Jelentés"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Csatorna jelentése"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Biztosan jelenteni szeretné ezt a csatornát?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "AI által ellenőrzött"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Telegram csatorna"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "jelentések"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "Név szerint:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "ábécé sorrendben"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "Kategória szerint:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "kategóriánként csoportosítva"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "Ellenőrzés szerint:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "először ellenőrzött"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Csak ellenőrzött"
+
+#. js-lingui-explicit-id
 msgid "Yes"
 msgstr "Igen"
 
@@ -1132,12 +1052,80 @@ msgid "No"
 msgstr "Nem"
 
 #. js-lingui-explicit-id
+msgid "Clear Filters"
+msgstr "Szűrők törlése"
+
+#. js-lingui-explicit-id
+msgid "Apply Filters"
+msgstr "Szűrők alkalmazása"
+
+#. js-lingui-explicit-id
+msgid "Add Channel"
+msgstr "Csatorna hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "Please fill all required fields"
+msgstr "Kérjük, töltse ki az összes kötelező mezőt"
+
+#. js-lingui-explicit-id
+msgid "Channel submitted for review"
+msgstr "Csatorna ellenőrzésre küldve"
+
+#. js-lingui-explicit-id
+msgid "Failed to add channel"
+msgstr "A csatorna hozzáadása sikertelen"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram Channel"
+msgstr "Telegram csatorna hozzáadása"
+
+#. js-lingui-explicit-id
+msgid "You can add a telegram channel"
+msgstr "Hozzáadhat egy telegram csatornát"
+
+#. js-lingui-explicit-id
+msgid "Enter channel name"
+msgstr "Adja meg a csatorna nevét"
+
+#. js-lingui-explicit-id
+msgid "Channel Name"
+msgstr "Csatorna neve"
+
+#. js-lingui-explicit-id
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname vagy @channelname"
+
+#. js-lingui-explicit-id
+msgid "Channel URL"
+msgstr "Csatorna URL"
+
+#. js-lingui-explicit-id
+msgid "Enter channel description"
+msgstr "Adja meg a csatorna leírását"
+
+#. js-lingui-explicit-id
 msgid "Description"
 msgstr "Leírás"
 
 #. js-lingui-explicit-id
 msgid "Location"
 msgstr "Helyszín"
+
+#. js-lingui-explicit-id
+msgid "Select location..."
+msgstr "Helyszín kiválasztása..."
+
+#. js-lingui-explicit-id
+msgid "Search country..."
+msgstr "Ország keresése..."
+
+#. js-lingui-explicit-id
+msgid "Search city..."
+msgstr "Város keresése..."
+
+#. js-lingui-explicit-id
+msgid "No results found"
+msgstr "Nem található eredmény"
 
 #. js-lingui-explicit-id
 msgid "Events"
@@ -1732,6 +1720,18 @@ msgstr "Válasszon országot"
 #. js-lingui-explicit-id
 msgid "Select contact type"
 msgstr "Válasszon kapcsolattípust"
+
+#. js-lingui-explicit-id
+msgid "Report on event"
+msgstr "Esemény jelentése"
+
+#. js-lingui-explicit-id
+msgid "Report on workshop"
+msgstr "Műhely jelentése"
+
+#. js-lingui-explicit-id
+msgid "Report on telegram channel"
+msgstr "Telegram csatorna jelentése"
 
 #. js-lingui-explicit-id
 msgid "Contact us via:"
