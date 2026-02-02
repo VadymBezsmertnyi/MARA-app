@@ -26,7 +26,6 @@ import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { EventListItem } from "./components/ItemListEvents/ItemListEvents";
@@ -58,7 +57,6 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
   navigation,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { infoSmallEvents } = useSubscriptionProvider();
   const { location } = useMapSelector();
   const { upcomingClosest, pastClosest } = useEventsSelector();
   const [refreshing, setRefreshing] = useState(false);
@@ -114,7 +112,6 @@ export const EventsMain: FunctionComponent<EventsMainProps> = ({
             onPressFilter={() => {}}
             onPressSort={() => {}}
             onPressAddWorkshop={onPressAddEvent}
-            isAddButtonDisabled={infoSmallEvents.amountSmallEvent <= 0}
             addButtonAccessibilityLabel={i18n._("Add event")}
             showFilters={false}
             hasActiveSort={false}

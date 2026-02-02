@@ -26,7 +26,6 @@ import { useGetWorkshopsUserQuery } from "../../../storeRedux/api";
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 import {
   useDropDownAlertProvider,
   DropdownAlertType,
@@ -36,7 +35,6 @@ import {
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ItemSettingWorkshops } from "./components/ItemSettingWorkshops/ItemSettingWorkshops";
-import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 // icons
 import { IconClose, IconPlus } from "../../../icons/components";
@@ -64,10 +62,8 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
   const { userData } = useUserSelector();
   const { heightStatusBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
-  const { infoWorkshops } = useSubscriptionProvider();
   const { showMessageServer } = useDropDownAlertProvider();
   const { workshopsUserList } = useWorkshopsSelector();
-  const [isShowPayment, setIsShowPayment] = useState(false);
   const [activeTab, setActiveTab] = useState<TabType>("all");
   const [refreshing, setRefreshing] = useState(false);
   const lastRefreshTimeRef = useRef<number>(0);
@@ -227,31 +223,18 @@ export const SettingsWorkshops: FunctionComponent<SettingsWorkshopsProps> = ({
             })}
             <ButtonCustom
               onSubmit={() => {
-                if (infoWorkshops.amountWorkshop > 0)
-                  navigation.navigate(
-                    PATHS_SETTINGS_SCREENS.settingsWorkshopAdd
-                  );
-                else setIsShowPayment(true);
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopAdd);
               }}
               styleContainer={styles.containerButtonAdd}
             >
               <View style={styles.buttonAdd}>
-                {infoWorkshops.amountWorkshop > 0 && (
-                  <IconPlus width={16} height={16} fill={colors.white} />
-                )}
-                <Text style={styles.titleAdd}>
-                  {infoWorkshops.amountWorkshop > 0
-                    ? i18n._("Add workshop")
-                    : i18n._("Buy workshop")}
-                </Text>
+                <IconPlus width={16} height={16} fill={colors.white} />
+                <Text style={styles.titleAdd}>{i18n._("Add workshop")}</Text>
               </View>
             </ButtonCustom>
           </ScrollView>
         )}
       </View>
-      {isShowPayment && (
-        <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
-      )}
     </>
   );
 };

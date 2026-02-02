@@ -21,7 +21,6 @@ import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -62,7 +61,6 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
   const { heightTabBar } = useThemeProvider();
   const { bottom } = useSafeAreaInsets();
   const { location } = useMapSelector();
-  const { infoSmallEvents } = useSubscriptionProvider();
   const {
     upcomingEventsList,
     pastEventsList,
@@ -253,7 +251,6 @@ export const EventsList: FunctionComponent<ItemListEventsProps> = ({
               setIsShowSort(true);
             }}
             onPressAddWorkshop={onPressAddEvent}
-            isAddButtonDisabled={infoSmallEvents.amountSmallEvent <= 0}
             addButtonAccessibilityLabel={i18n._("Add event")}
             showFilters
             hasActiveSort={sort !== null}

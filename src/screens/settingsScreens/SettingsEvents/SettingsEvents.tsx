@@ -26,7 +26,6 @@ import { useGetEventsUserQuery } from "../../../storeRedux/api";
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 import {
   useDropDownAlertProvider,
   DropdownAlertType,
@@ -36,7 +35,6 @@ import {
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { ItemSettingEvents } from "./components/ItemSettingEvents/ItemSettingEvents";
-import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 // icons
 import { IconClose, IconPlus } from "../../../icons/components";
@@ -63,12 +61,10 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
   navigation,
 }) => {
   const { userData } = useUserSelector();
-  const { infoSmallEvents } = useSubscriptionProvider();
   const { eventsUserList } = useEventsSelector();
   const { heightStatusBar } = useThemeProvider();
   const { i18n, language } = useLocalesProvider();
   const { showMessageServer } = useDropDownAlertProvider();
-  const [isShowPayment, setIsShowPayment] = useState(false);
   const [activeMainTab, setActiveMainTab] = useState<MainTabType>("all");
   const [activeTab, setActiveTab] = useState<TabType>("upcoming");
   const [refreshing, setRefreshing] = useState(false);
@@ -309,21 +305,13 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
             })}
             <ButtonCustom
               onSubmit={() => {
-                if (infoSmallEvents.amountSmallEvent > 0)
-                  navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
-                else setIsShowPayment(true);
+                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
               }}
               styleContainer={styles.containerButtonAdd}
             >
               <View style={styles.buttonAdd}>
-                {infoSmallEvents.amountSmallEvent > 0 && (
-                  <IconPlus width={16} height={16} fill={colors.white} />
-                )}
-                <Text style={styles.titleAdd}>
-                  {infoSmallEvents.amountSmallEvent > 0
-                    ? i18n._("Add event")
-                    : i18n._("Buy event")}
-                </Text>
+                <IconPlus width={16} height={16} fill={colors.white} />
+                <Text style={styles.titleAdd}>{i18n._("Add event")}</Text>
               </View>
             </ButtonCustom>
           </ScrollView>
@@ -342,9 +330,6 @@ export const SettingsEvents: FunctionComponent<SettingsEventsProps> = ({
           </ButtonCustom>
         </View>
       </View>
-      {isShowPayment && (
-        <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
-      )}
     </>
   );
 };

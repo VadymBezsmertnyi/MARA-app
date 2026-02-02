@@ -26,7 +26,6 @@ import {
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -65,7 +64,6 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
 }) => {
   const { bottom } = useSafeAreaInsets();
   const { i18n } = useLocalesProvider();
-  const { infoWorkshops } = useSubscriptionProvider();
   const { heightTabBar } = useThemeProvider();
   const { showMessageServer } = useDropDownAlertProvider();
   const {
@@ -210,7 +208,6 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
               setIsShowSort(true);
             }}
             onPressAddWorkshop={onPressAddWorkshop}
-            isAddButtonDisabled={infoWorkshops.amountWorkshop <= 0}
             addButtonAccessibilityLabel={i18n._("Add workshop")}
             showFilters={workshops.length > 0 || filters !== null}
             hasActiveSort={sort !== null}

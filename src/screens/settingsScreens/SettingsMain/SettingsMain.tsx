@@ -24,13 +24,11 @@ import { deleteTokens } from "../../../storeRedux/apis/user/user.helpers";
 // providers
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { ContainerUser } from "./components/ContainerUser/ContainerUser";
-import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
 
 // constants
 import {
@@ -60,7 +58,7 @@ const mockActions = [
     icon: "school",
     subItems: [
       { label: "Active", value: 1, icon: "check-circle", color: "#4CAF50" },
-      { label: "On review", value: 1, icon: "clock", color: "#FF9800" },
+      { label: "On review", value: 1, icon: "lock-clock", color: "#FF9800" },
       { label: "Rejected", value: 0, icon: "cancel", color: "#F44336" },
     ],
   },
@@ -70,7 +68,7 @@ const mockActions = [
     icon: "event",
     subItems: [
       { label: "Active", value: 1, icon: "check-circle", color: "#4CAF50" },
-      { label: "On review", value: 0, icon: "clock", color: "#FF9800" },
+      { label: "On review", value: 0, icon: "lock-clock", color: "#FF9800" },
     ],
   },
   { id: "3", name: "Comments", icon: "comment", count: 21 },
@@ -91,7 +89,6 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   const dispatch = useRootDispatch();
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  const [isShowPayment, setIsShowPayment] = useState(false);
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
@@ -115,10 +112,6 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
         routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
       })
     );
-  };
-
-  const onPressBuy = () => {
-    setIsShowPayment(true);
   };
 
   const renderSectionItem = (
@@ -227,9 +220,6 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <View style={styles.containerEmpty} />
         </ScrollView>
       </View>
-      {isShowPayment && (
-        <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
-      )}
     </>
   );
 };
