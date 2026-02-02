@@ -683,6 +683,7 @@ export const EventDetails: FunctionComponent<EventDetailsProps> = ({
       <ModalReportContact
         visible={showReportModal}
         onClose={() => setShowReportModal(false)}
+        type="event"
       />
     </View>
   );

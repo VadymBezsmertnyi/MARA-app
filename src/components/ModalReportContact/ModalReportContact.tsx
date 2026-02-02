@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import { Linking, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
 
@@ -18,13 +18,27 @@ import colors from "../../../styles/colors";
 type ModalReportContactProps = {
   visible: boolean;
   onClose: () => void;
+  type: "event" | "workshop" | "telegram-channel";
 };
 
 export const ModalReportContact: FunctionComponent<ModalReportContactProps> = ({
   visible,
   onClose,
+  type,
 }) => {
   const { i18n } = useLocalesProvider();
+  const title = useMemo(() => {
+    switch (type) {
+      case "event":
+        return i18n._("Report on event");
+      case "workshop":
+        return i18n._("Report on workshop");
+      case "telegram-channel":
+        return i18n._("Report on telegram channel");
+      default:
+        return i18n._("Report on business");
+    }
+  }, [type, i18n]);
 
   const onPressTelegram = async () => {
     const telegram = "VadymBezsmertnyi";
@@ -54,7 +68,7 @@ export const ModalReportContact: FunctionComponent<ModalReportContactProps> = ({
               <IconClose width={24} height={24} fill={colors.blackCoffee} />
             </TouchableOpacity>
           </View>
-          <Text style={styles.titleModal}>{i18n._("Report on business")}</Text>
+          <Text style={styles.titleModal}>{title}</Text>
           <Text style={styles.subtitleModal}>{i18n._("Contact us via:")}</Text>
           <View style={styles.containerButtons}>
             <TouchableOpacity

@@ -581,6 +581,7 @@ export const WorkshopsDetails: FunctionComponent<WorkshopsDetailsProps> = ({
       <ModalReportContact
         visible={showReportModal}
         onClose={() => setShowReportModal(false)}
+        type="workshop"
       />
     </View>
   );
