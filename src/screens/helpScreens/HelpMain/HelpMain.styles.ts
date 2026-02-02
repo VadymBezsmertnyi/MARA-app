@@ -156,7 +156,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: 8,
-    backgroundColor: "#FFEBEE",
+    backgroundColor: colors.lightOrange,
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
@@ -165,85 +165,6 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 14,
     fontWeight: "600",
-    color: "#F44336",
-  },
-  // Modal styles
-  modalTitle: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 18,
-    fontWeight: "600",
-    color: colors.blackCoffee,
-    marginBottom: 16,
-  },
-  sortModalContent: {
-    backgroundColor: colors.white,
-    borderRadius: 12,
-    padding: 20,
-    margin: 20,
-  },
-  sortOption: {
-    padding: 16,
-    borderRadius: 8,
-    backgroundColor: colors.grayCloudy,
-    marginBottom: 8,
-  },
-  sortOptionSelected: {
-    backgroundColor: colors.blueTufts,
-  },
-  sortOptionText: {
-    fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 16,
-    color: colors.blackCoffee,
-    textAlign: "center",
-  },
-  sortOptionTextSelected: {
-    color: colors.white,
-  },
-  filterModalContent: {
-    flex: 1,
-    backgroundColor: colors.white,
-    padding: 20,
-  },
-  filterSection: {
-    marginBottom: 20,
-  },
-  filterLabel: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 16,
-    fontWeight: "600",
-    color: colors.blackCoffee,
-    marginBottom: 12,
-  },
-  filterChip: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    backgroundColor: colors.grayCloudy,
-    borderRadius: 16,
-    marginRight: 8,
-    marginBottom: 8,
-  },
-  filterChipActive: {
-    backgroundColor: colors.blueTufts,
-  },
-  filterChipText: {
-    fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 14,
-    color: colors.blackCoffee,
-  },
-  filterChipTextActive: {
-    color: colors.white,
-  },
-  clearButton: {
-    alignSelf: "flex-start",
-    marginTop: 16,
-    padding: 12,
-    backgroundColor: colors.errorRed,
-    borderRadius: 8,
-  },
-  clearButtonText: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 14,
-    fontWeight: "600",
-    color: colors.white,
+    color: colors.errorRed,
   },
 });

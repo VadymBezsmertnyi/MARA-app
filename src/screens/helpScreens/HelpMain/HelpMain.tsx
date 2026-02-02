@@ -37,6 +37,8 @@ import { HeaderActions } from "../../workshopsScreens/WorkshopsMain/components/H
 import { Input } from "../../../components/Input/Input";
 import { IconSearchInput } from "../../../icons/components";
 import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
+import { ModalSort } from "./components/ModalSort/ModalSort";
+import { ModalFilter } from "./components/ModalFilter/ModalFilter";
 
 // API
 import {
@@ -359,174 +361,24 @@ export const HelpMain: FunctionComponent<HelpMainProps> = ({ navigation }) => {
       </View>
       {isShowSort ? (
         <ModalWindow onClose={onClose}>
-          <View style={styles.sortModalContent}>
-            <Text style={styles.modalTitle}>{i18n._("Sort by")}</Text>
-            {(["name", "category", "verified"] as SortOption[]).map(
-              (sortOption) => (
-                <TouchableOpacity
-                  key={sortOption}
-                  style={[
-                    styles.sortOption,
-                    sort === sortOption && styles.sortOptionSelected,
-                  ]}
-                  onPress={() => setTypeSort(sortOption)}
-                >
-                  <Text
-                    style={[
-                      styles.sortOptionText,
-                      sort === sortOption && styles.sortOptionTextSelected,
-                    ]}
-                  >
-                    {i18n._(sortOption || "")}
-                  </Text>
-                </TouchableOpacity>
-              )
-            )}
-          </View>
+          <ModalSort
+            onClose={onClose}
+            setTypeSort={setTypeSort}
+            currentSort={sort}
+          />
         </ModalWindow>
       ) : null}
       {isShowFilter ? (
         <Modal>
-          <View style={styles.filterModalContent}>
-            <Text style={styles.modalTitle}>{i18n._("Filters")}</Text>
-            <ScrollView>
-              {/* Category Filter */}
-              <View style={styles.filterSection}>
-                <Text style={styles.filterLabel}>{i18n._("Category")}</Text>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                  {categoriesData?.data?.map((category: any) => (
-                    <TouchableOpacity
-                      key={category.value}
-                      style={[
-                        styles.filterChip,
-                        filters?.category === category.value &&
-                          styles.filterChipActive,
-                      ]}
-                      onPress={() =>
-                        onSubmitFilters({
-                          ...filters,
-                          category:
-                            filters?.category === category.value
-                              ? null
-                              : category.value,
-                        } as FiltersState)
-                      }
-                    >
-                      <Text
-                        style={[
-                          styles.filterChipText,
-                          filters?.category === category.value &&
-                            styles.filterChipTextActive,
-                        ]}
-                      >
-                        {category.label}
-                      </Text>
-                    </TouchableOpacity>
-                  ))}
-                </ScrollView>
-              </View>
-              <View style={styles.filterSection}>
-                <Text style={styles.filterLabel}>{i18n._("Country")}</Text>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                  {countriesData?.data?.map((country: string) => (
-                    <TouchableOpacity
-                      key={country}
-                      style={[
-                        styles.filterChip,
-                        filters?.country === country && styles.filterChipActive,
-                      ]}
-                      onPress={() =>
-                        onSubmitFilters({
-                          ...filters,
-                          country: filters?.country === country ? "" : country,
-                          city:
-                            filters?.country === country ? "" : filters?.city,
-                        } as FiltersState)
-                      }
-                    >
-                      <Text
-                        style={[
-                          styles.filterChipText,
-                          filters?.country === country &&
-                            styles.filterChipTextActive,
-                        ]}
-                      >
-                        {country}
-                      </Text>
-                    </TouchableOpacity>
-                  ))}
-                </ScrollView>
-              </View>
-              {filters?.country && (
-                <View style={styles.filterSection}>
-                  <Text style={styles.filterLabel}>{i18n._("City")}</Text>
-                  <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                    {citiesData?.data?.map((city: string) => (
-                      <TouchableOpacity
-                        key={city}
-                        style={[
-                          styles.filterChip,
-                          filters?.city === city && styles.filterChipActive,
-                        ]}
-                        onPress={() =>
-                          onSubmitFilters({
-                            ...filters,
-                            city: filters?.city === city ? "" : city,
-                          } as FiltersState)
-                        }
-                      >
-                        <Text
-                          style={[
-                            styles.filterChipText,
-                            filters?.city === city &&
-                              styles.filterChipTextActive,
-                          ]}
-                        >
-                          {city}
-                        </Text>
-                      </TouchableOpacity>
-                    ))}
-                  </ScrollView>
-                </View>
-              )}
-              <View style={styles.filterSection}>
-                <Text style={styles.filterLabel}>
-                  {i18n._("Verified Only")}
-                </Text>
-                <TouchableOpacity
-                  style={[
-                    styles.filterChip,
-                    filters?.verified && styles.filterChipActive,
-                  ]}
-                  onPress={() =>
-                    onSubmitFilters({
-                      ...filters,
-                      verified: !filters?.verified,
-                    } as FiltersState)
-                  }
-                >
-                  <Text
-                    style={[
-                      styles.filterChipText,
-                      filters?.verified && styles.filterChipTextActive,
-                    ]}
-                  >
-                    {filters?.verified ? "Yes" : "No"}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              {filters && (
-                <TouchableOpacity
-                  style={styles.clearButton}
-                  onPress={() => onSubmitFilters({} as FiltersState)}
-                >
-                  <Text style={styles.clearButtonText}>
-                    {i18n._("Clear Filters")}
-                  </Text>
-                </TouchableOpacity>
-              )}
-            </ScrollView>
-          </View>
+          <ModalFilter
+            filters={filters}
+            onClose={onClose}
+            onSubmit={onSubmitFilters}
+            categoriesData={categoriesData}
+            countriesData={countriesData?.data || []}
+            citiesData={citiesData?.data || []}
+            initialFilters={filters || undefined}
+          />
         </Modal>
       ) : null}
       <ModalReportContact
