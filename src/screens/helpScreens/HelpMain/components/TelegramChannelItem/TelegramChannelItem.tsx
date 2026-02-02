@@ -22,13 +22,11 @@ export const TelegramChannelItem: FunctionComponent<
   const { i18n } = useLocalesProvider();
 
   const handlePress = () => {
-    if (onPress) {
-      onPress(channel);
-    }
+    if (onPress) onPress(channel);
   };
 
   const handleReport = () => {
-    if (onReport) {
+    if (onReport)
       Alert.alert(
         i18n._("Report Channel"),
         i18n._("Are you sure you want to report this channel?"),
@@ -41,7 +39,6 @@ export const TelegramChannelItem: FunctionComponent<
           },
         ]
       );
-    }
   };
 
   const categoryColors = useMemo(() => {

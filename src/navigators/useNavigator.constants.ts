@@ -47,4 +47,5 @@ export const PATHS_WORKSHOP_SCREENS = {
 
 export const PATHS_HELP_SCREENS = {
   helpMain: "helpMain",
+  addTelegramChannel: "addTelegramChannel",
 } as const;

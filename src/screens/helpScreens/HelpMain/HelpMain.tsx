@@ -19,6 +19,7 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 // types
 import { RootHelpScreensParamList } from "../../../navigators/Navigators.types";
 import { TTelegramChannelCategory } from "../../../storeRedux/apis/telegram-channels/telegram-channels.types";
+import { PATHS_HELP_SCREENS } from "../../../navigators/useNavigator.constants";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
@@ -28,7 +29,6 @@ import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 // API
 import {
   useGetTelegramChannelsQuery,
-  useLazyGetTelegramChannelsQuery,
   useGetTelegramCategoriesQuery,
   useGetTelegramCountriesQuery,
   useGetTelegramCitiesQuery,
@@ -226,7 +226,11 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
           <MaterialIcons name="arrow-back" size={24} color="#007AFF" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{i18n._("Help & Resources")}</Text>
-        <TouchableOpacity onPress={() => setShowAddModal(true)}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate(PATHS_HELP_SCREENS.addTelegramChannel)
+          }
+        >
           <MaterialIcons name="add" size={24} color="#007AFF" />
         </TouchableOpacity>
       </View>

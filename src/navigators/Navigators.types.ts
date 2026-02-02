@@ -139,6 +139,10 @@ export type RootWorkshopsScreensParamList = {
 
 export type RootHelpScreensParamList = {
   [PATHS_HELP_SCREENS.helpMain]?: Record<string, string | number | boolean>;
+  [PATHS_HELP_SCREENS.addTelegramChannel]?: Record<
+    string,
+    string | number | boolean
+  >;
 };
 
 export type RootAllScreensParamList = RootMainScreensParamList &
