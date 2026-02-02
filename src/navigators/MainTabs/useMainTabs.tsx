@@ -66,7 +66,8 @@ export const useMainTabs = () => {
       tabBarIcon: IconTabMap,
       tabBarIconSelect: IconTabMapSelect,
     },
-    {
+    //TODO: включити пізніше якщо буде потрібно
+    /* {
       id: PATHS_MAIN_TABS.help,
       name: PATHS_MAIN_TABS.help,
       mainScreen: PATHS_HELP_SCREENS.helpMain,
@@ -77,7 +78,7 @@ export const useMainTabs = () => {
       tabBarIconSelect: MaterialIcons,
       tabBarIconName: "help-outline",
       tabBarIconNameSelect: "help",
-    },
+    }, */
     {
       id: PATHS_MAIN_TABS.settings,
       name: PATHS_MAIN_TABS.settings,
