@@ -93,7 +93,7 @@ export const styles = StyleSheet.create({
     marginRight: 4,
   },
   sectionItems: {
-    gap: 8,
+    gap: 4,
   },
   sectionItem: {
     flexDirection: "row",

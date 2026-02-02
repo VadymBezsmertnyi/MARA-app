@@ -281,7 +281,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         <View style={styles.containerHeader}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsMain);
+              navigation.goBack();
             }}
             style={styles.buttonsHeaderLeft}
           >

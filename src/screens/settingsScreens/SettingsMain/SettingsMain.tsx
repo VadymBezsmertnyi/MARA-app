@@ -27,7 +27,6 @@ import { useLocalesProvider } from "../../../../localization/localization.provid
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 
 // components
-import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
 import { ContainerUser } from "./components/ContainerUser/ContainerUser";
 
@@ -75,9 +74,15 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
       },
       {
         id: "3",
-        name: "Organizator of events",
+        name: "Owner of events",
         icon: "event",
         count: userStats.userRoles.ownerEventIds.length,
+      },
+      {
+        id: "4",
+        name: "Adder of events",
+        icon: "event-note",
+        count: userStats.userRoles.addedEventIds.length,
       },
     ];
   }, [userStats]);
@@ -285,7 +290,11 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           </TouchableOpacity>
         </View>
         <ScrollView>
-          <ContainerUser />
+          <ContainerUser
+            onPressEditProfile={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
+            }}
+          />
 
           <View style={styles.profileSections}>
             {renderSectionItem(
@@ -316,16 +325,6 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
               },
               isLoading
             )}
-          </View>
-
-          <View style={styles.containerFooter}>
-            <ButtonCustom
-              type="transparent"
-              title={i18n._("Setting profile")}
-              onSubmit={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
-              }}
-            />
           </View>
           <View style={styles.containerEmpty} />
         </ScrollView>

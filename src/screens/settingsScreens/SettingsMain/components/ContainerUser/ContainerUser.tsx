@@ -19,7 +19,13 @@ import { IconProfileAvatar } from "../../../../../icons/components";
 // styles
 import { styles } from "./ContainerUser.styles";
 
-export const ContainerUser: FunctionComponent = () => {
+type Props = {
+  onPressEditProfile: () => void;
+};
+
+export const ContainerUser: FunctionComponent<Props> = ({
+  onPressEditProfile,
+}) => {
   const { language } = useLocalesProvider();
   const { userData } = useUserSelector();
   const { placesDB } = usePlacesProvider();
@@ -72,7 +78,10 @@ export const ContainerUser: FunctionComponent = () => {
           )}
         </View>
 
-        <TouchableOpacity style={styles.settingsButton}>
+        <TouchableOpacity
+          style={styles.settingsButton}
+          onPress={onPressEditProfile}
+        >
           <MaterialIcons name="settings" size={24} color="#666" />
         </TouchableOpacity>
       </View>
