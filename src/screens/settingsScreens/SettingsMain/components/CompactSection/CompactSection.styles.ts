@@ -38,58 +38,41 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: "#666",
   },
-  itemsContainer: {
+  contentContainer: {
     gap: 8,
   },
-  itemTouchable: {
-    borderRadius: 8,
-    overflow: "hidden",
-  },
-  item: {
+  topSection: {
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 12,
-    paddingHorizontal: 8,
-    backgroundColor: "#F8F9FA",
-    borderRadius: 8,
+    gap: 8,
   },
-  itemLeft: {
+  leftColumn: {
+    flex: 1,
+  },
+  rightColumn: {
+    flex: 1,
+  },
+  categoryContainer: {
+    borderRadius: 8,
+    padding: 12,
+  },
+  categoryHeader: {
     flexDirection: "row",
     alignItems: "center",
-    flex: 1,
-    gap: 12,
+    gap: 8,
+    marginBottom: 8,
   },
-  itemIcon: {
+  categoryIcon: {
     width: 20,
     height: 20,
   },
-  itemText: {
+  categoryText: {
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
     fontWeight: "600",
     color: "#1A1A1A",
-    flex: 1,
-  },
-  itemRight: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  ratingContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 4,
-  },
-  itemCount: {
-    fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#666",
   },
   subItemsContainer: {
-    marginTop: 8,
-    paddingLeft: 32,
     gap: 4,
   },
   subItem: {
@@ -105,5 +88,44 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: "#666",
+  },
+  bottomSection: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: 16,
+  },
+  bottomItem: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderRadius: 8,
+    padding: 12,
+  },
+  bottomItemLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  bottomItemIcon: {
+    width: 20,
+    height: 20,
+  },
+  bottomItemText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#1A1A1A",
+  },
+  bottomItemCount: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#666",
+  },
+  ratingContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
   },
 });

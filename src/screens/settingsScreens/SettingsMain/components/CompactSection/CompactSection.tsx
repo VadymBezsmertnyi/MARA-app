@@ -39,63 +39,122 @@ export const CompactSectionComponent: FunctionComponent<
           <Text style={styles.loadingText}>Loading...</Text>
         </View>
       ) : (
-        <View style={styles.itemsContainer}>
-          {items.map((item) => (
-            <TouchableOpacity
-              key={item.id}
-              onPress={onPress}
-              disabled={!onPress}
-              style={styles.itemTouchable}
-            >
-              <View style={styles.item}>
-                <View style={styles.itemLeft}>
-                  {item.icon && (
-                    <MaterialIcons
-                      name={item.icon}
-                      size={20}
-                      color={item.color || "#666"}
-                      style={styles.itemIcon}
-                    />
-                  )}
-                  <Text style={styles.itemText}>{item.name}</Text>
-                </View>
-                <View style={styles.itemRight}>
-                  {item.isRating ? (
-                    <View style={styles.ratingContainer}>
-                      <Text style={styles.itemCount}>{item.count}</Text>
-                      <MaterialIcons name="star" size={16} color="#FFD700" />
+        <View style={styles.contentContainer}>
+          <View style={styles.topSection}>
+            <View style={styles.leftColumn}>
+              {items
+                .filter((item) => item.name === "Workshops")
+                .map((item) => (
+                  <View key={item.id} style={styles.categoryContainer}>
+                    <View style={styles.categoryHeader}>
+                      {item.icon && (
+                        <MaterialIcons
+                          name={item.icon}
+                          size={20}
+                          color={item.color || "#666"}
+                          style={styles.categoryIcon}
+                        />
+                      )}
+                      <Text style={styles.categoryText}>{item.name}</Text>
                     </View>
-                  ) : item.count !== undefined ? (
-                    <Text style={styles.itemCount}>{item.count}</Text>
-                  ) : null}
-                  {onPress && (
-                    <MaterialIcons
-                      name="arrow-forward-ios"
-                      size={12}
-                      color="#666"
-                    />
-                  )}
-                </View>
-              </View>
-              {item.subItems && (
-                <View style={styles.subItemsContainer}>
-                  {item.subItems.map((subItem, index) => (
-                    <View key={index} style={styles.subItem}>
+                    {item.subItems && (
+                      <View style={styles.subItemsContainer}>
+                        {item.subItems.map((subItem, index) => (
+                          <View key={index} style={styles.subItem}>
+                            <MaterialIcons
+                              name={subItem.icon}
+                              size={14}
+                              color={subItem.color}
+                              style={styles.subItemIcon}
+                            />
+                            <Text style={styles.subItemText}>
+                              {subItem.label}: {subItem.value}
+                            </Text>
+                          </View>
+                        ))}
+                      </View>
+                    )}
+                  </View>
+                ))}
+            </View>
+            <View style={styles.rightColumn}>
+              {items
+                .filter((item) => item.name === "Events")
+                .map((item) => (
+                  <View key={item.id} style={styles.categoryContainer}>
+                    <View style={styles.categoryHeader}>
+                      {item.icon && (
+                        <MaterialIcons
+                          name={item.icon}
+                          size={20}
+                          color={item.color || "#666"}
+                          style={styles.categoryIcon}
+                        />
+                      )}
+                      <Text style={styles.categoryText}>{item.name}</Text>
+                    </View>
+                    {item.subItems && (
+                      <View style={styles.subItemsContainer}>
+                        {item.subItems.map((subItem, index) => (
+                          <View key={index} style={styles.subItem}>
+                            <MaterialIcons
+                              name={subItem.icon}
+                              size={14}
+                              color={subItem.color}
+                              style={styles.subItemIcon}
+                            />
+                            <Text style={styles.subItemText}>
+                              {subItem.label}: {subItem.value}
+                            </Text>
+                          </View>
+                        ))}
+                      </View>
+                    )}
+                  </View>
+                ))}
+            </View>
+          </View>
+          <View style={styles.bottomSection}>
+            {items
+              .filter((item) => item.name === "Comments")
+              .map((item) => (
+                <View key={item.id} style={styles.bottomItem}>
+                  <View style={styles.bottomItemLeft}>
+                    {item.icon && (
                       <MaterialIcons
-                        name={subItem.icon}
-                        size={14}
-                        color={subItem.color}
-                        style={styles.subItemIcon}
+                        name={item.icon}
+                        size={20}
+                        color={item.color || "#666"}
+                        style={styles.bottomItemIcon}
                       />
-                      <Text style={styles.subItemText}>
-                        {subItem.label}: {subItem.value}
-                      </Text>
-                    </View>
-                  ))}
+                    )}
+                    <Text style={styles.bottomItemText}>{item.name}</Text>
+                  </View>
+                  <Text style={styles.bottomItemCount}>{item.count}</Text>
                 </View>
-              )}
-            </TouchableOpacity>
-          ))}
+              ))}
+            {items
+              .filter((item) => item.name === "Rating")
+              .map((item) => (
+                <View key={item.id} style={styles.bottomItem}>
+                  <View style={styles.bottomItemLeft}>
+                    {item.icon && (
+                      <MaterialIcons
+                        name={item.icon}
+                        size={20}
+                        color={item.color || "#666"}
+                        style={styles.bottomItemIcon}
+                      />
+                    )}
+                    <Text style={styles.bottomItemText}>{item.name}</Text>
+                  </View>
+                  <View style={styles.ratingContainer}>
+                    <Text style={styles.bottomItemCount}>{item.count}</Text>
+                    <MaterialIcons name="star" size={16} color="#FFD700" />
+                  </View>
+                </View>
+              ))}
+          </View>
         </View>
       )}
     </View>

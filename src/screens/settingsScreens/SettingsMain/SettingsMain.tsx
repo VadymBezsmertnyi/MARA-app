@@ -266,7 +266,7 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           />
 
           <View style={styles.profileSections}>
-            <CompactSectionComponent
+            <SectionItemComponent
               title={i18n._("My roles")}
               items={rolesData}
               sectionLoading={isLoading || isFetching}
