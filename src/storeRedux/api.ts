@@ -29,6 +29,14 @@ import {
 } from "./apis/events/apis";
 import { getCurrencies } from "./apis/payment/apis";
 import {
+  getTelegramChannels,
+  getTelegramCategories,
+  getTelegramCountries,
+  getTelegramCities,
+  addTelegramChannel,
+  reportTelegramChannel,
+} from "./apis/telegram-channels/apis";
+import {
   getWorkshops,
   getWorkshopsUser,
   getWorkshopById,
@@ -81,6 +89,13 @@ export const api = createApi({
     changeEventComment: changeEventComment(builder),
     // Payment APIs
     getCurrencies: getCurrencies(builder),
+    // Telegram Channels APIs
+    getTelegramChannels: getTelegramChannels(builder),
+    getTelegramCategories: getTelegramCategories(builder),
+    getTelegramCountries: getTelegramCountries(builder),
+    getTelegramCities: getTelegramCities(builder),
+    addTelegramChannel: addTelegramChannel(builder),
+    reportTelegramChannel: reportTelegramChannel(builder),
     // Workshops APIs
     getWorkshops: getWorkshops(builder),
     getWorkshopsUser: getWorkshopsUser(builder),
@@ -131,6 +146,17 @@ export const {
   // Payment Hooks APIs
   useGetCurrenciesQuery,
   useLazyGetCurrenciesQuery,
+  // Telegram Channels Hooks APIs
+  useGetTelegramChannelsQuery,
+  useLazyGetTelegramChannelsQuery,
+  useGetTelegramCategoriesQuery,
+  useLazyGetTelegramCategoriesQuery,
+  useGetTelegramCountriesQuery,
+  useLazyGetTelegramCountriesQuery,
+  useGetTelegramCitiesQuery,
+  useLazyGetTelegramCitiesQuery,
+  useAddTelegramChannelMutation,
+  useReportTelegramChannelMutation,
   // Workshops Hooks APIs
   useGetWorkshopsQuery,
   useLazyGetWorkshopsQuery,
