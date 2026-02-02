@@ -14,6 +14,194 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Οι ρόλοι μου"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Οι ενέργειές μου"
+
+#. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Δεν είναι δυνατό το άνοιγμα του URL του καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Αποτυχία φόρτωσης καναλιών telegram"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Βοήθεια και πόροι"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Προσθήκη καναλιού Telegram"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Αναζήτηση καναλιών..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Ενεργά φίλτρα:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Κατηγορία"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Χώρα"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Μόνο επαληθευμένα"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Ταξινόμηση κατά"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Φόρτωση καναλιών..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Άνοιγμα καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Αναφορά"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Αναφορά καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Είστε σίγουροι ότι θέλετε να αναφέρετε αυτόν τον καναλό;"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "Επαληθευμένο από AI"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Κανάλι Telegram"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "αναφορές"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "Κατά όνομα:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "αλφαβητικά"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "Κατά κατηγορία:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "ομαδοποιημένα κατά κατηγορία"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "Κατά επαλήθευσης:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "επαληθευμένα πρώτα"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Μόνο επαληθευμένα"
+
+#. js-lingui-explicit-id
+msgid "Clear Filters"
+msgstr "Εκκαθάριση φίλτρων"
+
+#. js-lingui-explicit-id
+msgid "Apply Filters"
+msgstr "Εφαρμογή φίλτρων"
+
+#. js-lingui-explicit-id
+msgid "Add Channel"
+msgstr "Προσθήκη καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Please fill all required fields"
+msgstr "Παρακαλώ συμπληρώστε όλα τα απαιτούμενα πεδία"
+
+#. js-lingui-explicit-id
+msgid "Channel submitted for review"
+msgstr "Ο καναλός υποβλήθηκε για έλεγχο"
+
+#. js-lingui-explicit-id
+msgid "Failed to add channel"
+msgstr "Αποτυχία προσθήκης καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram Channel"
+msgstr "Προσθήκη καναλιού Telegram"
+
+#. js-lingui-explicit-id
+msgid "You can add a telegram channel"
+msgstr "Μπορείτε να προσθέσετε έναν καναλό telegram"
+
+#. js-lingui-explicit-id
+msgid "Enter channel name"
+msgstr "Εισαγάγετε το όνομα του καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Channel Name"
+msgstr "Όνομα καναλιού"
+
+#. js-lingui-explicit-id
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname ή @channelname"
+
+#. js-lingui-explicit-id
+msgid "Channel URL"
+msgstr "URL καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Enter channel description"
+msgstr "Εισαγάγετε την περιγραφή του καναλιού"
+
+#. js-lingui-explicit-id
+msgid "Select location..."
+msgstr "Επιλογή τοποθεσίας..."
+
+#. js-lingui-explicit-id
+msgid "Search country..."
+msgstr "Αναζήτηση χώρας..."
+
+#. js-lingui-explicit-id
+msgid "Search city..."
+msgstr "Αναζήτηση πόλης..."
+
+#. js-lingui-explicit-id
+msgid "No results found"
+msgstr "Δεν βρέθηκαν αποτελέσματα"
+
+#. js-lingui-explicit-id
+msgid "Report on event"
+msgstr "Αναφορά εκδήλωσης"
+
+#. js-lingui-explicit-id
+msgid "Report on workshop"
+msgstr "Αναφορά εργαστηρίου"
+
+#. js-lingui-explicit-id
+msgid "Report on telegram channel"
+msgstr "Αναφορά καναλιού telegram"
+
+#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Συντήρηση"
 
@@ -191,7 +379,7 @@ msgstr "Αερογραφία οποιασδήποτε πολυπλοκότητα
 
 #. js-lingui-explicit-id
 msgid "Wait please before the next update"
-msgstr ""
+msgstr "Παρακαλώ περιμένετε πριν την επόμενη ενημέρωση"
 
 #. js-lingui-explicit-id
 msgid "Workshops"
@@ -207,19 +395,19 @@ msgstr "Εισάγετε το όνομα του εργαστηρίου ή τον
 
 #. js-lingui-explicit-id
 msgid "Sorry, but no workshops were found by the filters"
-msgstr ""
+msgstr "Λυπούμαστε, αλλά δεν βρέθηκαν εργαστήρια σύμφωνα με τα φίλτρα"
 
 #. js-lingui-explicit-id
 msgid "Sorry, there are no upcoming workshops"
-msgstr ""
+msgstr "Λυπούμαστε, δεν υπάρχουν επερχόμενα εργαστήρια"
 
 #. js-lingui-explicit-id
 msgid "Geolocation disabled for calculation"
-msgstr ""
+msgstr "Γεωτοποθέσία απενεργοποιημένη για υπολογισμό"
 
 #. js-lingui-explicit-id
 msgid "Cannot calculate"
-msgstr ""
+msgstr "Δεν μπορεί να υπολογιστεί"
 
 #. js-lingui-explicit-id
 msgid "km"
@@ -227,7 +415,7 @@ msgstr "χλμ"
 
 #. js-lingui-explicit-id
 msgid "Not comments"
-msgstr ""
+msgstr "Χωρίς σχόλια"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
@@ -235,35 +423,35 @@ msgstr "Κουμπί για κλείσιμο του παραθύρου modal"
 
 #. js-lingui-explicit-id
 msgid "By distance:"
-msgstr ""
+msgstr "Απόσταση:"
 
 #. js-lingui-explicit-id
 msgid "from closest to farthest"
-msgstr ""
+msgstr "από το κοντινότερο στο πιο μακρινό"
 
 #. js-lingui-explicit-id
 msgid "Getting location..."
-msgstr ""
+msgstr "Λήψη τοποθεσίας..."
 
 #. js-lingui-explicit-id
 msgid "To calculate distance, please enable location services"
-msgstr ""
+msgstr "Για να υπολογίσετε την απόσταση, παρακαλώ ενεργοποιήστε τις υπηρεσίες τοποθεσίας"
 
 #. js-lingui-explicit-id
 msgid "Enable location"
-msgstr ""
+msgstr "Ενεργοποίηση τοποθεσίας"
 
 #. js-lingui-explicit-id
 msgid "By rating:"
-msgstr ""
+msgstr "Αξιολόγηση:"
 
 #. js-lingui-explicit-id
 msgid "from highest to lowest"
-msgstr ""
+msgstr "από την υψηλότερη στη χαμηλότερη"
 
 #. js-lingui-explicit-id
 msgid "By number of comments:"
-msgstr ""
+msgstr "Αριθμός σχολίων:"
 
 #. js-lingui-explicit-id
 msgid "Not information"
@@ -303,7 +491,7 @@ msgstr "Απόσταση, χιλιόμετρα:"
 
 #. js-lingui-explicit-id
 msgid "Only with rating:"
-msgstr ""
+msgstr "Μόνο με αξιολόγηση:"
 
 #. js-lingui-explicit-id
 msgid "All works"
@@ -323,11 +511,11 @@ msgstr "Σφάλμα"
 
 #. js-lingui-explicit-id
 msgid "Unable to like the workshop"
-msgstr ""
+msgstr "Δεν είναι δυνατό το like στο εργαστήριο"
 
 #. js-lingui-explicit-id
 msgid "Failed to create share link"
-msgstr ""
+msgstr "Αποτυχία δημιουργίας συνδέσμου κοινοποίησης"
 
 #. js-lingui-explicit-id
 msgid ""
@@ -340,11 +528,11 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Share workshop"
-msgstr ""
+msgstr "Κοινοποίηση εργαστηρίου"
 
 #. js-lingui-explicit-id
 msgid "Failed to send SMS"
-msgstr ""
+msgstr "Αποτυχία αποστολής SMS"
 
 #. js-lingui-explicit-id
 msgid "Success"
@@ -352,11 +540,11 @@ msgstr "Επιτυχία"
 
 #. js-lingui-explicit-id
 msgid "Everything is successful and this is your business"
-msgstr ""
+msgstr "Όλα είναι επιτυχημένα και αυτή είναι η επιχείρησή σας"
 
 #. js-lingui-explicit-id
 msgid "Invalid or expired code"
-msgstr ""
+msgstr "Μη έγκυρος ή ληγμένος κωδικός"
 
 #. js-lingui-explicit-id
 msgid "Workshop"
@@ -364,43 +552,43 @@ msgstr "Εργαστήρι"
 
 #. js-lingui-explicit-id
 msgid "Unable to calculate distance, location is disabled"
-msgstr ""
+msgstr "Δεν είναι δυνατός ο υπολογισμός απόστασης, η τοποθεσία είναι απενεργοποιημένη"
 
 #. js-lingui-explicit-id
 msgid "Contacts unknown"
-msgstr ""
+msgstr "Άγνωστες επαφές"
 
 #. js-lingui-explicit-id
 msgid "About us:"
-msgstr ""
+msgstr "Σχετικά με εμάς:"
 
 #. js-lingui-explicit-id
 msgid "Read the whole description..."
-msgstr ""
+msgstr "Διαβάστε ολόκληρη την περιγραφή..."
 
 #. js-lingui-explicit-id
 msgid "This business has not been confirmed by the owner"
-msgstr ""
+msgstr "Αυτή η επιχείρηση δεν έχει επιβεβαιωθεί από τον ιδιοκτήτη"
 
 #. js-lingui-explicit-id
 msgid "Confirm business"
-msgstr ""
+msgstr "Επιβεβαίωση επιχείρησης"
 
 #. js-lingui-explicit-id
 msgid "Report on business"
-msgstr ""
+msgstr "Αναφορά επιχείρησης"
 
 #. js-lingui-explicit-id
 msgid "Working hours unknown"
-msgstr ""
+msgstr "Άγνωστες ώρες εργασίας"
 
 #. js-lingui-explicit-id
 msgid "Day off"
-msgstr ""
+msgstr "Ημέρα αργίας"
 
 #. js-lingui-explicit-id
 msgid "Working hours"
-msgstr ""
+msgstr "Ώρες εργασίας"
 
 #. js-lingui-explicit-id
 msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
@@ -412,7 +600,7 @@ msgstr "Το κείμενο πρέπει να περιέχει τουλάχισ�
 
 #. js-lingui-explicit-id
 msgid "Leave a review"
-msgstr ""
+msgstr "Αφήστε μια κριτική"
 
 #. js-lingui-explicit-id
 msgid "Name"
@@ -436,11 +624,11 @@ msgstr "Δημοσίευση"
 
 #. js-lingui-explicit-id
 msgid "The work we do:"
-msgstr ""
+msgstr "Η δουλειά που κάνουμε:"
 
 #. js-lingui-explicit-id
 msgid "Reviews:"
-msgstr ""
+msgstr "Κριτικές:"
 
 #. js-lingui-explicit-id
 msgid "Draft the first review"
@@ -456,87 +644,87 @@ msgstr "Γράψτε μια αναθεώρηση"
 
 #. js-lingui-explicit-id
 msgid "Monday"
-msgstr ""
+msgstr "Δευτέρα"
 
 #. js-lingui-explicit-id
 msgid "Mon"
-msgstr ""
+msgstr "Δευ"
 
 #. js-lingui-explicit-id
 msgid "Tuesday"
-msgstr ""
+msgstr "Τρίτη"
 
 #. js-lingui-explicit-id
 msgid "Tue"
-msgstr ""
+msgstr "Τρι"
 
 #. js-lingui-explicit-id
 msgid "Wednesday"
-msgstr ""
+msgstr "Τετάρτη"
 
 #. js-lingui-explicit-id
 msgid "Wed"
-msgstr ""
+msgstr "Τετ"
 
 #. js-lingui-explicit-id
 msgid "Thursday"
-msgstr ""
+msgstr "Πέμπτη"
 
 #. js-lingui-explicit-id
 msgid "Thu"
-msgstr ""
+msgstr "Πεμ"
 
 #. js-lingui-explicit-id
 msgid "Friday"
-msgstr ""
+msgstr "Παρασκευή"
 
 #. js-lingui-explicit-id
 msgid "Fri"
-msgstr ""
+msgstr "Παρ"
 
 #. js-lingui-explicit-id
 msgid "Saturday"
-msgstr ""
+msgstr "Σάββατο"
 
 #. js-lingui-explicit-id
 msgid "Sat"
-msgstr ""
+msgstr "Σαβ"
 
 #. js-lingui-explicit-id
 msgid "Sunday"
-msgstr ""
+msgstr "Κυριακή"
 
 #. js-lingui-explicit-id
 msgid "Sun"
-msgstr ""
+msgstr "Κυρ"
 
 #. js-lingui-explicit-id
 msgid "Phone"
-msgstr ""
+msgstr "Τηλέφωνο"
 
 #. js-lingui-explicit-id
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #. js-lingui-explicit-id
 msgid "Viber"
-msgstr ""
+msgstr "Viber"
 
 #. js-lingui-explicit-id
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #. js-lingui-explicit-id
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #. js-lingui-explicit-id
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #. js-lingui-explicit-id
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #. js-lingui-explicit-id
 msgid "workshop"
@@ -560,7 +748,7 @@ msgstr "Σφάλμα κατά τη δημιουργία του εργαστηρ�
 
 #. js-lingui-explicit-id
 msgid "Unable to delete the workshop"
-msgstr ""
+msgstr "Δεν είναι δυνατή η διαγραφή του εργαστηρίου"
 
 #. js-lingui-explicit-id
 msgid "Change workshop"
@@ -584,7 +772,7 @@ msgstr "Εισαγωγή διεύθυνσης"
 
 #. js-lingui-explicit-id
 msgid "Contacts"
-msgstr ""
+msgstr "Επαφές"
 
 #. js-lingui-explicit-id
 msgid "Phone number"
@@ -592,7 +780,7 @@ msgstr "Αριθμός τηλεφώνου"
 
 #. js-lingui-explicit-id
 msgid "Add contact type"
-msgstr ""
+msgstr "Προσθήκη τύπου επαφής"
 
 #. js-lingui-explicit-id
 msgid "Type workshop"
@@ -612,15 +800,15 @@ msgstr "Επιλέξτε τύπους εργασίας"
 
 #. js-lingui-explicit-id
 msgid "You can add up to 5 phone numbers"
-msgstr ""
+msgstr "Μπορείτε να προσθέσετε έως 5 αριθμούς τηλεφώνου"
 
 #. js-lingui-explicit-id
 msgid "This contact type has already been added"
-msgstr ""
+msgstr "Αυτός ο τύπος επαφής έχει ήδη προστεθεί"
 
 #. js-lingui-explicit-id
 msgid "Edit"
-msgstr ""
+msgstr "Επεξεργασία"
 
 #. js-lingui-explicit-id
 msgid "Save"
@@ -632,7 +820,7 @@ msgstr "Ακύρωση"
 
 #. js-lingui-explicit-id
 msgid "My workshops"
-msgstr ""
+msgstr "Τα εργαστήριά μου"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings workshops screen"
@@ -640,31 +828,27 @@ msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων ε�
 
 #. js-lingui-explicit-id
 msgid "All"
-msgstr ""
+msgstr "Όλα"
 
 #. js-lingui-explicit-id
 msgid "Created by me"
-msgstr ""
+msgstr "Δημιουργήθηκε από εμένα"
 
 #. js-lingui-explicit-id
 msgid "Mine"
-msgstr ""
+msgstr "Δικά μου"
 
 #. js-lingui-explicit-id
 msgid "Sorry!"
-msgstr ""
+msgstr "Λυπούμαστε!"
 
 #. js-lingui-explicit-id
 msgid "You don't have {typeItem}."
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Αγοράστε εργαστήριο"
+msgstr "Δεν έχετε {typeItem}."
 
 #. js-lingui-explicit-id
 msgid "Select phone number"
-msgstr ""
+msgstr "Επιλογή αριθμού τηλεφώνου"
 
 #. js-lingui-explicit-id
 msgid "Confirm"
@@ -672,27 +856,27 @@ msgstr "Επιβεβαιώστε"
 
 #. js-lingui-explicit-id
 msgid "Enter verification code"
-msgstr ""
+msgstr "Εισαγωγή κωδικού επαλήθευσης"
 
 #. js-lingui-explicit-id
 msgid "Enter 6-digit code"
-msgstr ""
+msgstr "Εισαγωγή 6-ψήφιου κωδικού"
 
 #. js-lingui-explicit-id
 msgid "Under review"
-msgstr ""
+msgstr "Υπό επεξεργασία"
 
 #. js-lingui-explicit-id
 msgid "Verified"
-msgstr ""
+msgstr "Επαληθευμένο"
 
 #. js-lingui-explicit-id
 msgid "Rejected"
-msgstr ""
+msgstr "Απορρίφθηκε"
 
 #. js-lingui-explicit-id
 msgid "Confirm ownership"
-msgstr ""
+msgstr "Επιβεβαίωση ιδιοκτησίας"
 
 #. js-lingui-explicit-id
 msgid "Error: incorrect phone number"
@@ -728,11 +912,11 @@ msgstr "Πίσω"
 
 #. js-lingui-explicit-id
 msgid "Profile"
-msgstr ""
+msgstr "Προφίλ"
 
 #. js-lingui-explicit-id
 msgid "Logout"
-msgstr ""
+msgstr "Αποσύνδεση"
 
 #. js-lingui-explicit-id
 msgid "First Name"
@@ -760,11 +944,11 @@ msgstr "Η φωτογραφία δεν άλλαξε"
 
 #. js-lingui-explicit-id
 msgid "Info"
-msgstr ""
+msgstr "Πληροφορίες"
 
 #. js-lingui-explicit-id
 msgid "The photo has been deleted"
-msgstr ""
+msgstr "Η φωτογραφία έχει διαγραφεί"
 
 #. js-lingui-explicit-id
 msgid "Delete"
@@ -776,7 +960,7 @@ msgstr "Αλλαγή"
 
 #. js-lingui-explicit-id
 msgid "Your profile"
-msgstr ""
+msgstr "Το προφίλ σας"
 
 #. js-lingui-explicit-id
 msgid "Your workshops"
@@ -787,36 +971,12 @@ msgid "Your events"
 msgstr "Τα συμβάντα σας"
 
 #. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Ρύθμιση προφίλ"
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Προσθήκη"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Αγοράστε επιπλέον"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Χρησιμοποιημένο: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Διαθέσιμο: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Ενεργό"
-
-#. js-lingui-explicit-id
 msgid "events"
 msgstr "εκδηλώσεις"
 
 #. js-lingui-explicit-id
 msgid "My events"
-msgstr ""
+msgstr "Οι εκδηλώσεις μου"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the settings events screen"
@@ -824,19 +984,15 @@ msgstr "Κουμπί για κλείσιμο οθόνης ρυθμίσεων ε�
 
 #. js-lingui-explicit-id
 msgid "Upcoming events"
-msgstr ""
+msgstr "Επερχόμενες εκδηλώσεις"
 
 #. js-lingui-explicit-id
 msgid "Past events"
-msgstr ""
+msgstr "Προηγούμενες εκδηλώσεις"
 
 #. js-lingui-explicit-id
 msgid "Add event"
 msgstr "Προσθήκη εκδήλωσης"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Αγοράστε εκδήλωση"
 
 #. js-lingui-explicit-id
 msgid "Terms of Use"
@@ -848,7 +1004,7 @@ msgstr "Πολιτική Απορρήτου"
 
 #. js-lingui-explicit-id
 msgid "Terms of Service"
-msgstr ""
+msgstr "Όροι Υπηρεσίας"
 
 #. js-lingui-explicit-id
 msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
@@ -896,7 +1052,7 @@ msgstr "Συμπληρώστε αργότερα"
 
 #. js-lingui-explicit-id
 msgid "Settings"
-msgstr ""
+msgstr "Ρυθμίσεις"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the menu settings screen"
@@ -960,6 +1116,22 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "No date"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Ναι"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Όχι"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Location"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -1032,10 +1204,6 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Clear location filter"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Location"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -1248,10 +1416,6 @@ msgid "Description (optional)"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Description"
-msgstr ""
-
-#. js-lingui-explicit-id
 msgid "Start"
 msgstr ""
 
@@ -1305,7 +1469,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Main"
-msgstr ""
+msgstr "Κύριο"
 
 #. js-lingui-explicit-id
 msgid "Create workshop"
@@ -1313,15 +1477,15 @@ msgstr "Δημιουργία εργαστηρίου"
 
 #. js-lingui-explicit-id
 msgid "Map"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Help"
-msgstr ""
+msgstr "Χάρτης"
 
 #. js-lingui-explicit-id
 msgid "Select tab {tabName}"
 msgstr "Επιλογή καρτέλας {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr "Βοήθεια"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -1457,11 +1621,11 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Password must contain at least 8 characters"
-msgstr ""
+msgstr "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες"
 
 #. js-lingui-explicit-id
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
 
 #. js-lingui-explicit-id
 msgid "Select"
@@ -1470,22 +1634,6 @@ msgstr "Επιλέξτε"
 #. js-lingui-explicit-id
 msgid "The price of the item"
 msgstr "Η τιμή του αντικειμένου"
-
-#. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Προσοχή!"
-
-#. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "Δυστυχώς, επί του παρόντος είναι αδύνατο να αυξηθεί ο αριθμός των διαθέσιμων διαφημίσεων, εργαστηρίων ή εκδηλώσεων, καθώς η εφαρμογή βρίσκεται σε δοκιμαστική λειτουργία. Εάν έχετε οποιεσδήποτε απορίες, παρακαλούμε επικοινωνήστε με τη διαχείριση ή αφήστε σχόλια."
-
-#. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- ή --"
-
-#. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Σας ευχαριστούμε για την κατανόηση!"
 
 #. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
@@ -1584,14 +1732,6 @@ msgid "Are you sure you want to delete?"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Yes"
-msgstr "Ναι"
-
-#. js-lingui-explicit-id
-msgid "No"
-msgstr "Όχι"
-
-#. js-lingui-explicit-id
 msgid "Decrease the maximum number"
 msgstr "Μειώστε το μέγιστο αριθμό"
 
@@ -1625,7 +1765,7 @@ msgstr "Εναλλαγή σαν προϊόν"
 
 #. js-lingui-explicit-id
 msgid "Language selection"
-msgstr ""
+msgstr "Επιλογή γλώσσας"
 
 #. js-lingui-explicit-id
 msgid "Press and enter to search for a city"

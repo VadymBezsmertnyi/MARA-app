@@ -14,6 +14,194 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Roolini"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Toimintani"
+
+#. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Kanavan URL-osoitetta ei voi avata"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Telegram-kanavien lataus epäonnistui"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Apua ja resursseja"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Lisää Telegram-kanava"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Etsi kanavia..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Aktiiviset suodattimet:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategoria"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Maa"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Vain vahvistetut"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Järjestä"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Ladataan kanavia..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Avaa kanava"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Raportoi"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Raportoi kanava"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Haluatko varmasti raportoida tämän kanavan?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "Tekoäly vahvistama"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Telegram-kanava"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "raportit"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "Nimen mukaan:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "aakkosjärjestyksessä"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "Kategorian mukaan:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "ryhmitelty kategorian mukaan"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "Vahvistuksen mukaan:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "vahvistetut ensin"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Vain vahvistetut"
+
+#. js-lingui-explicit-id
+msgid "Clear Filters"
+msgstr "Tyhjennä suodattimet"
+
+#. js-lingui-explicit-id
+msgid "Apply Filters"
+msgstr "Käytä suodattimia"
+
+#. js-lingui-explicit-id
+msgid "Add Channel"
+msgstr "Lisää kanava"
+
+#. js-lingui-explicit-id
+msgid "Please fill all required fields"
+msgstr "Täytä kaikki vaaditut kentät"
+
+#. js-lingui-explicit-id
+msgid "Channel submitted for review"
+msgstr "Kanava lähetetty tarkistettavaksi"
+
+#. js-lingui-explicit-id
+msgid "Failed to add channel"
+msgstr "Kanavan lisääminen epäonnistui"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram Channel"
+msgstr "Lisää Telegram-kanava"
+
+#. js-lingui-explicit-id
+msgid "You can add a telegram channel"
+msgstr "Voit lisätä telegram-kanavan"
+
+#. js-lingui-explicit-id
+msgid "Enter channel name"
+msgstr "Syötä kanavan nimi"
+
+#. js-lingui-explicit-id
+msgid "Channel Name"
+msgstr "Kanavan nimi"
+
+#. js-lingui-explicit-id
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname tai @channelname"
+
+#. js-lingui-explicit-id
+msgid "Channel URL"
+msgstr "Kanavan URL"
+
+#. js-lingui-explicit-id
+msgid "Enter channel description"
+msgstr "Syötä kanavan kuvaus"
+
+#. js-lingui-explicit-id
+msgid "Select location..."
+msgstr "Valitse sijainti..."
+
+#. js-lingui-explicit-id
+msgid "Search country..."
+msgstr "Etsi maa..."
+
+#. js-lingui-explicit-id
+msgid "Search city..."
+msgstr "Etsi kaupunki..."
+
+#. js-lingui-explicit-id
+msgid "No results found"
+msgstr "Tuloksia ei löytynyt"
+
+#. js-lingui-explicit-id
+msgid "Report on event"
+msgstr "Raportoi tapahtumasta"
+
+#. js-lingui-explicit-id
+msgid "Report on workshop"
+msgstr "Raportoi työpajasta"
+
+#. js-lingui-explicit-id
+msgid "Report on telegram channel"
+msgstr "Raportoi telegram-kanavasta"
+
+#. js-lingui-explicit-id
 msgid "Maintenance"
 msgstr "Huolto"
 
@@ -659,10 +847,6 @@ msgid "You don't have {typeItem}."
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Osta työpaja"
-
-#. js-lingui-explicit-id
 msgid "Select phone number"
 msgstr ""
 
@@ -787,30 +971,6 @@ msgid "Your events"
 msgstr "Tapahtumasi"
 
 #. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Profiilin asetukset"
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Lisää"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Osta lisäksi"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Käytetty: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Saatavilla: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Aktiivinen"
-
-#. js-lingui-explicit-id
 msgid "events"
 msgstr "tapahtumat"
 
@@ -833,10 +993,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Add event"
 msgstr "Lisää tapahtuma"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Osta tapahtuma"
 
 #. js-lingui-explicit-id
 msgid "Terms of Use"
@@ -963,6 +1119,22 @@ msgid "No date"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Yes"
+msgstr "Kyllä"
+
+#. js-lingui-explicit-id
+msgid "No"
+msgstr "Ei"
+
+#. js-lingui-explicit-id
+msgid "Description"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Location"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Events"
 msgstr "Tapahtumat"
 
@@ -1032,10 +1204,6 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Clear location filter"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Location"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -1248,10 +1416,6 @@ msgid "Description (optional)"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Description"
-msgstr ""
-
-#. js-lingui-explicit-id
 msgid "Start"
 msgstr ""
 
@@ -1316,12 +1480,12 @@ msgid "Map"
 msgstr ""
 
 #. js-lingui-explicit-id
-msgid "Help"
-msgstr ""
-
-#. js-lingui-explicit-id
 msgid "Select tab {tabName}"
 msgstr "Valitse välilehti {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -1472,22 +1636,6 @@ msgid "The price of the item"
 msgstr "Kohteen hinta"
 
 #. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Huomio!"
-
-#. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "Valitettavasti tällä hetkellä ei ole mahdollista lisätä saatavilla olevien mainosten, työpajojen tai tapahtumien määrää, koska sovellus on testitilassa. Jos sinulla on kysyttävää, ota yhteyttä hallintoon tai jätä palautetta."
-
-#. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- tai --"
-
-#. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Kiitos ymmärryksestä!"
-
-#. js-lingui-explicit-id
 msgid "Types of work for motorcycle transport:"
 msgstr ""
 
@@ -1582,14 +1730,6 @@ msgstr ""
 #. js-lingui-explicit-id
 msgid "Are you sure you want to delete?"
 msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Yes"
-msgstr "Kyllä"
-
-#. js-lingui-explicit-id
-msgid "No"
-msgstr "Ei"
 
 #. js-lingui-explicit-id
 msgid "Decrease the maximum number"
