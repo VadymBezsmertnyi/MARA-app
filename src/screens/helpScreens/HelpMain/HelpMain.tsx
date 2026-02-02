@@ -22,6 +22,7 @@ import { TTelegramChannelCategory } from "../../../storeRedux/apis/telegram-chan
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 
 // API
@@ -46,6 +47,7 @@ type HelpMainProps = {
 
 export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
   const { heightStatusBar } = useThemeProvider();
+  const { i18n } = useLocalesProvider();
   const userData = useUserSelector();
   const [selectedCategory, setSelectedCategory] =
     useState<TTelegramChannelCategory | null>(null);
@@ -105,7 +107,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
       !channelCategory ||
       !userData?.userData?._id
     ) {
-      Alert.alert("Error", "Please fill all required fields");
+      Alert.alert(i18n._("Error"), i18n._("Please fill all required fields"));
       return;
     }
 
@@ -122,8 +124,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
 
       Toast.show({
         type: "success",
-        text1: "Success",
-        text2: "Channel submitted for review",
+        text1: i18n._("Success"),
+        text2: i18n._("Channel submitted for review"),
         position: "top",
         visibilityTime: 3000,
       });
@@ -138,8 +140,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
     } catch (error: any) {
       Toast.show({
         type: "error",
-        text1: "Error",
-        text2: error.message || "Failed to add channel",
+        text1: i18n._("Error"),
+        text2: error.message || i18n._("Failed to add channel"),
         position: "top",
         visibilityTime: 3000,
       });
@@ -148,12 +150,12 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
 
   const handleReportChannel = async (channelId: string) => {
     Alert.alert(
-      "Report Channel",
-      "Are you sure you want to report this channel?",
+      i18n._("Report Channel"),
+      i18n._("Are you sure you want to report this channel?"),
       [
-        { text: "Cancel", style: "cancel" },
+        { text: i18n._("Cancel"), style: "cancel" },
         {
-          text: "Report",
+          text: i18n._("Report"),
           style: "destructive",
           onPress: async () => {
             try {
@@ -167,16 +169,16 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
 
               Toast.show({
                 type: "success",
-                text1: "Reported",
-                text2: "Channel has been reported",
+                text1: i18n._("Reported"),
+                text2: i18n._("Channel has been reported"),
                 position: "top",
                 visibilityTime: 3000,
               });
             } catch (error: any) {
               Toast.show({
                 type: "error",
-                text1: "Error",
-                text2: error.message || "Failed to report channel",
+                text1: i18n._("Error"),
+                text2: error.message || i18n._("Failed to report channel"),
                 position: "top",
                 visibilityTime: 3000,
               });
@@ -191,8 +193,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
     Linking.openURL(url).catch(() => {
       Toast.show({
         type: "error",
-        text1: "Error",
-        text2: "Cannot open channel URL",
+        text1: i18n._("Error"),
+        text2: i18n._("Cannot open channel URL"),
         position: "top",
         visibilityTime: 3000,
       });
@@ -210,8 +212,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
     if (channelsError)
       Toast.show({
         type: "error",
-        text1: "Error",
-        text2: "Failed to load telegram channels",
+        text1: i18n._("Error"),
+        text2: i18n._("Failed to load telegram channels"),
         position: "top",
         visibilityTime: 3000,
       });
@@ -219,30 +221,25 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
 
   return (
     <View style={containerStyles}>
-      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <MaterialIcons name="arrow-back" size={24} color="#007AFF" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Help & Resources</Text>
+        <Text style={styles.headerTitle}>{i18n._("Help & Resources")}</Text>
         <TouchableOpacity onPress={() => setShowAddModal(true)}>
           <MaterialIcons name="add" size={24} color="#007AFF" />
         </TouchableOpacity>
       </View>
-
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
         style={styles.content}
       >
-        {/* Filters Section */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Filters</Text>
-
-          {/* Category Filter */}
+          <Text style={styles.sectionTitle}>{i18n._("Filters")}</Text>
           <View style={styles.filterRow}>
-            <Text style={styles.filterLabel}>Category:</Text>
+            <Text style={styles.filterLabel}>{i18n._("Category")}:</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {categoriesData?.data?.map((category: any) => (
                 <TouchableOpacity
@@ -273,10 +270,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
               ))}
             </ScrollView>
           </View>
-
-          {/* Country Filter */}
           <View style={styles.filterRow}>
-            <Text style={styles.filterLabel}>Country:</Text>
+            <Text style={styles.filterLabel}>{i18n._("Country")}:</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {countriesData?.data?.map((country: string) => (
                 <TouchableOpacity
@@ -289,7 +284,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                     setSelectedCountry(
                       selectedCountry === country ? "" : country
                     );
-                    setSelectedCity(""); // Reset city when country changes
+                    setSelectedCity("");
                   }}
                 >
                   <Text
@@ -305,11 +300,9 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
               ))}
             </ScrollView>
           </View>
-
-          {/* City Filter */}
           {selectedCountry && (
             <View style={styles.filterRow}>
-              <Text style={styles.filterLabel}>City:</Text>
+              <Text style={styles.filterLabel}>{i18n._("City")}:</Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {citiesData?.data?.map((city: string) => (
                   <TouchableOpacity
@@ -335,10 +328,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
               </ScrollView>
             </View>
           )}
-
-          {/* Verified Filter */}
           <View style={styles.filterRow}>
-            <Text style={styles.filterLabel}>Verified Only:</Text>
+            <Text style={styles.filterLabel}>{i18n._("Verified Only")}:</Text>
             <TouchableOpacity
               style={[
                 styles.filterChip,
@@ -363,22 +354,23 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
             selectedCity ||
             verifiedOnly) && (
             <TouchableOpacity style={styles.clearButton} onPress={clearFilters}>
-              <Text style={styles.clearButtonText}>Clear Filters</Text>
+              <Text style={styles.clearButtonText}>
+                {i18n._("Clear Filters")}
+              </Text>
             </TouchableOpacity>
           )}
         </View>
-
-        {/* Channels List */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>
-            Telegram Channels ({channelsData?.data?.pagination?.totalItems || 0}
-            )
+            {i18n._("Telegram Channels")} (
+            {channelsData?.data?.pagination?.totalItems || 0})
           </Text>
-
           {channelsLoading ? (
             <View style={styles.loadingContainer}>
               <ActivityIndicator size="large" color="#007AFF" />
-              <Text style={styles.loadingText}>Loading channels...</Text>
+              <Text style={styles.loadingText}>
+                {i18n._("Loading channels...")}
+              </Text>
             </View>
           ) : (
             channelsData?.data?.channels?.map((channel: any) => (
@@ -415,19 +407,22 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                           size={16}
                           color="#4CAF50"
                         />
-                        <Text style={styles.verifiedText}>Verified</Text>
+                        <Text style={styles.verifiedText}>
+                          {i18n._("Verified")}
+                        </Text>
                       </View>
                     )}
                   </View>
                 </View>
-
                 <View style={styles.channelActions}>
                   <TouchableOpacity
                     style={styles.channelButton}
                     onPress={() => handleOpenChannel(channel.channelUrl)}
                   >
                     <MaterialIcons name="telegram" size={20} color="#0088CC" />
-                    <Text style={styles.channelButtonText}>Open Channel</Text>
+                    <Text style={styles.channelButtonText}>
+                      {i18n._("Open Channel")}
+                    </Text>
                   </TouchableOpacity>
 
                   <TouchableOpacity
@@ -436,7 +431,9 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                     disabled={reportChannelLoading}
                   >
                     <MaterialIcons name="flag" size={20} color="#F44336" />
-                    <Text style={styles.reportButtonText}>Report</Text>
+                    <Text style={styles.reportButtonText}>
+                      {i18n._("Report")}
+                    </Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -444,8 +441,6 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
           )}
         </View>
       </ScrollView>
-
-      {/* Add Channel Modal */}
       <Modal
         visible={showAddModal}
         animationType="slide"
@@ -457,20 +452,21 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
             <TouchableOpacity onPress={() => setShowAddModal(false)}>
               <MaterialIcons name="close" size={24} color="#007AFF" />
             </TouchableOpacity>
-            <Text style={styles.modalTitle}>Add Telegram Channel</Text>
+            <Text style={styles.modalTitle}>
+              {i18n._("Add Telegram Channel")}
+            </Text>
             <TouchableOpacity
               onPress={handleAddChannel}
               disabled={addChannelLoading}
             >
               <Text style={styles.modalSaveButton}>
-                {addChannelLoading ? "Adding..." : "Add"}
+                {addChannelLoading ? i18n._("Adding...") : i18n._("Add")}
               </Text>
             </TouchableOpacity>
           </View>
-
           <ScrollView style={styles.modalContent}>
             <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>Channel Name *</Text>
+              <Text style={styles.formLabel}>{i18n._("Channel Name")} *</Text>
               <TextInput
                 style={styles.formInput}
                 value={channelName}
@@ -478,9 +474,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                 placeholder="Enter channel name"
               />
             </View>
-
             <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>Channel URL *</Text>
+              <Text style={styles.formLabel}>{i18n._("Channel URL")} *</Text>
               <TextInput
                 style={styles.formInput}
                 value={channelUrl}
@@ -489,7 +484,6 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                 keyboardType="url"
               />
             </View>
-
             <View style={styles.formGroup}>
               <Text style={styles.formLabel}>Description</Text>
               <TextInput
@@ -501,7 +495,6 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                 numberOfLines={3}
               />
             </View>
-
             <View style={styles.formGroup}>
               <Text style={styles.formLabel}>Category *</Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -528,7 +521,6 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                 ))}
               </ScrollView>
             </View>
-
             <View style={styles.formGroup}>
               <Text style={styles.formLabel}>Country</Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -554,7 +546,6 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
                 ))}
               </ScrollView>
             </View>
-
             {channelCountry && (
               <View style={styles.formGroup}>
                 <Text style={styles.formLabel}>City</Text>
