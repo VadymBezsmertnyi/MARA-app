@@ -26,6 +26,9 @@ import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useUserSelector } from "../../../storeRedux/apis/user/slice";
 
+// components
+import { ModalReportContact } from "../../../components/ModalReportContact/ModalReportContact";
+
 // API
 import {
   useGetTelegramChannelsQuery,
@@ -34,7 +37,6 @@ import {
   useGetTelegramCitiesQuery,
   useGetTelegramLocationsQuery,
   useAddTelegramChannelMutation,
-  useReportTelegramChannelMutation,
 } from "../../../storeRedux/api";
 
 // styles
@@ -56,6 +58,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
   const [selectedCity, setSelectedCity] = useState<string>("");
   const [verifiedOnly, setVerifiedOnly] = useState<boolean>(false);
   const [showAddModal, setShowAddModal] = useState<boolean>(false);
+  const [showReportModal, setShowReportModal] = useState<boolean>(false);
   const [refreshing, setRefreshing] = useState<boolean>(false);
   const [channelName, setChannelName] = useState<string>("");
   const [channelUrl, setChannelUrl] = useState<string>("");
@@ -90,8 +93,6 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
     useGetTelegramLocationsQuery();
   const [addChannel, { isLoading: addChannelLoading }] =
     useAddTelegramChannelMutation();
-  const [reportChannel, { isLoading: reportChannelLoading }] =
-    useReportTelegramChannelMutation();
 
   const containerStyles = [styles.container, { paddingTop: heightStatusBar }];
 
@@ -149,45 +150,8 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
     }
   };
 
-  const handleReportChannel = async (channelId: string) => {
-    Alert.alert(
-      i18n._("Report Channel"),
-      i18n._("Are you sure you want to report this channel?"),
-      [
-        { text: i18n._("Cancel"), style: "cancel" },
-        {
-          text: i18n._("Report"),
-          style: "destructive",
-          onPress: async () => {
-            try {
-              await reportChannel({
-                channelId,
-                reportData: {
-                  reason: "Inappropriate content",
-                  reportedBy: userData?.userData?._id || "",
-                },
-              }).unwrap();
-
-              Toast.show({
-                type: "success",
-                text1: i18n._("Reported"),
-                text2: i18n._("Channel has been reported"),
-                position: "top",
-                visibilityTime: 3000,
-              });
-            } catch (error: any) {
-              Toast.show({
-                type: "error",
-                text1: i18n._("Error"),
-                text2: error.message || i18n._("Failed to report channel"),
-                position: "top",
-                visibilityTime: 3000,
-              });
-            }
-          },
-        },
-      ]
-    );
+  const handleReportChannel = () => {
+    setShowReportModal(true);
   };
 
   const handleOpenChannel = (url: string) => {
@@ -439,8 +403,7 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
 
                   <TouchableOpacity
                     style={styles.reportButton}
-                    onPress={() => handleReportChannel(channel._id)}
-                    disabled={reportChannelLoading}
+                    onPress={() => handleReportChannel()}
                   >
                     <MaterialIcons name="flag" size={20} color="#F44336" />
                     <Text style={styles.reportButtonText}>
@@ -587,6 +550,10 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
           </ScrollView>
         </View>
       </Modal>
+      <ModalReportContact
+        visible={showReportModal}
+        onClose={() => setShowReportModal(false)}
+      />
     </View>
   );
 };
