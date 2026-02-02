@@ -2,7 +2,7 @@ import React, { FunctionComponent, useMemo } from "react";
 import { View, Text, TouchableOpacity, Alert } from "react-native";
 
 // providers
-import { useThemeProvider } from "../../../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // types
 import { TTelegramChannel } from "../../../../../storeRedux/apis/telegram-channels/telegram-channels.types";
@@ -19,7 +19,7 @@ type TelegramChannelItemProps = {
 export const TelegramChannelItem: FunctionComponent<
   TelegramChannelItemProps
 > = ({ channel, onPress, onReport }) => {
-  const { theme } = useThemeProvider();
+  const { i18n } = useLocalesProvider();
 
   const handlePress = () => {
     if (onPress) {
@@ -30,12 +30,12 @@ export const TelegramChannelItem: FunctionComponent<
   const handleReport = () => {
     if (onReport) {
       Alert.alert(
-        "Report Channel",
-        "Are you sure you want to report this channel?",
+        i18n._("Report Channel"),
+        i18n._("Are you sure you want to report this channel?"),
         [
-          { text: "Cancel", style: "cancel" },
+          { text: i18n._("Cancel"), style: "cancel" },
           {
-            text: "Report",
+            text: i18n._("Report"),
             style: "destructive",
             onPress: () => onReport(channel._id),
           },
@@ -78,12 +78,12 @@ export const TelegramChannelItem: FunctionComponent<
         <View style={styles.verificationContainer}>
           {channel.verified && (
             <View style={styles.verifiedBadge}>
-              <Text style={styles.verifiedText}>✓ Verified</Text>
+              <Text style={styles.verifiedText}>✓ {i18n._("Verified")}</Text>
             </View>
           )}
           {channel.aiVerified && (
             <View style={styles.aiVerifiedBadge}>
-              <Text style={styles.aiVerifiedText}>AI Verified</Text>
+              <Text style={styles.aiVerifiedText}>{i18n._("AI Verified")}</Text>
             </View>
           )}
         </View>
@@ -97,13 +97,15 @@ export const TelegramChannelItem: FunctionComponent<
 
       <View style={styles.footer}>
         <View style={styles.locationInfo}>
-          <Text style={styles.locationText}>� Telegram Channel</Text>
           <Text style={styles.locationText}>
-            👥 {channel.reportCount} reports
+            📱 {i18n._("Telegram Channel")}
+          </Text>
+          <Text style={styles.locationText}>
+            👥 {channel.reportCount} {i18n._("reports")}
           </Text>
         </View>
         <TouchableOpacity style={styles.reportButton} onPress={handleReport}>
-          <Text style={styles.reportButtonText}>⚠️ Report</Text>
+          <Text style={styles.reportButtonText}>⚠️ {i18n._("Report")}</Text>
         </TouchableOpacity>
       </View>
     </TouchableOpacity>

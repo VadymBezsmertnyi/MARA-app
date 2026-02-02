@@ -347,8 +347,6 @@ export const HelpMain: React.FC<HelpMainProps> = ({ navigation }) => {
               </Text>
             </TouchableOpacity>
           </View>
-
-          {/* Clear Filters */}
           {(selectedCategory ||
             selectedCountry ||
             selectedCity ||
