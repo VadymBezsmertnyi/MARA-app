@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Permitir a $(PRODUCT_NAME) acceder siempre a tu ubicación para proporcionar un seguimiento continuo de amigos en el mapa. Puedes desactivar esto en cualquier momento en el menú de la aplicación.",
     "locationWhenInUsePermission": "Permitir a $(PRODUCT_NAME) acceder a tu ubicación mientras usas la aplicación para ayudarte a encontrar amigos en el mapa. Puedes desactivar esto en el menú de la aplicación.",
     "cameraPermission": "Para tomar fotos",
-    "photoLibraryPermission": "Para acceder a las fotos en tu biblioteca",
-    "microphonePermission": "Para grabar audio",
-    "calendarsPermission": "Para acceder a los calendarios",
-    "contactsPermission": "Para acceder a los contactos",
-    "appleMusicPermission": "Para acceder a Apple Music"
+    "photosPermission": "Para acceder a las fotos en tu biblioteca",
+    "microphonePermission": "Para grabar audio"
   }
 }

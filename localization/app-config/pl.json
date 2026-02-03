@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Zezwól $(PRODUCT_NAME) na zawsze korzystanie z Twojej lokalizacji w celu zapewnienia ciągłego śledzenia znajomych na mapie. Możesz to wyłączyć w dowolnym momencie w menu aplikacji.",
     "locationWhenInUsePermission": "Zezwól $(PRODUCT_NAME) na dostęp do Twojej lokalizacji podczas korzystania z aplikacji, aby pomóc Ci znaleźć znajomych na mapie. Możesz to wyłączyć w menu aplikacji.",
     "cameraPermission": "Do robienia zdjęć",
-    "photoLibraryPermission": "Do dostępu do zdjęć w twojej bibliotece",
-    "microphonePermission": "Do nagrywania dźwięku",
-    "calendarsPermission": "Do dostępu do kalendarzy",
-    "contactsPermission": "Do dostępu do kontaktów",
-    "appleMusicPermission": "Do dostępu do Apple Music"
+    "photosPermission": "Do dostępu do zdjęć w twojej bibliotece",
+    "microphonePermission": "Do nagrywania dźwięku"
   }
 }

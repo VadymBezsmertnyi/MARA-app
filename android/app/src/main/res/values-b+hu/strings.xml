@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében."</string>
   <string name="locationWhenInUsePermission">"Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében."</string>
   <string name="cameraPermission">"Fényképek készítéséhez"</string>
-  <string name="photoLibraryPermission">"Fényképek eléréséhez a könyvtárában"</string>
+  <string name="photosPermission">"Fényképek eléréséhez a könyvtárában"</string>
   <string name="microphonePermission">"Hangfelvétel készítéséhez"</string>
-  <string name="calendarsPermission">"Naptárak eléréséhez"</string>
-  <string name="contactsPermission">"Kapcsolatok eléréséhez"</string>
-  <string name="appleMusicPermission">"Az Apple Music eléréséhez"</string>
 </resources>

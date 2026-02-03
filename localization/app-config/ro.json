@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Permiteți $(PRODUCT_NAME) să aibă întotdeauna acces la locația dvs. pentru a oferi urmărirea continuă a prietenilor pe hartă. Puteți dezactiva această funcție în orice moment în meniul aplicației.",
     "locationWhenInUsePermission": "Permiteți $(PRODUCT_NAME) să aibă acces la locația dvs. în timp ce folosiți aplicația pentru a vă ajuta să găsiți prieteni pe hartă. Puteți dezactiva această funcție în meniul aplicației.",
     "cameraPermission": "Pentru realizarea de fotografii",
-    "photoLibraryPermission": "Pentru accesarea fotografiilor din biblioteca ta",
-    "microphonePermission": "Pentru înregistrarea audio",
-    "calendarsPermission": "Pentru accesarea calendarelor",
-    "contactsPermission": "Pentru accesarea contactelor",
-    "appleMusicPermission": "Pentru accesarea Apple Music"
+    "photosPermission": "Pentru accesarea fotografiilor din biblioteca ta",
+    "microphonePermission": "Pentru înregistrarea audio"
   }
 }

@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application."</string>
   <string name="locationWhenInUsePermission">"Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application."</string>
   <string name="cameraPermission">"Pour prendre des photos"</string>
-  <string name="photoLibraryPermission">"Pour accéder à vos photos dans la bibliothèque"</string>
+  <string name="photosPermission">"Pour accéder à vos photos dans la bibliothèque"</string>
   <string name="microphonePermission">"Pour enregistrer l'audio"</string>
-  <string name="calendarsPermission">"Pour accéder aux calendriers"</string>
-  <string name="contactsPermission">"Pour accéder aux contacts"</string>
-  <string name="appleMusicPermission">"Pour accéder à Apple Music"</string>
 </resources>

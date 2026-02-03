@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Povoliť $(PRODUCT_NAME) neustále pristupovať k vašej polohe na poskytovanie nepretržitého sledovania priateľov na mape. Túto funkciu môžete kedykoľvek vypnúť v menu aplikácie."</string>
   <string name="locationWhenInUsePermission">"Povoliť $(PRODUCT_NAME) prístup k vašej polohe počas používania aplikácie na vyhľadávanie priateľov na mape. Túto funkciu môžete vypnúť v menu aplikácie."</string>
   <string name="cameraPermission">"Na fotografovanie"</string>
-  <string name="photoLibraryPermission">"Na prístup k fotografiám vo vašej knižnici"</string>
+  <string name="photosPermission">"Na prístup k fotografiám vo vašej knižnici"</string>
   <string name="microphonePermission">"Na nahrávanie zvuku"</string>
-  <string name="calendarsPermission">"Na prístup kalendarom"</string>
-  <string name="contactsPermission">"Na prístup k kontaktom"</string>
-  <string name="appleMusicPermission">"Na prístup k Apple Music"</string>
 </resources>

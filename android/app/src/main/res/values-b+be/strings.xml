@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы."</string>
   <string name="locationWhenInUsePermission">"Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы."</string>
   <string name="cameraPermission">"Для стварэння фатаграфій"</string>
-  <string name="photoLibraryPermission">"Для доступу да фатаграфій у вашай бібліятэцы"</string>
+  <string name="photosPermission">"Для доступу да фатаграфій у вашай бібліятэцы"</string>
   <string name="microphonePermission">"Для запісу гукавога супрацоўніцтва"</string>
-  <string name="calendarsPermission">"Для доступу да каляндараў"</string>
-  <string name="contactsPermission">"Для доступу да кантактаў"</string>
-  <string name="appleMusicPermission">"Для доступу да Apple Music"</string>
 </resources>

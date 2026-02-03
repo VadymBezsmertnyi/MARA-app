@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Tillad $(PRODUCT_NAME) altid at få adgang til din placering for at give kontinuerlig venesporing på kortet. Du kan deaktivere dette når som helst i appens menu.",
     "locationWhenInUsePermission": "Tillad $(PRODUCT_NAME) at få adgang til din placering, mens du bruger appen til at hjælpe dig med at finde venner på kortet. Du kan deaktivere dette i appens menu.",
     "cameraPermission": "Til at tage billeder",
-    "photoLibraryPermission": "Til adgang til fotos i din bibliotek",
-    "microphonePermission": "Til at optage lyd",
-    "calendarsPermission": "Til adgang til kalendere",
-    "contactsPermission": "Til adgang til kontakter",
-    "appleMusicPermission": "Til adgang til Apple Music"
+    "photosPermission": "Til adgang til fotos i din bibliotek",
+    "microphonePermission": "Til at optage lyd"
   }
 }

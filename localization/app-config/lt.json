@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu.",
     "locationWhenInUsePermission": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu.",
     "cameraPermission": "Naudojama fotografijų kūrimui",
-    "photoLibraryPermission": "Naudojama prieigai prie nuotraukų jūsų bibliotekoje",
-    "microphonePermission": "Naudojama garso įrašymui",
-    "calendarsPermission": "Naudojama prieigai prie kalendorių",
-    "contactsPermission": "Naudojama prieigai prie kontaktų",
-    "appleMusicPermission": "Naudojama prieigai prie Apple Music"
+    "photosPermission": "Naudojama prieigai prie nuotraukų jūsų bibliotekoje",
+    "microphonePermission": "Naudojama garso įrašymui"
   }
 }

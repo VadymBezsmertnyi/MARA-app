@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Επιτρέψτε στο $(PRODUCT_NAME) να έχει πάντα πρόσβαση στην τοποθεσία σας για να παρέχει συνεχή παρακολούθηση φίλων στο χάρτη. Μπορείτε να απενεργοποιήσετε αυτήν τη λειτουργία ανά πάσα στιγμή στο μενού της εφαρμογής."</string>
   <string name="locationWhenInUsePermission">"Επιτρέψτε στο $(PRODUCT_NAME) να έχει πρόσβαση στην τοποθεσία σας κατά τη χρήση της εφαρμογής για να σας βοηθήσει να βρείτε φίλους στο χάρτη. Μπορείτε να απενεργοποιήσετε αυτήν τη λειτουργία στο μενού της εφαρμογής."</string>
   <string name="cameraPermission">"Για λήψη φωτογραφιών"</string>
-  <string name="photoLibraryPermission">"Για πρόσβαση σε φωτογραφίες στη βιβλιοθήκη σας"</string>
+  <string name="photosPermission">"Για πρόσβαση σε φωτογραφίες στη βιβλιοθήκη σας"</string>
   <string name="microphonePermission">"Για εγγραφή ήχου"</string>
-  <string name="calendarsPermission">"Για πρόσβαση σε ημερολόγια"</string>
-  <string name="contactsPermission">"Για πρόσβαση σε επαφές"</string>
-  <string name="appleMusicPermission">"Για πρόσβαση στο Apple Music"</string>
 </resources>

@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Tillad $(PRODUCT_NAME) altid at få adgang til din placering for at give kontinuerlig venesporing på kortet. Du kan deaktivere dette når som helst i appens menu."</string>
   <string name="locationWhenInUsePermission">"Tillad $(PRODUCT_NAME) at få adgang til din placering, mens du bruger appen til at hjælpe dig med at finde venner på kortet. Du kan deaktivere dette i appens menu."</string>
   <string name="cameraPermission">"Til at tage billeder"</string>
-  <string name="photoLibraryPermission">"Til adgang til fotos i din bibliotek"</string>
+  <string name="photosPermission">"Til adgang til fotos i din bibliotek"</string>
   <string name="microphonePermission">"Til at optage lyd"</string>
-  <string name="calendarsPermission">"Til adgang til kalendere"</string>
-  <string name="contactsPermission">"Til adgang til kontakter"</string>
-  <string name="appleMusicPermission">"Til adgang til Apple Music"</string>
 </resources>

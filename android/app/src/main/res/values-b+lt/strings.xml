@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu."</string>
   <string name="locationWhenInUsePermission">"Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu."</string>
   <string name="cameraPermission">"Naudojama fotografijų kūrimui"</string>
-  <string name="photoLibraryPermission">"Naudojama prieigai prie nuotraukų jūsų bibliotekoje"</string>
+  <string name="photosPermission">"Naudojama prieigai prie nuotraukų jūsų bibliotekoje"</string>
   <string name="microphonePermission">"Naudojama garso įrašymui"</string>
-  <string name="calendarsPermission">"Naudojama prieigai prie kalendorių"</string>
-  <string name="contactsPermission">"Naudojama prieigai prie kontaktų"</string>
-  <string name="appleMusicPermission">"Naudojama prieigai prie Apple Music"</string>
 </resources>

@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.",
     "locationWhenInUsePermission": "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.",
     "cameraPermission": "För att ta foton",
-    "photoLibraryPermission": "För åtkomst till foton i din bibliotek",
-    "microphonePermission": "För att spela in ljud",
-    "calendarsPermission": "För åtkomst till kalendrar",
-    "contactsPermission": "För åtkomst till kontakter",
-    "appleMusicPermission": "För åtkomst till Apple Music"
+    "photosPermission": "För åtkomst till foton i din bibliotek",
+    "microphonePermission": "För att spela in ljud"
   }
 }

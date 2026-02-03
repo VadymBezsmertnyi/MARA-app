@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Povoliť $(PRODUCT_NAME) neustále pristupovať k vašej polohe na poskytovanie nepretržitého sledovania priateľov na mape. Túto funkciu môžete kedykoľvek vypnúť v menu aplikácie.",
     "locationWhenInUsePermission": "Povoliť $(PRODUCT_NAME) prístup k vašej polohe počas používania aplikácie na vyhľadávanie priateľov na mape. Túto funkciu môžete vypnúť v menu aplikácie.",
     "cameraPermission": "Na fotografovanie",
-    "photoLibraryPermission": "Na prístup k fotografiám vo vašej knižnici",
-    "microphonePermission": "Na nahrávanie zvuku",
-    "calendarsPermission": "Na prístup kalendarom",
-    "contactsPermission": "Na prístup k kontaktom",
-    "appleMusicPermission": "Na prístup k Apple Music"
+    "photosPermission": "Na prístup k fotografiám vo vašej knižnici",
+    "microphonePermission": "Na nahrávanie zvuku"
   }
 }

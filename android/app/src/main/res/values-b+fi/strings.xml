@@ -3,9 +3,6 @@
   <string name="locationAlwaysPermission">"Salli $(PRODUCT_NAME) aina käyttää sijaintiasi jatkuvan ystävien seurannan tarjoamiseksi kartalla. Voit poistaa tämän käytöstä milloin tahansa sovelluksen valikossa."</string>
   <string name="locationWhenInUsePermission">"Salli $(PRODUCT_NAME) käyttää sijaintiasi sovelluksen käytön aikana auttaaksesi sinua löytämään ystäviä kartalla. Voit poistaa tämän käytöstä so applikaation valikossa."</string>
   <string name="cameraPermission">"Valokuvien ottamiseen"</string>
-  <string name="photoLibraryPermission">"Valokuvien käyttöön kirjastossasi"</string>
+  <string name="photosPermission">"Valokuvien käyttöön kirjastossasi"</string>
   <string name="microphonePermission">"Äänen tallentamiseen"</string>
-  <string name="calendarsPermission">"Kalenterien käyttöön"</string>
-  <string name="contactsPermission">"Yhteystietoihin pääsyyn"</string>
-  <string name="appleMusicPermission">"Apple Musicin käyttöön"</string>
 </resources>

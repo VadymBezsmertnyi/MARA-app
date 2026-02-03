@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Atļaut $(PRODUCT_NAME) vienmēr piekļūt jūsu atrašanās vietai, lai nodrošinātu nepārtrauktu draugu izsekošanu kartē. Jūs varat atspējot šo funkciju jebkurā laikā lietotnes izvēlnē.",
     "locationWhenInUsePermission": "Atļaut $(PRODUCT_NAME) piekļūt jūsu atrašanās vietai, izmantojot lietotni, lai palīdzētu jums atrast draugus kartē. Jūs varat atspējot šo funkciju lietotnes izvēlnē.",
     "cameraPermission": "Lai veiktu fotoattēlu uzņemšanu",
-    "photoLibraryPermission": "Lai piekļūtu attēliem jūsu bibliotēkā",
-    "microphonePermission": "Lai ierakstītu skaņu",
-    "calendarsPermission": "Lai piekļūtu kalendāriem",
-    "contactsPermission": "Lai piekļūtu kontaktiem",
-    "appleMusicPermission": "Lai piekļūtu Apple Music"
+    "photosPermission": "Lai piekļūtu attēliem jūsu bibliotēkā",
+    "microphonePermission": "Lai ierakstītu skaņu"
   }
 }

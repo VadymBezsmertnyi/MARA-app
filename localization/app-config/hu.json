@@ -20,10 +20,7 @@
     "locationAlwaysPermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
     "locationWhenInUsePermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében.",
     "cameraPermission": "Fényképek készítéséhez",
-    "photoLibraryPermission": "Fényképek eléréséhez a könyvtárában",
-    "microphonePermission": "Hangfelvétel készítéséhez",
-    "calendarsPermission": "Naptárak eléréséhez",
-    "contactsPermission": "Kapcsolatok eléréséhez",
-    "appleMusicPermission": "Az Apple Music eléréséhez"
+    "photosPermission": "Fényképek eléréséhez a könyvtárában",
+    "microphonePermission": "Hangfelvétel készítéséhez"
   }
 }
