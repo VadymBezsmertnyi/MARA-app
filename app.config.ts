@@ -52,7 +52,7 @@ export const expo = {
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
     googleServicesFile: "./keys/GoogleService-Info.plist",
-    buildNumber: "40",
+    buildNumber: "41",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -89,7 +89,7 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 40,
+    versionCode: 41,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
@@ -98,26 +98,18 @@ export const expo = {
     package: "com.motoauto.mara",
     scheme: "maraapp",
     permissions: [
-      "CAMERA",
-      "RECORD_AUDIO",
-      "CAMERA_ROLL",
-      "READ_EXTERNAL_STORAGE",
-      "WRITE_EXTERNAL_STORAGE",
-      "USE_BIOMETRIC",
-      "USE_FINGERPRINT",
       "INTERNET",
       "ACCESS_NETWORK_STATE",
-      "GET_ACCOUNTS",
-      "SYSTEM_ALERT_WINDOW",
+      "CAMERA",
+      "RECORD_AUDIO",
+      "USE_BIOMETRIC",
+      "USE_FINGERPRINT",
       "RECEIVE_BOOT_COMPLETED",
       "WAKE_LOCK",
       "ACCESS_FINE_LOCATION",
       "ACCESS_COARSE_LOCATION",
       "ACCESS_BACKGROUND_LOCATION",
       "com.google.android.gms.permission.AD_ID",
-      "com.google.android.c2dm.permission.RECEIVE",
-      "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
-      "com.google.android.providers.gsf.permission.READ_GSERVICES",
     ],
     config: {
       googleMaps: {
