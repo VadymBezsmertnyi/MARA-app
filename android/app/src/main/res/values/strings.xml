@@ -7,4 +7,10 @@
   <string name="facebook_client_token">9ab6fd53433128459985341b29d5843f</string>
   <string name="fb_login_protocol_scheme">fb392972260073420</string>
   <string name="expo_runtime_version">1.1.0</string>
+  <string name="cameraPermission">For taking photos</string>
+  <string name="photosPermission">For accessing photos in your library</string>
+  <string name="microphonePermission">For recording audio</string>
+  <string name="locationAlwaysAndWhenInUsePermission">Allow $(PRODUCT_NAME) to use your location.</string>
+  <string name="locationAlwaysPermission">Allow $(PRODUCT_NAME) to use your location.</string>
+  <string name="locationWhenInUsePermission">Allow $(PRODUCT_NAME) to use your location.</string>
 </resources>
