@@ -135,6 +135,7 @@ export const expo = {
   },
   owner: "fop_vadym_bezsmertnyi",
   plugins: [
+    "./plugins/withCustomAndroidManifest",
     [
       "react-native-maps",
       {
