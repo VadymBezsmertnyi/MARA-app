@@ -1,16 +1,29 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Дазволіць $(PRODUCT_NAME) выкарыстоўваць ваша месцазнаходжанне для пошуку сяброў на мапе. Вы можаце заўсёды адключыць гэта ў меню праграмы.",
-  "NSLocationAlwaysUsageDescription": "Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы.",
-  "NSLocationWhenInUseUsageDescription": "Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы.",
-  "locationAlwaysAndWhenInUsePermission": "Дазволіць $(PRODUCT_NAME) выкарыстоўваць ваша месцазнаходжанне для пошуку сяброў на мапе. Вы можаце заўсёды адключыць гэта ў меню праграмы.",
-  "locationAlwaysPermission": "Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы.",
-  "locationWhenInUsePermission": "Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы.",
-  "NSFaceIDUsageDescription": "Для ўваходу з дапамогай Face ID",
-  "UIApplicationShortcutItemTitle": "Хуткі доступ",
-  "NSCameraUsageDescription": "Для стварэння фатаграфій",
-  "NSPhotoLibraryUsageDescription": "Для доступу да фатаграфій у вашай бібліятэцы",
-  "NSMicrophoneUsageDescription": "Для запісу гукавога супрацоўніцтва",
-  "NSCalendarsUsageDescription": "Для доступу да каляндараў",
-  "NSContactsUsageDescription": "Для доступу да кантактаў",
-  "NSAppleMusicUsageDescription": "Для доступу да Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Дазволіць $(PRODUCT_NAME) выкарыстоўваць ваша месцазнаходжанне для пошуку сяброў на мапе. Вы можаце заўсёды адключыць гэта ў меню праграмы.",
+    "NSLocationAlwaysUsageDescription": "Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы.",
+    "NSLocationWhenInUseUsageDescription": "Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы.",
+    "locationAlwaysAndWhenInUsePermission": "Дазволіць $(PRODUCT_NAME) выкарыстоўваць ваша месцазнаходжанне для пошуку сяброў на мапе. Вы можаце заўсёды адключыць гэта ў меню праграмы.",
+    "locationAlwaysPermission": "Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы.",
+    "locationWhenInUsePermission": "Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы.",
+    "NSFaceIDUsageDescription": "Для ўваходу з дапамогай Face ID",
+    "UIApplicationShortcutItemTitle": "Хуткі доступ",
+    "NSCameraUsageDescription": "Для стварэння фатаграфій",
+    "NSPhotoLibraryUsageDescription": "Для доступу да фатаграфій у вашай бібліятэцы",
+    "NSMicrophoneUsageDescription": "Для запісу гукавога супрацоўніцтва",
+    "NSCalendarsUsageDescription": "Для доступу да каляндараў",
+    "NSContactsUsageDescription": "Для доступу да кантактаў",
+    "NSAppleMusicUsageDescription": "Для доступу да Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Дазволіць $(PRODUCT_NAME) выкарыстоўваць ваша месцазнаходжанне для пошуку сяброў на мапе. Вы можаце заўсёды адключыць гэта ў меню праграмы.",
+    "locationAlwaysPermission": "Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы.",
+    "locationWhenInUsePermission": "Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы.",
+    "cameraPermission": "Для стварэння фатаграфій",
+    "photoLibraryPermission": "Для доступу да фатаграфій у вашай бібліятэцы",
+    "microphonePermission": "Для запісу гукавога супрацоўніцтва",
+    "calendarsPermission": "Для доступу да каляндараў",
+    "contactsPermission": "Для доступу да кантактаў",
+    "appleMusicPermission": "Для доступу да Apple Music"
+  }
 }

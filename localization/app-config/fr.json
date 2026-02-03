@@ -1,16 +1,29 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Autoriser $(PRODUCT_NAME) à utiliser votre position pour rechercher des amis sur la carte. Vous pouvez toujours désactiver cette fonctionnalité dans le menu de l'application.",
-  "NSLocationAlwaysUsageDescription": "Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application.",
-  "NSLocationWhenInUseUsageDescription": "Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application.",
-  "locationAlwaysAndWhenInUsePermission": "Autoriser $(PRODUCT_NAME) à utiliser votre position pour rechercher des amis sur la carte. Vous pouvez toujours désactiver cette fonctionnalité dans le menu de l'application.",
-  "locationAlwaysPermission": "Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application.",
-  "locationWhenInUsePermission": "Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application.",
-  "NSFaceIDUsageDescription": "Pour vous connecter avec Face ID",
-  "UIApplicationShortcutItemTitle": "Accès rapide",
-  "NSCameraUsageDescription": "Pour prendre des photos",
-  "NSPhotoLibraryUsageDescription": "Pour accéder à vos photos dans la bibliothèque",
-  "NSMicrophoneUsageDescription": "Pour enregistrer l'audio",
-  "NSCalendarsUsageDescription": "Pour accéder aux calendriers",
-  "NSContactsUsageDescription": "Pour accéder aux contacts",
-  "NSAppleMusicUsageDescription": "Pour accéder à Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Autoriser $(PRODUCT_NAME) à utiliser votre position pour rechercher des amis sur la carte. Vous pouvez toujours désactiver cette fonctionnalité dans le menu de l'application.",
+    "NSLocationAlwaysUsageDescription": "Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application.",
+    "NSLocationWhenInUseUsageDescription": "Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application.",
+    "locationAlwaysAndWhenInUsePermission": "Autoriser $(PRODUCT_NAME) à utiliser votre position pour rechercher des amis sur la carte. Vous pouvez toujours désactiver cette fonctionnalité dans le menu de l'application.",
+    "locationAlwaysPermission": "Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application.",
+    "locationWhenInUsePermission": "Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application.",
+    "NSFaceIDUsageDescription": "Pour vous connecter avec Face ID",
+    "UIApplicationShortcutItemTitle": "Accès rapide",
+    "NSCameraUsageDescription": "Pour prendre des photos",
+    "NSPhotoLibraryUsageDescription": "Pour accéder à vos photos dans la bibliothèque",
+    "NSMicrophoneUsageDescription": "Pour enregistrer l'audio",
+    "NSCalendarsUsageDescription": "Pour accéder aux calendriers",
+    "NSContactsUsageDescription": "Pour accéder aux contacts",
+    "NSAppleMusicUsageDescription": "Pour accéder à Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Autoriser $(PRODUCT_NAME) à utiliser votre position pour rechercher des amis sur la carte. Vous pouvez toujours désactiver cette fonctionnalité dans le menu de l'application.",
+    "locationAlwaysPermission": "Autoriser $(PRODUCT_NAME) à accéder en permanence à votre position pour fournir un suivi continu des amis sur la carte. Vous pouvez désactiver cette fonctionnalité à tout moment dans le menu de l'application.",
+    "locationWhenInUsePermission": "Autoriser $(PRODUCT_NAME) à accéder à votre position pendant l'utilisation de l'application pour vous aider à trouver des amis sur la carte. Vous pouvez désactiver cette fonctionnalité dans le menu de l'application.",
+    "cameraPermission": "Pour prendre des photos",
+    "photoLibraryPermission": "Pour accéder à vos photos dans la bibliothèque",
+    "microphonePermission": "Pour enregistrer l'audio",
+    "calendarsPermission": "Pour accéder aux calendriers",
+    "contactsPermission": "Pour accéder aux contacts",
+    "appleMusicPermission": "Pour accéder à Apple Music"
+  }
 }

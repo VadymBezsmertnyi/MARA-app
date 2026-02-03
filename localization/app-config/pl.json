@@ -1,16 +1,29 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Zezwól $(PRODUCT_NAME) na korzystanie z Twojej lokalizacji w celu wyszukiwania znajomych na mapie. Zawsze możesz to wyłączyć w menu aplikacji.",
-  "NSLocationAlwaysUsageDescription": "Zezwól $(PRODUCT_NAME) na zawsze korzystanie z Twojej lokalizacji w celu zapewnienia ciągłego śledzenia znajomych na mapie. Możesz to wyłączyć w dowolnym momencie w menu aplikacji.",
-  "NSLocationWhenInUseUsageDescription": "Zezwól $(PRODUCT_NAME) na dostęp do Twojej lokalizacji podczas korzystania z aplikacji, aby pomóc Ci znaleźć znajomych na mapie. Możesz to wyłączyć w menu aplikacji.",
-  "locationAlwaysAndWhenInUsePermission": "Zezwól $(PRODUCT_NAME) na korzystanie z Twojej lokalizacji w celu wyszukiwania znajomych na mapie. Zawsze możesz to wyłączyć w menu aplikacji.",
-  "locationAlwaysPermission": "Zezwól $(PRODUCT_NAME) na zawsze korzystanie z Twojej lokalizacji w celu zapewnienia ciągłego śledzenia znajomych na mapie. Możesz to wyłączyć w dowolnym momencie w menu aplikacji.",
-  "locationWhenInUsePermission": "Zezwól $(PRODUCT_NAME) na dostęp do Twojej lokalizacji podczas korzystania z aplikacji, aby pomóc Ci znaleźć znajomych na mapie. Możesz to wyłączyć w menu aplikacji.",
-  "NSFaceIDUsageDescription": "Do logowania za pomocą Face ID",
-  "UIApplicationShortcutItemTitle": "Skrót dostępu",
-  "NSCameraUsageDescription": "Do robienia zdjęć",
-  "NSPhotoLibraryUsageDescription": "Do dostępu do zdjęć w twojej bibliotece",
-  "NSMicrophoneUsageDescription": "Do nagrywania dźwięku",
-  "NSCalendarsUsageDescription": "Do dostępu do kalendarzy",
-  "NSContactsUsageDescription": "Do dostępu do kontaktów",
-  "NSAppleMusicUsageDescription": "Do dostępu do Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Zezwól $(PRODUCT_NAME) na korzystanie z Twojej lokalizacji w celu wyszukiwania znajomych na mapie. Zawsze możesz to wyłączyć w menu aplikacji.",
+    "NSLocationAlwaysUsageDescription": "Zezwól $(PRODUCT_NAME) na zawsze korzystanie z Twojej lokalizacji w celu zapewnienia ciągłego śledzenia znajomych na mapie. Możesz to wyłączyć w dowolnym momencie w menu aplikacji.",
+    "NSLocationWhenInUseUsageDescription": "Zezwól $(PRODUCT_NAME) na dostęp do Twojej lokalizacji podczas korzystania z aplikacji, aby pomóc Ci znaleźć znajomych na mapie. Możesz to wyłączyć w menu aplikacji.",
+    "locationAlwaysAndWhenInUsePermission": "Zezwól $(PRODUCT_NAME) na korzystanie z Twojej lokalizacji w celu wyszukiwania znajomych na mapie. Zawsze możesz to wyłączyć w menu aplikacji.",
+    "locationAlwaysPermission": "Zezwól $(PRODUCT_NAME) na zawsze korzystanie z Twojej lokalizacji w celu zapewnienia ciągłego śledzenia znajomych na mapie. Możesz to wyłączyć w dowolnym momencie w menu aplikacji.",
+    "locationWhenInUsePermission": "Zezwól $(PRODUCT_NAME) na dostęp do Twojej lokalizacji podczas korzystania z aplikacji, aby pomóc Ci znaleźć znajomych na mapie. Możesz to wyłączyć w menu aplikacji.",
+    "NSFaceIDUsageDescription": "Do logowania za pomocą Face ID",
+    "UIApplicationShortcutItemTitle": "Skrót dostępu",
+    "NSCameraUsageDescription": "Do robienia zdjęć",
+    "NSPhotoLibraryUsageDescription": "Do dostępu do zdjęć w twojej bibliotece",
+    "NSMicrophoneUsageDescription": "Do nagrywania dźwięku",
+    "NSCalendarsUsageDescription": "Do dostępu do kalendarzy",
+    "NSContactsUsageDescription": "Do dostępu do kontaktów",
+    "NSAppleMusicUsageDescription": "Do dostępu do Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Zezwól $(PRODUCT_NAME) na korzystanie z Twojej lokalizacji w celu wyszukiwania znajomych na mapie. Zawsze możesz to wyłączyć w menu aplikacji.",
+    "locationAlwaysPermission": "Zezwól $(PRODUCT_NAME) na zawsze korzystanie z Twojej lokalizacji w celu zapewnienia ciągłego śledzenia znajomych na mapie. Możesz to wyłączyć w dowolnym momencie w menu aplikacji.",
+    "locationWhenInUsePermission": "Zezwól $(PRODUCT_NAME) na dostęp do Twojej lokalizacji podczas korzystania z aplikacji, aby pomóc Ci znaleźć znajomych na mapie. Możesz to wyłączyć w menu aplikacji.",
+    "cameraPermission": "Do robienia zdjęć",
+    "photoLibraryPermission": "Do dostępu do zdjęć w twojej bibliotece",
+    "microphonePermission": "Do nagrywania dźwięku",
+    "calendarsPermission": "Do dostępu do kalendarzy",
+    "contactsPermission": "Do dostępu do kontaktów",
+    "appleMusicPermission": "Do dostępu do Apple Music"
+  }
 }

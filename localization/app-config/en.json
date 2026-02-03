@@ -1,16 +1,29 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location to search for friends on the map. You can always disable this in the app's menu.",
-  "NSLocationAlwaysUsageDescription": "Allow $(PRODUCT_NAME) to always access your location to provide continuous friend tracking on the map. You can disable this at any time in the app's menu.",
-  "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to access your location while using the app to help you find friends on the map. You can disable this in the app's menu.",
-  "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location to search for friends on the map. You can always disable this in the app's menu.",
-  "locationAlwaysPermission": "Allow $(PRODUCT_NAME) to always access your location to provide continuous friend tracking on the map. You can disable this at any time in the app's menu.",
-  "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to access your location while using the app to help you find friends on the map. You can disable this in the app's menu.",
-  "NSFaceIDUsageDescription": "For logging in using Face ID",
-  "UIApplicationShortcutItemTitle": "Quick Access",
-  "NSCameraUsageDescription": "For taking photos",
-  "NSPhotoLibraryUsageDescription": "For accessing photos in your library",
-  "NSMicrophoneUsageDescription": "For recording audio",
-  "NSCalendarsUsageDescription": "For accessing calendars",
-  "NSContactsUsageDescription": "For accessing contacts",
-  "NSAppleMusicUsageDescription": "For accessing Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location to search for friends on the map. You can always disable this in the app's menu.",
+    "NSLocationAlwaysUsageDescription": "Allow $(PRODUCT_NAME) to always access your location to provide continuous friend tracking on the map. You can disable this at any time in the app's menu.",
+    "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to access your location while using the app to help you find friends on the map. You can disable this in the app's menu.",
+    "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location to search for friends on the map. You can always disable this in the app's menu.",
+    "locationAlwaysPermission": "Allow $(PRODUCT_NAME) to always access your location to provide continuous friend tracking on the map. You can disable this at any time in the app's menu.",
+    "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to access your location while using the app to help you find friends on the map. You can disable this in the app's menu.",
+    "NSFaceIDUsageDescription": "For logging in using Face ID",
+    "UIApplicationShortcutItemTitle": "Quick Access",
+    "NSCameraUsageDescription": "For taking photos",
+    "NSPhotoLibraryUsageDescription": "For accessing photos in your library",
+    "NSMicrophoneUsageDescription": "For recording audio",
+    "NSCalendarsUsageDescription": "For accessing calendars",
+    "NSContactsUsageDescription": "For accessing contacts",
+    "NSAppleMusicUsageDescription": "For accessing Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location to search for friends on the map. You can always disable this in the app's menu.",
+    "locationAlwaysPermission": "Allow $(PRODUCT_NAME) to always access your location to provide continuous friend tracking on the map. You can disable this at any time in the app's menu.",
+    "locationWhenInUsePermission": "Allow $(PRODUCT_NAME) to access your location while using the app to help you find friends on the map. You can disable this in the app's menu.",
+    "cameraPermission": "For taking photos",
+    "photoLibraryPermission": "For accessing photos in your library",
+    "microphonePermission": "For recording audio",
+    "calendarsPermission": "For accessing calendars",
+    "contactsPermission": "For accessing contacts",
+    "appleMusicPermission": "For accessing Apple Music"
+  }
 }

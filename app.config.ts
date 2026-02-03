@@ -11,6 +11,27 @@ const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
 const EXPO_PUBLIC_APP_ID_ONESIGNAL = process.env
   .EXPO_PUBLIC_APP_ID_ONESIGNAL as string;
 
+const DEFAULT_LANGUAGES = [
+  "be",
+  "cs",
+  "da",
+  "de",
+  "el",
+  "en",
+  "es",
+  "fi",
+  "fr",
+  "hu",
+  "it",
+  "lt",
+  "lv",
+  "pl",
+  "ro",
+  "sk",
+  "sv",
+  "uk",
+];
+
 export const expo = {
   name: "M.A.R.A",
   slug: "mara",
@@ -159,7 +180,15 @@ export const expo = {
         mode: "development",
       },
     ],
-    "expo-localization",
+    [
+      "expo-localization",
+      {
+        supportedLocales: {
+          ios: DEFAULT_LANGUAGES,
+          android: DEFAULT_LANGUAGES,
+        },
+      },
+    ],
     "expo-apple-authentication",
     [
       "@react-native-google-signin/google-signin",

@@ -1,16 +1,11 @@
 <resources>
-  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Leisti $(PRODUCT_NAME) naudoti jūsų vietą draugų paieškai žemėlapyje. Visada galite išjungti šią funkciją programos meniu."</string>
-  <string name="NSLocationAlwaysUsageDescription">"Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu."</string>
-  <string name="NSLocationWhenInUseUsageDescription">"Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu."</string>
   <string name="locationAlwaysAndWhenInUsePermission">"Leisti $(PRODUCT_NAME) naudoti jūsų vietą draugų paieškai žemėlapyje. Visada galite išjungti šią funkciją programos meniu."</string>
   <string name="locationAlwaysPermission">"Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu."</string>
   <string name="locationWhenInUsePermission">"Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu."</string>
-  <string name="NSFaceIDUsageDescription">"Naudojama prisijungimui naudojant Face ID"</string>
-  <string name="UIApplicationShortcutItemTitle">"Greitas prieiga"</string>
-  <string name="NSCameraUsageDescription">"Naudojama fotografijų kūrimui"</string>
-  <string name="NSPhotoLibraryUsageDescription">"Naudojama prieigai prie nuotraukų jūsų bibliotekoje"</string>
-  <string name="NSMicrophoneUsageDescription">"Naudojama garso įrašymui"</string>
-  <string name="NSCalendarsUsageDescription">"Naudojama prieigai prie kalendorių"</string>
-  <string name="NSContactsUsageDescription">"Naudojama prieigai prie kontaktų"</string>
-  <string name="NSAppleMusicUsageDescription">"Naudojama prieigai prie Apple Music"</string>
+  <string name="cameraPermission">"Naudojama fotografijų kūrimui"</string>
+  <string name="photoLibraryPermission">"Naudojama prieigai prie nuotraukų jūsų bibliotekoje"</string>
+  <string name="microphonePermission">"Naudojama garso įrašymui"</string>
+  <string name="calendarsPermission">"Naudojama prieigai prie kalendorių"</string>
+  <string name="contactsPermission">"Naudojama prieigai prie kontaktų"</string>
+  <string name="appleMusicPermission">"Naudojama prieigai prie Apple Music"</string>
 </resources>

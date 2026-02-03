@@ -1,16 +1,11 @@
 <resources>
-  <string name="NSLocationAlwaysAndWhenInUseUsageDescription">"Дазволіць $(PRODUCT_NAME) выкарыстоўваць ваша месцазнаходжанне для пошуку сяброў на мапе. Вы можаце заўсёды адключыць гэта ў меню праграмы."</string>
-  <string name="NSLocationAlwaysUsageDescription">"Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы."</string>
-  <string name="NSLocationWhenInUseUsageDescription">"Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы."</string>
   <string name="locationAlwaysAndWhenInUsePermission">"Дазволіць $(PRODUCT_NAME) выкарыстоўваць ваша месцазнаходжанне для пошуку сяброў на мапе. Вы можаце заўсёды адключыць гэта ў меню праграмы."</string>
   <string name="locationAlwaysPermission">"Дазволіць $(PRODUCT_NAME) заўсёды мець доступ да вашага месцазнаходжання для прадастаўлення пастаяннага адсочвання сяброў на мапе. Вы можаце адключыць гэта ў любы час у меню праграмы."</string>
   <string name="locationWhenInUsePermission">"Дазволіць $(PRODUCT_NAME) мець доступ да вашага месцазнаходжання падчас выкарыстання праграмы, каб дапамагчы вам знайсці сяброў на мапе. Вы можаце адключыць гэта ў меню праграмы."</string>
-  <string name="NSFaceIDUsageDescription">"Для ўваходу з дапамогай Face ID"</string>
-  <string name="UIApplicationShortcutItemTitle">"Хуткі доступ"</string>
-  <string name="NSCameraUsageDescription">"Для стварэння фатаграфій"</string>
-  <string name="NSPhotoLibraryUsageDescription">"Для доступу да фатаграфій у вашай бібліятэцы"</string>
-  <string name="NSMicrophoneUsageDescription">"Для запісу гукавога супрацоўніцтва"</string>
-  <string name="NSCalendarsUsageDescription">"Для доступу да каляндараў"</string>
-  <string name="NSContactsUsageDescription">"Для доступу да кантактаў"</string>
-  <string name="NSAppleMusicUsageDescription">"Для доступу да Apple Music"</string>
+  <string name="cameraPermission">"Для стварэння фатаграфій"</string>
+  <string name="photoLibraryPermission">"Для доступу да фатаграфій у вашай бібліятэцы"</string>
+  <string name="microphonePermission">"Для запісу гукавога супрацоўніцтва"</string>
+  <string name="calendarsPermission">"Для доступу да каляндараў"</string>
+  <string name="contactsPermission">"Для доступу да кантактаў"</string>
+  <string name="appleMusicPermission">"Для доступу да Apple Music"</string>
 </resources>
