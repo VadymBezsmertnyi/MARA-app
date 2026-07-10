@@ -1,11 +1,14 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal } from "react-native";
+import { Modal, TouchableOpacity, View } from "react-native";
 import WebView from "react-native-webview";
+import { Shadow } from "react-native-shadow-2";
 
-// components
-import { ModalsSheet } from "../../../../../components/ModalsSheet/ModalsSheet";
+// providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 import { Loader } from "../../../../../providers/LoadingProvider/components/Loader/Loader";
+
+// styles
+import { styles } from "./ModalAgreements.styles";
 
 type ModalAgreementsProps = {
   isOpen: boolean;
@@ -22,16 +25,20 @@ export const ModalAgreements: FunctionComponent<ModalAgreementsProps> = ({
   const [loading, setLoading] = useState(true);
 
   const source = useMemo(() => {
+    const EXPO_PUBLIC_WEB_SITE_URL = process.env
+      .EXPO_PUBLIC_WEB_SITE_URL as string;
+    const currentUrl =
+      EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
     if (type === "policy")
       return {
-        uri: `https://m-a-r-a.netlify.app/mobile/privacy-policy?language=${language}`,
+        uri: `${currentUrl}/mobile/privacy-policy?language=${language}`,
       };
     if (type === "about")
       return {
-        uri: `https://m-a-r-a.netlify.app/mobile/about?language=${language}`,
+        uri: `${currentUrl}/mobile/about?language=${language}`,
       };
     return {
-      uri: `https://m-a-r-a.netlify.app/mobile/term-of-use?language=${language}`,
+      uri: `${currentUrl}/mobile/term-of-use?language=${language}`,
     };
   }, [type]);
 
@@ -40,19 +47,37 @@ export const ModalAgreements: FunctionComponent<ModalAgreementsProps> = ({
   }, [isOpen]);
 
   return (
-    <Modal visible={isOpen} transparent>
-      <ModalsSheet isShow={isOpen} onClose={onClose}>
-        <>
-          <WebView
-            source={source}
-            onLoad={(event) => {
-              setLoading(event.nativeEvent.loading);
-            }}
-            cacheEnabled
-          />
-          {loading ? <Loader /> : null}
-        </>
-      </ModalsSheet>
+    <Modal
+      visible={isOpen}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
+      <TouchableOpacity
+        style={styles.modalOverlay}
+        activeOpacity={1}
+        onPress={onClose}
+      >
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
+          style={styles.modalContent}
+        >
+          <Shadow stretch>
+            <View style={styles.container}>
+              <WebView
+                source={source}
+                onLoad={(event) => {
+                  setLoading(event.nativeEvent.loading);
+                }}
+                cacheEnabled
+                style={styles.webView}
+              />
+              {loading ? <Loader /> : null}
+            </View>
+          </Shadow>
+        </TouchableOpacity>
+      </TouchableOpacity>
     </Modal>
   );
 };

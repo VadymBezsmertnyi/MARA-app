@@ -1,35 +1,48 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../styles/colors";
+
+const SLIDER_HEIGHT = 220;
 
 export const styles = StyleSheet.create({
   container: {
+    height: SLIDER_HEIGHT,
+    backgroundColor: colors.white,
+  },
+  sliderFrame: {
+    height: SLIDER_HEIGHT,
+    backgroundColor: colors.lightOrange,
+    borderRadius: 12,
+    overflow: "hidden",
+    justifyContent: "center",
+  },
+  slideContainer: {
     flex: 1,
-  },
-  scrollViewContainer: {
-    flexDirection: "row",
-    backgroundColor: "#222",
-  },
-  image: {
-    width: 200,
-    height: "100%",
-  },
-  buttons: {
-    height: 15,
-    marginTop: -25,
-    marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: "row",
+    backgroundColor: "transparent",
   },
-  button: {
-    margin: 3,
-    width: 8,
-    height: 8,
-    borderRadius: 8 / 2,
-    backgroundColor: "#ccc",
-    opacity: 0.9,
+  imageWrapper: {
+    width: "101%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  buttonSelected: {
-    opacity: 1,
-    backgroundColor: "#fff",
+  imageStyle: {
+    width: "100%",
+    height: "100%",
+  },
+  indicator: {
+    position: "absolute",
+    bottom: 8,
+    alignSelf: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+  },
+  indicatorText: {
+    color: colors.white,
+    fontSize: 12,
+    fontWeight: "600",
   },
 });

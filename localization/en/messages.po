@@ -14,68 +14,1034 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Add a photo"
+msgid "Maintenance"
+msgstr "Maintenance"
 
 #. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "The first photo will be on the cover of the advertisement."
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
 
 #. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Enter text to search"
+msgid "Diagnostics"
+msgstr "Diagnostics"
 
 #. js-lingui-explicit-id
-msgid "Press and enter to search for a city"
-msgstr "Press and enter to search for a city"
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
 
 #. js-lingui-explicit-id
-msgid "Select"
-msgstr "Select"
+msgid "Auto Electrical"
+msgstr "Auto Electrical"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Chassis Repair"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Engine, Automatic, and Manual Transmission"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Brakes and Steering System"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Accessory Equipment"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Air Conditioning Systems"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Wheel Alignment"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Painting"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Airbrushing"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Technical maintenance"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "General works"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Chassis"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Drive chain"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Engine"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Electrics"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Brake system"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Plastic repair"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Welding/restoration of fragments/restoration of fasteners"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Welding works"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Electric arc welding / Semi-automatic welding / Argon arc welding"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Tuning and customization"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+
+#. js-lingui-explicit-id
+msgid "Wait please before the next update"
+msgstr "Wait please before the next update"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Workshops"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Add workshop"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Enter the name of the workshop or type of work"
+
+#. js-lingui-explicit-id
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Sorry, but no workshops were found by the filters"
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Sorry, there are no upcoming workshops"
+
+#. js-lingui-explicit-id
+msgid "Geolocation disabled for calculation"
+msgstr "Geolocation disabled for calculation"
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr "Cannot calculate"
 
 #. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
 #. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Not enabled location"
-
-#. js-lingui-explicit-id
-msgid "Photo {numberPhoto}"
-msgstr "Photo {numberPhoto}"
+msgid "Not comments"
+msgstr "Not comments"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
 msgstr "Button for closing the modal window"
 
 #. js-lingui-explicit-id
-msgid "Main photo"
-msgstr "Main photo"
+msgid "By distance:"
+msgstr "By distance:"
 
 #. js-lingui-explicit-id
-msgid "Make the main photo"
-msgstr "Make the main photo"
+msgid "from closest to farthest"
+msgstr "from closest to farthest"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "All cities"
+msgid "Getting location..."
+msgstr "Getting location..."
 
 #. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "No cities found"
+msgid "To calculate distance, please enable location services"
+msgstr "To calculate distance, please enable location services"
 
 #. js-lingui-explicit-id
-msgid "Decrease the maximum number"
-msgstr "Decrease the maximum number"
+msgid "Enable location"
+msgstr "Enable location"
 
 #. js-lingui-explicit-id
-msgid "Increase the maximum number"
-msgstr "Increase the maximum number"
+msgid "By rating:"
+msgstr "By rating:"
+
+#. js-lingui-explicit-id
+msgid "from highest to lowest"
+msgstr "from highest to lowest"
+
+#. js-lingui-explicit-id
+msgid "By number of comments:"
+msgstr "By number of comments:"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Not information"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Moto"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Auto"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "All workshops"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Repair of motorcycles"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Repair of automobiles"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Filter"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Type workshops"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Distance, km:"
+
+#. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr "Only with rating:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "All works"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Type works"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Filtering"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Error"
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr "Unable to like the workshop"
+
+#. js-lingui-explicit-id
+msgid "Failed to create share link"
+msgstr "Failed to create share link"
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+
+#. js-lingui-explicit-id
+msgid "Share workshop"
+msgstr "Share workshop"
+
+#. js-lingui-explicit-id
+msgid "Failed to send SMS"
+msgstr "Failed to send SMS"
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Success"
+
+#. js-lingui-explicit-id
+msgid "Everything is successful and this is your business"
+msgstr "Everything is successful and this is your business"
+
+#. js-lingui-explicit-id
+msgid "Invalid or expired code"
+msgstr "Invalid or expired code"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Workshop"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr "Unable to calculate distance, location is disabled"
+
+#. js-lingui-explicit-id
+msgid "Contacts unknown"
+msgstr "Contacts unknown"
+
+#. js-lingui-explicit-id
+msgid "About us:"
+msgstr "About us:"
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr "Read the whole description..."
+
+#. js-lingui-explicit-id
+msgid "This business has not been confirmed by the owner"
+msgstr "This business has not been confirmed by the owner"
+
+#. js-lingui-explicit-id
+msgid "Confirm business"
+msgstr "Confirm business"
+
+#. js-lingui-explicit-id
+msgid "Report on business"
+msgstr "Report on business"
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr "Working hours unknown"
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr "Day off"
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr "Working hours"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "The text must contain a minimum of 3 and a maximum of 40 characters."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "The text must contain a minimum of 10 and a maximum of 2000 characters."
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr "Leave a review"
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Name"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Enter your name"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Add a description about the workshop"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Workshop description"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Publish"
+
+#. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr "The work we do:"
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr "Reviews:"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Draft the first review"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Change a review"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Write a review"
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr "Monday"
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr "Mon"
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr "Tuesday"
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr "Tue"
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr "Wednesday"
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr "Wed"
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr "Thursday"
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr "Thu"
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr "Friday"
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr "Fri"
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr "Saturday"
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr "Sat"
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr "Sunday"
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr "Sun"
+
+#. js-lingui-explicit-id
+msgid "Phone"
+msgstr "Phone"
+
+#. js-lingui-explicit-id
+msgid "Email"
+msgstr "Email"
+
+#. js-lingui-explicit-id
+msgid "Viber"
+msgstr "Viber"
+
+#. js-lingui-explicit-id
+msgid "Telegram"
+msgstr "Telegram"
+
+#. js-lingui-explicit-id
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#. js-lingui-explicit-id
+msgid "Instagram"
+msgstr "Instagram"
+
+#. js-lingui-explicit-id
+msgid "Facebook"
+msgstr "Facebook"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "workshop"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Workshop change successfully"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Workshop created successfully"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Error changing workshop"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Error creating workshop"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr "Unable to delete the workshop"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Change workshop"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Enter the name of the workshop"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Workshop name"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Workshop address"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Enter the address"
+
+#. js-lingui-explicit-id
+msgid "Contacts"
+msgstr "Contacts"
+
+#. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Phone number"
+
+#. js-lingui-explicit-id
+msgid "Add contact type"
+msgstr "Add contact type"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Type workshop"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Select type"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Types of work"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Select types of work"
+
+#. js-lingui-explicit-id
+msgid "You can add up to 5 phone numbers"
+msgstr "You can add up to 5 phone numbers"
+
+#. js-lingui-explicit-id
+msgid "This contact type has already been added"
+msgstr "This contact type has already been added"
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr "Edit"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Save"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Cancel"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "My workshops"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Button for closing the settings workshops screen"
+
+#. js-lingui-explicit-id
+msgid "All"
+msgstr "All"
+
+#. js-lingui-explicit-id
+msgid "Created by me"
+msgstr "Created by me"
+
+#. js-lingui-explicit-id
+msgid "Mine"
+msgstr "Mine"
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr "Sorry!"
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr "You don't have {typeItem}."
+
+#. js-lingui-explicit-id
+msgid "Select phone number"
+msgstr "Select phone number"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Confirm"
+
+#. js-lingui-explicit-id
+msgid "Enter verification code"
+msgstr "Enter verification code"
+
+#. js-lingui-explicit-id
+msgid "Enter 6-digit code"
+msgstr "Enter 6-digit code"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr "Under review"
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr "Verified"
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr "Rejected"
+
+#. js-lingui-explicit-id
+msgid "Confirm ownership"
+msgstr "Confirm ownership"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Error: incorrect phone number"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Error: First name must be between 3 and 15 characters"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Error: select the city"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "The photo added"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Sorry, an error occurred"
+
+#. js-lingui-explicit-id
+msgid "Profile saved"
+msgstr "Profile saved"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Error: save profile"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Back"
+
+#. js-lingui-explicit-id
+msgid "Profile"
+msgstr "Profile"
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr "Logout"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "First Name"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Last Name"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "City"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Select the city"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "The photo has been changed"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "The photo has not been changed"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr "Info"
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr "The photo has been deleted"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Delete"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Change"
+
+#. js-lingui-explicit-id
+msgid "Your profile"
+msgstr "Your profile"
+
+#. js-lingui-explicit-id
+msgid "My roles"
+msgstr "My roles"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "My actions"
+
+#. js-lingui-explicit-id
+msgid "Your workshops"
+msgstr "Your workshops"
+
+#. js-lingui-explicit-id
+msgid "Your events"
+msgstr "Your events"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "events"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "My events"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Button for closing the settings events screen"
+
+#. js-lingui-explicit-id
+msgid "Upcoming events"
+msgstr "Upcoming events"
+
+#. js-lingui-explicit-id
+msgid "Past events"
+msgstr "Past events"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Add event"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Terms of Use"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr "Terms of Service"
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Allow the {nameApp} application to determine my location"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Toggle on your location"
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr "and choose the city of residence:"
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Continue"
+
+#. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Invalid phone number"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "The length of the name should be between 2 and 20 characters"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Registration"
+
+#. js-lingui-explicit-id
+msgid "We recommend filling out the profile information"
+msgstr "We recommend filling out the profile information"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Fill out later"
+
+#. js-lingui-explicit-id
+msgid "Settings"
+msgstr "Settings"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Button for closing the menu settings screen"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Share the app"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "About the service"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Terms of use"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Privacy policy"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Report an error/improvement"
+
+#. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr "Dark theme"
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr "Automatically detect location"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Toggle automatically detect location"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Delete profile"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "With the deletion of the profile, all your information will be deleted"
+
+#. js-lingui-explicit-id
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "What platform do you want to send the app installation invitation to?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
 msgstr "Toggle show menu"
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr "The nearest event:"
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr "{distance} km"
+
+#. js-lingui-explicit-id
+msgid "No date"
+msgstr "No date"
+
+#. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Cannot open channel URL"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Failed to load telegram channels"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Help & Resources"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Add Telegram channel"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Search channels..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Active filters:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Category"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Country"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Verified only"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Sort by"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Loading channels..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Open Channel"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Report"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Report Channel"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Are you sure you want to report this channel?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "AI Verified"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Telegram Channel"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "reports"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "By name:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "alphabetically"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "By category:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "grouped by category"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "By verification:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "verified first"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Verified Only"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -86,304 +1052,438 @@ msgid "No"
 msgstr "No"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Select country {nameCountry}"
+msgid "Clear Filters"
+msgstr "Clear Filters"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Select region {nameRegion}"
+msgid "Apply Filters"
+msgstr "Apply Filters"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Select region {nameCity}"
+msgid "Add Channel"
+msgstr "Add Channel"
 
 #. js-lingui-explicit-id
-msgid "Select country"
-msgstr "Select country"
+msgid "Please fill all required fields"
+msgstr "Please fill all required fields"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Continue"
+msgid "Channel submitted for review"
+msgstr "Channel submitted for review"
 
 #. js-lingui-explicit-id
-msgid "Back"
-msgstr "Back"
+msgid "Failed to add channel"
+msgstr "Failed to add channel"
 
 #. js-lingui-explicit-id
-msgid "Disable Deep Search"
-msgstr "Disable Deep Search"
+msgid "Add Telegram Channel"
+msgstr "Add Telegram Channel"
 
 #. js-lingui-explicit-id
-msgid "Enable Deep Search"
-msgstr "Enable Deep Search"
+msgid "You can add a telegram channel"
+msgstr "You can add a telegram channel"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Event address"
+msgid "Enter channel name"
+msgstr "Enter channel name"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Enter the exact address"
+msgid "Channel Name"
+msgstr "Channel Name"
 
 #. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Independence Street, 1"
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname or @channelname"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto {nameTypeWork}"
-msgstr "Select type work auto {nameTypeWork}"
+msgid "Channel URL"
+msgstr "Channel URL"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto {nameTypeWork}"
-msgstr "Select type work moto {nameTypeWork}"
+msgid "Enter channel description"
+msgstr "Enter channel description"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto"
-msgstr "Select type work moto"
+msgid "Description"
+msgstr "Description"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto"
-msgstr "Select type work auto"
+msgid "Location"
+msgstr "Location"
 
 #. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Background overlay for closing the modal window"
+msgid "Select location..."
+msgstr "Select location..."
 
 #. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Attention!"
+msgid "Search country..."
+msgstr "Search country..."
 
 #. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
+msgid "Search city..."
+msgstr "Search city..."
 
 #. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- or --"
+msgid "No results found"
+msgstr "No results found"
 
 #. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Report an error/improvement"
+msgid "Events"
+msgstr "Events"
 
 #. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Thank you for understanding!"
+msgid "Upcoming events:"
+msgstr "Upcoming events:"
 
 #. js-lingui-explicit-id
-msgid "The price of the item"
-msgstr "The price of the item"
+msgid "Sorry, there are no upcoming events"
+msgstr "Sorry, there are no upcoming events"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Motorcycle transport"
+msgid "Press show more events"
+msgstr "Press show more events"
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Car transport"
+msgid "More events"
+msgstr "More events"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle parts"
-msgstr "Motorcycle parts"
+msgid "Past events:"
+msgstr "Past events:"
 
 #. js-lingui-explicit-id
-msgid "Car parts"
-msgstr "Car parts"
+msgid "No events have passed"
+msgstr "No events have passed"
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Gasoline"
+msgid "Now"
+msgstr "Now"
 
 #. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Diesel"
+msgid "Not enabled location"
+msgstr "Not enabled location"
 
 #. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Gas / Petrol"
+msgid "Enter the text to search"
+msgstr "Enter the text to search"
 
 #. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Electric"
+msgid "By date:"
+msgstr "By date:"
 
 #. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Hybrid"
+msgid "from soonest to latest"
+msgstr "from soonest to latest"
 
 #. js-lingui-explicit-id
-msgid "Other"
-msgstr "Other"
+msgid "Price range:"
+msgstr "Price range:"
 
 #. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Manual"
+msgid "From"
+msgstr "From"
 
 #. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Automatic"
+msgid "To"
+msgstr "To"
 
 #. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Continuously variable transmission (CVT)"
+msgid "All locations"
+msgstr "All locations"
 
 #. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Adaptive"
+msgid "Select country or city"
+msgstr "Select country or city"
 
 #. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Tiptronic"
+msgid "Clear location filter"
+msgstr "Clear location filter"
 
 #. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Batteries"
+msgid "Close"
+msgstr "Close"
 
 #. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Shock absorbers and suspension"
+msgid "All countries"
+msgstr "All countries"
 
 #. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Variators and reducers"
+msgid "No countries found"
+msgstr "No countries found"
 
 #. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Exhaust systems, straight pipes, mufflers"
+msgid "All cities"
+msgstr "All cities"
 
 #. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Engine parts"
+msgid "No cities found"
+msgstr "No cities found"
 
 #. js-lingui-explicit-id
-msgid "Gearbox"
-msgstr "Gearbox"
+msgid "Save location filter"
+msgstr "Save location filter"
 
 #. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Footrests and pedals"
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
 
 #. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Lighting and lamps"
+msgid "{price} grn."
+msgstr "{price} grn."
 
 #. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Bearings"
+msgid "Free"
+msgstr "Free"
 
 #. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Drive and chassis"
+msgid "Phone number not found"
+msgstr "Phone number not found"
 
 #. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Frame, brackets, and swingarms"
+msgid ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Handlebars and controls"
+msgid "Share event"
+msgstr "Share event"
 
 #. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Seat"
+msgid "Please sign in to continue"
+msgstr "Please sign in to continue"
 
 #. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Cooling system"
+msgid "Event"
+msgstr "Event"
 
 #. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Clutch"
+msgid "All photos"
+msgstr "All photos"
 
 #. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Fuel system"
+msgid "Not going"
+msgstr "Not going"
 
 #. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Brake system"
+msgid "Going"
+msgstr "Going"
 
 #. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Cables and hoses"
+msgid "Date of the event"
+msgstr "Date of the event"
 
 #. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Filters"
+msgid "The beginning"
+msgstr "The beginning"
 
 #. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Chains and sprockets"
+msgid "Finish"
+msgstr "Finish"
 
 #. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Electrical system"
+msgid "Price for participation"
+msgstr "Price for participation"
 
 #. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Other motorcycle parts"
+msgid "About event"
+msgstr "About event"
 
 #. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Engine"
+msgid "Gallery"
+msgstr "Gallery"
 
 #. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Exhaust system"
+msgid "Timeline"
+msgstr "Timeline"
 
 #. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Transmission / Manual and Automatic Transmission"
+msgid "Add a description about the event"
+msgstr "Add a description about the event"
 
 #. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Steering system"
+msgid "Event description"
+msgstr "Event description"
 
 #. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Suspension / Chassis"
+msgid "event"
+msgstr "event"
 
 #. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Body parts"
+msgid "Your event is under review and will appear after verification"
+msgstr "Your event is under review and will appear after verification"
 
 #. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Interior details"
+msgid "Change event"
+msgstr "Change event"
 
 #. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Air conditioning, heater, ventilation"
+msgid "Create event"
+msgstr "Create event"
 
 #. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Air intake system"
+msgid "You can create an event"
+msgstr "You can create an event"
 
 #. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Ignition system"
+msgid "Enter the name of the event"
+msgstr "Enter the name of the event"
 
 #. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Window and headlight cleaning system"
+msgid "Name of the event"
+msgstr "Name of the event"
 
 #. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Headlights and lighting"
+msgid "The place of the event"
+msgstr "The place of the event"
 
 #. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Electrical equipment"
+msgid "Conclusion"
+msgstr "Conclusion"
 
 #. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Automotive glass"
+msgid "Participation fee"
+msgstr "Participation fee"
 
 #. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Liquefied gas system"
+msgid "100 uah"
+msgstr "100 uah"
 
 #. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Other types of spare parts"
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Briefly describe what will happen"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Tell us about the event"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to each timeline item"
+msgstr "Please add a title to each timeline item"
+
+#. js-lingui-explicit-id
+msgid "Timeline item start time is outside event dates"
+msgstr "Timeline item start time is outside event dates"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish must be after start"
+msgstr "Timeline item finish must be after start"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish time is outside event dates"
+msgstr "Timeline item finish time is outside event dates"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to the timeline item"
+msgstr "Please add a title to the timeline item"
+
+#. js-lingui-explicit-id
+msgid "Add item"
+msgstr "Add item"
+
+#. js-lingui-explicit-id
+msgid "No timeline items yet"
+msgstr "No timeline items yet"
+
+#. js-lingui-explicit-id
+msgid "Step"
+msgstr "Step"
+
+#. js-lingui-explicit-id
+msgid "Timeline item"
+msgstr "Timeline item"
+
+#. js-lingui-explicit-id
+msgid "Title"
+msgstr "Title"
+
+#. js-lingui-explicit-id
+msgid "Description (optional)"
+msgstr "Description (optional)"
+
+#. js-lingui-explicit-id
+msgid "Start"
+msgstr "Start"
+
+#. js-lingui-explicit-id
+msgid "Remove finish time"
+msgstr "Remove finish time"
+
+#. js-lingui-explicit-id
+msgid "Add finish time"
+msgstr "Add finish time"
+
+#. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Welcome to our service."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Log in using:"
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr "Continue with {typeSocial}"
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr "or sign up using:"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "find nearby events, workshops"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr "get help in case of an emergency"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Accept"
+
+#. js-lingui-explicit-id
+msgid "Welcome"
+msgstr "Welcome"
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr "Main"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Create workshop"
+
+#. js-lingui-explicit-id
+msgid "Map"
+msgstr "Map"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Select tab {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr "Help"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -514,1336 +1614,177 @@ msgid "Telegram {otherName}"
 msgstr "Telegram {otherName}"
 
 #. js-lingui-explicit-id
-msgid "advert"
-msgstr "advert"
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Incorrect phone number entered or country code of the phone number selected incorrectly"
 
 #. js-lingui-explicit-id
-msgid "Select tab {tabName}"
-msgstr "Select tab {tabName}"
+msgid "Password must contain at least 8 characters"
+msgstr "Password must contain at least 8 characters"
 
 #. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Create event"
+msgid "Passwords do not match"
+msgstr "Passwords do not match"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Change event"
+msgid "Select"
+msgstr "Select"
 
 #. js-lingui-explicit-id
-msgid "Create workshop"
-msgstr "Create workshop"
+msgid "The price of the item"
+msgstr "The price of the item"
 
 #. js-lingui-explicit-id
-msgid "Change workshop"
-msgstr "Change workshop"
+msgid "Types of work for motorcycle transport:"
+msgstr "Types of work for motorcycle transport:"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Create advert"
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Select type work moto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Change advert"
+msgid "Types of work for automobile transport:"
+msgstr "Types of work for automobile transport:"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Please authenticator"
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Select type work auto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Event delete"
+msgid "Select type work moto"
+msgstr "Select type work moto"
 
 #. js-lingui-explicit-id
-msgid "Success"
-msgstr "Success"
+msgid "Select type work auto"
+msgstr "Select type work auto"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Advert delete"
+msgid "Event address"
+msgstr "Event address"
 
 #. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Cancel"
+msgid "Enter the exact address"
+msgstr "Enter the exact address"
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Accept"
+msgid "Independence Street, 1"
+msgstr "Independence Street, 1"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "find nearby events, workshops"
+msgid "Select a location on the map"
+msgstr "Select a location on the map"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "for the \"SOS\" function so that other app users can assist you"
+msgid "Move and change the location"
+msgstr "Move and change the location"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
-msgstr "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgid "Specify the city"
+msgstr "Specify the city"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
-msgstr "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgid "Enter text to search"
+msgstr "Enter text to search"
 
 #. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Sorry, an error occurred"
+msgid "Please enter text for searching"
+msgstr "Please enter text for searching"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "The photo has been changed"
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "If there is no suitable option in the list, use 'Deep Search'"
 
 #. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "The photo has not been changed"
+msgid "Disable Deep Search"
+msgstr "Disable Deep Search"
 
 #. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Delete"
+msgid "Enable Deep Search"
+msgstr "Enable Deep Search"
 
 #. js-lingui-explicit-id
-msgid "Change"
-msgstr "Change"
+msgid "Select country {nameCountry}"
+msgstr "Select country {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Access denied"
+msgid "Select region {nameRegion}"
+msgstr "Select region {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Maintenance"
+msgid "Select region {nameCity}"
+msgstr "Select region {nameCity}"
 
 #. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgid "Select country"
+msgstr "Select country"
 
 #. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnostics"
+msgid "Select contact type"
+msgstr "Select contact type"
 
 #. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgid "Report on event"
+msgstr "Report on event"
 
 #. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Auto Electrical"
+msgid "Report on workshop"
+msgstr "Report on workshop"
 
 #. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgid "Report on telegram channel"
+msgstr "Report on telegram channel"
 
 #. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Chassis Repair"
+msgid "Contact us via:"
+msgstr "Contact us via:"
 
 #. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgid "Are you sure you want to delete?"
+msgstr "Are you sure you want to delete?"
 
 #. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Engine, Automatic, and Manual Transmission"
+msgid "Decrease the maximum number"
+msgstr "Decrease the maximum number"
 
 #. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgid "Increase the maximum number"
+msgstr "Increase the maximum number"
 
 #. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Brakes and Steering System"
+msgid "Resend the code"
+msgstr "Resend the code"
 
 #. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgid "Photo {numberPhoto}"
+msgstr "Photo {numberPhoto}"
 
 #. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Accessory Equipment"
+msgid "Main photo"
+msgstr "Main photo"
 
 #. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Air Conditioning Systems"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Wheel Alignment"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Painting"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Airbrushing"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Technical maintenance"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "General works"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Chassis"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Drive chain"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Electrics"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Plastic repair"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Welding/restoration of fragments/restoration of fasteners"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Welding works"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Electric arc welding / Semi-automatic welding / Argon arc welding"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Tuning and customization"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Button for closing the menu settings sos"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Radius, km:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Toggle notification of SOS signal"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Toggle automatically detect location"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Your telegram"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Phone number"
-
-#. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Add a description"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Description"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "On SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Check permissions"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings screen"
-msgstr "Button for closing the menu settings screen"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "SOS signal notification"
-
-#. js-lingui-explicit-id
-msgid "Share the app"
-msgstr "Share the app"
-
-#. js-lingui-explicit-id
-msgid "About the service"
-msgstr "About the service"
-
-#. js-lingui-explicit-id
-msgid "Terms of use"
-msgstr "Terms of use"
-
-#. js-lingui-explicit-id
-msgid "Privacy policy"
-msgstr "Privacy policy"
-
-#. js-lingui-explicit-id
-msgid "Delete profile"
-msgstr "Delete profile"
-
-#. js-lingui-explicit-id
-msgid "With the deletion of the profile, all your information will be deleted"
-msgstr "With the deletion of the profile, all your information will be deleted"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Brand/Make"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Mileage, km:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Year of release:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Customs cleared:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Type fuel"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
-msgstr "Transmission gearbox"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Category"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Motorcycle brand"
-
-#. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Car's make"
-
-#. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Type of fuel"
-
-#. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Type of transmission"
-
-#. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Advert change successfully"
-
-#. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Advert created successfully"
-
-#. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Error changing advert"
-
-#. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Error creating advert"
-
-#. js-lingui-explicit-id
-msgid "Error"
-msgstr "Error"
-
-#. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Add advert"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Enter the name of the advert"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Advert name"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "New"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Used"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "The state of the goods"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Private individual"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Business"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Seller"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Location"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Choose a city"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Add a description about the advert"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Advert description"
-
-#. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Publish"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Brand"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Condition"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Mileage"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} km"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Year of manufacture"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} km"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Customs cleared"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Fuel type"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Transmission"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Type parts"
-
-#. js-lingui-explicit-id
-msgid "Filter"
-msgstr "Filter"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "The state of the goods:"
-
-#. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Seller:"
-
-#. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Price, {symbol}:"
-
-#. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Make of car"
-
-#. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "brand of motorcycle"
-
-#. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Brand of motorcycle"
-
-#. js-lingui-explicit-id
-msgid "Filtering"
-msgstr "Filtering"
-
-#. js-lingui-explicit-id
-msgid "grn"
-msgstr "grn"
-
-#. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Toggle like product"
-
-#. js-lingui-explicit-id
-msgid "Market"
-msgstr "Market"
-
-#. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Enter the name"
-
-#. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Add product"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Confirm"
-
-#. js-lingui-explicit-id
-msgid "event"
-msgstr "event"
-
-#. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "You can create an event"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Enter the name of the event"
-
-#. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Name of the event"
-
-#. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Enter the address"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "The place of the event"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Date of the event"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "The beginning"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Conclusion"
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 uah"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 uah"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Briefly describe what will happen"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Tell us about the event"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} grn."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} grn."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Free"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Event"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Finish"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Price for participation"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "About event"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Gallery"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "All photos"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Enter the text to search"
-
-#. js-lingui-explicit-id
-msgid "Events"
-msgstr "Events"
-
-#. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Press show more events"
-
-#. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Add event"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Button for closing the registration FaceID"
-
-#. js-lingui-explicit-id
-msgid "Invalid phone number"
-msgstr "Invalid phone number"
-
-#. js-lingui-explicit-id
-msgid "The length of the name should be between 2 and 20 characters"
-msgstr "The length of the name should be between 2 and 20 characters"
-
-#. js-lingui-explicit-id
-msgid "Registration"
-msgstr "Registration"
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Name"
-
-#. js-lingui-explicit-id
-msgid "Enter your name"
-msgstr "Enter your name"
-
-#. js-lingui-explicit-id
-msgid "Save"
-msgstr "Save"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Fill out later"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location"
-msgstr "Toggle on your location"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Toggle on your location in the background"
-
-#. js-lingui-explicit-id
-msgid "Select the city"
-msgstr "Select the city"
-
-#. js-lingui-explicit-id
-msgid "Privacy Policy"
-msgstr "Privacy Policy"
-
-#. js-lingui-explicit-id
-msgid "Terms of Use"
-msgstr "Terms of Use"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Button for closing the registration TouchID"
-
-#. js-lingui-explicit-id
-msgid "business"
-msgstr "business"
-
-#. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Business profile"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Name company"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Enter the name of your business"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "City"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Additional number {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "events"
-msgstr "events"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings events screen"
-msgstr "Button for closing the settings events screen"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Buy event"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Improve"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Available ads: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Published ads: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Review"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Add"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Buy additionally"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Expended: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Available: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Active"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Your adverts"
-
-#. js-lingui-explicit-id
-msgid "Your workshops"
-msgstr "Your workshops"
-
-#. js-lingui-explicit-id
-msgid "Your events"
-msgstr "Your events"
-
-#. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Setting profile"
-
-#. js-lingui-explicit-id
-msgid "adverts"
-msgstr "adverts"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Button for closing the settings products screen"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Buy advert"
-
-#. js-lingui-explicit-id
-msgid "Error: incorrect phone number"
-msgstr "Error: incorrect phone number"
-
-#. js-lingui-explicit-id
-msgid "Error: First name must be between 3 and 15 characters"
-msgstr "Error: First name must be between 3 and 15 characters"
-
-#. js-lingui-explicit-id
-msgid "Error: select the city"
-msgstr "Error: select the city"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "The photo added"
-
-#. js-lingui-explicit-id
-msgid "Profile saved"
-msgstr "Profile saved"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Error: save profile"
-
-#. js-lingui-explicit-id
-msgid "First Name"
-msgstr "First Name"
-
-#. js-lingui-explicit-id
-msgid "Last Name"
-msgstr "Last Name"
-
-#. js-lingui-explicit-id
-msgid "workshops"
-msgstr "workshops"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings workshops screen"
-msgstr "Button for closing the settings workshops screen"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Add workshop"
-
-#. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Buy workshop"
-
-#. js-lingui-explicit-id
-msgid "Welcome to our service."
-msgstr "Welcome to our service."
-
-#. js-lingui-explicit-id
-msgid "Log in using:"
-msgstr "Log in using:"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Not information"
-
-#. js-lingui-explicit-id
-msgid "Moto"
-msgstr "Moto"
-
-#. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Auto"
-
-#. js-lingui-explicit-id
-msgid "All workshops"
-msgstr "All workshops"
-
-#. js-lingui-explicit-id
-msgid "Repair of motorcycles"
-msgstr "Repair of motorcycles"
-
-#. js-lingui-explicit-id
-msgid "Repair of automobiles"
-msgstr "Repair of automobiles"
-
-#. js-lingui-explicit-id
-msgid "workshop"
-msgstr "workshop"
-
-#. js-lingui-explicit-id
-msgid "Workshop change successfully"
-msgstr "Workshop change successfully"
-
-#. js-lingui-explicit-id
-msgid "Workshop created successfully"
-msgstr "Workshop created successfully"
-
-#. js-lingui-explicit-id
-msgid "Error changing workshop"
-msgstr "Error changing workshop"
-
-#. js-lingui-explicit-id
-msgid "Error creating workshop"
-msgstr "Error creating workshop"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop"
-msgstr "Enter the name of the workshop"
-
-#. js-lingui-explicit-id
-msgid "Workshop name"
-msgstr "Workshop name"
-
-#. js-lingui-explicit-id
-msgid "Workshop address"
-msgstr "Workshop address"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the workshop"
-msgstr "Add a description about the workshop"
-
-#. js-lingui-explicit-id
-msgid "Workshop description"
-msgstr "Workshop description"
-
-#. js-lingui-explicit-id
-msgid "Type workshop"
-msgstr "Type workshop"
-
-#. js-lingui-explicit-id
-msgid "Select type"
-msgstr "Select type"
-
-#. js-lingui-explicit-id
-msgid "Types of work"
-msgstr "Types of work"
-
-#. js-lingui-explicit-id
-msgid "Select types of work"
-msgstr "Select types of work"
-
-#. js-lingui-explicit-id
-msgid "Draft the first review"
-msgstr "Draft the first review"
-
-#. js-lingui-explicit-id
-msgid "Change a review"
-msgstr "Change a review"
-
-#. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Write a review"
+msgid "Make the main photo"
+msgstr "Make the main photo"
 
 #. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Select share page"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
-msgstr "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgid "Toggle like product"
+msgstr "Toggle like product"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
-msgstr "The text must contain a minimum of 10 and a maximum of 2000 characters."
-
-#. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Workshop"
-
-#. js-lingui-explicit-id
-msgid "Type workshops"
-msgstr "Type workshops"
-
-#. js-lingui-explicit-id
-msgid "Distance, km:"
-msgstr "Distance, km:"
-
-#. js-lingui-explicit-id
-msgid "All works"
-msgstr "All works"
-
-#. js-lingui-explicit-id
-msgid "Type works"
-msgstr "Type works"
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Workshops"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Enter the name of the workshop or type of work"
-
-msgid "{distance} km"
-msgstr "{distance} km"
-
-msgid "About us:"
-msgstr "About us:"
-
-msgid "Access to geolocation in the background mode"
-msgstr "Access to geolocation in the background mode"
-
-msgid "Access to geolocation when using the application"
-msgstr "Access to geolocation when using the application"
-
-msgid "Add advert"
-msgstr "Add advert"
-
-msgid "Add event"
-msgstr "Add event"
-
-msgid "Add workshop"
-msgstr "Add workshop"
-
-msgid "All cities"
-msgstr "All cities"
-
-msgid "All photos"
-msgstr "All photos"
-
-msgid "Allow"
-msgstr "Allow"
-
-msgid "Allow later"
-msgstr "Allow later"
-
-msgid "Allow login using Face ID"
-msgstr "Allow login using Face ID"
-
-msgid "Allow login using Touch ID"
-msgstr "Allow login using Touch ID"
-
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Allow the {nameApp} app to determine my location in the background"
-
-msgid "Allow the {nameApp} application to determine my location"
-msgstr "Allow the {nameApp} application to determine my location"
-
-msgid "Allow Touch ID to access the {nameApp} app."
-msgstr "Allow Touch ID to access the {nameApp} app."
-
-msgid "and choose the city of residence:"
-msgstr "and choose the city of residence:"
-
-msgid "Are you sure you want to delete?"
-msgstr "Are you sure you want to delete?"
-
-msgid "Automatically detect location"
-msgstr "Automatically detect location"
-
-msgid "Back"
-msgstr "Back"
-
-msgid "Business profile"
-msgstr "Business profile"
-
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-
-msgid "By distance:"
-msgstr "By distance:"
-
-msgid "By number of comments:"
-msgstr "By number of comments:"
-
-msgid "By rating:"
-msgstr "By rating:"
-
-msgid "Call"
-msgstr "Call"
-
-msgid "Cheapest"
-msgstr "Cheapest"
-
-msgid "Continue with {typeSocial}"
-msgstr "Continue with {typeSocial}"
-
-msgid "Create"
-msgstr "Create"
-
-msgid "Create event"
-msgstr "Create event"
-
-msgid "Currency:"
-msgstr "Currency:"
-
-msgid "Dark theme"
-msgstr "Dark theme"
-
-msgid "Delete"
-msgstr "Delete"
-
-msgid "Description"
-msgstr "Description"
-
-msgid "Do you want to send an SOS signal?"
-msgstr "Do you want to send an SOS signal?"
-
-msgid "Enable logging into the app using Face ID"
-msgstr "Enable logging into the app using Face ID"
-
-msgid "Event"
-msgstr "Event"
-
-msgid "Events"
-msgstr "Events"
-
-msgid "from closest to farthest"
-msgstr "from closest to farthest"
-
-msgid "from highest to lowest"
-msgstr "from highest to lowest"
-
-msgid "Gallery"
-msgstr "Gallery"
-
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr "If there is no suitable option in the list, use 'Deep Search'"
-
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr "Incorrect phone number entered or country code of the phone number selected incorrectly"
-
 msgid "Language selection"
 msgstr "Language selection"
 
-msgid "Last update"
-msgstr "Last update"
-
-msgid "Latest"
-msgstr "Latest"
-
-msgid "Leave a review"
-msgstr "Leave a review"
-
-msgid "Logout"
-msgstr "Logout"
-
-msgid "Main"
-msgstr "Main"
-
-msgid "Map"
-msgstr "Map"
-
-msgid "Market"
-msgstr "Market"
-
-msgid "More events"
-msgstr "More events"
-
-msgid "Most expensive"
-msgstr "Most expensive"
-
-msgid "Move and change the location"
-msgstr "Move and change the location"
-
-msgid "My adverts"
-msgstr "My adverts"
-
-msgid "My events"
-msgstr "My events"
-
-msgid "My workshops"
-msgstr "My workshops"
-
-msgid "No events have passed"
-msgstr "No events have passed"
-
-msgid "Not comments"
-msgstr "Not comments"
-
-msgid "Notification of SOS signal"
-msgstr "Notification of SOS signal"
-
-msgid "Now"
-msgstr "Now"
-
-msgid "Only with rating:"
-msgstr "Only with rating:"
-
-msgid "or sign up using:"
-msgstr "or sign up using:"
-
-msgid "Participation fee"
-msgstr "Participation fee"
-
-msgid "Password must contain at least 8 characters"
-msgstr "Password must contain at least 8 characters"
-
-msgid "Passwords do not match"
-msgstr "Passwords do not match"
-
-msgid "Past events:"
-msgstr "Past events:"
-
-msgid "Phone number"
-msgstr "Phone number"
-
-msgid "Please enter text for searching"
-msgstr "Please enter text for searching"
-
-msgid "Privacy Policy"
-msgstr "Privacy Policy"
-
-msgid "Profile"
-msgstr "Profile"
-
-msgid "Read the whole description..."
-msgstr "Read the whole description..."
-
-msgid "Registration"
-msgstr "Registration"
-
-msgid "Repair of automobiles"
-msgstr "Repair of automobiles"
-
-msgid "Repair of motorcycles"
-msgstr "Repair of motorcycles"
-
-msgid "Resend the code"
-msgstr "Resend the code"
-
-msgid "Reviews:"
-msgstr "Reviews:"
-
-msgid "Select a location on the map"
-msgstr "Select a location on the map"
-
-msgid "Settings"
-msgstr "Settings"
-
-msgid "Settings and permissions should be enabled"
-msgstr "Settings and permissions should be enabled"
-
-msgid "Someone needs help within a {distance} km radius"
-msgstr "Someone needs help within a {distance} km radius"
-
-msgid "Sorry, but no products were found by the filters"
-msgstr "Sorry, but no products were found by the filters"
-
-msgid "Sorry, but no workshops were found by the filters"
-msgstr "Sorry, but no workshops were found by the filters"
-
-msgid "Sorry, there are no available items"
-msgstr "Sorry, there are no available items"
-
-msgid "Sorry, there are no upcoming events"
-msgstr "Sorry, there are no upcoming events"
-
-msgid "Sorry, there are no upcoming workshops"
-msgstr "Sorry, there are no upcoming workshops"
-
-msgid "Sorry!"
-msgstr "Sorry!"
-
-msgid "Specify the city"
-msgstr "Specify the city"
-
-msgid "Terms of Service"
-msgstr "Terms of Service"
-
-msgid "Terms of Use"
-msgstr "Terms of Use"
-
-msgid "The nearest event:"
-msgstr "The nearest event:"
-
-msgid "The work we do:"
-msgstr "The work we do:"
-
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-
-msgid "Type workshops"
-msgstr "Type workshops"
-
-msgid "Types of work for automobile transport:"
-msgstr "Types of work for automobile transport:"
-
-msgid "Types of work for motorcycle transport:"
-msgstr "Types of work for motorcycle transport:"
-
-msgid "Upcoming events:"
-msgstr "Upcoming events:"
-
-msgid "Views:"
-msgstr "Views:"
-
-msgid "We recommend filling out the profile information"
-msgstr "We recommend filling out the profile information"
-
-msgid "Welcome"
-msgstr "Welcome"
-
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr "What platform do you want to send the app installation invitation to?"
-
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr "Will automatically turn off after 20-30 minutes"
-
-msgid "Workshop"
-msgstr "Workshop"
-
-msgid "Workshops"
-msgstr "Workshops"
-
-msgid "Write"
-msgstr "Write"
-
-msgid "You don't have {typeItem}."
-msgstr "You don't have {typeItem}."
-
-msgid "Your contact information"
-msgstr "Your contact information"
-
-msgid "Your profile"
-msgstr "Your profile"
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Press and enter to search for a city"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Add a photo"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "The first photo will be on the cover of the advertisement."

@@ -24,8 +24,8 @@ type InputButtonProps = {
   containerStyle?: ViewStyle;
   isRegular?: boolean;
   isSelect?: boolean;
-  leftElementInput?: JSX.Element;
-  rightElementInput?: JSX.Element;
+  leftElementInput?: React.ReactNode;
+  rightElementInput?: React.ReactNode;
   disabled?: boolean;
   isMultiLines?: boolean;
 };

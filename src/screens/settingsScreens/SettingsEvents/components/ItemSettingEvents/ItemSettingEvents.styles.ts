@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../../../styles/colors";
 import { FONT_600_OPEN_SANS } from "../../../../../../styles/constants";
+import { horizontalScale } from "../../../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,12 +17,17 @@ export const styles = StyleSheet.create({
   containerLeft: {
     flexDirection: "row",
     gap: 8,
+    flex: 1,
+    flexShrink: 1,
   },
   image: { width: 60, height: 52, borderRadius: 3 },
   containerInfo: {
     justifyContent: "space-between",
+    flex: 1,
+    flexShrink: 1,
   },
   title: {
+    width: horizontalScale(250),
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 16,
   },
@@ -29,7 +35,50 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_600_OPEN_SANS,
     fontSize: 12,
   },
+  containerStatus: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 4,
+  },
+  statusBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 4,
+  },
+  statusText: {
+    fontSize: 10,
+    fontFamily: FONT_600_OPEN_SANS,
+  },
+  statusPending: {
+    backgroundColor: colors.yellow,
+  },
+  statusVerified: {
+    backgroundColor: colors.green,
+  },
+  statusRejected: {
+    backgroundColor: colors.errorRed,
+  },
+  statusTextPending: {
+    color: colors.blackCoffee,
+  },
+  statusTextVerified: {
+    color: colors.white,
+  },
+  statusTextRejected: {
+    color: colors.white,
+  },
+  reasonText: {
+    fontSize: 9,
+    color: colors.errorRed,
+    marginTop: 2,
+    fontStyle: "italic",
+    flexShrink: 1,
+    maxWidth: horizontalScale(250),
+  },
   containerRight: {
     justifyContent: "center",
+    alignItems: "flex-end",
+    flexShrink: 0,
   },
 });

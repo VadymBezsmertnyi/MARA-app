@@ -1,5 +1,3 @@
-import { t } from "@lingui/macro";
-
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
@@ -7,10 +5,10 @@ import { useLocalesProvider } from "../../../localization/localization.provider"
 import { PATHS_EVENTS_SCREENS } from "../useNavigator.constants";
 
 // News and events
-import { EventsMain } from "../../screens/newsScreens/EventsMain/EventsMain";
-import { EventsList } from "../../screens/newsScreens/EventsList/EventsList";
-import { EventItem } from "../../screens/newsScreens/EventItem/EventItem";
-import { AddEvent } from "../../screens/newsScreens/EventAdd/EventAdd";
+import { EventsMain } from "../../screens/eventsScreens/EventsMain/EventsMain";
+import { EventsList } from "../../screens/eventsScreens/EventsList/EventsList";
+import { EventDetails } from "../../screens/eventsScreens/EventDetails/EventDetails";
+import { AddEvent } from "../../screens/eventsScreens/EventAdd/EventAdd";
 
 export const useNewsStack = () => {
   const { i18n } = useLocalesProvider();
@@ -26,21 +24,21 @@ export const useNewsStack = () => {
     {
       id: PATHS_EVENTS_SCREENS.eventsList,
       name: PATHS_EVENTS_SCREENS.eventsList,
-      title: t(i18n)`Events`,
+      title: i18n._("Events"),
       headerShown: false,
       component: EventsList,
     },
     {
       id: PATHS_EVENTS_SCREENS.eventItem,
       name: PATHS_EVENTS_SCREENS.eventItem,
-      title: t(i18n)`Event`,
+      title: i18n._("Event"),
       headerShown: false,
-      component: EventItem,
+      component: EventDetails,
     },
     {
       id: PATHS_EVENTS_SCREENS.eventAdd,
       name: PATHS_EVENTS_SCREENS.eventAdd,
-      title: t(i18n)`Create event`,
+      title: i18n._("Create event"),
       headerShown: false,
       component: AddEvent,
     },

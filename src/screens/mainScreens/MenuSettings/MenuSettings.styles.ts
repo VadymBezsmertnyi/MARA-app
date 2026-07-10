@@ -83,9 +83,4 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 35,
   },
-  titleSos: {
-    fontFamily: FONT_700_MONTSERRAT,
-    color: colors.blackCoffee,
-    fontSize: 20,
-  },
 });

@@ -1,16 +1,18 @@
 import React, { FunctionComponent } from "react";
 import { ScrollView, Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
+import { Shadow } from "react-native-shadow-2";
+
+// types
+import { TTypeWork } from "../../storeRedux/apis/workshops/workshops.types";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
-import { TypeWorkType } from "../../providers/WorkshopsProvider/WorkshopsProvider.types";
 
 // hooks
-import { useWorkshopsProviderState } from "../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsState } from "../../storeRedux/apis/workshops/useWorkshops.constants";
 
 // components
-import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
+import { ModalUniversal } from "../ModalUniversal/ModalUniversal";
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 import { CheckboxClassic } from "../CheckboxClassic/CheckboxClassic";
@@ -36,9 +38,9 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
   onSubmit,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { typesWorkServices } = useWorkshopsProviderState();
+  const { typesWorkServices } = useWorkshopsState();
 
-  const onSelectAutoTypeWork = (typeAutoWork: TypeWorkType) => {
+  const onSelectAutoTypeWork = (typeAutoWork: TTypeWork) => {
     const isBe = selectAutoTypesWorks.includes(typeAutoWork.id);
     if (isBe)
       setSelectAutoTypesWorks((state) =>
@@ -47,16 +49,29 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
     else setSelectAutoTypesWorks((state) => [...state, typeAutoWork.id]);
   };
 
+  if (!isShow) return null;
+
   return (
-    <ModalsSheet isShow={isShow} onClose={onClose}>
+    <ModalUniversal
+      visible={isShow}
+      onClose={onClose}
+      styleContainer={styles.modalOverlay}
+      animationType="fade"
+    >
       <View style={styles.containerModalTypeWork}>
-        <View style={styles.containerHeaderTypeWork}>
-          <Text style={styles.titleModalType}>
-            <Trans>Types of work for automobile transport:</Trans>
-          </Text>
-          <LinearGradientCustom style={styles.lineModalType} />
-        </View>
-        <ScrollView>
+        <Shadow stretch>
+          <View style={styles.containerHeaderTypeWork}>
+            <Text style={styles.titleModalType}>
+              {i18n._("Types of work for automobile transport:")}
+            </Text>
+            <LinearGradientCustom style={styles.lineModalType} />
+          </View>
+        </Shadow>
+        <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollViewContent}
+          nestedScrollEnabled
+        >
           <View style={styles.containerTypesWork}>
             {typesWorkServices.auto.map((workAuto) => {
               const isSelect = selectAutoTypesWorks.includes(workAuto.id);
@@ -87,15 +102,17 @@ export const ModalSheetTypesAutoWorks: FunctionComponent<
             })}
           </View>
         </ScrollView>
-        <View style={styles.containerSubmitModalTypeWork}>
-          <ButtonCustom
-            disabled={selectAutoTypesWorks.length === 0}
-            accessibilityLabel={i18n._("Select")}
-            title={i18n._("Select")}
-            onSubmit={onSubmit}
-          />
-        </View>
+        <Shadow stretch>
+          <View style={styles.containerSubmitModalTypeWork}>
+            <ButtonCustom
+              disabled={selectAutoTypesWorks.length === 0}
+              accessibilityLabel={i18n._("Select")}
+              title={i18n._("Select")}
+              onSubmit={onSubmit}
+            />
+          </View>
+        </Shadow>
       </View>
-    </ModalsSheet>
+    </ModalUniversal>
   );
 };

@@ -17,8 +17,9 @@ import { LocationObjectCoords } from "expo-location";
 import { Language } from "../../../localization/localization.types";
 import { InitialUrlType } from "./PushNotificationProvider.types";
 
-// providers
-import { userContext, useUserProvider } from "../UserProvider/UserProvider";
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../storeRedux/api";
 
 // schemas
 import { typeInitialUrlSchema } from "./PushNotificationProvider.schemas";
@@ -32,7 +33,6 @@ import {
 
 type PushNotificationContext = {
   setLanguageNotification: (language: Language) => void;
-  addSosNotification: (location: LocationObjectCoords) => Promise<void>;
 };
 
 type PushNotificationProviderProps = {
@@ -63,7 +63,8 @@ const PushNotificationProvider: FunctionComponent<
       };
     }>
   >();
-  const { userData, editUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
   const [tempGoLink, setTempGoLink] = useState<InitialUrlType | null>(null);
 
   const setSubscriptionNotification = async () => {
@@ -71,7 +72,10 @@ const PushNotificationProvider: FunctionComponent<
       const userSubscriptionId =
         await OneSignal.User.pushSubscription.getIdAsync();
       if (userSubscriptionId)
-        await editUser({ ...userData, subscriptionId: userSubscriptionId });
+        await editUserMutation({
+          body: { subscriptionId: userSubscriptionId },
+          existingUserData: userData,
+        });
     }
   };
 
@@ -87,22 +91,8 @@ const PushNotificationProvider: FunctionComponent<
     if (currentInitialUrl?.success) setTempGoLink(currentInitialUrl.data);
   };
 
-  const addSosNotification = async (location: LocationObjectCoords) => {
-    const queryParams = qs.stringify(
-      {
-        type: "sos",
-        latitude: location.latitude,
-        longitude: location.longitude,
-      },
-      { addQueryPrefix: true }
-    );
-    const url = Linking.createURL("/main");
-
-    // TODO to server for push notification
-  };
-
   const valueContext: PushNotificationContext = useMemo(
-    () => ({ setLanguageNotification, addSosNotification }),
+    () => ({ setLanguageNotification }),
     []
   );
 

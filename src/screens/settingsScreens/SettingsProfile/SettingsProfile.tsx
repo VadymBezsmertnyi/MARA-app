@@ -8,22 +8,28 @@ import {
   View,
 } from "react-native";
 import { CommonActions } from "@react-navigation/native";
-import { Trans } from "@lingui/macro";
 import * as ImagePicker from "expo-image-picker";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { DropdownAlertType } from "react-native-dropdownalert";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../../storeRedux/api";
+import { useRootDispatch } from "../../../storeRedux/store";
+import { cleanUserData } from "../../../storeRedux/apis/user/slice";
+
 // providers
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { usePlacesProvider } from "../../../providers/PlacesProvider/PlacesProvider";
-import { useDropDownAlertProvider } from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+import {
+  DropdownAlertType,
+  useDropDownAlertProvider,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
@@ -33,10 +39,13 @@ import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ItemSearchPlaceType } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace.types";
 import { ModalSheetSearchPlace } from "../../../components/ModalSheetSearchPlace/ModalSheetSearchPlace";
 import { ImageProfile } from "../../../components/ImageProfile/ImageProfile";
+import { ModalChangeAvatar } from "./components/ModalChangeAvatar/ModalChangeAvatar";
 
 // helps
-import { compressAndProcessImages } from "../../../helps/helps";
-import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
+import {
+  deleteTokens,
+  getNamesUser,
+} from "../../../storeRedux/apis/user/user.helpers";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";
 
@@ -59,7 +68,7 @@ import { ModalShowErrors } from "../../../components/ModalShowErrors/ModalShowEr
 
 type SettingsProfileProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootAllScreensParamList>;
 };
 
 type NamesErrorsType = "phoneNumber" | "firstName" | "place";
@@ -70,7 +79,9 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const { bottom } = useSafeAreaInsets();
   const { messageFromServer } = useDropDownAlertProvider();
   const { verifyPhone } = useAuthorizationRegistration();
-  const { userData, editUser, exitUser, setIsChangeAvatar } = useUserProvider();
+  const { userData } = useUserSelector();
+  const dispatch = useRootDispatch();
+  const [editUserMutation] = useEditUserMutation();
   const { i18n, language } = useLocalesProvider();
   const { heightTabBar, heightStatusBar } = useThemeProvider();
   const { placesDB } = usePlacesProvider();
@@ -80,6 +91,7 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
   const [isShowModal, setIsShowModal] = useState(false);
   const [city, setCity] = useState<ItemSearchPlaceType | null>(null);
+  const [isChangeAvatar, setIsChangeAvatar] = useState(false);
   const showTitlePlace = useMemo(() => {
     if (!userData?.place_id) return "";
     return userData.place_id[language].formatted_address;
@@ -98,13 +110,13 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
 
   const imageSource = useMemo(
     () =>
-      userData?.avatar
+      userData?.avatarFile
         ? ({
-            uri: userData.avatar.url,
+            uri: userData.avatarFile.url,
             cache: "force-cache",
           } as ImageURISource)
         : null,
-    [userData?.avatar]
+    [userData?.avatarFile]
   );
 
   const errorsObject = useMemo(() => {
@@ -149,33 +161,30 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: ["images"],
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
       base64: true,
     });
 
-    if (!result.canceled) {
-      const compressImages = await compressAndProcessImages(result);
-      const resultUpdate = await editUser({
-        avatar: {
-          ...userData?.avatar,
-          image: compressImages[0],
-        },
+    if (!result.canceled && userData) {
+      const resultUpdate = await editUserMutation({
+        body: { avatarFile: result.assets[0] },
+        existingUserData: userData,
       });
 
-      if (!resultUpdate)
+      if (resultUpdate.data?.userData)
         messageFromServer(
-          i18n._("The photo has been changed"),
+          i18n._("The photo added"),
           i18n._("Success"),
           DropdownAlertType.Success
         );
       else
         messageFromServer(
-          i18n._("The photo added"),
-          i18n._("Success"),
-          DropdownAlertType.Success
+          i18n._("Sorry, an error occurred"),
+          i18n._("Error"),
+          DropdownAlertType.Warn
         );
     } else
       messageFromServer(
@@ -190,14 +199,14 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
   };
 
   const onLogoutProfile = async () => {
-    const result = await exitUser();
-    if (result)
-      navigation.dispatch(
-        CommonActions.reset({
-          index: 0,
-          routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
-        })
-      );
+    dispatch(cleanUserData());
+    await deleteTokens();
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: PATHS_MAIN_SCREENS.welcome }],
+      })
+    );
   };
 
   const onSave = async () => {
@@ -213,14 +222,17 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
             country_place_id: userData.country_place_id,
           }
         : { cityUser: city };
-    const resultSave = await editUser({
-      ...userData,
-      ...currentCityUser,
-      firstName,
-      lastName,
-      ...(isPhone && { phoneNumber: clearPhoneNumber }),
+    if (!userData) return;
+    const resultSave = await editUserMutation({
+      body: {
+        ...currentCityUser,
+        firstName,
+        lastName,
+        ...(isPhone && { phoneNumber: clearPhoneNumber }),
+      },
+      existingUserData: userData,
     });
-    if (resultSave) {
+    if (resultSave.data) {
       messageFromServer(
         i18n._("Profile saved"),
         i18n._("Success"),
@@ -269,22 +281,18 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         <View style={styles.containerHeader}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsMain);
+              navigation.goBack();
             }}
             style={styles.buttonsHeaderLeft}
           >
             <Text style={styles.titleDelete}>{i18n._("Back")}</Text>
           </TouchableOpacity>
-          <Text style={styles.titleHeader}>
-            <Trans>Profile</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("Profile")}</Text>
           <TouchableOpacity
             onPress={onLogoutProfile}
             style={styles.buttonsHeaderRight}
           >
-            <Text style={styles.titleLogout}>
-              <Trans>Logout</Trans>
-            </Text>
+            <Text style={styles.titleLogout}>{i18n._("Logout")}</Text>
           </TouchableOpacity>
         </View>
         <ScrollView
@@ -372,6 +380,13 @@ export const SettingsProfile: FunctionComponent<SettingsProfileProps> = ({
         }}
         errors={errorMessage}
       />
+      {isChangeAvatar ? (
+        <ModalChangeAvatar
+          onClose={() => {
+            setIsChangeAvatar(false);
+          }}
+        />
+      ) : null}
     </KeyboardAvoidingView>
   );
 };

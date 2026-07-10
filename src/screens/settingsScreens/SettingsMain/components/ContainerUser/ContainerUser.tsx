@@ -1,8 +1,11 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { ImageURISource, Text, View } from "react-native";
+import { ImageURISource, Text, View, TouchableOpacity } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+
+// redux
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 
 // providers
-import { useUserProvider } from "../../../../../providers/UserProvider/UserProvider";
 import { usePlacesProvider } from "../../../../../providers/PlacesProvider/PlacesProvider";
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
@@ -16,9 +19,15 @@ import { IconProfileAvatar } from "../../../../../icons/components";
 // styles
 import { styles } from "./ContainerUser.styles";
 
-export const ContainerUser: FunctionComponent = () => {
+type Props = {
+  onPressEditProfile: () => void;
+};
+
+export const ContainerUser: FunctionComponent<Props> = ({
+  onPressEditProfile,
+}) => {
   const { language } = useLocalesProvider();
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
   const { placesDB } = usePlacesProvider();
   const showCity = useMemo(
     () => (userData?.place_id ? userData.place_id[language] || null : null),
@@ -26,49 +35,56 @@ export const ContainerUser: FunctionComponent = () => {
   );
   const imageSource = useMemo(
     () =>
-      userData?.avatar
+      userData?.avatarFile
         ? ({
-            uri: userData.avatar.url,
+            uri: userData.avatarFile.url,
             cache: "force-cache",
           } as ImageURISource)
         : null,
-    [userData?.avatar]
+    [userData?.avatarFile]
   );
 
   return (
     <View style={styles.container}>
-      <View style={styles.containerMain}>
-        {imageSource ? (
-          <ImageCache style={styles.containerImage} imageSrc={imageSource} />
-        ) : (
-          <IconProfileAvatar style={styles.containerImage} />
-        )}
-        <View style={styles.titlesMain}>
-          <Text style={styles.titleInfo}>{userData?.firstName}</Text>
-          <Text style={styles.titleInfo}>{showCity?.name}</Text>
-          {userData?.phoneNumber ? (
-            <PhoneWithMessengers
-              title={userData.phoneNumber}
-              //isTelegram
-              //isWhatsApp
-              //isViber
-            />
-          ) : null}
+      <View style={styles.profileHeader}>
+        <View style={styles.avatarContainer}>
+          {imageSource ? (
+            <ImageCache style={styles.avatarImage} imageSrc={imageSource} />
+          ) : (
+            <IconProfileAvatar style={styles.avatarImage} />
+          )}
+          <TouchableOpacity style={styles.editButton}>
+            <MaterialIcons name="edit" size={16} color="#fff" />
+          </TouchableOpacity>
         </View>
+
+        <View style={styles.profileInfo}>
+          <View style={styles.nameRow}>
+            <Text style={styles.profileName}>
+              {userData?.firstName || "Вадим"}
+            </Text>
+            <View style={styles.verifiedBadge}>
+              <MaterialIcons name="check-circle" size={16} color="#4CAF50" />
+              <Text style={styles.verifiedText}>Верифікований</Text>
+            </View>
+          </View>
+          <Text style={styles.profileLocation}>
+            {showCity?.name || "Cherkasy"}
+          </Text>
+          {userData?.phoneNumber ? (
+            <PhoneWithMessengers title={userData.phoneNumber} />
+          ) : (
+            <Text style={styles.profilePhone}>+3809729909007</Text>
+          )}
+        </View>
+
+        <TouchableOpacity
+          style={styles.settingsButton}
+          onPress={onPressEditProfile}
+        >
+          <MaterialIcons name="settings" size={24} color="#666" />
+        </TouchableOpacity>
       </View>
-      {/* <View style={styles.containerOtherContacts}>
-        <Text style={styles.titleOtherContacts}>
-          <Trans>Additional contacts:</Trans>
-        </Text>
-        {userData?.phoneNumber ? (
-          <PhoneWithMessengers
-            title={userData.phoneNumber}
-            isTelegram
-            isWhatsApp
-            isViber
-          />
-        ) : null}
-      </View> */}
     </View>
   );
 };

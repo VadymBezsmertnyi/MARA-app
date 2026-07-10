@@ -14,68 +14,1034 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Pridėti nuotrauką"
+msgid "Maintenance"
+msgstr "Uzturēšana"
 
 #. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "Pirma nuotrauka bus reklamos viršelyje."
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Eļļas nomaiņa / Filtru nomaiņa / Šķērsošanas siksnu nomaiņa / Sprādzes nomaiņa / Pārnesumu eļļas nomaiņa / Bremžu serviss / Visu nepieciešamo šķidrumu nomaiņa / utt."
 
 #. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Įveskite tekstą, kurį norite ieškoti"
+msgid "Diagnostics"
+msgstr "Diagnostika"
 
 #. js-lingui-explicit-id
-msgid "Press and enter to search for a city"
-msgstr "Paspauskite ir įveskite, norėdami ieškoti miesto"
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Pirmspārdošanas visaptveroša diagnostika / Šasijas diagnostika / Dzinēja diagnostika / Pārnesumu diagnostika / Ķermeņa diagnostika / Datora diagnostika / Šķidruma diagnostika / utt."
 
 #. js-lingui-explicit-id
-msgid "Select"
-msgstr "Pasirinkti"
+msgid "Auto Electrical"
+msgstr "Auto Elektrība"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Elektrinės laidų remontas / Mikroschemų lankymas / Bet kokios sudėtingumo signalizacijos įrengimas / Odometro korekcija / Raktų perprogramavimas / Variklio ir perdavimo prisitaikymas / EGR pašalinimas / DPF pašalinimas / Ksenoninio apšvietimo įrengimas / Parkavimo daviklių įrengimas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Šasijos remontas"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Amortizatorių kojos keitimas / Spyruoklių keitimas / Valdymo rankena keitimas / Sąsagos keitimas / Tylus blokas keitimas / Lapo spyruoklių keitimas / Ratų guolių keitimas / Pjovimo peilių keitimas / Veleno keitimas / Sferinio sąnario keitimas / Variklio ir perdavimo tvirtinimo keitimas / Mechaniniai darbai"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Variklis, automatinė ir mechaninė pavarų dėžė"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Variklio diagnostika / Variklio remontas / Variklio keitimas / Variklio aliuminio karterio keitimas / Automatinės pavarų dėžės diagnostika / Automatinės pavarų dėžės tepalų keitimas / Automatinės pavarų dėžės keitimas / Automatinės pavarų dėžės valymas / Embriono keitimas / Mechaninės pavarų dėžės diagnostika / Mechaninės pavarų dėžės tepalų keitimas / Mechaninės pavarų dėžės keitimas / Mechaninės pavarų dėžės valymas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Stabdžiai ir vairavimo sistema"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Stabdžių sistemos diagnostika / Stabdžių skysčio keitimas / Stabdžių sistemos remontas / Stabdžių kraujas / Vairo kolonėlės keitimas / Vairo kolonėlės atkūrimas / Galiūno keitimas / Galiūno skysčio keitimas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Priedai"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Starterio remontas / Starterio keitimas / Generatoriaus remontas / Generatoriaus keitimas / Turbokompresoriaus atkūrimas / Turbokompresoriaus keitimas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Kondicionavimo sistemos"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnostika / Įkrovimas / Pakrovimas / Nutekėjimo aptikimas / Vamzdelių keitimas / Radiatoriaus keitimas / Kompresoriaus remontas / Kompresoriaus keitimas / Sistemos dezinfekcija / Užsienio kvapų pašalinimas"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Ratų išlyginimas"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Ratų išlyginimas / Išlyginimo diagnostika / Pakabos defektų paieška / Krovinio defektų paieška"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Dažymas"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Kėbulo dažymas / Bamperio dažymas / Šoninės sijos dažymas / Durų dažymas / Kapoto dažymas / Stogo dažymas / Bagažinės dažymas / Sparno dažymas / Spoilerio dažymas / Veidrodžio dažymas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aerografija"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Aerografija jebkādai sarežģītībai / Aerografija jebkādai sarežģītībai uz jebkuras virsmas / Aerografija jebkādai sarežģītībai uz jebkuras motocikla daļas / Pasūtījuma aerografijas dizaini bako, šķērsošanas un kėbulo daļām"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Techninė priežiūra"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Kabelių tepimas / Kuro siurblio sinchronizavimas / Oro filtro keitimas / Žvakės keitimas / Pavarų dėžės tepalų keitimas / Diferencialo tepalo keitimas / Šaldytuvo keitimas / Variklio alyvos keitimas"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Bendrieji darbai"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Bendroji diagnostika / Slegio matavimas / Techninio skysčio lygio patikrinimas / Embriono kabelio keitimas / Droselio kabelio keitimas / Kuro bakų valymas ir nutekėjimas / Kuro bakų pašalinimas ir įrengimas / Plastikinių detalių pašalinimas ir įrengimas / Apsauginio lanko, slydimo įrengimas"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Šasija"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Priekinių ratų pašalinimas ir įrengimas / Galinių ratų pašalinimas ir įrengimas / Ratų guolių keitimas / Vairo stovo guolio reguliavimas / Vairo stovo guolio keitimas / Priekinės šakės pašalinimas ir įrengimas / Priekinės šakės sandarinimo keitimas / Priekinės šakės tepalo keitimas / Galinio svirties guolio keitimas / Galinio amortizatoriaus keitimas / Monoshock amortizatoriaus keitimas / Galinio amortizatoriaus remontas"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Pavara"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Pavaros grandinės ir pavarų ratai keitimas / Grandinės valymas, tepimas ir reguliavimas / Grandinės reguliavimas, įtempimas ir tepimas"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Dzinējs"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Pašalinimas ir įrengimas / Vožtuvo reguliavimas / Embriono keitimas / Cilindro galvos remontas / Laiko grandinės keitimas / Pistono grupės remontas / Pavarų dėžės remontas / Variklio remontas"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Elektra"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Reguliatoriaus relejų keitimas / Generatoriaus keitimas / Starterio keitimas / Starterio remontas / Lempos keitimas / Ksenono įrengimas / Baterijos keitimas / Baterijos įkrovimas"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Bremžu sistēma"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Diskinio stabdžio kaladėlių keitimas / Būgninio stabdžio kaladėlių keitimas / Stabdžių kraujas / Stabdžių skysčio keitimas / Kombinuotas stabdžių skysčio keitimas / Stabdžių vamzdžių keitimas / Sustiprinto vamzdžio įrengimas / Stabdžių disko keitimas / Stabdžių suportų remontas"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Plastikinio remontas"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Virinimas / fragmentų atkūrimas / tvirtinimų atkūrimas"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Virinimo darbai"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Elektrodų virinimas / Pusiau automatizuotas virinimas / Argoninis virinimas"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Reguliavimas ir pritaikymas"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Apsauginio lanko įrengimas / Slankiojimo įrengimas / Išmetimo sistemos įrengimas / Stabdžių sistemos įrengimas / Sustiprinto vamzdžio įrengimas / Ksenono įrengimas / Motociklo apšvietimo įrengimas / Rūkas įrengimas (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Bako dažymas / Šoninės plokštės dažymas / Šoninės sijos dažymas / Kėbulo dažymas / Galinio žibinto dangtelio dažymas / Užpakalinės dalies dažymas / Sėdynės dangtelio dažymas / Išmetimo dangtelio dažymas / Priekinės šakės dažymas / Ir kt."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Aerografija jebkādai sarežģītībai / Aerografija jebkādai sarežģītībai uz jebkuras virsmas / Aerografija jebkādai sarežģītībai uz jebkuras automašīnas daļas"
+
+#. js-lingui-explicit-id
+msgid "Wait please before the next update"
+msgstr "Lūdzu, gaidiet pirms nākamās atjaunināšanas"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Darbnīcas"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Pridėti dirbtuvę"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Ievadiet darbnīcas nosaukumu vai darba veidu"
+
+#. js-lingui-explicit-id
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Atvainojiet, bet ar filtriem netika atrast nevienu darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Atvainojiet, nav tuvēšo darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Geolocation disabled for calculation"
+msgstr "Ģeolokācija atslēgta aprēķināšanai"
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr "Nevar aprēķināt"
 
 #. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
 #. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Neleidžiama vieta"
-
-#. js-lingui-explicit-id
-msgid "Photo {numberPhoto}"
-msgstr "Nuotrauka {numberPhoto}"
+msgid "Not comments"
+msgstr "Nav komentāru"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
 msgstr "Mygtukas uždaryti iššokantį langą"
 
 #. js-lingui-explicit-id
-msgid "Main photo"
-msgstr "Pagrindinė nuotrauka"
+msgid "By distance:"
+msgstr "Pēc attāluma:"
 
 #. js-lingui-explicit-id
-msgid "Make the main photo"
-msgstr "Padarykite pagrindinę nuotrauką"
+msgid "from closest to farthest"
+msgstr "no tuvākā līdz tālākajam"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Visi miestai"
+msgid "Getting location..."
+msgstr "Nosakot atrašanās vietu..."
 
 #. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Miestų nerasta"
+msgid "To calculate distance, please enable location services"
+msgstr "Lai aprēķinātu attālumu, lūdzu iespējot atrašanās pakalpojumus"
 
 #. js-lingui-explicit-id
-msgid "Decrease the maximum number"
-msgstr "Sumažinkite maksimalų skaičių"
+msgid "Enable location"
+msgstr "Iespējot atrašanās vietu"
 
 #. js-lingui-explicit-id
-msgid "Increase the maximum number"
-msgstr "Padidinkite maksimalų skaičių"
+msgid "By rating:"
+msgstr "Pēc vērtējuma:"
+
+#. js-lingui-explicit-id
+msgid "from highest to lowest"
+msgstr "no augstākā līdz zemākajam"
+
+#. js-lingui-explicit-id
+msgid "By number of comments:"
+msgstr "Pēc komentāru skaita:"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Nav informācijas"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Moto"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Auto"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Visas darbnīcas"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Motociklu remonts"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Automobilių remontas"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Filtrs"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Darbnīcu tips"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Attālums, km:"
+
+#. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr "Tik ar vērtējumu:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Visi darbi"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Darbu tips"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Filtrēšana"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Kļūda"
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr "Nevar patikt darbnīcai"
+
+#. js-lingui-explicit-id
+msgid "Failed to create share link"
+msgstr "Neizdevās izveidot dalīšanās saiti"
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Atvērt darbnīcu lietotnē:\n"
+"{appLink}\n"
+"\n"
+"Atvērt pārlūkprogrammā:\n"
+"{webLink}"
+
+#. js-lingui-explicit-id
+msgid "Share workshop"
+msgstr "Dalīties ar darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Failed to send SMS"
+msgstr "Neizdevās nosūtīt īsziņojumu"
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Veiksmīgi"
+
+#. js-lingui-explicit-id
+msgid "Everything is successful and this is your business"
+msgstr "Viss ir veiksmīgi un šis ir jūsu uzņēmums"
+
+#. js-lingui-explicit-id
+msgid "Invalid or expired code"
+msgstr "Nederīgs vai beidzis kods"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Darbnīca"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr "Nevar aprēķināt attālumu, atrašanās vieta ir atslēgta"
+
+#. js-lingui-explicit-id
+msgid "Contacts unknown"
+msgstr "Kontakti nezināmi"
+
+#. js-lingui-explicit-id
+msgid "About us:"
+msgstr "Par mums:"
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr "Lasīt visu aprakstu..."
+
+#. js-lingui-explicit-id
+msgid "This business has not been confirmed by the owner"
+msgstr "Šis uzņēmums vēl nav apstiprināts īpašnieka"
+
+#. js-lingui-explicit-id
+msgid "Confirm business"
+msgstr "Apstiprināt uzņēmumu"
+
+#. js-lingui-explicit-id
+msgid "Report on business"
+msgstr "Ziņot par uzņēmumu"
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr "Darba laiks nezināms"
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr "Brīvdiena"
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr "Darba laiks"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Tekstam jābūt vismaz 3 un ne vairāk kā 40 simboliem."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Tekstam jābūt vismaz 10 un ne vairāk kā 2000 simboliem."
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr "Atstājiet atsauksmi"
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Nosaukums"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Įveskite savo vardą"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Pievienot aprakstu par darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Darbnīcas apraksts"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Publicēt"
+
+#. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr "Darbs, ko mēs veicam:"
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr "Atsauksmes:"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Izveidojiet pirmo pārskatu"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Mainīt pārskatu"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Rakstīt pārskatu"
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr "Pirmdiena"
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr "Pr"
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr "Otrdiena"
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr "Ot"
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr "Trešdiena"
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr "Tr"
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr "Ceturtdiena"
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr "Ce"
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr "Piektdiena"
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr "Pk"
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr "Sestdiena"
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr "Se"
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr "Svētdiena"
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr "Sv"
+
+#. js-lingui-explicit-id
+msgid "Phone"
+msgstr "Telefons"
+
+#. js-lingui-explicit-id
+msgid "Email"
+msgstr "E-pasts"
+
+#. js-lingui-explicit-id
+msgid "Viber"
+msgstr "Viber"
+
+#. js-lingui-explicit-id
+msgid "Telegram"
+msgstr "Telegram"
+
+#. js-lingui-explicit-id
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#. js-lingui-explicit-id
+msgid "Instagram"
+msgstr "Instagram"
+
+#. js-lingui-explicit-id
+msgid "Facebook"
+msgstr "Facebook"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "Darbnīca"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Darbnīcas izmaiņas veiksmīgas"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Darbnīca veiksmīgi izveidota"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Kļūda mainot darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Kļūda veidojot darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr "Nevar dzēst darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Mainīt darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Ievadiet darbnīcas nosaukumu"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Darbnīcas nosaukums"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Darbnīcas adrese"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Įveskite adresą"
+
+#. js-lingui-explicit-id
+msgid "Contacts"
+msgstr "Kontakti"
+
+#. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Telefona numurs"
+
+#. js-lingui-explicit-id
+msgid "Add contact type"
+msgstr "Pievienot kontakta veidu"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Darbnīcas tips"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Izvēlieties tipu"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Darbu veidi"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Izvēlieties darbu veidus"
+
+#. js-lingui-explicit-id
+msgid "You can add up to 5 phone numbers"
+msgstr "Varat pievienot līdz 5 tālruņu numuriem"
+
+#. js-lingui-explicit-id
+msgid "This contact type has already been added"
+msgstr "Šis kontakta veids jau ir pievienots"
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr "Rediģēt"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Saglabāt"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Manas darbnīcas"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Poga, lai aizvērtu darbnīcu iestatījumu ekrānu"
+
+#. js-lingui-explicit-id
+msgid "All"
+msgstr "Visi"
+
+#. js-lingui-explicit-id
+msgid "Created by me"
+msgstr "Manis veidots"
+
+#. js-lingui-explicit-id
+msgid "Mine"
+msgstr "Mani"
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr "Atvainojiet!"
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr "Jums nav {typeItem}."
+
+#. js-lingui-explicit-id
+msgid "Select phone number"
+msgstr "Izvēlieties tālruņa numuru"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Apstiprināt"
+
+#. js-lingui-explicit-id
+msgid "Enter verification code"
+msgstr "Ievadiet pārbaudes kodu"
+
+#. js-lingui-explicit-id
+msgid "Enter 6-digit code"
+msgstr "Ievadiet 6 ciparu kodu"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr "Pārskatā"
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr "Apstiprināts"
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr "Noraidīts"
+
+#. js-lingui-explicit-id
+msgid "Confirm ownership"
+msgstr "Apstiprināt īpašumību"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Kļūda: nepareizs tālruņa numurs"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Kļūda: Vārdam jābūt no 3 līdz 15 simboliem"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Kļūda: izvēlieties pilsētu"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Foto pievienota"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Atvainojiet, radās kļūda"
+
+#. js-lingui-explicit-id
+msgid "Profile saved"
+msgstr "Profils saglabāts"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Kļūda: saglabāt profilu"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Atgal"
+
+#. js-lingui-explicit-id
+msgid "Profile"
+msgstr "Profils"
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr "Izrakstīties"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Vārds"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Uzvārds"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Pilsēta"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Pasirinkite miestą"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Fotoattēls ir mainīts"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Fotoattēls nav mainīts"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr "Informācija"
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr "Fotogrāfija ir dzēsta"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Dzēst"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Mainīt"
+
+#. js-lingui-explicit-id
+msgid "Your profile"
+msgstr "Jūsu profils"
+
+#. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Manas lomas"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Manas darbības"
+
+#. js-lingui-explicit-id
+msgid "Your workshops"
+msgstr "Jūsu darbnīcas"
+
+#. js-lingui-explicit-id
+msgid "Your events"
+msgstr "Jūsu pasākumi"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "įvykiai"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Mani pasākumi"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Mygtukas uždaryti nustatymų įvykių langą"
+
+#. js-lingui-explicit-id
+msgid "Upcoming events"
+msgstr "Tuvie pasākumi"
+
+#. js-lingui-explicit-id
+msgid "Past events"
+msgstr "Pagājušie pasākumi"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Pievienot pasākumu"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Naudojimosi sąlygos"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Privatumo politika"
+
+#. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr "Pakalpojumu noteikumi"
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Lai pilnībā izmantotu visas pakalpojuma funkcijas, jums jāatļauj lietotnei noteikt jūsu atrašanās vietu:"
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Atļaut {nameApp} lietotnei noteikt manu atrašanās vietu"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Įjunkite savo vietą"
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr "un izvēlieties dzīvesvietas pilsētu:"
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "Spiežot pogu \"Turpināt\", jūs piekrītat {buttonTermsService} un {buttonPrivacyPolicy}"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Tęsti"
+
+#. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Nederīgs telefona numurs"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "Pavadinimo ilgis turi būti nuo 2 iki 20 simbolių"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Registracija"
+
+#. js-lingui-explicit-id
+msgid "We recommend filling out the profile information"
+msgstr "Mēs iesakām aizpildīt profila informāciju"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Užpildyti vėliau"
+
+#. js-lingui-explicit-id
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Mygtukas, skirtas uždaryti meniu nustatymų ekraną"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Bendrinti programą"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "Apie paslaugą"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Naudojimo sąlygos"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Privatumo politika"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Pranešti apie klaidą/pokytį"
+
+#. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr "Tumšais temats"
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr "Automātiski noteikt atrašanās vietu"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Perjungti automatinio vietos aptikimo funkciją"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Ištrinti profilį"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Ištrinant profilį, visi jūsų duomenys bus ištrinti"
+
+#. js-lingui-explicit-id
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "Uz kuras platformas vēlaties nosūtīt lietotnes instalēšanas uzaicinājumu?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
 msgstr "Perjungti rodyti meniu"
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr "Tuvākais pasākums:"
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr "{distance} km"
+
+#. js-lingui-explicit-id
+msgid "No date"
+msgstr "Nav datuma"
+
+#. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Nevar atvērt kanāla URL"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Neizdevās ielādēt telegram kanālus"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Palīdzība un resursi"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Pievienot telegram kanālu"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Meklēt kanālus..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Aktīvie filtri:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Kategorija"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Valsts"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Tik pārbaudīti"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Kārtot pēc"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Ielādē kanālus..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Atvērt kanālu"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Ziņot"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Ziņot par kanālu"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Vai tiešām vēlaties ziņot par šo kanālu?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "AI pārbaudīts"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Telegram kanāls"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "ziņojumi"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "Pēc nosaukuma:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "alfabētiski"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "Pēc kategorijas:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "grupēti pēc kategorijas"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "Pēc pārbaudījuma:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "vispirām pārbaudīti"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Tik pārbaudīti"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -86,304 +1052,438 @@ msgid "No"
 msgstr "Ne"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Pasirinkite šalį {nameCountry}"
+msgid "Clear Filters"
+msgstr "Notīrīt filtrus"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Pasirinkite regioną {nameRegion}"
+msgid "Apply Filters"
+msgstr "Pielietot filtrus"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Pasirinkite regioną {nameCity}"
+msgid "Add Channel"
+msgstr "Pievienot kanālu"
 
 #. js-lingui-explicit-id
-msgid "Select country"
-msgstr "Pasirinkite šalį"
+msgid "Please fill all required fields"
+msgstr "Lūdzu aizpildīt visus obligātos laukus"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Tęsti"
+msgid "Channel submitted for review"
+msgstr "Kanāls iesniegts pārbaudei"
 
 #. js-lingui-explicit-id
-msgid "Back"
-msgstr "Atgal"
+msgid "Failed to add channel"
+msgstr "Neizdevās pievienot kanālu"
 
 #. js-lingui-explicit-id
-msgid "Disable Deep Search"
-msgstr "Atspējot Dziļo Meklēšanu"
+msgid "Add Telegram Channel"
+msgstr "Pievienot telegram kanālu"
 
 #. js-lingui-explicit-id
-msgid "Enable Deep Search"
-msgstr "Iespējot Dziļo Meklēšanu"
+msgid "You can add a telegram channel"
+msgstr "Jūs varat pievienot telegram kanālu"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Įvykio adresas"
+msgid "Enter channel name"
+msgstr "Ievadiet kanāla nosaukumu"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Įveskite tikslų adresą"
+msgid "Channel Name"
+msgstr "Kanāla nosaukums"
 
 #. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Nepriklausomybės g., 1"
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname vai @channelname"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto {nameTypeWork}"
-msgstr "Pasirinkite automobilio darbo tipą {nameTypeWork}"
+msgid "Channel URL"
+msgstr "Kanāla URL"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto {nameTypeWork}"
-msgstr "Pasirinkite motociklo darbo tipą {nameTypeWork}"
+msgid "Enter channel description"
+msgstr "Ievadiet kanāla aprakstu"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto"
-msgstr "Pasirinkite motociklo darbo tipą"
+msgid "Description"
+msgstr "Apraksts"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto"
-msgstr "Pasirinkite automobilio darbo tipą"
+msgid "Location"
+msgstr "Atrašanās vieta"
 
 #. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Fono sluoksnis uždarant modalinį langą"
+msgid "Select location..."
+msgstr "Izvēlēties vietu..."
 
 #. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Dėmesio!"
+msgid "Search country..."
+msgstr "Meklēt valsti..."
 
 #. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "Deja, šiuo metu negalima padidinti prieinamų skelbimų, darbnīcu vai pasākumu skaitu, jo lietotne ir testa režīmā. Ja jums ir jautājumi, lūdzu, sazinieties ar administrāciju vai atstājiet atsauksmes."
+msgid "Search city..."
+msgstr "Meklēt pilsētu..."
 
 #. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- vai --"
+msgid "No results found"
+msgstr "Rezultāti nav atrasti"
 
 #. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Pranešti apie klaidą/pokytį"
+msgid "Events"
+msgstr "Pasākumi"
 
 #. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Paldies par sapratni!"
+msgid "Upcoming events:"
+msgstr "Tuvie pasākumi:"
 
 #. js-lingui-explicit-id
-msgid "The price of the item"
-msgstr "Prekės kaina"
+msgid "Sorry, there are no upcoming events"
+msgstr "Atvainojiet, nav tuvēšo pasākumu"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Motociklų transportas"
+msgid "Press show more events"
+msgstr "Paspauskite, kad pamatytumėte daugiau įvykių"
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Automobilių transportas"
+msgid "More events"
+msgstr "Vairāk pasākumu"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle parts"
-msgstr "Motociklų dalys"
+msgid "Past events:"
+msgstr "Pagājušie pasākumi:"
 
 #. js-lingui-explicit-id
-msgid "Car parts"
-msgstr "Automobilių dalys"
+msgid "No events have passed"
+msgstr "Nav pagājušu pasākumu"
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Benzinas"
+msgid "Now"
+msgstr "Tagad"
 
 #. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Dyzelinas"
+msgid "Not enabled location"
+msgstr "Neleidžiama vieta"
 
 #. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Dujos / Benzinas"
+msgid "Enter the text to search"
+msgstr "Įveskite paieškos tekstą"
 
 #. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Elektra"
+msgid "By date:"
+msgstr "Pēc datuma:"
 
 #. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Hibridas"
+msgid "from soonest to latest"
+msgstr "no tuvākā līdz tālākajam"
 
 #. js-lingui-explicit-id
-msgid "Other"
-msgstr "Kita"
+msgid "Price range:"
+msgstr "Cenu diapazons:"
 
 #. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Mechaninė"
+msgid "From"
+msgstr "No"
 
 #. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Automatinė"
+msgid "To"
+msgstr "Līdz"
 
 #. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Nenuosekli kintama transmisija (CVT)"
+msgid "All locations"
+msgstr "Visas atrašanās vietas"
 
 #. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Prisitaikantis"
+msgid "Select country or city"
+msgstr "Izvēlieties valsti vai pilsētu"
 
 #. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Tiptronikas"
+msgid "Clear location filter"
+msgstr "Notīrīt atrašanās vietas filtru"
 
 #. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Baterijos"
+msgid "Close"
+msgstr "Aizvērt"
 
 #. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Amortizatoriai ir pakaba"
+msgid "All countries"
+msgstr "Visas valstis"
 
 #. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Variatoriai ir sumažintuvai"
+msgid "No countries found"
+msgstr "Valstis nav atrastas"
 
 #. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Išmetimo sistemos, tiesios vamzdžiai, ištuštinimas"
+msgid "All cities"
+msgstr "Visi miestai"
 
 #. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Variklio dalys"
+msgid "No cities found"
+msgstr "Miestų nerasta"
 
 #. js-lingui-explicit-id
-msgid "Gearbox"
-msgstr "Pavarų dėžė"
+msgid "Save location filter"
+msgstr "Saglabāt atrašanās vietas filtru"
 
 #. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Pedalai ir atlošai"
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} грн."
 
 #. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Apšvietimas ir lempos"
+msgid "{price} grn."
+msgstr "{price} грн."
 
 #. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Guoliai"
+msgid "Free"
+msgstr "Nemokamai"
 
 #. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Piedziņa un šasija"
+msgid "Phone number not found"
+msgstr "Tālruņa numurs nav atrasts"
 
 #. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Rāmis, stiprinājumi un sviras"
+msgid ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Atvērt pasākumu lietotnē:\n"
+"{appLink}\n"
+"\n"
+"Atvērt pārlūkprogrammā:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Stūre un vadības"
+msgid "Share event"
+msgstr "Dalīties ar pasākumu"
 
 #. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Sēdeklis"
+msgid "Please sign in to continue"
+msgstr "Lūdzu, pierakstieties, lai turpinātu"
 
 #. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Dzesēšanas sistēma"
+msgid "Event"
+msgstr "Įvykis"
 
 #. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Saites"
+msgid "All photos"
+msgstr "Visi nuotraukos"
 
 #. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Degvielas sistēma"
+msgid "Not going"
+msgstr "Neiešu"
 
 #. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Bremžu sistēma"
+msgid "Going"
+msgstr "Eju"
 
 #. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Kabeļi un caurules"
+msgid "Date of the event"
+msgstr "Įvykio data"
 
 #. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Filtri"
+msgid "The beginning"
+msgstr "Pradžia"
 
 #. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Ķēdes un zobratu komplekti"
+msgid "Finish"
+msgstr "Pabaiga"
 
 #. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Elektrosistēma"
+msgid "Price for participation"
+msgstr "Dalyvavimo kaina"
 
 #. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Citas motocikla detaļas"
+msgid "About event"
+msgstr "Apie įvykį"
 
 #. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Dzinējs"
+msgid "Gallery"
+msgstr "Galerija"
 
 #. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Izplūdes sistēma"
+msgid "Timeline"
+msgstr "Laika josla"
 
 #. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Pārnesumu / Manuālā un Automātiskā pārnesumu"
+msgid "Add a description about the event"
+msgstr "Pievienot pasākuma aprakstu"
 
 #. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Stūrēšanas sistēma"
+msgid "Event description"
+msgstr "Pasākuma apraksts"
 
 #. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Sūkņu sistēma / šasija"
+msgid "event"
+msgstr "Įvykis"
 
 #. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Ķermeņa daļas"
+msgid "Your event is under review and will appear after verification"
+msgstr "Jūsu pasākums tiek pārskatīts un parādīsies pēc pārbaudes"
 
 #. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Iekšpuses detaļas"
+msgid "Change event"
+msgstr "Mainīt pasākumu"
 
 #. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Gaisa kondicionēšana, apkure, ventilācija"
+msgid "Create event"
+msgstr "Izveidot pasākumu"
 
 #. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Gaisa ieplūdes sistēma"
+msgid "You can create an event"
+msgstr "Jūs galite sukurti įvykį"
 
 #. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Ugunsdzēsības sistēma"
+msgid "Enter the name of the event"
+msgstr "Įveskite įvykio pavadinimą"
 
 #. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Logu un gaismu tīrīšanas sistēma"
+msgid "Name of the event"
+msgstr "Įvykio pavadinimas"
 
 #. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Galvenās gaismas un apgaismojums"
+msgid "The place of the event"
+msgstr "Įvykio vieta"
 
 #. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Elektriskā aprīkojums"
+msgid "Conclusion"
+msgstr "Pabaiga"
 
 #. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Automašīnas stikls"
+msgid "Participation fee"
+msgstr "Dalības maksa"
 
 #. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Skidrāna gāzes sistēma"
+msgid "100 uah"
+msgstr "100 грн"
 
 #. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Citas rezerves daļu veidi"
+msgid "200 uah"
+msgstr "200 грн"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Trumpai aprašykite, kas vyks"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Papasakokite apie įvykį"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to each timeline item"
+msgstr "Lūdzu, pievienojiet nosaukumu katram laika joslas elementam"
+
+#. js-lingui-explicit-id
+msgid "Timeline item start time is outside event dates"
+msgstr "Laika joslas elementa sākuma laiks ir ārpus pasākuma datumiem"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish must be after start"
+msgstr "Laika joslas elementa beigām jābūt pēc sākuma"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish time is outside event dates"
+msgstr "Laika joslas elementa beigu laiks ir ārpus pasākuma datumiem"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to the timeline item"
+msgstr "Lūdzu, pievienojiet nosaukumu laika joslas elementam"
+
+#. js-lingui-explicit-id
+msgid "Add item"
+msgstr "Pievienot elementu"
+
+#. js-lingui-explicit-id
+msgid "No timeline items yet"
+msgstr "Vēl nav laika joslas elementu"
+
+#. js-lingui-explicit-id
+msgid "Step"
+msgstr "Solis"
+
+#. js-lingui-explicit-id
+msgid "Timeline item"
+msgstr "Laika joslas elements"
+
+#. js-lingui-explicit-id
+msgid "Title"
+msgstr "Nosaukums"
+
+#. js-lingui-explicit-id
+msgid "Description (optional)"
+msgstr "Apraksts (neobligāts)"
+
+#. js-lingui-explicit-id
+msgid "Start"
+msgstr "Sākums"
+
+#. js-lingui-explicit-id
+msgid "Remove finish time"
+msgstr "Noņemt beigu laiku"
+
+#. js-lingui-explicit-id
+msgid "Add finish time"
+msgstr "Pievienot beigu laiku"
+
+#. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Laipni lūdzam mūsu pakalpojumā."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Pierakstieties, izmantojot:"
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr "Turpināt ar {typeSocial}"
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr "vai reģistrējieties, izmantojot:"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "atrast tuvumā esošus pasākumus, darbnīcas"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr "saņemt palīdzību ārkārtējā situācijā"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Lietotne {nameApp} savāc atrašanās vietas datus, lai iespējotu {firstEvent}, pat ja lietotne ir aizvērta vai netiek izmantota."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Lietotne {nameApp} savāc atrašanās vietas datus, lai iespējotu {secondEvent}, pat ja lietotne ir aizvērta vai netiek izmantota."
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Apstiprināt"
+
+#. js-lingui-explicit-id
+msgid "Welcome"
+msgstr "Laipni lūdzam"
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr "Galvenā"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Izveidot darbnīcu"
+
+#. js-lingui-explicit-id
+msgid "Map"
+msgstr "Karte"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Izvēlieties cilni {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr "Palīdzība"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -514,1336 +1614,177 @@ msgid "Telegram {otherName}"
 msgstr "Telegram {otherName}"
 
 #. js-lingui-explicit-id
-msgid "advert"
-msgstr "sludinājums"
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Nepareizs tālruņa numurs vai nepareizs valsts kods"
 
 #. js-lingui-explicit-id
-msgid "Select tab {tabName}"
-msgstr "Izvēlieties cilni {tabName}"
+msgid "Password must contain at least 8 characters"
+msgstr "Parolei jāsatur vismaz 8 rakstzīmes"
 
 #. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Izveidot pasākumu"
+msgid "Passwords do not match"
+msgstr "Paroles nesakrīt"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Mainīt pasākumu"
+msgid "Select"
+msgstr "Izvēlēties"
 
 #. js-lingui-explicit-id
-msgid "Create workshop"
-msgstr "Izveidot darbnīcu"
+msgid "The price of the item"
+msgstr "Prekės kaina"
 
 #. js-lingui-explicit-id
-msgid "Change workshop"
-msgstr "Mainīt darbnīcu"
+msgid "Types of work for motorcycle transport:"
+msgstr "Motociklu transporta darbu veidi:"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Izveidot sludinājumu"
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Pasirinkite motociklo darbo tipą {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Mainīt sludinājumu"
+msgid "Types of work for automobile transport:"
+msgstr "Automobiļu transporta darbu veidi:"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Lūdzu, autentifikatoru"
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Pasirinkite automobilio darbo tipą {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Dzēst pasākumu"
+msgid "Select type work moto"
+msgstr "Pasirinkite motociklo darbo tipą"
 
 #. js-lingui-explicit-id
-msgid "Success"
-msgstr "Veiksmīgi"
+msgid "Select type work auto"
+msgstr "Pasirinkite automobilio darbo tipą"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Dzēst sludinājumu"
+msgid "Event address"
+msgstr "Įvykio adresas"
 
 #. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Atšaukti"
+msgid "Enter the exact address"
+msgstr "Įveskite tikslų adresą"
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Apstiprināt"
+msgid "Independence Street, 1"
+msgstr "Nepriklausomybės g., 1"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "atrast tuvumā esošus pasākumus, darbnīcas"
+msgid "Select a location on the map"
+msgstr "Izvēlieties atrašanās vietu kartē"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "\"SOS\" funkcijai, lai citi lietotnes lietotāji varētu jums palīdzēt"
+msgid "Move and change the location"
+msgstr "Pārvietot un mainīt atrašanās vietu"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
-msgstr "Lietotne {nameApp} savāc atrašanās vietas datus, lai iespējotu {firstEvent}, pat ja lietotne ir aizvērta vai netiek izmantota."
+msgid "Specify the city"
+msgstr "Norādiet pilsētu"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
-msgstr "Lietotne {nameApp} savāc atrašanās vietas datus, lai iespējotu {secondEvent}, pat ja lietotne ir aizvērta vai netiek izmantota."
+msgid "Enter text to search"
+msgstr "Įveskite tekstą, kurį norite ieškoti"
 
 #. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Atvainojiet, radās kļūda"
+msgid "Please enter text for searching"
+msgstr "Lūdzu, ievadiet tekstu meklēšanai"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Fotoattēls ir mainīts"
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Ja sarakstā nav piemērotas opcijas, izmantojiet 'Dziļo meklēšanu'"
 
 #. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Fotoattēls nav mainīts"
+msgid "Disable Deep Search"
+msgstr "Atspējot Dziļo Meklēšanu"
 
 #. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Dzēst"
+msgid "Enable Deep Search"
+msgstr "Iespējot Dziļo Meklēšanu"
 
 #. js-lingui-explicit-id
-msgid "Change"
-msgstr "Mainīt"
+msgid "Select country {nameCountry}"
+msgstr "Pasirinkite šalį {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Pieeja liegta"
+msgid "Select region {nameRegion}"
+msgstr "Pasirinkite regioną {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Uzturēšana"
+msgid "Select region {nameCity}"
+msgstr "Pasirinkite regioną {nameCity}"
 
 #. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Eļļas nomaiņa / Filtru nomaiņa / Šķērsošanas siksnu nomaiņa / Sprādzes nomaiņa / Pārnesumu eļļas nomaiņa / Bremžu serviss / Visu nepieciešamo šķidrumu nomaiņa / utt."
+msgid "Select country"
+msgstr "Pasirinkite šalį"
 
 #. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnostika"
+msgid "Select contact type"
+msgstr "Izvēlieties kontakta veidu"
 
 #. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Pirmspārdošanas visaptveroša diagnostika / Šasijas diagnostika / Dzinēja diagnostika / Pārnesumu diagnostika / Ķermeņa diagnostika / Datora diagnostika / Šķidruma diagnostika / utt."
+msgid "Report on event"
+msgstr "Ziņot par notikumu"
 
 #. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Auto Elektrība"
+msgid "Report on workshop"
+msgstr "Ziņot par darbnīcu"
 
 #. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Elektrinės laidų remontas / Mikroschemų lankymas / Bet kokios sudėtingumo signalizacijos įrengimas / Odometro korekcija / Raktų perprogramavimas / Variklio ir perdavimo prisitaikymas / EGR pašalinimas / DPF pašalinimas / Ksenoninio apšvietimo įrengimas / Parkavimo daviklių įrengimas / Ir kt."
+msgid "Report on telegram channel"
+msgstr "Ziņot par telegram kanālu"
 
 #. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Šasijos remontas"
+msgid "Contact us via:"
+msgstr "Sazinieties ar mums:"
 
 #. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Amortizatorių kojos keitimas / Spyruoklių keitimas / Valdymo rankena keitimas / Sąsagos keitimas / Tylus blokas keitimas / Lapo spyruoklių keitimas / Ratų guolių keitimas / Pjovimo peilių keitimas / Veleno keitimas / Sferinio sąnario keitimas / Variklio ir perdavimo tvirtinimo keitimas / Mechaniniai darbai"
+msgid "Are you sure you want to delete?"
+msgstr "Vai tiešām vēlaties dzēst?"
 
 #. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Variklis, automatinė ir mechaninė pavarų dėžė"
+msgid "Decrease the maximum number"
+msgstr "Sumažinkite maksimalų skaičių"
 
 #. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Variklio diagnostika / Variklio remontas / Variklio keitimas / Variklio aliuminio karterio keitimas / Automatinės pavarų dėžės diagnostika / Automatinės pavarų dėžės tepalų keitimas / Automatinės pavarų dėžės keitimas / Automatinės pavarų dėžės valymas / Embriono keitimas / Mechaninės pavarų dėžės diagnostika / Mechaninės pavarų dėžės tepalų keitimas / Mechaninės pavarų dėžės keitimas / Mechaninės pavarų dėžės valymas / Ir kt."
+msgid "Increase the maximum number"
+msgstr "Padidinkite maksimalų skaičių"
 
 #. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Stabdžiai ir vairavimo sistema"
+msgid "Resend the code"
+msgstr "Nosūtīt kodu vēlreiz"
 
 #. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Stabdžių sistemos diagnostika / Stabdžių skysčio keitimas / Stabdžių sistemos remontas / Stabdžių kraujas / Vairo kolonėlės keitimas / Vairo kolonėlės atkūrimas / Galiūno keitimas / Galiūno skysčio keitimas / Ir kt."
+msgid "Photo {numberPhoto}"
+msgstr "Nuotrauka {numberPhoto}"
 
 #. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Priedai"
+msgid "Main photo"
+msgstr "Pagrindinė nuotrauka"
 
 #. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Starterio remontas / Starterio keitimas / Generatoriaus remontas / Generatoriaus keitimas / Turbokompresoriaus atkūrimas / Turbokompresoriaus keitimas / Ir kt."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Kondicionavimo sistemos"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnostika / Įkrovimas / Pakrovimas / Nutekėjimo aptikimas / Vamzdelių keitimas / Radiatoriaus keitimas / Kompresoriaus remontas / Kompresoriaus keitimas / Sistemos dezinfekcija / Užsienio kvapų pašalinimas"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Ratų išlyginimas"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Ratų išlyginimas / Išlyginimo diagnostika / Pakabos defektų paieška / Krovinio defektų paieška"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Dažymas"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Kėbulo dažymas / Bamperio dažymas / Šoninės sijos dažymas / Durų dažymas / Kapoto dažymas / Stogo dažymas / Bagažinės dažymas / Sparno dažymas / Spoilerio dažymas / Veidrodžio dažymas / Ir kt."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Aerografija"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Aerografija jebkādai sarežģītībai / Aerografija jebkādai sarežģītībai uz jebkuras virsmas / Aerografija jebkādai sarežģītībai uz jebkuras motocikla daļas / Pasūtījuma aerografijas dizaini bako, šķērsošanas un kėbulo daļām"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Techninė priežiūra"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Kabelių tepimas / Kuro siurblio sinchronizavimas / Oro filtro keitimas / Žvakės keitimas / Pavarų dėžės tepalų keitimas / Diferencialo tepalo keitimas / Šaldytuvo keitimas / Variklio alyvos keitimas"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Bendrieji darbai"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Bendroji diagnostika / Slegio matavimas / Techninio skysčio lygio patikrinimas / Embriono kabelio keitimas / Droselio kabelio keitimas / Kuro bakų valymas ir nutekėjimas / Kuro bakų pašalinimas ir įrengimas / Plastikinių detalių pašalinimas ir įrengimas / Apsauginio lanko, slydimo įrengimas"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Šasija"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Priekinių ratų pašalinimas ir įrengimas / Galinių ratų pašalinimas ir įrengimas / Ratų guolių keitimas / Vairo stovo guolio reguliavimas / Vairo stovo guolio keitimas / Priekinės šakės pašalinimas ir įrengimas / Priekinės šakės sandarinimo keitimas / Priekinės šakės tepalo keitimas / Galinio svirties guolio keitimas / Galinio amortizatoriaus keitimas / Monoshock amortizatoriaus keitimas / Galinio amortizatoriaus remontas"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Pavara"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Pavaros grandinės ir pavarų ratai keitimas / Grandinės valymas, tepimas ir reguliavimas / Grandinės reguliavimas, įtempimas ir tepimas"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Pašalinimas ir įrengimas / Vožtuvo reguliavimas / Embriono keitimas / Cilindro galvos remontas / Laiko grandinės keitimas / Pistono grupės remontas / Pavarų dėžės remontas / Variklio remontas"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Elektra"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Reguliatoriaus relejų keitimas / Generatoriaus keitimas / Starterio keitimas / Starterio remontas / Lempos keitimas / Ksenono įrengimas / Baterijos keitimas / Baterijos įkrovimas"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Diskinio stabdžio kaladėlių keitimas / Būgninio stabdžio kaladėlių keitimas / Stabdžių kraujas / Stabdžių skysčio keitimas / Kombinuotas stabdžių skysčio keitimas / Stabdžių vamzdžių keitimas / Sustiprinto vamzdžio įrengimas / Stabdžių disko keitimas / Stabdžių suportų remontas"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Plastikinio remontas"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Virinimas / fragmentų atkūrimas / tvirtinimų atkūrimas"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Virinimo darbai"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Elektrodų virinimas / Pusiau automatizuotas virinimas / Argoninis virinimas"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Reguliavimas ir pritaikymas"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Apsauginio lanko įrengimas / Slankiojimo įrengimas / Išmetimo sistemos įrengimas / Stabdžių sistemos įrengimas / Sustiprinto vamzdžio įrengimas / Ksenono įrengimas / Motociklo apšvietimo įrengimas / Rūkas įrengimas (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Bako dažymas / Šoninės plokštės dažymas / Šoninės sijos dažymas / Kėbulo dažymas / Galinio žibinto dangtelio dažymas / Užpakalinės dalies dažymas / Sėdynės dangtelio dažymas / Išmetimo dangtelio dažymas / Priekinės šakės dažymas / Ir kt."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Aerografija jebkādai sarežģītībai / Aerografija jebkādai sarežģītībai uz jebkuras virsmas / Aerografija jebkādai sarežģītībai uz jebkuras automašīnas daļas"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Mygtukas, skirtas uždaryti SOS meniu nustatymus"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Spindulys, km:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Perjungti SOS signalo pranešimą"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Perjungti automatinio vietos aptikimo funkciją"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Jūsų telegrama"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Telefona numurs"
-
-#. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Pridėti aprašymą"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Aprašymas"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "Dėl SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Patikrinkite leidimus"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings screen"
-msgstr "Mygtukas, skirtas uždaryti meniu nustatymų ekraną"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "SOS signalo pranešimas"
-
-#. js-lingui-explicit-id
-msgid "Share the app"
-msgstr "Bendrinti programą"
-
-#. js-lingui-explicit-id
-msgid "About the service"
-msgstr "Apie paslaugą"
-
-#. js-lingui-explicit-id
-msgid "Terms of use"
-msgstr "Naudojimo sąlygos"
-
-#. js-lingui-explicit-id
-msgid "Privacy policy"
-msgstr "Privatumo politika"
-
-#. js-lingui-explicit-id
-msgid "Delete profile"
-msgstr "Ištrinti profilį"
-
-#. js-lingui-explicit-id
-msgid "With the deletion of the profile, all your information will be deleted"
-msgstr "Ištrinant profilį, visi jūsų duomenys bus ištrinti"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Prekės ženklas/Gamintojas"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Rida, km:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Leidimo metai:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Muita iztīrīta:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Degvielas tips"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
-msgstr "Pārnesumu kārba"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Kategorija"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Motocikla marka"
-
-#. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Automobīļa marka"
-
-#. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Degvielas tips"
-
-#. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Pārnesumu veids"
-
-#. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Sludinājuma maiņa veiksmīga"
-
-#. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Sludinājums veiksmīgi izveidots"
-
-#. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Kļūda, mainot sludinājumu"
-
-#. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Kļūda, izveidojot sludinājumu"
-
-#. js-lingui-explicit-id
-msgid "Error"
-msgstr "Kļūda"
-
-#. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Pievienot sludinājumu"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Ievadiet sludinājuma nosaukumu"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Sludinājuma nosaukums"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "Jauns"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Lietots"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Preces stāvoklis"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Privātpersona"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Uzņēmums"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Pārdevējs"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Atrašanās vieta"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Izvēlieties pilsētu"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Pievienojiet aprakstu par sludinājumu"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Sludinājuma apraksts"
-
-#. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Publicēt"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Marka"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Stāvoklis"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Nobraukums"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} km"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Ražošanas gads"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} km"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Muitas izņemts"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Degvielas tips"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Pārnesumu veids"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Detaļu tips"
-
-#. js-lingui-explicit-id
-msgid "Filter"
-msgstr "Filtrs"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Preces stāvoklis:"
-
-#. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Pārdevējs:"
-
-#. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Cena, {symbol}:"
-
-#. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Automobīļa marka"
-
-#. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "Motocikla marka"
-
-#. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Motocikla marka"
-
-#. js-lingui-explicit-id
-msgid "Filtering"
-msgstr "Filtrēšana"
-
-#. js-lingui-explicit-id
-msgid "grn"
-msgstr "грн"
-
-#. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Perjungti patikusio produkto būseną"
-
-#. js-lingui-explicit-id
-msgid "Market"
-msgstr "Turgus"
-
-#. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Įveskite pavadinimą"
-
-#. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Pridėti produktą"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Patvirtinti"
-
-#. js-lingui-explicit-id
-msgid "event"
-msgstr "Įvykis"
-
-#. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Jūs galite sukurti įvykį"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Įveskite įvykio pavadinimą"
-
-#. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Įvykio pavadinimas"
-
-#. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Įveskite adresą"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Įvykio vieta"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Įvykio data"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Pradžia"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Pabaiga"
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 грн"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 грн"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Trumpai aprašykite, kas vyks"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Papasakokite apie įvykį"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} грн."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} грн."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Nemokamai"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Įvykis"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Pabaiga"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Dalyvavimo kaina"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "Apie įvykį"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Galerija"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Visi nuotraukos"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Įveskite paieškos tekstą"
-
-#. js-lingui-explicit-id
-msgid "Events"
-msgstr "Pasākumi"
-
-#. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Paspauskite, kad pamatytumėte daugiau įvykių"
-
-#. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Pridėti įvykį"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Mygtukas uždaryti registracijos FaceID"
-
-#. js-lingui-explicit-id
-msgid "Invalid phone number"
-msgstr "Nederīgs telefona numurs"
-
-#. js-lingui-explicit-id
-msgid "The length of the name should be between 2 and 20 characters"
-msgstr "Pavadinimo ilgis turi būti nuo 2 iki 20 simbolių"
-
-#. js-lingui-explicit-id
-msgid "Registration"
-msgstr "Registracija"
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Nosaukums"
-
-#. js-lingui-explicit-id
-msgid "Enter your name"
-msgstr "Įveskite savo vardą"
-
-#. js-lingui-explicit-id
-msgid "Save"
-msgstr "Išsaugoti"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Užpildyti vėliau"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location"
-msgstr "Įjunkite savo vietą"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Ieslēdziet savu atrašanās vietu fonā"
-
-#. js-lingui-explicit-id
-msgid "Select the city"
-msgstr "Pasirinkite miestą"
-
-#. js-lingui-explicit-id
-msgid "Privacy Policy"
-msgstr "Privatumo politika"
-
-#. js-lingui-explicit-id
-msgid "Terms of Use"
-msgstr "Naudojimosi sąlygos"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Mygtukas uždaryti registracijos TouchID"
-
-#. js-lingui-explicit-id
-msgid "business"
-msgstr "uzņēmums"
-
-#. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Uzņēmuma profils"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Uzņēmuma nosaukums"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Ievadiet savas uzņēmuma nosaukumu"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Pilsēta"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Papildus numurs {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "events"
-msgstr "įvykiai"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings events screen"
-msgstr "Mygtukas uždaryti nustatymų įvykių langą"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Pirkt įvykį"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Uzlabot"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Pieejamie sludinājumi: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Publicētie sludinājumi: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Pārskats"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Uzmanību! Visi ar uzņēmumu saistītie dati tiks dzēsti."
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Pievienot"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Pirkt papildus"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Izmantots: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Pieejams: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Aktīvs"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Jūsu reklāmas"
-
-#. js-lingui-explicit-id
-msgid "Your workshops"
-msgstr "Jūsu darbnīcas"
-
-#. js-lingui-explicit-id
-msgid "Your events"
-msgstr "Jūsu pasākumi"
-
-#. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Profila iestatīšana"
-
-#. js-lingui-explicit-id
-msgid "adverts"
-msgstr "Sludinājumi"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Poga, lai aizvērtu iestatījumu ekrānu"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Pirkt sludinājumu"
-
-#. js-lingui-explicit-id
-msgid "Error: incorrect phone number"
-msgstr "Kļūda: nepareizs telefona numurs"
-
-#. js-lingui-explicit-id
-msgid "Error: First name must be between 3 and 15 characters"
-msgstr "Kļūda: Vārdam jābūt no 3 līdz 15 simboliem"
-
-#. js-lingui-explicit-id
-msgid "Error: select the city"
-msgstr "Kļūda: izvēlieties pilsētu"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "Foto pievienota"
-
-#. js-lingui-explicit-id
-msgid "Profile saved"
-msgstr "Profils saglabāts"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Kļūda: saglabāt profilu"
-
-#. js-lingui-explicit-id
-msgid "First Name"
-msgstr "Vārds"
-
-#. js-lingui-explicit-id
-msgid "Last Name"
-msgstr "Uzvārds"
-
-#. js-lingui-explicit-id
-msgid "workshops"
-msgstr "Darbnīcas"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings workshops screen"
-msgstr "Poga, lai aizvērtu darbnīcu iestatījumu ekrānu"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Pridėti dirbtuvę"
-
-#. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Pirkt darbnīcu"
-
-#. js-lingui-explicit-id
-msgid "Welcome to our service."
-msgstr "Laipni lūdzam mūsu servisā."
-
-#. js-lingui-explicit-id
-msgid "Log in using:"
-msgstr "Pierakstieties, izmantojot:"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Nav informācijas"
-
-#. js-lingui-explicit-id
-msgid "Moto"
-msgstr "Moto"
-
-#. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Auto"
-
-#. js-lingui-explicit-id
-msgid "All workshops"
-msgstr "Visas darbnīcas"
-
-#. js-lingui-explicit-id
-msgid "Repair of motorcycles"
-msgstr "Motociklu remonts"
-
-#. js-lingui-explicit-id
-msgid "Repair of automobiles"
-msgstr "Automobilių remontas"
-
-#. js-lingui-explicit-id
-msgid "workshop"
-msgstr "Darbnīca"
-
-#. js-lingui-explicit-id
-msgid "Workshop change successfully"
-msgstr "Darbnīcas izmaiņas veiksmīgas"
-
-#. js-lingui-explicit-id
-msgid "Workshop created successfully"
-msgstr "Darbnīca veiksmīgi izveidota"
-
-#. js-lingui-explicit-id
-msgid "Error changing workshop"
-msgstr "Kļūda mainot darbnīcu"
-
-#. js-lingui-explicit-id
-msgid "Error creating workshop"
-msgstr "Kļūda veidojot darbnīcu"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop"
-msgstr "Ievadiet darbnīcas nosaukumu"
-
-#. js-lingui-explicit-id
-msgid "Workshop name"
-msgstr "Darbnīcas nosaukums"
-
-#. js-lingui-explicit-id
-msgid "Workshop address"
-msgstr "Darbnīcas adrese"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the workshop"
-msgstr "Pievienot aprakstu par darbnīcu"
-
-#. js-lingui-explicit-id
-msgid "Workshop description"
-msgstr "Darbnīcas apraksts"
-
-#. js-lingui-explicit-id
-msgid "Type workshop"
-msgstr "Darbnīcas tips"
-
-#. js-lingui-explicit-id
-msgid "Select type"
-msgstr "Izvēlieties tipu"
-
-#. js-lingui-explicit-id
-msgid "Types of work"
-msgstr "Darbu veidi"
-
-#. js-lingui-explicit-id
-msgid "Select types of work"
-msgstr "Izvēlieties darbu veidus"
-
-#. js-lingui-explicit-id
-msgid "Draft the first review"
-msgstr "Izveidojiet pirmo pārskatu"
-
-#. js-lingui-explicit-id
-msgid "Change a review"
-msgstr "Mainīt pārskatu"
-
-#. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Rakstīt pārskatu"
+msgid "Make the main photo"
+msgstr "Padarykite pagrindinę nuotrauką"
 
 #. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Izvēlieties kopīgošanas lapu"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
-msgstr "Tekstam jābūt vismaz 3 un ne vairāk kā 40 simboliem."
+msgid "Toggle like product"
+msgstr "Perjungti patikusio produkto būseną"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
-msgstr "Tekstam jābūt vismaz 10 un ne vairāk kā 2000 simboliem."
-
-#. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Darbnīca"
-
-#. js-lingui-explicit-id
-msgid "Type workshops"
-msgstr "Darbnīcu tips"
-
-#. js-lingui-explicit-id
-msgid "Distance, km:"
-msgstr "Attālums, km:"
-
-#. js-lingui-explicit-id
-msgid "All works"
-msgstr "Visi darbi"
-
-#. js-lingui-explicit-id
-msgid "Type works"
-msgstr "Darbu tips"
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Darbnīcas"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Ievadiet darbnīcas nosaukumu vai darba veidu"
-
-msgid "{distance} km"
-msgstr "{distance} km"
-
-msgid "About us:"
-msgstr "Par mums:"
-
-msgid "Access to geolocation in the background mode"
-msgstr "Pieeja ģeolokācijai fona režīmā"
-
-msgid "Access to geolocation when using the application"
-msgstr "Pieeja ģeolokācijai lietojot lietotni"
-
-msgid "Add advert"
-msgstr "Pievienot reklāmu"
-
-msgid "Add event"
-msgstr "Pievienot notikumu"
-
-msgid "Add workshop"
-msgstr "Pievienot darbnīcu"
-
-msgid "All cities"
-msgstr "Visas pilsētas"
-
-msgid "All photos"
-msgstr "Visas fotogrāfijas"
-
-msgid "Allow"
-msgstr "Atļaut"
-
-msgid "Allow later"
-msgstr "Atļaut vēlāk"
-
-msgid "Allow login using Face ID"
-msgstr "Atļaut pierakstīties, izmantojot Face ID"
-
-msgid "Allow login using Touch ID"
-msgstr "Atļaut pierakstīties, izmantojot Touch ID"
-
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Atļaut lietotnei {nameApp} noteikt manu atrašanās vietu fonā"
-
-msgid "Allow the {nameApp} application to determine my location"
-msgstr "Atļaut {nameApp} lietotnei noteikt manu atrašanās vietu"
-
-msgid "Allow Touch ID to access the {nameApp} app."
-msgstr "Atļaut Touch ID piekļūt {nameApp} lietotnei."
-
-msgid "and choose the city of residence:"
-msgstr "un izvēlies dzīvesvietas pilsētu:"
-
-msgid "Are you sure you want to delete?"
-msgstr "Vai tiešām vēlaties dzēst?"
-
-msgid "Automatically detect location"
-msgstr "Automātiski noteikt atrašanās vietu"
-
-msgid "Back"
-msgstr "Atpakaļ"
-
-msgid "Business profile"
-msgstr "Biznesa profils"
-
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr "Noklikšķinot uz pogas \"Turpināt\", jūs piekrītat {buttonTermsService} un {buttonPrivacyPolicy}"
-
-msgid "By distance:"
-msgstr "Pēc attāluma:"
-
-msgid "By number of comments:"
-msgstr "Pēc komentāru skaita:"
-
-msgid "By rating:"
-msgstr "Pēc vērtējuma:"
-
-msgid "Call"
-msgstr "Zvanīt"
-
-msgid "Cheapest"
-msgstr "Lētākais"
-
-msgid "Continue with {typeSocial}"
-msgstr "Turpināt ar {typeSocial}"
-
-msgid "Create"
-msgstr "Izveidot"
-
-msgid "Create event"
-msgstr "Izveidot notikumu"
-
-msgid "Currency:"
-msgstr "Valūta:"
-
-msgid "Dark theme"
-msgstr "Tumšā tēma"
-
-msgid "Delete"
-msgstr "Dzēst"
-
-msgid "Description"
-msgstr "Apraksts"
-
-msgid "Do you want to send an SOS signal?"
-msgstr "Vai vēlaties nosūtīt SOS signālu?"
-
-msgid "Enable logging into the app using Face ID"
-msgstr "Iespējot pierakstīšanos lietotnē, izmantojot Face ID"
-
-msgid "Event"
-msgstr "Notikums"
-
-msgid "Events"
-msgstr "Notikumi"
-
-msgid "from closest to farthest"
-msgstr "no tuvākā līdz tālākajam"
-
-msgid "from highest to lowest"
-msgstr "no augstākā uz zemāko"
-
-msgid "Gallery"
-msgstr "Galerija"
-
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr "Ja sarakstā nav piemērotas opcijas, izmantojiet 'Dziļo Meklēšanu'"
-
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr "Ievadīts nepareizs tālruņa numurs vai tālruņa numura valsts kods ir izvēlēts nepareizi"
-
 msgid "Language selection"
 msgstr "Valodas izvēle"
 
-msgid "Last update"
-msgstr "Pēdējā atjaunināšana"
-
-msgid "Latest"
-msgstr "Jaunākie"
-
-msgid "Leave a review"
-msgstr "Atstāt atsauksmi"
-
-msgid "Logout"
-msgstr "Izrakstīties"
-
-msgid "Main"
-msgstr "Galvenā"
-
-msgid "Map"
-msgstr "Karte"
-
-msgid "Market"
-msgstr "Tirgus"
-
-msgid "More events"
-msgstr "Vairāk notikumu"
-
-msgid "Most expensive"
-msgstr "Visdārgākie"
-
-msgid "Move and change the location"
-msgstr "Pārvietot un mainīt atrašanās vietu"
-
-msgid "My adverts"
-msgstr "Manas reklāmas"
-
-msgid "My events"
-msgstr "Mani notikumi"
-
-msgid "My workshops"
-msgstr "Manas darbnīcas"
-
-msgid "No events have passed"
-msgstr "Nav pagājuši notikumi"
-
-msgid "Not comments"
-msgstr "Nav komentāru"
-
-msgid "Notification of SOS signal"
-msgstr "SOS signāla paziņojums"
-
-msgid "Now"
-msgstr "Tagad"
-
-msgid "Only with rating:"
-msgstr "Tikai ar vērtējumu:"
-
-msgid "or sign up using:"
-msgstr "vai pierakstieties, izmantojot:"
-
-msgid "Participation fee"
-msgstr "Dalības maksa"
-
-msgid "Password must contain at least 8 characters"
-msgstr "Parolei jāsatur vismaz 8 rakstzīmes"
-
-msgid "Passwords do not match"
-msgstr "Paroles nesakrīt"
-
-msgid "Past events:"
-msgstr "Pagājušie notikumi:"
-
-msgid "Phone number"
-msgstr "Telefona numurs"
-
-msgid "Please enter text for searching"
-msgstr "Lūdzu, ievadiet tekstu meklēšanai"
-
-msgid "Privacy Policy"
-msgstr "Privātuma politika"
-
-msgid "Profile"
-msgstr "Profils"
-
-msgid "Read the whole description..."
-msgstr "Lasīt pilnu aprakstu..."
-
-msgid "Registration"
-msgstr "Reģistrācija"
-
-msgid "Repair of automobiles"
-msgstr "Automobiļu remonts"
-
-msgid "Repair of motorcycles"
-msgstr "Motociklu remonts"
-
-msgid "Resend the code"
-msgstr "Atkārtoti nosūtīt kodu"
-
-msgid "Reviews:"
-msgstr "Atsauksmes:"
-
-msgid "Select a location on the map"
-msgstr "Atlasiet atrašanās vietu kartē"
-
-msgid "Settings"
-msgstr "Iestatījumi"
-
-msgid "Settings and permissions should be enabled"
-msgstr "Iestatījumi un atļaujas jābūt ieslēgtām"
-
-msgid "Someone needs help within a {distance} km radius"
-msgstr "Kāds vajag palīdzību {distance} km rādiusā"
-
-msgid "Sorry, but no products were found by the filters"
-msgstr "Atvainojiet, bet filtriem neatbilst neviens produkts"
-
-msgid "Sorry, but no workshops were found by the filters"
-msgstr "Atvainojiet, bet filtriem neatbilst neviena darbnīca"
-
-msgid "Sorry, there are no available items"
-msgstr "Atvainojiet, nav pieejamu vienību"
-
-msgid "Sorry, there are no upcoming events"
-msgstr "Atvainojiet, nav nākotnes notikumu"
-
-msgid "Sorry, there are no upcoming workshops"
-msgstr "Atvainojiet, nav nākotnes darbnīcu"
-
-msgid "Sorry!"
-msgstr "Atvainojiet!"
-
-msgid "Specify the city"
-msgstr "Norādiet pilsētu"
-
-msgid "Terms of Service"
-msgstr "Pakalpojumu sniegšanas noteikumi"
-
-msgid "Terms of Use"
-msgstr "Lietošanas noteikumi"
-
-msgid "The nearest event:"
-msgstr "Visbližākais pasākums:"
-
-msgid "The work we do:"
-msgstr "Mūsu darbs:"
-
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr "Lai pilnībā izmantotu visus pakalpojuma piedāvātos funkcionalitātes, jums ir jāpiešķir lietotnei atļauja noteikt jūsu atrašanās vietu:"
-
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr "Lai saņemtu SOS signālus, iestatiet signāla uztveršanas rādiusu no jūsu pilsētas centra:"
-
-msgid "Type workshops"
-msgstr "Darbnīcu tips"
-
-msgid "Types of work for automobile transport:"
-msgstr "Veicamo darbu veidi automobiļu transportam:"
-
-msgid "Types of work for motorcycle transport:"
-msgstr "Veicamo darbu veidi motociklu transportam:"
-
-msgid "Upcoming events:"
-msgstr "Nākamie notikumi:"
-
-msgid "Views:"
-msgstr "Skatījumi:"
-
-msgid "We recommend filling out the profile information"
-msgstr "Mēs iesakām aizpildīt profilu"
-
-msgid "Welcome"
-msgstr "Laipni lūdzam"
-
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr "Uz kuru platformu vēlaties nosūtīt lietotnes instalācijas ielūgumu?"
-
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr "Automātiski izslēgsies pēc 20-30 minūtēm"
-
-msgid "Workshop"
-msgstr "Darbnīca"
-
-msgid "Workshops"
-msgstr "Darbnīcas"
-
-msgid "Write"
-msgstr "Rakstīt"
-
-msgid "You don't have {typeItem}."
-msgstr "Jums nav {typeItem}."
-
-msgid "Your contact information"
-msgstr "Jūsu kontakta informācija"
-
-msgid "Your profile"
-msgstr "Jūsu profils"
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Paspauskite ir įveskite, norėdami ieškoti miesto"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Pridėti nuotrauką"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Pirma nuotrauka bus reklamos viršelyje."

@@ -1,0 +1,8 @@
+<resources>
+  <string name="locationAlwaysAndWhenInUsePermission">"Дозволити $(PRODUCT_NAME) використовувати ваше місцезнаходження для пошуку друзів на карті. Ви завжди можете вимкнути це в меню програми."</string>
+  <string name="locationAlwaysPermission">"Дозволити $(PRODUCT_NAME) завжди мати доступ до вашого місцезнаходження для надання постійного відстеження друзів на карті. Ви можете вимкнути це в будь-який час у меню програми."</string>
+  <string name="locationWhenInUsePermission">"Дозволити $(PRODUCT_NAME) мати доступ до вашого місцезнаходження під час використання програми, щоб допомогти вам знайти друзів на карті. Ви можете вимкнути це в меню програми."</string>
+  <string name="cameraPermission">"Для створення фотографій"</string>
+  <string name="photosPermission">"Для доступу до фотографій у вашій бібліотеці"</string>
+  <string name="microphonePermission">"Для запису звуку"</string>
+</resources>

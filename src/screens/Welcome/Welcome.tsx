@@ -1,12 +1,17 @@
 import React, { FunctionComponent, useMemo } from "react";
-import { Keyboard, Platform, Text, View } from "react-native";
+import { Platform, Text, View } from "react-native";
 import { ImageBackground } from "expo-image";
 import { BlurView } from "expo-blur";
 import { User } from "@react-native-google-signin/google-signin";
 
+// redux
+import {
+  useLoginGoogleMutation,
+  useLoginFacebookMutation,
+  useLoginAppleMutation,
+} from "../../storeRedux/api";
+
 // providers
-import { useUserProvider } from "../../providers/UserProvider/UserProvider";
-import { useBiometricProvider } from "../../providers/BiometricProvider/BiometricProvider";
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
 import { useAnalyticsProvider } from "../../providers/AnalyticsProvider/AnalyticsProvider";
 import { useLocalesProvider } from "../../../localization/localization.provider";
@@ -37,38 +42,39 @@ import { styles } from "./Welcome.styles";
 export const Welcome: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { i18n } = useLocalesProvider();
-  const { isFaceId, isTouchId } = useBiometricProvider();
   const { onLogLogin, onLogSignUp } = useAnalyticsProvider();
   const { heightStatusBar } = useThemeProvider();
-  const { signInGoogle, signInFacebook, signInApple } = useUserProvider();
+  const [loginGoogle] = useLoginGoogleMutation();
+  const [loginFacebook] = useLoginFacebookMutation();
+  const [loginApple] = useLoginAppleMutation();
 
   const onSelectGoogle = async (userData: User) => {
-    const user = await signInGoogle(userData);
-
-    if (user) {
-      if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_GOOGLE);
+    const result = await loginGoogle({ idToken: userData.idToken || "" });
+    if (result.data?.userData) {
+      if (result.data.userData.isNewUser)
+        await onLogSignUp(METHOD_NAME_AUTH_GOOGLE);
       else await onLogLogin(METHOD_NAME_AUTH_GOOGLE);
-      redirectToScreen(navigation, user, isFaceId, isTouchId);
+      redirectToScreen(navigation, result.data.userData);
     }
   };
 
   const onSelectApple = async (identityToken: string) => {
-    const user = await signInApple(identityToken);
-
-    if (user) {
-      if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_APPLE);
+    const result = await loginApple({ identityToken });
+    if (result.data?.userData) {
+      if (result.data.userData.isNewUser)
+        await onLogSignUp(METHOD_NAME_AUTH_APPLE);
       else await onLogLogin(METHOD_NAME_AUTH_APPLE);
-      redirectToScreen(navigation, user, isFaceId, isTouchId);
+      redirectToScreen(navigation, result.data.userData);
     }
   };
 
   const onSelectFacebook = async (accessToken: string) => {
-    const user = await signInFacebook(accessToken);
-
-    if (user) {
-      if (user.isNewUser) await onLogSignUp(METHOD_NAME_AUTH_FACEBOOK);
+    const result = await loginFacebook({ accessToken });
+    if (result.data?.userData) {
+      if (result.data.userData.isNewUser)
+        await onLogSignUp(METHOD_NAME_AUTH_FACEBOOK);
       else await onLogLogin(METHOD_NAME_AUTH_FACEBOOK);
-      redirectToScreen(navigation, user, isFaceId, isTouchId);
+      redirectToScreen(navigation, result.data.userData);
     }
   };
 

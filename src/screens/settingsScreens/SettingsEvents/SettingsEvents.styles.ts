@@ -17,6 +17,28 @@ export const styles = StyleSheet.create({
     paddingTop: 11,
     paddingBottom: 9,
   },
+  containerTabs: {
+    flexDirection: "row",
+    paddingHorizontal: 20,
+    gap: 8,
+  },
+  tab: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
+    backgroundColor: colors.lightGray,
+  },
+  tabActive: {
+    backgroundColor: colors.californiaOrange,
+  },
+  tabText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    color: colors.blackCoffee,
+  },
+  tabTextActive: {
+    color: colors.white,
+  },
   containerNotElements: {
     justifyContent: "center",
     alignItems: "center",

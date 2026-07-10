@@ -1,22 +1,31 @@
-import React, { FunctionComponent, useEffect, useMemo, useRef } from "react";
-import { Platform, Text, View } from "react-native";
+import React, {
+  FunctionComponent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { ActivityIndicator, Platform, Text, View } from "react-native";
 import MapViewCluster from "react-native-map-clustering";
-import MapView, { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Trans } from "@lingui/macro";
 import dayjs from "dayjs";
 
 // types
 import { RootMainTabsParamList } from "../../../navigators/Navigators.types";
-import { mapMarker } from "./Map.types";
+import {
+  TMapMarker,
+  TMapPointEvent,
+  TMapPointWorkshop,
+} from "../../../storeRedux/apis/map/map.types";
+
+// redux
+import { useLazyGetMapPointsQuery } from "../../../storeRedux/api";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
-import { useEventsProvider } from "../../../providers/EventsProvider/EventsProvider";
-import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // components
 import { EventMarker } from "./components/EventMarker/EventMarker";
@@ -24,20 +33,22 @@ import { MeMarker } from "./components/MeMarker/MeMarker";
 import { UpContainer } from "./components/UpContainer/UpContainer";
 import { EventContainer } from "./components/EventContainer/EventContainer";
 import { WorkshopMarker } from "./components/WorkshopMarker/WorkshopMarker";
-import { SosMarker } from "./components/SosMarker/SosMarker";
 
-// icons
-import { IconAutoMap } from "../../../icons/components";
+// hooks
+import { useMapLocation } from "./useMapLocation";
+import { regionToBounds } from "../../../storeRedux/apis/map/map.helpers";
 
 // styles
 import { styles } from "./Map.styles";
-import colors from "../../../../styles/colors";
+
+const MAP_POINTS_THROTTLE_MS = 1200;
+const EVENT_DELTA = 0.1;
 
 type MapProps = {
   navigation: NativeStackNavigationProp<RootMainTabsParamList>;
 };
 
-const DEFAULT_LOCATION: mapMarker = {
+const DEFAULT_LOCATION: TMapMarker = {
   longitude: 31.976197008043528,
   latitude: 49.63489179964168,
   latitudeDelta: 7.273602506374104,
@@ -45,75 +56,97 @@ const DEFAULT_LOCATION: mapMarker = {
 };
 
 export const Map: FunctionComponent<MapProps> = () => {
-  const { language } = useLocalesProvider();
-  const { userData } = useUserProvider();
-  const { workshops } = useWorkshopsProvider();
-  const { location, usersMaps, usersSos } = useMapProvider();
-  const { theme } = useThemeProvider();
-  const { eventsList } = useEventsProvider();
+  const { location, mapPoints } = useMapSelector();
+  const { theme, heightStatusBar } = useThemeProvider();
+  const [getMapPoints] = useLazyGetMapPointsQuery();
+  const {
+    location: hookLocation,
+    statusText,
+    isLocationLoading,
+    getMapPointsRequestParams,
+  } = useMapLocation();
   const refMap = useRef<MapView>(null);
+  const [hasUserMoved, setHasUserMoved] = useState(false);
+  const lastFirstFetchKeyRef = useRef<string | null>(null);
+  const lastMapPointsAtRef = useRef<number>(0);
 
-  const showEventList = useMemo(
-    () =>
-      eventsList.filter(
-        (eventItem) => eventItem.date.finish > dayjs().valueOf()
+  const mapEvents = useMemo(
+    (): TMapPointEvent[] =>
+      (mapPoints?.events ?? []).filter(
+        (event) => (event.date?.finish ?? 0) > dayjs().valueOf()
       ),
-    [eventsList]
+    [mapPoints?.events]
   );
-  const firstEvent = useMemo(
-    () => (eventsList.length ? eventsList[0] : null),
-    [eventsList]
+  const mapWorkshops = useMemo(
+    (): TMapPointWorkshop[] => mapPoints?.workshops ?? [],
+    [mapPoints?.workshops]
   );
-  const listUsers = useMemo(
-    () =>
-      usersMaps
-        ? usersMaps.filter(({ userId }) => userId !== userData?._id)
-        : [],
-    [usersMaps, userData?._id, location]
-  );
-  const listUsersSos = useMemo(
-    () =>
-      usersSos ? usersSos.filter(({ userId }) => userId !== userData?._id) : [],
-    [usersSos, userData?._id, location]
+  const nearestEvent: TMapPointEvent | null = mapPoints?.nearestEvent ?? null;
+
+  const fetchMapPoints = useCallback(
+    (
+      bounds: {
+        minLat: number;
+        maxLat: number;
+        minLon: number;
+        maxLon: number;
+      },
+      includeNearest: boolean
+    ) => {
+      getMapPoints(getMapPointsRequestParams(bounds, { includeNearest }));
+    },
+    [getMapPoints, getMapPointsRequestParams]
   );
 
-  const showFirstEvent = (location: mapMarker) => {
+  const handleRegionChangeComplete = useCallback(
+    (region: {
+      latitude: number;
+      longitude: number;
+      latitudeDelta: number;
+      longitudeDelta: number;
+    }) => {
+      const now = Date.now();
+      if (now - lastMapPointsAtRef.current < MAP_POINTS_THROTTLE_MS) return;
+      lastMapPointsAtRef.current = now;
+      const bounds = regionToBounds(region);
+      fetchMapPoints(bounds, false);
+    },
+    [fetchMapPoints]
+  );
+
+  const showFirstEvent = (location: TMapMarker) => {
     if (refMap.current)
       refMap.current.animateToRegion({
         ...location,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-      });
-  };
-
-  const getToUser = () => {
-    if (location && refMap.current)
-      refMap.current.animateToRegion({
-        ...location,
-        latitudeDelta: 0.02,
-        longitudeDelta: 0.02,
-      });
-  };
-
-  const getToCity = () => {
-    const cityCoordinates =
-      userData?.place_id?.[language].geometry.location || null;
-    if (cityCoordinates && refMap.current)
-      refMap.current.animateToRegion({
-        longitude: cityCoordinates.lng,
-        latitude: cityCoordinates.lat,
-        latitudeDelta: 0.1,
-        longitudeDelta: 0.1,
+        latitudeDelta: EVENT_DELTA,
+        longitudeDelta: EVENT_DELTA,
       });
   };
 
   useEffect(() => {
-    if (location) getToUser();
-    else getToCity();
-  }, [!location, userData?._id]);
+    if (!hookLocation || hasUserMoved || !refMap.current) return;
+    refMap.current.animateToRegion(hookLocation);
+  }, [hookLocation, hasUserMoved]);
+
+  useEffect(() => {
+    if (isLocationLoading || !hookLocation) return;
+    const key = `${hookLocation.latitude.toFixed(
+      5
+    )}-${hookLocation.longitude.toFixed(5)}`;
+    if (lastFirstFetchKeyRef.current === key) return;
+    lastFirstFetchKeyRef.current = key;
+    const bounds = regionToBounds(hookLocation);
+    fetchMapPoints(bounds, true);
+  }, [hookLocation, isLocationLoading, fetchMapPoints]);
 
   return (
     <View style={styles.container}>
+      {statusText ? (
+        <View style={[styles.statusContainer, { top: heightStatusBar + 12 }]}>
+          <ActivityIndicator size="small" color="#2E7D32" />
+          <Text style={styles.statusText}>{statusText}</Text>
+        </View>
+      ) : null}
       <MapViewCluster
         ref={refMap}
         provider={PROVIDER_GOOGLE}
@@ -123,14 +156,14 @@ export const Map: FunctionComponent<MapProps> = () => {
         zoomControlEnabled
         userInterfaceStyle={theme}
         showsBuildings={false}
-        showsPointsOfInterest={false}
         showsIndoorLevelPicker={false}
-        onLayout={() => {
-          getToUser();
+        onPanDrag={() => {
+          if (!hasUserMoved) setHasUserMoved(true);
         }}
+        onRegionChangeComplete={handleRegionChangeComplete}
       >
         <MeMarker />
-        {showEventList.map((eventItem) =>
+        {mapEvents.map((eventItem) =>
           eventItem?.coordinates ? (
             <EventMarker
               key={`marker-event-${eventItem._id}`}
@@ -139,57 +172,19 @@ export const Map: FunctionComponent<MapProps> = () => {
             />
           ) : null
         )}
-        {workshops.map((workshop) => (
+        {mapWorkshops.map((workshop) => (
           <WorkshopMarker
             key={`marker-workshop-${workshop._id}`}
             workshop={workshop}
             location={location}
           />
         ))}
-        {listUsers.map((userLocation) => {
-          const dateNow = dayjs().valueOf();
-          const isUserSos =
-            listUsersSos.filter(
-              (userSos) => userSos.userId === userLocation.userId
-            ).length > 0;
-          if (userLocation === null || isUserSos) return null;
-          const timeUpdate =
-            dateNow > userLocation.date ? dateNow - userLocation.date : null;
-          return (
-            <Marker
-              key={`user-marker-${userLocation.userId}`}
-              coordinate={userLocation.location}
-            >
-              <IconAutoMap width={24} height={24} fill={colors.pinkNight} />
-              <Callout>
-                <View style={styles.containerClusterUser}>
-                  <Text>{`User #${userLocation.userId}`}</Text>
-                  {timeUpdate ? (
-                    <Text>
-                      <Trans>Last update</Trans>:{" "}
-                      {dayjs(timeUpdate).format("mm:ss")}
-                    </Text>
-                  ) : null}
-                </View>
-              </Callout>
-            </Marker>
-          );
-        })}
-        {listUsersSos.map((userLocationSos) => (
-          <SosMarker
-            key={`user-sos-marker-${userLocationSos.userId}`}
-            longitude={userLocationSos.location.longitude}
-            latitude={userLocationSos.location.latitude}
-            phoneNumber={userLocationSos.phoneNumber}
-            telegram={userLocationSos.telegram}
-            description={userLocationSos.description}
-            date={userLocationSos.date}
-          />
-        ))}
       </MapViewCluster>
       <UpContainer />
-      <EventContainer firstEvent={firstEvent} showFirstEvent={showFirstEvent} />
-      {/* <ButtonSearch navigation={navigation} /> */}
+      <EventContainer
+        firstEvent={nearestEvent}
+        showFirstEvent={showFirstEvent}
+      />
     </View>
   );
 };

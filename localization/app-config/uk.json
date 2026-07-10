@@ -1,16 +1,26 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Дозволити $(PRODUCT_NAME) використовувати ваше місцезнаходження для пошуку друзів на карті. Ви завжди можете вимкнути це в меню програми.",
-  "NSLocationAlwaysUsageDescription": "Дозволити $(PRODUCT_NAME) завжди мати доступ до вашого місцезнаходження для надання постійного відстеження друзів на карті. Ви можете вимкнути це в будь-який час у меню програми.",
-  "NSLocationWhenInUseUsageDescription": "Дозволити $(PRODUCT_NAME) мати доступ до вашого місцезнаходження під час використання програми, щоб допомогти вам знайти друзів на карті. Ви можете вимкнути це в меню програми.",
-  "locationAlwaysAndWhenInUsePermission": "Дозволити $(PRODUCT_NAME) використовувати ваше місцезнаходження для пошуку друзів на карті. Ви завжди можете вимкнути це в меню програми.",
-  "locationAlwaysPermission": "Дозволити $(PRODUCT_NAME) завжди мати доступ до вашого місцезнаходження для надання постійного відстеження друзів на карті. Ви можете вимкнути це в будь-який час у меню програми.",
-  "locationWhenInUsePermission": "Дозволити $(PRODUCT_NAME) мати доступ до вашого місцезнаходження під час використання програми, щоб допомогти вам знайти друзів на карті. Ви можете вимкнути це в меню програми.",
-  "NSFaceIDUsageDescription": "Для входу за допомогою Face ID",
-  "UIApplicationShortcutItemTitle": "Швидкий доступ",
-  "NSCameraUsageDescription": "Для створення фотографій",
-  "NSPhotoLibraryUsageDescription": "Для доступу до фотографій у вашій бібліотеці",
-  "NSMicrophoneUsageDescription": "Для запису звуку",
-  "NSCalendarsUsageDescription": "Для доступу до календарів",
-  "NSContactsUsageDescription": "Для доступу до контактів",
-  "NSAppleMusicUsageDescription": "Для доступу до Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Дозволити $(PRODUCT_NAME) використовувати ваше місцезнаходження для пошуку друзів на карті. Ви завжди можете вимкнути це в меню програми.",
+    "NSLocationAlwaysUsageDescription": "Дозволити $(PRODUCT_NAME) завжди мати доступ до вашого місцезнаходження для надання постійного відстеження друзів на карті. Ви можете вимкнути це в будь-який час у меню програми.",
+    "NSLocationWhenInUseUsageDescription": "Дозволити $(PRODUCT_NAME) мати доступ до вашого місцезнаходження під час використання програми, щоб допомогти вам знайти друзів на карті. Ви можете вимкнути це в меню програми.",
+    "locationAlwaysAndWhenInUsePermission": "Дозволити $(PRODUCT_NAME) використовувати ваше місцезнаходження для пошуку друзів на карті. Ви завжди можете вимкнути це в меню програми.",
+    "locationAlwaysPermission": "Дозволити $(PRODUCT_NAME) завжди мати доступ до вашого місцезнаходження для надання постійного відстеження друзів на карті. Ви можете вимкнути це в будь-який час у меню програми.",
+    "locationWhenInUsePermission": "Дозволити $(PRODUCT_NAME) мати доступ до вашого місцезнаходження під час використання програми, щоб допомогти вам знайти друзів на карті. Ви можете вимкнути це в меню програми.",
+    "NSFaceIDUsageDescription": "Для входу за допомогою Face ID",
+    "UIApplicationShortcutItemTitle": "Швидкий доступ",
+    "NSCameraUsageDescription": "Для створення фотографій",
+    "NSPhotoLibraryUsageDescription": "Для доступу до фотографій у вашій бібліотеці",
+    "NSMicrophoneUsageDescription": "Для запису звуку",
+    "NSCalendarsUsageDescription": "Для доступу до календарів",
+    "NSContactsUsageDescription": "Для доступу до контактів",
+    "NSAppleMusicUsageDescription": "Для доступу до Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Дозволити $(PRODUCT_NAME) використовувати ваше місцезнаходження для пошуку друзів на карті. Ви завжди можете вимкнути це в меню програми.",
+    "locationAlwaysPermission": "Дозволити $(PRODUCT_NAME) завжди мати доступ до вашого місцезнаходження для надання постійного відстеження друзів на карті. Ви можете вимкнути це в будь-який час у меню програми.",
+    "locationWhenInUsePermission": "Дозволити $(PRODUCT_NAME) мати доступ до вашого місцезнаходження під час використання програми, щоб допомогти вам знайти друзів на карті. Ви можете вимкнути це в меню програми.",
+    "cameraPermission": "Для створення фотографій",
+    "photosPermission": "Для доступу до фотографій у вашій бібліотеці",
+    "microphonePermission": "Для запису звуку"
+  }
 }

@@ -14,19 +14,22 @@ import {
   DrawerNavigationState,
   ParamListBase,
 } from "@react-navigation/native";
-import { Trans } from "@lingui/macro";
 import { MaterialIcons } from "@expo/vector-icons";
-
-// types
 import {
-  DrawerDescriptorMap,
-  DrawerNavigationHelpers,
-} from "@react-navigation/drawer/lib/typescript/src/types";
+  DrawerContentComponentProps,
+  DrawerNavigationProp,
+} from "@react-navigation/drawer";
+
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import {
+  useEditUserMutation,
+  useDeleteUserMutation,
+} from "../../../storeRedux/api";
 
 // providers
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 
 // components
 import { ItemMenuSettings } from "./components/ItemMenuSettings/ItemMenuSettings";
@@ -34,7 +37,6 @@ import { ImageCache } from "../../../components/ImageCache/ImageCache";
 import { Checkbox } from "../../../components/Checkbox/Checkbox";
 import { ChangeLanguage } from "../../../components/ChangeLanguage/ChangeLanguage";
 import { ModalSelectPlatform } from "./components/ModalSelectPlatform/ModalSelectPlatform";
-import { ModalSettingsSos } from "./components/ModalSettingsSos/ModalSettingsSos";
 import { ModalAgreements } from "./components/ModalAgreements/ModalAgreements";
 import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
@@ -42,7 +44,6 @@ import { ModalDelete } from "../../../components/ModalDelete/ModalDelete";
 // icons
 import {
   IconAvatarEmpty,
-  IconBellGradient,
   IconClose,
   IconDocumentGradient,
   IconLockGradient,
@@ -63,8 +64,8 @@ const APP_ID = "6502443474";
 
 type MenuSettingsProps = {
   state: DrawerNavigationState<ParamListBase>;
-  navigation: DrawerNavigationHelpers;
-  descriptors: DrawerDescriptorMap;
+  navigation: DrawerNavigationProp<ParamListBase>;
+  descriptors: DrawerContentComponentProps["descriptors"];
 };
 
 export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
@@ -73,26 +74,16 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
 }) => {
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  //const { usersSos, onDeleteSos } = useMapProvider();
-  const { userData, editUser, deleteUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
+  const [deleteUserMutation] = useDeleteUserMutation();
   const [darkTheme, setDarkTheme] = useState(false);
-  //const [isSos, setIsSos] = useState(false);
   const [isShowSelectPlatform, setIsShowSelectPlatform] = useState(false);
-  //const [isShowOnSos, setIsShowOnSos] = useState(false);
-  const [isShowSettingsSos, setIsShowSettingsSos] = useState(false);
   const [typeAgreements, setTypeAgreements] = useState<
     "terms" | "policy" | "about" | null
   >(null);
   const [isShowDelete, setIsShowDelete] = useState(false);
 
-  /* const isOnSos = useMemo(
-    () =>
-      usersSos
-        ? usersSos.filter((userSos) => userSos.userId === userData?._id).length >
-          0
-        : false,
-    [usersSos]
-  ); */
   const isShowDrawer = useMemo(
     () =>
       state.history.length
@@ -132,24 +123,13 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   };
 
   const onToggleLocation = async () => {
-    const isGeoLocation = !(userData?.isGeoLocation || false);
-    const isGeoLocationBackground = isGeoLocation
-      ? userData?.isGeoLocationBackground || false
-      : false;
-    await editUser({
-      isGeoLocation,
-      isGeoLocationBackground,
+    if (!userData) return;
+    const isGeoLocation = !(userData.isGeoLocation || false);
+    await editUserMutation({
+      body: { isGeoLocation },
+      existingUserData: userData,
     });
   };
-
-  /* const onToggleLocationBackground = async () => {
-    const isGeoLocationBackground = !(
-      userData?.isGeoLocationBackground || false
-    );
-    await editUser({
-      isGeoLocationBackground,
-    });
-  }; */
 
   const onCloseMenu = () => {
     navigation.closeDrawer();
@@ -160,8 +140,11 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
   };
 
   const onDeleteProfile = async () => {
-    const result = await deleteUser();
-    if (result)
+    if (!userData?._id) return;
+    const result = await deleteUserMutation({
+      body: { _id: userData._id },
+    });
+    if (result.data?.result)
       navigation.dispatch(
         CommonActions.reset({
           index: 0,
@@ -179,9 +162,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
         <ScrollView>
           <View style={styles.containerHeader}>
             <View style={styles.boxHeaderEmpty} />
-            <Text style={styles.titleHeader}>
-              <Trans>Settings</Trans>
-            </Text>
+            <Text style={styles.titleHeader}>{i18n._("Settings")}</Text>
             <TouchableOpacity
               accessibilityLabel={i18n._(
                 "Button for closing the menu settings screen"
@@ -193,9 +174,9 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             </TouchableOpacity>
           </View>
           <View style={styles.containerProfile}>
-            {userData?.avatar?.url ? (
+            {userData?.avatarFile?.url ? (
               <ImageCache
-                imageSrc={userData.avatar.url}
+                imageSrc={userData.avatarFile.url}
                 style={styles.imageProfile}
               />
             ) : (
@@ -205,14 +186,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             )}
             <Text style={styles.titleProfile}>{userData?.email}</Text>
           </View>
-          <View style={styles.lineWhite} />
-          <ItemMenuSettings
-            title={i18n._("SOS signal notification")}
-            Icon={IconBellGradient}
-            onPress={() => {
-              setIsShowSettingsSos(true);
-            }}
-          />
           <View style={styles.lineWhite} />
           <ItemMenuSettings
             title={i18n._("Share the app")}
@@ -262,7 +235,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
             {isToggleTheme ? (
               <View style={styles.containerCheckbox}>
                 <Text style={styles.titleDarkTheme}>
-                  <Trans>Dark theme</Trans>
+                  {i18n._("Dark theme")}
                 </Text>
                 <Checkbox check={darkTheme} setCheck={setDarkTheme} />
               </View>
@@ -272,7 +245,7 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
               style={styles.containerCheckbox}
             >
               <Text numberOfLines={2} style={styles.titleDarkTheme}>
-                <Trans>Automatically detect location</Trans>
+                {i18n._("Automatically detect location")}
               </Text>
               <Checkbox
                 accessibilityLabel={i18n._(
@@ -282,38 +255,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
                 setCheck={onToggleLocation}
               />
             </TouchableOpacity>
-            {/* <TouchableOpacity
-              onPress={onToggleLocation}
-              style={[
-                styles.containerCheckbox,
-                { opacity: userData?.isGeoLocation ? 1 : 0.5 },
-              ]}
-            >
-              <Text numberOfLines={2} style={styles.titleDarkTheme}>
-                <Trans>Automatically detect location in the background</Trans>
-              </Text>
-              <Checkbox
-                accessibilityLabel={i18n._(
-                  "Toggle automatically detect location in the background"
-                )}
-                check={userData?.isGeoLocationBackground || false}
-                setCheck={onToggleLocationBackground}
-              />
-            </TouchableOpacity> */}
-            {/* <View style={styles.containerCheckbox}>
-              <Text style={styles.titleSos}>
-                <Trans>SOS signal</Trans>
-              </Text>
-              <Checkbox
-                check={isOnSos || isSos}
-                setCheck={(value) => {
-                  if (value) setIsShowOnSos(true);
-                  else onDeleteSos();
-                  setIsSos(value);
-                }}
-                colorBoxEnabled={colors.electricRed}
-              />
-            </View> */}
             <View style={styles.containerCheckbox}>
               <ButtonCustom
                 title={i18n._("Delete profile")}
@@ -335,19 +276,6 @@ export const MenuSettings: FunctionComponent<MenuSettingsProps> = ({
           setIsShowSelectPlatform(false);
         }}
         onSelect={shareApp}
-      />
-      {/* <ModalSosOn
-        isOpen={isShowOnSos}
-        onClose={() => {
-          setIsShowOnSos(false);
-          setIsSos(false);
-        }}
-      /> */}
-      <ModalSettingsSos
-        isOpen={isShowSettingsSos}
-        onClose={() => {
-          setIsShowSettingsSos(false);
-        }}
       />
       <ModalAgreements
         isOpen={typeAgreements !== null}

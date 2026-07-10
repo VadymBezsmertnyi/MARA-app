@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -28,7 +27,7 @@ import WorkshopPlaceholder from "../../../../../../assets/default/workshop-place
 import { styles } from "./WorkshopItem.styles";
 import colors from "../../../../../../styles/colors";
 
-type WorkshopItemProps = {
+type WorkshopListItemProps = {
   workshopId: string;
   title: string;
   description: string;
@@ -41,7 +40,7 @@ type WorkshopItemProps = {
   image: { url: string } | null;
 };
 
-export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
+export const WorkshopListItem: FunctionComponent<WorkshopListItemProps> = ({
   workshopId,
   title,
   description,
@@ -66,6 +65,23 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
   const checkImage = image
     ? { ...image, uri: image?.url }
     : WorkshopPlaceholder;
+
+  const getRangeDisplay = useMemo(() => {
+    if (range === null)
+      return {
+        text: i18n._("Geolocation disabled for calculation"),
+        isWarning: true,
+      };
+    if (isNaN(Number(range)))
+      return {
+        text: i18n._("Cannot calculate"),
+        isWarning: false,
+      };
+    return {
+      text: `${range} ${i18n._("km")}`,
+      isWarning: false,
+    };
+  }, [range, i18n]);
 
   return (
     <TouchableOpacity style={styles.container} onPress={selectNew}>
@@ -96,9 +112,17 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
               width={12}
               height={12}
             />
-            <Text style={styles.infoText}>
-              {range} {i18n._("km")}
-            </Text>
+            <View>
+              {getRangeDisplay.isWarning ? (
+                <Text style={styles.distanceWarning}>
+                  {getRangeDisplay.text}
+                </Text>
+              ) : isNaN(Number(range)) ? (
+                <Text style={styles.distanceError}>{getRangeDisplay.text}</Text>
+              ) : (
+                <Text style={styles.infoText}>{getRangeDisplay.text}</Text>
+              )}
+            </View>
           </View>
           <View style={styles.comment}>
             {rate ? (
@@ -117,9 +141,7 @@ export const WorkshopItem: FunctionComponent<WorkshopItemProps> = ({
                 </View>
               </>
             ) : (
-              <Text style={styles.notComments}>
-                <Trans>Not comments</Trans>
-              </Text>
+              <Text style={styles.notComments}>{i18n._("Not comments")}</Text>
             )}
           </View>
         </View>

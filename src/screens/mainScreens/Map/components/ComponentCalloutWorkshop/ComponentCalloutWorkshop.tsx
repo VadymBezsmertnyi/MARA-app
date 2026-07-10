@@ -1,6 +1,8 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { Text, View } from "react-native";
-import { Trans } from "@lingui/macro";
+
+// providers
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
@@ -28,8 +30,10 @@ type ComponentCalloutProps = {
 export const ComponentCalloutWorkshop: FunctionComponent<
   ComponentCalloutProps
 > = ({ imageSrc, title, distance, isMoto, isAuto }) => {
+  const { i18n } = useLocalesProvider();
   const styleIconAuto = useMemo(() => ({ right: isMoto ? -12 : 0 }), [isMoto]);
   const checkImage = imageSrc ? imageSrc : WorkshopPlaceholder;
+
   return (
     <View style={styles.container}>
       <LinearGradientCustom style={styles.linearGradient}>
@@ -48,7 +52,7 @@ export const ComponentCalloutWorkshop: FunctionComponent<
           </View>
           <View style={styles.containerSubTitles}>
             <Text style={styles.title}>
-              <Trans>{distance} km</Trans>
+              {i18n._("{distance} km", { distance: distance ?? "0" })}
             </Text>
             <View style={styles.containerIcons}>
               {isAuto ? (

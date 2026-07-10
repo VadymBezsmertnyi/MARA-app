@@ -1,11 +1,25 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import colors from "../../../styles/colors";
 import {
   FONT_400_OPEN_SANS,
   FONT_600_OPEN_SANS,
 } from "../../../styles/constants";
+import { horizontalScale, scaleFont } from "../../../styles/hooks";
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalContent: {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+    backgroundColor: "rgba(0, 0, 0, 0.95)",
+  },
   container: {
     position: "relative",
     flex: 1,
@@ -16,28 +30,34 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
-    paddingHorizontal: 11,
+    paddingHorizontal: horizontalScale(11),
     justifyContent: "space-between",
-    backgroundColor: colors.white,
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    zIndex: 10,
   },
   buttonBack: {
-    padding: 4,
+    padding: horizontalScale(4),
     flexDirection: "row",
     alignItems: "center",
   },
   buttonTitle: {
     fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 17,
+    fontSize: scaleFont(17),
   },
   title: {
     fontFamily: FONT_600_OPEN_SANS,
-    fontSize: 17,
+    fontSize: scaleFont(17),
   },
-  containerEmpty: { width: 70 },
-  containerGallery: { backgroundColor: colors.transparent },
+  containerEmpty: { width: horizontalScale(70) },
+  containerGallery: {
+    backgroundColor: colors.transparent,
+    flex: 1,
+  },
   containerImage: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
   },
 });

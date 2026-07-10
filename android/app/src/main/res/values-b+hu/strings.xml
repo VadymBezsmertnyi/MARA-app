@@ -1,0 +1,8 @@
+<resources>
+  <string name="locationAlwaysAndWhenInUsePermission">"Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének használatát a térképen barátok kereséséhez. Bármikor letilthatja ezt az alkalmazás menüjében."</string>
+  <string name="locationAlwaysPermission">"Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében."</string>
+  <string name="locationWhenInUsePermission">"Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében."</string>
+  <string name="cameraPermission">"Fényképek készítéséhez"</string>
+  <string name="photosPermission">"Fényképek eléréséhez a könyvtárában"</string>
+  <string name="microphonePermission">"Hangfelvétel készítéséhez"</string>
+</resources>

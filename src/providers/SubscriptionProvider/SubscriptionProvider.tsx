@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useContext, useMemo } from "react";
-import { useUserProvider } from "../UserProvider/UserProvider";
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
 import {
-  TYPE_BUSINESS_SUBSCRIPTIONS_ADVERT,
   TYPE_INDIVIDUAL_SUBSCRIPTIONS_ADVERT,
   TYPE_SMALL_SUBSCRIPTIONS_EVENT,
 } from "./SubscriptionProvider.constants";
@@ -40,7 +39,7 @@ export const subscriptionContext = React.createContext(
 const SubscriptionProvider: FunctionComponent<SubscriptionProviderProps> = ({
   children,
 }) => {
-  const { userData } = useUserProvider();
+  const { userData } = useUserSelector();
 
   const infoBusinessAdverts = useMemo(() => {
     if (!userData)
@@ -48,33 +47,11 @@ const SubscriptionProvider: FunctionComponent<SubscriptionProviderProps> = ({
         amountBusinessAdvert: 0,
         useAmountBusinessAdvert: 0,
       };
-    const subscription = userData.subscriptionAdvertIds.reduce(
-      (state, next) => {
-        if (next.type === TYPE_BUSINESS_SUBSCRIPTIONS_ADVERT) {
-          const isEnd = next.dateEnd > new Date().getTime();
-          if (isEnd) return state;
-          return state + next.amount;
-        }
-        return state;
-      },
-      0
-    );
-    const useBusinessAdvert = userData.productsIds.filter(
-      (item) => item.isBusiness
-    ).length;
-    const amountBusinessAdvert =
-      subscription +
-      userData.defaultAmount.advertBusinessAmount -
-      useBusinessAdvert;
     return {
-      amountBusinessAdvert,
-      useAmountBusinessAdvert: useBusinessAdvert,
+      amountBusinessAdvert: 0,
+      useAmountBusinessAdvert: 0,
     };
-  }, [
-    userData?.subscriptionAdvertIds,
-    userData?.productsIds,
-    userData?.defaultAmount.advertBusinessAmount,
-  ]);
+  }, [userData?.defaultAmount.advertBusinessAmount]);
   const infoAdverts = useMemo(() => {
     if (!userData)
       return {
@@ -92,20 +69,11 @@ const SubscriptionProvider: FunctionComponent<SubscriptionProviderProps> = ({
       },
       0
     );
-    const useAdvert = userData.productsIds.filter(
-      (item) => !item.isBusiness
-    ).length;
-    const amountAdvert =
-      subscription + userData.defaultAmount.advertAmount - useAdvert;
     return {
-      amountAdvert,
-      useAmountAdvert: useAdvert,
+      amountAdvert: 0,
+      useAmountAdvert: 0,
     };
-  }, [
-    userData?.subscriptionAdvertIds,
-    userData?.productsIds,
-    userData?.defaultAmount.advertAmount,
-  ]);
+  }, [userData?.subscriptionAdvertIds, userData?.defaultAmount.advertAmount]);
   const infoSmallEvents = useMemo(() => {
     if (!userData)
       return {

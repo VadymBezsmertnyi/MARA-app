@@ -15,10 +15,12 @@ import { styles } from "./RegistrationTermsOfUse.styles";
 export const RegistrationTermsOfUse: FunctionComponent = () => {
   const { i18n, language } = useLocalesProvider();
   const [loading, setLoading] = useState(true);
+  const EXPO_PUBLIC_WEB_SITE_URL =
+    process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
   const source = useMemo(
     () => ({
-      uri: `https://m-a-r-a.netlify.app/mobile/term-of-use?language=${language}`,
+      uri: `${EXPO_PUBLIC_WEB_SITE_URL}/mobile/term-of-use?language=${language}`,
     }),
     []
   );

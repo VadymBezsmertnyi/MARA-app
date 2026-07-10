@@ -14,68 +14,1034 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Adaugă o fotografie"
+msgid "Maintenance"
+msgstr "Întreținere"
 
 #. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "Prima fotografie va fi pe coperta anunțului."
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Schimb de ulei / Înlocuire filtru / Înlocuire curea de distribuție / Înlocuire bujie / Schimb de ulei de transmisie / Serviciu de frână / Înlocuirea tuturor fluidelor necesare / Și altele."
 
 #. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Introduceți text pentru căutare"
+msgid "Diagnostics"
+msgstr "Diagnosticare"
 
 #. js-lingui-explicit-id
-msgid "Press and enter to search for a city"
-msgstr "Apăsați și introduceți pentru a căuta un oraș"
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Diagnosticare completă pre-achiziție / Diagnosticare șasiu / Diagnosticare motor / Diagnosticare transmisie / Diagnosticare caroserie / Diagnosticare computer / Diagnosticare fluide / Și altele."
 
 #. js-lingui-explicit-id
-msgid "Select"
-msgstr "Selectează"
+msgid "Auto Electrical"
+msgstr "Electrice auto"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Repararea cablajului / Tuning cip / Instalarea unei alarme de orice complexitate / Corecție kilometraj / Reprogramarea cheii / Adaptarea motorului și a transmisiei / Înlăturarea EGR-ului / Înlăturarea DPF-ului / Instalare Xenon / Instalare senzori de parcare / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Reparare șasiu"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Înlocuire amortizor / Înlocuire arc / Înlocuire braț de control / Înlocuire grinda / Presare silent bloc / Înlocuire arc de frunză / Înlocuire butuc / Înlocuire lamă de ferăstrău / Înlocuire ax / Înlocuire articulație sferică / Înlocuire suport motor și transmisie / Lucrări mecanice"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Motor, Transmisie Automată și Manuală"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Diagnosticare motor / Reparare motor / Înlocuire motor / Înlocuire vas ulei motor / Diagnosticare transmisie automată / Schimb ulei transmisie automată / Înlocuire transmisie automată / Curățare-spălare transmisie automată / Înlocuire ambreiaj / Diagnosticare transmisie manuală / Schimb ulei transmisie manuală / Înlocuire transmisie manuală / Curățare-spălare transmisie manuală / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Sistem de frânare și direcție"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Diagnosticare sistem de frânare / Înlocuire lichid de frână / Reparare sistem de frânare / Sângerare frâne / Înlocuire cremalier de direcție / Restaurare cremalier de direcție / Înlocuire direcție asistată / Înlocuire lichid direcție asistată / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Echipamente accesorii"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Reparare electromotor / Înlocuire electromotor / Reparare generator / Înlocuire generator / Restaurare turbocompresor / Înlocuire turbocompresor / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Sisteme de climatizare"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Diagnosticare / Încărcare / Reîncărcare / Detectare scurgeri / Înlocuire conducte / Înlocuire radiator / Reparare compresor / Înlocuire compresor / Dezinfectare sistem / Eliminare mirosuri străine"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Aliniere roți"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Aliniere roți / Diagnosticare aliniere / Căutare defecte suspensie / Căutare defecte caroserie"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Vopsire"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Vopsire caroserie / Vopsire bară / Vopsire aripă / Vopsire ușă / Vopsire capotă / Vopsire plafon / Vopsire portbagaj / Vopsire aripă / Vopsire spoiler / Vopsire oglindă / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Aerografie"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a motocicletei / Designuri personalizate de aerografie pentru rezervoare, aripi și carene"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Întreținere tehnică"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Lubrifiere cablu / Sincronizare carburator / Înlocuire filtru de aer / Înlocuire bujie / Schimb ulei de transmisie / Schimb ulei de diferențial / Înlocuire lichid de răcire / Schimb ulei de motor"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Lucrări generale"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Diagnosticare generală / Măsurare compresie / Verificare nivel lichide tehnice / Înlocuire cablu ambreiaj / Înlocuire cablu accelerație / Curățare și spălare rezervor de carburant / Înlăturare și instalare rezervor de carburant / Înlăturare și instalare plastic / Instalare arc de siguranță, șină"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Şasiu"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Înlăturare și instalare roată față / Înlăturare și instalare roată spate / Înlocuire rulment roată / Ajustare rulment coloană de direcție / Înlocuire rulment coloană de direcție / Înlăturare și instalare furcă față / Înlocuire garnitură furcă față / Schimb ulei furcă față / Înlocuire rulment braț oscilant spate / Înlocuire amortizor spate / Înlocuire amortizor central / Reparare amortizor spate"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Lanț de transmisie"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Înlocuire lanț și pinion / Curățare, lubrifiere și ajustare lanț / Ajustare, întindere și lubrifiere lanț"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Motor"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Înlăturare și instalare / Ajustare supape / Înlocuire ambreiaj / Reparare cap cilindru / Înlocuire lanț distribuție / Reparare grup piston / Reparare cutie de viteze / Revizie motor"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Electrice"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Înlocuire regulator tensiune / Înlocuire alternator / Înlocuire electromotor / Reparare electromotor / Înlocuire bec / Instalare xenon / Înlocuire baterie / Încărcare baterie"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Sistem de frânare"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Înlocuire placă frână disc / Înlocuire placă frână tambur / Sângerare frâne / Înlocuire lichid frână / Înlocuire lichid frână combinat / Înlocuire furtun frână / Instalare furtun consolidat / Înlocuire disc frână / Reparare etrier frână"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Reparare plastic"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Sudură/restaurare fragmente/restaurare elemente de fixare"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Lucrări de sudură"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Sudură electrică cu arc / Sudură semiautomată / Sudură cu argon"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Tuning și personalizare"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Instalare arc de protecție / Instalare protecție alunecător / Instalare sistem de evacuare / Instalare sistem de frânare / Instalare furtun consolidat / Instalare xenon / Instalare lumină moto / Instalare lumină ceață (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Vopsire rezervor / Vopsire panou lateral / Vopsire aripă / Vopsire carenă / Vopsire capac far / Vopsire secțiune spate / Vopsire capac șa / Vopsire capac evacuare / Vopsire furcă față / Și altele."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a mașinii"
+
+#. js-lingui-explicit-id
+msgid "Wait please before the next update"
+msgstr "Vă rugăm așteptați înainte de următoarea actualizare"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Ateliere"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Adaugă atelier"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Introduceți numele atelierului sau tipul de lucrare"
+
+#. js-lingui-explicit-id
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Ne pare rău, dar nu s-au găsit ateliere conform filtrelor"
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Ne pare rău, nu există ateliere viitoare"
+
+#. js-lingui-explicit-id
+msgid "Geolocation disabled for calculation"
+msgstr "Geolocație dezactivată pentru calcul"
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr "Nu se poate calcula"
 
 #. js-lingui-explicit-id
 msgid "km"
 msgstr "km"
 
 #. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Locație neactivată"
-
-#. js-lingui-explicit-id
-msgid "Photo {numberPhoto}"
-msgstr "Fotografie {numberPhoto}"
+msgid "Not comments"
+msgstr "Fără comentarii"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
 msgstr "Buton pentru închiderea ferestrei modale"
 
 #. js-lingui-explicit-id
-msgid "Main photo"
-msgstr "Fotografia principală"
+msgid "By distance:"
+msgstr "După distanță:"
 
 #. js-lingui-explicit-id
-msgid "Make the main photo"
-msgstr "Faceți fotografia principală"
+msgid "from closest to farthest"
+msgstr "de la cel mai apropiat la cel mai îndepărtat"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Toate orașele"
+msgid "Getting location..."
+msgstr "Se obține locația..."
 
 #. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Nu s-au găsit orașe"
+msgid "To calculate distance, please enable location services"
+msgstr "Pentru a calcula distanța, vă rugăm activați serviciile de locație"
 
 #. js-lingui-explicit-id
-msgid "Decrease the maximum number"
-msgstr "Scădeați numărul maxim"
+msgid "Enable location"
+msgstr "Activați locația"
 
 #. js-lingui-explicit-id
-msgid "Increase the maximum number"
-msgstr "Creșteți numărul maxim"
+msgid "By rating:"
+msgstr "După evaluare:"
+
+#. js-lingui-explicit-id
+msgid "from highest to lowest"
+msgstr "de la cel mai mare la cel mai mic"
+
+#. js-lingui-explicit-id
+msgid "By number of comments:"
+msgstr "După numărul de comentarii:"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Fără informații"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Moto"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Auto"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Toate atelierele"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Repararea motocicletelor"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Repararea autoturismelor"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Filtru"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Tipuri de ateliere"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Distanța, km:"
+
+#. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr "Doar cu evaluare:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Toate lucrările"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Tipuri de lucrări"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Filtrare"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Eroare"
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr "Nu se poate aprecia atelierul"
+
+#. js-lingui-explicit-id
+msgid "Failed to create share link"
+msgstr "Eșec la crearea linkului de partajare"
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Deschideți atelierul în aplicație:\n"
+"{appLink}\n"
+"\n"
+"Deschideți în browser:\n"
+"{webLink}"
+
+#. js-lingui-explicit-id
+msgid "Share workshop"
+msgstr "Partajează atelierul"
+
+#. js-lingui-explicit-id
+msgid "Failed to send SMS"
+msgstr "Eșec la trimiterea SMS"
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Succes"
+
+#. js-lingui-explicit-id
+msgid "Everything is successful and this is your business"
+msgstr "Totul este cu succes și aceasta este afacerea dumneavoastră"
+
+#. js-lingui-explicit-id
+msgid "Invalid or expired code"
+msgstr "Cod invalid sau expirat"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Atelier"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr "Nu se poate calcula distanța, locația este dezactivată"
+
+#. js-lingui-explicit-id
+msgid "Contacts unknown"
+msgstr "Contacte necunoscute"
+
+#. js-lingui-explicit-id
+msgid "About us:"
+msgstr "Despre noi:"
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr "Citiți întreaga descriere..."
+
+#. js-lingui-explicit-id
+msgid "This business has not been confirmed by the owner"
+msgstr "Această afacere nu a fost confirmată de proprietar"
+
+#. js-lingui-explicit-id
+msgid "Confirm business"
+msgstr "Confirmați afacerea"
+
+#. js-lingui-explicit-id
+msgid "Report on business"
+msgstr "Raportați despre afacere"
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr "Program de lucru necunoscut"
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr "Zi liberă"
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr "Program de lucru"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Textul trebuie să conțină între 3 și 40 de caractere."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Textul trebuie să conțină între 10 și 2000 de caractere."
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr "Lăsați o recenzie"
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Nume"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Introduceți numele dumneavoastră"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Adăugați o descriere despre atelier"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Descrierea atelierului"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Publică"
+
+#. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr "Munca pe care o facem:"
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr "Recenzii:"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Redactați prima recenzie"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Modificați o recenzie"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Scrieți o recenzie"
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr "Luni"
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr "Lu"
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr "Marți"
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr "Ma"
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr "Miercuri"
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr "Mi"
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr "Joi"
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr "Jo"
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr "Vineri"
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr "Vi"
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr "Sâmbătă"
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr "Sâ"
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr "Duminică"
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr "Du"
+
+#. js-lingui-explicit-id
+msgid "Phone"
+msgstr "Telefon"
+
+#. js-lingui-explicit-id
+msgid "Email"
+msgstr "Email"
+
+#. js-lingui-explicit-id
+msgid "Viber"
+msgstr "Viber"
+
+#. js-lingui-explicit-id
+msgid "Telegram"
+msgstr "Telegram"
+
+#. js-lingui-explicit-id
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#. js-lingui-explicit-id
+msgid "Instagram"
+msgstr "Instagram"
+
+#. js-lingui-explicit-id
+msgid "Facebook"
+msgstr "Facebook"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "atelier"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Atelier modificat cu succes"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Atelier creat cu succes"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Eroare la modificarea atelierului"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Eroare la crearea atelierului"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr "Nu se poate șterge atelierul"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Modificați atelier"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Introduceți numele atelierului"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Numele atelierului"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Adresa atelierului"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Introduceți adresa"
+
+#. js-lingui-explicit-id
+msgid "Contacts"
+msgstr "Contacte"
+
+#. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Număr de telefon"
+
+#. js-lingui-explicit-id
+msgid "Add contact type"
+msgstr "Adăugați tip de contact"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Tipul atelierului"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Selectați tipul"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Tipuri de lucrări"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Selectați tipurile de lucrări"
+
+#. js-lingui-explicit-id
+msgid "You can add up to 5 phone numbers"
+msgstr "Puteți adăuga până la 5 numere de telefon"
+
+#. js-lingui-explicit-id
+msgid "This contact type has already been added"
+msgstr "Acest tip de contact a fost deja adăugat"
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr "Editați"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Salvați"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Anulare"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Atelierele mele"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Buton pentru închiderea ecranului de setări al atelierelor"
+
+#. js-lingui-explicit-id
+msgid "All"
+msgstr "Toate"
+
+#. js-lingui-explicit-id
+msgid "Created by me"
+msgstr "Creat de mine"
+
+#. js-lingui-explicit-id
+msgid "Mine"
+msgstr "Ale mele"
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr "Ne pare rău!"
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr "Nu aveți {typeItem}."
+
+#. js-lingui-explicit-id
+msgid "Select phone number"
+msgstr "Selectați numărul de telefon"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Confirmați"
+
+#. js-lingui-explicit-id
+msgid "Enter verification code"
+msgstr "Introduceți codul de verificare"
+
+#. js-lingui-explicit-id
+msgid "Enter 6-digit code"
+msgstr "Introduceți cod de 6 cifre"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr "În revizuire"
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr "Verificat"
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr "Respins"
+
+#. js-lingui-explicit-id
+msgid "Confirm ownership"
+msgstr "Confirmați proprietatea"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Eroare: număr de telefon incorect"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Eroare: Prenumele trebuie să fie între 3 și 15 caractere"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Eroare: selectați orașul"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Fotografia adăugată"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Ne pare rău, a apărut o eroare"
+
+#. js-lingui-explicit-id
+msgid "Profile saved"
+msgstr "Profil salvat"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Eroare: salvare profil"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Înapoi"
+
+#. js-lingui-explicit-id
+msgid "Profile"
+msgstr "Profil"
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr "Delogare"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Prenume"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Nume"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Oraș"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Selectați orașul"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Fotografia a fost modificată"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Fotografia nu a fost modificată"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr "Informații"
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr "Fotografia a fost ștearsă"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Ștergeți"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Modifică"
+
+#. js-lingui-explicit-id
+msgid "Your profile"
+msgstr "Profilul dumneavoastră"
+
+#. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Rolurile mele"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Acțiunile mele"
+
+#. js-lingui-explicit-id
+msgid "Your workshops"
+msgstr "Atelierele dumneavoastră"
+
+#. js-lingui-explicit-id
+msgid "Your events"
+msgstr "Evenimentele dumneavoastră"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "evenimente"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Evenimentele mele"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Buton pentru închiderea ecranului de setări al evenimentelor"
+
+#. js-lingui-explicit-id
+msgid "Upcoming events"
+msgstr "Evenimente viitoare"
+
+#. js-lingui-explicit-id
+msgid "Past events"
+msgstr "Evenimente trecute"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Adăugați eveniment"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Termeni de utilizare"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Politica de confidențialitate"
+
+#. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr "Termenii de Serviciu"
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Pentru a utiliza pe deplin toate funcționalitățile serviciului, trebuie să acordați aplicației permisiunea de a vă determina locația:"
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Permiteți aplicației {nameApp} să determine locația mea"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Comută localizarea dvs."
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr "și alegeți orașul de reședință:"
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "Apăsând butonul \"Continuați\", sunteți de acord cu {buttonTermsService} și {buttonPrivacyPolicy}"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Continuați"
+
+#. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Număr de telefon invalid"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "Lungimea numelui ar trebui să fie între 2 și 20 de caractere"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Înregistrare"
+
+#. js-lingui-explicit-id
+msgid "We recommend filling out the profile information"
+msgstr "Recomandăm completarea informațiilor din profil"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Completați mai târziu"
+
+#. js-lingui-explicit-id
+msgid "Settings"
+msgstr "Setări"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Buton pentru închiderea ecranului de setări din meniu"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Partajează aplicația"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "Despre serviciu"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Condiții de utilizare"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Politica de confidențialitate"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Raportați o eroare/îmbunătățire"
+
+#. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr "Temă întunecată"
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr "Detectare automată a locației"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Comutare detectare automată a locației"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Ștergeți profilul"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "Odată cu ștergerea profilului, toate informațiile dvs. vor fi șterse"
+
+#. js-lingui-explicit-id
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "Pe ce platformă doriți să trimiteți invitația de instalare a aplicației?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
 msgstr "Comută afișarea meniului"
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr "Cel mai apropiat eveniment:"
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr "{distance} km"
+
+#. js-lingui-explicit-id
+msgid "No date"
+msgstr "Fără dată"
+
+#. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Nu se poate deschide URL-ul canalului"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Eșec la încărcarea canalelor telegram"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Ajutor și resurse"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Adaugă canal Telegram"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Caută canale..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Filtre active:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Categorie"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Țară"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Doar verificate"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Sortează după"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Se încarcă canalele..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Deschide canalul"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Raportează"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Raportează canalul"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Sigur doriți să raportați acest canal?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "Verificat de AI"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Canal Telegram"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "rapoarte"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "După nume:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "alfabetic"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "După categorie:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "grupate după categorie"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "După verificare:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "verificate mai întâi"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Doar verificate"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -86,304 +1052,438 @@ msgid "No"
 msgstr "Nu"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Selectați țara {nameCountry}"
+msgid "Clear Filters"
+msgstr "Șterge filtrele"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Selectați regiunea {nameRegion}"
+msgid "Apply Filters"
+msgstr "Aplică filtrele"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Selectați regiunea {nameCity}"
+msgid "Add Channel"
+msgstr "Adaugă canalul"
 
 #. js-lingui-explicit-id
-msgid "Select country"
-msgstr "Selectați țara"
+msgid "Please fill all required fields"
+msgstr "Vă rugăm să completați toate câmpurile obligatorii"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Continuați"
+msgid "Channel submitted for review"
+msgstr "Canal trimis pentru revizuire"
 
 #. js-lingui-explicit-id
-msgid "Back"
-msgstr "Înapoi"
+msgid "Failed to add channel"
+msgstr "Eșec la adăugarea canalului"
 
 #. js-lingui-explicit-id
-msgid "Disable Deep Search"
-msgstr "Dezactivați Căutarea Profundă"
+msgid "Add Telegram Channel"
+msgstr "Adaugă canal Telegram"
 
 #. js-lingui-explicit-id
-msgid "Enable Deep Search"
-msgstr "Activați Căutarea Profundă"
+msgid "You can add a telegram channel"
+msgstr "Puteți adăuga un canal telegram"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Adresa evenimentului"
+msgid "Enter channel name"
+msgstr "Introduceți numele canalului"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Introduceți adresa exactă"
+msgid "Channel Name"
+msgstr "Nume canal"
 
 #. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Strada Independenței, 1"
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname sau @channelname"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto {nameTypeWork}"
-msgstr "Selectați tipul de lucru auto {nameTypeWork}"
+msgid "Channel URL"
+msgstr "URL canal"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto {nameTypeWork}"
-msgstr "Selectați tipul de lucru moto {nameTypeWork}"
+msgid "Enter channel description"
+msgstr "Introduceți descrierea canalului"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto"
-msgstr "Selectați tipul de lucru moto"
+msgid "Description"
+msgstr "Descriere"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto"
-msgstr "Selectați tipul de lucru auto"
+msgid "Location"
+msgstr "Locație"
 
 #. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Suprapunere fundal pentru închiderea ferestrei modale"
+msgid "Select location..."
+msgstr "Selectați locația..."
 
 #. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Atenție!"
+msgid "Search country..."
+msgstr "Caută țară..."
 
 #. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "Din păcate, în prezent este imposibil să creșteți numărul de anunțuri, ateliere sau evenimente disponibile, deoarece aplicația este în modul de testare. Dacă aveți întrebări, vă rugăm să contactați administrația sau să lăsați feedback."
+msgid "Search city..."
+msgstr "Caută oraș..."
 
 #. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- sau --"
+msgid "No results found"
+msgstr "Nu s-au găsit rezultate"
 
 #. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Raportați o eroare/îmbunătățire"
+msgid "Events"
+msgstr "Evenimente"
 
 #. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Vă mulțumim pentru înțelegere!"
+msgid "Upcoming events:"
+msgstr "Evenimente viitoare:"
 
 #. js-lingui-explicit-id
-msgid "The price of the item"
-msgstr "Prețul produsului"
+msgid "Sorry, there are no upcoming events"
+msgstr "Ne pare rău, nu există evenimente viitoare"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Transport motocicletă"
+msgid "Press show more events"
+msgstr "Apăsați pentru a arăta mai multe evenimente"
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Transport auto"
+msgid "More events"
+msgstr "Mai multe evenimente"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle parts"
-msgstr "Piese de motocicletă"
+msgid "Past events:"
+msgstr "Evenimente trecute:"
 
 #. js-lingui-explicit-id
-msgid "Car parts"
-msgstr "Piese auto"
+msgid "No events have passed"
+msgstr "Nu au trecut evenimente"
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Benzină"
+msgid "Now"
+msgstr "Acum"
 
 #. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Motorină"
+msgid "Not enabled location"
+msgstr "Locație neactivată"
 
 #. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Gaz / Benzină"
+msgid "Enter the text to search"
+msgstr "Introduceți textul pentru căutare"
 
 #. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Electric"
+msgid "By date:"
+msgstr "După dată:"
 
 #. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Hibrid"
+msgid "from soonest to latest"
+msgstr "de la cel mai devreme la cel mai târziu"
 
 #. js-lingui-explicit-id
-msgid "Other"
-msgstr "Altele"
+msgid "Price range:"
+msgstr "Interval de prețuri:"
 
 #. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Manual"
+msgid "From"
+msgstr "De la"
 
 #. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Automat"
+msgid "To"
+msgstr "La"
 
 #. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Transmisie cu variație continuă (CVT)"
+msgid "All locations"
+msgstr "Toate locațiile"
 
 #. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Adaptiv"
+msgid "Select country or city"
+msgstr "Selectați țara sau orașul"
 
 #. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Tiptronic"
+msgid "Clear location filter"
+msgstr "Ștergeți filtrul de locație"
 
 #. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Baterii"
+msgid "Close"
+msgstr "Închideți"
 
 #. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Amortizoare și suspensie"
+msgid "All countries"
+msgstr "Toate țările"
 
 #. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Variatoare și reducători"
+msgid "No countries found"
+msgstr "Nu s-au găsit țări"
 
 #. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Sisteme de evacuare, țevi drepte, muflere"
+msgid "All cities"
+msgstr "Toate orașele"
 
 #. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Piese de motor"
+msgid "No cities found"
+msgstr "Nu s-au găsit orașe"
 
 #. js-lingui-explicit-id
-msgid "Gearbox"
-msgstr "Cutie de viteze"
+msgid "Save location filter"
+msgstr "Salvați filtrul de locație"
 
 #. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Repos picioare și pedale"
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} grn."
 
 #. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Iluminare și lampi"
+msgid "{price} grn."
+msgstr "{price} grn."
 
 #. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Rulmenți"
+msgid "Free"
+msgstr "Gratuit"
 
 #. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Transmisie și șasiu"
+msgid "Phone number not found"
+msgstr "Numărul de telefon nu a fost găsit"
 
 #. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Cadru, suporturi și brațe oscilante"
+msgid ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Deschideți evenimentul în aplicație:\n"
+"{appLink}\n"
+"\n"
+"Deschideți în browser:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Mânere și comenzi"
+msgid "Share event"
+msgstr "Partajează evenimentul"
 
 #. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Scaun"
+msgid "Please sign in to continue"
+msgstr "Vă rugăm să vă autentificați pentru a continua"
 
 #. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Sistem de răcire"
+msgid "Event"
+msgstr "Eveniment"
 
 #. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Ambreiaj"
+msgid "All photos"
+msgstr "Toate fotografiile"
 
 #. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Sistem de alimentare cu combustibil"
+msgid "Not going"
+msgstr "Nu particip"
 
 #. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Sistem de frânare"
+msgid "Going"
+msgstr "Particip"
 
 #. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Cabluri și furtune"
+msgid "Date of the event"
+msgstr "Data evenimentului"
 
 #. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Filtre"
+msgid "The beginning"
+msgstr "Începutul"
 
 #. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Lanțuri și pinioane"
+msgid "Finish"
+msgstr "Final"
 
 #. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Sistem electric"
+msgid "Price for participation"
+msgstr "Preț pentru participare"
 
 #. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Alte piese de motocicletă"
+msgid "About event"
+msgstr "Despre eveniment"
 
 #. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Motor"
+msgid "Gallery"
+msgstr "Galerie"
 
 #. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Sistem de evacuare"
+msgid "Timeline"
+msgstr "Cronologie"
 
 #. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Transmisie / Transmisie manuală și automată"
+msgid "Add a description about the event"
+msgstr "Adăugați o descriere despre eveniment"
 
 #. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Sistem de direcție"
+msgid "Event description"
+msgstr "Descrierea evenimentului"
 
 #. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Suspensie / Șasiu"
+msgid "event"
+msgstr "eveniment"
 
 #. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Piese caroserie"
+msgid "Your event is under review and will appear after verification"
+msgstr "Evenimentul dumneavoastră este în revizuire și va apărea după verificare"
 
 #. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Detalii interioare"
+msgid "Change event"
+msgstr "Modificați eveniment"
 
 #. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Aer condiționat, încălzire, ventilație"
+msgid "Create event"
+msgstr "Creați eveniment"
 
 #. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Sistem de admisie aer"
+msgid "You can create an event"
+msgstr "Puteți crea un eveniment"
 
 #. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Sistem de aprindere"
+msgid "Enter the name of the event"
+msgstr "Introduceți numele evenimentului"
 
 #. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Sistem de curățare a geamurilor și farurilor"
+msgid "Name of the event"
+msgstr "Numele evenimentului"
 
 #. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Faruri și iluminare"
+msgid "The place of the event"
+msgstr "Locul evenimentului"
 
 #. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Echipament electric"
+msgid "Conclusion"
+msgstr "Concluzie"
 
 #. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Sticlă auto"
+msgid "Participation fee"
+msgstr "Taxă de participare"
 
 #. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Sistem de gaz lichefiat"
+msgid "100 uah"
+msgstr "100 uah"
 
 #. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Alte tipuri de piese de schimb"
+msgid "200 uah"
+msgstr "200 uah"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Descrieți pe scurt ce se va întâmpla"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Spuneți-ne despre eveniment"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to each timeline item"
+msgstr "Vă rugăm adăugați un titlu pentru fiecare element al cronologiei"
+
+#. js-lingui-explicit-id
+msgid "Timeline item start time is outside event dates"
+msgstr "Ora de început a elementului cronologiei este în afara datelor evenimentului"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish must be after start"
+msgstr "Ora de sfârșit a elementului cronologiei trebuie să fie după început"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish time is outside event dates"
+msgstr "Ora de sfârșit a elementului cronologiei este în afara datelor evenimentului"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to the timeline item"
+msgstr "Vă rugăm adăugați un titlu elementului cronologiei"
+
+#. js-lingui-explicit-id
+msgid "Add item"
+msgstr "Adăugați element"
+
+#. js-lingui-explicit-id
+msgid "No timeline items yet"
+msgstr "Nu există încă elemente de cronologie"
+
+#. js-lingui-explicit-id
+msgid "Step"
+msgstr "Pas"
+
+#. js-lingui-explicit-id
+msgid "Timeline item"
+msgstr "Element cronologie"
+
+#. js-lingui-explicit-id
+msgid "Title"
+msgstr "Titlu"
+
+#. js-lingui-explicit-id
+msgid "Description (optional)"
+msgstr "Descriere (opțional)"
+
+#. js-lingui-explicit-id
+msgid "Start"
+msgstr "Început"
+
+#. js-lingui-explicit-id
+msgid "Remove finish time"
+msgstr "Eliminați ora de sfârșit"
+
+#. js-lingui-explicit-id
+msgid "Add finish time"
+msgstr "Adăugați ora de sfârșit"
+
+#. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Bine ați venit la serviciul nostru."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Conectare folosind:"
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr "Continuați cu {typeSocial}"
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr "sau înregistrați-vă folosind:"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "găsiți evenimente, ateliere apropiate"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr "obțineți ajutor în caz de urgență"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {firstEvent}, chiar și atunci când aplicația este închisă sau nu este utilizată."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {secondEvent}, chiar și atunci când aplicația este închisă sau nu este utilizată."
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Acceptare"
+
+#. js-lingui-explicit-id
+msgid "Welcome"
+msgstr "Bun venit"
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr "Principal"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Creați atelier"
+
+#. js-lingui-explicit-id
+msgid "Map"
+msgstr "Hartă"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Selectați fila {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr "Ajutor"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -514,1336 +1614,177 @@ msgid "Telegram {otherName}"
 msgstr "Telegram {otherName}"
 
 #. js-lingui-explicit-id
-msgid "advert"
-msgstr "anunț"
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Numărul de telefon introdus incorect sau codul țării numărului de telefon selectat incorect"
 
 #. js-lingui-explicit-id
-msgid "Select tab {tabName}"
-msgstr "Selectați fila {tabName}"
+msgid "Password must contain at least 8 characters"
+msgstr "Parola trebuie să conțină cel puțin 8 caractere"
 
 #. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Creați eveniment"
+msgid "Passwords do not match"
+msgstr "Parolele nu se potrivesc"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Modificați eveniment"
+msgid "Select"
+msgstr "Selectați"
 
 #. js-lingui-explicit-id
-msgid "Create workshop"
-msgstr "Creați atelier"
+msgid "The price of the item"
+msgstr "Prețul produsului"
 
 #. js-lingui-explicit-id
-msgid "Change workshop"
-msgstr "Modificați atelier"
+msgid "Types of work for motorcycle transport:"
+msgstr "Tipuri de lucrări pentru transport motociclist:"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Creați anunț"
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Selectați tipul de lucru moto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Modificați anunț"
+msgid "Types of work for automobile transport:"
+msgstr "Tipuri de lucrări pentru transport auto:"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Vă rugăm să autentificați"
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Selectați tipul de lucru auto {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Ștergeți eveniment"
+msgid "Select type work moto"
+msgstr "Selectați tipul de lucru moto"
 
 #. js-lingui-explicit-id
-msgid "Success"
-msgstr "Succes"
+msgid "Select type work auto"
+msgstr "Selectați tipul de lucru auto"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Ștergeți anunț"
+msgid "Event address"
+msgstr "Adresa evenimentului"
 
 #. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Anulare"
+msgid "Enter the exact address"
+msgstr "Introduceți adresa exactă"
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Acceptare"
+msgid "Independence Street, 1"
+msgstr "Strada Independenței, 1"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "găsiți evenimente, ateliere apropiate"
+msgid "Select a location on the map"
+msgstr "Selectați o locație pe hartă"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "pentru funcția „SOS” astfel încât alți utilizatori de aplicații să vă poată ajuta"
+msgid "Move and change the location"
+msgstr "Mutați și schimbați locația"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
-msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {firstEvent}, chiar și atunci când aplicația este închisă sau nu este utilizată."
+msgid "Specify the city"
+msgstr "Specificați orașul"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
-msgstr "Aplicația {nameApp} colectează date de localizare pentru a permite {secondEvent}, chiar și atunci când aplicația este închisă sau nu este utilizată."
+msgid "Enter text to search"
+msgstr "Introduceți text pentru căutare"
 
 #. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Ne pare rău, a apărut o eroare"
+msgid "Please enter text for searching"
+msgstr "Vă rugăm introduceți textul pentru căutare"
 
 #. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Fotografia a fost modificată"
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Dacă nu există o opțiune potrivită în listă, folosiți 'Căutare profundă'"
 
 #. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Fotografia nu a fost modificată"
+msgid "Disable Deep Search"
+msgstr "Dezactivați Căutarea Profundă"
 
 #. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Șterge"
+msgid "Enable Deep Search"
+msgstr "Activați Căutarea Profundă"
 
 #. js-lingui-explicit-id
-msgid "Change"
-msgstr "Modifică"
+msgid "Select country {nameCountry}"
+msgstr "Selectați țara {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Acces interzis"
+msgid "Select region {nameRegion}"
+msgstr "Selectați regiunea {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Întreținere"
+msgid "Select region {nameCity}"
+msgstr "Selectați regiunea {nameCity}"
 
 #. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Schimb de ulei / Înlocuire filtru / Înlocuire curea de distribuție / Înlocuire bujie / Schimb de ulei de transmisie / Serviciu de frână / Înlocuirea tuturor fluidelor necesare / Și altele."
+msgid "Select country"
+msgstr "Selectați țara"
 
 #. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Diagnosticare"
+msgid "Select contact type"
+msgstr "Selectați tipul de contact"
 
 #. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Diagnosticare completă pre-achiziție / Diagnosticare șasiu / Diagnosticare motor / Diagnosticare transmisie / Diagnosticare caroserie / Diagnosticare computer / Diagnosticare fluide / Și altele."
+msgid "Report on event"
+msgstr "Raportează evenimentul"
 
 #. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Electrice auto"
+msgid "Report on workshop"
+msgstr "Raportează atelierul"
 
 #. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Repararea cablajului / Tuning cip / Instalarea unei alarme de orice complexitate / Corecție kilometraj / Reprogramarea cheii / Adaptarea motorului și a transmisiei / Înlăturarea EGR-ului / Înlăturarea DPF-ului / Instalare Xenon / Instalare senzori de parcare / Și altele."
+msgid "Report on telegram channel"
+msgstr "Raportează canalul telegram"
 
 #. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Reparare șasiu"
+msgid "Contact us via:"
+msgstr "Contactați-ne prin:"
 
 #. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Înlocuire amortizor / Înlocuire arc / Înlocuire braț de control / Înlocuire grinda / Presare silent bloc / Înlocuire arc de frunză / Înlocuire butuc / Înlocuire lamă de ferăstrău / Înlocuire ax / Înlocuire articulație sferică / Înlocuire suport motor și transmisie / Lucrări mecanice"
+msgid "Are you sure you want to delete?"
+msgstr "Sunteți sigur că doriți să ștergeți?"
 
 #. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Motor, Transmisie Automată și Manuală"
+msgid "Decrease the maximum number"
+msgstr "Scădeați numărul maxim"
 
 #. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Diagnosticare motor / Reparare motor / Înlocuire motor / Înlocuire vas ulei motor / Diagnosticare transmisie automată / Schimb ulei transmisie automată / Înlocuire transmisie automată / Curățare-spălare transmisie automată / Înlocuire ambreiaj / Diagnosticare transmisie manuală / Schimb ulei transmisie manuală / Înlocuire transmisie manuală / Curățare-spălare transmisie manuală / Și altele."
+msgid "Increase the maximum number"
+msgstr "Creșteți numărul maxim"
 
 #. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Sistem de frânare și direcție"
+msgid "Resend the code"
+msgstr "Retrimiteți codul"
 
 #. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Diagnosticare sistem de frânare / Înlocuire lichid de frână / Reparare sistem de frânare / Sângerare frâne / Înlocuire cremalier de direcție / Restaurare cremalier de direcție / Înlocuire direcție asistată / Înlocuire lichid direcție asistată / Și altele."
+msgid "Photo {numberPhoto}"
+msgstr "Fotografie {numberPhoto}"
 
 #. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Echipamente accesorii"
+msgid "Main photo"
+msgstr "Fotografia principală"
 
 #. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Reparare electromotor / Înlocuire electromotor / Reparare generator / Înlocuire generator / Restaurare turbocompresor / Înlocuire turbocompresor / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Sisteme de climatizare"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Diagnosticare / Încărcare / Reîncărcare / Detectare scurgeri / Înlocuire conducte / Înlocuire radiator / Reparare compresor / Înlocuire compresor / Dezinfectare sistem / Eliminare mirosuri străine"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Aliniere roți"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Aliniere roți / Diagnosticare aliniere / Căutare defecte suspensie / Căutare defecte caroserie"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Vopsire"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Vopsire caroserie / Vopsire bară / Vopsire aripă / Vopsire ușă / Vopsire capotă / Vopsire plafon / Vopsire portbagaj / Vopsire aripă / Vopsire spoiler / Vopsire oglindă / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Aerografie"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a motocicletei / Designuri personalizate de aerografie pentru rezervoare, aripi și carene"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Întreținere tehnică"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Lubrifiere cablu / Sincronizare carburator / Înlocuire filtru de aer / Înlocuire bujie / Schimb ulei de transmisie / Schimb ulei de diferențial / Înlocuire lichid de răcire / Schimb ulei de motor"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Lucrări generale"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Diagnosticare generală / Măsurare compresie / Verificare nivel lichide tehnice / Înlocuire cablu ambreiaj / Înlocuire cablu accelerație / Curățare și spălare rezervor de carburant / Înlăturare și instalare rezervor de carburant / Înlăturare și instalare plastic / Instalare arc de siguranță, șină"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Şasiu"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Înlăturare și instalare roată față / Înlăturare și instalare roată spate / Înlocuire rulment roată / Ajustare rulment coloană de direcție / Înlocuire rulment coloană de direcție / Înlăturare și instalare furcă față / Înlocuire garnitură furcă față / Schimb ulei furcă față / Înlocuire rulment braț oscilant spate / Înlocuire amortizor spate / Înlocuire amortizor central / Reparare amortizor spate"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Lanț de transmisie"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Înlocuire lanț și pinion / Curățare, lubrifiere și ajustare lanț / Ajustare, întindere și lubrifiere lanț"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Înlăturare și instalare / Ajustare supape / Înlocuire ambreiaj / Reparare cap cilindru / Înlocuire lanț distribuție / Reparare grup piston / Reparare cutie de viteze / Revizie motor"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Electrice"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Înlocuire regulator tensiune / Înlocuire alternator / Înlocuire electromotor / Reparare electromotor / Înlocuire bec / Instalare xenon / Înlocuire baterie / Încărcare baterie"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Înlocuire placă frână disc / Înlocuire placă frână tambur / Sângerare frâne / Înlocuire lichid frână / Înlocuire lichid frână combinat / Înlocuire furtun frână / Instalare furtun consolidat / Înlocuire disc frână / Reparare etrier frână"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Reparare plastic"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Sudură/restaurare fragmente/restaurare elemente de fixare"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Lucrări de sudură"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Sudură electrică cu arc / Sudură semiautomată / Sudură cu argon"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Tuning și personalizare"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Instalare arc de protecție / Instalare protecție alunecător / Instalare sistem de evacuare / Instalare sistem de frânare / Instalare furtun consolidat / Instalare xenon / Instalare lumină moto / Instalare lumină ceață (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Vopsire rezervor / Vopsire panou lateral / Vopsire aripă / Vopsire carenă / Vopsire capac far / Vopsire secțiune spate / Vopsire capac șa / Vopsire capac evacuare / Vopsire furcă față / Și altele."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Aerografie de orice complexitate / Aerografie de orice complexitate pe orice suprafață / Aerografie de orice complexitate pe orice parte a mașinii"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Buton pentru închiderea meniului de setări sos"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Raza, km:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Comutare notificare semnal SOS"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Comutare detectare automată a locației"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Telegrama ta"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Număr de telefon"
-
-#. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Adaugă o descriere"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Descriere"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "Activare SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Verificare permisiuni"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings screen"
-msgstr "Buton pentru închiderea ecranului de setări din meniu"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "Notificare semnal SOS"
-
-#. js-lingui-explicit-id
-msgid "Share the app"
-msgstr "Partajează aplicația"
-
-#. js-lingui-explicit-id
-msgid "About the service"
-msgstr "Despre serviciu"
-
-#. js-lingui-explicit-id
-msgid "Terms of use"
-msgstr "Condiții de utilizare"
-
-#. js-lingui-explicit-id
-msgid "Privacy policy"
-msgstr "Politica de confidențialitate"
-
-#. js-lingui-explicit-id
-msgid "Delete profile"
-msgstr "Ștergeți profilul"
-
-#. js-lingui-explicit-id
-msgid "With the deletion of the profile, all your information will be deleted"
-msgstr "Odată cu ștergerea profilului, toate informațiile dvs. vor fi șterse"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Marcă/Producător"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Kilometraj, km:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Anul fabricației:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Vamuit:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Tip combustibil"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
-msgstr "Cutie de viteze"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Categorie"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Marcă motocicletă"
-
-#. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Producător mașină"
-
-#. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Tip de combustibil"
-
-#. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Tip de transmisie"
-
-#. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Anunț modificat cu succes"
-
-#. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Anunț creat cu succes"
-
-#. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Eroare la modificarea anunțului"
-
-#. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Eroare la crearea anunțului"
-
-#. js-lingui-explicit-id
-msgid "Error"
-msgstr "Eroare"
-
-#. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Adaugă anunț"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Introduceți numele anunțului"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Numele anunțului"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "Nou"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Utilizat"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Starea bunurilor"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Persoană fizică"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Companie"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Vânzător"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Locație"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Alegeți un oraș"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Adăugați o descriere despre anunț"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Descriere anunț"
-
-#. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Publică"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Marcă"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Stare"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Kilometraj"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} km"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Anul fabricației"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} km"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Vamă clarificată"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Tip combustibil"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Transmisie"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Tip piese"
-
-#. js-lingui-explicit-id
-msgid "Filter"
-msgstr "Filtru"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Starea bunurilor:"
-
-#. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Vânzător:"
-
-#. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Preț, {symbol}:"
-
-#. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Marca mașinii"
-
-#. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "marca motocicletei"
-
-#. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Marca motocicletei"
-
-#. js-lingui-explicit-id
-msgid "Filtering"
-msgstr "Filtrare"
-
-#. js-lingui-explicit-id
-msgid "grn"
-msgstr "grn"
-
-#. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Comută produsul preferat"
-
-#. js-lingui-explicit-id
-msgid "Market"
-msgstr "Piață"
-
-#. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Introduceți numele"
-
-#. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Adaugă produs"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Confirmați"
-
-#. js-lingui-explicit-id
-msgid "event"
-msgstr "eveniment"
-
-#. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Puteți crea un eveniment"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Introduceți numele evenimentului"
-
-#. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Numele evenimentului"
-
-#. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Introduceți adresa"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Locul evenimentului"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Data evenimentului"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Începutul"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Concluzie"
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 uah"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 uah"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Descrieți pe scurt ce se va întâmpla"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Spuneți-ne despre eveniment"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} grn."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} grn."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Gratuit"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Eveniment"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Final"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Preț pentru participare"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "Despre eveniment"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Galerie"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Toate fotografiile"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
-msgstr "Introduceți textul pentru căutare"
-
-#. js-lingui-explicit-id
-msgid "Events"
-msgstr "Evenimente"
-
-#. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Apăsați pentru a arăta mai multe evenimente"
-
-#. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Adaugă eveniment"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Buton pentru închiderea înregistrării FaceID"
-
-#. js-lingui-explicit-id
-msgid "Invalid phone number"
-msgstr "Număr de telefon invalid"
-
-#. js-lingui-explicit-id
-msgid "The length of the name should be between 2 and 20 characters"
-msgstr "Lungimea numelui ar trebui să fie între 2 și 20 de caractere"
-
-#. js-lingui-explicit-id
-msgid "Registration"
-msgstr "Înregistrare"
-
-#. js-lingui-explicit-id
-msgid "Name"
-msgstr "Nume"
-
-#. js-lingui-explicit-id
-msgid "Enter your name"
-msgstr "Introduceți numele dumneavoastră"
-
-#. js-lingui-explicit-id
-msgid "Save"
-msgstr "Salvează"
-
-#. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Completați mai târziu"
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location"
-msgstr "Comută localizarea dvs."
-
-#. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Activați-vă locația în fundal"
-
-#. js-lingui-explicit-id
-msgid "Select the city"
-msgstr "Selectați orașul"
-
-#. js-lingui-explicit-id
-msgid "Privacy Policy"
-msgstr "Politica de confidențialitate"
-
-#. js-lingui-explicit-id
-msgid "Terms of Use"
-msgstr "Termeni de utilizare"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Buton pentru închiderea înregistrării TouchID"
-
-#. js-lingui-explicit-id
-msgid "business"
-msgstr "afacere"
-
-#. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Profil afacere"
-
-#. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Nume companie"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Introduceți numele afacerii dumneavoastră"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Oraș"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "events"
-msgstr "evenimente"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings events screen"
-msgstr "Buton pentru închiderea ecranului de setări al evenimentelor"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Cumpără eveniment"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Îmbunătăți"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Anunțuri disponibile: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Anunțuri publicate: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Recenzie"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Atenție! Toate datele legate de afacerea \"{nameBusiness}\" vor fi șterse."
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Adaugă"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Cumpără suplimentar"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Cheltuit: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Disponibil: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Activ"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Anunțurile tale"
-
-#. js-lingui-explicit-id
-msgid "Your workshops"
-msgstr "Atelierele tale"
-
-#. js-lingui-explicit-id
-msgid "Your events"
-msgstr "Evenimentele tale"
-
-#. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Setare profil"
-
-#. js-lingui-explicit-id
-msgid "adverts"
-msgstr "anunțuri"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Buton pentru închiderea ecranului de setări al produselor"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Cumpără anunț"
-
-#. js-lingui-explicit-id
-msgid "Error: incorrect phone number"
-msgstr "Eroare: număr de telefon incorect"
-
-#. js-lingui-explicit-id
-msgid "Error: First name must be between 3 and 15 characters"
-msgstr "Eroare: Prenumele trebuie să fie între 3 și 15 caractere"
-
-#. js-lingui-explicit-id
-msgid "Error: select the city"
-msgstr "Eroare: selectați orașul"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "Fotografia adăugată"
-
-#. js-lingui-explicit-id
-msgid "Profile saved"
-msgstr "Profil salvat"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Eroare: salvare profil"
-
-#. js-lingui-explicit-id
-msgid "First Name"
-msgstr "Prenume"
-
-#. js-lingui-explicit-id
-msgid "Last Name"
-msgstr "Nume"
-
-#. js-lingui-explicit-id
-msgid "workshops"
-msgstr "ateliere"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings workshops screen"
-msgstr "Buton pentru închiderea ecranului de setări al atelierelor"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Adaugă atelier"
-
-#. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Cumpără atelier"
-
-#. js-lingui-explicit-id
-msgid "Welcome to our service."
-msgstr "Bine ați venit la serviciul nostru."
-
-#. js-lingui-explicit-id
-msgid "Log in using:"
-msgstr "Conectare folosind:"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Fără informații"
-
-#. js-lingui-explicit-id
-msgid "Moto"
-msgstr "Moto"
-
-#. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Auto"
-
-#. js-lingui-explicit-id
-msgid "All workshops"
-msgstr "Toate atelierele"
-
-#. js-lingui-explicit-id
-msgid "Repair of motorcycles"
-msgstr "Repararea motocicletelor"
-
-#. js-lingui-explicit-id
-msgid "Repair of automobiles"
-msgstr "Repararea autoturismelor"
-
-#. js-lingui-explicit-id
-msgid "workshop"
-msgstr "atelier"
-
-#. js-lingui-explicit-id
-msgid "Workshop change successfully"
-msgstr "Atelier modificat cu succes"
-
-#. js-lingui-explicit-id
-msgid "Workshop created successfully"
-msgstr "Atelier creat cu succes"
-
-#. js-lingui-explicit-id
-msgid "Error changing workshop"
-msgstr "Eroare la modificarea atelierului"
-
-#. js-lingui-explicit-id
-msgid "Error creating workshop"
-msgstr "Eroare la crearea atelierului"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop"
-msgstr "Introduceți numele atelierului"
-
-#. js-lingui-explicit-id
-msgid "Workshop name"
-msgstr "Numele atelierului"
-
-#. js-lingui-explicit-id
-msgid "Workshop address"
-msgstr "Adresa atelierului"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the workshop"
-msgstr "Adăugați o descriere despre atelier"
-
-#. js-lingui-explicit-id
-msgid "Workshop description"
-msgstr "Descrierea atelierului"
-
-#. js-lingui-explicit-id
-msgid "Type workshop"
-msgstr "Tipul atelierului"
-
-#. js-lingui-explicit-id
-msgid "Select type"
-msgstr "Selectați tipul"
-
-#. js-lingui-explicit-id
-msgid "Types of work"
-msgstr "Tipuri de lucrări"
-
-#. js-lingui-explicit-id
-msgid "Select types of work"
-msgstr "Selectați tipurile de lucrări"
-
-#. js-lingui-explicit-id
-msgid "Draft the first review"
-msgstr "Redactați prima recenzie"
-
-#. js-lingui-explicit-id
-msgid "Change a review"
-msgstr "Modificați o recenzie"
-
-#. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Scrieți o recenzie"
+msgid "Make the main photo"
+msgstr "Faceți fotografia principală"
 
 #. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Selectați pagina de partajare"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
-msgstr "Textul trebuie să conțină între 3 și 40 de caractere."
+msgid "Toggle like product"
+msgstr "Comută produsul preferat"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
-msgstr "Textul trebuie să conțină între 10 și 2000 de caractere."
-
-#. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Atelier"
-
-#. js-lingui-explicit-id
-msgid "Type workshops"
-msgstr "Tipuri de ateliere"
-
-#. js-lingui-explicit-id
-msgid "Distance, km:"
-msgstr "Distanța, km:"
-
-#. js-lingui-explicit-id
-msgid "All works"
-msgstr "Toate lucrările"
-
-#. js-lingui-explicit-id
-msgid "Type works"
-msgstr "Tipuri de lucrări"
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Ateliere"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Introduceți numele atelierului sau tipul de lucrare"
-
-msgid "{distance} km"
-msgstr "{distance} km"
-
-msgid "About us:"
-msgstr "Despre noi:"
-
-msgid "Access to geolocation in the background mode"
-msgstr "Acces la geolocație în modul de fundal"
-
-msgid "Access to geolocation when using the application"
-msgstr "Acces la geolocație în timpul utilizării aplicației"
-
-msgid "Add advert"
-msgstr "Adăugați anunț"
-
-msgid "Add event"
-msgstr "Adăugați eveniment"
-
-msgid "Add workshop"
-msgstr "Adăugați atelier"
-
-msgid "All cities"
-msgstr "Toate orașele"
-
-msgid "All photos"
-msgstr "Toate fotografiile"
-
-msgid "Allow"
-msgstr "Permiteți"
-
-msgid "Allow later"
-msgstr "Permiteți mai târziu"
-
-msgid "Allow login using Face ID"
-msgstr "Permiteți autentificarea folosind Face ID"
-
-msgid "Allow login using Touch ID"
-msgstr "Permiteți autentificarea folosind Touch ID"
-
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Permiteți aplicației {nameApp} să îmi determine locația în fundal"
-
-msgid "Allow the {nameApp} application to determine my location"
-msgstr "Permiteți aplicației {nameApp} să determine locația mea"
-
-msgid "Allow Touch ID to access the {nameApp} app."
-msgstr "Permiteți accesul prin Touch ID la aplicația {nameApp}."
-
-msgid "and choose the city of residence:"
-msgstr "și alegeți orașul de reședință:"
-
-msgid "Are you sure you want to delete?"
-msgstr "Sunteți sigur că doriți să ștergeți?"
-
-msgid "Automatically detect location"
-msgstr "Detectați automat locația"
-
-msgid "Back"
-msgstr "Înapoi"
-
-msgid "Business profile"
-msgstr "Profil de afaceri"
-
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr "Dând clic pe butonul „Continuați”, sunteți de acord cu {buttonTermsService} și {buttonPrivacyPolicy}"
-
-msgid "By distance:"
-msgstr "După distanță:"
-
-msgid "By number of comments:"
-msgstr "După numărul de comentarii:"
-
-msgid "By rating:"
-msgstr "După evaluare:"
-
-msgid "Call"
-msgstr "Apel"
-
-msgid "Cheapest"
-msgstr "Cel mai ieftin"
-
-msgid "Continue with {typeSocial}"
-msgstr "Continuați cu {typeSocial}"
-
-msgid "Create"
-msgstr "Creare"
-
-msgid "Create event"
-msgstr "Creați eveniment"
-
-msgid "Currency:"
-msgstr "Monedă:"
-
-msgid "Dark theme"
-msgstr "Temă întunecată"
-
-msgid "Delete"
-msgstr "Șterge"
-
-msgid "Description"
-msgstr "Descriere"
-
-msgid "Do you want to send an SOS signal?"
-msgstr "Doriți să trimiteți un semnal SOS?"
-
-msgid "Enable logging into the app using Face ID"
-msgstr "Permiteți conectarea la aplicație folosind Face ID"
-
-msgid "Event"
-msgstr "Eveniment"
-
-msgid "Events"
-msgstr "Evenimente"
-
-msgid "from closest to farthest"
-msgstr "de la cel mai apropiat la cel mai îndepărtat"
-
-msgid "from highest to lowest"
-msgstr "de la cel mai mare la cel mai mic"
-
-msgid "Gallery"
-msgstr "Galerie"
-
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr "Dacă nu există o opțiune potrivită în listă, utilizați „Căutarea Profundă”"
-
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr "Numărul de telefon introdus este incorect sau codul țării pentru numărul de telefon a fost selectat incorect"
-
 msgid "Language selection"
-msgstr "Selectare limbă"
-
-msgid "Last update"
-msgstr "Ultima actualizare"
-
-msgid "Latest"
-msgstr "Cele mai recente"
-
-msgid "Leave a review"
-msgstr "Lăsați o recenzie"
-
-msgid "Logout"
-msgstr "Deconectare"
-
-msgid "Main"
-msgstr "Principal"
-
-msgid "Map"
-msgstr "Hartă"
-
-msgid "Market"
-msgstr "Piață"
-
-msgid "More events"
-msgstr "Mai multe evenimente"
-
-msgid "Most expensive"
-msgstr "Cel mai scump"
-
-msgid "Move and change the location"
-msgstr "Mutare și schimbare locație"
-
-msgid "My adverts"
-msgstr "Anunțurile mele"
-
-msgid "My events"
-msgstr "Evenimentele mele"
-
-msgid "My workshops"
-msgstr "Atelierele mele"
-
-msgid "No events have passed"
-msgstr "Nu au trecut evenimente"
-
-msgid "Not comments"
-msgstr "Fără comentarii"
-
-msgid "Notification of SOS signal"
-msgstr "Notificare semnal SOS"
-
-msgid "Now"
-msgstr "Acum"
-
-msgid "Only with rating:"
-msgstr "Doar cu evaluare:"
-
-msgid "or sign up using:"
-msgstr "sau înregistrați-vă folosind:"
-
-msgid "Participation fee"
-msgstr "Taxă de participare"
-
-msgid "Password must contain at least 8 characters"
-msgstr "Parola trebuie să conțină cel puțin 8 caractere"
-
-msgid "Passwords do not match"
-msgstr "Parolele nu se potrivesc"
-
-msgid "Past events:"
-msgstr "Evenimente anterioare:"
-
-msgid "Phone number"
-msgstr "Număr de telefon"
-
-msgid "Please enter text for searching"
-msgstr "Vă rugăm să introduceți text pentru căutare"
-
-msgid "Privacy Policy"
-msgstr "Politica de confidențialitate"
-
-msgid "Profile"
-msgstr "Profil"
-
-msgid "Read the whole description..."
-msgstr "Citiți întreaga descriere..."
-
-msgid "Registration"
-msgstr "Înregistrare"
-
-msgid "Repair of automobiles"
-msgstr "Repararea automobilelor"
-
-msgid "Repair of motorcycles"
-msgstr "Repararea motocicletelor"
-
-msgid "Resend the code"
-msgstr "Retrimiteți codul"
-
-msgid "Reviews:"
-msgstr "Recenzii:"
-
-msgid "Select a location on the map"
-msgstr "Selectați o locație pe hartă"
-
-msgid "Settings"
-msgstr "Setări"
-
-msgid "Settings and permissions should be enabled"
-msgstr "Setările și permisiunile trebuie să fie activate"
-
-msgid "Someone needs help within a {distance} km radius"
-msgstr "Cineva are nevoie de ajutor într-un rază de {distance} km"
-
-msgid "Sorry, but no products were found by the filters"
-msgstr "Ne pare rău, dar nu au fost găsite produse conform filtrelor"
-
-msgid "Sorry, but no workshops were found by the filters"
-msgstr "Ne pare rău, dar nu au fost găsite ateliere conform filtrelor"
-
-msgid "Sorry, there are no available items"
-msgstr "Ne pare rău, nu sunt disponibile elemente"
-
-msgid "Sorry, there are no upcoming events"
-msgstr "Ne pare rău, nu există evenimente viitoare"
-
-msgid "Sorry, there are no upcoming workshops"
-msgstr "Ne pare rău, nu există ateliere viitoare"
-
-msgid "Sorry!"
-msgstr "Ne pare rău!"
-
-msgid "Specify the city"
-msgstr "Specificați orașul"
-
-msgid "Terms of Service"
-msgstr "Termeni de serviciu"
-
-msgid "Terms of Use"
-msgstr "Termeni de utilizare"
-
-msgid "The nearest event:"
-msgstr "Cel mai apropiat eveniment:"
-
-msgid "The work we do:"
-msgstr "Lucrările pe care le facem:"
-
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr "Pentru a utiliza pe deplin toate funcțiile serviciului, trebuie să acordați aplicației permisiunea de a determina locația dumneavoastră:"
-
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr "Pentru a primi semnale SOS, configurați raza de recepție a semnalului din centrul orașului dumneavoastră:"
-
-msgid "Type workshops"
-msgstr "Tipuri de ateliere"
-
-msgid "Types of work for automobile transport:"
-msgstr "Tipuri de lucrări pentru transportul auto:"
-
-msgid "Types of work for motorcycle transport:"
-msgstr "Tipuri de lucrări pentru transportul motocicletelor:"
-
-msgid "Upcoming events:"
-msgstr "Evenimente viitoare:"
-
-msgid "Views:"
-msgstr "Vizualizări:"
-
-msgid "We recommend filling out the profile information"
-msgstr "Vă recomandăm să completați informațiile de profil"
-
-msgid "Welcome"
-msgstr "Bine ați venit"
-
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr "Pe ce platformă doriți să trimiteți invitația de instalare a aplicației?"
-
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr "Se va opri automat după 20-30 de minute"
-
-msgid "Workshop"
-msgstr "Atelier"
-
-msgid "Workshops"
-msgstr "Ateliere"
-
-msgid "Write"
-msgstr "Scrieți"
-
-msgid "You don't have {typeItem}."
-msgstr "Nu aveți {typeItem}."
-
-msgid "Your contact information"
-msgstr "Informațiile dvs. de contact"
-
-msgid "Your profile"
-msgstr "Profilul tău"
+msgstr "Selectarea limbii"
+
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Apăsați și introduceți pentru a căuta un oraș"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Adaugă o fotografie"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Prima fotografie va fi pe coperta anunțului."

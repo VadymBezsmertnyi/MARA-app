@@ -44,7 +44,7 @@ export const InputPassword: FunctionComponent<InputProps> = ({
   errorMessage,
   placeholder = "",
   ...props
-}): JSX.Element => {
+}) => {
   const { theme } = useThemeProvider();
   const [isShow, setIsShow] = useState(true);
   const containerStyleState = useMemo(

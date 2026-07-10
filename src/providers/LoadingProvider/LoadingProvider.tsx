@@ -7,6 +7,12 @@ import React, {
 } from "react";
 import { BlurView } from "expo-blur";
 
+// redux
+import { useUserSelector } from "../../storeRedux/apis/user/slice";
+import { useEventsSelector } from "../../storeRedux/apis/events/slice";
+import { useWorkshopsSelector } from "../../storeRedux/apis/workshops/slice";
+import { useSmsVerificationSelector } from "../../storeRedux/apis/sms-verification/slice";
+
 // components
 import { Loader } from "./components/Loader/Loader";
 
@@ -19,7 +25,7 @@ type LoadingContext = {
 };
 
 type LoadingProviderType = {
-  children: JSX.Element;
+  children: React.ReactNode;
   isLoadingProps?: boolean;
 };
 
@@ -30,7 +36,10 @@ const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
   isLoadingProps = false,
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const { loading: userLoading } = useUserSelector();
+  const { loading: eventsLoading } = useEventsSelector();
+  const { loading: workshopsLoading } = useWorkshopsSelector();
+  const { loading: smsVerificationLoading } = useSmsVerificationSelector();
   const setLoading = (state: boolean) => {
     setIsLoading(state);
   };
@@ -43,6 +52,22 @@ const LoadingProvider: FunctionComponent<LoadingProviderType> = ({
   useEffect(() => {
     setIsLoading(!isLoadingProps);
   }, [isLoadingProps]);
+
+  useEffect(() => {
+    const anyLoading =
+      userLoading ||
+      eventsLoading ||
+      workshopsLoading ||
+      smsVerificationLoading;
+    if (anyLoading) setIsLoading(true);
+    else if (!isLoadingProps) setIsLoading(false);
+  }, [
+    userLoading,
+    eventsLoading,
+    workshopsLoading,
+    smsVerificationLoading,
+    isLoadingProps,
+  ]);
 
   return (
     <loadingContext.Provider value={contextValue}>

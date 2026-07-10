@@ -1,17 +1,19 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import { KeyboardAvoidingView, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { Trans } from "@lingui/macro";
+
+// redux
+import { useUserSelector } from "../../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../../storeRedux/api";
 
 // providers
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 
 // helps
 import { useAllNavigation } from "../../../navigators/Navigators.helps";
 import { useAuthorizationRegistration } from "../../../helps/useAuthorizationRegistration";
 import { getClearValue } from "../../../helps/regexp";
-import { getNamesUser } from "../../../providers/UserProvider/UserProvider.helps";
+import { getNamesUser } from "../../../storeRedux/apis/user/user.helpers";
 
 // components
 import { InputPhone } from "../../../components/InputPhone/InputPhone";
@@ -30,7 +32,8 @@ export const RegistrationInfo: FunctionComponent = () => {
   const navigation = useAllNavigation();
   const { verifyPhone } = useAuthorizationRegistration();
   const { i18n } = useLocalesProvider();
-  const { userData, editUser } = useUserProvider();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
   const [login, setLogin] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("+380");
   const [selectCountryIso, setSelectCountryIso] = useState(DEFAULT_COUNTRY);
@@ -66,15 +69,18 @@ export const RegistrationInfo: FunctionComponent = () => {
     if (isPhone && login.length >= 2 && login.length <= 20) {
       const clearPhoneNumber = getClearValue(phoneNumber);
       const { firstName, lastName } = getNamesUser(userData);
+      if (!userData) return;
 
-      const resultSave = await editUser({
-        login,
-        isNewUser: false,
-        firstName: login || firstName,
-        lastName,
-        ...(isPhone && { phoneNumber: clearPhoneNumber }),
+      const resultSave = await editUserMutation({
+        body: {
+          isNewUser: false,
+          firstName: login || firstName,
+          lastName,
+          ...(isPhone && { phoneNumber: clearPhoneNumber }),
+        },
+        existingUserData: userData,
       });
-      if (resultSave) navigation.navigate(PATHS_MAIN_SCREENS.main);
+      if (resultSave.data) navigation.navigate(PATHS_MAIN_SCREENS.main);
     } else if (!isPhone) setErrorMessagePhone(i18n._("Invalid phone number"));
     else
       setErrorMessageLogin(
@@ -114,9 +120,9 @@ export const RegistrationInfo: FunctionComponent = () => {
           isShowRight={false}
           containerStyle={styles.containerHeader}
         />
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollView}>
           <Text style={styles.title}>
-            <Trans>We recommend filling out the profile information</Trans>
+            {i18n._("We recommend filling out the profile information")}
           </Text>
           <View style={styles.containerInputs}>
             <Input

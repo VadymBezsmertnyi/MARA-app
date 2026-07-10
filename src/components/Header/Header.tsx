@@ -1,13 +1,11 @@
 import React, { FunctionComponent, useMemo, useState } from "react";
 import {
-  SafeAreaView,
   StyleProp,
   Text,
   TouchableOpacity,
   View,
   ViewStyle,
 } from "react-native";
-import { Trans, t } from "@lingui/macro";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
@@ -28,8 +26,8 @@ import colors from "../../../styles/colors";
 
 type HeaderStackProps = {
   title: string;
-  leftElement?: JSX.Element;
-  rightElement?: JSX.Element;
+  leftElement?: React.ReactNode;
+  rightElement?: React.ReactNode;
   onPressLeftElement?: () => void;
   backgroundStyle?: StyleProp<ViewStyle>;
   onRightDelete?: () => void;
@@ -52,14 +50,14 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   rightStyle,
 }) => {
   const navigation = useAllNavigation();
-  const { theme } = useThemeProvider();
+  const { theme, heightStatusBar } = useThemeProvider();
   const { i18n } = useLocalesProvider();
   const [leftWidth, setLeftWidth] = useState(0);
   const [rightWidth, setRightWidth] = useState(0);
 
   const backgroundStyles = useMemo(
-    () => [styles.background, backgroundStyle],
-    [backgroundStyle]
+    () => [styles.background, { paddingTop: heightStatusBar }, backgroundStyle],
+    [backgroundStyle, heightStatusBar]
   );
 
   const containerStyles = useMemo(
@@ -86,7 +84,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
   };
 
   return (
-    <SafeAreaView style={backgroundStyles}>
+    <View style={backgroundStyles}>
       <View style={containerStyles}>
         <View
           style={{
@@ -108,7 +106,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
                     stroke={theme === THEME_DARK ? colors.white : colors.black}
                     style={styles.iconButtonBack}
                   />
-                  <Text style={backTitleStyle}>{t(i18n)`Back`}</Text>
+                  <Text style={backTitleStyle}>{i18n._("Back")}</Text>
                 </>
               )}
             </TouchableOpacity>
@@ -140,7 +138,7 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
               }}
             >
               <Text style={styles.titleButtonDeleteEvent}>
-                <Trans>Delete</Trans>
+                {i18n._("Delete")}
               </Text>
             </TouchableOpacity>
           ) : isShowRight ? (
@@ -160,6 +158,6 @@ export const Header: FunctionComponent<HeaderStackProps> = ({
           ) : null}
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };

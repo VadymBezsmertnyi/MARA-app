@@ -1,14 +1,12 @@
 import React, { FunctionComponent } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
+import { Shadow } from "react-native-shadow-2";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // hooks
 import { useErrors } from "../../helps/useErrors";
-
-// components
-import { ModalWindow } from "../ModalWindow/ModalWindow";
 
 // icons
 import { IconClose, IconWarningGradient } from "../../icons/components";
@@ -41,23 +39,42 @@ export const ModalShowErrors: FunctionComponent<ModalErrors> = ({
 
   if (!isOpen || !errors) return null;
   return (
-    <Modal visible={isOpen} transparent>
-      <ModalWindow onClose={onClose}>
-        <View style={styles.containerModal}>
-          <View style={styles.containerClose}>
-            <TouchableOpacity
-              accessibilityLabel={i18n._("Button for closing the modal window")}
-              onPress={onClose}
-            >
-              <IconClose width={24} height={24} fill={colors.blackCoffee} />
-            </TouchableOpacity>
-          </View>
-          <IconWarningGradient width={130} height={130} />
-          <Text style={styles.titleModal}>
-            {`${errorMessage.title}:\n\n${onlyErrors.join("\n\n")}`}
-          </Text>
-        </View>
-      </ModalWindow>
+    <Modal
+      visible={isOpen}
+      transparent
+      animationType="fade"
+      onRequestClose={onClose}
+    >
+      <TouchableOpacity
+        style={styles.modalOverlay}
+        activeOpacity={1}
+        onPress={onClose}
+      >
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={(e) => e.stopPropagation()}
+          style={styles.modalContent}
+        >
+          <Shadow stretch>
+            <View style={styles.containerModal}>
+              <View style={styles.containerClose}>
+                <TouchableOpacity
+                  accessibilityLabel={i18n._(
+                    "Button for closing the modal window"
+                  )}
+                  onPress={onClose}
+                >
+                  <IconClose width={24} height={24} fill={colors.blackCoffee} />
+                </TouchableOpacity>
+              </View>
+              <IconWarningGradient width={130} height={130} />
+              <Text style={styles.titleModal}>
+                {`${errorMessage.title}:\n\n${onlyErrors.join("\n\n")}`}
+              </Text>
+            </View>
+          </Shadow>
+        </TouchableOpacity>
+      </TouchableOpacity>
     </Modal>
   );
 };

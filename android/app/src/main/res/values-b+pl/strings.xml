@@ -1,0 +1,8 @@
+<resources>
+  <string name="locationAlwaysAndWhenInUsePermission">"Zezwól $(PRODUCT_NAME) na korzystanie z Twojej lokalizacji w celu wyszukiwania znajomych na mapie. Zawsze możesz to wyłączyć w menu aplikacji."</string>
+  <string name="locationAlwaysPermission">"Zezwól $(PRODUCT_NAME) na zawsze korzystanie z Twojej lokalizacji w celu zapewnienia ciągłego śledzenia znajomych na mapie. Możesz to wyłączyć w dowolnym momencie w menu aplikacji."</string>
+  <string name="locationWhenInUsePermission">"Zezwól $(PRODUCT_NAME) na dostęp do Twojej lokalizacji podczas korzystania z aplikacji, aby pomóc Ci znaleźć znajomych na mapie. Możesz to wyłączyć w menu aplikacji."</string>
+  <string name="cameraPermission">"Do robienia zdjęć"</string>
+  <string name="photosPermission">"Do dostępu do zdjęć w twojej bibliotece"</string>
+  <string name="microphonePermission">"Do nagrywania dźwięku"</string>
+</resources>

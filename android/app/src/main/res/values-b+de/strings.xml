@@ -1,0 +1,8 @@
+<resources>
+  <string name="locationAlwaysAndWhenInUsePermission">"Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren."</string>
+  <string name="locationAlwaysPermission">"Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren."</string>
+  <string name="locationWhenInUsePermission">"Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren."</string>
+  <string name="cameraPermission">"Für das Aufnehmen von Fotos"</string>
+  <string name="photosPermission">"Für den Zugriff auf Fotos in Ihrer Bibliothek"</string>
+  <string name="microphonePermission">"Für die Aufnahme von Audio"</string>
+</resources>

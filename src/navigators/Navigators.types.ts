@@ -5,14 +5,14 @@ import {
   PATHS_REGISTRATION_SCREENS,
   PATHS_SETTINGS_SCREENS,
   PATHS_WORKSHOP_SCREENS,
-  PATHS_MARKET_SCREENS,
+  PATHS_HELP_SCREENS,
 } from "./useNavigator.constants";
 
 export type MainScreenT = {
   id: string;
   name: string;
   title: string;
-  component: () => JSX.Element | null;
+  component: () => React.ReactNode | null;
 };
 
 export type MainScreensT = MainScreenT[];
@@ -34,20 +34,12 @@ export type RootMainTabsParamList = {
   [PATHS_MAIN_TABS.workshops]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.map]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.events]?: Record<string, string | number | boolean>;
-  [PATHS_MAIN_TABS.market]?: Record<string, string | number | boolean>;
+  [PATHS_MAIN_TABS.help]?: Record<string, string | number | boolean>;
   [PATHS_MAIN_TABS.settings]?: Record<string, string | number | boolean>;
 };
 
 export type RootRegistrationScreensParamList = {
   [PATHS_REGISTRATION_SCREENS.registrationLocation]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_REGISTRATION_SCREENS.registrationTouchId]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_REGISTRATION_SCREENS.registrationFaceId]?: Record<
     string,
     string | number | boolean
   >;
@@ -93,20 +85,6 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
-  [PATHS_SETTINGS_SCREENS.settingsProducts]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_SETTINGS_SCREENS.settingsProductAdd]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_SETTINGS_SCREENS.settingsProductChange]?: Record<
-    string,
-    string | number | boolean
-  > & {
-    productId?: string;
-  };
   [PATHS_SETTINGS_SCREENS.settingsWorkshops]?: Record<
     string,
     string | number | boolean
@@ -139,22 +117,6 @@ export type RootSettingsScreensParamList = {
     string,
     string | number | boolean
   >;
-  [PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate]?: Record<
-    string,
-    string | number | boolean
-  >;
-  [PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange]?: Record<
-    string,
-    string | number | boolean
-  > & {
-    businessMarketId: number;
-  };
-  [PATHS_SETTINGS_SCREENS.settingsBusinessMarketReview]?: Record<
-    string,
-    string | number | boolean
-  > & {
-    businessMarketId: number;
-  };
 };
 
 export type RootWorkshopsScreensParamList = {
@@ -175,21 +137,18 @@ export type RootWorkshopsScreensParamList = {
   >;
 };
 
-export type RootMarketScreensParamList = {
-  [PATHS_MARKET_SCREENS.marketMain]?: Record<string, string | number | boolean>;
-  [PATHS_MARKET_SCREENS.marketAdd]?: Record<string, string | number | boolean>;
-  [PATHS_MARKET_SCREENS.marketItem]?: Record<
+export type RootHelpScreensParamList = {
+  [PATHS_HELP_SCREENS.helpMain]?: Record<string, string | number | boolean>;
+  [PATHS_HELP_SCREENS.addTelegramChannel]?: Record<
     string,
     string | number | boolean
-  > & {
-    productId?: number;
-  };
+  >;
 };
 
 export type RootAllScreensParamList = RootMainScreensParamList &
   RootRegistrationScreensParamList &
   RootWorkshopsScreensParamList &
-  RootMarketScreensParamList &
   RootSettingsScreensParamList &
   RootEventsScreensParamList &
+  RootHelpScreensParamList &
   RootMainTabsParamList;

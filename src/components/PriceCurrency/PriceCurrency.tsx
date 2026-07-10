@@ -2,14 +2,16 @@ import React, { FunctionComponent, useMemo } from "react";
 import { Text, View } from "react-native";
 
 // types
-import { CodeCurrenciesType } from "../../providers/PaymentProvider/PaymentProvider.types";
+import { TCodeCurrencies } from "../../storeRedux/apis/payment/payment.types";
 
 // schemas
-import { codeCurrenciesSchema } from "../../providers/PaymentProvider/PaymentProvider.schemas";
+import { codeCurrenciesSchema } from "../../storeRedux/apis/payment/payment.schemas";
+
+// redux
+import { usePaymentSelector } from "../../storeRedux/apis/payment/slice";
 
 // providers
 import { useLocalesProvider } from "../../../localization/localization.provider";
-import { usePaymentProvider } from "../../providers/PaymentProvider/PaymentProvider";
 
 // components
 import { Input } from "../Input/Input";
@@ -22,8 +24,8 @@ type PriceCurrencyProps = {
   isRegular?: boolean;
   label?: string;
   value: string;
-  code: CodeCurrenciesType;
-  setCode: React.Dispatch<React.SetStateAction<CodeCurrenciesType>>;
+  code: TCodeCurrencies;
+  setCode: React.Dispatch<React.SetStateAction<TCodeCurrencies>>;
   onChange: (value: string) => void;
   errorMessage?: string;
   clearKeyError: (type: string) => void;
@@ -42,7 +44,7 @@ export const PriceCurrency: FunctionComponent<PriceCurrencyProps> = ({
   onBlurProp,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { listCurrency } = usePaymentProvider();
+  const { listCurrency } = usePaymentSelector();
   const data = useMemo(
     () =>
       listCurrency.map((currency) => ({

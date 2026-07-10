@@ -87,4 +87,15 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     color: colors.grayCloudy,
   },
+  distanceWarning: {
+    fontSize: scaleFont(8),
+    fontWeight: "400",
+    color: colors.grayCloudy,
+    marginTop: 2,
+  },
+  distanceError: {
+    fontSize: scaleFont(9),
+    fontWeight: "500",
+    color: colors.grayCloudy,
+  },
 });

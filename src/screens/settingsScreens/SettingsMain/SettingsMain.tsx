@@ -1,28 +1,42 @@
-import React, { FunctionComponent, useMemo, useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
+import React, { FunctionComponent, useMemo, useEffect } from "react";
+import {
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+  RefreshControl,
+} from "react-native";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 import { CommonActions } from "@react-navigation/native";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
+import Toast from "react-native-toast-message";
 
 // types
 import { RootAllScreensParamList } from "../../../navigators/Navigators.types";
 
+// redux
+import { cleanUserData } from "../../../storeRedux/apis/user/slice";
+import { useRootDispatch } from "../../../storeRedux/store";
+import { deleteTokens } from "../../../storeRedux/apis/user/user.helpers";
+import { useGetUserStatsQuery } from "../../../storeRedux/api";
+
 // providers
-import { useUserProvider } from "../../../providers/UserProvider/UserProvider";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
-import { ButtonCustom } from "../../../components/ButtonCustom/ButtonCustom";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
-import ItemTypeSetting from "./components/ItemTypeSetting/ItemTypeSetting";
-import { ContainerBusiness } from "./components/ContainerBusiness/ContainerBusiness";
 import { ContainerUser } from "./components/ContainerUser/ContainerUser";
-import ModalWindowBuy from "../../../components/ModalWindowBuy/ModalWindowBuy";
+import {
+  SectionItemComponent,
+  SectionItem,
+} from "./components/SectionItem/SectionItem";
+import {
+  CompactSectionComponent,
+  CompactSectionItem,
+} from "./components/CompactSection/CompactSection";
 
 // constants
 import {
@@ -35,34 +49,172 @@ import { styles } from "./SettingsMain.styles";
 
 type SettingsMainProps = {
   navigation: NativeStackNavigationProp<RootAllScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootAllScreensParamList>;
 };
 
 export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
   navigation,
 }) => {
-  const { exitUser } = useUserProvider();
-  const { infoBusinessAdverts, infoAdverts, infoSmallEvents, infoWorkshops } =
-    useSubscriptionProvider();
+  const dispatch = useRootDispatch();
   const { i18n } = useLocalesProvider();
   const { heightStatusBar } = useThemeProvider();
-  const [isShowPayment, setIsShowPayment] = useState(false);
+  const {
+    data: userStats,
+    isLoading,
+    isFetching,
+    error,
+    refetch,
+  } = useGetUserStatsQuery();
 
   const containerStyles = useMemo(
     () => [styles.container, { paddingTop: heightStatusBar }],
     [heightStatusBar]
   );
 
+  const rolesData: CompactSectionItem[] = useMemo(() => {
+    if (!userStats) return [];
+    return [
+      {
+        id: "1",
+        name: "Owner of workshops",
+        icon: "business",
+        count: userStats.userRoles.ownerWorkshopIds.length,
+      },
+      {
+        id: "2",
+        name: "Adder of workshops",
+        icon: "build",
+        count: userStats.userRoles.addedWorkshopIds.length,
+      },
+      {
+        id: "3",
+        name: "Owner of events",
+        icon: "event",
+        count: userStats.userRoles.ownerEventIds.length,
+      },
+      {
+        id: "4",
+        name: "Adder of events",
+        icon: "event-note",
+        count: userStats.userRoles.addedEventIds.length,
+      },
+    ];
+  }, [userStats]);
+
+  const actionsData: CompactSectionItem[] = useMemo(() => {
+    if (!userStats) return [];
+    return [
+      {
+        id: "1",
+        name: "Workshops",
+        icon: "school",
+        subItems: [
+          {
+            label: "Active",
+            value: userStats.userActions.workshops.active,
+            icon: "check-circle",
+            color: "#4CAF50",
+          },
+          {
+            label: "On review",
+            value: userStats.userActions.workshops.onReview,
+            icon: "lock-clock",
+            color: "#FF9800",
+          },
+          {
+            label: "Rejected",
+            value: userStats.userActions.workshops.rejected,
+            icon: "cancel",
+            color: "#F44336",
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "Events",
+        icon: "event",
+        subItems: [
+          {
+            label: "Active",
+            value: userStats.userActions.events.active,
+            icon: "check-circle",
+            color: "#4CAF50",
+          },
+          {
+            label: "On review",
+            value: userStats.userActions.events.onReview,
+            icon: "lock-clock",
+            color: "#FF9800",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "Comments",
+        icon: "comment",
+        count: userStats.userComments.totalComments,
+      },
+      {
+        id: "4",
+        name: "Rating",
+        icon: "star",
+        count: userStats.userComments.averageRating.toString(),
+        isRating: true,
+      },
+    ];
+  }, [userStats]);
+
+  const workshopsData: SectionItem[] = useMemo(() => {
+    if (!userStats) return [];
+    return [
+      {
+        id: "1",
+        name: "Active",
+        icon: "check-circle",
+        color: "#4CAF50",
+        count: userStats.userActions.workshops.active,
+      },
+    ];
+  }, [userStats]);
+
+  const eventsData: SectionItem[] = useMemo(() => {
+    if (!userStats) return [];
+    return [
+      {
+        id: "1",
+        name: "Active",
+        icon: "check-circle",
+        color: "#4CAF50",
+        count: userStats.userActions.events.active,
+      },
+    ];
+  }, [userStats]);
+
+  const onRefresh = async () => {
+    try {
+      await refetch();
+    } catch (refreshError) {
+      Toast.show({
+        type: "error",
+        text1: "Refresh Failed",
+        text2: "Failed to refresh data. Please pull down to try again.",
+        position: "top",
+        visibilityTime: 3000,
+      });
+    }
+  };
+
   const onShowMenu = () => {
     navigation.openDrawer();
   };
 
   const onLogoutProfile = async () => {
-    const isSignedInGoogle = await GoogleSignin.isSignedIn();
+    const isSignedInGoogle = GoogleSignin.hasPreviousSignIn();
     const isSignedInFacebook = await AccessToken.getCurrentAccessToken();
     if (isSignedInGoogle) await GoogleSignin.signOut();
     if (isSignedInFacebook) LoginManager.logOut();
-    await exitUser();
+    dispatch(cleanUserData());
+    await deleteTokens();
     navigation.dispatch(
       CommonActions.reset({
         index: 0,
@@ -71,25 +223,16 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
     );
   };
 
-  const onCreateBusinessMarket = () => {
-    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate);
-  };
-
-  const onChangeBusinessMarket = (businessMarketId: string) => {
-    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange, {
-      businessMarketId,
-    });
-  };
-
-  const onReviewBusinessMarket = (businessMarketId: string) => {
-    navigation.navigate(PATHS_SETTINGS_SCREENS.settingsBusinessMarketReview, {
-      businessMarketId,
-    });
-  };
-
-  const onPressBuy = () => {
-    setIsShowPayment(true);
-  };
+  useEffect(() => {
+    if (error)
+      Toast.show({
+        type: "error",
+        text1: "Error",
+        text2: "Failed to load user statistics. Please try again.",
+        position: "top",
+        visibilityTime: 3000,
+      });
+  }, [error]);
 
   return (
     <>
@@ -98,93 +241,61 @@ export const SettingsMain: FunctionComponent<SettingsMainProps> = ({
           <View style={styles.buttonsHeaderLeft}>
             <MenuBurgerButton onPress={onShowMenu} />
           </View>
-          <Text style={styles.titleHeader}>
-            <Trans>Your profile</Trans>
-          </Text>
+          <Text style={styles.titleHeader}>{i18n._("Your profile")}</Text>
           <TouchableOpacity
             onPress={onLogoutProfile}
             style={styles.buttonsHeaderRight}
           >
-            <Text style={styles.titleLogout}>
-              <Trans>Logout</Trans>
-            </Text>
+            <Text style={styles.titleLogout}>{i18n._("Logout")}</Text>
           </TouchableOpacity>
         </View>
-        <ScrollView>
-          <ContainerUser />
-          <View style={styles.containerLineEmpty} />
-          <ContainerBusiness
-            onCreateBusiness={onCreateBusinessMarket}
-            onChangeBusiness={onChangeBusinessMarket}
-            onReviewBusiness={onReviewBusinessMarket}
-            onPressBuy={onPressBuy}
-          />
-          <View style={styles.containerList}>
-            <View style={styles.containerLineEmpty} />
-            <ItemTypeSetting
-              title={i18n._("Your adverts")}
-              amountUsed={
-                infoAdverts.useAmountAdvert +
-                infoBusinessAdverts.useAmountBusinessAdvert
-              }
-              amountAvailable={
-                infoAdverts.amountAdvert +
-                infoBusinessAdverts.amountBusinessAdvert
-              }
-              amountAvailableTitle={`${infoAdverts.amountAdvert}(${infoBusinessAdverts.amountBusinessAdvert})`}
-              onPressView={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProducts);
-              }}
-              onPressAdd={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProductAdd);
-              }}
-              onPressBuy={onPressBuy}
+        <ScrollView
+          refreshControl={
+            <RefreshControl
+              refreshing={isLoading || isFetching}
+              onRefresh={onRefresh}
+              colors={["#007AFF"]}
+              tintColor="#007AFF"
             />
-            <View style={styles.containerLineEmpty} />
-            <ItemTypeSetting
+          }
+        >
+          <ContainerUser
+            onPressEditProfile={() => {
+              navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
+            }}
+          />
+
+          <View style={styles.profileSections}>
+            <SectionItemComponent
+              title={i18n._("My roles")}
+              items={rolesData}
+              sectionLoading={isLoading || isFetching}
+            />
+            <CompactSectionComponent
+              title={i18n._("My actions")}
+              items={actionsData}
+              sectionLoading={isLoading || isFetching}
+            />
+            <SectionItemComponent
               title={i18n._("Your workshops")}
-              amountUsed={infoWorkshops.useAmountWorkshop}
-              amountAvailable={infoWorkshops.amountWorkshop}
-              amountAvailableTitle={`${infoWorkshops.amountWorkshop}`}
-              onPressView={() => {
+              items={workshopsData}
+              onPress={() => {
                 navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshops);
               }}
-              onPressAdd={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopAdd);
-              }}
-              onPressBuy={onPressBuy}
+              sectionLoading={isLoading || isFetching}
             />
-            <View style={styles.containerLineEmpty} />
-            <ItemTypeSetting
+            <SectionItemComponent
               title={i18n._("Your events")}
-              amountUsed={infoSmallEvents.useAmountSmallEvent}
-              amountAvailable={infoSmallEvents.amountSmallEvent}
-              amountAvailableTitle={`${infoSmallEvents.amountSmallEvent}`}
-              onPressView={() => {
+              items={eventsData}
+              onPress={() => {
                 navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEvents);
               }}
-              onPressAdd={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsEventAdd);
-              }}
-              onPressBuy={onPressBuy}
-            />
-          </View>
-          <View style={styles.containerLineEmpty} />
-          <View style={styles.containerFooter}>
-            <ButtonCustom
-              type="transparent"
-              title={i18n._("Setting profile")}
-              onSubmit={() => {
-                navigation.navigate(PATHS_SETTINGS_SCREENS.settingsProfile);
-              }}
+              sectionLoading={isLoading || isFetching}
             />
           </View>
           <View style={styles.containerEmpty} />
         </ScrollView>
       </View>
-      {isShowPayment && (
-        <ModalWindowBuy onClose={() => setIsShowPayment(false)} />
-      )}
     </>
   );
 };

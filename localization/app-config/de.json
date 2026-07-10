@@ -1,16 +1,26 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren.",
-  "NSLocationAlwaysUsageDescription": "Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren.",
-  "NSLocationWhenInUseUsageDescription": "Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren.",
-  "locationAlwaysAndWhenInUsePermission": "Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren.",
-  "locationAlwaysPermission": "Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren.",
-  "locationWhenInUsePermission": "Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren.",
-  "NSFaceIDUsageDescription": "Zum Einloggen mit Face ID",
-  "UIApplicationShortcutItemTitle": "Schnellzugriff",
-  "NSCameraUsageDescription": "Für das Aufnehmen von Fotos",
-  "NSPhotoLibraryUsageDescription": "Für den Zugriff auf Fotos in Ihrer Bibliothek",
-  "NSMicrophoneUsageDescription": "Für die Aufnahme von Audio",
-  "NSCalendarsUsageDescription": "Für den Zugriff auf Kalender",
-  "NSContactsUsageDescription": "Für den Zugriff auf Kontakte",
-  "NSAppleMusicUsageDescription": "Für den Zugriff auf Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren.",
+    "NSLocationAlwaysUsageDescription": "Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren.",
+    "NSLocationWhenInUseUsageDescription": "Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren.",
+    "locationAlwaysAndWhenInUsePermission": "Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren.",
+    "locationAlwaysPermission": "Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren.",
+    "locationWhenInUsePermission": "Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren.",
+    "NSFaceIDUsageDescription": "Zum Einloggen mit Face ID",
+    "UIApplicationShortcutItemTitle": "Schnellzugriff",
+    "NSCameraUsageDescription": "Für das Aufnehmen von Fotos",
+    "NSPhotoLibraryUsageDescription": "Für den Zugriff auf Fotos in Ihrer Bibliothek",
+    "NSMicrophoneUsageDescription": "Für die Aufnahme von Audio",
+    "NSCalendarsUsageDescription": "Für den Zugriff auf Kalender",
+    "NSContactsUsageDescription": "Für den Zugriff auf Kontakte",
+    "NSAppleMusicUsageDescription": "Für den Zugriff auf Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Erlauben Sie $(PRODUCT_NAME), Ihren Standort zu verwenden, um Freunde auf der Karte zu suchen. Sie können dies jederzeit im Menü der App deaktivieren.",
+    "locationAlwaysPermission": "Erlauben Sie $(PRODUCT_NAME) immer auf Ihren Standort zuzugreifen, um eine kontinuierliche Freundesverfolgung auf der Karte zu ermöglichen. Sie können dies jederzeit im Menü der App deaktivieren.",
+    "locationWhenInUsePermission": "Erlauben Sie $(PRODUCT_NAME), auf Ihren Standort zuzugreifen, während Sie die App verwenden, um Ihnen bei der Suche nach Freunden auf der Karte zu helfen. Sie können dies im Menü der App deaktivieren.",
+    "cameraPermission": "Für das Aufnehmen von Fotos",
+    "photosPermission": "Für den Zugriff auf Fotos in Ihrer Bibliothek",
+    "microphonePermission": "Für die Aufnahme von Audio"
+  }
 }

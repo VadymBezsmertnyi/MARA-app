@@ -2,8 +2,14 @@ import { StyleSheet } from "react-native";
 import colors from "../../../../styles/colors";
 import {
   FONT_400_OPEN_SANS,
+  FONT_600_OPEN_SANS,
   FONT_700_MONTSERRAT,
 } from "../../../../styles/constants";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../../styles/hooks";
 
 export const styles = StyleSheet.create({
   container: {},
@@ -19,6 +25,18 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 14,
     color: colors.grayFuscous,
+  },
+  labelContacts: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: scaleFont(16),
+    color: colors.blackCoffee,
+    marginBottom: verticalScale(4),
+  },
+  contactsContainer: {
+    paddingVertical: verticalScale(10),
+  },
+  contactsListContainer: {
+    paddingHorizontal: horizontalScale(5),
   },
   containerStyleInputButton: {
     backgroundColor: colors.transparent,
@@ -39,5 +57,35 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     color: colors.errorRed,
     minHeight: 20,
+  },
+  contactRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    marginBottom: verticalScale(10),
+    gap: horizontalScale(8),
+  },
+  contactInputContainer: {
+    flex: 1,
+  },
+  deleteContactIconButton: {
+    marginTop: verticalScale(25),
+    padding: horizontalScale(8),
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  addContactButtonContainer: {
+    marginTop: 0,
+    height: "auto",
+  },
+  addContactButton: {
+    paddingVertical: verticalScale(8),
+    paddingHorizontal: horizontalScale(12),
+    minWidth: 0,
+    height: "auto",
+  },
+  addContactText: {
+    fontFamily: FONT_400_OPEN_SANS,
+    fontSize: scaleFont(14),
+    color: colors.grayFuscous,
   },
 });

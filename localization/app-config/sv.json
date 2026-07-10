@@ -1,16 +1,26 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Tillåt $(PRODUCT_NAME) att använda din plats för att söka efter vänner på kartan. Du kan alltid inaktivera detta i appens meny.",
-  "NSLocationAlwaysUsageDescription": "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.",
-  "NSLocationWhenInUseUsageDescription": "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.",
-  "locationAlwaysAndWhenInUsePermission": "Tillåt $(PRODUCT_NAME) att använda din plats för att söka efter vänner på kartan. Du kan alltid inaktivera detta i appens meny.",
-  "locationAlwaysPermission": "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.",
-  "locationWhenInUsePermission": "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.",
-  "NSFaceIDUsageDescription": "För att logga in med Face ID",
-  "UIApplicationShortcutItemTitle": "Snabbåtkomst",
-  "NSCameraUsageDescription": "För att ta foton",
-  "NSPhotoLibraryUsageDescription": "För åtkomst till foton i din bibliotek",
-  "NSMicrophoneUsageDescription": "För att spela in ljud",
-  "NSCalendarsUsageDescription": "För åtkomst till kalendrar",
-  "NSContactsUsageDescription": "För åtkomst till kontakter",
-  "NSAppleMusicUsageDescription": "För åtkomst till Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Tillåt $(PRODUCT_NAME) att använda din plats för att söka efter vänner på kartan. Du kan alltid inaktivera detta i appens meny.",
+    "NSLocationAlwaysUsageDescription": "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.",
+    "NSLocationWhenInUseUsageDescription": "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.",
+    "locationAlwaysAndWhenInUsePermission": "Tillåt $(PRODUCT_NAME) att använda din plats för att söka efter vänner på kartan. Du kan alltid inaktivera detta i appens meny.",
+    "locationAlwaysPermission": "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.",
+    "locationWhenInUsePermission": "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.",
+    "NSFaceIDUsageDescription": "För att logga in med Face ID",
+    "UIApplicationShortcutItemTitle": "Snabbåtkomst",
+    "NSCameraUsageDescription": "För att ta foton",
+    "NSPhotoLibraryUsageDescription": "För åtkomst till foton i din bibliotek",
+    "NSMicrophoneUsageDescription": "För att spela in ljud",
+    "NSCalendarsUsageDescription": "För åtkomst till kalendrar",
+    "NSContactsUsageDescription": "För åtkomst till kontakter",
+    "NSAppleMusicUsageDescription": "För åtkomst till Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Tillåt $(PRODUCT_NAME) att använda din plats för att söka efter vänner på kartan. Du kan alltid inaktivera detta i appens meny.",
+    "locationAlwaysPermission": "Tillåt $(PRODUCT_NAME) att alltid få åtkomst till din plats för att ge kontinuerlig vänspårning på kartan. Du kan inaktivera detta när som helst i appens meny.",
+    "locationWhenInUsePermission": "Tillåt $(PRODUCT_NAME) att få åtkomst till din plats medan du använder appen för att hjälpa dig att hitta vänner på kartan. Du kan inaktivera detta i appens meny.",
+    "cameraPermission": "För att ta foton",
+    "photosPermission": "För åtkomst till foton i din bibliotek",
+    "microphonePermission": "För att spela in ljud"
+  }
 }

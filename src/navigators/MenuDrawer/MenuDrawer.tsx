@@ -7,7 +7,7 @@ import {
 
 // screens
 import { MenuSettings } from "../../screens/mainScreens/MenuSettings/MenuSettings";
-import { MainTabs } from "../MainTabs/mainTabs";
+import { MainTabs } from "../MainTabs/MainTabs";
 
 const Drawer = createDrawerNavigator();
 export const MenuDrawer: FunctionComponent = () => {

@@ -1,13 +1,33 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../styles/colors";
+
+const PREVIEW_SIZE = 120;
+const SEPARATOR_WIDTH = 12;
 
 export const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    width: "100%",
   },
-  list: {
-    flexDirection: "row",
-    gap: 13,
+  listContent: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    alignItems: "center",
   },
-  image: { width: 48, height: 48 },
+  separator: {
+    width: SEPARATOR_WIDTH,
+  },
+  image: {
+    width: PREVIEW_SIZE,
+    height: PREVIEW_SIZE,
+    borderRadius: 8,
+  },
+  addButton: {
+    width: PREVIEW_SIZE,
+    height: PREVIEW_SIZE,
+    borderRadius: 8,
+    backgroundColor: colors.grayMercury,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: SEPARATOR_WIDTH,
+  },
 });

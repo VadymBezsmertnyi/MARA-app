@@ -1,47 +1,78 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import colors from "../../../styles/colors";
 import {
   FONT_400_OPEN_SANS,
   FONT_600_MONTSERRAT,
 } from "../../../styles/constants";
+import {
+  horizontalScale,
+  scaleFont,
+  verticalScale,
+} from "../../../styles/hooks";
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
-  containerModalTypeWork: {
+  modalOverlay: {
     flex: 1,
-    paddingBottom: 40,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  containerModalTypeWork: {
+    width: SCREEN_WIDTH * 0.9,
+    height: SCREEN_HEIGHT * 0.8,
+    backgroundColor: colors.white,
+    borderRadius: horizontalScale(16),
+    overflow: "hidden",
     justifyContent: "space-between",
   },
   containerHeaderTypeWork: {
-    paddingHorizontal: 16,
+    paddingHorizontal: horizontalScale(16),
+    paddingTop: verticalScale(10),
+    paddingBottom: verticalScale(6),
   },
   titleModalType: {
     fontFamily: FONT_600_MONTSERRAT,
-    fontSize: 16,
+    fontSize: scaleFont(16),
     color: colors.grayFuscous,
   },
-  lineModalType: { width: "100%", height: 1, marginTop: 16, marginBottom: 13 },
+  lineModalType: {
+    width: "100%",
+    height: verticalScale(1),
+    marginTop: verticalScale(16),
+    marginBottom: verticalScale(13),
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollViewContent: {
+    flexGrow: 1,
+  },
   containerTypesWork: {
-    gap: 24,
-    paddingHorizontal: 16,
+    gap: verticalScale(24),
+    paddingHorizontal: horizontalScale(16),
+    paddingTop: verticalScale(12),
+    paddingBottom: verticalScale(8),
   },
   containerTypeWork: {
     flexDirection: "row",
-    gap: 51,
+    gap: horizontalScale(51),
   },
   containerTitlesTypeWork: {
     flex: 1,
-    gap: 6,
+    gap: verticalScale(6),
   },
   titleTypeWork: {
     fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 16,
+    fontSize: scaleFont(16),
   },
   subTitleTypeWork: {
     fontFamily: FONT_400_OPEN_SANS,
-    fontSize: 12,
+    fontSize: scaleFont(12),
   },
   containerSubmitModalTypeWork: {
-    padding: 24,
-    paddingBottom: 0,
+    padding: horizontalScale(24),
+    paddingTop: verticalScale(12),
+    paddingBottom: verticalScale(12),
   },
 });

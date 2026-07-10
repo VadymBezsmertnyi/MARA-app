@@ -1,12 +1,11 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { Modal, Platform, ScrollView, Text, View } from "react-native";
+import { Platform, ScrollView, Text, View } from "react-native";
 import MapView, {
   MapPressEvent,
   Marker,
   PROVIDER_GOOGLE,
 } from "react-native-maps";
 import { Shadow } from "react-native-shadow-2";
-import { Trans } from "@lingui/macro";
 
 // types
 import { ItemSearchPlaceAddressType } from "./ModalSheetSearchPlaceAddress.types";
@@ -15,8 +14,8 @@ import { ItemSearchPlaceAddressType } from "./ModalSheetSearchPlaceAddress.types
 import { useLocalesProvider } from "../../../localization/localization.provider";
 
 //components
+import { ModalUniversal } from "../ModalUniversal/ModalUniversal";
 import { ModalSheetSearchPlace } from "../ModalSheetSearchPlace/ModalSheetSearchPlace";
-import { ModalsSheet } from "../ModalsSheet/ModalsSheet";
 import { Input } from "../Input/Input";
 import { ButtonCustom } from "../ButtonCustom/ButtonCustom";
 import { LinearGradientCustom } from "../LinearGradientCustom/LinearGradientCustom";
@@ -110,109 +109,44 @@ export const ModalSheetSearchPlaceAddress: FunctionComponent<
         statePlace={currentStatePlace}
       />
     );
-
   if (step === 1 && isOpen)
     return (
-      <Modal visible={isOpen} transparent>
-        <ModalsSheet isShow={isOpen} onClose={onClose}>
-          <View style={styles.container}>
-            <Shadow stretch disabled={step > 1}>
-              <View style={styles.containerHeader}>
-                <Text style={styles.title}>{i18n._("Event address")}</Text>
-                <LinearGradientCustom style={styles.lineHeader} />
-              </View>
-            </Shadow>
-            <View style={styles.container}>
-              <ScrollView style={styles.containerInputs}>
-                <Input
-                  isRegular
-                  label={i18n._("Enter the exact address")}
-                  placeholder={i18n._("Independence Street, 1")}
-                  value={place?.address || ""}
-                  onChange={(value) => {
-                    setPlace((state) => ({
-                      ...DEFAULT_PLACE_ADDRESS_DATA,
-                      ...state,
-                      address: value,
-                    }));
-                  }}
-                  containerStyle={styles.input}
-                />
-              </ScrollView>
-              <View>
-                <Shadow stretch disabled={step > 1}>
-                  <View style={styles.containerSubmitModalTypeWork}>
-                    <ButtonCustom
-                      disabled={!place?.address.length}
-                      title={i18n._("Continue")}
-                      onSubmit={onPressNext}
-                    />
-                    <ButtonCustom
-                      type="transparent"
-                      disabled={false}
-                      title={i18n._("Back")}
-                      onSubmit={onPressBack}
-                    />
-                  </View>
-                </Shadow>
-              </View>
-            </View>
-          </View>
-        </ModalsSheet>
-      </Modal>
-    );
-
-  return (
-    <Modal visible={isOpen} transparent>
-      <ModalsSheet isShow={isOpen} onClose={onClose}>
+      <ModalUniversal
+        visible={isOpen}
+        onClose={onClose}
+        styleContainer={styles.modalOverlay}
+        animationType="fade"
+      >
         <View style={styles.container}>
-          <Shadow stretch disabled={step > 1}>
+          <Shadow stretch>
             <View style={styles.containerHeader}>
-              <Text style={styles.titleCoordinates}>
-                <Trans>Select a location on the map</Trans>
-              </Text>
-              <Text style={styles.subTitleCoordinates}>
-                <Trans>Move and change the location</Trans>
-              </Text>
+              <Text style={styles.title}>{i18n._("Event address")}</Text>
+              <LinearGradientCustom style={styles.lineHeader} />
             </View>
           </Shadow>
-          <View style={styles.containerMap}>
-            <MapView
-              onPress={getPlaces}
-              initialRegion={DEFAULT_LOCATION}
-              region={DEFAULT_LOCATION}
-              provider={PROVIDER_GOOGLE}
-              style={styles.map}
-              mapType={Platform.OS === "ios" ? "terrain" : "standard"}
-              zoomControlEnabled
-              showsBuildings={false}
-              showsPointsOfInterest={false}
-              showsIndoorLevelPicker={false}
-            >
-              {place?.coordinates ? (
-                <Marker coordinate={place.coordinates} />
-              ) : null}
-            </MapView>
-            {place?.coordinates && place?.coordinates.latitude !== 0 ? (
-              <View style={styles.containerLineCoordinates}>
-                <Shadow stretch offset={offsetShadow} distance={4}>
-                  <View style={styles.lineCoordinates}>
-                    <Text style={styles.titleLineCoordinates}>
-                      {place.coordinates.latitude.toFixed(6)},
-                      {place.coordinates.longitude.toFixed(6)}
-                    </Text>
-                  </View>
-                </Shadow>
-              </View>
-            ) : null}
-          </View>
+          <ScrollView style={styles.containerInputs}>
+            <Input
+              isRegular
+              label={i18n._("Enter the exact address")}
+              placeholder={i18n._("Independence Street, 1")}
+              value={place?.address || ""}
+              onChange={(value) => {
+                setPlace((state) => ({
+                  ...DEFAULT_PLACE_ADDRESS_DATA,
+                  ...state,
+                  address: value,
+                }));
+              }}
+              containerStyle={styles.input}
+            />
+          </ScrollView>
           <View>
-            <Shadow stretch disabled={step > 1}>
+            <Shadow stretch>
               <View style={styles.containerSubmitModalTypeWork}>
                 <ButtonCustom
-                  disabled={!(place?.coordinates.latitude !== 0)}
-                  title={i18n._("Select")}
-                  onSubmit={onPressSubmit}
+                  disabled={!place?.address.length}
+                  title={i18n._("Continue")}
+                  onSubmit={onPressNext}
                 />
                 <ButtonCustom
                   type="transparent"
@@ -224,7 +158,73 @@ export const ModalSheetSearchPlaceAddress: FunctionComponent<
             </Shadow>
           </View>
         </View>
-      </ModalsSheet>
-    </Modal>
+      </ModalUniversal>
+    );
+  return (
+    <ModalUniversal
+      visible={isOpen}
+      onClose={onClose}
+      styleContainer={styles.modalOverlay}
+      animationType="fade"
+    >
+      <View style={styles.container}>
+        <Shadow stretch>
+          <View style={styles.containerHeader}>
+            <Text style={styles.titleCoordinates}>
+              {i18n._("Select a location on the map")}
+            </Text>
+            <Text style={styles.subTitleCoordinates}>
+              {i18n._("Move and change the location")}
+            </Text>
+          </View>
+        </Shadow>
+        <View style={styles.containerMap}>
+          <MapView
+            onPress={getPlaces}
+            initialRegion={DEFAULT_LOCATION}
+            region={DEFAULT_LOCATION}
+            provider={PROVIDER_GOOGLE}
+            style={styles.map}
+            mapType={Platform.OS === "ios" ? "terrain" : "standard"}
+            zoomControlEnabled
+            showsBuildings={false}
+            showsIndoorLevelPicker={false}
+          >
+            {place?.coordinates ? (
+              <Marker coordinate={place.coordinates} />
+            ) : null}
+          </MapView>
+          {place?.coordinates && place?.coordinates.latitude !== 0 ? (
+            <View style={styles.containerLineCoordinates}>
+              <Shadow stretch offset={offsetShadow} distance={4}>
+                <View style={styles.lineCoordinates}>
+                  <Text style={styles.titleLineCoordinates}>
+                    {place.coordinates.latitude.toFixed(6)},
+                    {place.coordinates.longitude.toFixed(6)}
+                  </Text>
+                </View>
+              </Shadow>
+            </View>
+          ) : null}
+        </View>
+        <View>
+          <Shadow stretch>
+            <View style={styles.containerSubmitModalTypeWork}>
+              <ButtonCustom
+                disabled={!(place?.coordinates.latitude !== 0)}
+                title={i18n._("Select")}
+                onSubmit={onPressSubmit}
+              />
+              <ButtonCustom
+                type="transparent"
+                disabled={false}
+                title={i18n._("Back")}
+                onSubmit={onPressBack}
+              />
+            </View>
+          </Shadow>
+        </View>
+      </View>
+    </ModalUniversal>
   );
 };

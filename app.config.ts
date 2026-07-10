@@ -11,11 +11,32 @@ const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
 const EXPO_PUBLIC_APP_ID_ONESIGNAL = process.env
   .EXPO_PUBLIC_APP_ID_ONESIGNAL as string;
 
+const DEFAULT_LANGUAGES = [
+  "be",
+  "cs",
+  "da",
+  "de",
+  "el",
+  "en",
+  "es",
+  "fi",
+  "fr",
+  "hu",
+  "it",
+  "lt",
+  "lv",
+  "pl",
+  "ro",
+  "sk",
+  "sv",
+  "uk",
+];
+
 export const expo = {
   name: "M.A.R.A",
   slug: "mara",
-  version: "1.0.3",
-  runtimeVersion: "1.0.3",
+  version: "1.1.0",
+  runtimeVersion: "1.1.0",
   orientation: "portrait",
   icon: "./assets/icon.png",
   userInterfaceStyle: "automatic",
@@ -30,8 +51,8 @@ export const expo = {
     supportsTablet: false,
     bundleIdentifier: "com.motoauto.mara",
     scheme: "maraapp",
-    googleServicesFile: "./GoogleService-Info.plist",
-    buildNumber: "34",
+    googleServicesFile: "./keys/GoogleService-Info.plist",
+    buildNumber: "42",
     usesAppleSignIn: true,
     infoPlist: {
       LSApplicationQueriesSchemes: [
@@ -68,35 +89,27 @@ export const expo = {
     associatedDomains: ["applinks:mara-app.onelink.me"],
   },
   android: {
-    versionCode: 34,
+    versionCode: 42,
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#ffffff",
     },
-    googleServicesFile: "./google-services.json",
+    googleServicesFile: "./keys/google-services.json",
     package: "com.motoauto.mara",
     scheme: "maraapp",
     permissions: [
-      "CAMERA",
-      "RECORD_AUDIO",
-      "CAMERA_ROLL",
-      "READ_EXTERNAL_STORAGE",
-      "WRITE_EXTERNAL_STORAGE",
-      "USE_BIOMETRIC",
-      "USE_FINGERPRINT",
       "INTERNET",
       "ACCESS_NETWORK_STATE",
-      "GET_ACCOUNTS",
-      "SYSTEM_ALERT_WINDOW",
+      "CAMERA",
+      "RECORD_AUDIO",
+      "USE_BIOMETRIC",
+      "USE_FINGERPRINT",
       "RECEIVE_BOOT_COMPLETED",
       "WAKE_LOCK",
       "ACCESS_FINE_LOCATION",
       "ACCESS_COARSE_LOCATION",
       "ACCESS_BACKGROUND_LOCATION",
       "com.google.android.gms.permission.AD_ID",
-      "com.google.android.c2dm.permission.RECEIVE",
-      "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
-      "com.google.android.providers.gsf.permission.READ_GSERVICES",
     ],
     config: {
       googleMaps: {
@@ -135,14 +148,22 @@ export const expo = {
   },
   owner: "fop_vadym_bezsmertnyi",
   plugins: [
-    //"./plugins/react-native-maps-plugin",
-    "./plugins/withCustomInfoPlist",
+    "./plugins/withCustomAndroidManifest",
+    "./plugins/withAndroidDefaultPermissionStrings",
+    [
+      "react-native-maps",
+      {
+        iosGoogleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
+        androidGoogleMapsApiKey: EXPO_PUBLIC_API_KEY_GOOGLE_WEB_PLACES,
+      },
+    ],
     "@react-native-firebase/app",
     [
       "expo-build-properties",
       {
         ios: {
           useFrameworks: "static",
+          forceStaticLinking: ["RNFBApp"],
         },
       },
     ],
@@ -152,7 +173,15 @@ export const expo = {
         mode: "development",
       },
     ],
-    "expo-localization",
+    [
+      "expo-localization",
+      {
+        supportedLocales: {
+          ios: DEFAULT_LANGUAGES,
+          android: DEFAULT_LANGUAGES,
+        },
+      },
+    ],
     "expo-apple-authentication",
     [
       "@react-native-google-signin/google-signin",
@@ -211,6 +240,7 @@ export const expo = {
     "expo-font",
     "expo-secure-store",
     ["react-native-appsflyer", { shouldUseStrictMode: true }],
+    "@react-native-community/datetimepicker",
   ],
   updates: {
     url: "https://u.expo.dev/c9b5a1d2-759e-4704-9171-69ad591def63",

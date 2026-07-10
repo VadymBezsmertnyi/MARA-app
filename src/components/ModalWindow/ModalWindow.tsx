@@ -7,7 +7,7 @@ import { styles } from "./ModalWindow.styles";
 
 type ModalWindowProps = {
   onClose: () => void;
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const ModalWindow: FunctionComponent<ModalWindowProps> = ({

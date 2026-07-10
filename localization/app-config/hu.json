@@ -1,16 +1,26 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének használatát a térképen barátok kereséséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
-  "NSLocationAlwaysUsageDescription": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
-  "NSLocationWhenInUseUsageDescription": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében.",
-  "locationAlwaysAndWhenInUsePermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének használatát a térképen barátok kereséséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
-  "locationAlwaysPermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
-  "locationWhenInUsePermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében.",
-  "NSFaceIDUsageDescription": "Bejelentkezéshez Face ID használata",
-  "UIApplicationShortcutItemTitle": "Gyors hozzáférés",
-  "NSCameraUsageDescription": "Fényképek készítéséhez",
-  "NSPhotoLibraryUsageDescription": "Fényképek eléréséhez a könyvtárában",
-  "NSMicrophoneUsageDescription": "Hangfelvétel készítéséhez",
-  "NSCalendarsUsageDescription": "Naptárak eléréséhez",
-  "NSContactsUsageDescription": "Kapcsolatok eléréséhez",
-  "NSAppleMusicUsageDescription": "Az Apple Music eléréséhez"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének használatát a térképen barátok kereséséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
+    "NSLocationAlwaysUsageDescription": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
+    "NSLocationWhenInUseUsageDescription": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében.",
+    "locationAlwaysAndWhenInUsePermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének használatát a térképen barátok kereséséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
+    "locationAlwaysPermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
+    "locationWhenInUsePermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében.",
+    "NSFaceIDUsageDescription": "Bejelentkezéshez Face ID használata",
+    "UIApplicationShortcutItemTitle": "Gyors hozzáférés",
+    "NSCameraUsageDescription": "Fényképek készítéséhez",
+    "NSPhotoLibraryUsageDescription": "Fényképek eléréséhez a könyvtárában",
+    "NSMicrophoneUsageDescription": "Hangfelvétel készítéséhez",
+    "NSCalendarsUsageDescription": "Naptárak eléréséhez",
+    "NSContactsUsageDescription": "Kapcsolatok eléréséhez",
+    "NSAppleMusicUsageDescription": "Az Apple Music eléréséhez"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének használatát a térképen barátok kereséséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
+    "locationAlwaysPermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének folyamatos hozzáférését a térképen történő barátok nyomon követéséhez. Bármikor letilthatja ezt az alkalmazás menüjében.",
+    "locationWhenInUsePermission": "Engedélyezze a(z) $(PRODUCT_NAME) alkalmazásnak a helyzetének hozzáférését az alkalmazás használata közben, hogy segítsen megtalálni a barátokat a térképen. Letilthatja ezt az alkalmazás menüjében.",
+    "cameraPermission": "Fényképek készítéséhez",
+    "photosPermission": "Fényképek eléréséhez a könyvtárában",
+    "microphonePermission": "Hangfelvétel készítéséhez"
+  }
 }

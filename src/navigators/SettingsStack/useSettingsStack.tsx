@@ -8,16 +8,11 @@ import { PATHS_SETTINGS_SCREENS } from "../useNavigator.constants";
 import { SettingsMain } from "../../screens/settingsScreens/SettingsMain/SettingsMain";
 import { SettingsProfile } from "../../screens/settingsScreens/SettingsProfile/SettingsProfile";
 import { SettingsEvents } from "../../screens/settingsScreens/SettingsEvents/SettingsEvents";
-import { AddEvent } from "../../screens/newsScreens/EventAdd/EventAdd";
+import { AddEvent } from "../../screens/eventsScreens/EventAdd/EventAdd";
 
 // Workshops
 import { SettingsWorkshops } from "../../screens/settingsScreens/SettingsWorkshops/SettingsWorkshops";
 import { WorkshopAdd } from "../../screens/workshopsScreens/WorkshopAdd/WorkshopAdd";
-
-// Adverts
-import { SettingsProducts } from "../../screens/settingsScreens/SettingsProducts/SettingsProducts";
-import { MarketAdd } from "../../screens/marketScreens/MarketAdd/MarketAdd";
-import { SettingsBusinessCreate } from "../../screens/settingsScreens/SettingsBusinessCreate/SettingsBusinessCreate";
 
 export const useSettingsStack = () => {
   const { i18n } = useLocalesProvider();
@@ -78,41 +73,6 @@ export const useSettingsStack = () => {
       title: i18n._("Change workshop"),
       headerShown: false,
       component: WorkshopAdd,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsProducts,
-      name: PATHS_SETTINGS_SCREENS.settingsProducts,
-      title: null,
-      headerShown: false,
-      component: SettingsProducts,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsProductAdd,
-      name: PATHS_SETTINGS_SCREENS.settingsProductAdd,
-      title: i18n._("Create advert"),
-      headerShown: false,
-      component: MarketAdd,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsProductChange,
-      name: PATHS_SETTINGS_SCREENS.settingsProductChange,
-      title: i18n._("Change advert"),
-      headerShown: false,
-      component: MarketAdd,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate,
-      name: PATHS_SETTINGS_SCREENS.settingsBusinessMarketCreate,
-      title: "",
-      headerShown: false,
-      component: SettingsBusinessCreate,
-    },
-    {
-      id: PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange,
-      name: PATHS_SETTINGS_SCREENS.settingsBusinessMarketChange,
-      title: "",
-      headerShown: false,
-      component: SettingsBusinessCreate,
     },
   ] as const;
 

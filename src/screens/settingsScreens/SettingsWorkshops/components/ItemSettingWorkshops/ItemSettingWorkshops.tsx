@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { FunctionComponent, useMemo, useState } from "react";
 import {
   StyleProp,
   Text,
@@ -6,13 +6,26 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { Trans } from "@lingui/macro";
 
 // types
-import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+import { TWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.types";
+
+// providers
+import { useLocalesProvider } from "../../../../../../localization/localization.provider";
+import { useDropDownAlertProvider } from "../../../../../providers/DropDownAlertProvider/DropDownAlertProvider";
+
+// redux
+import {
+  useSendSmsVerificationMutation,
+  useVerifySmsCodeMutation,
+  useLazyGetWorkshopsUserQuery,
+} from "../../../../../storeRedux/api";
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
 
 // components
 import { ImageCache } from "../../../../../components/ImageCache/ImageCache";
+import { ModalSelectPhone } from "../ModalSelectPhone/ModalSelectPhone";
+import { ModalEnterCode } from "../ModalEnterCode/ModalEnterCode";
 
 // helps
 import { useAllNavigation } from "../../../../../navigators/Navigators.helps";
@@ -25,7 +38,6 @@ import {
   IconAutoService,
   IconChat,
   IconMotoService,
-  IconPencilGradient,
   IconStar,
 } from "../../../../../icons/components";
 
@@ -34,15 +46,26 @@ import { styles } from "./ItemSettingWorkshops.styles";
 import colors from "../../../../../../styles/colors";
 
 type ItemSettingWorkshopsProps = {
-  workshop: WorkshopType;
+  workshop: TWorkshop;
   isStart: boolean;
+  currentUserId: string | null;
 };
 
 export const ItemSettingWorkshops: FunctionComponent<
   ItemSettingWorkshopsProps
-> = ({ workshop, isStart }) => {
+> = ({ workshop, isStart, currentUserId }) => {
+  const { i18n } = useLocalesProvider();
+  const { showMessageServer } = useDropDownAlertProvider();
   const navigation = useAllNavigation();
-  const firstImage = workshop.images[0] ? workshop.images[0].url : null;
+  const { userData } = useUserSelector();
+  const [sendSms] = useSendSmsVerificationMutation();
+  const [verifyCode, { isLoading: verifyingCode }] = useVerifySmsCodeMutation();
+  const [getWorkshopsUser] = useLazyGetWorkshopsUserQuery();
+  const [showPhoneModal, setShowPhoneModal] = useState(false);
+  const [showCodeModal, setShowCodeModal] = useState(false);
+  const [codeError, setCodeError] = useState<string | null>(null);
+
+  const firstImage = workshop.imageFiles[0] ? workshop.imageFiles[0].url : null;
   const containerStyles: StyleProp<ViewStyle> = useMemo(
     () => [styles.container, { marginTop: isStart ? 0 : 12 }],
     [isStart]
@@ -58,10 +81,63 @@ export const ItemSettingWorkshops: FunctionComponent<
     [workshop.autoTypesWorks]
   );
 
+  const hasOwner = !!workshop.ownerUserId;
+  const isCurrentUserOwner =
+    currentUserId && workshop.ownerUserId?._id === currentUserId;
+  const canEdit = !hasOwner || isCurrentUserOwner;
+  const showConfirmButton = !hasOwner;
+
   const onPressChange = () => {
     navigation.navigate(PATHS_SETTINGS_SCREENS.settingsWorkshopChange, {
       workshopId: workshop._id,
     });
+  };
+
+  const onPressConfirmOwnership = () => {
+    setShowPhoneModal(true);
+  };
+
+  const handlePhoneSelect = async (phoneNumber: string) => {
+    setShowPhoneModal(false);
+    setCodeError(null);
+
+    const result = await sendSms({
+      body: {
+        workshopId: workshop._id,
+        phoneNumber,
+      },
+    });
+
+    if (result.data?.status === "success") setShowCodeModal(true);
+    else
+      await showMessageServer(
+        i18n._("Error"),
+        result.data?.reason || i18n._("Failed to send SMS"),
+        "error"
+      );
+  };
+
+  const handleCodeConfirm = async (code: string) => {
+    setCodeError(null);
+
+    const result = await verifyCode({
+      body: {
+        workshopId: workshop._id,
+        code,
+      },
+    });
+
+    if (result.data?.status === "success") {
+      setShowCodeModal(false);
+      if (userData?._id) await getWorkshopsUser({ userId: userData._id });
+      await showMessageServer(
+        i18n._("Success"),
+        i18n._("Everything is successful and this is your business"),
+        "success"
+      );
+    } else {
+      setCodeError(result.data?.reason || i18n._("Invalid or expired code"));
+    }
   };
 
   return (
@@ -74,6 +150,46 @@ export const ItemSettingWorkshops: FunctionComponent<
           <Text numberOfLines={1} style={styles.title}>
             {workshop.title}
           </Text>
+          {workshop.verification && (
+            <View style={styles.containerStatus}>
+              <View
+                style={[
+                  styles.statusBadge,
+                  workshop.verification.status === "pending" &&
+                    styles.statusPending,
+                  workshop.verification.status === "verified" &&
+                    styles.statusVerified,
+                  workshop.verification.status === "rejected" &&
+                    styles.statusRejected,
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.statusText,
+                    workshop.verification.status === "pending" &&
+                      styles.statusTextPending,
+                    workshop.verification.status === "verified" &&
+                      styles.statusTextVerified,
+                    workshop.verification.status === "rejected" &&
+                      styles.statusTextRejected,
+                  ]}
+                >
+                  {workshop.verification.status === "pending" &&
+                    i18n._("Under review")}
+                  {workshop.verification.status === "verified" &&
+                    i18n._("Verified")}
+                  {workshop.verification.status === "rejected" &&
+                    i18n._("Rejected")}
+                </Text>
+              </View>
+            </View>
+          )}
+          {workshop.verification?.status === "rejected" &&
+            workshop.verification.reason && (
+              <Text style={styles.reasonText} numberOfLines={2}>
+                {workshop.verification.reason}
+              </Text>
+            )}
           <View style={styles.containerIcons}>
             {workshop.autoTypesWorks.length > 0 && (
               <View style={styles.auto}>
@@ -102,17 +218,43 @@ export const ItemSettingWorkshops: FunctionComponent<
               </View>
             </View>
           ) : (
-            <Text style={styles.notComments}>
-              <Trans>Not comments</Trans>
-            </Text>
+            <Text style={styles.notComments}>{i18n._("Not comments")}</Text>
           )}
         </View>
       </View>
       <View style={styles.containerRight}>
-        <TouchableOpacity onPress={onPressChange}>
-          <IconPencilGradient width={24} height={24} />
-        </TouchableOpacity>
+        {canEdit && (
+          <TouchableOpacity style={styles.buttonEdit} onPress={onPressChange}>
+            <Text style={styles.buttonEditText}>{i18n._("Edit")}</Text>
+          </TouchableOpacity>
+        )}
+        {showConfirmButton && (
+          <TouchableOpacity
+            style={styles.buttonEdit}
+            onPress={onPressConfirmOwnership}
+          >
+            <Text style={styles.buttonEditText}>
+              {i18n._("Confirm ownership")}
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
+      <ModalSelectPhone
+        visible={showPhoneModal}
+        onClose={() => setShowPhoneModal(false)}
+        workshop={workshop}
+        onConfirm={handlePhoneSelect}
+      />
+      <ModalEnterCode
+        visible={showCodeModal}
+        onClose={() => {
+          setShowCodeModal(false);
+          setCodeError(null);
+        }}
+        onConfirm={handleCodeConfirm}
+        isLoading={verifyingCode}
+        error={codeError}
+      />
     </View>
   );
 };

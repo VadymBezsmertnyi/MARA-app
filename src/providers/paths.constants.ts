@@ -10,28 +10,30 @@ export const PATHS = {
   // events
   eventsGet: "/events/",
   eventsGetUserId: "/events/user/",
+  eventsGetById: "/events/",
+  eventsGetClosest: "/events/closest/",
+  eventsGetLocations: "/events/locations/",
   eventAdd: "/events/add/",
   eventChange: "/events/change/",
   eventDelete: "/events/delete/",
+  eventsCommentsAdd: "/events/comments/add/",
+  eventsCommentsChange: "/events/comments/change/",
+  eventsGoingAdd: "/events/going/add/",
+  eventsGoingRemove: "/events/going/remove/",
   //workshops
   workshopsGet: "/workshops/",
+  workshopsGetById: "/workshops/",
   workshopsGetUserId: "/workshops/user/",
   workshopsAdd: "/workshops/add/",
   workshopsChange: "/workshops/change/",
   workshopsDelete: "/workshops/delete/",
   workshopsCommentsAdd: "/workshops/comments/add/",
   workshopsCommentsChange: "/workshops/comments/change/",
-  // market
-  marketsProductsGet: "/markets/products/",
-  marketsProductsGetUserId: "/markets/products/user/",
-  marketsProductsAdd: "/markets/products/add/",
-  marketsProductsChange: "/markets/products/change/",
-  marketsProductsDelete: "/markets/products/delete/",
-  marketsProductsMinMaxPricesGet: "/markets/products/minMaxPrices/",
+  // sms-verification
+  smsVerificationSend: "/sms-verification/send/",
+  smsVerificationVerify: "/sms-verification/verify/",
   // location
   locationUsers: "/location-users/",
-  locationUsersSosAdd: "/location-users/sos/add/",
-  locationUsersSosDelete: "/location-users/sos/delete/",
   // places
   placesCountries: "/places/countries/",
   placesCountriesSearch: "/places/countries/search/",
@@ -40,11 +42,8 @@ export const PATHS = {
   placesCities: "/places/cities/",
   placesCitiesSearch: "/places/cities/search/",
   placesCityId: "/places/cities/getPlaceId/",
-  // business
-  businessMarket: "/business/market/",
-  businessMarketCreate: "/business/market/create/",
-  businessMarketUpdate: "/business/market/update/",
-  businessMarketDelete: "/business/market/delete/",
+  // map
+  mapPoints: "/map/points",
   // other
   ipApiGetCountry: "http://ip-api.com/json",
 } as const;

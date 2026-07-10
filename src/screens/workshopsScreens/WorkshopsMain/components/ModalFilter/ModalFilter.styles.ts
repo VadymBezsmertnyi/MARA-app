@@ -21,9 +21,8 @@ export const styles = StyleSheet.create({
     minWidth: 90,
   },
   containerBody: {
-    paddingLeft: 20,
-    paddingRight: 16,
-    gap: 20,
+    paddingHorizontal: 20,
+    gap: 12,
   },
   containerStyleInputButton: {
     backgroundColor: colors.transparent,
@@ -86,5 +85,37 @@ export const styles = StyleSheet.create({
     fontFamily: FONT_400_OPEN_SANS,
     fontSize: 16,
     color: colors.blackCoffee,
+  },
+  distanceContainer: {
+    position: "relative",
+    minHeight: 100,
+  },
+  distanceBlur: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+  },
+  distanceBlurContent: {
+    paddingHorizontal: 20,
+    alignItems: "center",
+    gap: 4,
+  },
+  distanceWarningText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 14,
+    color: colors.blackCoffee,
+    textAlign: "center",
+  },
+  distanceButtonContainer: {
+    paddingVertical: 6,
+  },
+  distanceButton: {
+    paddingHorizontal: 6,
   },
 });

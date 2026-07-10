@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useCallback, useState } from "react";
 import { Modal, Text, TouchableOpacity, View } from "react-native";
 import { Shadow } from "react-native-shadow-2";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
@@ -61,10 +60,9 @@ export const ModalSelectPlatform: FunctionComponent<
             </View>
             <IconWarningGradient width={130} height={130} />
             <Text style={styles.titleModal}>
-              <Trans>
-                What platform do you want to send the app installation
-                invitation to?
-              </Trans>
+              {i18n._(
+                "What platform do you want to send the app installation invitation to?"
+              )}
             </Text>
 
             <View style={styles.containerButtons}>

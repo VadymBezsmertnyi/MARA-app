@@ -30,11 +30,11 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
       <G strokeLinecap="round" strokeWidth={2.836}>
         <Path
           stroke="url(#icon-touch-id-gradient_svg__a)"
-          d="M8.025 31.867a54.508 54.508 0 0 0-4.931 35.784"
+          d="M8.025 31.867a54.5 54.5 0 0 0-4.931 35.784"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__b)"
-          d="M81.04 7.598a54.707 54.707 0 0 0-34.995-4.506c-14 2.819-25.672 10.726-33.475 21.404"
+          d="M81.04 7.598a54.7 54.7 0 0 0-34.995-4.506c-14 2.819-25.672 10.726-33.475 21.404"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__c)"
@@ -42,11 +42,11 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__d)"
-          d="M111.99 58.447a54.297 54.297 0 0 0-1.083-11.864"
+          d="M111.99 58.447a54.3 54.3 0 0 0-1.083-11.864"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__e)"
-          d="M3.311 68.109c.16.781.334 1.556.525 2.323"
+          d="M3.311 68.109q.24 1.172.525 2.323"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__f)"
@@ -58,7 +58,7 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__h)"
-          d="M50.752 112c12.013-15.295 17.492-35.52 13.333-56.039l.022-.007c-.76-3.745-4.426-6.17-8.19-5.414-3.764.755-6.2 4.403-5.441 8.15l.049-.009a54.643 54.643 0 0 1-.117 22.409"
+          d="M50.752 112c12.013-15.295 17.492-35.52 13.333-56.039l.022-.007c-.76-3.745-4.426-6.17-8.19-5.414-3.764.755-6.2 4.403-5.441 8.15l.049-.009a54.6 54.6 0 0 1-.117 22.409"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__i)"
@@ -66,7 +66,7 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__j)"
-          d="M71.515 69.588a78.856 78.856 0 0 0-1.494-15.03l.015-.006c-1.49-7.568-8.692-12.467-16.085-10.94-5.523 1.14-9.59 5.541-10.673 10.851"
+          d="M71.515 69.588a79 79 0 0 0-1.494-15.03l.015-.006c-1.49-7.568-8.692-12.467-16.085-10.94-5.523 1.14-9.59 5.541-10.673 10.851"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__k)"
@@ -74,7 +74,7 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__l)"
-          d="M58.405 36.326a20.83 20.83 0 0 0-5.697.346C41.527 38.91 34.29 49.71 36.545 60.801l.039-.007c3.049 15-2.587 29.737-13.475 39.088"
+          d="M58.405 36.326a20.8 20.8 0 0 0-5.697.346C41.527 38.91 34.29 49.71 36.545 60.801l.039-.007c3.049 15-2.587 29.737-13.475 39.088"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__m)"
@@ -90,15 +90,15 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__p)"
-          d="M76.557 107.961a90.023 90.023 0 0 0 6.05-16.157"
+          d="M76.557 107.961a90 90 0 0 0 6.05-16.157"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__q)"
-          d="M84.624 37.274a33.645 33.645 0 0 1 6.087 13.413l.002.001c3.858 18.497 1.936 36.823-4.557 53.234"
+          d="M84.624 37.274a33.65 33.65 0 0 1 6.087 13.413l.002.001c3.858 18.497 1.936 36.823-4.557 53.234"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__r)"
-          d="M42.27 25.377a33.865 33.865 0 0 1 7.59-2.54c10.566-2.198 20.978.835 28.714 7.369"
+          d="M42.27 25.377a34 34 0 0 1 7.59-2.54c10.566-2.198 20.978.835 28.714 7.369"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__s)"
@@ -110,7 +110,7 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__u)"
-          d="M97.734 54.441a105.636 105.636 0 0 0-.93-5.33h-.008C92.312 26.82 70.652 12.395 48.413 16.889c-17.09 3.454-29.547 17.077-32.363 33.316"
+          d="M97.734 54.441a106 106 0 0 0-.93-5.33h-.008C92.312 26.82 70.652 12.395 48.413 16.889c-17.09 3.454-29.547 17.077-32.363 33.316"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__v)"
@@ -118,11 +118,11 @@ const SvgIconTouchIdGradient = (originalProps: IconType) => {
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__w)"
-          d="M63.447 9.43a47.185 47.185 0 0 0-15.805.528C21.84 15.205 5.14 40.556 10.342 66.582l.016-.004a13.84 13.84 0 0 1-3.384 12.098"
+          d="M63.447 9.43a47.2 47.2 0 0 0-15.805.528C21.84 15.205 5.14 40.556 10.342 66.582l.016-.004a13.84 13.84 0 0 1-3.384 12.098"
         />
         <Path
           stroke="url(#icon-touch-id-gradient_svg__x)"
-          d="M104.974 82.716a111.257 111.257 0 0 0-1.335-35.362l-.013.001c-3.528-17.718-16.245-31.184-32.112-36.336"
+          d="M104.974 82.716a111.3 111.3 0 0 0-1.335-35.362l-.013.001c-3.528-17.718-16.245-31.184-32.112-36.336"
         />
       </G>
       <Defs>

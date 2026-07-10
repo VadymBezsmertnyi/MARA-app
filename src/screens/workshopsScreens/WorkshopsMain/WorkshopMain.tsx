@@ -1,32 +1,44 @@
-import React, { FunctionComponent, useMemo, useState } from "react";
-import { Modal, ScrollView, Text, View } from "react-native";
+import React, {
+  FunctionComponent,
+  useMemo,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
+import { Modal, ScrollView, Text, View, RefreshControl } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { Trans } from "@lingui/macro";
 import { convertDistance, getDistance } from "geolib";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
+
+// redux
+import { useWorkshopsSelector } from "../../../storeRedux/apis/workshops/slice";
+import { useGetWorkshopsQuery } from "../../../storeRedux/api";
+import { useMapSelector } from "../../../storeRedux/apis/map/slice";
 
 // providers
-import { useWorkshopsProvider } from "../../../providers/WorkshopsProvider/WorkshopsProvider";
-import { useMapProvider } from "../../../providers/MapProvider/MapProvider";
 import { useThemeProvider } from "../../../providers/ThemeProvider/ThemeProvider";
+import {
+  useDropDownAlertProvider,
+  DropdownAlertType,
+} from "../../../providers/DropDownAlertProvider/DropDownAlertProvider";
 
 // types
 import { RootWorkshopsScreensParamList } from "../../../navigators/Navigators.types";
 import { useLocalesProvider } from "../../../../localization/localization.provider";
-import { TypeFilters } from "./components/ModalFilter/ModalFilter.types";
-import { DrawerNavigationHelpers } from "@react-navigation/drawer/lib/typescript/src/types";
-import { useSubscriptionProvider } from "../../../providers/SubscriptionProvider/SubscriptionProvider";
 
 // components
 import { Input } from "../../../components/Input/Input";
-import { WorkshopItem } from "./components/WorkshopItem/WorkshopItem";
+import { WorkshopListItem } from "./components/WorkshopItem/WorkshopItem";
 import { Header } from "../../../components/Header/Header";
 import { MenuBurgerButton } from "../../../components/MenuBurgerButton/MenuBurgerButton";
-import { HeaderFilters } from "./components/HeaderFilters/HeaderFilters";
-import { AddEventButton } from "../../../components/AddEventButton/AddEventButton";
+import { HeaderActions } from "./components/HeaderActions/HeaderActions";
 import { ModalWindow } from "../../../components/ModalWindow/ModalWindow";
 import { ModalSort } from "./components/ModalSort/ModalSort";
-import { ModalFilter } from "./components/ModalFilter/ModalFilter";
+import {
+  ModalFilter,
+  TypeWorkshopFilters,
+} from "./components/ModalFilter/ModalFilter";
 import { ImageCache } from "../../../components/ImageCache/ImageCache";
 
 // icons
@@ -44,7 +56,7 @@ import { styles } from "./WorkshopMain.styles";
 
 type WorkshopMainProps = {
   navigation: NativeStackNavigationProp<RootWorkshopsScreensParamList> &
-    DrawerNavigationHelpers;
+    DrawerNavigationProp<RootWorkshopsScreensParamList>;
 };
 
 export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
@@ -52,94 +64,77 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
 }) => {
   const { bottom } = useSafeAreaInsets();
   const { i18n } = useLocalesProvider();
-  const { infoWorkshops } = useSubscriptionProvider();
   const { heightTabBar } = useThemeProvider();
-  const { workshops, minMaxDistance } = useWorkshopsProvider();
-  const { location } = useMapProvider();
+  const { showMessageServer } = useDropDownAlertProvider();
+  const {
+    workshopsList: workshops,
+    pagination,
+    maxDistance = 5,
+  } = useWorkshopsSelector();
+  const { location } = useMapSelector();
   const [isShowSort, setIsShowSort] = useState(false);
   const [isShowFilter, setIsShowFilter] = useState(false);
   const [workshopName, setWorkshopName] = useState("");
-  const [filters, setFilters] = useState<TypeFilters | null>(null);
+  const [debouncedWorkshopName, setDebouncedWorkshopName] = useState("");
+  const [filters, setFilters] = useState<TypeWorkshopFilters | null>(null);
   const [sort, setSort] = useState<"comments" | "distance" | "rating" | null>(
     null
   );
-  const workshopsFilterSort = useMemo(() => {
-    if (filters === null && sort === null && !workshopName.length)
-      return workshops;
-    const filterWorkshop = filters
-      ? workshops.filter((workshop) => {
-          const distance =
-            location && workshop.coordinates
-              ? convertDistance(
-                  getDistance(location, {
-                    longitude: workshop.coordinates.longitude,
-                    latitude: workshop.coordinates.latitude,
-                  }),
-                  "km"
-                )
-              : null;
-          const isMoto = filters.moto
-            ? workshop.motoTypesWorks.filter(
-                (typeWork) => filters.moto?.includes(typeWork)
-              ).length > 0
-            : true;
-          const isAuto = filters.auto
-            ? workshop.autoTypesWorks.filter(
-                (typeWork) => filters.auto?.includes(typeWork)
-              ).length > 0
-            : true;
-          const isDistance =
-            filters.maxDistance && distance
-              ? distance <= filters.maxDistance
-              : true;
-          const isRating =
-            filters.minRating && workshop.rating
-              ? filters.minRating <= workshop.rating
-              : true;
-          return isMoto && isAuto && isDistance && isRating;
-        })
-      : workshops;
-    const sortWorkshop = sort
-      ? filterWorkshop.sort((prev, next) => {
-          const distancePrev =
-            location && prev.coordinates
-              ? convertDistance(
-                  getDistance(location, {
-                    longitude: prev.coordinates.longitude,
-                    latitude: prev.coordinates.latitude,
-                  }),
-                  "km"
-                )
-              : null;
-          const distanceNext =
-            location && next.coordinates
-              ? convertDistance(
-                  getDistance(location, {
-                    longitude: next.coordinates.longitude,
-                    latitude: next.coordinates.latitude,
-                  }),
-                  "km"
-                )
-              : null;
-          if (sort === "comments")
-            return prev.comments.length - next.comments.length;
-          if (sort === "distance" && distancePrev && distanceNext)
-            return distancePrev - distanceNext;
-          if (sort === "rating" && prev.rating && next.rating)
-            return prev.rating - next.rating;
-          return 0;
-        })
-      : filterWorkshop;
-    const findInputWorkshop = workshopName.length
-      ? sortWorkshop.filter((workshop) =>
-          workshop.title
-            .toLocaleLowerCase()
-            .includes(workshopName.toLocaleLowerCase())
-        )
-      : sortWorkshop;
+  const [page, setPage] = useState(1);
+  const [refreshing, setRefreshing] = useState(false);
+  const limit = 20;
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const prevDebouncedWorkshopNameRef = useRef<string>("");
+  const lastRefreshTimeRef = useRef<number>(0);
 
-    return findInputWorkshop;
-  }, [workshops, filters, sort, workshopName]);
+  const queryParams = useMemo(
+    () => ({
+      page,
+      limit,
+      ...(sort && { sort }),
+      ...(filters?.moto !== undefined && { moto: filters.moto }),
+      ...(filters?.auto !== undefined && { auto: filters.auto }),
+      ...(filters?.maxDistance
+        ? { maxDistance: filters.maxDistance }
+        : { maxDistance }),
+      ...(filters?.minRating !== undefined && { minRating: filters.minRating }),
+      ...(debouncedWorkshopName && { workshopName: debouncedWorkshopName }),
+      ...(location && {
+        latitude: location.latitude,
+        longitude: location.longitude,
+      }),
+    }),
+    [page, limit, sort, filters, debouncedWorkshopName, location, maxDistance]
+  );
+
+  const { isLoading, refetch } = useGetWorkshopsQuery(queryParams);
+
+  const hasMorePages = useMemo(
+    () => pagination && pagination.page < pagination.totalPages,
+    [pagination]
+  );
+
+  const loadMore = () => {
+    if (hasMorePages && !isLoading) setPage((prev) => prev + 1);
+  };
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    const currentTime = Date.now();
+    const timeSinceLastRefresh = currentTime - lastRefreshTimeRef.current;
+    const minRefreshInterval = 10000;
+    if (timeSinceLastRefresh >= minRefreshInterval) {
+      lastRefreshTimeRef.current = currentTime;
+      await refetch();
+    } else
+      showMessageServer(
+        i18n._("Wait please before the next update"),
+        i18n._("Wait please before the next update"),
+        DropdownAlertType.Info
+      );
+
+    setRefreshing(false);
+  };
 
   const onClose = () => {
     setIsShowSort(false);
@@ -151,7 +146,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     onClose();
   };
 
-  const onSubmitFilters = (newFilters: TypeFilters) => {
+  const onSubmitFilters = (newFilters: TypeWorkshopFilters) => {
     setFilters(newFilters);
     onClose();
   };
@@ -164,30 +159,69 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
     navigation.openDrawer();
   };
 
+  useEffect(() => {
+    if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    if (workshopName.length >= 3)
+      debounceTimerRef.current = setTimeout(() => {
+        setDebouncedWorkshopName(workshopName);
+      }, 500);
+    else setDebouncedWorkshopName("");
+
+    return () => {
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    };
+  }, [workshopName]);
+
+  useEffect(() => {
+    if (sort !== null || filters !== null || debouncedWorkshopName) setPage(1);
+  }, [sort, filters, debouncedWorkshopName]);
+
+  useEffect(() => {
+    if (
+      !debouncedWorkshopName &&
+      prevDebouncedWorkshopNameRef.current &&
+      workshopName.length < 3
+    ) {
+      refetch();
+      lastRefreshTimeRef.current = Date.now();
+    }
+
+    prevDebouncedWorkshopNameRef.current = debouncedWorkshopName;
+  }, [debouncedWorkshopName, workshopName, refetch]);
+
+  useEffect(() => {
+    if (!isLoading && lastRefreshTimeRef.current === 0)
+      lastRefreshTimeRef.current = Date.now();
+  }, [isLoading]);
+
   return (
     <>
       <Header
         leftElement={<MenuBurgerButton onPress={onPressShowMenu} />}
         title={i18n._("Workshops")}
         rightElement={
-          workshops.length ? (
-            <HeaderFilters
-              onPressFilter={() => {
-                setIsShowFilter(true);
-              }}
-              onPressSort={() => {
-                setIsShowSort(true);
-              }}
-            />
-          ) : (
-            <></>
-          )
+          <HeaderActions
+            onPressFilter={() => {
+              setIsShowFilter(true);
+            }}
+            onPressSort={() => {
+              setIsShowSort(true);
+            }}
+            onPressAddWorkshop={onPressAddWorkshop}
+            addButtonAccessibilityLabel={i18n._("Add workshop")}
+            showFilters={workshops.length > 0 || filters !== null}
+            hasActiveSort={sort !== null}
+          />
         }
         containerStyle={styles.containerHeader}
         rightStyle={styles.containerRightHeader}
       />
       <View style={styles.container}>
-        {workshops.length ? (
+        {workshops.length > 0 ||
+        workshopName ||
+        debouncedWorkshopName ||
+        filters !== null ||
+        sort !== null ? (
           <View style={styles.search}>
             <Input
               value={workshopName}
@@ -212,9 +246,23 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
               paddingBottom: (heightTabBar || 0) + bottom,
             },
           ]}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+          onScroll={({ nativeEvent }) => {
+            const { layoutMeasurement, contentOffset, contentSize } =
+              nativeEvent;
+            const paddingToBottom = 20;
+            if (
+              layoutMeasurement.height + contentOffset.y >=
+              contentSize.height - paddingToBottom
+            )
+              loadMore();
+          }}
+          scrollEventThrottle={400}
         >
-          {workshops.length && workshopsFilterSort.length ? (
-            workshopsFilterSort.map((item) => {
+          {workshops.length ? (
+            workshops.map((item) => {
               const distance =
                 location && item.coordinates
                   ? getDistance(location, {
@@ -223,7 +271,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                     })
                   : null;
               return (
-                <WorkshopItem
+                <WorkshopListItem
                   key={`workshop-${item._id}`}
                   workshopId={item._id}
                   title={item.title}
@@ -236,11 +284,13 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                   navigation={navigation}
                   isAutoService={item.autoTypesWorks.length > 0}
                   isMotoService={item.motoTypesWorks.length > 0}
-                  image={item.images ? item.images[0] : null}
+                  image={item.imageFiles ? item.imageFiles[0] : null}
                 />
               );
             })
-          ) : workshops.length ? (
+          ) : pagination &&
+            pagination.total === 0 &&
+            (sort !== null || filters !== null || debouncedWorkshopName) ? (
             <View style={styles.containerNotList}>
               <ImageCache
                 contentFit="contain"
@@ -248,7 +298,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                 imageSrc={notWorkshopsFilterImage}
               />
               <Text style={styles.titleNotList}>
-                <Trans>Sorry, but no workshops were found by the filters</Trans>
+                {i18n._("Sorry, but no workshops were found by the filters")}
               </Text>
             </View>
           ) : (
@@ -259,21 +309,20 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
                 imageSrc={notWorkshopsImage}
               />
               <Text style={styles.titleNotList}>
-                <Trans>Sorry, there are no upcoming workshops</Trans>
+                {i18n._("Sorry, there are no upcoming workshops")}
               </Text>
             </View>
           )}
           <View style={styles.containerEmpty} />
         </ScrollView>
-        <AddEventButton
-          disabled={infoWorkshops.amountWorkshop <= 0}
-          onPress={onPressAddWorkshop}
-          accessibilityLabel={i18n._("Add workshop")}
-        />
       </View>
       {isShowSort ? (
         <ModalWindow onClose={onClose}>
-          <ModalSort onClose={onClose} setTypeSort={setTypeSort} />
+          <ModalSort
+            onClose={onClose}
+            setTypeSort={setTypeSort}
+            currentSort={sort}
+          />
         </ModalWindow>
       ) : null}
       {isShowFilter ? (
@@ -282,7 +331,7 @@ export const WorkshopMain: FunctionComponent<WorkshopMainProps> = ({
             onClose={onClose}
             filters={filters}
             onSubmit={onSubmitFilters}
-            maxDistance={minMaxDistance.max}
+            maxDistance={maxDistance}
           />
         </Modal>
       ) : null}

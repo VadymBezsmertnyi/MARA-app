@@ -15,10 +15,12 @@ import { styles } from "./RegistrationPrivacyPolicy.styles";
 export const RegistrationPrivacyPolicy: FunctionComponent = () => {
   const { i18n, language } = useLocalesProvider();
   const [loading, setLoading] = useState(true);
+  const EXPO_PUBLIC_WEB_SITE_URL =
+    process.env.EXPO_PUBLIC_WEB_SITE_URL || "https://m-a-r-a.netlify.app";
 
   const source = useMemo(
     () => ({
-      uri: `https://m-a-r-a.netlify.app/mobile/privacy-policy?language=${language}`,
+      uri: `${EXPO_PUBLIC_WEB_SITE_URL}/mobile/privacy-policy?language=${language}`,
     }),
     []
   );

@@ -14,68 +14,1034 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
-msgid "Add a photo"
-msgstr "Додати фото"
+msgid "Maintenance"
+msgstr "Технічне обслуговування"
 
 #. js-lingui-explicit-id
-msgid "The first photo will be on the cover of the advertisement."
-msgstr "Перше фото буде на обкладинці оголошення."
+msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
+msgstr "Заміна масла / Заміна фільтра / Заміна ременя ГРМ / Заміна свічок запалювання / Заміна трансмісійної оли / Обслуговування гальм / Заміна всіх необхідних рідин / Та інше."
 
 #. js-lingui-explicit-id
-msgid "Enter text to search"
-msgstr "Введіть текст для пошуку"
+msgid "Diagnostics"
+msgstr "Діагностика"
 
 #. js-lingui-explicit-id
-msgid "Press and enter to search for a city"
-msgstr "Натисніть та введіть для пошуку міста"
+msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
+msgstr "Комплексна діагностика перед покупкою / Діагностика шасі / Діагностика двигуна / Діагностика трансмісії / Діагностика кузова / Комп'ютерна діагностика / Діагностика рідин / Та інше."
 
 #. js-lingui-explicit-id
-msgid "Select"
-msgstr "Обрати"
+msgid "Auto Electrical"
+msgstr "Автоелектрика"
+
+#. js-lingui-explicit-id
+msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
+msgstr "Ремонт електропроводки / Чіп-тюнінг / Встановлення будь-якої складності сигналізації / Корекція одометра / Перепрограмування ключів / Адаптація двигуна та трансмісії / Видалення EGR / Видалення DPF / Встановлення ксенону / Встановлення парктроніків / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Chassis Repair"
+msgstr "Ремонт шасі"
+
+#. js-lingui-explicit-id
+msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
+msgstr "Заміна амортизатора / Заміна пружини / Заміна рульової тяги / Заміна балки / Пресування тихохідного блока / Заміна ресори / Заміна втулки / Заміна пильного диска / Заміна вала / Заміна шарового наконечника / Заміна підвіски двигуна та коробки передач / Механічна робота"
+
+#. js-lingui-explicit-id
+msgid "Engine, Automatic, and Manual Transmission"
+msgstr "Двигун, автоматична та механічна коробка передач"
+
+#. js-lingui-explicit-id
+msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
+msgstr "Діагностика двигуна / Ремонт двигуна / Заміна двигуна / Заміна масляної піддону двигуна / Діагностика автоматичної трансмісії / Заміна масла в автоматичній трансмісії / Заміна автоматичної трансмісії / Чищення-промивання автоматичної трансмісії / Заміна зчеплення / Діагностика механічної трансмісії / Заміна масла в механічній трансмісії / Заміна механічної трансмісії / Чищення-промивання механічної трансмісії / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Brakes and Steering System"
+msgstr "Гальма та система керування"
+
+#. js-lingui-explicit-id
+msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
+msgstr "Діагностика гальмівної системи / Заміна гальмівної рідини / Ремонт гальмівної системи / Прокачування гальмівної системи / Заміна рейки кермового управління / Відновлення рейки кермового управління / Заміна гідропідсилювача керма / Заміна рідини в гідропідсилювачі керма / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Accessory Equipment"
+msgstr "Додаткове обладнання"
+
+#. js-lingui-explicit-id
+msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
+msgstr "Ремонт стартера / Заміна стартера / Ремонт генератора / Заміна генератора / Відновлення турбонаддува / Заміна турбонаддува / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Air Conditioning Systems"
+msgstr "Системи кондиціонування повітря"
+
+#. js-lingui-explicit-id
+msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
+msgstr "Діагностика / Зарядка / Перезарядка / Виявлення витоків / Заміна трубок / Заміна радіатора / Ремонт компресора / Заміна компресора / Дезінфекція системи / Позбавлення від чужого запаху"
+
+#. js-lingui-explicit-id
+msgid "Wheel Alignment"
+msgstr "Вирівнювання коліс"
+
+#. js-lingui-explicit-id
+msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
+msgstr "Вирівнювання коліс / Діагностика вирівнювання / Пошук дефектів підвіски / Пошук дефектів кузова"
+
+#. js-lingui-explicit-id
+msgid "Painting"
+msgstr "Фарбування"
+
+#. js-lingui-explicit-id
+msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
+msgstr "Фарбування кузова / Фарбування бампера / Фарбування крила / Фарбування дверей / Фарбування капота / Фарбування даху / Фарбування багажника / Фарбування крила / Фарбування спойлера / Фарбування дзеркала / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing"
+msgstr "Аерографія"
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
+msgstr "Аерографія будь-якої складності / Аерографія будь-якої складності на будь-якій поверхні / Аерографія будь-якої складності на будь-якій частині мотоцикла / Індивідуальні дизайни аерографії для баків, крил та обтекачів"
+
+#. js-lingui-explicit-id
+msgid "Technical maintenance"
+msgstr "Технічне обслуговування"
+
+#. js-lingui-explicit-id
+msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
+msgstr "Змащення кабелів / Синхронізація карбюратора / Заміна повітряного фільтра / Заміна свічок запалювання / Заміна трансмісійної оли / Заміна масла в диференціалі / Заміна охолоджувальної рідини / Заміна масла в двигуні"
+
+#. js-lingui-explicit-id
+msgid "General works"
+msgstr "Загальні роботи"
+
+#. js-lingui-explicit-id
+msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
+msgstr "Загальна діагностика / Вимірювання компресії / Перевірка рівня технічної рідини / Заміна зчіпного кабелю / Заміна дросельного кабелю / Прибирання та змивання бензобака / Видалення та встановлення бензобака / Видалення та встановлення пластмас / Встановлення захисного аркуша, слайдера"
+
+#. js-lingui-explicit-id
+msgid "Chassis"
+msgstr "Шасі"
+
+#. js-lingui-explicit-id
+msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
+msgstr "Видалення та встановлення переднього колеса / Видалення та встановлення заднього колеса / Заміна підшипника колеса / Регулювання підшипника керма / Заміна підшипника керма / Видалення та встановлення передньої вилки / Заміна сальника передньої вилки / Заміна масла передньої вилки / Заміна підшипника задньої підвіски / Заміна амортизатора задньої підвіски / Заміна моноамортизатора / Ремонт заднього амортизатора"
+
+#. js-lingui-explicit-id
+msgid "Drive chain"
+msgstr "Привід ланцюга"
+
+#. js-lingui-explicit-id
+msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
+msgstr "Заміна приводу ланцюга та зірок / Чищення, змащування та налаштування ланцюга / Регулювання, натяг та змащування ланцюга"
+
+#. js-lingui-explicit-id
+msgid "Engine"
+msgstr "Двигун"
+
+#. js-lingui-explicit-id
+msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
+msgstr "Видалення та встановлення / Регулювання клапанів / Заміна зчеплення / Ремонт головки блока циліндрів / Заміна ланцюга ГРМ / Ремонт поршневої групи / Ремонт коробки передач / Капітальний ремонт двигуна"
+
+#. js-lingui-explicit-id
+msgid "Electrics"
+msgstr "Електрика"
+
+#. js-lingui-explicit-id
+msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
+msgstr "Заміна реле регулятора / Заміна генератора / Заміна стартера / Ремонт стартера / Заміна лампочки / Установка ксенону / Заміна акумулятора / Зарядка акумулятора"
+
+#. js-lingui-explicit-id
+msgid "Brake system"
+msgstr "Гальмівна система"
+
+#. js-lingui-explicit-id
+msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
+msgstr "Заміна гальмівних колодок дискового гальма / Заміна гальмівних колодок барабанного гальма / Прокачка гальм / Заміна гальмівної рідини / Заміна комбінованої гальмівної рідини / Заміна гальмівного шланга / Установка посиленого шланга / Заміна гальмівного диска / Ремонт гальмівного гальмівника"
+
+#. js-lingui-explicit-id
+msgid "Plastic repair"
+msgstr "Ремонт пластику"
+
+#. js-lingui-explicit-id
+msgid "Welding/restoration of fragments/restoration of fasteners"
+msgstr "Зварювання / відновлення фрагментів / відновлення кріплення"
+
+#. js-lingui-explicit-id
+msgid "Welding works"
+msgstr "Зварювальні роботи"
+
+#. js-lingui-explicit-id
+msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
+msgstr "Дугове зварювання / Півавтоматичне зварювання / Аргонове зварювання"
+
+#. js-lingui-explicit-id
+msgid "Tuning and customization"
+msgstr "Тюнінг та кастомізація"
+
+#. js-lingui-explicit-id
+msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
+msgstr "Установка захисного аркуша / Установка слайдера / Установка вихлопної системи / Установка гальмівної системи / Установка посиленого шланга / Установка ксенону / Установка освітлення мотоцикла / Установка протитуманних фар (FL)"
+
+#. js-lingui-explicit-id
+msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
+msgstr "Фарбування бака / Фарбування бокової панелі / Фарбування крила / Фарбування обтекача / Фарбування кришки фари / Фарбування задньої частини / Фарбування сидіння / Фарбування кришки вихлопу / Фарбування передньої вилки / Та інше."
+
+#. js-lingui-explicit-id
+msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
+msgstr "Аерографія будь-якої складності / Аерографія будь-якої складності на будь-якій поверхні / Аерографія будь-якої складності на будь-якій частині автомобіля"
+
+#. js-lingui-explicit-id
+msgid "Wait please before the next update"
+msgstr "Будь ласка, зачекайте перед наступним оновленням"
+
+#. js-lingui-explicit-id
+msgid "Workshops"
+msgstr "Майстерні"
+
+#. js-lingui-explicit-id
+msgid "Add workshop"
+msgstr "Додати майстерню"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop or type of work"
+msgstr "Введіть назву майстерні або вид робіт"
+
+#. js-lingui-explicit-id
+msgid "Sorry, but no workshops were found by the filters"
+msgstr "Вибачте, але за фільтрами не знайдено майстерень"
+
+#. js-lingui-explicit-id
+msgid "Sorry, there are no upcoming workshops"
+msgstr "Вибачте, але немає майбутніх майстерень"
+
+#. js-lingui-explicit-id
+msgid "Geolocation disabled for calculation"
+msgstr "Геолокація вимкнена для розрахунку"
+
+#. js-lingui-explicit-id
+msgid "Cannot calculate"
+msgstr "Не вдалося розрахувати"
 
 #. js-lingui-explicit-id
 msgid "km"
 msgstr "км"
 
 #. js-lingui-explicit-id
-msgid "Not enabled location"
-msgstr "Не ввімкнено місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "Photo {numberPhoto}"
-msgstr "Фото {numberPhoto}"
+msgid "Not comments"
+msgstr "Немає коментарів"
 
 #. js-lingui-explicit-id
 msgid "Button for closing the modal window"
 msgstr "Кнопка для закриття модального вікна"
 
 #. js-lingui-explicit-id
-msgid "Main photo"
-msgstr "Головне фото"
+msgid "By distance:"
+msgstr "За відстанню:"
 
 #. js-lingui-explicit-id
-msgid "Make the main photo"
-msgstr "Зробити головним фото"
+msgid "from closest to farthest"
+msgstr "від найближчого до найдальшого"
 
 #. js-lingui-explicit-id
-msgid "All cities"
-msgstr "Всі міста"
+msgid "Getting location..."
+msgstr "Отримання місцезнаходження..."
 
 #. js-lingui-explicit-id
-msgid "No cities found"
-msgstr "Міста не знайдено"
+msgid "To calculate distance, please enable location services"
+msgstr "Щоб розрахувати відстань, будь ласка, увімкніть служби визначення місцезнаходження"
 
 #. js-lingui-explicit-id
-msgid "Decrease the maximum number"
-msgstr "Зменшити максимальну кількість"
+msgid "Enable location"
+msgstr "Увімкнути місцезнаходження"
 
 #. js-lingui-explicit-id
-msgid "Increase the maximum number"
-msgstr "Збільшити максимальну кількість"
+msgid "By rating:"
+msgstr "За рейтингом:"
+
+#. js-lingui-explicit-id
+msgid "from highest to lowest"
+msgstr "від найвищого до найнижчого"
+
+#. js-lingui-explicit-id
+msgid "By number of comments:"
+msgstr "За кількістю коментарів:"
+
+#. js-lingui-explicit-id
+msgid "Not information"
+msgstr "Інформація відсутня"
+
+#. js-lingui-explicit-id
+msgid "Moto"
+msgstr "Мото"
+
+#. js-lingui-explicit-id
+msgid "Auto"
+msgstr "Авто"
+
+#. js-lingui-explicit-id
+msgid "All workshops"
+msgstr "Всі майстерні"
+
+#. js-lingui-explicit-id
+msgid "Repair of motorcycles"
+msgstr "Ремонт мотоциклів"
+
+#. js-lingui-explicit-id
+msgid "Repair of automobiles"
+msgstr "Ремонт автомобілів"
+
+#. js-lingui-explicit-id
+msgid "Filter"
+msgstr "Фільтр"
+
+#. js-lingui-explicit-id
+msgid "Type workshops"
+msgstr "Тип майстерень"
+
+#. js-lingui-explicit-id
+msgid "Distance, km:"
+msgstr "Відстань, км:"
+
+#. js-lingui-explicit-id
+msgid "Only with rating:"
+msgstr "Тільки з рейтингом:"
+
+#. js-lingui-explicit-id
+msgid "All works"
+msgstr "Всі роботи"
+
+#. js-lingui-explicit-id
+msgid "Type works"
+msgstr "Тип робіт"
+
+#. js-lingui-explicit-id
+msgid "Filtering"
+msgstr "Фільтрація"
+
+#. js-lingui-explicit-id
+msgid "Error"
+msgstr "Помилка"
+
+#. js-lingui-explicit-id
+msgid "Unable to like the workshop"
+msgstr "Не вдалося поставити лайк майстерні"
+
+#. js-lingui-explicit-id
+msgid "Failed to create share link"
+msgstr "Не вдалося створити посилання для спільного доступу"
+
+#. js-lingui-explicit-id
+msgid ""
+"Open the workshop in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Відкрити майстерню в додатку:\n"
+"{appLink}\n"
+"\n"
+"Відкрити в браузері:\n"
+"{webLink}"
+
+#. js-lingui-explicit-id
+msgid "Share workshop"
+msgstr "Поділитися майстернею"
+
+#. js-lingui-explicit-id
+msgid "Failed to send SMS"
+msgstr "Не вдалося надіслати SMS"
+
+#. js-lingui-explicit-id
+msgid "Success"
+msgstr "Успішно"
+
+#. js-lingui-explicit-id
+msgid "Everything is successful and this is your business"
+msgstr "Все успішно, і це ваш бізнес"
+
+#. js-lingui-explicit-id
+msgid "Invalid or expired code"
+msgstr "Недійсний або прострочений код"
+
+#. js-lingui-explicit-id
+msgid "Workshop"
+msgstr "Майстерня"
+
+#. js-lingui-explicit-id
+msgid "Unable to calculate distance, location is disabled"
+msgstr "Не вдалося розрахувати відстань, місцезнаходження вимкнено"
+
+#. js-lingui-explicit-id
+msgid "Contacts unknown"
+msgstr "Контакти невідомі"
+
+#. js-lingui-explicit-id
+msgid "About us:"
+msgstr "Про нас:"
+
+#. js-lingui-explicit-id
+msgid "Read the whole description..."
+msgstr "Прочитати весь опис..."
+
+#. js-lingui-explicit-id
+msgid "This business has not been confirmed by the owner"
+msgstr "Цей бізнес не підтверджений власником"
+
+#. js-lingui-explicit-id
+msgid "Confirm business"
+msgstr "Підтвердити бізнес"
+
+#. js-lingui-explicit-id
+msgid "Report on business"
+msgstr "Повідомити про бізнес"
+
+#. js-lingui-explicit-id
+msgid "Working hours unknown"
+msgstr "Робочі години невідомі"
+
+#. js-lingui-explicit-id
+msgid "Day off"
+msgstr "Вихідний"
+
+#. js-lingui-explicit-id
+msgid "Working hours"
+msgstr "Робочі години"
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
+msgstr "Текст повинен містити принаймні 3, але не більше 40 символів."
+
+#. js-lingui-explicit-id
+msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
+msgstr "Текст повинен містити принаймні 10, але не більше 2000 символів."
+
+#. js-lingui-explicit-id
+msgid "Leave a review"
+msgstr "Залишити відгук"
+
+#. js-lingui-explicit-id
+msgid "Name"
+msgstr "Ім'я"
+
+#. js-lingui-explicit-id
+msgid "Enter your name"
+msgstr "Введіть своє ім'я"
+
+#. js-lingui-explicit-id
+msgid "Add a description about the workshop"
+msgstr "Додайте опис про майстерню"
+
+#. js-lingui-explicit-id
+msgid "Workshop description"
+msgstr "Опис майстерні"
+
+#. js-lingui-explicit-id
+msgid "Publish"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "The work we do:"
+msgstr "Робота, яку ми виконуємо:"
+
+#. js-lingui-explicit-id
+msgid "Reviews:"
+msgstr "Відгуки:"
+
+#. js-lingui-explicit-id
+msgid "Draft the first review"
+msgstr "Створіть перший відгук"
+
+#. js-lingui-explicit-id
+msgid "Change a review"
+msgstr "Змінити відгук"
+
+#. js-lingui-explicit-id
+msgid "Write a review"
+msgstr "Написати відгук"
+
+#. js-lingui-explicit-id
+msgid "Monday"
+msgstr "Понеділок"
+
+#. js-lingui-explicit-id
+msgid "Mon"
+msgstr "Пн"
+
+#. js-lingui-explicit-id
+msgid "Tuesday"
+msgstr "Вівторок"
+
+#. js-lingui-explicit-id
+msgid "Tue"
+msgstr "Вт"
+
+#. js-lingui-explicit-id
+msgid "Wednesday"
+msgstr "Середа"
+
+#. js-lingui-explicit-id
+msgid "Wed"
+msgstr "Ср"
+
+#. js-lingui-explicit-id
+msgid "Thursday"
+msgstr "Четвер"
+
+#. js-lingui-explicit-id
+msgid "Thu"
+msgstr "Чт"
+
+#. js-lingui-explicit-id
+msgid "Friday"
+msgstr "П'ятниця"
+
+#. js-lingui-explicit-id
+msgid "Fri"
+msgstr "Пт"
+
+#. js-lingui-explicit-id
+msgid "Saturday"
+msgstr "Субота"
+
+#. js-lingui-explicit-id
+msgid "Sat"
+msgstr "Сб"
+
+#. js-lingui-explicit-id
+msgid "Sunday"
+msgstr "Неділя"
+
+#. js-lingui-explicit-id
+msgid "Sun"
+msgstr "Нд"
+
+#. js-lingui-explicit-id
+msgid "Phone"
+msgstr "Телефон"
+
+#. js-lingui-explicit-id
+msgid "Email"
+msgstr "Електронна пошта"
+
+#. js-lingui-explicit-id
+msgid "Viber"
+msgstr "Viber"
+
+#. js-lingui-explicit-id
+msgid "Telegram"
+msgstr "Telegram"
+
+#. js-lingui-explicit-id
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#. js-lingui-explicit-id
+msgid "Instagram"
+msgstr "Instagram"
+
+#. js-lingui-explicit-id
+msgid "Facebook"
+msgstr "Facebook"
+
+#. js-lingui-explicit-id
+msgid "workshop"
+msgstr "майстерня"
+
+#. js-lingui-explicit-id
+msgid "Workshop change successfully"
+msgstr "Майстерню успішно змінено"
+
+#. js-lingui-explicit-id
+msgid "Workshop created successfully"
+msgstr "Майстерню успішно створено"
+
+#. js-lingui-explicit-id
+msgid "Error changing workshop"
+msgstr "Помилка при зміні майстерні"
+
+#. js-lingui-explicit-id
+msgid "Error creating workshop"
+msgstr "Помилка при створенні майстерні"
+
+#. js-lingui-explicit-id
+msgid "Unable to delete the workshop"
+msgstr "Не вдалося видалити майстерню"
+
+#. js-lingui-explicit-id
+msgid "Change workshop"
+msgstr "Змінити майстерню"
+
+#. js-lingui-explicit-id
+msgid "Enter the name of the workshop"
+msgstr "Введіть назву майстерні"
+
+#. js-lingui-explicit-id
+msgid "Workshop name"
+msgstr "Назва майстерні"
+
+#. js-lingui-explicit-id
+msgid "Workshop address"
+msgstr "Адреса майстерні"
+
+#. js-lingui-explicit-id
+msgid "Enter the address"
+msgstr "Введіть адресу"
+
+#. js-lingui-explicit-id
+msgid "Contacts"
+msgstr "Контакти"
+
+#. js-lingui-explicit-id
+msgid "Phone number"
+msgstr "Номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Add contact type"
+msgstr "Додати тип контакту"
+
+#. js-lingui-explicit-id
+msgid "Type workshop"
+msgstr "Тип майстерні"
+
+#. js-lingui-explicit-id
+msgid "Select type"
+msgstr "Виберіть тип"
+
+#. js-lingui-explicit-id
+msgid "Types of work"
+msgstr "Типи робіт"
+
+#. js-lingui-explicit-id
+msgid "Select types of work"
+msgstr "Виберіть типи робіт"
+
+#. js-lingui-explicit-id
+msgid "You can add up to 5 phone numbers"
+msgstr "Ви можете додати до 5 номерів телефонів"
+
+#. js-lingui-explicit-id
+msgid "This contact type has already been added"
+msgstr "Цей тип контакту вже додано"
+
+#. js-lingui-explicit-id
+msgid "Edit"
+msgstr "Редагувати"
+
+#. js-lingui-explicit-id
+msgid "Save"
+msgstr "Зберегти"
+
+#. js-lingui-explicit-id
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. js-lingui-explicit-id
+msgid "My workshops"
+msgstr "Мої майстерні"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings workshops screen"
+msgstr "Кнопка для закриття екрану налаштувань майстерень"
+
+#. js-lingui-explicit-id
+msgid "All"
+msgstr "Всі"
+
+#. js-lingui-explicit-id
+msgid "Created by me"
+msgstr "Створено мною"
+
+#. js-lingui-explicit-id
+msgid "Mine"
+msgstr "Мої"
+
+#. js-lingui-explicit-id
+msgid "Sorry!"
+msgstr "Вибачте!"
+
+#. js-lingui-explicit-id
+msgid "You don't have {typeItem}."
+msgstr "У вас немає {typeItem}."
+
+#. js-lingui-explicit-id
+msgid "Select phone number"
+msgstr "Виберіть номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Confirm"
+msgstr "Опублікувати"
+
+#. js-lingui-explicit-id
+msgid "Enter verification code"
+msgstr "Введіть код підтвердження"
+
+#. js-lingui-explicit-id
+msgid "Enter 6-digit code"
+msgstr "Введіть 6-значний код"
+
+#. js-lingui-explicit-id
+msgid "Under review"
+msgstr "На розгляді"
+
+#. js-lingui-explicit-id
+msgid "Verified"
+msgstr "Перевірено"
+
+#. js-lingui-explicit-id
+msgid "Rejected"
+msgstr "Відхилено"
+
+#. js-lingui-explicit-id
+msgid "Confirm ownership"
+msgstr "Підтвердити власність"
+
+#. js-lingui-explicit-id
+msgid "Error: incorrect phone number"
+msgstr "Помилка: невірний номер телефону"
+
+#. js-lingui-explicit-id
+msgid "Error: First name must be between 3 and 15 characters"
+msgstr "Помилка: Ім'я повинно бути від 3 до 15 символів"
+
+#. js-lingui-explicit-id
+msgid "Error: select the city"
+msgstr "Помилка: виберіть місто"
+
+#. js-lingui-explicit-id
+msgid "The photo added"
+msgstr "Додано фото"
+
+#. js-lingui-explicit-id
+msgid "Sorry, an error occurred"
+msgstr "Вибачте, сталася помилка"
+
+#. js-lingui-explicit-id
+msgid "Profile saved"
+msgstr "Профіль збережено"
+
+#. js-lingui-explicit-id
+msgid "Error: save profile"
+msgstr "Помилка: збереження профілю"
+
+#. js-lingui-explicit-id
+msgid "Back"
+msgstr "Назад"
+
+#. js-lingui-explicit-id
+msgid "Profile"
+msgstr "Профіль"
+
+#. js-lingui-explicit-id
+msgid "Logout"
+msgstr "Вийти"
+
+#. js-lingui-explicit-id
+msgid "First Name"
+msgstr "Ім'я"
+
+#. js-lingui-explicit-id
+msgid "Last Name"
+msgstr "Прізвище"
+
+#. js-lingui-explicit-id
+msgid "City"
+msgstr "Місто"
+
+#. js-lingui-explicit-id
+msgid "Select the city"
+msgstr "Оберіть місто:"
+
+#. js-lingui-explicit-id
+msgid "The photo has been changed"
+msgstr "Фото змінено"
+
+#. js-lingui-explicit-id
+msgid "The photo has not been changed"
+msgstr "Фото не змінено"
+
+#. js-lingui-explicit-id
+msgid "Info"
+msgstr "Інформація"
+
+#. js-lingui-explicit-id
+msgid "The photo has been deleted"
+msgstr "Фото було видалено"
+
+#. js-lingui-explicit-id
+msgid "Delete"
+msgstr "Видалити"
+
+#. js-lingui-explicit-id
+msgid "Change"
+msgstr "Змінити"
+
+#. js-lingui-explicit-id
+msgid "Your profile"
+msgstr "Ваш профіль"
+
+#. js-lingui-explicit-id
+msgid "My roles"
+msgstr "Мої ролі"
+
+#. js-lingui-explicit-id
+msgid "My actions"
+msgstr "Мої дії"
+
+#. js-lingui-explicit-id
+msgid "Your workshops"
+msgstr "Ваші майстерні"
+
+#. js-lingui-explicit-id
+msgid "Your events"
+msgstr "Ваші події"
+
+#. js-lingui-explicit-id
+msgid "events"
+msgstr "події"
+
+#. js-lingui-explicit-id
+msgid "My events"
+msgstr "Мої події"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the settings events screen"
+msgstr "Кнопка для закриття екрану налаштувань подій"
+
+#. js-lingui-explicit-id
+msgid "Upcoming events"
+msgstr "Майбутні події"
+
+#. js-lingui-explicit-id
+msgid "Past events"
+msgstr "Минулі події"
+
+#. js-lingui-explicit-id
+msgid "Add event"
+msgstr "Додати подію"
+
+#. js-lingui-explicit-id
+msgid "Terms of Use"
+msgstr "Умови використання"
+
+#. js-lingui-explicit-id
+msgid "Privacy Policy"
+msgstr "Політика конфіденційності"
+
+#. js-lingui-explicit-id
+msgid "Terms of Service"
+msgstr "Умови обслуговування"
+
+#. js-lingui-explicit-id
+msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
+msgstr "Щоб повністю використовувати всі функції сервісу, потрібно надати додатку дозвіл на визначення вашого місцезнаходження:"
+
+#. js-lingui-explicit-id
+msgid "Allow the {nameApp} application to determine my location"
+msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "Toggle on your location"
+msgstr "Перемикач вашого місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "and choose the city of residence:"
+msgstr "і вибрати місто проживання:"
+
+#. js-lingui-explicit-id
+msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
+msgstr "Натискаючи кнопку \"Продовжити\", ви погоджуєтеся з {buttonTermsService} та {buttonPrivacyPolicy}"
+
+#. js-lingui-explicit-id
+msgid "Continue"
+msgstr "Продовжити"
+
+#. js-lingui-explicit-id
+msgid "Invalid phone number"
+msgstr "Невірний номер телефону"
+
+#. js-lingui-explicit-id
+msgid "The length of the name should be between 2 and 20 characters"
+msgstr "Довжина імені повинна бути від 2 до 20 символів"
+
+#. js-lingui-explicit-id
+msgid "Registration"
+msgstr "Реєстрація"
+
+#. js-lingui-explicit-id
+msgid "We recommend filling out the profile information"
+msgstr "Рекомендуємо заповнити інформацію профілю"
+
+#. js-lingui-explicit-id
+msgid "Fill out later"
+msgstr "Заповнити пізніше"
+
+#. js-lingui-explicit-id
+msgid "Settings"
+msgstr "Налаштування"
+
+#. js-lingui-explicit-id
+msgid "Button for closing the menu settings screen"
+msgstr "Кнопка для закриття екрану налаштувань меню"
+
+#. js-lingui-explicit-id
+msgid "Share the app"
+msgstr "Поділитись додатком"
+
+#. js-lingui-explicit-id
+msgid "About the service"
+msgstr "Про сервіс"
+
+#. js-lingui-explicit-id
+msgid "Terms of use"
+msgstr "Умови користування"
+
+#. js-lingui-explicit-id
+msgid "Privacy policy"
+msgstr "Політика конфіденційності"
+
+#. js-lingui-explicit-id
+msgid "Report an error/improvement"
+msgstr "Повідомити про помилку/покращення"
+
+#. js-lingui-explicit-id
+msgid "Dark theme"
+msgstr "Темна тема"
+
+#. js-lingui-explicit-id
+msgid "Automatically detect location"
+msgstr "Автоматично визначати місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "Toggle automatically detect location"
+msgstr "Перемикач автоматичного визначення місцезнаходження"
+
+#. js-lingui-explicit-id
+msgid "Delete profile"
+msgstr "Видалити профіль"
+
+#. js-lingui-explicit-id
+msgid "With the deletion of the profile, all your information will be deleted"
+msgstr "При видаленні профілю буде видалена вся ваша інформація"
+
+#. js-lingui-explicit-id
+msgid "What platform do you want to send the app installation invitation to?"
+msgstr "На яку платформу ви хочете надіслати запрошення на встановлення додатку?"
 
 #. js-lingui-explicit-id
 msgid "Toggle show menu"
 msgstr "Перемикання відображення меню"
+
+#. js-lingui-explicit-id
+msgid "The nearest event:"
+msgstr "Найближча подія:"
+
+#. js-lingui-explicit-id
+msgid "{distance} km"
+msgstr "{distance} км"
+
+#. js-lingui-explicit-id
+msgid "No date"
+msgstr "Без дати"
+
+#. js-lingui-explicit-id
+msgid "Cannot open channel URL"
+msgstr "Не вдалося відкрити URL каналу"
+
+#. js-lingui-explicit-id
+msgid "Failed to load telegram channels"
+msgstr "Не вдалося завантажити telegram канали"
+
+#. js-lingui-explicit-id
+msgid "Help & Resources"
+msgstr "Допомога та ресурси"
+
+#. js-lingui-explicit-id
+msgid "Add Telegram channel"
+msgstr "Додати Telegram канал"
+
+#. js-lingui-explicit-id
+msgid "Search channels..."
+msgstr "Пошук каналів..."
+
+#. js-lingui-explicit-id
+msgid "Active filters:"
+msgstr "Активні фільтри:"
+
+#. js-lingui-explicit-id
+msgid "Category"
+msgstr "Категорія"
+
+#. js-lingui-explicit-id
+msgid "Country"
+msgstr "Країна"
+
+#. js-lingui-explicit-id
+msgid "Verified only"
+msgstr "Тільки перевірені"
+
+#. js-lingui-explicit-id
+msgid "Sort by"
+msgstr "Сортувати за"
+
+#. js-lingui-explicit-id
+msgid "Loading channels..."
+msgstr "Завантаження каналів..."
+
+#. js-lingui-explicit-id
+msgid "Open Channel"
+msgstr "Відкрити канал"
+
+#. js-lingui-explicit-id
+msgid "Report"
+msgstr "Поскаржитися"
+
+#. js-lingui-explicit-id
+msgid "Report Channel"
+msgstr "Поскаржитися на канал"
+
+#. js-lingui-explicit-id
+msgid "Are you sure you want to report this channel?"
+msgstr "Ви впевнені, що хочете поскаржитися на цей канал?"
+
+#. js-lingui-explicit-id
+msgid "AI Verified"
+msgstr "Перевірено AI"
+
+#. js-lingui-explicit-id
+msgid "Telegram Channel"
+msgstr "Telegram канал"
+
+#. js-lingui-explicit-id
+msgid "reports"
+msgstr "скарги"
+
+#. js-lingui-explicit-id
+msgid "By name:"
+msgstr "За назвою:"
+
+#. js-lingui-explicit-id
+msgid "alphabetically"
+msgstr "за алфавітом"
+
+#. js-lingui-explicit-id
+msgid "By category:"
+msgstr "За категорією:"
+
+#. js-lingui-explicit-id
+msgid "grouped by category"
+msgstr "згруповано за категоріями"
+
+#. js-lingui-explicit-id
+msgid "By verification:"
+msgstr "За перевіркою:"
+
+#. js-lingui-explicit-id
+msgid "verified first"
+msgstr "спочатку перевірені"
+
+#. js-lingui-explicit-id
+msgid "Verified Only"
+msgstr "Тільки перевірені"
 
 #. js-lingui-explicit-id
 msgid "Yes"
@@ -86,304 +1052,438 @@ msgid "No"
 msgstr "Ні"
 
 #. js-lingui-explicit-id
-msgid "Select country {nameCountry}"
-msgstr "Виберіть країну {nameCountry}"
+msgid "Clear Filters"
+msgstr "Очистити фільтри"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameRegion}"
-msgstr "Виберіть регіон {nameRegion}"
+msgid "Apply Filters"
+msgstr "Застосувати фільтри"
 
 #. js-lingui-explicit-id
-msgid "Select region {nameCity}"
-msgstr "Виберіть регіон {nameCity}"
+msgid "Add Channel"
+msgstr "Додати канал"
 
 #. js-lingui-explicit-id
-msgid "Select country"
-msgstr "Виберіть країну"
+msgid "Please fill all required fields"
+msgstr "Будь ласка, заповніть усі обов'язкові поля"
 
 #. js-lingui-explicit-id
-msgid "Continue"
-msgstr "Продовжити"
+msgid "Channel submitted for review"
+msgstr "Канал відправлено на перевірку"
 
 #. js-lingui-explicit-id
-msgid "Back"
-msgstr "Назад"
+msgid "Failed to add channel"
+msgstr "Не вдалося додати канал"
 
 #. js-lingui-explicit-id
-msgid "Disable Deep Search"
-msgstr "Вимкнути Глибокий Пошук"
+msgid "Add Telegram Channel"
+msgstr "Додати Telegram канал"
 
 #. js-lingui-explicit-id
-msgid "Enable Deep Search"
-msgstr "Увімкнути Глибокий Пошук"
+msgid "You can add a telegram channel"
+msgstr "Ви можете додати telegram канал"
 
 #. js-lingui-explicit-id
-msgid "Event address"
-msgstr "Адреса події"
+msgid "Enter channel name"
+msgstr "Введіть назву каналу"
 
 #. js-lingui-explicit-id
-msgid "Enter the exact address"
-msgstr "Введіть точну адресу"
+msgid "Channel Name"
+msgstr "Назва каналу"
 
 #. js-lingui-explicit-id
-msgid "Independence Street, 1"
-msgstr "Вулиця Незалежності, 1"
+msgid "https://t.me/channelname or @channelname"
+msgstr "https://t.me/channelname або @channelname"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto {nameTypeWork}"
-msgstr "Виберіть тип роботи авто {nameTypeWork}"
+msgid "Channel URL"
+msgstr "URL каналу"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto {nameTypeWork}"
-msgstr "Виберіть тип роботи мото {nameTypeWork}"
+msgid "Enter channel description"
+msgstr "Введіть опис каналу"
 
 #. js-lingui-explicit-id
-msgid "Select type work moto"
-msgstr "Виберіть тип роботи мото"
+msgid "Description"
+msgstr "Опис"
 
 #. js-lingui-explicit-id
-msgid "Select type work auto"
-msgstr "Виберіть тип роботи авто"
+msgid "Location"
+msgstr "Місцезнаходження"
 
 #. js-lingui-explicit-id
-msgid "Background overlay for closing the modal window"
-msgstr "Фонове наложення для закриття модального вікна"
+msgid "Select location..."
+msgstr "Виберіть місцезнаходження..."
 
 #. js-lingui-explicit-id
-msgid "Attention!"
-msgstr "Увага!"
+msgid "Search country..."
+msgstr "Пошук країни..."
 
 #. js-lingui-explicit-id
-msgid "Unfortunately, it is currently impossible to increase the number of available ads, workshops or events, as the application is in test mode. If you have any questions, please contact the administration or leave feedback."
-msgstr "На жаль, на даний момент неможливо збільшити кількість доступних оголошень, майстерень або подій, оскільки додаток знаходиться в тестовому режимі. Якщо у вас є питання, звертайтеся до адміністрації або залишайте відгук."
+msgid "Search city..."
+msgstr "Пошук міста..."
 
 #. js-lingui-explicit-id
-msgid "-- or --"
-msgstr "-- або --"
+msgid "No results found"
+msgstr "Результати не знайдено"
 
 #. js-lingui-explicit-id
-msgid "Report an error/improvement"
-msgstr "Повідомити про помилку/покращення"
+msgid "Events"
+msgstr "Події"
 
 #. js-lingui-explicit-id
-msgid "Thank you for understanding!"
-msgstr "Дякуємо за розуміння!"
+msgid "Upcoming events:"
+msgstr "Майбутні події:"
 
 #. js-lingui-explicit-id
-msgid "The price of the item"
-msgstr "Ціна товару"
+msgid "Sorry, there are no upcoming events"
+msgstr "Вибачте, але немає майбутніх подій"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle transport"
-msgstr "Мото транспорт"
+msgid "Press show more events"
+msgstr "Натисніть, щоб побачити більше подій"
 
 #. js-lingui-explicit-id
-msgid "Car transport"
-msgstr "Авто транспорт"
+msgid "More events"
+msgstr "Більше подій"
 
 #. js-lingui-explicit-id
-msgid "Motorcycle parts"
-msgstr "Деталі для мотоциклів"
+msgid "Past events:"
+msgstr "Минулі події:"
 
 #. js-lingui-explicit-id
-msgid "Car parts"
-msgstr "Деталі для автомобілів"
+msgid "No events have passed"
+msgstr "Немає минулих подій"
 
 #. js-lingui-explicit-id
-msgid "Gasoline"
-msgstr "Бензин"
+msgid "Now"
+msgstr "Зараз"
 
 #. js-lingui-explicit-id
-msgid "Diesel"
-msgstr "Дизель"
+msgid "Not enabled location"
+msgstr "Не ввімкнено місцезнаходження"
 
 #. js-lingui-explicit-id
-msgid "Gas / Petrol"
-msgstr "Газ / Бензин"
+msgid "Enter the text to search"
+msgstr "Введіть текст для пошуку"
 
 #. js-lingui-explicit-id
-msgid "Electric"
-msgstr "Електрика"
+msgid "By date:"
+msgstr "За датою:"
 
 #. js-lingui-explicit-id
-msgid "Hybrid"
-msgstr "Гібрид"
+msgid "from soonest to latest"
+msgstr "від найближчої до найвіддаленішої"
 
 #. js-lingui-explicit-id
-msgid "Other"
-msgstr "Інше"
+msgid "Price range:"
+msgstr "Ціновий діапазон:"
 
 #. js-lingui-explicit-id
-msgid "Manual"
-msgstr "Механічна"
+msgid "From"
+msgstr "Від"
 
 #. js-lingui-explicit-id
-msgid "Automatic"
-msgstr "Автоматична"
+msgid "To"
+msgstr "До"
 
 #. js-lingui-explicit-id
-msgid "Continuously variable transmission (CVT)"
-msgstr "Безступінчаста трансмісія (CVT)"
+msgid "All locations"
+msgstr "Всі місця"
 
 #. js-lingui-explicit-id
-msgid "Adaptive"
-msgstr "Адаптивна"
+msgid "Select country or city"
+msgstr "Виберіть країну або місто"
 
 #. js-lingui-explicit-id
-msgid "Tiptronic"
-msgstr "Тіптронік"
+msgid "Clear location filter"
+msgstr "Очистити фільтр місцезнаходження"
 
 #. js-lingui-explicit-id
-msgid "Batteries"
-msgstr "Акумулятори"
+msgid "Close"
+msgstr "Закрити"
 
 #. js-lingui-explicit-id
-msgid "Shock absorbers and suspension"
-msgstr "Амортизатори та підвіска"
+msgid "All countries"
+msgstr "Всі країни"
 
 #. js-lingui-explicit-id
-msgid "Variators and reducers"
-msgstr "Варіатори та редуктори"
+msgid "No countries found"
+msgstr "Країни не знайдені"
 
 #. js-lingui-explicit-id
-msgid "Exhaust systems, straight pipes, mufflers"
-msgstr "Вихлопні системи, прямі труби, глушники"
+msgid "All cities"
+msgstr "Всі міста"
 
 #. js-lingui-explicit-id
-msgid "Engine parts"
-msgstr "Деталі двигуна"
+msgid "No cities found"
+msgstr "Міста не знайдено"
 
 #. js-lingui-explicit-id
-msgid "Gearbox"
-msgstr "Коробка передач"
+msgid "Save location filter"
+msgstr "Зберегти фільтр місцезнаходження"
 
 #. js-lingui-explicit-id
-msgid "Footrests and pedals"
-msgstr "Підніжки та педалі"
+msgid "{priceStart}-{priceFinish} grn."
+msgstr "{priceStart}-{priceFinish} грн."
 
 #. js-lingui-explicit-id
-msgid "Lighting and lamps"
-msgstr "Освітлення та лампи"
+msgid "{price} grn."
+msgstr "{price} грн."
 
 #. js-lingui-explicit-id
-msgid "Bearings"
-msgstr "Підшипники"
+msgid "Free"
+msgstr "Безкоштовно"
 
 #. js-lingui-explicit-id
-msgid "Drive and chassis"
-msgstr "Привід та шасі"
+msgid "Phone number not found"
+msgstr "Номер телефону не знайдено"
 
 #. js-lingui-explicit-id
-msgid "Frame, brackets, and swingarms"
-msgstr "Рама, кронштейни та підвіски"
+msgid ""
+"Open the event in the app:\n"
+"{appLink}\n"
+"\n"
+"Open in the browser:\n"
+"{webLink}"
+msgstr ""
+"Відкрити подію в додатку:\n"
+"{appLink}\n"
+"\n"
+"Відкрити в браузері:\n"
+"{webLink}"
 
 #. js-lingui-explicit-id
-msgid "Handlebars and controls"
-msgstr "Кермо та керування"
+msgid "Share event"
+msgstr "Поділитися подією"
 
 #. js-lingui-explicit-id
-msgid "Seat"
-msgstr "Сидіння"
+msgid "Please sign in to continue"
+msgstr "Будь ласка, увійдіть, щоб продовжити"
 
 #. js-lingui-explicit-id
-msgid "Cooling system"
-msgstr "Система охолодження"
+msgid "Event"
+msgstr "Подія"
 
 #. js-lingui-explicit-id
-msgid "Clutch"
-msgstr "Зчеплення"
+msgid "All photos"
+msgstr "Всі фото"
 
 #. js-lingui-explicit-id
-msgid "Fuel system"
-msgstr "Паливна система"
+msgid "Not going"
+msgstr "Не йду"
 
 #. js-lingui-explicit-id
-msgid "Brake system"
-msgstr "Гальмівна система"
+msgid "Going"
+msgstr "Йду"
 
 #. js-lingui-explicit-id
-msgid "Cables and hoses"
-msgstr "Кабелі та шланги"
+msgid "Date of the event"
+msgstr "Дата проведення"
 
 #. js-lingui-explicit-id
-msgid "Filters"
-msgstr "Фільтри"
+msgid "The beginning"
+msgstr "Початок"
 
 #. js-lingui-explicit-id
-msgid "Chains and sprockets"
-msgstr "Ланцюги та зірочки"
+msgid "Finish"
+msgstr "Фініш"
 
 #. js-lingui-explicit-id
-msgid "Electrical system"
-msgstr "Електрична система"
+msgid "Price for participation"
+msgstr "Ціна за участь"
 
 #. js-lingui-explicit-id
-msgid "Other motorcycle parts"
-msgstr "Інші деталі для мотоциклів"
+msgid "About event"
+msgstr "Про подію"
 
 #. js-lingui-explicit-id
-msgid "Engine"
-msgstr "Двигун"
+msgid "Gallery"
+msgstr "Галерея"
 
 #. js-lingui-explicit-id
-msgid "Exhaust system"
-msgstr "Вихлопна система"
+msgid "Timeline"
+msgstr "Хронологія"
 
 #. js-lingui-explicit-id
-msgid "Transmission / Manual and Automatic Transmission"
-msgstr "Трансмісія / Механічна та Автоматична"
+msgid "Add a description about the event"
+msgstr "Додайте опис події"
 
 #. js-lingui-explicit-id
-msgid "Steering system"
-msgstr "Система керування"
+msgid "Event description"
+msgstr "Опис події"
 
 #. js-lingui-explicit-id
-msgid "Suspension / Chassis"
-msgstr "Підвіска / Шасі"
+msgid "event"
+msgstr "подія"
 
 #. js-lingui-explicit-id
-msgid "Body parts"
-msgstr "Деталі кузова"
+msgid "Your event is under review and will appear after verification"
+msgstr "Ваша подія знаходиться на перевірці і з'явиться після підтвердження"
 
 #. js-lingui-explicit-id
-msgid "Interior details"
-msgstr "Деталі інтер'єру"
+msgid "Change event"
+msgstr "Змінити подію"
 
 #. js-lingui-explicit-id
-msgid "Air conditioning, heater, ventilation"
-msgstr "Кондиціонер, обігрівач, вентиляція"
+msgid "Create event"
+msgstr "Створити подію"
 
 #. js-lingui-explicit-id
-msgid "Air intake system"
-msgstr "Система подачі повітря"
+msgid "You can create an event"
+msgstr "Ви можете створити подію"
 
 #. js-lingui-explicit-id
-msgid "Ignition system"
-msgstr "Система запалювання"
+msgid "Enter the name of the event"
+msgstr "Введіть назву події"
 
 #. js-lingui-explicit-id
-msgid "Window and headlight cleaning system"
-msgstr "Система очищення вікон та фар"
+msgid "Name of the event"
+msgstr "Назва події"
 
 #. js-lingui-explicit-id
-msgid "Headlights and lighting"
-msgstr "Фари та освітлення"
+msgid "The place of the event"
+msgstr "Місце події"
 
 #. js-lingui-explicit-id
-msgid "Electrical equipment"
-msgstr "Електрообладнання"
+msgid "Conclusion"
+msgstr "Завершення"
 
 #. js-lingui-explicit-id
-msgid "Automotive glass"
-msgstr "Автомобільне скло"
+msgid "Participation fee"
+msgstr "Вартість участі"
 
 #. js-lingui-explicit-id
-msgid "Liquefied gas system"
-msgstr "Система рідкого газу"
+msgid "100 uah"
+msgstr "100 грн"
 
 #. js-lingui-explicit-id
-msgid "Other types of spare parts"
-msgstr "Інші типи запчастин"
+msgid "200 uah"
+msgstr "200 грн"
+
+#. js-lingui-explicit-id
+msgid "Briefly describe what will happen"
+msgstr "Коротко опишіть, що відбуватиметься"
+
+#. js-lingui-explicit-id
+msgid "Tell us about the event"
+msgstr "Розкажіть про подію"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to each timeline item"
+msgstr "Будь ласка, додайте заголовок до кожного елемента хронології"
+
+#. js-lingui-explicit-id
+msgid "Timeline item start time is outside event dates"
+msgstr "Час початку елемента хронології виходить за межі дат події"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish must be after start"
+msgstr "Завершення елемента хронології має бути після початку"
+
+#. js-lingui-explicit-id
+msgid "Timeline item finish time is outside event dates"
+msgstr "Час завершення елемента хронології виходить за межі дат події"
+
+#. js-lingui-explicit-id
+msgid "Please add a title to the timeline item"
+msgstr "Будь ласка, додайте заголовок до елемента хронології"
+
+#. js-lingui-explicit-id
+msgid "Add item"
+msgstr "Додати елемент"
+
+#. js-lingui-explicit-id
+msgid "No timeline items yet"
+msgstr "Поки що немає елементів хронології"
+
+#. js-lingui-explicit-id
+msgid "Step"
+msgstr "Крок"
+
+#. js-lingui-explicit-id
+msgid "Timeline item"
+msgstr "Елемент хронології"
+
+#. js-lingui-explicit-id
+msgid "Title"
+msgstr "Заголовок"
+
+#. js-lingui-explicit-id
+msgid "Description (optional)"
+msgstr "Опис (необов'язково)"
+
+#. js-lingui-explicit-id
+msgid "Start"
+msgstr "Початок"
+
+#. js-lingui-explicit-id
+msgid "Remove finish time"
+msgstr "Видалити час завершення"
+
+#. js-lingui-explicit-id
+msgid "Add finish time"
+msgstr "Додати час завершення"
+
+#. js-lingui-explicit-id
+msgid "Welcome to our service."
+msgstr "Ласкаво просимо до нашого сервісу."
+
+#. js-lingui-explicit-id
+msgid "Log in using:"
+msgstr "Увійти за допомогою:"
+
+#. js-lingui-explicit-id
+msgid "Continue with {typeSocial}"
+msgstr "Продовжити з {typeSocial}"
+
+#. js-lingui-explicit-id
+msgid "or sign up using:"
+msgstr "або зареєструватися за допомогою:"
+
+#. js-lingui-explicit-id
+msgid "find nearby events, workshops"
+msgstr "знайти поруч події, майстерні"
+
+#. js-lingui-explicit-id
+msgid "get help in case of an emergency"
+msgstr "отримати допомогу у разі надзвичайної ситуації"
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
+msgstr "Додаток {nameApp} збирає дані про місцезнаходження, щоб дозволити {firstEvent}, навіть коли додаток закрито або не використовується."
+
+#. js-lingui-explicit-id
+msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
+msgstr "Додаток {nameApp} збирає дані про місцезнаходження, щоб дозволити {secondEvent}, навіть коли додаток закрито або не використовується."
+
+#. js-lingui-explicit-id
+msgid "Accept"
+msgstr "Прийняти"
+
+#. js-lingui-explicit-id
+msgid "Welcome"
+msgstr "Ласкаво просимо"
+
+#. js-lingui-explicit-id
+msgid "Main"
+msgstr "Головна"
+
+#. js-lingui-explicit-id
+msgid "Create workshop"
+msgstr "Створити майстерню"
+
+#. js-lingui-explicit-id
+msgid "Map"
+msgstr "Карта"
+
+#. js-lingui-explicit-id
+msgid "Select tab {tabName}"
+msgstr "Виберіть вкладку {tabName}"
+
+#. js-lingui-explicit-id
+msgid "Help"
+msgstr "Допомога"
 
 #. js-lingui-explicit-id
 msgid "Name of the {otherName}"
@@ -514,1336 +1614,177 @@ msgid "Telegram {otherName}"
 msgstr "Телеграм {otherName}"
 
 #. js-lingui-explicit-id
-msgid "advert"
-msgstr "оголошення"
+msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
+msgstr "Введено неправильний номер телефону або неправильно вибрано код країни телефону"
 
 #. js-lingui-explicit-id
-msgid "Select tab {tabName}"
-msgstr "Виберіть вкладку {tabName}"
+msgid "Password must contain at least 8 characters"
+msgstr "Пароль повинен містити щонайменше 8 символів"
 
 #. js-lingui-explicit-id
-msgid "Create event"
-msgstr "Створити подію"
+msgid "Passwords do not match"
+msgstr "Паролі не співпадають"
 
 #. js-lingui-explicit-id
-msgid "Change event"
-msgstr "Змінити подію"
+msgid "Select"
+msgstr "Обрати"
 
 #. js-lingui-explicit-id
-msgid "Create workshop"
-msgstr "Створити майстерню"
+msgid "The price of the item"
+msgstr "Ціна товару"
 
 #. js-lingui-explicit-id
-msgid "Change workshop"
-msgstr "Змінити майстерню"
+msgid "Types of work for motorcycle transport:"
+msgstr "Види робіт для мотоциклетного транспорту:"
 
 #. js-lingui-explicit-id
-msgid "Create advert"
-msgstr "Створити оголошення"
+msgid "Select type work moto {nameTypeWork}"
+msgstr "Виберіть тип роботи мото {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Change advert"
-msgstr "Змінити оголошення"
+msgid "Types of work for automobile transport:"
+msgstr "Види робіт для автомобільного транспорту:"
 
 #. js-lingui-explicit-id
-msgid "Please authenticator"
-msgstr "Будь ласка, аутентифікатор"
+msgid "Select type work auto {nameTypeWork}"
+msgstr "Виберіть тип роботи авто {nameTypeWork}"
 
 #. js-lingui-explicit-id
-msgid "Event delete"
-msgstr "Видалити подію"
+msgid "Select type work moto"
+msgstr "Виберіть тип роботи мото"
 
 #. js-lingui-explicit-id
-msgid "Success"
-msgstr "Успішно"
+msgid "Select type work auto"
+msgstr "Виберіть тип роботи авто"
 
 #. js-lingui-explicit-id
-msgid "Advert delete"
-msgstr "Оголошення видалено"
+msgid "Event address"
+msgstr "Адреса події"
 
 #. js-lingui-explicit-id
-msgid "Cancel"
-msgstr "Скасувати"
+msgid "Enter the exact address"
+msgstr "Введіть точну адресу"
 
 #. js-lingui-explicit-id
-msgid "Accept"
-msgstr "Прийняти"
+msgid "Independence Street, 1"
+msgstr "Вулиця Незалежності, 1"
 
 #. js-lingui-explicit-id
-msgid "find nearby events, workshops"
-msgstr "знайти поруч події, майстерні"
+msgid "Select a location on the map"
+msgstr "Виберіть місце на карті"
 
 #. js-lingui-explicit-id
-msgid "for the \"SOS\" function so that other app users can assist you"
-msgstr "для функції \"SOS\", щоб інші користувачі додатка могли вам допомогти"
+msgid "Move and change the location"
+msgstr "Перемістіть і змініть місце розташування"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {firstEvent} even when the app is closed or not in use."
-msgstr "Додаток {nameApp} збирає дані про місцезнаходження, щоб дозволити {firstEvent}, навіть коли додаток закрито або не використовується."
+msgid "Specify the city"
+msgstr "Вкажіть місто"
 
 #. js-lingui-explicit-id
-msgid "App {nameApp} collects location data to enable {secondEvent} even when the app is closed or not in use."
-msgstr "Додаток {nameApp} збирає дані про місцезнаходження, щоб дозволити {secondEvent}, навіть коли додаток закрито або не використовується."
-
-#. js-lingui-explicit-id
-msgid "Sorry, an error occurred"
-msgstr "Вибачте, сталася помилка"
-
-#. js-lingui-explicit-id
-msgid "The photo has been changed"
-msgstr "Фото змінено"
-
-#. js-lingui-explicit-id
-msgid "The photo has not been changed"
-msgstr "Фото не змінено"
-
-#. js-lingui-explicit-id
-msgid "Delete"
-msgstr "Видалити"
-
-#. js-lingui-explicit-id
-msgid "Change"
-msgstr "Змінити"
-
-#. js-lingui-explicit-id
-msgid "Access denied"
-msgstr "Доступ заборонено"
-
-#. js-lingui-explicit-id
-msgid "Maintenance"
-msgstr "Технічне обслуговування"
-
-#. js-lingui-explicit-id
-msgid "Oil change / Filter replacement / Timing belt replacement / Spark plug replacement / Transmission oil change / Brake service / Replacement of all necessary fluids / Etc."
-msgstr "Заміна масла / Заміна фільтра / Заміна ременя ГРМ / Заміна свічок запалювання / Заміна трансмісійної оли / Обслуговування гальм / Заміна всіх необхідних рідин / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Diagnostics"
-msgstr "Діагностика"
-
-#. js-lingui-explicit-id
-msgid "Pre-purchase comprehensive diagnostics / Chassis diagnostics / Engine diagnostics / Transmission diagnostics / Body diagnostics / Computer diagnostics / Fluid diagnostics / Etc."
-msgstr "Комплексна діагностика перед покупкою / Діагностика шасі / Діагностика двигуна / Діагностика трансмісії / Діагностика кузова / Комп'ютерна діагностика / Діагностика рідин / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Auto Electrical"
-msgstr "Автоелектрика"
-
-#. js-lingui-explicit-id
-msgid "Wiring repair / Chip tuning / Installation of any complexity alarm / Odometer correction / Key reprogramming / Engine and transmission adaptation / EGR removal / DPF removal / Xenon installation / Parking sensors installation / Etc."
-msgstr "Ремонт електропроводки / Чіп-тюнінг / Встановлення будь-якої складності сигналізації / Корекція одометра / Перепрограмування ключів / Адаптація двигуна та трансмісії / Видалення EGR / Видалення DPF / Встановлення ксенону / Встановлення парктроніків / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Chassis Repair"
-msgstr "Ремонт шасі"
-
-#. js-lingui-explicit-id
-msgid "Shock absorber strut replacement / Spring replacement / Control arm replacement / Beam replacement / Silent block pressing / Leaf spring replacement / Hub replacement / Saw blade replacement / Axle replacement / Ball joint replacement / Engine and transmission mount replacement / Mechanical work"
-msgstr "Заміна амортизатора / Заміна пружини / Заміна рульової тяги / Заміна балки / Пресування тихохідного блока / Заміна ресори / Заміна втулки / Заміна пильного диска / Заміна вала / Заміна шарового наконечника / Заміна підвіски двигуна та коробки передач / Механічна робота"
-
-#. js-lingui-explicit-id
-msgid "Engine, Automatic, and Manual Transmission"
-msgstr "Двигун, автоматична та механічна коробка передач"
-
-#. js-lingui-explicit-id
-msgid "Engine diagnostics / Engine repair / Engine replacement / Engine oil pan replacement / Automatic transmission diagnostics / Automatic transmission oil change / Automatic transmission replacement / Automatic transmission cleaning-flushing / Clutch replacement / Manual transmission diagnostics / Manual transmission oil change / Manual transmission replacement / Manual transmission cleaning-flushing / Etc."
-msgstr "Діагностика двигуна / Ремонт двигуна / Заміна двигуна / Заміна масляної піддону двигуна / Діагностика автоматичної трансмісії / Заміна масла в автоматичній трансмісії / Заміна автоматичної трансмісії / Чищення-промивання автоматичної трансмісії / Заміна зчеплення / Діагностика механічної трансмісії / Заміна масла в механічній трансмісії / Заміна механічної трансмісії / Чищення-промивання механічної трансмісії / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Brakes and Steering System"
-msgstr "Гальма та система керування"
-
-#. js-lingui-explicit-id
-msgid "Brake system diagnostics / Brake fluid replacement / Brake system repair / Brake bleeding / Steering rack replacement / Steering rack restoration / Power steering replacement / Power steering fluid replacement / Etc."
-msgstr "Діагностика гальмівної системи / Заміна гальмівної рідини / Ремонт гальмівної системи / Прокачування гальмівної системи / Заміна рейки кермового управління / Відновлення рейки кермового управління / Заміна гідропідсилювача керма / Заміна рідини в гідропідсилювачі керма / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Accessory Equipment"
-msgstr "Додаткове обладнання"
-
-#. js-lingui-explicit-id
-msgid "Starter repair / Starter replacement / Generator repair / Generator replacement / Turbocharger restoration / Turbocharger replacement / Etc."
-msgstr "Ремонт стартера / Заміна стартера / Ремонт генератора / Заміна генератора / Відновлення турбонаддува / Заміна турбонаддува / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Air Conditioning Systems"
-msgstr "Системи кондиціонування повітря"
-
-#. js-lingui-explicit-id
-msgid "Diagnostics / Charging / Recharging / Leak detection / Pipe replacement / Radiator replacement / Compressor repair / Compressor replacement / System disinfection / Elimination of foreign odors"
-msgstr "Діагностика / Зарядка / Перезарядка / Виявлення витоків / Заміна трубок / Заміна радіатора / Ремонт компресора / Заміна компресора / Дезінфекція системи / Позбавлення від чужого запаху"
-
-#. js-lingui-explicit-id
-msgid "Wheel Alignment"
-msgstr "Вирівнювання коліс"
-
-#. js-lingui-explicit-id
-msgid "Wheel alignment / Alignment diagnostics / Suspension defect search / Body defect search"
-msgstr "Вирівнювання коліс / Діагностика вирівнювання / Пошук дефектів підвіски / Пошук дефектів кузова"
-
-#. js-lingui-explicit-id
-msgid "Painting"
-msgstr "Фарбування"
-
-#. js-lingui-explicit-id
-msgid "Body painting / Bumper painting / Fender painting / Door painting / Hood painting / Roof painting / Trunk painting / Wing painting / Spoiler painting / Mirror painting / Etc."
-msgstr "Фарбування кузова / Фарбування бампера / Фарбування крила / Фарбування дверей / Фарбування капота / Фарбування даху / Фарбування багажника / Фарбування крила / Фарбування спойлера / Фарбування дзеркала / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing"
-msgstr "Аерографія"
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the motorcycle / Custom airbrushing designs for tanks, fenders, and fairings"
-msgstr "Аерографія будь-якої складності / Аерографія будь-якої складності на будь-якій поверхні / Аерографія будь-якої складності на будь-якій частині мотоцикла / Індивідуальні дизайни аерографії для баків, крил та обтекачів"
-
-#. js-lingui-explicit-id
-msgid "Technical maintenance"
-msgstr "Технічне обслуговування"
-
-#. js-lingui-explicit-id
-msgid "Cable lubrication / Carburetor synchronization / Air filter replacement / Spark plug replacement / Transmission oil change / Differential oil change / Coolant replacement / Engine oil change"
-msgstr "Змащення кабелів / Синхронізація карбюратора / Заміна повітряного фільтра / Заміна свічок запалювання / Заміна трансмісійної оли / Заміна масла в диференціалі / Заміна охолоджувальної рідини / Заміна масла в двигуні"
-
-#. js-lingui-explicit-id
-msgid "General works"
-msgstr "Загальні роботи"
-
-#. js-lingui-explicit-id
-msgid "General diagnostics / Compression measurement / Technical fluid level check / Clutch cable replacement / Throttle cable replacement / Fuel tank cleaning and flushing / Fuel tank removal and installation / Plastic removal and installation / Safety arch, slider installation"
-msgstr "Загальна діагностика / Вимірювання компресії / Перевірка рівня технічної рідини / Заміна зчіпного кабелю / Заміна дросельного кабелю / Прибирання та змивання бензобака / Видалення та встановлення бензобака / Видалення та встановлення пластмас / Встановлення захисного аркуша, слайдера"
-
-#. js-lingui-explicit-id
-msgid "Chassis"
-msgstr "Шасі"
-
-#. js-lingui-explicit-id
-msgid "Front wheel removal and installation / Rear wheel removal and installation / Wheel bearing replacement / Steering column bearing adjustment / Steering column bearing replacement / Front fork removal and installation / Front fork seal replacement / Front fork oil change / Rear swingarm bearing replacement / Rear shock absorber replacement / Monoshock absorber replacement / Rear shock absorber repair"
-msgstr "Видалення та встановлення переднього колеса / Видалення та встановлення заднього колеса / Заміна підшипника колеса / Регулювання підшипника керма / Заміна підшипника керма / Видалення та встановлення передньої вилки / Заміна сальника передньої вилки / Заміна масла передньої вилки / Заміна підшипника задньої підвіски / Заміна амортизатора задньої підвіски / Заміна моноамортизатора / Ремонт заднього амортизатора"
-
-#. js-lingui-explicit-id
-msgid "Drive chain"
-msgstr "Привід ланцюга"
-
-#. js-lingui-explicit-id
-msgid "Drive chain and sprocket replacement / Chain cleaning, lubrication, and adjustment / Chain adjustment, tensioning, and lubrication"
-msgstr "Заміна приводу ланцюга та зірок / Чищення, змащування та налаштування ланцюга / Регулювання, натяг та змащування ланцюга"
-
-#. js-lingui-explicit-id
-msgid "Removal and installation / Valve adjustment / Clutch replacement / Cylinder head repair / Timing chain replacement / Piston group repair / Gearbox repair / Engine overhaul"
-msgstr "Видалення та встановлення / Регулювання клапанів / Заміна зчеплення / Ремонт головки блока циліндрів / Заміна ланцюга ГРМ / Ремонт поршневої групи / Ремонт коробки передач / Капітальний ремонт двигуна"
-
-#. js-lingui-explicit-id
-msgid "Electrics"
-msgstr "Електрика"
-
-#. js-lingui-explicit-id
-msgid "Regulator relay replacement / Alternator replacement / Starter replacement / Starter repair / Bulb replacement / Xenon installation / Battery replacement / Battery charging"
-msgstr "Заміна реле регулятора / Заміна генератора / Заміна стартера / Ремонт стартера / Заміна лампочки / Установка ксенону / Заміна акумулятора / Зарядка акумулятора"
-
-#. js-lingui-explicit-id
-msgid "Disk brake pad replacement / Drum brake pad replacement / Brake bleeding / Brake fluid replacement / Combined brake fluid replacement / Brake hose replacement / Reinforced hose installation / Brake disk replacement / Brake caliper repair"
-msgstr "Заміна гальмівних колодок дискового гальма / Заміна гальмівних колодок барабанного гальма / Прокачка гальм / Заміна гальмівної рідини / Заміна комбінованої гальмівної рідини / Заміна гальмівного шланга / Установка посиленого шланга / Заміна гальмівного диска / Ремонт гальмівного гальмівника"
-
-#. js-lingui-explicit-id
-msgid "Plastic repair"
-msgstr "Ремонт пластику"
-
-#. js-lingui-explicit-id
-msgid "Welding/restoration of fragments/restoration of fasteners"
-msgstr "Зварювання / відновлення фрагментів / відновлення кріплення"
-
-#. js-lingui-explicit-id
-msgid "Welding works"
-msgstr "Зварювальні роботи"
-
-#. js-lingui-explicit-id
-msgid "Electric arc welding / Semi-automatic welding / Argon arc welding"
-msgstr "Дугове зварювання / Півавтоматичне зварювання / Аргонове зварювання"
-
-#. js-lingui-explicit-id
-msgid "Tuning and customization"
-msgstr "Тюнінг та кастомізація"
-
-#. js-lingui-explicit-id
-msgid "Protective arch installation / Slider installation / Exhaust system installation / Brake system installation / Reinforced hose installation / Xenon installation / Motorcycle lighting installation / Fog light installation (FL)"
-msgstr "Установка захисного аркуша / Установка слайдера / Установка вихлопної системи / Установка гальмівної системи / Установка посиленого шланга / Установка ксенону / Установка освітлення мотоцикла / Установка протитуманних фар (FL)"
-
-#. js-lingui-explicit-id
-msgid "Tank painting / Side panel painting / Fender painting / Fairing painting / Headlight cover painting / Tail section painting / Seat cover painting / Exhaust cover painting / Front fork painting / Etc."
-msgstr "Фарбування бака / Фарбування бокової панелі / Фарбування крила / Фарбування обтекача / Фарбування кришки фари / Фарбування задньої частини / Фарбування сидіння / Фарбування кришки вихлопу / Фарбування передньої вилки / Та інше."
-
-#. js-lingui-explicit-id
-msgid "Airbrushing of any complexity / Airbrushing of any complexity on any surface / Airbrushing of any complexity on any part of the car"
-msgstr "Аерографія будь-якої складності / Аерографія будь-якої складності на будь-якій поверхні / Аерографія будь-якої складності на будь-якій частині автомобіля"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings sos"
-msgstr "Кнопка для закриття меню налаштувань SOS"
-
-#. js-lingui-explicit-id
-msgid "Radius, km:"
-msgstr "Радіус, км:"
-
-#. js-lingui-explicit-id
-msgid "Toggle notification of SOS signal"
-msgstr "Перемикач сповіщення про сигнал SOS"
-
-#. js-lingui-explicit-id
-msgid "Toggle automatically detect location"
-msgstr "Перемикач автоматичного визначення місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "@fgt_com"
-msgstr "@fgt_com"
-
-#. js-lingui-explicit-id
-msgid "Your telegram"
-msgstr "Ваш телеграм"
-
-#. js-lingui-explicit-id
-msgid "Phone number"
-msgstr "Номер телефону"
-
-#. js-lingui-explicit-id
-msgid "Add a description"
-msgstr "Додати опис"
-
-#. js-lingui-explicit-id
-msgid "Description"
-msgstr "Опис"
-
-#. js-lingui-explicit-id
-msgid "On SOS"
-msgstr "Вкоючити SOS"
-
-#. js-lingui-explicit-id
-msgid "Check permissions"
-msgstr "Перевірити дозволи"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the menu settings screen"
-msgstr "Кнопка для закриття екрану налаштувань меню"
-
-#. js-lingui-explicit-id
-msgid "SOS signal notification"
-msgstr "Сповіщення сигналу SOS"
-
-#. js-lingui-explicit-id
-msgid "Share the app"
-msgstr "Поділитись додатком"
-
-#. js-lingui-explicit-id
-msgid "About the service"
-msgstr "Про сервіс"
-
-#. js-lingui-explicit-id
-msgid "Terms of use"
-msgstr "Умови користування"
-
-#. js-lingui-explicit-id
-msgid "Privacy policy"
-msgstr "Політика конфіденційності"
-
-#. js-lingui-explicit-id
-msgid "Delete profile"
-msgstr "Видалити профіль"
-
-#. js-lingui-explicit-id
-msgid "With the deletion of the profile, all your information will be deleted"
-msgstr "При видаленні профілю буде видалена вся ваша інформація"
-
-#. js-lingui-explicit-id
-msgid "Brand/Make"
-msgstr "Бренд/Виробник"
-
-#. js-lingui-explicit-id
-msgid "Mileage, km:"
-msgstr "Пробіг, км:"
-
-#. js-lingui-explicit-id
-msgid "Year of release:"
-msgstr "Рік випуску:"
-
-#. js-lingui-explicit-id
-msgid "Cleared:"
-msgstr "Розмитнено:"
-
-#. js-lingui-explicit-id
-msgid "Type fuel"
-msgstr "Тип палива"
-
-#. js-lingui-explicit-id
-msgid "Transmission gearbox"
-msgstr "Коробка передач"
-
-#. js-lingui-explicit-id
-msgid "Category"
-msgstr "Категорія"
-
-#. js-lingui-explicit-id
-msgid "Motorcycle brand"
-msgstr "Марка мотоцикла"
-
-#. js-lingui-explicit-id
-msgid "Car's make"
-msgstr "Марка автомобіля"
-
-#. js-lingui-explicit-id
-msgid "Type of fuel"
-msgstr "Тип палива"
-
-#. js-lingui-explicit-id
-msgid "Type of transmission"
-msgstr "Тип коробки передач"
-
-#. js-lingui-explicit-id
-msgid "Advert change successfully"
-msgstr "Оголошення успішно змінено"
-
-#. js-lingui-explicit-id
-msgid "Advert created successfully"
-msgstr "Оголошення успішно створено"
-
-#. js-lingui-explicit-id
-msgid "Error changing advert"
-msgstr "Помилка зміни оголошення"
-
-#. js-lingui-explicit-id
-msgid "Error creating advert"
-msgstr "Помилка створення оголошення"
-
-#. js-lingui-explicit-id
-msgid "Error"
-msgstr "Помилка"
-
-#. js-lingui-explicit-id
-msgid "Add advert"
-msgstr "Додати оголошення"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the advert"
-msgstr "Введіть назву оголошення"
-
-#. js-lingui-explicit-id
-msgid "Advert name"
-msgstr "Назва оголошення"
-
-#. js-lingui-explicit-id
-msgid "New"
-msgstr "Новий"
-
-#. js-lingui-explicit-id
-msgid "Used"
-msgstr "Вживаний"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods"
-msgstr "Стан товару"
-
-#. js-lingui-explicit-id
-msgid "Private individual"
-msgstr "Приватна особа"
-
-#. js-lingui-explicit-id
-msgid "Business"
-msgstr "Бізнес"
-
-#. js-lingui-explicit-id
-msgid "Seller"
-msgstr "Продавець"
-
-#. js-lingui-explicit-id
-msgid "Location"
-msgstr "Місцезнаходження"
-
-#. js-lingui-explicit-id
-msgid "Choose a city"
-msgstr "Виберіть місто"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the advert"
-msgstr "Додайте опис про оголошення"
-
-#. js-lingui-explicit-id
-msgid "Advert description"
-msgstr "Опис оголошення"
-
-#. js-lingui-explicit-id
-msgid "Publish"
-msgstr "Опублікувати"
-
-#. js-lingui-explicit-id
-msgid "Brand"
-msgstr "Бренд"
-
-#. js-lingui-explicit-id
-msgid "Condition"
-msgstr "Стан"
-
-#. js-lingui-explicit-id
-msgid "Mileage"
-msgstr "Пробіг"
-
-#. js-lingui-explicit-id
-msgid "{mileage} km"
-msgstr "{mileage} км"
-
-#. js-lingui-explicit-id
-msgid "Year of manufacture"
-msgstr "Рік виробництва"
-
-#. js-lingui-explicit-id
-msgid "{yearRelease} km"
-msgstr "{yearRelease} км"
-
-#. js-lingui-explicit-id
-msgid "Customs cleared"
-msgstr "Мито сплачено"
-
-#. js-lingui-explicit-id
-msgid "Fuel type"
-msgstr "Тип палива"
-
-#. js-lingui-explicit-id
-msgid "Transmission"
-msgstr "Коробка передач"
-
-#. js-lingui-explicit-id
-msgid "Type parts"
-msgstr "Тип деталів"
-
-#. js-lingui-explicit-id
-msgid "Filter"
-msgstr "Фільтр"
-
-#. js-lingui-explicit-id
-msgid "The state of the goods:"
-msgstr "Стан товару:"
-
-#. js-lingui-explicit-id
-msgid "Seller:"
-msgstr "Продавець:"
-
-#. js-lingui-explicit-id
-msgid "Price, {symbol}:"
-msgstr "Ціна, {symbol}:"
-
-#. js-lingui-explicit-id
-msgid "Make of car"
-msgstr "Марка автомобіля"
-
-#. js-lingui-explicit-id
-msgid "brand of motorcycle"
-msgstr "марка мотоцикла"
-
-#. js-lingui-explicit-id
-msgid "Brand of motorcycle"
-msgstr "Марка мотоцикла"
-
-#. js-lingui-explicit-id
-msgid "Filtering"
-msgstr "Фільтрація"
-
-#. js-lingui-explicit-id
-msgid "grn"
-msgstr "грн"
-
-#. js-lingui-explicit-id
-msgid "Toggle like product"
-msgstr "Перемикання подобається продукт"
-
-#. js-lingui-explicit-id
-msgid "Market"
-msgstr "Ринок"
-
-#. js-lingui-explicit-id
-msgid "Enter the name"
-msgstr "Введіть назву"
-
-#. js-lingui-explicit-id
-msgid "Add product"
-msgstr "Додати продукт"
-
-#. js-lingui-explicit-id
-msgid "Confirm"
-msgstr "Опублікувати"
-
-#. js-lingui-explicit-id
-msgid "event"
-msgstr "подія"
-
-#. js-lingui-explicit-id
-msgid "You can create an event"
-msgstr "Ви можете створити подію"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the event"
-msgstr "Введіть назву події"
-
-#. js-lingui-explicit-id
-msgid "Name of the event"
-msgstr "Назва події"
-
-#. js-lingui-explicit-id
-msgid "Enter the address"
-msgstr "Введіть адресу"
-
-#. js-lingui-explicit-id
-msgid "The place of the event"
-msgstr "Місце події"
-
-#. js-lingui-explicit-id
-msgid "Date of the event"
-msgstr "Дата проведення"
-
-#. js-lingui-explicit-id
-msgid "The beginning"
-msgstr "Початок"
-
-#. js-lingui-explicit-id
-msgid "Conclusion"
-msgstr "Завершення"
-
-#. js-lingui-explicit-id
-msgid "100 uah"
-msgstr "100 грн"
-
-#. js-lingui-explicit-id
-msgid "200 uah"
-msgstr "200 грн"
-
-#. js-lingui-explicit-id
-msgid "Briefly describe what will happen"
-msgstr "Коротко опишіть, що відбуватиметься"
-
-#. js-lingui-explicit-id
-msgid "Tell us about the event"
-msgstr "Розкажіть про подію"
-
-#. js-lingui-explicit-id
-msgid "{priceStart}-{priceFinish} grn."
-msgstr "{priceStart}-{priceFinish} грн."
-
-#. js-lingui-explicit-id
-msgid "{price} grn."
-msgstr "{price} грн."
-
-#. js-lingui-explicit-id
-msgid "Free"
-msgstr "Безкоштовно"
-
-#. js-lingui-explicit-id
-msgid "Event"
-msgstr "Подія"
-
-#. js-lingui-explicit-id
-msgid "Finish"
-msgstr "Фініш"
-
-#. js-lingui-explicit-id
-msgid "Price for participation"
-msgstr "Ціна за участь"
-
-#. js-lingui-explicit-id
-msgid "About event"
-msgstr "Про подію"
-
-#. js-lingui-explicit-id
-msgid "Gallery"
-msgstr "Галерея"
-
-#. js-lingui-explicit-id
-msgid "All photos"
-msgstr "Всі фото"
-
-#. js-lingui-explicit-id
-msgid "Enter the text to search"
+msgid "Enter text to search"
 msgstr "Введіть текст для пошуку"
 
 #. js-lingui-explicit-id
-msgid "Events"
-msgstr "Події"
+msgid "Please enter text for searching"
+msgstr "Будь ласка, введіть текст для пошуку"
 
 #. js-lingui-explicit-id
-msgid "Press show more events"
-msgstr "Натисніть, щоб побачити більше подій"
+msgid "If there is no suitable option in the list, use 'Deep Search'"
+msgstr "Якщо в списку немає підходящого варіанту, скористайтеся 'Глибоким пошуком'"
 
 #. js-lingui-explicit-id
-msgid "Add event"
-msgstr "Додати подію"
+msgid "Disable Deep Search"
+msgstr "Вимкнути Глибокий Пошук"
 
 #. js-lingui-explicit-id
-msgid "Button for closing the registration FaceID"
-msgstr "Кнопка для закриття реєстрації FaceID"
+msgid "Enable Deep Search"
+msgstr "Увімкнути Глибокий Пошук"
 
 #. js-lingui-explicit-id
-msgid "Invalid phone number"
-msgstr "Невірний номер телефону"
+msgid "Select country {nameCountry}"
+msgstr "Виберіть країну {nameCountry}"
 
 #. js-lingui-explicit-id
-msgid "The length of the name should be between 2 and 20 characters"
-msgstr "Довжина імені повинна бути від 2 до 20 символів"
+msgid "Select region {nameRegion}"
+msgstr "Виберіть регіон {nameRegion}"
 
 #. js-lingui-explicit-id
-msgid "Registration"
-msgstr "Реєстрація"
+msgid "Select region {nameCity}"
+msgstr "Виберіть регіон {nameCity}"
 
 #. js-lingui-explicit-id
-msgid "Name"
-msgstr "Ім'я"
+msgid "Select country"
+msgstr "Виберіть країну"
 
 #. js-lingui-explicit-id
-msgid "Enter your name"
-msgstr "Введіть своє ім'я"
+msgid "Select contact type"
+msgstr "Виберіть тип контакту"
 
 #. js-lingui-explicit-id
-msgid "Save"
-msgstr "Зберегти"
+msgid "Report on event"
+msgstr "Поскаржитися на подію"
 
 #. js-lingui-explicit-id
-msgid "Fill out later"
-msgstr "Заповнити пізніше"
+msgid "Report on workshop"
+msgstr "Поскаржитися на майстерню"
 
 #. js-lingui-explicit-id
-msgid "Toggle on your location"
-msgstr "Перемикач вашого місцезнаходження"
+msgid "Report on telegram channel"
+msgstr "Поскаржитися на telegram канал"
 
 #. js-lingui-explicit-id
-msgid "Toggle on your location in the background"
-msgstr "Увімкніть своє місце знаходження в фоновому режимі"
+msgid "Contact us via:"
+msgstr "Зв'яжіться з нами через:"
 
 #. js-lingui-explicit-id
-msgid "Select the city"
-msgstr "Оберіть місто:"
+msgid "Are you sure you want to delete?"
+msgstr "Ви впевнені, що хочете видалити?"
 
 #. js-lingui-explicit-id
-msgid "Privacy Policy"
-msgstr "Політика конфіденційності"
+msgid "Decrease the maximum number"
+msgstr "Зменшити максимальну кількість"
 
 #. js-lingui-explicit-id
-msgid "Terms of Use"
-msgstr "Умови використання"
+msgid "Increase the maximum number"
+msgstr "Збільшити максимальну кількість"
 
 #. js-lingui-explicit-id
-msgid "Button for closing the registration TouchID"
-msgstr "Кнопка для закриття реєстрації TouchID"
+msgid "Resend the code"
+msgstr "Відправити код повторно"
 
 #. js-lingui-explicit-id
-msgid "business"
-msgstr "бізнес"
+msgid "Photo {numberPhoto}"
+msgstr "Фото {numberPhoto}"
 
 #. js-lingui-explicit-id
-msgid "Business profile"
-msgstr "Профіль бізнесу"
+msgid "Main photo"
+msgstr "Головне фото"
 
 #. js-lingui-explicit-id
-msgid "Name company"
-msgstr "Назва компанії"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of your business"
-msgstr "Введіть назву свого бізнесу"
-
-#. js-lingui-explicit-id
-msgid "City"
-msgstr "Місто"
-
-#. js-lingui-explicit-id
-msgid "Additional number {numberOtherPhone}"
-msgstr "Додатковий номер {numberOtherPhone}"
-
-#. js-lingui-explicit-id
-msgid "events"
-msgstr "події"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings events screen"
-msgstr "Кнопка для закриття екрану налаштувань подій"
-
-#. js-lingui-explicit-id
-msgid "Buy event"
-msgstr "Купити подію"
-
-#. js-lingui-explicit-id
-msgid "Improve"
-msgstr "Покращити"
-
-#. js-lingui-explicit-id
-msgid "Available ads: {ads}"
-msgstr "Доступні оголошення: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Published ads: {ads}"
-msgstr "Опубліковані оголошення: {ads}"
-
-#. js-lingui-explicit-id
-msgid "Review"
-msgstr "Огляд"
-
-#. js-lingui-explicit-id
-msgid "Attention! All data related to the \"{nameBusiness}\" business will be deleted."
-msgstr "Увага! Всі дані, пов'язані з бізнесом \"{nameBusiness}\", будуть видалені."
-
-#. js-lingui-explicit-id
-msgid "Add"
-msgstr "Додати"
-
-#. js-lingui-explicit-id
-msgid "Buy additionally"
-msgstr "Купити додатково"
-
-#. js-lingui-explicit-id
-msgid "Expended: {amountUsed}"
-msgstr "Витрачено: {amountUsed}"
-
-#. js-lingui-explicit-id
-msgid "Available: {amountAvailable}"
-msgstr "Доступно: {amountAvailable}"
-
-#. js-lingui-explicit-id
-msgid "Active"
-msgstr "Активний"
-
-#. js-lingui-explicit-id
-msgid "Your adverts"
-msgstr "Ваші оголошення"
-
-#. js-lingui-explicit-id
-msgid "Your workshops"
-msgstr "Ваші майстерні"
-
-#. js-lingui-explicit-id
-msgid "Your events"
-msgstr "Ваші події"
-
-#. js-lingui-explicit-id
-msgid "Setting profile"
-msgstr "Корегувати профіль"
-
-#. js-lingui-explicit-id
-msgid "adverts"
-msgstr "оголошення"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings products screen"
-msgstr "Кнопка для закриття екрану налаштувань продуктів"
-
-#. js-lingui-explicit-id
-msgid "Buy advert"
-msgstr "Купити оголошення"
-
-#. js-lingui-explicit-id
-msgid "Error: incorrect phone number"
-msgstr "Помилка: невірний номер телефону"
-
-#. js-lingui-explicit-id
-msgid "Error: First name must be between 3 and 15 characters"
-msgstr "Помилка: Ім'я повинно бути від 3 до 15 символів"
-
-#. js-lingui-explicit-id
-msgid "Error: select the city"
-msgstr "Помилка: виберіть місто"
-
-#. js-lingui-explicit-id
-msgid "The photo added"
-msgstr "Додано фото"
-
-#. js-lingui-explicit-id
-msgid "Profile saved"
-msgstr "Профіль збережено"
-
-#. js-lingui-explicit-id
-msgid "Error: save profile"
-msgstr "Помилка: збереження профілю"
-
-#. js-lingui-explicit-id
-msgid "First Name"
-msgstr "Ім'я"
-
-#. js-lingui-explicit-id
-msgid "Last Name"
-msgstr "Прізвище"
-
-#. js-lingui-explicit-id
-msgid "workshops"
-msgstr "майстерні"
-
-#. js-lingui-explicit-id
-msgid "Button for closing the settings workshops screen"
-msgstr "Кнопка для закриття екрану налаштувань майстерень"
-
-#. js-lingui-explicit-id
-msgid "Add workshop"
-msgstr "Додати майстерню"
-
-#. js-lingui-explicit-id
-msgid "Buy workshop"
-msgstr "Купити майстерню"
-
-#. js-lingui-explicit-id
-msgid "Welcome to our service."
-msgstr "Ласкаво просимо до нашого сервісу."
-
-#. js-lingui-explicit-id
-msgid "Log in using:"
-msgstr "Увійти за допомогою:"
-
-#. js-lingui-explicit-id
-msgid "Not information"
-msgstr "Інформація відсутня"
-
-#. js-lingui-explicit-id
-msgid "Moto"
-msgstr "Мото"
-
-#. js-lingui-explicit-id
-msgid "Auto"
-msgstr "Авто"
-
-#. js-lingui-explicit-id
-msgid "All workshops"
-msgstr "Всі майстерні"
-
-#. js-lingui-explicit-id
-msgid "Repair of motorcycles"
-msgstr "Ремонт мотоциклів"
-
-#. js-lingui-explicit-id
-msgid "Repair of automobiles"
-msgstr "Ремонт автомобілів"
-
-#. js-lingui-explicit-id
-msgid "workshop"
-msgstr "майстерня"
-
-#. js-lingui-explicit-id
-msgid "Workshop change successfully"
-msgstr "Майстерню успішно змінено"
-
-#. js-lingui-explicit-id
-msgid "Workshop created successfully"
-msgstr "Майстерню успішно створено"
-
-#. js-lingui-explicit-id
-msgid "Error changing workshop"
-msgstr "Помилка при зміні майстерні"
-
-#. js-lingui-explicit-id
-msgid "Error creating workshop"
-msgstr "Помилка при створенні майстерні"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop"
-msgstr "Введіть назву майстерні"
-
-#. js-lingui-explicit-id
-msgid "Workshop name"
-msgstr "Назва майстерні"
-
-#. js-lingui-explicit-id
-msgid "Workshop address"
-msgstr "Адреса майстерні"
-
-#. js-lingui-explicit-id
-msgid "Add a description about the workshop"
-msgstr "Додайте опис про майстерню"
-
-#. js-lingui-explicit-id
-msgid "Workshop description"
-msgstr "Опис майстерні"
-
-#. js-lingui-explicit-id
-msgid "Type workshop"
-msgstr "Тип майстерні"
-
-#. js-lingui-explicit-id
-msgid "Select type"
-msgstr "Виберіть тип"
-
-#. js-lingui-explicit-id
-msgid "Types of work"
-msgstr "Типи робіт"
-
-#. js-lingui-explicit-id
-msgid "Select types of work"
-msgstr "Виберіть типи робіт"
-
-#. js-lingui-explicit-id
-msgid "Draft the first review"
-msgstr "Створіть перший відгук"
-
-#. js-lingui-explicit-id
-msgid "Change a review"
-msgstr "Змінити відгук"
-
-#. js-lingui-explicit-id
-msgid "Write a review"
-msgstr "Написати відгук"
+msgid "Make the main photo"
+msgstr "Зробити головним фото"
 
 #. js-lingui-explicit-id
 msgid "Select share page"
 msgstr "Виберіть сторінку для поділу"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 3 and a maximum of 40 characters."
-msgstr "Текст повинен містити принаймні 3, але не більше 40 символів."
+msgid "Toggle like product"
+msgstr "Перемикання подобається продукт"
 
 #. js-lingui-explicit-id
-msgid "The text must contain a minimum of 10 and a maximum of 2000 characters."
-msgstr "Текст повинен містити принаймні 10, але не більше 2000 символів."
-
-#. js-lingui-explicit-id
-msgid "Workshop"
-msgstr "Майстерня"
-
-#. js-lingui-explicit-id
-msgid "Type workshops"
-msgstr "Тип майстерень"
-
-#. js-lingui-explicit-id
-msgid "Distance, km:"
-msgstr "Відстань, км:"
-
-#. js-lingui-explicit-id
-msgid "All works"
-msgstr "Всі роботи"
-
-#. js-lingui-explicit-id
-msgid "Type works"
-msgstr "Тип робіт"
-
-#. js-lingui-explicit-id
-msgid "Workshops"
-msgstr "Майстерні"
-
-#. js-lingui-explicit-id
-msgid "Enter the name of the workshop or type of work"
-msgstr "Введіть назву майстерні або вид робіт"
-
-msgid "{distance} km"
-msgstr "{distance} км"
-
-msgid "About us:"
-msgstr "Про нас:"
-
-msgid "Access to geolocation in the background mode"
-msgstr "Доступ до геолокації в режимі фонової роботи"
-
-msgid "Access to geolocation when using the application"
-msgstr "Доступ до геолокації при використанні додатка"
-
-msgid "Add advert"
-msgstr "Додати оголошення"
-
-msgid "Add event"
-msgstr "Додати подію"
-
-msgid "Add workshop"
-msgstr "Додати майстерню"
-
-msgid "All cities"
-msgstr "Усі міста"
-
-msgid "All photos"
-msgstr "Усі фотографії"
-
-msgid "Allow"
-msgstr "Дозволити"
-
-msgid "Allow later"
-msgstr "Дозволити пізніше"
-
-msgid "Allow login using Face ID"
-msgstr "Дозволити вхід за допомогою Face ID"
-
-msgid "Allow login using Touch ID"
-msgstr "Дозволити вхід за допомогою Touch ID"
-
-msgid "Allow the {nameApp} app to determine my location in the background"
-msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження в фоновому режимі"
-
-msgid "Allow the {nameApp} application to determine my location"
-msgstr "Дозволити додатку {nameApp} визначати моє місцезнаходження "
-
-msgid "Allow Touch ID to access the {nameApp} app."
-msgstr "Дозволити Touch id входити у додаток {nameApp}"
-
-msgid "and choose the city of residence:"
-msgstr "та оберіть місто проживання:"
-
-msgid "Are you sure you want to delete?"
-msgstr "Ви впевнені, що хочете видалити?"
-
-msgid "Automatically detect location"
-msgstr "Автоматично визначати місцезнаходження"
-
-msgid "Back"
-msgstr "Назад"
-
-msgid "Business profile"
-msgstr "Бізнес-профіль"
-
-msgid "By clicking the \"Continue\" button, you agree to the {buttonTermsService} and {buttonPrivacyPolicy}"
-msgstr "Натискаючи кнопку \"Продовжити\", ви погоджуєтесь із {buttonTermsService} та {buttonPrivacyPolicy}"
-
-msgid "By distance:"
-msgstr "За відстанню:"
-
-msgid "By number of comments:"
-msgstr "За кількістю коментарів:"
-
-msgid "By rating:"
-msgstr "За рейтингом:"
-
-msgid "Call"
-msgstr "Подзвонити"
-
-msgid "Cheapest"
-msgstr "Найдешевший"
-
-msgid "Continue with {typeSocial}"
-msgstr "Продовжити з {typeSocial}"
-
-msgid "Create"
-msgstr "Створити"
-
-msgid "Create event"
-msgstr "Створити подію"
-
-msgid "Currency:"
-msgstr "Валюта:"
-
-msgid "Dark theme"
-msgstr "Темна тема"
-
-msgid "Delete"
-msgstr "Видалити"
-
-msgid "Description"
-msgstr "Опис"
-
-msgid "Do you want to send an SOS signal?"
-msgstr "Бажаєте відправити сигнал SOS?"
-
-msgid "Enable logging into the app using Face ID"
-msgstr "Увімкнути вхід у додаток за допомогою Face ID"
-
-msgid "Event"
-msgstr "Подія"
-
-msgid "Events"
-msgstr "Події"
-
-msgid "from closest to farthest"
-msgstr "від найближчого до найвіддаленішого"
-
-msgid "from highest to lowest"
-msgstr "від найвищого до найнижчого"
-
-msgid "Gallery"
-msgstr "Галерея"
-
-msgid "If there is no suitable option in the list, use 'Deep Search'"
-msgstr "Якщо в списку немає відповідного варіанту, використовуйте 'Глибокий Пошук'"
-
-msgid "Incorrect phone number entered or country code of the phone number selected incorrectly"
-msgstr "Введений неправильний номер телефону або неправильно вибраний код країни для введеного номера телефону"
-
 msgid "Language selection"
 msgstr "Вибір мови"
 
-msgid "Last update"
-msgstr "Останнє оновлення"
-
-msgid "Latest"
-msgstr "Найновіші"
-
-msgid "Leave a review"
-msgstr "Залишити відгук"
-
-msgid "Logout"
-msgstr "Вийти"
-
-msgid "Main"
-msgstr "Головна"
-
-msgid "Map"
-msgstr "Карта"
-
-msgid "Market"
-msgstr "Базар"
-
-msgid "More events"
-msgstr "Більше подій"
-
-msgid "Most expensive"
-msgstr "Найдорожчий"
-
-msgid "Move and change the location"
-msgstr "Перемістити та змінити місце"
-
-msgid "My adverts"
-msgstr "Мої оголошення"
-
-msgid "My events"
-msgstr "Мої події"
-
-msgid "My workshops"
-msgstr "Мої майстерні"
-
-msgid "No events have passed"
-msgstr "Події не відбулися"
-
-msgid "Not comments"
-msgstr "Коментарі відсутні"
-
-msgid "Notification of SOS signal"
-msgstr "Сповіщення про сигнал SOS"
-
-msgid "Now"
-msgstr "Зараз"
-
-msgid "Only with rating:"
-msgstr "Тільки з рейтингом:"
-
-msgid "or sign up using:"
-msgstr "або зареєструйтеся за допомогою:"
-
-msgid "Participation fee"
-msgstr "Ціна за участь"
-
-msgid "Password must contain at least 8 characters"
-msgstr "Пароль повинен містити не менше 8 символів"
-
-msgid "Passwords do not match"
-msgstr "Паролі не співпадають"
-
-msgid "Past events:"
-msgstr "Минулі події:"
-
-msgid "Phone number"
-msgstr "Номер телефону"
-
-msgid "Please enter text for searching"
-msgstr "Будь ласка, введіть текст для пошуку"
-
-msgid "Privacy Policy"
-msgstr "Політикою конфіденційності"
-
-msgid "Profile"
-msgstr "Профіль"
-
-msgid "Read the whole description..."
-msgstr "Читати весь опис..."
-
-msgid "Registration"
-msgstr "Реєстрація"
-
-msgid "Repair of automobiles"
-msgstr "Ремонт автомобілів"
-
-msgid "Repair of motorcycles"
-msgstr "Ремонт мотоциклів"
-
-msgid "Resend the code"
-msgstr "Надіслати код повторно"
-
-msgid "Reviews:"
-msgstr "Відгуки:"
-
-msgid "Select a location on the map"
-msgstr "Виберіть місце на мапі"
-
-msgid "Settings"
-msgstr "Налаштування"
-
-msgid "Settings and permissions should be enabled"
-msgstr "Налаштування та дозволи мають бути увімкнені"
-
-msgid "Someone needs help within a {distance} km radius"
-msgstr "Хтось потребує допомоги в радіусі {distance} км"
-
-msgid "Sorry, but no products were found by the filters"
-msgstr "Вибачте, за вказаними фільтрами продукти не знайдені"
-
-msgid "Sorry, but no workshops were found by the filters"
-msgstr "Вибачте, за вказаними фільтрами майстерні не знайдені"
-
-msgid "Sorry, there are no available items"
-msgstr "Вибачте, немає доступних товарів"
-
-msgid "Sorry, there are no upcoming events"
-msgstr "Вибачте, немає майбутніх подій"
-
-msgid "Sorry, there are no upcoming workshops"
-msgstr "Вибачте, найближчих майстерень немає"
-
-msgid "Sorry!"
-msgstr "Вибачте!"
-
-msgid "Specify the city"
-msgstr "Вкажіть місто"
-
-msgid "Terms of Service"
-msgstr "Умовами користування"
-
-msgid "Terms of Use"
-msgstr "Умовами користування"
-
-msgid "The nearest event:"
-msgstr "Найближча подія:"
-
-msgid "The work we do:"
-msgstr "Роботи, які ми виконуємо:"
-
-msgid "To fully utilize all the features of the service, you need to grant the application permission to determine your location:"
-msgstr "Щоб ви могли користуватися всіма можливостями сервісу, необхідно дозволити додатку визначати ваше місцезнаходження:"
-
-msgid "To receive SOS signals, set up the radius of signal reception from the center of your city:"
-msgstr "Для отримання сигналів SOS налаштуйте радіус прийому сигналів від центру вашого міста:"
-
-msgid "Type workshops"
-msgstr "Тип майстерень"
-
-msgid "Types of work for automobile transport:"
-msgstr "Типи робіт для автомобільного транспорту:"
-
-msgid "Types of work for motorcycle transport:"
-msgstr "Типи робіт для мотоциклів:"
-
-msgid "Upcoming events:"
-msgstr "Найближчі події:"
-
-msgid "Views:"
-msgstr "Перегляди:"
-
-msgid "We recommend filling out the profile information"
-msgstr "Рекомендуємо заповнити  дані для профілю"
-
-msgid "Welcome"
-msgstr "Ласкаво просимо"
-
-msgid "What platform do you want to send the app installation invitation to?"
-msgstr "На яку платформу ви хочете надіслати запрошення на встановлення додатку?"
-
-msgid "Will automatically turn off after 20-30 minutes"
-msgstr "Автоматично вимкнеться через 20-30 хвилин"
-
-msgid "Workshop"
-msgstr "Майстерня"
-
-msgid "Workshops"
-msgstr "Майстерні"
-
-msgid "Write"
-msgstr "Написати"
-
-msgid "You don't have {typeItem}."
-msgstr "У вас немає {typeItem}."
-
-msgid "Your contact information"
-msgstr "Ваші контактні дані"
-
-msgid "Your profile"
-msgstr "Ваш профіль"
+#. js-lingui-explicit-id
+msgid "Press and enter to search for a city"
+msgstr "Натисніть та введіть для пошуку міста"
+
+#. js-lingui-explicit-id
+msgid "Add a photo"
+msgstr "Додати фото"
+
+#. js-lingui-explicit-id
+msgid "The first photo will be on the cover of the advertisement."
+msgstr "Перше фото буде на обкладинці оголошення."

@@ -17,10 +17,14 @@ export const styles = StyleSheet.create({
   containerLeft: {
     flexDirection: "row",
     gap: 8,
+    flex: 1,
+    flexShrink: 1,
   },
   image: { width: 73, height: 73, borderRadius: 3 },
   containerInfo: {
     justifyContent: "space-between",
+    flex: 1,
+    flexShrink: 1,
   },
   title: {
     width: horizontalScale(250),
@@ -38,6 +42,20 @@ export const styles = StyleSheet.create({
   },
   containerRight: {
     justifyContent: "center",
+    alignItems: "flex-end",
+    flexShrink: 0,
+    gap: 8,
+  },
+  buttonEdit: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    backgroundColor: colors.californiaOrange,
+    borderRadius: 4,
+  },
+  buttonEditText: {
+    fontFamily: FONT_600_OPEN_SANS,
+    fontSize: 12,
+    color: colors.white,
   },
   inner: {
     flexDirection: "row",
@@ -53,5 +71,46 @@ export const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: "600",
     color: colors.grayCloudy,
+  },
+  containerStatus: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 4,
+  },
+  statusBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 4,
+  },
+  statusText: {
+    fontSize: 10,
+    fontFamily: FONT_600_OPEN_SANS,
+  },
+  statusPending: {
+    backgroundColor: colors.yellow,
+  },
+  statusVerified: {
+    backgroundColor: colors.green,
+  },
+  statusRejected: {
+    backgroundColor: colors.errorRed,
+  },
+  statusTextPending: {
+    color: colors.blackCoffee,
+  },
+  statusTextVerified: {
+    color: colors.white,
+  },
+  statusTextRejected: {
+    color: colors.white,
+  },
+  reasonText: {
+    fontSize: 9,
+    color: colors.errorRed,
+    marginTop: 2,
+    fontStyle: "italic",
+    flexShrink: 1,
+    maxWidth: horizontalScale(250),
   },
 });

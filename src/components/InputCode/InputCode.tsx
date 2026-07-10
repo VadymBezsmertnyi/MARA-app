@@ -13,10 +13,10 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
-import { Trans } from "@lingui/macro";
 
 // providers
 import { useThemeProvider } from "../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../localization/localization.provider";
 
 // constants
 import { THEME_DARK } from "../../providers/ThemeProvider/ThemeProvider.const";
@@ -52,6 +52,7 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
   errorMessage,
 }) => {
   const { theme } = useThemeProvider();
+  const { i18n } = useLocalesProvider();
   const ref = useBlurOnFulfill({ value, cellCount });
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
@@ -123,9 +124,7 @@ export const InputCode: FunctionComponent<InputCodeProps> = ({
             style={styles.buttonResendCode}
           >
             <View style={styles.containerResendCode}>
-              <Text style={styles.resendCode}>
-                <Trans>Resend the code</Trans>
-              </Text>
+              <Text style={styles.resendCode}>{i18n._("Resend the code")}</Text>
             </View>
           </TouchableOpacity>
         </View>

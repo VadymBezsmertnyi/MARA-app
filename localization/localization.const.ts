@@ -22,87 +22,33 @@ import imageCountrySk from "../images/countries/icon-country-sk.png";
 
 export const defaultLanguage: Language = "en";
 export const languagesKeys = [
-  "en",
-  "uk",
-  "fr",
-  "de",
-  "es",
-  "it",
-  "sk",
-  "sv",
-  "da",
-  "fi",
-  "pl",
+  "be",
   "cs",
-  "hu",
+  "da",
+  "de",
   "el",
-  "ro",
+  "en",
+  "es",
+  "fi",
+  "fr",
+  "hu",
+  "it",
   "lt",
   "lv",
-  "be",
+  "pl",
+  "ro",
+  "sk",
+  "sv",
+  "uk",
 ] as const;
 export const languageKey = "language";
 
 export const languages: Languages = [
   {
-    title: "Українська",
-    key: "uk",
-    icon: imageCountryUk,
-    native: "Ukrainian",
-  },
-  {
-    title: "English",
-    key: "en",
-    icon: imageCountryUs,
-    native: "English",
-  },
-  {
-    title: "Français",
-    key: "fr",
-    icon: imageCountryFr,
-    native: "French",
-  },
-  {
-    title: "Deutsch",
-    key: "de",
-    icon: imageCountryDe,
-    native: "German",
-  },
-  {
-    title: "Español",
-    key: "es",
-    icon: imageCountryEs,
-    native: "Spanish",
-  },
-  {
-    title: "Italiano",
-    key: "it",
-    icon: imageCountryIt,
-    native: "Italian",
-  },
-  {
-    title: "Svenska",
-    key: "sv",
-    icon: imageCountrySv,
-    native: "Swedish",
-  },
-  {
-    title: "Dansk",
-    key: "da",
-    icon: imageCountryDa,
-    native: "Danish",
-  },
-  {
-    title: "Suomi",
-    key: "fi",
-    icon: imageCountryFi,
-    native: "Finnish",
-  },
-  {
-    title: "Polski",
-    key: "pl",
-    icon: imageCountryPl,
-    native: "Polish",
+    title: "Беларуская",
+    key: "be",
+    icon: imageCountryBe,
+    native: "Belarusian",
   },
   {
     title: "Čeština",
@@ -111,10 +57,16 @@ export const languages: Languages = [
     native: "Czech",
   },
   {
-    title: "Magyar",
-    key: "hu",
-    icon: imageCountryHu,
-    native: "Hungarian",
+    title: "Dansk",
+    key: "da",
+    icon: imageCountryDa,
+    native: "Danish",
+  },
+  {
+    title: "Deutsch",
+    key: "de",
+    icon: imageCountryDe,
+    native: "German",
   },
   {
     title: "Ελληνικά",
@@ -123,10 +75,40 @@ export const languages: Languages = [
     native: "Greek",
   },
   {
-    title: "Română",
-    key: "ro",
-    icon: imageCountryRo,
-    native: "Romanian",
+    title: "English",
+    key: "en",
+    icon: imageCountryUs,
+    native: "English",
+  },
+  {
+    title: "Español",
+    key: "es",
+    icon: imageCountryEs,
+    native: "Spanish",
+  },
+  {
+    title: "Suomi",
+    key: "fi",
+    icon: imageCountryFi,
+    native: "Finnish",
+  },
+  {
+    title: "Français",
+    key: "fr",
+    icon: imageCountryFr,
+    native: "French",
+  },
+  {
+    title: "Magyar",
+    key: "hu",
+    icon: imageCountryHu,
+    native: "Hungarian",
+  },
+  {
+    title: "Italiano",
+    key: "it",
+    icon: imageCountryIt,
+    native: "Italian",
   },
   {
     title: "Lietuvių",
@@ -141,10 +123,16 @@ export const languages: Languages = [
     native: "Latvian",
   },
   {
-    title: "Беларуская",
-    key: "be",
-    icon: imageCountryBe,
-    native: "Belarusian",
+    title: "Polski",
+    key: "pl",
+    icon: imageCountryPl,
+    native: "Polish",
+  },
+  {
+    title: "Română",
+    key: "ro",
+    icon: imageCountryRo,
+    native: "Romanian",
   },
   {
     title: "Slovenský",
@@ -152,68 +140,80 @@ export const languages: Languages = [
     icon: imageCountrySk,
     native: "Slovak",
   },
+  {
+    title: "Svenska",
+    key: "sv",
+    icon: imageCountrySv,
+    native: "Swedish",
+  },
+  {
+    title: "Українська",
+    key: "uk",
+    icon: imageCountryUk,
+    native: "Ukrainian",
+  },
 ];
 
 export const languages_short = {
-  en: "en-US",
-  uk: "uk-UA",
-  fr: "fr-FR",
-  de: "de-DE",
-  es: "es-ES",
-  it: "it-IT",
-  sv: "sv-SE",
-  da: "da-DK",
-  fi: "fi-FI",
-  pl: "pl-PL",
+  be: "be-BY",
   cs: "cs-CS",
-  hu: "hu-HU",
+  da: "da-DK",
+  de: "de-DE",
   el: "el-GR",
-  ro: "ro-RO",
+  en: "en-US",
+  es: "es-ES",
+  fi: "fi-FI",
+  fr: "fr-FR",
+  hu: "hu-HU",
+  it: "it-IT",
   lt: "lt-LT",
   lv: "lv-LV",
-  be: "be-BY",
+  pl: "pl-PL",
+  ro: "ro-RO",
   sk: "sk-SK",
-};
-
-export const languagesLinguiAlias = {
-  en: "en",
-  uk: "uk",
-  fr: "fr",
-  de: "de",
-  es: "es",
-  it: "it",
-  sv: "sv",
-  da: "da",
-  fi: "fi",
-  pl: "pl",
-  cs: "cs",
-  hu: "hu",
-  el: "el",
-  ro: "ro",
-  lt: "lt",
-  lv: "lv",
-  be: "be",
-  sk: "sk",
+  sv: "sv-SE",
+  uk: "uk-UA",
 } as const;
 
-export const LANGUAGE_EN = "en";
-export const LANGUAGE_UK = "uk";
-export const LANGUAGE_FR = "fr";
-export const LANGUAGE_DE = "de";
-export const LANGUAGE_ES = "es";
-export const LANGUAGE_IT = "it";
-export const LANGUAGE_SV = "sv";
-export const LANGUAGE_DA = "da";
-export const LANGUAGE_FI = "fi";
-export const LANGUAGE_PL = "pl";
+export const languagesLinguiAlias = {
+  be: "be",
+  cs: "cs",
+  da: "da",
+  de: "de",
+  el: "el",
+  en: "en",
+  es: "es",
+  fi: "fi",
+  fr: "fr",
+  hu: "hu",
+  it: "it",
+  lt: "lt",
+  lv: "lv",
+  pl: "pl",
+  ro: "ro",
+  sk: "sk",
+  sv: "sv",
+  uk: "uk",
+} as const;
+
+export const LANGUAGE_BE = "be";
 export const LANGUAGE_CS = "cs";
-export const LANGUAGE_HU = "hu";
+export const LANGUAGE_DA = "da";
+export const LANGUAGE_DE = "de";
 export const LANGUAGE_EL = "el";
-export const LANGUAGE_RO = "ro";
+export const LANGUAGE_EN = "en";
+export const LANGUAGE_ES = "es";
+export const LANGUAGE_FI = "fi";
+export const LANGUAGE_FR = "fr";
+export const LANGUAGE_HU = "hu";
+export const LANGUAGE_IT = "it";
 export const LANGUAGE_LT = "lt";
 export const LANGUAGE_LV = "lv";
-export const LANGUAGE_BE = "be";
+export const LANGUAGE_PL = "pl";
+export const LANGUAGE_RO = "ro";
 export const LANGUAGE_SK = "sk";
+export const LANGUAGE_SV = "sv";
+export const LANGUAGE_UK = "uk";
 
 export const languagePattern =
-  /\b(en|uk|fr|de|es|it|sv|da|fi|pl|cs|hu|el|ro|lt|lv|be|sk)\b/;
+  /\b(be|cs|da|de|el|en|es|fi|fr|hu|it|lt|lv|pl|ro|sk|sv|uk)\b/;

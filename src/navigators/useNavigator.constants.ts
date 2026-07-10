@@ -10,14 +10,12 @@ export const PATHS_MAIN_TABS = {
   workshops: "workshops",
   map: "map",
   events: "events",
-  market: "market",
+  help: "help",
   settings: "settings",
 } as const;
 
 export const PATHS_REGISTRATION_SCREENS = {
   registrationLocation: "registrationLocation",
-  registrationTouchId: "registrationTouchId",
-  registrationFaceId: "registrationFaceId",
   registrationPrivacyPolicy: "registrationPrivacyPolicy",
   registrationTermsOfUse: "registrationTermsOfUse",
   registrationInfo: "registrationInfo",
@@ -32,9 +30,6 @@ export const PATHS_EVENTS_SCREENS = {
 
 export const PATHS_SETTINGS_SCREENS = {
   settingsMain: "settingsMain",
-  settingsProducts: "settingsProducts",
-  settingsProductAdd: "settingsProductAdd",
-  settingsProductChange: "settingsProductChange",
   settingsWorkshops: "settingsWorkshops",
   settingsWorkshopAdd: "settingsWorkshopAdd",
   settingsWorkshopChange: "settingsWorkshopChange",
@@ -42,9 +37,6 @@ export const PATHS_SETTINGS_SCREENS = {
   settingsEventAdd: "settingsEventAdd",
   settingsEventChange: "settingsEventChange",
   settingsProfile: "settingsProfile",
-  settingsBusinessMarketCreate: "settingsBusinessMarketCreate",
-  settingsBusinessMarketChange: "settingsBusinessMarketChange",
-  settingsBusinessMarketReview: "settingsBusinessMarketReview",
 } as const;
 
 export const PATHS_WORKSHOP_SCREENS = {
@@ -53,8 +45,7 @@ export const PATHS_WORKSHOP_SCREENS = {
   workshopAdd: "workshopAdd",
 } as const;
 
-export const PATHS_MARKET_SCREENS = {
-  marketMain: "marketMain",
-  marketItem: "marketItem",
-  marketAdd: "marketAdd",
+export const PATHS_HELP_SCREENS = {
+  helpMain: "helpMain",
+  addTelegramChannel: "addTelegramChannel",
 } as const;

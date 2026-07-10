@@ -1,16 +1,26 @@
 {
-  "NSLocationAlwaysAndWhenInUseUsageDescription": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą draugų paieškai žemėlapyje. Visada galite išjungti šią funkciją programos meniu.",
-  "NSLocationAlwaysUsageDescription": "Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu.",
-  "NSLocationWhenInUseUsageDescription": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu.",
-  "locationAlwaysAndWhenInUsePermission": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą draugų paieškai žemėlapyje. Visada galite išjungti šią funkciją programos meniu.",
-  "locationAlwaysPermission": "Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu.",
-  "locationWhenInUsePermission": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu.",
-  "NSFaceIDUsageDescription": "Naudojama prisijungimui naudojant Face ID",
-  "UIApplicationShortcutItemTitle": "Greitas prieiga",
-  "NSCameraUsageDescription": "Naudojama fotografijų kūrimui",
-  "NSPhotoLibraryUsageDescription": "Naudojama prieigai prie nuotraukų jūsų bibliotekoje",
-  "NSMicrophoneUsageDescription": "Naudojama garso įrašymui",
-  "NSCalendarsUsageDescription": "Naudojama prieigai prie kalendorių",
-  "NSContactsUsageDescription": "Naudojama prieigai prie kontaktų",
-  "NSAppleMusicUsageDescription": "Naudojama prieigai prie Apple Music"
+  "ios": {
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą draugų paieškai žemėlapyje. Visada galite išjungti šią funkciją programos meniu.",
+    "NSLocationAlwaysUsageDescription": "Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu.",
+    "NSLocationWhenInUseUsageDescription": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu.",
+    "locationAlwaysAndWhenInUsePermission": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą draugų paieškai žemėlapyje. Visada galite išjungti šią funkciją programos meniu.",
+    "locationAlwaysPermission": "Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu.",
+    "locationWhenInUsePermission": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu.",
+    "NSFaceIDUsageDescription": "Naudojama prisijungimui naudojant Face ID",
+    "UIApplicationShortcutItemTitle": "Greitas prieiga",
+    "NSCameraUsageDescription": "Naudojama fotografijų kūrimui",
+    "NSPhotoLibraryUsageDescription": "Naudojama prieigai prie nuotraukų jūsų bibliotekoje",
+    "NSMicrophoneUsageDescription": "Naudojama garso įrašymui",
+    "NSCalendarsUsageDescription": "Naudojama prieigai prie kalendorių",
+    "NSContactsUsageDescription": "Naudojama prieigai prie kontaktų",
+    "NSAppleMusicUsageDescription": "Naudojama prieigai prie Apple Music"
+  },
+  "android": {
+    "locationAlwaysAndWhenInUsePermission": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą draugų paieškai žemėlapyje. Visada galite išjungti šią funkciją programos meniu.",
+    "locationAlwaysPermission": "Leisti $(PRODUCT_NAME) visada naudoti jūsų vietą, kad būtų galima nuolat stebėti draugus žemėlapyje. Šią funkciją galite išjungti bet kuriuo metu programos meniu.",
+    "locationWhenInUsePermission": "Leisti $(PRODUCT_NAME) naudoti jūsų vietą naudojant programą, kad padėtų jums rasti draugus žemėlapyje. Šią funkciją galite išjungti programos meniu.",
+    "cameraPermission": "Naudojama fotografijų kūrimui",
+    "photosPermission": "Naudojama prieigai prie nuotraukų jūsų bibliotekoje",
+    "microphonePermission": "Naudojama garso įrašymui"
+  }
 }

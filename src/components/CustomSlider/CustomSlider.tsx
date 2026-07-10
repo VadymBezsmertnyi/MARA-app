@@ -6,21 +6,25 @@ import React, {
   useState,
 } from "react";
 import {
-  Image,
   ImageStyle,
-  LayoutChangeEvent,
-  NativeScrollEvent,
-  NativeSyntheticEvent,
-  ScrollView,
   StyleProp,
-  StyleSheet,
+  Text,
   TouchableOpacity,
   View,
   ViewStyle,
+  useWindowDimensions,
 } from "react-native";
+import { Image as ExpoImage } from "expo-image";
+import Carousel, {
+  ICarouselInstance,
+  TAnimationStyle,
+} from "react-native-reanimated-carousel";
+import { Extrapolation, interpolate } from "react-native-reanimated";
 
 // styles
 import { styles } from "./CustomSlider.styles";
+
+const SLIDER_HEIGHT = 220;
 
 type CustomSliderProps = {
   images: Array<{ url: string }> | string[];
@@ -43,13 +47,13 @@ type CustomSliderProps = {
     style: StyleProp<ImageStyle>;
     index: number;
     width: number;
-  }) => JSX.Element;
+  }) => React.ReactNode;
   position?: number;
   onPositionChanged?: (value: number) => void;
   customButtons?: (
     number: number,
     move: (number: number, animated?: boolean) => void
-  ) => JSX.Element;
+  ) => React.ReactNode;
   loop?: boolean;
 };
 
@@ -62,182 +66,175 @@ export const CustomSlider: FunctionComponent<CustomSliderProps> = ({
   position,
   onPositionChanged,
   customButtons,
-  loop,
+  loop = true,
 }) => {
+  const { width: windowWidth } = useWindowDimensions();
   const [positionState, setPositionState] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [onPositionChangedCalled, setOnPositionChangedCalled] = useState(false);
-  const ref = useRef<ScrollView | null>(null);
+  const carouselRef = useRef<ICarouselInstance>(null);
 
   const containerStyles = useMemo(
     () => [styles.container, style ? style(styles.container) : {}],
     [style]
   );
-  const scrollContainerStyles = useMemo(
-    () => [
-      styles.scrollViewContainer,
-      styleScroll ? styleScroll(styles.scrollViewContainer) : {},
-    ],
-    [styleScroll]
+
+  const carouselContainerStyles = useMemo(() => {
+    const baseStyle = { width: windowWidth, height: SLIDER_HEIGHT };
+    if (styleScroll) {
+      const scrollStyles = styleScroll(baseStyle);
+      return Array.isArray(scrollStyles) ? scrollStyles : [scrollStyles];
+    }
+    return [baseStyle];
+  }, [styleScroll, windowWidth]);
+
+  const normalizedImages = useMemo(() => {
+    return images.map((img) => (typeof img === "string" ? { url: img } : img));
+  }, [images]);
+
+  const currentPosition =
+    typeof position === "number" ? position : positionState;
+
+  const move = (index: number) => {
+    const normalizedIndex = Math.max(0, Math.min(index, images.length - 1));
+    setPositionState(normalizedIndex);
+    if (carouselRef.current)
+      carouselRef.current.scrollTo({ index: normalizedIndex });
+
+    if (
+      onPositionChanged &&
+      normalizedIndex >= 0 &&
+      normalizedIndex < images.length
+    )
+      onPositionChanged(normalizedIndex);
+  };
+
+  const PAGE_WIDTH = windowWidth;
+  const ITEM_SIZE = PAGE_WIDTH / 2;
+  const CENTER_OFFSET = PAGE_WIDTH / 2 - ITEM_SIZE / 2;
+  const SIDE_ITEM_COUNT = 2;
+  const SIDE_ITEM_WIDTH = (PAGE_WIDTH - ITEM_SIZE) / (2 * SIDE_ITEM_COUNT);
+
+  const foldAnimationStyle: TAnimationStyle = React.useCallback(
+    (value: number) => {
+      "worklet";
+
+      const itemOffsetInput = new Array(SIDE_ITEM_COUNT * 2 + 1)
+        .fill(null)
+        .map((_, index) => index - SIDE_ITEM_COUNT);
+
+      const itemOffset = interpolate(
+        value,
+        itemOffsetInput,
+        itemOffsetInput.map((item) => {
+          if (item < 0) return (-ITEM_SIZE + SIDE_ITEM_WIDTH) * Math.abs(item);
+
+          if (item > 0)
+            return (ITEM_SIZE - SIDE_ITEM_WIDTH) * (Math.abs(item) - 1);
+
+          return 0;
+        })
+      );
+
+      const translate =
+        interpolate(value, [-1, 0, 1], [-ITEM_SIZE, 0, ITEM_SIZE]) +
+        CENTER_OFFSET -
+        itemOffset;
+
+      const itemWidth = interpolate(
+        value,
+        [-1, 0, 1],
+        [SIDE_ITEM_WIDTH, ITEM_SIZE, SIDE_ITEM_WIDTH],
+        Extrapolation.CLAMP
+      );
+
+      return {
+        transform: [{ translateX: translate }],
+        width: itemWidth,
+        overflow: "hidden",
+      };
+    },
+    [CENTER_OFFSET, ITEM_SIZE, SIDE_ITEM_WIDTH, SIDE_ITEM_COUNT]
   );
-
-  const getPosition = () => {
-    if (typeof position === "number") {
-      return position;
-    }
-    return positionState;
-  };
-
-  const move = (index: number, animated = true) => {
-    const isUpdating = index !== getPosition();
-    const x = width * index;
-
-    if (ref.current) ref.current.scrollTo({ y: 0, x, animated });
-
-    setPositionState(index);
-
-    if (
-      isUpdating &&
-      onPositionChanged &&
-      index < images.length &&
-      index > -1
-    ) {
-      onPositionChanged(index);
-      setOnPositionChangedCalled(true);
-    }
-  };
-
-  const onLayout = (event: LayoutChangeEvent) => {
-    setWidth(event.nativeEvent.layout.width);
-    move(loop ? 1 : 0, false);
-  };
-
-  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const { x } = event.nativeEvent.contentOffset;
-    const newPosition = Math.round(event.nativeEvent.contentOffset.x / width);
-    const isGoStart = loop && x >= width * images.length + 1;
-    const isGoEnd = loop && x <= width && newPosition === 0;
-
-    if (isGoStart) {
-      move(1, false);
-      return;
-    } else if (isGoEnd) {
-      move(images.length, false);
-      return;
-    }
-    move(newPosition, true);
-
-    if (positionState !== -1 && positionState !== images.length) {
-      setPositionState(newPosition);
-    }
-
-    if (
-      onPositionChanged &&
-      onPositionChangedCalled &&
-      newPosition < images.length &&
-      newPosition > -1
-    ) {
-      onPositionChanged(newPosition);
-    } else {
-      setOnPositionChangedCalled(false);
-    }
-  };
 
   const renderImage = (
     image: { url: string } | string,
-    index: number,
-    isLoop?: boolean
-  ) => {
-    const imageStyle = () => [styles.image, { width }];
+    index: number
+  ): React.JSX.Element | null => {
+    if (customSlide) {
+      const customNode = customSlide({
+        item: image,
+        style: { width: "100%", height: "100%" },
+        index,
+        width: windowWidth,
+      }) as React.JSX.Element | null;
+      return customNode || null;
+    }
 
-    if (customSlide)
-      return customSlide({ item: image, style: imageStyle(), index, width });
-    const imageObject =
-      typeof image === "string" ? { uri: image } : { uri: image?.url };
-
-    const imageComponent = (
-      <View style={StyleSheet.absoluteFillObject}>
-        {imageObject.uri ? (
-          <Image
-            key={`image-render-item-${index + 1}`}
-            source={imageObject}
-            resizeMode="contain"
-            style={imageStyle()}
-          />
-        ) : null}
-      </View>
-    );
-
-    const containerButtonStyles = () => [imageStyle()];
+    const imageUri = typeof image === "string" ? image : image?.url;
 
     return (
       <TouchableOpacity
-        key={`image-${index + 1}${isLoop ? "-loop" : ""}`}
         disabled={!onPress}
-        style={containerButtonStyles()}
+        style={styles.slideContainer}
         onPress={() => {
           if (onPress) onPress({ image, index });
         }}
         delayPressIn={200}
       >
-        {imageComponent}
+        <View style={styles.imageWrapper}>
+          <ExpoImage
+            source={{ uri: imageUri }}
+            contentFit="contain"
+            style={styles.imageStyle}
+          />
+        </View>
       </TouchableOpacity>
     );
   };
 
   useEffect(() => {
-    if (position && position >= 0) setPositionState(position);
+    if (typeof position === "number") move(position);
   }, [position]);
 
   useEffect(() => {
-    if (positionState >= 0) move(positionState);
-  }, [positionState]);
+    setPositionState(0);
+    if (carouselRef.current) carouselRef.current.scrollTo({ index: 0 });
+  }, [images.length]);
 
   return (
-    <View style={containerStyles} onLayout={onLayout}>
-      <ScrollView
-        onLayout={onLayout}
-        ref={ref}
-        onMomentumScrollEnd={handleScroll}
-        scrollEventThrottle={16}
-        pagingEnabled
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={scrollContainerStyles}
-        showsVerticalScrollIndicator={false}
-      >
-        {loop && renderImage(images[images.length - 1], -1, true)}
-        {images.map((image, index) => renderImage(image, index))}
-        {loop && renderImage(images[0], images.length, true)}
-      </ScrollView>
-      {customButtons && position ? (
-        customButtons(position, move)
-      ) : (
-        <View style={styles.buttons}>
-          {images.map((_image, index) => {
-            const currentPosition = position || positionState;
-            const getStyles = () => [
-              styles.button,
-              { backgroundColor: "#ccc" },
-              currentPosition === (loop ? index + 1 : index) &&
-                styles.buttonSelected,
-            ];
-            return (
-              <View
-                key={`slider-button-${index + 1}`}
-                // TODO
-                //underlayColor="#ccc"
-                /* onPress={() => {
-                  move(index);
-                }} */
-                style={getStyles()}
-              >
-                <View />
-              </View>
-            );
-          })}
+    <View style={containerStyles}>
+      <View style={styles.sliderFrame}>
+        <Carousel
+          ref={carouselRef}
+          width={PAGE_WIDTH}
+          height={SLIDER_HEIGHT}
+          loop={loop}
+          data={normalizedImages}
+          scrollAnimationDuration={500}
+          windowSize={Math.min(9, Math.max(5, normalizedImages.length))}
+          customAnimation={foldAnimationStyle}
+          onSnapToItem={(index) => {
+            setPositionState(index);
+            if (onPositionChanged) {
+              onPositionChanged(index);
+            }
+          }}
+          renderItem={({ item }) => {
+            const rendered = renderImage(item as { url: string } | string, 0);
+            return rendered || <View />;
+          }}
+          style={carouselContainerStyles}
+          containerStyle={{ width: PAGE_WIDTH, height: SLIDER_HEIGHT }}
+        />
+        <View style={styles.indicator}>
+          <Text style={styles.indicatorText}>
+            {currentPosition + 1}/{images.length}
+          </Text>
         </View>
-      )}
+      </View>
+
+      {customButtons && typeof position === "number"
+        ? customButtons(position, move)
+        : null}
     </View>
   );
 };

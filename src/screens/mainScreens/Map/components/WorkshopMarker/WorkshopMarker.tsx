@@ -1,12 +1,13 @@
 import React, { FunctionComponent, useRef } from "react";
 import { LocationObjectCoords } from "expo-location";
-import { Marker, Callout, MapCallout, MapMarker } from "react-native-maps";
+import { Marker, Callout, MapMarker } from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { convertDistance, getDistance } from "geolib";
 
 // types
-import { WorkshopType } from "../../../../../providers/WorkshopsProvider/WorkshopsProvider.types";
+import { TWorkshop } from "../../../../../storeRedux/apis/workshops/workshops.types";
+import { TMapPointWorkshop } from "../../../../../storeRedux/apis/map/map.types";
 
 // components
 import { ComponentCalloutWorkshop } from "../ComponentCalloutWorkshop/ComponentCalloutWorkshop";
@@ -21,7 +22,7 @@ import {
 import { IconWorkshopMap } from "../../../../../icons/components";
 
 type WorkshopMarkerProps = {
-  workshop: WorkshopType;
+  workshop: TWorkshop | TMapPointWorkshop;
   location: LocationObjectCoords | null;
 };
 
@@ -69,11 +70,23 @@ export const WorkshopMarker: FunctionComponent<WorkshopMarkerProps> = ({
         }}
       >
         <ComponentCalloutWorkshop
-          imageSrc={workshop.images.length ? workshop.images[0].url : null}
-          title={workshop.title}
+          imageSrc={
+            workshop.imageFiles?.length
+              ? (workshop.imageFiles[0] as { url?: string })?.url ?? null
+              : null
+          }
+          title={workshop.title ?? ""}
           distance={distance ? convertDistance(distance, "km").toFixed() : null}
-          isMoto={workshop.motoTypesWorks.length > 0}
-          isAuto={workshop.autoTypesWorks.length > 0}
+          isMoto={
+            "motoTypesWorks" in workshop
+              ? workshop.motoTypesWorks?.length > 0
+              : false
+          }
+          isAuto={
+            "autoTypesWorks" in workshop
+              ? workshop.autoTypesWorks?.length > 0
+              : false
+          }
         />
       </Callout>
     </Marker>

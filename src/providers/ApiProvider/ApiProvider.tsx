@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext, useMemo } from "react";
+import React, { FunctionComponent, JSX, useContext, useMemo } from "react";
 import { Platform } from "react-native";
 import { ZodSchema, z } from "zod";
 import axios, { AxiosRequestConfig } from "axios";
@@ -21,7 +21,7 @@ type ApiContext = {
 };
 
 type ApiProviderProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const apiContext = React.createContext({} as ApiContext);
@@ -56,9 +56,10 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
     const currentConfig = config ? config : {};
 
     try {
+      const isFormData = currentConfig.data instanceof FormData;
       const response = await axios(currentUrl, {
         headers: {
-          "Content-Type": "application/json",
+          ...(isFormData ? { "Content-Type": "multipart/form-data" } : {}),
           authorization: verifyTokens?.accessToken || "",
         },
         ...currentConfig,
@@ -68,9 +69,14 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
       // TODO for test
       const isCurrent = schema.safeParse(response.data);
       if (isCurrent.success) return isCurrent.data;
-      console.warn("currentUrl", currentUrl);
+      /* console.warn("currentUrl", currentUrl);
       console.warn("response.data", response.data);
-      console.warn("isCurrent", isCurrent);
+      console.warn("isCurrent", isCurrent); */
+      console.warn("error zod:", {
+        currentUrl,
+        data: response.data,
+        isCurrent,
+      });
 
       return null;
     } catch (error: any) {
@@ -79,9 +85,10 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
           const currentUrlToken = url.includes("http")
             ? url
             : `${urlApi}${PATHS.token}`;
+          const isFormData = currentConfig.data instanceof FormData;
           const responseOther = await axios(currentUrlToken, {
             headers: {
-              "Content-Type": "application/json",
+              ...(isFormData ? { "Content-Type": "multipart/form-data" } : {}),
               authorization: verifyTokens.refreshToken,
             },
             ...currentConfig,
@@ -90,18 +97,22 @@ const ApiProvider: FunctionComponent<ApiProviderProps> = (props) => {
           if (isCurrent.success) {
             return isCurrent.data;
           }
-          console.warn("error-402-currentUrl", currentUrl);
-          console.warn("error-402-responseOther.data", responseOther.data);
-          console.warn("error-402-isCurrent", isCurrent);
+          console.warn("error-402-currentUrl: ", {
+            currentUrl,
+            data: responseOther.data,
+            isCurrent,
+          });
           return null;
         }
-        if (__DEV__) {
-          console.warn("error", error);
-        }
+        if (__DEV__)
+          console.warn("error: ", { error, currentUrl, currentConfig });
       } catch (error402) {
-        if (__DEV__) {
-          console.warn("error-402-verifyTokens?.refreshToken", error402);
-        }
+        if (__DEV__)
+          console.warn("error-402-verifyTokens?.refreshToken", {
+            error402,
+            currentUrl,
+          });
+
         throw error402;
       }
       throw error;

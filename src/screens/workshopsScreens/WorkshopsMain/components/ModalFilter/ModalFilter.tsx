@@ -1,15 +1,17 @@
 import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { StatusBar, Text, TouchableOpacity, View } from "react-native";
-import { Trans } from "@lingui/macro";
+import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
+import { BlurView } from "expo-blur";
 
-// types
-import { TypeFilters } from "./ModalFilter.types";
+// redux
+import { useUserSelector } from "../../../../../storeRedux/apis/user/slice";
+import { useEditUserMutation } from "../../../../../storeRedux/api";
+import { useMapSelector } from "../../../../../storeRedux/apis/map/slice";
 
 // providers
 import { useLocalesProvider } from "../../../../../../localization/localization.provider";
 
 // hooks
-import { useWorkshopsProviderState } from "../../../../../providers/WorkshopsProvider/useWorkshopsProvider.constants";
+import { useWorkshopsState } from "../../../../../storeRedux/apis/workshops/useWorkshops.constants";
 
 // components
 import { Header } from "../../../../../components/Header/Header";
@@ -28,10 +30,17 @@ import { IconArrowRightEvent } from "../../../../../icons/components";
 import { styles } from "./ModalFilter.styles";
 import colors from "../../../../../../styles/colors";
 
+export type TypeWorkshopFilters = {
+  moto: number[] | null;
+  auto: number[] | null;
+  maxDistance: number;
+  minRating: number | null;
+};
+
 type ModalFilterProps = {
-  filters: TypeFilters | null;
+  filters: TypeWorkshopFilters | null;
   onClose: () => void;
-  onSubmit: (filters: TypeFilters) => void;
+  onSubmit: (filters: TypeWorkshopFilters) => void;
   maxDistance?: number;
 };
 
@@ -42,7 +51,10 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   maxDistance = 200,
 }) => {
   const { i18n } = useLocalesProvider();
-  const { typesWorkServices } = useWorkshopsProviderState();
+  const { userData } = useUserSelector();
+  const [editUserMutation] = useEditUserMutation();
+  const { location } = useMapSelector();
+  const { typesWorkServices } = useWorkshopsState();
   const [distance, setDistance] = useState(5);
   const [isShowTypeWorkshops, setIsShowTypeWorkshops] = useState(false);
   const [isShowTypesMotoWorks, setIsShowTypesMotoWorks] = useState(false);
@@ -60,14 +72,58 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
   const [selectRating, setSelectRating] = useState<number | null>(null);
 
   const onSubmitFilters = () => {
-    const filters = {
+    const newFilters: TypeWorkshopFilters = {
       moto: typeWorkshops.moto ? selectMotoTypesWorks : null,
       auto: typeWorkshops.auto ? selectAutoTypesWorks : null,
       maxDistance: distance,
       minRating: selectRating,
     };
-    onSubmit(filters);
+    onSubmit(newFilters);
   };
+
+  const hasFiltersChanged = useMemo(() => {
+    const currentMoto = typeWorkshops.moto ? selectMotoTypesWorks : null;
+    const currentAuto = typeWorkshops.auto ? selectAutoTypesWorks : null;
+    const currentDistance = distance;
+    const currentRating = selectRating;
+
+    if (!filters) {
+      const hasAnyFilter =
+        currentMoto !== null ||
+        currentAuto !== null ||
+        currentDistance !== 5 ||
+        currentRating !== null;
+      return hasAnyFilter;
+    }
+
+    const motoChanged =
+      (filters.moto === null && currentMoto !== null) ||
+      (filters.moto !== null && currentMoto === null) ||
+      (filters.moto !== null &&
+        currentMoto !== null &&
+        JSON.stringify([...filters.moto].sort()) !==
+          JSON.stringify([...currentMoto].sort()));
+
+    const autoChanged =
+      (filters.auto === null && currentAuto !== null) ||
+      (filters.auto !== null && currentAuto === null) ||
+      (filters.auto !== null &&
+        currentAuto !== null &&
+        JSON.stringify([...filters.auto].sort()) !==
+          JSON.stringify([...currentAuto].sort()));
+
+    const distanceChanged = filters.maxDistance !== currentDistance;
+    const ratingChanged = filters.minRating !== currentRating;
+
+    return motoChanged || autoChanged || distanceChanged || ratingChanged;
+  }, [
+    filters,
+    typeWorkshops,
+    selectMotoTypesWorks,
+    selectAutoTypesWorks,
+    distance,
+    selectRating,
+  ]);
   const valueTypesWork = useMemo(() => {
     const selectMotoTypes = selectMotoTypesWorks.map(
       (idTypeWork) =>
@@ -130,23 +186,42 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
     setIsShowTypesAutoWorks(false);
   };
 
+  const onToggleLocation = async () => {
+    if (!userData) return;
+    const isGeoLocation = !(userData.isGeoLocation || false);
+    await editUserMutation({
+      body: { isGeoLocation },
+      existingUserData: userData,
+    });
+  };
+
+  const isLocationEnabled = userData?.isGeoLocation || false;
+  const isLocationLoading = isLocationEnabled && !location;
+
   useEffect(() => {
     if (filters) {
-      if (filters.moto || filters.auto)
-        setTypeWorkshops({
-          moto: filters.moto ? filters.moto.length > 0 : false,
-          auto: filters.auto ? filters.auto.length > 0 : false,
-        });
-      if (filters.moto) setSelectMotoTypesWorks(filters.moto);
-      if (filters.auto) setSelectAutoTypesWorks(filters.auto);
+      setTypeWorkshops({
+        moto: filters.moto !== null,
+        auto: filters.auto !== null,
+      });
+      if (filters.moto !== null) setSelectMotoTypesWorks(filters.moto);
+      else setSelectMotoTypesWorks([]);
+      if (filters.auto !== null) setSelectAutoTypesWorks(filters.auto);
+      else setSelectAutoTypesWorks([]);
       if (filters.maxDistance) setDistance(filters.maxDistance);
       if (filters.minRating) setSelectRating(filters.minRating);
+      else setSelectRating(null);
+    } else {
+      setTypeWorkshops({ moto: false, auto: false });
+      setSelectMotoTypesWorks([]);
+      setSelectAutoTypesWorks([]);
+      setDistance(maxDistance);
+      setSelectRating(null);
     }
-  }, []);
+  }, [filters, maxDistance]);
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={colors.lightOrange} />
       <Header
         title={i18n._("Filter")}
         onPressLeftElement={onClose}
@@ -172,17 +247,45 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
             />
           }
         />
-        <InputSlider
-          label={i18n._("Distance, km:")}
-          min={0}
-          max={maxDistance}
-          value={distance}
-          onChange={setDistance}
-        />
+        <View style={styles.distanceContainer}>
+          <InputSlider
+            label={i18n._("Distance, km:")}
+            min={0}
+            max={maxDistance}
+            value={distance}
+            onChange={setDistance}
+            disabled={!isLocationEnabled || isLocationLoading}
+          />
+          {isLocationLoading && (
+            <BlurView intensity={5} style={styles.distanceBlur}>
+              <View style={styles.distanceBlurContent}>
+                <ActivityIndicator size="large" color={colors.blazeOrange} />
+                <Text style={styles.distanceWarningText}>
+                  {i18n._("Getting location...")}
+                </Text>
+              </View>
+            </BlurView>
+          )}
+          {!isLocationEnabled && !isLocationLoading && (
+            <BlurView intensity={5} style={styles.distanceBlur}>
+              <View style={styles.distanceBlurContent}>
+                <Text style={styles.distanceWarningText}>
+                  {i18n._(
+                    "To calculate distance, please enable location services"
+                  )}
+                </Text>
+                <ButtonCustom
+                  title={i18n._("Enable location")}
+                  onSubmit={onToggleLocation}
+                  styleContainer={styles.distanceButtonContainer}
+                  styleButton={styles.distanceButton}
+                />
+              </View>
+            </BlurView>
+          )}
+        </View>
         <View style={styles.containerSelectRatings}>
-          <Text style={styles.labelSectors}>
-            <Trans>Only with rating:</Trans>
-          </Text>
+          <Text style={styles.labelSectors}>{i18n._("Only with rating:")}</Text>
           <View style={styles.containerRatings}>
             {ratings.map((rating) => {
               const isSelect =
@@ -239,6 +342,7 @@ export const ModalFilter: FunctionComponent<ModalFilterProps> = ({
           title={i18n._("Filtering")}
           onSubmit={onSubmitFilters}
           styleContainer={styles.buttonSubmit}
+          disabled={!hasFiltersChanged}
         />
       </View>
       <ModalSheetTypeWorkshops

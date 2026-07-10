@@ -5,12 +5,12 @@ import React, {
   useState,
 } from "react";
 import { Platform, Text, View, ViewStyle } from "react-native";
-import { Trans } from "@lingui/macro";
 import { GoogleSignin, User } from "@react-native-google-signin/google-signin";
 import * as AppleAuthentication from "expo-apple-authentication";
 
 // providers
 import { useThemeProvider } from "../../../../providers/ThemeProvider/ThemeProvider";
+import { useLocalesProvider } from "../../../../../localization/localization.provider";
 
 // components
 import { SocialGoogle, SocialApple } from "../../../../icons/components";
@@ -37,6 +37,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   onChangeGoogle,
   onChangeApple,
 }) => {
+  const { i18n, language } = useLocalesProvider();
   const [focus, setFocus] = useState<number | null>(null);
   const { theme } = useThemeProvider();
 
@@ -79,7 +80,7 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   const onGoogle = async () => {
     try {
       const userDataGoogle = await GoogleSignin.signIn();
-      onChangeGoogle(userDataGoogle);
+      if (userDataGoogle?.data) onChangeGoogle(userDataGoogle.data);
     } catch (error) {}
   };
 
@@ -96,15 +97,16 @@ export const Socials: FunctionComponent<SocialsProps> = ({
   };
 
   const showTitle = useCallback(
-    (typeSocial: string) => <Trans>Continue with {typeSocial}</Trans>,
-    []
+    (typeSocial: string) =>
+      i18n._("Continue with {typeSocial}", { typeSocial }),
+    [i18n, language]
   );
 
   return (
     <View style={containerStyles}>
       {isTitle ? (
         <Text style={titleSocialConnectStyle}>
-          <Trans>or sign up using:</Trans>
+          {i18n._("or sign up using:")}
         </Text>
       ) : null}
       <View style={styles.containerButtons}>
