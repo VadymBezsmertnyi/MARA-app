@@ -130,6 +130,7 @@
     "@typescript-eslint/eslint-plugin": "^8.53.1",
     "@typescript-eslint/parser": "^8.53.1",
     "babel-plugin-module-resolver": "^5.0.2",
+    "babel-preset-expo": "~54.0.9",
     "babel-preset-react-native": "^4.0.1",
     "eslint": "^9.39.2",
     "reactotron-redux": "^3.2.1",
