@@ -10,6 +10,7 @@ const EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB = process.env
   .EXPO_PUBLIC_CLIENT_ID_GOOGLE_WEB as string;
 const EXPO_PUBLIC_APP_ID_ONESIGNAL = process.env
   .EXPO_PUBLIC_APP_ID_ONESIGNAL as string;
+const EXPO_PUBLIC_APPLE_TEAM_ID = process.env.EXPO_PUBLIC_APPLE_TEAM_ID || "";
 
 const DEFAULT_LANGUAGES = [
   "be",
@@ -50,6 +51,7 @@ export const expo = {
   ios: {
     supportsTablet: false,
     bundleIdentifier: "com.motoauto.mara",
+    appleTeamId: EXPO_PUBLIC_APPLE_TEAM_ID,
     scheme: "maraapp",
     googleServicesFile: "./keys/GoogleService-Info.plist",
     buildNumber: "50",
@@ -171,6 +173,7 @@ export const expo = {
       "onesignal-expo-plugin",
       {
         mode: "development",
+        devTeam: EXPO_PUBLIC_APPLE_TEAM_ID,
       },
     ],
     [
