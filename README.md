@@ -1,24 +1,47 @@
-# Project version using Expo for iOS 17 (tested on MacBook PRO M1)
+# M.A.R.A. App
 
-# Installation:
+> **Project Status: Discontinued / Portfolio Archive**
 
-**1. npm install**
+M.A.R.A. (Moto Auto Road Assistant) was my first major software project, created to bring together automotive and motorcycle enthusiasts, workshops, events, and related services.
 
-**2. npm start or npx expo prebuild**
+## What This Repository Contains
 
-\*_Perhaps you don't have Expo installed, in that case, please go here:_
-`https://docs.expo.dev/build/setup/`
+The mobile application of M.A.R.A. for iOS and Android.
 
-# Launch:
+## Tech Stack
 
-**npm run ios**
+- React Native 0.81 with Expo 54 and Expo Router
+- TypeScript
+- Redux Toolkit
+- React Native Firebase
+- React Native Maps and Geolib
+- OneSignal for push notifications
+- Lingui for localization (18 locale folders)
+- Zod for response validation
+- Bottom sheets and Reanimated for the UI
 
-# Build for TestFlight:
+## Main Features
 
-**1. eas build -p ios --profile preview**
+- Map with places and nearby users
+- Events: list, details, and creation
+- Workshops: list, details, and creation
+- Registration flow with location access, privacy policy, and terms of use
+- Settings for profile, events, and workshops
+- Help section, including adding a Telegram channel
+- Subscriptions and push notification providers
 
-\*_We're waiting for it to finish, checking on expo.dev_
+## Project Status
 
-**2. eas submit --platform ios**
+- The project is **discontinued** and no longer maintained.
+- The production services of M.A.R.A. have been shut down.
+- This repository is preserved for reading and reference only.
+- Some external integrations (Firebase, push notifications, SMS, maps, and similar third-party services) may no longer work.
+- The code is not intended to run in production without additional setup, new credentials, and new infrastructure.
 
-\*_We're waiting for it to finish, checking, and following the instructions on apple.developer_
+## Why This Repository Is Public
+
+The project was eventually discontinued because it was no longer relevant to my current priorities. I decided to preserve the source code as part of my development portfolio, documenting my early experience in building and maintaining a multi-component software product.
+
+M.A.R.A. consisted of four repositories: `MARA-app` (mobile app), `MARA-api` (backend), `MARA-web` (web part), and `MARA-websocket` (real-time service).
+
+No license has been chosen for this repository, so all rights are reserved by the author.
